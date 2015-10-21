@@ -56,7 +56,6 @@
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
 
-    <form id="form" runat="server">
        
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -440,7 +439,6 @@
     </div><!-- ./wrapper -->
 
 
-    </form>
   </body>
 </html>
 
