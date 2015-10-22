@@ -20,196 +20,101 @@
         </div><!-- /.box-header -->
 
     <div class="box-body table-responsive">
-        <table id="example" class="table table-bordered table-striped dataTable">
+        <table id="tablacompetencias" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th>ID</th>
-					<th >Requerimiento</th>
-					<th>Tipo</th>
-					<th >Prioridad</th>
-					<th style="text-align:right;">Acciones</th>
+					<th style="text-align:center">Nombre</th>
+					<th style="text-align:center">Tipo</th>
+					<th style="text-align:center">Evento Origen</th>
+					<th style="text-align:center">Categoria</th>
+					<th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="id">TOT_RF_1</td>
-					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
+					<td class="id">Competencia 1</td>
+					<td>Kata</td>
+					<td>Evento 1</td>
+					<td>Categoria 1</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
                 <tr>
-                    <td class="id">TOT_RF_2</td>
-					<td>El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
+                    <td class="id">Competencia 1</td>
+					<td>Kumite</td>
+					<td>Evento 1</td>
+					<td>Categoria 1</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
 				</tr><tr>
-                    <td class="id">TOT_RF_3</td>
-					<td>El sistema deberá permitir eliminar los requerimientos funcionales y no funcionales de un proyecto.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
+                    <td class="id">Competencia 2</td>
+					<td>Kata</td>
+					<td>Evento 1</td>
+					<td>Categoria 2</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
                 <tr>
-                    <td class="id">TOT_RF_4</td>
-					<td>El sistema deberá permitir buscar requerimientos funcionales y no funcionales, por ID y por descripción, que se encuentran asociados a un proyecto en específico.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
+                    <td class="id">Competencia 2</td>
+					<td>Kumite</td>
+					<td>Evento 2</td>
+					<td>Categoria 1</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
                 <tr>
-                <td class="id">TOT_RF_5</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por ID.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
+                <td class="id">Competencia 1</td>
+					<td>Kumite</td>
+					<td>Evento 2</td>
+					<td>Categoria 3</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
                 <tr>
-                <td class="id">TOT_RF_6</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
+                <td class="id">Competencia 2</td>
+					<td>Kata</td>
+					<td>Evento 2</td>
+					<td>Categoria 2</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
-                </tr><tr>
-                    <td class="id">TOT_RNF_1</td>
-					<td>El sistema deberá permitir eliminar los requerimientos funcionales y no funcionales de un proyecto.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">TOT_RNF_2</td>
-					<td>El sistema deberá permitir buscar requerimientos funcionales y no funcionales, por ID y por descripción, que se encuentran asociados a un proyecto en específico.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                <td class="id">TOT_RNF_3</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por ID.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-
-
-
-			</tbody>
-    </table>
+                    </tr>
+			    </tbody>
+            </table>
+           </div>
+       </div>
     </div>
-                  </div>
-                </div>
-         </div>
+</div>
 
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n de Requerimiento</h4>
+              <h4 class="modal-title" >Eliminaci&oacute;n de Competencia</h4>
             </div>
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row">
-                    <p>Seguro que desea eliminar el requerimiento:</p>
-                    <p id="req"></p>
+                    <p>Seguro que desea eliminar la competencia:</p>
+                    <p id="comp"></p>
                 </div>
               </div>
             </div>
@@ -226,76 +131,40 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del Caso de Uso</h4>
+						<h4 class="modal-title">Información De Competencia</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
 							<div class="row">
-								<h3>Precondiciones</h3>
+								<h3>Competencia</h3>
 									<ul>
-										<li>Usuario registrado</li>
-										<li>Usuario logeado</li>
-										<li>Proyecto creado</li>
+										<li>Tipo De Competencia</li>
+										<li>Categoria</li>
+										<li>Evento</li>
 									</ul>
-								<h3>Condición Final de Éxito</h3>
-								<p>
-									Caso de uso creado
-								</p>
-								<h3>Condición Final de Fallo</h3>
-								<p>
-									El caso de uso no pudo ser creado
-								</p>
-								<h3>Disparador</h3>
-								<p>
-									Seleccionar opción "Gestión de Casos de uso" → "Agregar caso de uso" del menú
-								</p>
-								<h3>Escenario Principal de Éxito</h3>
-									<ol>
-										<li>El usuario o admin selecciona la opción "Gestión de Casos de uso" → "Agregar caso de uso" del menú.</li>
-										<li>El sistema despliega la pantalla de obtener los datos del caso de uso.</li>
-										<li>El usuario o admin ingresa los números de los requerimientos asociados.</li>
-										<li>El sistema verifica la existencia de esos requerimientos.</li>
-										<li>El usuario o admin introduce los datos del caso de uso.</li>
-										<li>El sistema registra el caso de uso. Volver paso 2. El CU termina.</li>
-    								</ol>
-								<h3>Extensiones</h3>
-								<p>
-									4-A. El o los requerimientos no existen.
-								</p>
-								<p style="text-indent: 5em;">
-									A1. Desplegar mensaje de error.
-								</p>
-								<p style="text-indent: 5em;">
-									A2. Volver al paso 2. 
-								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-
-    </div>
-
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#example').DataTable();
+                $('#tablacompetencias').DataTable();
 
-                var table = $('#example').DataTable();
-                var req;
+                var table = $('#tablacompetencias').DataTable();
+                var comp;
                 var tr;
 
-                $('#example tbody').on('click', 'a', function () {
+                $('#tablacompetencias tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
-                        req = $(this).parent().prev().prev().prev().prev().text();
+                        comp = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
                         $(this).parent().removeClass('selected');
 
                     }
                     else {
-                        req = $(this).parent().prev().prev().prev().prev().text();
+                        comp = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
                         table.$('tr.selected').removeClass('selected');
                         $(this).parent().addClass('selected');
@@ -306,8 +175,8 @@
 
                 $('#modal-delete').on('show.bs.modal', function (event) {
                     var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
-                    modal.find('#req').text(req)
+                    modal.find('.modal-title').text('Eliminar Competencia:  ' + comp)
+                    modal.find('#comp').text(comp)
                 })
                 $('#btn-eliminar').on('click', function () {
                     table.row(tr).remove().draw();//se elimina la fila de la tabla
