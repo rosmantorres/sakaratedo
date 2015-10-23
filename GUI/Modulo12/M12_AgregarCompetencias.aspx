@@ -99,12 +99,30 @@
          </div>
       </div>
    </div>
+
+    <br />
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-10 col-md-10 col-lg-10">
+                <p><b>Status:</b></p>
+                <label class="radio-inline">
+                <input type="radio" name="radioStatus" checked="checked" id="input_status_porIniciar"/>Por Iniciar</label>
+                <label class="radio-inline">
+                <input type="radio" name="radioStatus" id="input_status_enCurso"/>En Curso</label>
+                <label class="radio-inline">
+                <input type="radio" name="radioStatus" disabled="disabled" id="input_status_Finalizado"/>Finalizado</label>
+            </div>
+        </div>
+     <br />
+
+
+
+
 </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <button id="btn-agregarComp" class="btn btn-primary" type="submit" onclick="return checkform();">Agregar</button>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M12_ListarCompetencias.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Volver</a>
       </div>

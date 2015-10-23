@@ -119,7 +119,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M12_ListarCompetencias.aspx?eliminacionSuccess=1">Eliminar</a>
+                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M12_ListarCompetencias.aspx?eliminacionSuccess=2">Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
