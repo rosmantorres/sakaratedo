@@ -238,4 +238,179 @@
 						<div class="container-fluid" id="info">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--VALIDACION PARA EL MODAL DE PAGO-->
+    <script src="js/Validacion.js"></script>
+    <script>
+
+        function example() {
+            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
+
+                $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
+                $('#<%=Text1.ClientID %>').val('');
+                $('#<%=Text2.ClientID %>').val('');
+                $('#<%=Text3.ClientID %>').val('');
+                $('#<%=Text4.ClientID %>').val('');
+                $('#<%=Text5.ClientID %>').val('');
+                $('#<%=Text6.ClientID %>').val('');
+                $('#<%=Text7.ClientID %>').val('');
+                $('#<%=Text8.ClientID %>').val('');
+                $('#<%=Text9.ClientID %>').val('');
+                $('#<%=Text10.ClientID %>').val('');
+            }
+            else
+                if ($('#<%=DropDownList1.ClientID %>').val() == 1) {
+                    $('#<%=Text1.ClientID %>').attr("disabled", false);
+                    $('#<%=Text2.ClientID %>').attr("disabled", false);
+                    $('#<%=Text3.ClientID %>').attr("disabled", false);
+                    $('#<%=Text4.ClientID %>').attr("disabled", false);
+
+                    //Deshabilitamos los campos y limpiamos
+                    $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
+                    $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
+                    $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
+                    $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
+                    $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
+                    $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
+                    $('#<%=Text5.ClientID %>').val('');
+                    $('#<%=Text6.ClientID %>').val('');
+                    $('#<%=Text7.ClientID %>').val('');
+                    $('#<%=Text8.ClientID %>').val('');
+                    $('#<%=Text9.ClientID %>').val('');
+                    $('#<%=Text10.ClientID %>').val('');
+
+                    $('#<%=Boton1.ClientID %>').attr("disabled", false);
+                }
+
+                else
+                    if ($('#<%=DropDownList1.ClientID %>').val() == 2) {
+
+                        //Deshabilitamos los campos y limpiamos
+                        $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text1.ClientID %>').val('');
+                        $('#<%=Text2.ClientID %>').val('');
+                        $('#<%=Text3.ClientID %>').val('');
+                        $('#<%=Text4.ClientID %>').val('');
+
+                        $('#<%=Text5.ClientID %>').attr("disabled", false);
+                        $('#<%=Text6.ClientID %>').attr("disabled", false);
+                        $('#<%=Text7.ClientID %>').attr("disabled", false);
+
+                        //Deshabilitamos los campos y limpiamos
+                        $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
+                        $('#<%=Text8.ClientID %>').val('');
+                        $('#<%=Text9.ClientID %>').val('');
+                        $('#<%=Text10.ClientID %>').val('');
+
+                        $('#<%=Boton1.ClientID %>').attr("disabled", false);
+                    }
+                    else
+                        if ($('#<%=DropDownList1.ClientID %>').val() == 3) {
+
+                            //Deshabilitamos los campos y limpiamos
+                            $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
+                            $('#<%=Text1.ClientID %>').val('');
+                            $('#<%=Text2.ClientID %>').val('');
+                            $('#<%=Text3.ClientID %>').val('');
+                            $('#<%=Text4.ClientID %>').val('');
+                            $('#<%=Text5.ClientID %>').val('');
+                            $('#<%=Text6.ClientID %>').val('');
+                            $('#<%=Text7.ClientID %>').val('');
+
+                            $('#<%=Text8.ClientID %>').attr("disabled", false);
+                            $('#<%=Text9.ClientID %>').attr("disabled", false);
+                            $('#<%=Text10.ClientID %>').attr("disabled", false);
+                            $('#<%=Boton1.ClientID %>').attr("disabled", false);
+                        }
+        }
+    </script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var table = $('#example').DataTable({
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+            });
+            var req;
+            var tr;
+
+                $('#example tbody').on('click', 'a', function () {
+                    if ($(this).parent().hasClass('selected')) {
+                        req = $(this).parent().prev().prev().prev().text();
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                        $(this).parent().removeClass('selected');
+
+                    }
+                    else {
+                        req = $(this).parent().prev().prev().prev().text();
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                        table.$('tr.selected').removeClass('selected');
+                        $(this).parent().addClass('selected');
+                    }
+
+                });
+
+                $('#modal-delete').on('show.bs.modal', function (event) {
+                    var modal = $(this)
+                    modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
+                    modal.find('#req').text(req)
+                })
+                $('#btn-eliminar').on('click', function () {
+                    table.row(tr).remove().draw();//se elimina la fila de la tabla
+                    $('#modal-delete').modal('hide');//se esconde el modal
+                    
+                });
+              
+
+           });
+
+        </script>
+
 </asp:Content>
