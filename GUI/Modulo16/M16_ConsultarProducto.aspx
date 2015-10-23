@@ -73,85 +73,60 @@
         </tbody>
     </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                  <!--MODAL PARA EL DETALLE -->
+<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada del Producto</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info1">
+							<div class="row">
+                                <img src="Imagenes/GuanteRojo.jpg" alt="">
+								<h3>Nombre</h3>
+								<p>
+									Guantes Rojos
+								</p>
+								<h3>Cantidad disponible</h3>
+                                <br />
+                                <form runat="server" class="form-horizontal" method="POST">
+                                     <div class="dropdown" runat="server" id="div1">
+                                     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"  runat="server" >
+                                         <asp:ListItem Enabled="true" Text="Cantidad" Value="-1"></asp:ListItem>
+                                         <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                                         <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                                         <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                                         <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                                         <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                                     </asp:DropDownList>
+                                     </div> 
+                               
+            
+								    <h3>Detalles</h3>
+								    <p>
+									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
+                                        golpes contra el contrincante o cuando se está practicando, con un diseño
+                                        particular de color rojo a gusto del atleta.
+								    </p>
+								    <div class="form-group">
+		                                <div class="box-footer">
+				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="submit"  onclick="M16_VerCarrito.aspx" >Agregar al Carrito</button>
+                                            <a class="btn btn-default" href="M16_ConsultarProducto.aspx">Cancelar</a>
+			                            </div>
+	                                </div>
+                                </form>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    </div>
 
      <!--VALIDACION PARA MODAL -->
     <script src="js/Validacion.js"></script>
