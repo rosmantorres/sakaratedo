@@ -30,6 +30,14 @@ namespace templateApp.GUI.Modulo12
                     alert.Attributes["role"] = "alert";
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Competencia eliminada exitosamente</div>";
                 }
+
+                if (success.Equals("3"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Competencia modificada exitosamente</div>";
+                }
+
             }
         }
     }
