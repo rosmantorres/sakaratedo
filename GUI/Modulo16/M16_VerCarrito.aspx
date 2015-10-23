@@ -238,24 +238,118 @@
 						<div class="container-fluid" id="info">
 
 
+                            <!--INFORMACION DEL MODAL PARA EL PAGO-->
+    <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
+          <div id="alert_nombre" runat="server">
+         </div>
+         <div id="alert_apellido" runat="server">
+          </div>
+          <div id="alert_username" runat="server">
+          </div>
+          <div id="alert_correo" runat="server">
+          </div>
+          <div id="alert_pregunta" runat="server">
+          </div>
+          <div id="alert_respuesta" runat="server">
+           </div>
+           <div id="alert_password" runat="server">
+           </div>
+
+        <div id="alertlocal" runat="server">
+        </div>
 
 
+        <h4 class="modal-title">Total: 26.096 Bs</h4>
+
+    
+         <div class="form-group">
+        <!-- El form iba aqui -->
+        
+              
+        <br />
+        
+            <div class="col-sm-10 col-md-10 col-lg-10">
+                 <div class="dropdown" runat="server" id="div1">
+                 <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"   onchange="example()"  runat="server" >
+                     <asp:ListItem Enabled="true" Text="Seleccione" Value="-1"></asp:ListItem>
+                     <asp:ListItem Text="Tarjeta" Value="1"></asp:ListItem>
+                     <asp:ListItem Text="Deposito" Value="2"></asp:ListItem>
+                     <asp:ListItem Text="Transferencia" Value="3"></asp:ListItem>
+               </asp:DropDownList>
+             </div> 
+            </div>
+        </div>
+        <h4 class="modal-title">Tarjeta Credito/Debito</h4>
+        <div class="form-group">
+	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="Text1" Disabled="disabled" type="text" placeholder="Numero de la Tarjeta" class="form-control" name="Text1" runat="server"/>
+		    </div>
+	    </div>
+        <div class="form-group">
+	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="Text2" Disabled="disabled" type="text" placeholder="Nombre del Tarjeta Habiente" class="form-control" name="Text2" runat="server"/>
+		    </div>
+	    </div>
+        <div class="form-group">
+	        <div id="div_usuario" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="Text3" Disabled="disabled" type="text" placeholder="Fecha de Vencimiento" class="form-control" name="Text3" runat="server"/>
+		    </div>
+	    </div>
+        <div class="form-group">
+	        <div id="div_email" class="col-sm-5 col-md-5 col-lg-5">
+		        <input id="Text4" Disabled="disabled" type="password" placeholder="Codigo de Seguridad" class="form-control" name="Text4" runat="server"/>
+		    </div>
+	    </div>
+        
+        <h4 class="modal-title">Deposito Bancario</h4>
+
+        <div class="form-group">
+			<div id="div_confirm_pswd" class="col-sm-10 col-md-10 col-lg-10">
+				    <input id="Text5" Disabled="disabled" type="text" placeholder="Numero del Deposito" class="form-control" name="Text5" runat="server"/>
+            </div>
+		</div>
+       
+        <div class="form-group">
+			<div id="div_pregunta" class="col-sm-10 col-md-10 col-lg-10">
+				<input id="Text6" Disabled="disabled" type="text" placeholder="Banco Emisor" class="form-control" name="Text6"  runat="server"/>
+			</div>
+		</div>
+
+        <div class="form-group">
+			<div id="div_preg" class="col-sm-5 col-md-5 col-lg-5">
+				<input id="Text7" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text7"  runat="server"/>
+			</div>
+		</div>
+
+        <h4 class="modal-title">Transferencia</h4>
+
+        <div class="form-group">
+			<div id="div_respuesta" class="col-sm-10 col-md-10 col-lg-10">
+				<input id="Text8" Disabled="disabled" type="text" placeholder="Codigo de Confirmacion" class="form-control" name="Text8"  runat="server"/>
+			</div>
+		</div>
+
+        <div class="form-group">
+			<div id="div_respuestas" class="col-sm-10 col-md-10 col-lg-10">
+				<input id="Text9" Disabled="disabled" type="text" placeholder="Banco Emisor" class="form-control" name="Text9"  runat="server"/>
+			</div>
+		</div>
+        <div class="form-group">
+			<div id="div_respuess" class="col-sm-5 col-md-5 col-lg-5">
+				<input id="Text10" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text10"  runat="server"/>
+			</div>
+		</div>
+
+         <div class="form-group">
+		    <div class="box-footer">
+				<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="submit" >Registrar</button>
+                <a class="btn btn-default" href="ListarUsuarios.aspx">Cancelar</a>
+			</div>
+	    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </form>
+        </div>
 
 
 <!--VALIDACION PARA EL MODAL DE PAGO-->
