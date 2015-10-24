@@ -18,7 +18,7 @@ Agregar Implemento
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" id="agregar_implemento" method="post" action="M15_agregar_implemento.aspx?success=1" >
+                <form role="form" id="agregar_implemento" method="post" action="M15_AgregarImplemento.aspx?success=1" >
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Articulo:</b></p>
@@ -81,7 +81,7 @@ Agregar Implemento
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Agregar</button>
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M15_agregar_implemento.aspx">Cancelar</a>
+                    <a class="btn btn-default" href="M15_AgregarImplemento.aspx">Cancelar</a>
                   </div>
 
                 </form>
