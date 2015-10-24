@@ -11,7 +11,7 @@ namespace templateApp.GUI.Modulo15
 {
 
 
-    public partial class M15_Prueba
+    public partial class WebForm2
     {
     }
 }
