@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarProducto.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Consulta de Productos
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Consulta de Articulos Deportivos
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> Productos en existencia:
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> Articulos en Existencia:
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
@@ -13,14 +13,14 @@
      <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Productos Actuales</h3>
+                  <h3 class="box-title">Articulos Actuales</h3>
                 </div><!-- /.box-header -->
 
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
             <tr>
                 <th>Foto</th>
-                <th>Producto</th>
+                <th>Articulo Deportivo</th>
                 <th>Precio (Bs)</th>
                 <th>Accion</th>
                 
@@ -30,7 +30,7 @@
         <tfoot>
             <tr>
                 <th>Foto</th>
-                <th>Producto</th>
+                <th>Articulo Deportivo</th>
                 <th>Precio (BS)</th>
                 <th>Accion</th>
             </tr>
@@ -79,7 +79,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Información detallada del Producto</h2>
+						<h2 class="modal-title">Información detallada del Articulo</h2>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
