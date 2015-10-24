@@ -7,14 +7,6 @@
     <div id="alert" runat="server">
     </div>
 
-    <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Hover Data Table</h3>
-                </div><!-- /.box-header -->
-
-
     <div class="box-body table-responsive">
 
        <table id="example" class="table table-bordered table-striped dataTable">
@@ -190,11 +182,6 @@
 
 			</tbody>
     </table>
-        </div>
-       </div>
-                </div>
-        </div>
-
 
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -279,12 +266,9 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
+                $('#example').DataTable();
 
-                var table = $('#example').DataTable({
-                    "language": {
-                        "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                    }
-                });
+                var table = $('#example').DataTable();
                 var req;
                 var tr;
 
