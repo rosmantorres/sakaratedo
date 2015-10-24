@@ -1,6 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M12_ListarCompetencias.aspx.cs" Inherits="templateApp.GUI.Modulo12.M12_ListarCompetencias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Eventos y Competencias</a> 
+		    </li>
+		
+		    <li class="active">
+			    Gestión de Competencias
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Competencias
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Competencias

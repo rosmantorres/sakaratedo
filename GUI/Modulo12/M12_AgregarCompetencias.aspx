@@ -3,6 +3,30 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Eventos y Competencias</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Competencias</a> 
+		    </li>
+		
+		    <li class="active">
+			    Agregar Competencia
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Competencias</asp:Content>
 
