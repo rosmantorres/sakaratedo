@@ -10,6 +10,15 @@ Gestion de Inventario
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     
+ <div id="alert"  >
+    <div id="contenido_alerta"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+ </div>
+
+ <div id="alert_confirmacion"  >
+    <div id="Div2"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+ </div>    
+
+
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -85,5 +94,88 @@ Gestion de Inventario
 
                 </form>
               </div><!-- /.box -->
+    
+  <script type="text/javascript">
+
+      $(document).ready(function () {
+          $("#alert").hide();
+          $("#alert").attr("class", "alert alert-error alert-dismissible");
+          $("#alert").attr("role", "alert");
+
+          $("#alert_confirmacion").hide();
+
+          $("#alert_confirmacion").attr("class", "alert alert-success alert-dismissible");
+          $("#alert_confirmacion").attr("role", "alert");
+          var valor = "";
+          var estado = false;
+
+
+          $("#btn-agregarComp").click(function (evento) {
+              evento.preventDefault();
+              //  alert($("#nombre_articulo").val());
+              if ($("#nombre_articulo").val() == "") {
+                  valor = "El campo nombre articulo es obligatorio </br>";
+                  estado = true;
+              }
+              if ($("#cantidad_inventario").val() == "") {
+                  valor = valor + "El campo cantidad es obligatorio </br>";
+                  estado = true;
+              } else {
+                  if ((isNaN($("#cantidad_inventario").val()))) {
+                      valor = valor + "El campo cantidad es numerico</br>";
+                      estado = true;
+                  }
+
+              }
+
+              if ($("#precio_producto").val() == "") {
+                  valor = valor + "El campo precio es obligatorio </br>";
+                  estado = true;
+              }
+              else {
+                  if ((isNaN($("#precio_producto").val()))) {
+                      valor = valor + "El campo precio es numerico";
+                      estado = true;
+                  }
+              }
+
+              if ($("#color_implemento").val() == "") {
+                  valor = valor + "El campo color es obligatorio </br>";
+                  estado = true;
+              }
+              if ($("#marca_implemento").val() == "") {
+                  valor = valor + "El campo marca es obligatorio </br>";
+                  estado = true;
+              }
+              if ($("#talla_implemento").val() == "") {
+                  valor = valor + "El campo talla es obligatorio </br>";
+                  estado = true;
+              }
+
+              if (estado) {
+                  $("#alert_confirmacion").hide();
+                  $("#alert").html(valor);
+                  $("#alert").fadeIn(2000);
+                  valor = "";
+                  estado = false;
+              }
+              else {
+                  $("#alert_confirmacion").html("Se modifico el implemento ");
+                  $("#alert").hide();
+                  $("#alert_confirmacion").fadeIn(1000);
+
+
+
+              }
+
+
+
+
+          });
+
+
+      });
+
+  </script>
 
 </asp:Content>

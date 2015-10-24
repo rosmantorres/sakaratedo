@@ -10,11 +10,11 @@ Agregar Implemento
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
 
- <div id="alert" class="alert alert-error alert-dismissible" role="alert" >
+ <div id="alert"  >
     <div id="contenido_alerta"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
  </div>
 
- <div id="alert_confirmacion" class="alert alert-success alert-dismissible" role="alert" >
+ <div id="alert_confirmacion"  >
     <div id="Div2"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
  </div>    
 
@@ -98,7 +98,13 @@ Agregar Implemento
 
       $(document).ready(function () {
           $("#alert").hide();
+          $("#alert").attr("class", "alert alert-error alert-dismissible");
+          $("#alert").attr("role", "alert");
+
           $("#alert_confirmacion").hide();
+
+          $("#alert_confirmacion").attr("class", "alert alert-success alert-dismissible");
+          $("#alert_confirmacion").attr("role", "alert");
           var valor="";
           var estado = false;
         
@@ -153,7 +159,7 @@ Agregar Implemento
                       estado = false;
                   }
                   else {
-                      $("#alert_confirmacion").html("Se agrego bien jeje");
+                      $("#alert_confirmacion").html("Se agrego el implemento exitosamente");
                       $("#alert").hide();
                       $("#alert_confirmacion").fadeIn(1000);
 

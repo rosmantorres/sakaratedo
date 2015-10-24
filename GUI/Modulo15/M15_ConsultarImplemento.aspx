@@ -8,18 +8,20 @@ Gestion de Inventario
     Consultar Implemento
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    
-    <div id="alert" runat="server">
-    </div>
-    
-    <center><h3 id="nombre-dojo">Dojo</h3></center>
-    <select id="ubicacion">
+       <center><h3 id="nombre-dojo">Dojo</h3></center>
+
+    <div class ="row">
+        <div class="col-lg-3"> 
+
+    <select id="ubicacion" class="form-control" >
         <option value="0">Todas las ciudades</option>
         <option value="1">Caracas</option>
         <option value="2">Maracay</option>
         <option value="3">Valencia</option>
     </select>
-        <select id="dojo">
+            </div>
+            <div class="col-lg-3">
+        <select id="dojo" class="form-control" >
         <option value="1">Dojo A</option>
         <option value="2">Dojo B</option>
         <option value="3">Dojo C</option>
@@ -28,6 +30,11 @@ Gestion de Inventario
         <option value="6">Dojo F</option>
 
     </select>
+                </div>
+        </div>
+    
+    <div id="alert" runat="server">
+    </div>
     <div class="box-body table-responsive">
 
        <table id="example" class="table table-bordered table-striped dataTable">
@@ -81,7 +88,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
@@ -98,7 +105,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
@@ -115,7 +122,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
@@ -132,7 +139,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
@@ -149,7 +156,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -167,7 +174,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -185,7 +192,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -203,7 +210,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -221,7 +228,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -239,7 +246,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -265,7 +272,7 @@ Gestion de Inventario
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M15_consultar_implemento.aspx?eliminacionSuccess=1">Eliminar</a>
+                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M15_ConsultarImplemento.aspx?eliminacionSuccess=1">Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
