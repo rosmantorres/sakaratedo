@@ -13,7 +13,7 @@
 
     <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
       <div class="col-sm-3 col-md-3 col-lg-3">
-         <label>Seleccione el mes a consultar:</label>  
+         <label>Seleccione el ID a consultar:</label>  
       </div>
       <div class="col-sm-8 col-md-8 col-lg-8" >
          <div class="btn-group">
@@ -21,18 +21,11 @@
             Selecionar...<span class="caret"></span>
             </button>
             <ol id="dp1" class="dropdown-menu" role="menu"  onclick="cargarcargo();">
-                <li value="1"><a href="#">Enero</a></li>
-                <li value="2"><a href="#">Febrero</a></li>
-                <li value="2"><a href="#">Marzo</a></li>
-                <li value="2"><a href="#">Abril</a></li>
-                <li value="2"><a href="#">Mayo</a></li>
-                <li value="2"><a href="#">Junio</a></li>
-                <li value="2"><a href="#">Juli0</a></li>
-                <li value="2"><a href="#">Agosto</a></li>
-                <li value="2"><a href="#">Septiembre</a></li>
-                <li value="2"><a href="#">Octubre</a></li>
-                <li value="2"><a href="#">Noviembre</a></li>
-                <li value="2"><a href="#">Dicembre</a></li>
+                <li value="1"><a href="#">17754924</a></li>
+                <li value="2"><a href="#">17236310</a></li>
+                <li value="2"><a href="#">15679566</a></li>
+                <li value="2"><a href="#">12623747</a></li>
+
             </ol>
          </div>
       </div>
