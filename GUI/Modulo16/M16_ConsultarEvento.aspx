@@ -1,27 +1,29 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarProducto.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarEvento.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Consulta de Articulos Deportivos
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Consulta de Eventos
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> Articulos en Existencia:
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> Eventos en Existencia:
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <div class="box-body table-responsive">
+    <div class="box-body table-responsive">
 
          <!--MODAL PARA EL DETALLE-->
      <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Articulos Actuales</h3>
+                  <h3 class="box-title">Eventos Actuales</h3>
                 </div><!-- /.box-header -->
 
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
             <tr>
-                <th>Foto</th>
-                <th>Articulo Deportivo</th>
-                <th>Precio (Bs)</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Ubicacion</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
                 <th>Accion</th>
                 
             </tr>
@@ -29,44 +31,56 @@
  
         <tfoot>
             <tr>
-                <th>Foto</th>
-                <th>Articulo Deportivo</th>
-                <th>Precio (BS)</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Ubicacion</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
                 <th>Accion</th>
             </tr>
         </tfoot>
  
         <tbody>
             <tr>
-                <td><img src="Imagenes\GuanteRojo.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Guantes Rojos</td>
-                <td>Bs 5000</td>
+                <td></td>
+                <td>Karategi</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
             <tr>
-                <td><img src="Imagenes\CintaBlanca.jpg" alt="" style="width:60px; height:auto;"></td>
+                <td></td>
                 <td>Cinta Blanca</td>
-                <td>Bs 400</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
             <tr>
-                <td><img src="Imagenes\Suspensorio.jpg" alt="" style="width:60px; height:auto;"></td>
+                <td></td>
                 <td>Suspensorio</td>
-                <td>Bs 350</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
             
             <tr>
-                <td><img src="Imagenes\ProtectorBucal.jpg" alt="" style="width:60px; height:auto;"></td>
+                <td></td>
                 <td>Proteccion Bucal</td>
-                <td>Bs 3200</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
 
              <tr>
-                <td><img src="Imagenes\Karategi.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Karategi</td>
-                <td>Bs 14000</td>
+                <td></td>
+                <td>Guantes Rojos</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
 
@@ -79,32 +93,29 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Información detallada del Articulo</h2>
+						<h2 class="modal-title">Información detallada del Evento</h2>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-                                <img src="Imagenes/GuanteRojo.jpg" alt="">
 								<h3>Nombre</h3>
-								<p>
 									Guantes Rojos
-								</p>
-								<h3>Cantidad disponible</h3>
                                 <br />
+                                <h3>Tipo</h3>
+                                    Sakaratedo
+                                <br />
+                                <h3>Lugar/ Fin</h3>
+                                    Caracas
+                                <br />
+								<h3>Fecha Inicio</h3>
+                                    20 Octubre 2015
+                                <br />
+                                <h3>Fecha Fin</h3>
+                                    22 Octubre 2015
+                                <br />
+                                
                                 <form runat="server" class="form-horizontal" method="POST">
-                                     <div class="dropdown" runat="server" id="div1">
-                                     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                         <asp:ListItem Enabled="true" Text="Cantidad" Value="-1"></asp:ListItem>
-                                         <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                         <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                         <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                         <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                         <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                     </asp:DropDownList>
-                                     </div> 
-                               
-            
-								    <h3>Detalles</h3>
+								    <h3>Descricion</h3>
 								    <p>
 									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
                                         golpes contra el contrincante o cuando se está practicando, con un diseño
@@ -129,17 +140,6 @@
     </div>
 
      <!--VALIDACION PARA MODAL -->
-    <script src="js/Validacion.js"></script>
-    <script>
-
-        function ver() {
-            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
-
-                $('#<%=Boton1.ClientID %>').attr("disabled", "disabled");
-            }
-        }
-    </script>
-
          
          <script type="text/javascript">
              $(document).ready(function () {
