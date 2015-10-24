@@ -152,6 +152,8 @@
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
+    <Content Include="GUI\Modulo13\M13_Deudores.js" />
+    <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
@@ -1045,6 +1047,12 @@
     </Compile>
     <Compile Include="GUI\Modulo12\M12_Prueba.aspx.designer.cs">
       <DependentUpon>M12_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
+      <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.designer.cs">
+      <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Prueba.aspx.cs">
       <DependentUpon>M13_Prueba.aspx</DependentUpon>
