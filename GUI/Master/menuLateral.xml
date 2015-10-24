@@ -72,11 +72,35 @@
 
 
   <!--OPCIONES DE MODULO 7-->
-  
-  <opcion nombre="" link="~/GUI/Modulo7/">
+
+  <opcion nombre="Consultar Organización y Dojo" link="~/GUI/Modulo7/M7_ListarOrganizacionYDojo.aspx">
     <modulo id="7"></modulo>
   </opcion>
   
+  <opcion nombre="Consultar Cintas" link="~/GUI/Modulo7/M7_ListarCintas.aspx">
+    <modulo id="7"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Eventos Asistidos" link="~/GUI/Modulo7/M7_ListarAsistenciaAEventos.aspx">
+    <modulo id="7"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Eventos Inscritos" link="~/GUI/Modulo7/M7_ListarEventosInscritos.aspx">
+    <modulo id="7"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Horario de Práctica" link="~/GUI/Modulo7/M7_ListarHorarioDePractica.aspx">
+    <modulo id="7"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Pago de Eventos" link="~/GUI/Modulo7/M7_ListarPagosAEventos.aspx">
+    <modulo id="7"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Pago de Matrícula" link="~/GUI/Modulo7/M7_ListarPagosDeMatricula.aspx">
+    <modulo id="7"></modulo>
+  </opcion>
+
   <!--FIN OPCIONES MODULO 7-->
 
 
