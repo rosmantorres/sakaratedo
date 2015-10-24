@@ -43,11 +43,13 @@
 
 
   <!--OPCIONES DE MODULO 4-->
-  
-  <opcion nombre="" link="~/GUI/Modulo4/">
+
+  <opcion nombre="Listar Dojos" link="~/GUI/Modulo4/M4_ListarDojos.aspx">
     <modulo id="4"></modulo>
   </opcion>
-  
+  <opcion nombre="Agregar Dojo" link="~/GUI/Modulo4/M4_AgregarDojo.aspx">
+    <modulo id="4"></modulo>
+  </opcion>
   <!--FIN OPCIONES MODULO 4-->
 
 
