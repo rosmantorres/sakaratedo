@@ -34,44 +34,13 @@ namespace templateApp.GUI.Modulo15
                     }
 
 
-                    if (cantidad_inventario.Value == "")
-                    {
-                        valor = valor + "Cantidad del Inventario esta Vacio</br>"; estado = true;
-
-                    }
-
-
-                    if (precio_producto.Value == "")
-                    {
-                        valor = valor + "Precio del Articulo esta Vacio</br>"; estado = true;
-
-                    }
-                    if (color_implemento.Value == "")
-                    {
-                        valor = valor + "Color del Articulo esta Vacio</br>"; estado = true;
-
-                    }
-                    if (marca_implemento.Value == "")
-                    {
-                        valor = valor + "Marca del Articulo esta Vacio</br>"; estado = true;
-
-                    }
-                    if (talla_implemento.Value == "")
-                    {
-                        valor = valor + "talla de Articulo esta Vacio</br>"; estado = true;
-
-                    }
-                    if (nombre_dojo.Value == "")
-                    {
-                        valor = valor + "Nombre del dojo esta Vacio</br>"; estado = true;
-
-                    }
+                  
                     
                     if (estado)
                     {
-                        alert.Attributes["class"] = "alert alert-error alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> " + valor + "</div>";
+                     //   alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                      //  alert.Attributes["role"] = "alert";
+                      //  alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> " + valor + "</div>";
                     }
                  }
             }

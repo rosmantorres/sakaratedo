@@ -8,9 +8,17 @@ Gestion de Inventario
 Agregar Implemento
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
- <div id="alert" runat="server">
-    </div>
-    
+
+
+ <div id="alert" class="alert alert-error alert-dismissible" role="alert" >
+    <div id="contenido_alerta"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+ </div>
+
+ <div id="alert_confirmacion" class="alert alert-success alert-dismissible" role="alert" >
+    <div id="Div2"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+ </div>    
+
+
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -18,11 +26,11 @@ Agregar Implemento
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" id="agregar_implemento" method="post" action="M15_AgregarImplemento.aspx?success=1" >
+                <form role="form" id="agregar_implemento"  >
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Articulo:</b></p>
-                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*nombre del articulo" class="form-control" runat="server"/>            
+                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*nombre del articulo" class="form-control" />            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -36,27 +44,27 @@ Agregar Implemento
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*cantidad" class="form-control" runat="server"/>            
+                           <input type="text" id="cantidad_inventario" placeholder="*cantidad" class="form-control" />            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Precio:</b></p>
-                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control" runat="server"/>         
+                        <p><b>Precio Bs:</b></p>
+                        <input type="text" id="precio_producto" placeholder="*Precio Bs" class="form-control"  />         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control"  runat="server"/>            
+                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control"  />            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*marca" class="form-control" runat="server"/>            
+                       <input type="text" id="marca_implemento"  placeholder="*marca" class="form-control" />            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                       <input type="text" id="talla_implemento"  placeholder="*talla" class="form-control" runat="server"/>            
+                       <input type="text" id="talla_implemento"  placeholder="*talla" class="form-control" />            
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -74,18 +82,93 @@ Agregar Implemento
                       <br/>
                       
                       
-                         <%= Request.Form %>>
+                        
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Agregar</button>
+                    <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" >Agregar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M15_AgregarImplemento.aspx">Cancelar</a>
                   </div>
 
                 </form>
               </div><!-- /.box -->
-  
+  <script type="text/javascript">
+
+      $(document).ready(function () {
+          $("#alert").hide();
+          $("#alert_confirmacion").hide();
+          var valor="";
+          var estado = false;
+        
+
+          $("#btn-agregarComp").click(function (evento) {
+              evento.preventDefault();
+            //  alert($("#nombre_articulo").val());
+              if ($("#nombre_articulo").val() == "") {
+                  valor = "El campo nombre articulo es obligatorio </br>";
+                  estado = true;
+              }
+              if ($("#cantidad_inventario").val() == "") {
+                  valor = valor + "El campo cantidad es obligatorio </br>";
+                  estado = true;
+              } else {
+                  if ((isNaN($("#cantidad_inventario").val()))) {
+                      valor = valor + "El campo cantidad es numerico</br>";
+                      estado = true;
+                  }
+
+              }
+
+              if ($("#precio_producto").val() == "") {
+                  valor = valor + "El campo precio es obligatorio </br>";
+                  estado = true;
+              }
+              else {
+                  if ((isNaN($("#precio_producto").val()))) {
+                      valor = valor + "El campo precio es numerico";
+                      estado = true;
+                  }
+              }
+                
+                  if ($("#color_implemento").val() == "") {
+                      valor = valor + "El campo color es obligatorio </br>";
+                      estado = true;
+                  }
+                  if ($("#marca_implemento").val() == "") {
+                      valor = valor + "El campo marca es obligatorio </br>";
+                      estado = true;
+                  }
+                  if ($("#talla_implemento").val() == "") {
+                      valor = valor + "El campo talla es obligatorio </br>";
+                      estado = true;
+                  }
+
+                  if (estado) {
+                      $("#alert_confirmacion").hide();
+                      $("#alert").html(valor);
+                      $("#alert").fadeIn(2000);
+                      valor = "";
+                      estado = false;
+                  }
+                  else {
+                      $("#alert_confirmacion").html("Se agrego bien jeje");
+                      $("#alert").hide();
+                      $("#alert_confirmacion").fadeIn(1000);
+
+
+
+                  }
+              
+
+
+
+          });
+
+
+      });
+
+  </script>
     
     </asp:Content>
