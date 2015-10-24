@@ -154,9 +154,9 @@
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
-    <Content Include="GUI\Modulo15\M15_agregar_implemento.aspx" />
-    <Content Include="GUI\Modulo15\M15_consultar_implemento.aspx" />
-    <Content Include="GUI\Modulo15\M15_modificar_implemento.aspx" />
+    <Content Include="GUI\Modulo15\M15_AgregarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\M15_ModificarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
@@ -1061,26 +1061,26 @@
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.designer.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_agregar_implemento.aspx.cs">
-      <DependentUpon>M15_agregar_implemento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
+      <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_agregar_implemento.aspx.designer.cs">
-      <DependentUpon>M15_agregar_implemento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_consultar_implemento.aspx.cs">
-      <DependentUpon>M15_consultar_implemento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.cs">
+      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_consultar_implemento.aspx.designer.cs">
-      <DependentUpon>M15_consultar_implemento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_modificar_implemento.aspx.cs">
-      <DependentUpon>M15_modificar_implemento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.cs">
+      <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_modificar_implemento.aspx.designer.cs">
-      <DependentUpon>M15_modificar_implemento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo16\M16_Prueba.aspx.cs">
       <DependentUpon>M16_Prueba.aspx</DependentUpon>

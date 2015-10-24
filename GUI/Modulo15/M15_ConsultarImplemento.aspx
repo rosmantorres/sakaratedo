@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M15_consultar_implemento.aspx.cs" Inherits="templateApp.GUI.Modulo15.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M15_ConsultarImplemento.aspx.cs" Inherits="templateApp.GUI.Modulo15.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
@@ -12,7 +12,22 @@ Gestion de Inventario
     <div id="alert" runat="server">
     </div>
     
-    <center><h3>Dojo</h3></center>
+    <center><h3 id="nombre-dojo">Dojo</h3></center>
+    <select id="ubicacion">
+        <option value="0">Todas las ciudades</option>
+        <option value="1">Caracas</option>
+        <option value="2">Maracay</option>
+        <option value="3">Valencia</option>
+    </select>
+        <select id="dojo">
+        <option value="1">Dojo A</option>
+        <option value="2">Dojo B</option>
+        <option value="3">Dojo C</option>
+        <option value="4">Dojo D</option>
+        <option value="5">Dojo E</option>
+        <option value="6">Dojo F</option>
+
+    </select>
     <div class="box-body table-responsive">
 
        <table id="example" class="table table-bordered table-striped dataTable">
@@ -48,7 +63,7 @@ Gestion de Inventario
                     
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" " href="M15_modificar_implemento.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" " href="M15_ModificarImplemento.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -346,8 +361,23 @@ Gestion de Inventario
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
-             
+                $("#ubicacion").change(function () {
 
+
+                    if ($("#ubicacion").val() == "0") {
+                        $("#dojo").html("<option value='1'>Dojo A</option> <option value='2'>Dojo B</option><option value='3'>Dojo C</option> <option value='4'>Dojo D</option><option value='5'>Dojo E</option> <option value='6'>Dojo F</option>");
+                    }
+                    else if ($("#ubicacion").val() == "1") {
+                        $("#dojo").html("<option value='1'>Dojo A</option> <option value='2'>Dojo B</option>");
+                    } else if ($("#ubicacion").val() == "2") {
+                        $("#dojo").html("<option value='3'>Dojo C</option> <option value='4'>Dojo D</option>");
+                    } else {
+                        $("#dojo").html("<option value='5'>Dojo E</option> <option value='6'>Dojo F</option>");
+                    }
+                });
+                $("#dojo").change(function () {
+                    $("#nombre-dojo").text($("#dojo option:selected").text());
+                });
             });
 
         </script>
