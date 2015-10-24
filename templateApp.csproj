@@ -163,7 +163,13 @@
     <Content Include="GUI\Modulo4\M4_Prueba.aspx" />
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
-    <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarCintas.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarHorariodePractica.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx" />
     <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
@@ -1123,12 +1129,47 @@
     <Compile Include="GUI\Modulo6\M6_Prueba.aspx.designer.cs">
       <DependentUpon>M6_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo7\M7_Prueba.aspx.cs">
-      <DependentUpon>M7_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx.cs">
+      <DependentUpon>M7_ListarAsistenciaAEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo7\M7_Prueba.aspx.designer.cs">
-      <DependentUpon>M7_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx.designer.cs">
+      <DependentUpon>M7_ListarAsistenciaAEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarCintas.aspx.cs">
+      <DependentUpon>M7_ListarCintas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarCintas.aspx.designer.cs">
+      <DependentUpon>M7_ListarCintas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx.cs">
+      <DependentUpon>M7_ListarEventosInscritos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx.designer.cs">
+      <DependentUpon>M7_ListarEventosInscritos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarHorariodePractica.aspx.cs">
+      <DependentUpon>M7_ListarHorariodePractica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarHorariodePractica.aspx.designer.cs">
+      <DependentUpon>M7_ListarHorariodePractica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx.cs">
+      <DependentUpon>M7_ListarOrganizacionYDojo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx.designer.cs">
+      <DependentUpon>M7_ListarOrganizacionYDojo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.cs">
+      <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.designer.cs">
+      <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.cs">
+      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
+      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\M8_Prueba.aspx.cs">
       <DependentUpon>M8_Prueba.aspx</DependentUpon>
