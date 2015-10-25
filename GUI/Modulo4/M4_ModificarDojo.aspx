@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_AgregarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_AgregarDojo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ModificarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_AgregarDojo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Dojo
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Dojo
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
      <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Nuevo Dojo</h3>
+                  <h3 class="box-title">Editando Dojo</h3>
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
@@ -18,12 +18,14 @@
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
 
-                       <div>
- 
+ <div>
+  <label class="box-title">Imagen Actual:</label>
 <img src="Dojoico.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
  
  <input id="input-1a" type="file" class="file"  >
  </div>
+
+
 
                       <p><b>Rif Del Dojo:</b></p>
                       <input type="text" name="rifDojo" id="rifDojo" placeholder="RIF" class="form-control">
@@ -102,7 +104,7 @@
                       <br/>
                 <div class="form-group">
                     <div class="col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Asignar Administrador:</b></p>
+                        <p><b>Modificar Administrador:</b></p>
                         <label class="radio-inline">
                         <input type="radio" name="radioTipo" checked="checked" id="input_nuevo"  onclick="return fillCodigoTextField();"/>Nuevo</label>
                         <label class="radio-inline">
@@ -118,7 +120,7 @@
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Agregar</button>
+                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M4_ListarDojos.aspx">Volver</a>
                   </div>
