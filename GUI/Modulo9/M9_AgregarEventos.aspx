@@ -43,7 +43,6 @@
 <form role="form" name="agregar_evento" id="agregar_evento" method="post" action="M9_ListarEventos.aspx?success=1">
 <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
 
-
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
       <br />
       <h3>Nombre del Evento</h3>
@@ -55,13 +54,62 @@
       <h3>Lugar del Evento</h3>
       <input type="text" name="lugarEvent" id="lugarEvent" placeholder="Lugar" class="form-control">
    </div>
-   <br/>
+
+    <br/>
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
       <br />
       <h3>Descripci&oacute;n</h3>
       <input type="text" name="descripcionEvent" id="descripcionEvent" placeholder="Breve resumen del Evento" class="form-control">
    </div>
    <br/>
+     <!--Date picker FECHA-->
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+    <!--Date picker FECHA Inicio-->
+    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+        <br />
+        <h3>Fecha de Inicio:</h3>
+        <div class="input-group input-append date" id="datePickerIni">
+        <input type="text" class="form-control" name="date" />
+        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+    <!--Date picker FECHA-->
+    <div class="form-group col-sm-4 col-md-3 col-lg-4">
+        <br />
+        <h3>Fecha de Culminaci&oacute;n:</h3>
+        <div class="input-group input-append date" id="datePickerFin">
+        <input type="text" class="form-control" name="date" />
+        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
+   </div>
+    <br/>
+     <!--Date picker Hora-->
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+    <!--Date picker Hroa Inicio-->
+    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+        <br />
+        <h3>Hora de Inicio:</h3>
+        <div class="input-group input-append date" id="datePickerIni">
+        <input type="time" class="form-control" name="date" />
+        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+        </div>
+    </div>
+    <!--Date picker Hora Fin-->
+    <div class="form-group col-sm-4 col-md-3 col-lg-4">
+        <br />
+        <h3>Hora de Culminaci&oacute;n:</h3>
+        <div class="input-group input-append date" id="datePickerFin">
+        <input type="time" class="form-control" name="date" />
+        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <br/>
     <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
       <div class="col-sm-3 col-md-3 col-lg-3">
          <label>Tipo de Evento:</label>  
