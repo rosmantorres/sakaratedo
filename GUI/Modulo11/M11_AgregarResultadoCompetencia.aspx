@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_AgregarResultadoCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_RegistrarResultadoCompetencia" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_AgregarResultadoCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_AgregarResultadoCompetencia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
@@ -17,7 +17,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_asistencia" id="agregar_asistencia" method="post" action="#">
+<form role="form" name="agregar_resultado" id="agregar_resultado" method="post" action="#">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
     <!--Date picker FECHA-->
@@ -65,11 +65,144 @@
         </div>
       </div>
     </div>
-   <br/>
+
+        <!--COMBO CATEGORIA-->
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <h3>Categoria:</h3>
+      <div class="col-sm-8 col-md-8 col-lg-8" >
+        <div class="btn-group">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true">
+            Seleccionar Categoria<span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+               <li><a href="#">Categoria #1</a></li>
+               <li><a href="#">Categoria #2</a></li>
+               <li><a href="#">Categoria #3</a></li>
+               <li><a href="#">Categoria #4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--DATATABLE ATLETAS-->
+    <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>ATLETAS A COMPETIR:</h3>
+       <table id="example" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					
+					<th >Id</th>
+					<th>Atleta</th>
+					<th style="text-align:right;">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					
+					<td>1</td>
+					<td>Atleta 1</td>
+				
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+                </tr>
+                <tr>
+                    
+					<td>2</td>
+					<td>Atleta 2</td>
+					
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+				</tr><tr>
+                    
+					<td>3</td>
+					<td>Atleta 3</td>
+					
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+                </tr>
+                <tr>
+                    
+					<td>4</td>
+					<td>Atleta 4</td>
+					
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+                </tr>
+                <tr>
+                
+					<td>5</td>
+					<td>Atleta 5</td>
+					
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                    </td>
+                </tr>
+               
+
+			</tbody>
+    </table>
+            </div>
+        </div>
+
+        		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Información detallada del Atleta</h4>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info">
+							<div class="row">
+								<p>
+									Nombre, Apellido, Sexo, cinta... etc
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
             <script type="text/javascript">
+                $(document).ready(function () {
 
-                //script que hace el manejo del datepicker
+                    var table = $('#example').DataTable({
+                        "language": {
+                            "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                        }
+                    });
+                    var req;
+                    var tr;
+
+                    $('#example tbody').on('click', 'a', function () {
+                        if ($(this).parent().hasClass('selected')) {
+                            req = $(this).parent().prev().prev().prev().prev().text();
+                            tr = $(this).parents('tr');//se guarda la fila seleccionada
+                            $(this).parent().removeClass('selected');
+
+                        }
+                        else {
+                            req = $(this).parent().prev().prev().prev().prev().text();
+                            tr = $(this).parents('tr');//se guarda la fila seleccionada
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).parent().addClass('selected');
+                        }
+                    });
+
+                });
+
+
                 $(document).ready(function () {
                     $('#datePicker')
                         .datepicker({
@@ -114,6 +247,21 @@
 
         </script>
 
+    <!--LISTA POSICIONES-->
+     <div class="form-group">
+      <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
+         <h3>Posiciones:</h3>
+         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
+            <option value="Organización 1">Atleta #1</option>
+            <option value="Organización 2">Atleta #2</option>
+            <option value="Organización 3">Atleta #3</option>
+            <option value="Organización 1">Atleta #4</option>
+            <option value="Organización 2">Atleta #5</option>
+            <option value="Organización 3">Atleta #6</option>
+         </select>
+      </div>
+   </div>
+
 </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -121,7 +269,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default"> Volver</a>
+         <a class="btn btn-default"> Cancelar</a>
       </div>
    </form>
 </div>

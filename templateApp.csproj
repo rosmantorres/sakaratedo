@@ -150,9 +150,10 @@
     <Content Include="dist\img\logofinal.png" />
     <Content Include="GUI\Master\menuLateral.xml" />
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
+    <Content Include="GUI\Modulo11\M11_AgregarAscenso.aspx" />
+    <Content Include="GUI\Modulo11\M11_AgregarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
-    <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_AgregarKata.aspx" />
     <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
@@ -1036,6 +1037,20 @@
     <Compile Include="GUI\Modulo10\M10_Prueba.aspx.designer.cs">
       <DependentUpon>M10_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
+      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.designer.cs">
+      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.cs">
+      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.designer.cs">
+      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1049,13 +1064,6 @@
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_Prueba.aspx.cs">
-      <DependentUpon>M11_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_Prueba.aspx.designer.cs">
-      <DependentUpon>M11_Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.cs">
       <DependentUpon>M11_AgregarKata.aspx</DependentUpon>

@@ -10,6 +10,6 @@
 namespace templateApp.GUI.Modulo11 {
     
     
-    public partial class M11_AgregarResultadoCompetencia {
+    public partial class M11_AgregarKumite {
     }
 }

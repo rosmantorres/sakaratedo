@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo11
 {
-    public partial class M11_AgregarKata : System.Web.UI.Page
+    public partial class M11_AgregarKumite : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

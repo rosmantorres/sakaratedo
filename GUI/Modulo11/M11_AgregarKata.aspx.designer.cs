@@ -10,6 +10,6 @@
 namespace templateApp.GUI.Modulo11 {
     
     
-    public partial class M11_RegistrarKata {
+    public partial class M11_AgregarKata {
     }
 }
