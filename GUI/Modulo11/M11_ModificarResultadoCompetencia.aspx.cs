@@ -9,9 +9,10 @@ namespace templateApp.GUI.Modulo11
 {
     public partial class M11_ModificarResultadoCompetencia : System.Web.UI.Page
     {
+        string tabla;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ((SKD)Page.Master).IdModulo = "11";
         }
     }
 }
