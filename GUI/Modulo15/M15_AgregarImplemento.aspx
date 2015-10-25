@@ -84,10 +84,21 @@ Agregar Implemento
                                   <option value="4" >dojo número4</option>
                                   <option value="5" >dojo número5</option>
                                   <option value="6" >dojo número6</option>
-                              </select></br></br>
+                              </select></br>
                                                        
                     </div>
+               
+                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Proveedor:</b></p>
+                       <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" />            
+                    </div>
                       <br/>
+                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Imagen Implemento:</b></p>
+                       <input type="file" id="imagen_implemento"  class="form-control" />            
+                    </div>
+                      <br/>
+                      
                       
                       
                         
@@ -141,13 +152,21 @@ Agregar Implemento
               }
               else {
                   if ((isNaN($("#precio_producto").val()))) {
-                      valor = valor + "El campo precio es numérico";
+                      valor = valor + "El campo precio es numérico </br>";
                       estado = true;
                   }
               }
 
               if ($("#color_implemento").val() == "") {
                   valor = valor + "El campo color es obligatorio </br>";
+                  estado = true;
+              }
+              if ($("#imagen_implemento").val() == "") {
+                  valor = valor + "La imagen es obligatoria </br>";
+                  estado = true;
+              }
+              if ($("#proveedor_implemento").val() == "") {
+                  valor = valor + "El campo proveedor es obligatorio </br>";
                   estado = true;
               }
               if ($("#marca_implemento").val() == "") {
