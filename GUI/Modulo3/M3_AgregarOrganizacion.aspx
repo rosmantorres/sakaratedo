@@ -1,5 +1,28 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M3_Agregar_org.aspx.cs" Inherits="templateApp.GUI.Modulo3.M3_Prueba" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M3_AgregarOrganizacion.aspx.cs" Inherits="templateApp.GUI.Modulo3.M3_AgregarOrganizacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Organizaciones</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Organizaciones</a> 
+		    </li>
+		
+		    <li class="active">
+			    Agregar Organizacion
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
