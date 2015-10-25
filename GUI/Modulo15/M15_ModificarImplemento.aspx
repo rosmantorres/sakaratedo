@@ -196,6 +196,13 @@ Gestion de Inventario
               if ($("#imagen_implemento").val() == "") {
                   valor = valor + "La imagen es obligatoria </br>";
                   estado = true;
+              } else {
+                  if ($("#imagen_implemento").val().split(".")[1] != "jpg") {
+
+                      valor = valor + "Se acepta solo imagenes con formato .jpg </br>";
+                      estado = true;
+                  }
+
               }
               if ($("#proveedor_implemento").val() == "") {
                   valor = valor + "El campo proveedor es obligatorio </br>";
