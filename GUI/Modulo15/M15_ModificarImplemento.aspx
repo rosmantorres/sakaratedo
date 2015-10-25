@@ -105,6 +105,11 @@ Gestion de Inventario
                                                        
                     </div>
                       <br/>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Stock mínimo:</b></p>
+                       <input type="text" id="stock_implemento"  placeholder="*Stock mínimo" class="form-control" value="5"/>            
+                    </div>
+                      <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Proveedor:</b></p>
                        <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" value="Shirido"/>            
@@ -157,6 +162,17 @@ Gestion de Inventario
               } else {
                   if ((isNaN($("#cantidad_inventario").val()))) {
                       valor = valor + "El campo cantidad es numérico</br>";
+                      estado = true;
+                  }
+
+              }
+
+              if ($("#stock_implemento").val() == "") {
+                  valor = valor + "El campo stock mínimo es obligatorio </br>";
+                  estado = true;
+              } else {
+                  if ((isNaN($("#stock_implemento").val()))) {
+                      valor = valor + "El campo stock mínimo es numérico</br>";
                       estado = true;
                   }
 

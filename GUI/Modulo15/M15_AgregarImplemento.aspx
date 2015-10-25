@@ -103,8 +103,12 @@ Agregar Implemento
                                   <option value="6" >dojo número6</option>
                               </select></br>
                                                        
-                    </div>
-               
+                      </div>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                        <p><b>Stock Mínimo</b></p>
+                        <input type="text" id="stock_implemento" placeholder="*Stock Minimo" class="form-control"  />         
+                     </div>
+                      <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Proveedor:</b></p>
                        <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" />            
@@ -125,7 +129,7 @@ Agregar Implemento
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-agregarComp" type="submit" style="align-content:flex-end" class="btn btn-primary" >Agregar</button>
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M15_AgregarImplemento.aspx">Cancelar</a>
+                   <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
                   </div>
 
                 </form>
@@ -169,6 +173,18 @@ Agregar Implemento
               else {
                   if ((isNaN($("#precio_producto").val()))) {
                       valor = valor + "El campo precio es numérico </br>";
+                      estado = true;
+                  }
+              }
+
+
+              if ($("#stock_implemento").val() == "") {
+                  valor = valor + "El campo stock mínimo es obligatorio </br>";
+                  estado = true;
+              }
+              else {
+                  if ((isNaN($("#stock_implemento").val()))) {
+                      valor = valor + "El campo stock mínimo es numérico </br>";
                       estado = true;
                   }
               }
