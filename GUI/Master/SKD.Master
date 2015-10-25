@@ -219,7 +219,7 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-
+            <asp:ContentPlaceHolder runat="server" ID="breads">Breadcrumbs</asp:ContentPlaceHolder>
             <h1 class="page-header">
                <asp:ContentPlaceHolder runat="server" ID="titulo">Título</asp:ContentPlaceHolder>
                 <br />
