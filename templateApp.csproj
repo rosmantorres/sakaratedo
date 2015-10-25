@@ -180,6 +180,7 @@
     <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx" />
@@ -1199,6 +1200,13 @@
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx.cs">
+      <DependentUpon>interfazMenuRestriccionesCintasYEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx.designer.cs">
+      <DependentUpon>interfazMenuRestriccionesCintasYEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>

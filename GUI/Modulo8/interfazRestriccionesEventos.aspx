@@ -11,7 +11,7 @@
 		</li>
 		
 		<li>
-			<a href="#">Algún Módulo</a>
+			<a href="../Modulo8/interfazMenuRestriccionesCintasYEventos.aspx">Menú de Restricciones de Cintas y Eventos</a>
 		</li>
 		
 		<li class="active">
