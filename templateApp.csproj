@@ -151,6 +151,8 @@
     <Content Include="GUI\Master\menuLateral.xml" />
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
+    <Content Include="GUI\Modulo11\M11_RegistrarKata.aspx" />
+    <Content Include="GUI\Modulo11\M11_RegistrarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
@@ -1038,6 +1040,20 @@
     </Compile>
     <Compile Include="GUI\Modulo11\M11_Prueba.aspx.designer.cs">
       <DependentUpon>M11_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_RegistrarKata.aspx.cs">
+      <DependentUpon>M11_RegistrarKata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_RegistrarKata.aspx.designer.cs">
+      <DependentUpon>M11_RegistrarKata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_RegistrarResultadoCompetencia.aspx.cs">
+      <DependentUpon>M11_RegistrarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_RegistrarResultadoCompetencia.aspx.designer.cs">
+      <DependentUpon>M11_RegistrarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo12\M12_Prueba.aspx.cs">
       <DependentUpon>M12_Prueba.aspx</DependentUpon>
