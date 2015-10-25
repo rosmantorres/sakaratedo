@@ -183,11 +183,16 @@
     <Content Include="GUI\Modulo13\Kyu-imagenes\verde.jpg" />
     <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
     <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
+<<<<<<< HEAD
+=======
+    <Content Include="GUI\Modulo13\M13_KyuPrograma.aspx" />
+>>>>>>> 80ade1784a6fa215f90b505abed6a002d3cf3e2d
     <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
     <Content Include="GUI\Modulo13\M13_Kyu.aspx" />
     <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
+    <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
     <Content Include="GUI\Modulo15\WebForm1.aspx" />
@@ -1103,6 +1108,13 @@
     <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.designer.cs">
       <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.cs">
+      <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.designer.cs">
+      <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1116,6 +1128,13 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Inicio.aspx.designer.cs">
       <DependentUpon>M13_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.cs">
+      <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
+      <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>

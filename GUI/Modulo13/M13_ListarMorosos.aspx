@@ -31,18 +31,18 @@
                    <td style="text-align:center">3</td>
                    <td style="text-align:center">12000</td>                  
                </tr>                            
-     </tbody>
+    
 
-      <tbody>
+     
                <tr>	
                   <td style="text-align:center">Leopoldo</td>
                   <td style="text-align:center">Mirabal</td>
                    <td style="text-align:center">2</td>
                    <td style="text-align:center">6000</td>                  
                </tr>                            
-     </tbody>        
+         
 
-       <tbody>
+       
                 <tr>	
                    <td style="text-align:center">Eduardo</td>
                    <td style="text-align:center">Pacheco</td>
