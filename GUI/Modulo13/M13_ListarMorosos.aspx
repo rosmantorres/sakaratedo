@@ -9,7 +9,9 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     
-   
+   &nbsp;&nbsp;&nbsp;&nbsp
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="M13_ListarMorosos.aspx?eliminacionSuccess=1" onclick="return checkform();">Exportar PDF</a>
+         &nbsp;&nbsp
    
     <table id="tablamorosos" class="table table-bordered table-striped dataTable">
         <thead>
