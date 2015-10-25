@@ -231,7 +231,7 @@
             <div class="form-group">
                 <label for="imputApellidosR" class="control-label col-xs-2">Apellidos:</label>
                 <div class="col-xs-10">
-                    <input class="form-control" id="imputApellidosR" placeholder="ej: Romulo Jose" required/>
+                    <input class="form-control" id="imputApellidosR" placeholder="ej: Rodriguez Rojas" required/>
                 </div>
             </div>
             <div class="form-group">
@@ -341,8 +341,8 @@
             </div>
         </fieldset>
         <div class="box-footer">
-            <button type="submit" class="btn btn-primary"> Procesar Solicitud </button>
-            <button type="button" class="btn btn-default"> Volver </button>
+            <button type="submit" class="btn btn-primary"> Enviar </button>
+            <button type="button" class="btn btn-default"> Cancelar </button>
         </div>
     </form>
     </div>
