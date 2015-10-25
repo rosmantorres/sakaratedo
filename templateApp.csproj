@@ -154,6 +154,7 @@
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
+    <Content Include="GUI\Modulo15\Imagen\imagen1.jpg" />
     <Content Include="GUI\Modulo15\M15_AgregarImplemento.aspx" />
     <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
     <Content Include="GUI\Modulo15\M15_ModificarImplemento.aspx" />

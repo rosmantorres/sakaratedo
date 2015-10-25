@@ -8,6 +8,8 @@ Gestion de Inventario
     Consultar Implemento
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <div id="alert" runat="server">
+    </div>
        <center><h3 id="nombre-dojo">Dojo</h3></center>
 
   
@@ -36,23 +38,23 @@ Gestion de Inventario
                 </div>
         </div>
     
-    <div id="alert" runat="server">
-    </div>
+    
     <div class="box-body table-responsive">
 
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
 					<th>ID</th>
-					<th >Nombre</th>
+					<th>Nombre</th>
 					<th>Tipo</th>
-                    <th >Marca</th>
-					<th >Color</th>
-                    <th >Talla</th>
-                    <th >Dojo</th>
-                    <th >Cantidad</th>
-					<th >Precio (Bs)</th>
+                    <th>Marca</th>
+					<th>Color</th>
+                    <th>Talla</th>
+                    <th>Dojo</th>
+                    <th>Cantidad</th>
+					<th>Precio (Bs)</th>
                     <th >Monto Total Bs</th>
+                    <th>Proveedor</th>
                    <th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
@@ -64,13 +66,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" " href="M15_ModificarImplemento.aspx"></a>
@@ -79,16 +81,16 @@ Gestion de Inventario
                 </tr>
            <tr>
                 <td class="id">2</td>
-					<td>Guante de pelea</td>
+               	<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>azul</td>
+                    <td>Azul</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -96,16 +98,16 @@ Gestion de Inventario
                     </td>
                 </tr><tr>
                 <td class="id">3</td>
-					<td>cinta</td>
-					<td>vestimenta</td>	
-                    <td>pirata</td>
-                    <td>amarillo</td>
+					<td>Cinta</td>
+					<td>Vestimenta</td>	
+                    <td>Everblast</td>
+                    <td>Amarillo</td>
                     <td>s</td>
-                    <td>boina verde</td>
+                    <td>Red Dragon</td>
                     <td>30</td>
                     <td>1000</td>
                     <td>30000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -116,13 +118,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>M</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -133,13 +135,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
                     <td>El dragon verde</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -150,13 +152,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -168,13 +170,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -186,13 +188,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -204,13 +206,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -224,11 +226,11 @@ Gestion de Inventario
                     <td>Kombate</td>
                     <td>rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -240,13 +242,13 @@ Gestion de Inventario
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
-                    <td>rojo</td>
+                    <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>1000</td>
                     <td>20000</td>
-                    
+                    <td>Shurido</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M15_ModificarImplemento.aspx"></a>
@@ -292,6 +294,7 @@ Gestion de Inventario
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
 							<div class="row">
+                                <div class="col-lg-4">
                                 <p id="nombre_articulo"> Nombre del Implemento:</p>
                                 <p id="talla_articulo"> Talla :</p>
                                 <p id="color_articulo"> Color :</p>
@@ -300,6 +303,13 @@ Gestion de Inventario
                                 <p id="cantidad_articulo"> Cantidad :</p>
                                 <p id="precio_articulo"> Precio Bs:</p>
                                 <p id="monto_total_articulo"> Monto Total Bs:</p> 
+                                <p id="proveedor_articulo">Proveedor :</p>
+                                    </div>
+                                <div class="col-lg-4">
+
+                                  <div id="imagen_articulo"></div>  
+
+                                </div>
 							</div>
 						</div>
 					</div>
@@ -318,7 +328,13 @@ Gestion de Inventario
                 var table = $('#example').DataTable({
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                    }
+                      },
+                        
+                   "columnDefs":[{
+                            "targets":[0],
+                            "visible":false
+                   }]
+                    
                 });
 
                 var req;
@@ -352,17 +368,16 @@ Gestion de Inventario
 
                 $('#modal-info').on('show.bs.modal', function (event) {
                     var modal = $(this)
-
-                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().text());
-                    modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().text());
-                    modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().text());
-                    modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().text());
-                    modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().text());
-
+                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().prev().text());
+                    modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().prev().text());
+                    modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().prev().text());
+                    modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().prev().text());
+                    modal.find('#proveedor_articulo').text("Proveedor: " + tr.prev().text());
 
                 });
 
@@ -396,6 +411,7 @@ Gestion de Inventario
                 $("#ubicacion").change(function () {
                     $("#nombre-dojo").text($("#dojo option:selected").text());
                 });
+                $("#id").hide();
             });
 
         </script>
