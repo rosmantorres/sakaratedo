@@ -29,12 +29,12 @@ Agregar Implemento
                 <form role="form" id="agregar_implemento"  >
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Nombre De Articulo:</b></p>
-                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*nombre del articulo" class="form-control" />            
+                      <p><b>Nombre De Implemento:</b></p>
+                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control" />            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <p><b>Tipo Articulo:</b></p>
+                         <p><b>Tipo Implemento:</b></p>
                         <select id="tipo_articulo" class="form-control" runat="server">
                                <option value="1" >Vestimenta</option>
                                <option value="2" >Accesorios</option>
@@ -44,12 +44,12 @@ Agregar Implemento
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*cantidad" class="form-control" />            
+                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" />            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Precio Bs:</b></p>
-                        <input type="text" id="precio_producto" placeholder="*Precio Bs" class="form-control"  />         
+                        <p><b>Precio (Bs):</b></p>
+                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control"  />         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -59,23 +59,31 @@ Agregar Implemento
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*marca" class="form-control" />            
+                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" />            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                       <input type="text" id="talla_implemento"  placeholder="*talla" class="form-control" />            
-                    </div>
+                        <select id="Select1" class="form-control" runat="server">
+                               <option value="1" >XS</option>
+                               <option value="2" >S</option>
+                               <option value="3" >M</option>
+                               <option value="4" >L</option>
+                               <option value="5" >XL</option>
+                               <option value="6" >XXL</option>
+                               <option value="7" >XXXL</option>
+                        </select>            
+                      </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dojo:</b></p>
                              <select id="nombre_dojo" class="form-control" runat="server">
-                                  <option value="1" >dojo numero1</option>
-                                  <option value="2" >dojo numero2</option>
-                                  <option value="3" >dojo numero3</option>
-                                  <option value="4" >dojo numero4</option>
-                                  <option value="5" >dojo numero5</option>
-                                  <option value="6" >dojo numero6</option>
+                                  <option value="1" >dojo número1</option>
+                                  <option value="2" >dojo número2</option>
+                                  <option value="3" >dojo número3</option>
+                                  <option value="4" >dojo número4</option>
+                                  <option value="5" >dojo número5</option>
+                                  <option value="6" >dojo número6</option>
                               </select></br></br>
                                                        
                     </div>
@@ -105,15 +113,15 @@ Agregar Implemento
 
           $("#alert_confirmacion").attr("class", "alert alert-success alert-dismissible");
           $("#alert_confirmacion").attr("role", "alert");
-          var valor="";
+          var valor = "";
           var estado = false;
-        
+
 
           $("#btn-agregarComp").click(function (evento) {
               evento.preventDefault();
-            //  alert($("#nombre_articulo").val());
+              //  alert($("#nombre_articulo").val());
               if ($("#nombre_articulo").val() == "") {
-                  valor = "El campo nombre articulo es obligatorio </br>";
+                  valor = "El campo nombre implemento es obligatorio </br>";
                   estado = true;
               }
               if ($("#cantidad_inventario").val() == "") {
@@ -121,7 +129,7 @@ Agregar Implemento
                   estado = true;
               } else {
                   if ((isNaN($("#cantidad_inventario").val()))) {
-                      valor = valor + "El campo cantidad es numerico</br>";
+                      valor = valor + "El campo cantidad es numérico</br>";
                       estado = true;
                   }
 
@@ -133,45 +141,36 @@ Agregar Implemento
               }
               else {
                   if ((isNaN($("#precio_producto").val()))) {
-                      valor = valor + "El campo precio es numerico";
+                      valor = valor + "El campo precio es numérico";
                       estado = true;
                   }
               }
-                
-                  if ($("#color_implemento").val() == "") {
-                      valor = valor + "El campo color es obligatorio </br>";
-                      estado = true;
-                  }
-                  if ($("#marca_implemento").val() == "") {
-                      valor = valor + "El campo marca es obligatorio </br>";
-                      estado = true;
-                  }
-                  if ($("#talla_implemento").val() == "") {
-                      valor = valor + "El campo talla es obligatorio </br>";
-                      estado = true;
-                  }
 
-                  if (estado) {
-                      $("#alert_confirmacion").hide();
-                      $("#alert").html(valor);
-                      $("#alert").fadeIn(2000);
-                      valor = "";
-                      estado = false;
-                  }
-                  else {
-                      $("#alert_confirmacion").html("Se agrego el implemento exitosamente");
-                      $("#alert").hide();
-                      $("#alert_confirmacion").fadeIn(1000);
+              if ($("#color_implemento").val() == "") {
+                  valor = valor + "El campo color es obligatorio </br>";
+                  estado = true;
+              }
+              if ($("#marca_implemento").val() == "") {
+                  valor = valor + "El campo marca es obligatorio </br>";
+                  estado = true;
+              }
 
+              if (estado) {
+                  $("#alert_confirmacion").hide();
+                  $("#alert").html(valor);
+                  $("#alert").fadeIn(2000);
+                  valor = "";
+                  estado = false;
+              }
+              else {
+                  $("#alert_confirmacion").html("Se agregó el implemento exitosamente");
+                  $("#alert").hide();
+                  $("#alert_confirmacion").fadeIn(1000);
 
-
-                  }
-              
-
+              }
 
 
           });
-
 
       });
 

@@ -29,12 +29,12 @@ Gestion de Inventario
                 <form role="form" id="modificar_implemento" method="post" action="M15_modificar_implemento.aspx?success=1">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Nombre De Articulo:</b></p>
-                        <input  type="text" id="nombre_articulo" placeholder="*nombre del articulo" class="form-control" value="Guante de pelea"/>            
+                      <p><b>Nombre De Implemento:</b></p>
+                        <input  type="text" id="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <p><b>Tipo Articulo:</b></p>
+                         <p><b>Tipo Implemento:</b></p>
                         <select id="tipo_articulo" class="form-control">
                                <option value="1" >Vestimenta</option>
                                <option selected value="2" >Accesorios</option>
@@ -44,11 +44,11 @@ Gestion de Inventario
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*cantidad" class="form-control" value="20"/>            
+                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" value="20"/>            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Precio:</b></p>
+                        <p><b>Precio (Bs):</b></p>
                         <input type="text" id="precio_producto" placeholder="*Precio" class="form-control" value="1000"/>         
                     </div>
                       <br/>
@@ -59,23 +59,31 @@ Gestion de Inventario
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*marca" class="form-control" value="Kombate"/>            
+                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" value="Kombate"/>            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                       <input type="text" id="talla_implemento"  placeholder="*talla" class="form-control" value="L"/>            
-                    </div>
+                       <select id="Select1" class="form-control">
+                               <option value="1" >XS</option>
+                               <option value="2" >S</option>
+                               <option value="3" >M</option>
+                               <option value="4" >L</option>
+                               <option value="5" >XL</option>
+                               <option value="6" >XXL</option>
+                               <option value="7" >XXXL</option>
+                        </select>            
+                      </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dojo:</b></p>
                              <select id="nombre_dojo" class="form-control">
                                   <option selected value="1" >el dragon verde </option>
-                                  <option value="2" >dojo numero2</option>
-                                  <option value="3" >dojo numero3</option>
-                                  <option value="4" >dojo numero4</option>
-                                  <option value="5" >dojo numero5</option>
-                                  <option value="6" >dojo numero6</option>
+                                  <option value="2" >dojo número2</option>
+                                  <option value="3" >dojo número3</option>
+                                  <option value="4" >dojo número4</option>
+                                  <option value="5" >dojo número5</option>
+                                  <option value="6" >dojo número6</option>
                               </select></br></br>
                                                        
                     </div>
@@ -114,7 +122,7 @@ Gestion de Inventario
               evento.preventDefault();
               //  alert($("#nombre_articulo").val());
               if ($("#nombre_articulo").val() == "") {
-                  valor = "El campo nombre articulo es obligatorio </br>";
+                  valor = "El campo nombre implemento es obligatorio </br>";
                   estado = true;
               }
               if ($("#cantidad_inventario").val() == "") {
@@ -122,7 +130,7 @@ Gestion de Inventario
                   estado = true;
               } else {
                   if ((isNaN($("#cantidad_inventario").val()))) {
-                      valor = valor + "El campo cantidad es numerico</br>";
+                      valor = valor + "El campo cantidad es numérico</br>";
                       estado = true;
                   }
 
@@ -134,7 +142,7 @@ Gestion de Inventario
               }
               else {
                   if ((isNaN($("#precio_producto").val()))) {
-                      valor = valor + "El campo precio es numerico";
+                      valor = valor + "El campo precio es numérico";
                       estado = true;
                   }
               }
@@ -147,10 +155,6 @@ Gestion de Inventario
                   valor = valor + "El campo marca es obligatorio </br>";
                   estado = true;
               }
-              if ($("#talla_implemento").val() == "") {
-                  valor = valor + "El campo talla es obligatorio </br>";
-                  estado = true;
-              }
 
               if (estado) {
                   $("#alert_confirmacion").hide();
@@ -160,16 +164,11 @@ Gestion de Inventario
                   estado = false;
               }
               else {
-                  $("#alert_confirmacion").html("Se modifico el implemento ");
+                  $("#alert_confirmacion").html("Se modificó el implemento ");
                   $("#alert").hide();
                   $("#alert_confirmacion").fadeIn(1000);
 
-
-
               }
-
-
-
 
           });
 
