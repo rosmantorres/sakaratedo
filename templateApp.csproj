@@ -150,12 +150,14 @@
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
     <Content Include="dist\img\logofinal.png" />
+    <Content Include="GUI\Master\Inicio - Copy.aspx" />
     <Content Include="GUI\Master\menuLateral.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\1.jpg" />
     <Content Include="GUI\Modulo13\Kyu-imagenes\amarilla.jpg" />
     <Content Include="GUI\Modulo13\Kyu-imagenes\azul-roja.jpg" />
     <Content Include="GUI\Modulo13\Kyu-imagenes\azul.jpg" />
@@ -174,7 +176,9 @@
     <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
     <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio2.aspx" />
+    <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
     <Content Include="GUI\Modulo13\M13_Kyu.aspx" />
+    <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
@@ -1050,6 +1054,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Master\Inicio - Copy.aspx.cs">
+      <DependentUpon>Inicio - Copy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Master\Inicio - Copy.aspx.designer.cs">
+      <DependentUpon>Inicio - Copy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Master\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1080,6 +1091,7 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
@@ -1090,6 +1102,13 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Inicio2.aspx.designer.cs">
       <DependentUpon>M13_Inicio2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.cs">
+      <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.designer.cs">
+      <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
