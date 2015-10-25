@@ -8,21 +8,12 @@ Gestion de Inventario
     Consultar Implemento
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-<<<<<<< HEAD
-    
-    <div id="alert" runat="server">
-    </div>
-    
-    <h3 align="center" id="nombre-dojo">Dojo</h3>
-    <select id="ubicacion">
-=======
        <center><h3 id="nombre-dojo">Dojo</h3></center>
 
     <div class ="row">
         <div class="col-lg-3"> 
 
     <select id="ubicacion" class="form-control" >
->>>>>>> 599437fbfa3f3e76576adf4e1aecc1b54328eca5
         <option value="0">Todas las ciudades</option>
         <option value="1">Caracas</option>
         <option value="2">Maracay</option>
@@ -57,7 +48,7 @@ Gestion de Inventario
                     <th >Talla</th>
                     <th >Dojo</th>
                     <th >Cantidad</th>
-					<th >Precio Bs</th>
+					<th >Precio (Bs)</th>
                     <th >Monto Total Bs</th>
                    <th style="text-align:right;">Acciones</th>
 				</tr>
@@ -84,7 +75,7 @@ Gestion de Inventario
                     </td>
                 </tr>
            <tr>
-                <td class="id">1</td>
+                <td class="id">2</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -101,7 +92,7 @@ Gestion de Inventario
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
-                <td class="id">1</td>
+                <td class="id">3</td>
 					<td>cinta</td>
 					<td>vestimenta</td>	
                     <td>pirata</td>
@@ -118,7 +109,7 @@ Gestion de Inventario
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
-                <td class="id">1</td>
+                <td class="id">4</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -135,7 +126,7 @@ Gestion de Inventario
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
-                <td class="id">1</td>
+                <td class="id">5</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -152,7 +143,7 @@ Gestion de Inventario
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr><tr>
-                <td class="id">1</td>
+                <td class="id">6</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -170,7 +161,7 @@ Gestion de Inventario
                     </td>
                 </tr>
                 <tr>
-                <td class="id">1</td>
+                <td class="id">7</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -188,7 +179,7 @@ Gestion de Inventario
                     </td>
                 </tr>
                 <tr>
-                <td class="id">1</td>
+                <td class="id">8</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -206,7 +197,7 @@ Gestion de Inventario
                     </td>
                 </tr>
                 <tr>
-                <td class="id">1</td>
+                <td class="id">9</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -224,7 +215,7 @@ Gestion de Inventario
                     </td>
                 </tr>
                 <tr>
-                <td class="id">1</td>
+                <td class="id">10</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -242,7 +233,7 @@ Gestion de Inventario
                     </td>
                 </tr>
                 <tr>
-                <td class="id">1</td>
+                <td class="id">11</td>
 					<td>Guante de pelea</td>
 					<td>Accesorio</td>	
                     <td>Kombate</td>
@@ -270,12 +261,12 @@ Gestion de Inventario
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n del Articulo</h4>
+              <h4 class="modal-title" >Eliminaci&oacute;n del implemento</h4>
             </div>
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row">
-                    <p>Seguro que desea eliminar el Articulo:</p>
+                    <p>Seguro que desea eliminar el implemento:</p>
                     <p id="req"></p>
                 </div>
               </div>
@@ -298,7 +289,7 @@ Gestion de Inventario
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
 							<div class="row">
-                                <p id="nombre_articulo"> Nombre del Articulo :</p>
+                                <p id="nombre_articulo"> Nombre del Implemento:</p>
                                 <p id="talla_articulo"> Talla :</p>
                                 <p id="color_articulo"> Color :</p>
                                 <p id="marca_articulo"> Marca :</p>
@@ -319,13 +310,13 @@ Gestion de Inventario
 
         <script type="text/javascript">
             $(document).ready(function () {
-             
 
-               var table = $('#example').DataTable({
-                   "language": {
-                       "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                   }
-               });
+
+                var table = $('#example').DataTable({
+                    "language": {
+                        "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                    }
+                });
 
                 var req;
                 var tr;
@@ -344,29 +335,29 @@ Gestion de Inventario
                         table.$('tr.selected').removeClass('selected');
                         $(this).parent().addClass('selected');
                     }
-                  
+
                 });
 
 
 
                 $('#modal-delete').on('show.bs.modal', function (event) {
                     var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar Articulo:  ' + req);
+                    modal.find('.modal-title').text('Eliminar Implemento:  ' + req);
                     modal.find('#req').text(req);
 
                 });
 
                 $('#modal-info').on('show.bs.modal', function (event) {
                     var modal = $(this)
-                   
-                    modal.find('#nombre_articulo').text("Nombre articulo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+
+                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
                     modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
                     modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
                     modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().text());
                     modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().text());
                     modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().text());
                     modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().text());
-                    modal.find('#precio_articulo').text("Precio Bs: " + tr.prev().prev().text());
+                    modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().text());
                     modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().text());
 
 
@@ -378,6 +369,8 @@ Gestion de Inventario
                 });
 
                 $("#ubicacion").change(function () {
+
+
                     if ($("#ubicacion").val() == "0") {
                         $("#dojo").html("<option value='1'>Dojo A</option> <option value='2'>Dojo B</option><option value='3'>Dojo C</option> <option value='4'>Dojo D</option><option value='5'>Dojo E</option> <option value='6'>Dojo F</option>");
                     }
@@ -389,13 +382,8 @@ Gestion de Inventario
                         $("#dojo").html("<option value='5'>Dojo E</option> <option value='6'>Dojo F</option>");
                     }
                 });
-                
-                $("#nombre-dojo").text($("#dojo option:selected").text());
                 $("#dojo").change(function () {
-                  $("#nombre-dojo").text($("#dojo option:selected").text());
-                });
-                $("#ubicacion").change(function () {
-                  $("#nombre-dojo").text($("#dojo option:selected").text());
+                    $("#nombre-dojo").text($("#dojo option:selected").text());
                 });
             });
 
