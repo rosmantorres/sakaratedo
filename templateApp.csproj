@@ -151,7 +151,10 @@
     <Content Include="GUI\Master\menuLateral.xml" />
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
-    <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
+    <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
+    <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
+    <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
+    <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
@@ -1048,12 +1051,26 @@
     <Compile Include="GUI\Modulo11\M11_Prueba.aspx.designer.cs">
       <DependentUpon>M11_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo12\M12_Prueba.aspx.cs">
-      <DependentUpon>M12_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
+      <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo12\M12_Prueba.aspx.designer.cs">
-      <DependentUpon>M12_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.designer.cs">
+      <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_ListarCompetencias.aspx.cs">
+      <DependentUpon>M12_ListarCompetencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_ListarCompetencias.aspx.designer.cs">
+      <DependentUpon>M12_ListarCompetencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_ModificarCompetencias.aspx.cs">
+      <DependentUpon>M12_ModificarCompetencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_ModificarCompetencias.aspx.designer.cs">
+      <DependentUpon>M12_ModificarCompetencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Prueba.aspx.cs">
       <DependentUpon>M13_Prueba.aspx</DependentUpon>

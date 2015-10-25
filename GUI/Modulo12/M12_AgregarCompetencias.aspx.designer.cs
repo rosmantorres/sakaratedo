@@ -11,7 +11,7 @@ namespace templateApp.GUI.Modulo12
 {
 
 
-    public partial class M12_Prueba
+    public partial class M12_AgregarCompetencias
     {
     }
 }
