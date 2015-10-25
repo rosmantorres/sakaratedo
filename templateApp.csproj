@@ -150,6 +150,7 @@
     <Content Include="dist\img\logofinal.png" />
     <Content Include="GUI\Master\menuLateral.xml" />
     <Content Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx" />
+    <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
@@ -1032,6 +1033,13 @@
     </Compile>
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx.cs">
+      <DependentUpon>M10_ListarAsistenciaEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx.designer.cs">
+      <DependentUpon>M10_ListarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo10\M10_Prueba.aspx.cs">
       <DependentUpon>M10_Prueba.aspx</DependentUpon>
