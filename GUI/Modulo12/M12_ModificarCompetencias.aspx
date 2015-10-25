@@ -1,6 +1,50 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M12_ModificarCompetencias.aspx.cs" Inherits="templateApp.GUI.Modulo12.M12_ModificarCompetencias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript">
+
+    function initialize() {
+        var latlng = new google.maps.LatLng(10.5000, -66.9167);
+        var mapProp = {
+            center: latlng,
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var contentString = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                    '</div>' +
+      '<h1 id="firstHeading" class="firstHeading">Título</h1>' +
+      '<div id="bodyContent">' +
+      '<p>  Cuerpo </p>' +
+      '<p>' +
+      '</p>' +
+      '</div>' +
+      '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 150
+        });
+
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var point = new google.maps.LatLng(10.5000, -66.9167);
+        var marker = new google.maps.Marker({
+            position: point,
+            map: map,
+            title: 'Ubicación',
+
+        })
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
@@ -79,6 +123,11 @@
          <br />
       </div>
    </div>
+     <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <h3>Ubicación de Competencia</h3>
+        <div id="googleMap" style="width:500px;height:250px;"></div>
+        <br />
+    </div>
    <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
       <div class="col-sm-3 col-md-3 col-lg-3">
          <label>Seleccione el rango de edad:</label>  
