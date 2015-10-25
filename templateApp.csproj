@@ -159,7 +159,11 @@
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
-    <Content Include="GUI\Modulo3\M3_Prueba.aspx" />
+    <Content Include="GUI\Modulo3\M3_Consultar_org.aspx" />
+    <Content Include="GUI\Modulo3\M3_Modificar2_org.aspx" />
+    <Content Include="GUI\Modulo3\M3_Modificar_org.aspx" />
+    <Content Include="GUI\Modulo3\M3_Eliminar_org.aspx" />
+    <Content Include="GUI\Modulo3\M3_Agregar_org.aspx" />
     <Content Include="GUI\Modulo4\M4_Prueba.aspx" />
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
@@ -1095,12 +1099,40 @@
     <Compile Include="GUI\Modulo2\M2_Prueba.aspx.designer.cs">
       <DependentUpon>M2_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo3\M3_Prueba.aspx.cs">
-      <DependentUpon>M3_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo3\M3_Consultar_org.aspx.cs">
+      <DependentUpon>M3_Consultar_org.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo3\M3_Prueba.aspx.designer.cs">
-      <DependentUpon>M3_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo3\M3_Consultar_org.aspx.designer.cs">
+      <DependentUpon>M3_Consultar_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Modificar2_org.aspx.cs">
+      <DependentUpon>M3_Modificar2_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Modificar2_org.aspx.designer.cs">
+      <DependentUpon>M3_Modificar2_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Modificar_org.aspx.cs">
+      <DependentUpon>M3_Modificar_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Modificar_org.aspx.designer.cs">
+      <DependentUpon>M3_Modificar_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Eliminar_org.aspx.cs">
+      <DependentUpon>M3_Eliminar_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Eliminar_org.aspx.designer.cs">
+      <DependentUpon>M3_Eliminar_org.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Agregar_org.aspx.cs">
+      <DependentUpon>M3_Agregar_org.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_Agregar_org.aspx.designer.cs">
+      <DependentUpon>M3_Agregar_org.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_Prueba.aspx.cs">
       <DependentUpon>M4_Prueba.aspx</DependentUpon>
