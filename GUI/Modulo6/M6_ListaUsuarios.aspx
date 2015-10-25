@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-    Lista de los usuarios a los que se pyuede administrar
+    Lista de los usuarios que se pueden administrar
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -53,7 +53,7 @@
                     <td>Eltercera</td>
                     <td>Atleta</td>
                     <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"><a/>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                          <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
@@ -65,7 +65,217 @@
 
 
     <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2>Consulta de Usuario</h2>
+                </div>
+                <div class="modal-body">
+                    <legend class="scheduler-border">Datos Personales</legend>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nombres:</strong></div>
+                        <div class="col-md-8">Rómulo José</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Apellidos:</strong></div>
+                        <div class="col-md-8">Rodríguez Rojas</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Usuario:</strong></div>
+                        <div class="col-md-8">eltercera</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nacionalidad:</strong></div>
+                        <div class="col-md-8">Venezolana</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Fecha de Nacimiento:</strong></div>
+                        <div class="col-md-8">05/10/1990</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Edad:</strong></div>
+                        <div class="col-md-8">24</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>CI o Pasaporte:</strong></div>
+                        <div class="col-md-8">19.513.536</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Sexo:</strong></div>
+                        <div class="col-md-8">Masculino</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Correo electronico:</strong></div>
+                        <div class="col-md-8">rodriguezrjrr@gmail.com</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono:</strong></div>
+                        <div class="col-md-8">(0414)914-64-38</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono Movil:</strong></div>
+                        <div class="col-md-8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Dirección de Habitación:</strong></div>
+                        <div class="col-md-8"> La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12sdf skdf skdf dsjk fjsd fjlhs jfhds fj eif lja dfjlsd fjl</div>
+                    </div>
+                    <legend class="scheduler-border">Datos del Representantes</legend>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nombres:</strong></div>
+                        <div class="col-md-8">Rómulo José</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Apellidos:</strong></div>
+                        <div class="col-md-8">Rodríguez Rojas</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nacionalidad:</strong></div>
+                        <div class="col-md-8">Venezolana</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Fecha de Nacimiento:</strong></div>
+                        <div class="col-md-8">05/10/1990</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Edad:</strong></div>
+                        <div class="col-md-8">24</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>CI o Pasaporte:</strong></div>
+                        <div class="col-md-8">19.513.536</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Sexo:</strong></div>
+                        <div class="col-md-8">Masculino</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Correo electronico:</strong></div>
+                        <div class="col-md-8">rodriguezrjrr@gmail.com</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono:</strong></div>
+                        <div class="col-md-8">(0414)914-64-38</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono Movil:</strong></div>
+                        <div class="col-md-8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Patentesco:</strong></div>
+                        <div class="col-md-8">Padre</div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <div id="modal-update" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2>Consulta de Usuario</h2>
+                </div>
+                <div class="modal-body">
+                    <legend class="scheduler-border">Datos Personales</legend>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nombres:</strong></div>
+                        <div class="col-md-8">Rómulo José</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Apellidos:</strong></div>
+                        <div class="col-md-8">Rodríguez Rojas</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Usuario:</strong></div>
+                        <div class="col-md-8">eltercera</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nacionalidad:</strong></div>
+                        <div class="col-md-8">Venezolana</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Fecha de Nacimiento:</strong></div>
+                        <div class="col-md-8">05/10/1990</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Edad:</strong></div>
+                        <div class="col-md-8">24</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>CI o Pasaporte:</strong></div>
+                        <div class="col-md-8">19.513.536</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Sexo:</strong></div>
+                        <div class="col-md-8">Masculino</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Correo electronico:</strong></div>
+                        <div class="col-md-8">rodriguezrjrr@gmail.com</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono:</strong></div>
+                        <div class="col-md-8">(0414)914-64-38</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono Movil:</strong></div>
+                        <div class="col-md-8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Dirección de Habitación:</strong></div>
+                        <div class="col-md-8"> La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12sdf skdf skdf dsjk fjsd fjlhs jfhds fj eif lja dfjlsd fjl</div>
+                    </div>
+                    <legend class="scheduler-border">Datos del Representantes</legend>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nombres:</strong></div>
+                        <div class="col-md-8">Rómulo José</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Apellidos:</strong></div>
+                        <div class="col-md-8">Rodríguez Rojas</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Nacionalidad:</strong></div>
+                        <div class="col-md-8">Venezolana</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Fecha de Nacimiento:</strong></div>
+                        <div class="col-md-8">05/10/1990</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Edad:</strong></div>
+                        <div class="col-md-8">24</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>CI o Pasaporte:</strong></div>
+                        <div class="col-md-8">19.513.536</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Sexo:</strong></div>
+                        <div class="col-md-8">Masculino</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Correo electronico:</strong></div>
+                        <div class="col-md-8">rodriguezrjrr@gmail.com</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono:</strong></div>
+                        <div class="col-md-8">(0414)914-64-38</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Teléfono Movil:</strong></div>
+                        <div class="col-md-8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Patentesco:</strong></div>
+                        <div class="col-md-8">Padre</div>
+                    </div>
+                </div>
+            </div>
+         </div>
     </div>
 
     </div>

@@ -142,7 +142,7 @@
                     </button>
                     <ol id="selectNacionalidadOpts" class="dropdown-menu" role="menu"  onclick="">
                         <li value="1"><a href="#">Venezolano</a></li>
-                        <li value="2"><a href="#">Extenagero</a></li>
+                        <li value="2"><a href="#">Extranjero</a></li>
                     </ol>
                 </div>
             </div>

@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-    Listado de solisitudes generadas.
+    Listado de solicitudes generadas.
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -101,7 +101,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Solocitud de inscripcion</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2>Solicitud de inscripcion</h2>
                 </div>
                 <div class="modal-body">
                     <legend class="scheduler-border">Datos Personales</legend>
@@ -150,6 +151,7 @@
                         <div class="col-md-8"> La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12sdf skdf skdf dsjk fjsd fjlhs jfhds fj eif lja dfjlsd fjl</div>
                     </div>
                     <legend class="scheduler-border">Datos del Representantes</legend>
+                    <legend class="scheduler-border">Datos del Representantes</legend>
                     <div class="row">
                         <div class="col-md-4" style="text-align: right"><strong>Nombres:</strong></div>
                         <div class="col-md-8">Rómulo José</div>
@@ -194,11 +196,11 @@
                         <div class="col-md-4" style="text-align: right"><strong>Patentesco:</strong></div>
                         <div class="col-md-8">Padre</div>
                     </div>
-                    <legend class="scheduler-border">Acciones</legend>
+                    <br />
                     <div class="row" style="text-align: center">
                         <input type="button" value="Aceptar" class="btn btn-success col-lg-offset-1" />
                         <input type="button" value="Rechazar"  class="btn btn-danger col-lg-offset-1" />
-                        <input type="button" value="cancelar" class="btn btn-primary col-lg-offset-1" />
+                        <input type="button" value="Cancelar" class="btn btn-primary col-lg-offset-1" />
                     </div>
                 </div>
             </div>

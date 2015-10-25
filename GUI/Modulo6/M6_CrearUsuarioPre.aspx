@@ -104,8 +104,8 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary"> Guardar </button>
-                <button type="button" class="btn btn-default"> Volver </button>
+                <button type="submit" class="btn btn-primary"> Agregar </button>
+                <button type="button" class="btn btn-default"> Cancelar </button>
             </div>
         </fieldset>
     </form>
