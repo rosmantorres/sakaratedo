@@ -11,11 +11,11 @@
 		</li>
 		
 		<li>
-			<a href="#">Algun Modulo</a>
+			<a href="#">Algún Módulo</a>
 		</li>
 		
 		<li class="active">
-			Restricciones de Eventos
+			Gestión Restricciones de Eventos
 		</li>
 	
 	</ol>
@@ -24,7 +24,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
     
-    Gestion de Restricciones de Eventos
+    Gestión de Restricciones de Eventos
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
@@ -52,12 +52,12 @@
 				<tr>
 					<th>ID</th>
 					<th>Evento</th>
-					<th >Edad Minima</th>
-					<th>Edad Maxima</th>
-					<th >Rango Minimo</th>
-					<th >Rango Maximo</th>
+					<th >Edad Mínima</th>
+					<th>Edad Máxima</th>
+					<th >Rango Mínimo</th>
+					<th >Rango Máximo</th>
 					<th >Sexo</th>
-					<th >Categoria</th>
+					<th >Categoría</th>
                     <th>Especialidad</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
@@ -69,7 +69,7 @@
 					<td>10</td>
 					<td>18</td>
 					<td>Blanco</td>
-					<td>Marron</td>
+					<td>Marrón</td>
 					<td>Ambos</td>
                     <td>N/A</td>
                     <td>N/a</td>
@@ -85,7 +85,7 @@
 					<td>10</td>
 					<td>18</td>
 					<td>Blanco</td>
-					<td>Marron</td>
+					<td>Marrón</td>
 					<td>Femenino</td>
                     <td>Peso Ligero</td>
                     <td>Kumite</td>
@@ -106,19 +106,19 @@
 		  <div class="modal-content">
 			<div class="modal-header">
 			  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <h4 class="modal-title" >Eliminaci&oacute;n de Reestriccion</h4>
+			  <h4 class="modal-title" >Eliminaci&oacute;n de Reestricción</h4>
 			</div>
 			<div class="modal-body">
 			  <div class="container-fluid">
 				<div class="row">
-					<p>¿Seguro que desea eliminar esta restriccion?</p>
+					<p>¿ Seguro que desea eliminar esta restricción ?</p>
 					<%--<p id="req"></p>--%>
 				</div>
 			  </div>
 			</div>
 			<div class="modal-footer">  
-				<a id="btn-eliminar" type="button" class="btn btn-primary" href="interfazRestriccionesEventos.aspx?actionSuccess=2">Eliminar</a>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<a id="btn-eliminar" type="submit" class="btn btn-primary" href="interfazRestriccionesEventos.aspx?actionSuccess=2">Eliminar</a>
+				<button type="submit" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 		   </div>
 		  </div><!-- /.modal-delete-content -->
 		</div><!-- /.modal-delete-dialog -->
@@ -154,7 +154,7 @@
 
 				$('#modal-delete').on('show.bs.modal', function (event) {
 					var modal = $(this)
-					modal.find('.modal-title').text('Eliminar Restriccion  ')
+					modal.find('.modal-title').text('Eliminar Restricción  ')
 					modal.find('#req').text(req)
 				})
 				$('#btn-eliminar').on('click', function () {

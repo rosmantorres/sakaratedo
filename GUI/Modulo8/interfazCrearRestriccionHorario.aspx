@@ -11,15 +11,15 @@
 		</li>
 		
         <li>
-			<a href="#">Algun Modulo</a>
+			<a href="#">Algún Módulo</a>
 		</li>
 
 		<li>
-			<a href="../Modulo8/interfazRestriccionesHorario.aspx">Restricciones de Horarios</a>
+			<a href="../Modulo8/interfazRestriccionesHorario.aspx">Gestión de Restricciones de Horarios</a>
 		</li>
 		
 		<li class="active">
-			Creacion de Restricciones de Horarios
+			Agregar Restricciones de Horarios
 		</li>
 	
 	</ol>
@@ -28,12 +28,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 
-    Gestion de Restricciones de Horarios
+    Gestión de Restricciones de Horarios
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
     
-    Creacion de Restricciones de Horarios
+    Agregar Restricciones de Horarios
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -57,7 +57,7 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input type="text" placeholder="Edad Minima" class="form-control" id="edad_menor">
+					<input type="text" placeholder="Edad Mínima" class="form-control" id="edad_menor">
 					
 					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
 						<option value="">Seleccione Cinta</option>
@@ -66,7 +66,7 @@
 						<option value="3">verde</option>
 						<option value="4">azul</option>
 						<option value="5">roja</option>
-						<option value="6">marron</option>
+						<option value="6">marrón</option>
 						<option value="7">Negra 1do Dan</option>
 						<option value="8">Negra 2do Dan</option>
 						<option value="9">Negra 3er Dan</option>
@@ -85,7 +85,7 @@
         <div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
-					<input type="text" placeholder="Edad Maxima" class="form-control" id="rango_mayor">
+					<input type="text" placeholder="Edad Máxima" class="form-control" id="rango_mayor">
 					
 					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
 						<option value="">Seleccione Cinta</option>
@@ -94,17 +94,15 @@
 						<option value="3">verde</option>
 						<option value="4">azul</option>
 						<option value="5">roja</option>
-						<option value="6">marron</option>
+						<option value="6">marrón</option>
 						<option value="7">Negra 1do Dan</option>
 						<option value="8">Negra 2do Dan</option>
 						<option value="9">Negra 3er Dan</option>
 						<option value="10">Negra 4to Dan</option>
 						<option value="11">Negra 5to Dan</option>
 					</select>
-				    <%--<button type="btn-cancelar" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx" style="margin-top:5%; margin-right:5%; height:35px">Cancelar</button>--%>
-                    <a id="btn-aceptar" type="button" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
-                    <%--<a id="btn-aceptar" type="button" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-primary pull-right" data-toggle="modal"  data-target="modal-exito" href="#" >Crear</a>--%>
-                    <a id="btn-aceptar" type="button" class="btn btn-primary glyphicon glyphicon-check pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesHorario.aspx?actionSuccess=1"> Crear</a>
+				    <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
+                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesHorario.aspx?actionSuccess=1"> Agregar</a>
 				
                 </div>
 			</div>

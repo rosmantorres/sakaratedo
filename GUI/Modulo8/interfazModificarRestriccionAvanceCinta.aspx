@@ -11,11 +11,11 @@
 		</li>
 		
 		<li>
-			<a href="#">Algun Modulo</a>
+			<a href="#">Algún Módulo</a>
 		</li>
 
         <li>
-			<a href="../Modulo8/interfazRestriccionesAvanceCinta.aspx">Restricciones de Avance de Cinta</a>
+			<a href="../Modulo8/interfazRestriccionesAvanceCinta.aspx">Gestión Restricciones de Avance de Cinta</a>
 		</li>
 		
 		<li class="active">
@@ -28,7 +28,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
 
-    Gestion de Restricciones de Avance de Cinta
+    Gestión de Restricciones de Avance de Cinta
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
@@ -42,18 +42,18 @@
     </div>
   
     <select class="combobox" style="width:300px; height:35px">
-        <option value="">Seleccione Restriccion de Avance de Cinta</option>
-        <option value="1">blanca Tiempo Minimo: 3 meses Puntaje Minimo: 30 pts Horas Docentes Minimas: 0</option>
-		<option value="2">amarilla Tiempo Minimo: 5 meses Puntaje Minimo: 60 pts Horas Docentes Minimas: 0</option>
-		<option value="3">verde Tiempo Minimo: 7 meses Puntaje Minimo: 120 pts Horas Docentes Minimas: 0</option>
-		<option value="4">azul Tiempo Minimo: 9 meses Puntaje Minimo: 240 pts Horas Docentes Minimas: 8</option>
-		<option value="5">roja Tiempo Minimo: 11 meses Puntaje Minimo: 480 pts Horas Docentes Minimas: 16</option>
-		<option value="6">marron Tiempo Minimo: 13 meses Puntaje Minimo: 960 pts Horas Docentes Minimas: 32</option>
-		<option value="7">Negra 1do Dan Tiempo Minimo: 18 meses Puntaje Minimo: 1920 pts Horas Docentes Minimas: 80</option>
-		<option value="8">Negra 2do Dan Tiempo Minimo: 24 meses Puntaje Minimo: 4000 pts Horas Docentes Minimas: 160</option>
-		<option value="9">Negra 3er Dan Tiempo Minimo: 30 meses Puntaje Minimo: 8000 pts Horas Docentes Minimas: 320</option>
-		<option value="10">Negra 4to Dan Tiempo Minimo: 36 meses Puntaje Minimo: 16000 pts Horas Docentes Minimas: 640</option>
-		<option value="11">Negra 5to Dan Tiempo Minimo: 42 meses Puntaje Minimo: 32000 pts Horas Docentes Minimas: 1028</option>
+        <option value="">Seleccione Restricción de Avance de Cinta</option>
+        <option value="1">blanca Tiempo Mínimo : 3 meses Puntaje Mínimo: 30 pts Horas Docentes mínimas: 0</option>
+		<option value="2">amarilla Tiempo Mínimo : 5 meses Puntaje Mínimo: 60 pts Horas Docentes mínimas: 0</option>
+		<option value="3">verde Tiempo Mínimo : 7 meses Puntaje Mínimo: 120 pts Horas Docentes mínimas: 0</option>
+		<option value="4">azul Tiempo Mínimo : 9 meses Puntaje Mínimo: 240 pts Horas Docentes mínimas: 8</option>
+		<option value="5">roja Tiempo Mínimo: 11 meses Puntaje Mínimo: 480 pts Horas Docentes mínimas: 16</option>
+		<option value="6">marrón Tiempo Mínimo: 13 meses Puntaje Mínimo: 960 pts Horas Docentes mínimas: 32</option>
+		<option value="7">Negra 1do Dan Tiempo Mínimo: 18 meses Puntaje Mínimo: 1920 pts Horas Docentes mínimas: 80</option>
+		<option value="8">Negra 2do Dan Tiempo Mínimo: 24 meses Puntaje Mínimo: 4000 pts Horas Docentes mínimas: 160</option>
+		<option value="9">Negra 3er Dan Tiempo Mínimo: 30 meses Puntaje Mínimo: 8000 pts Horas Docentes mínimas: 320</option>
+		<option value="10">Negra 4to Dan Tiempo Mínimo: 36 meses Puntaje Mínimo: 16000 pts Horas Docentes mínimas: 640</option>
+		<option value="11">Negra 5to Dan Tiempo Mínimo: 42 meses Puntaje Mínimo: 32000 pts Horas Docentes mínimas: 1028</option>
    </select>
  
   
@@ -63,13 +63,13 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input type="text" placeholder="tiempo minimo" class="form-control" id="tiempo_minimo">
-                    <input style="margin-top:5%" type="text" placeholder="Putaje minimo" class="form-control" id="puntaje_minimo">
-                    <input style="margin-top:5%" type="text" placeholder="Horas doncentes minimas" class="form-control" id="horas_docentes">
+					<input type="text" placeholder="Tiempo Mínimo" class="form-control" id="tiempo_minimo">
+                    <input style="margin-top:5%" type="text" placeholder="Putaje Mínimo" class="form-control" id="puntaje_minimo">
+                    <input style="margin-top:5%" type="text" placeholder="Horas doncentes mínimas" class="form-control" id="horas_docentes">
 					
-                    <a id="btn-aceptar" type="button" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
+                    <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
                     
-                    <a id="btn-aceptar" type="button" class="btn btn-primary glyphicon glyphicon-check pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesAvanceCinta.aspx?actionSuccess=3"> Modificar</a>
+                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesAvanceCinta.aspx?actionSuccess=3"> Modificar</a>
 				
 				</div>	
 			

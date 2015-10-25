@@ -21,7 +21,7 @@ namespace templateApp.GUI.Modulo8
                 {
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restriccion agregada exitosamente</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción agregada exitosamente</div>";
                 }
                 else
                 {
@@ -29,14 +29,14 @@ namespace templateApp.GUI.Modulo8
                     {
                         alert.Attributes["class"] = "alert alert-success alert-dismissible";
                         alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restriccion eliminada exitosamente</div>";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción eliminada exitosamente</div>";
                     }
                     else
                         if (success.Equals("3"))
                         {
                             alert.Attributes["class"] = "alert alert-success alert-dismissible";
                             alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restriccion modificada exitosamente</div>";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción modificada exitosamente</div>";
                         }
                 }
             }

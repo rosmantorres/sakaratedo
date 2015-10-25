@@ -11,11 +11,11 @@
 		</li>
 		
 		<li>
-			<a href="#">Algun Modulo</a>
+			<a href="#">Algún Módulo</a>
 		</li>
 
         <li>
-			<a href="../Modulo8/interfazRestriccionesAvanceCinta.aspx">Restricciones de Avance de Cinta</a>
+			<a href="../Modulo8/interfazRestriccionesAvanceCinta.aspx">Gestión Restricciones de Avance de Cinta</a>
 		</li>
 		
 		<li class="active">
@@ -28,7 +28,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
 
-    Gestion de Restricciones de Avance de Cinta
+    Gestión de Restricciones de Avance de Cinta
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
@@ -48,7 +48,7 @@
 		<option value="3">verde</option>
 		<option value="4">azul</option>
 		<option value="5">roja</option>
-		<option value="6">marron</option>
+		<option value="6">marrón</option>
 		<option value="7">Negra 1do Dan</option>
 		<option value="8">Negra 2do Dan</option>
 		<option value="9">Negra 3er Dan</option>
@@ -63,13 +63,13 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input type="text" placeholder="tiempo minimo" class="form-control" id="tiempo_minimo">
-                    <input style="margin-top:5%" type="text" placeholder="Putaje minimo" class="form-control" id="puntaje_minimo">
-                    <input style="margin-top:5%" type="text" placeholder="Horas doncentes minimas" class="form-control" id="horas_docentes">
+					<input type="text" placeholder="Tiempo mínimo" class="form-control" id="tiempo_minimo">
+                    <input style="margin-top:5%" type="text" placeholder="Putaje mínimo" class="form-control" id="puntaje_minimo">
+                    <input style="margin-top:5%" type="text" placeholder="Horas docentes mínimas" class="form-control" id="horas_docentes">
 					
-                    <a id="btn-aceptar" type="button" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
+                    <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
                     
-                    <a id="btn-aceptar" type="button" class="btn btn-primary glyphicon glyphicon-check pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesAvanceCinta.aspx?actionSuccess=1"> Agregar</a>
+                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesAvanceCinta.aspx?actionSuccess=1"> Agregar</a>
 				
 				</div>	
 			

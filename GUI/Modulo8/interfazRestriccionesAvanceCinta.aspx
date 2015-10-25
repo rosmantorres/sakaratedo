@@ -11,11 +11,11 @@
 		</li>
 		
 		<li>
-			<a href="#">Algun Modulo</a>
+			<a href="#">Algún Módulo</a>
 		</li>
 		
 		<li class="active">
-			Restricciones de Avance de Cinta
+			Gestión Restricciones de Avance de Cinta
 		</li>
 	
 	</ol>
@@ -24,7 +24,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
 
-    Gestion de Restricciones de Avance de Cinta
+    Gestión de Restricciones de Avance de Cinta
     
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
@@ -52,9 +52,9 @@
 				<tr>
 					<th>ID</th>
 					<th>Cinta</th>
-					<th >Tiempo Minimo</th>
-					<th>Puntaje Minimo</th>
-					<th >Minimo Horas Docentes</th>
+					<th >Tiempo Mínimo</th>
+					<th>Puntaje Mínimo</th>
+					<th >Mínimo Horas Docentes</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
@@ -94,19 +94,19 @@
 		  <div class="modal-content">
 			<div class="modal-header">
 			  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			  <h4 class="modal-title" >Eliminaci&oacute;n de Reestriccion</h4>
+			  <h4 class="modal-title" >Eliminaci&oacute;n de Reestricción</h4>
 			</div>
 			<div class="modal-body">
 			  <div class="container-fluid">
 				<div class="row">
-					<p>¿Seguro que desea eliminar esta restriccion?</p>
+					<p>¿ Seguro que desea eliminar esta restricción ?</p>
 					<%--<p id="req"></p>--%>
 				</div>
 			  </div>
 			</div>
 			<div class="modal-footer">  
-				<a id="btn-eliminar" type="button" class="btn btn-primary" href="interfazRestriccionesAvanceCinta.aspx?actionSuccess=2">Eliminar</a>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<a id="btn-eliminar" type="submit" class="btn btn-primary" href="interfazRestriccionesAvanceCinta.aspx?actionSuccess=2">Eliminar</a>
+				<button type="submit" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 		   </div>
 		  </div><!-- /.modal-delete-content -->
 		</div><!-- /.modal-delete-dialog -->
@@ -142,7 +142,7 @@
 
 				$('#modal-delete').on('show.bs.modal', function (event) {
 					var modal = $(this)
-					modal.find('.modal-title').text('Eliminar Restriccion  ')
+					modal.find('.modal-title').text('Eliminar Restricción  ')
 					modal.find('#req').text(req)
 				})
 				$('#btn-eliminar').on('click', function () {

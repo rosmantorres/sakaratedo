@@ -11,15 +11,15 @@
 		</li>
 		
         <li>
-			<a href="#">Algun Modulo</a>
+			<a href="#">Algún Módulo</a>
 		</li>
 
 		<li>
-			<a href="../Modulo8/interfazRestriccionesEventos.aspx">Restricciones de Eventos</a>
+			<a href="../Modulo8/interfazRestriccionesEventos.aspx">Gestión Restricciones de Eventos</a>
 		</li>
 		
 		<li class="active">
-			Creacion de Restricciones de Eventos
+			Agregar Restricciones de Eventos
 		</li>
 	
 	</ol>
@@ -28,12 +28,12 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
 
-    Gestion de Restricciones de Eventos
+    Gestión de Restricciones de Eventos
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 
-    Creacion de Restricciones de Eventos
+    Agregar Restricciones de Eventos
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -57,7 +57,7 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input type="text" placeholder="Edad Minima" class="form-control" id="edad_menor">
+					<input type="text" placeholder="Edad Mínima" class="form-control" id="edad_menor">
 					
 					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
 						
@@ -67,7 +67,7 @@
 					    <option value="3">verde</option>
 					    <option value="4">azul</option>
 					    <option value="5">roja</option>
-					    <option value="6">marron</option>
+					    <option value="6">marrón</option>
 					    <option value="7">Negra 1do Dan</option>
 					    <option value="8">Negra 2do Dan</option>
 					    <option value="9">Negra 3er Dan</option>
@@ -78,7 +78,7 @@
 			
                     <select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="Modalidad">
 						
-                        <option value="">Seleccione Categoria</option>
+                        <option value="">Seleccione Categoría</option>
 						<option value="1">Ligero</option>
 						<option value="2">Medio</option>
                         <option value="3">Semipesado</option>
@@ -94,7 +94,7 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-                    <input type="text" placeholder="Edad Maxima" class="form-control" id="rango_mayor">
+                    <input type="text" placeholder="Edad Máxima" class="form-control" id="rango_mayor">
 					
 					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
 						
@@ -104,7 +104,7 @@
 					    <option value="3">verde</option>
 					    <option value="4">azul</option>
 					    <option value="5">roja</option>
-					    <option value="6">marron</option>
+					    <option value="6">marrón</option>
 					    <option value="7">Negra 1do Dan</option>
 					    <option value="8">Negra 2do Dan</option>
 					    <option value="9">Negra 3er Dan</option>
@@ -121,9 +121,9 @@
 
                     </select>
 				    
-                    <a id="btn-aceptar" type="button" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesEventos.aspx">Cancelar</a>
+                    <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesEventos.aspx">Cancelar</a>
                     
-                    <a id="btn-aceptar" type="button" class="btn btn-primary glyphicon glyphicon-check pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesEventos.aspx?actionSuccess=1"> Crear</a>
+                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesEventos.aspx?actionSuccess=1"> Agregar</a>
 				
                 </div>
 			</div>
