@@ -1,17 +1,26 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="M13_ListarMorosos.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_ListarMorosos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_ListarMorosos.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_ListarMorosos" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   
+</asp:Content>
 
-<!DOCTYPE html>
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Lista de Morosos</asp:Content>
 
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Morosos</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     
-    </div>
-    </form>
-</body>
-</html>
+   
+   
+    <table id="tablamorosos" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					<th style="text-align:center">Nombre</th>
+					<th style="text-align:center">Apellido</th>
+                    <th style="text-align:center">Numero de meses que adeuda</th>
+					<th style="text-align:center">Monto deuda</th>
+				</tr>
+			</thead>
+			
+      </table>
+
+</asp:Content>

@@ -127,43 +127,44 @@
 
   <!--OPCIONES DE MODULO 13-->
   
-   <opcion nombre="Listar Morosos" link="~/GUI/Modulo13/M13_Prueba.aspx">
+
+   <opcion nombre="Listar Morosos" link="~/GUI/Modulo13/M13_ListarMorosos.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Planilla de Evaluación para Kyu" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Planilla de Evaluación para Kyu" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Asistencia a las Practicas" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Asistencia a las Practicas" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Programa técnico del Kyu" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Programa técnico del Kyu" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Dojos Asociados" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Dojos Asociados" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Asistencia a  Evento" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Asistencia a  Evento" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Prueba.aspx">
+  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
   
