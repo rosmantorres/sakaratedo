@@ -1,6 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ModificarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ModificarCintas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Organizaciones</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Cintas</a> 
+		    </li>
+		
+		    <li class="active">
+			    Modificar cintas
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
