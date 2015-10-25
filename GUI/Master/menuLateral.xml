@@ -97,9 +97,6 @@
   <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
-  <opcion nombre="Modificar Eventos" link="~/GUI/Modulo9/M9_ModificarEventos.aspx">
-    <modulo id="9"></modulo>
-  </opcion>
   
   <!--FIN OPCIONES MODULO 9-->
 

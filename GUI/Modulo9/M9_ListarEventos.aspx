@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_ListarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 
@@ -21,7 +22,7 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Eventos
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gesti&oacute;n de Eventos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Lista de Eventos
 </asp:Content>
@@ -47,7 +48,7 @@
                     <th style="text-align:center">Fecha Fin</th>
                     <th style="text-align:center">Hora Inicio</th>
                     <th style="text-align:center">Hora Fin</th>
-					<th style="text-align:center">Estatus</th>
+					<th style="text-align:center">Status</th>
                     <th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>

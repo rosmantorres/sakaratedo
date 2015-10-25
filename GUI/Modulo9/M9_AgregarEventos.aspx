@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_AgregarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_AgregarEventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- 
+ <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
+<script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 		<%--Breadcrumbs--%>
@@ -13,9 +14,9 @@
 		    <li>
 			    <a href="#">Eventos y Competencias</a> 
 		    </li>
-            		    <li>
-			    <a href="#">Gesti&oacute;n de Eventos</a> 
-		    </li>
+            <li>
+			    <a href="../Modulo9/M9_ListarEventos.aspx">Gesti&oacute;n de Eventos</a> 
+		    </li>	
 		
 		    <li class="active">
 			    <a href="#">Agregar Evento</a> 
@@ -82,7 +83,7 @@
    </div>
    <br/>
      <!--Date picker FECHA-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+    <div class="form-group col-sm-12 col-md-12 col-lg-12" name="calendar">
     <!--Date picker FECHA Inicio-->
     <div class="form-group col-sm-4 col-md-4 col-lg-4">
         <br />
@@ -151,5 +152,29 @@
       </div>
    </form>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#datePickerIni')
+    .datepicker({
+        format: 'mm/dd/yyyy'
+    })
+    .on('changeDate', function (e) {
+                // Revalidate the date field
+            });
+    });
+
+$(document).ready(function () {
+    $('#datePickerFin')
+    .datepicker({
+        format: 'mm/dd/yyyy'
+    })
+    .on('changeDate', function (e) {
+        // Revalidate the date field
+    });
+});
+
+    </script>
+
 <!-- /.box -->
 </asp:Content>
