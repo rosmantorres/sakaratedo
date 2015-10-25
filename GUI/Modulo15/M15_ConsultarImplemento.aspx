@@ -388,6 +388,14 @@ Gestion de Inventario
                 $("#dojo").change(function () {
                     $("#nombre-dojo").text($("#dojo option:selected").text());
                 });
+
+                $("#nombre-dojo").text($("#dojo option:selected").text());
+                $("#dojo").change(function () {
+                    $("#nombre-dojo").text($("#dojo option:selected").text());
+                });
+                $("#ubicacion").change(function () {
+                    $("#nombre-dojo").text($("#dojo option:selected").text());
+                });
             });
 
         </script>
