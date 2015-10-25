@@ -39,7 +39,7 @@
 
     <div class="box-body table-responsive">
 
-       <table id="example" class="table table-bordered table-striped dataTable">
+       <table id="tablacintas" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>Nivel</th>
@@ -83,7 +83,7 @@
 						<h4 class="modal-title">Información detallada de la cinta</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info1">
 							<div class="row">
 								<h3>Color</h3>
 								<p>
@@ -126,7 +126,7 @@
 						<h4 class="modal-title">Información detallada de la cinta</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info2">
 							<div class="row">
 								<h3>Color</h3>
 								<p>
@@ -164,7 +164,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
 
-                var table = $('#example').DataTable({
+                var table = $('#tablacintas').DataTable({
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
@@ -172,7 +172,7 @@
                 var req;
                 var tr;
 
-                $('#example tbody').on('click', 'a', function () {
+                $('#tablacintas tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         req = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada

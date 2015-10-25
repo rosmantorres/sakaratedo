@@ -39,7 +39,7 @@
 
     <div class="box-body table-responsive">
 
-       <table id="example" class="table table-bordered table-striped dataTable">
+       <table id="tablapractica" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>ID</th>
@@ -112,7 +112,7 @@
 						<h4 class="modal-title">Información detallada del horario de práctica </h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info1">
 							<div class="row">
                   				<h3>Práctica</h3>
 								<p>
@@ -153,9 +153,8 @@
 						<h4 class="modal-title">Información detallada del horario de práctica</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info2">
 							<div class="row">
-                                  <td class="id">002</td>
 								<h3>Práctica</h3>
 								<p>
 									Dachi (Posición)
@@ -192,9 +191,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del horario de práctica </h4>
+						<h4 class="modal-title">Información detallada del horario de práctica</h4>
 					</div>
-						        <h3>Práctica</h3>
+					<div class="modal-body">
+						<div class="container-fluid" id="info3">
+							<div class="row">
+								<h3>Práctica</h3>
 								<p>
 									Uke (Bloqueo)
 								</p>
@@ -218,7 +220,7 @@
 								<p>
                                     S-02
     							</p>
-                            </div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -233,7 +235,7 @@
 						<h4 class="modal-title">Información detallada del horario de práctica</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info4">
 							<div class="row">
 									<h3>Práctica</h3>
 								<p>
@@ -269,7 +271,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
 
-                var table = $('#example').DataTable({
+                var table = $('#tablapractica').DataTable({
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
@@ -277,7 +279,7 @@
                 var req;
                 var tr;
 
-                $('#example tbody').on('click', 'a', function () {
+                $('#tablapractica tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         req = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada

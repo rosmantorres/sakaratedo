@@ -33,13 +33,13 @@
     <div class="box-body table-responsive">
 						<div class="container-fluid" id="info">
 							<h3>Atleta</h3>
-								<p>
+								<div>
 								   <ul>
                                         <li>Nombre: Enmanuel</li>
                                         <li>Apellido: García </li>
                                         <li>Fecha Nacimiento: 27/02/1995 </li>
 									</ul>
-								</p>
+								</div>
 								<h3>Dojo</h3>
 								<p>
 									Dojo Hombuji

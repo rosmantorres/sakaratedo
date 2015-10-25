@@ -38,7 +38,7 @@
 
     <div class="box-body table-responsive">
 
-       <table id="example" class="table table-bordered table-striped dataTable">
+       <table id="tablainscritos" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>ID</th>
@@ -106,7 +106,7 @@
 						<h4 class="modal-title">Información detallada de los eventos inscritos</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info1">
 							<div class="row">
 								<h3>Nombre</h3>
 								<p>
@@ -125,12 +125,12 @@
 									27/01/2016
 								</p>
                                 <h3>Locación</h3>
-								<p>
+								<div>
 									<ul>
                                         <li>Estado: Guárico</li>
                                         <li>Ciudad: San Juan de los Morros </li>
 									</ul>
-								</p>
+								</div>
 								<h3>Descripción</h3>
 								<p>
                                     Encuentro de atletas con cinta negra de 5to KYU. 
@@ -150,7 +150,7 @@
 						<h4 class="modal-title">Información detallada de los eventos inscritos</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info2">
 							<div class="row">
                                 <h3>Nombre</h3>
 								<p>
@@ -169,12 +169,12 @@
 									25/06/2016
 								</p>
                                 <h3>Locación</h3>
-								<p>
+								<div>
 									<ul>
                                         <li>Estado: Carabobo</li>
                                         <li>Ciudad: Valencia </li>
 									</ul>
-								</p>
+								</div>
                                 <h3>Descripción</h3>
 								<p>
                                     Competencia para los atletas de cinta negra. 
@@ -194,7 +194,7 @@
 						<h4 class="modal-title">Información detallada de los eventos inscritos</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info3">
 							<div class="row">
 								  <h3>Nombre</h3>
 								<p>
@@ -213,12 +213,12 @@
 									25/06/2016
 								</p>
                                 <h3>Locación</h3>
-								<p>
+								<div>
 									<ul>
                                         <li>Estado: Distrito Capital</li>
                                         <li>Ciudad: Caracas </li>
 									</ul>
-								</p>
+								</div>
                                 <h3>Descripción</h3>
 								<p>
                                     Conferencia para enriquecer el conocimiento y habilidades de los atletas
@@ -238,7 +238,7 @@
 						<h4 class="modal-title">Información detallada de los eventos inscritos</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
+						<div class="container-fluid" id="info4">
 							<div class="row">
 								  <h3>Nombre</h3>
 								<p>
@@ -278,7 +278,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
 
-                var table = $('#example').DataTable({
+                var table = $('#tablainscritos').DataTable({
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
@@ -286,7 +286,7 @@
                 var req;
                 var tr;
 
-                $('#example tbody').on('click', 'a', function () {
+                $('#tablainscritos tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         req = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
