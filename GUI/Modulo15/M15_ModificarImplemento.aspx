@@ -97,7 +97,7 @@ Gestion de Inventario
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M15_modificar_implemento.aspx">Cancelar</a>
+                    <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
                   </div>
 
                 </form>
