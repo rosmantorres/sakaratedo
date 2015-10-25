@@ -32,7 +32,7 @@
 			<tbody>
 				<tr>
                     <td class="id">1</td>
-					<td>Evento 1</td>
+					<td>Campeonato Nacional Seito</td>
                     <td> Competencia</td>
                     <td> 19/05/2001</td>
 					
@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                      <td class="id">2</td>
-                    <td>Evento 2</td>
+                    <td>Karate Premier</td>
                      <td>Examen de Ascenso</td>
                     <td>09/04/2001</td>
                     <td>
@@ -52,7 +52,7 @@
                      </td>
 				</tr><tr>
                     <td class="id">3</td>
-                    <td>Evento 3</td>
+                    <td>Copa Osawa</td>
                      <td>Competencia</td>
                     <td>14/10/2001</td>
                     <td>
@@ -62,8 +62,8 @@
                 </tr>
                 <tr>
                     <td class="id">4</td>
-                    <td>Evento 4</td>
-                     <td>Examen de Ascenso</td>
+                    <td>XVII SHITORYU KARATEDO PAN-AMERICAN CHAMPIONSHIPS</td>
+                     <td>Competencia</td>
                     <td>01/01/2000</td>		
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -72,7 +72,7 @@
                 </tr>
                 <tr>
                     <td class="id">5</td>
-                    <td>Evento 5</td>
+                    <td>COPA SHOKO SATO</td>
                     <td> Competencia</td>
                     <td>05/04/2001</td>
                     <td>
@@ -106,7 +106,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información de la Organización</h4>
+						<h4 class="modal-title">Información del Evento</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
@@ -115,7 +115,6 @@
 									<ul>
 										<li>Fecha del Evento </li>
 										<li>Informacion del Evento</li>
-										<li>Asitencia</li>
 									</ul>
 							</div>
 						</div>
