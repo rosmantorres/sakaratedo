@@ -255,7 +255,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M12_ListarCompetencias.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default" Volver</a>
+         <a class="btn btn-default"> Volver</a>
       </div>
    </form>
 </div>
