@@ -82,8 +82,8 @@
 
   <!--OPCIONES DE MODULO 8-->
   
-  <opcion nombre="" link="~/GUI/Modulo8/">
-    <modulo id="8"></modulo>
+  <opcion nombre="Crear Restriccion de Horario" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
+    <modulo id="8.1"></modulo>
   </opcion>
   
   <!--FIN OPCIONES MODULO 8-->
