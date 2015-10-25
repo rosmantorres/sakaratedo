@@ -1,10 +1,55 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M12_AgregarCompetencias.aspx.cs" Inherits="templateApp.GUI.Modulo12.M12_AgregarCompetencias" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript">
+
+    function initialize() {
+        var latlng = new google.maps.LatLng(51.508742, -0.120850);
+        var mapProp = {
+            center: latlng,
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var contentString = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                    '</div>' +
+      '<h1 id="firstHeading" class="firstHeading">Título</h1>' +
+      '<div id="bodyContent">' +
+      '<p>  Cuerpo </p>' +
+      '<p>' +
+      '</p>' +
+      '</div>' +
+      '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 150
+        });
+
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var point = new google.maps.LatLng(51.508742, -0.120850);
+        var marker = new google.maps.Marker({
+            position: point,
+            map: map,
+            title: 'Ubicación',
+
+        })
+
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+
+    }
+
+
+
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
-
 	<%--Breadcrumbs--%>
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
@@ -33,6 +78,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Competencia</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+
+     
+
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
@@ -42,6 +90,9 @@
 <!-- form start -->
 <form role="form" name="agregar_competencia" id="agregar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=1">
 <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+
+    <div id="googleMap" style="width:500px;height:250px;"></div>
+
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
       <br />
       <h3>Nombre de Competencia</h3>
