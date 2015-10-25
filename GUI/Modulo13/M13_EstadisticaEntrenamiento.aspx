@@ -13,7 +13,8 @@
     
 <div class="form-horizontal">
     <div class="control-group row-fluid form-inline">
-        <label for="name" class="control-label"><p class="text-info">Name&nbsp;<i class="icon-star"></i></p></label>
+        <label for="name" class="control-label"><p class="text-info" >   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Atleta&nbsp; &nbsp;</p>
+        </label>
         <div class="controls">
             <input type="text" id="atleta" placeholder="Ingrese atleta" class="span3">
         </div>
@@ -22,19 +23,23 @@
 
 
 
-
-
+   
     <div class="form-horizontal">
     <div class="control-group row-fluid form-inline">
-        <label for="name" class="control-label"><p class="text-info">Name&nbsp;<i class="icon-star"></i></p></label>
+        &nbsp;<label for="name" class="control-label"><p class="text-info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contrincante&nbsp;<i class="icon-star"></i></p></label>
         <div class="controls">
-            <input type="text" id="contrincante" placeholder="Ingrese nombre del rival" class="span3">
+            <input type="text" id="contrincante" placeholder="Ingrese rival" class="span3">
+            <br />
+            <br />
+            <br />
         </div>
     </div>
 </div>
 
+     &nbsp;&nbsp;&nbsp;&nbsp&nbsp;
+         &nbsp;&nbsp
 
-  
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="M13_EstadisticaEntrenaminto.aspx?eliminacionSuccess=1" onclick="return checkform();">Ver</a>
 
 </asp:Content>
 
