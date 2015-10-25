@@ -28,11 +28,11 @@ Agregar Implemento
 
 
  <div id="alert"  >
-    <div id="contenido_alerta"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+    <div id="contenido_alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>
 
  <div id="alert_confirmacion"  >
-    <div id="Div2"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+    <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>    
 
 
@@ -95,13 +95,13 @@ Agregar Implemento
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dojo:</b></p>
                              <select id="nombre_dojo" class="form-control" runat="server">
-                                  <option value="1" >dojo número1</option>
-                                  <option value="2" >dojo número2</option>
-                                  <option value="3" >dojo número3</option>
-                                  <option value="4" >dojo número4</option>
-                                  <option value="5" >dojo número5</option>
-                                  <option value="6" >dojo número6</option>
-                              </select></br>
+                                  <option value="1" >Green Dragon</option>
+                                  <option value="2" >Red Dragon</option>
+                                  <option value="3" >Blue Dragon</option>
+                                  <option value="4" >White Dragon</option>
+                                  <option value="5" >Black Dragon</option>
+                                  <option value="6" >Rainbow Dragon</option>
+                              </select>
                                                        
                       </div>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -127,7 +127,7 @@ Agregar Implemento
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarComp" type="submit" style="align-content:flex-end" class="btn btn-primary" >Agregar</button>
+                    <button id="btn-agregarComp" type="submit" class="btn btn-primary" >Agregar</button>
                     &nbsp;&nbsp
                    <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
                   </div>

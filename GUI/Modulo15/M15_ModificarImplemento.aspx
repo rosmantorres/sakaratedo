@@ -28,11 +28,11 @@ Gestion de Inventario
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     
  <div id="alert"  >
-    <div id="contenido_alerta"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+    <div id="contenido_alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>
 
  <div id="alert_confirmacion"  >
-    <div id="Div2"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+    <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>    
 
 
@@ -95,12 +95,12 @@ Gestion de Inventario
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dojo:</b></p>
                              <select id="nombre_dojo" class="form-control">
-                                  <option selected value="1" >el dragon verde </option>
-                                  <option value="2" >dojo número2</option>
-                                  <option value="3" >dojo número3</option>
-                                  <option value="4" >dojo número4</option>
-                                  <option value="5" >dojo número5</option>
-                                  <option value="6" >dojo número6</option>
+                                  <option value="1" >Green Dragon</option>
+                                  <option value="2" >Red Dragon</option>
+                                  <option value="3" >Blue Dragon</option>
+                                  <option value="4" >White Dragon</option>
+                                  <option value="5" >Black Dragon</option>
+                                  <option value="6" >Rainbow Dragon</option>
                               </select>
                                                        
                     </div>
@@ -127,7 +127,7 @@ Gestion de Inventario
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
+                    <button id="btn-agregarComp" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
                   </div>
