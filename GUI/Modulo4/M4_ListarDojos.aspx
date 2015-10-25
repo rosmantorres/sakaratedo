@@ -41,7 +41,7 @@
                     <td>Ciudad 1</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -54,7 +54,7 @@
                     <td>Ciudad 2</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -67,7 +67,7 @@
                     <td>Ciudad 3</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -80,7 +80,7 @@
                     <td>Ciudad 4</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -93,7 +93,7 @@
                     <td>Ciudad 5</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -106,7 +106,7 @@
                     <td>Ciudad 6</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>

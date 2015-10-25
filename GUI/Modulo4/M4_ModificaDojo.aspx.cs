@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo4
 {
-    public partial class M4_AgregarDojo : System.Web.UI.Page
+    public partial class M4_ModificaDojo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

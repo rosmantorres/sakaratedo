@@ -1,20 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ModificarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_AgregarDojo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ModificaDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ModificaDojo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Dojo
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <!-- general form elements -->
+
+
+        <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Editando Dojo</h3>
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" name="agregar_dojo" id="agregar_dojo" method="post" action="M4_ListarDojos.aspx?success=1">
+                <form role="form" name="modificar_dojo" id="modificar_dojo" method="post" action="M4_ListarDojos.aspx?success=1">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
 

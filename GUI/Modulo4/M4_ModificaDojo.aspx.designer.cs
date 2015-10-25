@@ -10,6 +10,6 @@
 namespace templateApp.GUI.Modulo4 {
     
     
-    public partial class M4_AgregarDojo {
+    public partial class M4_ModificaDojo {
     }
 }
