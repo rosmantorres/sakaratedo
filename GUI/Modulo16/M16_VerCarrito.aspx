@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_VerCarrito.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_VerCarrito" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Inicio</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Ver Carrito</a> 
+		    </li>
+		</ol>
+    </div>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Carrito 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> Productos que posees:
