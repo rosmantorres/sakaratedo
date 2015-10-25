@@ -154,6 +154,8 @@
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
+    <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
+    <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio2.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
@@ -1049,6 +1051,12 @@
     </Compile>
     <Compile Include="GUI\Modulo12\M12_Prueba.aspx.designer.cs">
       <DependentUpon>M12_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.cs">
+      <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
+      <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Inicio2.aspx.cs">
       <DependentUpon>M13_Inicio2.aspx</DependentUpon>
