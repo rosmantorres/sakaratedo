@@ -23,7 +23,8 @@
     <div class="box-body table-responsive">
         <table id="tablaasistenciae" class="table table-bordered table-striped dataTable">
         <thead>
-				<tr>
+				<tr> 
+                    <th style="text-align:center">Id</th>
 					<th style="text-align:center">Nombre Evento</th>
                     <th style="text-align:center">Fecha</th>
 					<th style="text-align:center">Estatus de Asistencia</th>
@@ -32,6 +33,7 @@
 			</thead>
 			<tbody>
 				<tr>
+                    <td class="id">1</td>
 					<td class="id">Evento 1</td>
                     <td> 19/05/2001</td>
 					<td>Procesado</td>
@@ -42,6 +44,7 @@
                      </td>
                 </tr>
                 <tr>
+                    <td class="id">2</td>
                     <td class="id">Evento 2</td>
                     <td>09/04/2001</td>
 					<td>No Procesado</td>
@@ -50,6 +53,7 @@
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
                      </td>
 				</tr><tr>
+                    <td class="id">3</td>
                     <td class="id">Evento 3</td>
                     <td>14/10/2001</td>
 					<td>Procesada</td>
@@ -59,6 +63,7 @@
                      </td>
                 </tr>
                 <tr>
+                    <td class="id">4</td>
                     <td class="id">Evento 4</td>
                     <td>01/01/2000</td>
 					<td>Procesada</td>
@@ -68,6 +73,7 @@
                      </td>
                 </tr>
                 <tr>
+                    <td class="id">5</td>
                 <td class="id">Evento 5</td>
                     <td>05/04/2001</td>
 					<td>Procesada</td>
