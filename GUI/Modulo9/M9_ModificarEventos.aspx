@@ -151,7 +151,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-modificarrEvent" class="btn btn-primary" type="submit" href="M9_ListarEventos.aspx?eliminacionSuccess=1" onclick="return checkform();">Modificar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M9_ListarEventos.aspx">Volver</a>
+         <a class="btn btn-default" href="M9_ListarEventos.aspx">Cancelar</a>
       </div>
    </form>
 </div>
