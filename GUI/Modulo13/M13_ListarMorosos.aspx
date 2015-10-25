@@ -23,6 +23,50 @@
 				</tr>
 			</thead>
 			
+        <tbody>
+				<tr>
+					<td class="id" style="text-align:center">Rose</td>
+					<td style="text-align:center">Gomez</td>
+					<td style="text-align:center">2</td>
+					<td style="text-align:center">5000.00</td>
+                                                          
+                </tr>
+
+            <tr>
+					<td class="id" style="text-align:center">Leopoldo</td>
+					<td style="text-align:center">Mirabal</td>
+					<td style="text-align:center">3</td>
+					<td style="text-align:center">8000.00</td>
+                                                          
+                </tr>
+            <tr>
+					<td class="id" style="text-align:center">Eduardo</td>
+					<td style="text-align:center">Pacheco</td>
+					<td style="text-align:center">4</td>
+					<td style="text-align:center">15000.00</td>
+                                                          
+                </tr>
+         </tbody>
       </table>
+
+    <nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 </asp:Content>
