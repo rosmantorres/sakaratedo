@@ -28,11 +28,11 @@ Agregar Implemento
 
 
  <div id="alert"  >
-    <div id="contenido_alerta"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+    <div id="contenido_alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>
 
  <div id="alert_confirmacion"  >
-    <div id="Div2"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> </div>
+    <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>    
 
 
@@ -101,8 +101,8 @@ Agregar Implemento
                                   <option value="4" >dojo número4</option>
                                   <option value="5" >dojo número5</option>
                                   <option value="6" >dojo número6</option>
-                              </select></br>
-                                                       
+                              </select>
+                          <br/>                             
                     </div>
                
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -123,7 +123,7 @@ Agregar Implemento
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarComp" type="submit" style="align-content:flex-end" class="btn btn-primary" >Agregar</button>
+                    <button id="btn-agregarComp" type="submit" class="btn btn-primary" >Agregar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M15_AgregarImplemento.aspx">Cancelar</a>
                   </div>

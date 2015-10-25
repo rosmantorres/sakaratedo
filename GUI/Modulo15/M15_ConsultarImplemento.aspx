@@ -24,7 +24,7 @@ Gestion de Inventario
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     <div id="alert" runat="server">
     </div>
-       <center><h3 id="nombre-dojo">Dojo</h3></center>
+       <h3 id="nombre-dojo">Dojo</h3>
 
   
     
@@ -66,6 +66,8 @@ Gestion de Inventario
                     <th>Talla</th>
                     <th>Dojo</th>
                     <th>Cantidad</th>
+                    <th>Stock Mínimo</th>
+                    <th>Estatus</th>
 					<th>Precio (Bs)</th>
                     <th >Monto Total Bs</th>
                     <th>Proveedor</th>
@@ -73,7 +75,6 @@ Gestion de Inventario
 				</tr>
 			</thead>
 			<tbody>
-				
 
                 <tr>
                 <td class="id">1</td>
@@ -84,6 +85,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                    <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>                     
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -102,6 +109,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                    <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-success">
+                     
+                             </div>
+                            </div></td>                  
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -119,6 +132,12 @@ Gestion de Inventario
                     <td>s</td>
                     <td>Red Dragon</td>
                     <td>30</td>
+                    <td>5</td>
+                   <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-success">
+                     
+                             </div>
+                            </div></td>                         
                     <td>1000</td>
                     <td>30000</td>
                     <td>Shurido</td>
@@ -136,6 +155,12 @@ Gestion de Inventario
                     <td>M</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                   <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-success">
+                     
+                             </div>
+                            </div></td>                        
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -153,6 +178,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>El dragon verde</td>
                     <td>20</td>
+                    <td>5</td>
+                    <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-warning">
+                     
+                             </div>
+                            </div></td>                         
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -170,6 +201,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                   <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>    
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -188,6 +225,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                   <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>    
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -206,6 +249,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                  <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>     
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -224,6 +273,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                  <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>    
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -242,6 +297,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                    <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>    
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -260,6 +321,12 @@ Gestion de Inventario
                     <td>L</td>
                     <td>Green Dragon</td>
                     <td>20</td>
+                    <td>5</td>
+                   <td><div class="panel panel-default caja">
+                            <div class="panel-body alert-error">
+                     
+                             </div>
+                            </div></td>    
                     <td>1000</td>
                     <td>20000</td>
                     <td>Shurido</td>
@@ -308,15 +375,17 @@ Gestion de Inventario
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
 							<div class="row">
-                                <div class="col-lg-4">
-                                <p id="nombre_articulo"> Nombre del Implemento:</p>
+                                <div class="col-lg-6">
+                                <p id="nombre_articulo"> Nombre del Implemento :</p>
+                                <p id="tipo_articulo"> Tipo :</p>
                                 <p id="talla_articulo"> Talla :</p>
                                 <p id="color_articulo"> Color :</p>
                                 <p id="marca_articulo"> Marca :</p>
                                 <p id="dojo_articulo"> Dojo :</p>
                                 <p id="cantidad_articulo"> Cantidad :</p>
+                                <p id="stock_minimo_articulo">Stock Mínimo :</p>
                                 <p id="precio_articulo"> Precio Bs:</p>
-                                <p id="monto_total_articulo"> Monto Total Bs:</p> 
+                                <p id="monto_total_articulo"> Monto Total Bs :</p> 
                                 <p id="proveedor_articulo">Proveedor :</p>
                                     </div>
                                 <div class="col-lg-4">
@@ -337,6 +406,9 @@ Gestion de Inventario
 
         <script type="text/javascript">
             $(document).ready(function () {
+                $(".caja").height(10);
+                $(".caja").width(10);
+                $("#nombre-dojo").css("text-align","center");
 
 
                 var table = $('#example').DataTable({
@@ -356,14 +428,14 @@ Gestion de Inventario
 
                 $('#example tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
-                        req = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
+                        req = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
                         tr = $(this).parent(); // se guarda la fila seleccionada
                         $(this).parent().removeClass('selected');
 
 
                     }
                     else {
-                        req = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
+                        req = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
                         tr = $(this).parent();//se guarda la fila seleccionada
                         table.$('tr.selected').removeClass('selected');
                         $(this).parent().addClass('selected');
@@ -382,13 +454,14 @@ Gestion de Inventario
 
                 $('#modal-info').on('show.bs.modal', function (event) {
                     var modal = $(this)
-                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().prev().text());
-                    modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().prev().text());
+                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().prev().prev().text());
+                    modal.find('#stock_minimo_articulo').text("Stock Mínimo :" + tr.prev().prev().prev().prev().text());
                     modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().prev().text());
                     modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().prev().text());
                     modal.find('#proveedor_articulo').text("Proveedor: " + tr.prev().text());
