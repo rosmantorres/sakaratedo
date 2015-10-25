@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojos" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
@@ -22,7 +22,8 @@
         <table id="tabladojos" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th style="text-align:center">RIF</th>
+                      <th style="text-align:center">Foto</th>
+                    <th style="text-align:center">Rif</th>
 					<th style="text-align:center">Nombre</th>
 					<th style="text-align:center">Teléfono</th>
 					<th style="text-align:center">País</th>
@@ -33,12 +34,13 @@
 			</thead>
 			<tbody>
 				<tr>
+                     <td><img src="Imagenes\Aikido.png" alt="" style="width:50px; height:auto;"></td>
 					<td class="id">J-17280493-1</td>
-					<td>Dojo 1</td>
-					<td>0212-4567899</td>
-					<td>País 1</td>
-                    <td>Estado 1</td>
-                    <td>Ciudad 1</td>
+					<td>Aikido</td>
+					<td>55-4567899</td>
+					<td>Brasil</td>
+                    <td>Río de Janeiro</td>
+                    <td>Río de Janeiro</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
@@ -46,12 +48,13 @@
                      </td>
                 </tr>
                 <tr>
+                     <td><img src="Imagenes\hokuto.jpg" alt="" style="width:60px; height:auto;"></td>
 					<td class="id">J-17280434-1</td>
-					<td>Dojo 2</td>
+					<td>hokuto</td>
 					<td>0212-4567811</td>
-					<td>País 2</td>
-                    <td>Estado 2</td>
-                    <td>Ciudad 2</td>
+					<td>Venezuela</td>
+                    <td>Distrito Capital</td>
+                    <td>Caracas</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
@@ -59,25 +62,28 @@
                      </td>
                 </tr>
                 <tr>
+                     <td><img src="Imagenes\Dai-Fu.jpg" alt="" style="width:60px; height:auto;"></td>
 					<td class="id">J-17280422-1</td>
-					<td>Dojo 3</td>
+					<td>Dai-Fu</td>
 					<td>0212-4533899</td>
-					<td>País 3</td>
-                    <td>Estado 3</td>
-                    <td>Ciudad 3</td>
+					<td>Colombia</td>
+                    <td>Distrito Capital</td>
+                    <td>Bogotá</td>
                     <td>
+                     
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
                 <tr>
+                     <td><img src="Imagenes\Kaizen.jpg" alt="" style="width:60px; height:auto;"></td>
 					<td class="id">J-17280433-1</td>
-					<td>Dojo 4</td>
+					<td>Kaizen</td>
 					<td>0212-4567800</td>
-					<td>País 4</td>
+					<td>Chile</td>
                     <td>Estado 4</td>
-                    <td>Ciudad 4</td>
+                    <td>Santiago de Chile</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
@@ -85,12 +91,13 @@
                      </td>
                 </tr>
                 <tr>
+                     <td><img src="Imagenes\rendoki.jpg" alt="" style="width:60px; height:auto;"></td>
 					<td class="id">J-17280456-1</td>
-					<td>Dojo 5</td>
+					<td>rendoki</td>
 					<td>0212-4567867</td>
-					<td>País 5</td>
-                    <td>Estado 5</td>
-                    <td>Ciudad 5</td>
+					<td>España</td>
+                    <td>Madrid</td>
+                    <td>Madrid </td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
@@ -98,12 +105,13 @@
                      </td>
                 </tr>
                 <tr>
+                     <td><img src="Imagenes\bushido.jpg" alt="" style="width:60px; height:auto;"></td>
 					<td class="id">J-17280234-1</td>
-					<td>Dojo 6</td>
+					<td>bushido</td>
 					<td>0212-2345678</td>
-					<td>País 6</td>
-                    <td>Estado 6</td>
-                    <td>Ciudad 6</td>
+					<td>Estados Unidos</td>
+                    <td>NY</td>
+                    <td>Edison</td> 
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
@@ -116,6 +124,9 @@
        </div>
     </div>
 </div>
+
+
+
 
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
