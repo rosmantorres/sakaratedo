@@ -25,19 +25,14 @@ Gestion de Inventario
     <div id="alert" runat="server">
     </div>
        <h3 id="nombre-dojo">Dojo</h3>
-
-  
-    
-    
        <div class ="row">
         <div class="col-lg-3"> 
-
-    <select id="ubicacion" class="form-control" >
+        <select id="ubicacion" class="form-control" >
         <option value="0">Todas las ciudades</option>
         <option value="1">Caracas</option>
         <option value="2">Maracay</option>
         <option value="3">Valencia</option>
-    </select>
+        </select>
             </div>
             <div class="col-lg-3">
         <select id="dojo" class="form-control" >
@@ -47,14 +42,10 @@ Gestion de Inventario
         <option value="4">Dojo D</option>
         <option value="5">Dojo E</option>
         <option value="6">Dojo F</option>
-
-    </select>
-                </div>
+        </select>
+             </div>
         </div>
-    
-    
     <div class="box-body table-responsive">
-
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
