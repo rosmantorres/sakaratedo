@@ -12,7 +12,7 @@ Gestion de Inventario
     <div id="alert" runat="server">
     </div>
     
-    <center><h3 id="nombre-dojo">Dojo</h3></center>
+    <h3 align="center" id="nombre-dojo">Dojo</h3>
     <select id="ubicacion">
         <option value="0">Todas las ciudades</option>
         <option value="1">Caracas</option>
@@ -362,8 +362,6 @@ Gestion de Inventario
                 });
 
                 $("#ubicacion").change(function () {
-
-
                     if ($("#ubicacion").val() == "0") {
                         $("#dojo").html("<option value='1'>Dojo A</option> <option value='2'>Dojo B</option><option value='3'>Dojo C</option> <option value='4'>Dojo D</option><option value='5'>Dojo E</option> <option value='6'>Dojo F</option>");
                     }
@@ -375,8 +373,13 @@ Gestion de Inventario
                         $("#dojo").html("<option value='5'>Dojo E</option> <option value='6'>Dojo F</option>");
                     }
                 });
+                
+                $("#nombre-dojo").text($("#dojo option:selected").text());
                 $("#dojo").change(function () {
-                    $("#nombre-dojo").text($("#dojo option:selected").text());
+                  $("#nombre-dojo").text($("#dojo option:selected").text());
+                });
+                $("#ubicacion").change(function () {
+                  $("#nombre-dojo").text($("#dojo option:selected").text());
                 });
             });
 
