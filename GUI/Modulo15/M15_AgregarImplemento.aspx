@@ -26,7 +26,7 @@ Agregar Implemento
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" id="agregar_implemento"  >
+                <form role="form" id="agregar_implemento" method="post" action="M15_ConsultarImplemento.aspx?comprobar=exito">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Implemento:</b></p>
@@ -106,7 +106,7 @@ Agregar Implemento
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" >Agregar</button>
+                    <button id="btn-agregarComp" type="submit" style="align-content:flex-end" class="btn btn-primary" >Agregar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M15_AgregarImplemento.aspx">Cancelar</a>
                   </div>
@@ -129,7 +129,6 @@ Agregar Implemento
 
 
           $("#btn-agregarComp").click(function (evento) {
-              evento.preventDefault();
               //  alert($("#nombre_articulo").val());
               if ($("#nombre_articulo").val() == "") {
                   valor = "El campo nombre implemento es obligatorio </br>";
@@ -180,13 +179,10 @@ Agregar Implemento
                   $("#alert").fadeIn(2000);
                   valor = "";
                   estado = false;
-              }
-              else {
-                  $("#alert_confirmacion").html("Se agregó el implemento exitosamente");
-                  $("#alert").hide();
-                  $("#alert_confirmacion").fadeIn(1000);
+                  evento.preventDefault();
 
               }
+           
 
 
           });

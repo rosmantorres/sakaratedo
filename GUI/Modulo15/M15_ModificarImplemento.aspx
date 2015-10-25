@@ -26,7 +26,7 @@ Gestion de Inventario
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" id="modificar_implemento" method="post" action="M15_modificar_implemento.aspx?success=1">
+                <form role="form" id="modificar_implemento" method="post" action="M15_ConsultarImplemento.aspx?modificar=exito">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Implemento:</b></p>
@@ -129,7 +129,6 @@ Gestion de Inventario
 
 
           $("#btn-agregarComp").click(function (evento) {
-              evento.preventDefault();
               //  alert($("#nombre_articulo").val());
               if ($("#nombre_articulo").val() == "") {
                   valor = "El campo nombre implemento es obligatorio </br>";
@@ -180,13 +179,10 @@ Gestion de Inventario
                   $("#alert").fadeIn(2000);
                   valor = "";
                   estado = false;
-              }
-              else {
-                  $("#alert_confirmacion").html("Se modificó el implemento ");
-                  $("#alert").hide();
-                  $("#alert_confirmacion").fadeIn(1000);
+                  evento.preventDefault();
 
               }
+          
 
           });
 
