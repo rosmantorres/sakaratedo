@@ -1,12 +1,50 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript">
+    function initialize() {
+        var latlng = new google.maps.LatLng(51.508742, -0.120850);
+        var mapProp = {
+            center: latlng,
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var contentString = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                    '</div>' +
+      '<h1 id="firstHeading" class="firstHeading">Título</h1>' +
+      '<div id="bodyContent">' +
+      '<p>  Cuerpo </p>' +
+      '<p>' +
+      '</p>' +
+      '</div>' +
+      '</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 150
+        });
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var point = new google.maps.LatLng(51.508742, -0.120850);
+        var marker = new google.maps.Marker({
+            position: point,
+            map: map,
+            title: 'Ubicación',
+        })
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-
+    
         <div id="alert" runat="server">
     </div>
 
@@ -17,11 +55,16 @@
               <div class="box">
         <div class="box-header">
                       <h3 class="box-title">Dojos</h3>
+             &nbsp;&nbsp;&nbsp;&nbsp
+                     <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo">
+                        </a>
+                    
         </div><!-- /.box-header -->
 
     <div class="box-body table-responsive">
         <table id="tabladojos" class="table table-bordered table-striped dataTable">
-        <thead>
+            <thead>
 				<tr>
                       <th style="text-align:center">Foto</th>
                     <th style="text-align:center">Rif</th>
@@ -31,6 +74,7 @@
 					<th style="text-align:center">Pais</th>
                     <th style="text-align:center">Estado</th>
                     <th style="text-align:center">Ciudad</th>
+                    <th style="text-align:center">Status</th>
 					<th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>
@@ -44,9 +88,12 @@
 					<td>Brasil</td>
                     <td>Río de Janeiro</td>
                     <td>Río de Janeiro</td>
-
+                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
+                        </a></td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
@@ -60,9 +107,12 @@
 					<td>Venezuela</td>
                     <td>Distrito Capital</td>
                     <td>Caracas</td>
-
+                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
+                        </a></td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
@@ -76,10 +126,13 @@
 					<td>Colombia</td>
                     <td>Distrito Capital</td>
                     <td>Bogotá</td>
-
+                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
+                        </a></td>
                     <td>
                      
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
@@ -93,8 +146,12 @@
 					<td>Chile</td>
                     <td>Estado 4</td>
                     <td>Santiago de Chile</td>
+                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
+                        </a></td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
@@ -108,9 +165,12 @@
 					<td>España</td>
                     <td>Madrid</td>
                     <td>Madrid </td>
-
+                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
+                        </a></td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
@@ -124,9 +184,12 @@
 					<td>Estados Unidos</td>
                     <td>NY</td>
                     <td>Edison</td> 
-
+                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
+                        </a></td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
@@ -197,7 +260,21 @@
 			</div>
 		</div>
 
-
+    <div id="modal-maps" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Ubicación Del Dojo</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="maps">
+							  <div id="googleMap" style="width:500px;height:250px;"></div><br/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
         <script type="text/javascript">
@@ -239,5 +316,6 @@
             });
 
         </script> 
+     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>

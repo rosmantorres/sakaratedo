@@ -1,5 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ModificaDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ModificaDojo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+      <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript">
+    function initialize() {
+        var latlng = new google.maps.LatLng(51.508742, -0.120850);
+        var mapProp = {
+            center: latlng,
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var contentString = '<div id="content">' +
+                                '<div id="siteNotice">' +
+                                    '</div>' +
+      '<h1 id="firstHeading" class="firstHeading">Título</h1>' +
+      '<div id="bodyContent">' +
+      '<p>  Cuerpo </p>' +
+      '<p>' +
+      '</p>' +
+      '</div>' +
+      '</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 150
+        });
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var point = new google.maps.LatLng(51.508742, -0.120850);
+        var marker = new google.maps.Marker({
+            position: point,
+            map: map,
+            title: 'Ubicación',
+        })
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
@@ -18,17 +57,12 @@
                 <!-- form start -->
                 <form role="form" name="modificar_dojo" id="modificar_dojo" method="post" action="M4_ListarDojos.aspx?success=1">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-                    <div class="form-group col-sm-10 col-md-10 col-lg-10">
-
- <div>
-  <label class="box-title">Imagen Actual:</label>
-<img src="Imagenes\Aikido.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
- 
- <input id="input-1a" type="file" class="file"  >
- </div>
-
-
-
+                      <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
+                    <img src="Imagenes\Aikido.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
+                        <input id="input-1a" type="file" class="file"  >
+                           </div>
+                      <br/>
+                      <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                       <p><b>Rif Del Dojo:</b></p>
                       <input type="text" name="rifDojo" id="rifDojo" placeholder="RIF" class="form-control" value="J-17280493-1">
                     </div>
@@ -45,7 +79,7 @@
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Email:</b></p>
-                      <input type="text" name="emailDojo" id="emailDojo" placeholder="Email" class="form-control" value="Dojo1@gmail.com">
+                      <input type="email" name="emailDojo" id="emailDojo" placeholder="Email" class="form-control" value="Dojo1@gmail.com">
                     </div>
                       <br/>
                   <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
@@ -106,8 +140,8 @@
                   </div>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dirección:</b></p>
-                      <input type="text" name="direccionDojo" id="direccionDojo" placeholder="Av/Calle/Sector/Urb/Piso/NºHabitación" class="form-control" value="Av. 4 de Mayo, C.C. Plaza PB Local 12-17">
-                    </div>
+                    <div id="googleMap" style="width:500px;height:250px;"></div><br/>
+                       </div>
                       <br/>
                 <div class="form-group">
                     <div class="col-sm-10 col-md-10 col-lg-10">
@@ -123,15 +157,25 @@
                       <input type="text" name="estiloDojo" id="estiloDojo" class="form-control" readonly="readonly" value="Estilo 1">
                     </div>
                       <br/>
-                  </div><!-- /.box-body -->
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Status:</b></p>
+                     <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
+                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo">
+                        </a>
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M4_ListarDojos.aspx">Volver</a>
+                    <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                   </div>
 
                 </form>
-              </div><!-- /.box -->
+              </div>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+    
+    <!-- /.box -->
 </asp:Content>
