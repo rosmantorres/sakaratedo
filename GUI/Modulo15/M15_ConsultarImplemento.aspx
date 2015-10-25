@@ -10,10 +10,7 @@ Gestion de Inventario
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
        <center><h3 id="nombre-dojo">Dojo</h3></center>
 
-  
-    
-    
-       <div class ="row">
+    <div class ="row">
         <div class="col-lg-3"> 
 
     <select id="ubicacion" class="form-control" >
