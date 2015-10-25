@@ -171,6 +171,8 @@
     <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
     <Content Include="GUI\Modulo3\M3_Prueba.aspx" />
     <Content Include="GUI\Modulo4\M4_Prueba.aspx" />
+    <Content Include="GUI\Modulo5\M5_ListarCintas.aspx" />
+    <Content Include="GUI\Modulo5\M5_ModificarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
@@ -1131,6 +1133,20 @@
     </Compile>
     <Compile Include="GUI\Modulo4\M4_Prueba.aspx.designer.cs">
       <DependentUpon>M4_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo5\M5_ListarCintas.aspx.cs">
+      <DependentUpon>M5_ListarCintas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo5\M5_ListarCintas.aspx.designer.cs">
+      <DependentUpon>M5_ListarCintas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo5\M5_ModificarCintas.aspx.cs">
+      <DependentUpon>M5_ModificarCintas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo5\M5_ModificarCintas.aspx.designer.cs">
+      <DependentUpon>M5_ModificarCintas.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo5\M5_Prueba.aspx.cs">
       <DependentUpon>M5_Prueba.aspx</DependentUpon>

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo5
 {
-    public partial class M5_Modificar : System.Web.UI.Page
+    public partial class M5_ModificarCintas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ((SKD)Page.Master).IdModulo = "5";
         }
     }
 }
