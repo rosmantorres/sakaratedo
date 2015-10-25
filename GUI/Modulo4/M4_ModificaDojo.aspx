@@ -30,17 +30,22 @@
 
 
                       <p><b>Rif Del Dojo:</b></p>
-                      <input type="text" name="rifDojo" id="rifDojo" placeholder="RIF" class="form-control">
+                      <input type="text" name="rifDojo" id="rifDojo" placeholder="RIF" class="form-control" value="J-17280493-1">
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre Del Dojo:</b></p>
-                      <input type="text" name="nombreDojo" id="nombreDojo" placeholder="Nombre" class="form-control">
+                      <input type="text" name="nombreDojo" id="nombreDojo" placeholder="Nombre" class="form-control" value="Dojo1">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Número Telefónico:</b></p>
-                      <input type="text" name="numeroDojo" id="numeroDojo" placeholder="Número" class="form-control">
+                      <input type="text" name="numeroDojo" id="numeroDojo" placeholder="Número" class="form-control" value="0212-4567899">
+                    </div>
+                      <br/>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Email:</b></p>
+                      <input type="text" name="emailDojo" id="emailDojo" placeholder="Email" class="form-control" value="Dojo1@gmail.com">
                     </div>
                       <br/>
                   <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
@@ -50,7 +55,7 @@
                       <div class="col-sm-8 col-md-8 col-lg-8" >
                          <div class="btn-group">
                             <button id="pais" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Selecionar...<span class="caret"></span>
+                            País 3<span class="caret"></span>
                             </button>
                             <ol id="dp4" class="dropdown-menu" role="menu"  onclick="cargarestado();">
                                <li value="1"><a href="#">País 1</a></li>
@@ -70,7 +75,7 @@
                       <div class="col-sm-8 col-md-8 col-lg-8" >
                          <div class="btn-group">
                             <button id="estado" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Selecionar...<span class="caret"></span>
+                            Estado 2<span class="caret"></span>
                             </button>
                             <ol id="dp5" class="dropdown-menu" role="menu"  onclick="cargarciudad();">
                                <li value="1"><a href="#">Estado 1</a></li>
@@ -88,7 +93,7 @@
                       <div class="col-sm-8 col-md-8 col-lg-8" >
                          <div class="btn-group">
                             <button id="ciudad" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Selecionar...<span class="caret"></span>
+                            Ciudad 1<span class="caret"></span>
                             </button>
                             <ol id="dp6" class="dropdown-menu" role="menu">
                                <li value="1"><a href="#">Ciudad 1</a></li>
@@ -101,7 +106,7 @@
                   </div>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dirección:</b></p>
-                      <input type="text" name="direccionDojo" id="direccionDojo" placeholder="Av/Calle/Sector/Urb/Piso/NºHabitación" class="form-control">
+                      <input type="text" name="direccionDojo" id="direccionDojo" placeholder="Av/Calle/Sector/Urb/Piso/NºHabitación" class="form-control" value="Av. 4 de Mayo, C.C. Plaza PB Local 12-17">
                     </div>
                       <br/>
                 <div class="form-group">
