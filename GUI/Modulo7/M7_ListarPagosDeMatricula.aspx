@@ -1,6 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M7_ListarPagosDeMatricula.aspx.cs" Inherits="templateApp.GUI.Modulo7.M7_ListarPagosDeMatricula" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Inicio</a>
+		    </li>
+		
+		    <li>
+			    <a href="M7_ListarOrganizacionYDojo.aspx">Consulta Atletas</a> 
+		    </li>
+
+		    <li class="active">
+			    Historial de Pagos de Matrícula
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Historial de Pagos de Matrícula
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Lista de los pagos que se han efectuado
