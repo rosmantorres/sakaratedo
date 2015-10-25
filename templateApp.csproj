@@ -147,8 +147,14 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
+    <Content Include="dist\img\Dojo1.jpg" />
+    <Content Include="dist\img\Dojo2.jpg" />
     <Content Include="dist\img\logofinal.png" />
+    <Content Include="dist\img\Texture_Dark.jpg" />
     <Content Include="GUI\Master\menuLateral.xml" />
+    <Content Include="GUI\Master\menuSuperior.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
@@ -160,7 +166,11 @@
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
     <Content Include="GUI\Modulo15\WebForm1.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
+    <Content Include="GUI\Modulo1\css\styles.css" />
+    <Content Include="GUI\Modulo1\Index.aspx" />
+    <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
+    <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
     <Content Include="GUI\Modulo3\M3_Prueba.aspx" />
     <Content Include="GUI\Modulo4\M4_Prueba.aspx" />
@@ -1037,6 +1047,7 @@
     <Compile Include="GUI\Master\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Master\sessionTag.cs" />
     <Compile Include="GUI\Modulo10\M10_Prueba.aspx.cs">
       <DependentUpon>M10_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1107,12 +1118,24 @@
     <Compile Include="GUI\Modulo16\M16_Prueba.aspx.designer.cs">
       <DependentUpon>M16_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo1\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo1\login.cs" />
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
+      <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo2\M2_Prueba.aspx.cs">
       <DependentUpon>M2_Prueba.aspx</DependentUpon>
