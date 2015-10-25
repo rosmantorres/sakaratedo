@@ -190,7 +190,6 @@
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
-    <Content Include="GUI\Modulo13\templateApp.csproj" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
     <Content Include="GUI\Modulo15\WebForm1.aspx" />
