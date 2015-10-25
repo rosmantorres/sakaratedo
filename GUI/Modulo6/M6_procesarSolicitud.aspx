@@ -102,7 +102,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h2>Solicitud de inscripcion</h2>
+                    <h2>Solicitud de inscripción</h2>
                 </div>
                 <div class="modal-body">
                     <legend class="scheduler-border">Datos Personales</legend>
@@ -148,9 +148,25 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4" style="text-align: right"><strong>Dirección de Habitación:</strong></div>
-                        <div class="col-md-8"> La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12sdf skdf skdf dsjk fjsd fjlhs jfhds fj eif lja dfjlsd fjl</div>
+                        <div class="col-md-8"> La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12</div>
                     </div>
-                    <legend class="scheduler-border">Datos del Representantes</legend>
+                    <legend class="scheduler-border">Datos de Salud</legend>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Tipo de Sangre:</strong></div>
+                        <div class="col-md-8">O+</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Alergias:</strong></div>
+                        <div class="col-md-8">Ninguna</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Peso:</strong></div>
+                        <div class="col-md-8">80 Kg</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" style="text-align: right"><strong>Estatura:</strong></div>
+                        <div class="col-md-8">1.70 m</div>
+                    </div>
                     <legend class="scheduler-border">Datos del Representantes</legend>
                     <div class="row">
                         <div class="col-md-4" style="text-align: right"><strong>Nombres:</strong></div>

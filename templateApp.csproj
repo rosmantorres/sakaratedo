@@ -166,7 +166,6 @@
     <Content Include="GUI\Modulo6\M6_ListaUsuarios.aspx" />
     <Content Include="GUI\Modulo6\M6_procesarSolicitud.aspx" />
     <Content Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx" />
-    <Content Include="GUI\Modulo6\M6_Crear.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
     <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
@@ -1147,13 +1146,6 @@
     </Compile>
     <Compile Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx.designer.cs">
       <DependentUpon>M6_SolicitudInscripcionPre.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo6\M6_Crear.aspx.cs">
-      <DependentUpon>M6_Crear.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo6\M6_Crear.aspx.designer.cs">
-      <DependentUpon>M6_Crear.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_Prueba.aspx.cs">
       <DependentUpon>M7_Prueba.aspx</DependentUpon>

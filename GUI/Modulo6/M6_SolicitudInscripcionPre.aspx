@@ -192,12 +192,12 @@
                     <ol id="selectSangreOpts" class="dropdown-menu" role="menu"  onclick="">
                         <li value="1"><a href="#">O-</a></li>
                         <li value="2"><a href="#">O+</a></li>
-                        <li value="2"><a href="#">A-</a></li>
-                        <li value="2"><a href="#">A+</a></li>
-                        <li value="2"><a href="#">B-</a></li>
-                        <li value="2"><a href="#">B+</a></li>
-                        <li value="2"><a href="#">AB-</a></li>
-                        <li value="2"><a href="#">AB+</a></li>
+                        <li value="3"><a href="#">A-</a></li>
+                        <li value="4"><a href="#">A+</a></li>
+                        <li value="5"><a href="#">B-</a></li>
+                        <li value="6"><a href="#">B+</a></li>
+                        <li value="7"><a href="#">AB-</a></li>
+                        <li value="8"><a href="#">AB+</a></li>
                     </ol>
                 </div>
             </div>
@@ -221,7 +221,7 @@
             </div>
         </fieldset>
         <fieldset class="scheduler-border" id="sfR">
-            <legend class="scheduler-border">Datos del Representantes</legend>
+            <legend class="scheduler-border">Datos del Representante</legend>
             <div class="form-group">
                 <label for="imputNombresR" class="control-label col-xs-2">Nombres:</label>
                 <div class="col-xs-10">
