@@ -24,16 +24,16 @@
         <table id="tablaasistenciae" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:center">Nombre Organización</th>
-                    <th style="text-align:center">Evento</th>
+					<th style="text-align:center">Nombre Evento</th>
+                    <th style="text-align:center">Fecha</th>
 					<th style="text-align:center">Estatus de Asistencia</th>
 					<th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="id">Organización 1</td>
-                    <td>Evento 1</td>
+					<td class="id">Evento 1</td>
+                    <td> 19/05/2001</td>
 					<td>Procesado</td>
 					
                     <td>
@@ -42,16 +42,16 @@
                      </td>
                 </tr>
                 <tr>
-                    <td class="id">Organización 2</td>
-                    <td>Evento 2</td>
+                    <td class="id">Evento 2</td>
+                    <td>09/04/2001</td>
 					<td>No Procesado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
                      </td>
 				</tr><tr>
-                    <td class="id">Organización 3</td>
-                    <td>Evento 3</td>
+                    <td class="id">Evento 3</td>
+                    <td>14/10/2001</td>
 					<td>Procesada</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -59,8 +59,8 @@
                      </td>
                 </tr>
                 <tr>
-                    <td class="id">Organización 4</td>
-                    <td>Evento 4</td>
+                    <td class="id">Evento 4</td>
+                    <td>01/01/2000</td>
 					<td>Procesada</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -68,8 +68,8 @@
                      </td>
                 </tr>
                 <tr>
-                <td class="id">Organización 5</td>
-                    <td>Evento 5</td>
+                <td class="id">Evento 5</td>
+                    <td>05/04/2001</td>
 					<td>Procesada</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
