@@ -40,6 +40,34 @@
 </script>
 
 </asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Dojo</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Dojo</a> 
+		    </li>
+
+		    <li>
+			    <a href="../Modulo4/M4_ListarDojos.aspx">Listar Dojos</a> 
+		    </li>
+		    
+            <li class="active">
+			    Modificar Dojo
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
