@@ -22,7 +22,7 @@
   </opcion>
 
   <opcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Eventos">
-    <subopcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Eventos y Competencias" link="#"/>
+    <subopcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Eventos y Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx"/>
     <subopcion rol="Sistema-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Asistencia a Eventos" link="#"/>
     <subopcion rol="Sistema-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Resultados de Competencias" link="#"/>
   </opcion>
