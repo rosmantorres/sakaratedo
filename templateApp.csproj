@@ -1080,6 +1080,7 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
