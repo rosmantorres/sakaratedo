@@ -38,7 +38,7 @@
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href=".../GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
 					<td>No Procesado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
                      </td>
 				</tr><tr>
                     <td class="id">Evento 3</td>
@@ -55,7 +55,7 @@
 					<td>Procesada</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -64,7 +64,7 @@
 					<td>Procesada</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -122,10 +122,12 @@
              <script type="text/javascript">
                  $(document).ready(function () {
                      $('#tablaasistenciae').DataTable();
-
+                    
                      var table = $('#tablaasistenciae').DataTable();
                      var comp;
                      var tr;
+
+        
 
                      $('#tablaasistenciae tbody').on('click', 'a', function () {
                          if ($(this).parent().hasClass('selected')) {

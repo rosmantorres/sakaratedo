@@ -25,12 +25,12 @@
         <br />
         <h3>Fecha del Evento:</h3>
         <div class="input-group input-append date" id="datePicker">
-        <input type="text" class="form-control" name="date" />
+        <input type="text" class="form-control" name="date" disabled />
         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
         </div>
 
             <h3>Evento:</h3>
-    <input type="text" class="form-control-control" placeholder="Campo de texto">
+    <type="text" class="form-control disabled" >
     </div>
 
  
