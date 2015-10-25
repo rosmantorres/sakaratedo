@@ -9,7 +9,7 @@
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
 		    <li class="active">
-			    Organización y Dojo
+			   Consultar Organización y Dojo
 		    </li>
 	    </ol>
     </div>

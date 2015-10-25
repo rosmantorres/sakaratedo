@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Asistencias a Eventos
+			    Consultar Eventos Asistidos
 		    </li>
 	    </ol>
     </div>

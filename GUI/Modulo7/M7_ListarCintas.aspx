@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Cintas
+			    Consultar Cintas
 		    </li>
 	    </ol>
     </div>

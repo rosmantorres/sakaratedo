@@ -93,11 +93,11 @@
     <modulo id="7"></modulo>
   </opcion>
 
-  <opcion nombre="Consultar Pago de Eventos" link="~/GUI/Modulo7/M7_ListarPagosAEventos.aspx">
+  <opcion nombre="Consultar Pagos de Eventos" link="~/GUI/Modulo7/M7_ListarPagosAEventos.aspx">
     <modulo id="7"></modulo>
   </opcion>
 
-  <opcion nombre="Consultar Pago de Matrícula" link="~/GUI/Modulo7/M7_ListarPagosDeMatricula.aspx">
+  <opcion nombre="Consultar Pagos de Matrícula" link="~/GUI/Modulo7/M7_ListarPagosDeMatricula.aspx">
     <modulo id="7"></modulo>
   </opcion>
 

@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Historial de Pagos de Matrícula
+			    Consultar Pagos de Matrícula
 		    </li>
 	    </ol>
     </div>

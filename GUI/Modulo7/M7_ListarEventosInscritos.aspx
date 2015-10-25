@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Eventos Inscritos
+			    Consultar Eventos Inscritos
 		    </li>
 	    </ol>
     </div>
@@ -52,7 +52,7 @@
 			<tbody>
 				<tr>
 					<td class="id">001</td>
-					<td>Noveno encuentro de cintas negras 5to DAN</td>
+					<td>Noveno encuentro de cintas negras 5to KYU</td>
 					<td>Seminario</td>
 					<td>26/01/2016</td>
                     <td>Estado Barinas</td>
@@ -110,7 +110,7 @@
 							<div class="row">
 								<h3>Nombre</h3>
 								<p>
-								    Noveno encuentro de cintas negras 5to DAN
+								    Noveno encuentro de cintas negras 5to KYU
 								</p>
 								<h3>Tipo</h3>
 								<p>
@@ -133,7 +133,7 @@
 								</p>
 								<h3>Descripción</h3>
 								<p>
-                                    Encuentro de atletas con cinta negra de 5to DAN. 
+                                    Encuentro de atletas con cinta negra de 5to KYU. 
     							</p>
 							</div>
 						</div>

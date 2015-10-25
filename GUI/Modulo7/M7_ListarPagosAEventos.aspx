@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Historial de Pagos a Eventos
+			    Consultar Pagos de Eventos
 		    </li>
 	    </ol>
     </div>

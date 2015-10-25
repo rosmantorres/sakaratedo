@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Horario de Práctica
+			   Consultar Horario de Práctica
 		    </li>
 	    </ol>
     </div>
