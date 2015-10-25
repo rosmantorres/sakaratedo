@@ -3,9 +3,9 @@
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Lista de Morosos</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Lista de Kyu</asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Morosos</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"></asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
@@ -16,7 +16,7 @@
     <div align="center">
       <table class="table-hover table-bordered table-condensed">
         <tr>
-          <td><img src="Kyu-imagenes/blanca-azul.jpg" width="92" height="72" class="img-responsive" /></td>
+          <td><a href="M13_Kyu_atletas.aspx"><img src="Kyu-imagenes/blanca-azul.jpg" width="92" height="72" class="img-responsive" /></a></td>
           <td><img src="Kyu-imagenes/celeste.jpg" width="92" height="72" class="img-responsive"/></td>
           <td><img src="Kyu-imagenes/celeste-amarillo.jpg" width="92" height="72"class="img-responsive" /></td>
           <td><img src="Kyu-imagenes/amarilla.jpg" width="92" height="72"class="img-responsive" /></td>

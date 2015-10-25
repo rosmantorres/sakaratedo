@@ -152,7 +152,7 @@
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Inicio.aspx">
+  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Kyu.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
