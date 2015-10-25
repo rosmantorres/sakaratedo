@@ -164,10 +164,13 @@
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
     <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
@@ -1136,6 +1139,13 @@
     <Compile Include="GUI\Modulo7\M7_Prueba.aspx.designer.cs">
       <DependentUpon>M7_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.cs">
       <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1150,6 +1160,13 @@
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.cs">
       <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1163,6 +1180,13 @@
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.cs">
+      <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.cs">
       <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>

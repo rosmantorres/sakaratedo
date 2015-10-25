@@ -42,7 +42,7 @@
     </div>
   
   <select class="combobox" style="width:500px; height:35px">
-  <option value="">Seleccione Horario</option>
+  <option value="">Seleccione Restriccion de evento a modificar</option>
   <option value="1">Entrenamiento Especial 1/1/2016  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a Marron Sexo: Ambos Categoria: N/A Especialidad N/A</option>
   <option value="2">Competencia 1/2/2016  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a Marron Sexo: Femenino Categoria: N/Peso Pluma Especialidad: Kumite</option>
   <option value="3">Entrenamiento Especial 1/1/2016  12:00 a 14:00  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a Marron Sexo: Ambos Categoria: N/A Especialidad N/A</option>

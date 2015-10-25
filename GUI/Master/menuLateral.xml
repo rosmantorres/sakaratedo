@@ -82,12 +82,16 @@
 
   <!--OPCIONES DE MODULO 8-->
   
-  <opcion nombre="Crear Restriccion de Horario" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
+  <opcion nombre="Agregar Rest. de Horario" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
     <modulo id="8.1"></modulo>
   </opcion>
   
-  <opcion nombre="Crear Restriccion de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
+  <opcion nombre="Agregar Rest. de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
     <modulo id="8.2"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Avance de Cinta" link="~/GUI/Modulo8/interfazCrearRestriccionAvanceCinta.aspx">
+    <modulo id="8.3"></modulo>
   </opcion>
   
   <!--FIN OPCIONES MODULO 8-->

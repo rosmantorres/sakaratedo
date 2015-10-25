@@ -42,7 +42,7 @@
     </div>
   
   <select class="combobox" style="width:300px; height:35px">
-  <option value="">Seleccione Horario</option>
+  <option value="">Seleccione Evento</option>
   <option value="1">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
   <option value="2">Competencia 1/2/2016  12:00 a 14:00</option>
   <option value="3">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
