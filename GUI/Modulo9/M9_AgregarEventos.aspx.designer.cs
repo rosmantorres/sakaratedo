@@ -11,5 +11,14 @@ namespace templateApp.GUI.Modulo9 {
     
     
     public partial class M9_AgregarEventos {
+        
+        /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
     }
 }

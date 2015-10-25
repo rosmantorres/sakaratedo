@@ -30,7 +30,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Evento</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-
+        <div id="alert" runat="server">
+    </div>
      
 
 <!-- general form elements -->

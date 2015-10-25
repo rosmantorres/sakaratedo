@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_ModificarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_AgregarEventos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_ModificarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_ModificarEventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  
 </asp:Content>
@@ -17,7 +17,8 @@ function habilitar() {
     document.getElementById('tipoEvento').disabled = false;
 } 
 </script>
-
+            <div id="alert" runat="server">
+    </div>
 
 		<%--Breadcrumbs--%>
     <div>
