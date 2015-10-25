@@ -43,6 +43,7 @@
 
 
   <!--OPCIONES DE MODULO 4-->
+<<<<<<< HEAD
   
   <opcion nombre="Listar Dojos" link="~/GUI/Modulo4/M4_ListarDojos.aspx">
     <modulo id="4"></modulo>
@@ -51,6 +52,15 @@
     <modulo id="4"></modulo>
   </opcion>
 
+=======
+
+  <opcion nombre="Listar Dojos" link="~/GUI/Modulo4/M4_ListarDojos.aspx">
+    <modulo id="4"></modulo>
+  </opcion>
+  <opcion nombre="Agregar Dojo" link="~/GUI/Modulo4/M4_AgregarDojo.aspx">
+    <modulo id="4"></modulo>
+  </opcion>
+>>>>>>> refs/remotes/origin/master
   <!--FIN OPCIONES MODULO 4-->
 
 
@@ -156,6 +166,10 @@
   <!--OPCIONES DE MODULO 16-->
   
   <opcion nombre="Consultar Productos" link="~/GUI/Modulo16/M16_ConsultarProducto.aspx">
+    <modulo id="16"></modulo>
+  </opcion>
+  
+  <opcion nombre="Consultar Eventos" link="~/GUI/Modulo16/M16_ConsultarEvento.aspx">
     <modulo id="16"></modulo>
   </opcion>
   
