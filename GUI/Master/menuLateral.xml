@@ -147,7 +147,7 @@
     <modulo id="13"></modulo>
   </opcion>
   
-   <opcion nombre="Programa técnico del Kyu" link="~/GUI/Modulo13/M13_Inicio.aspx">
+   <opcion nombre="Programa técnico del Kyu" link="~/GUI/Modulo13/M13_KyuPrograma.aspx">
     <modulo id="13"></modulo>
   </opcion>
   

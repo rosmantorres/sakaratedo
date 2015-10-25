@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo13
 {
-    public partial class M13_Asistencia_Evento : System.Web.UI.Page
+    public partial class M13_ProgramaKyu : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
