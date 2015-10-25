@@ -35,7 +35,7 @@
   
   <!--OPCIONES DE MODULO 3-->
   
-  <opcion nombre="" link="~/GUI/Modulo3/">
+  <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
   
