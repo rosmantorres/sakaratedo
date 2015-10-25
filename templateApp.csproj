@@ -148,14 +148,13 @@
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
     <Content Include="dist\img\logofinal.png" />
-    <Content Include="GUI\Master\menuLateral.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="GUI\Master\menuLateral.xml" />
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
+    <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
+    <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
-    <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
     <Content Include="GUI\Modulo15\WebForm1.aspx" />
@@ -1049,19 +1048,18 @@
     <Compile Include="GUI\Modulo12\M12_Prueba.aspx.designer.cs">
       <DependentUpon>M12_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.cs">
+      <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
+      <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.designer.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo13\M13_Inicio.aspx.cs">
-      <DependentUpon>M13_Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo13\M13_Inicio.aspx.designer.cs">
-      <DependentUpon>M13_Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>
