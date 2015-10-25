@@ -135,7 +135,7 @@
 								    <div class="form-group">
 		                                <div class="box-footer">
 				                            <button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info1').modal('hide'); $('#prueba').show();" >Agregar al Carrito</button>
-                                            <a class="btn btn-default" href="M16_ConsultarProducto.aspx">Cancelar</a>
+                                             
 			                            </div>
 	                                </div>
                                 </form>

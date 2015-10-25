@@ -24,6 +24,11 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
+            La Mensualidad se ha Agregado Exitosamente al Carrito.
+        </div>
+
      <div class="box-body table-responsive">
 
          <!--MODAL PARA EL DETALLE-->
@@ -37,7 +42,7 @@
         <thead>
             <tr>
                 <th>Mes</th>
-                <th>Ano</th>
+                <th>Anio</th>
                 <th>Monto (Bs.)</th>
                 <th>Fecha tope para cancelar</th>
                 
@@ -48,7 +53,7 @@
         <tfoot>
             <tr>
                <th>Mes</th>
-                <th>Ano</th>
+                <th>Anio</th>
                 <th>Monto (Bs.)</th>
                 <th>Fecha tope para cancelar</th>
                 
@@ -81,7 +86,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Información detallada dela Mensualidad</h2>
+						<h2 class="modal-title">Información detallada de la Mensualidad</h2>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
@@ -90,7 +95,7 @@
 								<h3>Mes</h3>
 									Marzo 
                                 <br />
-                                <h3>Ano</h3>
+                                <h3>Anio</h3>
 									2015
                                 <br />
                                 <h3>Monto (Bs.)</h3>
@@ -114,8 +119,8 @@
 								    </p>
 								    <div class="form-group">
 		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="submit"  onclick="M16_VerCarrito.aspx" >Agregar al Carrito</button>
-                                            <a class="btn btn-default" href="M16_ConsultarMensualidad.aspx">Cancelar</a>
+				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show(); " >Agregar al Carrito</button>
+                                            
 			                            </div>
 	                                </div>
                                 </form>
@@ -173,6 +178,7 @@
                  $('#btn-eliminar').on('click', function () {
                      table.row(tr).remove().draw();//se elimina la fila de la tabla
                      $('#modal-delete').modal('hide');//se esconde el modal
+                     $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
              });

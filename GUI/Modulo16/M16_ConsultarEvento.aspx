@@ -7,6 +7,11 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
+            El Evento se ha Agregado Exitosamente al Carrito.
+        </div>
+
     <div class="box-body table-responsive">
 
          <!--MODAL PARA EL DETALLE-->
@@ -42,47 +47,39 @@
  
         <tbody>
             <tr>
-                <td></td>
-                <td>Karategi</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Primera Competencia Anual</td>
+                <td>Competencia</td>
+                <td>Caracas</td>
+                <td>01 Enero 2016</td>
+                <td>02 Enero 2016</td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
             <tr>
-                <td></td>
-                <td>Cinta Blanca</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Sakarate-Do Avanzado</td>
+                <td>Entrenamiento Especial</td>
+                <td>Caracas</td>
+                <td>07 Noviembre 2015</td>
+                <td>08 Noviembre 2015</td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
             <tr>
-                <td></td>
-                <td>Suspensorio</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>2DO Seminario Showakai Sakarate-Do</td>
+                <td>Seminario</td>
+                <td>Caracas</td>
+                <td>01 Diciembre 2015</td>
+                <td>03 Diciembre 2015</td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
             
             <tr>
-                <td></td>
-                <td>Proteccion Bucal</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Adulto Intermedio</td>
+                <td>Clase</td>
+                <td>Caracas</td>
+                <td>20 Noviembre 2015</td>
+                <td>21 Noviembre 2015</td>
                 <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
             </tr>
 
-             <tr>
-                <td></td>
-                <td>Guantes Rojos</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
 
         </tbody>
     </table>
@@ -99,32 +96,30 @@
 						<div class="container-fluid" id="info1">
 							<div class="row">
 								<h3>Nombre</h3>
-									Guantes Rojos
+									2DO Seminario Showakai Sakarate-Do
                                 <br />
                                 <h3>Tipo</h3>
-                                    Sakaratedo
+                                    Seminario
                                 <br />
                                 <h3>Lugar/ Fin</h3>
                                     Caracas
                                 <br />
 								<h3>Fecha Inicio</h3>
-                                    20 Octubre 2015
+                                    01 Diciembre 2015
                                 <br />
                                 <h3>Fecha Fin</h3>
-                                    22 Octubre 2015
+                                    03 Diciembre 2015
                                 <br />
                                 
                                 <form runat="server" class="form-horizontal" method="POST">
 								    <h3>Descricion</h3>
 								    <p>
-									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
-                                        golpes contra el contrincante o cuando se está practicando, con un diseño
-                                        particular de color rojo a gusto del atleta.
+									    El 2do Seminario Showakai se presenta en la ciudad de Caracas para el deleite de todos los interesados, se ofrece material de apoyo mas las clases de practica.
 								    </p>
 								    <div class="form-group">
 		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="submit"  onclick="M16_VerCarrito.aspx" >Agregar al Carrito</button>
-                                            <a class="btn btn-default" href="M16_ConsultarProducto.aspx">Cancelar</a>
+				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show();"  >Agregar al Carrito</button>
+                                          
 			                            </div>
 	                                </div>
                                 </form>
@@ -176,6 +171,7 @@
                  $('#btn-eliminar').on('click', function () {
                      table.row(tr).remove().draw();//se elimina la fila de la tabla
                      $('#modal-delete').modal('hide');//se esconde el modal
+                     $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
              });
