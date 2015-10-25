@@ -24,7 +24,7 @@
     <div class="form-group col-sm-10 col-md-10 col-lg-10">
         <br />
         <h3>Fecha del Evento:</h3>
-        <div class="input-group input-append date" id="datepicker">
+        <div class="input-group input-append date" id="datePicker">
         <input type="text" class="form-control" name="date" />
         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
         </div>
@@ -92,7 +92,7 @@
 
 
     <div class="form-group">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="col-sm-12 col-md-12 col-lg-12">
         <h3>No Asistieron:</h3>
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
@@ -165,42 +165,8 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
 							<div class="row">
-								<h3>Precondiciones</h3>
-									<ul>
-										<li>Usuario registrado</li>
-										<li>Usuario logeado</li>
-										<li>Proyecto creado</li>
-									</ul>
-								<h3>Condición Final de Éxito</h3>
 								<p>
-									Caso de uso creado
-								</p>
-								<h3>Condición Final de Fallo</h3>
-								<p>
-									El caso de uso no pudo ser creado
-								</p>
-								<h3>Disparador</h3>
-								<p>
-									Seleccionar opción "Gestión de Casos de uso" → "Agregar caso de uso" del menú
-								</p>
-								<h3>Escenario Principal de Éxito</h3>
-									<ol>
-										<li>El usuario o admin selecciona la opción "Gestión de Casos de uso" → "Agregar caso de uso" del menú.</li>
-										<li>El sistema despliega la pantalla de obtener los datos del caso de uso.</li>
-										<li>El usuario o admin ingresa los números de los requerimientos asociados.</li>
-										<li>El sistema verifica la existencia de esos requerimientos.</li>
-										<li>El usuario o admin introduce los datos del caso de uso.</li>
-										<li>El sistema registra el caso de uso. Volver paso 2. El CU termina.</li>
-    								</ol>
-								<h3>Extensiones</h3>
-								<p>
-									4-A. El o los requerimientos no existen.
-								</p>
-								<p style="text-indent: 5em;">
-									A1. Desplegar mensaje de error.
-								</p>
-								<p style="text-indent: 5em;">
-									A2. Volver al paso 2. 
+									Nombre, Apellido, Sexo, cinta... etc
 								</p>
 							</div>
 						</div>
@@ -212,7 +178,7 @@
             <script type="text/javascript">
                 $(document).ready(function () {
 
-                    var table = $('example').DataTable({
+                    var table = $('#example').DataTable({
                         "language": {
                             "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                         }
@@ -237,6 +203,49 @@
 
                 });
 
+             
+    $(document).ready(function () {
+        $('#datePicker')
+            .datepicker({
+                format: 'mm/dd/yyyy'
+            })
+            .on('changeDate', function (e) {
+                // Revalidate the date field
+                $('#eventForm').formValidation('revalidateField', 'date');
+            });
+
+        $('#eventForm').formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                name: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The name is required'
+                        }
+                    }
+                },
+                date: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The date is required'
+                        },
+                        date: {
+                            format: 'MM/DD/YYYY',
+                            message: 'The date is not a valid'
+                        }
+                    }
+                }
+            }
+        });
+    });
+
+
+
         </script>
 
 </div>
@@ -246,7 +255,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M12_ListarCompetencias.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Volver</a>
+         <a class="btn btn-default" Volver</a>
       </div>
    </form>
 </div>
