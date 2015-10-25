@@ -164,6 +164,8 @@
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
     <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
@@ -1129,6 +1131,20 @@
     </Compile>
     <Compile Include="GUI\Modulo7\M7_Prueba.aspx.designer.cs">
       <DependentUpon>M7_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.cs">
+      <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\M8_Prueba.aspx.cs">
       <DependentUpon>M8_Prueba.aspx</DependentUpon>
