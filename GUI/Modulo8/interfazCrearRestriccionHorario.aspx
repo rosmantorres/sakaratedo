@@ -27,10 +27,14 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-Gestion de Restricciones de Horarios
+
+    Gestion de Restricciones de Horarios
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-Creacion de Restriccion por Horario
+    
+    Creacion de Restricciones de Horarios
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     

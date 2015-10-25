@@ -1,10 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesHorario.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesHorario" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesEventos.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesEventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
 </asp:Content>
-
-<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
 
     <%--Breadcrumbs--%>
 	<ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
@@ -18,86 +15,82 @@
 		</li>
 		
 		<li class="active">
-			Restricciones de Horarios
+			Restricciones de Eventos
 		</li>
 	
 	</ol>
 	<%--Fin_Breadcrumbs--%>
 
 </asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-
-<%--Titulo--%>
- Gestion de Restricciones de Horarios
-<%--Fin_Titulo--%>
-
-</asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
     
-    Restricciones de Horarios
-	
-	
+    Gestion de Restricciones de Eventos
 
 </asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 
-<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-	
-	<div id="alert" runat="server">
+    Restricciones de Eventos
+
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+
+    <div id="alert" runat="server">
 	</div>
 
 	<div class="row">
 			<div class="col-xs-12">
 			  <div class="box">
 				<div class="box-header">
-				  <h3 class="box-title">Lista de Restricciones de Horarios</h3>
+				  <h3 class="box-title">Lista de Restricciones de Eventos</h3>
 				</div><!-- /.box-header -->
 
-	
-  
-  
-				  
+	 
 	<div class="box-body table-responsive">
 
-	   <table id="Restricciones" class="table table-bordered table-striped dataTable">
+	   <table id="RestriccionesEventos" class="table table-bordered table-striped dataTable">
 		<thead>
 				<tr>
 					<th>ID</th>
-					<th>Horario</th>
+					<th>Evento</th>
 					<th >Edad Minima</th>
 					<th>Edad Maxima</th>
 					<th >Rango Minimo</th>
 					<th >Rango Maximo</th>
 					<th >Sexo</th>
+					<th >Categoria</th>
+                    <th>Especialidad</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="id">RH_1</td>
-					<td>Lunes-Miercoles-Viernes 12:00 a 14:00</td>
+					<td class="id">REV_1</td>
+					<td>Entrenamiento Especial 1/1/2016  12:00 a 14:00</td>
 					<td>10</td>
 					<td>18</td>
 					<td>Blanco</td>
 					<td>Marron</td>
 					<td>Ambos</td>
+                    <td>N/A</td>
+                    <td>N/a</td>
 					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionHorario.aspx"></a>
+						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionEvento.aspx"></a>
 						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
 					 </td>
 				</tr>
 
 				<tr>
-					<td class="id">RH_1</td>
-					<td>Lunes-Miercoles-Viernes 12:00 a 14:00</td>
+					<td class="id">REV_2</td>
+					<td>Competencia 1/2/2016  12:00 a 14:00</td>
 					<td>10</td>
 					<td>18</td>
 					<td>Blanco</td>
 					<td>Marron</td>
-					<td>Ambos</td>
+					<td>Femenino</td>
+                    <td>Peso Ligero</td>
+                    <td>Kumite</td>
 					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionHorario.aspx"></a>
+						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionEvento.aspx"></a>
 						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
 					 </td>
 				</tr>
@@ -124,7 +117,7 @@
 			  </div>
 			</div>
 			<div class="modal-footer">  
-				<a id="btn-eliminar" type="button" class="btn btn-primary" href="interfazRestriccionesHorario.aspx?actionSuccess=2">Eliminar</a>
+				<a id="btn-eliminar" type="button" class="btn btn-primary" href="interfazRestriccionesEventos.aspx?actionSuccess=2">Eliminar</a>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 		   </div>
 		  </div><!-- /.modal-delete-content -->
@@ -134,7 +127,7 @@
 		<script type="text/javascript">
 			$(document).ready(function () {
 
-				var table = $('#Restricciones').DataTable({
+			    var table = $('#RestriccionesEventos').DataTable({
 					"language": {
 						"url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
 					}
@@ -142,7 +135,7 @@
 				var req;
 				var tr;
 
-				$('#Restricciones tbody').on('click', 'a', function () {
+				$('#RestriccionesEventos tbody').on('click', 'a', function () {
 					if ($(this).parent().hasClass('selected')) {
 						req = $(this).parent().prev().prev().prev().prev().text();
 						tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -174,4 +167,5 @@
 
 		</script>
 	
+
 </asp:Content>

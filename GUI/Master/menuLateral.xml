@@ -86,6 +86,10 @@
     <modulo id="8.1"></modulo>
   </opcion>
   
+  <opcion nombre="Crear Restriccion de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
+    <modulo id="8.2"></modulo>
+  </opcion>
+  
   <!--FIN OPCIONES MODULO 8-->
 
 

@@ -164,8 +164,11 @@
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
     <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
@@ -1133,6 +1136,13 @@
     <Compile Include="GUI\Modulo7\M7_Prueba.aspx.designer.cs">
       <DependentUpon>M7_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1140,12 +1150,26 @@
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.cs">
       <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.cs">
+      <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
