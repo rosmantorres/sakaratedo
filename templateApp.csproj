@@ -165,6 +165,7 @@
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
     <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
@@ -1138,6 +1139,13 @@
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>

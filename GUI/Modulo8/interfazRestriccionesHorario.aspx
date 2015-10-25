@@ -4,6 +4,28 @@
 
 </asp:Content>
 
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+    <%--Breadcrumbs--%>
+	<ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+
+		<li>
+			<a href="../Master/Inicio.aspx">Inicio</a>
+		</li>
+		
+		<li>
+			<a href="#">Algun Modulo</a>
+		</li>
+		
+		<li class="active">
+			Restricciones de Horarios
+		</li>
+	
+	</ol>
+	<%--Fin_Breadcrumbs--%>
+
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 
 <%--Titulo--%>
@@ -16,23 +38,7 @@
     
     Restricciones de Horarios
 	
-	<%--Breadcrumbs--%>
-	<ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
-
-		<li>
-			<a href="../Master/Inicio.aspx">Home</a>
-		</li>
-		
-		<li>
-			<a href="#">Gestion de Horarios</a>
-		</li>
-		
-		<li class="active">
-			Gestion de Horarios
-		</li>
 	
-	</ol>
-	<%--Fin_Breadcrumbs--%>
 
 </asp:Content>
 
@@ -79,7 +85,7 @@
 					<td>Marron</td>
 					<td>Ambos</td>
 					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionHorario.aspx"></a>
 						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
 					 </td>
 				</tr>
@@ -94,7 +100,7 @@
 					<td>Marron</td>
 					<td>Ambos</td>
 					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionHorario.aspx"></a>
 						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
 					 </td>
 				</tr>
