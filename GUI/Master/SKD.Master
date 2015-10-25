@@ -143,12 +143,20 @@
                           <p>Roles</p>
                           <hr />
                             <ul class="nav nav-pills">
+<<<<<<< HEAD
                               <li role="presentation" class="active"><a href="#"><%=Session["rol"] %></a></li>
+=======
+                              <li role="presentation" class="active"><a ><%=Session["rol"] %></a></li>
+>>>>>>> refs/remotes/origin/master
                                         <% foreach (string opcion in RolesUsuario) %>
 						                    <% { %>
                                                 <%if ((opcion != null) && (opcion != Session["rol"].ToString()))%>
                                                  <% { %>
+<<<<<<< HEAD
 							                    <li role="presentation"><a href="Inicio.aspx?rol=<%=opcion %>" class="rolButton"><%=opcion %></a></li>
+=======
+							                    <li role="presentation"><a href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol="+opcion) %>" class="rolButton"><%=opcion %></a></li>
+>>>>>>> refs/remotes/origin/master
 						                         <% }%>
                                              <% } %> 
                             </ul> 
