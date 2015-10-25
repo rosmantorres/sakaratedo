@@ -161,10 +161,9 @@
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
     <Content Include="GUI\Modulo3\M3_Prueba.aspx" />
-    <Content Include="GUI\Modulo4\M4_ListarDojosActivos.aspx" />
+    <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
-    <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_Prueba.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
@@ -1106,12 +1105,12 @@
     <Compile Include="GUI\Modulo3\M3_Prueba.aspx.designer.cs">
       <DependentUpon>M3_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo4\M4_ListarDojosActivos.aspx.cs">
-      <DependentUpon>M4_ListarDojosActivos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.cs">
+      <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo4\M4_ListarDojosActivos.aspx.designer.cs">
-      <DependentUpon>M4_ListarDojosActivos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.designer.cs">
+      <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.cs">
       <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
@@ -1126,13 +1125,6 @@
     </Compile>
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.designer.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.cs">
-      <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.designer.cs">
-      <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo5\M5_Prueba.aspx.cs">
       <DependentUpon>M5_Prueba.aspx</DependentUpon>

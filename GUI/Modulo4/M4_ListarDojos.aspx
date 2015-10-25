@@ -1,6 +1,4 @@
-
-<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojosActivos" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
@@ -8,7 +6,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    <div id="alert" runat="server">
+
+        <div id="alert" runat="server">
     </div>
 
     
@@ -218,7 +217,7 @@
                     }
                     else {
                         dojo = $(this).parent().prev().prev().prev().prev().prev().text();
-                        tr= $(this).parents('tr');//se guarda la fila seleccionada
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
                         table.$('tr.selected').removeClass('selected');
                         $(this).parent().addClass('selected');
                     }
@@ -239,5 +238,6 @@
 
             });
 
-        </script>
+        </script> 
+
 </asp:Content>

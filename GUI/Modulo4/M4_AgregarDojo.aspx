@@ -20,7 +20,7 @@
 
                        <div>
  
-<img src="Imagenes\Dojoico.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
+<img src="Imagenes\Aikido.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
  
  <input id="input-1a" type="file" class="file"  >
  </div>
