@@ -25,12 +25,13 @@
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <h1 class="modal-title">Eliminar Organización</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-  <h1>Eliminar Organizacion</h1>
+ 
  Organizaciones Registradas :
 <div class="btn-group-vertical" role="group" aria-label="...">
   <button type="button" class="btn btn-default">Seito Karate Do</button>

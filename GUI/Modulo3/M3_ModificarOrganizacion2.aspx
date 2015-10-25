@@ -29,12 +29,13 @@
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <h1 class="modal-title">Modificar Organización</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-           <h1>Modificar Datos de la Organizacion Seleccionada</h1>
+          
 
     <form class = "form-horizontal" role = "form">
    
@@ -45,6 +46,14 @@
 		
       <div class = "col-sm-10">
          <input type = "text" class = "form-control" id = "direccion" placeholder = "Urb. Santa Paula - El Cafetal, Caracas Venezuela">
+      </div>
+   </div>
+
+    <div class = "form-group">
+      <label for = "tecnica" class = "col-sm-2 control-label">Técnica</label>
+		
+      <div class = "col-sm-10">
+         <input type = "text" class = "form-control" id = "tecnica" placeholder = "Seito Karate Do">
       </div>
    </div>
 

@@ -25,12 +25,12 @@
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    <h1 class="modal-title">Agregar Organización</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <h1>Agregar Organizacion</h1>
 
     <form class = "form-horizontal" role = "form">
    
@@ -39,6 +39,14 @@
 		
       <div class = "col-sm-10">
          <input type = "text" class = "form-control" id = "nombre" placeholder = "Introduzca el Nombre de la Organizacion">
+      </div>
+   </div>
+
+    <div class = "form-group">
+      <label for = "tecnica" class = "col-sm-2 control-label">Técnica</label>
+		
+      <div class = "col-sm-10">
+         <input type = "text" class = "form-control" id = "tecnica" placeholder = "Introduzca la técnica de la Organizacion">
       </div>
    </div>
    

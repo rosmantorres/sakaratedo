@@ -3,7 +3,7 @@
 <menusuperior>
   
   <opcion rol="Sistema-Organizacion" nombre="Organizaciones">
-    <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="#"/>
+    <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx"/>
     <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="#"/>
     <subopcion rol="Sistema-Organizacion" nombre="Restricciones de Cintas y Eventos" link="#"/>
   </opcion>
