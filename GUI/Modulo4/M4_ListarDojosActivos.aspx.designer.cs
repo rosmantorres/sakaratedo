@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo4 {
     
     
-    public partial class M4_ListarDojosActivos {
+    public partial class M4_ListarDojosActivos1 {
         
         /// <summary>
         /// Control alert.

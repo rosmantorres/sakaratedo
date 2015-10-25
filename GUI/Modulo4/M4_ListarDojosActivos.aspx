@@ -1,12 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojosActivos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojosActivos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojosActivos1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos Activos
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    <div id="alert" runat="server">
+
+     <div id="alert" runat="server">
     </div>
 
     
@@ -47,20 +48,7 @@
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
-                <tr>
-					<td class="id">J-17280434-1</td>
-					<td>Dojo 2</td>
-					<td>0212-4567811</td>
-                    <td>Dojo2@gmail.com</td>
-					<td>País 2</td>
-                    <td>Estado 2</td>
-                    <td>Ciudad 2</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
+                
                 <tr>
 					<td class="id">J-17280422-1</td>
 					<td>Dojo 3</td>
@@ -103,20 +91,7 @@
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
-                <tr>
-					<td class="id">J-17280234-1</td>
-					<td>Dojo 6</td>
-					<td>0212-2345678</td>
-                    <td>Dojo6@gmail.com</td>
-					<td>País 6</td>
-                    <td>Estado 6</td>
-                    <td>Ciudad 6</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
+        
 			    </tbody>
             </table>
            </div>
@@ -211,4 +186,5 @@
             });
 
         </script>
+
 </asp:Content>
