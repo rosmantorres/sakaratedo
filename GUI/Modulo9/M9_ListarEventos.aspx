@@ -15,7 +15,7 @@
 		    </li>
 		
 		    <li class="active">
-			    Gestión de Eventos
+			    Gesti&oacute;n de Eventos
 		    </li>
 	    </ol>
     </div>
@@ -91,7 +91,7 @@
                     <td>20/10/2015</td>
                     <td>09:00 AM</td>
                     <td>012:00 PM</td>
-                    <td>Desactivo</td>
+                    <td>Inactivo</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEventos.aspx"></a>
