@@ -9,7 +9,16 @@
 
      <div id="alert" runat="server">
     </div>
+
+    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
+            El Articulo Deportivo se ha Eliminado Exitosamente del Carrito.
+        </div>
     
+    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba1">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
+            El Pago se ha registrado Exitosamente.
+        </div>
 <!--MODAL PARA EL DETALLE-->
      <!-- general form elements -->
     <form runat="server" class="form-horizontal" method="POST">
@@ -42,8 +51,8 @@
         <tbody>
            
             <tr>
-                <td><img src="Imagenes/CintaBlanca.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Cinta Blanca</td>
+                <td><img src="Imagenes/GuanteRojo.jpg" alt="" style="width:50px; height:auto;"></td>
+                <td>Guantes rojos</td>
                 <td>
                      
                                  <div class="dropdown" runat="server" id="div3">
@@ -58,7 +67,7 @@
                                  </div> 
                                 
                 </td>
-                <td>400</td>
+                <td>5000</td>
                 <td>
                     <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
                     <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
@@ -135,8 +144,9 @@
                 </td>
             </tr>
             <tr>
-                <td><img src="Imagenes/GuanteRojo.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Guantes rojos</td>
+                <td><img src="Imagenes/CintaBlanca.jpg" alt="" style="width:50px; height:auto;"></td>
+                
+                <td>Cinta Blanca</td>
                 <td>
                      <div class="dropdown" runat="server" id="div7">
                                  <asp:DropDownList ID="DropDownList7"   class="btn btn-default dropdown-toggle"  runat="server" >
@@ -150,7 +160,7 @@
                                  </div> 
 
                 </td>
-                <td>5000</td>
+                <td>400</td>
                 <td>
                     <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"> </a>
                     <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
@@ -222,7 +232,7 @@
 <!--MODAL DE PAGO-->
     <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="submit" data-toggle="modal" data-target="#modal-info"">Pagar</button>
+         <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-info"">Pagar</button>
           &nbsp;&nbsp
          
     </div>
@@ -342,8 +352,8 @@
 
          <div class="form-group">
 		    <div class="box-footer">
-				<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="submit" >Registrar</button>
-                <a class="btn btn-default" href="ListarUsuarios.aspx">Cancelar</a>
+				<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>
+                <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
 
@@ -456,6 +466,7 @@
                             $('#<%=Boton1.ClientID %>').attr("disabled", false);
                         }
         }
+
     </script>
 						</div>
 					</div>
@@ -480,7 +491,6 @@
                         req = $(this).parent().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
                         $(this).parent().removeClass('selected');
-
                     }
                     else {
                         req = $(this).parent().prev().prev().prev().text();
@@ -488,7 +498,6 @@
                         table.$('tr.selected').removeClass('selected');
                         $(this).parent().addClass('selected');
                     }
-
                 });
 
                 $('#modal-delete').on('show.bs.modal', function (event) {
@@ -499,9 +508,9 @@
                 $('#btn-eliminar').on('click', function () {
                     table.row(tr).remove().draw();//se elimina la fila de la tabla
                     $('#modal-delete').modal('hide');//se esconde el modal
-                    
+                    $('#prueba').show();//Muestra el mensaje de borrado exitosamente
                 });
-              
+
 
            });
 
