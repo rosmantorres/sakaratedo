@@ -156,7 +156,7 @@
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_Inicio.aspx">
+  <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_EstadisticaEntrenamiento.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
