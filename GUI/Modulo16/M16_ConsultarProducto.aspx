@@ -24,6 +24,11 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
+            El Articulo Deportivo se ha Agregado Exitosamente al Carrito.
+        </div>
+
      <div class="box-body table-responsive">
 
          <!--MODAL PARA EL DETALLE-->
@@ -110,7 +115,7 @@
                                 <br />
                                 <form runat="server" class="form-horizontal" method="POST">
                                      <div class="dropdown" runat="server" id="div1">
-                                     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"  runat="server" >
+                                     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"  onchange="funcionCantidadObjetos(this.id);"  runat="server" >
                                          <asp:ListItem Enabled="true" Text="Cantidad" Value="-1"></asp:ListItem>
                                          <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                          <asp:ListItem Text="2" Value="2"></asp:ListItem>
@@ -129,7 +134,7 @@
 								    </p>
 								    <div class="form-group">
 		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="submit"  onclick="M16_VerCarrito.aspx" >Agregar al Carrito</button>
+				                            <button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info1').modal('hide'); $('#prueba').show();" >Agregar al Carrito</button>
                                             <a class="btn btn-default" href="M16_ConsultarProducto.aspx">Cancelar</a>
 			                            </div>
 	                                </div>
@@ -147,17 +152,7 @@
 
      <!--VALIDACION PARA MODAL -->
     <script src="js/Validacion.js"></script>
-    <script>
 
-        function ver() {
-            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
-
-                $('#<%=Boton1.ClientID %>').attr("disabled", "disabled");
-            }
-        }
-    </script>
-
-         
          <script type="text/javascript">
              $(document).ready(function () {
 
@@ -193,9 +188,24 @@
                  $('#btn-eliminar').on('click', function () {
                      table.row(tr).remove().draw();//se elimina la fila de la tabla
                      $('#modal-delete').modal('hide');//se esconde el modal
+                     $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
              });
+
+
+             function funcionCantidadObjetos(param) {
+
+                 
+
+                 if ($('#<%=DropDownList1.ClientID %>').val() != -1) {
+
+                     $('#<%=Boton1.ClientID %>').attr("disabled", false);
+                 }
+                 else     
+                 $('#<%=Boton1.ClientID %>').attr("disabled", "disabled");
+             }
+
         </script>
 
 </asp:Content>
