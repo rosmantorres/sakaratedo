@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_RegistrarKata.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_RegistrarKata" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_AgregarResultadoCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_RegistrarResultadoCompetencia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
@@ -13,14 +13,24 @@
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
-   <h3 class="box-title">Agregar Resultados Kata</h3>
+   <h3 class="box-title">Agregar Resultado</h3>
 </div>
 <!-- /.box-header -->
 <!-- form start -->
 <form role="form" name="agregar_asistencia" id="agregar_asistencia" method="post" action="#">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
+   
+    <!--Date picker FECHA-->
+    <div class="form-group col-sm-10 col-md-10 col-lg-10">
+        <br />
+        <h3>Fecha del Evento:</h3>
+        <div class="input-group input-append date" id="datePicker">
+        <input type="text" class="form-control" name="date" />
+        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+        </div>
+    </div>
 
-    <!--COMBO CATEGORIA-->
+    <!--COMBO EVENTO-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
