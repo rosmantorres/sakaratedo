@@ -377,7 +377,6 @@ Gestion de Inventario
                                 <p id="dojo_articulo"> Dojo :</p>
                                 <p id="cantidad_articulo"> Cantidad :</p>
                                 <p id="stock_minimo_articulo">Stock Mínimo :</p>
-                                <p id="estatus_articulo">Stock Mínimo :</p>
                                 <p id="precio_articulo"> Precio Bs :</p>
                                 <p id="monto_total_articulo"> Monto Total Bs :</p> 
                                 <p id="proveedor_articulo">Proveedor :</p>
