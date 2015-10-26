@@ -14,12 +14,5 @@
 
              <img src="Imagenes/reportes.jpg" width="370" height="229" />
 
-<<<<<<< HEAD
-
-
-
-
-             <img src="Imagenes/reportes.jpg" width="370" height="229" />
-=======
->>>>>>> 8d0fc31cda212d146dea093e7c18e1db93a9ab2b
+           
     </asp:Content>

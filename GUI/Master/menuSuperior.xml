@@ -11,7 +11,7 @@
 
   <opcion rol="Sistema-Organizacion-Dojo" nombre="Dojo">
     <subopcion rol="Sistema-Organizacion" nombre="Gestión de Dojos" link="~/GUI/Modulo4/M4_ListarDojos.aspx"/>
-    <subopcion rol="Sistema-Dojo" nombre="Reportes de Dojo" link="#"/>
+    <subopcion rol="Sistema-Dojo" nombre="Reportes de Dojo" link="~/GUI/Modulo13/M13_Inicio.aspx"/>
   </opcion>
 
   <opcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Usuarios">
