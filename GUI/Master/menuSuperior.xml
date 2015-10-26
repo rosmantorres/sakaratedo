@@ -14,11 +14,11 @@
     <subopcion rol="Sistema-Dojo" nombre="Reportes de Dojo" link="#"/>
   </opcion>
 
-  <opcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Usuarios">
+  <opcion rol="Sistema-Dojo-Entrenador" nombre="Usuarios">
     <subopcion rol="Sistema-Dojo-Entrenador" nombre="Atletas" link="#"/>
     <subopcion rol="Sistema-Dojo-Entrenador" nombre="Consulta Atletas" link="~/GUI/Modulo7/M7_ListarOrganizacionYDojo.aspx"/>
-    <subopcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Representantes" link="#"/>
-    <subopcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Contactos" link="#"/>
+    <subopcion rol="Sistema-Dojo" nombre="Gestión de Usuarios" link="~/GUI/Modulo6/M6_ListaUsuarios.aspx"/>
+    <subopcion rol="Sistema-Dojo" nombre="Solicitudes" link="~/GUI/Modulo6/M6_procesarSolicitud.aspx"/>
   </opcion>
 
   <opcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Eventos">
