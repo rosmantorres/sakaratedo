@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Entrenadorn el rol se colocara los distintos roles que pueden observar cada opcion separados con un guión-->
 <menusuperior>
-  
+
   <opcion rol="Sistema-Organizacion" nombre="Organizaciones">
     <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx"/>
     <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="~/GUI/Modulo5/M5_ListarCintas.aspx"/>
