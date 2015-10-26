@@ -24,9 +24,22 @@
 
   <!--OPCIONES DE MODULO 3-->
 
-  <opcion nombre="" link="~/GUI/Modulo3/">
+  <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
+
+  <opcion nombre="Consultar Organizacion" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx">
+    <modulo id="3"></modulo>
+  </opcion>
+
+  <opcion nombre="Eliminar Organizacion" link="~/GUI/Modulo3/M3_EliminarOrganizacion.aspx">
+    <modulo id="3"></modulo>
+  </opcion>
+
+  <opcion nombre="Modificar Organizacion" link="~/GUI/Modulo3/M3_ModificarOrganizacion.aspx">
+    <modulo id="3"></modulo>
+  </opcion>
+
 
   <!--FIN OPCIONES MODULO 3-->
 
@@ -44,9 +57,18 @@
 
   <!--OPCIONES DE MODULO 5-->
 
-  <opcion nombre="" link="~/GUI/Modulo5/">
+  <opcion nombre="Listar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ListarCintas.aspx">
     <modulo id="5"></modulo>
   </opcion>
+
+  <opcion nombre="Modificar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ModificarCintas.aspx">
+    <modulo id="5"></modulo>
+  </opcion>
+
+  <opcion nombre="Crear Cintas por Organizacion" link="~/GUI/Modulo5/M5_CrearCintas.aspx">
+    <modulo id="5"></modulo>
+  </opcion>
+
 
   <!--FIN OPCIONES MODULO 5-->
 
