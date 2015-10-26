@@ -160,17 +160,13 @@
 
 
   <!--OPCIONES DE MODULO 12-->
-<<<<<<< HEAD
-
-  <opcion nombre="Listar Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
-=======
   
   <opcion nombre="Listar Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
     <modulo id="12"> </modulo>
   </opcion>
   
   <opcion nombre="Agregar Competencia" link="~/GUI/Modulo12/M12_AgregarCompetencias.aspx">
->>>>>>> refs/remotes/origin/master
+
     <modulo id="12"> </modulo>
   </opcion>
   
