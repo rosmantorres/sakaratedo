@@ -159,27 +159,18 @@
 
 
   <!--OPCIONES DE MODULO 13-->
-
+  
  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Kyu.aspx">
     <modulo id="13"></modulo>
   </opcion>
   
-   
-
-
-  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Kyu.aspx">
-    <modulo id="13"></modulo>
-  </opcion>
-
-  <opcion nombre="Listar Morosos" link="~/GUI/Modulo13/M13_ListarMorosos.aspx">
-
+   <opcion nombre="Listar Morosos" link="~/GUI/Modulo13/M13_ListarMorosos.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
   <opcion nombre="Dojos Asociados" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
-
   
   <opcion nombre="Asistencia a Evento" link="~/GUI/Modulo13/M13_Asistencia_Evento.aspx">
     <modulo id="13"></modulo>
@@ -198,46 +189,16 @@
   </opcion>
     
     <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_EstadisticaEntrenamiento.aspx">
-
-
-  <opcion nombre="Asistencia a Evento" link="~/GUI/Modulo13/M13_Asistencia_Evento.aspx">
-    <modulo id="13"></modulo>
-  </opcion>
-
-  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Inicio.aspx">
-    <modulo id="13"></modulo>
-  </opcion>
-
-  <opcion nombre="Programa técnico del Kyu" link="~/GUI/Modulo13/M13_KyuPrograma.aspx">
-    <modulo id="13"></modulo>
-  </opcion>
-
-  <opcion nombre="Asistencia a las Practicas" link="~/GUI/Modulo13/M13_Inicio.aspx">
-    <modulo id="13"></modulo>
-  </opcion>
-
-  <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_EstadisticaEntrenamiento.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="13"></modulo>
   </opcion>
   <opcion nombre="Planilla de Evaluación para Kyu" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
-
   </opcion>  
 
   <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion> 
   
-=======
-  </opcion>
-
-  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inicio.aspx">
-    <modulo id="13"></modulo>
-  </opcion>
-
-
->>>>>>> refs/remotes/origin/master
   <!--FIN OPCIONES MODULO 13-->
 
 
@@ -272,10 +233,7 @@
 
   <!--OPCIONES DE MODULO 15-->
   
-  <opcion nombre="Agregar Implemento" link="~/GUI/Modulo15/M15_AgregarImplemento.aspx">
-    <modulo id="15"></modulo>
-  </opcion>
-  <opcion nombre="Consultar Implemento" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx">
+  <opcion nombre="" link="~/GUI/Modulo15/">
     <modulo id="15"></modulo>
   </opcion>
   
