@@ -151,7 +151,9 @@
     <Content Include="dist\img\Dojo2.jpg" />
     <Content Include="dist\img\logofinal.png" />
     <Content Include="dist\img\Texture_Dark.jpg" />
-    <Content Include="GUI\Master\menuLateral.xml" />
+    <Content Include="GUI\Master\menuLateral.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="GUI\Master\menuSuperior.xml">
       <SubType>Designer</SubType>
     </Content>
