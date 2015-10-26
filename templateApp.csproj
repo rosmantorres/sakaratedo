@@ -156,6 +156,7 @@
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
+    <Content Include="GUI\Modulo13\Estilo\tournaments.css" />
     <Content Include="GUI\Modulo13\Fotos-Atletas\1.jpg" />
     <Content Include="GUI\Modulo13\Fotos-Atletas\2.jpg" />
     <Content Include="GUI\Modulo13\Fotos-Atletas\3.jpg" />
@@ -164,6 +165,9 @@
     <Content Include="GUI\Modulo13\Fotos-Atletas\5813.jpg" />
     <Content Include="GUI\Modulo13\Fotos-Atletas\6.jpg" />
     <Content Include="GUI\Modulo13\Fotos-Atletas\7.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\AlejandroGonzalez.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\EduardoSchwank.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\Venezuela.png" />
     <Content Include="GUI\Modulo13\Imagenes\ven.png" />
     <Content Include="GUI\Modulo13\Imagenes\reportes.jpg" />
     <Content Include="GUI\Modulo13\Kyu-imagenes\amarilla.jpg" />
