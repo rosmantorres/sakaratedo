@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ModificaDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ModificaDojo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-      <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
-      <script src="M4_js/M4_JSGoogleMaps.js"></script>
-      <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
-      <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="M4_js/M4_JSGoogleMaps.js"></script>
+    <script src="M4_js/M4_Alert.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>
 
@@ -34,9 +35,9 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Dojos
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Dojo
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
@@ -63,17 +64,17 @@
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre Del Dojo:</b></p>
-                      <input type="text" name="nombreDojo" id="nombreDojo" placeholder="Nombre" class="form-control" value="Dojo1">
+                      <input type="text" name="nombreDojo" id="nombreDojo" placeholder="Nombre" class="form-control" value="Aikido">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Número Telefónico:</b></p>
-                      <input type="text" name="numeroDojo" id="numeroDojo" placeholder="Número" class="form-control" value="0212-4567899">
+                      <input type="text" name="numeroDojo" id="numeroDojo" placeholder="Número" class="form-control" value="55-4567899">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Email:</b></p>
-                      <input type="email" name="emailDojo" id="emailDojo" placeholder="Email" class="form-control" value="Dojo1@gmail.com">
+                      <input type="email" name="emailDojo" id="emailDojo" placeholder="Email" class="form-control" value="Aikido@Dojo.com">
                     </div>
                       <br/>
                   <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
@@ -83,7 +84,7 @@
                       <div class="col-sm-8 col-md-8 col-lg-8" >
                          <div class="btn-group">
                             <button id="pais" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            País 3<span class="caret"></span>
+                            Brasil<span class="caret"></span>
                             </button>
                             <ol id="dp4" class="dropdown-menu" role="menu"  onclick="cargarestado();">
                                <li value="1"><a href="#">País 1</a></li>
@@ -103,7 +104,7 @@
                       <div class="col-sm-8 col-md-8 col-lg-8" >
                          <div class="btn-group">
                             <button id="estado" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Estado 2<span class="caret"></span>
+                            Río de Janeiro<span class="caret"></span>
                             </button>
                             <ol id="dp5" class="dropdown-menu" role="menu"  onclick="cargarciudad();">
                                <li value="1"><a href="#">Estado 1</a></li>
@@ -121,7 +122,7 @@
                       <div class="col-sm-8 col-md-8 col-lg-8" >
                          <div class="btn-group">
                             <button id="ciudad" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Ciudad 1<span class="caret"></span>
+                            Río de Janeiro<span class="caret"></span>
                             </button>
                             <ol id="dp6" class="dropdown-menu" role="menu">
                                <li value="1"><a href="#">Ciudad 1</a></li>
@@ -132,18 +133,19 @@
                          </div>
                       </div>
                   </div>
-                <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dirección:</b></p>
-                    <div id="googleMap" style="width:500px;height:250px;"></div><br/>
-                       </div>
+                      <div id="googleMap" style="width:500px;height:250px;"></div><br/>
+                    </div>
                       <br/>
+                      
                 <div class="form-group">
                     <div class="col-sm-10 col-md-10 col-lg-10">
                         <p><b>Modificar Administrador:</b></p>
                         <label class="radio-inline">
-                        <input type="radio" name="radioTipo" checked="checked" id="input_nuevo"  onclick="return fillCodigoTextField();"/>Nuevo</label>
+                        <input type="radio" name="radioTipo"  id="input_nuevo"  onclick="return fillCodigoTextField();"/>Nuevo</label>
                         <label class="radio-inline">
-                        <input type="radio" name="radioTipo" id="input_existente" onclick="return fillCodigoTextField();" />Existente</label>
+                        <input type="radio" name="radioTipo" checked="checked" id="input_existente" onclick="return fillCodigoTextField();" />Existente</label>
                     </div>
                 </div>
                    <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -162,7 +164,7 @@
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
+                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="alertModificarDojo();">Modificar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                   </div>

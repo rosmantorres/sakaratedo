@@ -3,6 +3,7 @@
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="M4_js/M4_JSGoogleMaps.js"></script>
+    <script src="M4_js/M4_Alert.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>
@@ -29,7 +30,7 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Dojos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Dojo
 </asp:Content>
@@ -131,15 +132,7 @@
                       <div id="googleMap" style="width:500px;height:250px;"></div><br/>
                     </div>
                       <br/>
-                <div class="form-group">
-                    <div class="col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Asignar Administrador:</b></p>
-                        <label class="radio-inline">
-                        <input type="radio" name="radioTipo" checked="checked" id="input_nuevo"  onclick="return fillCodigoTextField();"/>Nuevo</label>
-                        <label class="radio-inline">
-                        <input type="radio" name="radioTipo" id="input_existente" onclick="return fillCodigoTextField();" />Existente</label>
-                    </div>
-                </div>
+             
                    <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Estilo:</b></p>
                       <input type="text" name="estiloDojo" id="estiloDojo" class="form-control" readonly="readonly" value="Estilo 1">
@@ -155,13 +148,15 @@
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();" data-target="#modal-agregar">Agregar</button>
+                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" 
+                        onclick="alertAgregarDojo();">Agregar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                   </div>
-
+                                   
                 </form>
               </div>
+ 
     
     
     <!-- /.box -->
