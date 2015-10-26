@@ -120,7 +120,7 @@
   <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
-  <opcion nombre="Gestión de Competencias"link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
+  <opcion nombre="Gestión de Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
     <modulo id="9"> </modulo>
   </opcion>
 
