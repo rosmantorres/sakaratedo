@@ -22,7 +22,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                <section class="login-form">
-                  <form  role="login" id="loginUser" runat="server">
+                  <form  method="post" action="#" role="login" id="loginUser" runat="server">
                      <img src="../../dist/img/logofinal.png" class="img-responsive" alt=""/>
                      <div>
                         <h1 >SA-KARATEDO</h1>

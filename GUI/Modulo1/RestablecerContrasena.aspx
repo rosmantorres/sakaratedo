@@ -21,7 +21,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                <section class="login-form">
-                  <form  role="login" id="loginUser" runat="server">
+                  <form method="post"  role="login" id="loginUser" href="#">
                                       
                             <img src="../../dist/img/logofinal.png" class="img-responsive" alt=""/>
                           
@@ -34,14 +34,11 @@
                          <strong>una(1) letra minuscula</strong> y <strong>un(1) numero.</strong>
                        </div>
                     <hr />
-                      <div>
-                         <input type="password" title="Al menos ocho caracteres, una letra mayúscula, una letra minúscula y un número" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="input-lg form-control" name="password1" onchange="form.password2.pattern = this.value;" id="password3" placeholder="Contraseña nueva" autocomplete="off"/>
-                         <input type="password" title="Las contraseñas introducidas no coinciden" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control input-lg" name="password2" id="password4" placeholder="Repetir Contraseña" required="" />
-                         <div class="pwstrength_viewport_progress"></div>
-                         <button type="button"  id="buttonReset" class="btn btn-lg btn-primary btn-block" runat="server" onserverclick="redireccionarIncio"> Restablecer</button>
-                     </div>
-
-                  </form>  
+                      <input type="password" title="Al menos ocho caracteres, una letra mayúscula, una letra minúscula y un número" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="input-lg form-control" name="password1" onchange="form.password2.pattern = this.value;" id="password3" placeholder="Contraseña nueva" autocomplete="off"/>
+                     <input type="password" title="Las contraseñas introducidas no coinciden" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control input-lg" name="password2" id="password4" placeholder="Repetir Contraseña" required="" />
+                     <div class="pwstrength_viewport_progress"></div>
+                     <button type="submit" name="go" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Restablecer</button>
+                    </form>  
                 </section>
             </div>
             <div class="col-md-4"></div>
