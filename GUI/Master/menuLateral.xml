@@ -63,8 +63,11 @@
 
 
   <!--OPCIONES DE MODULO 6-->
-  
-  <opcion nombre="" link="~/GUI/Modulo6/">
+
+  <opcion nombre="Gestion de Usuarios" link="~/GUI/Modulo6/M6_ListaUsuarios.aspx">
+    <modulo id="6"></modulo>
+  </opcion>
+  <opcion nombre="Solicitudes de Inscripcion" link="~/GUI/Modulo6/M6_procesarSolicitud.aspx">
     <modulo id="6"></modulo>
   </opcion>
   
