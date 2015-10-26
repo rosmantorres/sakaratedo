@@ -114,7 +114,8 @@
 
   <!--OPCIONES DE MODULO 9-->
   
-  <opcion nombre="Gestión de Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
+
+  <opcion nombre="Gestionar Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
   <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
