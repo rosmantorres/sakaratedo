@@ -72,62 +72,30 @@
    
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Organizaciones<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Organizaciones Mundiales</a></li>
-                                <li><a href="#">Cintas por Organización</a></li>
-                                <li><a href="#">Restricciones de Cintas y Eventos</a></li>
-                            </ul>
-					    </li>
+               <%-- <li class="header">MAIN NAVIGATION</li>--%>           
 
-                <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dojo<span class="caret"></span></a>
+            <% foreach (KeyValuePair<string, string[,]> opcion in SubOpcionesDelMenu) %>
+						<% { %>
+                            <li class="dropdown">
+                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%=opcion.Key%><span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Administración de Dojo</a></li>
-                                <li><a href="#">Reportes de Dojo</a></li>
-                            </ul>
-					    </li>
-                 <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Atletas</a></li>
-                                <li><a href="#">Consulta Atletas</a></li>
-                                <li><a href="#">Representantes</a></li>
-                                <li><a href="#">Contactos</a></li>
-                            </ul>
-					    </li>
-                
-                <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Eventos<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Eventos y Competencias</a></li>
-                                <li><a href="#">Asistencia a Eventos</a></li>
-                                <li><a href="#">Resultados de Competencias</a></li>
-                             
-                            </ul>
-					    </li>
-
-                 <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mercancía<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Inventario</a></li>
-                            </ul>
-					    </li>
-
-                 <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Planillas<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Gestión De Planillas</a></li>
-                            </ul>
-					    </li>
+                                <%for (int i = 0; i < opcion.Value.GetLength(1); i++) %>
+                                <%{
+                                      if (opcion.Value[1, i] != null)
+                                      { %>
+							             <li><a href="<%=Page.ResolveUrl(opcion.Value[1, i]) %>"><%= opcion.Value[0, i]%></a></li>
+                                <%}
+                                  } %>
+                                 </ul>
+					         </li>
+						<% } %> 
  <li class="dropdown">
                             
-                <a href="M16_VerCarrito.aspx" class="logo" style="background-color:#080B0C">
+                <a href="M16_VerCarrito.aspx" class="logo" style="background-color:#080B0C; width:auto;">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>SKD</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="/dist/img/carrito3.png" style="max-width:40px;margin-top:3px;margin-left:0px" class="pull-left" /> </span>
+          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="/dist/img/carrito3.png" style="max-width:25px; height:25px; margin-top:10px;margin-left:0px" class="pull-left" /> </span>
         </a>
                            
 					    </li>
@@ -159,25 +127,42 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs" id="userName" runat="server">Alexander Pierce</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    <p>
+                    <p runat="server" id="userTag">
                       Alexander Pierce - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
+                    <!-- Menu Body -->
+                     <li class="user-body">
+                          <p>Roles</p>
+                          <hr />
+                            <ul class="nav nav-pills">
+                              <li role="presentation" class="active"><a ><%=Session["rol"] %></a></li>
+                                        <% foreach (string opcion in RolesUsuario) %>
+						                    <% { %>
+                                                <%if ((opcion != null) && (opcion != Session["rol"].ToString()))%>
+                                                 <% { %>
+							                    <li role="presentation"><a href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol="+opcion) %>" class="rolButton"><%=opcion %></a></li>
+						                         <% }%>
+                                             <% } %> 
+                            </ul> 
+                    </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
+                      <form id="Form1" runat="server">
+                        <div id="Div1" class="pull-right" runat="server">
+                          <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
+                        </div>
+                    </form>
                   </li>
                 </ul>
               </li>
@@ -219,7 +204,7 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-
+            <asp:ContentPlaceHolder runat="server" ID="breads">Breadcrumbs</asp:ContentPlaceHolder>
             <h1 class="page-header">
                <asp:ContentPlaceHolder runat="server" ID="titulo">Título</asp:ContentPlaceHolder>
                 <br />
