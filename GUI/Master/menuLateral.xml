@@ -114,10 +114,18 @@
 
   <!--OPCIONES DE MODULO 9-->
   
-  <opcion nombre="" link="~/GUI/Modulo9/">
+  <opcion nombre="Gestion de Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
+  <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEvento.aspx">
+    <modulo id="9"></modulo>
+  </opcion>
+  <opcion nombre="Gestion de Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
+    <modulo id="9"></modulo>
+  </opcion>
+
   
+
   <!--FIN OPCIONES MODULO 9-->
 
 
