@@ -81,9 +81,29 @@
 
 
   <!--OPCIONES DE MODULO 8-->
-  
-  <opcion nombre="" link="~/GUI/Modulo8/">
-    <modulo id="8"></modulo>
+
+  <opcion nombre="Gestión de Rest. de Horarios" link="~/GUI/Modulo8/interfazRestriccionesHorario.aspx">
+    <modulo id="8.0"></modulo>
+  </opcion>
+
+  <opcion nombre="Gestión de Rest. de Eventos" link="~/GUI/Modulo8/interfazRestriccionesEventos.aspx">
+    <modulo id="8.0"></modulo>
+  </opcion>
+
+  <opcion nombre="Gestión de Rest. de Cintas" link="~/GUI/Modulo8/interfazRestriccionesAvanceCinta.aspx">
+    <modulo id="8.0"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Horario" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
+    <modulo id="8.1"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
+    <modulo id="8.2"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Avance de Cinta" link="~/GUI/Modulo8/interfazCrearRestriccionAvanceCinta.aspx">
+    <modulo id="8.3"></modulo>
   </opcion>
   
   <!--FIN OPCIONES MODULO 8-->
