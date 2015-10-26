@@ -198,7 +198,10 @@
 
   <!--OPCIONES DE MODULO 15-->
 
-  <opcion nombre="" link="~/GUI/Modulo15/">
+  <opcion nombre="Agregar Implemento" link="~/GUI/Modulo15/M15_AgregarImplemento.aspx">
+    <modulo id="15"></modulo>
+  </opcion>
+  <opcion nombre="Consultar Implemento" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx">
     <modulo id="15"></modulo>
   </opcion>
 
