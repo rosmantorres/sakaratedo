@@ -171,6 +171,8 @@
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
     <Content Include="GUI\Modulo3\M3_Prueba.aspx" />
+    <Content Include="GUI\Modulo4\M4_js\M4_JSGoogleMaps.js" />
+    <Content Include="GUI\Modulo4\M4_js\M4_TablaDojos_Accion.js" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />

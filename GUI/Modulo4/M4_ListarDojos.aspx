@@ -1,43 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
-
+    <script src="M4_js/M4_JSGoogleMaps.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-<script type="text/javascript">
-    function initialize() {
-        var latlng = new google.maps.LatLng(51.508742, -0.120850);
-        var mapProp = {
-            center: latlng,
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var contentString = '<div id="content">' +
-                                '<div id="siteNotice">' +
-                                    '</div>' +
-      '<h1 id="firstHeading" class="firstHeading">Título</h1>' +
-      '<div id="bodyContent">' +
-      '<p>  Cuerpo </p>' +
-      '<p>' +
-      '</p>' +
-      '</div>' +
-      '</div>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 150
-        });
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var point = new google.maps.LatLng(51.508742, -0.120850);
-        var marker = new google.maps.Marker({
-            position: point,
-            map: map,
-            title: 'Ubicación',
-        })
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
@@ -244,7 +211,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M4_ListarDojos.aspx?eliminacionSuccess=2">Eliminar</a>
+                <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
@@ -300,46 +267,7 @@
 			</div>
 		</div>
 
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#tabladojos').DataTable();
-
-                var table = $('#tabladojos').DataTable();
-                var dojo;
-                var tr;
-
-                $('#tabladojos tbody').on('click', 'a', function () {
-                    if ($(this).parent().hasClass('selected')) {
-                        dojo = $(this).parent().prev().prev().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        $(this).parent().removeClass('selected');
-
-                    }
-                    else {
-                        dojo = $(this).parent().prev().prev().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        table.$('tr.selected').removeClass('selected');
-                        $(this).parent().addClass('selected');
-                    }
-                });
-
-
-
-                $('#modal-delete').on('show.bs.modal', function (event) {
-                    var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar Dojo:  ' + dojo)
-                    modal.find('#dojo').text(dojo)
-                })
-                $('#btn-eliminar').on('click', function () {
-                    table.row(tr).remove().draw();//se elimina la fila de la tabla
-                    $('#modal-delete').modal('hide');//se esconde el modal
-                });
-
-
-            });
-
-        </script> 
-     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+    <script src="M4_js/M4_TablaDojos_Accion.js"></script>
+      
 
 </asp:Content>

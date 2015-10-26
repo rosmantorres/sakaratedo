@@ -1,43 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_AgregarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_AgregarDojo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
-
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-<script type="text/javascript">
-    function initialize() {
-        var latlng = new google.maps.LatLng(51.508742, -0.120850);
-        var mapProp = {
-            center: latlng,
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var contentString = '<div id="content">' +
-                                '<div id="siteNotice">' +
-                                    '</div>' +
-      '<h1 id="firstHeading" class="firstHeading">Título</h1>' +
-      '<div id="bodyContent">' +
-      '<p>  Cuerpo </p>' +
-      '<p>' +
-      '</p>' +
-      '</div>' +
-      '</div>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 150
-        });
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var point = new google.maps.LatLng(51.508742, -0.120850);
-        var marker = new google.maps.Marker({
-            position: point,
-            map: map,
-            title: 'Ubicación',
-        })
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+    <script src="M4_js/M4_JSGoogleMaps.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
@@ -76,7 +42,7 @@
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" name="agregar_dojo" id="agregar_dojo" method="post" action="M4_ListarDojos.aspx?success=1">
+                <form role="form" name="agregar_dojo" id="agregar_dojo" method="post" action="../Modulo6/M6_NuevoAdmin.aspx">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                       
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -189,14 +155,14 @@
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();">Agregar</button>
+                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="return checkform();" data-target="#modal-agregar">Agregar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                   </div>
 
                 </form>
               </div>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+    
     
     <!-- /.box -->
 </asp:Content>
