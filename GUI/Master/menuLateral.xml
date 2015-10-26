@@ -2,19 +2,8 @@
 <menuLateral>
   <!-- OPCIONES DE CADA MODULO -->
 
-  <!--OPCIONES DE PANTALLA EJEMPLO-->
-  
-  <opcion nombre="Funcionalidad 0" link="~/GUI/Master/Inicio.aspx">
-    <modulo id="0"></modulo>
-  </opcion>
-  
-    <opcion nombre="Funcionalidad 1" link="~/GUI/Master/Inicio.aspx">
-    <modulo id="0"></modulo>
-  </opcion>
-
   <!--FIN OPCIONES DE PANTALLA EJEMPLO-->
-  
-  
+   
   <!--OPCIONES DE MODULO 1-->
   
   <opcion nombre="" link="~/GUI/Modulo1/">
