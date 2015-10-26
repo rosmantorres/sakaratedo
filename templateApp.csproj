@@ -164,7 +164,16 @@
     <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
-    <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
+    <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
+    <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
+    <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
+    <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
+    <Content Include="GUI\Modulo13\M13_Kyu.aspx" />
+    <Content Include="GUI\Modulo13\M13_KyuPrograma.aspx" />
+    <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
+    <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
+    <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
+    <Content Include="GUI\Modulo13\templateApp.csproj" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
     <Content Include="GUI\Modulo15\WebForm1.aspx" />
@@ -1086,12 +1095,41 @@
     <Compile Include="GUI\Modulo12\M12_ModificarCompetencias.aspx.designer.cs">
       <DependentUpon>M12_ModificarCompetencias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo13\M13_Prueba.aspx.cs">
-      <DependentUpon>M13_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.cs">
+      <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo13\M13_Prueba.aspx.designer.cs">
-      <DependentUpon>M13_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.designer.cs">
+      <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.cs">
+      <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
+      <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Inicio.aspx.cs">
+      <DependentUpon>M13_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Inicio.aspx.designer.cs">
+      <DependentUpon>M13_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.cs">
+      <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.designer.cs">
+      <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
+      <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.designer.cs">
+      <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.cs">
+      <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
+      <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>
