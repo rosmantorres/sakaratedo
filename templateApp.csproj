@@ -149,6 +149,14 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
+<<<<<<< HEAD
+=======
+    <Content Include="dist\css\inicio.css" />
+    <Content Include="dist\img\Dojo1.jpg" />
+    <Content Include="dist\img\Dojo2.jpg" />
+    <Content Include="dist\img\fondo_inicio.jpg" />
+    <Content Include="dist\img\logo-wkf.png" />
+>>>>>>> refs/remotes/origin/master
     <Content Include="dist\img\logofinal.png" />
     <Content Include="GUI\Master\menuLateral.xml">
       <SubType>Designer</SubType>
