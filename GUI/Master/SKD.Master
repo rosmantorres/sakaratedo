@@ -9,6 +9,8 @@
     <title>SAKARATEDO | Home Page</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Css de pagina inicial -->
+    <link rel="stylesheet" href="../../dist/css/inicio.css" rel="stylesheet" />
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -189,7 +191,7 @@
 
           </ul>
           <ul class="sidebar-menu">
-
+          <div class="anuncio">Elige una opción del menu superior <br /> para poder tener acceso a todo <br /> lo que SA-Karatedo te ofrece</div>
 
            <%-- <li class="header">MAIN NAVIGATION</li>--%>           
 
@@ -205,25 +207,25 @@
      
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <asp:ContentPlaceHolder runat="server" ID="breads">Breadcrumbs</asp:ContentPlaceHolder>
-            <h1 class="page-header">
-               <asp:ContentPlaceHolder runat="server" ID="titulo">Título</asp:ContentPlaceHolder>
-                <br />
-                  <small> 
-                  <asp:ContentPlaceHolder runat="server" ID="subtitulo">Subtítulo</asp:ContentPlaceHolder>
-                  </small>
-			</h1>
-
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-
-                    <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
-
-        </section><!-- /.content -->
+              <!-- Main content -->
+      <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
+       <div class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">SA-KARATEDO</h1>
+                        <p class="intro-text">Bienvenido a tu cuenta de SA-Karatedo<br></p>
+                        <p class="Contenido">El Karate-Do (“Camino de la mano vacía”, Kara: Vacía, Te: mano, Do: Camino.) es un arte marcial tradicional originario de la Isla de Okinawa, conocida como islas RyuKyu de Japón. Este deporte es practicado en todo el mundo y está dirigido por la Federación Mundial de Karate (WKF, World Karate Federation).</p>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          <div class="logoFederacion">
+              <a href="http://www.wkf.net/"><img src="../../dist/img/logo-wkf.png"  alt="WKF"  longdesc="Federacion Mundial de Karate" height:"110" width="150"/></a>
+          </div>
       </div><!-- /.content-wrapper -->
 
       <footer class="main-footer">
