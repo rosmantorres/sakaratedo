@@ -9,6 +9,32 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Asistencias a Eventos</asp:Content>
 
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Asistencia a Eventos</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Asistencia a Eventos</a> 
+		    </li>
+		
+		    <li class="active">
+			    Modificar Asitencia a Eventos
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+
+    </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 <!-- general form elements -->
 <div class="box box-primary">

@@ -6,6 +6,34 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Asistencia a Eventos
 </asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="breads" runat="server">
+
+    
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Asistencia a Eventos</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Asistencia a Eventos</a> 
+		    </li>
+		
+		    <li class="active">
+			    Listar Asitencia a Eventos
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+
+    </asp:Content>
+
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
     <div id="alert" runat="server">
