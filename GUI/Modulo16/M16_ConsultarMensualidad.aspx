@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarMensualidad.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarMensualidad" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<%--     <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
@@ -13,11 +13,11 @@
 		    </li>
 
             <li>
-			    <a href="#">Consultar Producto</a> 
+			    <a href="#">Consultar Mensualidad</a> 
 		    </li>
 		</ol>
     </div>
-</asp:Content>--%>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> Consulta de Mensualidades
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> Mensualidades en Existencia
