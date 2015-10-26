@@ -105,11 +105,11 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td class="id">Competencia 1</td>
+					<td class="id">Nacional Juvenil F.V.K.D.</td>
 					<td>Kata</td>
-					<td>Organización 1</td>
+					<td>Seito Yodan Ryu</td>
                     <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
+					<td>Seito Yodan Ryu</td>
                     <td>Por Iniciar</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -118,11 +118,11 @@
                      </td>
                 </tr>
                 <tr>
-					<td class="id">Competencia 2</td>
+					<td class="id">Ozawa Cup</td>
 					<td>Kata</td>
-					<td>Organización 1, Organización 2</td>
+					<td>Tensho, Kenshin Ryu Kobudo</td>
                     <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
+					<td>Kenshin Ryu Kobudo</td>
                     <td>Por Iniciar</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -131,11 +131,11 @@
                      </td>
                 </tr>
                 <tr>
-					<td class="id">Competencia 3</td>
+					<td class="id">Hayashi Ha</td>
 					<td>Kumite</td>
-					<td>Organización 1, Organización 3</td>
+					<td>Kihin, Doo Kan</td>
                     <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
+					<td>Doo Kan</td>
                     <td>Por Iniciar</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -157,11 +157,11 @@
                      </td>
                 </tr>
                 <tr>
-					<td class="id">Competencia 5</td>
+					<td class="id">Shin Kyoshi</td>
 					<td>Kata</td>
-					<td>Organización 1</td>
+					<td>Ryu Kobudo</td>
                     <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
+					<td>Cinta Purpura</td>
                     <td>Por Iniciar</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
@@ -170,11 +170,11 @@
                      </td>
                 </tr>
                 <tr>
-					<td class="id">Competencia 6</td>
+					<td class="id">Do Hombu</td>
 					<td>Kumite</td>
-					<td>Organización 3</td>
+					<td>Kenshin Ryu Kobudo</td>
                     <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
+					<td>Cinta Naranja Raya Verde</td>
                     <td>Por Iniciar</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
