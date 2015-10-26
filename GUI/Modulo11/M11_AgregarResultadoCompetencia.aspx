@@ -9,6 +9,31 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Resultados de Competencias</asp:Content>
 
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Resultados de Competencia</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Resultados de Competencia</a> 
+		    </li>
+		
+		    <li class="active">
+			    Agregar Resultados de Competencias
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+    </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 <!-- general form elements -->
 <div class="box box-primary">
@@ -57,10 +82,9 @@
             Seleccionar Especialidad <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-               <li><a href="#">Especialidad #1</a></li>
-               <li><a href="#">Especialidad #2</a></li>
-               <li><a href="#">Especialidad #3</a></li>
-               <li><a href="#">Especialidad #4</a></li>
+               <li><a href="#">Kata</a></li>
+               <li><a href="#">Kumite</a></li>
+         
           </ul>
         </div>
       </div>
@@ -87,7 +111,7 @@
     <!--DATATABLE ATLETAS-->
     <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>ATLETAS A COMPETIR:</h3>
+        <h3>Atletas a Competir:</h3>
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
@@ -101,50 +125,50 @@
 				<tr>
 					
 					<td>1</td>
-					<td>Atleta 1</td>
+					<td>Jorge Gomez</td>
 				
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarAscenso.aspx"></a>
                      </td>
                 </tr>
                 <tr>
                     
 					<td>2</td>
-					<td>Atleta 2</td>
+					<td>Eduardo Cruz</td>
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKata.aspx"></a>
                      </td>
 				</tr><tr>
                     
 					<td>3</td>
-					<td>Atleta 3</td>
+					<td>Romulo Betancourt</td>
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKumite.aspx"></a>
                      </td>
                 </tr>
                 <tr>
                     
 					<td>4</td>
-					<td>Atleta 4</td>
+					<td>Guillermo Perez</td>
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKumite.aspx"></a>
                      </td>
                 </tr>
                 <tr>
                 
 					<td>5</td>
-					<td>Atleta 5</td>
+					<td>Juan Bastidas</td>
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKata.aspx"></a>
                     </td>
                 </tr>
                
@@ -267,7 +291,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="return checkform();">Agregar</a>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
          <a class="btn btn-default"> Cancelar</a>
       </div>

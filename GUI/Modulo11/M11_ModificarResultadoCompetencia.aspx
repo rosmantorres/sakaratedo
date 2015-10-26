@@ -6,6 +6,30 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Resultados de Competencia
 </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Resultados de Competencia</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Resultados de Competencia</a> 
+		    </li>
+		
+		    <li class="active">
+			    Modificar Resultados de Competencia
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+    </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 <!-- general form elements -->
 <div class="box box-primary">
@@ -55,7 +79,7 @@
 
     <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>No Asistieron:</h3>
+        <h3>Atletas que compitieron:</h3>
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
@@ -74,7 +98,7 @@
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href=".../GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarAscenso.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -83,7 +107,7 @@
                      <td>20</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKata.aspx"></a>
                      </td>
 				</tr><tr>
                     <td class="id">3</td>
@@ -91,7 +115,7 @@
                      <td>36</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKumite.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -100,7 +124,7 @@
                      <td>5</td>		
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKumite.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -109,7 +133,7 @@
                     <td> 26</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKata.aspx"></a>
                     </td>
                 </tr>
 			    </tbody>
@@ -215,7 +239,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-modificarResul" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="return checkform();">Modificar</a>
+         <a id="btn-modificarResul" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx" onclick="">Aceptar</a>
          &nbsp;&nbsp
          <a class="btn btn-default"> Cancelar</a>
       </div>

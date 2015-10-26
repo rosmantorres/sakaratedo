@@ -9,6 +9,31 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Resultados de Competencias</asp:Content>
 
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Resultados de Competencia</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Resultados de Competencia</a> 
+		    </li>
+		
+		    <li class="active">
+			    Agregar Kata
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+    </asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 <!-- general form elements -->
 <div class="box box-primary">
@@ -100,7 +125,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="return checkform();">Agregar</a>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_AgregarResultadoCompetencia.aspx" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
          <a class="btn btn-default"> Cancelar</a>
       </div>

@@ -6,6 +6,31 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Resultados de Competencia
 </asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="breads" runat="server">
+
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="#">Resultados de Competencia</a> 
+		    </li>
+
+            <li>
+			    <a href="#">Gestión de Resultados de Competencia</a> 
+		    </li>
+		
+		    <li class="active">
+			    Listar Resultados de Competencias
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+    </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
     <div id="alert" runat="server">
@@ -38,7 +63,7 @@
 					
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href=".../GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -48,7 +73,7 @@
                     <td>09/04/2001</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx"></a>
                      </td>
 				</tr><tr>
                     <td class="id">3</td>
@@ -57,7 +82,7 @@
                     <td>14/10/2001</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -67,7 +92,7 @@
                     <td>01/01/2000</td>		
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="/GUI/Modulo10/M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx"></a>
                      </td>
                 </tr>
                 <tr>
@@ -77,7 +102,7 @@
                     <td>05/04/2001</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx"></a>
                     </td>
                 </tr>
 			    </tbody>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_AgregarKumite.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_AgregarKumite" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_ModificarKumite.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_ModificarKumite" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Resultados de Competencias</asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Resultados de Competencias</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Resultados de Competencias</asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 
@@ -27,7 +27,7 @@
 		    </li>
 		
 		    <li class="active">
-			    Agregar Kumite
+			    Modificar Kumite
 		    </li>
 	    </ol>
     </div>
@@ -38,11 +38,11 @@
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
-   <h3 class="box-title">Agregar Resultados Kumite</h3>
+   <h3 class="box-title">Modificar Resultados Kumite</h3>
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_asistencia" id="agregar_asistencia" method="post" action="#">
+<form role="form" name="modificar_kumite" id="modificar_kumite" method="post" action="#">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
 
     <!--COMBO ATLETA#1-->
@@ -101,7 +101,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_AgregarResultadoCompetencia.aspx" onclick="return checkform();">Agregar</a>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ModificarResultadoCompetencia.aspx" onclick="return checkform();">Modificar</a>
          &nbsp;&nbsp
          <a class="btn btn-default"> Cancelar</a>
       </div>
