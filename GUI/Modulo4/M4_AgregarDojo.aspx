@@ -139,6 +139,11 @@
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Reglamento Interno:</b></p>
+                      <textarea class="form-control" id="reglaDojo" name="reglaDojo" placeholder="1. Regla1"></textarea>
+                    </div>
+                      <br/>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Status:</b></p>
                      <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo">

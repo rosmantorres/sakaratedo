@@ -154,6 +154,14 @@
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Reglamento Interno:</b></p>
+                      <textarea class="form-control" id="reglaDojo" name="reglaDojo">1. Regla 1
+2. Regla 2
+3. Regla 3
+4. Regla 4</textarea>
+                    </div>
+                      <br/>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Status:</b></p>
                      <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo">

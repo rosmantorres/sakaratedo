@@ -30,7 +30,7 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Administración de Dojos
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Dojos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos
 </asp:Content>
@@ -231,18 +231,23 @@
 								<h3>Dojo</h3>
                                  <img src="Imagenes/Aikido.png" width="150" height="150" alt="">
 								
-                                        <h4>Rif</h4>
+                                        <h4><b>Rif</b></h4>
                                         <p>J-17280493-1</p>
-										<h4>Nombre</h4>
+										<h4><b>Nombre</b><h4>
                                          <p>Aikido</p>
-										<h4>Teléfono</h4>
+										<h4><b>Teléfono</b></h4>
                                          <p>55-4567899</p>
-                                        <h4>País</h4>
+                                        <h4><b>País</b></h4>
                                          <p>Brasil</p>
-                                        <h4>Estado</h4>
+                                        <h4><b>Estado</b></h4>
                                          <p>Río de Janeiro</p>
-                                        <h4>Ciudad</h4>
+                                        <h4><b>Ciudad</b></h4>
                                          <p>Río de Janeiro</p>
+                                        <h4><b>Reglamento Interno:</b></h4>
+                                         <p>1. Regla 1</p>
+                                         <p>2. Regla 2</p>
+                                         <p>3. Regla 3</p>
+                                         <p>4. Regla 4</p>
 								
 							</div>
 						</div>
