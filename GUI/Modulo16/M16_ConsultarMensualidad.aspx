@@ -111,7 +111,7 @@
                                     Cinta Blanca
                                 <br />
                                 
-                                <form runat="server" class="form-horizontal" method="POST">
+                                <form role="form" class="form-horizontal" method="POST">
 								    <h3>Descricion</h3>
 								    <p>
 									    Mensualidad pendiente por pagar en el mes de Marzo. Tiene la oportunidad de pagar hasta

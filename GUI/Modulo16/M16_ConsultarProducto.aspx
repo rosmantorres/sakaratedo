@@ -113,20 +113,25 @@
 								</p>
 								<h3>Cantidad disponible</h3>
                                 <br />
-                                <form runat="server" class="form-horizontal" method="POST">
-                                     <div class="dropdown" runat="server" id="div1">
-                                     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"  onchange="funcionCantidadObjetos(this.id);"  runat="server" >
-                                         <asp:ListItem Enabled="true" Text="Cantidad" Value="-1"></asp:ListItem>
-                                         <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                         <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                         <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                         <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                         <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                     </asp:DropDownList>
-                                     </div> 
-                               
+                                <form role="form" class="form-horizontal" method="POST">
+                                     <div class="col-sm-8 col-md-8 col-lg-8" >
+         <div class="btn-group">
             
-								    <h3>Detalles</h3>
+            <select ID="DropDownList1" class="combobox" style="width:80px; height:35px" runat="server" onchange="funcionCantidadObjetos(this.id);" >
+  <option value="-1">Cantidad</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+
+  </select>
+                
+         </div>
+      </div>
+                                    <br />
+                               
+            					    <h3>Detalles</h3>
 								    <p>
 									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
                                         golpes contra el contrincante o cuando se está practicando, con un diseño

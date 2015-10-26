@@ -37,7 +37,7 @@ namespace templateApp.GUI.Modulo16 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList3;
         
         /// <summary>
         /// div4 control.
@@ -55,7 +55,7 @@ namespace templateApp.GUI.Modulo16 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList4;
         
         /// <summary>
         /// div5 control.
@@ -73,7 +73,7 @@ namespace templateApp.GUI.Modulo16 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList5;
         
         /// <summary>
         /// div6 control.
@@ -91,7 +91,7 @@ namespace templateApp.GUI.Modulo16 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList6;
         
         /// <summary>
         /// div7 control.
@@ -109,7 +109,7 @@ namespace templateApp.GUI.Modulo16 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList7;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList7;
         
         /// <summary>
         /// alert_nombre control.
@@ -199,7 +199,7 @@ namespace templateApp.GUI.Modulo16 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList1;
         
         /// <summary>
         /// Text1 control.

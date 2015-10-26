@@ -34,7 +34,7 @@
         </div>
 <!--MODAL PARA EL DETALLE-->
      <!-- general form elements -->
-    <form runat="server" class="form-horizontal" method="POST">
+    <form role="form" class="form-horizontal" method="POST">
               
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -69,17 +69,33 @@
                 <td>
                      
                                  <div class="dropdown" runat="server" id="div3">
-                                 <asp:DropDownList ID="DropDownList3"   class="btn btn-default dropdown-toggle"  runat="server" >
+                                     </div>
+                                     <div class="col-sm-8 col-md-8 col-lg-8" >
+                                <div class="btn-group">
+            
+                                <select id="DropDownList3" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                  <option value="5">5</option>
+
+                                  </select>
+                
+                                         </div>
+                                      </div>
+                    </td>
+                                 <%-- <asp:DropDownList ID="DropDownList3"   class="btn btn-default dropdown-toggle"  runat="server" >
                                      
                                      <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                      <asp:ListItem Text="2" Value="2"></asp:ListItem>
                                      <asp:ListItem Text="3" Value="3"></asp:ListItem>
                                      <asp:ListItem Text="4" Value="4"></asp:ListItem>
                                      <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>
-                                 </div> 
-                                
-                </td>
+                                 </asp:DropDownList>--%>
+
+                 
+                
                 <td>5000</td>
                 <td>
                     <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
@@ -92,16 +108,29 @@
                 <td>
                      
                                  <div class="dropdown" runat="server" id="div4">
-                                 <asp:DropDownList ID="DropDownList4"   class="btn btn-default dropdown-toggle"  runat="server" >
+                                 <%-- <asp:DropDownList ID="DropDownList4"   class="btn btn-default dropdown-toggle"  runat="server" >
                                      
                                      <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                      <asp:ListItem Text="2" Value="2"></asp:ListItem>
                                      <asp:ListItem Text="3" Value="3"></asp:ListItem>
                                      <asp:ListItem Text="4" Value="4"></asp:ListItem>
                                      <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>
+                                 </asp:DropDownList>--%>
                                  </div> 
-                                
+                                  <div class="col-sm-8 col-md-8 col-lg-8" >
+                                <div class="btn-group">
+            
+                                <select id="DropDownList4" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                  <option value="5">5</option>
+
+                                  </select>
+                
+                                         </div>
+                                      </div>
 
                 </td>
                 <td>14000</td>
@@ -116,6 +145,8 @@
                 <td>
                     
                                  <div class="dropdown" runat="server" id="div5">
+                                     </div>
+                    <%-- 
                                  <asp:DropDownList ID="DropDownList5"   class="btn btn-default dropdown-toggle"  runat="server" >
                                     
                                      <asp:ListItem Text="1" Value="1"></asp:ListItem>
@@ -123,8 +154,22 @@
                                      <asp:ListItem Text="3" Value="3"></asp:ListItem>
                                      <asp:ListItem Text="4" Value="4"></asp:ListItem>
                                      <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>
-                                 </div> 
+                                 </asp:DropDownList>--%>
+                                     <div class="col-sm-8 col-md-8 col-lg-8" >
+                                <div class="btn-group">
+            
+                                <select id="DropDownList5" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                  <option value="5">5</option>
+
+                                  </select>
+                
+                                         </div>
+                                      </div>
+                  
                         
 
                 </td>
@@ -139,16 +184,31 @@
                 <td>Proteccion bucal</td>
                 <td>
                      <div class="dropdown" runat="server" id="div6">
-                                 <asp:DropDownList ID="DropDownList6"   class="btn btn-default dropdown-toggle"  runat="server" >
+                         </div>
+                                <%--  
+                                    <asp:DropDownList ID="DropDownList6"   class="btn btn-default dropdown-toggle"  runat="server" >
                                      
                                      <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                      <asp:ListItem Text="2" Value="2"></asp:ListItem>
                                      <asp:ListItem Text="3" Value="3"></asp:ListItem>
                                      <asp:ListItem Text="4" Value="4"></asp:ListItem>
                                      <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>
-                                 </div> 
+                                 </asp:DropDownList>--%>
+                       <div class="col-sm-8 col-md-8 col-lg-8" >
+                                <div class="btn-group">
+            
+                                <select id="DropDownList6" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                  <option value="5">5</option>
 
+                                  </select>
+                
+                                         </div>
+                                      </div>
+                                 
                 </td>
                 <td>3200</td>
                 <td>
@@ -162,15 +222,29 @@
                 <td>Cinta Blanca</td>
                 <td>
                      <div class="dropdown" runat="server" id="div7">
-                                 <asp:DropDownList ID="DropDownList7"   class="btn btn-default dropdown-toggle"  runat="server" >
+                         </div>
+                              <%--    <asp:DropDownList ID="DropDownList7"   class="btn btn-default dropdown-toggle"  runat="server" >
                                     
                                      <asp:ListItem Text="1" Value="1"></asp:ListItem>
                                      <asp:ListItem Text="2" Value="2"></asp:ListItem>
                                      <asp:ListItem Text="3" Value="3"></asp:ListItem>
                                      <asp:ListItem Text="4" Value="4"></asp:ListItem>
                                      <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>
-                                 </div> 
+                                 </asp:DropDownList>--%>
+                                  <div class="col-sm-8 col-md-8 col-lg-8" >
+                                <div class="btn-group">
+            
+                                <select id="DropDownList7" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                  <option value="5">5</option>
+
+                                  </select>
+                
+                                         </div>
+                                      </div>
 
                 </td>
                 <td>400</td>
@@ -293,13 +367,25 @@
         
             <div class="col-sm-10 col-md-10 col-lg-10">
                  <div class="dropdown" runat="server" id="div1">
-                 <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"   onchange="example()"  runat="server" >
+                     </div>
+             <%--     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"   onchange="example()"  runat="server" >
                      <asp:ListItem Enabled="true" Text="Seleccione" Value="-1"></asp:ListItem>
                      <asp:ListItem Text="Tarjeta" Value="1"></asp:ListItem>
                      <asp:ListItem Text="Deposito" Value="2"></asp:ListItem>
                      <asp:ListItem Text="Transferencia" Value="3"></asp:ListItem>
                </asp:DropDownList>
-             </div> 
+              --%>
+                 <div class="btn-group">
+            
+                                <select id="DropDownList1" runat="server" class="combobox" style="width:80px; height:35px" onchange="example()" >
+                                <option value="-1">Seleccione</option>
+                                <option value="1">Tarjeta</option>
+                                <option value="2">Deposito</option>
+                                <option value="3">Transferencia</option>
+                                
+                                  </select>
+                
+                                         </div>
             </div>
         </div>
         <h4 class="modal-title">Tarjeta Credito/Debito</h4>

@@ -130,7 +130,7 @@
                                     03 Diciembre 2015
                                 <br />
                                 
-                                <form runat="server" class="form-horizontal" method="POST">
+                                <form role="form" class="form-horizontal" method="POST">
 								    <h3>Descricion</h3>
 								    <p>
 									    El 2do Seminario Showakai se presenta en la ciudad de Caracas para el deleite de todos los interesados, se ofrece material de apoyo mas las clases de practica.
