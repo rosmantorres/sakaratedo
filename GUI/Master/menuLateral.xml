@@ -120,7 +120,10 @@
 
   <!--OPCIONES DE MODULO 10-->
   
-  <opcion nombre="" link="~/GUI/Modulo10/">
+  <opcion nombre="Listar Asistencia a Eventos" link="~/GUI/Modulo10/M10_ListarAsistenciaEventos.aspx">
+    <modulo id="10"></modulo>
+  </opcion>
+  <opcion nombre="Agregar Asistencia a Eventos" link="~/GUI/Modulo10/M10_AgregarAsistenciaEventos.aspx">
     <modulo id="10"></modulo>
   </opcion>
   
@@ -129,7 +132,10 @@
 
   <!--OPCIONES DE MODULO 11-->
   
-  <opcion nombre="" link="~/GUI/Modulo11/">
+  <opcion nombre="Listar Resultados de Competencia" link="~/GUI/Modulo11/M11_ListarResultadoCompetencia.aspx">
+    <modulo id="11"></modulo>
+  </opcion>
+  <opcion nombre="Agregar Resultados de Competencia" link="~/GUI/Modulo11/M11_AgregarResultadoCompetencia.aspx">
     <modulo id="11"></modulo>
   </opcion>
   
@@ -187,6 +193,10 @@
   </opcion>
   
   <opcion nombre="Ver Carrito" link="~/GUI/Modulo16/M16_VerCarrito.aspx">
+    <modulo id="16"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Mensualidad" link="~/GUI/Modulo16/M16_ConsultarMensualidad.aspx">
     <modulo id="16"></modulo>
   </opcion>
   
