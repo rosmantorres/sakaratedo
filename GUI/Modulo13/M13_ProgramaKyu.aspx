@@ -7,6 +7,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Programa T&eacutecnico Inicial</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+
+    &nbsp;&nbsp;&nbsp;&nbsp
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/programa_tecnico.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
+         &nbsp;&nbsp
+
+
     <div class="box-body table-responsive">
             <div class="box-body table-responsive">
     <table id="example" class="table table-bordered table-striped dataTable">

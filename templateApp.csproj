@@ -244,6 +244,7 @@
     <Content Include="GUI\Modulo13\Pdf\Atletas.pdf" />
     <Content Include="GUI\Modulo13\Pdf\estadisticas.pdf" />
     <Content Include="GUI\Modulo13\Pdf\Morosos.pdf" />
+    <Content Include="GUI\Modulo13\Pdf\programa_tecnico.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1178,6 +1179,7 @@
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -1192,6 +1194,7 @@
     </Compile>
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.designer.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>

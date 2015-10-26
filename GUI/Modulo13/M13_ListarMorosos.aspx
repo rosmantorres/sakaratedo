@@ -10,7 +10,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     
    &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="M13_ListarMorosos.aspx?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/Morosos.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
          &nbsp;&nbsp
 
     <div class="box-body table-responsive">

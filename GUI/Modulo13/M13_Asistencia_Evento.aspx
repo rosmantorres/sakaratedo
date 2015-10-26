@@ -77,7 +77,9 @@
  </script>
 
     <br> <br />  
-
+      &nbsp;&nbsp;&nbsp;&nbsp
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/Asistencia.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
+         &nbsp;&nbsp
 
    
 
