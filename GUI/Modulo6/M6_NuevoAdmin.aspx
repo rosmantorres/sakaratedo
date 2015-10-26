@@ -3,8 +3,40 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="../Modulo4/M4_ListarDojos.aspx">Dojo</a> 
+		    </li>
+
+            <li>
+			    <a href="../Modulo4/M4_ListarDojos.aspx">Gestion de Dojos</a> 
+		    </li>
+
+            <li>
+			    <a href="../Modulo4/M4_AgregarDojo.aspx">Agregar Dojo</a> 
+		    </li>
+		
+		    <li class="active">
+			    Creacion de Administrador
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
     Creacion de Administrador
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
+    Creacion del primer administrador
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -107,10 +139,10 @@
 
     <script type="text/javascript">
         document.getElementById("aceptar").onclick = function () {
-            location.href = "M6_ListaUsuario.aspx";
+            location.href = "../Modulo4/M4_ListarDojos.aspx";
         };
         document.getElementById("cancelar").onclick = function () {
-            location.href = "M6_ListaUsuario.aspx";
+            location.href = "../Modulo4/M4_ListarDojos.aspx";
         };
     </script>
 </asp:Content>
