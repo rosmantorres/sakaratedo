@@ -36,7 +36,7 @@ Agregar Implemento
  <div id="alert_confirmacion"  >
     <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>    
-    <%--Alerta de confirmación--%>
+    <%--fin de Alerta de confirmación--%>
 
               <!-- Elementos generales del formulario -->
               <div class="box box-primary">
@@ -133,10 +133,9 @@ Agregar Implemento
 
                 </form>
               </div><!-- Fin del formulario-->
-  <script type="text/javascript">
-
+ 
       <!-- Declaración de las alertas-->
-      
+     <script type="text/javascript">  
       $(document).ready(function () {
           $("#alert").hide();
           $("#alert").attr("class", "alert alert-error alert-dismissible");

@@ -14,6 +14,7 @@
 	    </ol>
     </div>
 	<%--Fin_Breadcrumbs--%>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 Gestion de Inventario
@@ -21,6 +22,9 @@ Gestion de Inventario
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
     Consultar Implemento
 </asp:Content>
+
+	<%--Ciudades con sus Dojo--%>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     <div id="alert" runat="server">
     </div>
@@ -45,6 +49,9 @@ Gestion de Inventario
         </select>
              </div>
         </div>
+
+    	<%--Contenido de la tabla--%>
+
     <div class="box-body table-responsive">
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
@@ -65,6 +72,9 @@ Gestion de Inventario
                    <th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
+
+           	<%--llenado de la tabla--%>
+
 			<tbody>
                 <tr>
                 <td class="id">1</td>
@@ -320,6 +330,10 @@ Gestion de Inventario
 
 			</tbody>
     </table>
+        	<%--fin del llenado de la tabla--%>
+
+
+        	<%--botón de eliminación de un implemento--%>
 
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -340,9 +354,10 @@ Gestion de Inventario
                 <a id="btn-eliminar" type="button" class="btn btn-primary" href="M15_ConsultarImplemento.aspx?eliminacionSuccess=1">Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
-          </div><!-- /.modal-delete-content -->
-        </div><!-- /.modal-delete-dialog -->
-      </div><!-- /.modal-delete -->
+          </div>
+        </div>
+      </div>
+        	<%--botón de información de un implemento--%>
 
     		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -378,23 +393,21 @@ Gestion de Inventario
 				</div>
 			</div>
 		</div>
-
-
-
     </div>
 
+      <!-- Declaración de las alertas-->
         <script type="text/javascript">
             $(document).ready(function () {
                 $(".caja").height(10);
                 $(".caja").width(10);
                 $("#nombre-dojo").css("text-align", "center");
 
-                var table = $('#example').DataTable({
+                var table = $('#example').DataTable({  //lenguaje del DataTable
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                       },
                         
-                   "columnDefs":[{
+                   "columnDefs":[{//esconde el ID de la tabla
                             "targets":[0],
                             "visible":false
                    }]
@@ -403,7 +416,7 @@ Gestion de Inventario
 
                 var req;
                 var tr;
-
+                // imprimir mensaje de confirmación de eliminar
                 $('#example tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         req = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
@@ -429,7 +442,7 @@ Gestion de Inventario
                     modal.find('#req').text(req);
 
                 });
-
+                // imprime en el modal la información
                 $('#modal-info').on('show.bs.modal', function (event) {
                     var modal = $(this)
                     modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
@@ -451,6 +464,7 @@ Gestion de Inventario
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
+                //comboBox de ciudad con sus Dojo
                 $("#ubicacion").change(function () {
 
 
