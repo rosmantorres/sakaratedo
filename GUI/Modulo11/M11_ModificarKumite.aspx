@@ -101,7 +101,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ModificarResultadoCompetencia.aspx" onclick="return checkform();">Modificar</a>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ModificarResultadoCompetencia.aspx?eliminacionSuccess=1" onclick="return checkform();">Modificar</a>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M11_ModificarResultadoCompetencia.aspx"> Cancelar</a>
       </div>

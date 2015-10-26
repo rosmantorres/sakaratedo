@@ -31,6 +31,9 @@
 	<%--Fin_Breadcrumbs--%>
     </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+
+        <div id="alert" runat="server">
+    </div>
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
@@ -239,7 +242,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-modificarResul" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx" onclick="">Aceptar</a>
+         <a id="btn-modificarResul" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx?eliminacionSuccess=2" onclick="">Aceptar</a>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx"> Cancelar</a>
       </div>
