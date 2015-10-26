@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <!--COMBO 1-->
+    <!--COMBO EVENTO-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <!--COMBO 2-->
+    <!--COMBO CATEGORIA-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Categoria:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
@@ -239,37 +239,7 @@
             })
             .on('changeDate', function (e) {
                 // Revalidate the date field
-                $('#eventForm').formValidation('revalidateField', 'date');
             });
-
-        $('#eventForm').formValidation({
-            framework: 'bootstrap',
-            icon: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                name: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The name is required'
-                        }
-                    }
-                },
-                date: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The date is required'
-                        },
-                        date: {
-                            format: 'MM/DD/YYYY',
-                            message: 'The date is not a valid'
-                        }
-                    }
-                }
-            }
-        });
     });
 
 

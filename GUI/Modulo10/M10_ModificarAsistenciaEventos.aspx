@@ -56,7 +56,25 @@
         </div>
 
             <h3>Evento:</h3>
-    <type="text" class="form-control disabled" >
+    <input type="text" class="form-control" disabled >
+    </div>
+
+        <!--COMBO CATEGORIA-->
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <h3>Categoria:</h3>
+      <div class="col-sm-8 col-md-8 col-lg-8" >
+        <div class="btn-group">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Seleccionar Categoria <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+               <li><a href="#">Categoria #1</a></li>
+               <li><a href="#">Categoria #2</a></li>
+               <li><a href="#">Categoria #3</a></li>
+               <li><a href="#">Categoria #4</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
  
