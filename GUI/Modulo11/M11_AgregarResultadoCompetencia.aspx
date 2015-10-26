@@ -293,7 +293,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default"> Cancelar</a>
+         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx"> Cancelar</a>
       </div>
    </form>
 </div>

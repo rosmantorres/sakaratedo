@@ -241,7 +241,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-modificarResul" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx" onclick="">Aceptar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default"> Cancelar</a>
+         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx"> Cancelar</a>
       </div>
    </form>
 </div>
