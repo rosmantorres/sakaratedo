@@ -24,12 +24,6 @@
 
   <!--OPCIONES DE MODULO 3-->
 
-<<<<<<< HEAD
-  <opcion nombre="" link="~/GUI/Modulo3/">
-    <modulo id="3"></modulo>
-  </opcion>
-
-=======
   <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
@@ -46,8 +40,6 @@
     <modulo id="3"></modulo>
   </opcion>
 
-
->>>>>>> refs/remotes/origin/master
   <!--FIN OPCIONES MODULO 3-->
 
 
@@ -64,12 +56,6 @@
 
   <!--OPCIONES DE MODULO 5-->
 
-<<<<<<< HEAD
-  <opcion nombre="" link="~/GUI/Modulo5/">
-    <modulo id="5"></modulo>
-  </opcion>
-
-=======
   <opcion nombre="Listar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ListarCintas.aspx">
     <modulo id="5"></modulo>
   </opcion>
@@ -82,8 +68,6 @@
     <modulo id="5"></modulo>
   </opcion>
 
-
->>>>>>> refs/remotes/origin/master
   <!--FIN OPCIONES MODULO 5-->
 
 
