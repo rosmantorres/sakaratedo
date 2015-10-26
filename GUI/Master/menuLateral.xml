@@ -111,7 +111,6 @@
 
   <opcion nombre="Agregar Rest. de Avance de Cinta" link="~/GUI/Modulo8/interfazCrearRestriccionAvanceCinta.aspx">
     <modulo id="8.3"></modulo>
-
   </opcion>
   
   <!--FIN OPCIONES MODULO 8-->
@@ -119,7 +118,6 @@
 
   <!--OPCIONES DE MODULO 9-->
   
-
   <opcion nombre="Gestionar Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
@@ -129,8 +127,6 @@
   <opcion nombre="Gestión de Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
     <modulo id="9"> </modulo>
   </opcion>
-
-  
 
   <!--FIN OPCIONES MODULO 9-->
 
@@ -146,7 +142,6 @@
   
   <!--FIN OPCIONES MODULO 10-->
 
-
   <!--OPCIONES DE MODULO 11-->
   
   <opcion nombre="Listar Resultados de Competencia" link="~/GUI/Modulo11/M11_ListarResultadoCompetencia.aspx">
@@ -158,15 +153,9 @@
   
   <!--FIN OPCIONES MODULO 11-->
 
-
   <!--OPCIONES DE MODULO 12-->
   
   <opcion nombre="Listar Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
-    <modulo id="12"> </modulo>
-  </opcion>
-  
-  <opcion nombre="Agregar Competencia" link="~/GUI/Modulo12/M12_AgregarCompetencias.aspx">
-
     <modulo id="12"> </modulo>
   </opcion>
   
