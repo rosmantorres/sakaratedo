@@ -1,25 +1,9 @@
-﻿<?<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <menuLateral>
   <!-- OPCIONES DE CADA MODULO -->
 
-<<<<<<< HEAD
-  <!--OPCIONES DE PANTALLA EJEMPLO-->
-
-  <opcion nombre="Funcionalidad 0" link="~/GUI/Master/Inicio.aspx">
-    <modulo id="0"></modulo>
-  </opcion>
-
-  <opcion nombre="Funcionalidad 1" link="~/GUI/Master/Inicio.aspx">
-    <modulo id="0"></modulo>
-  </opcion>
-
   <!--FIN OPCIONES DE PANTALLA EJEMPLO-->
 
-
-=======
-  <!--FIN OPCIONES DE PANTALLA EJEMPLO-->
-   
->>>>>>> refs/remotes/origin/master
   <!--OPCIONES DE MODULO 1-->
 
   <opcion nombre="" link="~/GUI/Modulo1/">
@@ -118,14 +102,9 @@
 
 
   <!--OPCIONES DE MODULO 9-->
-<<<<<<< HEAD
 
-  <opcion nombre="Gestión de Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
-=======
-  
 
   <opcion nombre="Gestionar Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="9"></modulo>
   </opcion>
   <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
