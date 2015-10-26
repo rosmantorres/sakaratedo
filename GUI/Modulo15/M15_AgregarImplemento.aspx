@@ -19,7 +19,7 @@
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-Gestion de Inventario
+Gesti&oacuten de Inventario
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
 Agregar Implemento
@@ -107,7 +107,7 @@ Agregar Implemento
                                                        
                       </div>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Stock Mínimo</b></p>
+                        <p><b>Stock M&iacutenimo</b></p>
                         <input type="text" id="stock_implemento" placeholder="*Stock Minimo" class="form-control"  />         
                      </div>
                       <br/>
@@ -121,6 +121,7 @@ Agregar Implemento
                        <input type="file" id="imagen_implemento"  class="form-control" />            
                     </div>
                       <br/>
+
                                                   
                   </div><!--Fin del listado del formulario -->
 
@@ -161,7 +162,7 @@ Agregar Implemento
                   estado = true;
               } else {
                   if ((isNaN($("#cantidad_inventario").val()))) {
-                      valor = valor + "El campo cantidad es numérico</br>";
+                      valor = valor + "El campo cantidad es num&eacuterico</br>";
                       estado = true;
                   }
 
@@ -173,19 +174,19 @@ Agregar Implemento
               }
               else {
                   if ((isNaN($("#precio_producto").val()))) {
-                      valor = valor + "El campo precio es numérico </br>";
+                      valor = valor + "El campo precio es num&eacuterico </br>";
                       estado = true;
                   }
               }
 
 
               if ($("#stock_implemento").val() == "") {
-                  valor = valor + "El campo stock mínimo es obligatorio </br>";
+                  valor = valor + "El campo stock m&iacutenimo es obligatorio </br>";
                   estado = true;
               }
               else {
                   if ((isNaN($("#stock_implemento").val()))) {
-                      valor = valor + "El campo stock mínimo es numérico </br>";
+                      valor = valor + "El campo stock m&iacutenimo es num&eacuterico </br>";
                       estado = true;
                   }
               }

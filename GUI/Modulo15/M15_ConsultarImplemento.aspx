@@ -17,7 +17,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-Gestion de Inventario
+Gesti&oacuten de Inventario
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
     Consultar Implemento
@@ -48,6 +48,15 @@ Gestion de Inventario
         <option value="6">Dojo F</option>
         </select>
              </div>
+            <div class="col-lg-4">
+        
+             </div>
+            <div class="col-lg-2">
+        <select id="Select2" class="form-control" >
+        <option value="1">Activo</option>
+        <option value="2">Inactivo</option>
+        </select>
+             </div>
         </div>
 
     	<%--Contenido de la tabla--%>
@@ -64,7 +73,7 @@ Gestion de Inventario
                     <th>Talla</th>
                     <th>Dojo</th>
                     <th>Cantidad</th>
-                    <th>Stock Mínimo</th>
+                    <th>Stock M&iacutenimo</th>
                     <th>Estatus</th>
 					<th>Precio (Bs)</th>
                     <th >Monto Total Bs</th>
@@ -127,7 +136,7 @@ Gestion de Inventario
 					<td>Vestimenta</td>	
                     <td>Everblast</td>
                     <td>Amarillo</td>
-                    <td>s</td>
+                    <td>S</td>
                     <td>Red Dragon</td>
                     <td>30</td>
                     <td>5</td>
@@ -172,7 +181,7 @@ Gestion de Inventario
                     <td>Kombate</td>
                     <td>Rojo</td>
                     <td>L</td>
-                    <td>El dragon verde</td>
+                    <td>Green Dragon</td>
                     <td>20</td>
                     <td>5</td>
                     <td><div class="panel panel-default caja">
@@ -340,7 +349,7 @@ Gestion de Inventario
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n del implemento</h4>
+              <h4 class="modal-title" >Eliminaci&oacuten del implemento</h4>
             </div>
             <div class="modal-body">
               <div class="container-fluid">
@@ -364,7 +373,7 @@ Gestion de Inventario
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del Producto</h4>
+						<h4 class="modal-title">Informaci&oacuten detallada del Producto</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
@@ -376,7 +385,7 @@ Gestion de Inventario
                                 <p id="marca_articulo"> Marca :</p>
                                 <p id="dojo_articulo"> Dojo :</p>
                                 <p id="cantidad_articulo"> Cantidad :</p>
-                                <p id="stock_minimo_articulo">Stock Mínimo :</p>
+                                <p id="stock_minimo_articulo">Stock M&iacutenimo :</p>
                                 <p id="precio_articulo"> Precio Bs :</p>
                                 <p id="monto_total_articulo"> Monto Total Bs :</p> 
                                 <p id="proveedor_articulo">Proveedor :</p>
@@ -451,7 +460,7 @@ Gestion de Inventario
                     modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
                     modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
                     modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#stock_minimo_articulo').text("Stock Mínimo :" + tr.prev().prev().prev().prev().prev().text());
+                    modal.find('#stock_minimo_articulo').html("Stock M&iacutenimo :" + tr.prev().prev().prev().prev().prev().text());
                     modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().prev().text());
                     modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().prev().text());
                     modal.find('#proveedor_articulo').text("Proveedor: " + tr.prev().text());

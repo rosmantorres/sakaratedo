@@ -19,7 +19,7 @@
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-Gestion de Inventario
+Gesti&oacuten de Inventario
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
@@ -109,8 +109,8 @@ Gestion de Inventario
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Stock mínimo:</b></p>
-                       <input type="text" id="stock_implemento"  placeholder="*Stock mínimo" class="form-control" value="5"/>            
+                      <p><b>Stock m&iacutenimo:</b></p>
+                       <input type="text" id="stock_implemento"  placeholder="*Stock m&iacutenimo" class="form-control" value="5"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -123,7 +123,15 @@ Gestion de Inventario
                        <input type="file" id="imagen_implemento"  class="form-control"/>            
                     </div>
                       <br/>
-                      
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Condicion:</b></p>
+                             <select id="Select2" class="form-control" runat="server">
+                                  <option value="1" >Activo</option>
+                                  <option value="2" >Inactivo</option>                                  
+                              </select>
+                                                       
+                      </div>
+                      <br/>
                       
                          
                   </div><!--Fin del listado del formulario -->
@@ -167,18 +175,18 @@ Gestion de Inventario
                   estado = true;
               } else {
                   if ((isNaN($("#cantidad_inventario").val()))) {
-                      valor = valor + "El campo cantidad es numérico</br>";
+                      valor = valor + "El campo cantidad es num&eacuterico</br>";
                       estado = true;
                   }
 
               }
 
               if ($("#stock_implemento").val() == "") {
-                  valor = valor + "El campo stock mínimo es obligatorio </br>";
+                  valor = valor + "El campo stock m&iacutenimo es obligatorio </br>";
                   estado = true;
               } else {
                   if ((isNaN($("#stock_implemento").val()))) {
-                      valor = valor + "El campo stock mínimo es numérico</br>";
+                      valor = valor + "El campo stock m&iacutenimo es num&eacuterico</br>";
                       estado = true;
                   }
 
@@ -190,7 +198,7 @@ Gestion de Inventario
               }
               else {
                   if ((isNaN($("#precio_producto").val()))) {
-                      valor = valor + "El campo precio es numérico";
+                      valor = valor + "El campo precio es num&eacuterico </br>";
                       estado = true;
                   }
               }
