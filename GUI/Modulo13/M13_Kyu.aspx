@@ -42,3 +42,23 @@
 
 </div>
 </asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="M13_Inicio.aspx">Reportes Dojo</a> 
+		    </li>
+            
+		    <li class="active">
+			    Kyu
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
+</asp:Content>
