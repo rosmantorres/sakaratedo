@@ -3,42 +3,42 @@
   <!-- OPCIONES DE CADA MODULO -->
 
   <!--OPCIONES DE PANTALLA EJEMPLO-->
-  
+
   <opcion nombre="Funcionalidad 0" link="~/GUI/Master/Inicio.aspx">
     <modulo id="0"></modulo>
   </opcion>
-  
-    <opcion nombre="Funcionalidad 1" link="~/GUI/Master/Inicio.aspx">
+
+  <opcion nombre="Funcionalidad 1" link="~/GUI/Master/Inicio.aspx">
     <modulo id="0"></modulo>
   </opcion>
 
   <!--FIN OPCIONES DE PANTALLA EJEMPLO-->
-  
-  
+
+
   <!--OPCIONES DE MODULO 1-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo1/">
     <modulo id="1"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 1-->
-  
-  
+
+
   <!--OPCIONES DE MODULO 2-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo2/">
     <modulo id="2"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 2-->
 
-  
+
   <!--OPCIONES DE MODULO 3-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo3/">
     <modulo id="3"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 3-->
 
 
@@ -54,29 +54,32 @@
 
 
   <!--OPCIONES DE MODULO 5-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo5/">
     <modulo id="5"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 5-->
 
 
   <!--OPCIONES DE MODULO 6-->
-  
-  <opcion nombre="" link="~/GUI/Modulo6/">
+
+  <opcion nombre="Gestion de Usuarios" link="~/GUI/Modulo6/M6_ListaUsuarios.aspx">
     <modulo id="6"></modulo>
   </opcion>
-  
+  <opcion nombre="Solicitudes de Inscripcion" link="~/GUI/Modulo6/M6_procesarSolicitud.aspx">
+    <modulo id="6"></modulo>
+  </opcion>
+
   <!--FIN OPCIONES MODULO 6-->
 
 
   <!--OPCIONES DE MODULO 7-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo7/">
     <modulo id="7"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 7-->
 
 
@@ -105,34 +108,40 @@
   <opcion nombre="Agregar Rest. de Avance de Cinta" link="~/GUI/Modulo8/interfazCrearRestriccionAvanceCinta.aspx">
     <modulo id="8.3"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 8-->
 
 
   <!--OPCIONES DE MODULO 9-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo9/">
     <modulo id="9"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 9-->
 
 
   <!--OPCIONES DE MODULO 10-->
-  
-  <opcion nombre="" link="~/GUI/Modulo10/">
+
+  <opcion nombre="Listar Asistencia a Eventos" link="~/GUI/Modulo10/M10_ListarAsistenciaEventos.aspx">
     <modulo id="10"></modulo>
   </opcion>
-  
+  <opcion nombre="Agregar Asistencia a Eventos" link="~/GUI/Modulo10/M10_AgregarAsistenciaEventos.aspx">
+    <modulo id="10"></modulo>
+  </opcion>
+
   <!--FIN OPCIONES MODULO 10-->
 
 
   <!--OPCIONES DE MODULO 11-->
-  
-  <opcion nombre="" link="~/GUI/Modulo11/">
+
+  <opcion nombre="Listar Resultados de Competencia" link="~/GUI/Modulo11/M11_ListarResultadoCompetencia.aspx">
     <modulo id="11"></modulo>
   </opcion>
-  
+  <opcion nombre="Agregar Resultados de Competencia" link="~/GUI/Modulo11/M11_AgregarResultadoCompetencia.aspx">
+    <modulo id="11"></modulo>
+  </opcion>
+
   <!--FIN OPCIONES MODULO 11-->
 
 
@@ -141,7 +150,7 @@
   <opcion nombre="Listar Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
     <modulo id="12"> </modulo>
   </opcion>
-  
+
   <opcion nombre="Agregar Competencia" link="~/GUI/Modulo12/M12_AgregarCompetencias.aspx">
     <modulo id="12"> </modulo>
   </opcion>
@@ -150,42 +159,42 @@
 
 
   <!--OPCIONES DE MODULO 13-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo13/">
     <modulo id="13"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 13-->
 
 
   <!--OPCIONES DE MODULO 14-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo14/">
     <modulo id="14"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 14-->
 
 
   <!--OPCIONES DE MODULO 15-->
-  
+
   <opcion nombre="" link="~/GUI/Modulo15/">
     <modulo id="15"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 15-->
 
 
   <!--OPCIONES DE MODULO 16-->
-  
+
   <opcion nombre="Consultar Productos" link="~/GUI/Modulo16/M16_ConsultarProducto.aspx">
     <modulo id="16"></modulo>
   </opcion>
-  
+
   <opcion nombre="Consultar Eventos" link="~/GUI/Modulo16/M16_ConsultarEvento.aspx">
     <modulo id="16"></modulo>
   </opcion>
-  
+
   <opcion nombre="Ver Carrito" link="~/GUI/Modulo16/M16_VerCarrito.aspx">
     <modulo id="16"></modulo>
   </opcion>
@@ -193,6 +202,6 @@
   <opcion nombre="Consultar Mensualidad" link="~/GUI/Modulo16/M16_ConsultarMensualidad.aspx">
     <modulo id="16"></modulo>
   </opcion>
-  
+
   <!--FIN OPCIONES MODULO 16-->
 </menuLateral>
