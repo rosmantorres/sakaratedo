@@ -3,8 +3,8 @@
 <menusuperior>
   
   <opcion rol="Sistema-Organizacion" nombre="Organizaciones">
-    <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="#"/>
-    <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="#"/>
+    <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx"/>
+    <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="~/GUI/Modulo5/M5_ListarCintas.aspx"/>
     <subopcion rol="Sistema-Organizacion" nombre="Restricciones de Cintas y Eventos" link="~/GUI/Modulo8/interfazMenuRestriccionesCintasYEventos.aspx"/>
   </opcion>
 
@@ -35,5 +35,8 @@
     <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
   </opcion>
 
+  <opcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante" nombre="Compras">
+    <subopcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante" nombre="Gestión De Compras" link="~/GUI/Modulo16/M16_VerCarrito.aspx"/>
+  </opcion>
 
 </menusuperior>
