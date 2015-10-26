@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="ModificarAsistenciaEventos.aspx.cs" Inherits="templateApp.GUI.Modulo10.ModificarAsistenciaEventos" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M10_ModificarAsistenciaEventos.aspx.cs" Inherits="templateApp.GUI.Modulo10.M10_ModificarAsistenciaEventos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
@@ -89,9 +89,9 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-modificar" class="btn btn-primary" type="submit" href="" onclick="return checkform();">Modificar</a>
+         <a id="btn-modificar" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="#">Modificar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default"> Cancelar</a>
+         <a class="btn btn-default" href="M10_ListarAsistenciaEventos.aspx"> Cancelar</a>
       </div>
    </form>
 </div>

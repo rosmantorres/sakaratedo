@@ -281,9 +281,9 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="return checkform();">Agregar</a>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx" onclick="#">Agregar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default"> Cancelar</a>
+         <a class="btn btn-default" href="M10_ListarAsistenciaEventos.aspx"> Cancelar</a>
       </div>
    </form>
 </div>

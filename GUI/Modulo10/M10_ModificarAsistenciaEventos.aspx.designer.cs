@@ -10,6 +10,6 @@
 namespace templateApp.GUI.Modulo10 {
     
     
-    public partial class ModificarAsistenciaEventos {
+    public partial class M10_ModificarAsistenciaEventos {
     }
 }
