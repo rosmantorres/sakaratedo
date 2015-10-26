@@ -11,11 +11,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Gestión de planillas</a>
+			    <a href="M14_ConsultarPlanillas.aspx">Gestión de planillas</a>
 		    </li>
 
             <li>
-			    <a href="#">Gestión de planillas</a>
+			    <a href="M14_ConsultarPlanillasSolicitadas.aspx">Gestión de planillas</a>
 		    </li>
 
 

@@ -6,17 +6,19 @@
 	<%--Breadcrumbs--%>
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+
 		    <li>
 			    <a href="../Master/Inicio.aspx">Home</a>
 		    </li>
 		
 		    <li>
-			    <a href="#">Solicitar planillas</a>
+			    <a href="M14_SolicitarPlanilla.aspx">Solicitar planillas</a>
 		    </li>
 
 		    <li class="active">
 			    Solicitud de Planilla
 		    </li>
+
 	    </ol>
     </div>
 	<%--Fin_Breadcrumbs--%>
