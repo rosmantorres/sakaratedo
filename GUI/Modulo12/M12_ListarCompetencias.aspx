@@ -62,7 +62,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Eventos y Competencias</a> 
+			    <a href="~/GUI/Modulo9/M9_ListarEventos.aspx">Eventos y Competencias</a> 
 		    </li>
 		
 		    <li class="active">

@@ -8,6 +8,7 @@
 .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
+    
 }
 
 .intro .intro-body .brand-heading {
@@ -20,7 +21,8 @@
     font-size: 40px;
     color: #000;
 }
-h1,
+
+.intro h1,
 h2,
 h3,
 h4,
