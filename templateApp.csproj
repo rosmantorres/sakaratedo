@@ -163,11 +163,14 @@
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
+    <Content Include="GUI\Modulo14\M14_AgregarEliminarDatos.js" />
+    <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx" />
     <Content Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
+    <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_VisorCarnet.aspx" />
@@ -1093,6 +1096,13 @@
       <DependentUpon>Inscripcion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
+      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.designer.cs">
+      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx.cs">
       <DependentUpon>M14_ConsultarPlanillasDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1127,6 +1137,13 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.designer.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.cs">
+      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.cs">
       <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
