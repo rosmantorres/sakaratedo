@@ -56,8 +56,7 @@
 
 
   <!--OPCIONES DE MODULO 5-->
-<<<<<<< HEAD
-  
+
   <opcion nombre="Listar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ListarCintas.aspx">
     <modulo id="5"></modulo>
   </opcion>
@@ -67,19 +66,6 @@
   </opcion>
 
   <opcion nombre="Crear Cintas por Organizacion" link="~/GUI/Modulo5/M5_CrearCintas.aspx">
-=======
-
-  <opcion nombre="Listar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ListarCintas.aspx">
->>>>>>> refs/remotes/origin/master
-    <modulo id="5"></modulo>
-  </opcion>
-
-  <opcion nombre="Modificar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ModificarCintas.aspx">
-    <modulo id="5"></modulo>
-  </opcion>
-
-  <opcion nombre="Crear Cintas por Organizacion" link="~/GUI/Modulo5/M5_CrearCintas.aspx">
-    <modulo id="5"></modulo>
   </opcion>
 
 
