@@ -6,211 +6,19 @@
     
     <div id="alert" runat="server">
     </div>
-
-    <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Hover Data Table</h3>
-                </div><!-- /.box-header -->
-
-
-    <div class="box-body table-responsive">
-
-       <table id="example" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					<th>ID</th>
-					<th >Requerimiento</th>
-					<th>Tipo</th>
-					<th >Prioridad</th>
-					<th style="text-align:right;">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="id">TOT_RF_1</td>
-					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">TOT_RF_2</td>
-					<td>El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">TOT_RF_3</td>
-					<td>El sistema deberá permitir eliminar los requerimientos funcionales y no funcionales de un proyecto.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">TOT_RF_4</td>
-					<td>El sistema deberá permitir buscar requerimientos funcionales y no funcionales, por ID y por descripción, que se encuentran asociados a un proyecto en específico.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                <td class="id">TOT_RF_5</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por ID.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                <td class="id">TOT_RF_6</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr><tr>
-                    <td class="id">TOT_RNF_1</td>
-					<td>El sistema deberá permitir eliminar los requerimientos funcionales y no funcionales de un proyecto.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">TOT_RNF_2</td>
-					<td>El sistema deberá permitir buscar requerimientos funcionales y no funcionales, por ID y por descripción, que se encuentran asociados a un proyecto en específico.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                <td class="id">TOT_RNF_3</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por ID.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-                <tr>
-                <td class="id">TOT_RNF_4</td>
-					<td>El sistema deberá permitir consultar la lista de requerimientos funcionales, asociados a un proyecto en específico, organizada por su prioridad.</td>
-					<td>No Funcional</td>
-					<td>Alta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-
-
-
-
-			</tbody>
-    </table>
-        </div>
-       </div>
-                </div>
-        </div>
-
-
-        <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n de Requerimiento</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
+           <div class="intro">
+        <div class="intro-body">
+            <div class="container">
                 <div class="row">
-                    <p>Seguro que desea eliminar el requerimiento:</p>
-                    <p id="req"></p>
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">SA-KARATEDO</h1>
+                        <p class="intro-text">Bienvenido a tu cuenta de SA-Karatedo<br></p>
+                        <p class="Contenido">El Karate-Do (“Camino de la mano vacía”, Kara: Vacía, Te: mano, Do: Camino.) es un arte marcial tradicional originario de la Isla de Okinawa, conocida como islas RyuKyu de Japón. Este deporte es practicado en todo el mundo y está dirigido por la Federación Mundial de Karate (WKF, World Karate Federation).</p>
+                      
+                    </div>
                 </div>
-              </div>
             </div>
+<<<<<<< HEAD
             <div class="modal-footer">  
                 <a id="btn-eliminar" type="button" class="btn btn-primary" href="Inicio.aspx?eliminacionSuccess=1">Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -319,5 +127,12 @@
             });
 
         </script>
+=======
+        </div>
+    </div>
+          <div class="logoFederacion">
+              <a href="http://www.wkf.net/"><img src="../../dist/img/logo-wkf.png"  alt="WKF"  longdesc="Federacion Mundial de Karate" height:"110" width="150"/></a>
+          </div>
+>>>>>>> refs/remotes/origin/master
     
 </asp:Content>

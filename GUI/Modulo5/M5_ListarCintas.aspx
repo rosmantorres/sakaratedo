@@ -25,9 +25,10 @@
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
+    Gestión de Cintas
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-    <h1 class="modal-title">Listado de Cintas por Organización</h1>
+    Listado de Cintas por Organización
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 

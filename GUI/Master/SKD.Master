@@ -9,6 +9,8 @@
     <title>SAKARATEDO | Home Page</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Css de pagina inicial -->
+    <link rel="stylesheet" href="../../dist/css/inicio.css" rel="stylesheet" />
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -19,6 +21,8 @@
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
      <!-- DATA TABLES -->
      <link href="../../plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+     <!-- DATE PICKER -->
+     <link href="../../plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins
     folder instead of downloading all of them to reduce the load. -->
@@ -41,7 +45,8 @@
     <!-- DATA TABES SCRIPT -->
     <script src="../../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
     <script src="../../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
-
+    <!-- DATE PICKER SCRIPT -->
+    <script src="../../plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -91,8 +96,8 @@
 						<% } %> 
  <li class="dropdown">
                             
-                <a href="M16_VerCarrito.aspx" class="logo" style="background-color:#080B0C; width:auto;">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
+                     <a href= "<%=Page.ResolveUrl("~/GUI/Modulo16/M16_VerCarrito.aspx") %>" class="logo" style="background-color:#080B0C; width:auto;">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>SKD</b></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="/dist/img/carrito3.png" style="max-width:25px; height:25px; margin-top:10px;margin-left:0px" class="pull-left" /> </span>
@@ -186,7 +191,7 @@
 
           </ul>
           <ul class="sidebar-menu">
-
+          <div class="anuncio">Elige una opción del menu superior <br /> para poder tener acceso a todo <br /> lo que SA-Karatedo te ofrece</div>
 
            <%-- <li class="header">MAIN NAVIGATION</li>--%>           
 
@@ -202,14 +207,15 @@
      
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+              <!-- Main content -->
+          <!-- Content Header (Page header) -->
         <section class="content-header">
-            <asp:ContentPlaceHolder runat="server" ID="breads">Breadcrumbs</asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder runat="server" ID="breads"></asp:ContentPlaceHolder>
             <h1 class="page-header">
-               <asp:ContentPlaceHolder runat="server" ID="titulo">Título</asp:ContentPlaceHolder>
+               <asp:ContentPlaceHolder runat="server" ID="titulo"></asp:ContentPlaceHolder>
                 <br />
                   <small> 
-                  <asp:ContentPlaceHolder runat="server" ID="subtitulo">Subtítulo</asp:ContentPlaceHolder>
+                  <asp:ContentPlaceHolder runat="server" ID="subtitulo"></asp:ContentPlaceHolder>
                   </small>
 			</h1>
 
@@ -217,10 +223,8 @@
 
         <!-- Main content -->
         <section class="content">
-
-                    <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
-
-        </section><!-- /.content -->
+      <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
+            </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
       <footer class="main-footer">
