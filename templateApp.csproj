@@ -174,6 +174,7 @@
     <Content Include="GUI\Modulo5\M5_Prueba.aspx" />
     <Content Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx" />
     <Content Include="GUI\Modulo6\M6_ListaUsuarios.aspx" />
+    <Content Include="GUI\Modulo6\M6_NuevoAdmin.aspx" />
     <Content Include="GUI\Modulo6\M6_procesarSolicitud.aspx" />
     <Content Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx" />
     <Content Include="GUI\Modulo7\M7_Prueba.aspx" />
@@ -1155,6 +1156,13 @@
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ListaUsuarios.aspx.designer.cs">
       <DependentUpon>M6_ListaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo6\M6_NuevoAdmin.aspx.cs">
+      <DependentUpon>M6_NuevoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo6\M6_NuevoAdmin.aspx.designer.cs">
+      <DependentUpon>M6_NuevoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ProcesarSolicitud.aspx.cs">
       <DependentUpon>M6_procesarSolicitud.aspx</DependentUpon>

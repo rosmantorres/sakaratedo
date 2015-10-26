@@ -104,12 +104,20 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary"> Agregar </button>
-                <button type="button" class="btn btn-default"> Cancelar </button>
+                <button type="submit" id="aceptar" class="btn btn-primary"> Agregar </button>
+                <button type="button" id="cancelar" class="btn btn-default"> Cancelar </button>
             </div>
         </fieldset>
     </form>
     </div>
 </body>
+    <script type="text/javascript">
+        document.getElementById("aceptar").onclick = function () {
+            location.href = "../Modulo1/Index.aspx";
+        };
+        document.getElementById("cancelar").onclick = function () {
+            location.href = "../Modulo1/Index.aspx";
+        };
+    </script>
 </html>
 

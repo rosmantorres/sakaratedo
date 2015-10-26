@@ -100,8 +100,17 @@
             </div>
         </div>
         <div class="row" style="text-align: center">
-            <input type="button" value="Aceptar" class="btn btn-success col-lg-offset-1" />
-            <input type="button" value="Cancelar" class="btn btn-primary col-lg-offset-1" />
+            <input type="button" id="aceptar" value="Aceptar" class="btn btn-success col-lg-offset-1" />
+            <input type="button" id="cancelar" value="Cancelar" class="btn btn-primary col-lg-offset-1" />
         </div>
     </div>
+
+    <script type="text/javascript">
+        document.getElementById("aceptar").onclick = function () {
+            location.href = "M6_ListaUsuario.aspx";
+        };
+        document.getElementById("cancelar").onclick = function () {
+            location.href = "M6_ListaUsuario.aspx";
+        };
+    </script>
 </asp:Content>
