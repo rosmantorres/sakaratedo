@@ -149,18 +149,11 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
-    <Content Include="dist\img\Dojo1.jpg" />
-    <Content Include="dist\img\Dojo2.jpg" />
     <Content Include="dist\img\logofinal.png" />
-<<<<<<< HEAD
     <Content Include="GUI\Master\menuLateral.xml">
-=======
-    <Content Include="dist\img\Texture_Dark.jpg" />
-    <Content Include="GUI\Master\menuLateral.xml" />
-    <Content Include="GUI\Master\menuSuperior.xml">
->>>>>>> refs/remotes/origin/master
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="GUI\Master\menuSuperior.xml" />
     <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
@@ -1181,7 +1174,6 @@
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -1196,7 +1188,9 @@
     </Compile>
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.designer.cs">
+      <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo2\M2_Prueba.aspx.cs">
       <DependentUpon>M2_Prueba.aspx</DependentUpon>
