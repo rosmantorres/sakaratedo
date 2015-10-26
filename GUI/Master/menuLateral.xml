@@ -168,7 +168,7 @@
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Dojos Asociados" link="">
+  <opcion nombre="Dojos Asociados" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
   
@@ -176,7 +176,7 @@
     <modulo id="13"></modulo>
   </opcion>
   
-  <opcion nombre="Información de Producto" link="">
+  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
   
@@ -184,18 +184,18 @@
     <modulo id="13"></modulo>
   </opcion>
   
-  <opcion nombre="Asistencia a las Practicas" link="">
+  <opcion nombre="Asistencia a las Practicas" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>
     
     <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_EstadisticaEntrenamiento.aspx">
     <modulo id="13"></modulo>
   </opcion>
-  <opcion nombre="Planilla de Evaluación para Kyu" link="">
+  <opcion nombre="Planilla de Evaluación para Kyu" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion>  
 
-  <opcion nombre="Inventario Accesorios y Vestimenta" link="">
+  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inicio.aspx">
     <modulo id="13"></modulo>
   </opcion> 
   
