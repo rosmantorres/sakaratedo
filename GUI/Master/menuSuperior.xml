@@ -28,11 +28,11 @@
   </opcion>
 
   <opcion rol="Sistema-Dojo-Entrenador-Atleta-Representante" nombre="Mercancía">
-    <subopcion rol="Sistema-Dojo-Entrenador-Atleta-Representante" nombre="Inventario" link="#"/>
+    <subopcion rol="Sistema-Dojo-Entrenador" nombre="Inventario" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx"/>
   </opcion>
 
   <opcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Planillas">
-    <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="#"/>
+    <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
   </opcion>
 
 

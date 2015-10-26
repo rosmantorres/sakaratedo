@@ -168,6 +168,7 @@
 
 
   <!--OPCIONES DE MODULO 14-->
+<<<<<<< HEAD
 
   <opcion nombre="Solicitar Planilla" link="~/GUI/Modulo14/M14_SolicitarPlanilla.aspx">
     <modulo id="14"></modulo>
@@ -182,6 +183,30 @@
   </opcion>
 
   <opcion nombre="Planillas Solicitadas" link="~/GUI/Modulo14/M14_ConsultarPlanillasSolicitadas.aspx">
+=======
+  
+  <opcion nombre="Solicitar Planilla" link="~/GUI/Modulo14/M14_SolicitarPlanilla.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Solicitar Carnet" link="~/GUI/Modulo14/M14_VisorCarnet.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Solicitar planilla de Inscripción" link="~/GUI/Modulo14/M14_VisorInscripcion.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Planillas Solicitadas" link="~/GUI/Modulo14/M14_ConsultarPlanillasSolicitadas.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Planillas por Dojo" link="~/GUI/Modulo14/M14_ConsultarPlanillasDojo.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Registrar Planilla" link="~/GUI/Modulo14/M14_RegistrarPlanilla.aspx">
+>>>>>>> refs/remotes/origin/master
     <modulo id="14"></modulo>
   </opcion>
 
@@ -197,8 +222,16 @@
 
 
   <!--OPCIONES DE MODULO 15-->
+<<<<<<< HEAD
 
   <opcion nombre="" link="~/GUI/Modulo15/">
+=======
+  
+  <opcion nombre="Agregar Implemento" link="~/GUI/Modulo15/M15_AgregarImplemento.aspx">
+    <modulo id="15"></modulo>
+  </opcion>
+  <opcion nombre="Consultar Implemento" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx">
+>>>>>>> refs/remotes/origin/master
     <modulo id="15"></modulo>
   </opcion>
 
