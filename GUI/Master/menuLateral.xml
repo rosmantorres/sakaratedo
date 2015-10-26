@@ -114,11 +114,8 @@
 
   <!--OPCIONES DE MODULO 9-->
   
-<<<<<<< HEAD
+
   <opcion nombre="Gestionar Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
-=======
-  <opcion nombre="Gestión de Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="9"></modulo>
   </opcion>
   <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
