@@ -11,7 +11,7 @@ namespace templateApp.GUI.Modulo13
 {
 
 
-    public partial class M13_Prueba
+    public partial class M13_KyuPrograma
     {
     }
 }
