@@ -5,7 +5,7 @@
   <opcion rol="Sistema-Organizacion" nombre="Organizaciones">
     <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="#"/>
     <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="#"/>
-    <subopcion rol="Sistema-Organizacion" nombre="Restricciones de Cintas y Eventos" link="#"/>
+    <subopcion rol="Sistema-Organizacion" nombre="Restricciones de Cintas y Eventos" link="~/GUI/Modulo8/interfazMenuRestriccionesCintasYEventos.aspx"/>
   </opcion>
 
 
@@ -16,7 +16,7 @@
 
   <opcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Usuarios">
     <subopcion rol="Sistema-Dojo-Entrenador" nombre="Atletas" link="#"/>
-    <subopcion rol="Sistema-Dojo-Entrenador" nombre="Consulta Atletas" link="#"/>
+    <subopcion rol="Sistema-Dojo-Entrenador" nombre="Consulta Atletas" link="~/GUI/Modulo7/M7_ListarOrganizacionYDojo.aspx"/>
     <subopcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Representantes" link="#"/>
     <subopcion rol="Sistema-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Contactos" link="#"/>
   </opcion>
