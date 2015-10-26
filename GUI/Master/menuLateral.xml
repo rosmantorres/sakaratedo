@@ -181,7 +181,7 @@
   </opcion>
 
   
-  <opcion nombre="Asistencia a  Evento" link="~/GUI/Modulo13/M13_Inicio.aspx">
+  <opcion nombre="Asistencia a Evento" link="~/GUI/Modulo13/M13_Asistencia_Evento.aspx">
     <modulo id="13"></modulo>
   </opcion>
   
