@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?<?xml version="1.0" encoding="utf-8" ?>
 <menuLateral>
   <!-- OPCIONES DE CADA MODULO -->
 
@@ -113,13 +113,7 @@
 
 
   <!--OPCIONES DE MODULO 9-->
-<<<<<<< HEAD
 
-  <opcion nombre="" link="~/GUI/Modulo9/">
-    <modulo id="9"></modulo>
-  </opcion>
-=======
-  
   <opcion nombre="Gestión de Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
@@ -130,23 +124,17 @@
     <modulo id="9"> </modulo>
   </opcion>
 
-  
->>>>>>> refs/remotes/origin/master
+
 
   <!--FIN OPCIONES MODULO 9-->
 
 
   <!--OPCIONES DE MODULO 10-->
-<<<<<<< HEAD
 
-  <opcion nombre="" link="~/GUI/Modulo10/">
-=======
-  
   <opcion nombre="Listar Asistencia a Eventos" link="~/GUI/Modulo10/M10_ListarAsistenciaEventos.aspx">
     <modulo id="10"></modulo>
   </opcion>
   <opcion nombre="Agregar Asistencia a Eventos" link="~/GUI/Modulo10/M10_AgregarAsistenciaEventos.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="10"></modulo>
   </opcion>
 
@@ -154,16 +142,11 @@
 
 
   <!--OPCIONES DE MODULO 11-->
-<<<<<<< HEAD
 
-  <opcion nombre="" link="~/GUI/Modulo11/">
-=======
-  
   <opcion nombre="Listar Resultados de Competencia" link="~/GUI/Modulo11/M11_ListarResultadoCompetencia.aspx">
     <modulo id="11"></modulo>
   </opcion>
   <opcion nombre="Agregar Resultados de Competencia" link="~/GUI/Modulo11/M11_AgregarResultadoCompetencia.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="11"></modulo>
   </opcion>
 
@@ -171,17 +154,12 @@
 
 
   <!--OPCIONES DE MODULO 12-->
-<<<<<<< HEAD
 
-  <opcion nombre="Crear Competencia" link="~/GUI/Modulo12/">
-=======
-  
   <opcion nombre="Listar Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
     <modulo id="12"> </modulo>
   </opcion>
-  
+
   <opcion nombre="Agregar Competencia" link="~/GUI/Modulo12/M12_AgregarCompetencias.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="12"> </modulo>
   </opcion>
 
@@ -190,12 +168,6 @@
 
   <!--OPCIONES DE MODULO 13-->
 
-<<<<<<< HEAD
-  <opcion nombre="" link="~/GUI/Modulo13/">
-    <modulo id="13"></modulo>
-  </opcion>
-
-=======
   <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Kyu.aspx">
     <modulo id="13"></modulo>
   </opcion>
@@ -236,38 +208,32 @@
   </opcion>
 
 
->>>>>>> refs/remotes/origin/master
   <!--FIN OPCIONES MODULO 13-->
 
 
   <!--OPCIONES DE MODULO 14-->
-<<<<<<< HEAD
 
-  <opcion nombre="" link="~/GUI/Modulo14/">
-=======
-  
   <opcion nombre="Solicitar Planilla" link="~/GUI/Modulo14/M14_SolicitarPlanilla.aspx">
     <modulo id="14"></modulo>
   </opcion>
-  
+
   <opcion nombre="Solicitar Carnet" link="~/GUI/Modulo14/M14_VisorCarnet.aspx">
     <modulo id="14"></modulo>
   </opcion>
-  
+
   <opcion nombre="Solicitar planilla de Inscripción" link="~/GUI/Modulo14/M14_VisorInscripcion.aspx">
     <modulo id="14"></modulo>
   </opcion>
-  
+
   <opcion nombre="Planillas Solicitadas" link="~/GUI/Modulo14/M14_ConsultarPlanillasSolicitadas.aspx">
     <modulo id="14"></modulo>
   </opcion>
-  
+
   <opcion nombre="Planillas por Dojo" link="~/GUI/Modulo14/M14_ConsultarPlanillasDojo.aspx">
     <modulo id="14"></modulo>
   </opcion>
-  
+
   <opcion nombre="Registrar Planilla" link="~/GUI/Modulo14/M14_RegistrarPlanilla.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="14"></modulo>
   </opcion>
 
@@ -275,16 +241,11 @@
 
 
   <!--OPCIONES DE MODULO 15-->
-<<<<<<< HEAD
 
-  <opcion nombre="" link="~/GUI/Modulo15/">
-=======
-  
   <opcion nombre="Agregar Implemento" link="~/GUI/Modulo15/M15_AgregarImplemento.aspx">
     <modulo id="15"></modulo>
   </opcion>
   <opcion nombre="Consultar Implemento" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx">
->>>>>>> refs/remotes/origin/master
     <modulo id="15"></modulo>
   </opcion>
 
@@ -305,12 +266,9 @@
     <modulo id="16"></modulo>
   </opcion>
 
-<<<<<<< HEAD
-=======
   <opcion nombre="Consultar Mensualidad" link="~/GUI/Modulo16/M16_ConsultarMensualidad.aspx">
     <modulo id="16"></modulo>
   </opcion>
-  
->>>>>>> refs/remotes/origin/master
+
   <!--FIN OPCIONES MODULO 16-->
 </menuLateral>
