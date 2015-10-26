@@ -66,8 +66,6 @@ Gestion de Inventario
 				</tr>
 			</thead>
 			<tbody>
-				
-
                 <tr>
                 <td class="id">1</td>
 					<td>Guante de pelea</td>
