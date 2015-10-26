@@ -279,9 +279,12 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#example').DataTable();
 
-                var table = $('#example').DataTable();
+                var table = $('#example').DataTable({
+                    "language": {
+                        "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                    }
+                });
                 var req;
                 var tr;
 
