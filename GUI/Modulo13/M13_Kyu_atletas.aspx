@@ -8,7 +8,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"></asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    <div class="box-body table-responsive">
+   
+     &nbsp;&nbsp;&nbsp;&nbsp
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/Atletas.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
+         &nbsp;&nbsp
+
+     <div class="box-body table-responsive">
 
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
@@ -106,4 +111,29 @@
 
      
 
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="M13_Inicio.aspx">Reportes Dojo</a> 
+		    </li>
+            
+             <li>
+			    <a href="M13_Kyu.aspx">Kyu</a> 
+		    </li>
+
+
+		    <li class="active">
+			    Kyu Atletas
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
 </asp:Content>

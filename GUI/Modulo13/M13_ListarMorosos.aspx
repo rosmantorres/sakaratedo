@@ -10,7 +10,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
     
    &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="M13_ListarMorosos.aspx?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/Morosos.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
          &nbsp;&nbsp
 
     <div class="box-body table-responsive">
@@ -99,4 +99,25 @@
          </script>
 
 
+</asp:Content>
+
+
+<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+	<%--Breadcrumbs--%>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Home</a>
+		    </li>
+		
+		    <li>
+			    <a href="M13_Inicio.aspx">Reportes Dojo</a> 
+		    </li>
+		
+		    <li class="active">
+			    Lista Morosos
+		    </li>
+	    </ol>
+    </div>
+	<%--Fin_Breadcrumbs--%>
 </asp:Content>
