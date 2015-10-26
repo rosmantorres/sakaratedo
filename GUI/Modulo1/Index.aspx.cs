@@ -18,8 +18,13 @@ namespace templateApp.GUI.Modulo1
 
             errorLogin.Visible = false;
             warningLog.Visible = false;
-            infoLog.Visible = false;
-            if (Request.QueryString[mensajes.tipoInfo] == "true")
+
+            if ((Request.QueryString[mensajes.tipoInfo] == "true"))
+                mensajeLogin(true, mensajes.logInfo, mensajes.tipoInfo);
+            else
+                infoLog.Visible = false;
+
+            if ((Request.QueryString[mensajes.tipoSucess] == "true"))
                 mensajeLogin(true, mensajes.logSuccess, mensajes.tipoSucess);
             else
                 successLog.Visible = false;
@@ -46,10 +51,26 @@ namespace templateApp.GUI.Modulo1
         {
             switch (tipo)
             {
-                case "Error": errorLogin.Visible = visible; errorLogin.InnerText = mensaje; break;
-                case "Warning": warningLog.Visible = visible; warningLog.InnerText = mensaje; break;
-                case "Info": infoLog.Visible = visible; infoLog.InnerText = mensaje; break;
-                case "Success": successLog.Visible = visible; successLog.InnerText = mensaje; break;
+                case "Error": errorLogin.Visible = visible;
+                              warningLog.Visible = !visible;
+                              infoLog.Visible = !visible;
+                              successLog.Visible = !visible;
+                               errorLogin.InnerText = mensaje; break;
+                case "Warning": warningLog.Visible = visible;
+                                errorLogin.Visible = !visible;
+                                infoLog.Visible = !visible;
+                                successLog.Visible = !visible;
+                                warningLog.InnerText = mensaje; break;
+                case "Info": infoLog.Visible = visible;
+                              errorLogin.Visible = !visible;
+                              warningLog.Visible = !visible;
+                              successLog.Visible = !visible;
+                              infoLog.InnerText = mensaje; break;
+                case "Success": successLog.Visible = visible; 
+                                errorLogin.Visible =!visible;
+                              warningLog.Visible = !visible;
+                              infoLog.Visible = !visible;
+                              successLog.InnerText = mensaje; break;
             }
         }
 
@@ -81,7 +102,10 @@ namespace templateApp.GUI.Modulo1
                 mensajeLogin(true, mensajes.logInfo, mensajes.tipoInfo);
                 new login().EnviarCorreo(CorreoOrigen, ClaveOrigen, CorreoDestino, Mensaje);
             }
-                RestablecerCorreo.Value = "";
+            RestablecerCorreo.Value = "";
+                    
+            string opcion="true";
+            Response.Redirect("~/GUI/Modulo1/Index.aspx?" + mensajes.tipoInfo + "=" + opcion);
            
         }
         public void validarUsuario()

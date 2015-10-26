@@ -18,7 +18,7 @@ namespace templateApp.GUI.Modulo1
         {
            
             string opcion="true";
-            Response.Redirect("~/GUI/Modulo1/Index.aspx?" + mensajes.tipoInfo + "=" + opcion);
+            Response.Redirect("~/GUI/Modulo1/Index.aspx?" + mensajes.tipoSucess + "=" + opcion);
         }
     }
 }
