@@ -32,7 +32,7 @@
   </opcion>
 
   <opcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Planillas">
-    <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="#"/>
+    <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
   </opcion>
 
 
