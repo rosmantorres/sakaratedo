@@ -377,7 +377,7 @@
               --%>
                  <div class="btn-group">
             
-                                <select id="DropDownList1" runat="server" class="combobox" style="width:80px; height:35px" onchange="example()" >
+                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
