@@ -11,7 +11,14 @@ namespace templateApp.GUI.Modulo1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        protected void redireccionarIncio(object sender, EventArgs e)
+        {
+            
+            string opcion="true";
+            Response.Redirect("~/GUI/Modulo1/Index.aspx?" + mensajes.tipoSucess + "=" + opcion);
         }
     }
 }
