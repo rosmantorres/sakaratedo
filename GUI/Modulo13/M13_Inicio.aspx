@@ -10,11 +10,8 @@
   <p>&nbsp;</p>
 </asp:Content>
 
-<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server"></asp:Content>
-
-
-
-
-
+<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
              <img src="Imagenes/reportes.jpg" width="370" height="229" />
+
+    </asp:Content>
