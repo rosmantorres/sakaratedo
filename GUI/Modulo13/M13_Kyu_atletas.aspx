@@ -8,7 +8,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"></asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    <div class="box-body table-responsive">
+   
+     &nbsp;&nbsp;&nbsp;&nbsp
+         <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/Morosos.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
+         &nbsp;&nbsp
+
+     <div class="box-body table-responsive">
 
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
