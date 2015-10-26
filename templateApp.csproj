@@ -152,16 +152,12 @@
     <Content Include="dist\img\logofinal.png" />
     <Content Include="dist\img\Texture_Dark.jpg" />
     <Content Include="GUI\Master\menuLateral.xml" />
-<<<<<<< HEAD
-    <Content Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo10\ModificarAsistenciaEventos.aspx" />
-=======
     <Content Include="GUI\Master\menuSuperior.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
->>>>>>> refs/remotes/origin/master
+    <Content Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx" />
+    <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
+    <Content Include="GUI\Modulo10\ModificarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
@@ -1041,14 +1037,9 @@
     <Compile Include="GUI\Master\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+    <Compile Include="GUI\Master\sessionTag.cs" />
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.cs">
       <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
-=======
-    <Compile Include="GUI\Master\sessionTag.cs" />
-    <Compile Include="GUI\Modulo10\M10_Prueba.aspx.cs">
-      <DependentUpon>M10_Prueba.aspx</DependentUpon>
->>>>>>> refs/remotes/origin/master
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.designer.cs">
