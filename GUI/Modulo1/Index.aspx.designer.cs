@@ -31,13 +31,31 @@ namespace templateApp.GUI.Modulo1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm loginUser;
         
         /// <summary>
+        /// Control errorLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorLogin;
+        
+        /// <summary>
+        /// Control warningLog.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl warningLog;
+        
+        /// <summary>
         /// Control userIni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userIni;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userIni;
         
         /// <summary>
         /// Control passwordIni.

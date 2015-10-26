@@ -27,7 +27,11 @@
                      <div>
                         <h1 >SA-KARATEDO</h1>
                      </div>
-                     <input type="email" id="userIni" placeholder="Correo electronico" runat="server" class="form-control input-lg"  />         
+                       <div class="alert alert-danger" id="errorLogin" runat="server">
+                       </div>
+                       <div class="alert alert-warning" id="warningLog" runat="server">
+                       </div>
+                     <input type="text" id="userIni" placeholder="Usuario" runat="server" class="form-control input-lg"  />         
                      <input type="password" class="form-control input-lg" id="passwordIni" runat="server"  placeholder="Contraseña" required="" />                    
                      <div class="pwstrength_viewport_progress"></div>
                      <button type="button"  runat="server" name="go" class="btn btn-lg btn-primary btn-block" onserverclick="ValidarUsuario">Entrar</button>
@@ -43,10 +47,12 @@
                               </div>
                                   <div class="modal-body">
                                      <p>Introduzca el correo asociado a su cuenta, de no conocerlo contacte a su dojo</p>
-                                     <input type="email" name="correo" id="RestablecerCorreo" runat="server" placeholder="Correo"  class="form-control input-lg" value="" />         
+                                     <input type="email" name="correo" id="RestablecerCorreo" runat="server" placeholder="Correo" 
+                                      class="form-control input-lg" value="" />         
                                   </div>
                                   <div class="modal-footer">
-                                   <button type="button"   runat="server"  class="btn btn-primary"  data-dismiss="modal"   onserverclick="EnvioCorreo">Restablecer</button>
+                                   <button type="button"   runat="server"  class="btn btn-primary"  data-dismiss="modal"  
+                                    onserverclick="EnvioCorreo">Restablecer</button>
                                       
                                      <!--  <asp:Button runat="server"  Text="Save Image" CssClass="Greengradiant btn- large" OnClick="EnvioCorreo" UseSubmitBehavior="false" data-dismiss="modal" />
 -->
@@ -56,8 +62,13 @@
                      </div>
                   </form>
                   <div class="form-links">
-                     <a href="#">Si desea solicitar inscripción a un dojo, haga click aquí</a>
-                     <a>Copyright © 2015-2016 SA-Karatedo.</a>
+                        <a href="<%=Page.ResolveUrl("~/GUI/Modulo6/M6_SolicitudInscripcionPre.aspx") %>">
+                            <strong>
+                                   Si desea solicitar inscripción a un dojo, click aquí
+                            </strong>
+                        </a>
+                    
+                         <a>Copyright © 2015-2016 SA-Karatedo.</a>
                   </div>
                 </section>
             </div>

@@ -6,15 +6,18 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Modulo1;
 using templateApp.GUI.Master;
+using templateApp.GUI.Modulo1;
 
 namespace templateApp.GUI.Modulo1
 {
     public partial class Index : System.Web.UI.Page
     {
+        public Boolean valueErr = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
+            errorLogin.Visible = false;
+            warningLog.Visible = false;
         }
 
         public void EnvioCorreo(object sender, EventArgs e)
@@ -27,6 +30,27 @@ namespace templateApp.GUI.Modulo1
 
             validarUsuario();
         }
+        /// <summary>
+        /// Metodo para Establecer un mensaje de alerta en el login
+        /// </summary>
+        /// <param name="visible">Si queremos que sea visible</param>
+        /// <param name="mensaje">Mensaje que aparecerá en la alerta</param>
+        /// <param name="tipo">stirng Error;Warning;Info;Sucess</param>
+        public void mensajeLogin(Boolean visible,string mensaje,string tipo)
+        {
+            switch (tipo)
+            {
+                case "Error": errorLogin.Visible = visible; errorLogin.InnerText = mensaje; break;
+                case "Warning": warningLog.Visible = visible; warningLog.InnerText = mensaje; break;
+                case "Info": break;
+                case "Sucess": break;
+            }
+        }
+
+
+        /// <summary>
+        /// Metodo para el envio de correo electrónico 
+        /// </summary>
         public void EnviarCorreo()
         {
             //BD:Todo esto sera traido de la base de datos 
@@ -40,24 +64,35 @@ namespace templateApp.GUI.Modulo1
            DireccionHTTP+"</br>";
             //BD:End
             String CorreoDestino= RestablecerCorreo.Value;
-            new login().EnviarCorreo(CorreoOrigen, ClaveOrigen, CorreoDestino, Mensaje);
-            RestablecerCorreo.Value = "";
+            if (CorreoDestino == "falla@gmail.com")
+            {
+
+                mensajeLogin(true, mensajes.logWarning, mensajes.tipoWarning);
+            }
+            else
+            {
+                new login().EnviarCorreo(CorreoOrigen, ClaveOrigen, CorreoDestino, Mensaje);
+            }
+                RestablecerCorreo.Value = "";
+           
         }
         public void validarUsuario()
         {
             string correo = userIni.Value;
             string clave = passwordIni.Value;
             string[] Respuesta = new login().iniciarSesion(correo, clave);
-            if (Respuesta!=null)
+            if (Respuesta != null)
             {
-                Session[sessionTag.rol] =Respuesta[2] ;
+                Session[sessionTag.rol] = Respuesta[2];
                 Session[sessionTag.usuarioN] = Respuesta[3];
                 Session[sessionTag.usuarioA] = Respuesta[4];
                 Session[sessionTag.usuarioC] = Respuesta[0];
                 Session[sessionTag.roles] = Respuesta[5];
                 Response.Redirect("../Master/Inicio.aspx");
+                mensajeLogin(false, mensajes.logErr, mensajes.tipoErr);
             }
-           
+            else
+                mensajeLogin(true,mensajes.logErr,mensajes.tipoErr);
         }
            
     }
