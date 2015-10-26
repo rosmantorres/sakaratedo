@@ -22,15 +22,21 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                <section class="login-form">
-                  <form method="post" action="#" role="login" id="loginUser" runat="server">
+                  <form  role="login" id="loginUser" runat="server">
                      <img src="../../dist/img/logofinal.png" class="img-responsive" alt=""/>
                      <div>
                         <h1 >SA-KARATEDO</h1>
                      </div>
+
                        <div class="alert alert-danger" id="errorLogin" runat="server">
                        </div>
                        <div class="alert alert-warning" id="warningLog" runat="server">
                        </div>
+                      <div class="alert alert-info" id="infoLog" runat="server">
+                       </div>
+                       <div class="alert alert-success" id="successLog" runat="server">
+                       </div>
+
                      <input type="text" id="userIni" placeholder="Usuario" runat="server" class="form-control input-lg"  />         
                      <input type="password" class="form-control input-lg" id="passwordIni" runat="server"  placeholder="Contraseña" required="" />                    
                      <div class="pwstrength_viewport_progress"></div>
@@ -42,7 +48,7 @@
                         <div id="modalid" class="modal-dialog">
                            <div class="modal-content" id="ModalCont">
                               <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+                                 <button type="button" class="close icon-white" id="closeModal" data-dismiss="modal" aria-hidden="true" >&times;</button>
                                  <h3>Restablecer contraseña</h3>
                               </div>
                                   <div class="modal-body">
@@ -51,7 +57,7 @@
                                       class="form-control input-lg" value="" />         
                                   </div>
                                   <div class="modal-footer">
-                                   <button type="button"   runat="server"  class="btn btn-primary"  data-dismiss="modal"  
+                                   <button type="button"   runat="server"  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"  
                                     onserverclick="EnvioCorreo">Restablecer</button>
                                       
                                      <!--  <asp:Button runat="server"  Text="Save Image" CssClass="Greengradiant btn- large" OnClick="EnvioCorreo" UseSubmitBehavior="false" data-dismiss="modal" />

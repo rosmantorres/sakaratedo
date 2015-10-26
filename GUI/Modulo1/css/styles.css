@@ -87,6 +87,9 @@ form[role=login] {
 	.form-links a {
 		color: #000;
 	}
+.closeModal {
+    color:#fff;
+}
 
 #logo-pass {
     text-align: center;

@@ -12,12 +12,18 @@ namespace templateApp.GUI.Modulo1
 {
     public partial class Index : System.Web.UI.Page
     {
-        public Boolean valueErr = false;
+        public Boolean valueInfo = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
             errorLogin.Visible = false;
             warningLog.Visible = false;
+            infoLog.Visible = false;
+            if (Request.QueryString[mensajes.tipoInfo] == "true")
+                mensajeLogin(true, mensajes.logSuccess, mensajes.tipoSucess);
+            else
+                successLog.Visible = false;
+
         }
 
         public void EnvioCorreo(object sender, EventArgs e)
@@ -42,8 +48,8 @@ namespace templateApp.GUI.Modulo1
             {
                 case "Error": errorLogin.Visible = visible; errorLogin.InnerText = mensaje; break;
                 case "Warning": warningLog.Visible = visible; warningLog.InnerText = mensaje; break;
-                case "Info": break;
-                case "Sucess": break;
+                case "Info": infoLog.Visible = visible; infoLog.InnerText = mensaje; break;
+                case "Success": successLog.Visible = visible; successLog.InnerText = mensaje; break;
             }
         }
 
@@ -56,7 +62,8 @@ namespace templateApp.GUI.Modulo1
             //BD:Todo esto sera traido de la base de datos 
             String CorreoOrigen = "sakaratedo@gmail.com";
             String ClaveOrigen = "karate1234";
-            String DireccionHTTP="Https://EnlaceEncriptado";
+            string puerto = "23072";
+            String DireccionHTTP = "http://localhost:"+puerto+"/GUI/Modulo1/RestablecerContrasena.aspx";
             String Mensaje = "Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña "+
            "asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los "+
            "pasao que a continuacion se le presenta para poder reestablecer su contraseña:<br>"+
@@ -71,6 +78,7 @@ namespace templateApp.GUI.Modulo1
             }
             else
             {
+                mensajeLogin(true, mensajes.logInfo, mensajes.tipoInfo);
                 new login().EnviarCorreo(CorreoOrigen, ClaveOrigen, CorreoDestino, Mensaje);
             }
                 RestablecerCorreo.Value = "";
@@ -88,7 +96,7 @@ namespace templateApp.GUI.Modulo1
                 Session[sessionTag.usuarioA] = Respuesta[4];
                 Session[sessionTag.usuarioC] = Respuesta[0];
                 Session[sessionTag.roles] = Respuesta[5];
-                Response.Redirect("../Master/Inicio.aspx");
+                Response.Redirect("~/GUI/Master/Inicio.aspx");
                 mensajeLogin(false, mensajes.logErr, mensajes.tipoErr);
             }
             else
