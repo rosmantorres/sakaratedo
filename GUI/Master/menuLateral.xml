@@ -2,19 +2,8 @@
 <menuLateral>
   <!-- OPCIONES DE CADA MODULO -->
 
-  <!--OPCIONES DE PANTALLA EJEMPLO-->
-  
-  <opcion nombre="Funcionalidad 0" link="~/GUI/Master/Inicio.aspx">
-    <modulo id="0"></modulo>
-  </opcion>
-  
-    <opcion nombre="Funcionalidad 1" link="~/GUI/Master/Inicio.aspx">
-    <modulo id="0"></modulo>
-  </opcion>
-
   <!--FIN OPCIONES DE PANTALLA EJEMPLO-->
-  
-  
+   
   <!--OPCIONES DE MODULO 1-->
   
   <opcion nombre="" link="~/GUI/Modulo1/">
@@ -75,8 +64,11 @@
 
 
   <!--OPCIONES DE MODULO 6-->
-  
-  <opcion nombre="" link="~/GUI/Modulo6/">
+
+  <opcion nombre="Gestion de Usuarios" link="~/GUI/Modulo6/M6_ListaUsuarios.aspx">
+    <modulo id="6"></modulo>
+  </opcion>
+  <opcion nombre="Solicitudes de Inscripcion" link="~/GUI/Modulo6/M6_procesarSolicitud.aspx">
     <modulo id="6"></modulo>
   </opcion>
   
@@ -123,10 +115,19 @@
 
   <!--OPCIONES DE MODULO 9-->
   
-  <opcion nombre="" link="~/GUI/Modulo9/">
+
+  <opcion nombre="Gestionar Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
+  <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
+    <modulo id="9"></modulo>
+  </opcion>
+  <opcion nombre="Gestión de Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
+    <modulo id="9"> </modulo>
+  </opcion>
+
   
+
   <!--FIN OPCIONES MODULO 9-->
 
 
@@ -156,7 +157,11 @@
 
   <!--OPCIONES DE MODULO 12-->
   
-  <opcion nombre="Crear Competencia" link="~/GUI/Modulo12/">
+  <opcion nombre="Listar Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
+    <modulo id="12"> </modulo>
+  </opcion>
+  
+  <opcion nombre="Agregar Competencia" link="~/GUI/Modulo12/M12_AgregarCompetencias.aspx">
     <modulo id="12"> </modulo>
   </opcion>
   
@@ -164,17 +169,73 @@
 
 
   <!--OPCIONES DE MODULO 13-->
-  
-  <opcion nombre="" link="~/GUI/Modulo13/">
+
+  <opcion nombre="Kyu Atleta" link="~/GUI/Modulo13/M13_Kyu.aspx">
     <modulo id="13"></modulo>
   </opcion>
-  
+
+  <opcion nombre="Listar Morosos" link="~/GUI/Modulo13/M13_ListarMorosos.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Dojos Asociados" link="~/GUI/Modulo13/M13_Inicio.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Asistencia a Evento" link="~/GUI/Modulo13/M13_Asistencia_Evento.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Inicio.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Programa técnico del Kyu" link="~/GUI/Modulo13/M13_KyuPrograma.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Asistencia a las Practicas" link="~/GUI/Modulo13/M13_Inicio.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Estadísticas de Enfrentamiento" link="~/GUI/Modulo13/M13_EstadisticaEntrenamiento.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+  <opcion nombre="Planilla de Evaluación para Kyu" link="~/GUI/Modulo13/M13_Inicio.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inicio.aspx">
+    <modulo id="13"></modulo>
+  </opcion>
+
+
   <!--FIN OPCIONES MODULO 13-->
 
 
   <!--OPCIONES DE MODULO 14-->
   
-  <opcion nombre="" link="~/GUI/Modulo14/">
+  <opcion nombre="Solicitar Planilla" link="~/GUI/Modulo14/M14_SolicitarPlanilla.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Solicitar Carnet" link="~/GUI/Modulo14/M14_VisorCarnet.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Solicitar planilla de Inscripción" link="~/GUI/Modulo14/M14_VisorInscripcion.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Planillas Solicitadas" link="~/GUI/Modulo14/M14_ConsultarPlanillasSolicitadas.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Planillas por Dojo" link="~/GUI/Modulo14/M14_ConsultarPlanillasDojo.aspx">
+    <modulo id="14"></modulo>
+  </opcion>
+  
+  <opcion nombre="Registrar Planilla" link="~/GUI/Modulo14/M14_RegistrarPlanilla.aspx">
     <modulo id="14"></modulo>
   </opcion>
   
@@ -183,7 +244,10 @@
 
   <!--OPCIONES DE MODULO 15-->
   
-  <opcion nombre="" link="~/GUI/Modulo15/">
+  <opcion nombre="Agregar Implemento" link="~/GUI/Modulo15/M15_AgregarImplemento.aspx">
+    <modulo id="15"></modulo>
+  </opcion>
+  <opcion nombre="Consultar Implemento" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx">
     <modulo id="15"></modulo>
   </opcion>
   
