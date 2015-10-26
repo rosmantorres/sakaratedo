@@ -1127,6 +1127,7 @@
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo1\mensajes.cs" />
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
