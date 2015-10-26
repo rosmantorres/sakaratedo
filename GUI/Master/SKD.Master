@@ -9,6 +9,8 @@
     <title>SAKARATEDO | Home Page</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Css de pagina inicial -->
+    <link rel="stylesheet" href="../../dist/css/inicio.css" rel="stylesheet" />
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -158,9 +160,11 @@
                     </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
+                      <!--Boton de Profile suspendido
+                        <div class="pull-left">
+                          <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        </div>
+                      --fin del comentario-->
                       <form id="Form1" runat="server">
                         <div id="Div1" class="pull-right" runat="server">
                           <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
@@ -185,11 +189,11 @@
         <section class="sidebar" style="background-color:Disabled;">
                   <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-          <li><a href="#" class="fa fa-home"></></a></li> 
+          <li><a href="<%= Page.ResolveUrl("~/GUI/Master/Inicio.aspx") %>" class="fa fa-home"></></a></li> 
 
           </ul>
           <ul class="sidebar-menu">
-
+          <div class="anuncio">Elige una opción del menu superior <br /> para poder tener acceso a todo <br /> lo que SA-Karatedo te ofrece</div>
 
            <%-- <li class="header">MAIN NAVIGATION</li>--%>           
 
@@ -205,14 +209,15 @@
      
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+              <!-- Main content -->
+          <!-- Content Header (Page header) -->
         <section class="content-header">
-            <asp:ContentPlaceHolder runat="server" ID="breads">Breadcrumbs</asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder runat="server" ID="breads"></asp:ContentPlaceHolder>
             <h1 class="page-header">
-               <asp:ContentPlaceHolder runat="server" ID="titulo">Título</asp:ContentPlaceHolder>
+               <asp:ContentPlaceHolder runat="server" ID="titulo"></asp:ContentPlaceHolder>
                 <br />
                   <small> 
-                  <asp:ContentPlaceHolder runat="server" ID="subtitulo">Subtítulo</asp:ContentPlaceHolder>
+                  <asp:ContentPlaceHolder runat="server" ID="subtitulo"></asp:ContentPlaceHolder>
                   </small>
 			</h1>
 
@@ -220,10 +225,8 @@
 
         <!-- Main content -->
         <section class="content">
-
-                    <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
-
-        </section><!-- /.content -->
+      <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
+            </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
       <footer class="main-footer">
