@@ -61,6 +61,10 @@ form[role=login] {
 		color: #fff;
 
 	}
+    	form[role=login] h3 {
+		color: #fff
+
+	}
 	form[role=login] img {
 		display: block;
 		margin: 0 auto;
@@ -89,4 +93,7 @@ form[role=login] {
     width:50%;
     height:50%;
 
+}
+#infoRestablecer {
+    text-align:left;
 }
