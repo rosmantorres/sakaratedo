@@ -95,6 +95,7 @@
     </div>
    <br/>
 
+        <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
    <div class="form-group">
       <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
          <h3>Inscritos:</h3>
