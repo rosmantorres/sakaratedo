@@ -13,7 +13,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="M14_ConsultarPlanillas.aspx">Gestión de planillas</a>
+			    <a href="#">Gestión de planillas</a>
 		    </li>
 		
 		    <li class="active">
@@ -34,7 +34,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" name="modificar_planilla" id="modificar_planilla" method="post" action="M14_ModificarPlanillaCreada.aspx?success=1"  runat="server">
+  <form role="form" name="modificar_planilla" id="modificar_planilla" method="post" action="M14_ModificarPlanillaCreada.aspx?success=1" >
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
       <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
          <div id="alertlocal" runat="server">
@@ -43,21 +43,26 @@
           <div class="col-sm-3 col-md-3 col-lg-3">
             <label>Seleccione el tipo de planilla:</label>  
           </div>
-          <div class="col-sm-8 col-md-8 col-lg-84">
-             <div class="dropdown" runat="server" id="divComboTipoPlanilla" >
-                 <asp:DropDownList ID="comboTipoPlanilla" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboTipoPlanilla_SelectedIndexChanged">
-                 </asp:DropDownList>
-              </div>
-           </div>
+           <div class="col-sm-8 col-md-8 col-lg-8">
+             <div class="btn-group">
+            <button id="id_tipos" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            Selecionar...<span class="caret"></span>
+            </button>
+            <ol id="dp1" class="dropdown-menu" role="menu"  onclick="cargartipo();">
+               <li value="1"><a href="#">Retiro</a></li>
+               <li value="2"><a href="#">Asistencia</a></li>
+            </ol>
+         </div>
+     </div>
      </div>
 
-    <div class="form-group  col-sm-10 col-md-10 col-lg-10">
+  <!--  <div class="form-group  col-sm-10 col-md-10 col-lg-10">
        <div  id="id_otro" runat="server">
         <br/>
           <h3>Nombre del tipo de Planilla</h3>
            <input id="id_nombretipo" type="text" placeholder="Nombre Tipo Planilla" class="form-control" name="NombreTipoPlanilla" runat="server" />
         </div>
-     </div>
+     </div>-->
      <div class="form-group  col-sm-10 col-md-10 col-lg-10"">
       <br/>
       <h3>Nombre de Planilla</h3>
@@ -92,7 +97,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="btneditar" class="btn btn-primary"  type="submit" runat="server" Text = "Editar" OnClick="btneditar_Click" ></asp:Button>
+           <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M14_ConsultarPlanillas.aspx?eliminacionSuccess=1" onclick="return checkform();">Modificar</a>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M14_ConsultarPlanillas.aspx">Cancelar</a>
       </div>

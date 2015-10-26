@@ -13,15 +13,6 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_SolicitarPlanilla {
         
         /// <summary>
-        /// Control solicitar_planilla.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm solicitar_planilla;
-        
-        /// <summary>
         /// Control alertlocal.
         /// </summary>
         /// <remarks>
@@ -29,23 +20,5 @@ namespace templateApp.GUI.Modulo14 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
-        
-        /// <summary>
-        /// Control divComboTipoPlanilla.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboTipoPlanilla;
-        
-        /// <summary>
-        /// Control comboTipoPlanilla.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboTipoPlanilla;
     }
 }

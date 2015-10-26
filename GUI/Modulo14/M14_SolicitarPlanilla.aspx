@@ -12,7 +12,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="M14_ConsultarPlanillas.aspx">Gestión de planillas</a>
+			    <a href="#">Gestión de planillas</a>
 		    </li>
 		
 		    <li class="active">
@@ -34,7 +34,7 @@
       </div>
       <!-- /.box-header -->
      <!-- form start -->
-    <form role="form" name="solicitar_planilla" id="solicitar_planilla" method="post" action="M14_SolicitarPlanilla.aspx?success=1"  runat="server">
+    <form role="form" name="solicitar_planilla" id="solicitar_planilla" method="post" action="M14_SolicitarPlanilla.aspx?success=1">
 
      <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
          <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
@@ -44,12 +44,15 @@
             <div class="col-sm-3 col-md-3 col-lg-3">
                 <label>Seleccione el tipo de planilla:</label>  
             </div>
-            <div class="col-sm-8 col-md-8 col-lg-84">
-                <div class="dropdown" runat="server" id="divComboTipoPlanilla" >
-                    <asp:DropDownList ID="comboTipoPlanilla" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
-                    </asp:DropDownList>
-                 </div>
-             </div>
+              <div class="btn-group">
+            <button id="id_tipos" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            Selecionar...<span class="caret"></span>
+            </button>
+            <ol id="dp1" class="dropdown-menu" role="menu"  onclick="cargartipo();">
+               <li value="1"><a href="#">Retiro</a></li>
+               <li value="2"><a href="#">Asistencia</a></li>
+            </ol>
+         </div>
            </div>
 
          <div class="box-body table-responsive">

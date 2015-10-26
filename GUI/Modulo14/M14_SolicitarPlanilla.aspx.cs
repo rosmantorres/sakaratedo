@@ -12,11 +12,11 @@ namespace templateApp.GUI.Modulo14
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
-                llenarComboTipoPlanilla();  
+               // llenarComboTipoPlanilla();  
         }
 
 
-        protected void llenarComboTipoPlanilla()
+      /*  protected void llenarComboTipoPlanilla()
         {
 
             Dictionary<string, string> options = new Dictionary<string, string>();
@@ -31,7 +31,7 @@ namespace templateApp.GUI.Modulo14
             comboTipoPlanilla.DataBind();
 
 
-        }
+        }*/
     }
     
        

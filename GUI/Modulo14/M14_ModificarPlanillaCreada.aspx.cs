@@ -12,13 +12,13 @@ namespace templateApp.GUI.Modulo14
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
-            if (!IsPostBack)
+       /*     if (!IsPostBack)
             {
                 id_otro.Visible = false;
                 llenarComboTipoPlanilla();
-            }
+            }*/
         }
-        protected void llenarComboTipoPlanilla()
+        /*protected void llenarComboTipoPlanilla()
         {
 
             Dictionary<string, string> options = new Dictionary<string, string>();
@@ -33,9 +33,9 @@ namespace templateApp.GUI.Modulo14
             comboTipoPlanilla.DataBind();
 
 
-        }
+        }*/
 
-        protected void comboTipoPlanilla_SelectedIndexChanged(object sender, EventArgs e)
+      /*  protected void comboTipoPlanilla_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboTipoPlanilla.SelectedValue == "3")
             {
@@ -46,9 +46,9 @@ namespace templateApp.GUI.Modulo14
                 id_otro.Visible = false;
             }
 
-        }
+        }*/
 
-        protected void btneditar_Click(object sender, EventArgs e)
+       /* protected void btneditar_Click(object sender, EventArgs e)
         {
             if (comboTipoPlanilla.SelectedValue == "-1")
             {
@@ -90,7 +90,7 @@ namespace templateApp.GUI.Modulo14
             }
             if (comboTipoPlanilla.SelectedValue == "1" || comboTipoPlanilla.SelectedValue == "2")
             {
-                /*    if (Text1.Value != "")
+                    if (Text1.Value != "")
                    {
                         if (checkbox0.Value == "" && checkbox1.Value == "" && checkbox2.Value == "" && checkbox3.Value == "" && checkbox4.Value == "" && checkbox5.Value == "" && checkbox6.Value == "")
                         {
@@ -99,7 +99,7 @@ namespace templateApp.GUI.Modulo14
                         this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>no has seleccionado datos para la planilla.</div>";
                         this.alertlocal.Visible = true;
                         }
-                    }*/
+                    }
             }
             if (comboTipoPlanilla.SelectedValue == "1" || comboTipoPlanilla.SelectedValue == "2")
             {
@@ -123,7 +123,7 @@ namespace templateApp.GUI.Modulo14
 
                 }
             }
-        }
+        }*/
     
     }
 
