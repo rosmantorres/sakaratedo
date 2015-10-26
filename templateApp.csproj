@@ -168,6 +168,7 @@
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx" />
     <Content Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
@@ -1123,6 +1124,13 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx.designer.cs">
       <DependentUpon>M14_DiseñoPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.cs">
+      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.designer.cs">
+      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.cs">
       <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
