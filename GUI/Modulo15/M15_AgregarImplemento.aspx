@@ -4,7 +4,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 	<%--Breadcrumbs--%>
     <div>
-	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);"> 
 		    <li>
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
@@ -26,23 +26,25 @@ Agregar Implemento
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-
+    <%--Alerta de falta de contenido--%>
  <div id="alert"  >
     <div id="contenido_alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>
+    <%--Fin de alerta de falta de contenido--%>
 
+    <%--Alerta de confirmación--%>
  <div id="alert_confirmacion"  >
     <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>    
+    <%--Alerta de confirmación--%>
 
-
-              <!-- general form elements -->
+              <!-- Elementos generales del formulario -->
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Agregar Implemento</h3>
-                </div><!-- /.box-header -->
+                </div><!--Encabezado del formulario -->
 
-                <!-- form start -->
+                <!-- Comienzo del formulario -->
                 <form role="form" id="agregar_implemento" method="post" action="M15_ConsultarImplemento.aspx?comprobar=exito">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -119,11 +121,8 @@ Agregar Implemento
                        <input type="file" id="imagen_implemento"  class="form-control" />            
                     </div>
                       <br/>
-                      
-                      
-                      
-                        
-                  </div><!-- /.box-body -->
+                                                  
+                  </div><!--Fin del listado del formulario -->
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
@@ -133,21 +132,24 @@ Agregar Implemento
                   </div>
 
                 </form>
-              </div><!-- /.box -->
+              </div><!-- Fin del formulario-->
   <script type="text/javascript">
 
+      <!-- Declaración de las alertas-->
+      
       $(document).ready(function () {
           $("#alert").hide();
           $("#alert").attr("class", "alert alert-error alert-dismissible");
           $("#alert").attr("role", "alert");
 
           $("#alert_confirmacion").hide();
-
           $("#alert_confirmacion").attr("class", "alert alert-success alert-dismissible");
           $("#alert_confirmacion").attr("role", "alert");
           var valor = "";
           var estado = false;
 
+
+          // Alertas de cada uno de los campos vacios y los que pertenecen a numéricos
 
           $("#btn-agregarComp").click(function (evento) {
               //  alert($("#nombre_articulo").val());
@@ -212,6 +214,8 @@ Agregar Implemento
                   valor = valor + "El campo marca es obligatorio </br>";
                   estado = true;
               }
+               
+              //aparición de las alertas de pantalla
 
               if (estado) {
                   $("#alert_confirmacion").hide();
