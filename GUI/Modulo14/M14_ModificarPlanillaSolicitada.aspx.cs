@@ -14,7 +14,7 @@ namespace templateApp.GUI.Modulo14
             ((SKD)Page.Master).IdModulo = "14";
         }
 
-        protected void boteditar_Click(object sender, EventArgs e)
+       /* protected void boteditar_Click(object sender, EventArgs e)
         {
             if (id_fechai.Value == "")
             {
@@ -45,6 +45,6 @@ namespace templateApp.GUI.Modulo14
                 this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Se ha modificado la solicitud de planilla.</div>";
                 this.alertlocal.Visible = true;
             }
-        }
+        }*/
     }
 }

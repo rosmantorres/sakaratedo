@@ -98,7 +98,8 @@
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
            <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M14_ConsultarPlanillas.aspx?eliminacionSuccess=1" onclick="return checkform();">Modificar</a>
-         &nbsp;&nbsp
+       
+            &nbsp;&nbsp
          <a class="btn btn-default" href="M14_ConsultarPlanillas.aspx">Cancelar</a>
       </div>
    </form>

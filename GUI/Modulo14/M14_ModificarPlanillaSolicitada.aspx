@@ -11,11 +11,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="M14_ConsultarPlanillas.aspx">Gestión de planillas</a>
+			    <a href="#">Gestión de planillas</a>
 		    </li>
 
             <li>
-			    <a href="M14_ConsultarPlanillasSolicitadas.aspx">Gestión de planillas</a>
+			    <a href="#">Gestión de planillas</a>
 		    </li>
 
 
@@ -37,7 +37,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" name="modificar_planilla" id="modificar_planilla" method="post" action="M14_ModificarPlanillaSolicitada.aspx?success=1"  runat="server">
+  <form role="form" name="modificar_planilla" id="modificar_planilla" method="post" action="M14_ModificarPlanillaSolicitada.aspx?success=1">
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
        <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
          <div id="alertlocal" runat="server">
@@ -63,7 +63,7 @@
                       <label>Motivo:</label>
                   </div>     
                   <div class="col-sm-8 col-md-8 col-lg-8">
-                   <asp:TextBox id="TextBox1" placeholder="Escribe el Motivo" TextMode="multiline" Columns="106" Rows="10" runat="server" />     
+                    <input type="text" ID="Date1" Class="form-control" runat="server"/>   </div>           
                   </div>
       </div>
 

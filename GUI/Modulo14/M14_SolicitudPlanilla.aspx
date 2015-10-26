@@ -11,7 +11,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="M14_SolicitarPlanilla.aspx">Solicitar planillas</a>
+			    <a href="#">Solicitar planillas</a>
 		    </li>
 
 		    <li class="active">
@@ -32,7 +32,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" name="solicitud_planilla" id="solicitud_planilla" method="post" action="M14_SolicitudPlanilla.aspx?success=1"  runat="server">
+  <form role="form" name="solicitud_planilla" id="solicitud_planilla" method="post" action="M14_SolicitudPlanilla.aspx?success=1">
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
        <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
          <div id="alertlocal" runat="server">
@@ -58,18 +58,15 @@
                       <label>Motivo:</label>
                   </div>     
                   <div class="col-sm-8 col-md-8 col-lg-8">
-                   <asp:TextBox id="TextBox1" placeholder="Escribe el Motivo" TextMode="multiline" Columns="106" Rows="10" runat="server" />     
+                       <input type="text" ID="Date1" Class="form-control" runat="server"/>   </div>     
                   </div>
-      </div>
-
  
-
  </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="botaceptar" class="btn btn-primary"  type="submit" runat="server" Text = "Solicitar" OnClick="botaceptar_Click"  ></asp:Button>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M14_ConsultarPlanillas.aspx?eliminacionSuccess=1" onclick="return checkform();">Aceptar</a>
         &nbsp;&nbsp
          <a class="btn btn-default" href="M14_SolicitarPlanilla.aspx">Cancelar</a>
       </div>
