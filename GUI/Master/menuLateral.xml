@@ -23,7 +23,6 @@
 
   
   <!--OPCIONES DE MODULO 3-->
-<<<<<<< HEAD
   
   <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
     <modulo id="3"></modulo>
@@ -38,25 +37,7 @@
   </opcion>
     
   <opcion nombre="Modificar Organizacion" link="~/GUI/Modulo3/M3_ModificarOrganizacion.aspx">
-=======
-
-  <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
->>>>>>> refs/remotes/origin/master
-    <modulo id="3"></modulo>
   </opcion>
-
-  <opcion nombre="Consultar Organizacion" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx">
-    <modulo id="3"></modulo>
-  </opcion>
-
-  <opcion nombre="Eliminar Organizacion" link="~/GUI/Modulo3/M3_EliminarOrganizacion.aspx">
-    <modulo id="3"></modulo>
-  </opcion>
-
-  <opcion nombre="Modificar Organizacion" link="~/GUI/Modulo3/M3_ModificarOrganizacion.aspx">
-    <modulo id="3"></modulo>
-  </opcion>
-
 
   <!--FIN OPCIONES MODULO 3-->
 
