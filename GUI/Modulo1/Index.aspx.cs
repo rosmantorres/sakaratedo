@@ -101,11 +101,12 @@ namespace templateApp.GUI.Modulo1
             {
                 mensajeLogin(true, mensajes.logInfo, mensajes.tipoInfo);
                 new login().EnviarCorreo(CorreoOrigen, ClaveOrigen, CorreoDestino, Mensaje);
+
+                string opcion = "true";
+                Response.Redirect("~/GUI/Modulo1/Index.aspx?" + mensajes.tipoInfo + "=" + opcion);
             }
             RestablecerCorreo.Value = "";
                     
-            string opcion="true";
-            Response.Redirect("~/GUI/Modulo1/Index.aspx?" + mensajes.tipoInfo + "=" + opcion);
            
         }
         public void validarUsuario()
