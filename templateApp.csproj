@@ -160,6 +160,7 @@
     <Content Include="GUI\Modulo12\M12_Prueba.aspx" />
     <Content Include="GUI\Modulo13\M13_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
+    <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
     <Content Include="GUI\Modulo15\WebForm1.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
@@ -1070,6 +1071,13 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.designer.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.cs">
+      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo15\M15_Prueba.aspx.cs">
       <DependentUpon>M15_Prueba.aspx</DependentUpon>
