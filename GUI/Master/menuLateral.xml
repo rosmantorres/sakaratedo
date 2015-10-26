@@ -93,9 +93,29 @@
 
 
   <!--OPCIONES DE MODULO 8-->
-  
-  <opcion nombre="" link="~/GUI/Modulo8/">
-    <modulo id="8"></modulo>
+
+  <opcion nombre="Gestión de Rest. de Horarios" link="~/GUI/Modulo8/interfazRestriccionesHorario.aspx">
+    <modulo id="8.0"></modulo>
+  </opcion>
+
+  <opcion nombre="Gestión de Rest. de Eventos" link="~/GUI/Modulo8/interfazRestriccionesEventos.aspx">
+    <modulo id="8.0"></modulo>
+  </opcion>
+
+  <opcion nombre="Gestión de Rest. de Cintas" link="~/GUI/Modulo8/interfazRestriccionesAvanceCinta.aspx">
+    <modulo id="8.0"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Horario" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
+    <modulo id="8.1"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
+    <modulo id="8.2"></modulo>
+  </opcion>
+
+  <opcion nombre="Agregar Rest. de Avance de Cinta" link="~/GUI/Modulo8/interfazCrearRestriccionAvanceCinta.aspx">
+    <modulo id="8.3"></modulo>
   </opcion>
   
   <!--FIN OPCIONES MODULO 8-->
@@ -112,7 +132,10 @@
 
   <!--OPCIONES DE MODULO 10-->
   
-  <opcion nombre="" link="~/GUI/Modulo10/">
+  <opcion nombre="Listar Asistencia a Eventos" link="~/GUI/Modulo10/M10_ListarAsistenciaEventos.aspx">
+    <modulo id="10"></modulo>
+  </opcion>
+  <opcion nombre="Agregar Asistencia a Eventos" link="~/GUI/Modulo10/M10_AgregarAsistenciaEventos.aspx">
     <modulo id="10"></modulo>
   </opcion>
   
@@ -121,7 +144,10 @@
 
   <!--OPCIONES DE MODULO 11-->
   
-  <opcion nombre="" link="~/GUI/Modulo11/">
+  <opcion nombre="Listar Resultados de Competencia" link="~/GUI/Modulo11/M11_ListarResultadoCompetencia.aspx">
+    <modulo id="11"></modulo>
+  </opcion>
+  <opcion nombre="Agregar Resultados de Competencia" link="~/GUI/Modulo11/M11_AgregarResultadoCompetencia.aspx">
     <modulo id="11"></modulo>
   </opcion>
   
@@ -175,6 +201,10 @@
   </opcion>
   
   <opcion nombre="Ver Carrito" link="~/GUI/Modulo16/M16_VerCarrito.aspx">
+    <modulo id="16"></modulo>
+  </opcion>
+
+  <opcion nombre="Consultar Mensualidad" link="~/GUI/Modulo16/M16_ConsultarMensualidad.aspx">
     <modulo id="16"></modulo>
   </opcion>
   
