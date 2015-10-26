@@ -6,7 +6,7 @@
    <head id="Head1" runat="server">
       <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
       <meta charset="utf-8"/>
-      <title>SKD - Iniciar Sesión</title>
+      <title>SAKARATEDO - Inicio de Sesión</title>
       <meta name="generator" content="Bootply" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
       <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
