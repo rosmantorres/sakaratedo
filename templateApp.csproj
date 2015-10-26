@@ -147,8 +147,11 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
+    <Content Include="dist\css\inicio.css" />
     <Content Include="dist\img\Dojo1.jpg" />
     <Content Include="dist\img\Dojo2.jpg" />
+    <Content Include="dist\img\fondo_inicio.jpg" />
+    <Content Include="dist\img\logo-wkf.png" />
     <Content Include="dist\img\logofinal.png" />
     <Content Include="dist\img\Texture_Dark.jpg" />
     <Content Include="GUI\Master\menuLateral.xml" />
@@ -1110,6 +1113,7 @@
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo1\mensajes.cs" />
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
