@@ -5,7 +5,7 @@
 <script type="text/javascript">
 
     function initialize() {
-        var latlng = new google.maps.LatLng(51.508742, -0.120850);
+        var latlng = new google.maps.LatLng(10.5000,-66.9167);
         var mapProp = {
             center: latlng,
             zoom: 5,
@@ -29,7 +29,7 @@
 
         var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-        var point = new google.maps.LatLng(51.508742, -0.120850);
+        var point = new google.maps.LatLng(10.5000, -66.9167);
         var marker = new google.maps.Marker({
             position: point,
             map: map,
@@ -58,11 +58,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Eventos y Competencias</a> 
+			    <a href="../GUI/Modulo9/M9_ListarEventos.aspx">Eventos y Competencias</a> 
 		    </li>
 
             <li>
-			    <a href="#">Gestión de Competencias</a> 
+			    <a href="../GUI/Modulo12/M12_ListarCompetencias.aspx">Gestión de Competencias</a> 
 		    </li>
 		
 		    <li class="active">
@@ -90,8 +90,6 @@
 <!-- form start -->
 <form role="form" name="agregar_competencia" id="agregar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=1">
 <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-
-    <div id="googleMap" style="width:500px;height:250px;"></div>
 
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
       <br />
@@ -130,6 +128,11 @@
          <br />
       </div>
    </div>
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <h3>Ubicación de Competencia</h3>
+        <div id="googleMap" style="width:500px;height:250px;"></div>
+        <br />
+    </div>
    <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
       <div class="col-sm-3 col-md-3 col-lg-3">
          <label>Seleccione el rango de edad:</label>  
@@ -199,7 +202,7 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M12_ListarCompetencias.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Volver</a>
+         <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Cancelar</a>
       </div>
    </form>
 </div>
