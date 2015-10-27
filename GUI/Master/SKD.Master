@@ -134,7 +134,7 @@
                   <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                   <span class="hidden-xs" id="userName" runat="server">Alexander Pierce</span>
                 </a>
-                <ul class="dropdown-menu">
+               <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -148,33 +148,28 @@
                           <p>Roles</p>
                           <hr />
                             <ul class="nav nav-pills">
-<<<<<<< HEAD
                               <li role="presentation" class="active"><a href="#"><%=Session["rol"] %></a></li>
-=======
-                              <li role="presentation" class="active"><a ><%=Session["rol"] %></a></li>
->>>>>>> refs/remotes/origin/master
                                         <% foreach (string opcion in RolesUsuario) %>
 						                    <% { %>
                                                 <%if ((opcion != null) && (opcion != Session["rol"].ToString()))%>
                                                  <% { %>
-<<<<<<< HEAD
 							                    <li role="presentation"><a href="Inicio.aspx?rol=<%=opcion %>" class="rolButton"><%=opcion %></a></li>
-=======
-							                    <li role="presentation"><a href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol="+opcion) %>" class="rolButton"><%=opcion %></a></li>
->>>>>>> refs/remotes/origin/master
 						                         <% }%>
                                              <% } %> 
                             </ul> 
                     </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
+                  <!--Comentado: Boton Profile
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
+                      fin de comentario:Boton Profile-->
                       <form id="Form1" runat="server">
                         <div id="Div1" class="pull-right" runat="server">
                           <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
                         </div>
+                    </form>
                     </form>
                   </li>
                 </ul>

@@ -1116,54 +1116,63 @@
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
       <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.designer.cs">
       <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.cs">
       <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.designer.cs">
       <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.cs">
       <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.designer.cs">
       <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.cs">
       <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.designer.cs">
       <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.cs">
       <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.designer.cs">
       <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.cs">
       <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.designer.cs">
       <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
@@ -1191,36 +1200,42 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.cs">
       <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.designer.cs">
       <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Inicio.aspx.cs">
       <DependentUpon>M13_Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Inicio.aspx.designer.cs">
       <DependentUpon>M13_Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.cs">
       <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.designer.cs">
       <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.designer.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
@@ -1234,18 +1249,21 @@
     </Compile>
     <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
       <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.designer.cs">
       <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.cs">
       <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.designer.cs">
       <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.cs">
       <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.designer.cs">
       <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
@@ -1349,18 +1367,21 @@
     </Compile>
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.designer.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.designer.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.cs">
       <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.designer.cs">
       <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
@@ -1444,60 +1465,70 @@
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.cs">
       <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx.cs">
       <DependentUpon>interfazMenuRestriccionesCintasYEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx.designer.cs">
       <DependentUpon>interfazMenuRestriccionesCintasYEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.designer.cs">
       <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.cs">
       <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.designer.cs">
       <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.cs">
       <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.designer.cs">
       <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.cs">
       <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.cs">
       <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
