@@ -162,7 +162,15 @@
     <Content Include="GUI\Modulo10\M10_AgregarEliminarAsistencia.js" />
     <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
+    <Content Include="GUI\Modulo11\M11_AgregarAscenso.aspx" />
+    <Content Include="GUI\Modulo11\M11_AgregarKata.aspx" />
+    <Content Include="GUI\Modulo11\M11_AgregarKumite.aspx" />
+    <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
+    <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
+    <Content Include="GUI\Modulo11\M11_ModificarAscenso.aspx" />
+    <Content Include="GUI\Modulo11\M11_ModificarKata.aspx" />
+    <Content Include="GUI\Modulo11\M11_ModificarKumite.aspx" />
+    <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
@@ -208,7 +216,16 @@
     <Content Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx" />
-    <Content Include="GUI\Modulo8\M8_Prueba.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
@@ -1094,12 +1111,59 @@
     <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo11\M11_Prueba.aspx.cs">
-      <DependentUpon>M11_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
+      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo11\M11_Prueba.aspx.designer.cs">
-      <DependentUpon>M11_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.designer.cs">
+      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.cs">
+      <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.designer.cs">
+      <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.cs">
+      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.designer.cs">
+      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.cs">
+      <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.designer.cs">
+      <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
+      <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.designer.cs">
+      <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.cs">
+      <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.designer.cs">
+      <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.cs">
+      <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.designer.cs">
+      <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.cs">
+      <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.designer.cs">
+      <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.cs">
+      <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
+      <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
@@ -1360,12 +1424,65 @@
     <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
       <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo8\M8_Prueba.aspx.cs">
-      <DependentUpon>M8_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo8\M8_Prueba.aspx.designer.cs">
-      <DependentUpon>M8_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx.cs">
+      <DependentUpon>interfazMenuRestriccionesCintasYEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx.designer.cs">
+      <DependentUpon>interfazMenuRestriccionesCintasYEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.cs">
+      <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.cs">
+      <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.cs">
+      <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
       <DependentUpon>M9_Prueba.aspx</DependentUpon>
