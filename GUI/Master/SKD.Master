@@ -153,7 +153,7 @@
 						                    <% { %>
                                                 <%if ((opcion != null) && (opcion != Session["rol"].ToString()))%>
                                                  <% { %>
-							                    <li role="presentation"><a href="Inicio.aspx?rol=<%=opcion %>" class="rolButton"><%=opcion %></a></li>
+							                    <li role="presentation"><a href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol="+opcion ) %>" class="rolButton"><%=opcion %></a></li>
 						                         <% }%>
                                              <% } %> 
                             </ul> 
@@ -169,7 +169,6 @@
                         <div id="Div1" class="pull-right" runat="server">
                           <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
                         </div>
-                    </form>
                     </form>
                   </li>
                 </ul>
