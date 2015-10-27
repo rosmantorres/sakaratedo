@@ -65,7 +65,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="Inicio.aspx" class="logo" style="background-color:#080B0C">
+        <a href="/GUI/Master/Inicio.aspx" class="logo" style="background-color:#080B0C">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>SKD</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -168,11 +168,9 @@
                     </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
-                      <!--Boton de Profile suspendido
-                        <div class="pull-left">
-                          <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        </div>
-                      --fin del comentario-->
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
                       <form id="Form1" runat="server">
                         <div id="Div1" class="pull-right" runat="server">
                           <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
@@ -197,7 +195,7 @@
         <section class="sidebar" style="background-color:Disabled;">
                   <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-          <li><a href="<%= Page.ResolveUrl("~/GUI/Master/Inicio.aspx") %>" class="fa fa-home"></></a></li> 
+          <li><a href="/GUI/Master/Inicio.aspx" class="fa fa-home"></></a></li> 
 
           </ul>
           <ul class="sidebar-menu">
@@ -236,7 +234,7 @@
       <asp:ContentPlaceHolder runat="server" ID="contenidoCentral"></asp:ContentPlaceHolder>	
             </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-
+  
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <strong>Copyright &copy; 2015-2016 <a href="#">SA-Karatedo</a>.</strong> All rights reserved.

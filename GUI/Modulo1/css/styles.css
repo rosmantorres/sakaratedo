@@ -61,6 +61,10 @@ form[role=login] {
 		color: #fff;
 
 	}
+    	form[role=login] h3 {
+		color: #fff
+
+	}
 	form[role=login] img {
 		display: block;
 		margin: 0 auto;
@@ -81,12 +85,18 @@ form[role=login] {
 	margin-bottom: 50px;
 }
 	.form-links a {
-		color: #000000;
+		color: #000;
 	}
+.closeModal {
+    color:#fff;
+}
 
 #logo-pass {
     text-align: center;
     width:50%;
     height:50%;
 
+}
+#infoRestablecer {
+    text-align:left;
 }

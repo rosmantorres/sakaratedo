@@ -35,5 +35,8 @@
     <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
   </opcion>
 
+  <opcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante" nombre="Compras">
+    <subopcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante" nombre="Gestión De Compras" link="~/GUI/Modulo16/M16_VerCarrito.aspx"/>
+  </opcion>
 
 </menusuperior>
