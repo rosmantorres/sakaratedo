@@ -158,7 +158,10 @@
     <Content Include="GUI\Master\menuSuperior.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="GUI\Modulo10\M10_Prueba.aspx" />
+    <Content Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx" />
+    <Content Include="GUI\Modulo10\M10_AgregarEliminarAsistencia.js" />
+    <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
+    <Content Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo11\M11_Prueba.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
@@ -1070,12 +1073,26 @@
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Master\sessionTag.cs" />
-    <Compile Include="GUI\Modulo10\M10_Prueba.aspx.cs">
-      <DependentUpon>M10_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.cs">
+      <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo10\M10_Prueba.aspx.designer.cs">
-      <DependentUpon>M10_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.designer.cs">
+      <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx.cs">
+      <DependentUpon>M10_ListarAsistenciaEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx.designer.cs">
+      <DependentUpon>M10_ListarAsistenciaEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.cs">
+      <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.designer.cs">
+      <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_Prueba.aspx.cs">
       <DependentUpon>M11_Prueba.aspx</DependentUpon>

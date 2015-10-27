@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo10
 {
-    public partial class M10_Prueba : System.Web.UI.Page
+    public partial class M10_ModificarAsistenciaEventos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ((SKD)Page.Master).IdModulo = "10";
         }
     }
 }
