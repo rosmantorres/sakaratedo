@@ -186,8 +186,9 @@
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
     <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
-    <Content Include="GUI\Modulo15\M15_Prueba.aspx" />
-    <Content Include="GUI\Modulo15\WebForm1.aspx" />
+    <Content Include="GUI\Modulo15\M15_AgregarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\M15_ModificarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -1231,19 +1232,23 @@
     <Compile Include="GUI\Modulo14\M14_Prueba.aspx.designer.cs">
       <DependentUpon>M14_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_Prueba.aspx.cs">
-      <DependentUpon>M15_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
+      <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_Prueba.aspx.designer.cs">
-      <DependentUpon>M15_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.cs">
+      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.cs">
+      <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>
