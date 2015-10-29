@@ -80,8 +80,8 @@
 					<td>Kyu</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="M5_Modificar.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
                 <tr>
@@ -91,7 +91,7 @@
 					<td>Kyu</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
 				</tr><tr>
@@ -101,7 +101,7 @@
 					<td>Kyu</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -112,7 +112,7 @@
 					<td>Dan</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -123,7 +123,7 @@
 					<td>Dan</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
