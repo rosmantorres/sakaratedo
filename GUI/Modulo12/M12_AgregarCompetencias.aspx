@@ -58,11 +58,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Eventos y Competencias</a> 
+			    <a href="../GUI/Modulo9/M9_ListarEventos.aspx">Eventos y Competencias</a> 
 		    </li>
 
             <li>
-			    <a href="#">Gestión de Competencias</a> 
+			    <a href="../GUI/Modulo12/M12_ListarCompetencias.aspx">Gestión de Competencias</a> 
 		    </li>
 		
 		    <li class="active">
