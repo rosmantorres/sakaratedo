@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script type="text/javascript">
 
     function initialize() {
@@ -42,10 +43,7 @@
         });
 
     }
-
-
-
-
+    
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </asp:Content>
@@ -88,7 +86,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_competencia" id="agregar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=1">
+<form runat="server" role="form" name="agregar_competencia" id="agregar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=1">
 <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
 
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -104,28 +102,48 @@
          <input type="radio" name="radioTipo" checked="checked" id="input_tipo_kata" onclick="return fillCodigoTextField();" />Kata</label>
          <label class="radio-inline">
          <input type="radio" name="radioTipo" id="input_tipo_kumite"  onclick="return fillCodigoTextField();"/>Kumite</label>
+         <label class="radio-inline">
+         <input type="radio" name="radioTipo" id="input_tipo_ambos"  onclick="return fillCodigoTextField();"/>Ambos</label>
+         <br />
       </div>
    </div>
    <div class="form-group">
       <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
+         <h3>Organizadores</h3>
+          <input id="organizaciones" type="checkbox" data-width="175">
+          <div id="latabla">
          <h3>Organizaciones Disponibles</h3>
-         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
-            <option value="Organización 1">Organización 1</option>
-            <option value="Organización 2">Organización 2</option>
-            <option value="Organización 3">Organización 3</option>
-            <option value="Organización 1">Organización 4</option>
-            <option value="Organización 2">Organización 5</option>
-            <option value="Organización 3">Organización 6</option>
-         </select>
+         <div class="box-body table-responsive">
+        <table id="tablacompetencias" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					<th style="width:100px;">Seleccionar</th>
+                    <th style="width:auto;">Organización</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+                    <th><input type="radio" name="radioSeleccion" id="radio1"  onclick="return fillCodigoTextField();"/></th>
+					<td class="id">Organización 1</td>
+                </tr>
+                <tr>
+					<th><input type="radio" name="radioSeleccion" id="radio2"  onclick="return fillCodigoTextField();"/></th>
+					<td class="id">Organización 2</td>
+                </tr>
+                <tr>
+					<th><input type="radio" name="radioSeleccion" id="radio3"  onclick="return fillCodigoTextField();"/></th>
+					<td class="id">Organización 3</td>
+                </tr>
+                <tr>
+					<th><input type="radio" name="radioSeleccion" id="radio4"  onclick="return fillCodigoTextField();"/></th>
+					<td class="id">Organización 4</td>
+                </tr>
+                </tbody>
+            </table>
+           </div>
          <br />
-         <div class="text-center padding-small">
-            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-down" onclick="agregarOrg()"></button>
-            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-up" onclick="eliminarOrg()"></button>
-         </div>
-         <h3>Organizaciones Seleccionadas</h3>
-         <select multiple="multiple" name="org_secondary" size="4" class="form-control select select-primary select-block mbl"></select>
          <br />
-         <br />
+        </div>
       </div>
    </div>
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
@@ -138,15 +156,19 @@
          <label>Seleccione el rango de edad:</label>  
       </div>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-         <div class="btn-group">
-            <button id="id_edades" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+<%--         <div class="btn-group">--%>
+            <%--<button id="id_edades" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             Selecionar...<span class="caret"></span>
             </button>
             <ol id="dp1" class="dropdown-menu" role="menu"  onclick="cargarcargo();">
                <li value="1"><a href="#">12-20</a></li>
                <li value="2"><a href="#">21-26</a></li>
-            </ol>
-         </div>
+            </ol>--%>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <label>Desde:</label><input id="edad_desde" type="number" min="10" max="98"/><br />
+                <label>Hasta:</label><input id="edad_hasta" type="number" max="100" disabled="disabled"/>
+            </div>
+         <%--</div>--%>
       </div>
    </div>
    <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 2-->
@@ -154,27 +176,29 @@
          <label>Seleccione la cinta:</label>  
       </div>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-         <div class="btn-group">
-            <button id="id_cinta" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-            Selecionar...<span class="caret"></span>
-            </button>
-            <ol id="dp3" class="dropdown-menu" role="menu">                                                                                                 
-            </ol>
-         </div>
+
+      <div class="dropdown" runat="server" id="divComboCintaDesde">
+          
+            <asp:DropDownList ID="comboCintaDesde"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboCintaDesde_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
       </div>
-   </div>
+      <div class="dropdown" runat="server" id="divComboCintaHasta">
+            <asp:DropDownList ID="comboCintaHasta"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboCintaHasta_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
+      </div>
+     </div>
+</div>
    <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 3-->
       <div class="col-sm-3 col-md-3 col-lg-3">
          <label>Seleccione el sexo:</label>  
       </div>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-         <div class="btn-group">
-            <button id="id_sexo" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            Selecionar...<span class="caret"></span>
-            </button>
-            <ol id="dp2" class="dropdown-menu" role="menu">
-            </ol>
-         </div>
+
+          <div class="dropdown" runat="server" id="divComboSexo">
+            <asp:DropDownList ID="comboSexo"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboSexo_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
+            </div>
+
       </div>
    </div>
 
@@ -194,17 +218,57 @@
 
 
 
-
 </div>
+
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M12_ListarCompetencias.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+         <asp:Button id="btn_agregarComp" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarComp_Click" Text="Agregar"></asp:Button>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Cancelar</a>
       </div>
    </form>
+
 </div>
+
 <!-- /.box -->
+
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $('#tablacompetencias').DataTable();
+
+                $(function () {
+                    $('#organizaciones').bootstrapToggle({
+                        on: 'Todas las organizaciones',
+                        off: 'Elegir una'
+                    });
+                })
+
+                var table = $('#tablacompetencias').DataTable();
+
+            });
+    </script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+    <script>
+        $(function () {
+            $('#organizaciones').change(function () {
+                if ($(this).prop('checked')) {
+                    $('#latabla').hide();
+                }
+                else {
+                    $('#latabla').show();
+                }
+            });
+        });
+    </script>    
+    <script>
+        $(function () {
+            $('#edad_desde').change(function () {
+                var valor = $('#edad_desde').val();
+                $('#edad_hasta').removeAttr('disabled');
+                $('#edad_hasta').attr('min', valor);
+            });
+        });
+    </script>
 </asp:Content>

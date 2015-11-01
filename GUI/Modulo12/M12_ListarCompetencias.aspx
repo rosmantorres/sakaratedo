@@ -77,6 +77,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Competencias
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <form runat="server" role="form" name="eliminar_competencia" id="eliminar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=2">
 
     <div id="alert" runat="server">
     </div>
@@ -96,7 +97,9 @@
 				<tr>
 					<th style="text-align:left">Nombre</th>
 					<th style="text-align:left">Tipo</th>
-					<th style="text-align:left">Organizaciones Participantes</th>
+					<th style="text-align:left">Organización</th>
+                    <th style="text-align:left">Fecha Inicio</th>
+                    <th style="text-align:left">Fecha Fin</th>
                     <th style="text-align:left">Ubicación</th>
 					<th style="text-align:left">Categoria</th>
                     <th style="text-align:left">Status</th>
@@ -108,6 +111,8 @@
 					<td class="id">Nacional Juvenil F.V.K.D.</td>
 					<td>Kata</td>
 					<td>Seito Yodan Ryu</td>
+                    <td>01/01/2016</td>
+                    <td>04/01/2016</td>
                     <td>Caracas, Venezuela</td>
 					<td>Seito Yodan Ryu</td>
                     <td>Por Iniciar</td>
@@ -121,6 +126,8 @@
 					<td class="id">Ozawa Cup</td>
 					<td>Kata</td>
 					<td>Tensho, Kenshin Ryu Kobudo</td>
+                    <td>01/01/2016</td>
+                    <td>04/01/2016</td>
                     <td>Caracas, Venezuela</td>
 					<td>Kenshin Ryu Kobudo</td>
                     <td>Por Iniciar</td>
@@ -134,6 +141,8 @@
 					<td class="id">Hayashi Ha</td>
 					<td>Kumite</td>
 					<td>Kihin, Doo Kan</td>
+                    <td>01/01/2016</td>
+                    <td>04/01/2016</td>
                     <td>Caracas, Venezuela</td>
 					<td>Doo Kan</td>
                     <td>Por Iniciar</td>
@@ -147,6 +156,8 @@
 					<td class="id">Competencia 4</td>
 					<td>Kumite</td>
 					<td>Organización 4</td>
+                    <td>01/01/2016</td>
+                    <td>04/01/2016</td>
                     <td>Caracas, Venezuela</td>
 					<td>Categoria 1</td>
                     <td>Por Iniciar</td>
@@ -160,6 +171,8 @@
 					<td class="id">Shin Kyoshi</td>
 					<td>Kata</td>
 					<td>Ryu Kobudo</td>
+                    <td>01/01/2016</td>
+                    <td>04/01/2016</td>
                     <td>Caracas, Venezuela</td>
 					<td>Cinta Purpura</td>
                     <td>Por Iniciar</td>
@@ -173,6 +186,8 @@
 					<td class="id">Do Hombu</td>
 					<td>Kumite</td>
 					<td>Kenshin Ryu Kobudo</td>
+                    <td>01/01/2016</td>
+                    <td>04/01/2016</td>
                     <td>Caracas, Venezuela</td>
 					<td>Cinta Naranja Raya Verde</td>
                     <td>Por Iniciar</td>
@@ -205,8 +220,8 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M12_ListarCompetencias.aspx?eliminacionSuccess=2">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+         <asp:Button id="btn_eliminarComp" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarComp_Click" Text="Eliminar"></asp:Button>
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
         </div><!-- /.modal-delete-dialog -->
@@ -240,6 +255,7 @@
 				</div>
 			</div>
 		</div>
+</form>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#tablacompetencias').DataTable();
