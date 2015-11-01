@@ -41,6 +41,7 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -195,7 +196,6 @@
     <Content Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
-    <Content Include="GUI\Modulo14\M14_Prueba.aspx" />
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
@@ -1259,20 +1259,17 @@
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo14\Carnet.cs" />
-    <Compile Include="GUI\Modulo14\Carnet1.cs">
+    <Compile Include="GUI\Modulo14\Carnet.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Carnet.rpt</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo14\DiseñoDefault.cs" />
-    <Compile Include="GUI\Modulo14\DiseñoDefault1.cs">
+    <Compile Include="GUI\Modulo14\DiseñoDefault.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DiseñoDefault.rpt</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo14\Inscripcion.cs" />
-    <Compile Include="GUI\Modulo14\Inscripcion1.cs">
+    <Compile Include="GUI\Modulo14\Inscripcion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Inscripcion.rpt</DependentUpon>
@@ -1312,13 +1309,6 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
       <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_Prueba.aspx.cs">
-      <DependentUpon>M14_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_Prueba.aspx.designer.cs">
-      <DependentUpon>M14_Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.cs">
       <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
@@ -1697,21 +1687,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="GUI\Modulo14\Carnet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Carnet1.cs</LastGenOutput>
+      <LastGenOutput>Carnet.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo14\DiseñoDefault.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DiseñoDefault1.cs</LastGenOutput>
+      <LastGenOutput>DiseñoDefault.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo14\Inscripcion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Inscripcion1.cs</LastGenOutput>
+      <LastGenOutput>Inscripcion.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
