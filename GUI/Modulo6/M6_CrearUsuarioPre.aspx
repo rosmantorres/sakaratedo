@@ -37,7 +37,6 @@
     <script src="../../dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script> 
-
     <!-- DATA TABES SCRIPT -->
     <script src="../../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
     <script src="../../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
@@ -53,6 +52,8 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->  
+    <!-- Customized stylesheet -->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -86,19 +87,19 @@
         <fieldset class="scheduler-border">
             <legend class="scheduler-border">Usuario del Sistema</legend>
             <div class="form-group">
-                <label for="imputUserName" class="control-label col-xs-2">Nombre de usuario:</label>
+                <label for="imputUserName" class="control-label col-xs-2 needed">Nombre de usuario:</label>
                 <div class="col-xs-10">
                     <input type="text" class="form-control" id="imputUserName"  placeholder="ej: eltercera" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="imputPassword" class="control-label col-xs-2">Contraseña:</label>
+                <label for="imputPassword" class="control-label col-xs-2 needed">Contraseña:</label>
                 <div class="col-xs-10">
                     <input type="password" class="form-control" id="imputPassword"  placeholder="" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="imputPasswordRe" class="control-label col-xs-2">Repetir contraseña:</label>
+                <label for="imputPasswordRe" class="control-label col-xs-2 needed">Repetir contraseña:</label>
                 <div class="col-xs-10">
                     <input type="password" class="form-control" id="imputPasswordRe"  placeholder="" required/>
                 </div>

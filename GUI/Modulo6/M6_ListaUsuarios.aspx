@@ -32,6 +32,8 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <!-- Customized stylesheet -->
+<link href="css/styles.css" rel="stylesheet" />
     <div id="alert" runat="server">
     </div>
 
@@ -232,25 +234,25 @@
                 <div class="modal-body">
                     <legend class="scheduler-border">Datos Personales</legend>
                         <div class="row form-group">
-                            <label for="imputNombres" class="control-label col-xs-2">Nombres:</label>
+                            <label for="imputNombres" class="control-label col-xs-2 needed">Nombres:</label>
                             <div class="col-xs-10">
                                 <input class="form-control" id="imputNombres"  value="Rómulo José" required/>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="imputApellidos" class="control-label col-xs-2">Apellidos:</label>
+                            <label for="imputApellidos" class="control-label col-xs-2 needed">Apellidos:</label>
                             <div class="col-xs-10">
                                 <input class="form-control" id="imputApellidos" value="Rodriguez Rojas" required/>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="dateNacimiento" class="control-label col-xs-2">Fecha de Nacimiento:</label>
+                            <label for="dateNacimiento" class="control-label col-xs-2 needed">Fecha de Nacimiento:</label>
                             <div class="col-xs-10">
                                 <input type="text" id="dateNacimiento" class="form-control" value="05/10/1990" required/>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="selectNacionalidad" class="control-label col-xs-2">Nacionalidad:</label>
+                            <label for="selectNacionalidad" class="control-label col-xs-2 needed">Nacionalidad:</label>
                             <div class="col-xs-10">
                                 <button id="selectNacionalidad" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 Nacionalidad: <span class="caret"></span>
@@ -262,26 +264,26 @@
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="inputCI" class="control-label col-xs-2">Cédula o Pasaporte:</label>
+                            <label for="inputCI" class="control-label col-xs-2 needed">Cédula o Pasaporte:</label>
                             <div class="col-xs-10">
                                 <input data-validation="number" type="text" class="form-control" id="inputCI" value="19513536" required/>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="selectSex" class="control-label col-xs-2">Sexo:</label>
+                            <label for="selectSex" class="control-label col-xs-2 needed">Sexo:</label>
                             <div class="col-xs-10">
                                 <label class="radio-inline"><input type="radio" name="selectSex" disabled>Femenino</label>
                                 <label class="radio-inline"><input type="radio" name="selectSex" checked disabled>Masculino</label>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="inputMail" class="control-label col-xs-2">Correo Electrónico:</label>
+                            <label for="inputMail" class="control-label col-xs-2 needed">Correo Electrónico:</label>
                             <div class="col-xs-10">
-                                <input type="email" class="form-control" id="inputMail" value="rodriguezrjrr@gmail.com" data-validation="email"/>
+                                <input type="email" class="form-control" id="inputMail" value="rodriguezrjrr@gmail.com" data-validation="email" required/>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label for="inputTelf" class="control-label col-xs-2">Teléfono:</label>
+                            <label for="inputTelf" class="control-label col-xs-2  needed">Teléfono:</label>
                             <div class="col-xs-10">
                                 <input type="text" id="inputTelf" class="form-control"  value="(0212)451-54-54" data-validation="custom" data-validation-regexp="((\(\d{3,4}\)|\d{3,4}-)\d{4,9}(-\d{1,5}|\d{0}))|(\d{4,12})"/>
                             </div>
@@ -295,7 +297,7 @@
                         <div class="row form-group">
                             <label for="textareaDir" class="control-label col-xs-2">Direccion de habitación:</label>
                             <div class="col-xs-10">
-                                <textarea id="textareaDir" class="form-control col-xs-2" rows="5">La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12</textarea>
+                                <textarea id="textareaDir" class="form-control col-xs-2 needed" rows="5">La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12 La Vega, Los Mangos, Sector unido, Carretera negra, Casa N° 12</textarea>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -367,25 +369,25 @@
                     </div>
                     <legend class="scheduler-border">Datos Personales</legend>
                     <div class="row form-group">
-                        <label for="imputNombres" class="control-label col-xs-2">Nombres:</label>
+                        <label for="imputNombres" class="control-label col-xs-2 needed">Nombres:</label>
                         <div class="col-xs-10">
                             <input class="form-control" id="imputNombres"  placeholder="ej: Rómulo Jose" required/>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="imputApellidos" class="control-label col-xs-2">Apellidos:</label>
+                        <label for="imputApellidos" class="control-label col-xs-2 needed">Apellidos:</label>
                         <div class="col-xs-10">
                             <input class="form-control" id="imputApellidos" placeholder="ej: Rodriguez Rojas" required/>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="dateNacimiento" class="control-label col-xs-2">Fecha de Nacimiento:</label>
+                        <label for="dateNacimiento" class="control-label col-xs-2 needed">Fecha de Nacimiento:</label>
                         <div class="col-xs-10">
                             <input type="text" id="dateNacimiento" readonly class="form-control" placeholder="dd/mm/aaaa" required/>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="selectNacionalidad" class="control-label col-xs-2">Nacionalidad:</label>
+                        <label for="selectNacionalidad" class="control-label col-xs-2 needed">Nacionalidad:</label>
                         <div class="col-xs-10">
                             <button id="selectNacionalidad" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Seleccione una Nacionalidad <span class="caret"></span>
@@ -397,26 +399,26 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="inputCI" class="control-label col-xs-2">Cédula o Pasaporte:</label>
+                        <label for="inputCI" class="control-label col-xs-2 needed">Cédula o Pasaporte:</label>
                         <div class="col-xs-10">
                             <input data-validation="number" type="text" class="form-control" id="inputCI" placeholder="ej: 19513536" required/>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="selectSex" class="control-label col-xs-2">Sexo:</label>
+                        <label for="selectSex" class="control-label col-xs-2 needed">Sexo:</label>
                         <div class="col-xs-10">
                             <label class="radio-inline"><input type="radio" name="selectSex" checked>Femenino</label>
                             <label class="radio-inline"><input type="radio" name="selectSex">Masculino</label>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="inputMail" class="control-label col-xs-2">Correo Electrónico:</label>
+                        <label for="inputMail" class="control-label col-xs-2 needed">Correo Electrónico:</label>
                         <div class="col-xs-10">
-                            <input type="email" class="form-control" id="inputMail" placeholder="ej: pedro@gmail.com" data-validation="email"/>
+                            <input type="email" class="form-control" id="inputMail" placeholder="ej: pedro@gmail.com" data-validation="email" required/>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="inputTelf" class="control-label col-xs-2">Teléfono:</label>
+                        <label for="inputTelf" class="control-label col-xs-2 needed">Teléfono:</label>
                         <div class="col-xs-10">
                             <input type="text" id="inputTelf" class="form-control"  placeholder="Ej: (0212)451-54-54" data-validation="custom" data-validation-regexp="((\(\d{3,4}\)|\d{3,4}-)\d{4,9}(-\d{1,5}|\d{0}))|(\d{4,12})"/>
                         </div>
@@ -428,7 +430,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="textareaDir" class="control-label col-xs-2">Direccion de habitación:</label>
+                        <label for="textareaDir" class="control-label col-xs-2 needed">Direccion de habitación:</label>
                         <div class="col-xs-10">
                             <textarea id="textareaDir" class="form-control col-xs-2" rows="5"></textarea>
                         </div>

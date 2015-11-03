@@ -32,6 +32,8 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <!-- Customized stylesheet -->
+    <link href="css/styles.css" rel="stylesheet" />
     <div id="alert" runat="server">
     </div>
 
