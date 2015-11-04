@@ -31,13 +31,49 @@ namespace templateApp.GUI.Modulo1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm loginUser;
         
         /// <summary>
+        /// errorLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorLogin;
+        
+        /// <summary>
+        /// warningLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl warningLog;
+        
+        /// <summary>
+        /// infoLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl infoLog;
+        
+        /// <summary>
+        /// successLog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successLog;
+        
+        /// <summary>
         /// userIni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userIni;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText userIni;
         
         /// <summary>
         /// passwordIni control.
