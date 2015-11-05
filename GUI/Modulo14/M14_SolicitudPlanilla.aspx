@@ -68,7 +68,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M14_ConsultarPlanillas.aspx?eliminacionSuccess=1" onclick="return checkform();">Aceptar</a>
+         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M14_ConsultarPlanillasSolicitadas.aspx?eliminacionSuccess=1" onclick="return checkform();">Aceptar</a>
         &nbsp;&nbsp
          <a class="btn btn-default" href="M14_SolicitarPlanilla.aspx">Cancelar</a>
       </div>
