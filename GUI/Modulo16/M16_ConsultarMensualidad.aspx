@@ -47,7 +47,7 @@
                 <th>Anio</th>
                 <th>Monto (Bs.)</th>
                 <th>Fecha tope para cancelar</th>
-                
+                <th>Accion</th>
                 
             </tr>
         </thead>
@@ -58,7 +58,7 @@
                 <th>Anio</th>
                 <th>Monto (Bs.)</th>
                 <th>Fecha tope para cancelar</th>
-                
+               <th>Accion</th>
             </tr>
         </tfoot>
  
@@ -68,74 +68,21 @@
                 <td>2015</td>
                 <td>190.000</td>
                 <td>1 de Abril de 2015</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
+                 <td><a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a></td>
             </tr>
              <tr>
                 <td>Abril</td>
                 <td>2015</td>
                 <td>200.000</td>
                 <td>1 de Mayo de 2015</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
+                 <td><a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a></td>
             </tr>
             
 
         </tbody>
     </table>
 
-                  <!--MODAL PARA EL DETALLE -->
-<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Información detallada de la Mensualidad</h2>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info1">
-							<div class="row">
-                                 
-								<h3>Mes</h3>
-									Marzo 
-                                <br />
-                                <h3>Anio</h3>
-									2015
-                                <br />
-                                <h3>Monto (Bs.)</h3>
-                                    190.000
-                                <br />
-                                <h3>Fecha tope para cancelar</h3>
-                                    1 de Abril de 2015
-                                <br />
-								<h3>Dojo Asociado</h3>
-                                    Kyu-dan
-                                <br />
-                                <h3>Especialidad del Curso</h3>
-                                    Cinta Blanca
-                                <br />
-                                
-                                <form role="form" class="form-horizontal" method="POST">
-								    <h3>Descricion</h3>
-								    <p>
-									    Mensualidad pendiente por pagar en el mes de Marzo. Tiene la oportunidad de pagar hasta
-                                        el 1 de Abril, sin recargo adicional. Por favor cancele la deuda que tiene pendiente.
-								    </p>
-								    <div class="form-group">
-		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show(); " >Agregar al Carrito</button>
-                                            
-			                            </div>
-	                                </div>
-                                </form>
 
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-    </div>
 
      <!--VALIDACION PARA MODAL -->
              <script type="text/javascript">

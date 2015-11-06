@@ -45,8 +45,9 @@
             <tr>
                 <th>Foto</th>
                 <th>Producto</th>
+                <th>Precio Unitario</th>
                 <th>Cantidad</th>
-                <th>Precio (Bs.)</th>
+                <th>Precio por Cantidad</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -55,8 +56,9 @@
             <tr>
                 <th>Foto</th>
                 <th>Producto</th>
+                <th>Precio Unitario</th>
                 <th>Cantidad</th>
-                <th>Precio (Bs.)</th>
+                <th>Precio por Cantidad</th>
                 <th>Acciones</th>
             </tr>
         </tfoot>
@@ -66,6 +68,7 @@
             <tr>
                 <td><img src="Imagenes/GuanteRojo.jpg" alt="" style="width:50px; height:auto;"></td>
                 <td>Guantes rojos</td>
+                <td>5000</td>
                 <td>
                      
                                  <div class="dropdown" runat="server" id="div3">
@@ -105,6 +108,7 @@
             <tr>
                 <td><img src="Imagenes/Karategi.jpg" alt="" style="width:50px; height:auto;"></td>
                 <td>Karategi</td>
+                <td>14000</td>
                 <td>
                      
                                  <div class="dropdown" runat="server" id="div4">
@@ -142,6 +146,7 @@
             <tr>
                 <td><img src="Imagenes/Suspensorio.jpg" alt="" style="width:50px; height:auto;"></td>
                 <td>Suspensorio</td>
+                <td>350</td>
                 <td>
                     
                                  <div class="dropdown" runat="server" id="div5">
@@ -182,6 +187,7 @@
              <tr>
                 <td><img src="Imagenes/ProtectorBucal.jpg" alt="" style="width:50px; height:auto;"></td>
                 <td>Proteccion bucal</td>
+                 <td>3200</td>
                 <td>
                      <div class="dropdown" runat="server" id="div6">
                          </div>
@@ -220,6 +226,7 @@
                 <td><img src="Imagenes/CintaBlanca.jpg" alt="" style="width:50px; height:auto;"></td>
                 
                 <td>Cinta Blanca</td>
+                <td>400</td>
                 <td>
                      <div class="dropdown" runat="server" id="div7">
                          </div>
