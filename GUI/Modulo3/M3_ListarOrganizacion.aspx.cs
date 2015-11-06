@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo3
 {
-    public partial class M3_ModificarOrganizacion2 : System.Web.UI.Page
+    public partial class M3_ListarOrganizacion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

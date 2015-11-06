@@ -24,19 +24,12 @@
 
   <!--OPCIONES DE MODULO 3-->
   
-  <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
-    <modulo id="3"></modulo>
-  </opcion>
-  
-  <opcion nombre="Consultar Organizacion" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx">
-    <modulo id="3"></modulo>
-  </opcion>
-  
-  <opcion nombre="Eliminar Organizacion" link="~/GUI/Modulo3/M3_EliminarOrganizacion.aspx">
+  <opcion nombre="Agregar Organización" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
     
-  <opcion nombre="Modificar Organizacion" link="~/GUI/Modulo3/M3_ModificarOrganizacion.aspx">
+  <opcion nombre="Listar Organización" link="~/GUI/Modulo3/M3_ListarOrganizacion.aspx">
+    <modulo id="3"></modulo>
   </opcion>
 
   <!--FIN OPCIONES MODULO 3-->
