@@ -23,5 +23,7 @@
           <div class="logoFederacion">
               <a href="http://www.wkf.net/"><img src="../../dist/img/logo-wkf.png"  alt="WKF"  longdesc="Federacion Mundial de Karate" height:"110" width="150"/></a>
           </div>
+
     
+
 </asp:Content>
