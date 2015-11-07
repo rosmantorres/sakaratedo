@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Entrenadorn el rol se colocara los distintos roles que pueden observar cada opcion separados con un guión-->
 <menusuperior>
-  
+
   <opcion rol="Sistema-Organizacion" nombre="Organizaciones">
-    <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="#"/>
-    <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="#"/>
+    <subopcion rol="Sistema-Organizacion" nombre="Organizaciones Mundiales" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx"/>
+    <subopcion rol="Sistema-Organizacion" nombre="Cintas por Organización" link="~/GUI/Modulo5/M5_ListarCintas.aspx"/>
     <subopcion rol="Sistema-Organizacion" nombre="Restricciones de Cintas y Eventos" link="~/GUI/Modulo8/interfazMenuRestriccionesCintasYEventos.aspx"/>
   </opcion>
 
 
   <opcion rol="Sistema-Organizacion-Dojo" nombre="Dojo">
     <subopcion rol="Sistema-Organizacion" nombre="Gestión de Dojos" link="~/GUI/Modulo4/M4_ListarDojos.aspx"/>
-    <subopcion rol="Sistema-Dojo" nombre="Reportes de Dojo" link="#"/>
+    <subopcion rol="Sistema-Dojo" nombre="Reportes de Dojo" link="~/GUI/Modulo13/M13_Inicio.aspx"/>
   </opcion>
 
   <opcion rol="Sistema-Dojo-Entrenador" nombre="Usuarios">
@@ -21,19 +21,22 @@
     <subopcion rol="Sistema-Dojo" nombre="Solicitudes" link="~/GUI/Modulo6/M6_procesarSolicitud.aspx"/>
   </opcion>
 
-  <opcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Eventos">
-    <subopcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Eventos y Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx"/>
+  <opcion rol="Sistema-Organizacion-Dojo-Atleta-Representante-Atleta(Menor)" nombre="Eventos">
+    <subopcion rol="Sistema-Organizacion-Dojo" nombre="Eventos y Competencias" link="~/GUI/Modulo9/M9_ListarEventos.aspx"/>
     <subopcion rol="Sistema-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Asistencia a Eventos" link="~/GUI/Modulo10/M10_ListarAsistenciaEventos.aspx"/>
     <subopcion rol="Sistema-Entrenador-Atleta-Representante-Atleta(Menor)" nombre="Resultados de Competencias" link="~/GUI/Modulo11/M11_ListarResultadoCompetencia.aspx"/>
   </opcion>
 
-  <opcion rol="Sistema-Dojo-Entrenador-Atleta-Representante" nombre="Mercancía">
-    <subopcion rol="Sistema-Dojo-Entrenador-Atleta-Representante" nombre="Inventario" link="#"/>
+  <opcion rol="Sistema-Dojo-Entrenador" nombre="Mercancía">
+    <subopcion rol="Sistema-Dojo-Entrenador" nombre="Inventario" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx"/>
   </opcion>
 
   <opcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Planillas">
     <subopcion rol="Sistema-Organizacion-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
   </opcion>
 
+  <opcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante" nombre="Compras">
+    <subopcion rol="Sistema-Organizacion-Dojo-Entrenador-Atleta-Representante" nombre="Gestión De Compras" link="~/GUI/Modulo16/M16_VerCarrito.aspx"/>
+  </opcion>
 
 </menusuperior>
