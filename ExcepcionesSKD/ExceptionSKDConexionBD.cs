@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD
 {
-    class ExceptionSKDConexionBD:ExceptionSKD
+    public class ExceptionSKDConexionBD:ExceptionSKD
     {
         public ExceptionSKDConexionBD()
             : base()

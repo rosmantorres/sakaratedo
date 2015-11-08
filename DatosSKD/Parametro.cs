@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatosSKD
 {
-    class Parametro
+    public class Parametro
     {
         public string etiqueta { get; set; }
         public SqlDbType tipoDato { get; set; }
