@@ -202,6 +202,16 @@
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DominioSKD\DominioSKD.csproj">
+      <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
+      <Name>DominioSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
