@@ -13,7 +13,7 @@ namespace templateApp.GUI.Modulo12
         {
             ((SKD)Page.Master).IdModulo = "12";
 
-            String success = Request.QueryString["eliminacionSuccess"];
+            String success = Request.QueryString["success"];
 
             if (success != null)
             {
@@ -39,6 +39,11 @@ namespace templateApp.GUI.Modulo12
                 }
 
             }
+        }
+
+        protected void btn_eliminarComp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
