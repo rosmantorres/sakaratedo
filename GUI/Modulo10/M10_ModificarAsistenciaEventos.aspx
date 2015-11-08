@@ -77,30 +77,65 @@
       </div>
     </div>
 
- 
 
-   <div class="form-group">
-      <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
-         <h3>Inscritos:</h3>
-         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
-             <option value="Atleta #1">Atleta #1</option>
-             <option value="Atleta #2">Atleta #2</option>
-             <option value="Atleta #3">Atleta #3</option>
-             <option value="Atleta #4">Atleta #4</option>
-             <option value="Atleta #5">Atleta #5</option>
-             <option value="Atleta #6">Atleta #6</option>
+            <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
+    <div class="form-group">
+      <div id="div-org" class="col-sm-12 col-md-12 col-lg-12" style="height:200px">
+           <table style="width:100%; height:100% ">
+               <tr>
+                   <th >
+                       <h3 style="text-align:center">No Asistieron</h3>
+                   </th>
+                    <th>
+                       
+                   </th>
+                   <th>
+                       <h3 style="text-align:center">Asistieron</h3>
+                   </th>
+               </tr>
+        <tr>
+            <td>
+        
+         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl" style="height:120px">
+            <option value="Organización 1">Atleta #1</option>
+            <option value="Organización 2">Atleta #2</option>
+            <option value="Organización 3">Atleta #3</option>
+            <option value="Organización 1">Atleta #4</option>
+            <option value="Organización 2">Atleta #5</option>
+            <option value="Organización 3">Atleta #6</option>
+            <option value="Organización 1">Atleta #1</option>
+            <option value="Organización 2">Atleta #2</option>
+            <option value="Organización 3">Atleta #3</option>
+            <option value="Organización 1">Atleta #4</option>
+            <option value="Organización 2">Atleta #5</option>
+            <option value="Organización 3">Atleta #6</option>
          </select>
-         <br />
+       </td>
+            <td>
          <div class="text-center padding-small">
             <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-down" onclick="agregarOrg()"></button>
             <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-up" onclick="eliminarOrg()"></button>
          </div>
-         <h3>Asistieron:</h3>
-         <select multiple="multiple" name="org_secondary" size="4" class="form-control select select-primary select-block mbl"></select>
-         <br />
-         <br />
+           </td>
+            
+             <td>
+         <select id="asistieron" multiple="multiple" name="org_secondary" size="4" class="form-control select select-primary select-block mbl" style="height:120px">
+               <option value="Organización 1">Atleta #1</option>
+            <option value="Organización 2">Atleta #2</option>
+            <option value="Organización 3">Atleta #3</option>
+            <option value="Organización 1">Atleta #4</option>
+            <option value="Organización 2">Atleta #5</option>
+            <option value="Organización 3">Atleta #6</option>
+    
+
+         </select>
+        
+                  </td>
+        </tr>
+    </table>
       </div>
    </div>
+    <!--FIN LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
 
 </div>
       <!-- /.box-body -->

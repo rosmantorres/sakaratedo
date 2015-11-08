@@ -53,7 +53,7 @@
         <table id="tablaasistenciae" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr> 
-                    <th style="text-align:center">Id</th>
+                    <th style="text-align:center">Referencia</th>
 					<th style="text-align:center">Nombre Evento</th>
                     <th style="text-align:center">Fecha</th>
 					<th style="text-align:center">Estatus de Asistencia</th>
@@ -157,12 +157,12 @@
              <script type="text/javascript">
                  $(document).ready(function () {
                      $('#tablaasistenciae').DataTable();
-                    
+
                      var table = $('#tablaasistenciae').DataTable();
                      var comp;
                      var tr;
 
-        
+
 
                      $('#tablaasistenciae tbody').on('click', 'a', function () {
                          if ($(this).parent().hasClass('selected')) {
