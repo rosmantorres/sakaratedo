@@ -130,11 +130,11 @@
     <comment>Codigo de error cuando se coloca un parametro errado</comment>
   </data>
   <data name="Mensaje" xml:space="preserve">
-    <value>Error con la Conexion en la BaseDeDatosTotem, no se pudo abrir la conexion</value>
+    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
     <comment>Mensaje al dar error en la conexion con la BD</comment>
   </data>
   <data name="Mensaje_Error_Desconexion" xml:space="preserve">
-    <value>Error al Desconectarse con la BaseDeDatosTotem</value>
+    <value>Error al Desconectarse de la Base de Datos</value>
   </data>
   <data name="Mensaje_Parametro_Errado" xml:space="preserve">
     <value>Error en un parametro del stored procedure</value>

@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo11.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo12\intentodatos.cs" />
     <Compile Include="Modulo12\RecursosBDModulo12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -243,13 +244,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BaseDeDatos\BaseDeDatosSKD.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BaseDeDatos\BaseDeDatosSKD_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
-    </Content>
+    <Folder Include="BaseDeDatos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

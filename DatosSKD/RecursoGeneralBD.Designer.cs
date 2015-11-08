@@ -88,7 +88,7 @@ namespace DatosSKD {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error con la Conexion en la BaseDeDatosTotem, no se pudo abrir la conexion.
+        ///   Looks up a localized string similar to Error con la Conexion en la Base de Datos, no se pudo abrir la conexion.
         /// </summary>
         internal static string Mensaje {
             get {
@@ -97,7 +97,7 @@ namespace DatosSKD {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error al Desconectarse con la BaseDeDatosTotem.
+        ///   Looks up a localized string similar to Error al Desconectarse de la Base de Datos.
         /// </summary>
         internal static string Mensaje_Error_Desconexion {
             get {
