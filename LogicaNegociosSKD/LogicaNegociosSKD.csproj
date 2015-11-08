@@ -121,7 +121,20 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DatosSKD\DatosSKD.csproj">
+      <Project>{27cf82c4-c713-4057-81e0-8e4de0978481}</Project>
+      <Name>DatosSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DominioSKD\DominioSKD.csproj">
+      <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
+      <Name>DominioSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
