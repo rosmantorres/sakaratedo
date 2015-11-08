@@ -26,18 +26,29 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <div id="alert" runat="server">
-    </div>
-
+    <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="css/daterange.css" rel="stylesheet" />
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/daterange.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+    
+     <div id="alert" runat="server"></div>
+    
     <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Eventos</h3>
                 </div><!-- /.box-header -->
-
-
+    
     <div class="box-body table-responsive">
+
+        <div class="center-block" id="baseFechaControl">
+            <div class="dateControlBlock">
+                 Desde fecha: <input type="text" name="fechaInicio" id="fechaInicio" class="datepicker" size="8"/> Hasta fecha:   
+                 <input type="text" name="fechaFin" id="fechaFin" class="datepicker" size="8"/>
+            </div>
+        </div>
 
        <table id="tablaasistencia" class="table table-bordered table-striped dataTable">
         <thead>
@@ -55,7 +66,7 @@
 					<td class="id">001</td>
 					<td>Octavo encuentro de cintas amarillas 2do kyu</td>
 					<td>Seminario</td>
-					<td>24/10/2015</td>
+					<td>10/26/2015</td>
                     <td>Estado Guarico</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
@@ -65,7 +76,7 @@
                     <td class="id">002</td>
 					<td>Clase de kata</td>
 					<td>Entrenamiento Especial</td>
-					<td>01/11/2015</td>
+					<td>11/01/2015</td>
                     <td>Estado Distrito Capital</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
@@ -74,7 +85,7 @@
                     <td class="id">003</td>
 					<td>Competencia entre cintas blancas</td>
 					<td>Competencia</td>
-					<td>13/10/2015</td>
+					<td>10/11/2015</td>
                     <td>Estado Distrito Capital</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
@@ -84,14 +95,12 @@
                     <td class="id">004</td>
 					<td>Cuarto encuentro de cintas blancas 1er kyu</td>
 					<td>Seminario</td>
-					<td>10/05/2015</td>
+					<td>11/07/2015</td>
                     <td>Estado Guarico</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
                      </td>
-                </tr>
-                
-
+                </tr>              
 			</tbody>
     </table>
         </div>
@@ -273,7 +282,7 @@
 								</p>
 								<h3>Fecha de inicio</h3>
 								<p>
-									10/05/2015
+									09/05/2010
 								</p>
 								<h3>Fecha de finalización</h3>
 								<p>
@@ -296,16 +305,55 @@
 		</div>
     
         <script type="text/javascript">
+            $.datepicker.setDefaults($.datepicker.regional["es"]);
             $(document).ready(function () {
-
                 var table = $('#tablaasistencia').DataTable({
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
                 });
                 var req;
-                var tr;
+                var tr;       
+     
+                $dateControls = $("#baseFechaControl").children("div").clone();
+                $("#feedbackTable_filter").prepend($dateControls);
+               
+                // Implementacion de jQuery UI Datepicker widget sobre los controles de fechas
+                $("#fechaInicio").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaFin").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+                $("#fechaFin").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaInicio").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
 
+                // Crea el evento listeners que va a filtrar la tabla siempre que el usuario escriba el usuario escriba
+                // en el datepicker 
+                $("#fechaInicio").keyup(function () { table.draw(); });
+                $("#fechaInicio").change(function () { table.draw(); });
+                $("#fechaFin").keyup(function () { table.draw(); });
+                $("#fechaFin").change(function () { table.draw(); });
+             
                 $('#tablaasistencia tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         req = $(this).parent().prev().prev().prev().prev().text();
@@ -321,8 +369,6 @@
                     }
                 });
 
-
-
                 $('#modal-delete').on('show.bs.modal', function (event) {
                     var modal = $(this)
                     modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
@@ -333,9 +379,6 @@
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
-
             });
-
         </script>
-
 </asp:Content>
