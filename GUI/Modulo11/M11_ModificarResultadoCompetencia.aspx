@@ -86,7 +86,7 @@
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th style="text-align:center">Id</th>
+                    <th style="text-align:center">Cédula</th>
 					<th style="text-align:center">Nombre del Atleta</th>
                     <th style="text-align:center">Puntaje</th>
 					<th style="text-align:center">Acciones</th>

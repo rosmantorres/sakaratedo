@@ -119,7 +119,7 @@
         <thead>
 				<tr>
 					
-					<th >Id</th>
+					<th >Cedula</th>
 					<th>Atleta</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>

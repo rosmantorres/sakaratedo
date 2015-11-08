@@ -47,7 +47,7 @@
         <table id="tablaResultado" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th style="text-align:center">Id</th>
+                    <th style="text-align:center">Referencia</th>
 					<th style="text-align:center">Nombre del Evento</th>
                     <th style="text-align:center">Tipo</th>
 					<th style="text-align:center">Fecha</th>
