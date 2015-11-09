@@ -13,5 +13,15 @@ namespace templateApp.GUI.Modulo10
         {
             ((SKD)Page.Master).IdModulo = "10";
         }
+
+        protected void comboCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboEve_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

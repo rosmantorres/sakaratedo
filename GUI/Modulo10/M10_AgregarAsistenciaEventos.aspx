@@ -62,11 +62,10 @@
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Evento <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
+             <div class="dropdown" runat="server" id="DivComboEve">
+             <asp:DropDownList class="btn btn-default btn-lg dropdown-toggle" ID="comboEve" runat="server" OnSelectedIndexChanged="comboEve_SelectedIndexChanged" AutoPostBack="true"  >
+             </asp:DropDownList>
+            <ul class="dropdown-menu">
                <li><a href="#">Evento #1</a></li>
                <li><a href="#">Evento #2</a></li>
                <li><a href="#">Evento #3</a></li>
@@ -75,15 +74,15 @@
         </div>
       </div>
     </div>
+     <!-- FIN COMBO EVENTO-->
 
     <!--COMBO CATEGORIA-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Categoria:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Categoria <span class="caret"></span>
-          </button>
+        <div class="dropdown" runat="server" id="DivComboCat">
+          <asp:DropDownList class="btn btn-default btn-lg dropdown-toggle" ID="comboCat" runat="server" OnSelectedIndexChanged="comboCat_SelectedIndexChanged" AutoPostBack="true"  >
+          </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">Categoria #1</a></li>
                <li><a href="#">Categoria #2</a></li>
@@ -93,7 +92,9 @@
         </div>
       </div>
     </div>
+     <!-- FIN COMBO CATEGORIA-->
    <br/>
+
 
         <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
     <div class="form-group">
@@ -112,48 +113,39 @@
                </tr>
         <tr>
             <td>
-        
-         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl" style="height:120px">
-            <option value="Organización 1">Atleta #1</option>
-            <option value="Organización 2">Atleta #2</option>
-            <option value="Organización 3">Atleta #3</option>
-            <option value="Organización 1">Atleta #4</option>
-            <option value="Organización 2">Atleta #5</option>
-            <option value="Organización 3">Atleta #6</option>
-            <option value="Organización 1">Atleta #1</option>
-            <option value="Organización 2">Atleta #2</option>
-            <option value="Organización 3">Atleta #3</option>
-            <option value="Organización 1">Atleta #4</option>
-            <option value="Organización 2">Atleta #5</option>
-            <option value="Organización 3">Atleta #6</option>
-         </select>
+         <asp:ListBox id="ListBox1" size="4" SelectionMode="Multiple" runat="server" style="height:120px" Width="100%">
+            <asp:ListItem>Atleta #1</asp:ListItem>
+          <asp:ListItem>Atleta #2</asp:ListItem>
+             <asp:ListItem>Atleta #3</asp:ListItem>
+             <asp:ListItem>Atleta #8</asp:ListItem>
+             <asp:ListItem>Atleta #5</asp:ListItem>
+             <asp:ListItem>Atleta #6</asp:ListItem>
+             <asp:ListItem>Atleta #7</asp:ListItem>
+         </asp:ListBox>
        </td>
             <td>
          <div class="text-center padding-small">
-            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-down" onclick="agregarOrg()"></button>
-            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-up" onclick="eliminarOrg()"></button>
+            <asp:button runat="server" id="buttonAgregar" Text=">>" onclick="agregarOrg()"></asp:button>
+            <asp:button runat="server" id="buttonEliminar" Text="<<" onclick="eliminarOrg()"></asp:button>
          </div>
            </td>
             
-             <td>
-         <select id="asistieron" multiple="multiple" name="org_secondary" size="4" class="form-control select select-primary select-block mbl" style="height:120px">
-               <option value="Organización 1">Atleta #1</option>
-            <option value="Organización 2">Atleta #2</option>
-            <option value="Organización 3">Atleta #3</option>
-            <option value="Organización 1">Atleta #4</option>
-            <option value="Organización 2">Atleta #5</option>
-            <option value="Organización 3">Atleta #6</option>
-    
-
-         </select>
-        
-                  </td>
+           <td>
+         <asp:ListBox id="ListBox2" size="4" SelectionMode="Multiple" runat="server" style="height:120px" Width="100%">
+            <asp:ListItem>Atleta #4</asp:ListItem>
+             <asp:ListItem>Atleta #9</asp:ListItem>
+             <asp:ListItem>Atleta #10</asp:ListItem>
+             <asp:ListItem>Atleta #11</asp:ListItem>
+             <asp:ListItem>Atleta #12</asp:ListItem>
+      
+         </asp:ListBox>
+       </td>
         </tr>
     </table>
       </div>
    </div>
     <!--FIN LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
-   
+
 
     <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
@@ -287,11 +279,13 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx?eliminacionSuccess=1" onclick="#">Agregar</a>
+         <asp:Button id="btn_agregarAsist" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarAsist_Click" Text="Agregar"></asp:Button>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M10_ListarAsistenciaEventos.aspx"> Cancelar</a>
+         <a class="btn btn-default" href="M10_ListarAsistenciaEventos.aspx">Cancelar</a>
       </div>
    </form>
+
 </div>
+
 <!-- /.box -->
 </asp:Content>
