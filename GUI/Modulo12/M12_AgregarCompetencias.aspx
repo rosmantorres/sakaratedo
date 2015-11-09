@@ -86,7 +86,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form runat="server" role="form" name="agregar_competencia" id="agregar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=1">
+<form runat="server" role="form" name="agregar_competencia" id="agregar_competencia" method="post">
 <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
 
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
