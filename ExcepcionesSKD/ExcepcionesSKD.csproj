@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
+    <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
