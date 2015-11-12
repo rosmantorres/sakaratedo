@@ -86,6 +86,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo16\BDCarrito.cs" />
+    <Compile Include="Modulo16\BDCompra.cs" />
     <Compile Include="Modulo16\RecursosBDModulo16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
