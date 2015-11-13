@@ -63,6 +63,10 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
+    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
+      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -1282,79 +1286,93 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Carnet.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\DiseñoDefault.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DiseñoDefault.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\Inscripcion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Inscripcion.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
       <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.designer.cs">
       <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx.cs">
       <DependentUpon>M14_ConsultarPlanillasDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx.designer.cs">
       <DependentUpon>M14_ConsultarPlanillasDojo.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.cs">
       <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.designer.cs">
       <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx.cs">
       <DependentUpon>M14_DiseñoPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx.designer.cs">
       <DependentUpon>M14_DiseñoPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.cs">
       <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.designer.cs">
       <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.cs">
       <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
       <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.cs">
       <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.designer.cs">
       <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.cs">
       <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.designer.cs">
       <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.cs">
       <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.designer.cs">
       <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_VisorCarnet.aspx.cs">
       <DependentUpon>M14_VisorCarnet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_VisorCarnet.aspx.designer.cs">
       <DependentUpon>M14_VisorCarnet.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_VisorInscripcion.aspx.cs">
       <DependentUpon>M14_VisorInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_VisorInscripcion.aspx.designer.cs">
       <DependentUpon>M14_VisorInscripcion.aspx</DependentUpon>
@@ -1521,30 +1539,35 @@
     </Compile>
     <Compile Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx.cs">
       <DependentUpon>M6_CrearUsuarioPre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx.designer.cs">
       <DependentUpon>M6_CrearUsuarioPre.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ListaUsuarios.aspx.cs">
       <DependentUpon>M6_ListaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ListaUsuarios.aspx.designer.cs">
       <DependentUpon>M6_ListaUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_NuevoAdmin.aspx.cs">
       <DependentUpon>M6_NuevoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_NuevoAdmin.aspx.designer.cs">
       <DependentUpon>M6_NuevoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ProcesarSolicitud.aspx.cs">
       <DependentUpon>M6_procesarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ProcesarSolicitud.aspx.designer.cs">
       <DependentUpon>M6_procesarSolicitud.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx.cs">
       <DependentUpon>M6_SolicitudInscripcionPre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx.designer.cs">
       <DependentUpon>M6_SolicitudInscripcionPre.aspx</DependentUpon>
@@ -1722,6 +1745,21 @@
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DominioSKD\DominioSKD.csproj">
+      <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
+      <Name>DominioSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="LogicaNegociosSKD\LogicaNegociosSKD.csproj">
+      <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
+      <Name>LogicaNegociosSKD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
