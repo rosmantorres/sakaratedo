@@ -73,6 +73,56 @@ namespace LogicaNegociosSKD.Modulo16
             bool respuesta = carritoBD.registrarPago("Transferencia",null,1);
             return respuesta;
         }
+
+        /// <summary>
+        /// Metodo que agrega los eventos al Carrito
+        /// </summary>
+        /// <param name="idUsuario">Indica el identificador del Usuario</param>
+        /// <param name="idEvento">Indica el identificador del Evento</param>
+        /// <returns>Si la operacion fue exitosa o fallida</returns>
+
+         public bool agregarEventoaCarrito(int idUsuario, int idEvento) 
+        {
+
+            bool respuesta = carritoBD.agregarEventoaCarrito(1, 1);
+            return respuesta;
+        }
+
+
+         /// <summary>
+         /// Metodo que agrega las Matriculas al Carrito
+         /// </summary>
+         /// <param name="idUsuario">Indica el identificador del Usuario</param>
+         /// <param name="idMatricula">Indica el identificador del Evento</param>
+         /// <returns>Si la operacion fue exitosa o fallida</returns>
+
+         public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula)
+         {
+
+             bool respuesta = carritoBD.agregarMatriculaaCarrito(1, 1);
+             return respuesta;
+         }
+
+
+         /// <summary>
+         /// Metodo que agrega los Inventarios al Carrito
+         /// </summary>
+         /// <param name="idUsuario">Indica el identificador del Usuario</param>
+         /// <param name="idInventario">Indica el identificador del Inventario</param>
+         /// <returns>Si la operacion fue exitosa o fallida</returns>
+
+         public bool agregarInventarioaCarrito(int idUsuario, int idInventario)
+         {
+
+             bool respuesta = carritoBD.agregarInventarioaCarrito( 1, 1);
+             return respuesta;
+         }
+
+
+
+
+       
+
         #endregion
     }
 }
