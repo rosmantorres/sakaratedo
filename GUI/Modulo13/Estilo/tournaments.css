@@ -1,0 +1,1858 @@
+﻿@charset "UTF-8";
+body {
+  /*background-color:#053b0e;*/
+  background-color: #fff;
+  text-align: center;
+  /*background:url('perfectbackground.jpg')no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Arial"; }
+
+#menu p {
+  position: relative;
+  float: left;
+  margin: 0; }
+
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+#header {
+  text-align: center;
+  background: grey; }
+
+#forma {
+  margin: 0 0 20px 0;
+  border: solid 1px #091939;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+#wrapper {
+  margin: auto;
+  width: 100%;
+  max-width: 1600px;
+  min-width: 1050px;
+  min-height: 100%; }
+
+/*logo pozicija i sl*/
+#logo {
+  position: relative;
+  float: left;
+  width: 22%;
+  margin-left: 1%; }
+
+#banner {
+  width: 102%; }
+
+#content {
+  width: 62%;
+  z-index: 1; }
+
+#embedflash {
+  position: relative;
+  float: left;
+  top: 52px;
+  /*background:url("http://www.tennisscores-stats.com/images/tennis_ballok.jpg" ) no-repeat;*/
+  background-size: 100% 100%;
+  width: 100%;
+  /*height:216px;*/
+  /*height:120px;*/
+  clear: both;
+  margin-bottom: 5%;
+  text-align: left;
+  font-size: 8pt;
+  height: 15px; }
+
+@media only screen and (max-width: 1220px) {
+  #embedflash {
+    height: 27px; } }
+#rightcolumn img {
+  width: 100%;
+  padding-left: 2.5%; }
+
+#leftcolumn, #rightcolumn {
+  width: 16%; }
+
+#leftcolumn, #rightcolumn, #content {
+  position: relative;
+  float: left;
+  margin: 1%; }
+
+#leftcolumn img {
+  width: 100%;
+  /*box-shadow: 5px 5px 5px #808080;*/
+  margin: 15px 0; }
+
+#linkovi {
+  margin: 1% 0 1% 0; }
+
+table {
+  /*box-shadow: 5px 5px 5px  grey;*/
+  position: relative;
+  margin: 3%;
+  border-collapse: collapse;
+  width: 95%; }
+
+tr, td {
+  text-align: center;
+  font-family: arial;
+  font-size: 9pt;
+  font-family: arial; }
+
+tr {
+  color: #000; }
+
+.oddrow {
+  background-color: #9a853d;
+  color: #fff; }
+
+.evenrow {
+  color: #000; }
+
+tr.evenrow:hover, tr.oddrow:hover {
+  background-color: #f2d42c; }
+
+/*prvi redovi*/
+tr.special {
+  height: 30px;
+  /*background: -webkit-linear-gradient(#c2b070, #FF8C00); /* For Safari 5.1 to 6.0 */
+  /*background: -o-linear-gradient(#c2b070, #FF8C00); /* For Opera 11.1 to 12.0 */
+  /*background: -moz-linear-gradient(#c2b070, #FF8C00); /* For Firefox 3.6 to 15 */
+  /*background: linear-gradient(#c2b070, #FF8C00); /* Standard syntax */
+  background: #091939;
+  color: #fff; }
+
+.drugaspec td {
+  width: 5%;
+  font-size: 8pt; }
+
+input {
+  width: 20%;
+  max-height: 150%;
+  text-align: center;
+  margin: 1% 0 0 0;
+  font-size: 10pt;
+  border-radius: 4px;
+  border: 1px solid #999; }
+
+.userchoice1 {
+  width: 100%;
+  margin: 0 0 0 0;
+  /*box-shadow: 5px 5px 5px #808080;*/ }
+
+#search {
+  box-shadow: #777 2px 2px;
+  width: 35%;
+  margin: 5.6%;
+  border-radius: 6px;
+  border: 2px solid #c9c9d0;
+  height: 24px;
+  background: url("searchback.jpg") repeat-x scroll 0% 0%/100% 100% transparent;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  cursor: hand;
+  font-size: 9pt;
+  box-shadow: #777 2px 2px 5px; }
+  #search:hover {
+    color: #091939;
+    border: 2px solid #9a853d; }
+
+#reset {
+  position: relative;
+  float: left;
+  margin: 5.6% 0 5.6% 10.6%;
+  height: 25px;
+  background: url("searchback.jpg") repeat-x scroll 0% 0%/100% 100% transparent;
+  color: #FFF;
+  border: 2px solid #C9C9D0;
+  border-radius: 6px;
+  width: 35%;
+  font-size: 9pt;
+  padding: 0px;
+  box-shadow: #777 2px 2px 5px; }
+  #reset:hover {
+    color: #091939;
+    border: 2px solid #9a853d; }
+
+/*strelice za surface*/
+#test67, #test45, #test01, #test23, #test89 {
+  position: relative;
+  float: right;
+  left: 5%; }
+
+/*  polja za izbor */
+div.userchoice {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  z-index: 1 !important;
+  /*background:#235f2f;*/
+  background: #fff;
+  width: 100%;
+  color: #091939;
+  /*box-shadow: 5px 5px 5px #808080;*/ }
+
+/*slika u tabeli*/
+#tdimage {
+  background: url("turniri.jpg");
+  background-size: 100% 100%; }
+
+ul#menu, ul#menu ul.sub-menu {
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  width: 100%; }
+
+ul#menu li, ul#menu ul.sub-menu li {
+  list-style-type: none;
+  display: inline-block;
+  width: 100%; }
+
+/*Link Appearance*/
+ul#menu li label, ul#menu li ul.sub-menu li label {
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  padding: 1%;
+  display: inline-block;
+  width: 94%;
+  font-size: 9pt;
+  font-weight: 700; }
+
+/*Make the parent of sub-menu relative*/
+ul#menu li {
+  position: relative; }
+
+/*sub menu*/
+ul#menu li ul.sub-menu {
+  /*display:none;*/
+  /*position: absolute;*/
+  /*top: 30px;
+  left: 0;
+  width: 150px;*/
+  width: 92%;
+  margin-right: 1%;
+  z-index: 1; }
+
+ul#menu li:hover ul.sub-menu {
+  display: block;
+  z-index: 1; }
+
+ul.sub-menu li input {
+  position: relative;
+  float: left; }
+
+#scriptBox {
+  position: relative;
+  float: none; }
+
+#week li label p {
+  position: relative;
+  float: left;
+  max-width: 50%; }
+
+#year li {
+  position: relative;
+  float: left;
+  max-width: 50%; }
+
+#year select {
+  width: 80%;
+  margin: 0 0 5% 0;
+  padding: 0;
+  font-size: 8pt; }
+
+/*slicica pored menija*/
+ul#menu li label {
+  border-radius: 4px;
+  padding: 3%;
+  background: #091939;
+  cursor: pointer;
+  color: #fff; }
+
+/*footer*/
+div.footerclass {
+  display: inline-block;
+  margin: 30px;
+  width: 120px; }
+
+#footer {
+  background: #666;
+  margin-top: 5%;
+  position: relative;
+  float: left;
+  clear: both;
+  width: 100%; }
+
+div.footerclass a {
+  position: relative;
+  float: left;
+  display: block;
+  background: #666;
+  padding: 10px;
+  margin: 5px;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none; }
+
+/*tebela za grafik*/
+.highchart {
+  display: none; }
+
+/*gornji meni nav*/
+ul#menu1, ul#menu1 ul.sub-menu1 {
+  padding: 0;
+  margin: 0; }
+
+ul#menu1 li, ul#menu1 ul.sub-menu1 li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0 15px 0px 5px; }
+
+ul#menu1 li {
+  padding: 0 15px 9px 5px; }
+
+/*Link Appearance*/
+ul#menu1 li a {
+  text-decoration: none;
+  color: #c2b070;
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
+  line-height: 20px;
+  font-weight: 700; }
+
+ul#menu1 li ul.sub-menu1 li a {
+  text-decoration: none;
+  color: #091939;
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
+  line-height: 30px;
+  font-weight: 500; }
+
+/*Make the parent of sub-menu relative*/
+ul#menu1 li {
+  position: relative;
+  float: left; }
+
+/*sub menu*/
+ul#menu1 li ul.sub-menu1 {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  text-transform: none; }
+
+ul#menu1 li ul.sub-menu1 li {
+  border-bottom: 1px solid gray;
+  background: #c2b070;
+  min-width: 150px;
+  width: 100%; }
+
+ul#menu1 li:hover ul.sub-menu1 {
+  display: block;
+  width: 100%;
+  z-index: 1;
+  /*background: #444444;*/ }
+
+#navigation {
+  width: 100%;
+  /*background: #c2b070;*/
+  /*background: linear-gradient(#c2b070, #FF8C00) repeat scroll 0% 0% transparent;*/
+  background: #091939;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  position: fixed;
+  z-index: 1000;
+  height: 32px;
+  min-width: 1050px; }
+
+ul#menu1 img {
+  width: 210px;
+  position: relative;
+  float: left;
+  top: -7px; }
+
+/*help week*/
+#help {
+  z-index: 2; }
+
+#week li {
+  position: relative;
+  float: left;
+  max-width: 45%;
+  left: 17%; }
+
+#week select {
+  width: 120%;
+  margin: 0 0 5% 0;
+  padding: 0;
+  font-size: 8pt; }
+
+#helpweek {
+  display: none; }
+
+/*podaci igraca - tabela*/
+/*podaci igraca - tabela*/
+#rezultat {
+  width: 95%;
+  position: relative;
+  float: left;
+  border-collapse: initial;
+  /*background:#E5E5E5;*/
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border: 1px solid #091939;
+  margin-top: 2px; }
+
+td.rezultat {
+  font-size: 32pt;
+  width: 30%;
+  color: #235f2f; }
+
+td.playername, td.opponentname {
+  font-size: 18pt;
+  color: #235f2f;
+  cursor: pointer; }
+
+td.playername {
+  width: 35%; }
+
+td.opponentname {
+  width: 35%; }
+
+#rezultat img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px #091939;
+  margin-bottom: 10px; }
+  #rezultat img:hover {
+    box-shadow: 1px 1px 2px #777;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter idΓÇª0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    filter: contrast(1.1);
+    -webkit-filter: contrast(1.1); }
+
+td.playerdata1 {
+  color: #000;
+  width: 25%;
+  font-size: 10pt; }
+
+td.playerdata, td.playerdatam, td.playerdata1, td.playerdatam1 {
+  border-bottom: solid 1px #f2f5fa;
+  color: #000; }
+
+td.playername1 {
+  color: #000;
+  font-size: 18pt;
+  padding-left: 3%;
+  text-align: left; }
+
+td.playerdatam1 {
+  text-align: right;
+  width: 15%;
+  font-size: 10pt; }
+
+td.playerdata2 {
+  border-bottom: 1px solid #F2F5FA; }
+
+td.playerdata3 {
+  text-align: right;
+  border-bottom: 1px solid #f2f5fa; }
+
+td.resultall {
+  /* background:#fff url("Grass.jpg")no-repeat ;
+   background-size:100% 100%;
+   line-height:1.8;*/
+  color: #235f2f;
+  /*text-shadow:0 0 5px #FF0000;*/ }
+
+#slikaigraca {
+  text-align: center;
+  box-sizing: border-box;
+  padding-bottom: 15px; }
+
+#slikaigraca img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 1px 1px #091939; }
+
+#cmbplayer, #cmbOpponent {
+  margin-bottom: 8px;
+  -webkit-animation: myfirst 6s;
+  /* Chrome, Safari, Opera */
+  animation: myfirst 6s;
+  cursor: context-menu; }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+  0% {
+    background: #091939; }
+  15% {
+    background: #c2b070; }
+  30% {
+    background: #091939; }
+  45% {
+    background: #c2b070; }
+  60% {
+    background: #091939; }
+  100% {
+    background: #c2b070; } }
+/* Standard syntax */
+@keyframes myfirst {
+  0% {
+    background: #091939; }
+  15% {
+    background: #c2b070; }
+  30% {
+    background: #091939; }
+  45% {
+    background: #c2b070; }
+  60% {
+    background: #091939; }
+  100% {
+    background: #c2b070; } }
+table#setdistribution, table#setdistribution td, table#setdistribution tr {
+  border: solid 1px #fff;
+  color: #235f2f; }
+
+#lastH2H {
+  position: relative;
+  float: left;
+  width: 100%; }
+
+#H2H, #lastH2H, #set_distribution {
+  font-size: 10pt;
+  /*box-shadow: 5px 5px 5px #808080;*/
+  margin: 15px 0; }
+
+#set_distribution {
+  text-align: left; }
+
+table#setdistribution tr {
+  background: #e5e5e5; }
+
+table#setdistribution tr.special {
+  background: -webkit-linear-gradient(#c2b070, #FF8C00);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#c2b070, #FF8C00);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#c2b070, #FF8C00);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#c2b070, #FF8C00);
+  /* Standard syntax */ }
+
+table#firstset {
+  background: #e5e5e5;
+  position: relative;
+  float: left;
+  width: 55%; }
+
+table#firstset td {
+  border-right: #f2f5fa solid 1px; }
+
+td#fourprc {
+  width: 40%; }
+
+/*plyer probability win/total bar*/
+#progress {
+  background: #235f2f;
+  width: 95%;
+  height: 20px;
+  color: #c2b070;
+  font-weight: 600;
+  margin-left: 3%;
+  border-radius: 4px; }
+
+#progress1 {
+  background: none; }
+
+#playerprogres {
+  color: #235f2f;
+  /*width:50%;*/
+  height: 20px;
+  position: relative;
+  float: left;
+  border-right: solid 2px #e5e5e5;
+  padding: 0px 2px 0 2px;
+  background: #c2b070;
+  min-width: 20px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; }
+
+#oppprogres {
+  /*width:50%;*/
+  height: 20px;
+  position: relative;
+  float: left;
+  padding: 0px 2px 0 2px; }
+
+/*procenat player-a u power baru*/
+#plprc {
+  position: relative;
+  top: 10%; }
+
+td.opponentname1 #oppprogres {
+  padding: 0 3px; }
+
+td.wl {
+  width: 32%;
+  text-align: left; }
+
+#allresults {
+  text-align: left;
+  padding: 0px 15px 15px 17px; }
+
+table#rezbar #playerprogres {
+  min-width: 0px; }
+
+/*linkovi pre prve tabele za H2H*/
+#H2Hplayer, #H2Hstats, #H2Hplayer1 {
+  width: 99%;
+  position: relative;
+  float: left;
+  padding: 6%;
+  border: solid #091939 1px;
+  margin: 0px 3% 10px 3%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  /*box-shadow: 5px 5px 5px grey;*/ }
+
+#H2Hplayer {
+  margin-bottom: 35px; }
+
+#H2Hstats img:hover {
+  border: solid 3px gray;
+  width: 96.5%; }
+
+#H2Hplayer img:hover {
+  border: solid 3px gray;
+  width: 96.5%; }
+
+#YTD {
+  width: 160px;
+  height: 120px;
+  background: #FFF url("http://tennisscores-stats.com/images/ytd-stats.gif") no-repeat;
+  background-size: 100% 100%;
+  border-radius: 15px; }
+
+#YTD:hover {
+  /*background:url(stats_symbol_YTDhov.gif);
+  background-size:100% 100%;*/
+  opacity: 0.9; }
+
+/*ranking*/
+td#spec {
+  font-size: 20pt;
+  color: #235f2f;
+  /*border: 2px solid #F2F5FA;*/
+  border-bottom: #e5e5e5; }
+
+td#spec span {
+  margin: 0 12%;
+  font-size: 11pt; }
+
+/*ranking module*/
+table#rankingfirst {
+  width: 100%;
+  border: solid 1px #091939; }
+
+table#rankingfirst tr.special {
+  background: -webkit-linear-gradient(#c2b070, #FF8C00);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#c2b070, #FF8C00);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#c2b070, #FF8C00);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#c2b070, #FF8C00);
+  /* Standard syntax */
+  color: #000;
+  font-size: 9pt; }
+
+table#rankingfirst td {
+  font-size: 8pt;
+  padding: 1%;
+  background-color: #fff;
+  border-top: 1px solid #dddddd;
+  text-align: left;
+  color: #000; }
+
+#ranking h3 {
+  /*position:relative;
+      top:15px;*/
+  padding-left: 5%; }
+
+table#rankingfirst td:nth-child(1) {
+  text-align: center; }
+
+#ranking {
+  /*overflow:hidden;*/
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 25px; }
+
+#ranking caption {
+  background: #091939;
+  padding: 5px 0;
+  color: #fff;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px; }
+
+#ranking th {
+  background: #fff;
+  color: #444; }
+
+#rankingfirst .oddrow, #rankingfirst .evenrow {
+  background: #fff;
+  color: #000;
+  font-size: 8pt; }
+
+/*table*/
+.CSSTableGenerator {
+  margin: 0px 0 0 3%;
+  padding: 0px;
+  width: 95%;
+  /*box-shadow: 10px 10px 5px #888888;*/
+  border: 1px solid #000000;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px; }
+
+.CSSTableGenerator table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px; }
+
+.CSSTableGenerator tr:last-child td:last-child {
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+
+.CSSTableGenerator table tr:first-child td:first-child {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px; }
+
+.CSSTableGenerator table tr:first-child td:last-child {
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px; }
+
+.CSSTableGenerator tr:last-child td:first-child {
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px; }
+
+.CSSTableGenerator tr:hover td {
+  background-color: #ffffff; }
+
+.CSSTableGenerator td {
+  width: 33%;
+  vertical-align: middle;
+  background: -o-linear-gradient(bottom, #e5e5e5 5%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e5e5e5), color-stop(1, #ffffff));
+  background: -moz-linear-gradient(center top, #e5e5e5 5%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e5e5e5", endColorstr="#ffffff");
+  background: -o-linear-gradient(top, #e5e5e5, ffffff);
+  background-color: #e5e5e5;
+  border: 1px solid #000000;
+  border-width: 0px 1px 1px 0px;
+  text-align: center;
+  padding: 7px;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: normal;
+  color: #235f2f; }
+
+.CSSTableGenerator tr:last-child td {
+  border-width: 0px 1px 0px 0px; }
+
+.CSSTableGenerator tr td:last-child {
+  border-width: 0px 0px 1px 0px; }
+
+.CSSTableGenerator tr:last-child td:last-child {
+  border-width: 0px 0px 0px 0px; }
+
+.CSSTableGenerator tr:first-child td {
+  /*		background:-o-linear-gradient(bottom, #cccccc 5%, #b2b2b2 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #b2b2b2) );
+  	background:-moz-linear-gradient( center top, #cccccc 5%, #b2b2b2 100% );
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc", endColorstr="#b2b2b2");	background: -o-linear-gradient(top,#cccccc,b2b2b2);*/
+  background-color: #091939;
+  border: 0px solid #000000;
+  text-align: center;
+  border-width: 0px 0px 1px 1px;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #ffffff; }
+
+.CSSTableGenerator tr:first-child:hover td {
+  background: -o-linear-gradient(bottom, #cccccc 5%, #b2b2b2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #b2b2b2));
+  background: -moz-linear-gradient(center top, #cccccc 5%, #b2b2b2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc", endColorstr="#b2b2b2");
+  background: -o-linear-gradient(top, #cccccc, b2b2b2);
+  background-color: #cccccc; }
+
+.CSSTableGenerator tr:first-child td:first-child {
+  border-width: 0px 0px 1px 0px; }
+
+.CSSTableGenerator tr:first-child td:last-child {
+  border-width: 0px 0px 1px 1px; }
+
+/*zastava*/
+div.flag {
+  max-height: 30px;
+  max-width: 100px;
+  clear: none;
+  position: relative;
+  top: -5%;
+  left: -8%; }
+
+/*tabele za pite*/
+#container, #container5 {
+  position: relative;
+  float: left;
+  max-width: 45%; }
+
+#bo3, #bo5 {
+  position: relative;
+  float: left;
+  width: 48%; }
+
+#container5 {
+  left: 5%; }
+
+#container {
+  right: 5%; }
+
+#year div {
+  position: relative;
+  float: left; }
+
+#rezultat .flag img {
+  width: 70%;
+  border-radius: 0;
+  box-shadow: none; }
+
+td.playername1 div {
+  position: relative;
+  float: left;
+  left: 1px; }
+
+table caption {
+  background: #091939;
+  padding: 5px;
+  color: #fff;
+  font-weight: 600;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px; }
+
+#bo3 table, #bo5 table {
+  background: #e5e5e5; }
+
+#bo3 table#datatablev th, #bo5 table#datatable5v th {
+  /*border-right:#fff 1px solid;*/ }
+
+#bo3 table#datatablev .thf, #bo5 table#datatable5v .thf {
+  border-bottom: 0.5px solid #fff; }
+
+#bo3 table thead, #bo5 table thead {
+  border-bottom: #fff 1px solid; }
+
+#PLS {
+  width: 160px;
+  height: 60px;
+  background: url("http://tennisscores-stats.com/images/player_stats.png") no-repeat scroll 0% 0%/50% 100% #FFF;
+  text-align: right;
+  padding-right: 2px;
+  margin: 0;
+  box-shadow: 1px 1px 5px #999;
+  margin-top: 10px; }
+
+#PLS:hover {
+  /*border:outset 1px $nasa-szlatna;*/
+  box-shadow: 1px 1px 5px #c2b070; }
+
+/*#H2Hbut{
+width: 160px;
+height: 120px;
+background: url('http://tennisscores-stats.com/images/head-to-head-symbol.gif') no-repeat scroll 0% 0% / 100% 100% #FFF;
+border-radius: 15px;
+}*/
+#H2Hbut {
+  width: 100%;
+  height: 60px;
+  background: url("http://tennisscores-stats.com/images/head-to-head-symbol.png") no-repeat scroll 0% 0%/50% 100% #FFF;
+  text-align: right;
+  padding-right: 10px;
+  margin: 0; }
+
+tr.firstsetline {
+  border-bottom: 1px #fff solid; }
+
+#H2HstatsYTD {
+  position: relative;
+  /*top:0px;*/ }
+
+/*#H2HstatsYTD div{
+position:relative;
+width:46%;
+margin-left:3%;
+float:left;
+height:100%;
+/*background-color:$nasa-zlatna;*/
+/*border-radius:5px;
+display:inline-block;
+}*/
+#YTDsmall {
+  background: #235f2f;
+  color: #c2b070;
+  border-radius: 7px;
+  border: none;
+  font-weight: 700;
+  height: 25px; }
+
+h2 {
+  margin: 0; }
+
+h1 {
+  margin-top: 0; }
+
+table#YTDresults td.ytdheading {
+  font-weight: 700; }
+
+table#YTDresults tr:nth-child(2) td {
+  font-weight: 700;
+  border-bottom: 1px solid #091939; }
+
+/*za test*/
+tr.oddrow input {
+  background: #9a853d;
+  color: #fff; }
+
+tr.evenrow input {
+  background: #fff;
+  color: #000; }
+
+tr.oddrow input:hover {
+  background: #c2b070; }
+
+tr.evenrow input:hover {
+  background: #c2b070; }
+
+tr.oddrow #yearstats {
+  width: 5%; }
+
+tr.oddrow #tsastats, tr.oddrow #tsbstats {
+  width: 2%; }
+
+tr.oddrow #roundstats {
+  width: 5%; }
+
+tr.oddrow #matchwinnerstats {
+  width: 2%; }
+
+tr.oddrow #playerstats, tr.oddrow #playerstats1, tr.oddrow #oponentstats {
+  width: 18%; }
+
+tr.oddrow #resultstats {
+  width: 20%; }
+
+tr.oddrow #searchsmall {
+  width: 5%;
+  position: relative;
+  float: right;
+  background: url("stats.png") no-repeat scroll 0% 0%/100% 100%;
+  cursor: zoom-in; }
+
+tr.oddrow form input {
+  position: relative;
+  float: left;
+  border: none; }
+
+tr.oddrow {
+  width: 100%;
+  margin-left: 3%; }
+
+tr.evenrow #yearstats {
+  width: 5%; }
+
+tr.evenrow #tsastats, tr.evenrow #tsbstats {
+  width: 2%; }
+
+tr.evenrow #roundstats {
+  width: 5%; }
+
+tr.evenrow #matchwinnerstats {
+  width: 2%; }
+
+tr.evenrow #playerstats, tr.evenrow #playerstats1, tr.evenrow #oponentstats {
+  width: 18%; }
+
+tr.evenrow #resultstats {
+  width: 20%; }
+
+tr.evenrow #searchsmall {
+  width: 5%;
+  position: relative;
+  float: right;
+  background: url("stats.png") no-repeat scroll 0% 0%/100% 100%;
+  cursor: pointer;
+  cursor: hand; }
+
+tr.evenrow form input {
+  position: relative;
+  float: left;
+  border: none; }
+
+tr.evenrow {
+  width: 100%;
+  margin-left: 3%; }
+
+tr.evenrow #tournamenttstats, tr.oddrow #tournamenttstats {
+  width: 23%; }
+
+td.playername .flagh {
+  max-width: 50px;
+  clear: none;
+  position: relative;
+  float: left;
+  left: 1%; }
+
+td.opponentname .flagh {
+  max-width: 50px;
+  clear: none;
+  position: relative;
+  float: right;
+  right: 1%; }
+
+#rezultat td .flagh img {
+  min-width: 60%;
+  box-shadow: none;
+  border-radius: 0; }
+
+#compare {
+  width: 60px;
+  font-size: 8pt;
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+  border: 2px solid #C9C9D0;
+  height: 24px;
+  background: url("searchback.jpg") repeat-x scroll 0% 0%/100% 100% transparent;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer; }
+
+table#mecevi input {
+  font-size: 9pt;
+  padding: 0;
+  margin: 0; }
+
+#yearmec {
+  width: 5%; }
+
+#tourmec {
+  width: 23%; }
+
+#roundmec {
+  width: 5%; }
+
+#h2hmec {
+  width: 36%; }
+
+#wlmec {
+  width: 2%; }
+
+#resmec {
+  width: 20%; }
+
+#plmec, #oppmec {
+  width: 2%; }
+
+#statsmec {
+  width: 5%; }
+
+/*div#navigation > ul#menu1 > li > ul.sub-menu1 >li:hover{
+background:#eeeeee;
+color:#fff;
+}
+div#navigation > ul#menu1 > li > ul.sub-menu1 >li  >a:hover{
+color:#fff;
+}
+div#navigation > ul#menu1 > li > a:hover{
+    color:#fff;
+}
+div#navigation > ul#menu1 > li:hover{
+	    border-bottom:solid 3px #fff;
+}*/
+div#navigation ul#menu1 li ul.sub-menu1 li:hover {
+  background: #9a853d;
+  color: #fff; }
+
+div#navigation ul#menu1 li ul.sub-menu1 li a:hover {
+  color: #fff; }
+
+div#navigation ul#menu1 li a:hover {
+  color: #fff; }
+
+div#navigation ul#menu1 li:hover {
+  border-bottom: solid 3px #fff; }
+
+ul.sub-menu1 li {
+  position: relative;
+  top: 12px; }
+
+#datatable, #datatable5 {
+  display: none; }
+
+table#gamedistribution {
+  background: #e5e5e5; }
+
+table#gamedistribution th.thf {
+  border-right: 0.5px solid #fff; }
+
+#contentlive {
+  /*box-shadow: 5px 5px 5px #808080;*/
+  position: relative;
+  float: left;
+  margin: 1%;
+  width: 62%;
+  z-index: 1; }
+
+#contentlive p {
+  text-align: justify;
+  font-size: 10pt;
+  color: #444; }
+
+#contentlive div {
+  padding: 2%; }
+
+div.nekitekst {
+  text-align: left;
+  position: relative;
+  left: 5%;
+  top: -20px; }
+
+#playerstats {
+  font-size: 10pt; }
+
+tr.separator {
+  height: 10px; }
+
+div.naslovi {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+  float: left; }
+
+#plprcp {
+  position: relative;
+  top: 10%;
+  border: 1px solid #235f2f;
+  border-radius: 5px; }
+
+#playerprogresp {
+  color: #235F2F;
+  position: relative;
+  float: left;
+  background: none repeat scroll 0% 0% #c2b070;
+  min-width: 20px;
+  border-right: 2px solid #E5E5E5;
+  padding: 0px 2px;
+  left: 0px;
+  height: 15px;
+  top: 0px;
+  margin: 2px;
+  border-radius: 5px; }
+
+#leftcolumn select {
+  max-width: 98%;
+  margin: 1%; }
+
+/*#tournament1.userchoice{
+    position:relative;
+    float:left;
+    width:19.87%;
+    margin-right:0.13%;
+    overflow:hidden;
+    margin-bottom:20px;
+}*/
+table#gamesinfirst {
+  background: none repeat scroll 0% 0% #E5E5E5;
+  width: 37%;
+  position: relative;
+  float: left;
+  margin: 3% 0 3% 0; }
+
+table#gamesinfirst td, table#gamesinfirst th {
+  border-right: solid #F2F5FA 1px; }
+
+div.tekstovi {
+  clear: both;
+  font-size: 11pt; }
+
+#tournaments {
+  border-radius: 3px;
+  border: 2px solid #C9C9D0;
+  height: 24px;
+  background: url("searchback.jpg") repeat-x scroll 0% 0%/100% 100% transparent;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer; }
+
+#playerseason td:nth-child(1) {
+  width: 35%;
+  border-right: 1px solid #091939; }
+
+#playerseason td:nth-child(2), #playerseason td:nth-child(3), #playerseason td:nth-child(4), #playerseason td:nth-child(5) {
+  width: 15%; }
+
+#playerseason td:nth-child(6) {
+  width: 5%; }
+
+table#playerseason th {
+  background-color: #091939;
+  color: #FFF;
+  height: 30px;
+  font-size: 12pt; }
+
+td.bledje img {
+  opacity: 0.5; }
+
+table#playerseason td img {
+  width: 50%; }
+
+table #makitabela td:nth-child(1), #makitabela td:nth-child(3) {
+  border: 1px solid #235F2F;
+  color: #fff;
+  width: 30%;
+  background: #9a853d; }
+
+table #makitabela td:nth-child(2), #makitabela td:nth-child(4) {
+  border: 1px solid #235F2F;
+  border-radius: 5px;
+  width: 20%; }
+
+table #makitabela {
+  border: 1px solid #235F2F;
+  margin-bottom: 0;
+  margin-top: 35px; }
+
+table #statsbar3 {
+  position: relative;
+  bottom: 15%; }
+
+table #makitabela th {
+  height: 20px; }
+
+#navtabs {
+  margin-left: 2.7%;
+  margin-bottom: 65px; }
+
+#navtabs form {
+  position: relative;
+  float: left;
+  width: 24%;
+  margin: 0 0 5px 0.3%;
+  top: 25px; }
+
+.playertabs {
+  width: 100%;
+  color: #fff;
+  background: -webkit-linear-gradient(#ffffff 1%, #091939);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffffff 1%, #091939);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffffff 1%, #091939);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffffff 1%, #091939);
+  /* Standard syntax */
+  cursor: pointer;
+  height: 30px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  text-transform: uppercase; }
+
+table#titleswon {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  margin: 0;
+  /*background: #e5e5e5;*/
+  text-align: left;
+  z-index: 10;
+  border: 1px solid #091939;
+  border-radius: 4px; }
+
+table#titleswon td {
+  border-bottom: 1px solid #DDD; }
+
+table#titleswon tr:last-child td {
+  border-bottom: 1px solid #091939; }
+
+table#titleswon th {
+  height: 20px;
+  border-bottom: 1px solid #DDD; }
+
+div.plimgmod {
+  font-size: 8pt;
+  width: 50%;
+  position: relative;
+  float: left; }
+
+div.plimgmod1 .image6 {
+  width: 100%; }
+
+div#images {
+  width: 100%;
+  margin-left: 3%;
+  filter: grayscale(50%); }
+
+table#uspesi input {
+  border-radius: 0;
+  margin-top: 1.3%; }
+
+table#uspesi #yearstats, table#uspesi #weekstats {
+  width: 12%; }
+
+table#uspesi #yearstats1, table#uspesi #weekstats1 {
+  width: 5%; }
+
+table#uspesi #drawstats1 {
+  width: 10%; }
+
+table#uspesi input#tournamenttstats {
+  width: 45%; }
+
+table#uspesi #tournamenttstats1 {
+  width: 25%; }
+
+table#uspesi #resmec1 {
+  min-width: 50%; }
+
+table#uspesi input#playerstats {
+  width: 1px;
+  height: 0; }
+
+table#uspesi input#searchsmall {
+  width: 8%;
+  bottom: 4px; }
+
+table#uspesi #resstats {
+  width: 50%; }
+
+#jebise {
+  background: #c2b070;
+  height: 20px;
+  margin: 0;
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px; }
+
+#jebise p#drugip {
+  position: relative;
+  left: 107%;
+  bottom: 30px; }
+
+div.plimgmod {
+  font-size: 8pt;
+  width: 50%;
+  position: relative;
+  float: left;
+  /*background: #e5e5e5;*/
+  text-align: center;
+  z-index: 10; }
+
+div.plimgmod1 {
+  margin-top: 10px; }
+
+#cmbplayer {
+  width: 95%;
+  text-transform: capitalize; }
+
+.show {
+  padding: 3px;
+  border-bottom: 1px #999 dashed;
+  font-size: 15px;
+  height: 20px;
+  text-transform: capitalize; }
+
+.show:hover {
+  background: #4c66a4;
+  color: #FFF;
+  cursor: pointer;
+  text-transform: capitalize; }
+
+.show img {
+  max-width: 25px;
+  display: none; }
+
+#cmbOpponent {
+  width: 95%;
+  text-transform: capitalize; }
+
+.siva {
+  background: #e5e5e5; }
+
+.hlight {
+  background: #4c66a4;
+  color: #ffffff; }
+
+/*twiter i fejsbuk na php stranicama*/
+div.fb-like {
+  position: absolute;
+  margin-left: 80%;
+  top: 10px; }
+
+div.tweet {
+  position: absolute;
+  left: 91%;
+  top: 10px; }
+
+/*izgled h2h tabele u desnoj koloni*/
+#rightcolumn table#forH2Hpage td:nth-child(1), #rightcolumn table#forH2Hpage td:nth-child(3) {
+  width: 45%; }
+
+#rightcolumn table#forH2Hpage td:nth-child(2) {
+  width: 10%; }
+
+#rightcolumn table#forH2Hpage #cmbOpponent {
+  font-size: 9pt; }
+
+#rightcolumn .show {
+  font-size: 7pt; }
+
+#rightcolumn table#forH2Hpage {
+  margin: 0;
+  width: 113%;
+  position: relative;
+  bottom: 15px;
+  right: 7%; }
+
+table#forH2Hpage {
+  width: 100%; }
+
+#rightcolumn h3 {
+  background-color: #091939;
+  color: #fff;
+  font-size: 12pt;
+  width: 114%;
+  position: relative;
+  bottom: 15px;
+  right: 7%;
+  min-height: 30px;
+  padding-top: 6px;
+  margin: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+#H2Hbut {
+  margin: 0; }
+
+/*da budu sive slike*/
+input.image6 {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  /* Firefox 3.5+ */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+ & Safari 6+ */ }
+
+input.image6:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%); }
+
+/*tabela tournamentmodule*/
+table#tmoduletable td:nth-child(2) {
+  background: #9a853d;
+  border: solid 1px #091939; }
+
+table#tmoduletable {
+  border: solid 1px #091939; }
+
+table#tmoduletable th {
+  padding: 5px; }
+
+table#YTDresults tr {
+  border-bottom: solid 1px #c2b071; }
+
+input#tourSubmit {
+  visibility: hidden; }
+
+/*radio dugme u tournamenttstats*/
+#content table td:nth-child(9) input[type="radio"] {
+  width: 30px; }
+
+#radioall {
+  width: 30px; }
+
+#pobedniciturnira input {
+  height: 15px;
+  padding: 0;
+  width: 5%; }
+#pobedniciturnira input#yearstats {
+  width: 8%; }
+#pobedniciturnira input#playerstats {
+  width: 25%; }
+#pobedniciturnira input#oponentstats {
+  width: 25%; }
+#pobedniciturnira input#resultstats {
+  width: 28%; }
+#pobedniciturnira #yearmec {
+  width: 5%; }
+#pobedniciturnira #h2hmec {
+  width: 25%; }
+#pobedniciturnira #resultmec {
+  width: 15%; }
+
+input.butlink {
+  width: 80%;
+  cursor: pointer; }
+
+#leftcolumn > table#nexttour {
+  border: 1px solid #091939;
+  width: 100%;
+  margin-left: 0; }
+  #leftcolumn > table#nexttour th {
+    background-color: #091939;
+    color: #fff; }
+
+input.plrnk {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  text-align: left; }
+  input.plrnk:hover {
+    color: #9a853d; }
+
+table#firstthree td:nth-child(6), table#firstthree td:nth-child(11), table#firstthree td:nth-child(1), table#secondthree td:nth-child(6), table#secondthree td:nth-child(11), table#secondthree td:nth-child(1) {
+  border-right: 1px solid #ffffff; }
+table#firstthree tr:first-child, table#secondthree tr:first-child {
+  border-bottom: 1px solid #ffffff; }
+
+.playertabs.active-tab {
+  border: 2px solid #9a853d;
+  background: #9a853d;
+  position: relative;
+  bottom: 2px;
+  box-shadow: 2px 2px 3px #777777;
+  height: 30px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  font-weight: 800; }
+
+.playertabs:hover {
+  color: #091939;
+  font-weight: 800; }
+
+#navigation #navbar > ul > a > img {
+  width: 230%;
+  position: relative;
+  right: 160%;
+  top: 3px; }
+#navigation .navbar {
+  background-color: #091939;
+  height: 32px; }
+#navigation a {
+  color: #c2b070;
+  font-weight: 700; }
+#navigation a.navbar-brand {
+  position: relative;
+  float: left;
+  width: 6%;
+  margin: 0 0% 0 0%;
+  padding: 0; }
+#navigation ul.dropdown-menu {
+  background-color: #c2b070;
+  padding-bottom: 0; }
+  #navigation ul.dropdown-menu li a {
+    border-bottom: 1px solid #091939;
+    font-weight: normal;
+    font-family: arial;
+    color: #091939;
+    text-transform: capitalize;
+    height: 40px;
+    padding-top: 8px; }
+    #navigation ul.dropdown-menu li a:hover {
+      background-color: #9a853d;
+      color: #ffffff; }
+  #navigation ul.dropdown-menu li {
+    height: 40px;
+    margin-bottom: 0; }
+#navigation #navbar > ul {
+  width: 120%; }
+
+@media (max-width: 767px) {
+  #navbar > ul > li > a {
+    background-color: #091939;
+    text-align: left;
+    border-bottom: 1px solid #dfbf0d;
+    padding: 17px 0px 17px 15px; }
+
+  #navbar > ul {
+    max-width: 104.2%; }
+
+  #navbar {
+    background-color: #091939; } }
+@media (min-width: 1000px) {
+  #navigation #navbar > ul > a > img {
+    width: 250%;
+    position: relative;
+    right: 150%;
+    top: 3px; }
+
+  #navbar {
+    position: relative;
+    left: 7%; } }
+@media (min-width: 768px) and (max-width: 999px) {
+  #navigation #navbar > ul > a > img {
+    width: 330%;
+    position: relative;
+    right: 240%;
+    top: 3px; }
+
+  #navbar {
+    position: relative;
+    left: 7%; } }
+@media (min-width: 767px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important; } }
+#tourcompall > tbody th:nth-child(1) {
+  padding-left: 10px; }
+#tourcompall > tbody th {
+  border-bottom: 1px solid #091939; }
+#tourcompall > tbody td {
+  border-bottom: 1px solid #091939; }
+#tourcompall > tbody td:nth-child(1) {
+  padding-left: 10px; }
+
+#tourcompall1 > tbody th {
+  text-align: left; }
+#tourcompall1 > tbody th:nth-child(1) {
+  padding-left: 10px; }
+#tourcompall1 > tbody th {
+  border-bottom: 1px solid #091939; }
+#tourcompall1 > tbody td {
+  position: relative;
+  right: 3%;
+  border-bottom: 1px solid #091939; }
+#tourcompall1 > tbody td:nth-child(1) {
+  padding-left: 10px; }
+
+a.dugme {
+  background-color: #9a853d;
+  padding: 10px;
+  position: relative;
+  top: 20px;
+  color: #000;
+  border-radius: 4px;
+  border: 2px solid #000000; }
+
+input.dugme1 {
+  background-color: #9a853d;
+  padding: 7px;
+  position: relative;
+  color: #000;
+  border-radius: 4px;
+  border: 2px solid #000000;
+  width: 30%; }
+
+input.dugme1:hover {
+  box-shadow: 1px 1px 2px #9a853d;
+  font-weight: 600; }
+
+div#tweet {
+  margin-top: 20px; }
+
+#playerseason > tbody > tr:nth-child(2) {
+  border-bottom: 1px solid #091939;
+  font-weight: 700; }
+
+.tekstovi.spec {
+  border: 2px solid #000;
+  margin-bottom: 10px;
+  border-radius: 5px; }
+
+input#oponentstats, input#playerstats1 {
+  color: #091939;
+  /*font-style:italic;*/
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer; }
+
+th {
+  text-align: center; }
+
+.highest {
+  color: #9a853d; }
+
+div.jebise {
+  height: 18px;
+  background-color: #c2b070;
+  text-align: left;
+  position: relative;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding-top: 2px;
+  /*overflow:hidden;*/ }
+
+td div.jebise span.desno {
+  position: absolute;
+  left: 110%;
+  width: 140px; }
+
+input#matchwinnerstats {
+  border-radius: 0px;
+  color: #ffffff;
+  font-weight: bold; }
+
+div.plus {
+  margin-bottom: 15px; }
+  div.plus h2 {
+    background-color: #091939;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    width: 95%;
+    position: relative;
+    left: 3%;
+    border-radius: 4px;
+    font-size: 1.5em; }
+    div.plus h2:hover {
+      cursor: pointer; }
+  div.plus span {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer; }
+
+table.konacnotabela td {
+  border-bottom: 1px solid #091939; }
+table.konacnotabela tr:nth-child(2) {
+  background-color: #e5e5e5;
+  font-weight: 600; }
+table.konacnotabela tr td:nth-child(3) {
+  font-weight: 600;
+  background-color: #e5e5e5;
+  min-width: 90px; }
+table.konacnotabela tr.total {
+  font-weight: 600; }
+
+#navh2htabs {
+  margin-left: 2.7%;
+  margin-bottom: 64px; }
+
+#navh2htabs form {
+  float: left;
+  width: 49%;
+  margin: 0 0 5px 0.3%; }
+
+.firstplus {
+  margin-top: 15px; }
+
+.plus h2 {
+  text-align: left;
+  padding-left: 15px; }
+
+td.plimage {
+  cursor: pointer; }
+
+#h2hsmall {
+  border: 1px solid #091939;
+  margin-top: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+  #h2hsmall input#cmbplayerp1 {
+    width: 95%;
+    color: #000;
+    margin-bottom: 8px; }
+  #h2hsmall h3 {
+    margin-top: 0;
+    background: #091939;
+    height: 30px;
+    width: 100%;
+    padding-top: 6px;
+    color: #ffffff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+  #h2hsmall input#searchjp {
+    margin-bottom: 8px;
+    background: #091939;
+    color: #ffffff;
+    cursor: pointer; }
+
+.legend {
+  display: table; }
+  .legend .trow {
+    display: table-row; }
+  .legend .firstcol, .legend .secondcol {
+    display: table-cell;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px; }
+  .legend .secondcol {
+    border-bottom: 1px solid #091939; }
+  .legend .comparing {
+    opacity: 0.5; }
+
+#rightcolumn form.next input.kliknime {
+  width: 100%;
+  border: none;
+  position: relative;
+  left: 3%;
+  background-color: #091939;
+  color: #ffffff;
+  text-align: left; }
+  #rightcolumn form.next input.kliknime:hover {
+    background-color: #ffffff;
+    color: #091939; }
+
+#rightcolumn #nextmatches {
+  clear: both;
+  margin-top: 25px;
+  margin-bottom: 12px; }
+  #rightcolumn #nextmatches h3 {
+    background: #ffffff;
+    color: #091939;
+    font-weight: 600;
+    border: 1px solid #091939;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    left: 3%; }
+
+#tweet {
+  border: 1px solid #091939;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; }
+
+/*# sourceMappingURL=tournaments.css.map */
