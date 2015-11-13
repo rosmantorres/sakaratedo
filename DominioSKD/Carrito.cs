@@ -21,6 +21,56 @@ namespace DominioSKD
         List<Matricula> listaMatricula;*/
         #endregion
 
+        #region Propiedades
+        /*
+        /// <summary>
+        /// Propiedad del atributo listaInventario
+        /// </summary>
+        public List<Inventario> Listainventario
+        {
+            get
+            {
+                return this.listaInventario;
+            }
+            set
+            {
+                this.listaInventario = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del atributo listaEvento
+        /// </summary>
+        public List<Evento> Listaevento
+        {
+            get
+            {
+                return this.listaEvento;
+            }
+            set
+            {
+                this.listaEvento = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del atributo listaMatricula
+        /// </summary>
+        public List<Matricula> Listamatricula
+        {
+            get
+            {
+                return this.listaMatricula;
+            }
+            set
+            {
+                this.listaMatricula = value;
+            }
+        }
+        
+        */
+        #endregion
+
         #region Constructores
         /// <summary>
         /// Constructor vacio de la clase

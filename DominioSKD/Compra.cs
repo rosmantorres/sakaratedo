@@ -23,10 +23,71 @@ namespace DominioSKD
         #endregion
 
         #region Propiedades
+        /*
+        /// <summary>
+        /// Propiedad del atributo listaInventario
+        /// </summary>
+        public List<Inventario> Listainventario
+        {
+            get
+            {
+                return this.listaInventario;
+            }
+            set
+            {
+                this.listaInventario = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del atributo listaEvento
+        /// </summary>
+        public List<Evento> Listaevento
+        {
+            get
+            {
+                return this.listaEvento;
+            }
+            set
+            {
+                this.listaEvento = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del atributo listaMatricula
+        /// </summary>
+        public List<Matricula> Listamatricula
+        {
+            get
+            {
+                return this.listaMatricula;
+            }
+            set
+            {
+                this.listaMatricula = value;
+            }
+        }
         
+        */
+
+        /// <summary>
+        /// Propiedad del atributo fechaCompra
+        /// </summary>
+        public DateTime Fechacompra
+        {
+            get
+            {
+                return this.fechaCompra;
+            }
+            set
+            {
+                this.fechaCompra = value;
+            }
+        }
         #endregion
 
-        #region Construtores
+        #region Constructores
         /// <summary>
         /// Constructor vacio de la clase Compra
         /// </summary>
