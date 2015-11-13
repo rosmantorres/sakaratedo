@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Modulo16
 {
-    class Logicainventario
+   public class Logicainventario
     {
         #region Constructores
         /// <summary>
@@ -23,10 +23,11 @@ namespace LogicaNegociosSKD.Modulo16
         /// <summary>
         /// Metodo que obtiene todos productos que se encuentran en el inventario
         /// </summary>
+        /// <param name=NONE>Este metodo no posee paso de parametros</param>
         /// <returns>Retorna una lista de productos</returns>
-        public List<Inventario> consultarInventario()
+        public Producto consultarInventario()
         {
-            return null;
+            return List<Inventario>;
         }
         */
 

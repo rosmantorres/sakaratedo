@@ -8,7 +8,7 @@ using DatosSKD.Modulo16;
 
 namespace LogicaNegociosSKD.Modulo16
 {
-    class Logicaevento
+    public class Logicaevento
     {
         #region Atributos
         /// <summary>
