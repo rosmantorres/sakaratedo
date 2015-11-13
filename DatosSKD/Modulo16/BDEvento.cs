@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace DatosSKD.Modulo16
 {
-    class BDEvento
+    public class BDEvento
     {
+        #region Constructores
+        /// <summary>
+        /// Constructor vacio de la clase BDEvento
+        /// </summary>
+        public BDEvento()
+        {
 
-
-
-
+        }
+        #endregion
 
         #region Metodos
         /// <summary>
@@ -21,6 +26,18 @@ namespace DatosSKD.Modulo16
         /// <returns>Lista con todos los items del inventario que se encuentran en el carrito</returns>
         /*
         public Evento detallarEvento(int objetoDetallar , int idUsario)
+        {
+
+        }*/
+
+
+        /// <summary>
+        /// Metodo que obtiene todas los eventos que se encuentras disponibles en el inventario de eventos
+        /// </summary>
+        /// <param name=NONE>El metodo no posee parametros particulares</param>
+        /// <returns>Lista con todos los eventos que se ofrecen en sakaratedo</returns>
+        /*
+        public evento consultaEvento()
         {
 
         }*/
