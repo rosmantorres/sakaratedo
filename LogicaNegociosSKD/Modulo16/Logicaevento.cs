@@ -12,7 +12,7 @@ namespace LogicaNegociosSKD.Modulo16
     {
         #region Atributos
         /// <summary>
-        /// Atributos de la clase Logicacarrito
+        /// Atributos de la clase Logicaevento
         /// </summary>
         private BDEvento eventoBD;
         #endregion

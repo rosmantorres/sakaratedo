@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD;
+using DatosSKD.Modulo16;
 
 namespace LogicaNegociosSKD.Modulo16
 {
    public class Logicainventario
     {
+        #region Atributos
+        /// <summary>
+        /// Atributos de la clase Logicainventario
+        /// </summary>
+        private BDInventario inventarioBD;
+        #endregion
+
         #region Constructores
         /// <summary>
         /// Constructor vacio de la clase Logicainventario
@@ -16,6 +25,10 @@ namespace LogicaNegociosSKD.Modulo16
         {
 
         }
+        #endregion
+
+        #region Propiedades
+
         #endregion
 
         #region Metodos
