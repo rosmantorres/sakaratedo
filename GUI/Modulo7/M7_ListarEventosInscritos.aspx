@@ -320,7 +320,7 @@
                 });
                 $("#fechaFin").datepicker({
                     minDate: "-50Y",
-                    maxDate: "Y",
+                    maxDate: "+50Y",
                     changeMonth: true,
                     changeYear: true,
                     showButtonPanel: true,
