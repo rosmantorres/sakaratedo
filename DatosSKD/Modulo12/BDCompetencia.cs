@@ -54,7 +54,7 @@ namespace DatosSKD.Modulo12
             }
             catch (Exception e)
             {
-            
+                throw e;
             }
 
             return laListaDeCompetencias;

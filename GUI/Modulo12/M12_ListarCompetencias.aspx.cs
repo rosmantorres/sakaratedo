@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DominioSKD;
+using LogicaNegociosSKD;
 
 namespace templateApp.GUI.Modulo12
 {
     public partial class M12_ListarCompetencias : System.Web.UI.Page
     {
+        private List<Competencia> laLista = new List<Competencia>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "12";
@@ -39,7 +43,40 @@ namespace templateApp.GUI.Modulo12
                 }
 
             }
+
+            #region Llenar Data Table Con Competencias
+
+            LogicaNegociosSKD.Modulo12.LogicaCompetencias logComp = new LogicaNegociosSKD.Modulo12.LogicaCompetencias();
+            if (!IsPostBack)
+            {
+                try
+                {
+                    laLista = logComp.obtenerListaDeCompetencias();
+
+                    foreach (Competencia c in laLista)
+                    {
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTR;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Organizacion.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.TipoCompetencia.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Ubicacion.Ciudad.ToString() + ", " + c.Ubicacion.Estado.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Status.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M12_RecursoInterfaz.BotonModificar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M12_RecursoInterfaz.BotonEliminar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.CerrarTR;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
+        #endregion
 
         protected void btn_eliminarComp_Click(object sender, EventArgs e)
         {

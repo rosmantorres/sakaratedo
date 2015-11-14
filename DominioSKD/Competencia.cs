@@ -16,7 +16,8 @@ namespace DominioSKD
         private String status;
         private Categoria categoria;
         private Ubicacion ubicacion;
-        private Evento evento;
+        private DateTime fechaInicio;
+        private DateTime fechaFin;
         private Organizacion organizacion;
         private List<Organizacion> listaOrganizaciones;
 
@@ -65,11 +66,16 @@ namespace DominioSKD
             set { ubicacion = value; }
         }
 
-
-        public Evento Evento
+        public DateTime FechaInicio
         {
-            get { return evento; }
-            set { evento = value; }
+            get { return fechaInicio; }
+            set { fechaInicio = value; }
+        }
+
+        public DateTime FechaFin
+        {
+            get { return fechaFin; }
+            set { fechaFin = value; }
         }
 
         public Organizacion Organizacion
@@ -94,8 +100,9 @@ namespace DominioSKD
             status            = "";
             categoria         = null;
             ubicacion         = null;
-            evento            = null;
             organizacion      = null;
+            fechaInicio       = default(DateTime);
+            fechaFin          = default(DateTime);
         }
 
         public Competencia(int elId, String elNombre, int elTipo, bool orgTodas, String elStatus)
@@ -105,6 +112,8 @@ namespace DominioSKD
             tipoCompetencia   = elTipo;
             organizacionTodas = orgTodas;
             status            = elStatus;
+           
+
         }
 
         public Competencia(String elNombre, int elTipo, bool orgTodas, String elStatus)
