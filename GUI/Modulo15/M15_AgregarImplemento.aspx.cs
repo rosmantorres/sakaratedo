@@ -4,17 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LogicaNegociosSKD.Modulo15;
+
 
 namespace templateApp.GUI.Modulo15
-{
+{      
+   
     public partial class M15_Prueba : System.Web.UI.Page
-    {
+    {  
+        
+        void iniciar() { 
+            Implemento implementos = new Implemento();
+            implementos.consultarImplemento();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            iniciar();
             ((SKD)Page.Master).IdModulo = "15";
             String success = Request.QueryString["success"];
             String valor="";
             Boolean estado = false;
+
+
+
             if (success != null)
             {
                 if (success.Equals("1"))

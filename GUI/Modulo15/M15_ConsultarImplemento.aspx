@@ -62,6 +62,8 @@ Gesti&oacuten de Inventario
     	<%--Contenido de la tabla--%>
 
     <div class="box-body table-responsive">
+
+       
        <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>

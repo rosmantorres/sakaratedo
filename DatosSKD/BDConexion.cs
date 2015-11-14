@@ -33,6 +33,7 @@ namespace DatosSKD
                 if (conexion == null)
                 {
                     conexion = new SqlConnection(strConexion);
+                    conexion.Open();
                 }
 
             }
