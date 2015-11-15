@@ -41,6 +41,10 @@
   <ItemGroup>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
+    <Compile Include="Modulo16\AgregarEventoaCarritoFallidoException.cs" />
+    <Compile Include="Modulo16\CarritoSinEventoException.cs" />
+    <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
+    <Compile Include="Modulo16\CarritosSinInventarioException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,7 +55,6 @@
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo1\" />
     <Folder Include="Modulo2\" />
     <Folder Include="Modulo3\" />
