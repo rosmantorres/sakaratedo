@@ -158,5 +158,14 @@ namespace DatosSKD.Modulo12 {
                 return ResourceManager.GetString("ConsultarCompetencias", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todas.
+        /// </summary>
+        internal static string TodasLasOrganizaciones {
+            get {
+                return ResourceManager.GetString("TodasLasOrganizaciones", resourceCulture);
+            }
+        }
     }
 }

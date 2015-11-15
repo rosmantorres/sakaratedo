@@ -17,7 +17,6 @@ namespace DatosSKD.Modulo12
         {
             BDConexion laConexion;
             List<Competencia> laListaDeCompetencias = new List<Competencia>();
-
             List<Parametro> parametros;
 
             try
@@ -39,10 +38,13 @@ namespace DatosSKD.Modulo12
                     laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
                     laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
 
-                    if(laCompetencia.OrganizacionTodas == false)
+                    if (laCompetencia.OrganizacionTodas == false)
                         laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString())
-                                                                        ,row[RecursosBDModulo12.AliasNombreOrganizacion].ToString());
-
+                                                                        , row[RecursosBDModulo12.AliasNombreOrganizacion].ToString());
+                    else
+                    {
+                        laCompetencia.Organizacion = new Organizacion(RecursosBDModulo12.TodasLasOrganizaciones);
+                    }
                     laCompetencia.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDModulo12.AliasIdUbicacion].ToString()),
                                                             row[RecursosBDModulo12.AliasNombreCiudad].ToString(),
                                                             row[RecursosBDModulo12.AliasNombreEstado].ToString());
