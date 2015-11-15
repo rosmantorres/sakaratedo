@@ -53,9 +53,6 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <a class="btn btn-success glyphicon glyphicon-plus-sign col-md-offset-11" data-toggle="modal" data-target="#modal-create" href="#""></a>
-            </div>
         </form>
     </div>
 

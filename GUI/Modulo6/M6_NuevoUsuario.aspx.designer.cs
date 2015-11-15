@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo6
-{
-
-
-    public partial class M6_NuevoUsuario
-    {
-
+namespace templateApp.GUI.Modulo6 {
+    
+    
+    public partial class M6_NuevoUsuario {
+        
         /// <summary>
         /// control form1.
         /// </summary>
