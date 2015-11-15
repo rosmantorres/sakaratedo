@@ -233,8 +233,10 @@
     <Content Include="GUI\Modulo6\css\styles.css" />
     <Content Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx" />
     <Content Include="GUI\Modulo6\M6_ListaUsuarios.aspx" />
+    <Content Include="GUI\Modulo6\M6_ModificarUsuario.aspx" />
     <Content Include="GUI\Modulo6\M6_NuevaSolicitud.aspx" />
     <Content Include="GUI\Modulo6\M6_NuevoAdmin.aspx" />
+    <Content Include="GUI\Modulo6\M6_NuevoUsuario.aspx" />
     <Content Include="GUI\Modulo6\M6_procesarSolicitud.aspx" />
     <Content Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
@@ -1534,6 +1536,13 @@
     <Compile Include="GUI\Modulo6\M6_ListaUsuarios.aspx.designer.cs">
       <DependentUpon>M6_ListaUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo6\M6_ModificarUsuario.aspx.cs">
+      <DependentUpon>M6_ModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo6\M6_ModificarUsuario.aspx.designer.cs">
+      <DependentUpon>M6_ModificarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo6\M6_NuevaSolicitud.aspx.cs">
       <DependentUpon>M6_NuevaSolicitud.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1547,6 +1556,13 @@
     </Compile>
     <Compile Include="GUI\Modulo6\M6_NuevoAdmin.aspx.designer.cs">
       <DependentUpon>M6_NuevoAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo6\M6_NuevoUsuario.aspx.cs">
+      <DependentUpon>M6_NuevoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo6\M6_NuevoUsuario.aspx.designer.cs">
+      <DependentUpon>M6_NuevoUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_ProcesarSolicitud.aspx.cs">
       <DependentUpon>M6_procesarSolicitud.aspx</DependentUpon>
