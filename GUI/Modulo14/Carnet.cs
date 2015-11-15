@@ -11,7 +11,7 @@
 namespace templateApp.GUI.Modulo14 {
     using System;
     using System.ComponentModel;
-   /* using CrystalDecisions.Shared;
+    using CrystalDecisions.Shared;
     using CrystalDecisions.ReportSource;
     using CrystalDecisions.CrystalReports.Engine;
     
@@ -149,5 +149,5 @@ namespace templateApp.GUI.Modulo14 {
             //     this.ShareDBLogonInfo );
             return key;
         }
-    }*/
+    }
 }

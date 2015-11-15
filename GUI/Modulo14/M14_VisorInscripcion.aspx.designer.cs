@@ -28,7 +28,7 @@ namespace templateApp.GUI.Modulo14 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-       /* protected global::CrystalDecisions.Web.CrystalReportSource DataInscripcion;*/
+        protected global::CrystalDecisions.Web.CrystalReportSource DataInscripcion;
         
         /// <summary>
         /// Control VisorInscripcion.
@@ -37,6 +37,6 @@ namespace templateApp.GUI.Modulo14 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        /* protected global::CrystalDecisions.Web.CrystalReportViewer VisorInscripcion;*/
+        protected global::CrystalDecisions.Web.CrystalReportViewer VisorInscripcion;
     }
 }
