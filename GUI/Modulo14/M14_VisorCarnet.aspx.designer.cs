@@ -28,7 +28,7 @@ namespace templateApp.GUI.Modulo14 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::CrystalDecisions.Web.CrystalReportSource DataCarnet;
+        /* protected global::CrystalDecisions.Web.CrystalReportSource DataCarnet;*/
         
         /// <summary>
         /// Control VisorCarnet.
@@ -37,6 +37,6 @@ namespace templateApp.GUI.Modulo14 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::CrystalDecisions.Web.CrystalReportViewer VisorCarnet;
+        /*protected global::CrystalDecisions.Web.CrystalReportViewer VisorCarnet;*/
     }
 }
