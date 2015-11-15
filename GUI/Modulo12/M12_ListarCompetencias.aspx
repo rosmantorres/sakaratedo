@@ -138,7 +138,7 @@
         </div><!-- /.modal-delete-dialog -->
       </div><!-- /.modal-delete -->
 
-    		<div/ id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">

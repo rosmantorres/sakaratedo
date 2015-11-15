@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AliasCintaFin" xml:space="preserve">
+    <value>cintaFin</value>
+  </data>
+  <data name="AliasCintaInicio" xml:space="preserve">
+    <value>cintaInicio</value>
+  </data>
+  <data name="AliasEdadFin" xml:space="preserve">
+    <value>edadFin</value>
+  </data>
+  <data name="AliasEdadInicio" xml:space="preserve">
+    <value>edadInicio</value>
+  </data>
+  <data name="AliasFechaFin" xml:space="preserve">
+    <value>fechaFin</value>
+  </data>
+  <data name="AliasFechaInicio" xml:space="preserve">
+    <value>fechaInicio</value>
+  </data>
+  <data name="AliasIdCategoria" xml:space="preserve">
+    <value>idCategoria</value>
+  </data>
   <data name="AliasIdCompetencia" xml:space="preserve">
     <value>idCompetencia</value>
   </data>
@@ -126,17 +147,29 @@
   <data name="AliasIdUbicacion" xml:space="preserve">
     <value>idUbicacion</value>
   </data>
+  <data name="AliasLatitudDireccion" xml:space="preserve">
+    <value>latitudDireccion</value>
+  </data>
+  <data name="AliasLongitudDireccion" xml:space="preserve">
+    <value>longitudDireccion</value>
+  </data>
   <data name="AliasNombreCiudad" xml:space="preserve">
     <value>nombreCiudad</value>
   </data>
   <data name="AliasNombreCompetencia" xml:space="preserve">
     <value>nombreCompetencia</value>
   </data>
+  <data name="AliasNombreDireccion" xml:space="preserve">
+    <value>nombreDireccion</value>
+  </data>
   <data name="AliasNombreEstado" xml:space="preserve">
     <value>nombreEstado</value>
   </data>
   <data name="AliasNombreOrganizacion" xml:space="preserve">
     <value>nombreOrganizacion</value>
+  </data>
+  <data name="AliasSexo" xml:space="preserve">
+    <value>sexoCategoria</value>
   </data>
   <data name="AliasStatusCompetencia" xml:space="preserve">
     <value>statusCompetencia</value>
@@ -150,6 +183,9 @@
   <data name="ConsultarCompetencias" xml:space="preserve">
     <value>M12_ConsultarCompetencias</value>
     <comment>Consulta las competencias en general</comment>
+  </data>
+  <data name="ConsultarCompetenciasXId" xml:space="preserve">
+    <value>M12_ConsultarCompetenciasXId</value>
   </data>
   <data name="TodasLasOrganizaciones" xml:space="preserve">
     <value>Todas</value>

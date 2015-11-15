@@ -61,6 +61,69 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to cintaFin.
+        /// </summary>
+        internal static string AliasCintaFin {
+            get {
+                return ResourceManager.GetString("AliasCintaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cintaInicio.
+        /// </summary>
+        internal static string AliasCintaInicio {
+            get {
+                return ResourceManager.GetString("AliasCintaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to edadFin.
+        /// </summary>
+        internal static string AliasEdadFin {
+            get {
+                return ResourceManager.GetString("AliasEdadFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to edadInicio.
+        /// </summary>
+        internal static string AliasEdadInicio {
+            get {
+                return ResourceManager.GetString("AliasEdadInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaFin.
+        /// </summary>
+        internal static string AliasFechaFin {
+            get {
+                return ResourceManager.GetString("AliasFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaInicio.
+        /// </summary>
+        internal static string AliasFechaInicio {
+            get {
+                return ResourceManager.GetString("AliasFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idCategoria.
+        /// </summary>
+        internal static string AliasIdCategoria {
+            get {
+                return ResourceManager.GetString("AliasIdCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCompetencia.
         /// </summary>
         internal static string AliasIdCompetencia {
@@ -88,6 +151,24 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to latitudDireccion.
+        /// </summary>
+        internal static string AliasLatitudDireccion {
+            get {
+                return ResourceManager.GetString("AliasLatitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to longitudDireccion.
+        /// </summary>
+        internal static string AliasLongitudDireccion {
+            get {
+                return ResourceManager.GetString("AliasLongitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreCiudad.
         /// </summary>
         internal static string AliasNombreCiudad {
@@ -106,6 +187,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nombreDireccion.
+        /// </summary>
+        internal static string AliasNombreDireccion {
+            get {
+                return ResourceManager.GetString("AliasNombreDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreEstado.
         /// </summary>
         internal static string AliasNombreEstado {
@@ -120,6 +210,15 @@ namespace DatosSKD.Modulo12 {
         internal static string AliasNombreOrganizacion {
             get {
                 return ResourceManager.GetString("AliasNombreOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sexoCategoria.
+        /// </summary>
+        internal static string AliasSexo {
+            get {
+                return ResourceManager.GetString("AliasSexo", resourceCulture);
             }
         }
         
@@ -156,6 +255,15 @@ namespace DatosSKD.Modulo12 {
         internal static string ConsultarCompetencias {
             get {
                 return ResourceManager.GetString("ConsultarCompetencias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M12_ConsultarCompetenciasXId.
+        /// </summary>
+        internal static string ConsultarCompetenciasXId {
+            get {
+                return ResourceManager.GetString("ConsultarCompetenciasXId", resourceCulture);
             }
         }
         

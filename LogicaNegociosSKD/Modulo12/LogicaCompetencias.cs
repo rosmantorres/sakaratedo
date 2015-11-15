@@ -13,6 +13,7 @@ namespace LogicaNegociosSKD.Modulo12
         #region Atributos
 
         private List<DominioSKD.Competencia> laListaDeCompetencias;
+       
 
         #endregion
 
@@ -40,6 +41,18 @@ namespace LogicaNegociosSKD.Modulo12
                 throw e;
             }
         
+        }
+
+        public DominioSKD.Competencia detalleCompetenciaXId(int elIdCompetencia)
+        {
+            try
+            {
+                return BDCompetencia.DetallarCompetencia(elIdCompetencia);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
     }

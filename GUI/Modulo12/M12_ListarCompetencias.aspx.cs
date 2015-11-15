@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
+using LogicaNegociosSKD.Modulo12;
 
 namespace templateApp.GUI.Modulo12
 {
@@ -18,6 +19,19 @@ namespace templateApp.GUI.Modulo12
             ((SKD)Page.Master).IdModulo = "12";
 
             String success = Request.QueryString["success"];
+            String detalleString = Request.QueryString["compDetalle"];
+
+
+            if (detalleString != null)
+            {
+                llenarModalInfo(int.Parse(detalleString));
+                            
+            
+            
+            
+            }
+
+
 
             if (success != null)
             {
@@ -46,7 +60,7 @@ namespace templateApp.GUI.Modulo12
 
             #region Llenar Data Table Con Competencias
 
-            LogicaNegociosSKD.Modulo12.LogicaCompetencias logComp = new LogicaNegociosSKD.Modulo12.LogicaCompetencias();
+            LogicaCompetencias logComp = new LogicaCompetencias();
             if (!IsPostBack)
             {
                 try
@@ -80,6 +94,16 @@ namespace templateApp.GUI.Modulo12
 
         protected void btn_eliminarComp_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void llenarModalInfo(int elIdCompetencia)
+        {
+            Competencia laCompetencia = new Competencia();
+            LogicaCompetencias logica = new LogicaCompetencias();
+            laCompetencia = logica.detalleCompetenciaXId(elIdCompetencia);
+
+
 
         }
     }
