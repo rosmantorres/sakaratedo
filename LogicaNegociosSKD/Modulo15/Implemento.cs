@@ -17,11 +17,22 @@ namespace LogicaNegociosSKD.Modulo15
             BDConexion conexion = new BDConexion();
             String query = "SELECT * FROM IMPLEMENTO";
 
+            conexion.Conectar();
             SqlDataReader lectura = conexion.EjecutarQuery(query);
-            while (lectura.Read())
+
+            if (lectura.HasRows)
             {
-                Console.WriteLine(String.Format("{0}, {1}", lectura[0], lectura[1]));
+                while (lectura.Read())
+                {
+                    Console.WriteLine("{0}\t{1}", lectura.GetInt32(0),
+                        lectura.GetString(1));
+                }
             }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            lectura.Close();
 
 
         }

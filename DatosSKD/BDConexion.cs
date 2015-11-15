@@ -134,10 +134,7 @@ namespace DatosSKD
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
+        
         }
         #endregion
 
