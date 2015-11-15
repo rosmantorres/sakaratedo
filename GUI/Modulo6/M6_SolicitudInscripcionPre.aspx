@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="M6_SolicitudInscripcionPre.aspx.cs" Inherits="templateApp.GUI.Modulo6.M6_SolicitudInscripcionPre" %>
 
 <!DOCTYPE html>
-
+<!-- Pagina para la generacion de una nueva solicitud de inscripcion por parte de un prospecto -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8">
