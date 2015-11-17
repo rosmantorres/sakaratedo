@@ -70,11 +70,38 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;tr&gt;.
+        ///   Looks up a localized string similar to &lt;tr id=.
         /// </summary>
         internal static string ABRIR_TR {
             get {
                 return ResourceManager.GetString("ABRIR_TR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;tr id=E-.
+        /// </summary>
+        internal static string ABRIR_TR_EVENTO {
+            get {
+                return ResourceManager.GetString("ABRIR_TR_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;tr id=I-.
+        /// </summary>
+        internal static string ABRIR_TR_INVENTARIO {
+            get {
+                return ResourceManager.GetString("ABRIR_TR_INVENTARIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;tr id=M-.
+        /// </summary>
+        internal static string ABRIR_TR_MATRICULA {
+            get {
+                return ResourceManager.GetString("ABRIR_TR_MATRICULA", resourceCulture);
             }
         }
         

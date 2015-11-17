@@ -121,7 +121,16 @@
     <value>&lt;td&gt;</value>
   </data>
   <data name="ABRIR_TR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
+    <value>&lt;tr id=</value>
+  </data>
+  <data name="ABRIR_TR_EVENTO" xml:space="preserve">
+    <value>&lt;tr id=E-</value>
+  </data>
+  <data name="ABRIR_TR_INVENTARIO" xml:space="preserve">
+    <value>&lt;tr id=I-</value>
+  </data>
+  <data name="ABRIR_TR_MATRICULA" xml:space="preserve">
+    <value>&lt;tr id=M-</value>
   </data>
   <data name="BOTON_CERRAR" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>

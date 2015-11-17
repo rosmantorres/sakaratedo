@@ -60,7 +60,7 @@ namespace templateApp.GUI.Modulo16
             foreach (Inventario inventario in carritoCompras.Listainventario)
             {
                 //Creo la fila de la tabla
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + +">";
 
                 //Agrego los datos correspondientes de la tabla con sus botones
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + "foto" + M16_Recursointerfaz.CERRAR_TD;
@@ -84,7 +84,7 @@ namespace templateApp.GUI.Modulo16
             foreach (Matricula matricula in carritoCompras.Listamatricula)
             {
                 //Creo la fila de la tabla
-                this.laTabla2.Text += M16_Recursointerfaz.ABRIR_TR;
+                this.laTabla2.Text += M16_Recursointerfaz.ABRIR_TR_MATRICULA + +">";
 
                 //Agrego los datos correspondientes de la tabla con sus botones
                 this.laTabla2.Text += M16_Recursointerfaz.ABRIR_TD + "foto" + M16_Recursointerfaz.CERRAR_TD;
@@ -108,7 +108,7 @@ namespace templateApp.GUI.Modulo16
             foreach (Evento evento in carritoCompras.Listaevento)
             {
                 //Creo la fila de la tabla
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TR;
+                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TR_EVENTO + +">";
 
                 //Agrego los datos correspondientes de la tabla con sus botones
                 this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + "foto" + M16_Recursointerfaz.CERRAR_TD;
