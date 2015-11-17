@@ -37,63 +37,21 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Articulos Actuales</h3>
                 </div><!-- /.box-header -->
-
-       <table id="example" class="table table-bordered table-striped dataTable">
+              </div>
+       <table id="tablaproducto" class="table table-bordered table-striped dataTable">
         <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Articulo Deportivo</th>
-                <th>Precio (Bs)</th>
-                <th>Accion</th>
-                
-            </tr>
-        </thead>
- 
-        <tfoot>
-            <tr>
-                <th>Foto</th>
-                <th>Articulo Deportivo</th>
-                <th>Precio (BS)</th>
-                <th>Accion</th>
-            </tr>
-        </tfoot>
- 
-        <tbody>
-            <tr>
-                <td><img src="Imagenes\GuanteRojo.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Guantes Rojos</td>
-                <td>Bs 5000</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes\CintaBlanca.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Cinta Blanca</td>
-                <td>Bs 400</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes\Suspensorio.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Suspensorio</td>
-                <td>Bs 350</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            
-            <tr>
-                <td><img src="Imagenes\ProtectorBucal.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Proteccion Bucal</td>
-                <td>Bs 3200</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-
-             <tr>
-                <td><img src="Imagenes\Karategi.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Karategi</td>
-                <td>Bs 14000</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-
-        </tbody>
-    </table>
+				<tr>
+					<th style="text-align:left">Nombre</th>
+					<th style="text-align:left">Marca</th>
+					<th style="text-align:left">Precio</th>
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+		    </tbody>
+            </table>
+        </div>
 
                   <!--MODAL PARA EL DETALLE -->
 <div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
@@ -151,9 +109,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+</div>
 
-    </div>
+    
 
      <!--VALIDACION PARA MODAL -->
     <script src="js/Validacion.js"></script>
