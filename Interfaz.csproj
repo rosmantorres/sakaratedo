@@ -1279,7 +1279,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Inscripcion.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
       <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
@@ -1413,6 +1412,11 @@
     </Compile>
     <Compile Include="GUI\Modulo16\M16_VerCarrito.aspx.designer.cs">
       <DependentUpon>M16_VerCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_Recursointerfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M16_Recursointerfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -1724,6 +1728,10 @@
     <EmbeddedResource Include="GUI\Modulo14\Inscripcion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo16\M16_Recursointerfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M16_Recursointerfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
