@@ -36,233 +36,90 @@
      <!-- general form elements -->
     <form role="form" class="form-horizontal" method="POST">
               
-              <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Subtotal 23.300 Bs.</h3>
-                </div><!-- /.box-header -->
-        <table id="example" class="table table-bordered table-striped dataTable">
+              <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Inventario</h3>
+        </div><!-- /.box-header -->
+
+    <div class="box-body table-responsive">
+        <table id="tablainventario" class="table table-bordered table-striped dataTable">
         <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Producto</th>
-                <th>Precio Unitario</th>
-                <th>Cantidad</th>
-                <th>Precio por Cantidad</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
- 
-        <tfoot>
-            <tr>
-                <th>Foto</th>
-                <th>Producto</th>
-                <th>Precio Unitario</th>
-                <th>Cantidad</th>
-                <th>Precio por Cantidad</th>
-                <th>Acciones</th>
-            </tr>
-        </tfoot>
-<!--INFORMACION DEL MODAL PARA EL DETALLE-->
-        <tbody>
-           
-            <tr>
-                <td><img src="Imagenes/GuanteRojo.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Guantes rojos</td>
-                <td>5000</td>
-                <td>
-                     
-                                 <div class="dropdown" runat="server" id="div3">
-                                     </div>
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList3" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
+				<tr>
+					<th style="text-align:left">Foto</th>
+					<th style="text-align:left">Producto</th>
+					<th style="text-align:left">Precio Unitario</th>           
+                    <th style="text-align:left">Cantidad</th>
+                    <th style="text-align:left">Precio por Cantidad</th>
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla1"></asp:Literal>
+		    </tbody>
+            </table>
+           </div>
+       </div>
+    </div>
+</div>
 
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                    </td>
-                                 <%-- <asp:DropDownList ID="DropDownList3"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
+         <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Matricula</h3>
+        </div><!-- /.box-header -->
 
-                 
-                
-                <td>5000</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/Karategi.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Karategi</td>
-                <td>14000</td>
-                <td>
-                     
-                                 <div class="dropdown" runat="server" id="div4">
-                                 <%-- <asp:DropDownList ID="DropDownList4"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                 </div> 
-                                  <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList4" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
+        <div class="box-body table-responsive">
+        <table id="tablamatricula" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					<th style="text-align:left">Foto</th>
+					<th style="text-align:left">Producto</th>
+					<th style="text-align:left">Precio Unitario</th>           
+                    <th style="text-align:left">Cantidad</th>
+                    <th style="text-align:left">Precio por Cantidad</th>
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla2"></asp:Literal>
+		    </tbody>
+            </table>
+           </div>
+       </div>
+    </div>
+</div>
 
-                                  </select>
-                
-                                         </div>
-                                      </div>
+                <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Evento</h3>
+        </div><!-- /.box-header -->
 
-                </td>
-                <td>14000</td>
-                 <td>
-                     <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/Suspensorio.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Suspensorio</td>
-                <td>350</td>
-                <td>
-                    
-                                 <div class="dropdown" runat="server" id="div5">
-                                     </div>
-                    <%-- 
-                                 <asp:DropDownList ID="DropDownList5"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                    
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList5" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
+    <div class="box-body table-responsive">
+        <table id="tablaevento" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					<th style="text-align:left">Foto</th>
+					<th style="text-align:left">Producto</th>
+					<th style="text-align:left">Precio Unitario</th>           
+                    <th style="text-align:left">Cantidad</th>
+                    <th style="text-align:left">Precio por Cantidad</th>
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla3"></asp:Literal>
+		    </tbody>
+            </table>
+           </div>
+       </div>
+    </div>
+</div>
 
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                  
-                        
-
-                </td>
-                <td>350</td>
-                <td> 
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-             <tr>
-                <td><img src="Imagenes/ProtectorBucal.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Proteccion bucal</td>
-                 <td>3200</td>
-                <td>
-                     <div class="dropdown" runat="server" id="div6">
-                         </div>
-                                <%--  
-                                    <asp:DropDownList ID="DropDownList6"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                       <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList6" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                                 
-                </td>
-                <td>3200</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/CintaBlanca.jpg" alt="" style="width:50px; height:auto;"></td>
-                
-                <td>Cinta Blanca</td>
-                <td>400</td>
-                <td>
-                     <div class="dropdown" runat="server" id="div7">
-                         </div>
-                              <%--    <asp:DropDownList ID="DropDownList7"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                    
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                  <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList7" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-
-                </td>
-                <td>400</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"> </a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
 
          <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
