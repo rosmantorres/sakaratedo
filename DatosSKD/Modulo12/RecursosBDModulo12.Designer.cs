@@ -79,6 +79,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to costoCompetencia.
+        /// </summary>
+        internal static string AliasCostoCompetencia {
+            get {
+                return ResourceManager.GetString("AliasCostoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to edadFin.
         /// </summary>
         internal static string AliasEdadFin {
@@ -264,6 +273,177 @@ namespace DatosSKD.Modulo12 {
         internal static string ConsultarCompetenciasXId {
             get {
                 return ResourceManager.GetString("ConsultarCompetenciasXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cintaFin.
+        /// </summary>
+        internal static string ParamCintaFin {
+            get {
+                return ResourceManager.GetString("ParamCintaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cintaIni.
+        /// </summary>
+        internal static string ParamCintaInicio {
+            get {
+                return ResourceManager.GetString("ParamCintaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @costoCompetencia.
+        /// </summary>
+        internal static string ParamCostoCompetencia {
+            get {
+                return ResourceManager.GetString("ParamCostoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @edadFin.
+        /// </summary>
+        internal static string ParamEdadFin {
+            get {
+                return ResourceManager.GetString("ParamEdadFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @edadIni.
+        /// </summary>
+        internal static string ParamEdadInicio {
+            get {
+                return ResourceManager.GetString("ParamEdadInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fecha_fin.
+        /// </summary>
+        internal static string ParamFechaFin {
+            get {
+                return ResourceManager.GetString("ParamFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fecha_ini.
+        /// </summary>
+        internal static string ParamFechaInicio {
+            get {
+                return ResourceManager.GetString("ParamFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idCompetencia.
+        /// </summary>
+        internal static string ParamIdCompetencia {
+            get {
+                return ResourceManager.GetString("ParamIdCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @latitudDireccion.
+        /// </summary>
+        internal static string ParamLatitudDireccion {
+            get {
+                return ResourceManager.GetString("ParamLatitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @longitudDireccion.
+        /// </summary>
+        internal static string ParamLongitudDireccion {
+            get {
+                return ResourceManager.GetString("ParamLongitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombreCiudad.
+        /// </summary>
+        internal static string ParamNombreCiudad {
+            get {
+                return ResourceManager.GetString("ParamNombreCiudad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombreCompetencia.
+        /// </summary>
+        internal static string ParamNombreCompetencia {
+            get {
+                return ResourceManager.GetString("ParamNombreCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombreDireccion.
+        /// </summary>
+        internal static string ParamNombreDireccion {
+            get {
+                return ResourceManager.GetString("ParamNombreDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombreEstado.
+        /// </summary>
+        internal static string ParamNombreEstado {
+            get {
+                return ResourceManager.GetString("ParamNombreEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombreOrganizacion.
+        /// </summary>
+        internal static string ParamNombreOrganizacion {
+            get {
+                return ResourceManager.GetString("ParamNombreOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @organizacionesTodas.
+        /// </summary>
+        internal static string ParamOrganizacionTodas {
+            get {
+                return ResourceManager.GetString("ParamOrganizacionTodas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @sexo.
+        /// </summary>
+        internal static string ParamSexo {
+            get {
+                return ResourceManager.GetString("ParamSexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @statusCompetencia.
+        /// </summary>
+        internal static string ParamStatusCompetencia {
+            get {
+                return ResourceManager.GetString("ParamStatusCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @tipoCompetencia.
+        /// </summary>
+        internal static string ParamTipoCompetencia {
+            get {
+                return ResourceManager.GetString("ParamTipoCompetencia", resourceCulture);
             }
         }
         

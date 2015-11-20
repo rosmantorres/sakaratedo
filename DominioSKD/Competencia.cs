@@ -14,6 +14,7 @@ namespace DominioSKD
         private int tipoCompetencia;
         private bool organizacionTodas;
         private String status;
+        private float costo;
         private Categoria categoria;
         private Ubicacion ubicacion;
         private DateTime fechaInicio;
@@ -88,6 +89,12 @@ namespace DominioSKD
             get { return listaOrganizaciones; }
             set { listaOrganizaciones = value; }
         }
+
+        public float Costo
+        {
+            get { return costo; }
+            set { costo = value; }
+        }
         #endregion
 
         #region constructores
@@ -103,6 +110,7 @@ namespace DominioSKD
             organizacion      = null;
             fechaInicio       = default(DateTime);
             fechaFin          = default(DateTime);
+            costo             = 0;
         }
 
         public Competencia(int elId, String elNombre, int elTipo, bool orgTodas, String elStatus)

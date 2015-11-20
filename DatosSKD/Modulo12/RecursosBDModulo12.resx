@@ -123,6 +123,9 @@
   <data name="AliasCintaInicio" xml:space="preserve">
     <value>cintaInicio</value>
   </data>
+  <data name="AliasCostoCompetencia" xml:space="preserve">
+    <value>costoCompetencia</value>
+  </data>
   <data name="AliasEdadFin" xml:space="preserve">
     <value>edadFin</value>
   </data>
@@ -186,6 +189,63 @@
   </data>
   <data name="ConsultarCompetenciasXId" xml:space="preserve">
     <value>M12_ConsultarCompetenciasXId</value>
+  </data>
+  <data name="ParamCintaFin" xml:space="preserve">
+    <value>@cintaFin</value>
+  </data>
+  <data name="ParamCintaInicio" xml:space="preserve">
+    <value>@cintaIni</value>
+  </data>
+  <data name="ParamCostoCompetencia" xml:space="preserve">
+    <value>@costoCompetencia</value>
+  </data>
+  <data name="ParamEdadFin" xml:space="preserve">
+    <value>@edadFin</value>
+  </data>
+  <data name="ParamEdadInicio" xml:space="preserve">
+    <value>@edadIni</value>
+  </data>
+  <data name="ParamFechaFin" xml:space="preserve">
+    <value>@fecha_fin</value>
+  </data>
+  <data name="ParamFechaInicio" xml:space="preserve">
+    <value>@fecha_ini</value>
+  </data>
+  <data name="ParamIdCompetencia" xml:space="preserve">
+    <value>@idCompetencia</value>
+  </data>
+  <data name="ParamLatitudDireccion" xml:space="preserve">
+    <value>@latitudDireccion</value>
+  </data>
+  <data name="ParamLongitudDireccion" xml:space="preserve">
+    <value>@longitudDireccion</value>
+  </data>
+  <data name="ParamNombreCiudad" xml:space="preserve">
+    <value>@nombreCiudad</value>
+  </data>
+  <data name="ParamNombreCompetencia" xml:space="preserve">
+    <value>@nombreCompetencia</value>
+  </data>
+  <data name="ParamNombreDireccion" xml:space="preserve">
+    <value>@nombreDireccion</value>
+  </data>
+  <data name="ParamNombreEstado" xml:space="preserve">
+    <value>@nombreEstado</value>
+  </data>
+  <data name="ParamNombreOrganizacion" xml:space="preserve">
+    <value>@nombreOrganizacion</value>
+  </data>
+  <data name="ParamOrganizacionTodas" xml:space="preserve">
+    <value>@organizacionesTodas</value>
+  </data>
+  <data name="ParamSexo" xml:space="preserve">
+    <value>@sexo</value>
+  </data>
+  <data name="ParamStatusCompetencia" xml:space="preserve">
+    <value>@statusCompetencia</value>
+  </data>
+  <data name="ParamTipoCompetencia" xml:space="preserve">
+    <value>@tipoCompetencia</value>
   </data>
   <data name="TodasLasOrganizaciones" xml:space="preserve">
     <value>Todas</value>

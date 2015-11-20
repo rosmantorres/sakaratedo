@@ -94,7 +94,8 @@ namespace DatosSKD.Modulo12
                     laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
                     laCompetencia.FechaInicio = Convert.ToDateTime(row[RecursosBDModulo12.AliasEdadInicio].ToString());
                     laCompetencia.FechaFin = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin].ToString());
-
+                    laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
+                    
                     if (laCompetencia.OrganizacionTodas == false)
                         laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString())
                                                                         , row[RecursosBDModulo12.AliasNombreOrganizacion].ToString());
