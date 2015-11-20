@@ -41,7 +41,18 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    
+    <%--Alerta de falta de contenido--%>
+ <div id="alert"  >
+    <div id="contenido_alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
+ </div>
+    <%--Fin de alerta de falta de contenido--%>
 
+        <%--Alerta de confirmación--%>
+ <div id="alert_confirmacion"  >
+    <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
+ </div>    
+    <%--fin de Alerta de confirmación--%>
 
         <!-- general form elements -->
               <div class="box box-primary">
@@ -59,22 +70,22 @@
                       <br/>
                       <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                       <p><b>Rif Del Dojo:</b></p>
-                      <input type="text" name="rifDojo" id="rifDojo" placeholder="RIF" class="form-control" value="J-17280493-1">
+                      <input type="text" name="rifDojo" id="rifDojo" placeholder="*RIF" class="form-control" value="">
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre Del Dojo:</b></p>
-                      <input type="text" name="nombreDojo" id="nombreDojo" placeholder="Nombre" class="form-control" value="Aikido">
+                      <input type="text" name="nombreDojo" id="nombreDojo" placeholder="*Nombre" class="form-control" value="">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Número Telefónico:</b></p>
-                      <input type="text" name="numeroDojo" id="numeroDojo" placeholder="Número" class="form-control" value="55-4567899">
+                      <input type="text" name="numeroDojo" id="numeroDojo" placeholder="*Número-Telefono" class="form-control" value="">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Email:</b></p>
-                      <input type="email" name="emailDojo" id="emailDojo" placeholder="Email" class="form-control" value="Aikido@Dojo.com">
+                      <input type="email" name="emailDojo" id="emailDojo" placeholder="*Email" class="form-control" value="">
                     </div>
                       <br/>
                   <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
@@ -172,7 +183,7 @@
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="alertModificarDojo();">Modificar</button>
+                    <button id="btn-agregarDojo" style="align-content:flex-end" class="btn btn-primary" type="submit">Modificar</button>
                     &nbsp;&nbsp
                     <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                   </div>
@@ -180,5 +191,80 @@
                 </form>
               </div>
     
-    <!-- /.box -->
-</asp:Content>
+      <!-- Declaración de las alertas-->
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $("#alert").hide();
+             $("#alert").attr("class", "alert alert-error alert-dismissible");
+             $("#alert").attr("role", "alert");
+
+             $("#alert_confirmacion").hide();
+             $("#alert_confirmacion").attr("class", "alert alert-success alert-dismissible");
+             $("#alert_confirmacion").attr("role", "alert");
+             var valor = "";
+             var estado = false;
+
+
+             // Alertas de cada uno de los campos vacios y los que pertenecen a numéricos
+
+             $("#btn-agregarDojo").click(function (evento) {
+                 //  alert($("#nombre_articulo").val());
+                 if ($("#rifDojo").val() == "") {
+                     valor = "El campo Nombre  es obligatorio </br>";
+                     estado = true;
+                 }
+                 if ($("#emailDojo").val() == "") {
+                     valor = valor + "El campo Rif es obligatorio </br>";
+                     estado = true;
+                 } 
+
+
+
+              
+               
+                 if ($("#input-1a").val() == "") {
+                     valor = valor + "La imagen es obligatoria </br>";
+                     estado = true;
+                 } else {
+                     if ($("#input-1a").val().split(".")[1] != "jpg") {
+
+                         valor = valor + "Se acepta solo imagenes con formato .jpg </br>";
+                         estado = true;
+                     }
+
+                 }
+
+
+                 if ($("#numeroDojo").val() == "") {
+                     valor = valor + "El campo Telefono es obligatorio </br>";
+                     estado = true;
+                 }
+                 else {
+                     if ((isNaN($("#numeroDojo").val()))) {
+                         valor = valor + "El campo Telefono  es num&eacuterico </br>";
+                         estado = true;
+                     }
+                 }
+                
+
+                 //aparición de las alertas de pantalla
+
+                 if (estado) {
+                     $("#alert_confirmacion").hide();
+                     $("#alert").html(valor);
+                     $("#alert").fadeIn(2000);
+                     valor = "";
+                     estado = false;
+                     evento.preventDefault();
+
+                 }
+
+
+
+             });
+
+         });
+
+  </script>
+    
+    </asp:Content>
