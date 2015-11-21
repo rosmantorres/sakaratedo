@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Modulo1;
 using templateApp.GUI.Master;
-using templateApp.GUI.Modulo1;
 
 namespace templateApp.GUI.Modulo1
 {

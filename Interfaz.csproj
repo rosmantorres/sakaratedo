@@ -63,6 +63,10 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
+    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
+      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -1216,6 +1220,11 @@
     <Compile Include="GUI\Modulo12\M12_ModificarCompetencias.aspx.designer.cs">
       <DependentUpon>M12_ModificarCompetencias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo12\M12_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M12_RecursoInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.cs">
       <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1694,6 +1703,10 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo14\Carnet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Carnet.cs</LastGenOutput>
@@ -1707,6 +1720,21 @@
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DominioSKD\DominioSKD.csproj">
+      <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
+      <Name>DominioSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="LogicaNegociosSKD\LogicaNegociosSKD.csproj">
+      <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
+      <Name>LogicaNegociosSKD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

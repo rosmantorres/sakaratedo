@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F907DCE-B707-4187-ABA9-D825C1EEE891}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LogicaNegociosSKD</RootNamespace>
+    <AssemblyName>LogicaNegociosSKD</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo10.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo11\RecursosLogicaModulo11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo12\LogicaCompetencias.cs" />
+    <Compile Include="Modulo12\RecursosLogicaModulo12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo12.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo13\RecursosLogicaModulo13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo13.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo14\RecursosLogicaModulo14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo14.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo15.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo16\RecursosLogicaModulo16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo1\RecursosLogicaModulo1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo3\RecursosLogicaModulo3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo3.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo4\RecursosLogicaModulo4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo5\RecursosLogicaModulo5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo5.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo6.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo7\RecursosLogicaModulo7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo7.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo9.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatosSKD\DatosSKD.csproj">
+      <Project>{27cf82c4-c713-4057-81e0-8e4de0978481}</Project>
+      <Name>DatosSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DominioSKD\DominioSKD.csproj">
+      <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
+      <Name>DominioSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo11\RecursosLogicaModulo11.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo12\RecursosLogicaModulo12.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo12.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo13\RecursosLogicaModulo13.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo13.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo14\RecursosLogicaModulo14.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo14.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo15\RecursosLogicaModulo15.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo16\RecursosLogicaModulo16.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo3\RecursosLogicaModulo3.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo3.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo4\RecursosLogicaModulo4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo5\RecursosLogicaModulo5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo6\RecursosLogicaModulo6.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo6.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo7\RecursosLogicaModulo7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo9\RecursosLogicaModulo9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo9.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
