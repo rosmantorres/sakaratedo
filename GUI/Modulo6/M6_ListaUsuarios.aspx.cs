@@ -12,6 +12,7 @@ namespace templateApp.GUI.Modulo6
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "6";
+            nameLabel.Text = "Probando";
         }
     }
 }
