@@ -98,106 +98,17 @@
 					<th style="text-align:left">Nombre</th>
 					<th style="text-align:left">Tipo</th>
 					<th style="text-align:left">Organización</th>
-                    <th style="text-align:left">Fecha Inicio</th>
-                    <th style="text-align:left">Fecha Fin</th>
+<%--                    <th style="text-align:left">Fecha Inicio</th>
+                    <th style="text-align:left">Fecha Fin</th>--%>
                     <th style="text-align:left">Ubicación</th>
-					<th style="text-align:left">Categoria</th>
+<%--					<th style="text-align:left">Categoria</th>--%>
                     <th style="text-align:left">Status</th>
 					<th style="text-align:left">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">Nacional Juvenil F.V.K.D.</td>
-					<td>Kata</td>
-					<td>Seito Yodan Ryu</td>
-                    <td>01/01/2016</td>
-                    <td>04/01/2016</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Seito Yodan Ryu</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Ozawa Cup</td>
-					<td>Kata</td>
-					<td>Tensho, Kenshin Ryu Kobudo</td>
-                    <td>01/01/2016</td>
-                    <td>04/01/2016</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Kenshin Ryu Kobudo</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Hayashi Ha</td>
-					<td>Kumite</td>
-					<td>Kihin, Doo Kan</td>
-                    <td>01/01/2016</td>
-                    <td>04/01/2016</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Doo Kan</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Competencia 4</td>
-					<td>Kumite</td>
-					<td>Organización 4</td>
-                    <td>01/01/2016</td>
-                    <td>04/01/2016</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Shin Kyoshi</td>
-					<td>Kata</td>
-					<td>Ryu Kobudo</td>
-                    <td>01/01/2016</td>
-                    <td>04/01/2016</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Cinta Purpura</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Do Hombu</td>
-					<td>Kumite</td>
-					<td>Kenshin Ryu Kobudo</td>
-                    <td>01/01/2016</td>
-                    <td>04/01/2016</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Cinta Naranja Raya Verde</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                </tbody>
+                <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+		    </tbody>
             </table>
            </div>
        </div>
@@ -227,7 +138,7 @@
         </div><!-- /.modal-delete-dialog -->
       </div><!-- /.modal-delete -->
 
-    		<div/ id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
