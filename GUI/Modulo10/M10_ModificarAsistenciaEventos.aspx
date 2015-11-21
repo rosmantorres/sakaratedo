@@ -64,9 +64,8 @@
         <h3>Categoria:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Categoria <span class="caret"></span>
-          </button>
+         <asp:DropDownList class="btn btn-default btn-lg dropdown-toggle" ID="comboCat" runat="server" OnSelectedIndexChanged="comboCat_SelectedIndexChanged" AutoPostBack="true"  >
+          </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">Categoria #1</a></li>
                <li><a href="#">Categoria #2</a></li>

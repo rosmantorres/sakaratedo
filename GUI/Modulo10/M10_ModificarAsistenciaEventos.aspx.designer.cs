@@ -11,5 +11,14 @@ namespace templateApp.GUI.Modulo10 {
     
     
     public partial class M10_ModificarAsistenciaEventos {
+        
+        /// <summary>
+        /// comboCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboCat;
     }
 }
