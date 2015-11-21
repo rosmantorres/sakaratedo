@@ -15,6 +15,10 @@
 			    <a href="M6_ListaUsuarios.aspx">Usuarios</a>
 		    </li>
 
+            <li>
+			    <a href="M6_ListaUsuarios.aspx">Gestión de Usuarios</a>
+		    </li>
+
 		    <li class="active">
 			    Gestion de Usuarios
 		    </li>
@@ -94,8 +98,6 @@
             </tbody>
         </table>
     </div>
-
-
 
     <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -220,8 +222,6 @@
             </div>
          </div>
     </div>
-
-    
 
     </div>
     <script type="text/javascript">
