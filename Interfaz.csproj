@@ -1240,6 +1240,11 @@
     <Compile Include="GUI\Modulo12\M12_ModificarCompetencias.aspx.designer.cs">
       <DependentUpon>M12_ModificarCompetencias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo12\M12_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M12_RecursoInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo13\M13_Asistencia_Evento.aspx.cs">
       <DependentUpon>M13_Asistencia_Evento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1732,6 +1737,10 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo14\Carnet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Carnet.cs</LastGenOutput>
