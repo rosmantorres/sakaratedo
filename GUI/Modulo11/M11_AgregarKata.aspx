@@ -50,9 +50,8 @@
         <h3>Jurado #1:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Puntuacion: <span class="caret"></span>
-          </button>
+              <asp:DropDownList ID="PuntajeJurado1"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboPuntaje1_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">1</a></li>
                <li><a href="#">2</a></li>
@@ -74,9 +73,8 @@
         <h3>Jurado #2:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Puntuacion: <span class="caret"></span>
-          </button>
+               <asp:DropDownList ID="PuntajeJurado2"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboPuntaje2_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">1</a></li>
                <li><a href="#">2</a></li>
@@ -98,9 +96,8 @@
         <h3>Jurado #3:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Puntuacion:<span class="caret"></span>
-          </button>
+                 <asp:DropDownList ID="PuntajeJurado3"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboPuntaje3_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">1</a></li>
                <li><a href="#">2</a></li>
@@ -125,11 +122,13 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_AgregarResultadoCompetencia.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+         <asp:Button id="btn_agregarComp" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarKata_Click" Text="Agregar"></asp:Button>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M11_AgregarResultadoCompetencia.aspx"> Cancelar</a>
+         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx">Cancelar</a>
       </div>
    </form>
+
 </div>
+
 <!-- /.box -->
 </asp:Content>

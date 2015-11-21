@@ -50,9 +50,8 @@
         <h3>Atleta #1:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Puntuacion: <span class="caret"></span>
-          </button>
+        <asp:DropDownList ID="PuntajeJuradok1"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboPuntajeK1_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">1</a></li>
                <li><a href="#">2</a></li>
@@ -74,9 +73,8 @@
         <h3>Atleta #2:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Puntuacion: <span class="caret"></span>
-          </button>
+               <asp:DropDownList ID="PuntajeJuradok2"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboPuntajeK2_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">1</a></li>
                <li><a href="#">2</a></li>
@@ -101,9 +99,9 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ModificarResultadoCompetencia.aspx?eliminacionSuccess=1" onclick="return checkform();">Modificar</a>
+         <asp:Button id="btn_modificarKumite" class="btn btn-primary" type="submit" runat="server" OnClick="btn_modificarKumite_Click" Text="Modificar"></asp:Button>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M11_ModificarResultadoCompetencia.aspx"> Cancelar</a>
+         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx">Volver</a>
       </div>
    </form>
 </div>

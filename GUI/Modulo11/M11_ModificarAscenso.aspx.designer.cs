@@ -11,5 +11,23 @@ namespace templateApp.GUI.Modulo11 {
     
     
     public partial class M11_ModificarAscenso {
+        
+        /// <summary>
+        /// PuntajeAscensoM control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PuntajeAscensoM;
+        
+        /// <summary>
+        /// btn_modificarAsc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_modificarAsc;
     }
 }

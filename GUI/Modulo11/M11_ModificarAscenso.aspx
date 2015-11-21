@@ -51,9 +51,8 @@
         <h3>Atleta #1:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Puntuacion: <span class="caret"></span>
-          </button>
+           <asp:DropDownList ID="PuntajeAscensoM"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboAscenso_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">Aprobado</a></li>
                <li><a href="#">No Aprobado</a></li>
@@ -70,9 +69,9 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ModificarResultadoCompetencia.aspx?eliminacionSuccess=1" onclick="return checkform();">Modificar</a>
+         <asp:Button id="btn_modificarAsc" class="btn btn-primary" type="submit" runat="server" OnClick="btn_modificarAsc_Click" Text="Modificar"></asp:Button>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M11_ModificarResultadoCompetencia.aspx"> Cancelar</a>
+         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx">Volver</a>
       </div>
    </form>
 </div>

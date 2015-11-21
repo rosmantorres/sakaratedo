@@ -11,5 +11,41 @@ namespace templateApp.GUI.Modulo11 {
     
     
     public partial class M11_AgregarKata {
+        
+        /// <summary>
+        /// PuntajeJurado1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PuntajeJurado1;
+        
+        /// <summary>
+        /// PuntajeJurado2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PuntajeJurado2;
+        
+        /// <summary>
+        /// PuntajeJurado3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PuntajeJurado3;
+        
+        /// <summary>
+        /// btn_agregarComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_agregarComp;
     }
 }

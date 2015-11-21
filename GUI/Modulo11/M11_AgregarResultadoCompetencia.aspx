@@ -63,9 +63,8 @@
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Evento <span class="caret"></span>
-          </button>
+           <asp:DropDownList ID="EventosDisponibles"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboEventosD_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">Evento #1</a></li>
                <li><a href="#">Evento #2</a></li>
@@ -81,9 +80,8 @@
         <h3>Especialidad:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Especialidad <span class="caret"></span>
-          </button>
+            <asp:DropDownList ID="Especialidad"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboEspecialidad_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">Kata</a></li>
                <li><a href="#">Kumite</a></li>
@@ -98,9 +96,8 @@
         <h3>Categoria:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
         <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true">
-            Seleccionar Categoria<span class="caret"></span>
-          </button>
+            <asp:DropDownList ID="seleccionaCategoria"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboSeleccionCategoria_SelectedIndexChanged" AutoPostBack="true">
+            </asp:DropDownList>
           <ul class="dropdown-menu">
                <li><a href="#">Categoria #1</a></li>
                <li><a href="#">Categoria #2</a></li>
@@ -260,15 +257,17 @@
    </div>
 
 </div>
-      <!-- /.box-body -->
+       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+         <asp:Button id="btn_agregarKum" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarResultado_Click" Text="Agregar"></asp:Button>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx"> Cancelar</a>
+         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx">Cancelar</a>
       </div>
    </form>
+
 </div>
+
 <!-- /.box -->
 </asp:Content>
