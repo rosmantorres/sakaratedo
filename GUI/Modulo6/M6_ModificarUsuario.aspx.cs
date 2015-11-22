@@ -13,5 +13,15 @@ namespace templateApp.GUI.Modulo6
 		{
 
 		}
+
+        protected void bloodDropChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void natDropChanged(object sender, EventArgs e)
+        {
+
+        }
 	}
 }
