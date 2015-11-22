@@ -80,7 +80,8 @@ namespace templateApp
                 rolesUsuario[cont] = perfil;
                 cont++;
             }
-
+            if (Request.QueryString[RecursosInterfazMaster.sessionRol] ==RecursosInterfazMaster.sessionLogout)
+                logout();
             if (Request.QueryString[RecursosInterfazMaster.sessionRol] != null)
                 Session[RecursosInterfazMaster.sessionRol] = Request.QueryString[RecursosInterfazMaster.sessionRol];
 
@@ -144,9 +145,7 @@ namespace templateApp
         /// <summary>
         /// Metodo para el boto Sing Out de la tabla de usuario
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void logout(object sender, EventArgs e)
+        protected void logout()
         {
             Session.Remove(RecursosInterfazMaster.sessionRol);
             Session.Remove(RecursosInterfazMaster.sessionRoles);
