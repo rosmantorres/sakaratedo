@@ -117,36 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="asuntoSAKARATEDO" xml:space="preserve">
-    <value>SA-KARATEDO:Reestablecer contraseña</value>
-    <comment>asunto del mensaje a enviar</comment>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="cuentaClaveSAKARATEDO" xml:space="preserve">
-    <value>karate1234</value>
-    <comment>contraseña de la cuenta de sakaratedo</comment>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="cuentaCorreoSAKARATEDO" xml:space="preserve">
-    <value>sakaratedo@gmail.com</value>
-    <comment>correo oficial de sakaratedo</comment>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="direccionM1_RestablecerContraseña" xml:space="preserve">
-    <value>/GUI/Modulo1/RestablecerContrasena.aspx</value>
-    <comment>sin el ñangara para que pueda ser una direccion enviada al correo</comment>
+  <data name="BotonEliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compEliminar=</value>
   </data>
-  <data name="hostSAKARATEDO" xml:space="preserve">
-    <value>smtp.gmail.com</value>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compDetalle=</value>
   </data>
-  <data name="mensajeSAKARATEDO" xml:space="preserve">
-    <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
-           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
-    <comment>mensaje que se enviara al usuario</comment>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx?compMod=</value>
   </data>
-  <data name="puertoEnvioSAKARATEDO" xml:space="preserve">
-    <value>587</value>
-    <comment>puerto de envio del mensaje</comment>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="puertoSAKARATEDO" xml:space="preserve">
-    <value>23072</value>
-    <comment>puerto del localhost para generar el link al archivo</comment>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
 </root>
