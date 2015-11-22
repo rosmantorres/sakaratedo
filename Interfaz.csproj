@@ -1756,6 +1756,7 @@
     <EmbeddedResource Include="GUI\Modulo16\M16_Recursointerfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M16_Recursointerfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
