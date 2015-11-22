@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FechaFin1" xml:space="preserve">
+    <value>03/03/2015</value>
+  </data>
+  <data name="FechaFin2" xml:space="preserve">
+    <value>04/05/2016</value>
+  </data>
+  <data name="FechaInicio1" xml:space="preserve">
+    <value>02/03/2015</value>
+  </data>
+  <data name="FechaInicio2" xml:space="preserve">
+    <value>03/05/2016</value>
+  </data>
+  <data name="HoraFin1" xml:space="preserve">
+    <value>10:00:00</value>
+  </data>
+  <data name="HoraFin2" xml:space="preserve">
+    <value>16:00:00</value>
+  </data>
+  <data name="HoraInicio1" xml:space="preserve">
+    <value>08:00:00</value>
+  </data>
+  <data name="HoraInicio2" xml:space="preserve">
+    <value>14:00:00</value>
+  </data>
+  <data name="Id1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Id2" xml:space="preserve">
+    <value>2</value>
+  </data>
 </root>

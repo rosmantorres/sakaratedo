@@ -128,6 +128,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo7\RecursosEvento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosEvento.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo7\RecursosHorario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHorario.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo7\RecursosMatricula.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosMatricula.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo7\RecursosUbicacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosUbicacion.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +223,22 @@
     <EmbeddedResource Include="Modulo7\RecursosBDModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo7\RecursosEvento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosEvento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo7\RecursosHorario.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosHorario.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo7\RecursosMatricula.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosMatricula.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo7\RecursosUbicacion.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosUbicacion.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>

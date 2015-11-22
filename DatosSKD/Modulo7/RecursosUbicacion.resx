@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Direccion1" xml:space="preserve">
+    <value>El Paraiso</value>
+  </data>
+  <data name="Direccion2" xml:space="preserve">
+    <value>El Hatillo</value>
+  </data>
+  <data name="Id1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Id2" xml:space="preserve">
+    <value>2</value>
+  </data>
 </root>

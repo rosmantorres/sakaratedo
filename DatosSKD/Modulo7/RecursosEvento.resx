@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Costo1" xml:space="preserve">
+    <value>2000</value>
+  </data>
+  <data name="Costo2" xml:space="preserve">
+    <value>1500</value>
+  </data>
+  <data name="Descripcion1" xml:space="preserve">
+    <value>Seminario tecnicas de defensa</value>
+  </data>
+  <data name="Descripcion2" xml:space="preserve">
+    <value>Quinta Competencia de Cintas Verde</value>
+  </data>
+  <data name="Id1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Id2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Nombre1" xml:space="preserve">
+    <value>Seminario de Cintas Negra</value>
+  </data>
+  <data name="Nombre2" xml:space="preserve">
+    <value>Competencia Cintas verde</value>
+  </data>
+  <data name="Tipo1" xml:space="preserve">
+    <value>Seminario</value>
+  </data>
+  <data name="Tipo2" xml:space="preserve">
+    <value>Competencia</value>
+  </data>
 </root>

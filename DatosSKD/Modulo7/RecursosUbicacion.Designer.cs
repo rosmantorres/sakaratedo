@@ -22,14 +22,14 @@ namespace DatosSKD.Modulo7 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosBDModulo7 {
+    internal class RecursosUbicacion {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosBDModulo7() {
+        internal RecursosUbicacion() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo7 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.Modulo7.RecursosBDModulo7", typeof(RecursosBDModulo7).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.Modulo7.RecursosUbicacion", typeof(RecursosUbicacion).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,42 @@ namespace DatosSKD.Modulo7 {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El Paraiso.
+        /// </summary>
+        internal static string Direccion1 {
+            get {
+                return ResourceManager.GetString("Direccion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El Hatillo.
+        /// </summary>
+        internal static string Direccion2 {
+            get {
+                return ResourceManager.GetString("Direccion2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string Id1 {
+            get {
+                return ResourceManager.GetString("Id1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string Id2 {
+            get {
+                return ResourceManager.GetString("Id2", resourceCulture);
             }
         }
     }

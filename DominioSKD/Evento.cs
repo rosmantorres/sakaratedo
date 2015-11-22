@@ -9,11 +9,12 @@ namespace DominioSKD
     public class Evento
     {
         private int id_evento;
-
-        
         private String nombre;
         private String descripcion;
         private int costo;
+        private String tipoEvento;
+        private String fechaInicio;
+        private String ubicacion;
 
         public int Id_evento
         {
@@ -59,6 +60,17 @@ namespace DominioSKD
             nombre = elNombre;
             descripcion = descrip;
             costo = cost;
+        }
+
+        public Evento Eventos(int elId, String nombreEvento, String tipo, String fechaIni, String ubic)
+        {
+            Evento evento = new Evento();
+            id_evento = elId;
+            nombre = nombreEvento;
+            tipoEvento = tipo;
+            fechaInicio = fechaIni;
+            ubicacion = ubic;
+            return evento;
         }
 
         public Evento(String elNombre)

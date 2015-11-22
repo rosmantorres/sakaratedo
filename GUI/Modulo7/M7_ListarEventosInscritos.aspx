@@ -64,48 +64,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-					<td>Noveno encuentro de cintas negras 5to KYU</td>
-					<td>Seminario</td>
-					<td>26/01/2016</td>
-                    <td>Estado Barinas</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Campeonato Nacional 2016</td>
-					<td>Competencia</td>
-					<td>06/15/2016</td>
-                    <td>Estado Carabobo</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>IV Jornada de excelencia de Karate Do</td>
-					<td>Conferencia</td>
-					<td>12/03/2015</td>
-                    <td>Estado Distrito Capital</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Entrenamiento Especial de Bujutsu</td>
-					<td>Entrenamiento Especial</td>
-					<td>12/15/2015</td>
-                    <td>Estado Distrito Capital</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>
-                
-
-			</tbody>
+			        <asp:Literal runat="server" ID="laTabla"></asp:Literal>    
+           </tbody>
     </table>
         </div>
        </div>
