@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicaNegociosSKD.Modulo1 {
+namespace templateApp.GUI.Master {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace LogicaNegociosSKD.Modulo1 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosLogicaModulo1 {
+    internal class RecursosInterfazMaster {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosLogicaModulo1() {
+        internal RecursosInterfazMaster() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaNegociosSKD.Modulo1.RecursosLogicaModulo1", typeof(RecursosLogicaModulo1).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Master.RecursosInterfazMaster", typeof(RecursosInterfazMaster).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,75 +61,110 @@ namespace LogicaNegociosSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SA-KARATEDO:Reestablecer contraseña.
+        ///   Busca una cadena traducida similar a ~/GUI/Master/Inicio.aspx.
         /// </summary>
-        internal static string asuntoSAKARATEDO {
+        internal static string direccionMaster_Inicio {
             get {
-                return ResourceManager.GetString("asuntoSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("direccionMaster_Inicio", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a karate1234.
+        ///   Busca una cadena traducida similar a ~/GUI/Master/menuLateral.xml.
         /// </summary>
-        internal static string cuentaClaveSAKARATEDO {
+        internal static string direccionMaster_MenuLateral {
             get {
-                return ResourceManager.GetString("cuentaClaveSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("direccionMaster_MenuLateral", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a sakaratedo@gmail.com.
+        ///   Busca una cadena traducida similar a ~/GUI/Master/menuSuperior.xml.
         /// </summary>
-        internal static string cuentaCorreoSAKARATEDO {
+        internal static string direccionMaster_MenuSuperior {
             get {
-                return ResourceManager.GetString("cuentaCorreoSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("direccionMaster_MenuSuperior", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a /GUI/Modulo1/RestablecerContrasena.aspx.
+        ///   Busca una cadena traducida similar a rol.
         /// </summary>
-        internal static string direccionM1_RestablecerContraseña {
+        internal static string sessionRol {
             get {
-                return ResourceManager.GetString("direccionM1_RestablecerContraseña", resourceCulture);
+                return ResourceManager.GetString("sessionRol", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a smtp.gmail.com.
+        ///   Busca una cadena traducida similar a roles.
         /// </summary>
-        internal static string hostSAKARATEDO {
+        internal static string sessionRoles {
             get {
-                return ResourceManager.GetString("hostSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("sessionRoles", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
-        ///           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;.
+        ///   Busca una cadena traducida similar a Apellido.
         /// </summary>
-        internal static string mensajeSAKARATEDO {
+        internal static string sessionUsuarioApellido {
             get {
-                return ResourceManager.GetString("mensajeSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("sessionUsuarioApellido", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 587.
+        ///   Busca una cadena traducida similar a Correo.
         /// </summary>
-        internal static string puertoEnvioSAKARATEDO {
+        internal static string sessionUsuarioCorreo {
             get {
-                return ResourceManager.GetString("puertoEnvioSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("sessionUsuarioCorreo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 23072.
+        ///   Busca una cadena traducida similar a Nombre.
         /// </summary>
-        internal static string puertoSAKARATEDO {
+        internal static string sessionUsuarioNombre {
             get {
-                return ResourceManager.GetString("puertoSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("sessionUsuarioNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a -.
+        /// </summary>
+        internal static string splitRoles {
+            get {
+                return ResourceManager.GetString("splitRoles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a id.
+        /// </summary>
+        internal static string tagId {
+            get {
+                return ResourceManager.GetString("tagId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a link.
+        /// </summary>
+        internal static string tagLink {
+            get {
+                return ResourceManager.GetString("tagLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a nombre.
+        /// </summary>
+        internal static string tagName {
+            get {
+                return ResourceManager.GetString("tagName", resourceCulture);
             }
         }
     }
