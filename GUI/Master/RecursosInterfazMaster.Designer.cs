@@ -88,6 +88,15 @@ namespace templateApp.GUI.Master {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a logout.
+        /// </summary>
+        internal static string sessionLogout {
+            get {
+                return ResourceManager.GetString("sessionLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a rol.
         /// </summary>
         internal static string sessionRol {
@@ -120,6 +129,15 @@ namespace templateApp.GUI.Master {
         internal static string sessionUsuarioCorreo {
             get {
                 return ResourceManager.GetString("sessionUsuarioCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a usuarioID.
+        /// </summary>
+        internal static string sessionUsuarioID {
+            get {
+                return ResourceManager.GetString("sessionUsuarioID", resourceCulture);
             }
         }
         
