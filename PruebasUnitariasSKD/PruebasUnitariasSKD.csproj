@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Visual Studio 2013\Projects\sakaratedo-test\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,6 +73,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\M6_PruebaClasesDominioDocumentoIdentidad.cs" />
+    <Compile Include="Modulo6\M6_PruebaClasesDominioPersona.cs" />
+    <Compile Include="Modulo6\M6_PruebaClasesDominioTelefono.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod5.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\Pruebas_rapidas.cs" />
     <Compile Include="Modulo6\RecursosPU_Mod6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +212,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
