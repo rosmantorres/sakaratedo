@@ -10,42 +10,60 @@
 namespace templateApp.GUI.Modulo14 {
     
     
-    public partial class ModificarPlanillaSolicitada {
+    public partial class M14_DisenoPlanilla {
         
         /// <summary>
-        /// Control modificar_planilla.
+        /// Control diseno_planilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_planilla;
+        protected global::System.Web.UI.HtmlControls.HtmlForm diseno_planilla;
         
         /// <summary>
-        /// Control alertlocal.
+        /// Control CKEditor1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
+        protected global::CKEditor.NET.CKEditorControl CKEditor1;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control divComboDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboDatos;
         
         /// <summary>
-        /// Control boteditar.
+        /// Control comboDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button boteditar;
+        protected global::System.Web.UI.WebControls.DropDownList comboDatos;
+        
+        /// <summary>
+        /// Control labelLeyenda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelLeyenda;
+        
+        /// <summary>
+        /// Control btnguardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnguardar;
     }
 }

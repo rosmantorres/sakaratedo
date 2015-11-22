@@ -56,7 +56,7 @@
                     <td>01/03/2010</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" target="_blank" href="M14_VisorInscripcion.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_SolicitudPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx"></a>
                         <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch">
                             <input type="checkbox" checked data-toggle="toggle" data-on="On" data-off="Off" >
                         </a>

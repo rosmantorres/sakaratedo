@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -491,7 +494,7 @@
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx" />
-    <Content Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_DisenoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
@@ -1621,12 +1624,12 @@
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.designer.cs">
       <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx.cs">
-      <DependentUpon>M14_DiseñoPlanilla.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.cs">
+      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo14\M14_DiseñoPlanilla.aspx.designer.cs">
-      <DependentUpon>M14_DiseñoPlanilla.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.cs">
       <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>

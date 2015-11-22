@@ -57,9 +57,9 @@
                 <td>Solicutud</td>
                 <td>Dojo, Atleta</td>
                 <td>
-                        <a class="btn btn-primary glyphicon glyphicon-save" target="_blank" href="DiseñoDefault.rpt"></a>                        
-                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaCreada.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-upload" data-toggle="modal" data-target="#modal-cargar"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-eye-open " target="_blank" href="#"></a>                        
+                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx"></a>
                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox" checked data-toggle="toggle" data-on="ON" data-off="OFF" >
                         </a>               
@@ -71,12 +71,12 @@
                 <td>Retiro</td>
                 <td>Dojo, Atleta, Competencia</td>
                 <td>
-                        <a class="btn btn-primary glyphicon glyphicon-save" target="_blank" href="DiseñoDefault.rpt"></a>                        
-                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaCreada.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-upload" data-toggle="modal" data-target="#modal-cargar"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-eye-open " target="_blank" href="#"></a>                        
+                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx"></a>
                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox" checked data-toggle="toggle" data-on="ON" data-off="OFF" >
-                        </a>              
+                        </a>             
                 </td>
             </tr>
             
@@ -85,12 +85,12 @@
                 <td>Solicitud</td>
                 <td>Dojo, Atleta, Asistencia</td>
                 <td>
-                       <a class="btn btn-primary glyphicon glyphicon-save" target="_blank" href="DiseñoDefault.rpt"></a>                        
-                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaCreada.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-upload" data-toggle="modal" data-target="#modal-cargar"></a>
+                       <a class="btn btn-primary glyphicon glyphicon-eye-open " target="_blank" href="#"></a>                        
+                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx"></a>
                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox" checked data-toggle="toggle" data-on="ON" data-off="OFF" >
-                        </a>              
+                        </a>             
                 </td>
             </tr>
               <tr>
@@ -98,12 +98,12 @@
                 <td>Retiro</td>
                 <td>Dojo, Atleta</td>
                 <td>
-                      <a class="btn btn-primary glyphicon glyphicon-save" target="_blank" href="DiseñoDefault.rpt"></a>                        
-                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaCreada.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-upload" data-toggle="modal" data-target="#modal-cargar"></a>
+                      <a class="btn btn-primary glyphicon glyphicon-eye-open " target="_blank" href="#"></a>                        
+                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx"></a>
                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox" checked data-toggle="toggle" data-on="ON" data-off="OFF" >
-                        </a>              
+                        </a>            
                 </td>
             </tr>
             
@@ -112,12 +112,12 @@
                 <td>Retiro</td>
                 <td>Dojo, Atleta, Competencia</td>
                 <td>
-                       <a class="btn btn-primary glyphicon glyphicon-save" target="_blank" href="DiseñoDefault.rpt"></a>                        
-                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaCreada.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-upload" data-toggle="modal" data-target="#modal-cargar"></a>
+                       <a class="btn btn-primary glyphicon glyphicon-eye-open " target="_blank" href="#"></a>                        
+                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx"></a>
                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox" checked data-toggle="toggle" data-on="ON" data-off="OFF" >
-                        </a>              
+                        </a>               
                 </td>
             </tr>
             
@@ -126,12 +126,12 @@
                 <td>Retiro</td>
                 <td>Dojo, Atleta, Competencia</td>
                 <td>
-                       <a class="btn btn-primary glyphicon glyphicon-save" target="_blank" href="DiseñoDefault.rpt"></a>                        
-                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaCreada.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-upload" data-toggle="modal" data-target="#modal-cargar"></a>
+                        <a class="btn btn-primary glyphicon glyphicon-eye-open " target="_blank" href="#"></a>                        
+                       <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx"></a>
                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox" checked data-toggle="toggle" data-on="ON" data-off="OFF" >
-                        </a>               
+                        </a>                   
                 </td>
             </tr>
            </tbody>
@@ -164,51 +164,8 @@
         </div>
       </div>
             
-     <div id="modal-cargar" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Cargar diseño de Planilla</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>Buscar Archivo...</p>
-                    <p><input type="file" name="nombre"></p>
-                    <p id="P1"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modal-exito">Cargar</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-           </div>
-          </div>
-        </div>
-      </div>
      
-      <div id="modal-exito" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Exito!!!</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>¡¡Su diseño se cargó satisfactoriamente!!</p>
-                    <p id="P2"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-           </div>
-          </div>
-        </div>
-      </div>
+     
       <script type="text/javascript">
             $(document).ready(function () {
                 $('#planillascreadas').DataTable();
