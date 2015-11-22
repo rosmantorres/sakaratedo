@@ -22,7 +22,7 @@ namespace templateApp.GUI.Modulo1 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class RecursosInterfazModulo1 {
+    internal class RecursosInterfazModulo1 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace templateApp.GUI.Modulo1 {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo1.RecursosInterfazModulo1", typeof(RecursosInterfazModulo1).Assembly);
@@ -51,7 +51,7 @@ namespace templateApp.GUI.Modulo1 {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a ~/GUI/Modulo1/Index.aspx.
         /// </summary>
-        public static string direccionM1_Index {
+        internal static string direccionM1_Index {
             get {
                 return ResourceManager.GetString("direccionM1_Index", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Contraseña y/o usuario incorrecto..
         /// </summary>
-        public static string logErr {
+        internal static string logErr {
             get {
                 return ResourceManager.GetString("logErr", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a ¡Correo enviado!.
         /// </summary>
-        public static string logInfo {
+        internal static string logInfo {
             get {
                 return ResourceManager.GetString("logInfo", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Se reestableció con exito su contraseña.
         /// </summary>
-        public static string logSuccess {
+        internal static string logSuccess {
             get {
                 return ResourceManager.GetString("logSuccess", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a ¡El correo no se encuentra registrado en SA-KARATEDO!.
         /// </summary>
-        public static string logWarning {
+        internal static string logWarning {
             get {
                 return ResourceManager.GetString("logWarning", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
-        public static string tipoErr {
+        internal static string tipoErr {
             get {
                 return ResourceManager.GetString("tipoErr", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Info.
         /// </summary>
-        public static string tipoInfo {
+        internal static string tipoInfo {
             get {
                 return ResourceManager.GetString("tipoInfo", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Success.
         /// </summary>
-        public static string tipoSucess {
+        internal static string tipoSucess {
             get {
                 return ResourceManager.GetString("tipoSucess", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace templateApp.GUI.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Warning.
         /// </summary>
-        public static string tipoWarning {
+        internal static string tipoWarning {
             get {
                 return ResourceManager.GetString("tipoWarning", resourceCulture);
             }

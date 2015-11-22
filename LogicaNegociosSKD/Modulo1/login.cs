@@ -19,23 +19,26 @@ namespace LogicaNegociosSKD.Modulo1
         /// <param name="Destino">Correo destino</param>
         /// <param name="Mensaje">Mensaje a enviar</param>
         /// <returns>True si se envio, false si ocurrio un error</returns>
-        public Boolean EnviarCorreo(String CorreoOrigen, String Clave, String Destino, String Mensaje)
+        public Boolean EnviarCorreo(String Destino)
         {
             try
             {
-                Mail.From = new MailAddress(CorreoOrigen);
+                String DireccionHTTP = "http://localhost:" + RecursosLogicaModulo1.puertoSAKARATEDO +
+                RecursosLogicaModulo1.direccionM1_RestablecerContraseña;
+                String mensajeDireccion = "<br>" +  DireccionHTTP + "</br>";
+                Mail.From = new MailAddress(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO);
                 Mail.To.Add(new MailAddress(Destino));
-                Mail.Body = Mensaje;
+                Mail.Body = RecursosLogicaModulo1.mensajeSAKARATEDO+mensajeDireccion;
                 Mail.BodyEncoding = System.Text.Encoding.UTF8;
                 Mail.IsBodyHtml = true;//si queremos que se envie como codigo HTML
-                Mail.Subject = "SA-KARATEDO:Reestablecer contraseña";
+                Mail.Subject =RecursosLogicaModulo1.asuntoSAKARATEDO ;
                 Mail.SubjectEncoding = System.Text.Encoding.UTF8;
                 //Envia una copia de correo a sakaratedo@
-                Mail.Bcc.Add(CorreoOrigen);
+                Mail.Bcc.Add(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO);
                 //configuracion SMTP
-                SMTP.Host = "smtp.gmail.com";
-                SMTP.Port = 587;
-                SMTP.Credentials = new NetworkCredential(CorreoOrigen, Clave);
+                SMTP.Host = RecursosLogicaModulo1.hostSAKARATEDO;
+                SMTP.Port = int.Parse(RecursosLogicaModulo1.puertoEnvioSAKARATEDO);
+                SMTP.Credentials = new NetworkCredential(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO,RecursosLogicaModulo1.cuentaClaveSAKARATEDO);
                 SMTP.EnableSsl = true;
                 SMTP.Send(Mail);
                 return true;
