@@ -1452,6 +1452,7 @@
     </Compile>
     <Compile Include="GUI\Modulo2\M2_GestionarRol.aspx.cs">
       <DependentUpon>M2_GestionarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo2\M2_GestionarRol.aspx.designer.cs">
       <DependentUpon>M2_GestionarRol.aspx</DependentUpon>

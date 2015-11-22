@@ -18,13 +18,8 @@
 		    <li>
 			    <a href="#">Gestionar Usuario</a> 
 		    </li>
-
-            <li>
-			    <a href="#">Gestión de Dojo</a> 
-		    </li>
-		
 		    <li class="active">
-			    Listar Dojos
+			    Gestionar roles
 		    </li>
 	    </ol>
     </div>
@@ -35,36 +30,73 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
     Agregar o Quitar roles a un usuario
-
+    
+    <br />
     Nombre(s):
+    <br />
     Apellido(s):
+    <br />
     Correo:
+    <br />
     Identificador:
+    <br />
     Dojo:
+    <br />
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-<div>
-    <form id="formulario" runat="server">
-        <div>
-            <select name="origen[]" id="origen" multiple="multiple" size="8">
-                <option value="1">Opción 1</option>
-                <option value="2">Opción 2</option>
-                <option value="3">Opción 3</option>
-                <option value="4">Opción 4</option>
-                <option value="5">Opción 5</option>
-                <option value="6">Opción 6</option>
-                <option value="7">Opción 7</option>
-                <option value="8">Opción 8</option>
-            </select>
-        </div>
-        <div>
-            <input type="button" class="pasar izq" value=" »"><input type="button" class="quitar der" value="« ">
-        </div>
-        <div class="">
-            <select name="destino[]" id="destino" multiple="multiple" size="8"></select>
-        </div>
-        <p class="clear"><input type="submit" class="submit" value="Guardar cambios"></p>
-    </form>
-</div>
+<div class="box box-body">
+    <div>
+        <form class="form-horizontal">
+            <div class="row">
+                <a class="btn btn-success glyphicon glyphicon-plus-sign col-md-offset-11" data-toggle="modal" data-target="#modal-create" href="#""></a>
+            </div>
+        </form>
+    </div>
+
+    <br />
+    <div>
+        <table id="tableSolisitudes" class="table table-bordered table-striped dataTable">
+            <thead>
+                <tr>
+                    <th>Rol</th>
+                    <th>Descripcion</th>
+                    <th>Fecha de asignación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Administrador de Dojo</td>
+                    <td>se encarga de gestionar y organizar todas las actividades referentes al dojo,<br />
+                        tanto como hacer labores de mantenimiento de personal.
+                    </td>
+                    <td>22/11/2015</td>
+                    <td>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>Atleta</td>
+                    <td>Son competidores asociados a los dojos en los cuales entrenan mes a mes<br />
+                        para su formacion marcial.
+                    </td>
+                    <td>21/11/2015</td>
+                    <td>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+ </div>
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $("#tableSolisitudes").DataTable({
+                  "language": {
+                      "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                  }
+              });
+          });
+    </script>
 </asp:Content>
