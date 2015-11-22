@@ -117,36 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="asuntoSAKARATEDO" xml:space="preserve">
-    <value>SA-KARATEDO:Reestablecer contraseña</value>
-    <comment>asunto del mensaje a enviar</comment>
+  <data name="direccionM1_Index" xml:space="preserve">
+    <value>~/GUI/Modulo1/Index.aspx</value>
   </data>
-  <data name="cuentaClaveSAKARATEDO" xml:space="preserve">
-    <value>karate1234</value>
-    <comment>contraseña de la cuenta de sakaratedo</comment>
+  <data name="logErr" xml:space="preserve">
+    <value>Contraseña y/o usuario incorrecto.</value>
+    <comment>mensae para alertar sobre usuario y/o contrasea incorrecto en el login</comment>
   </data>
-  <data name="cuentaCorreoSAKARATEDO" xml:space="preserve">
-    <value>sakaratedo@gmail.com</value>
-    <comment>correo oficial de sakaratedo</comment>
+  <data name="logInfo" xml:space="preserve">
+    <value>¡Correo enviado!</value>
   </data>
-  <data name="direccionM1_RestablecerContraseña" xml:space="preserve">
-    <value>/GUI/Modulo1/RestablecerContrasena.aspx</value>
-    <comment>sin el ñangara para que pueda ser una direccion enviada al correo</comment>
+  <data name="logSuccess" xml:space="preserve">
+    <value>Se reestableció con exito su contraseña</value>
   </data>
-  <data name="hostSAKARATEDO" xml:space="preserve">
-    <value>smtp.gmail.com</value>
+  <data name="logWarning" xml:space="preserve">
+    <value>¡El correo no se encuentra registrado en SA-KARATEDO!</value>
   </data>
-  <data name="mensajeSAKARATEDO" xml:space="preserve">
-    <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
-           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
-    <comment>mensaje que se enviara al usuario</comment>
+  <data name="tipoErr" xml:space="preserve">
+    <value>Error</value>
+    <comment>Timpo de mensaje Error</comment>
   </data>
-  <data name="puertoEnvioSAKARATEDO" xml:space="preserve">
-    <value>587</value>
-    <comment>puerto de envio del mensaje</comment>
+  <data name="tipoInfo" xml:space="preserve">
+    <value>Info</value>
+    <comment>Tipo de mensaje Informacion</comment>
   </data>
-  <data name="puertoSAKARATEDO" xml:space="preserve">
-    <value>23072</value>
-    <comment>puerto del localhost para generar el link al archivo</comment>
+  <data name="tipoSucess" xml:space="preserve">
+    <value>Success</value>
+    <comment>Tipo de mensaje Exito</comment>
+  </data>
+  <data name="tipoWarning" xml:space="preserve">
+    <value>Warning</value>
+    <comment>Tipo de mensaje Alerta</comment>
   </data>
 </root>
