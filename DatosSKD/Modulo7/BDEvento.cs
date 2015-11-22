@@ -13,7 +13,7 @@ namespace DatosSKD.Modulo7
         public static List<Evento> ListarEventosAsistidos()
         {
             List<Evento> laListaDeEventoAsistidos = new List<Evento>();
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, RecursosEvento.Descripcion1, Convert.ToInt16(RecursosEvento.Costo1));
+            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, RecursosEvento.Tipo1, RecursosHorario.FechaInicio1, RecursosUbicacion.Direccion1 );
             laListaDeEventoAsistidos.Add(evento);
 
             return laListaDeEventoAsistidos;
@@ -22,7 +22,7 @@ namespace DatosSKD.Modulo7
         public static List<Evento> ListarEventosInscritos()
         {
             List<Evento> laListaDeEventoInscrito = new List<Evento>();
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id2), RecursosEvento.Nombre2, RecursosEvento.Descripcion2, Convert.ToInt16(RecursosEvento.Costo2));
+            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id2), RecursosEvento.Nombre2, RecursosEvento.Tipo2, RecursosHorario.FechaInicio2, RecursosUbicacion.Direccion2);
             laListaDeEventoInscrito.Add(evento);
 
             return laListaDeEventoInscrito;

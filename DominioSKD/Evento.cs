@@ -16,6 +16,8 @@ namespace DominioSKD
         private String fechaInicio;
         private String ubicacion;
 
+     
+
         public int Id_evento
         {
             get { return id_evento; }
@@ -46,6 +48,24 @@ namespace DominioSKD
             set { costo = value; }
         }
 
+        public String TipoEvento
+        {
+            get { return tipoEvento; }
+            set { tipoEvento = value; }
+        }
+
+        public String FechaInicio
+        {
+            get { return fechaInicio; }
+            set { fechaInicio = value; }
+        }
+
+         public String Ubicacion
+        {
+            get { return ubicacion; }
+            set { ubicacion = value; }
+        }
+
         public Evento()
         {
             id_evento = 0;
@@ -54,24 +74,15 @@ namespace DominioSKD
             costo = 0;
         }
 
-        public Evento(int elId, String elNombre, String descrip, int cost)
+        public Evento(int elId, String nombreEvento, String tipo, String fechaIni, String ubic)
         {
-            id_evento = elId;
-            nombre = elNombre;
-            descripcion = descrip;
-            costo = cost;
-        }
-
-        public Evento Eventos(int elId, String nombreEvento, String tipo, String fechaIni, String ubic)
-        {
-            Evento evento = new Evento();
             id_evento = elId;
             nombre = nombreEvento;
             tipoEvento = tipo;
             fechaInicio = fechaIni;
             ubicacion = ubic;
-            return evento;
         }
+
 
         public Evento(String elNombre)
         {
