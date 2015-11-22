@@ -23,5 +23,10 @@ namespace templateApp.GUI.Modulo6
         {
 
         }
+
+        protected void agreed(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

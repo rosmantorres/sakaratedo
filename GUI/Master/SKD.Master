@@ -165,9 +165,9 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                       fin de comentario:Boton Profile-->
-                      <form  runat="server">
+                      <form >
                         <div id="Div1" class="pull-right" runat="server">
-                          <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Cerrar Sesión</a>
+                          <a id="A1" href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol=logout" ) %>" class="btn btn-default btn-flat" >Cerrar Sesión</a>
                         </div>
                     </form>
                   </li>
