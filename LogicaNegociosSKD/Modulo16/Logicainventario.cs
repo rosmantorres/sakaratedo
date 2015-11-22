@@ -15,7 +15,6 @@ namespace LogicaNegociosSKD.Modulo16
         /// Atributos de la clase Logicainventario
         /// </summary>
         private BDInventario inventarioBD;
-        private List<DominioSKD.Inventario> laListaDeInventario;
         #endregion
 
         #region Constructores
@@ -29,12 +28,7 @@ namespace LogicaNegociosSKD.Modulo16
         #endregion
 
         #region Propiedades
-        public List<DominioSKD.Inventario> LaListaDeInventario
-        {
-            get { return laListaDeInventario; }
-            set { laListaDeInventario = value; }
-        }
-        
+
         #endregion
 
         #region Metodos
@@ -63,18 +57,6 @@ namespace LogicaNegociosSKD.Modulo16
         }
         */
 
-      /*  public List<DominioSKD.Inventario> obtenerListaDeInventario()
-        {
-            try
-            {
-                return BDInventario.ListarInventario();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-
-        }*/
         #endregion
 
     }
