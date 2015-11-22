@@ -132,7 +132,7 @@
             </div>
             <div class="row" style="text-align: center">
                 <asp:Button id="agreeButton" cssclass="btn btn-success col-lg-offset-1" Text="Aceptar" OnClick="agreed" runat="server"/>
-                <asp:Button id="Button1" cssclass="btn btn-success col-lg-offset-1" Text="Aceptar" OnClick="canceled" runat="server"/>
+                <asp:Button id="cancelButton" cssclass="btn btn-success col-lg-offset-1" Text="Aceptar" OnClientClick="window.open('M6_ListaUsuarios.aspx', 'ListarUsuarios');" runat="server"/>
             </div>
     </div>
     <script type="text/javascript">
