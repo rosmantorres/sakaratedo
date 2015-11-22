@@ -137,10 +137,8 @@
     <value>smtp.gmail.com</value>
   </data>
   <data name="mensajeSAKARATEDO" xml:space="preserve">
-    <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña "+
-           "asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los "+
-           "pasao que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;"+
-           "Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
+    <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
+           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
     <comment>mensaje que se enviara al usuario</comment>
   </data>
   <data name="puertoEnvioSAKARATEDO" xml:space="preserve">

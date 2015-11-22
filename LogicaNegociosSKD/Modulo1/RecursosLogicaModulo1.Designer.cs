@@ -106,10 +106,8 @@ namespace LogicaNegociosSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña &quot;+
-        ///           &quot;asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los &quot;+
-        ///           &quot;pasao que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;&quot;+
-        ///           &quot;Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;.
+        ///   Busca una cadena traducida similar a Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
+        ///           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;.
         /// </summary>
         internal static string mensajeSAKARATEDO {
             get {
