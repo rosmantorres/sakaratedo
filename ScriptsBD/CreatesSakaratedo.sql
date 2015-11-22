@@ -198,7 +198,7 @@ GO
 CREATE
   TABLE EMAIL
   (
-    ema_id    INTEGER NOT NULL ,
+    ema_id    INTEGER IDENTITY(1,1) NOT NULL ,
     ema_email VARCHAR (100) NOT NULL ,
     ema_principal BIT NOT NULL ,
     PERSONA_per_id INTEGER NOT NULL ,
@@ -469,7 +469,7 @@ GO
 CREATE
   TABLE MATRICULA
   (
-    mat_id             INTEGER NOT NULL ,
+    mat_id             INTEGER IDENTITY(1,1) NOT NULL ,
     mat_identificador  VARCHAR (50) NOT NULL ,
     mat_fecha_creacion DATETIME NOT NULL ,
     mat_activa BIT NOT NULL ,
@@ -521,7 +521,7 @@ GO
 CREATE
   TABLE PERSONA
   (
-    per_id           INTEGER NOT NULL ,
+    per_id           INTEGER IDENTITY(1,1) NOT NULL ,
     per_tipo_doc_id  VARCHAR (9) ,
     per_num_doc_id   NUMERIC (28) ,
     per_nombre       VARCHAR (256) NOT NULL ,
@@ -551,7 +551,7 @@ WITH
 GO
 ALTER TABLE PERSONA
 ADD
-CHECK ( per_tipo_doc_id IN ('Cédula', 'Pasaporte') )
+CHECK ( per_tipo_doc_id IN ('CEDULA NACIONAL', 'CEDULA EXTRAJERA', 'PASAPORTE') )
 GO
 ALTER TABLE PERSONA
 ADD
@@ -845,7 +845,7 @@ GO
 CREATE
   TABLE SOLICITUD_INSCRIPCION
   (
-    sol_inc_id                  INTEGER NOT NULL ,
+    sol_inc_id                  INTEGER IDENTITY(1,1) NOT NULL ,
     sol_inc_fecha_creacion      DATETIME NOT NULL ,
     sol_inc_fecha_actualizacion DATETIME NOT NULL ,
     sol_inc_estado              VARCHAR (30) NOT NULL ,
@@ -891,7 +891,7 @@ GO
 CREATE
   TABLE TELEFONO
   (
-    tel_id         INTEGER NOT NULL ,
+    tel_id         INTEGER IDENTITY(1,1) NOT NULL ,
     tel_numero     VARCHAR (10) NOT NULL ,
     PERSONA_per_id INTEGER NOT NULL ,
     CONSTRAINT TELEFONO_PK PRIMARY KEY CLUSTERED (PERSONA_per_id)
