@@ -620,12 +620,9 @@ CREATE
   TABLE RC_CINTA
   (
     rc_cinta_id                        INTEGER NOT NULL ,
-    rc_cinta_cinta_id                  INTEGER NOT NULL ,
-    rc_cinta_restriccion_id            INTEGER NOT NULL ,
     RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
-    CINTA_cin_id                       INTEGER ,
-    CONSTRAINT RC_CINTA_PK PRIMARY KEY CLUSTERED (rc_cinta_id,
-    rc_cinta_cinta_id, rc_cinta_restriccion_id)
+    CINTA_cin_id                       INTEGER NOT NULL ,
+    CONSTRAINT RC_CINTA_PK PRIMARY KEY CLUSTERED (rc_cinta_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -723,7 +720,6 @@ CREATE
     res_com_edad_max  INTEGER NOT NULL ,
     res_com_sexo      VARCHAR (1) NOT NULL ,
     res_com_modalidad VARCHAR (10) NOT NULL ,
-    res_com_categoria VARCHAR (255) NOT NULL ,
     CONSTRAINT RESTRICCION_COMPETENCIA_PK PRIMARY KEY CLUSTERED (res_com_id)
 WITH
   (
@@ -987,6 +983,25 @@ WITH
     ALLOW_ROW_LOCKS  = ON
   )
   ON "default"
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE COMP_REST_COMP
+  (
+    comp_rest_comp_id                  INTEGER NOT NULL ,
+    RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
+    COMPETENCIA_comp_id                INTEGER NOT NULL ,
+  )
+  ON "default"
+GO
+ALTER TABLE COMP_REST_COMP ADD CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY
+CLUSTERED (comp_rest_comp_id)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
   )
   ON "default"
 GO
@@ -1773,7 +1788,7 @@ cin_id
 )
 ON
 DELETE
-  NO ACTION ON
+  CASCADE ON
 UPDATE NO ACTION
 GO
 
@@ -1788,7 +1803,7 @@ res_com_id
 )
 ON
 DELETE
-  NO ACTION ON
+  CASCADE ON
 UPDATE NO ACTION
 GO
 
@@ -1983,6 +1998,36 @@ res_cin_id
 ON
 DELETE
   NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE COMP_REST_COMP
+ADD CONSTRAINT COMPETENCIA_FK FOREIGN KEY
+(
+COMPETENCIA_comp_id
+)
+REFERENCES COMPETENCIA
+(
+comp_id
+)
+ON
+DELETE
+  CASCADE ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE COMP_REST_COMP
+ADD CONSTRAINT REST_COMPET_FK FOREIGN KEY
+(
+RESTRICCION_COMPETENCIA_res_com_id
+)
+REFERENCES RESTRICCION_COMPETENCIA
+(
+res_com_id
+)
+ON
+DELETE
+  CASCADE ON
 UPDATE NO ACTION
 GO
 
