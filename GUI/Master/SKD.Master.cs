@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
+using templateApp.GUI.Modulo1;
 
 namespace templateApp
 {
@@ -40,18 +41,26 @@ namespace templateApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session[RecursosInterfazMaster.sessionUsuarioCorreo]!=null)
+            {
             XmlDocument doc = new XmlDocument();
-            doc.Load(Server.MapPath("~/GUI/Master/menuLateral.xml"));
+            doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
             idModulo = IdModulo;
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
                 foreach (XmlNode subNode in node.ChildNodes)
-                    if (!(subNode.Attributes["id"] == null) && subNode.Attributes["id"].InnerText.Equals(IdModulo))
+                    if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) && 
+                        subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(IdModulo))
                     {
-                        OpcionesDelMenu[node.Attributes["nombre"].InnerText] = node.Attributes["link"].InnerText;
+                        OpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] =
+                            node.Attributes[RecursosInterfazMaster.tagLink].InnerText;
                         break;
                     }
             asignarUsuario();
             DropDownMenu();
+            }
+            else
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
+
         }
 
         /// <summary>
@@ -60,9 +69,11 @@ namespace templateApp
         protected void asignarUsuario()
         {
 
-            userName.InnerText = (string)Session[sessionTag.usuarioN] + " " + Session[sessionTag.usuarioA];
-            userTag.InnerText = (string)Session[sessionTag.usuarioN] + " " + Session[sessionTag.usuarioA];
-            string[] roles = Session[sessionTag.roles].ToString().Split('-');
+            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] + " "
+                + Session[RecursosInterfazMaster.sessionUsuarioApellido];
+            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] + " "
+                + Session[RecursosInterfazMaster.sessionUsuarioApellido];
+            string[] roles = Session[RecursosInterfazMaster.sessionRoles].ToString().Split(char.Parse(RecursosInterfazMaster.splitRoles));
             int cont = 0;
             foreach (string perfil in roles)
             {
@@ -70,8 +81,8 @@ namespace templateApp
                 cont++;
             }
 
-            if (Request.QueryString[sessionTag.rol] != null)
-                Session[sessionTag.rol] = Request.QueryString[sessionTag.rol];
+            if (Request.QueryString[RecursosInterfazMaster.sessionRol] != null)
+                Session[RecursosInterfazMaster.sessionRol] = Request.QueryString[RecursosInterfazMaster.sessionRol];
 
 
         }
@@ -97,16 +108,16 @@ namespace templateApp
         /// </summary>
         protected void DropDownMenu()
         {
-            string rol = (string)(Session[sessionTag.rol]);
+            string rol = (string)(Session[RecursosInterfazMaster.sessionRol]);
             XmlDocument doc = new XmlDocument();
             string[] permisos;//se guardaran los permisos asociados a cada opcion del menuSuperior.xml
             string[] opciones = new string[2];
             int i = 0; //iteracion de posicionOpciones
-            doc.Load(Server.MapPath("~/GUI/Master/menuSuperior.xml"));
+            doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuSuperior));
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
                 i = 0;
-                permisos = node.Attributes[sessionTag.rol].InnerText.Split('-');
+                permisos = node.Attributes[RecursosInterfazMaster.sessionRol].InnerText.Split(char.Parse(RecursosInterfazMaster.splitRoles));
 
                 if (validaRol(permisos, rol))
                 {
@@ -114,17 +125,18 @@ namespace templateApp
                     foreach (XmlNode subNode in node.ChildNodes)
                     {
 
-                        permisos = subNode.Attributes[sessionTag.rol].InnerText.Split('-');
-                        if ((subNode.Attributes[sessionTag.linkTag].InnerText != null) && (validaRol(permisos, rol)))
+                        permisos = subNode.Attributes[RecursosInterfazMaster.sessionRol].
+                            InnerText.Split(char.Parse(RecursosInterfazMaster.splitRoles));
+                        if ((subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText != null) && (validaRol(permisos, rol)))
                         {
 
-                            posicionOpcinones[0, i] = (string)subNode.Attributes[sessionTag.nameTag].InnerText.ToString();
-                            posicionOpcinones[1, i] = subNode.Attributes[sessionTag.linkTag].InnerText.ToString();
+                            posicionOpcinones[0, i] = (string)subNode.Attributes[RecursosInterfazMaster.tagName].InnerText.ToString();
+                            posicionOpcinones[1, i] = subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText.ToString();
                             i++;
                         }
                     }
 
-                    SubOpcionesDelMenu[node.Attributes[sessionTag.nameTag].InnerText] = posicionOpcinones;
+                    SubOpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] = posicionOpcinones;
 
                 }
             }
@@ -136,12 +148,12 @@ namespace templateApp
         /// <param name="e"></param>
         protected void logout(object sender, EventArgs e)
         {
-            Session.Remove(sessionTag.rol);
-            Session.Remove(sessionTag.roles);
-            Session.Remove(sessionTag.usuarioA);
-            Session.Remove(sessionTag.usuarioC);
-            Session.Remove(sessionTag.usuarioN);
-            Response.Redirect("../Modulo1/Index.aspx");
+            Session.Remove(RecursosInterfazMaster.sessionRol);
+            Session.Remove(RecursosInterfazMaster.sessionRoles);
+            Session.Remove(RecursosInterfazMaster.sessionUsuarioApellido);
+            Session.Remove(RecursosInterfazMaster.sessionUsuarioCorreo);
+            Session.Remove(RecursosInterfazMaster.sessionUsuarioNombre);
+            Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
         }
     }
 }
