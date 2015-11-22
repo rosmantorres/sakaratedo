@@ -1119,7 +1119,6 @@
     <Compile Include="GUI\Master\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Master\RecursosInterfazMaster.Designer.cs" />
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.cs">
       <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1437,7 +1436,6 @@
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo1\RecursosInterfazModulo1.Designer.cs" />
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1721,7 +1719,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI\Master\RecursosInterfazMaster.resx" />
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
@@ -1738,7 +1735,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="DominioSKD\DominioSKD.csproj">
