@@ -15,21 +15,70 @@ namespace templateApp.GUI.Modulo7
         #region Atributos
         private List<Evento> laLista = new List<Evento>();
         #endregion
-        #region Métodos
+        #region Page Load
+        /// <summary>
+        /// Método que se ejecuta al cargar la página
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
 
+            String detalleString = Request.QueryString["eventDetalle"];
+
+            if (detalleString != null)
+            {
+                llenarModalInfo(int.Parse(detalleString));
+            }
+
+            #region Llenar Data Table con Eventos
+            LogicaEventosAsistidos logEvento = new LogicaEventosAsistidos();
+
+            if (!IsPostBack)
+            {
+                try
+                {
+                    laLista = logEvento.obtenerListaDeEventos();
+
+                    foreach (Evento evento in laLista)
+                    {
+                        this.laTabla.Text += M7_Recursos.AbrirTR;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Costo.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Descripcion.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD;
+                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.CerrarTR;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
+        
+            /// <summary>
+            /// Método que llena el modal con la información del evento
+            /// </summary>
+            /// <param name="idEvento">Número entero que representa el ID del evento</param>
+            protected void llenarModalInfo(int idEvento)
+            {
+                Evento evento = new Evento();
+                LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
+                evento = logica.detalleEventoID(idEvento);
+            }
 
+        }
+            #endregion
+            
+            
 
-
-
-
-
-
-
-
+        
         #endregion
-    }
+        
 }

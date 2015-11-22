@@ -9,11 +9,18 @@ namespace DominioSKD
     public class Evento
     {
         private int id_evento;
+
+        
         private String nombre;
         private String descripcion;
         private int costo;
 
-     
+        public int Id_evento
+        {
+            get { return id_evento; }
+            set { id_evento = value; }
+        }
+
         public int Id_organizacion
         {
             get { return id_evento; }

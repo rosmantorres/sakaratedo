@@ -19,9 +19,11 @@ namespace DatosSKD.Modulo7
 
         public static List<Evento> ListarEventosAsistidos()
         {
-            List<Evento> laListaDeEventoInscrito = new List<Evento>();
+            List<Evento> laListaDeEventoAsistidos = new List<Evento>();
+            Evento evento = new Evento(1, "Pedro", "Primer evento", 5000);
+            laListaDeEventoAsistidos.Add(evento);
 
-            return laListaDeEventoInscrito;
+            return laListaDeEventoAsistidos;
         }
 
 

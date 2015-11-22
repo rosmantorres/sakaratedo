@@ -11,7 +11,7 @@ namespace LogicaNegociosSKD.Modulo7
     /// <summary>
     /// Clase para obtener la lista de eventos asistidos y la descripción de un evento
     /// </summary>
-    class LogicaEventosAsistidos
+    public class LogicaEventosAsistidos
     {
         #region Atributos
         private List<DominioSKD.Evento> laListaDeEventos;
@@ -42,7 +42,7 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try 
             {
-                return BDEvento.listarEventosAsistidos();
+                return BDEvento.ListarEventosAsistidos();
             }
             catch (Exception e)
             {
@@ -59,7 +59,7 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDEvento.detallarEvento(idEvento);
+                return BDEvento.DetallarEvento(idEvento);
             }
             catch (Exception e)
             {
