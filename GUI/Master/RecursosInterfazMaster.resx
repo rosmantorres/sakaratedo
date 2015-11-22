@@ -126,6 +126,10 @@
   <data name="direccionMaster_MenuSuperior" xml:space="preserve">
     <value>~/GUI/Master/menuSuperior.xml</value>
   </data>
+  <data name="sessionLogout" xml:space="preserve">
+    <value>logout</value>
+    <comment>tag para cerrar sesion</comment>
+  </data>
   <data name="sessionRol" xml:space="preserve">
     <value>rol</value>
     <comment>Rol del usuario</comment>
@@ -141,6 +145,10 @@
   <data name="sessionUsuarioCorreo" xml:space="preserve">
     <value>Correo</value>
     <comment>Correo del usuario</comment>
+  </data>
+  <data name="sessionUsuarioID" xml:space="preserve">
+    <value>usuarioID</value>
+    <comment>contiene el ID del usuario para poder hacer todas las consultas en la Base de Datos</comment>
   </data>
   <data name="sessionUsuarioNombre" xml:space="preserve">
     <value>Nombre</value>
