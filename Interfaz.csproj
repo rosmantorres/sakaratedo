@@ -1626,6 +1626,11 @@
     <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
       <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo7\M7_Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M7_Recursos.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1752,6 +1757,10 @@
     <EmbeddedResource Include="GUI\Modulo14\Inscripcion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M7_Recursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
