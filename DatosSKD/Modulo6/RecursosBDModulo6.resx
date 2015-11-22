@@ -1,101 +1,276 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Documento_Cedula_Extranjera" xml:space="preserve">
+    <value>CEDULA-E</value>
+  </data>
+  <data name="Documento_Cedula_Nacional" xml:space="preserve">
+    <value>CEDULA-N</value>
+  </data>
+  <data name="Documento_Pasaporte" xml:space="preserve">
+    <value>PASAPORTE</value>
+  </data>
+  <data name="Estado_Aceptado" xml:space="preserve">
+    <value>ACEPTADO</value>
+  </data>
+  <data name="Estado_Pendiente" xml:space="preserve">
+    <value>PENDIENTE</value>
+  </data>
+  <data name="Estado_Rechazado" xml:space="preserve">
+    <value>RECHAZADO</value>
+  </data>
+  <data name="Sangre_ABN" xml:space="preserve">
+    <value>AB-</value>
+  </data>
+  <data name="Sangre_ABP" xml:space="preserve">
+    <value>AB+</value>
+  </data>
+  <data name="Sangre_AN" xml:space="preserve">
+    <value>A-</value>
+  </data>
+  <data name="Sangre_AP" xml:space="preserve">
+    <value>A+</value>
+  </data>
+  <data name="Sangre_BN" xml:space="preserve">
+    <value>B-</value>
+  </data>
+  <data name="Sangre_BP" xml:space="preserve">
+    <value>B+</value>
+  </data>
+  <data name="Sangre_ON" xml:space="preserve">
+    <value>O-</value>
+  </data>
+  <data name="Sangre_OP" xml:space="preserve">
+    <value>O+</value>
+  </data>
+  <data name="Sexo_Femenino" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="Sexo_Masculino" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="Atribute_Correo_Direccion" xml:space="preserve">
+    <value>correo_direccion</value>
+  </data>
+  <data name="Atribute_Correo_Id" xml:space="preserve">
+    <value>correo_id</value>
+  </data>
+  <data name="Atribute_Correo_Principal" xml:space="preserve">
+    <value>correo_principal</value>
+  </data>
+  <data name="Atribute_Matricula_Creacion" xml:space="preserve">
+    <value>mat_fecha_creacion</value>
+  </data>
+  <data name="Atribute_Matricula_Estado" xml:space="preserve">
+    <value>mat_activa</value>
+  </data>
+  <data name="Atribute_Matricula_Id" xml:space="preserve">
+    <value>mat_id</value>
+  </data>
+  <data name="Atribute_Matricula_Identificador" xml:space="preserve">
+    <value>mat_identificador</value>
+  </data>
+  <data name="Atribute_Matricula_Ultima_Fecha" xml:space="preserve">
+    <value>mat_ultimo_pago</value>
+  </data>
+  <data name="Atribute_Persona_Alergias" xml:space="preserve">
+    <value>persona_alergias</value>
+  </data>
+  <data name="Atribute_Persona_Apellido" xml:space="preserve">
+    <value>persona_apellido</value>
+  </data>
+  <data name="Atribute_Persona_direccion" xml:space="preserve">
+    <value>persona_direccion</value>
+  </data>
+  <data name="Atribute_Persona_Estatura" xml:space="preserve">
+    <value>persona_estatura</value>
+  </data>
+  <data name="Atribute_Persona_Id" xml:space="preserve">
+    <value>persona_id</value>
+  </data>
+  <data name="Atribute_Persona_Image_url" xml:space="preserve">
+    <value>persona_imagen</value>
+  </data>
+  <data name="Atribute_Persona_Nacimiento" xml:space="preserve">
+    <value>persona_fecha_nacimiento</value>
+  </data>
+  <data name="Atribute_Persona_Nacionalidad" xml:space="preserve">
+    <value>persona_nacionalidad</value>
+  </data>
+  <data name="Atribute_Persona_Nombre" xml:space="preserve">
+    <value>persona_nombre</value>
+  </data>
+  <data name="Atribute_Persona_Numero_Documento" xml:space="preserve">
+    <value>persona_num_doc_id</value>
+  </data>
+  <data name="Atribute_Persona_Pass" xml:space="preserve">
+    <value>persona_clave</value>
+  </data>
+  <data name="Atribute_Persona_Peso" xml:space="preserve">
+    <value>persona_peso</value>
+  </data>
+  <data name="Atribute_Persona_Sangre" xml:space="preserve">
+    <value>persona_tipo_sangre</value>
+  </data>
+  <data name="Atribute_Persona_Sexo" xml:space="preserve">
+    <value>persona_sexo</value>
+  </data>
+  <data name="Atribute_Persona_Status" xml:space="preserve">
+    <value>persona_activo</value>
+  </data>
+  <data name="Atribute_Persona_Tipo_Documento" xml:space="preserve">
+    <value>persona_tipo_doc_id</value>
+  </data>
+  <data name="Atribute_Persona_Ususuaio" xml:space="preserve">
+    <value>persona_nombre_usuario</value>
+  </data>
+  <data name="Atribute_Relacion_Tipo" xml:space="preserve">
+    <value>rel_tipo</value>
+  </data>
+  <data name="Atribute_Solicitud_Actualizacion" xml:space="preserve">
+    <value>sol_inc_fecha_actualizacion</value>
+  </data>
+  <data name="Atribute_Solicitud_Creacion" xml:space="preserve">
+    <value>sol_inc_fecha_creacion</value>
+  </data>
+  <data name="Atribute_Solicitud_Estado" xml:space="preserve">
+    <value>sol_inc_estado</value>
+  </data>
+  <data name="Atribute_Solicitud_Id" xml:space="preserve">
+    <value>sol_inc_id</value>
+  </data>
+  <data name="Atribute_Telefono_Id" xml:space="preserve">
+    <value>telefono_id</value>
+  </data>
+  <data name="Atribute_Telefono_numero" xml:space="preserve">
+    <value>telefono_numero</value>
+  </data>
+  <data name="SP_Add_Persona" xml:space="preserve">
+    <value>Agregar_Persona</value>
+  </data>
+  <data name="SP_Get_Emails" xml:space="preserve">
+    <value>Listar_Correos</value>
+  </data>
+  <data name="SP_Get_Telefonos" xml:space="preserve">
+    <value>Listar_Telefonos</value>
+  </data>
+  <data name="SP_Add_Telefono" xml:space="preserve">
+    <value>Agregar_Telefono</value>
+  </data>
 </root>
