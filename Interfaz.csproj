@@ -1119,7 +1119,6 @@
     <Compile Include="GUI\Master\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Master\sessionTag.cs" />
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.cs">
       <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1430,7 +1429,6 @@
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo1\login.cs" />
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1438,7 +1436,6 @@
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo1\mensajes.cs" />
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
