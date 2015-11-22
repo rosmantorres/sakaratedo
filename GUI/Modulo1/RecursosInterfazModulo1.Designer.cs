@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicaNegociosSKD.Modulo1 {
+namespace templateApp.GUI.Modulo1 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace LogicaNegociosSKD.Modulo1 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosLogicaModulo1 {
+    internal class RecursosInterfazModulo1 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosLogicaModulo1() {
+        internal RecursosInterfazModulo1() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaNegociosSKD.Modulo1.RecursosLogicaModulo1", typeof(RecursosLogicaModulo1).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo1.RecursosInterfazModulo1", typeof(RecursosInterfazModulo1).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,75 +61,83 @@ namespace LogicaNegociosSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SA-KARATEDO:Reestablecer contraseña.
+        ///   Busca una cadena traducida similar a ~/GUI/Modulo1/Index.aspx.
         /// </summary>
-        internal static string asuntoSAKARATEDO {
+        internal static string direccionM1_Index {
             get {
-                return ResourceManager.GetString("asuntoSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("direccionM1_Index", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a karate1234.
+        ///   Busca una cadena traducida similar a Contraseña y/o usuario incorrecto..
         /// </summary>
-        internal static string cuentaClaveSAKARATEDO {
+        internal static string logErr {
             get {
-                return ResourceManager.GetString("cuentaClaveSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("logErr", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a sakaratedo@gmail.com.
+        ///   Busca una cadena traducida similar a ¡Correo enviado!.
         /// </summary>
-        internal static string cuentaCorreoSAKARATEDO {
+        internal static string logInfo {
             get {
-                return ResourceManager.GetString("cuentaCorreoSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("logInfo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a /GUI/Modulo1/RestablecerContrasena.aspx.
+        ///   Busca una cadena traducida similar a Se reestableció con exito su contraseña.
         /// </summary>
-        internal static string direccionM1_RestablecerContraseña {
+        internal static string logSuccess {
             get {
-                return ResourceManager.GetString("direccionM1_RestablecerContraseña", resourceCulture);
+                return ResourceManager.GetString("logSuccess", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a smtp.gmail.com.
+        ///   Busca una cadena traducida similar a ¡El correo no se encuentra registrado en SA-KARATEDO!.
         /// </summary>
-        internal static string hostSAKARATEDO {
+        internal static string logWarning {
             get {
-                return ResourceManager.GetString("hostSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("logWarning", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
-        ///           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;.
+        ///   Busca una cadena traducida similar a Error.
         /// </summary>
-        internal static string mensajeSAKARATEDO {
+        internal static string tipoErr {
             get {
-                return ResourceManager.GetString("mensajeSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("tipoErr", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 587.
+        ///   Busca una cadena traducida similar a Info.
         /// </summary>
-        internal static string puertoEnvioSAKARATEDO {
+        internal static string tipoInfo {
             get {
-                return ResourceManager.GetString("puertoEnvioSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("tipoInfo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 23072.
+        ///   Busca una cadena traducida similar a Success.
         /// </summary>
-        internal static string puertoSAKARATEDO {
+        internal static string tipoSucess {
             get {
-                return ResourceManager.GetString("puertoSAKARATEDO", resourceCulture);
+                return ResourceManager.GetString("tipoSucess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Warning.
+        /// </summary>
+        internal static string tipoWarning {
+            get {
+                return ResourceManager.GetString("tipoWarning", resourceCulture);
             }
         }
     }

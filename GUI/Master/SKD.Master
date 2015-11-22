@@ -159,17 +159,17 @@
                             </ul> 
                     </li>
                   <!-- Menu Footer-->
-                  <li class="user-footer">
+                  <li class="user-footer" >
                   <!--Comentado: Boton Profile
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                       fin de comentario:Boton Profile-->
-                      <%--<form id="Form1" runat="server">--%>
+                      <form  runat="server">
                         <div id="Div1" class="pull-right" runat="server">
-                          <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
+                          <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Cerrar Sesión</a>
                         </div>
-                    <%--</form>--%>
+                    </form>
                   </li>
                 </ul>
               </li>
