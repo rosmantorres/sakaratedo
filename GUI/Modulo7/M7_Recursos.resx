@@ -117,22 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbrirH3" xml:space="preserve">
+    <value>&lt;h3&gt;</value>
+  </data>
+  <data name="AbrirH4" xml:space="preserve">
+    <value>&lt;h4 class="modal-title"&gt;</value>
+  </data>
+  <data name="AbrirLI" xml:space="preserve">
+    <value>&lt;li&gt;</value>
+  </data>
+  <data name="AbrirP" xml:space="preserve">
+    <value>&lt;p&gt;</value>
+  </data>
   <data name="AbrirTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
   </data>
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="AbrirUL" xml:space="preserve">
+    <value>&lt;ul&gt;</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonInfo" xml:space="preserve">
+  <data name="BotonInfoAsistenciaAEventos" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarAsistenciaAEventos.aspx?compDetalle=</value>
+  </data>
+  <data name="BotonInfoCintas" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarCintas.aspx?compDetalle=</value>
+  </data>
+  <data name="BotonInfoEventosInscritos" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarEventosInscritos.aspx?compDetalle=</value>
+  </data>
+  <data name="BotonInfoHorariodePractica" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarHorariodePractica.aspx?compDetalle=</value>
+  </data>
+  <data name="BotonInfoOrganizacionYDojo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarOrganizacionYDojo.aspx?compDetalle=</value>
+  </data>
+  <data name="BotonInfoPagosAEventos" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarPagosAEventos.aspx?compDetalle=</value>
+  </data>
+  <data name="BotonInfoPagosDeMatricula" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarPagosDeMatricula.aspx?compDetalle=</value>
+  </data>
+  <data name="CerrarH3" xml:space="preserve">
+    <value>&lt;/h3&gt;</value>
+  </data>
+  <data name="CerrarH4" xml:space="preserve">
+    <value>&lt;/h4&gt;</value>
+  </data>
+  <data name="CerrarLI" xml:space="preserve">
+    <value>&lt;/li&gt;</value>
+  </data>
+  <data name="CerrarP" xml:space="preserve">
+    <value>&lt;/p&gt;</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="CerrarUL" xml:space="preserve">
+    <value>&lt;/ul&gt;</value>
   </data>
 </root>

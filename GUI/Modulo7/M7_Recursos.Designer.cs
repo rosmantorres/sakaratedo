@@ -61,6 +61,42 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;.
+        /// </summary>
+        internal static string AbrirH3 {
+            get {
+                return ResourceManager.GetString("AbrirH3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4 class=&quot;modal-title&quot;&gt;.
+        /// </summary>
+        internal static string AbrirH4 {
+            get {
+                return ResourceManager.GetString("AbrirH4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;li&gt;.
+        /// </summary>
+        internal static string AbrirLI {
+            get {
+                return ResourceManager.GetString("AbrirLI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;.
+        /// </summary>
+        internal static string AbrirP {
+            get {
+                return ResourceManager.GetString("AbrirP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
         internal static string AbrirTD {
@@ -79,6 +115,15 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;.
+        /// </summary>
+        internal static string AbrirUL {
+            get {
+                return ResourceManager.GetString("AbrirUL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -88,11 +133,101 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarAsistenciaAEventos.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoAsistenciaAEventos {
+            get {
+                return ResourceManager.GetString("BotonInfoAsistenciaAEventos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarCintas.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoCintas {
+            get {
+                return ResourceManager.GetString("BotonInfoCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarEventosInscritos.aspx?compDetalle=.
         /// </summary>
-        internal static string BotonInfo {
+        internal static string BotonInfoEventosInscritos {
             get {
-                return ResourceManager.GetString("BotonInfo", resourceCulture);
+                return ResourceManager.GetString("BotonInfoEventosInscritos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarHorariodePractica.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoHorariodePractica {
+            get {
+                return ResourceManager.GetString("BotonInfoHorariodePractica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarOrganizacionYDojo.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoOrganizacionYDojo {
+            get {
+                return ResourceManager.GetString("BotonInfoOrganizacionYDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarPagosAEventos.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoPagosAEventos {
+            get {
+                return ResourceManager.GetString("BotonInfoPagosAEventos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarPagosDeMatricula.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoPagosDeMatricula {
+            get {
+                return ResourceManager.GetString("BotonInfoPagosDeMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/h3&gt;.
+        /// </summary>
+        internal static string CerrarH3 {
+            get {
+                return ResourceManager.GetString("CerrarH3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/h4&gt;.
+        /// </summary>
+        internal static string CerrarH4 {
+            get {
+                return ResourceManager.GetString("CerrarH4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/li&gt;.
+        /// </summary>
+        internal static string CerrarLI {
+            get {
+                return ResourceManager.GetString("CerrarLI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/p&gt;.
+        /// </summary>
+        internal static string CerrarP {
+            get {
+                return ResourceManager.GetString("CerrarP", resourceCulture);
             }
         }
         
@@ -111,6 +246,15 @@ namespace templateApp.GUI.Modulo7 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/ul&gt;.
+        /// </summary>
+        internal static string CerrarUL {
+            get {
+                return ResourceManager.GetString("CerrarUL", resourceCulture);
             }
         }
     }
