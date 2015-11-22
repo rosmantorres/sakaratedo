@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesSKD;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace DatosSKD.Modulo16
 {
@@ -17,7 +21,7 @@ namespace DatosSKD.Modulo16
         /// </summary>
         public BDCarrito()
         {
-
+           
         }
         #endregion
 
@@ -84,13 +88,47 @@ namespace DatosSKD.Modulo16
         /// <param name="objetoBorrar">El objeto en especifico a borrar</param>
         /// <param name="idUsuario">El usuario al que se alterara su carrito</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-        public bool eliminarItem(String tipoObjeto, int objetoBorrar, int idUsuario)
+        public bool eliminarItem(int tipoObjeto, int objetoBorrar, int idUsuario)
         {
-            return true;
+            //Procedo a intentar eliminar el Item en BD
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, SqlDbType.Int, 
+                    idUsuario.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
+                    objetoBorrar.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, SqlDbType.Int, 
+                    idUsuario.ToString(), false);
+                parametros.Add(parametro);
+                
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                conexion.EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM,parametros);
+
+                return true;
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("","",e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExceptionSKDConexionBD("blabla","blabla",e);
+            }
+
         }
 
         /// <summary>
         /// Metodo que registra el pago de los productos existentes en el carrito de la base de datos
+        /// La lista de datos actualmente no se usa, se deja asi para posibles futuros usos
         /// </summary>
         /// <param name="tipoPago">Indica cual de las formas se eligio para los pagos</param>
         /// <param name="datos">Todos los datos pertenecientes de ese tipo de pago</param>
@@ -98,7 +136,36 @@ namespace DatosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool registrarPago(String tipoPago, List<int> datos, int idUsuario)
         {
-            return true;
+            //Procedo a intentar registrar el pago en Base de Datos
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, 
+                    SqlDbType.VarChar, tipoPago, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, 
+                    SqlDbType.Int, idUsuario.ToString(), false);
+                parametros.Add(parametro);
+
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                conexion.EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_REGISTRAR_PAGO, parametros);
+
+                return true;
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExceptionSKDConexionBD("blabla", "blabla", e);
+            }
         }
 
 

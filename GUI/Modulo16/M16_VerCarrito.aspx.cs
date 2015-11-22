@@ -18,6 +18,7 @@ namespace templateApp.GUI.Modulo16
         /// Atributos de la clase
         /// </summary>
         public Carrito carritoCompras;
+        public Logicacarrito logicaCarrito;
 
         /// <summary>
         /// Metodo que carga las configuraciones por defecto y opciones especiales de su ventana correspondiente
@@ -131,6 +132,22 @@ namespace templateApp.GUI.Modulo16
 
         }*/
 
+        /// <summary>
+        /// Metodo que se encarga de eliminar un item determinado del carrito
+        /// </summary>
+        public void Eliminaritem()
+        {
+            bool respuesta = logicaCarrito.eliminarItem(1,1,1);
+            
+        }
+
+        /// <summary>
+        /// Metodo que se encarga de efectuar el pago de los productos en el carrito
+        /// </summary>
+        public void Registrarpago()
+        {
+            bool respuesta = logicaCarrito.registrarPago(1,null);
+        }
     }
             
 }
