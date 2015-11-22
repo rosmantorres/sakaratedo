@@ -18,6 +18,7 @@ namespace LogicaNegociosSKD.Modulo16
         /// Atributos de la clase Logicacarrito
         /// </summary>
         private BDCarrito carritoBD;
+        private Carrito carritoUsuario;
         #endregion
 
         #region Constructores
@@ -58,7 +59,14 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool eliminarItem(int tipoObjeto, int objetoBorrar, int idUsuario)
         {
-            bool respuesta = carritoBD.eliminarItem("Evento",1,1);
+            //Procedemos a eliminar el item de la Base de Datos
+            bool respuesta = carritoBD.eliminarItem(tipoObjeto,objetoBorrar,idUsuario);
+
+            //Si el proceso fue exitoso procedemos a eliminar de forma local
+            if (respuesta)
+                this.carritoUsuario.eliminarItem(tipoObjeto,objetoBorrar);
+
+            //Retornamos la respuesta
             return respuesta;
         }
 
@@ -70,7 +78,13 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool registrarPago(int tipoPago, List<int> datos)
         {
+            //Procedemos a procesar la compra de los productos que estan en el carrito
             bool respuesta = carritoBD.registrarPago("Transferencia",null,1);
+
+            //Limpiamos el carrito del Usuario
+            carritoUsuario.limpiar();
+
+            //Retonarmos el exito o fallo del proceso
             return respuesta;
         }
 
@@ -117,12 +131,6 @@ namespace LogicaNegociosSKD.Modulo16
              bool respuesta = carritoBD.agregarInventarioaCarrito( 1, 1);
              return respuesta;
          }
-
-
-
-
-       
-
         #endregion
     }
 }
