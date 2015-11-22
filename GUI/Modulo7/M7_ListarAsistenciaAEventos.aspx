@@ -62,45 +62,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-					<td>Octavo encuentro de cintas amarillas 2do kyu</td>
-					<td>Seminario</td>
-					<td>10/26/2015</td>
-                    <td>Estado Guarico</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Clase de kata</td>
-					<td>Entrenamiento Especial</td>
-					<td>11/01/2015</td>
-                    <td>Estado Distrito Capital</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>Competencia entre cintas blancas</td>
-					<td>Competencia</td>
-					<td>10/11/2015</td>
-                    <td>Estado Distrito Capital</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Cuarto encuentro de cintas blancas 1er kyu</td>
-					<td>Seminario</td>
-					<td>11/07/2015</td>
-                    <td>Estado Guarico</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>              
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>              
 			</tbody>
     </table>
         </div>
