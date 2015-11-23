@@ -132,6 +132,23 @@ BEGIN
 	;
 END
 
+/*Agrega una nueva solicitud*/
+CREATE PROCEDURE Agregar_Solicitud
+	@id_persona INTEGER,
+	@id_dojo INTEGER
+AS
+BEGIN
+	INSERT INTO dbo.SOLICITUD_INSCRIPCION(
+		sol_inc_fecha_creacion, 
+		sol_inc_estado, 
+		PERSONA_per_id, 
+		DOJO_doj_id) 
+	VALUES (
+		GETDATE(), 
+		'PENDIENTE', 
+		@id_persona, 
+		@id_dojo);	
+END
 
 ------------
 -- Listar --
@@ -197,6 +214,53 @@ BEGIN
 	WHERE
 		per_id = @persona_id
 	;
+END
+
+/* Cambiar el status de la solicitud */
+CREATE PROCEDURE Modificar_Solicitud
+	@id_solicitud INTEGER,
+	@estado_solicitud varchar(30)
+AS
+BEGIN
+	UPDATE dbo.SOLICITUD_INSCRIPCION
+	SET sol_inc_estado = @estado_usuario, sol_inc_fecha_actualizacion = GETDATE()
+	WHERE sol_inc_id = @id_solicitud
+	;
+END
+
+/* Cambiar los datos de una persona*/
+CREATE PROCEDURE Modificar_Persona
+    @persona_id INTEGER,
+	@persona_tipo_doc_id VARCHAR (9),
+    @persona_num_doc_id NUMERIC (28),
+    @persona_nombre VARCHAR (256),
+    @persona_apellido VARCHAR (256),
+    @persona_nacionalidad VARCHAR (10),
+    @persona_alergias TEXT,
+    @persona_direccion TEXT,
+    @persona_sexo CHAR (1),
+    @persona_tipo_sangre VARCHAR (3),
+    @persona_fecha_nacimiento DATETIME,
+    @persona_peso FLOAT,
+    @persona_estatura FLOAT,
+	@id_usuario INTEGER OUTPUT
+AS
+BEGIN
+    UPDATE dbo.PERSONA
+    SET per_tipo_doc_id = @persona_tipo_doc_id,
+        per_num_doc_id = @persona_num_doc_id,
+        per_nombre = @persona_nombre,
+        per_apellido = @persona_apellido,
+        per_nacionalidad = @persona_nacionalidad,
+        per_alergias = @persona_alergias,
+        per_direccion = @persona_direccion,
+        per_sexo = @persona_sexo,
+        per_tipo_sangre = @persona_tipo_sangre,
+        per_fecha_nacimiento = @persona_fecha_nacimiento,
+        per_peso = @persona_peso,
+        per_estatura = @persona_estatura
+    WHERE per_id = @persona_id
+    ;
 END
 
 ---------------
