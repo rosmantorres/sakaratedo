@@ -11,7 +11,14 @@ namespace templateApp.GUI.Modulo1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        protected void redireccionarIncio(object sender, EventArgs e)
+        {
+            
+            string opcion="true";
+            Response.Redirect(RecursosInterfazModulo1.direccionM1_Index+"?" + RecursosInterfazModulo1.tipoSucess + "=" + opcion);
         }
     }
 }
