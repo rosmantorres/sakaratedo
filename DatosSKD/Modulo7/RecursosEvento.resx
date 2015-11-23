@@ -141,6 +141,9 @@
   <data name="Nombre2" xml:space="preserve">
     <value>Competencia Cintas verde</value>
   </data>
+  <data name="Nombre3" xml:space="preserve">
+    <value>Golpe Fiji</value>
+  </data>
   <data name="Tipo1" xml:space="preserve">
     <value>Seminario</value>
   </data>

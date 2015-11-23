@@ -133,6 +133,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Golpe Fiji.
+        /// </summary>
+        internal static string Nombre3 {
+            get {
+                return ResourceManager.GetString("Nombre3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seminario.
         /// </summary>
         internal static string Tipo1 {

@@ -44,59 +44,14 @@
 				<tr>
                     <th>ID</th>
 					<th>Práctica</th>
-                    <th>Profesor</th>
-					<th>Hora Inicio</th>
-                    <th>Día</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
                     <th>Salón</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-					<td>Tsuki (Golpe)</td>
-					<td>José Reyes</td>
-					<td>14:00</td>
-                    <td>Lunes </td>
-                    <td>S-03 </td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Dachi (Posición) </td>
-					<td>Alejandro Fermín</td>
-					<td>16:00</td>
-                   <td>Lunes </td>
-                    <td>S-05 </td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>Uke (Bloqueo) </td>
-					<td>Ana K. López</td>
-					<td>14:00</td>
-                    <td>Miércoles </td>
-                    <td>S-02 </td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Kata (Forma) </td>
-					<td>Luisa E. López</td>
-					<td>16:00</td>
-                    <td>Jueves </td>
-                    <td>S-04 </td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>
-                
-
+				    <asp:Literal runat="server" ID="laTabla"></asp:Literal>   
 			</tbody>
     </table>
         </div>

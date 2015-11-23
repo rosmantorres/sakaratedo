@@ -31,9 +31,19 @@ namespace DatosSKD.Modulo7
         public static List<Evento> ListarEventosPagos()
         {
             List<Evento> laListaDeEventoPago = new List<Evento>();
+            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id2), RecursosEvento.Nombre2, RecursosEvento.Tipo2, RecursosHorario.FechaInicio2, RecursosUbicacion.Direccion2);
+            laListaDeEventoPago.Add(evento);
             
-
             return laListaDeEventoPago;
+        }
+        
+        public static List<Evento> ListarHorarioPractica()
+        {
+            List<Evento> laListaDeHorarioPractica = new List<Evento>();
+            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre3, RecursosHorario.HoraInicio1, RecursosHorario.HoraFin1, RecursosUbicacion.Direccion1);
+            laListaDeHorarioPractica.Add(evento);
+
+            return laListaDeHorarioPractica;
         }
 
         public static Evento DetallarEvento(int idEvento)

@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="Modulo7\LogicaEventosAsistidos.cs" />
     <Compile Include="Modulo7\LogicaEventosInscritos.cs" />
+    <Compile Include="Modulo7\LogicaHorarioPractica.cs" />
     <Compile Include="Modulo7\RecursosLogicaModulo7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
