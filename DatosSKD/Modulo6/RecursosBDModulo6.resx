@@ -285,4 +285,10 @@
   <data name="SP_Chg_Usuario_Estado" xml:space="preserve">
     <value>Cambiar_Estado_Usuario</value>
   </data>
+  <data name="SP_Chg_Ususairo_Image" xml:space="preserve">
+    <value>Cambiar_Image_Usuario</value>
+  </data>
+  <data name="SP_Get_Persona" xml:space="preserve">
+    <value>Consulta_Persona</value>
+  </data>
 </root>

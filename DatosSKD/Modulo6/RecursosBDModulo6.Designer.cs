@@ -547,11 +547,29 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cambiar_Image_Usuario.
+        /// </summary>
+        internal static string SP_Chg_Ususairo_Image {
+            get {
+                return ResourceManager.GetString("SP_Chg_Ususairo_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listar_Correos.
         /// </summary>
         internal static string SP_Get_Emails {
             get {
                 return ResourceManager.GetString("SP_Get_Emails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consulta_Persona.
+        /// </summary>
+        internal static string SP_Get_Persona {
+            get {
+                return ResourceManager.GetString("SP_Get_Persona", resourceCulture);
             }
         }
         
