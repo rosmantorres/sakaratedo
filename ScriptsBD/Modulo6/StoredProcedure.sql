@@ -143,7 +143,7 @@ BEGIN
 		sol_inc_fecha_actualizacion, 
 		sol_inc_estado, 
 		PERSONA_per_id, 
-		DOJO_doj_id,) 
+		DOJO_doj_id) 
 	VALUES (
 		GETDATE(), 
 		GETDATE(),
