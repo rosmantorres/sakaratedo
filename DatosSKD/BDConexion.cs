@@ -29,7 +29,8 @@ namespace DatosSKD
 
             try
             {
-                strConexion = ConfigurationManager.ConnectionStrings[RecursoGeneralBD.NombreBD].ConnectionString;
+                //strConexion = ConfigurationManager.ConnectionStrings[RecursoGeneralBD.NombreBD].ConnectionString;
+                strConexion = RecursoGeneralBD.StringDeConexion;
                 if (conexion == null)
                 {
                     conexion = new SqlConnection(strConexion);
@@ -116,6 +117,7 @@ namespace DatosSKD
 
                 using (conexion)
                 {
+                    conexion.Open();
                     comando = new SqlCommand(query, conexion);
                     SqlDataReader resultado = comando.ExecuteReader();
                     return resultado;
