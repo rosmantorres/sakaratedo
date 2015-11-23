@@ -245,7 +245,7 @@ CREATE PROCEDURE Modificar_Persona
     @persona_fecha_nacimiento DATETIME,
     @persona_peso FLOAT,
     @persona_estatura FLOAT,
-	@id_usuario INTEGER OUTPUT
+	@id_usuario INTEGER
 AS
 BEGIN
     UPDATE dbo.PERSONA
