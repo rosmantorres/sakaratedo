@@ -117,36 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="asuntoSAKARATEDO" xml:space="preserve">
-    <value>SA-KARATEDO:Reestablecer contraseña</value>
-    <comment>asunto del mensaje a enviar</comment>
+  <data name="direccionMaster_Inicio" xml:space="preserve">
+    <value>~/GUI/Master/Inicio.aspx</value>
   </data>
-  <data name="cuentaClaveSAKARATEDO" xml:space="preserve">
-    <value>karate1234</value>
-    <comment>contraseña de la cuenta de sakaratedo</comment>
+  <data name="direccionMaster_MenuLateral" xml:space="preserve">
+    <value>~/GUI/Master/menuLateral.xml</value>
   </data>
-  <data name="cuentaCorreoSAKARATEDO" xml:space="preserve">
-    <value>sakaratedo@gmail.com</value>
-    <comment>correo oficial de sakaratedo</comment>
+  <data name="direccionMaster_MenuSuperior" xml:space="preserve">
+    <value>~/GUI/Master/menuSuperior.xml</value>
   </data>
-  <data name="direccionM1_RestablecerContraseña" xml:space="preserve">
-    <value>/GUI/Modulo1/RestablecerContrasena.aspx</value>
-    <comment>sin el ñangara para que pueda ser una direccion enviada al correo</comment>
+  <data name="sessionLogout" xml:space="preserve">
+    <value>logout</value>
+    <comment>tag para cerrar sesion</comment>
   </data>
-  <data name="hostSAKARATEDO" xml:space="preserve">
-    <value>smtp.gmail.com</value>
+  <data name="sessionRol" xml:space="preserve">
+    <value>rol</value>
+    <comment>Rol del usuario</comment>
   </data>
-  <data name="mensajeSAKARATEDO" xml:space="preserve">
-    <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
-           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
-    <comment>mensaje que se enviara al usuario</comment>
+  <data name="sessionRoles" xml:space="preserve">
+    <value>roles</value>
+    <comment>Roles que puede tener un usuario</comment>
   </data>
-  <data name="puertoEnvioSAKARATEDO" xml:space="preserve">
-    <value>587</value>
-    <comment>puerto de envio del mensaje</comment>
+  <data name="sessionUsuarioApellido" xml:space="preserve">
+    <value>Apellido</value>
+    <comment>Apellido del usuario</comment>
   </data>
-  <data name="puertoSAKARATEDO" xml:space="preserve">
-    <value>23072</value>
-    <comment>puerto del localhost para generar el link al archivo</comment>
+  <data name="sessionUsuarioCorreo" xml:space="preserve">
+    <value>Correo</value>
+    <comment>Correo del usuario</comment>
+  </data>
+  <data name="sessionUsuarioID" xml:space="preserve">
+    <value>usuarioID</value>
+    <comment>contiene el ID del usuario para poder hacer todas las consultas en la Base de Datos</comment>
+  </data>
+  <data name="sessionUsuarioNombre" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Nombre del usuario</comment>
+  </data>
+  <data name="splitRoles" xml:space="preserve">
+    <value>-</value>
+    <comment>los roles se separan con ese caracter</comment>
+  </data>
+  <data name="tagId" xml:space="preserve">
+    <value>id</value>
+    <comment>Nombre de las etiquetas para los archivos XML  de menuSuperior.xml y menuLateral.xml</comment>
+  </data>
+  <data name="tagLink" xml:space="preserve">
+    <value>link</value>
+    <comment>Nombre de las etiquetas para los archivos XML  de menuSuperior.xml y menuLateral.xml</comment>
+  </data>
+  <data name="tagName" xml:space="preserve">
+    <value>nombre</value>
+    <comment>Nombre de las etiquetas para los archivos XML  de menuSuperior.xml y menuLateral.xml</comment>
   </data>
 </root>
