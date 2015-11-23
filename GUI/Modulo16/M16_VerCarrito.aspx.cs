@@ -44,6 +44,33 @@ namespace templateApp.GUI.Modulo16
 
             }
 
+            //Nos indica si hubo alguna accion de agregar, registrar pago o eliminar
+            String accion = Request.QueryString["success"];
+            switch (accion)
+            {
+                //Si se viene de un eliminar se procedera a eliminar y mostrar la alerta correspondiente
+                case "3":
+                    bool respuesta = logicaCarrito.eliminarItem(1, 1, 1);
+                    if (respuesta)
+                    {
+                        //Si el eliminar fue exitoso mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\""+
+                            "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El item ha sido"+ 
+                            " eliminado exitosamente</div>";
+                    }
+                    else
+                    {
+                        //Si el eliminar no fue exitoso mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El item no ha"+
+                            " sido eliminado</div>";
+                    }
+                    break;
+            }
 
         }
 
@@ -132,13 +159,13 @@ namespace templateApp.GUI.Modulo16
 
         }*/
 
+        #region Eliminar y Registrar
         /// <summary>
         /// Metodo que se encarga de eliminar un item determinado del carrito
         /// </summary>
         public void Eliminaritem()
         {
-            bool respuesta = logicaCarrito.eliminarItem(1,1,1);
-            
+                        
         }
 
         /// <summary>
@@ -148,6 +175,7 @@ namespace templateApp.GUI.Modulo16
         {
             bool respuesta = logicaCarrito.registrarPago(1,null);
         }
+        #endregion
     }
             
 }
