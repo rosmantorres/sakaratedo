@@ -125,6 +125,7 @@ namespace DominioSKD
         public int ID
         {
             get { return this._id; }
+            set { this._id = value; }
         }
         #endregion
 
