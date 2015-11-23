@@ -59,35 +59,36 @@
                     <!-- Comienzo del formulario -->
                 <form role="form" name="agregar_dojo" id="agregar_dojo" method="post" action="../Modulo6/M6_NuevoAdmin.aspx">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+
                        <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
                     <img src="Imagenes\Aikido.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
                         <input id="input-1a" type="file" class="file"  >
                            </div>
                       <br/>
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-                      <p><b>Rif Del Dojo:</b></p>
+                     <h3>Rif Del Dojo:</h3>
                       <input type="text" name="rifDojo" id="rifDojo" placeholder="*RIF" class="form-control" value="">
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Nombre Del Dojo:</b></p>
+                      <h3>Nombre Del Dojo:</h3>
                       <input type="text" name="nombreDojo" id="nombreDojo" placeholder="*Nombre" class="form-control" value="">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Número Telefónico:</b></p>
+                      <h3>Número Telefónico:</h3>
                       <input type="text" name="numeroDojo" id="numeroDojo" placeholder="*Número-Telefono" class="form-control" value="">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Email:</b></p>
+                      <h3>Email:</h3>
                       <input type="email" name="emailDojo" id="emailDojo" placeholder="*Email" class="form-control" value="">
                     </div>
                       <br/>
 
                 <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <p><b>Estado:</b></p>
+                         <h3>Estado:</h3>
                          <select id="Select1" class="form-control" runat="server">
                                <option value="1" >Estado 1</option>
                                <option value="2" >Estado 2</option>
@@ -101,7 +102,7 @@
 
                  <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 2-->
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <p><b>Ciudad:</b></p>
+                         <h3>Ciudad:</h3>
                         <select id="Select2" class="form-control" runat="server">
                                <option value="1" >ciudad1</option>
                                <option value="2" >ciudad2</option>
@@ -112,20 +113,20 @@
                 </div>
                       <br/>
                           <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>DIreccion Dojo:</b></p>
+                      <h3>DIreccion Dojo:</h3>
                       <input type="text" name="nombreDojo" id="direDojo" placeholder="Direccion" class="form-control" value="">
                     </div>
                       <br/>
 
                  <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Dirección:</b></p>
+                      <h3>Dirección:</h3>
                       <div id="googleMap" style="width:500px;height:250px;"></div><br/>
                     </div>
                       <br/>
                       
                 <div class="form-group">
                     <div class="col-sm-10 col-md-10 col-lg-10">
-                        <p><b>Elegir Administrador:</b></p>
+                        <h3>Elegir Administrador:</h3>
                         <label class="radio-inline">
                         <input type="radio" name="radioTipo"  id="input_nuevo"  onclick="return fillCodigoTextField();"/>Nuevo</label>
                         <label class="radio-inline">
@@ -133,12 +134,12 @@
                     </div>
                 </div>
                    <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Estilo:</b></p>
+                      <h3>Estilo:</h3>
                       <input type="text" name="estiloDojo" id="estiloDojo" class="form-control" readonly="readonly" value="Estilo 1">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Reglamento Interno:</b></p>
+                      <h3>Reglamento Interno:<h3>
                       <textarea class="form-control" id="reglaDojo" name="reglaDojo">1. Regla 1
 2. Regla 2
 3. Regla 3
@@ -146,7 +147,7 @@
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Status:</b></p>
+                      <h3>Status:</h3>
                      <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
                             <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo">
                         </a>
@@ -156,36 +157,34 @@
                    
 
                     <!--Date picker FECHA-->
-    <div class="form-group col-sm-4 col-md-3 col-lg-4">
-          <p><b>      Matricula:</b></p>
-        <br />
-        <p>Fecha de vigencia</p>
-        <div class="input-group input-append date" id="datePickerfecha">
-        <input type="text" class="form-control" name="date" />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-        </div>
-    </div>
-
-
-
-                    
-                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <p><b>Tipo Mensualidad:</b></p>
-                        <select id="tipo_mensualidad" class="form-control" runat="server">
-                               <option value="1" >Anual</option>
-                               <option value="2" >Semestral</option>
-                               <option value="3" >Trimestral</option>
-                            <option value="4" >Mensual</option>
-                        </select>            
-                      </div>
-                      <br/>
-
-  
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Monto Matricula:</b></p>
-                      <input type="text" name="cmatriDojo" id="cmatriDojo" placeholder="*Costo Matricula" class="form-control" value="">
+                <div class="form-group col-sm-4 col-md-3 col-lg-4">
+                      <h3>Matricula:<h3>
+                    <br />
+                    <h3>Fecha de vigencia<h3>
+                    <div class="input-group input-append date" id="datePickerfecha">
+                    <input type="text" class="form-control" name="date" />
+                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
-            </div>  <!--Fin del listado del formulario -->
+                </div>
+
+
+                <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                     <h3>Tipo Mensualidad:</h3>
+                    <select id="Select3" class="form-control" runat="server">
+                     <option value="1" >Anual</option>
+                     <option value="2" >Semestral</option>
+                     <option value="3" >Trimestral</option>
+                     <option value="4" >Mensual</option>
+                     </select>            
+                 </div>
+                 <br/>
+                    
+                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                    <h3>Monto Matricula:</h3>
+                    <input type="text" name="cmatriDojo" id="cmatriDojo" placeholder="*Costo Matricula" class="form-control" value="">
+                    </div>
+
+                  </div>  <!--Fin del listado del formulario -->
    
 
                   <div class="box-footer">

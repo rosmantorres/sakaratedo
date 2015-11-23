@@ -31,12 +31,12 @@ namespace templateApp.GUI.Modulo4 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect Select2;
         
         /// <summary>
-        /// Control tipo_mensualidad.
+        /// Control Select3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect tipo_mensualidad;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Select3;
     }
 }

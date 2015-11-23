@@ -57,12 +57,9 @@
         <table id="tabladojos" class="table table-bordered table-striped dataTable">
             <thead>
 				<tr>
-                      <th style="text-align:center">Foto</th>
+                    <th style="text-align:center">Foto</th>
                     <th style="text-align:center">Rif</th>
 					<th style="text-align:center">Nombre</th>
-					<th style="text-align:center">Teléfono</th>
-                    <th style="text-align:center">Email</th>
-					<th style="text-align:center">Pais</th>
                     <th style="text-align:center">Estado</th>
                     <th style="text-align:center">Ciudad</th>
                     <th style="text-align:center">Status</th>
@@ -74,9 +71,6 @@
                      <td><img src="Imagenes\Aikido.png" alt="" style="width:50px; height:auto;"></td>
 					<td class="id">J-17280493-1</td>
 					<td>Aikido</td>
-					<td>55-4567899</td>
-                    <td>Aikido@Dojo.com</td>
-					<td>Brasil</td>
                     <td>Río de Janeiro</td>
                     <td>Río de Janeiro</td>
                     <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
@@ -89,102 +83,7 @@
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
-                <tr>
-                     <td><img src="Imagenes\hokuto.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280434-1</td>
-					<td>hokuto</td>
-					<td>0212-4567811</td>
-                    <td>hokuto@Dojo.com</td>
-					<td>Venezuela</td>
-                    <td>Distrito Capital</td>
-                    <td>Caracas</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\Dai-Fu.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280422-1</td>
-					<td>Dai-Fu</td>
-					<td>0212-4533899</td>
-                      <td>Dai-Fu@Dojo.com</td>
-					<td>Colombia</td>
-                    <td>Distrito Capital</td>
-                    <td>Bogotá</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                     
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\Kaizen.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280433-1</td>
-					<td>Kaizen</td>
-					<td>0212-4567800</td>
-                    <td>Kaizen@Dojo.com</td>
-					<td>Chile</td>
-                    <td>Estado 4</td>
-                    <td>Santiago de Chile</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\rendoki.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280456-1</td>
-					<td>rendoki</td>
-					<td>0212-4567867</td>
-                    <td>rendoki@Dojo.com</td>
-					<td>España</td>
-                    <td>Madrid</td>
-                    <td>Madrid </td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\bushido.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280234-1</td>
-					<td>bushido</td>
-					<td>0212-2345678</td>
-                    <td>bushido@Dojo.com</td>
-					<td>Estados Unidos</td>
-                    <td>NY</td>
-                    <td>Edison</td> 
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
+               <!-- asp:Literal runat="server" ID="laTabla"></asp:Literal> -->
 			    </tbody>
             </table>
            </div>
