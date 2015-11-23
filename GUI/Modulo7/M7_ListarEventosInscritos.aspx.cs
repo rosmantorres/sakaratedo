@@ -33,7 +33,7 @@ namespace templateApp.GUI.Modulo7
             }
 
             #region Llenar Data Table con Eventos
-            LogicaEventosAsistidos logEvento = new LogicaEventosAsistidos();
+            LogicaEventosInscritos logEvento = new LogicaEventosInscritos();
 
             if (!IsPostBack)
             {
