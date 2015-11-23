@@ -429,14 +429,14 @@ GO
 CREATE
   TABLE INSCRIPCION
   (
+	ins_id                    		   INTEGER IDENTITY(1,1) NOT NULL ,
     PERSONA_per_id                     INTEGER NOT NULL ,
     ins_fecha                          DATE NOT NULL ,
     SOLICITUD_PLANILLA_sol_pla_id      INTEGER ,
     SOLICITUD_PLANILLA_PLANILLA_pla_id INTEGER ,
     COMPETENCIA_comp_id                INTEGER ,
     EVENTO_eve_id                      INTEGER ,
-    ins_id                             INTEGER NOT NULL ,
-    CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (PERSONA_per_id)
+    CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (ins_id ,PERSONA_per_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
