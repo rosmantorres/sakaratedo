@@ -173,7 +173,7 @@ GO
 CREATE
   TABLE DOJO
   (
-    doj_id             INTEGER NOT NULL ,
+    doj_id             INTEGER IDENTITY(1,1) NOT NULL ,
     doj_rif            VARCHAR (150) NOT NULL ,
     doj_nombre         VARCHAR (150) NOT NULL ,
     doj_telefono       INTEGER NOT NULL ,
@@ -306,6 +306,7 @@ GO
 CREATE
   TABLE HISTORIAL_MATRICULA
   (
+	his_mat_id INTEGER IDENTITY(1,1) NOT NULL,
     his_mat_fecha_vigente DATE NOT NULL ,
     his_mat_modalidad     VARCHAR (50) NOT NULL ,
     his_mat_monto FLOAT NOT NULL ,
@@ -636,7 +637,7 @@ GO
 CREATE
   TABLE REGLAMENTO
   (
-    reg_id               INTEGER NOT NULL ,
+    reg_id               INTEGER IDENTITY(1,1) NOT NULL ,
     reg_nombre           VARCHAR (150) NOT NULL ,
     reg_descripcion      VARCHAR (150) NOT NULL ,
     reg_fecha_registrada DATE NOT NULL ,
