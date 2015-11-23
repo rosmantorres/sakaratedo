@@ -59,11 +59,7 @@
     <modulo id="5"></modulo>
   </opcion>
 
-  <opcion nombre="Modificar Cintas por Organizacion" link="~/GUI/Modulo5/M5_ModificarCintas.aspx">
-    <modulo id="5"></modulo>
-  </opcion>
-
-  <opcion nombre="Crear Cintas por Organizacion" link="~/GUI/Modulo5/M5_CrearCintas.aspx">
+  <opcion nombre="Agregar Cintas por Organizacion" link="~/GUI/Modulo5/M5_CrearCintas.aspx">
     <modulo id="5"></modulo>
   </opcion>
 

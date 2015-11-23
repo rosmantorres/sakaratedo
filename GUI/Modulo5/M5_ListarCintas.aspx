@@ -33,22 +33,18 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
 
-       <div class="form-group">
-           <label for="org" class="col-lg-2 control-label">Organizaciones</label>
-       <div class="col-xs-5 dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Seleccione...
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <li><a href="#">Shito Ryu</a></li>
-    <li><a href="#">Budokai</a></li>
-    <li><a href="#">Hombu</a></li>
-  </ul>
-</div>
-</div>  <!-- fin dropdown de Organizaciones -->
+       <div class="form-group col-sm-10 col-md-10 col-lg-10 text-center">
+                                     <h3>Seleccione una Organización</h3>
+                                     <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
+                                     <option>Org A</option>
+                                     <option>Org B</option>
+                                     <option>Org C</option>      
+                                     </select>
+                                     <br />
+                        <br />
+                        </div> <!-- Lista de Organizaciones -->
 
-
+    
      <div id="alert" runat="server">
     </div>
 
@@ -80,8 +76,8 @@
 					<td>Kyu</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="M5_Modificar.aspx"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
                 <tr>
@@ -91,7 +87,7 @@
 					<td>Kyu</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
 				</tr><tr>
@@ -101,7 +97,7 @@
 					<td>Kyu</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -112,7 +108,7 @@
 					<td>Dan</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
@@ -123,7 +119,7 @@
 					<td>Dan</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
                 </tr>
@@ -200,7 +196,6 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-
             var table = $('#example').DataTable({
                 "language": {
                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
@@ -208,13 +203,11 @@
             });
             var req;
             var tr;
-
             $('#example tbody').on('click', 'a', function () {
                 if ($(this).parent().hasClass('selected')) {
                     req = $(this).parent().prev().prev().prev().prev().text();
                     tr = $(this).parents('tr');//se guarda la fila seleccionada
                     $(this).parent().removeClass('selected');
-
                 }
                 else {
                     req = $(this).parent().prev().prev().prev().prev().text();
@@ -223,9 +216,6 @@
                     $(this).parent().addClass('selected');
                 }
             });
-
-
-
             $('#modal-delete').on('show.bs.modal', function (event) {
                 var modal = $(this)
                 modal.find('.modal-title').text('Eliminar Cinta:  ' + req)
@@ -235,10 +225,7 @@
                 table.row(tr).remove().draw();//se elimina la fila de la tabla
                 $('#modal-delete').modal('hide');//se esconde el modal
             });
-
-
         });
-
         </script>
 
 </asp:Content>
