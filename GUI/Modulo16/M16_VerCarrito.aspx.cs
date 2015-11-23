@@ -45,15 +45,43 @@ namespace templateApp.GUI.Modulo16
             }
 
             //Nos indica si hubo alguna accion de agregar, registrar pago o eliminar
-            String accion = Request.QueryString["success"];
+            String accion = Request.QueryString["accion"];
             switch (accion)
             {
+                //Si se viene de un registrar pago se procedera a mostrar la alerta correspondiente
+                case "2":
+                    //Obtenemos el exito o fallo del proceso
+                    string exito = Request.QueryString["exito"];
+
+                    //Si el registrar pago fue exitoso o no se procedera dar la alerta correspondiente
+                    if (exito.Equals("1"))
+                    {
+                        //Limpiamos y mostramos la informacion
+                        this.carritoCompras.limpiar();
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago se ha" +
+                            " realizado exitosamente</div>";
+                    }
+                    else
+                    {
+                        //Si el registrar pago fue fallido mostramos la alerta
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago no se ha" +
+                            " realizado exitosamente</div>";
+                    }
+                    break;
                 //Si se viene de un eliminar se procedera a eliminar y mostrar la alerta correspondiente
                 case "3":
+                    //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
                     bool respuesta = logicaCarrito.eliminarItem(1, 1, 1);
                     if (respuesta)
                     {
-                        //Si el eliminar fue exitoso mostramos esta alerta
+                        //Si el eliminar fue exitoso mostramos esta alerta y eliminamos del carrito en la clase
+                        this.carritoCompras.eliminarItem(1, 1);
                         alert.Attributes["class"] = "alert alert-success alert-dismissible";
                         alert.Attributes["role"] = "alert";
                         alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\""+
@@ -171,11 +199,54 @@ namespace templateApp.GUI.Modulo16
         /// <summary>
         /// Metodo que se encarga de efectuar el pago de los productos en el carrito
         /// </summary>
-        public void Registrarpago()
+
+        protected void registrarPago(object sender, EventArgs e)
         {
-            bool respuesta = logicaCarrito.registrarPago(1,null);
+            //Lista que almacenara los datos correspondientes segun el tipo de pago
+            List<int> datosPago = new List<int>();
+
+            //Si se ha elegido un tipo de pago correcto
+            if(!DropDownList1.Value.Equals("-1"))
+            {
+                //Si se ha elegido tarjeta se procede a guardar sus datos
+                if (DropDownList1.Equals("1"))
+                {
+                    datosPago.Add(int.Parse(Text1.Value));
+                    datosPago.Add(int.Parse(Text2.Value));
+                    datosPago.Add(int.Parse(Text3.Value));
+                    datosPago.Add(int.Parse(Text4.Value));
+                }
+                //Si se ha elegido deposito se procede a guardar sus datos
+                else if (DropDownList1.Equals("2"))
+                {
+                    datosPago.Add(int.Parse(Text5.Value));
+                    datosPago.Add(int.Parse(Text6.Value));
+                    datosPago.Add(int.Parse(Text7.Value));
+                }
+                //Si se ha elegido transferencia se procede a guardar sus datos
+                else
+                {
+                    datosPago.Add(int.Parse(Text8.Value));
+                    datosPago.Add(int.Parse(Text9.Value));
+                    datosPago.Add(int.Parse(Text10.Value));
+                }
+
+                //Se registra el pago y se obtiene el exito o fallo
+                bool exito = this.logicaCarrito.registrarPago(int.Parse(DropDownList1.Value), datosPago);
+
+                //Analizamos las condiciones
+                if (exito)
+                {
+                    //Si se pudo registrar el pago
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
+                }
+                else
+                    //Si no se pudo registrar el pago
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0");
+            }
         }
         #endregion
+
     }
             
 }
