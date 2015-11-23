@@ -36,8 +36,8 @@ namespace DominioSKD
 
         public String Fecha_creacion
         {
-            get { return Fecha_creacion; }
-            set { Fecha_creacion = value; }
+            get { return fecha_creacion; }
+            set { fecha_creacion = value; }
         }
         #endregion
 
