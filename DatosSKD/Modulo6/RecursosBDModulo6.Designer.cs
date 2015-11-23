@@ -88,7 +88,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mat_fecha_creacion.
+        ///   Looks up a localized string similar to matricula_fecha_creacion.
         /// </summary>
         internal static string Atribute_Matricula_Creacion {
             get {
@@ -97,7 +97,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mat_activa.
+        ///   Looks up a localized string similar to matricula_activa.
         /// </summary>
         internal static string Atribute_Matricula_Estado {
             get {
@@ -106,7 +106,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mat_id.
+        ///   Looks up a localized string similar to matricula_id.
         /// </summary>
         internal static string Atribute_Matricula_Id {
             get {
@@ -115,7 +115,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mat_identificador.
+        ///   Looks up a localized string similar to matricula_identificador.
         /// </summary>
         internal static string Atribute_Matricula_Identificador {
             get {
@@ -124,7 +124,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mat_ultimo_pago.
+        ///   Looks up a localized string similar to matricula_ultimo_pago.
         /// </summary>
         internal static string Atribute_Matricula_Ultima_Fecha {
             get {
@@ -286,7 +286,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to rel_tipo.
+        ///   Looks up a localized string similar to relacion_tipo.
         /// </summary>
         internal static string Atribute_Relacion_Tipo {
             get {
@@ -295,7 +295,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sol_inc_fecha_actualizacion.
+        ///   Looks up a localized string similar to solicitud_inc_fecha_actualizacion.
         /// </summary>
         internal static string Atribute_Solicitud_Actualizacion {
             get {
@@ -304,7 +304,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sol_inc_fecha_creacion.
+        ///   Looks up a localized string similar to solicitud_inc_fecha_creacion.
         /// </summary>
         internal static string Atribute_Solicitud_Creacion {
             get {
@@ -313,7 +313,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sol_inc_estado.
+        ///   Looks up a localized string similar to solicitud_inc_estado.
         /// </summary>
         internal static string Atribute_Solicitud_Estado {
             get {
@@ -322,7 +322,7 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sol_inc_id.
+        ///   Looks up a localized string similar to solicitud_inc_id.
         /// </summary>
         internal static string Atribute_Solicitud_Id {
             get {
@@ -489,6 +489,15 @@ namespace DatosSKD.Modulo6 {
         internal static string Sexo_Masculino {
             get {
                 return ResourceManager.GetString("Sexo_Masculino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agregar_Email.
+        /// </summary>
+        internal static string SP_Add_Correo {
+            get {
+                return ResourceManager.GetString("SP_Add_Correo", resourceCulture);
             }
         }
         
