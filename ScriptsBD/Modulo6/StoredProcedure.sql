@@ -225,7 +225,7 @@ CREATE PROCEDURE Modificar_Solicitud
 AS
 BEGIN
 	UPDATE dbo.SOLICITUD_INSCRIPCION
-	SET sol_inc_estado = @estado_usuario, sol_inc_fecha_actualizacion = GETDATE()
+	SET sol_inc_estado = @estado_solicitud, sol_inc_fecha_actualizacion = GETDATE()
 	WHERE sol_inc_id = @id_solicitud
 	;
 END
