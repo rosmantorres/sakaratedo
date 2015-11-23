@@ -139,12 +139,14 @@ CREATE PROCEDURE Agregar_Solicitud
 AS
 BEGIN
 	INSERT INTO dbo.SOLICITUD_INSCRIPCION(
-		sol_inc_fecha_creacion, 
+		sol_inc_fecha_creacion,
+		sol_inc_fecha_actualizacion, 
 		sol_inc_estado, 
 		PERSONA_per_id, 
-		DOJO_doj_id) 
+		DOJO_doj_id,) 
 	VALUES (
 		GETDATE(), 
+		GETDATE(),
 		'PENDIENTE', 
 		@id_persona, 
 		@id_dojo);	
