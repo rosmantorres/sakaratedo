@@ -75,106 +75,91 @@
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Datos Personales</legend>
                     <div class="form-group">
-                        <label for="imputNombres" class="control-label col-xs-2">Nombres:</label>
+                        <label for="nameBox" class="control-label col-xs-2">Nombres:</label>
                         <div class="col-xs-10">
-                            <input class="form-control" id="imputNombres"  placeholder="ej: Romulo Jose" required/>
+                            <asp:TextBox id="nameBox" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="imputApellidos" class="control-label col-xs-2">Apellidos:</label>
+                        <label for="lastBox" class="control-label col-xs-2">Apellidos:</label>
                         <div class="col-xs-10">
-                            <input class="form-control" id="imputApellidos" placeholder="ej: Romulo Jose" required/>
+                            <asp:TextBox id="lastBox" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="dateNacimiento" class="control-label col-xs-2">Fecha de Nacimiento:</label>
+                        <label for="birthBox" class="control-label col-xs-2">Fecha de Nacimiento:</label>
                         <div class="col-xs-10">
-                            <input type="text" id="dateNacimiento" readonly class="form-control" placeholder="dd/mm/aaaa" required/>
+                            <asp:TextBox id="birthBox" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="selectNacionalidad" class="control-label col-xs-2">Nacionalidad:</label>
+                        <label for="natBox" class="control-label col-xs-2">Nacionalidad:</label>
                         <div class="col-xs-10">
-                            <button id="selectNacionalidad" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Seleccione una Nacionalidad <span class="caret"></span>
-                            </button>
-                            <ol id="selectNacionalidadOpts" class="dropdown-menu" role="menu"  onclick="">
-                                <li value="1"><a href="#">Venezolano</a></li>
-                                <li value="2"><a href="#">Extranjero</a></li>
-                            </ol>
+                            <asp:TextBox id="natBox" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputCI" class="control-label col-xs-2">Cédula o Pasaporte:</label>
+                        <label for="idBox" class="control-label col-xs-2">Cédula o Pasaporte:</label>
                         <div class="col-xs-10">
-                            <input data-validation="number" type="text" class="form-control" id="inputCI" placeholder="ej: 19513536" required/>
+                            <asp:TextBox id="idBox" data-validation="number" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="selectSex" class="control-label col-xs-2">Sexo:</label>
+                        <label for="sexGroup" class="control-label col-xs-2">Sexo:</label>
                         <div class="col-xs-10">
-                            <label class="radio-inline"><input type="radio" name="selectSex" checked>Femenino</label>
-                            <label class="radio-inline"><input type="radio" name="selectSex">Masculino</label>
+                            <asp:RadioButton id="femRadio" CssClass="radio-inline" Text="Femenino" Checked="False" GroupName="sexGroup" runat="server" />
+                            <asp:RadioButton id="masRadio" CssClass="radio-inline" Text="Masculino" Checked="False" GroupName="sexGroup" runat="server" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputMail" class="control-label col-xs-2">Correo Electrónico:</label>
+                        <label for="emailBox" class="control-label col-xs-2">Correo Electrónico:</label>
                         <div class="col-xs-10">
-                            <input type="email" class="form-control" id="inputMail" placeholder="ej: pedro@gmail.com" data-validation="email"/>
+                            <asp:TextBox id="emailBox" data-validation="email" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputTelf" class="control-label col-xs-2">Teléfono:</label>
+                        <label for="telfBox" class="control-label col-xs-2">Teléfono:</label>
                         <div class="col-xs-10">
-                            <input type="text" id="inputTelf" class="form-control"  placeholder="Ej: (0212)451-54-54" data-validation="custom" data-validation-regexp="((\(\d{3,4}\)|\d{3,4}-)\d{4,9}(-\d{1,5}|\d{0}))|(\d{4,12})"/>
+                            <asp:TextBox id="telfBox" cssclass="form-control" data-validation="custom" data-validation-regexp="((\(\d{3,4}\)|\d{3,4}-)\d{4,9}(-\d{1,5}|\d{0}))|(\d{4,12})" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputMovil" class="control-label col-xs-2">Teléfono Móvil:</label>
+                        <label for="mobileBox" class="control-label col-xs-2">Teléfono Móvil:</label>
                         <div class="col-xs-10">
-                            <input type="text" id="inputMovil" class="form-control" placeholder="Ej: (0212)451-54-54" data-validation="custom" data-validation-regexp="((\(\d{3,4}\)|\d{3,4}-)\d{4,9}(-\d{1,5}|\d{0}))|(\d{4,12})"/>
+                            <asp:TextBox id="mobileBox" cssclass="form-control" data-validation="custom" data-validation-regexp="((\(\d{3,4}\)|\d{3,4}-)\d{4,9}(-\d{1,5}|\d{0}))|(\d{4,12})" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="textareaDir" class="control-label col-xs-2">Direccion de habitación:</label>
+                        <label for="addressBox" class="control-label col-xs-2">Direccion de habitación:</label>
                         <div class="col-xs-10">
-                            <textarea id="textareaDir" class="form-control col-xs-2" rows="5"></textarea>
+                            <asp:TextBox id="addressBox" textmode="MultiLine" rows="5" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="selectSangre" class="control-label col-xs-2">Tipo de Sangre:</label>
+                        <label for="bloodDrop" class="control-label col-xs-2">Tipo de Sangre:</label>
                         <div class="col-xs-10">
-                        <button id="selectSangre" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Seleccione un tipo de sangre <span class="caret"></span>
-                            </button>
-                            <ol id="selectSangreOpts" class="dropdown-menu" role="menu"  onclick="">
-                                <li value="1"><a href="#">O-</a></li>
-                                <li value="2"><a href="#">O+</a></li>
-                                <li value="3"><a href="#">A-</a></li>
-                                <li value="4"><a href="#">A+</a></li>
-                                <li value="5"><a href="#">B-</a></li>
-                                <li value="6"><a href="#">B+</a></li>
-                                <li value="7"><a href="#">AB-</a></li>
-                                <li value="8"><a href="#">AB+</a></li>
-                            </ol>
+                        <div class="dropdown" runat="server" id="divBloodDrop">
+                            <asp:DropDownList id="bloodDrop"  cssclass="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="bloodDropChanged" AutoPostBack="true">
+                            </asp:DropDownList>
+                        </div> 
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="textareaAlegias" class="control-label col-xs-2">Alergias:</label>
+                        <label for="alergyBox" class="control-label col-xs-2">Alergias:</label>
                         <div class="col-xs-10">
-                            <textarea id="textareaAlegias" class="form-control col-xs-2" rows="5"></textarea>
+                            <asp:TextBox id="alergyBox" textmode="MultiLine" rows="5" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPeso" class="control-label col-xs-2">Peso:</label>
+                        <label for="weightBox" class="control-label col-xs-2">Peso:</label>
                         <div class="col-xs-10">
-                            <input type="text" id="inputPeso" class="form-control"/>
+                            <asp:TextBox id="weightBox" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEstatura" class="control-label col-xs-2">Estatura:</label>
+                        <label for="heightBox" class="control-label col-xs-2">Estatura:</label>
                         <div class="col-xs-10">
-                            <input type="text" id="inputEstatura" class="form-control"/>
+                            <asp:TextBox id="heightBox" cssclass="form-control" runat="server" required></asp:TextBox>
                         </div>
                     </div>
                 </fieldset>
