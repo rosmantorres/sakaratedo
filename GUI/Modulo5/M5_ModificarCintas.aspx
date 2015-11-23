@@ -32,6 +32,10 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div class="box box-primary">
+        <div class="box-header with-border">
+                  <h3 class="box-title">Modificar Cinta</h3>
+                </div><!-- /.box-header -->
    <form class="form-horizontal" role="form">
         <div class="form-group">
     <label for="color" class="col-lg-2 control-label">Organización</label>
@@ -60,11 +64,15 @@
     </div>
   </div>
 
-    <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-danger">Modificar</button>
-    </div>
-  </div>
+    
+    <div class="box-footer text-center">
+                    &nbsp;&nbsp;&nbsp;&nbsp
+                    <button id="btn-modificarCintas" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="alertModificarCinta();">Modificar</button>
+                    &nbsp;&nbsp
+                    <a class="btn btn-default" href="M3_ListarCintas.aspx">Cancelar</a>
+                  </div>
+  
 
  </form>
+       </div>
 </asp:Content>
