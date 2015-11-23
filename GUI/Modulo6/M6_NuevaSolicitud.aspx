@@ -40,6 +40,7 @@
     <div class="box box-body">
         <div>
             <form class="form-horizontal">
+                <!--
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Seleccion de Dojo</legend>
                     <div class="form-group">
@@ -69,7 +70,7 @@
                             </ol>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset>-->
 
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Datos Personales</legend>
