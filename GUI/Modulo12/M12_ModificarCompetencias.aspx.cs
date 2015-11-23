@@ -11,6 +11,26 @@ namespace templateApp.GUI.Modulo12
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((SKD)Page.Master).IdModulo = "12.1";
+        }
+
+        protected void btn_modificarComp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboCintaDesde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboCintaHasta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

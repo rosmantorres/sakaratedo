@@ -62,7 +62,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Eventos y Competencias</a> 
+			    <a href="~/GUI/Modulo9/M9_ListarEventos.aspx">Eventos y Competencias</a> 
 		    </li>
 		
 		    <li class="active">
@@ -77,6 +77,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Competencias
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <form runat="server" role="form" name="eliminar_competencia" id="eliminar_competencia" method="post" action="M12_ListarCompetencias.aspx?success=2">
 
     <div id="alert" runat="server">
     </div>
@@ -96,93 +97,18 @@
 				<tr>
 					<th style="text-align:left">Nombre</th>
 					<th style="text-align:left">Tipo</th>
-					<th style="text-align:left">Organizaciones Participantes</th>
+					<th style="text-align:left">Organización</th>
+<%--                    <th style="text-align:left">Fecha Inicio</th>
+                    <th style="text-align:left">Fecha Fin</th>--%>
                     <th style="text-align:left">Ubicación</th>
-					<th style="text-align:left">Categoria</th>
+<%--					<th style="text-align:left">Categoria</th>--%>
                     <th style="text-align:left">Status</th>
 					<th style="text-align:left">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">Nacional Juvenil F.V.K.D.</td>
-					<td>Kata</td>
-					<td>Seito Yodan Ryu</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Seito Yodan Ryu</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Ozawa Cup</td>
-					<td>Kata</td>
-					<td>Tensho, Kenshin Ryu Kobudo</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Kenshin Ryu Kobudo</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Hayashi Ha</td>
-					<td>Kumite</td>
-					<td>Kihin, Doo Kan</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Doo Kan</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Competencia 4</td>
-					<td>Kumite</td>
-					<td>Organización 4</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Categoria 1</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Shin Kyoshi</td>
-					<td>Kata</td>
-					<td>Ryu Kobudo</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Cinta Purpura</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td class="id">Do Hombu</td>
-					<td>Kumite</td>
-					<td>Kenshin Ryu Kobudo</td>
-                    <td>Caracas, Venezuela</td>
-					<td>Cinta Naranja Raya Verde</td>
-                    <td>Por Iniciar</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                </tbody>
+                <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+		    </tbody>
             </table>
            </div>
        </div>
@@ -205,14 +131,14 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="M12_ListarCompetencias.aspx?eliminacionSuccess=2">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+         <asp:Button id="btn_eliminarComp" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarComp_Click" Text="Eliminar"></asp:Button>
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
         </div><!-- /.modal-delete-dialog -->
       </div><!-- /.modal-delete -->
 
-    		<div/ id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -240,6 +166,7 @@
 				</div>
 			</div>
 		</div>
+</form>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#tablacompetencias').DataTable();
