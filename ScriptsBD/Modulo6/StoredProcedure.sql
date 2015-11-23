@@ -8,15 +8,23 @@ CREATE PROCEDURE Agregar_Telefono
 	@telefono_id INTEGER OUTPUT
 AS
 BEGIN
-	INSERT INTO dbo.TELEFONO (
-		tel_numero,
-		PERSONA_per_id
-	)
-	VALUES (
-		@telefono_numero,
-		@persona_id
-	);
-	SELECT @telefono_id = SCOPE_IDENTITY();
+	SELECT @telefono_id = tel_id
+	FROM dbo.TELEFONO
+	WHERE
+			PERSONA_per_id = @persona_id
+			AND tel_numero = @telefono_numero;
+	IF @telefono_id IS NULL
+	BEGIN
+		INSERT INTO dbo.TELEFONO (
+			tel_numero,
+			PERSONA_per_id
+		)
+		VALUES (
+			@telefono_numero,
+			@persona_id
+		);
+		SELECT @telefono_id = SCOPE_IDENTITY();
+	END
 END
 
 /* Agrega un telefono de una Persona. */

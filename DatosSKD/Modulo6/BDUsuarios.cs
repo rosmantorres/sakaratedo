@@ -151,5 +151,44 @@ namespace DatosSKD.Modulo6
                 res = getValues(RecursosBDModulo6.SP_Chg_Persona, parametros);
             }
         }
+
+        public static void GuardarTelefonos(Persona per)
+        {
+            Parametro parametro;
+            List<Parametro> parametros;
+            List<Resultado> res;
+
+
+            foreach (Telefono tel in per.Telefonos)
+            {
+                parametros = new List<Parametro>();
+
+                parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_numero, SqlDbType.VarChar, tel.Numero.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                if (tel.ID == -1)
+                {
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_Id, SqlDbType.Int, true);
+                    parametros.Add(parametro);
+
+                    res = getValues(RecursosBDModulo6.SP_Add_Telefono, parametros);
+                    tel.ID = int.Parse(res.ToArray()[0].valor);
+                }
+                else
+                {
+                    // TODO Por Hacer
+                }
+
+                
+            }
+
+            
+
+
+        }
+
     }
 }
