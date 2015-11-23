@@ -88,6 +88,15 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dojo_id.
+        /// </summary>
+        internal static string Atribute_Dojo_Id {
+            get {
+                return ResourceManager.GetString("Atribute_Dojo_Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to matricula_fecha_creacion.
         /// </summary>
         internal static string Atribute_Matricula_Creacion {
@@ -516,6 +525,24 @@ namespace DatosSKD.Modulo6 {
         internal static string SP_Add_Telefono {
             get {
                 return ResourceManager.GetString("SP_Add_Telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agregar_Usuario.
+        /// </summary>
+        internal static string SP_Add_Usuario {
+            get {
+                return ResourceManager.GetString("SP_Add_Usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cambiar_Estado_Usuario.
+        /// </summary>
+        internal static string SP_Chg_Usuario_Estado {
+            get {
+                return ResourceManager.GetString("SP_Chg_Usuario_Estado", resourceCulture);
             }
         }
         

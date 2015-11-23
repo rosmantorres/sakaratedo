@@ -273,7 +273,16 @@
   <data name="SP_Add_Telefono" xml:space="preserve">
     <value>Agregar_Telefono</value>
   </data>
+  <data name="Atribute_Dojo_Id" xml:space="preserve">
+    <value>dojo_id</value>
+  </data>
   <data name="SP_Add_Correo" xml:space="preserve">
     <value>Agregar_Email</value>
+  </data>
+  <data name="SP_Add_Usuario" xml:space="preserve">
+    <value>Agregar_Usuario</value>
+  </data>
+  <data name="SP_Chg_Usuario_Estado" xml:space="preserve">
+    <value>Cambiar_Estado_Usuario</value>
   </data>
 </root>
