@@ -285,4 +285,13 @@
   <data name="SP_Chg_Usuario_Estado" xml:space="preserve">
     <value>Cambiar_Estado_Usuario</value>
   </data>
+  <data name="SP_Add_Solicitud" xml:space="preserve">
+    <value>Agregar_Solicitud</value>
+  </data>
+  <data name="SP_Chg_Persona" xml:space="preserve">
+    <value>Modificar_Persona</value>
+  </data>
+  <data name="SP_Chg_Solicitud" xml:space="preserve">
+    <value>Modificar_Solicitud</value>
+  </data>
 </root>
