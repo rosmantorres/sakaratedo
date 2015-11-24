@@ -73,7 +73,8 @@ namespace templateApp.GUI.Modulo16
                             "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago no se ha" +
                             " realizado exitosamente</div>";
                     }
-                    break;
+                break;
+
                 //Si se viene de un eliminar se procedera a eliminar y mostrar la alerta correspondiente
                 case "3":
                     //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
@@ -97,7 +98,7 @@ namespace templateApp.GUI.Modulo16
                             "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El item no ha"+
                             " sido eliminado</div>";
                     }
-                    break;
+                break;
             }
 
         }
