@@ -21,8 +21,13 @@ namespace PruebasUnitariasSKD.Modulo6
         private DocumentoIdentidad _documentoID;
         private String _direccion;
         private String _nacionalidad;
+        private String _telefono1;
+        private String _telefono2;
 
         private DominioSKD.Persona _per;
+        private DominioSKD.Telefono _tel1;
+        private DominioSKD.Telefono _tel2;
+
 
 
         [TestFixtureSetUp]
@@ -40,6 +45,8 @@ namespace PruebasUnitariasSKD.Modulo6
             this._documentoID.Tipo = TipoDocumento.Cedula;
             this._documentoID.TipoCedula = TipoCedula.Nacional;
             this._direccion = "La vega Los Mangos";
+            this._telefono1 = "04141234325";
+            this._telefono2 = "04125436734";
 
             this._per = new DominioSKD.Persona();
 
@@ -53,16 +60,25 @@ namespace PruebasUnitariasSKD.Modulo6
             this._per.DocumentoID = this._documentoID;
             this._per.Direccion = this._direccion;
             this._per.ContatoEmergencia = this._per;
+
+            this._tel1 = new Telefono();
+            this._tel2 = new Telefono();
+
+            this._tel1.Numero = this._telefono1;
+            this._tel2.Numero = this._telefono2;
+
         }
 
         [Test]
         public void Prueba1NoNulo()
         {
             Assert.IsNotNull(this._per);
+            Assert.IsNotNull(this._tel1);
+            Assert.IsNotNull(this._tel2);
         }
 
         [Test]
-        public void Prueba2SetGet()
+        public void Prueba2_1SetGetPersona()
         {
 
             Assert.AreEqual(this._per.Nombre, this._nombre);
@@ -78,22 +94,50 @@ namespace PruebasUnitariasSKD.Modulo6
         }
 
         [Test]
-        public void Prueba3GuardarNuevaPersona()
+        public void Prueba2_2SetGetTelefono()
+        {
+            Assert.AreEqual(this._tel1.Numero, this._telefono1);
+            Assert.AreEqual(this._tel2.Numero, this._telefono2);
+        }
+
+        [Test]
+        public void Prueba3_1SetAddTelefono()
+        {
+            this._per.agregarTelefono(this._tel1);
+            this._per.agregarTelefono(this._tel2);
+
+            Assert.AreEqual(this._per.Telefonos.Count, 2);
+            Assert.IsTrue(this._per.Telefonos.Contains(this._tel1));
+            Assert.IsTrue(this._per.Telefonos.Contains(this._tel2));
+        }
+
+        [Test]
+        public void Prueba4_1GuardarNuevaPersona()
         {
             DatosSKD.Modulo6.BDUsuarios.GuardarDatosDePersona(this._per);
             Assert.AreNotEqual(this._per.ID, -1);
         }
+
+        [Test]
+        public void Prueba4_2GuardarNuevosTelefonos()
+        {
+            DatosSKD.Modulo6.BDUsuarios.GuardarTelefonos(this._per);
+
+            Assert.AreNotEqual(this._tel1.ID, -1);
+            Assert.AreNotEqual(this._tel2.ID, -1);
+        }
+
 
         [TestFixtureTearDown]
         public void Salir(){
             if (this._per.ID != -1)
             {
                 BDConexion con = new BDConexion();
-                con.Conectar();
+                con.EjecutarQuery("DELETE FROM dbo.TELEFONO WHERE PERSONA_per_id = " + this._per.ID.ToString());
+                con = new BDConexion();
                 con.EjecutarQuery("DELETE FROM dbo.PERSONA WHERE per_id = " + this._per.ID.ToString());
             }
            
         }
-
     }
 }
