@@ -3,48 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Configuration;
+using DominioSKD;
 
 namespace DatosSKD.Modulo16
 {
     public class BDEvento
     {
-        #region Constructores
-        /// <summary>
-        /// Constructor vacio de la clase BDEvento
-        /// </summary>
-        public BDEvento()
-        {
-
-        }
-        #endregion
 
         #region Metodos
         /// <summary>
-        /// Metodo que obtiene todos los items del inventario en el carrito del usuario de la Base de Datos
+        /// Metodo que retorma una lista de eventos existentes
         /// </summary>
-        /// <param name="idUsuario">Usuario del que se desea ver los items del iventario agregados en carrito</param>
-        /// <returns>Lista con todos los items del inventario que se encuentran en el carrito</returns>
-        /*
-        public Evento detallarEvento(int objetoDetallar , int idUsario)
+        /// <param name=NONE>Este metodo no posee paso de parametros</param>
+        /// <returns>Todo lo que tiene actualmente el inventario de eventos</returns>
+        public static List<Evento> ListarEvento()
         {
+            BDConexion laConexion;
+            List<Evento> laListaDeEvento = new List<Evento>();
+            List<Parametro> parametros;
 
-        }*/
-
-
-        /// <summary>
-        /// Metodo que obtiene todas los eventos que se encuentras disponibles en el inventario de eventos
-        /// </summary>
-        /// <param name=NONE>El metodo no posee parametros particulares</param>
-        /// <returns>Lista con todos los eventos que se ofrecen en sakaratedo</returns>
-        /*
-        public evento consultaEvento()
-        {
-
-        }*/
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
 
 
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo16.CONSULTAR_EVENTOS, parametros);
 
+                foreach (DataRow row in dt.Rows)
+                {
+                    Evento elEvento = new Evento();
+
+                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                    elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                    elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+                    laListaDeEvento.Add(elEvento);
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return laListaDeEvento;
+
+        }
 
         #endregion
     }
 }
+
