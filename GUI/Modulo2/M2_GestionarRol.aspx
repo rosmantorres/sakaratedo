@@ -89,6 +89,57 @@
             </tbody>
         </table>
     </div>
+
+    <div id="modal-create" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3>Agregar nuevo rol a usuario</h3>
+                </div>
+                <div class="modal-body" aria-label="Close">
+                            <div class="row form-group">
+                                <label for="selectRole" class="control-label col-xs-2">Rol:</label>
+                                <div class="col-xs-10">
+                                <button id="selectRole" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Seleccione un rol <span class="caret"></span>
+                                    </button>
+                                    <ol id="selectRoleOpts" class="dropdown-menu" role="menu"  onclick="">
+                                        <li value="1"><a href="#">Entrenador</a></li>
+                                        <li value="2"><a href="#">Administrador</a></li>
+                                        <li value="2"><a href="#">Atleta</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                     <div class="row form-group">
+                        <label for="textareaDir" class="control-label col-xs-2">Descripción:</label>
+                        <div class="col-xs-10">
+                            <textarea readonly id="textareaRol" class="form-control col-xs-2" rows="5">Descripcion del rol</textarea>
+                        </div>
+                    </div>
+                </div>
+                  <div class="modal-footer" style="text-align: center">
+                    <input type="button" onserverclick="EliminarRol" value="Agregar" class="btn btn-success col-lg-offset-1" />
+                    <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3>¿Esta seguro que desea eliminar este rol?</h3>
+                </div>
+                  <div class="modal-footer" style="text-align: center">
+                    <input type="button" onserverclick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
+                    <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
+                  </div>
+            </div>
+        </div>
+    </div>
  </div>
       <script type="text/javascript">
           $(document).ready(function () {

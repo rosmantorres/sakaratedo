@@ -14,5 +14,9 @@ namespace templateApp.GUI.Modulo2
 
             ((SKD)Page.Master).IdModulo = "2";
         }
+        protected void EliminarRol(object sender, EventArgs e)
+        {
+            Console.Write("Entro al metodo");
+        }
     }
 }
