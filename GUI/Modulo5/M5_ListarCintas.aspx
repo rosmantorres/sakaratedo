@@ -33,22 +33,18 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
 
-       <div class="form-group">
-           <label for="org" class="col-lg-2 control-label">Organizaciones</label>
-       <div class="col-xs-5 dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Seleccione...
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <li><a href="#">Shito Ryu</a></li>
-    <li><a href="#">Budokai</a></li>
-    <li><a href="#">Hombu</a></li>
-  </ul>
-</div>
-</div>  <!-- fin dropdown de Organizaciones -->
+       <div class="form-group col-sm-10 col-md-10 col-lg-10 text-center">
+                                     <h3>Seleccione una Organización</h3>
+                                     <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
+                                     <option>Org A</option>
+                                     <option>Org B</option>
+                                     <option>Org C</option>      
+                                     </select>
+                                     <br />
+                        <br />
+                        </div> <!-- Lista de Organizaciones -->
 
-
+    
      <div id="alert" runat="server">
     </div>
 
