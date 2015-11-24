@@ -17,6 +17,10 @@ namespace DominioSKD
 
         #region metodos
 
+        public Diseño()
+        {
+            
+        }
         public Diseño(int id, string contenido)
         {
             this.id = id;

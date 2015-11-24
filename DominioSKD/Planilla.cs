@@ -14,7 +14,7 @@ namespace DominioSKD
         private string nombre;
         private Boolean status;
         private string tipoPlanilla;
-        private List<Diseño> diseño;
+        private Diseño diseño;
         private List<SolicitudPlanilla> solicitud;
 
         #endregion
@@ -39,11 +39,6 @@ namespace DominioSKD
         public void AgregarSolicitud(SolicitudPlanilla solicitud)
         {
             this.solicitud.Add(solicitud);
-        }
-
-        public void AgregarDiseño(Diseño diseño)
-        {
-            this.diseño.Add(diseño);
         }
 
         #endregion
@@ -74,7 +69,7 @@ namespace DominioSKD
             set { tipoPlanilla = value; }
         }
 
-        public List<Diseño> Diseño
+        public Diseño Diseño
         {
             get { return diseño; }
             set { diseño = value; }
