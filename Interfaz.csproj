@@ -43,6 +43,10 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1114,7 +1118,11 @@
     <Compile Include="GUI\Master\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Master\sessionTag.cs" />
+    <Compile Include="GUI\Master\RecursosInterfazMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosInterfazMaster.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.cs">
       <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1425,7 +1433,6 @@
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo1\login.cs" />
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1433,7 +1440,11 @@
     <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
       <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo1\mensajes.cs" />
+    <Compile Include="GUI\Modulo1\RecursosInterfazModulo1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosInterfazModulo1.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.cs">
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1703,6 +1714,10 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Master\RecursosInterfazMaster.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
@@ -1718,6 +1733,10 @@
     <EmbeddedResource Include="GUI\Modulo14\Inscripcion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
