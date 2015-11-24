@@ -24,6 +24,9 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div id="alert" runat="server">
+    </div>
+
     <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
             El Articulo Deportivo se ha Agregado Exitosamente al Carrito.
@@ -41,19 +44,22 @@
        <table id="tablaproducto" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:left">Nombre</th>
-					<th style="text-align:left">Marca</th>
-					<th style="text-align:left">Precio</th>
-					<th style="text-align:left">Acciones</th>
+					<th style="text-align:right">Id</th>
+                    <th style="text-align:right">Imagen</th>
+                    <th style="text-align:right">Nombre</th>
+					<th style="text-align:right">Marca</th>
+                    <th style="text-align:right">Tipo</th>
+					<th style="text-align:right">Precio</th>
+					<th style="text-align:right">Acciones</th>
 				</tr>
-			</thead>
+		</thead>
 			<tbody>
                 <asp:Literal runat="server" ID="laTabla"></asp:Literal>
 		    </tbody>
             </table>
         </div>
 
-                  <!--MODAL PARA EL DETALLE -->
+                  <!--MODAL PARA EL DETALLEDEL PRODUCTO -->
 <div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -109,9 +115,7 @@
 					</div>
 				</div>
 			</div>
-</div>
-
-    
+ </div>
 
      <!--VALIDACION PARA MODAL -->
     <script src="js/Validacion.js"></script>
@@ -119,7 +123,8 @@
          <script type="text/javascript">
              $(document).ready(function () {
 
-                 var table = $('#example').DataTable({
+                 var table = $('#tablaproducto').DataTable({
+                     "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                      "language": {
                          "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                      }
@@ -127,7 +132,7 @@
                  var req;
                  var tr;
 
-                 $('#example tbody').on('click', 'a', function () {
+                 $('#tablaproducto tbody').on('click', 'a', function () {
                      if ($(this).parent().hasClass('selected')) {
                          req = $(this).parent().prev().prev().prev().text();
                          tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -155,19 +160,6 @@
 
                  });
              });
-
-
-             function funcionCantidadObjetos(param) {
-
-                 
-
-                 if ($('#<%=DropDownList1.ClientID %>').val() != -1) {
-
-                     $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                 }
-                 else     
-                 $('#<%=Boton1.ClientID %>').attr("disabled", "disabled");
-             }
 
         </script>
 
