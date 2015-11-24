@@ -41,9 +41,13 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Competencia.cs" />
+    <Compile Include="Diseño.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Organizacion.cs" />
+    <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitudPlanilla.cs" />
+    <Compile Include="TipoPlanilla.cs" />
     <Compile Include="Ubicacion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
