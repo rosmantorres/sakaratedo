@@ -10,6 +10,7 @@ namespace DominioSKD
     {
 
         #region atributos
+
         private int id_dojo;
         private String rif_dojo;
         private String nombre_dojo;
@@ -17,9 +18,8 @@ namespace DominioSKD
         private String email_dojo;
         private String logo_dojo;
         private bool status_dojo;
+        private Ubicacion ubicacion;
         #endregion
-
-
 
         #region propiedades
 
@@ -64,12 +64,31 @@ namespace DominioSKD
             set { logo_dojo = value; }
         }
 
+        public Ubicacion Ubicacion
+        {
+            get { return ubicacion; }
+            set { ubicacion = value; }
+        }
+
+        #endregion
+
+        #region constructores
+
         //constructor vacio
         public Dojo()
-        { }
+        {
+            this.id_dojo = 0;
+            this.rif_dojo = "";
+            this.nombre_dojo = "";
+            this.telefono_dojo = 0;
+            this.email_dojo = "";
+            this.logo_dojo = "";
+            this.status_dojo = false;
+            this.ubicacion = null;
+        }
 
         //constructor con parametros 
-        public Dojo(int Id,string Rif,string Nombre,int Telefono,string Email,string Logo,bool Status)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Ubicacion ubicacion)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
@@ -78,9 +97,10 @@ namespace DominioSKD
             this.email_dojo = Email;
             this.logo_dojo = Logo;
             this.status_dojo = Status;
+            this.ubicacion = ubicacion;
         }
         //constructor sin id 
-        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status)
+        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Ubicacion ubicacion)
         {
             this.rif_dojo = Rif;
             this.nombre_dojo = Nombre;
@@ -88,9 +108,10 @@ namespace DominioSKD
             this.email_dojo = Email;
             this.logo_dojo = Logo;
             this.status_dojo = Status;
+            this.ubicacion = ubicacion;
         }
 
-#endregion
+      #endregion
 
     }
 }

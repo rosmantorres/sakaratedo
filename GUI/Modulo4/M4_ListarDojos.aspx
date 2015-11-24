@@ -83,7 +83,7 @@
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                      </td>
                 </tr>
-               <!-- asp:Literal runat="server" ID="laTabla"></asp:Literal> -->
+               
 			    </tbody>
             </table>
            </div>
