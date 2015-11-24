@@ -442,7 +442,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            var table = $('#example').DataTable({
+            var table1 = $('#tablainventario').DataTable({
+                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                 "language": {
                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                 }
@@ -450,7 +451,7 @@
             var req;
             var tr;
 
-                $('#example tbody').on('click', 'a', function () {
+                    $('#tablainventario tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         req = $(this).parent().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -463,6 +464,52 @@
                         $(this).parent().addClass('selected');
                     }
                 });
+
+
+                    var table2 = $('#tablamatricula').DataTable({
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+                    "language": {
+                        "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                    }
+                });
+
+                                $('tablamatricula tbody').on('click', 'a', function () {
+                        if ($(this).parent().hasClass('selected')) {
+                            req = $(this).parent().prev().prev().prev().text();
+                            tr = $(this).parents('tr');//se guarda la fila seleccionada
+                            $(this).parent().removeClass('selected');
+                        }
+                        else {
+                            req = $(this).parent().prev().prev().prev().text();
+                            tr = $(this).parents('tr');//se guarda la fila seleccionada
+                            table.$('tr.selected').removeClass('selected');
+                            $(this).parent().addClass('selected');
+                        }
+                    });
+
+
+                                var table3 = $('#tablaevento').DataTable({
+                                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+                                    "language": {
+                                        "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                                    }
+                                });
+
+                                $('tablaevento tbody').on('click', 'a', function () {
+                                    if ($(this).parent().hasClass('selected')) {
+                                        req = $(this).parent().prev().prev().prev().text();
+                                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                                        $(this).parent().removeClass('selected');
+                                    }
+                                    else {
+                                        req = $(this).parent().prev().prev().prev().text();
+                                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                                        table.$('tr.selected').removeClass('selected');
+                                        $(this).parent().addClass('selected');
+                                    }
+                                });
+
+
 
                 $('#modal-delete').on('show.bs.modal', function (event) {
                     var modal = $(this)
