@@ -8,22 +8,23 @@ using DatosSKD.Modulo16;
 
 namespace LogicaNegociosSKD.Modulo16
 {
-   public class Logicainventario
+    public class Logicainventario
     {
         #region Atributos
         /// <summary>
         /// Atributos de la clase Logicainventario
         /// </summary>
         private BDInventario inventarioBD;
+        private List<DominioSKD.Implemento> laListaDeInventario;
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Constructor vacio de la clase Logicainventario
+        /// Constructor que devuelve una lista de tipo implemento
         /// </summary>
         public Logicainventario()
         {
-
+            laListaDeInventario = obtenerListaDeInventario();
         }
         #endregion
 
@@ -32,32 +33,43 @@ namespace LogicaNegociosSKD.Modulo16
         #endregion
 
         #region Metodos
-        /*
         /// <summary>
-        /// Metodo que obtiene todos productos que se encuentran en el inventario
+        /// Metodo que obtiene todos productos o implementos que se encuentran en el inventario
         /// </summary>
         /// <param name=NONE>Este metodo no posee paso de parametros</param>
-        /// <returns>Retorna una lista de productos</returns>
-        public Producto consultarInventario()
+        /// <returns>Retorna una lista de implementos</returns>
+        public List<DominioSKD.Implemento> obtenerListaDeInventario()
         {
-            return List<Inventario>;
-        }
-        */
+            try
+            {
+                return BDInventario.ListarInventario();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
 
-        /*
-        /// <summary>
-        /// Metodo que obtiene todos productos que se encuentran en el inventario
-        /// </summary>
-        /// <param name="objetoDetallar">Indica el objeto a detallar</param>
-        /// <param name="idUsuario">Indica el identificador del Usuario que esta </param>
-        /// <returns>Retorna un producto en especifico</returns>
-        public Producto detallarInventario(int objetoDetallar, int idUsuario)
-        {
-            return null;
         }
-        */
+
+        /// <summary>
+        /// Metodo que devueve el detalle completo de un implemento en especifico recibiendo como parametro su id.
+        /// </summary>
+        /// <param name="Id_implemento">Indica el objeto a detallar</param>
+        /// <returns>Retorna un implemento en especifico</returns>
+        public DominioSKD.Implemento detalleImplementoXId(int Id_implemento)
+        {
+            try
+            {
+                return BDInventario.DetallarImplemento(Id_implemento);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         #endregion
 
     }
 }
+
