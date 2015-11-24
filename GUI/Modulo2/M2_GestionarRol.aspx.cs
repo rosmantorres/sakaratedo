@@ -16,7 +16,18 @@ namespace templateApp.GUI.Modulo2
         }
         protected void EliminarRol(object sender, EventArgs e)
         {
-            Console.Write("Entro al metodo");
+            Console.WriteLine("Entro al metodo EliminarROL");
+        }
+        protected void AgregarRol(object sender, EventArgs e)
+        {
+            Console.WriteLine("Entro al metodo agregarROL");
+        }
+        protected void Selection_Change(Object sender, EventArgs e)
+        {
+
+            Console.WriteLine("Entro al metodo Selection_change");
+            //String h= RolList.SelectedValue;
+
         }
     }
 }

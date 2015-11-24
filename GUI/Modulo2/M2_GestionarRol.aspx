@@ -45,6 +45,7 @@
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+<form method="post" action="#"  id="userRol" runat="server">
 <div class="box box-body">
     <div>
         <form class="form-horizontal">
@@ -101,14 +102,15 @@
                             <div class="row form-group">
                                 <label for="selectRole" class="control-label col-xs-2">Rol:</label>
                                 <div class="col-xs-10">
-                                <button id="selectRole" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Seleccione un rol <span class="caret"></span>
-                                    </button>
-                                    <ol id="selectRoleOpts" class="dropdown-menu" role="menu"  onclick="">
-                                        <li value="1"><a href="#">Entrenador</a></li>
-                                        <li value="2"><a href="#">Administrador</a></li>
-                                        <li value="2"><a href="#">Atleta</a></li>
-                                    </ol>
+                                    <asp:DropDownList id="RolList" class="btn btn-default dropdown-toggle" AutoPostBack="True" OnSelectedIndexChanged="Selection_Change" runat="server">
+
+                                          <asp:ListItem Selected="True" Value="White">-Seleccionar rol- </asp:ListItem>
+                                          <asp:ListItem Value="Silver"> Silver </asp:ListItem>
+                                          <asp:ListItem Value="DarkGray"> Dark Gray </asp:ListItem>
+                                          <asp:ListItem Value="Khaki"> Khaki </asp:ListItem>
+                                          <asp:ListItem Value="DarkKhaki"> Dark Khaki </asp:ListItem>
+
+                                    </asp:DropDownList>
                                 </div>
                             </div>
                      <div class="row form-group">
@@ -119,7 +121,7 @@
                     </div>
                 </div>
                   <div class="modal-footer" style="text-align: center">
-                    <input type="button" onserverclick="EliminarRol" value="Agregar" class="btn btn-success col-lg-offset-1" />
+                    <input type="button" runat="server" onserverclick="AgregarRol" value="Agregar" class="btn btn-success col-lg-offset-1" />
                     <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
                   </div>
             </div>
@@ -134,13 +136,14 @@
                     <h3>¿Esta seguro que desea eliminar este rol?</h3>
                 </div>
                   <div class="modal-footer" style="text-align: center">
-                    <input type="button" onserverclick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
+                    <input type="button" runat="server" onserverclick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
                     <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
                   </div>
             </div>
         </div>
     </div>
  </div>
+</form>
       <script type="text/javascript">
           $(document).ready(function () {
               $("#tableSolisitudes").DataTable({
