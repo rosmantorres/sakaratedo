@@ -69,7 +69,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>SKD</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="/dist/img/logofinal.png" style="max-width:80px;margin-top:3px;margin-left:0px" class="pull-left" />SA-KARATEDO</span>
+          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="../../dist/img/logofinal.png" style="max-width:80px;margin-top:3px;margin-left:0px" class="pull-left" />SA-KARATEDO</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation" style="background-color:#080B0C">
@@ -100,7 +100,7 @@
                     <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>SKD</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="/dist/img/carrito3.png" style="max-width:25px; height:25px; margin-top:10px;margin-left:0px" class="pull-left" /> </span>
+          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img src="../../dist/img/carrito3.png" style="max-width:25px; height:25px; margin-top:10px;margin-left:0px" class="pull-left" /> </span>
         </a>
                            
 					    </li>
@@ -159,15 +159,15 @@
                             </ul> 
                     </li>
                   <!-- Menu Footer-->
-                  <li class="user-footer">
+                  <li class="user-footer" >
                   <!--Comentado: Boton Profile
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                       fin de comentario:Boton Profile-->
-                      <form id="Form1" runat="server">
+                      <form >
                         <div id="Div1" class="pull-right" runat="server">
-                          <a id="A1" href="#" class="btn btn-default btn-flat" runat="server" onserverclick="logout">Sign out</a>
+                          <a id="A1" href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol=logout" ) %>" class="btn btn-default btn-flat" >Cerrar Sesión</a>
                         </div>
                     </form>
                   </li>
