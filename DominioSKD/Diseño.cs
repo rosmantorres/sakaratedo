@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Diseño
+    public class Diseño
     {
         #region atributos
 
@@ -26,6 +26,27 @@ namespace DominioSKD
         public Diseño(string contenido)
         {
             this.contenido = contenido;
+        }
+
+        public void Base64Encode()
+        {
+            byte[] cadenaByte = new byte[this.contenido.Length];
+            cadenaByte = System.Text.Encoding.UTF8.GetBytes(this.contenido);
+            string encodedCadena = Convert.ToBase64String(cadenaByte);
+            this.contenido = encodedCadena;
+        }
+
+        public void Base64Decode()
+        {
+            var encoder = new System.Text.UTF8Encoding();
+            var utf8Decode = encoder.GetDecoder();
+
+            byte[] cadenaByte = Convert.FromBase64String(this.contenido);
+            int charCount = utf8Decode.GetCharCount(cadenaByte, 0, cadenaByte.Length);
+            char[] decodedChar = new char[charCount];
+            utf8Decode.GetChars(cadenaByte, 0, cadenaByte.Length, decodedChar, 0);
+            string result = new String(decodedChar);
+            this.contenido = result;
         }
         #endregion
 

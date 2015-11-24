@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Planilla
+    public class Planilla
     {
         #region atributos
 
         private int id;
         private string nombre;
         private Boolean status;
-        private List<TipoPlanilla> tipoPlanilla;
+        private string tipoPlanilla;
         private List<Diseño> diseño;
         private List<SolicitudPlanilla> solicitud;
 
@@ -21,47 +21,40 @@ namespace DominioSKD
 
         #region metodos
 
-        public Planilla(string nombre, Boolean status, TipoPlanilla tipoPlanilla, Diseño diseño)
+        public Planilla(string nombre, Boolean status, string tipoPlanilla)
         {
             this.nombre = nombre;
             this.status = status;
-            this.tipoPlanilla.Add(tipoPlanilla);
-            this.diseño.Add(diseño);
+            this.tipoPlanilla=tipoPlanilla;
         }
 
-        public Planilla(string nombre, Boolean status, List<TipoPlanilla> tipoPlanilla, List<Diseño> diseño)
-        {
-            this.nombre = nombre;
-            this.status = status;
-            this.tipoPlanilla =tipoPlanilla;
-            this.diseño = diseño;
-        }
-
-        public Planilla(int id,string nombre, Boolean status, TipoPlanilla tipoPlanilla, Diseño diseño)
+        public Planilla(int id, string nombre, Boolean status, string tipoPlanilla)
         {
             this.id = id;
             this.nombre = nombre;
             this.status = status;
-            this.tipoPlanilla.Add(tipoPlanilla);
-            this.diseño.Add(diseño);
+            this.tipoPlanilla=tipoPlanilla;
         }
-
-        public Planilla(int id,string nombre, Boolean status, List<TipoPlanilla> tipoPlanilla, List<Diseño> diseño)
-        {
-            this.id = id;
-            this.nombre = nombre;
-            this.status = status;
-            this.tipoPlanilla = tipoPlanilla;
-            this.diseño = diseño;
-        }
-
+        
         public void AgregarSolicitud(SolicitudPlanilla solicitud)
         {
             this.solicitud.Add(solicitud);
         }
+
+        public void AgregarDiseño(Diseño diseño)
+        {
+            this.diseño.Add(diseño);
+        }
+
         #endregion
 
         #region gets y sets
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public string Nombre
         {
@@ -75,7 +68,7 @@ namespace DominioSKD
             set { status = value; }
         }
 
-        public List<TipoPlanilla> TipoPlanilla
+        public string TipoPlanilla
         {
             get { return tipoPlanilla; }
             set { tipoPlanilla = value; }

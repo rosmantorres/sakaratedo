@@ -43,9 +43,16 @@
   <!-- /.box-header -->
   <!-- form start -->
   <form role="form" name="diseno_planilla" id="diseno_planilla" method="post" action="M14_DisenoPlanilla.aspx?success=1"  runat="server">
+
+   <div id="alert" runat="server">
+    </div>
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
 
        <div class="col-xs-12 col-lg-12 col-md-12">
+         <div class="col-sm-9 col-lg-9 col-md-9">
+             <asp:Label ID="tipoPlanilla" runat="server"></asp:Label>
+             <asp:Label ID="Planilla" runat="server"></asp:Label>
+        </div>
          <div class="col-sm-9 col-lg-9 col-md-9">
             <CKEditor:CKEditorControl ID="CKEditor1"  Height="620px" runat="server">
             </CKEditor:CKEditorControl>
@@ -74,7 +81,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
        &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="btnguardar" class="btn btn-primary"  type="submit" runat="server" Text = "Guardar"  ></asp:Button>
+         <asp:Button id="btnguardar" class="btn btn-primary"  type="submit" runat="server" Text = "Guardar" OnClick="btnguardar_Click"  ></asp:Button>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M14_ConsultarPlanillas.aspx">Cancelar</a>
       </div>

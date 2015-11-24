@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class SolicitudPlanilla
+    public class SolicitudPlanilla
     {
         #region atributos
 
