@@ -1,0 +1,10 @@
+C:\Users\Jose\projects\sakaratedo\obj\Debug\Interfaz.csprojResolveAssemblyReference.cache
+C:\Users\Jose\projects\sakaratedo\obj\Debug\templateApp.GUI.Modulo12.M12_RecursoInterfaz.resources
+C:\Users\Jose\projects\sakaratedo\obj\Debug\Interfaz.csproj.GenerateResource.Cache
+C:\Users\Jose\projects\sakaratedo\obj\Debug\templateApp.dll
+C:\Users\Jose\projects\sakaratedo\obj\Debug\templateApp.pdb
+C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\Interfaz.csprojResolveAssemblyReference.cache
+C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\templateApp.GUI.Modulo12.M12_RecursoInterfaz.resources
+C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\Interfaz.csproj.GenerateResource.Cache
+C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\templateApp.dll
+C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\templateApp.pdb
