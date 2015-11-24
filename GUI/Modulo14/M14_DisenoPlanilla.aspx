@@ -33,6 +33,8 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
  
+    <div id="alert" runat="server">
+    </div>
     <div class="row">
    <div class="col-xs-12">
      <div class="box">
@@ -44,8 +46,7 @@
   <!-- form start -->
   <form role="form" name="diseno_planilla" id="diseno_planilla" method="post" action="M14_DisenoPlanilla.aspx?success=1"  runat="server">
 
-   <div id="alert" runat="server">
-    </div>
+   
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
 
        <div class="col-xs-12 col-lg-12 col-md-12">

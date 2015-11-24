@@ -61,6 +61,24 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a dis_contenido.
+        /// </summary>
+        internal static string AtributocontenidoDiseño {
+            get {
+                return ResourceManager.GetString("AtributocontenidoDiseño", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a dis_id.
+        /// </summary>
+        internal static string AtributoIdDiseño {
+            get {
+                return ResourceManager.GetString("AtributoIdDiseño", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @dis_contenido.
         /// </summary>
         internal static string ParametroContenido {
@@ -72,9 +90,27 @@ namespace DatosSKD.Modulo14 {
         /// <summary>
         ///   Busca una cadena traducida similar a @PLANILLA_pla_id.
         /// </summary>
+        internal static string ParametroDiseñoPlanilla {
+            get {
+                return ResourceManager.GetString("ParametroDiseñoPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @PLANILLA_pla_id.
+        /// </summary>
         internal static string ParametroPlanilla {
             get {
                 return ResourceManager.GetString("ParametroPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarDiseño.
+        /// </summary>
+        internal static string ProcedureConsultarDiseño {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarDiseño", resourceCulture);
             }
         }
         

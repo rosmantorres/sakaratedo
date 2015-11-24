@@ -11,6 +11,7 @@ namespace DatosSKD.Modulo14
     public class BDDiseño
     {
         private BDConexion con = new BDConexion();
+
         public Boolean GuardarDiseñoBD(DominioSKD.Diseño diseño, DominioSKD.Planilla planilla)
         {
             SqlConnection conect = con.Conectar();
@@ -47,6 +48,57 @@ namespace DatosSKD.Modulo14
             finally
             {
                 con.Desconectar(conect);
+            }
+        }
+
+        public DominioSKD.Diseño ConsultarDiseño(DominioSKD.Planilla planilla)
+        {
+            SqlConnection conect = con.Conectar();
+            DominioSKD.Diseño diseño = new DominioSKD.Diseño();
+
+            if (planilla != null)
+            {
+                try
+                {
+
+                    SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarDiseño, conect);
+                    sqlcom.CommandType = CommandType.StoredProcedure;
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroDiseñoPlanilla, planilla.ID));
+
+                    SqlDataReader leer;
+                    conect.Open();
+
+                    leer = sqlcom.ExecuteReader();
+                    if (leer != null)
+                    {
+                        while (leer.Read())
+                        {
+                            diseño.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdDiseño]);
+                            diseño.Contenido = leer[RecursosBDModulo14.AtributocontenidoDiseño].ToString();
+                            diseño.Base64Decode();
+                            return diseño;
+                        }
+
+                        return null;
+                    }
+                    else
+                    {
+
+                        return null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    con.Desconectar(conect);
+                }
+            }
+            else
+            {
+                return null;
             }
         }
     }

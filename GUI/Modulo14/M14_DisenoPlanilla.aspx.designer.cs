@@ -13,15 +13,6 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_DisenoPlanilla {
         
         /// <summary>
-        /// Control diseno_planilla.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm diseno_planilla;
-        
-        /// <summary>
         /// Control alert.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace templateApp.GUI.Modulo14 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
+        /// Control diseno_planilla.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm diseno_planilla;
         
         /// <summary>
         /// Control tipoPlanilla.

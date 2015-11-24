@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AtributocontenidoDiseño" xml:space="preserve">
+    <value>dis_contenido</value>
+  </data>
+  <data name="AtributoIdDiseño" xml:space="preserve">
+    <value>dis_id</value>
+  </data>
   <data name="ParametroContenido" xml:space="preserve">
     <value>@dis_contenido</value>
   </data>
+  <data name="ParametroDiseñoPlanilla" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
   <data name="ParametroPlanilla" xml:space="preserve">
     <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ProcedureConsultarDiseño" xml:space="preserve">
+    <value>M14_ConsultarDiseño</value>
   </data>
   <data name="ProcedureGuardarDiseño" xml:space="preserve">
     <value>M14_AgregarDiseño</value>
