@@ -53,7 +53,7 @@ namespace LogicaNegociosSKD.Modulo1
                 Console.Write(e.ToString());
                 Console.Write(e.Data.ToString());
                 Console.Write(e.Message);
-                return false;
+                throw  e;
             }
         }
         /// <summary>
@@ -126,14 +126,15 @@ namespace LogicaNegociosSKD.Modulo1
             {
                 Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
                 Console.WriteLine("Mensaje: " + e.Message);
-                return null;
+                throw e;
             }
         }
 
 
 
         public string hash(string cadena)
-        {
+        { try
+            {
             HashAlgorithm sha = new SHA1CryptoServiceProvider(); //se crea la variable que contrenda el SHA1
             MD5 md5Hash = MD5.Create();// se crea la variable que contendrá el MD5
             byte[] cadenaByte = Encoding.UTF8.GetBytes(cadena);// se pasa la cadena de caracteres a un arreglo de byte
@@ -146,6 +147,13 @@ namespace LogicaNegociosSKD.Modulo1
             }
 
             return sBuilder.ToString();
+            }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error encontrado en login.hash: " + e);
+            Console.WriteLine("Mensaje: " + e.Message);
+            throw e;
+        }
         }
     }
 }

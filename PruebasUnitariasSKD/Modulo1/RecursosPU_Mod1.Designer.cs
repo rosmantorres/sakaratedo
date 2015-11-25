@@ -61,11 +61,65 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 12345.
+        /// </summary>
+        internal static string PruebaCorrectoClave {
+            get {
+                return ResourceManager.GetString("PruebaCorrectoClave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to admin@gmail.com.
+        /// </summary>
+        internal static string pruebaCorrectoCorreo {
+            get {
+                return ResourceManager.GetString("pruebaCorrectoCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to admin@gmail.com.
+        /// </summary>
+        internal static string PruebaCorrectoResultado {
+            get {
+                return ResourceManager.GetString("PruebaCorrectoResultado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 12345.
+        /// </summary>
+        internal static string PruebaErrorClave {
+            get {
+                return ResourceManager.GetString("PruebaErrorClave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error@gmail.com.
+        /// </summary>
+        internal static string pruebaErrorCorreo {
+            get {
+                return ResourceManager.GetString("pruebaErrorCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to hola.
         /// </summary>
         internal static string pruebaHash {
             get {
                 return ResourceManager.GetString("pruebaHash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hola.
+        /// </summary>
+        internal static string pruebaHash2 {
+            get {
+                return ResourceManager.GetString("pruebaHash2", resourceCulture);
             }
         }
     }

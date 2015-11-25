@@ -117,7 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="PruebaCorrectoClave" xml:space="preserve">
+    <value>12345</value>
+    <comment>Clave Correcto</comment>
+  </data>
+  <data name="pruebaCorrectoCorreo" xml:space="preserve">
+    <value>admin@gmail.com</value>
+    <comment>Correo Correcto</comment>
+  </data>
+  <data name="PruebaCorrectoResultado" xml:space="preserve">
+    <value>admin@gmail.com</value>
+    <comment>Resultado Correcto</comment>
+  </data>
+  <data name="PruebaErrorClave" xml:space="preserve">
+    <value>12345</value>
+    <comment>Clave error</comment>
+  </data>
+  <data name="pruebaErrorCorreo" xml:space="preserve">
+    <value>Error@gmail.com</value>
+    <comment>Correo error</comment>
+  </data>
   <data name="pruebaHash" xml:space="preserve">
+    <value>hola</value>
+    <comment>Prueba de hash</comment>
+  </data>
+  <data name="pruebaHash2" xml:space="preserve">
     <value>hola</value>
     <comment>Prueba de hash</comment>
   </data>
