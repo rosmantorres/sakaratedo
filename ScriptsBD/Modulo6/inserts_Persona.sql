@@ -85,16 +85,14 @@ VALUES (
 );
 
 INSERT INTO dbo.MATRICULA (
-    mat_id,
     mat_identificador,
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
     PERSONA_per_id,
-    DOJO_doj_id,
+    DOJO_doj_id
 ) 
 VALUES (
-    500,
     'CAF-CAF-CAFE',
     GETDATE(),
     1,
@@ -448,16 +446,14 @@ VALUES (
 );
 
 INSERT INTO dbo.MATRICULA (
-    mat_id,
     mat_identificador,
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
     PERSONA_per_id,
-    DOJO_doj_id,
+    DOJO_doj_id
 ) 
 VALUES (
-    501,
     '32-FE-A1',
     GETDATE(),
     1,
@@ -553,16 +549,14 @@ VALUES (
 );
 
 INSERT INTO dbo.MATRICULA (
-    mat_id,
     mat_identificador,
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
     PERSONA_per_id,
-    DOJO_doj_id,
+    DOJO_doj_id
 ) 
 VALUES (
-    502,
     'CEFA-FE-A65',
     GETDATE(),
     1,
@@ -1002,16 +996,14 @@ VALUES (
 );
 
 INSERT INTO dbo.MATRICULA (
-    mat_id,
     mat_identificador,
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
     PERSONA_per_id,
-    DOJO_doj_id,
+    DOJO_doj_id
 ) 
 VALUES (
-    503,
     '67F-31A-F2',
     GETDATE(),
     1,
