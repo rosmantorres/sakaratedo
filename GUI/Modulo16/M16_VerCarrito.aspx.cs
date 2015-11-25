@@ -79,6 +79,7 @@ namespace templateApp.GUI.Modulo16
                 case "3":
                     //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
                     bool respuesta = logicaCarrito.eliminarItem(1, 1, 1);
+
                     if (respuesta)
                     {
                         //Si el eliminar fue exitoso mostramos esta alerta y eliminamos del carrito en la clase
@@ -103,7 +104,7 @@ namespace templateApp.GUI.Modulo16
 
         }
 
-        /*
+        
         /// <summary>
         /// Metodo que se encarga de llenar el GRIDVIEW con todos los elementos que hayan en el carrito del Usuario
         /// </summary>
@@ -114,29 +115,28 @@ namespace templateApp.GUI.Modulo16
             carritoCompras = logicaCarrito.verCarrito(0);
 
             //Recorro La lista de los inventarios en el carrito para anexarlas al GRIDVIEW
-            foreach (Inventario inventario in carritoCompras.Listainventario)
+            foreach (Implemento inventario in carritoCompras.ListaImplemento)
             {
                 //Creo la fila de la tabla
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + +">";
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + inventario.Id_implemento +">";
 
                 //Agrego los datos correspondientes de la tabla con sus botones
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + "foto" + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + "Nombre" + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + "256 Bs." + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + "2" + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + "512 Bs." + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Imagen + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Nombre + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Marca + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Tipo + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Precio + M16_Recursointerfaz.CERRAR_TD;
 
                 //Agrego los botones
-                this.laTabla1.Text += M12_RecursoInterfaz.AbrirTD;
-                this.laTabla1.Text += M12_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla1.Text += M12_RecursoInterfaz.BotonModificar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla1.Text += M12_RecursoInterfaz.BotonEliminar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla1.Text += M12_RecursoInterfaz.CerrarTD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + inventario.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR + inventario.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla1.Text += M16_Recursointerfaz.CERRAR_TD;
 
                 //Cierro la fila creada
-                this.laTabla1.Text += M12_RecursoInterfaz.CerrarTR;
+                this.laTabla1.Text += M16_Recursointerfaz.CERRAR_TR;
             }
-
+            /*
             //Recorro la lista de las matriculas en el carrito para anexarlas al GRIDVIEW
             foreach (Matricula matricula in carritoCompras.Listamatricula)
             {
@@ -153,40 +153,36 @@ namespace templateApp.GUI.Modulo16
                 //Agrego los botones
                 this.laTabla2.Text += M12_RecursoInterfaz.AbrirTD;
                 this.laTabla2.Text += M12_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla2.Text += M12_RecursoInterfaz.BotonModificar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
                 this.laTabla2.Text += M12_RecursoInterfaz.BotonEliminar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
                 this.laTabla2.Text += M12_RecursoInterfaz.CerrarTD;
 
                 //Cierro la fila creada
                 this.laTabla2.Text += M12_RecursoInterfaz.CerrarTR;
-            }
+            }*/
 
             //Recorro la lista de eventos en el carrito para anexarlas al GRIDVIEW
             foreach (Evento evento in carritoCompras.Listaevento)
             {
                 //Creo la fila de la tabla
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TR_EVENTO + +">";
+                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TR_EVENTO + evento.Id_evento +">";
 
                 //Agrego los datos correspondientes de la tabla con sus botones
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + "foto" + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + "Nombre" + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + "256 Bs." + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + "2" + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + "512 Bs." + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + evento.Nombre + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD + evento.Costo + M16_Recursointerfaz.CERRAR_TD;
+                
 
                 //Agrego los botones
-                this.laTabla3.Text += M12_RecursoInterfaz.AbrirTD;
-                this.laTabla3.Text += M12_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla3.Text += M12_RecursoInterfaz.BotonModificar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla3.Text += M12_RecursoInterfaz.BotonEliminar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla3.Text += M12_RecursoInterfaz.CerrarTD;
+                this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD;
+                this.laTabla3.Text += M16_Recursointerfaz.BOTON_INFO + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla3.Text += M16_Recursointerfaz.BOTON_ELIMINAR + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TD;
 
                 //Cierro la fila creada
-                this.laTabla3.Text += M12_RecursoInterfaz.CerrarTR;
+                this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TR;
 
             }
 
-        }*/
+        }
 
         #region Eliminar y Registrar
         /// <summary>
@@ -239,11 +235,11 @@ namespace templateApp.GUI.Modulo16
                 if (exito)
                 {
                     //Si se pudo registrar el pago
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=1");
                 }
                 else
                     //Si no se pudo registrar el pago
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0");
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
             }
         }
         #endregion

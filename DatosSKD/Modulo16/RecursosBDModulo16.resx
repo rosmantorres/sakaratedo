@@ -174,12 +174,32 @@
     <value>@idusuario</value>
     <comment>Parametro que simboliza el id del usuario</comment>
   </data>
+  <data name="PROCEDIMIENTO_CONSULTAR_EVENTO_ID" xml:space="preserve">
+    <value>M16_CONSULTAR_EVENTO_ID</value>
+    <comment>Stored procedure que obtiene la informacion del evento dado su id</comment>
+  </data>
+  <data name="PROCEDIMIENTO_CONSULTAR_INVENTARIO_ID" xml:space="preserve">
+    <value>M16_CONSULTAR_INVENTARIO_ID</value>
+    <comment>Stored procedure que obtiene la informacion de la inventario dado su id</comment>
+  </data>
   <data name="PROCEDIMIENTO_ELIMINAR_ITEM" xml:space="preserve">
-    <value>ELIMINAR_ITEM</value>
+    <value>M16_ELIMINAR_ITEM</value>
     <comment>Stored procedure que elimina un item de un usuario de su carrito en la BD</comment>
   </data>
   <data name="PROCEDIMIENTO_REGISTRAR_PAGO" xml:space="preserve">
-    <value>REGISTRAR_PAGO</value>
+    <value>M16_REGISTRAR_PAGO</value>
     <comment>Stored procedure que registra el pago de una compra de un usuario en BD</comment>
+  </data>
+  <data name="PROCEDIMIENTO_SELECCIONAR_ID_EVENTO" xml:space="preserve">
+    <value>M16_SELECCIONAR_ID_EVENTO</value>
+    <comment>Stored procedure que selecciona el id de todos los eventos que esten en carrito</comment>
+  </data>
+  <data name="PROCEDIMIENTO_SELECCIONAR_ID_INVENTARIO" xml:space="preserve">
+    <value>M16_SELECCIONAR_ID_INVENTARIO</value>
+    <comment>Stored procedure que selecciona el id de todos los inventarios que esten en carrito</comment>
+  </data>
+  <data name="PROCEDIMIENTO_SELECCIONAR_ID_MATRICULA" xml:space="preserve">
+    <value>M16_SELECCIONAR_ID_MATRICULA</value>
+    <comment>Stored procedure que selecciona el id de todas las matriculas que esten en carrito</comment>
   </data>
 </root>

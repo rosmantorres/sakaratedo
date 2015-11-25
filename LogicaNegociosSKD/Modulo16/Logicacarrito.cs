@@ -43,11 +43,18 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Todo lo que tiene actualmente en su carrito</returns>
         public Carrito verCarrito(int idUsuario)
         {
-            /*
-            List<Inventario> listaInventario = carritoBD.getInventario(1);
-            List<Matricula> listaMatricula = carritoBD.getMatricula(1);
-            List<Evento> listaEvento = carritoBD.getEvento(1);*/
-            return null;
+            //Obtengo los datos de las tres tablas
+            List<Implemento> listaImplemento = carritoBD.getImplemento(idUsuario);
+         //   List<Matricula> listaMatricula = carritoBD.getMatricula(idUsuario);
+            List<Evento> listaEvento = carritoBD.getEvento(idUsuario);
+
+            //Creo el carrito y anexo la informacion
+            Carrito elCarrito = new Carrito();
+            elCarrito.ListaImplemento = listaImplemento;
+            elCarrito.Listaevento = listaEvento;
+
+            //Retorno el carrito del usuario
+            return elCarrito;
         }
 
         /// <summary>
@@ -78,8 +85,15 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool registrarPago(int tipoPago, List<int> datos)
         {
+            bool respuesta;
+
             //Procedemos a procesar la compra de los productos que estan en el carrito
-            bool respuesta = carritoBD.registrarPago("Transferencia",null,1);
+            if (tipoPago == 1)
+                respuesta = carritoBD.registrarPago("Tarjeta",null,1);
+            else if (tipoPago == 2)
+                respuesta = carritoBD.registrarPago("Deposito",null,1);
+            else
+                respuesta = carritoBD.registrarPago("Transferencia",null,1);
 
             //Limpiamos el carrito del Usuario
             carritoUsuario.limpiar();

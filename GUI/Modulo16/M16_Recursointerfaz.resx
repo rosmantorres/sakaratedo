@@ -141,6 +141,9 @@
   <data name="BOTON_INFO" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compDetalle=</value>
   </data>
+  <data name="BOTON_INFO_EVENTO" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="M16_ConsultarProducto.aspx?impDetalle=</value>
+  </data>
   <data name="BOTON_INFO_PRODUCTO" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="M16_ConsultarProducto.aspx?impDetalle=</value>
   </data>

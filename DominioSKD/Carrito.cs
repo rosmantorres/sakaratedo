@@ -15,26 +15,26 @@ namespace DominioSKD
         /// <summary>
         /// Atributos de la clase Carrito
         /// </summary>
-        /*
-        List<Inventario> listaInventario;
+        
+        List<Implemento> listaImplemento;
         List<Evento> listaEvento;
-        List<Matricula> listaMatricula;*/
+     //   List<Matricula> listaMatricula;
         #endregion
 
         #region Propiedades
-        /*
+        
         /// <summary>
         /// Propiedad del atributo listaInventario
         /// </summary>
-        public List<Inventario> Listainventario
+        public List<Implemento> ListaImplemento
         {
             get
             {
-                return this.listaInventario;
+                return this.listaImplemento;
             }
             set
             {
-                this.listaInventario = value;
+                this.listaImplemento = value;
             }
         }
 
@@ -52,7 +52,7 @@ namespace DominioSKD
                 this.listaEvento = value;
             }
         }
-
+        /*
         /// <summary>
         /// Propiedad del atributo listaMatricula
         /// </summary>

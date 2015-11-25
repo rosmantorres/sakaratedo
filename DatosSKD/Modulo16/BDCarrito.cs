@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ExcepcionesSKD;
 using System.Data.SqlClient;
 using System.Data;
+using DominioSKD;
 
 
 namespace DatosSKD.Modulo16
@@ -31,11 +32,72 @@ namespace DatosSKD.Modulo16
         /// </summary>
         /// <param name="idUsuario">Usuario del que se desea ver los items del iventario agregados en carrito</param>
         /// <returns>Lista con todos los items del inventario que se encuentran en el carrito</returns>
-        /*
-        public List<Inventario> getIventario(int idUsuario)
+        
+        public List<Implemento> getImplemento(int idUsuario)
         {
+            List<Implemento> laLista = new List<Implemento>();
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                    SqlDbType.Int, idUsuario.ToString(), false);
+                parametros.Add(parametro);
 
-        }*/
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                DataTable dt = conexion.EjecutarStoredProcedureTuplas
+                    (RecursosBDModulo16.PROCEDIMIENTO_SELECCIONAR_ID_INVENTARIO, parametros);
+
+                //Obtengo todos los ids que estan en carrito de los Inventario
+                foreach (DataRow row in dt.Rows)
+                {
+                    //Me creo el Inventario
+                    Implemento elInventario = new Implemento();
+
+                    //Preparo para obtener los datos de ese Inventario
+                    parametros = new List<Parametro>();
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int,
+                        row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString(), false);
+                    parametros.Add(parametro);
+
+                    //Obtengo la informacion de los inventarios
+                    DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
+                        (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_INVENTARIO_ID, parametros);
+
+                    //Por cada ID obtengo su informacion correspondiente
+                    foreach (DataRow row2 in dt2.Rows)
+                    {
+                        elInventario.Imagen = row2[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString();
+                        elInventario.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                        elInventario.Tipo = row2[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
+                        elInventario.Marca = row2[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
+                        elInventario.Color = row2[RecursosBDModulo16.PARAMETRO_COLOR].ToString();
+                        elInventario.Talla = row2[RecursosBDModulo16.PARAMETRO_TALLA].ToString();
+                        elInventario.Status = row2[RecursosBDModulo16.PARAMETRO_ESTATUS].ToString();
+                        elInventario.Precio = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+                        elInventario.Descripcion = row2[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+                    }
+
+                    //Agrego a la lista
+                    laLista.Add(elInventario);
+                }
+
+                return laLista;
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExceptionSKDConexionBD("blabla", "blabla", e);
+            }
+        }
 
         /// <summary>
         /// Metodo que obtiene todas las matriculas en el carrito del usuario en la Base de Datos
@@ -53,11 +115,66 @@ namespace DatosSKD.Modulo16
         /// </summary>
         /// <param name="idUsuario">Usuario del que se desea ver los eventos agregados en carrito</param>
         /// <returns>Lista con todos los eventos que se encuentran en el carrito</returns>
-        /*
+        
         public List<Evento> getEvento(int idUsuario)
         {
+            List<Evento> laLista= new List<Evento>();
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                    SqlDbType.Int, idUsuario.ToString(), false);
+                parametros.Add(parametro);
 
-        }*/
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                DataTable dt = conexion.EjecutarStoredProcedureTuplas
+                    (RecursosBDModulo16.PROCEDIMIENTO_SELECCIONAR_ID_EVENTO, parametros);
+
+                //Obtengo todos los ids que estan en carrito de los eventos
+                foreach(DataRow row in dt.Rows)
+                {
+                    //Me creo el evento
+                    Evento elEvento = new Evento();
+
+                    //Preparo para obtener los datos de ese evento
+                    parametros = new List<Parametro>();
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
+                        row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString(), false);
+                    parametros.Add(parametro);
+
+                    //Obtengo la informacion de los eventos
+                    DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
+                        (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_EVENTO_ID, parametros);
+
+                    //Por cada ID obtengo su informacion correspondiente
+                    foreach (DataRow row2 in dt2.Rows)
+                    {
+                        elEvento.Id_evento = int.Parse(row2[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                        elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                        elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+                    }
+                        
+                    //Agrego a la lista
+                    laLista.Add(elEvento);
+                }
+
+                return laLista;
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExceptionSKDConexionBD("blabla", "blabla", e);
+            }
+        }
 
         /// <summary>
         /// Metodo que obtiene todas las matriculas en el carrito del usuario de la Base de Datos
