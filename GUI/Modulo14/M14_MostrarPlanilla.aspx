@@ -23,6 +23,10 @@
                         <asp:Label ID="informacion" runat="server"></asp:Label>
                      </div>
                  </div>
+                 <div class="box-footer">
+                   <asp:Button id="btnguardar" class="btn btn-primary"  type="submit" runat="server" Text = "Imprimir" OnClick="imprimir_Click"></asp:Button>
+                    <a class="btn btn-default" href="M14_ConsultarPlanillas.aspx">Cancelar</a>
+                 </div>
              </div>
          </form>
         </div>
