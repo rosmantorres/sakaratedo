@@ -1660,6 +1660,11 @@
     <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.designer.cs">
       <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo14\RecursoInterfazModulo14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
       <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2025,6 +2030,10 @@
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo14\RecursoInterfazModulo14.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoInterfazModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
