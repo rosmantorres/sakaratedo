@@ -38,7 +38,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -53,7 +54,11 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.72,
+    'miguedro',
+    '12345',
+    'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -144,7 +149,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -162,7 +168,8 @@ VALUES (
     1.60,
     'adrijo',
     '12345',
-    'http://tphsartjdoerrer.weebly.com/uploads/7/7/0/2/7702116/152821360.jpg'
+    'http://tphsartjdoerrer.weebly.com/uploads/7/7/0/2/7702116/152821360.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -236,7 +243,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-E',
@@ -254,7 +262,8 @@ VALUES (
     1.84,
     'chrisjo',
     '12345',
-    'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg'
+    'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -328,7 +337,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -346,7 +356,8 @@ VALUES (
     1.75,
     'cesarau',
     '12345',
-    'http://www.one2onephotography.ca/image/portrait/men/men-images-1.jpg'
+    'http://www.one2onephotography.ca/image/portrait/men/men-images-1.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -420,7 +431,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -438,7 +450,8 @@ VALUES (
     1.78,
     'eduardo',
     '12345',
-    'https://upload.wikimedia.org/wikipedia/en/2/28/Deep_Fried_Man_portrait_-_real_name_Daniel_Friedman_-_South_African_Comedian.jpg'
+    'https://upload.wikimedia.org/wikipedia/en/2/28/Deep_Fried_Man_portrait_-_real_name_Daniel_Friedman_-_South_African_Comedian.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -529,7 +542,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -547,7 +561,8 @@ VALUES (
     1.78,
     'mariaisa',
     '12345',
-    'http://guildfordphotographer.co.uk/wp-content/uploads/2011/01/lucy.jpg'
+    'http://guildfordphotographer.co.uk/wp-content/uploads/2011/01/lucy.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -638,7 +653,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -656,7 +672,8 @@ VALUES (
     1.78,
     'carlosal',
     '12345',
-    'https://c.stocksy.com/a/3iJ000/z0/75767.jpg'
+    'https://c.stocksy.com/a/3iJ000/z0/75767.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -730,7 +747,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -748,7 +766,8 @@ VALUES (
     1.78,
     'jesusen',
     '12345',
-    'http://www.offshoresailing.com/wp-content/uploads/2013/05/photodune-658305-portrait-of-a-good-looking-african-american-business-man-s7-300x247.png'
+    'http://www.offshoresailing.com/wp-content/uploads/2013/05/photodune-658305-portrait-of-a-good-looking-african-american-business-man-s7-300x247.png',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -822,7 +841,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -840,7 +860,8 @@ VALUES (
     1.78,
     'gustavoto',
     '12345',
-    'http://thumbs.dreamstime.com/x/smiley-man-portrait-11016049.jpg'
+    'http://thumbs.dreamstime.com/x/smiley-man-portrait-11016049.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -914,7 +935,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -932,7 +954,8 @@ VALUES (
     1.78,
     'jessiale',
     '12345',
-    'http://thumbs.dreamstime.com/x/beautiful-woman-portrait-11713329.jpg'
+    'http://thumbs.dreamstime.com/x/beautiful-woman-portrait-11713329.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1006,7 +1029,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1024,7 +1048,8 @@ VALUES (
     1.78,
     'marioale',
     '12345',
-    'http://tedslater.com/wp-content/uploads/2010/07/shutterstock_202093444.jpg'
+    'http://tedslater.com/wp-content/uploads/2010/07/shutterstock_202093444.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1115,7 +1140,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1133,7 +1159,8 @@ VALUES (
     1.72,
     'eltercera',
     '12345',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg'
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1224,7 +1251,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1242,7 +1270,8 @@ VALUES (
     1.72,
     'silfreau',
     '12345',
-    'http://marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png'
+    'http://marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1333,7 +1362,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1351,7 +1381,8 @@ VALUES (
     1.72,
     'saulen',
     '12345',
-    'http://www4.pictures.zimbio.com/gi/Solitary+Man+Portraits+2009+Toronto+International+kBVOjNQV9rzl.jpg'
+    'http://www4.pictures.zimbio.com/gi/Solitary+Man+Portraits+2009+Toronto+International+kBVOjNQV9rzl.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1442,7 +1473,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1460,7 +1492,8 @@ VALUES (
     1.,
     'guilleja',
     '12345',
-    'http://previews.123rf.com/images/rido/rido1212/rido121200073/16732489-Closeup-portrait-of-smiling-young-man-isolated-on-white-background-Stock-Photo.jpg'
+    'http://previews.123rf.com/images/rido/rido1212/rido121200073/16732489-Closeup-portrait-of-smiling-young-man-isolated-on-white-background-Stock-Photo.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1551,7 +1584,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1569,7 +1603,8 @@ VALUES (
     1.72,
     'pedroleo',
     '12345',
-    'https://c2.staticflickr.com/4/3147/3030821516_793151ecc1_z.jpg'
+    'https://c2.staticflickr.com/4/3147/3030821516_793151ecc1_z.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1660,7 +1695,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1678,7 +1714,8 @@ VALUES (
     1.72,
     'josemiguel',
     '12345',
-    'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg'
+    'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1771,7 +1808,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1789,7 +1827,8 @@ VALUES (
     1.72,
     'ramirezadmin',
     '12345',
-    'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg'
+    'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1848,7 +1887,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1866,7 +1906,8 @@ VALUES (
     1.72,
     'suarezadmin',
     '12345',
-    'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg'
+    'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1925,7 +1966,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1943,7 +1985,8 @@ VALUES (
     1.72,
     'torresadmin',
     '12345',
-    'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg'
+    'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
