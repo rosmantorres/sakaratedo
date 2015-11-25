@@ -99,7 +99,7 @@ VALUES (
     GETDATE(),
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
-)
+);
 
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
@@ -1010,4 +1010,623 @@ VALUES (
     GETDATE(),
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Romulo Jose',
+    'Ruiz Campos',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
 )
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA1-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Silfredo Augusto',
+    'Rugeles Arraiz',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA2-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Saul Enrique',
+    'Hernandez Arraiz',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA3-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Guillermo Daniel',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA4-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Pedro Leonardo',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA5-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Jose Miguel',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA6-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
