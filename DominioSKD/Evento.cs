@@ -9,26 +9,7 @@ namespace DominioSKD
     public class Evento
     {
         #region Atributos
-
         private int id_evento;
-<<<<<<< HEAD
-        private String nombre;
-        private String descripcion;
-        private int costo;
-        private String tipoEvento;
-        private String fechaInicio;
-        private String ubicacion;
-
-     
-
-        public int Id_evento
-        {
-            get { return id_evento; }
-            set { id_evento = value; }
-        }
-
-        public int Id_organizacion
-=======
         private string descripcion;
         private string nombre;
         private int id_horario;
@@ -43,7 +24,6 @@ namespace DominioSKD
         #region Get y Set
 
         public int Id_evento
->>>>>>> refs/remotes/origin/master
         {
             get { return id_evento; }
             set { id_evento = value; }
@@ -61,38 +41,6 @@ namespace DominioSKD
             set { nombre = value; }
         }
 
-<<<<<<< HEAD
-        public String Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
-
-        public int Costo
-        {
-            get { return costo; }
-            set { costo = value; }
-        }
-
-        public String TipoEvento
-        {
-            get { return tipoEvento; }
-            set { tipoEvento = value; }
-        }
-
-        public String FechaInicio
-        {
-            get { return fechaInicio; }
-            set { fechaInicio = value; }
-        }
-
-         public String Ubicacion
-        {
-            get { return ubicacion; }
-            set { ubicacion = value; }
-        }
-
-=======
         public int Id_horario
         {
             get { return id_horario; }
@@ -132,32 +80,11 @@ namespace DominioSKD
 
         #region Constructores
 
->>>>>>> refs/remotes/origin/master
         public Evento()
         {
             id_evento = 0;
             descripcion = "";
             nombre = "";
-<<<<<<< HEAD
-            descripcion = "";
-            costo = 0;
-        }
-
-        public Evento(int elId, String nombreEvento, String tipo, String fechaIni, String ubic)
-        {
-            id_evento = elId;
-            nombre = nombreEvento;
-            tipoEvento = tipo;
-            fechaInicio = fechaIni;
-            ubicacion = ubic;
-        }
-
-
-        public Evento(String elNombre)
-        {
-            nombre = elNombre;
-        }
-=======
             id_horario = 0;
             id_ubicacion = 0;
             id_dojo = 0;
@@ -174,7 +101,5 @@ namespace DominioSKD
         }
 
         #endregion
-
->>>>>>> refs/remotes/origin/master
     }
 }
