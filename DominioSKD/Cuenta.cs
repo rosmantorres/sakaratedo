@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Cuenta
+    public class Cuenta
     {
         #region atributos
         private String nombre_usuario;
