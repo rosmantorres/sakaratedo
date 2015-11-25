@@ -92,7 +92,7 @@ CREATE
   TABLE COMPRA_CARRITO
   (
     com_id           INTEGER NOT NULL ,
-    com_tipo_pago    VARCHAR (100) NOT NULL ,
+    com_tipo_pago    VARCHAR (100) ,
     com_fecha_compra DATE NOT NULL ,
     com_estado       VARCHAR (20) NOT NULL ,
     PERSONA_per_id   INTEGER NOT NULL ,
@@ -127,16 +127,16 @@ GO
 CREATE
   TABLE DETALLE_COMPRA
   (
-    det_precio FLOAT NOT NULL ,
-    MATRICULA_mat_id      INTEGER NOT NULL ,
-    MATRICULA_per_id      INTEGER NOT NULL ,
-    INVENTARIO_inv_id     INTEGER NOT NULL ,
-    EVENTO_eve_id         INTEGER NOT NULL ,
+    det_id                INTEGER IDENTITY(1,1) NOT NULL ,
+    det_precio 	            FLOAT NOT NULL ,
     COMPRA_CARRITO_com_id INTEGER NOT NULL ,
-    MATRICULA_doj_id      INTEGER NOT NULL ,
-    CONSTRAINT DETALLE_COMPRA_PK PRIMARY KEY CLUSTERED (MATRICULA_mat_id,
-    MATRICULA_per_id, INVENTARIO_inv_id, EVENTO_eve_id, COMPRA_CARRITO_com_id,
-    MATRICULA_doj_id)
+    MATRICULA_mat_id      INTEGER ,
+    MATRICULA_per_id      INTEGER ,
+    INVENTARIO_inv_id     INTEGER ,
+    EVENTO_eve_id         INTEGER ,
+    MATRICULA_doj_id      INTEGER ,
+    CONSTRAINT DETALLE_COMPRA_PK PRIMARY KEY CLUSTERED (det_id, 
+    COMPRA_CARRITO_com_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
