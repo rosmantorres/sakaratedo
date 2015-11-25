@@ -117,6 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="aliasCostomatricula" xml:space="preserve">
+    <value>costoMatricula</value>
+  </data>
+  <data name="aliasFechainicio" xml:space="preserve">
+    <value>fechaInicio</value>
+  </data>
+  <data name="aliasFechatope" xml:space="preserve">
+    <value>fechaTope</value>
+  </data>
+  <data name="AliasIdEvento" xml:space="preserve">
+    <value>idEvento</value>
+  </data>
+  <data name="aliasIdmodalidad" xml:space="preserve">
+    <value>idModalidad</value>
+  </data>
+  <data name="AliasidOrganizacion" xml:space="preserve">
+    <value>idOrganizacion</value>
+  </data>
+  <data name="AliasNombreEvento" xml:space="preserve">
+    <value>nombreEvento</value>
+  </data>
+  <data name="aliasNombremodalidad" xml:space="preserve">
+    <value>nombreModaliad</value>
+  </data>
+  <data name="Codigo_ExcepcionAtributo" xml:space="preserve">
+    <value>S_16_05</value>
+  </data>
+  <data name="Codigo_ExcepcionGeneral" xml:space="preserve">
+    <value>S_16_03</value>
+  </data>
+  <data name="Codigo_ExcepcionNullReference" xml:space="preserve">
+    <value>S_16_05</value>
+  </data>
+  <data name="Codigo_ExcepcionParametro" xml:space="preserve">
+    <value>S_16_04</value>
+  </data>
+  <data name="Codigo_ExcepcionSql" xml:space="preserve">
+    <value>S_16_02</value>
+  </data>
   <data name="CONSULTAR_EVENTOS" xml:space="preserve">
     <value>M16_CONSULTAREVENTOS</value>
     <comment>Store procedure que lista todos los eventos existentes</comment>
@@ -128,6 +167,21 @@
   <data name="DETALLAR_IMPLEMENTO" xml:space="preserve">
     <value>M16_DETALLARIMPLEMENTO</value>
     <comment>Store procedure que muestra los detalles de un implemento del inventario en especifico</comment>
+  </data>
+  <data name="Mensaje_ExcepcionAtributo" xml:space="preserve">
+    <value>Error uno de los atributos no existe en el procedimiento ejecutado</value>
+  </data>
+  <data name="Mensaje_ExcepcionGeneral" xml:space="preserve">
+    <value>Error se ha producido una excepcion</value>
+  </data>
+  <data name="Mensaje_ExcepcionNullReference" xml:space="preserve">
+    <value>Error existe una referencia nula</value>
+  </data>
+  <data name="Mensaje_ExcepcionSql" xml:space="preserve">
+    <value>Error existe un conflicto con la conexión a la base de datos</value>
+  </data>
+  <data name="Mensaje__ExcepcionParametro" xml:space="preserve">
+    <value>Error uno de los parametros no existe en el procedimiento ejecutado</value>
   </data>
   <data name="PARAMETRO_COLOR" xml:space="preserve">
     <value>impColor</value>
@@ -174,6 +228,18 @@
     <value>@idusuario</value>
     <comment>Parametro que simboliza el id del usuario</comment>
   </data>
+  <data name="ParamIdEvento" xml:space="preserve">
+    <value>@eve_id</value>
+    <comment>Codigo de evento para el stored agregar evento a carrito</comment>
+  </data>
+  <data name="ParamIdMatricula" xml:space="preserve">
+    <value>@mat_id</value>
+    <comment>Codigo de matricula para el stored consultarMatriculas</comment>
+  </data>
+  <data name="ParamIdPersona" xml:space="preserve">
+    <value>@mat_persona</value>
+    <comment>Codigo de persona para el stored consultarMatriculas</comment>
+  </data>
   <data name="PROCEDIMIENTO_CONSULTAR_EVENTO_ID" xml:space="preserve">
     <value>M16_CONSULTAR_EVENTO_ID</value>
     <comment>Stored procedure que obtiene la informacion del evento dado su id</comment>
@@ -201,5 +267,25 @@
   <data name="PROCEDIMIENTO_SELECCIONAR_ID_MATRICULA" xml:space="preserve">
     <value>M16_SELECCIONAR_ID_MATRICULA</value>
     <comment>Stored procedure que selecciona el id de todas las matriculas que esten en carrito</comment>
+  </data>
+  <data name="StoreProcedureAgregareventoaCarrito" xml:space="preserve">
+    <value>M16_agregarEventoaCarrito</value>
+    <comment>Nombre del procedimiento que agrega evento al carrito</comment>
+  </data>
+  <data name="StoreProcedureAgregarinventarioaCarrito" xml:space="preserve">
+    <value>M16_agregarInventarioaCarrito</value>
+    <comment>Nombre del procedimiento que agrega inventario al carrito</comment>
+  </data>
+  <data name="StoreProcedureAgregarmatriculaaCarrito" xml:space="preserve">
+    <value>M16_agregarMatriculaaCarrito</value>
+    <comment>Nombre del procedimiento que agrega matricula al carrito</comment>
+  </data>
+  <data name="StoreProcedureConsultarEventosXId" xml:space="preserve">
+    <value>M16_detallarEvento</value>
+    <comment>Nombre del procedimiento para detallar evento</comment>
+  </data>
+  <data name="StoreProcedureConsultarMatriculas" xml:space="preserve">
+    <value>M16_consultarMatriculas</value>
+    <comment>Nombre del procedimiento que consulta matriculas por un cliente a consultar</comment>
   </data>
 </root>
