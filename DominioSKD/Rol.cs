@@ -57,6 +57,13 @@ namespace DominioSKD
             descripcion = laDescripcion;
             fecha_creacion = laFecha;
         }
+
+                public Rol(int elId, String elNombre, String laDescripcion)
+                {
+                    id_rol = elId;
+                    nombre = elNombre;
+                    descripcion = laDescripcion;
+                }
         #endregion
     }
 }
