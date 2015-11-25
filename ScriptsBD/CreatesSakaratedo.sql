@@ -257,8 +257,7 @@ CREATE
     EVENTO_eve_id                 INTEGER NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
     eve_res_id                    INTEGER NOT NULL ,
-    CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (EVENTO_eve_id,
-    RESTRICCION_EVENTO_res_eve_id, eve_res_id)
+    CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (eve_res_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -786,12 +785,9 @@ CREATE
   TABLE RH_CINTA
   (
     rh_cinta_id                   INTEGER NOT NULL ,
-    rh_cinta_cinta_id             INTEGER NOT NULL ,
-    rh_cinta_restriccion_id       INTEGER NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
-    CINTA_cin_id                  INTEGER ,
-    CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id,
-    rh_cinta_cinta_id, rh_cinta_restriccion_id)
+    CINTA_cin_id                  INTEGER NOT NULL,
+    CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
