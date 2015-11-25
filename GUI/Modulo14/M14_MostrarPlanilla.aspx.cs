@@ -44,11 +44,11 @@ namespace templateApp.GUI.Modulo14
 
 
                 string cadenaFinal = contenido;
-                string path = Server.MapPath("Carnet_titulo.jpg");
-                if (contenido.Contains("<img src='perfil.jpg' Height='80' Width='90'/>"))
+                string path = Server.MapPath("img/Carnet_titulo.jpg");
+                if (contenido.Contains("<img src='img/perfil.jpg' Height='80' Width='90'/>"))
                 {
-                    string path1 = Server.MapPath("perfil.jpg");
-                    contenido.Replace("<img src='perfil.jpg' Height='80' Width='90'/>", "<img src='" + path1 + "' Height='80' Width='90'/>");
+                    string path1 = Server.MapPath("img/perfil.jpg");
+                    contenido.Replace("<img src='img/perfil.jpg' Height='80' Width='90'/>", "<img src='" + path1 + "' Height='80' Width='90'/>");
                 }
                 string encabezado = "<img src='" + path + "' Height='48' Width='570'/><br/><br/>";
                 //Assign Html content in a string to write in PDF 

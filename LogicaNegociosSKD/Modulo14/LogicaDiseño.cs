@@ -26,7 +26,7 @@ namespace LogicaNegociosSKD.Modulo14
    
         public string ReemplazarElementos(string info)
         {
-            info = info.Replace("$per_imagen", "<img src='perfil.jpg' Height='80' Width='90'/>");
+            info = info.Replace("$per_imagen", "<img src='img/perfil.jpg' Height='80' Width='90'/>");
             info = info.Replace("$per_nombre", "María");
             info = info.Replace("$per_apellido","Vargas");
             info = info.Replace("$per_tipo_doc_id", "Cedula");
