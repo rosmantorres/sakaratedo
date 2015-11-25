@@ -1,8 +1,15 @@
-/* 
+/*
+INSERTS M6
+
 Los inserts de personas dependen de que los de Dojo hayan sido realizados.
 
 Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes expresiones:
+--ADMINISTRADORES--
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio')
 
+--ATLETAS--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel')
@@ -28,7 +35,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -131,7 +141,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -146,7 +159,10 @@ VALUES (
     '1988-11-15',
     1,
     63,
-    1.60
+    1.60,
+    'adrijo',
+    '12345',
+    'http://tphsartjdoerrer.weebly.com/uploads/7/7/0/2/7702116/152821360.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -217,7 +233,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-E',
@@ -232,7 +251,10 @@ VALUES (
     '1956-08-31',
     0,
     83,
-    1.84
+    1.84,
+    'chrisjo',
+    '12345',
+    'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -303,7 +325,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -318,7 +343,10 @@ VALUES (
     '1979-02-27',
     1,
     74,
-    1.75
+    1.75,
+    'cesarau',
+    '12345',
+    'http://www.one2onephotography.ca/image/portrait/men/men-images-1.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -389,7 +417,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -404,7 +435,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'eduardo',
+    '12345',
+    'https://upload.wikimedia.org/wikipedia/en/2/28/Deep_Fried_Man_portrait_-_real_name_Daniel_Friedman_-_South_African_Comedian.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -492,7 +526,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -507,7 +544,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'mariaisa',
+    '12345',
+    'http://guildfordphotographer.co.uk/wp-content/uploads/2011/01/lucy.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -595,7 +635,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -610,7 +653,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'carlosal',
+    '12345',
+    'https://c.stocksy.com/a/3iJ000/z0/75767.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -681,7 +727,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -696,7 +745,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'jesusen',
+    '12345',
+    'http://www.offshoresailing.com/wp-content/uploads/2013/05/photodune-658305-portrait-of-a-good-looking-african-american-business-man-s7-300x247.png'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -767,7 +819,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -782,7 +837,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'gustavoto',
+    '12345',
+    'http://thumbs.dreamstime.com/x/smiley-man-portrait-11016049.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -853,7 +911,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -868,7 +929,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'jessiale',
+    '12345',
+    'http://thumbs.dreamstime.com/x/beautiful-woman-portrait-11713329.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -939,7 +1003,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -954,7 +1021,10 @@ VALUES (
     '1968-03-05',
     1,
     88,
-    1.78
+    1.78,
+    'marioale',
+    '12345',
+    'http://tedslater.com/wp-content/uploads/2010/07/shutterstock_202093444.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1042,7 +1112,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -1057,7 +1130,10 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.72,
+    'eltercera',
+    '12345',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1145,7 +1221,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -1160,7 +1239,10 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.72,
+    'silfreau',
+    '12345',
+    'http://marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1248,7 +1330,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -1263,7 +1348,10 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.72,
+    'saulen',
+    '12345',
+    'http://www4.pictures.zimbio.com/gi/Solitary+Man+Portraits+2009+Toronto+International+kBVOjNQV9rzl.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1351,7 +1439,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -1366,7 +1457,10 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.,
+    'guilleja',
+    '12345',
+    'http://previews.123rf.com/images/rido/rido1212/rido121200073/16732489-Closeup-portrait-of-smiling-young-man-isolated-on-white-background-Stock-Photo.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1454,7 +1548,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -1469,7 +1566,10 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.72,
+    'pedroleo',
+    '12345',
+    'https://c2.staticflickr.com/4/3147/3030821516_793151ecc1_z.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1557,7 +1657,10 @@ INSERT INTO dbo.PERSONA (
     per_fecha_nacimiento,
     per_activo,
     per_peso,
-    per_estatura
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
 ) 
 VALUES (
     'CEDULA-N',
@@ -1572,7 +1675,10 @@ VALUES (
     '1993-05-21',
     1,
     77,
-    1.72
+    1.72,
+    'josemiguel',
+    '12345',
+    'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg'
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1647,3 +1753,235 @@ VALUES (
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
+/* ADMINISTRADORES */
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Alexander Abraham',
+    'Ramirez Cabrera',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'ramirezadmin',
+    '12345',
+    'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham'),
+    'administrador.generico@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham'),
+    'plain_administrador@gmail.com',
+    0
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Carlos Alberto',
+    'Suarez Romero',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'suarezadmin',
+    '12345',
+    'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    'administrador.generico@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    'plain_administrador@gmail.com',
+    0
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
+) 
+VALUES (
+    'CEDULA-N',
+    21424696,
+    'Javier Porfirio',
+    'Torres Contreras',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'torresadmin',
+    '12345',
+    'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio'),
+    'administrador.generico@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio'),
+    'plain_administrador@gmail.com',
+    0
+);
