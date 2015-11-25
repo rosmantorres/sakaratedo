@@ -45,6 +45,7 @@
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+<form method="post" action="#"  id="userRol" runat="server">
 <div class="box box-body">
     <div>
         <form class="form-horizontal">
@@ -89,7 +90,60 @@
             </tbody>
         </table>
     </div>
+
+    <div id="modal-create" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3>Agregar nuevo rol a usuario</h3>
+                </div>
+                <div class="modal-body" aria-label="Close">
+                            <div class="row form-group">
+                                <label for="selectRole" class="control-label col-xs-2">Rol:</label>
+                                <div class="col-xs-10">
+                                    <asp:DropDownList id="RolList" class="btn btn-default dropdown-toggle" AutoPostBack="True" OnSelectedIndexChanged="Selection_Change" runat="server">
+
+                                          <asp:ListItem Selected="True" Value="White">-Seleccionar rol- </asp:ListItem>
+                                          <asp:ListItem Value="Silver"> Silver </asp:ListItem>
+                                          <asp:ListItem Value="DarkGray"> Dark Gray </asp:ListItem>
+                                          <asp:ListItem Value="Khaki"> Khaki </asp:ListItem>
+                                          <asp:ListItem Value="DarkKhaki"> Dark Khaki </asp:ListItem>
+
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                     <div class="row form-group">
+                        <label for="textareaDir" class="control-label col-xs-2">Descripción:</label>
+                        <div class="col-xs-10">
+                            <textarea readonly id="textareaRol" class="form-control col-xs-2" rows="5">Descripcion del rol</textarea>
+                        </div>
+                    </div>
+                </div>
+                  <div class="modal-footer" style="text-align: center">
+                    <input type="button" runat="server" onserverclick="AgregarRol" value="Agregar" class="btn btn-success col-lg-offset-1" />
+                    <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3>¿Esta seguro que desea eliminar este rol?</h3>
+                </div>
+                  <div class="modal-footer" style="text-align: center">
+                    <input type="button" runat="server" onserverclick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
+                    <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
+                  </div>
+            </div>
+        </div>
+    </div>
  </div>
+</form>
       <script type="text/javascript">
           $(document).ready(function () {
               $("#tableSolisitudes").DataTable({
