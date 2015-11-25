@@ -117,49 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AtributocontenidoDiseño" xml:space="preserve">
-    <value>dis_contenido</value>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="AtributoIdDiseño" xml:space="preserve">
-    <value>dis_id</value>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="ParametroContenido" xml:space="preserve">
-    <value>@dis_contenido</value>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="ParametroDiseñoPlanilla" xml:space="preserve">
-    <value>@PLANILLA_pla_id</value>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
   </data>
-  <data name="ParametroPlanilla" xml:space="preserve">
-    <value>@PLANILLA_pla_id</value>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx?componente=</value>
   </data>
-  <data name="ProcedureConsultarDiseño" xml:space="preserve">
-    <value>M14_ConsultarDiseño</value>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="ProcedureGuardarDiseño" xml:space="preserve">
-    <value>M14_AgregarDiseño</value>
-  </data>
-  <data name="ParametroID" xml:space="preserve">
-    <value>@dis_id</value>
-  </data>
-  <data name="ProcedureModificarDiseño" xml:space="preserve">
-    <value>M14_ModificarDiseño</value>
-  </data>
-  <data name="ProcedureConsultarPlanillasCreadas" xml:space="preserve">
-    <value>M14_ConsultarPlanillasCreadas</value>
-  </data>
-  <data name="AtributoIdPlanilla" xml:space="preserve">
-    <value>pla_id</value>
-  </data>
-  <data name="AtributoNombrePlanilla" xml:space="preserve">
-    <value>pla_nombre</value>
-  </data>
-  <data name="AtributoNombreTipoPlanilla" xml:space="preserve">
-    <value>tip_nombre</value>
-  </data>
-  <data name="AtributoStatusPlanilla" xml:space="preserve">
-    <value>pla_status</value>
-  </data>
-  <data name="AtributoIdTipoPlanilla" xml:space="preserve">
-    <value>tip_id</value>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
 </root>

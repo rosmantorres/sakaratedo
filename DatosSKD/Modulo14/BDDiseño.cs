@@ -10,8 +10,19 @@ namespace DatosSKD.Modulo14
 {
     public class BDDiseño
     {
+        #region atributos
+
         private BDConexion con = new BDConexion();
 
+        #endregion
+
+        #region metodos
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="diseño"></param>
+        /// <param name="planilla"></param>
+        /// <returns></returns>
         public Boolean GuardarDiseñoBD(DominioSKD.Diseño diseño, DominioSKD.Planilla planilla)
         {
             SqlConnection conect = con.Conectar();
@@ -51,6 +62,11 @@ namespace DatosSKD.Modulo14
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="planilla"></param>
+        /// <returns></returns>
         public DominioSKD.Diseño ConsultarDiseño(DominioSKD.Planilla planilla)
         {
             SqlConnection conect = con.Conectar();
@@ -101,5 +117,60 @@ namespace DatosSKD.Modulo14
                 return null;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="diseño"></param>
+        /// <returns></returns>
+        public Boolean ModificarDiseño(DominioSKD.Diseño diseño)
+        {
+            SqlConnection conect = con.Conectar();
+
+            if (diseño != null)
+            {
+                try
+                {
+
+                    SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureModificarDiseño, conect);
+                    sqlcom.CommandType = CommandType.StoredProcedure;
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroID, diseño.ID));
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroContenido, diseño.Contenido));
+
+                    SqlDataReader leer;
+                    conect.Open();
+
+                    leer = sqlcom.ExecuteReader();
+                    if (leer != null)
+                    {
+                        while (leer.Read())
+                        {
+                            return true;
+                        }
+
+                        return false;
+                    }
+                    else
+                    {
+
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    con.Desconectar(conect);
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        #endregion
     }
 }

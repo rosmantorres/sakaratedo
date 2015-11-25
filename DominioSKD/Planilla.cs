@@ -21,6 +21,10 @@ namespace DominioSKD
 
         #region metodos
 
+        public Planilla()
+        {
+            
+        }
         public Planilla(string nombre, Boolean status, string tipoPlanilla)
         {
             this.nombre = nombre;
