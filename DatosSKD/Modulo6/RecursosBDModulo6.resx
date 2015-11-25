@@ -297,4 +297,10 @@
   <data name="SP_Chg_Solicitud" xml:space="preserve">
     <value>Modificar_Solicitud</value>
   </data>
+  <data name="SP_Chg_Correo" xml:space="preserve">
+    <value>Modificar_Correo</value>
+  </data>
+  <data name="SP_Chg_Telefono" xml:space="preserve">
+    <value>Modificar_Telefono</value>
+  </data>
 </root>

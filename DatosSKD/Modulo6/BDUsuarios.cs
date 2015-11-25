@@ -61,12 +61,39 @@ namespace DatosSKD.Modulo6
                     return RecursosBDModulo6.Documento_Cedula_Extranjera;
         }
 
+        private static void EnumDocId(String Tipo, Persona per)
+        {
+            if (Tipo.Equals(RecursosBDModulo6.Documento_Cedula_Nacional))
+            {
+                per.DocumentoID.Tipo = TipoDocumento.Cedula;
+                per.DocumentoID.TipoCedula = TipoCedula.Nacional;
+            }
+            else if (Tipo.Equals(RecursosBDModulo6.Documento_Cedula_Extranjera))
+            {
+                per.DocumentoID.Tipo = TipoDocumento.Cedula;
+                per.DocumentoID.TipoCedula = TipoCedula.Extranjera;
+            }
+            else if (Tipo.Equals(RecursosBDModulo6.Documento_Pasaporte))
+            {
+                per.DocumentoID.Tipo = TipoDocumento.Pasaporte;
+            }
+                
+        }
+
         private static String EnumSexo(Sexo sex)
         {
             if (sex == Sexo.Femenino)
                 return RecursosBDModulo6.Sexo_Femenino;
             else
                 return RecursosBDModulo6.Sexo_Masculino;
+        }
+
+        private static Sexo EnumSexo(String sex)
+        {
+            if (sex == RecursosBDModulo6.Sexo_Femenino)
+                return Sexo.Femenino;
+            else
+                return Sexo.Masculino;
         }
 
         private static String EnumSangre(Sangre san)
@@ -87,10 +114,28 @@ namespace DatosSKD.Modulo6
                     return RecursosBDModulo6.Sangre_BP;
                 case Sangre.ON:
                     return RecursosBDModulo6.Sangre_ON;
-                case Sangre.OP:
-                    return RecursosBDModulo6.Sangre_OP;
             }
             return RecursosBDModulo6.Sangre_OP;
+        }
+
+        private static Sangre EnumSangre(String san)
+        {
+            if (san.Equals(RecursosBDModulo6.Sangre_ABN))
+                return Sangre.ABN;
+            else if (san.Equals(RecursosBDModulo6.Sangre_ABP))
+                return Sangre.ABP;
+            else if (san.Equals(RecursosBDModulo6.Sangre_AN))
+                return Sangre.AN;
+            else if (san.Equals(RecursosBDModulo6.Sangre_AP))
+                return Sangre.AP;
+            else if (san.Equals(RecursosBDModulo6.Sangre_BN))
+                return Sangre.BN;
+            else if (san.Equals(RecursosBDModulo6.Sangre_BP))
+                return Sangre.BP;
+            else if (san.Equals(RecursosBDModulo6.Sangre_ON))
+                return Sangre.ON;
+
+            return Sangre.OP;
         }
 
         public static void GuardarDatosDePersona(Persona per)
@@ -150,9 +195,11 @@ namespace DatosSKD.Modulo6
                 parametros.Add(parametro);
                 res = getValues(RecursosBDModulo6.SP_Chg_Persona, parametros);
             }
+            GuardarTelefonos(per);
+            GuardarCorreos(per);
         }
 
-        public static void GuardarTelefonos(Persona per)
+        private static void GuardarTelefonos(Persona per)
         {
             Parametro parametro;
             List<Parametro> parametros;
@@ -166,11 +213,10 @@ namespace DatosSKD.Modulo6
                 parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_numero, SqlDbType.VarChar, tel.Numero.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
-                parametros.Add(parametro);
-
                 if (tel.ID == -1)
                 {
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
+                    parametros.Add(parametro);
                     parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_Id, SqlDbType.Int, true);
                     parametros.Add(parametro);
 
@@ -179,15 +225,88 @@ namespace DatosSKD.Modulo6
                 }
                 else
                 {
-                    // TODO Por Hacer
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_Id, SqlDbType.Int, tel.ID.ToString(), false);
+                    parametros.Add(parametro);
+
+                    res = getValues(RecursosBDModulo6.SP_Chg_Telefono, parametros);
                 }
-
-                
             }
+        }
 
+        private static void GuardarCorreos(Persona per)
+        {
+            Parametro parametro;
+            List<Parametro> parametros;
+            List<Resultado> res;
+
+
+            foreach (Correo email in per.Correos)
+            {
+                parametros = new List<Parametro>();
+
+                parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Correo_Direccion, SqlDbType.VarChar, email.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Correo_Principal, SqlDbType.VarChar, email.Primario.ToString(), false);
+                parametros.Add(parametro);
+
+                if (email.ID == -1)
+                {
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Correo_Id, SqlDbType.Int, true);
+                    parametros.Add(parametro);
+
+                    res = getValues(RecursosBDModulo6.SP_Add_Correo, parametros);
+                    email.ID = int.Parse(res.ToArray()[0].valor);
+                }
+                else
+                {
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_Id, SqlDbType.Int, email.ID.ToString(), false);
+                    parametros.Add(parametro);
+
+                    res = getValues(RecursosBDModulo6.SP_Chg_Telefono, parametros);
+                }
+            }
+        }
+
+        public static Persona GetInfoPersonaByID(int dbid)
+        {
+            Parametro parametro;
+            List<Parametro> parametros;
+            DataTable table;
+            Persona per;
+
+            parametros = new List<Parametro>();
+
+            parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, dbid.ToString(), false);
+            parametros.Add(parametro);
+
+            table = BDUsuarios.getTable(RecursosBDModulo6.SP_Get_Persona, parametros);
+
+            if (table.Rows.Count != 1)
+            {
+                // Lanza Excpcion;
+            }
             
-
-
+            foreach (DataRow row in table.Rows)
+            {
+                per = new Persona(Convert.ToInt32(row[RecursosBDModulo6.Atribute_Persona_Id].ToString()));
+                per.Nombre = row[RecursosBDModulo6.Atribute_Persona_Nombre].ToString();
+                per.Apellido = row[RecursosBDModulo6.Atribute_Persona_Apellido].ToString();
+                per.Nacionalidad = row[RecursosBDModulo6.Atribute_Persona_Nacionalidad].ToString();
+                per.Alergias = row[RecursosBDModulo6.Atribute_Persona_Alergias].ToString();
+                per.Direccion = row[RecursosBDModulo6.Atribute_Persona_direccion].ToString();
+                per.FechaNacimiento = Convert.ToDateTime(row[RecursosBDModulo6.Atribute_Persona_Nacimiento].ToString());
+                per.Peso = Convert.ToDouble(row[RecursosBDModulo6.Atribute_Persona_Peso].ToString());
+                per.Estatura = Convert.ToDouble(row[RecursosBDModulo6.Atribute_Persona_Estatura].ToString());
+                per.DocumentoID = new DocumentoIdentidad();
+                BDUsuarios.EnumDocId(row[RecursosBDModulo6.Atribute_Persona_Tipo_Documento].ToString(), per);
+                per.DocumentoID.Numero = Convert.ToInt32(row[RecursosBDModulo6.Atribute_Persona_Numero_Documento].ToString());
+                per.Sexo = BDUsuarios.EnumSexo(row[RecursosBDModulo6.Atribute_Persona_Sexo].ToString());
+                per.TipoSangre = BDUsuarios.EnumSangre(row[RecursosBDModulo6.Atribute_Persona_Sangre].ToString());
+                return per;
+            }
+            return null;
         }
 
     }

@@ -35,16 +35,26 @@ CREATE PROCEDURE Agregar_Email
 	@correo_id INTEGER OUTPUT
 AS
 BEGIN
-	INSERT INTO dbo.EMAIL (
-		ema_email,
-		ema_principal,
-		PERSONA_per_id
-	) VALUES (
-		@correo_direccion,
-		@correo_principal,
-		@persona_id
-	);
-	SELECT @correo_id = SCOPE_IDENTITY();
+	SELECT @correo_id = ema_id
+	FROM dbo.EMAIL
+	WHERE
+		PERSONA_per_id = @persona_id
+		AND ema_email = @correo_direccion;
+	
+	IF @correo_id IS NULL
+	BEGIN
+
+		INSERT INTO dbo.EMAIL (
+			ema_email,
+			ema_principal,
+			PERSONA_per_id
+		) VALUES (
+			@correo_direccion,
+			@correo_principal,
+			@persona_id
+		);
+		SELECT @correo_id = SCOPE_IDENTITY();
+	END
 END
 
 /* Agrega una nueva persona. */
@@ -273,11 +283,42 @@ BEGIN
     ;
 END
 
+/* Modifica la informacion de un telefono */
+CREATE PROCEDURE Modificar_Telefono
+	@telefono_numero VARCHAR (10),
+	@telefono_id INTEGER
+AS
+BEGIN
+	IF @telefono_numero <> (SELECT tel_numero FROM dbo.TELEFONO WHERE tel_id = @telefono_id)
+	BEGIN
+		UPDATE dbo.TELEFONO
+		SET tel_numero = @telefono_numero
+		WHERE tel_id = @telefono_id;
+	END
+END
+
+/* Modifica la informacion de un correo */
+CREATE PROCEDURE Modificar_Correo
+	@correo_direccion VARCHAR (100),
+	@correo_principal BIT,
+	@correo_id INTEGER
+AS
+BEGIN
+	IF @correo_direccion <> (SELECT ema_email FROM dbo.EMAIL WHERE ema_id = @correo_id AND ema_principal = @correo_principal )
+	BEGIN
+		UPDATE dbo.EMAIL
+		SET
+			ema_email = @correo_direccion,
+			ema_principal = @correo_principal
+		WHERE ema_id = @correo_id;
+	END
+END
+
 ---------------
 -- Consultas --
 ---------------
 /* Consultar todos los datos de una persona. */
-CREATE PROCEDURE [dbo].[Consulta_Persona]
+CREATE PROCEDURE dbo.Consulta_Persona
 	@persona_id INTEGER OUTPUT
 AS
 BEGIN
@@ -294,7 +335,6 @@ BEGIN
 		per_fecha_nacimiento AS persona_fecha_nacimiento,
 		per_peso AS persona_peso,
 		per_estatura AS persona_estatura,
-		per_imagen AS persona_imagen,
 		per_id AS persona_id 
 	FROM dbo.PERSONA
 	WHERE
