@@ -58,25 +58,25 @@ namespace DatosSKD.Modulo16
                     //Preparo para obtener los datos de ese Inventario
                     parametros = new List<Parametro>();
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int,
-                        row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString(), false);
+                        row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString(), false);
                     parametros.Add(parametro);
 
+                    //Seteamos el id del implemento
+                    elInventario.Id_implemento = int.Parse(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO);
+
                     //Obtengo la informacion de los inventarios
+                    conexion = new BDConexion();
                     DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_INVENTARIO_ID, parametros);
 
                     //Por cada ID obtengo su informacion correspondiente
                     foreach (DataRow row2 in dt2.Rows)
                     {
-                        elInventario.Imagen = row2[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString();
+                        elInventario.Imagen = row2[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
                         elInventario.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                         elInventario.Tipo = row2[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
                         elInventario.Marca = row2[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
-                        elInventario.Color = row2[RecursosBDModulo16.PARAMETRO_COLOR].ToString();
-                        elInventario.Talla = row2[RecursosBDModulo16.PARAMETRO_TALLA].ToString();
-                        elInventario.Status = row2[RecursosBDModulo16.PARAMETRO_ESTATUS].ToString();
-                        elInventario.Precio = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
-                        elInventario.Descripcion = row2[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+                        elInventario.Precio = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());                        
                     }
 
                     //Agrego a la lista
