@@ -15,15 +15,16 @@ namespace LogicaNegociosSKD.Modulo16
         /// Atributos de la clase Logicaevento
         /// </summary>
         private BDEvento eventoBD;
+        private List<DominioSKD.Evento> laListaDeEvento;
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Constructor vacio de la clase Logicaevento que inicializa el atributo eventoBD
+        /// Constructor que devuelve una lista de tipo evento
         /// </summary>
         public Logicaevento()
         {
-            eventoBD = new BDEvento();
+            laListaDeEvento = obtenerListaDeEvento();
         }
         #endregion
 
@@ -32,21 +33,23 @@ namespace LogicaNegociosSKD.Modulo16
         #endregion
 
         #region Metodos
-        /* Evento detallarEvento( int objetoDetallar , int idUsario)
-          {  
-
-            
-           }
-       */
         /// <summary>
         /// Metodo que obtiene todos los objetos que estan en el inventario de eventos
         /// </summary>
         /// <param name=NONE>Este metodo no posee paso de parametros</param>
-        /// <returns>Todo lo que tiene actualmente el inventario de los eventos</returns>
-        /*  public Evento consultarEvento()
-        {         
-            return List<Evento>;
-        }*/
+        /// <returns>Todo lo que tiene actualmente el inventario de los eventos (filtrado por usuario logeado)</returns>
+        public List<DominioSKD.Evento> obtenerListaDeEvento()
+        {
+            try
+            {
+                return BDEvento.ListarEvento();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
 
         #endregion
     }

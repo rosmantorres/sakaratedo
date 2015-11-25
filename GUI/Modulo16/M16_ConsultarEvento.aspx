@@ -26,6 +26,9 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div id="alert" runat="server">
+    </div>
+
     <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
             El Evento se ha Agregado Exitosamente al Carrito.
@@ -39,70 +42,22 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Eventos Actuales</h3>
                 </div><!-- /.box-header -->
-
-       <table id="example" class="table table-bordered table-striped dataTable">
+              </div>
+       <table id="tablaevento" class="table table-bordered table-striped dataTable">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Ubicacion</th>
-                <th>Fecha Inicio</th>
-                <th>Fecha Fin</th>
-                <th>Accion</th>
-                
+                    <th style="text-align:right">Id</th>
+                    <th style="text-align:right">Nombre</th>
+					<th style="text-align:right">Costo</th>
+					<th style="text-align:right">Acciones</th> 
             </tr>
         </thead>
  
-        <tfoot>
-            <tr>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Ubicacion</th>
-                <th>Fecha Inicio</th>
-                <th>Fecha Fin</th>
-                <th>Accion</th>
-            </tr>
-        </tfoot>
- 
         <tbody>
-            <tr>
-                <td>Primera Competencia Anual</td>
-                <td>Competencia</td>
-                <td>Caracas</td>
-                <td>01 Enero 2016</td>
-                <td>02 Enero 2016</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            <tr>
-                <td>Sakarate-Do Avanzado</td>
-                <td>Entrenamiento Especial</td>
-                <td>Caracas</td>
-                <td>07 Noviembre 2015</td>
-                <td>08 Noviembre 2015</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            <tr>
-                <td>2DO Seminario Showakai Sakarate-Do</td>
-                <td>Seminario</td>
-                <td>Caracas</td>
-                <td>01 Diciembre 2015</td>
-                <td>03 Diciembre 2015</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            
-            <tr>
-                <td>Adulto Intermedio</td>
-                <td>Clase</td>
-                <td>Caracas</td>
-                <td>20 Noviembre 2015</td>
-                <td>21 Noviembre 2015</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-
-
+            <asp:Literal runat="server" ID="laTabla"></asp:Literal>
         </tbody>
-    </table>
-
+    </table>    
+   </div>
                   <!--MODAL PARA EL DETALLE -->
 <div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -151,14 +106,13 @@
 			</div>
 		</div>
 
-    </div>
-
      <!--VALIDACION PARA MODAL -->
          
          <script type="text/javascript">
              $(document).ready(function () {
 
-                 var table = $('#example').DataTable({
+                 var table = $('#tablaevento').DataTable({
+                     "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                      "language": {
                          "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                      }
@@ -166,7 +120,7 @@
                  var req;
                  var tr;
 
-                 $('#example tbody').on('click', 'a', function () {
+                 $('#tablaevento tbody').on('click', 'a', function () {
                      if ($(this).parent().hasClass('selected')) {
                          req = $(this).parent().prev().prev().prev().text();
                          tr = $(this).parents('tr');//se guarda la fila seleccionada
