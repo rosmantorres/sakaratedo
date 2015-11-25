@@ -70,6 +70,33 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to id_rol.
+        /// </summary>
+        internal static string AliasIdRol {
+            get {
+                return ResourceManager.GetString("AliasIdRol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id_usuario.
+        /// </summary>
+        internal static string AliasIdUsuario {
+            get {
+                return ResourceManager.GetString("AliasIdUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string AliasNombreRol {
+            get {
+                return ResourceManager.GetString("AliasNombreRol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombre_usuario.
         /// </summary>
         internal static string AliasNombreUsuario {
@@ -79,11 +106,20 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT per_nombre_usuario, per_clave FROM Persona WHERE per_nombre = elParametro1.
+        ///   Looks up a localized string similar to M1_ConsultarNombreUsuarioContrasena.
         /// </summary>
         internal static string ConsultarNombreUsuarioContrasena {
             get {
                 return ResourceManager.GetString("ConsultarNombreUsuarioContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M1_ConsultarRolesUsuario.
+        /// </summary>
+        internal static string ConsultarRolesUsuario {
+            get {
+                return ResourceManager.GetString("ConsultarRolesUsuario", resourceCulture);
             }
         }
     }
