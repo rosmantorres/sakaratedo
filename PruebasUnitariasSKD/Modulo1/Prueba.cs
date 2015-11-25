@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using LogicaNegociosSKD.Modulo1;
+using PruebasUnitariasSKD.Modulo1;
 
 namespace PruebasUnitariasSKD.Modulo1
 {
@@ -29,12 +30,12 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaHash()
         {
             login lg = new login();
-            Console.WriteLine("hola:" +lg.hash("hola"));
+            Console.WriteLine(RecursosPU_Mod1.pruebaHash+lg.hash("hola"));
             Console.WriteLine("hol:" + lg.hash("hol"));
             Console.WriteLine("1234:" + lg.hash("1234"));
             Console.WriteLine("1235:" + lg.hash("1235"));
 
-            Assert.AreEqual(lg.hash("hola"), lg.hash("hola"));
+            Assert.AreEqual(lg.hash("hola"), lg.hash(RecursosPU_Mod1.pruebaHash));
             Assert.AreEqual(lg.hash("1234"), lg.hash("1234"));
             Assert.AreNotEqual(lg.hash("hol"), lg.hash("hola"));
             Assert.AreNotEqual(lg.hash("1235"), lg.hash("1234"));
