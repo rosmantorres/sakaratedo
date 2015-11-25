@@ -9,29 +9,26 @@ using System.Data.SqlClient;
 using System.Configuration;
 using DominioSKD;
 using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
-using ExcepcionesSKD.ExceptionSKD;
-using ExcepcionesSKD;
 
 
 namespace DatosSKD.Modulo16
 {
-    class BDMatricula
+    public class BDMatricula
     {
-         
-        
-          
-         public static List<DominioSKD.Matricula> mostrarMensualidadesmorosas()
+
+
+        public static List<DominioSKD.Matricula> mostrarMensualidadesmorosas(int IdPersona)
         {
             BDConexion laConexion;
             List<Matricula> laListaDeMatriculas = new List<Matricula>();
             List<Parametro> parametros;
-            ModalidadPago modalidad= new ModalidadPago();
 
             try
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-
+                Parametro parametro = new Parametro("@per_id", SqlDbType.Int, IdPersona.ToString(), false);
+                parametros.Add(parametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo16.StoreProcedureConsultarMatriculas, parametros);
@@ -40,65 +37,56 @@ namespace DatosSKD.Modulo16
                 {
                     Matricula laMatricula = new Matricula();
 
-                    laMatricula.IdentificadorUsuario = int.Parse(row[RecursosBDModulo16.ParamIdPersona].ToString());
-                    laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
-                   /* laMatricula.Modalidad = row[RecursosBDModulo16.aliasNombremodalidad].ToString();*/
-                    laMatricula.FechaTope = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
-                    laMatricula.CostoPeriodo = float.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
 
-                    
-                   
+                    laMatricula.Mat_identificador = (row[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
+                    laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
+                    laMatricula.FechaTope = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
+
+
+
+
 
                     laListaDeMatriculas.Add(laMatricula);
-                    return laListaDeMatriculas;
+
                 }
-               
+                return laListaDeMatriculas;
             }
-            
-             catch (NullReferenceException ex)
-             {
 
-                 throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionNullReference,
-                     RecursosBDModulo16.Mensaje_ExcepcionNullReference, ex);
+            catch (NullReferenceException ex)
+            {
 
-             }
-             catch(ExceptionSKDConexionBD ex)
-             {
-                
-                 throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                     RecursoGeneralBD.Mensaje,ex);
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionNullReference,
+                    RecursosBDModulo16.Mensaje_ExcepcionNullReference, ex);
 
-             }
-             catch (SqlException ex)
-             {
-                 throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionSql,
-                     RecursosBDModulo16.Mensaje_ExcepcionSql, ex);
+            }
 
-             }
-             catch (ParametroIncorrectoException ex)
-             {
-                 throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
-                     RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
-             }
-             catch (AtributoIncorrectoException ex)
-             {
-                 throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
-                     RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
-             }
-             catch (Exception ex)
-             {
-                 throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
-                    RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+            catch (SqlException ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionSql,
+                    RecursosBDModulo16.Mensaje_ExcepcionSql, ex);
 
-             }
-          
+            }
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
+                    RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
+                    RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
+                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+
+            }
+
 
         }
-        
 
 
-
-    }
 
 
     }
