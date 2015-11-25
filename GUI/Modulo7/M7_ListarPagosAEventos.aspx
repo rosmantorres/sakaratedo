@@ -63,43 +63,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-				    <td>Entrenamiento</td>
-					<td>23/10/2015</td>
-					<td>8.000 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Competencia</td>
-					<td>27/10/2015</td>
-					<td>3.280 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>Seminario de patadas</td>
-                    <td>02/11/2015</td>
-                    <td>2.000 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Entrenamiento especial</td>
-					<td>11/11/2015</td>
-					<td>4.285 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>
-                
-
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>        
 			</tbody>
     </table>
         </div>
