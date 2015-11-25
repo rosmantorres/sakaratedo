@@ -11,6 +11,7 @@ namespace DominioSKD
         #region atributos
         private String nombre_usuario;
         private String contrasena;
+        private List<Rol> roles;
         #endregion
 
         #region propiedades
@@ -34,11 +35,18 @@ namespace DominioSKD
             contrasena = "";
         }
 
-                public Cuenta(String elNombreUsuario, String laContrasena)
+         public Cuenta(String elNombreUsuario, String laContrasena)
         {
             nombre_usuario = elNombreUsuario;
             contrasena = laContrasena;
         }
+         public Cuenta(String elNombreUsuario, String laContrasena,List<Rol> listaRoles)
+         {
+             nombre_usuario = elNombreUsuario;
+             contrasena = laContrasena;
+             roles = listaRoles;
+         }
+
         #endregion
     }
 }
