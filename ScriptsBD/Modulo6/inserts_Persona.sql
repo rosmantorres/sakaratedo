@@ -84,6 +84,25 @@ VALUES (
     'ACEPTADO'
 );
 
+INSERT INTO dbo.MATRICULA (
+    mat_id,
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id,
+) 
+VALUES (
+    500,
+    'CAF-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+)
+
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
     per_num_doc_id,
@@ -428,6 +447,25 @@ VALUES (
     'ACEPTADO'
 );
 
+INSERT INTO dbo.MATRICULA (
+    mat_id,
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id,
+) 
+VALUES (
+    501,
+    '32-FE-A1',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
     per_num_doc_id,
@@ -512,6 +550,25 @@ VALUES (
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_id,
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id,
+) 
+VALUES (
+    502,
+    'CEFA-FE-A65',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.PERSONA (
@@ -943,3 +1000,22 @@ VALUES (
     GETDATE(),
     'ACEPTADO'
 );
+
+INSERT INTO dbo.MATRICULA (
+    mat_id,
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id,
+) 
+VALUES (
+    503,
+    '67F-31A-F2',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+)
