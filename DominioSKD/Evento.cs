@@ -10,24 +10,51 @@ namespace DominioSKD
     {
         #region Atributos
 
-        private int id_evento;
-        private string descripcion;
-        private string nombre;
-        private int id_horario;
-        private int id_ubicacion;
-        private int id_dojo;
-        private int id_categoria;
+        private int id;
+        private String nombre;
+        private String descripcion;
         private float costo;
-        private Evento tipo_evento;
+        private Ubicacion ubicacion;
+        private Categoria categoria;
+        private TipoEvento tipoEvento;
+        private Horario horario;
 
         #endregion
 
-        #region Get y Set
+        #region Constructores
+
+        public Evento(int id, String nombre, String descripcion, float costo, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.costo = costo;
+            this.ubicacion = ubicacion;
+            this.categoria = categoria;
+            this.tipoEvento = tipoEvento;
+            this.horario = horario;
+        }
+
+        public Evento(int id, String nombre, String descripcion, float costo, Ubicacion ubicacion, TipoEvento tipoEvento, Horario horario)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.costo = costo;
+            this.ubicacion = ubicacion;
+            this.tipoEvento = tipoEvento;
+            this.horario = horario;
+        }
+
+        #endregion
+
+
+        #region Propiedades
 
         public int Id_evento
         {
-            get { return id_evento; }
-            set { id_evento = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         public String Descripcion
@@ -42,27 +69,23 @@ namespace DominioSKD
             set { nombre = value; }
         }
 
-        public int Id_horario
+        public Horario Horario
         {
-            get { return id_horario; }
-            set { id_horario = value; }
+            get { return horario; }
+            set { horario = value; }
         }
 
-        public int Id_ubicacion
+        public Ubicacion Ubicacion
         {
-            get { return id_ubicacion; }
-            set { id_ubicacion = value; }
+            get { return ubicacion; }
+            set { ubicacion = value; }
         }
 
-        public int Id_dojo
+        
+        public Categoria Categoria
         {
-            get { return id_dojo; }
-            set { id_dojo = value; }
-        }
-        public int Id_categoria
-        {
-            get { return id_categoria; }
-            set { id_categoria = value; }
+            get { return categoria; }
+            set { categoria = value; }
         }
 
         public float Costo
@@ -71,37 +94,15 @@ namespace DominioSKD
             set { costo = value; }
         }
 
-        public Evento Tipo_evento
+        public TipoEvento TipoEvento
         {
-            get { return tipo_evento; }
-            set { tipo_evento = value; }
+            get { return tipoEvento; }
+            set { tipoEvento = value; }
         }
 
         #endregion
 
-        #region Constructores
 
-        public Evento()
-        {
-            id_evento = 0;
-            descripcion = "";
-            nombre = "";
-            id_horario = 0;
-            id_ubicacion = 0;
-            id_dojo = 0;
-            id_categoria = 0;
-            costo = 0;
-            tipo_evento = null;
-        }
-
-        public Evento(int eve_id, string eve_nombre, float precio)
-        {
-            id_evento = eve_id;
-            nombre = eve_nombre;
-            costo = precio;
-        }
-
-        #endregion
 
     }
 }
