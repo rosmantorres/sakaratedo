@@ -13,5 +13,25 @@ namespace templateApp.GUI.Modulo12
         {
             ((SKD)Page.Master).IdModulo = "12";
         }
+
+        protected void btn_agregarComp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboCintaHasta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void comboCintaDesde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
