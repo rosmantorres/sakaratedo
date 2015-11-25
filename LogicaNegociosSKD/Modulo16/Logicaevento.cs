@@ -52,46 +52,6 @@ namespace LogicaNegociosSKD.Modulo16
         }
 
 
-        public DominioSKD.Evento detalleEventoXId(int elIdEvento)
-        {
-            try
-            {
-                return BDEvento.DetallarEvento(elIdEvento);
-            }
-            catch (NullReferenceException ex)
-            {
-
-                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionNullReference,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionNullReference, ex);
-
-            }
-            catch (ExceptionSKDConexionBD ex)
-            {
-
-                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-
-            }
-
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
-                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
-                   RecursosLogicaModulo16.Mensaje_ExcepcionGeneral, ex);
-
-            }
-
-        }
-
         #endregion
     }
 }
