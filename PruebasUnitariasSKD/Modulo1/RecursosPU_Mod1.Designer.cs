@@ -122,5 +122,14 @@ namespace PruebasUnitariasSKD.Modulo1 {
                 return ResourceManager.GetString("pruebaHash2", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to usuario04.
+        /// </summary>
+        internal static string usuario {
+            get {
+                return ResourceManager.GetString("usuario", resourceCulture);
+            }
+        }
     }
 }

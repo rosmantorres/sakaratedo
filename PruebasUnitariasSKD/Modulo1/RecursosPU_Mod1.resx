@@ -145,4 +145,8 @@
     <value>hola</value>
     <comment>Prueba de hash</comment>
   </data>
+  <data name="usuario" xml:space="preserve">
+    <value>usuario04</value>
+    <comment>nombre de usuario</comment>
+  </data>
 </root>
