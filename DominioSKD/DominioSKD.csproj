@@ -39,9 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
+    <Compile Include="Compra.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Organizacion.cs" />
