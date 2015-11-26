@@ -35,7 +35,7 @@ namespace templateApp.GUI.Modulo16
                 try
                 {
                     //Lleno la tabla
-                    //    Llenartabla();
+                    Llenartabla();
                 }
                 catch (Exception ex)
                 {
@@ -122,9 +122,9 @@ namespace templateApp.GUI.Modulo16
 
                 //Agrego los datos correspondientes de la tabla con sus botones
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Imagen + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Nombre + M16_Recursointerfaz.CERRAR_TD;
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Precio + M16_Recursointerfaz.CERRAR_TD;
-          //      this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Nombre + M16_Recursointerfaz.CERRAR_TD;
-           //     this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Marca + M16_Recursointerfaz.CERRAR_TD;
+                //     this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Marca + M16_Recursointerfaz.CERRAR_TD;
                // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Tipo + M16_Recursointerfaz.CERRAR_TD;
                 
 
@@ -162,7 +162,7 @@ namespace templateApp.GUI.Modulo16
             }*/
 
             //Recorro la lista de eventos en el carrito para anexarlas al GRIDVIEW
-          /*  foreach (Evento evento in carritoCompras.Listaevento)
+            foreach (Evento evento in carritoCompras.Listaevento)
             {
                 //Creo la fila de la tabla
                 this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TR_EVENTO + evento.Id_evento +">";
@@ -181,7 +181,7 @@ namespace templateApp.GUI.Modulo16
                 //Cierro la fila creada
                 this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TR;
 
-            }*/
+            }
 
         }
 

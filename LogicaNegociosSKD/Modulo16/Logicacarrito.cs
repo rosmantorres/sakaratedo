@@ -46,12 +46,12 @@ namespace LogicaNegociosSKD.Modulo16
             //Obtengo los datos de las tres tablas
             List<Implemento> listaImplemento = carritoBD.getImplemento(idUsuario);
          //   List<Matricula> listaMatricula = carritoBD.getMatricula(idUsuario);
-       //     List<Evento> listaEvento = carritoBD.getEvento(idUsuario);
+            List<Evento> listaEvento = carritoBD.getEvento(idUsuario);
 
             //Creo el carrito y anexo la informacion
             Carrito elCarrito = new Carrito();
             elCarrito.ListaImplemento = listaImplemento;
-          //  elCarrito.Listaevento = listaEvento;
+            elCarrito.Listaevento = listaEvento;
 
             //Retorno el carrito del usuario
             return elCarrito;

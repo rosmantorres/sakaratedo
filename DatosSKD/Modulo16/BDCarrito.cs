@@ -28,7 +28,7 @@ namespace DatosSKD.Modulo16
 
         #region Metodos
         /// <summary>
-        /// Metodo que obtiene todos los items del inventario en el carrito del usuario de la Base de Datos
+        /// Metodo que obtiene todos los items de implementos en el carrito del usuario de la Base de Datos
         /// </summary>
         /// <param name="idUsuario">Usuario del que se desea ver los items del iventario agregados en carrito</param>
         /// <returns>Lista con todos los items del inventario que se encuentran en el carrito</returns>
@@ -52,7 +52,7 @@ namespace DatosSKD.Modulo16
                 //Obtengo todos los ids que estan en carrito de los Inventario
                 foreach (DataRow row in dt.Rows)
                 {
-                    //Me creo el Inventario
+                    //Me creo el Implemento
                     Implemento elInventario = new Implemento();
 
                     //Preparo para obtener los datos de ese Inventario
@@ -62,7 +62,7 @@ namespace DatosSKD.Modulo16
                     parametros.Add(parametro);
 
                     //Seteamos el id del implemento
-                    elInventario.Id_implemento = int.Parse(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO);
+                    elInventario.Id_implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
 
                     //Obtengo la informacion de los inventarios
                     conexion = new BDConexion();
@@ -83,6 +83,7 @@ namespace DatosSKD.Modulo16
                     laLista.Add(elInventario);
                 }
 
+                //Retorno la lista
                 return laLista;
             }
             catch (SqlException e)
@@ -144,14 +145,18 @@ namespace DatosSKD.Modulo16
                         row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString(), false);
                     parametros.Add(parametro);
 
+                    //Seteamos el id del evento
+                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+
                     //Obtengo la informacion de los eventos
+                    conexion = new BDConexion();
                     DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_EVENTO_ID, parametros);
 
                     //Por cada ID obtengo su informacion correspondiente
                     foreach (DataRow row2 in dt2.Rows)
                     {
-                        elEvento.Id_evento = int.Parse(row2[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                        
                         elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                         elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                     }
@@ -160,6 +165,7 @@ namespace DatosSKD.Modulo16
                     laLista.Add(elEvento);
                 }
 
+                //Retorno la lista
                 return laLista;
             }
             catch (SqlException e)
@@ -187,17 +193,7 @@ namespace DatosSKD.Modulo16
 
         }*/
 
-        /// <summary>
-        /// Metodo que obtiene todos los eventos en el carrito del usuario de la Base de Datos
-        /// </summary>
-        /// <param name="idUsuario">Usuario del que se desea ver los eventos agregados en el carrito</param>
-        /// <returns>Lista con todos los eventos que se encuentran en el carrito</returns>
-        /*
-        public List<Evento> getEvento(int idUsuario)
-        {
-
-        }*/
-
+        
         /// <summary>
         /// Metodo que elimina un objeto que haya en el carrito del usuario en la Base de Datos
         /// </summary>
