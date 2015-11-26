@@ -96,7 +96,7 @@ namespace LogicaNegociosSKD.Modulo1
                 string[] menorEdad = { "atletaM@gmail.com", "12345", "Atleta(Menor)", "Armando", "Paredes", "Atleta(Menor)" };
                 */
                string hashClave = hash(contraseña);
-               if (hashClave == hash(user.Contrasena))//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
+               if (hashClave == hash(user.Contrasena) && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
                    respuesta[0] = user.Id_usuario.ToString();
                    respuesta[1] = user.Nombre_usuario;
@@ -115,13 +115,19 @@ namespace LogicaNegociosSKD.Modulo1
                            split="";
                       // if(elRol==RecursosLogicaModulo1.rolAtleta ) verificar si es menor de edad
                        rolesConcat = rolesConcat + elRol + split;
-                       //DateTime timeRol=Convert.ToDateTime(rol.Fecha_creacion);
-                       //if (DateTime.Compare(fechaRol, timeRol) == 1)       ASIGNAR LA FECHA AL ROL
+                       int d = DateTime.Compare(fechaRol, rol.Fecha_creacion);
+                       if (DateTime.Compare(fechaRol, rol.Fecha_creacion) == -1)
+                       {
+                           fechaRol = rol.Fecha_creacion;
                            respuesta[3] = elRol;
+                       }
 
                    }
                    respuesta[2] = rolesConcat;
-                   return respuesta;
+                   if (rolesConcat != "")
+                       return respuesta;
+                   else
+                       return null;
                    //ingresó a sistema
                }
 
