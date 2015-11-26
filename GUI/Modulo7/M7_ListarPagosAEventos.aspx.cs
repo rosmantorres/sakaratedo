@@ -47,7 +47,7 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.FechaInicio.ToString() + M7_Recursos.CerrarTD;
+                        //this.laTabla.Text += M7_Recursos.AbrirTD + evento.FechaInicio.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
@@ -69,9 +69,9 @@ namespace templateApp.GUI.Modulo7
             /// <param name="idEvento">Número entero que representa el ID del evento</param>
             protected void llenarModalInfo(int idEvento)
             {
-                Evento evento = new Evento();
+                /*Evento evento = new Evento();
                 LogicaEventosPagos logica = new LogicaEventosPagos();
-                evento = logica.detalleEventoID(idEvento);
+                evento = logica.detalleEventoID(idEvento);*/
             }
 
         }

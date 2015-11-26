@@ -40,15 +40,15 @@ namespace templateApp.GUI.Modulo7
                 try
                 {
                     laLista = logEvento.obtenerListaDeEventos();
-
+                    
                     foreach (Evento evento in laLista)
                     {
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.FechaInicio.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaFin.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
@@ -69,9 +69,9 @@ namespace templateApp.GUI.Modulo7
             /// <param name="idEvento">Número entero que representa el ID del evento</param>
             protected void llenarModalInfo(int idEvento)
             {
-                Evento evento = new Evento();
+                /*Evento evento = new Evento();
                 LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
-                evento = logica.detalleEventoID(idEvento);
+                evento = logica.detalleEventoID(idEvento);*/
             }
 
         }
