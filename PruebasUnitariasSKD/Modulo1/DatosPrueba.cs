@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using DatosSKD.Modulo1;
 
 namespace PruebasUnitariasSKD.Modulo1
 {
@@ -24,10 +25,8 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaObtenerUsuario()
         {
-         DominioSKD.Cuenta resp=  DatosSKD.Modulo1.BDLogin.ObtenerUsuario("usuario01");
-         Console.WriteLine(resp.Nombre_usuario);
-         Console.WriteLine(resp.Roles);
-         Console.WriteLine(resp.Id_usuario.ToString());
+         DominioSKD.Cuenta resp=  BDLogin.ObtenerUsuario("usuario04");
+         
         }
     }
 }
