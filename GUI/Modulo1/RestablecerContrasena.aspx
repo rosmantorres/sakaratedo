@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReestablecerContraseña.aspx.cs" Inherits="templateApp.GUI.Modulo1.RestablecerContraseña" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RestablecerContrasena.aspx.cs" Inherits="templateApp.GUI.Modulo1.RestablecerContraseña" %>
 
 <!DOCTYPE html>
 

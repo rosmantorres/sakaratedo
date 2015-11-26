@@ -1450,6 +1450,9 @@
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="GUI\Modulo1\RestablecerContrasena.aspx.designer.cs">
+      <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo2\M2_GestionarRol.aspx.cs">
       <DependentUpon>M2_GestionarRol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
