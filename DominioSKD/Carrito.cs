@@ -37,8 +37,6 @@ namespace DominioSKD
 
         }
 
-        }
-
         /// <summary>
         /// Propiedad del atributo listaEvento
         /// </summary>
