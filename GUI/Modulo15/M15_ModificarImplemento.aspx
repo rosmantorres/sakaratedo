@@ -50,12 +50,12 @@ Gesti&oacuten de Inventario
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea"/>            
+                        <input  type="text" id="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea" runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                          <p><b>Tipo Implemento:</b></p>
-                        <select id="tipo_articulo" class="form-control">
+                        <select id="tipo_implemento" class="form-control" runat="server">
                                <option value="1" >Vestimenta</option>
                                <option selected value="2" >Accesorios</option>
                                <option value="3" >Otros</option>
@@ -64,27 +64,27 @@ Gesti&oacuten de Inventario
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" value="20"/>            
+                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control" value="1000"/>         
+                        <input type="text" id="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control" value="Rojo"/>            
+                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control" value="Rojo" runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" value="Kombate"/>            
+                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" value="Kombate" runat="server"/>            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                       <select id="Select1" class="form-control">
+                       <select id="talla_implemento" class="form-control" runat="server">
                                <option value="1" >XS</option>
                                <option value="2" >S</option>
                                <option value="3" >M</option>
@@ -97,7 +97,7 @@ Gesti&oacuten de Inventario
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Dojo:</b></p>
-                             <select id="nombre_dojo" class="form-control">
+                             <select id="nombre_dojo" class="form-control" runat="server">
                                   <option value="1" >Green Dragon</option>
                                   <option value="2" >Red Dragon</option>
                                   <option value="3" >Blue Dragon</option>
@@ -110,22 +110,18 @@ Gesti&oacuten de Inventario
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Stock m&iacutenimo:</b></p>
-                       <input type="text" id="stock_implemento"  placeholder="*Stock m&iacutenimo" class="form-control" value="5"/>            
+                       <input type="text" id="stock_implemento"  placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
                     </div>
                       <br/>
-                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Proveedor:</b></p>
-                       <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" value="Shirido"/>            
-                    </div>
-                      <br/>
+                        
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
-                       <input type="file" id="imagen_implemento"  class="form-control"/>            
+                       <input type="file" id="imagen_implemento"  class="form-control" runat="server"/>            
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Condicion:</b></p>
-                             <select id="Select2" class="form-control" runat="server">
+                      <p><b>Estatus:</b></p>
+                             <select id="estatus_implemento" class="form-control" runat="server">
                                   <option value="1" >Activo</option>
                                   <option value="2" >Inactivo</option>                                  
                               </select>

@@ -31,6 +31,8 @@ Agregar Implemento
  <div id="alert"  >
     <div id="contenido_alerta"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>
+     <div id="alert2" runat="server">
+    </div>
     <%--Fin de alerta de falta de contenido--%>
 
     <%--Alerta de confirmación--%>
@@ -46,11 +48,11 @@ Agregar Implemento
                 </div><!--Encabezado del formulario -->
 
                 <!-- Comienzo del formulario -->
-                <form role="form" id="agregar_implemento" method="post" action="M15_ConsultarImplemento.aspx?comprobar=exito">
+                <form role="form" id="agregar_implemento" method="post" action="M15_ConsultarImplemento.aspx">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control" />            
+                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control"  runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -64,27 +66,27 @@ Agregar Implemento
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" />            
+                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control"  runat="server" />            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control"  />         
+                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control"  runat="server" />         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control"  />            
+                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control"  runat="server" />            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" />            
+                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control"  runat="server"/>            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                        <select id="Select1" class="form-control" runat="server">
+                        <select id="talla_implemento" class="form-control" runat="server">
                                <option value="1" >XS</option>
                                <option value="2" >S</option>
                                <option value="3" >M</option>
@@ -109,17 +111,17 @@ Agregar Implemento
                       </div>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Stock M&iacutenimo</b></p>
-                        <input type="text" id="stock_implemento" placeholder="*Stock Minimo" class="form-control"  />         
+                        <input type="text" id="stock_implemento" placeholder="*Stock Minimo" class="form-control"  runat="server" />         
                      </div>
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Proveedor:</b></p>
-                       <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" />            
+                       <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
-                       <input type="file" id="imagen_implemento"  class="form-control" />            
+                       <input type="file" id="imagen_implemento"  class="form-control"  runat="server" />            
                     </div>
                       <br/>
 
@@ -128,9 +130,10 @@ Agregar Implemento
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarComp" type="submit" class="btn btn-primary" >Agregar</button>
-                    &nbsp;&nbsp
-                   <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
+                <a id="btnagregar" type="button" class="btn btn-primary"  href="M15_ConsultarImplemento.aspx?agregar=true" >Agregar</a>
+                                      &nbsp;&nbsp
+             <!-- <button id="btnagregar"  type="submit">Agregar</button>-->
+                           <a class="btn btn-default" href="M15_ConsultarImplemento.aspx" runat="server" >Cancelar</a>
                   </div>
 
                 </form>
@@ -152,7 +155,7 @@ Agregar Implemento
 
           // Alertas de cada uno de los campos vacios y los que pertenecen a numéricos
 
-          $("#btn-agregarComp").click(function (evento) {
+          $("#btndfagregarComp").click(function (evento) {
               //  alert($("#nombre_articulo").val());
               if ($("#nombre_articulo").val() == "") {
                   valor = "El campo nombre implemento es obligatorio </br>";
@@ -228,8 +231,6 @@ Agregar Implemento
 
               }
            
-
-
           });
 
       });

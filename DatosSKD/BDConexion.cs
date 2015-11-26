@@ -161,7 +161,6 @@ namespace DatosSKD
                     AsignarParametros(parametros);
 
 
-                    conexion.Open();
                     comando.ExecuteNonQuery();
                     if (comando.Parameters != null)
                     {
@@ -274,7 +273,6 @@ namespace DatosSKD
                     AsignarParametros(parametros);
 
 
-                    conexion.Open();
                     using (SqlDataAdapter dataAdapter = new SqlDataAdapter(comando))
                     {
                         //SqlDataAdapter dataAdapter = new SqlDataAdapter();
