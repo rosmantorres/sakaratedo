@@ -78,13 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo1\PruebasUnitariasLogin.cs" />
-=======
     <Compile Include="Modulo1\DatosPrueba.cs" />
     <Compile Include="Modulo1\Prueba.cs" />
->>>>>>> 34700eea69d820817f4cee2cca4e8c57108fd12d
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
