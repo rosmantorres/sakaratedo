@@ -149,4 +149,26 @@
     <value>23072</value>
     <comment>puerto del localhost para generar el link al archivo</comment>
   </data>
+  <data name="rolAtleta" xml:space="preserve">
+    <value>Atleta</value>
+  </data>
+  <data name="rolAtletaMenor" xml:space="preserve">
+    <value>Atleta(Menor)</value>
+  </data>
+  <data name="rolDojo" xml:space="preserve">
+    <value>Dojo</value>
+  </data>
+  <data name="rolOrganizacion" xml:space="preserve">
+    <value>Organizacion</value>
+  </data>
+  <data name="rolRepresentante" xml:space="preserve">
+    <value>Representante</value>
+  </data>
+  <data name="rolSistema" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="splitRoles" xml:space="preserve">
+    <value>-</value>
+    <comment>este mismo se encuentra en RecursosMaster</comment>
+  </data>
 </root>

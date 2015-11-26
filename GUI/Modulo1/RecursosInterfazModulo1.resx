@@ -133,6 +133,22 @@
   <data name="logWarning" xml:space="preserve">
     <value>¡El correo no se encuentra registrado en SA-KARATEDO!</value>
   </data>
+  <data name="parametroURLCorreoEnviado" xml:space="preserve">
+    <value>true</value>
+    <comment>parametro utilizado en el url cuando el correo se envia con exito</comment>
+  </data>
+  <data name="parametroURLCorreoFalla" xml:space="preserve">
+    <value>false</value>
+    <comment>parametro utilizado en el url cuando el correo no se envia con exito</comment>
+  </data>
+  <data name="parametroURLReestablecerExito" xml:space="preserve">
+    <value>true</value>
+    <comment>parametro utilizado para notificar exito en reestablecer contraseña</comment>
+  </data>
+  <data name="parametroURLReestablecerFalla" xml:space="preserve">
+    <value>false</value>
+    <comment>parametro utilizado para notificar falla en reestablecer contraseña</comment>
+  </data>
   <data name="tipoErr" xml:space="preserve">
     <value>Error</value>
     <comment>Timpo de mensaje Error</comment>
