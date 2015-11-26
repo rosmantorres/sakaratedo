@@ -68,56 +68,7 @@ namespace LogicaNegociosSKD.Modulo16
             }
         }
 
-        /// <summary>
-        /// Metodo que obtiene todas las matriculas asociadas a una persona
-        /// </summary>
-        /// <param name="idUsuario">El usuario el cual se desea ver las matriculas en su carrito</param>
-        /// <returns>Todas las matriculas que tiene actualmente el cliente en su carrito</returns>
-        public List<DominioSKD.Matricula> mostrarMensualidadesmorosas()
-        {
-
-            try
-            {
-                return BDMatricula.mostrarMensualidadesmorosas();
-            }
-
-
-
-            catch (NullReferenceException ex)
-            {
-
-                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionNullReference,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionNullReference, ex);
-
-            }
-            catch (ExceptionSKDConexionBD ex)
-            {
-
-                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-
-            }
-
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
-                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
-                   RecursosLogicaModulo16.Mensaje_ExcepcionGeneral, ex);
-
-            }
-
-
-
-        }
+       
  
 
 
