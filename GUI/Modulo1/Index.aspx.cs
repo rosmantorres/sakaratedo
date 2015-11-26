@@ -19,11 +19,12 @@ namespace templateApp.GUI.Modulo1
             errorLogin.Visible = false;
             warningLog.Visible = false;
 
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] == "true"))
+            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] == RecursosInterfazModulo1.parametroURLCorreoEnviado))
                 mensajeLogin(true, RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
             else
                 infoLog.Visible = false;
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] == "true"))
+
+            if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] == RecursosInterfazModulo1.parametroURLReestablecerExito))
                 mensajeLogin(true, RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
             else
                 successLog.Visible = false;
@@ -50,27 +51,20 @@ namespace templateApp.GUI.Modulo1
         {
             switch (tipo)
             {
-                case "Error": errorLogin.Visible = visible;
-                              warningLog.Visible = !visible;
-                              infoLog.Visible = !visible;
-                              successLog.Visible = !visible;
-                               errorLogin.InnerText = mensaje; break;
-                case "Warning": warningLog.Visible = visible;
-                                errorLogin.Visible = !visible;
-                                infoLog.Visible = !visible;
-                                successLog.Visible = !visible;
-                                warningLog.InnerText = mensaje; break;
-                case "Info": infoLog.Visible = visible;
-                              errorLogin.Visible = !visible;
-                              warningLog.Visible = !visible;
-                              successLog.Visible = !visible;
-                              infoLog.InnerText = mensaje; break;
-                case "Success": successLog.Visible = visible; 
-                                errorLogin.Visible =!visible;
-                              warningLog.Visible = !visible;
-                              infoLog.Visible = !visible;
-                              successLog.InnerText = mensaje; break;
+                case "Error": mensajeVisible(false, false, false, true); break;
+                case "Warning": mensajeVisible(false, false, true, false); break;
+                case "Info": mensajeVisible(false, true, false, false); break;
+                case "Success": mensajeVisible(true, false, false, false); break;
             }
+        }
+
+        public void mensajeVisible(bool success,bool info,bool warning,bool error)
+        {
+            successLog.Visible = success;
+            warningLog.Visible = warning;
+            errorLogin.Visible = error;
+            infoLog.Visible = info;
+
         }
 
 
@@ -93,8 +87,7 @@ namespace templateApp.GUI.Modulo1
                 mensajeLogin(true, RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
                 new login().EnviarCorreo( CorreoDestino);
 
-                string opcion = "true";
-                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?" + RecursosInterfazModulo1.tipoInfo + "=" + opcion);
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?" + RecursosInterfazModulo1.tipoInfo + "=" + RecursosInterfazModulo1.parametroURLCorreoEnviado);
             }
             RestablecerCorreo.Value = "";
                     
@@ -107,11 +100,10 @@ namespace templateApp.GUI.Modulo1
             string[] Respuesta = new login().iniciarSesion(correo, clave);
             if (Respuesta != null)
             {
-                Session[RecursosInterfazMaster.sessionRol] = Respuesta[2];
-                Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[3];
-                Session[RecursosInterfazMaster.sessionUsuarioApellido] = Respuesta[4];
-                Session[RecursosInterfazMaster.sessionUsuarioCorreo] = Respuesta[0];
-                Session[RecursosInterfazMaster.sessionRoles] = Respuesta[5];
+                Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];
+                Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[1];
+                Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
+                Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
                 Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 mensajeLogin(false, RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
             }
