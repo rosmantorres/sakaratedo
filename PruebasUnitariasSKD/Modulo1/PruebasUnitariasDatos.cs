@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using DatosSKD.Modulo1;
 using PruebasUnitariasSKD.Modulo1;
+using DominioSKD;
+using ExcepcionesSKD;
 
-namespace PruebasUnitariasSKD.Modulo1
+
+namespace PruebasUnitariasSKD.Modulo1.Datos
 {
     [TestFixture]
     class PruebasUnitariasLogin
@@ -19,11 +22,11 @@ namespace PruebasUnitariasSKD.Modulo1
         }
          // Prueba unitaria del metodo IniciarSesion() de forma erronea
         [Test]
-        public static void PruebaInicioSesionFallida()
+        [ExpectedException(typeof(ExceptionSKDConexionBD))]
+        public  void PruebaInicioSesionFallida()
         {
-            Cuenta lg = new Cuenta();
-            string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebaErrorCorreo, RecursosPU_Mod1.PruebaErrorClave);
-            Assert.AreEqual(resp, null);
+            Cuenta laCuenta = new Cuenta();
+            laCuenta = DatosSKD.Modulo1.BDLogin.ObtenerUsuario(RecursosPU_Mod1.pruebaErrorCorreo);
 
         }
 
