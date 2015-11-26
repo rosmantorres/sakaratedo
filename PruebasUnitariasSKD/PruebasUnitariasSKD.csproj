@@ -78,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo1\DatosPrueba.cs" />
     <Compile Include="Modulo1\Prueba.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>

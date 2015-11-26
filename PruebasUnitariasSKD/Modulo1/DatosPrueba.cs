@@ -24,7 +24,10 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaObtenerUsuario()
         {
-
+         DominioSKD.Cuenta resp=  DatosSKD.Modulo1.BDLogin.ObtenerUsuario("usuario01");
+         Console.WriteLine(resp.Nombre_usuario);
+         Console.WriteLine(resp.Roles);
+         Console.WriteLine(resp.Id_usuario.ToString());
         }
     }
 }
