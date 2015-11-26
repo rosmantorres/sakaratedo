@@ -30,11 +30,14 @@
        <div class="box-header">
            <h3 class="box-title">Planillas Creadas</h3>
         </div><!-- /.box-header -->
-         <div class="box-body table-responsive">
-
+      <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
+         
+          <div class="box-body table-responsive">
+             
           <table id="planillascreadas" class="table table-bordered table-striped dataTable">
            <thead>
             <tr>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Tipo de Planilla</th>
                 <th>Datos</th>
@@ -47,7 +50,8 @@
            </tbody>
         </table>
        </div>
-      </div>
+      </form>
+    </div>
 	</div>
   </div>
       

@@ -126,16 +126,25 @@
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
+  <data name="BotonCerrar1" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M14_DisenoPlanilla.aspx?componente=</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>&amp;nombre=</value>
+  </data>
+  <data name="Tipo" xml:space="preserve">
+    <value>&amp;tipo=</value>
   </data>
 </root>

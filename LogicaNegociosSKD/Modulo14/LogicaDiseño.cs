@@ -17,11 +17,16 @@ namespace LogicaNegociosSKD.Modulo14
             return  datos.GuardarDiseñoBD(diseño, planilla);
         }
 
-        public DominioSKD.Diseño ConsultarDiseño(DominioSKD.Planilla planilla)
+        public DominioSKD.Diseño ConsultarDiseño(int planilla)
         {
             diseñoPlanilla= datos.ConsultarDiseño(planilla);
             diseñoPlanilla.Contenido = ReemplazarElementos(diseñoPlanilla.Contenido);
             return diseñoPlanilla;
+        }
+
+        public DominioSKD.Diseño ConsultarDiseñoPuro(int planilla)
+        {
+            return diseñoPlanilla = datos.ConsultarDiseño(planilla);
         }
    
         public string ReemplazarElementos(string info)
@@ -43,6 +48,12 @@ namespace LogicaNegociosSKD.Modulo14
 
             return info;
 
+        }
+
+        public Boolean ModificarDiseño(DominioSKD.Diseño diseño)
+        {
+            diseño.Base64Encode();
+            return datos.ModificarDiseño(diseño);
         }
     }
 }

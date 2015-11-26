@@ -88,6 +88,15 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonCerrar1 {
+            get {
+                return ResourceManager.GetString("BotonCerrar1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;.
         /// </summary>
         internal static string BotonInfo {
@@ -97,7 +106,7 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_DisenoPlanilla.aspx?componente=.
+        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
         /// </summary>
         internal static string BotonModificar {
             get {
@@ -120,6 +129,24 @@ namespace templateApp.GUI.Modulo14 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;nombre=.
+        /// </summary>
+        internal static string Nombre {
+            get {
+                return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;tipo=.
+        /// </summary>
+        internal static string Tipo {
+            get {
+                return ResourceManager.GetString("Tipo", resourceCulture);
             }
         }
     }

@@ -26,7 +26,7 @@ namespace templateApp.GUI.Modulo14
         public void MostrarInformacion()
         {
             planilla1 = new DominioSKD.Planilla(1,"Retiro", true, "Vacaciones");
-            DominioSKD.Diseño diseño = logica.ConsultarDiseño(planilla1);
+            DominioSKD.Diseño diseño = logica.ConsultarDiseño(planilla1.ID);
             contenido = diseño.Contenido;
             this.informacion.Text = contenido;
         }
@@ -79,5 +79,6 @@ namespace templateApp.GUI.Modulo14
                 Response.Write(ex.ToString());
             }
         }
+
     }
 }

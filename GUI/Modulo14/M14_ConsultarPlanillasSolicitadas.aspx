@@ -44,6 +44,7 @@
 					<th style="text-align:center">Tipo</th>
 					<th style="text-align:center">Fecha</th>
 					<th style="text-align:center">Fecha de solicitud</th>
+                    <th style="text-align:center">Evento</th>
                     <th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>

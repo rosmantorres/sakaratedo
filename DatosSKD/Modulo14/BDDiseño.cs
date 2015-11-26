@@ -67,19 +67,19 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="planilla"></param>
         /// <returns></returns>
-        public DominioSKD.Diseño ConsultarDiseño(DominioSKD.Planilla planilla)
+        public DominioSKD.Diseño ConsultarDiseño(int planilla)
         {
             SqlConnection conect = con.Conectar();
             DominioSKD.Diseño diseño = new DominioSKD.Diseño();
-
-            if (planilla != null)
+            
+            if (planilla!=0)
             {
                 try
                 {
 
                     SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarDiseño, conect);
                     sqlcom.CommandType = CommandType.StoredProcedure;
-                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroDiseñoPlanilla, planilla.ID));
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroDiseñoPlanilla, planilla));
 
                     SqlDataReader leer;
                     conect.Open();
@@ -134,27 +134,19 @@ namespace DatosSKD.Modulo14
 
                     SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureModificarDiseño, conect);
                     sqlcom.CommandType = CommandType.StoredProcedure;
-                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroID, diseño.ID));
-                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroContenido, diseño.Contenido));
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroID,
+                                SqlDbType.Int));
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroContenido,
+                        SqlDbType.VarChar));
+
+                    sqlcom.Parameters[RecursosBDModulo14.ParametroID].Value = diseño.ID;
+                    sqlcom.Parameters[RecursosBDModulo14.ParametroContenido].Value = diseño.Contenido;
 
                     SqlDataReader leer;
                     conect.Open();
 
                     leer = sqlcom.ExecuteReader();
-                    if (leer != null)
-                    {
-                        while (leer.Read())
-                        {
-                            return true;
-                        }
-
-                        return false;
-                    }
-                    else
-                    {
-
-                        return false;
-                    }
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -164,11 +156,12 @@ namespace DatosSKD.Modulo14
                 {
                     con.Desconectar(conect);
                 }
-            }
+                
+              }
             else
             {
                 return false;
-            }
+           }
 
         }
         #endregion
