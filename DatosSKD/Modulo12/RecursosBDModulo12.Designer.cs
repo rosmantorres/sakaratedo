@@ -61,6 +61,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M12_AgregarCompetencia.
+        /// </summary>
+        internal static string AgregarCompetencia {
+            get {
+                return ResourceManager.GetString("AgregarCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to cintaFin.
         /// </summary>
         internal static string AliasCintaFin {
@@ -444,6 +453,24 @@ namespace DatosSKD.Modulo12 {
         internal static string ParamTipoCompetencia {
             get {
                 return ResourceManager.GetString("ParamTipoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kata.
+        /// </summary>
+        internal static string TipoCompetenciaKata {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kumite.
+        /// </summary>
+        internal static string TipoCompetenciaKumite {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaKumite", resourceCulture);
             }
         }
         

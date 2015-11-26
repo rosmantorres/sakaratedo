@@ -35,7 +35,13 @@ namespace DatosSKD.Modulo12
 
                     laCompetencia.Id_competencia = int.Parse(row[RecursosBDModulo12.AliasIdCompetencia].ToString());
                     laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
-                    laCompetencia.TipoCompetencia = int.Parse(row[RecursosBDModulo12.AliasTipoCompetencia].ToString());
+                    laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
+
+                    if (laCompetencia.TipoCompetencia == "1")
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
+                    else
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+
                     laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
                     laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
 
@@ -89,7 +95,13 @@ namespace DatosSKD.Modulo12
 
                     laCompetencia.Id_competencia = int.Parse(row[RecursosBDModulo12.AliasIdCompetencia].ToString());
                     laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
-                    laCompetencia.TipoCompetencia = int.Parse(row[RecursosBDModulo12.AliasTipoCompetencia].ToString());
+                    laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
+
+                    if (laCompetencia.TipoCompetencia == "1")
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
+                    else
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+
                     laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
                     laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
                     laCompetencia.FechaInicio = Convert.ToDateTime(row[RecursosBDModulo12.AliasEdadInicio].ToString());
