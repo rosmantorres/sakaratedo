@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD;
 
 namespace DominioSKD
 {
@@ -17,7 +18,7 @@ namespace DominioSKD
         /// </summary>
         List<Implemento> listaImplemento;
         List<Evento> listaEvento;
-     //   List<Matricula> listaMatricula;
+        List<Matricula> listaMatricula;
         #endregion
 
         #region Propiedades

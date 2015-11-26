@@ -136,17 +136,12 @@ namespace DatosSKD.Modulo16
                 //Obtengo todos los ids que estan en carrito de los eventos
                 foreach(DataRow row in dt.Rows)
                 {
-                    //Me creo el evento
-                    Evento elEvento = new Evento();
-
+                    
                     //Preparo para obtener los datos de ese evento
                     parametros = new List<Parametro>();
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
                         row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString(), false);
                     parametros.Add(parametro);
-
-                    //Seteamos el id del evento
-                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
 
                     //Obtengo la informacion de los eventos
                     conexion = new BDConexion();
@@ -156,13 +151,16 @@ namespace DatosSKD.Modulo16
                     //Por cada ID obtengo su informacion correspondiente
                     foreach (DataRow row2 in dt2.Rows)
                     {
+                        //Me creo el evento
+                        Evento elEvento = new Evento(int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString()),
+                            row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString(),null,
+                            int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString()),null,null,null);
+
+                        //Agrego a la lista
+                        laLista.Add(elEvento);
+                     }
                         
-                        elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
-                        elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
-                    }
-                        
-                    //Agrego a la lista
-                    laLista.Add(elEvento);
+                    
                 }
 
                 //Retorno la lista
