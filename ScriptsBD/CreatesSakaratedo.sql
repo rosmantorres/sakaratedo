@@ -501,17 +501,17 @@ CREATE
     per_num_doc_id   NUMERIC (28) ,
     per_nombre       VARCHAR (256) NOT NULL ,
     per_apellido     VARCHAR (256) NOT NULL ,
-    per_nacionalidad VARCHAR (10) NOT NULL ,
+    per_nacionalidad VARCHAR (10) ,
     per_alergias TEXT ,
     per_direccion TEXT ,
     per_sexo             CHAR (1) NOT NULL ,
-    per_tipo_sangre      VARCHAR (3) NOT NULL ,
-    per_fecha_nacimiento DATETIME NOT NULL ,
+    per_tipo_sangre      VARCHAR (3) ,
+    per_fecha_nacimiento DATETIME ,
     per_nombre_usuario   VARCHAR (25) ,
     per_clave            VARCHAR (64) ,
     per_activo BIT ,
-    per_peso FLOAT NOT NULL ,
-    per_estatura FLOAT NOT NULL ,
+    per_peso FLOAT ,
+    per_estatura FLOAT ,
     per_imagen TEXT ,
     DOJO_doj_id INTEGER ,
     CONSTRAINT PERSONA_PK PRIMARY KEY CLUSTERED (per_id)
@@ -651,7 +651,7 @@ WITH
 GO
 ALTER TABLE RELACION
 ADD
-CHECK ( rel_tipo IN ('Contacto', 'Entrenador', 'Representante') )
+CHECK ( rel_tipo IN ('CONTACTO', 'REPRESENTANTE') )
 GO
 
 CREATE
@@ -659,11 +659,9 @@ CREATE
   (
     res_cin_id               INTEGER NOT NULL ,
     res_cin_descripcion      VARCHAR (255) NOT NULL ,
-    res_cin_tiemp_min        INTEGER NOT NULL ,
+    res_cin_tiemp_min        INTEGER NOT NULL , /*# de meses*/
     res_cin_punt_min         INTEGER NOT NULL ,
-    res_cin_horas_docent     INTEGER NOT NULL ,
-    tipo_per_id              INTEGER NOT NULL ,
-    TIPO_PERIODO_tipo_per_id INTEGER NOT NULL ,
+    res_cin_horas_docent     INTEGER NOT NULL ,/*tiempo mensual en horas*/
     CINTA_cin_id             INTEGER NOT NULL ,
     CONSTRAINT RESTRICCION_CINTA_PK PRIMARY KEY CLUSTERED (res_cin_id)
 WITH
