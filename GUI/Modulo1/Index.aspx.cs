@@ -51,19 +51,28 @@ namespace templateApp.GUI.Modulo1
         {
             switch (tipo)
             {
-                case "Error": mensajeVisible(false, false, false, true); break;
-                case "Warning": mensajeVisible(false, false, true, false); break;
-                case "Info": mensajeVisible(false, true, false, false); break;
-                case "Success": mensajeVisible(true, false, false, false); break;
+                case "Error": mensajeVisible(false, false, false, true,mensaje); break;
+                case "Warning": mensajeVisible(false, false, true, false,mensaje); break;
+                case "Info": mensajeVisible(false, true, false, false,mensaje); break;
+                case "Success": mensajeVisible(true, false, false, false,mensaje); break;
             }
         }
 
-        public void mensajeVisible(bool success,bool info,bool warning,bool error)
+        public void mensajeVisible(bool success,bool info,bool warning,bool error,string mensaje)
         {
             successLog.Visible = success;
             warningLog.Visible = warning;
             errorLogin.Visible = error;
             infoLog.Visible = info;
+
+            if (success)
+                successLog.InnerText = mensaje;
+            else if (info)
+                infoLog.InnerText = mensaje;
+            else if (warning)
+                warningLog.InnerText = mensaje;
+            else if (error)
+                errorLogin.InnerText = mensaje;
 
         }
 
