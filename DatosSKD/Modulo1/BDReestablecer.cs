@@ -11,9 +11,9 @@ using System.Configuration;
 
 namespace DatosSKD.Modulo1
 {
-    class BDReestablecer
+    public class BDReestablecer
     {
-        public static bool ReestablecerContrasena(int usuarioId,string contraseña)
+        public static bool ReestablecerContrasena(string usuarioId,string contraseña)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -24,7 +24,7 @@ namespace DatosSKD.Modulo1
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 Cuenta laCuenta = new Cuenta();
-                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, usuarioId.ToString(), false);
+                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, usuarioId, false);
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo1.AliasContrasena, SqlDbType.VarChar,contraseña, false);
                 parametros.Add(elParametro);

@@ -35,10 +35,8 @@
                        </div>
                     <hr />
                       <input runat="server" type="password" title="Al menos ocho caracteres, una letra mayúscula, una letra minúscula y un número" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="input-lg form-control" name="password1" onchange="form.password2.pattern = this.value;" id="password3" placeholder="Contraseña nueva" autocomplete="off"/>
-                     <input type="password" title="Las contraseñas introducidas no coinciden" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control input-lg" name="password2" id="password4" runat="server"  placeholder="Repetir Contraseña" required="" />
-                    
-                     <input type="password" class="form-control input-lg" id="passwordIni" runat="server"  placeholder="Contraseña" required="" />   
-                       <div class="pwstrength_viewport_progress"></div>
+                     <input type="password" title="Las contraseñas introducidas no coinciden"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control input-lg" name="password2" id="password4" runat="server"  placeholder="Repetir Contraseña" required="" />
+                     <div class="pwstrength_viewport_progress"></div>
                      <button id="Button1" type="submit" name="go" class="btn btn-lg btn-primary btn-block"  runat="server" onServerClick="redireccionarInicio"><span class="glyphicon glyphicon-refresh" aria-hidden="true"   > Restablecer </span></button>
                     </form>  
                 </section>
