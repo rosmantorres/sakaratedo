@@ -11,7 +11,7 @@ using DominioSKD;
 
 namespace DatosSKD.Modulo1
 {
-    class BDLogin
+    public class BDLogin
     {
         public static Cuenta ObtenerUsuario(string nombre_usuario)
         {
@@ -24,7 +24,6 @@ namespace DatosSKD.Modulo1
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 Cuenta laCuenta = new Cuenta();
-                Rol losRoles = new Rol();
 
                 elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario,SqlDbType.VarChar,nombre_usuario,false);
 
@@ -36,6 +35,7 @@ namespace DatosSKD.Modulo1
 
                 foreach (DataRow row in dt.Rows)
                 {
+
                     laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
                     laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
                     laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();          
@@ -46,10 +46,13 @@ namespace DatosSKD.Modulo1
 
                foreach (DataRow row in dt1.Rows)
                {
-                    losRoles.Id_rol =int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
-                    losRoles.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
-                    laCuenta.Roles.Add(losRoles);
+
+                    Rol elRol = new Rol();
+                    elRol.Id_rol =int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
+                    elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
+                    laCuenta.Roles.Add(elRol);
                }
+
                 return laCuenta;
 
             }
@@ -58,5 +61,6 @@ namespace DatosSKD.Modulo1
                 throw e;
             }
         }
+   
     }
 }
