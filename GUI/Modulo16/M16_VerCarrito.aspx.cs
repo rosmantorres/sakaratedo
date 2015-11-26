@@ -51,7 +51,7 @@ namespace templateApp.GUI.Modulo16
                 //Si se viene de un registrar pago se procedera a mostrar la alerta correspondiente
                 case "2":
                     //Obtenemos el exito o fallo del proceso
-                    string exito = Request.QueryString["exito"];
+                    String exito = Request.QueryString["exito"];
 
                     //Si el registrar pago fue exitoso o no se procedera dar la alerta correspondiente
                     if (exito.Equals("1"))
@@ -77,9 +77,9 @@ namespace templateApp.GUI.Modulo16
 
                 //Si se viene de un eliminar se procedera a eliminar y mostrar la alerta correspondiente
                 case "3":
-                    //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
-                    bool respuesta = logicaCarrito.eliminarItem(1, 1, 1);
 
+                    //Se obtiene el exito o fallo de la eliminacion y se evalua
+                    bool respuesta = Eliminaritem();
                     if (respuesta)
                     {
                         //Si el eliminar fue exitoso mostramos esta alerta y eliminamos del carrito en la clase
@@ -104,7 +104,7 @@ namespace templateApp.GUI.Modulo16
 
         }
 
-        
+        #region LlenarTabla
         /// <summary>
         /// Metodo que se encarga de llenar el GRIDVIEW con todos los elementos que hayan en el carrito del Usuario
         /// </summary>
@@ -184,14 +184,34 @@ namespace templateApp.GUI.Modulo16
             }
 
         }
+        #endregion
 
         #region Eliminar y Registrar
         /// <summary>
         /// Metodo que se encarga de eliminar un item determinado del carrito
         /// </summary>
-        public void Eliminaritem()
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool Eliminaritem()
         {
-                        
+            //Obtenemos el tipo de item al que nos estamos refiriendo
+            String item = Request.QueryString["item"];
+            int tipoObjeto = 0;
+            if (item.Equals("I"))
+                tipoObjeto = 1;
+            else if (item.Equals("M"))
+                tipoObjeto = 2;
+            else
+                tipoObjeto = 3;
+
+            //Obtenemos el id del objeto a borrar
+            int objetoBorrar = int.Parse(Request.QueryString["id"]);
+
+            //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
+            bool respuesta = logicaCarrito.eliminarItem(tipoObjeto, objetoBorrar, 1);
+
+            //Retornamos la respuesta
+            return respuesta;
+
         }
 
         /// <summary>
