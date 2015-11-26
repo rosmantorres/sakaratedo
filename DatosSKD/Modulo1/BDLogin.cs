@@ -43,16 +43,16 @@ namespace DatosSKD.Modulo1
 
                DataTable dt1 = laConexion.EjecutarStoredProcedureTuplas(
                RecursosBDModulo1.ConsultarRolesUsuario, parametros);
-
+               List<Rol> listaRol = new List<Rol>();
                foreach (DataRow row in dt1.Rows)
                {
 
                     Rol elRol = new Rol();
                     elRol.Id_rol =int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
                     elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
-                    laCuenta.Roles.Add(elRol);
+                    listaRol.Add(elRol);
                }
-
+               laCuenta.Roles = listaRol;
                 return laCuenta;
 
             }
