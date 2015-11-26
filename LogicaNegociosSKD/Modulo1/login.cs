@@ -144,7 +144,7 @@ namespace LogicaNegociosSKD.Modulo1
 
 
 
-        public string hash(string cadena)
+        public static string hash(string cadena)
         {
             HashAlgorithm sha = new SHA1CryptoServiceProvider(); //se crea la variable que contrenda el SHA1
             MD5 md5Hash = MD5.Create();// se crea la variable que contendrá el MD5

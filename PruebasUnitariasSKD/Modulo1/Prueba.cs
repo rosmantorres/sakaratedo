@@ -28,16 +28,15 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaHash()
         {
-            login lg = new login();
-            Console.WriteLine("hola:" +lg.hash("hola"));
-            Console.WriteLine("hol:" + lg.hash("hol"));
-            Console.WriteLine("1234:" + lg.hash("1234"));
-            Console.WriteLine("1235:" + lg.hash("1235"));
+            Console.WriteLine("hola:" +login.hash("hola"));
+            Console.WriteLine("hol:" + login.hash("hol"));
+            Console.WriteLine("1234:" + login.hash("1234"));
+            Console.WriteLine("1235:" + login.hash("1235"));
 
-            Assert.AreEqual(lg.hash("hola"), lg.hash("hola"));
-            Assert.AreEqual(lg.hash("1234"), lg.hash("1234"));
-            Assert.AreNotEqual(lg.hash("hol"), lg.hash("hola"));
-            Assert.AreNotEqual(lg.hash("1235"), lg.hash("1234"));
+            Assert.AreEqual(login.hash("hola"), login.hash("hola"));
+            Assert.AreEqual(login.hash("1234"), login.hash("1234"));
+            Assert.AreNotEqual(login.hash("hol"), login.hash("hola"));
+            Assert.AreNotEqual(login.hash("1235"), login.hash("1234"));
         }
     }
 }
