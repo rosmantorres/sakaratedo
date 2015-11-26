@@ -10,6 +10,10 @@ namespace DatosSKD.Modulo7
     public class BDEvento
     {
 
+        /// <summary>
+        /// Método para listar los eventos asistidos del atleta
+        /// </summary>
+        /// <returns>Lista de eventos</returns>
         public static List<Evento> ListarEventosAsistidos()
         {
             List<Evento> laListaDeEventoAsistidos = new List<Evento>();
@@ -66,6 +70,11 @@ namespace DatosSKD.Modulo7
             return laListaDeHorarioPractica;
         }
 
+        /// <summary>
+        /// Método que consulta en la BD para detallar un evento
+        /// </summary>
+        /// <param name="idEvento">Número entero que representa el ID del evento</param>
+        /// <returns>Objeto de tipo Evento</returns>
         public static Evento DetallarEvento(int idEvento)
         {
             TipoEvento tipoEvento = new TipoEvento(1, "Seminario");

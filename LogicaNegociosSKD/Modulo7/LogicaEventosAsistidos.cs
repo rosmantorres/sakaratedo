@@ -54,7 +54,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// Método que obtiene el detalle de cada evento por su ID
         /// </summary>
         /// <param name="idEvento">Número entero que representa el ID del evento</param>
-        /// <returns>un objeto de tipo Evento</returns>
+        /// <returns>Objeto de tipo Evento</returns>
         public DominioSKD.Evento detalleEventoID(int idEvento)
         {
             try

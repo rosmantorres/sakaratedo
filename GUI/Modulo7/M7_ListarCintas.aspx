@@ -26,8 +26,13 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <div id="alert" runat="server">
-    </div>
+    <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="css/daterange.css" rel="stylesheet" />
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/daterange.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+
+    <div id="alert" runat="server"></div>
 
     <div class="row">
             <div class="col-xs-12">
@@ -38,6 +43,13 @@
 
 
     <div class="box-body table-responsive">
+
+          <div class="center-block" id="baseFechaControl">
+            <div class="dateControlBlock">
+                 Desde fecha: <input type="text" name="fechaInicio" id="fechaInicio" class="datepicker" size="8"/> Hasta fecha:   
+                 <input type="text" name="fechaFin" id="fechaFin" class="datepicker" size="8"/>
+            </div>
+        </div>
 
        <table id="tablacintas" class="table table-bordered table-striped dataTable">
         <thead>
@@ -50,24 +62,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-                    <td>1er</td>
-					<td>Kyu</td>
-					<td>Blanco</td>
-                    <td>05/04/2015</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-					<td>2do</td>
-					<td>Kyu</td>
-					<td>Amarillo</td>
-                    <td>24/10/2015</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr>
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>   
 			</tbody>
     </table>
         </div>
@@ -163,14 +158,53 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
-
+                $.datepicker.setDefaults($.datepicker.regional["es"]);
                 var table = $('#tablacintas').DataTable({
-                    "language": {
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+                    "language": {                       
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
                 });
                 var req;
                 var tr;
+
+                $dateControls = $("#baseFechaControl").children("div").clone();
+                $("#feedbackTable_filter").prepend($dateControls);
+
+                // Implementacion de jQuery UI Datepicker widget sobre los controles de fechas
+                $("#fechaInicio").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaFin").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+                $("#fechaFin").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaInicio").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
+
+                // Crea el evento listeners que va a filtrar la tabla siempre que el usuario escriba el usuario escriba
+                // en el datepicker 
+                $("#fechaInicio").keyup(function () { table.draw(); });
+                $("#fechaInicio").change(function () { table.draw(); });
+                $("#fechaFin").keyup(function () { table.draw(); });
+                $("#fechaFin").change(function () { table.draw(); });
 
                 $('#tablacintas tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {

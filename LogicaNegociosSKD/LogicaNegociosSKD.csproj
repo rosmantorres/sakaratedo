@@ -106,6 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo6.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo7\LogicaCintas.cs" />
     <Compile Include="Modulo7\LogicaEventosPagos.cs" />
     <Compile Include="Modulo7\LogicaEventosAsistidos.cs" />
     <Compile Include="Modulo7\LogicaEventosInscritos.cs" />

@@ -15,9 +15,10 @@ namespace templateApp.GUI.Modulo7
         #region Atributos
         private List<Evento> laLista = new List<Evento>();
         #endregion
+
         #region Page Load
         /// <summary>
-        /// Método que se ejecuta al cargar la página
+        /// Método que se ejecuta al cargar la página Asistencia a Eventos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
