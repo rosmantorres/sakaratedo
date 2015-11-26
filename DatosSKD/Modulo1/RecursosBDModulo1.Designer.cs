@@ -115,6 +115,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M1_RestablecerContrasena.
+        /// </summary>
+        internal static string CambiarContraseña {
+            get {
+                return ResourceManager.GetString("CambiarContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M1_ConsultarNombreUsuarioContrasena.
         /// </summary>
         internal static string ConsultarNombreUsuarioContrasena {

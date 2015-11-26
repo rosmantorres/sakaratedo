@@ -135,6 +135,9 @@
   <data name="AliasNombreUsuario" xml:space="preserve">
     <value>nombre_usuario</value>
   </data>
+  <data name="CambiarContraseña" xml:space="preserve">
+    <value>M1_RestablecerContrasena</value>
+  </data>
   <data name="ConsultarNombreUsuarioContrasena" xml:space="preserve">
     <value>M1_ConsultarNombreUsuarioContrasena</value>
   </data>
