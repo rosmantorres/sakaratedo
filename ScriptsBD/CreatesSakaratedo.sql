@@ -257,8 +257,7 @@ CREATE
     EVENTO_eve_id                 INTEGER NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
     eve_res_id                    INTEGER NOT NULL ,
-    CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (EVENTO_eve_id,
-    RESTRICCION_EVENTO_res_eve_id, eve_res_id)
+    CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (eve_res_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -502,17 +501,17 @@ CREATE
     per_num_doc_id   NUMERIC (28) ,
     per_nombre       VARCHAR (256) NOT NULL ,
     per_apellido     VARCHAR (256) NOT NULL ,
-    per_nacionalidad VARCHAR (10) NOT NULL ,
+    per_nacionalidad VARCHAR (10) ,
     per_alergias TEXT ,
     per_direccion TEXT ,
     per_sexo             CHAR (1) NOT NULL ,
-    per_tipo_sangre      VARCHAR (3) NOT NULL ,
-    per_fecha_nacimiento DATETIME NOT NULL ,
+    per_tipo_sangre      VARCHAR (3) ,
+    per_fecha_nacimiento DATETIME ,
     per_nombre_usuario   VARCHAR (25) ,
     per_clave            VARCHAR (64) ,
     per_activo BIT ,
-    per_peso FLOAT NOT NULL ,
-    per_estatura FLOAT NOT NULL ,
+    per_peso FLOAT ,
+    per_estatura FLOAT ,
     per_imagen TEXT ,
     DOJO_doj_id INTEGER ,
     CONSTRAINT PERSONA_PK PRIMARY KEY CLUSTERED (per_id)
@@ -652,7 +651,7 @@ WITH
 GO
 ALTER TABLE RELACION
 ADD
-CHECK ( rel_tipo IN ('Contacto', 'Entrenador', 'Representante') )
+CHECK ( rel_tipo IN ('CONTACTO', 'REPRESENTANTE') )
 GO
 
 CREATE
@@ -786,12 +785,9 @@ CREATE
   TABLE RH_CINTA
   (
     rh_cinta_id                   INTEGER NOT NULL ,
-    rh_cinta_cinta_id             INTEGER NOT NULL ,
-    rh_cinta_restriccion_id       INTEGER NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
-    CINTA_cin_id                  INTEGER ,
-    CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id,
-    rh_cinta_cinta_id, rh_cinta_restriccion_id)
+    CINTA_cin_id                  INTEGER NOT NULL,
+    CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
