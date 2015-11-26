@@ -116,6 +116,15 @@ namespace LogicaNegociosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a User.
+        /// </summary>
+        internal static string parametroURLId {
+            get {
+                return ResourceManager.GetString("parametroURLId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a 587.
         /// </summary>
         internal static string puertoEnvioSAKARATEDO {

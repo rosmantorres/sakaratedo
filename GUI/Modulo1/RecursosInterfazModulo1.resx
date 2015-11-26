@@ -141,6 +141,9 @@
     <value>false</value>
     <comment>parametro utilizado en el url cuando el correo no se envia con exito</comment>
   </data>
+  <data name="parametroURLID" xml:space="preserve">
+    <value>user</value>
+  </data>
   <data name="parametroURLReestablecerExito" xml:space="preserve">
     <value>true</value>
     <comment>parametro utilizado para notificar exito en reestablecer contraseña</comment>

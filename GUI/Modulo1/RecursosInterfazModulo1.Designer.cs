@@ -124,6 +124,15 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a user.
+        /// </summary>
+        internal static string parametroURLID {
+            get {
+                return ResourceManager.GetString("parametroURLID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a true.
         /// </summary>
         internal static string parametroURLReestablecerExito {

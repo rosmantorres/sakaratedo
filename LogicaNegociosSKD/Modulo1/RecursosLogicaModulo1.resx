@@ -141,6 +141,9 @@
            Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
     <comment>mensaje que se enviara al usuario</comment>
   </data>
+  <data name="parametroURLId" xml:space="preserve">
+    <value>User</value>
+  </data>
   <data name="puertoEnvioSAKARATEDO" xml:space="preserve">
     <value>587</value>
     <comment>puerto de envio del mensaje</comment>
