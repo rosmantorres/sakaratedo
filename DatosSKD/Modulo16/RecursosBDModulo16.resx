@@ -291,4 +291,11 @@
     <value>M16_consultarMatriculas</value>
     <comment>Nombre del procedimiento que consulta matriculas por un cliente a consultar</comment>
   </data>
+  <data name="PARAMETRO_IDMATRICULA" xml:space="preserve">
+    <value>idMatricula</value>
+  </data>
+  <data name="PROCEDIMIENTO_CONSULTAR_MATRICULA_ID" xml:space="preserve">
+    <value>M16_CONSULTAR_MATRICULA_ID</value>
+    <comment>Stored procedure que obtiene la informacion de la matricula dado su id</comment>
+  </data>
 </root>

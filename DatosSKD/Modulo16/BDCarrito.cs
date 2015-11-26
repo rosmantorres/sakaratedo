@@ -180,17 +180,76 @@ namespace DatosSKD.Modulo16
             }
         }
 
+        /*
         /// <summary>
         /// Metodo que obtiene todas las matriculas en el carrito del usuario de la Base de Datos
         /// </summary>
         /// <param name="idUsuario">Usuario del que se desea ver las matriculas agregadas en el carrito</param>
         /// <returns>Lista con todas las matriculas que se encuentran en el carrito</returns>
-        /*
+        
         public List<Matricula> getMatricula(int idUsuario)
         {
+            List<Matricula> laLista= new List<Matricula>();
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                    SqlDbType.Int, idUsuario.ToString(), false);
+                parametros.Add(parametro);
 
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                DataTable dt = conexion.EjecutarStoredProcedureTuplas
+                    (RecursosBDModulo16.PROCEDIMIENTO_SELECCIONAR_ID_MATRICULA, parametros);
+
+                //Obtengo todos los ids que estan en carrito de los eventos
+                foreach(DataRow row in dt.Rows)
+                {
+                    
+                    //Preparo para obtener los datos de ese evento
+                    parametros = new List<Parametro>();
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
+                        row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString(), false);
+                    parametros.Add(parametro);
+
+                    //Obtengo la informacion de los eventos
+                    conexion = new BDConexion();
+                    DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
+                        (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_MATRICULA_ID, parametros);
+
+                    Matricula laMatricula = new Matricula();
+
+                    //Por cada ID obtengo su informacion correspondiente
+                    foreach (DataRow row2 in dt2.Rows)
+                    {
+                        //Me creo la matricula
+                        //TERMINAR ESTA PARTE!!!!!!!!!!!!!!!!!!!!!!
+                        laMatricula = 
+
+                        //Agrego a la lista
+                        laLista.Add(laMatricula);
+                     }
+                        
+                    
+                }
+
+                //Retorno la lista
+                return laLista;
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExceptionSKDConexionBD("blabla", "blabla", e);
+            }
         }*/
-
         
         /// <summary>
         /// Metodo que elimina un objeto que haya en el carrito del usuario en la Base de Datos
