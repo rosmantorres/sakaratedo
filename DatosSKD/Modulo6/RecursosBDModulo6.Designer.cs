@@ -250,6 +250,15 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to id_persona_relacion.
+        /// </summary>
+        internal static string Atribute_Persona_Relacion {
+            get {
+                return ResourceManager.GetString("Atribute_Persona_Relacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to persona_tipo_sangre.
         /// </summary>
         internal static string Atribute_Persona_Sangre {
@@ -412,6 +421,24 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CONTACTO.
+        /// </summary>
+        internal static string Relacion_Contacto {
+            get {
+                return ResourceManager.GetString("Relacion_Contacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REPRESENTANTE.
+        /// </summary>
+        internal static string Relacion_Representante {
+            get {
+                return ResourceManager.GetString("Relacion_Representante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AB-.
         /// </summary>
         internal static string Sangre_ABN {
@@ -502,6 +529,15 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agregar_Contacto.
+        /// </summary>
+        internal static string SP_Add_Contacto {
+            get {
+                return ResourceManager.GetString("SP_Add_Contacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agregar_Email.
         /// </summary>
         internal static string SP_Add_Correo {
@@ -516,6 +552,24 @@ namespace DatosSKD.Modulo6 {
         internal static string SP_Add_Persona {
             get {
                 return ResourceManager.GetString("SP_Add_Persona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agregar_Representante.
+        /// </summary>
+        internal static string SP_Add_Persona_Representante {
+            get {
+                return ResourceManager.GetString("SP_Add_Persona_Representante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agregar_Relacion.
+        /// </summary>
+        internal static string SP_Add_Relacion {
+            get {
+                return ResourceManager.GetString("SP_Add_Relacion", resourceCulture);
             }
         }
         
@@ -592,6 +646,15 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contacto_de_Persona.
+        /// </summary>
+        internal static string SP_Get_Contacto {
+            get {
+                return ResourceManager.GetString("SP_Get_Contacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listar_Correos.
         /// </summary>
         internal static string SP_Get_Emails {
@@ -610,11 +673,29 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Listar_Representados.
+        /// </summary>
+        internal static string SP_Get_Representados {
+            get {
+                return ResourceManager.GetString("SP_Get_Representados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listar_Telefonos.
         /// </summary>
         internal static string SP_Get_Telefonos {
             get {
                 return ResourceManager.GetString("SP_Get_Telefonos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to correo_principal.
+        /// </summary>
+        internal static string SP_Set_Correo_Principal {
+            get {
+                return ResourceManager.GetString("SP_Set_Correo_Principal", resourceCulture);
             }
         }
     }

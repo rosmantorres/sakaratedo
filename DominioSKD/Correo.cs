@@ -40,7 +40,7 @@ namespace DominioSKD
         /// <returns></returns>
         public override string ToString()
         {
-            return this._email.ToString();
+            return this._email.Address;
         }
     }
 }

@@ -4,7 +4,7 @@
 /* Agrega un telefono de una Persona Y retorna el nuevo ID. */
 CREATE PROCEDURE Agregar_Telefono
 	@persona_id INTEGER,
-	@telefono_numero VARCHAR (10),
+	@telefono_numero VARCHAR (11),
 	@telefono_id INTEGER OUTPUT
 AS
 BEGIN
@@ -31,7 +31,6 @@ END
 CREATE PROCEDURE Agregar_Email
 	@persona_id INTEGER,
 	@correo_direccion VARCHAR (100),
-	@correo_principal BIT,
 	@correo_id INTEGER OUTPUT
 AS
 BEGIN
@@ -50,7 +49,7 @@ BEGIN
 			PERSONA_per_id
 		) VALUES (
 			@correo_direccion,
-			@correo_principal,
+			0,
 			@persona_id
 		);
 		SELECT @correo_id = SCOPE_IDENTITY();
@@ -106,6 +105,65 @@ BEGIN
 	);
 	SELECT @persona_id = SCOPE_IDENTITY();
 END
+
+/* Agrega una nueva persona COntacto . */
+CREATE PROCEDURE Agregar_Contacto
+    @persona_nombre VARCHAR (256),
+    @persona_apellido VARCHAR (256),
+    @persona_sexo CHAR (1),
+	@persona_id INTEGER OUTPUT
+AS
+BEGIN
+	INSERT INTO dbo.PERSONA (
+		per_nombre,
+		per_apellido ,
+		per_sexo,
+		per_activo
+	) 
+	VALUES (
+		@persona_nombre,
+		@persona_apellido,
+		@persona_sexo,
+		0
+	);
+	SELECT @persona_id = SCOPE_IDENTITY();
+END
+
+/* Agrega una nueva persona Representante. */
+CREATE PROCEDURE Agregar_Representante
+	@persona_tipo_doc_id VARCHAR (9),
+    @persona_num_doc_id NUMERIC (28),
+    @persona_nombre VARCHAR (256),
+    @persona_apellido VARCHAR (256),
+    @persona_nacionalidad VARCHAR (10),
+    @persona_sexo CHAR (1),
+    @persona_fecha_nacimiento DATETIME,
+	@persona_id INTEGER OUTPUT
+AS
+BEGIN
+	INSERT INTO dbo.PERSONA (
+		per_tipo_doc_id,
+		per_num_doc_id,
+		per_nombre,
+		per_apellido ,
+		per_nacionalidad,
+		per_sexo,
+		per_fecha_nacimiento,
+		per_activo
+	) 
+	VALUES (
+		@persona_tipo_doc_id,
+		@persona_num_doc_id,
+		@persona_nombre,
+		@persona_apellido,
+		@persona_nacionalidad,
+		@persona_sexo,
+		@persona_fecha_nacimiento,
+		0
+	);
+	SELECT @persona_id = SCOPE_IDENTITY();
+END
+
 
 /* Agrega una nueava matricula */
 CREATE PROCEDURE Agregar_Matricula
@@ -170,6 +228,25 @@ BEGIN
 		@id_dojo);	
 END
 
+
+/*Setea el contacto de emergencia de una persona*/
+CREATE PROCEDURE Agregar_Relacion
+	@relacion_tipo varchar(15),
+	@persona_id INTEGER,
+	@id_persona_relacion INTEGER
+AS
+BEGIN
+	INSERT INTO dbo.RELACION(
+		rel_tipo,
+		PERSONA_per_id, 
+		PERSONA_per_id1
+	) VALUES (
+		@relacion_tipo, 
+		@persona_id,
+		@id_persona_Relacion
+	);	
+END
+
 ------------
 -- Listar --
 ------------
@@ -200,6 +277,20 @@ BEGIN
 		ema_principal AS correo_principal
 	FROM
 		dbo.EMAIL
+	WHERE
+		PERSONA_per_id = @persona_id
+	;
+END
+
+/* Lista los ID de los Representados de una Persona */
+CREATE PROCEDURE Listar_Representados
+	@persona_id INTEGER
+AS
+BEGIN
+	SELECT
+		PERSONA_per_id1 AS persona_id
+	FROM
+		dbo.RELACION
 	WHERE
 		PERSONA_per_id = @persona_id
 	;
@@ -340,4 +431,33 @@ BEGIN
 	WHERE
 		per_id = @persona_id
 	;
+END
+
+/* Consultar el id de la persona de contacto. */
+CREATE PROCEDURE dbo.Contacto_de_Persona
+	@id_persona_relacion INTEGER OUTPUT,
+	@persona_id INTEGER
+AS
+BEGIN
+	SELECT @id_persona_relacion = PERSONA_per_id1
+	FROM dbo.RELACION
+	WHERE PERSONA_per_id = @persona_id AND rel_tipo = 'CONTACTO';
+END
+
+
+-------------
+-- ENL/DIS --
+-------------
+/* Colocal un correo como el principal. */
+CREATE PROCEDURE dbo.correo_principal
+	@persona_id INTEGER,
+	@correo_id INTEGER
+AS
+BEGIN
+	UPDATE dbo.EMAIL
+	SET ema_principal = 0
+	WHERE PERSONA_per_id = @persona_id;
+	UPDATE dbo.EMAIL
+	SET ema_principal = 1
+	WHERE ema_id = @correo_id;
 END

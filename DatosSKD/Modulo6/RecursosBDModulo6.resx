@@ -267,9 +267,6 @@
   <data name="SP_Get_Emails" xml:space="preserve">
     <value>Listar_Correos</value>
   </data>
-  <data name="SP_Get_Telefonos" xml:space="preserve">
-    <value>Listar_Telefonos</value>
-  </data>
   <data name="SP_Add_Telefono" xml:space="preserve">
     <value>Agregar_Telefono</value>
   </data>
@@ -302,5 +299,35 @@
   </data>
   <data name="SP_Chg_Telefono" xml:space="preserve">
     <value>Modificar_Telefono</value>
+  </data>
+  <data name="Atribute_Persona_Relacion" xml:space="preserve">
+    <value>id_persona_relacion</value>
+  </data>
+  <data name="SP_Add_Relacion" xml:space="preserve">
+    <value>Agregar_Relacion</value>
+  </data>
+  <data name="SP_Get_Contacto" xml:space="preserve">
+    <value>Contacto_de_Persona</value>
+  </data>
+  <data name="Relacion_Contacto" xml:space="preserve">
+    <value>CONTACTO</value>
+  </data>
+  <data name="Relacion_Representante" xml:space="preserve">
+    <value>REPRESENTANTE</value>
+  </data>
+  <data name="SP_Add_Contacto" xml:space="preserve">
+    <value>Agregar_Contacto</value>
+  </data>
+  <data name="SP_Add_Persona_Representante" xml:space="preserve">
+    <value>Agregar_Representante</value>
+  </data>
+  <data name="SP_Get_Representados" xml:space="preserve">
+    <value>Listar_Representados</value>
+  </data>
+  <data name="SP_Get_Telefonos" xml:space="preserve">
+    <value>Listar_Telefonos</value>
+  </data>
+  <data name="SP_Set_Correo_Principal" xml:space="preserve">
+    <value>correo_principal</value>
   </data>
 </root>

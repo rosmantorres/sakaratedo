@@ -48,12 +48,12 @@ namespace DominioSKD
         /// <summary>
         /// Peso de la persona
         /// </summary>
-        private Double _peso;
+        private Double _peso = 0;
 
         /// <summary>
         /// Estatura de la persona
         /// </summary>
-        private Double _estatura;
+        private Double _estatura = 0;
 
         /// <summary>
         /// Descripción de las alergias que padece
@@ -100,6 +100,11 @@ namespace DominioSKD
         /// Persona que tiene asignado como contacto de emergencia.
         /// </summary>
         private Persona _contatoEmergencia;
+
+        /// <summary>
+        /// Persona que tiene asignado como contacto de emergencia.
+        /// </summary>
+        private List<Persona> _representados;
 
         /// <summary>
         /// Estado de la persona en el sistema.
@@ -203,16 +208,12 @@ namespace DominioSKD
         /// </summary>
         /// <param name="main">Objeto Correo</param>
         /// <param name="primario"> True si es el correo principal</param>
-        public void agregarEmail(Correo mail, Boolean primario)
+        public void agregarEmail(Correo mail)
         {
             if (this._correos == null)
                 this._correos = new List<Correo>();
-
-            if (!primario)
-                this._correos.Add(mail);
-            else
-                this._correos.Insert(0, mail);
-        }
+            this._correos.Add(mail);
+         }
 
         public List<Telefono> Telefonos
         {
@@ -262,6 +263,26 @@ namespace DominioSKD
 
                 TimeSpan tiempo = DateTime.Now - this.FechaNacimiento;
                 return tiempo.Days / 365;
+            }
+        }
+
+        public void addRepresentado(Persona per)
+        {
+            if (this._representados == null)
+                this._representados = new List<Persona>();
+
+            this._representados.Add(per);
+        }
+
+        public List<Persona> Representados
+        {
+            set
+            {
+                this._representados = value;
+            }
+            get
+            {
+                return this._representados;
             }
         }
 

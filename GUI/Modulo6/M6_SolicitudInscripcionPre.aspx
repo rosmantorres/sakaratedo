@@ -280,15 +280,6 @@
                     <input type="text" id="inputMovilR" class="form-control" placeholder="Ej: (0212)451-54-54"/>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="selectParentescoR" class="control-label col-xs-2">Parentesco:</label>
-                <div class="col-xs-10">
-                    <select id="selectParentescoR" class="form-control">
-                        <option>Padre / Madre</option>
-                        <option>Abuelo / Abuela</option>
-                    </select>
-                </div>
-            </div>
         </fieldset>
         <fieldset class="scheduler-border" id="sfCE">
             <legend class="scheduler-border">Contacto de Emergencia</legend>

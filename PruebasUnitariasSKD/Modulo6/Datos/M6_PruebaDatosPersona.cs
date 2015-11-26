@@ -31,6 +31,7 @@ namespace PruebasUnitariasSKD.Modulo6
         private DominioSKD.Persona _per;
         private DominioSKD.Telefono _tel1;
         private DominioSKD.Correo _core;
+        private DominioSKD.Persona _perRepresentante;
 
 
 
@@ -78,11 +79,12 @@ namespace PruebasUnitariasSKD.Modulo6
             this._per.agregarTelefono(this._tel1);
 
             this._core = new Correo(this._correo1);
-            this._per.agregarEmail(this._core, this._correo1_pri);
+            this._core.Primario = this._correo1_pri;
+            this._per.agregarEmail(this._core);
 
             this._core = new Correo(this._correo2);
-            this._per.agregarEmail(this._core, this._correo2_pri);
-
+            this._core.Primario = this._correo2_pri;
+            this._per.agregarEmail(this._core);
 
         }
 
@@ -90,14 +92,41 @@ namespace PruebasUnitariasSKD.Modulo6
         public void Prueba1GuardarNuevaPersona()
         {
             int idp;
+            int idContacto;
+
+            Persona _perContacto;
+
+            _perContacto = new Persona();
+
+            _perContacto.Nombre = "Raiza";
+            _perContacto.Apellido = "Rojas";
+            _perContacto.Sexo = Sexo.Femenino;
+            Correo cc = new Correo("raiza08@gmail.com");
+            cc.Primario = true;
+            _perContacto.agregarEmail(cc);
+            Telefono tt = new Telefono();
+            tt.Numero = "05135254981";
+            _perContacto.agregarTelefono(tt);
+
+
+            this._per.ContatoEmergencia = _perContacto;
+
+
+
+
 
             DatosSKD.Modulo6.BDUsuarios.GuardarDatosDePersona(this._per);
             Assert.AreNotEqual(this._per.ID, -1);
+            Assert.AreNotEqual(this._per.ContatoEmergencia.ID, -1);
+
+            idContacto = _perContacto.ID;
+
             idp = this._per.ID;
             this._per = null;
 
             this._per = DatosSKD.Modulo6.BDUsuarios.GetInfoPersonaByID(idp);
 
+            DatosSKD.Modulo6.BDUsuarios.GetContacto(this._per);
 
             Assert.AreEqual(this._per.Nombre,this._nombre);
             Assert.AreEqual(this._per.Apellido,this._apellido);
@@ -111,29 +140,103 @@ namespace PruebasUnitariasSKD.Modulo6
             Assert.AreEqual(this._per.DocumentoID.Tipo, this._documentoID.Tipo);
             Assert.AreEqual(this._per.DocumentoID.TipoCedula, this._documentoID.TipoCedula);
 
+            Assert.IsNotNull(this._per.Correos);
+            Assert.IsNotNull(this._per.Telefonos);
+
+            Assert.AreEqual(this._per.Correo.ToString(), this._correo1);
+
+            Assert.IsNotNull(this._per.ContatoEmergencia);
+            Assert.AreEqual(this._per.ContatoEmergencia.ID, idContacto);
+            
+        }
+
+        [Test]
+        public void Prueba1GuardarNuevaPersonaRepresentante()
+        {
+            this._per.ContatoEmergencia = null;
+            this._perRepresentante = new Persona();
+
+            this._perRepresentante.Nombre = "Romulo Jose";
+            this._perRepresentante.Apellido = "Rodriguez Moreno";
+
+            this._perRepresentante.FechaNacimiento = new DateTime(1952, 09, 05);
+
+            this._perRepresentante.Nacionalidad = "Venezolano";
+            this._perRepresentante.DocumentoID = new DocumentoIdentidad();
+            this._perRepresentante.DocumentoID.Tipo = TipoDocumento.Cedula;
+            this._perRepresentante.DocumentoID.TipoCedula = TipoCedula.Nacional;
+            this._perRepresentante.DocumentoID.Numero = 10372649;
+            this._perRepresentante.Sexo = Sexo.Masculino;
+            Correo cc = new Correo("rjrodroge@eltercera.comv.e");
+            cc.Primario = true;
+            this._perRepresentante.agregarEmail(cc);
+            Telefono tt = new Telefono();
+            tt.Numero = "16542510514";
+            this._perRepresentante.agregarTelefono(tt);
+
+            this._perRepresentante.addRepresentado(this._per);
+
+
+            DatosSKD.Modulo6.BDUsuarios.GuardarDatosDeRepresentante(this._perRepresentante);
+
+            Assert.AreNotEqual(this._perRepresentante, -1);
+            Assert.AreNotEqual(this._per, -1);
+
+            Persona carga = DatosSKD.Modulo6.BDUsuarios.GetInfoPersonaByID(this._perRepresentante.ID);
+
+            DatosSKD.Modulo6.BDUsuarios.CargarRepresentados(carga);
+
+            Assert.AreEqual(carga.ID, this._perRepresentante.ID);
+            Assert.AreEqual(this._per.ID, this._perRepresentante.Representados[0].ID);
+
+
         }
 
         [TearDown]
         public void Salir(){
 
-            BDConexion con;
+            if (this._perRepresentante != null)
+            {
+                this.query("DELETE FROM dbo.TELEFONO WHERE PERSONA_per_id = " + this._perRepresentante.ID.ToString());
+                this.query("DELETE FROM dbo.EMAIL WHERE PERSONA_per_id = " + this._perRepresentante.ID);
+                this.query("DELETE FROM dbo.RELACION WHERE PERSONA_per_id = " + this._perRepresentante.ID.ToString());
+                this.query("DELETE FROM dbo.PERSONA WHERE per_id = " + this._perRepresentante.ID.ToString());
+            }
 
             if (this._per.ID != -1)
             {
                 if (this._tel1 != null)
                 {
-                    con = new BDConexion();
-                    con.EjecutarQuery("DELETE FROM dbo.TELEFONO WHERE PERSONA_per_id = " + this._per.ID.ToString());
+                    this.query("DELETE FROM dbo.TELEFONO WHERE PERSONA_per_id = " + this._per.ID.ToString());
+                    if (this._per.ContatoEmergencia != null && this._per.ContatoEmergencia.Telefonos != null)
+                    {
+                        this.query("DELETE FROM dbo.TELEFONO WHERE PERSONA_per_id = " + this._per.ContatoEmergencia.ID.ToString());
+                    }
+
                 }
                 if (this._core != null)
                 {
-                    con = new BDConexion();
-                    con.EjecutarQuery("DELETE FROM dbo.EMAIL WHERE PERSONA_per_id = " + this._per.ID.ToString());
+                    this.query("DELETE FROM dbo.EMAIL WHERE PERSONA_per_id = " + this._per.ID.ToString());
+                    if (this._per.ContatoEmergencia != null && this._per.ContatoEmergencia.Correos != null)
+                    {
+                        this.query("DELETE FROM dbo.EMAIL WHERE PERSONA_per_id = " + this._per.ContatoEmergencia.ID.ToString());
+                    }
                 }
-                con = new BDConexion();
-                con.EjecutarQuery("DELETE FROM dbo.PERSONA WHERE per_id = " + this._per.ID.ToString());
+                if (this._per.ContatoEmergencia != null)
+                {
+                    this.query("DELETE FROM dbo.RELACION WHERE PERSONA_per_id = " + this._per.ID.ToString());
+                    this.query("DELETE FROM dbo.PERSONA WHERE per_id = " + this._per.ContatoEmergencia.ID.ToString());
+                }
+                this.query("DELETE FROM dbo.PERSONA WHERE per_id = " + this._per.ID.ToString());
             }
            
+        }
+
+        private void query(String query)
+        {
+            BDConexion con;
+            con = new BDConexion();
+            con.EjecutarQuery(query);
         }
     }
 }
