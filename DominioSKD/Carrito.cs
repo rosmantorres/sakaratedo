@@ -15,14 +15,12 @@ namespace DominioSKD
         /// <summary>
         /// Atributos de la clase Carrito
         /// </summary>
-        
         List<Implemento> listaImplemento;
         List<Evento> listaEvento;
      //   List<Matricula> listaMatricula;
         #endregion
 
         #region Propiedades
-        
         /// <summary>
         /// Propiedad del atributo listaInventario
         /// </summary>
@@ -36,6 +34,9 @@ namespace DominioSKD
             {
                 this.listaImplemento = value;
             }
+
+        }
+
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace DominioSKD
                 this.listaEvento = value;
             }
         }
-        /*
+        
         /// <summary>
         /// Propiedad del atributo listaMatricula
         /// </summary>
@@ -68,7 +69,7 @@ namespace DominioSKD
             }
         }
         
-        */
+        
         #endregion
 
         #region Constructores
@@ -79,20 +80,7 @@ namespace DominioSKD
         {
 
         }
-        
-        /// <summary>
-        /// Constructor de la case que llena todos los atributos de la clase Carrito
-        /// </summary>
-        /// <param name="listaInventario">La lista de todos los inventarios que se han agregado al Carrito</param>
-        /// <param name="listaEvento">La lista de todos los eventos que se han agregado al Carrito</param>
-        /// <param name="listaMatricula">La lista de todas las mastriculas que se han agregado al Carrito</param>
-        /*
-        public Carrito(List<Inventario> listaInventario, List<Evento> listaEvento, List<Matricula> listaMatricula)
-        {
-            this.listaInventario = listaInventario;
-            this.listaEvento = listaEvento;
-            this.listaMatricula = listaMatricula;
-        }*/
+
         #endregion
 
         #region Metodos
