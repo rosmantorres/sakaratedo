@@ -7,18 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo1
 {
-    public partial class RestablecerContraseña : System.Web.UI.Page
+    public partial class ReestablecerContraseña : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
-
-        protected void redireccionarIncio(object sender, EventArgs e)
+        public void redireccionarInicio(object sender, EventArgs e)
         {
-            
-
-            Response.Redirect(RecursosInterfazModulo1.direccionM1_Index+ "?" + RecursosInterfazModulo1.tipoSucess + "=" + RecursosInterfazModulo1.parametroURLReestablecerExito);
+           
+            Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?" + RecursosInterfazModulo1.tipoSucess + "=" + RecursosInterfazModulo1.parametroURLReestablecerExito);
         }
     }
 }
