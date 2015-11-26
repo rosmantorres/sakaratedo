@@ -2,9 +2,8 @@
   TABLE ASISTENCIA
   (
     asi_asistio BIT NOT NULL ,
-	INSCRIPCION_ins_id      INTEGER NOT NULL ,
     INSCRIPCION_PERSONA_per_id INTEGER NOT NULL ,
-    CONSTRAINT ASISTENCIA_PK PRIMARY KEY CLUSTERED (INSCRIPCION_ins_id,INSCRIPCION_PERSONA_per_id)
+    CONSTRAINT ASISTENCIA_PK PRIMARY KEY CLUSTERED (INSCRIPCION_PERSONA_per_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -110,7 +109,7 @@ GO
 CREATE
   TABLE DATO
   (
-    dat_id          INTEGER IDENTITY(1,1) NOT NULL ,
+    dat_id          INTEGER NOT NULL ,
     dat_nombre      VARCHAR (100) NOT NULL ,
     dat_abreviatura VARCHAR (20) NOT NULL ,
     CONSTRAINT DATO_PK PRIMARY KEY CLUSTERED (dat_id)
@@ -150,8 +149,8 @@ GO
 CREATE
   TABLE DISEÑO
   (
-    dis_id          INTEGER IDENTITY(1,1) NOT NULL ,
-    dis_contenido   varchar(8000) NOT NULL ,
+    dis_id          INTEGER NOT NULL ,
+    dis_contenido   VARCHAR (500) NOT NULL ,
     PLANILLA_pla_id INTEGER NOT NULL ,
     CONSTRAINT DISEÑO_PK PRIMARY KEY CLUSTERED (dis_id)
 WITH
@@ -233,15 +232,15 @@ GO
 CREATE
   TABLE EVENTO
   (
-    eve_id           INTEGER NOT NULL ,
+    eve_id           INTEGER IDENTITY(1,1) NOT NULL ,
+	eve_nombre       VARCHAR (120) NOT NULL ,
     eve_descripcion  VARCHAR (120) NOT NULL ,
-    eve_nombre       VARCHAR (120) NOT NULL ,
+    eve_costo FLOAT NOT NULL ,
     HORARIO_hor_id   INTEGER NOT NULL ,
     UBICACION_ubi_id INTEGER NOT NULL ,
     DOJO_doj_id      INTEGER ,
-    CATEGORIA_cat_id INTEGER NOT NULL ,
-    eve_costo FLOAT NOT NULL ,
-    TIPO_EVENTO_TIPO_EVENTO_ID NUMERIC (28) NOT NULL ,
+    CATEGORIA_cat_id INTEGER,
+    TIPO_EVENTO_tip_id INTEGER NOT NULL ,
     CONSTRAINT EVENTO_PK PRIMARY KEY CLUSTERED (eve_id)
 WITH
   (
@@ -252,29 +251,13 @@ WITH
   )
   ON "default"
 GO
-CREATE UNIQUE NONCLUSTERED INDEX
-EVENTO__IDX ON EVENTO
-(
-  TIPO_EVENTO_TIPO_EVENTO_ID
-)
-ON "default"
-GO
-CREATE UNIQUE NONCLUSTERED INDEX
-EVENTO__IDXv1 ON EVENTO
-(
-  HORARIO_hor_id
-)
-ON "default"
-GO
-
 CREATE
   TABLE EVENTO_RESTRICCION
   (
     EVENTO_eve_id                 INTEGER NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
-    eve_res_id                    INTEGER NOT NULL ,
-    CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (EVENTO_eve_id,
-    RESTRICCION_EVENTO_res_eve_id, eve_res_id)
+    eve_res_id                    INTEGER IDENTITY(1,1) NOT NULL ,
+    CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (eve_res_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -326,10 +309,9 @@ CREATE
   TABLE HIST_ASCENSO
   (
     RESULTADO_ASCENSO_res_asc_id INTEGER NOT NULL ,
-	INSCRIPCION_ins_id           INTEGER NOT NULL ,
     INSCRIPCION_PERSONA_per_id   INTEGER NOT NULL ,
     CONSTRAINT HIST_ASCENSO_PK PRIMARY KEY CLUSTERED (
-    RESULTADO_ASCENSO_res_asc_id,INSCRIPCION_ins_id, INSCRIPCION_PERSONA_per_id)
+    RESULTADO_ASCENSO_res_asc_id, INSCRIPCION_PERSONA_per_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -344,9 +326,8 @@ CREATE
   TABLE HIST_KATA
   (
     RESULTADO_KATA_res_kat_id  INTEGER NOT NULL ,
-	INSCRIPCION_ins_id         INTEGER NOT NULL ,
     INSCRIPCION_PERSONA_per_id INTEGER NOT NULL ,
-    CONSTRAINT HIST_KATA_PK PRIMARY KEY CLUSTERED (RESULTADO_KATA_res_kat_id,INSCRIPCION_ins_id,
+    CONSTRAINT HIST_KATA_PK PRIMARY KEY CLUSTERED (RESULTADO_KATA_res_kat_id,
     INSCRIPCION_PERSONA_per_id)
 WITH
   (
@@ -362,13 +343,11 @@ CREATE
   TABLE HIST_KUMITE
   (
     RESULTADO_KUMITE_res_kum_id INTEGER NOT NULL ,
-	INSCRIPCION_ins_id          INTEGER NOT NULL ,
     INSCRIPCION_PERSONA_per_id  INTEGER NOT NULL ,
-    INSCRIPCION_ins_id1         INTEGER NOT NULL ,
     INSCRIPCION_PERSONA_per_id1 INTEGER NOT NULL ,
     CONSTRAINT HIST_KUMITE_PK PRIMARY KEY CLUSTERED (
-    RESULTADO_KUMITE_res_kum_id,INSCRIPCION_ins_id, INSCRIPCION_PERSONA_per_id,
-    INSCRIPCION_ins_id1,INSCRIPCION_PERSONA_per_id1)
+    RESULTADO_KUMITE_res_kum_id, INSCRIPCION_PERSONA_per_id,
+    INSCRIPCION_PERSONA_per_id1)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -382,12 +361,11 @@ GO
 CREATE
   TABLE HORARIO
   (
-    hor_id           INTEGER NOT NULL ,
+    hor_id           INTEGER IDENTITY(1,1) NOT NULL ,
     hor_fecha_inicio DATE NOT NULL ,
     hor_fecha_fin    DATE NOT NULL ,
     hor_hora_inicio  INTEGER NOT NULL ,
     hor_hora_fin     INTEGER NOT NULL ,
-    EVENTO_eve_id    INTEGER NOT NULL ,
     CONSTRAINT HORARIO_PK PRIMARY KEY CLUSTERED (hor_id)
 WITH
   (
@@ -397,13 +375,6 @@ WITH
   ON "default"
   )
   ON "default"
-GO
-CREATE UNIQUE NONCLUSTERED INDEX
-HORARIO__IDX ON HORARIO
-(
-  EVENTO_eve_id
-)
-ON "default"
 GO
 
 CREATE
@@ -434,12 +405,14 @@ GO
 CREATE
   TABLE INSCRIPCION
   (
-    ins_id                    		   INTEGER IDENTITY(1,1) NOT NULL ,
     PERSONA_per_id                     INTEGER NOT NULL ,
     ins_fecha                          DATE NOT NULL ,
+    SOLICITUD_PLANILLA_sol_pla_id      INTEGER ,
+    SOLICITUD_PLANILLA_PLANILLA_pla_id INTEGER ,
     COMPETENCIA_comp_id                INTEGER ,
     EVENTO_eve_id                      INTEGER ,
-    CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (ins_id ,PERSONA_per_id)
+    ins_id                             INTEGER NOT NULL ,
+    CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (PERSONA_per_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -528,17 +501,17 @@ CREATE
     per_num_doc_id   NUMERIC (28) ,
     per_nombre       VARCHAR (256) NOT NULL ,
     per_apellido     VARCHAR (256) NOT NULL ,
-    per_nacionalidad VARCHAR (10) NOT NULL ,
+    per_nacionalidad VARCHAR (10) ,
     per_alergias TEXT ,
     per_direccion TEXT ,
     per_sexo             CHAR (1) NOT NULL ,
-    per_tipo_sangre      VARCHAR (3) NOT NULL ,
-    per_fecha_nacimiento DATETIME NOT NULL ,
+    per_tipo_sangre      VARCHAR (3) ,
+    per_fecha_nacimiento DATETIME ,
     per_nombre_usuario   VARCHAR (25) ,
     per_clave            VARCHAR (64) ,
     per_activo BIT ,
-    per_peso FLOAT NOT NULL ,
-    per_estatura FLOAT NOT NULL ,
+    per_peso FLOAT ,
+    per_estatura FLOAT ,
     per_imagen TEXT ,
     DOJO_doj_id INTEGER ,
     CONSTRAINT PERSONA_PK PRIMARY KEY CLUSTERED (per_id)
@@ -553,7 +526,7 @@ WITH
 GO
 ALTER TABLE PERSONA
 ADD
-CHECK ( per_tipo_doc_id IN ('CEDULA-N', 'CEDULA-E', 'PASAPORTE') )
+CHECK ( per_tipo_doc_id IN ('CEDULA NACIONAL', 'CEDULA EXTRAJERA', 'PASAPORTE') )
 GO
 ALTER TABLE PERSONA
 ADD
@@ -585,9 +558,10 @@ GO
 CREATE
   TABLE PLANILLA
   (
-    pla_id     INTEGER IDENTITY(1,1) NOT NULL ,
+    pla_id     INTEGER NOT NULL ,
     pla_nombre VARCHAR (100) NOT NULL ,
     pla_status BIT NOT NULL ,
+    DOJO_doj_id          INTEGER ,
     TIPO_PLANILLA_tip_id INTEGER NOT NULL ,
     CONSTRAINT PLANILLA_PK PRIMARY KEY CLUSTERED (pla_id)
 WITH
@@ -621,7 +595,7 @@ GO
 CREATE
   TABLE RC_CINTA
   (
-    rc_cinta_id                        INTEGER NOT NULL ,
+    rc_cinta_id                        INTEGER IDENTITY(1,1) NOT NULL ,
     RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
     CINTA_cin_id                       INTEGER NOT NULL ,
     CONSTRAINT RC_CINTA_PK PRIMARY KEY CLUSTERED (rc_cinta_id)
@@ -674,7 +648,7 @@ WITH
 GO
 ALTER TABLE RELACION
 ADD
-CHECK ( rel_tipo IN ('Contacto', 'Entrenador', 'Representante') )
+CHECK ( rel_tipo IN ('CONTACTO', 'REPRESENTANTE') )
 GO
 
 CREATE
@@ -682,11 +656,9 @@ CREATE
   (
     res_cin_id               INTEGER NOT NULL ,
     res_cin_descripcion      VARCHAR (255) NOT NULL ,
-    res_cin_tiemp_min        INTEGER NOT NULL ,
+    res_cin_tiemp_min        INTEGER NOT NULL , /*# de meses*/
     res_cin_punt_min         INTEGER NOT NULL ,
-    res_cin_horas_docent     INTEGER NOT NULL ,
-    tipo_per_id              INTEGER NOT NULL ,
-    TIPO_PERIODO_tipo_per_id INTEGER NOT NULL ,
+    res_cin_horas_docent     INTEGER NOT NULL ,/*tiempo mensual en horas*/
     CINTA_cin_id             INTEGER NOT NULL ,
     CONSTRAINT RESTRICCION_CINTA_PK PRIMARY KEY CLUSTERED (res_cin_id)
 WITH
@@ -716,7 +688,7 @@ GO
 CREATE
   TABLE RESTRICCION_COMPETENCIA
   (
-    res_com_id        INTEGER NOT NULL ,
+    res_com_id        INTEGER IDENTITY(1,1) NOT NULL ,
     res_com_desc      VARCHAR (255) NOT NULL ,
     res_com_edad_min  INTEGER NOT NULL ,
     res_com_edad_max  INTEGER NOT NULL ,
@@ -734,9 +706,28 @@ WITH
 GO
 
 CREATE
+  TABLE COMP_REST_COMP
+  (
+    comp_rest_comp_id                  INTEGER IDENTITY(1,1) NOT NULL ,
+    RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
+    COMPETENCIA_comp_id                INTEGER NOT NULL ,
+  )
+  ON "default"
+GO
+ALTER TABLE COMP_REST_COMP ADD CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY
+CLUSTERED (comp_rest_comp_id)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
   TABLE RESTRICCION_EVENTO
   (
-    res_eve_id       INTEGER NOT NULL ,
+    res_eve_id       INTEGER  IDENTITY(1,1) NOT NULL ,
     res_eve_desc     VARCHAR (255) ,
     res_eve_edad_min INTEGER ,
     res_eve_edad_max INTEGER ,
@@ -806,13 +797,10 @@ GO
 CREATE
   TABLE RH_CINTA
   (
-    rh_cinta_id                   INTEGER NOT NULL ,
-    rh_cinta_cinta_id             INTEGER NOT NULL ,
-    rh_cinta_restriccion_id       INTEGER NOT NULL ,
+    rh_cinta_id                   INTEGER IDENTITY(1,1) NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
-    CINTA_cin_id                  INTEGER ,
-    CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id,
-    rh_cinta_cinta_id, rh_cinta_restriccion_id)
+    CINTA_cin_id                  INTEGER NOT NULL,
+    CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -867,16 +855,14 @@ GO
 CREATE
   TABLE SOLICITUD_PLANILLA
   (
-    sol_pla_id                    INTEGER IDENTITY(1,1) NOT NULL ,
+    sol_pla_id                    INTEGER NOT NULL ,
     sol_pla_fecha_creacion        DATE NOT NULL ,
     sol_pla_fecha_retiro          DATE ,
     sol_pla_fecha_reincorporacion DATE ,
-    sol_pla_motivo                VARCHAR (1000) ,
+    sol_pla_motivo                VARCHAR (2000) ,
     PLANILLA_pla_id               INTEGER NOT NULL ,
-	INSCRIPCION_ins_id            INTEGER NOT NULL,
-	PERSONA_per_id                INTEGER NOT NULL ,
     CONSTRAINT SOLICITUD_PLANILLA_PK PRIMARY KEY CLUSTERED (sol_pla_id,
-    PLANILLA_pla_id,INSCRIPCION_ins_id,PERSONA_per_id)
+    PLANILLA_pla_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -907,11 +893,9 @@ GO
 CREATE
   TABLE TIPO_EVENTO
   (
-    tip_id         INTEGER NOT NULL ,
-    tip_nombre     VARCHAR (120) NOT NULL ,
-    EVENTO_eve_id  INTEGER NOT NULL ,
-    TIPO_EVENTO_ID NUMERIC (28) NOT NULL IDENTITY NOT FOR REPLICATION ,
-    CONSTRAINT TIPO_EVENTO_PK PRIMARY KEY CLUSTERED (TIPO_EVENTO_ID)
+    tip_id        INTEGER IDENTITY(1,1) NOT NULL ,
+    tip_nombre    VARCHAR (120) NOT NULL ,
+    CONSTRAINT TIPO_EVENTO_PK PRIMARY KEY CLUSTERED (tip_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -920,13 +904,6 @@ WITH
   ON "default"
   )
   ON "default"
-GO
-CREATE UNIQUE NONCLUSTERED INDEX
-TIPO_EVENTO__IDX ON TIPO_EVENTO
-(
-  EVENTO_eve_id
-)
-ON "default"
 GO
 
 CREATE
@@ -957,7 +934,7 @@ GO
 CREATE
   TABLE TIPO_PLANILLA
   (
-    tip_id          INTEGER IDENTITY(1,1) NOT NULL ,
+    tip_id          INTEGER NOT NULL ,
     tip_nombre      VARCHAR (100) NOT NULL ,
     tip_descripcion VARCHAR (150) ,
     CONSTRAINT TIPO_PLANILLA_PK PRIMARY KEY CLUSTERED (tip_id)
@@ -991,34 +968,13 @@ WITH
   ON "default"
 GO
 
-CREATE
-  TABLE COMP_REST_COMP
-  (
-    comp_rest_comp_id                  INTEGER NOT NULL ,
-    RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
-    COMPETENCIA_comp_id                INTEGER NOT NULL ,
-  )
-  ON "default"
-GO
-ALTER TABLE COMP_REST_COMP ADD CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY
-CLUSTERED (comp_rest_comp_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
-GO
-
 ALTER TABLE ASISTENCIA
 ADD CONSTRAINT ASISTENCIA_INSCRIPCION_FK FOREIGN KEY
 (
-INSCRIPCION_ins_id,
 INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-ins_id,
 PERSONA_per_id
 )
 ON
@@ -1304,11 +1260,11 @@ GO
 ALTER TABLE EVENTO
 ADD CONSTRAINT EVENTO_TIPO_EVENTO_FK FOREIGN KEY
 (
-TIPO_EVENTO_TIPO_EVENTO_ID
+TIPO_EVENTO_tip_id
 )
 REFERENCES TIPO_EVENTO
 (
-TIPO_EVENTO_ID
+tip_id
 )
 ON
 DELETE
@@ -1394,12 +1350,10 @@ GO
 ALTER TABLE HIST_ASCENSO
 ADD CONSTRAINT HIST_ASCENSO_INSCRIPCION_FK FOREIGN KEY
 (
-INSCRIPCION_ins_id,
 INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-ins_id,
 PERSONA_per_id
 )
 ON
@@ -1426,12 +1380,10 @@ GO
 ALTER TABLE HIST_KATA
 ADD CONSTRAINT HIST_KATA_INSCRIPCION_FK FOREIGN KEY
 (
-INSCRIPCION_ins_id,
 INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-ins_id,
 PERSONA_per_id
 )
 ON
@@ -1458,12 +1410,10 @@ GO
 ALTER TABLE HIST_KUMITE
 ADD CONSTRAINT HIST_KUMITE_INSCRIPCION_FK FOREIGN KEY
 (
-INSCRIPCION_ins_id,
 INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-ins_id,
 PERSONA_per_id
 )
 ON
@@ -1475,12 +1425,10 @@ GO
 ALTER TABLE HIST_KUMITE
 ADD CONSTRAINT HIST_KUMITE_INSCRIPCION_FKv1 FOREIGN KEY
 (
-INSCRIPCION_ins_id1,
 INSCRIPCION_PERSONA_per_id1
 )
 REFERENCES INSCRIPCION
 (
-ins_id,
 PERSONA_per_id
 )
 ON
@@ -1497,21 +1445,6 @@ RESULTADO_KUMITE_res_kum_id
 REFERENCES RESULTADO_KUMITE
 (
 res_kum_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
-
-ALTER TABLE HORARIO
-ADD CONSTRAINT HORARIO_EVENTO_FK FOREIGN KEY
-(
-EVENTO_eve_id
-)
-REFERENCES EVENTO
-(
-eve_id
 )
 ON
 DELETE
@@ -1557,6 +1490,23 @@ PERSONA_per_id
 REFERENCES PERSONA
 (
 per_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE INSCRIPCION
+ADD CONSTRAINT INSCRIPCION_SOLICITUD_PLANILLA_FK FOREIGN KEY
+(
+SOLICITUD_PLANILLA_sol_pla_id,
+SOLICITUD_PLANILLA_PLANILLA_pla_id
+)
+REFERENCES SOLICITUD_PLANILLA
+(
+sol_pla_id ,
+PLANILLA_pla_id
 )
 ON
 DELETE
@@ -1714,6 +1664,20 @@ DELETE
 UPDATE NO ACTION
 GO
 
+ALTER TABLE PLANILLA
+ADD CONSTRAINT PLANILLA_DOJO_FK FOREIGN KEY
+(
+DOJO_doj_id
+)
+REFERENCES DOJO
+(
+doj_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
 
 ALTER TABLE PLANILLA
 ADD CONSTRAINT PLANILLA_TIPO_PLANILLA_FK FOREIGN KEY
@@ -1771,7 +1735,7 @@ cin_id
 )
 ON
 DELETE
-  CASCADE ON
+  NO ACTION ON
 UPDATE NO ACTION
 GO
 
@@ -1786,7 +1750,7 @@ res_com_id
 )
 ON
 DELETE
-  CASCADE ON
+  NO ACTION ON
 UPDATE NO ACTION
 GO
 
@@ -1939,23 +1903,6 @@ DELETE
 UPDATE NO ACTION
 GO
 
-ALTER TABLE SOLICITUD_PLANILLA
-ADD CONSTRAINT SOLICITUD_PLANILLA_INSCRIPCION_FK FOREIGN KEY
-(
-INSCRIPCION_ins_id,
-PERSONA_per_id
-)
-REFERENCES INSCRIPCION
-(
-ins_id,
-PERSONA_per_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
-
 ALTER TABLE TELEFONO
 ADD CONSTRAINT TELEFONO_PERSONA_FK FOREIGN KEY
 (
@@ -1964,21 +1911,6 @@ PERSONA_per_id
 REFERENCES PERSONA
 (
 per_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
-
-ALTER TABLE TIPO_EVENTO
-ADD CONSTRAINT TIPO_EVENTO_EVENTO_FK FOREIGN KEY
-(
-EVENTO_eve_id
-)
-REFERENCES EVENTO
-(
-eve_id
 )
 ON
 DELETE
@@ -2030,6 +1962,7 @@ DELETE
   CASCADE ON
 UPDATE NO ACTION
 GO
+
 
 ---------------------------------------------------STORED PROCEDURES M12 -------------------------------------
 
