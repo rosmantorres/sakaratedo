@@ -55,5 +55,16 @@ namespace LogicaNegociosSKD.Modulo12
             }
         }
 
+        public bool agregarCompetencia(DominioSKD.Competencia laCompetencia)
+        {
+            try
+            {
+                return BDCompetencia.AgregarCompetencia(laCompetencia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

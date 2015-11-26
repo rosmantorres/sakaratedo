@@ -55,15 +55,24 @@ namespace DatosSKD.Modulo12
                     laCompetencia.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDModulo12.AliasIdUbicacion].ToString()),
                                                             row[RecursosBDModulo12.AliasNombreCiudad].ToString(),
                                                             row[RecursosBDModulo12.AliasNombreEstado].ToString());
-                    
+
                     laListaDeCompetencias.Add(laCompetencia);
-                
+
                 }
-            
+
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
             return laListaDeCompetencias;
@@ -82,7 +91,7 @@ namespace DatosSKD.Modulo12
                 parametros = new List<Parametro>();
                 Competencia laCompetencia = new Competencia();
 
-                elParametro = new Parametro(RecursosBDModulo12.AliasIdCompetencia,SqlDbType.Int,idCompetencia.ToString(),
+                elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int, idCompetencia.ToString(),
                                             false);
                 parametros.Add(elParametro);
 
@@ -91,7 +100,7 @@ namespace DatosSKD.Modulo12
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    
+
 
                     laCompetencia.Id_competencia = int.Parse(row[RecursosBDModulo12.AliasIdCompetencia].ToString());
                     laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
@@ -107,7 +116,7 @@ namespace DatosSKD.Modulo12
                     laCompetencia.FechaInicio = Convert.ToDateTime(row[RecursosBDModulo12.AliasEdadInicio].ToString());
                     laCompetencia.FechaFin = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin].ToString());
                     laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
-                    
+
                     if (laCompetencia.OrganizacionTodas == false)
                         laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString())
                                                                         , row[RecursosBDModulo12.AliasNombreOrganizacion].ToString());
@@ -128,7 +137,7 @@ namespace DatosSKD.Modulo12
                                                              row[RecursosBDModulo12.AliasCintaInicio].ToString(),
                                                              row[RecursosBDModulo12.AliasCintaFin].ToString(),
                                                              row[RecursosBDModulo12.AliasSexo].ToString());
-                    
+
 
                 }
                 return laCompetencia;
@@ -136,13 +145,228 @@ namespace DatosSKD.Modulo12
 
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
-           
+
         }
 
+        public static bool BuscarNombreCompetencia(Competencia laCompetencia)
+        {
+            bool retorno = false;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar
+                                                      , laCompetencia.Nombre, false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo12.ParamSalidaNumCompetencia, SqlDbType.Int, true);
+                parametros.Add(elParametro);
+
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDModulo12.BuscarNombreCompetencia
+                                             , parametros);
+
+                foreach (Resultado elResultado in resultados)
+                {
+                    if (elResultado.etiqueta == RecursosBDModulo12.ParamSalidaNumCompetencia)
+                        if (int.Parse(elResultado.valor) == 1)
+                            retorno = true;
+                        else
+                            retorno = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return retorno;
+
+
+        }
+
+        public static bool AgregarCompetencia(Competencia laCompetencia)
+        {
+            try
+            {
+                if (!BuscarNombreCompetencia(laCompetencia))
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar,
+                        laCompetencia.Nombre, false);
+                    parametros.Add(elParametro);
+
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKata)
+                        laCompetencia.TipoCompetencia = "1";
+                    else
+                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKumite)
+                            laCompetencia.TipoCompetencia = "2";
+
+                    elParametro = new Parametro(RecursosBDModulo12.ParamTipoCompetencia, SqlDbType.VarChar,
+                        laCompetencia.TipoCompetencia, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamOrganizacionTodas, SqlDbType.Bit,
+                        laCompetencia.OrganizacionTodas.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamStatusCompetencia, SqlDbType.VarChar,
+                        laCompetencia.Status, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamFechaInicio, SqlDbType.DateTime,
+                        laCompetencia.FechaInicio.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamFechaFin, SqlDbType.DateTime,
+                        laCompetencia.FechaFin.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
+                        laCompetencia.Organizacion.Nombre, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreCiudad, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Ciudad, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreEstado, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Estado, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreDireccion, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Direccion, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamLatitudDireccion, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Latitud, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamLongitudDireccion, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Longitud, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamEdadInicio, SqlDbType.Int,
+                        laCompetencia.Categoria.Edad_inicial.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamEdadFin, SqlDbType.Int,
+                        laCompetencia.Categoria.Edad_final.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamCintaInicio, SqlDbType.VarChar,
+                        laCompetencia.Categoria.Cinta_inicial, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamCintaFin, SqlDbType.VarChar,
+                        laCompetencia.Categoria.Cinta_final, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamSexo, SqlDbType.Char,
+                        laCompetencia.Categoria.Sexo, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamCostoCompetencia, SqlDbType.Float,
+                        laCompetencia.Costo.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    BDConexion laConexion = new BDConexion();
+                    laConexion.EjecutarStoredProcedure(RecursosBDModulo12.AgregarCompetencia, parametros);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return true;
+        }
+
+        public static bool ModificarCompetencia(Competencia laCompetencia)
+        {
+            try
+            {
+                if (!BuscarNombreCompetencia(laCompetencia))
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int,
+                        laCompetencia.Id_competencia.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar,
+                        laCompetencia.Nombre, false);
+                    parametros.Add(elParametro);
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKata)
+                        laCompetencia.TipoCompetencia = "1";
+                    else
+                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKumite)
+                            laCompetencia.TipoCompetencia = "2";
+
+                    elParametro = new Parametro(RecursosBDModulo12.ParamTipoCompetencia, SqlDbType.VarChar,
+                        laCompetencia.TipoCompetencia, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamOrganizacionTodas, SqlDbType.Bit,
+                        laCompetencia.OrganizacionTodas.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamStatusCompetencia, SqlDbType.VarChar,
+                        laCompetencia.Status, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamFechaInicio, SqlDbType.DateTime,
+                        laCompetencia.FechaInicio.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamFechaFin, SqlDbType.DateTime,
+                        laCompetencia.FechaFin.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
+                        laCompetencia.Organizacion.Nombre, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreCiudad, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Ciudad, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreEstado, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Estado, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreDireccion, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Direccion, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamLatitudDireccion, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Latitud, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamLongitudDireccion, SqlDbType.VarChar,
+                        laCompetencia.Ubicacion.Longitud, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamEdadInicio, SqlDbType.Int,
+                        laCompetencia.Categoria.Edad_inicial.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamEdadFin, SqlDbType.Int,
+                        laCompetencia.Categoria.Edad_final.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamCintaInicio, SqlDbType.VarChar,
+                        laCompetencia.Categoria.Cinta_inicial, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamCintaFin, SqlDbType.VarChar,
+                        laCompetencia.Categoria.Cinta_final, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamSexo, SqlDbType.Char,
+                        laCompetencia.Categoria.Sexo, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo12.ParamCostoCompetencia, SqlDbType.Float,
+                        laCompetencia.Costo.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    BDConexion laConexion = new BDConexion();
+                    laConexion.EjecutarStoredProcedure(RecursosBDModulo12.ModificarCompetencia, parametros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return true;
+        }
     }
 }

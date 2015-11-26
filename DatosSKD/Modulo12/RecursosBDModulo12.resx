@@ -187,6 +187,9 @@
   <data name="AliasTodasOrganizaciones" xml:space="preserve">
     <value>todasOrganizaciones</value>
   </data>
+  <data name="BuscarNombreCompetencia" xml:space="preserve">
+    <value>M12_BuscarNombreCompetencia</value>
+  </data>
   <data name="ConsultarCompetencias" xml:space="preserve">
     <value>M12_ConsultarCompetencias</value>
     <comment>Consulta las competencias en general</comment>
@@ -242,6 +245,9 @@
   </data>
   <data name="ParamOrganizacionTodas" xml:space="preserve">
     <value>@organizacionesTodas</value>
+  </data>
+  <data name="ParamSalidaNumCompetencia" xml:space="preserve">
+    <value>@numCompetencia</value>
   </data>
   <data name="ParamSexo" xml:space="preserve">
     <value>@sexo</value>
