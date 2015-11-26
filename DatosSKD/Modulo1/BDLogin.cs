@@ -50,6 +50,7 @@ namespace DatosSKD.Modulo1
                     Rol elRol = new Rol();
                     elRol.Id_rol =int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
                     elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
+                    elRol.Fecha_creacion = (DateTime)row[RecursosBDModulo1.AliasFechaCreacion];
                     listaRol.Add(elRol);
                }
                laCuenta.Roles = listaRol;
