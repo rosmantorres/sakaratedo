@@ -659,11 +659,9 @@ CREATE
   (
     res_cin_id               INTEGER NOT NULL ,
     res_cin_descripcion      VARCHAR (255) NOT NULL ,
-    res_cin_tiemp_min        INTEGER NOT NULL ,
+    res_cin_tiemp_min        INTEGER NOT NULL , /*# de meses*/
     res_cin_punt_min         INTEGER NOT NULL ,
-    res_cin_horas_docent     INTEGER NOT NULL ,
-    tipo_per_id              INTEGER NOT NULL ,
-    TIPO_PERIODO_tipo_per_id INTEGER NOT NULL ,
+    res_cin_horas_docent     INTEGER NOT NULL ,/*tiempo mensual en horas*/
     CINTA_cin_id             INTEGER NOT NULL ,
     CONSTRAINT RESTRICCION_CINTA_PK PRIMARY KEY CLUSTERED (res_cin_id)
 WITH
