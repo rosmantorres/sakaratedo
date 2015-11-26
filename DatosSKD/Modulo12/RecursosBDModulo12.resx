@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgregarCompetencia" xml:space="preserve">
+    <value>M12_AgregarCompetencia</value>
+    <comment>Agrega una competencia</comment>
+  </data>
   <data name="AliasCintaFin" xml:space="preserve">
     <value>cintaFin</value>
   </data>
@@ -189,6 +193,7 @@
   </data>
   <data name="ConsultarCompetenciasXId" xml:space="preserve">
     <value>M12_ConsultarCompetenciasXId</value>
+    <comment>Consulta una competencia por su id</comment>
   </data>
   <data name="ParamCintaFin" xml:space="preserve">
     <value>@cintaFin</value>
@@ -246,6 +251,12 @@
   </data>
   <data name="ParamTipoCompetencia" xml:space="preserve">
     <value>@tipoCompetencia</value>
+  </data>
+  <data name="TipoCompetenciaKata" xml:space="preserve">
+    <value>Kata</value>
+  </data>
+  <data name="TipoCompetenciaKumite" xml:space="preserve">
+    <value>Kumite</value>
   </data>
   <data name="TodasLasOrganizaciones" xml:space="preserve">
     <value>Todas</value>
