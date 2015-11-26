@@ -93,6 +93,8 @@
       <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo1\BDLogin.cs" />
+    <Compile Include="Modulo1\BDReestablecer.cs" />
+    <Compile Include="Modulo2\BDRoles.cs" />
     <Compile Include="Modulo1\RecursosBDModulo1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

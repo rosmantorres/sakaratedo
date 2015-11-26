@@ -120,6 +120,9 @@
   <data name="AliasContrasena" xml:space="preserve">
     <value>contrasena</value>
   </data>
+  <data name="AliasFechaCreacion" xml:space="preserve">
+    <value>fecha_creacion</value>
+  </data>
   <data name="AliasIdRol" xml:space="preserve">
     <value>id_rol</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="AliasNombreUsuario" xml:space="preserve">
     <value>nombre_usuario</value>
+  </data>
+  <data name="CambiarContraseña" xml:space="preserve">
+    <value>M1_RestablecerContrasena</value>
   </data>
   <data name="ConsultarNombreUsuarioContrasena" xml:space="preserve">
     <value>M1_ConsultarNombreUsuarioContrasena</value>

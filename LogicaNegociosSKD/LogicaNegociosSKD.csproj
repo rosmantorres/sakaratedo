@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo1\Restablecer.cs" />
     <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

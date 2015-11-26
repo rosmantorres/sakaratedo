@@ -12,7 +12,7 @@ namespace DominioSKD
         private int id_rol;
         private String nombre;
         private String descripcion;
-        private String fecha_creacion;
+        private DateTime fecha_creacion;
         #endregion
 
         #region propiedades
@@ -34,7 +34,7 @@ namespace DominioSKD
             set { descripcion = value; }
         }
 
-        public String Fecha_creacion
+        public DateTime Fecha_creacion
         {
             get { return fecha_creacion; }
             set { fecha_creacion = value; }
@@ -47,10 +47,10 @@ namespace DominioSKD
             id_rol  = 0;
             nombre = "";
             descripcion = "";
-            fecha_creacion = "";
+            fecha_creacion =new DateTime();
         }
 
-                public Rol(int  elId, String elNombre, String laDescripcion, String laFecha)
+                public Rol(int  elId, String elNombre, String laDescripcion, DateTime laFecha)
         {
             id_rol = elId;
             nombre = elNombre;

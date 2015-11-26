@@ -129,4 +129,8 @@
   <data name="ConsultarRolesSistema" xml:space="preserve">
     <value>M2_ConsultarRolesSistema</value>
   </data>
+  <data name="COnsultarRolesSistema1" xml:space="preserve">
+    <value>M1_RestablecerContrasena</value>
+    <comment>quitar esto cuando se cambie el nombre del store procedure</comment>
+  </data>
 </root>

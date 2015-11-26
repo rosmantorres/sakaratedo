@@ -6,6 +6,8 @@ using System.Web;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
+using DatosSKD.Modulo1;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Modulo1
 {
@@ -81,7 +83,10 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                //consularbasededatos(usuario,contrasea);
+               //consularbasededatos(usuario,contrasea);
+                Cuenta user= BDLogin.ObtenerUsuario(usuario);
+                string[] respuesta = new string[4];
+                /*
                 string[] admin = { "admin@gmail.com", "12345","Sistema","juan","Perez","Atleta-Dojo-Sistema"};
                 string[] dojo = { "dojo@gmail.com", "12345", "Dojo","Javier","Dominguez","Dojo"};
                 string[] organizacion = { "organizacion@gmail.com", "12345", "Organizacion","Pepe","Lopez","Organizacion" };
@@ -89,36 +94,43 @@ namespace LogicaNegociosSKD.Modulo1
                 string[] atleta = { "atleta@gmail.com", "12345", "Atleta","Sandra","Villa","Atleta" };
                 string[] representante = { "representante@gmail.com", "12345", "Representante","Maria","Paz","Representante" };
                 string[] menorEdad = { "atletaM@gmail.com", "12345", "Atleta(Menor)", "Armando", "Paredes", "Atleta(Menor)" };
+                */
+               string hashClave = hash(contraseña);
+               if (hashClave == hash(user.Contrasena) && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
+               {
+                   respuesta[0] = user.Id_usuario.ToString();
+                   respuesta[1] = user.Nombre_usuario;
+                   string rolesConcat = "";
+                   string split= RecursosLogicaModulo1.splitRoles;
+                   int cantRoles=user.Roles.Count;
+                   int contador=0;
+                   DateTime fechaRol= new DateTime(1900,1,1);
+                   foreach (Rol rol in user.Roles)
+                   {
+                       contador++;
+                       //se intenta quitar la palabra Admin del rol si es que la tiene
+                       string[] sinAdmin = rol.Nombre.Split(' ');
+                       string elRol = sinAdmin[sinAdmin.Length - 1];
+                       if(contador==cantRoles)
+                           split="";
+                      // if(elRol==RecursosLogicaModulo1.rolAtleta ) verificar si es menor de edad
+                       rolesConcat = rolesConcat + elRol + split;
+                       int d = DateTime.Compare(fechaRol, rol.Fecha_creacion);
+                       if (DateTime.Compare(fechaRol, rol.Fecha_creacion) == -1)
+                       {
+                           fechaRol = rol.Fecha_creacion;
+                           respuesta[3] = elRol;
+                       }
 
-                if (validaUsuario(usuario, contraseña, admin))
-                {
-                    return admin;
-                }
-                else if (validaUsuario(usuario, contraseña, dojo))
-                {
-                    return dojo;
-                }
-                else if (validaUsuario(usuario, contraseña, organizacion))
-                {
-                    return organizacion;
-                }
-                else if(validaUsuario(usuario, contraseña, entrenador))
-                {
-                    return entrenador;
-                }
-                else if(validaUsuario(usuario, contraseña, atleta))
-                {
-                    return atleta;
-                }
-                else if(validaUsuario(usuario, contraseña, representante))
-                {
-                    return representante;
-                }
-                else if (validaUsuario(usuario, contraseña, menorEdad))
-                {
-                    return menorEdad;
-                }
-                else
+                   }
+                   respuesta[2] = rolesConcat;
+                   if (rolesConcat != "")
+                       return respuesta;
+                   else
+                       return null;
+                   //ingresó a sistema
+               }
+
                     return null;
                
             }
@@ -132,9 +144,14 @@ namespace LogicaNegociosSKD.Modulo1
 
 
 
+<<<<<<< HEAD
         public string hash(string cadena)
         { try
             {
+=======
+        public static string hash(string cadena)
+        {
+>>>>>>> 34700eea69d820817f4cee2cca4e8c57108fd12d
             HashAlgorithm sha = new SHA1CryptoServiceProvider(); //se crea la variable que contrenda el SHA1
             MD5 md5Hash = MD5.Create();// se crea la variable que contendrá el MD5
             byte[] cadenaByte = Encoding.UTF8.GetBytes(cadena);// se pasa la cadena de caracteres a un arreglo de byte
