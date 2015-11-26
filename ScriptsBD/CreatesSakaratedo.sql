@@ -256,7 +256,7 @@ CREATE
   (
     EVENTO_eve_id                 INTEGER NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
-    eve_res_id                    INTEGER NOT NULL ,
+    eve_res_id                    INTEGER IDENTITY(1,1) NOT NULL ,
     CONSTRAINT EVENTO_RESTRICCION_PK PRIMARY KEY CLUSTERED (eve_res_id)
 WITH
   (
@@ -727,7 +727,7 @@ GO
 CREATE
   TABLE RESTRICCION_EVENTO
   (
-    res_eve_id       INTEGER NOT NULL ,
+    res_eve_id       INTEGER  IDENTITY(1,1) NOT NULL ,
     res_eve_desc     VARCHAR (255) ,
     res_eve_edad_min INTEGER ,
     res_eve_edad_max INTEGER ,
@@ -797,7 +797,7 @@ GO
 CREATE
   TABLE RH_CINTA
   (
-    rh_cinta_id                   INTEGER NOT NULL ,
+    rh_cinta_id                   INTEGER IDENTITY(1,1) NOT NULL ,
     RESTRICCION_EVENTO_res_eve_id INTEGER NOT NULL ,
     CINTA_cin_id                  INTEGER NOT NULL,
     CONSTRAINT RH_CINTA_PK PRIMARY KEY CLUSTERED (rh_cinta_id)
