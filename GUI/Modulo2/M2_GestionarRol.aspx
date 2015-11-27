@@ -48,11 +48,7 @@
 <form method="post" action="#"  id="userRol" runat="server">
 <div class="box box-body">
     <div>
-        <form class="form-horizontal">
-            <div class="row">
-                <a class="btn btn-success glyphicon glyphicon-plus-sign col-md-offset-11" data-toggle="modal" data-target="#modal-create" href="#""></a>
-            </div>
-        </form>
+
     </div>
 
     <br />
@@ -64,29 +60,35 @@
                     <th>Descripcion</th>
                     <th>Fecha de asignación</th>
                     <th>Acciones</th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Administrador de Dojo</td>
-                    <td>se encarga de gestionar y organizar todas las actividades referentes al dojo,<br />
-                        tanto como hacer labores de mantenimiento de personal.
-                    </td>
-                    <td>22/11/2015</td>
-                    <td>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
+                <%int cont = 0; %>
+               <%foreach(DominioSKD.Rol rol in rolesDePersona) %>
+                <%{ %>
                  <tr>
-                    <td>Atleta</td>
-                    <td>Son competidores asociados a los dojos en los cuales entrenan mes a mes<br />
-                        para su formacion marcial.
+                    <td><%=rol.Nombre %></td>
+                    <td><%=rol.Descripcion %>
                     </td>
-                    <td>21/11/2015</td>
-                    <td>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                    <td><%=rol.Fecha_creacion.ToString()%></td>
+                    <td >
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" value="1" data-toggle="modal" data-target="#modal-delete" href="#"><a id="IdRol<%=cont++.ToString() %>" style="visibility: hidden"><%=rol.Id_rol %></a></a>
                     </td>
                 </tr>
+                <%} %>
+                 <%foreach(DominioSKD.Rol rol in rolesFiltrados) %>
+                <%{ %>
+                 <tr>
+                    <td><%=rol.Nombre %></td>
+                    <td><%=rol.Descripcion %></td>
+                    <td>-</td>
+                    <td>
+                        <a class="btn btn-success glyphicon glyphicon-plus-sign" value="2" data-toggle="modal" data-target="#modal-create" href="#" ><a id="IdRol<%=cont++.ToString()%>" style="visibility: hidden"><%=rol.Id_rol %></a></a>
+                    </td>
+                </tr>
+                <%} %>
+
             </tbody>
         </table>
     </div>
@@ -101,23 +103,18 @@
                 <div class="modal-body" aria-label="Close">
                             <div class="row form-group">
                                 <label for="selectRole" class="control-label col-xs-2">Rol:</label>
-                                <div class="col-xs-10">
-                                    <asp:DropDownList id="RolList" class="btn btn-default dropdown-toggle" AutoPostBack="True" OnSelectedIndexChanged="Selection_Change" runat="server">
-
-                                          <asp:ListItem Selected="True" Value="White">-Seleccionar rol- </asp:ListItem>
-                                          <asp:ListItem Value="Silver"> Silver </asp:ListItem>
-                                          <asp:ListItem Value="DarkGray"> Dark Gray </asp:ListItem>
-                                          <asp:ListItem Value="Khaki"> Khaki </asp:ListItem>
-                                          <asp:ListItem Value="DarkKhaki"> Dark Khaki </asp:ListItem>
+                                <div class="col-xs-10" runat="server" id="DropDawnDiv" >
+                                    <asp:DropDownList ID="RolList" class="btn btn-default dropdown-toggle"  runat="server">
 
                                     </asp:DropDownList>
+                                     <td>
+                                      <a class="btn btn-info glyphicon glyphicon-question-sign" data-toggle="modal" id="InfoButton" runat="server"  data-target="#info" href="#"></a>
+                                     </td>
+
                                 </div>
                             </div>
                      <div class="row form-group">
-                        <label for="textareaDir" class="control-label col-xs-2">Descripción:</label>
-                        <div class="col-xs-10">
-                            <textarea readonly id="textareaRol" class="form-control col-xs-2" rows="5">Descripcion del rol</textarea>
-                        </div>
+
                     </div>
                 </div>
                   <div class="modal-footer" style="text-align: center">
@@ -127,7 +124,7 @@
             </div>
         </div>
     </div>
-
+    
     <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -136,7 +133,7 @@
                     <h3>¿Esta seguro que desea eliminar este rol?</h3>
                 </div>
                   <div class="modal-footer" style="text-align: center">
-                    <input type="button" runat="server" onserverclick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
+                    <input type="button" runat="server" OnServerClick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
                     <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
                   </div>
             </div>
