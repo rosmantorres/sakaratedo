@@ -59,6 +59,14 @@ namespace DominioSKD
             this.idTipoPlanilla = idTipoPlanilla;
             this.datos = datos;
         }
+        public Planilla(int id,string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.status = status;
+            this.idTipoPlanilla = idTipoPlanilla;
+            this.datos = datos;
+        }
         public Planilla(int idTipoPlanilla, string tipoPlanilla)
         {
             this.idTipoPlanilla = idTipoPlanilla;
@@ -127,7 +135,7 @@ namespace DominioSKD
             set { solicitud = value; }
         }
 
-        public List<string> Dato
+        public List<String> Dato
         {
             get { return datos; }
             set { datos = value; }

@@ -196,8 +196,6 @@ namespace DatosSKD.Modulo14
 
                 string query = RecursosBDModulo14.ProcedureAgregarDatoPlanilla;
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
-
-
             }
             catch (SqlException)
             {
@@ -280,9 +278,193 @@ namespace DatosSKD.Modulo14
             return idTipolanilla;
         }
 
+        /// <summary>
+        /// Obtiene una planilla por el ID
+        /// </summary>
+        /// /// <param name="elUsuario">id planilla</param>
+        /// <returns>Planilla con nombre, status y tipo de planilla</returns>
+        public static Planilla ObtenerPlanillaID(int idPlanilla)
+        {
+            BDConexion laConexion;
+            Planilla planilla = null;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdPlanilla,
+                SqlDbType.VarChar, idPlanilla.ToString(), false);
+                parametros.Add(parametro);
+
+                DataTable resultadoConsulta = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo14.ProcedureConsultatPlanillaID, parametros);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    String tipoPlanilla = row[RecursosBDModulo14.AtributoNombreTipoPlanilla].ToString();
+                    String nombrePlanilla = row[RecursosBDModulo14.AtributoNombrePlanilla].ToString();
+                    bool statusPlanilla = (bool)row[RecursosBDModulo14.AtributoStatusPlanilla];
+                    planilla = new Planilla(nombrePlanilla,statusPlanilla ,tipoPlanilla);
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return planilla;
+        }
+
+        /// <summary>
+        /// Obtiene los datos de una planilla id
+        /// </summary>
+        /// /// <param name="elUsuario">id planilla</param>
+        /// <returns>datos de una planilla</returns>
+        public static List<String> ObtenerDatosPlanillaID(int idPlanilla)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+            List<String> listDatos = new List<String>();
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdPlanilla,
+                SqlDbType.VarChar, idPlanilla.ToString(), false);
+                parametros.Add(parametro);
+
+                DataTable resultadoConsulta = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo14.ProcedureConsultarDatosPlanillaId, parametros);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listDatos.Add(row[RecursosBDModulo14.AtributoNombre_Dato].ToString());
+                    
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return listDatos;
+        }
 
 
-    
+        /// <summary>
+        /// Modifica una planilla en la base de datos
+        /// </summary>
+        /// <param name="elUsuario">La planilla</param>
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
+
+        public static Boolean ModificarPlanillaBD(Planilla laPlanilla)
+        {
+
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdPlanilla,
+                SqlDbType.VarChar, laPlanilla.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroNombrePlanilla,
+                SqlDbType.VarChar,laPlanilla.Nombre , false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroTipoPlanillaFK,
+                SqlDbType.VarChar, laPlanilla.IDtipoPlanilla.ToString(), false);
+                parametros.Add(parametro);
+
+                string query = RecursosBDModulo14.ProcedureModificarPlanilla;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
+
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        /// <summary>
+        /// Modifica una planilla en la base de datos
+        /// </summary>
+        /// <param name="elUsuario">La planilla</param>
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
+
+        public static Boolean EliminarDatosPlanillaBD(int idPlanilla)
+        {
+
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdPlanilla,
+                SqlDbType.VarChar, idPlanilla.ToString(), false);
+                parametros.Add(parametro);
+
+
+                string query = RecursosBDModulo14.ProcedureEliminarDatosPlanilla;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
+
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Registra los datos de una planilla en la BD por id de la planilla
+        /// </summary>
+        /// <param name="">idPlanilla y dato de la planilla</param>
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
+        public static Boolean RegistrarDatosPlanillaIdBD(int idPlanilla, String datoPlanilla)
+        {
+
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdPlanilla,
+                          SqlDbType.VarChar, idPlanilla.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo14.ParametroNombreDato,
+                                          SqlDbType.VarChar, datoPlanilla, false);
+                parametros.Add(parametro);
+
+                string query = RecursosBDModulo14.ProcedureAgregarDatoPlanillaID;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            return true;
+        }
+
         #endregion
     }
 }
