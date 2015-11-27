@@ -162,4 +162,97 @@
   <data name="AtributoIdTipoPlanilla" xml:space="preserve">
     <value>tip_id</value>
   </data>
+  <data name="AtributocontenidoDiseño1" xml:space="preserve">
+    <value>dis_contenido</value>
+  </data>
+  <data name="AtributoIdDato" xml:space="preserve">
+    <value>dat_id</value>
+    <comment>atributo del id de Dato</comment>
+  </data>
+  <data name="AtributoIdDiseño1" xml:space="preserve">
+    <value>dis_id</value>
+  </data>
+  <data name="AtributoIdPlanillaDatos" xml:space="preserve">
+    <value>PLANILLA_pla_id</value>
+    <comment>id de la planilla en datos</comment>
+  </data>
+  <data name="AtributoIdTipoPlanilla1" xml:space="preserve">
+    <value>tip_id</value>
+    <comment>atributo del id Tipo_Planilla</comment>
+  </data>
+  <data name="AtributoNombreTipoPlanilla1" xml:space="preserve">
+    <value>tip_nombre</value>
+    <comment>atributo del nombre de Tipo_Planilla</comment>
+  </data>
+  <data name="AtributoNombre_Dato" xml:space="preserve">
+    <value>dat_nombre</value>
+    <comment>atributo del nombre Dato</comment>
+  </data>
+  <data name="ParametroContenido1" xml:space="preserve">
+    <value>@dis_contenido</value>
+  </data>
+  <data name="ParametroDiseñoPlanilla1" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ParametroIdDatos" xml:space="preserve">
+    <value>@DATO_dat_id</value>
+    <comment>parametro del id del datos de una planilla</comment>
+  </data>
+  <data name="ParametroIdTipoPlanilla" xml:space="preserve">
+    <value>@tip_id</value>
+    <comment>parametro del id de tipo planilla</comment>
+  </data>
+  <data name="ParametroNombreDato" xml:space="preserve">
+    <value>@dat_nombre</value>
+    <comment>parametro del nombre del dato</comment>
+  </data>
+  <data name="ParametroNombrePlanilla" xml:space="preserve">
+    <value>@pla_nombre</value>
+    <comment>parametro para el nombre de la planilla</comment>
+  </data>
+  <data name="ParametroPlanilla1" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ParametroSatusPlanilla" xml:space="preserve">
+    <value>@pla_status</value>
+    <comment>parametro del status de la planilla</comment>
+  </data>
+  <data name="ParametroTipoPlanilla" xml:space="preserve">
+    <value>@tip_nombre</value>
+    <comment>parametro del nombre del tipo planilla</comment>
+  </data>
+  <data name="ParametroTipoPlanillaFK" xml:space="preserve">
+    <value>@TIPO_PLANILLA_tip_id</value>
+    <comment>parametro del tipo planilla de la planilla</comment>
+  </data>
+  <data name="ProcedimientoAgregarTipoPlanilla" xml:space="preserve">
+    <value>M14_ProcedureAgregarTipoPlanilla</value>
+    <comment>Agrega el tipo de planilla</comment>
+  </data>
+  <data name="ProcedimientoObtenerIdTipoPlanilla" xml:space="preserve">
+    <value>M14_Procedure_IdTipoPlanilla</value>
+    <comment>Obtiene el id de un tipo planilla</comment>
+  </data>
+  <data name="ProcedureAgregarDatoPlanilla" xml:space="preserve">
+    <value>M14_ProcedureAgregarDatoPlanilla</value>
+    <comment>procedimiento que almacena los datos de la planilla</comment>
+  </data>
+  <data name="ProcedureAgregarPlanilla" xml:space="preserve">
+    <value>M14_ProcedureAgregarPlanilla</value>
+    <comment>Procedimiento para insertar una planilla</comment>
+  </data>
+  <data name="ProcedureConsultarDiseño1" xml:space="preserve">
+    <value>M14_ConsultarDiseño</value>
+  </data>
+  <data name="ProcedureConsultarListaDatos" xml:space="preserve">
+    <value>M14_Procedure_ListarDatos</value>
+    <comment>Obtiene todos los Datos de la tabla Dato</comment>
+  </data>
+  <data name="ProcedureGuardarDiseño1" xml:space="preserve">
+    <value>M14_AgregarDiseño</value>
+  </data>
+  <data name="ProcedureListaTipoPlanilla" xml:space="preserve">
+    <value>M14_Procedure_ListarTipoPlanilla</value>
+    <comment>Obtiene la lista de los tipos de planillas existentes</comment>
+  </data>
 </root>

@@ -67,13 +67,13 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText id_nombretipo;
         
         /// <summary>
-        /// Control Text1.
+        /// Control id_nombrePlanilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText id_nombrePlanilla;
         
         /// <summary>
         /// Control ListBox1.

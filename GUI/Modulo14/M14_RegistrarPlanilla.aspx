@@ -68,7 +68,7 @@
      <div class="form-group  col-sm-10 col-md-10 col-lg-10">
       <br/>
       <h3>Nombre de Planilla</h3>
-      <input id="Text1" type="text" placeholder="NombrePlanilla" class="form-control" name="NombrePlanilla" runat="server" />
+      <input id="id_nombrePlanilla" type="text" placeholder="Nombre Planilla" class="form-control" name="NombrePlanilla" runat="server" />
      </div>
     
     <div class="form-group">
@@ -78,10 +78,8 @@
           <asp:ListBox ID="ListBox1" runat="server" Width="860px" Height="130px">
              <asp:ListItem Text="Dojo" Value="Dojo" Selected="True" />
              <asp:ListItem Text="Atleta" Value="Atleta" />
-             <asp:ListItem Text="Competencia" Value="Competencia" />
-             <asp:ListItem Text="Asistencia" Value="Asistencia"  />
-             <asp:ListItem Text="Instructor" Value="Instructor" />
-             <asp:ListItem Text="Representante" Value="#Representante" />
+             <asp:ListItem Text="Evento" Value="Evento" />
+             <asp:ListItem Text="Competencia" Value="Competencia"  />
           </asp:ListBox>
           <br/>
          <div class="text-center padding-small col-sm-10 col-md-10 col-lg-10">

@@ -14,9 +14,10 @@ namespace DominioSKD
         private string nombre;
         private Boolean status;
         private string tipoPlanilla;
+        private int idTipoPlanilla;
         private Diseño diseño;
         private List<SolicitudPlanilla> solicitud;
-
+        private List<String> datos;
         #endregion
 
         #region metodos
@@ -44,10 +45,43 @@ namespace DominioSKD
         {
             this.solicitud.Add(solicitud);
         }
+        public Planilla(string nombre, bool status, string tipoPlanilla, List<String> datos)
+        {
+            this.nombre = nombre;
+            this.status = status;
+            this.tipoPlanilla = tipoPlanilla;
+            this.datos = datos;
+        }
+        public Planilla(string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        {
+            this.nombre = nombre;
+            this.status = status;
+            this.idTipoPlanilla = idTipoPlanilla;
+            this.datos = datos;
+        }
+        public Planilla(int idTipoPlanilla, string tipoPlanilla)
+        {
+            this.idTipoPlanilla = idTipoPlanilla;
+            this.tipoPlanilla = tipoPlanilla;
+
+        }
+
+        public Planilla(string nombre, bool status, int idTipoPlanilla)
+        {
+            this.nombre = nombre;
+            this.status = status;
+            this.idTipoPlanilla = idTipoPlanilla;
+        }
+
+        public Planilla(List<String> datos)
+        {
+            this.datos = datos;
+        }
 
         #endregion
 
         #region gets y sets
+
 
         public int ID
         {
@@ -61,7 +95,7 @@ namespace DominioSKD
             set { nombre = value; }
         }
 
-        public Boolean Status
+        public bool Status
         {
             get { return status; }
             set { status = value; }
@@ -73,6 +107,14 @@ namespace DominioSKD
             set { tipoPlanilla = value; }
         }
 
+        public int IDtipoPlanilla
+        {
+            get { return idTipoPlanilla; }
+            set { idTipoPlanilla = value; }
+        }
+
+
+
         public Diseño Diseño
         {
             get { return diseño; }
@@ -83,6 +125,18 @@ namespace DominioSKD
         {
             get { return solicitud; }
             set { solicitud = value; }
+        }
+
+        public List<string> Dato
+        {
+            get { return datos; }
+            set { datos = value; }
+        }
+
+        public List<int> IdDatos
+        {
+            get { return IdDatos; }
+            set { IdDatos = value; }
         }
         #endregion
     }
