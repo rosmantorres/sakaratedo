@@ -37,10 +37,10 @@ GO
 CREATE
   TABLE CINTA
   (
-    cin_id                       INTEGER NOT NULL ,
+    cin_id                       INTEGER IDENTITY(1,1) NOT NULL ,
     cin_color_nombre             VARCHAR (100) NOT NULL ,
-    cin_rango                    INTEGER NOT NULL ,
-    cin_clasificacion            INTEGER NOT NULL ,
+    cin_rango                    VARCHAR (100) NOT NULL ,
+    cin_clasificacion            VARCHAR (100) NOT NULL ,
     cin_significado              VARCHAR (150) NOT NULL ,
     cin_orden                    INTEGER NOT NULL ,
     RESTRICCION_CINTA_res_cin_id INTEGER NOT NULL ,
@@ -90,12 +90,12 @@ GO
 CREATE
   TABLE COMPRA_CARRITO
   (
-    com_id           INTEGER NOT NULL ,
-    com_tipo_pago    VARCHAR (100) NOT NULL ,
-    com_fecha_compra DATE NOT NULL ,
+    com_id           INTEGER IDENTITY(1,1) NOT NULL ,
+    com_tipo_pago    VARCHAR (100) ,
+    com_fecha_compra DATE ,
     com_estado       VARCHAR (20) NOT NULL ,
     PERSONA_per_id   INTEGER NOT NULL ,
-    CONSTRAINT COMPRA_CARRITO_PK PRIMARY KEY CLUSTERED (com_id)
+	 CONSTRAINT COMPRA_CARRITO_PK PRIMARY KEY CLUSTERED (com_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -126,16 +126,15 @@ GO
 CREATE
   TABLE DETALLE_COMPRA
   (
-    det_precio FLOAT NOT NULL ,
-    MATRICULA_mat_id      INTEGER NOT NULL ,
-    MATRICULA_per_id      INTEGER NOT NULL ,
-    INVENTARIO_inv_id     INTEGER NOT NULL ,
-    EVENTO_eve_id         INTEGER NOT NULL ,
-    COMPRA_CARRITO_com_id INTEGER NOT NULL ,
-    MATRICULA_doj_id      INTEGER NOT NULL ,
-    CONSTRAINT DETALLE_COMPRA_PK PRIMARY KEY CLUSTERED (MATRICULA_mat_id,
-    MATRICULA_per_id, INVENTARIO_inv_id, EVENTO_eve_id, COMPRA_CARRITO_com_id,
-    MATRICULA_doj_id)
+    det_id                INTEGER IDENTITY(1,1) NOT NULL ,
+	COMPRA_CARRITO_com_id INTEGER NOT NULL,
+    det_precio 	          FLOAT NOT NULL ,
+    MATRICULA_mat_id      INTEGER ,
+    MATRICULA_per_id      INTEGER ,
+    IMPLEMENTO_inv_id     INTEGER ,
+    EVENTO_eve_id         INTEGER ,
+    MATRICULA_doj_id      INTEGER ,
+    CONSTRAINT DETALLE_COMPRA_PK PRIMARY KEY CLUSTERED (det_id,COMPRA_CARRITO_com_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -215,7 +214,7 @@ GO
 CREATE
   TABLE ESTILO
   (
-    est_id          INTEGER NOT NULL ,
+    est_id          INTEGER IDENTITY(1,1) NOT NULL ,
     est_nombre      VARCHAR (150) NOT NULL ,
     est_descripcion VARCHAR (150) NOT NULL ,
     CONSTRAINT ESTILO_PK PRIMARY KEY CLUSTERED (est_id)
@@ -406,14 +405,14 @@ GO
 CREATE
   TABLE INSCRIPCION
   (
+    ins_id                    		   INTEGER IDENTITY(1,1) NOT NULL ,
     PERSONA_per_id                     INTEGER NOT NULL ,
     ins_fecha                          DATE NOT NULL ,
     SOLICITUD_PLANILLA_sol_pla_id      INTEGER ,
     SOLICITUD_PLANILLA_PLANILLA_pla_id INTEGER ,
     COMPETENCIA_comp_id                INTEGER ,
     EVENTO_eve_id                      INTEGER ,
-    ins_id                             INTEGER NOT NULL ,
-    CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (PERSONA_per_id)
+    CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (ins_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -467,7 +466,7 @@ GO
 CREATE
   TABLE ORGANIZACION
   (
-    org_id        INTEGER NOT NULL ,
+    org_id        INTEGER IDENTITY(1,1) NOT NULL ,
     org_nombre    VARCHAR (100) NOT NULL ,
     org_direccion VARCHAR (150) NOT NULL ,
     org_telefono  INTEGER NOT NULL ,
@@ -815,8 +814,9 @@ GO
 CREATE
   TABLE ROL
   (
-    rol_id     INTEGER NOT NULL ,
+    rol_id     INTEGER IDENTITY(1,1) NOT NULL,
     rol_nombre VARCHAR (150) NOT NULL ,
+	rol_descripcion VARCHAR(200) NOT NULL,
     CONSTRAINT ROL_PK PRIMARY KEY CLUSTERED (rol_id)
 WITH
   (
@@ -976,7 +976,7 @@ INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-PERSONA_per_id
+ins_id
 )
 ON
 DELETE
@@ -1059,6 +1059,16 @@ DELETE
 UPDATE NO ACTION
 GO
 
+ALTER TABLE COMPRA_CARRITO
+ADD
+CHECK ( com_estado IN ('CARRITO','PAGADO') )
+GO
+
+ALTER TABLE COMPRA_CARRITO
+ADD
+CHECK ( com_tipo_pago IN ('Tarjeta','Deposito','Transferencia') )
+GO
+
 ALTER TABLE DETALLE_COMPRA
 ADD CONSTRAINT DETALLE_COMPRA_COMPRA_CARRITO_FK FOREIGN KEY
 (
@@ -1090,13 +1100,13 @@ UPDATE NO ACTION
 GO
 
 ALTER TABLE DETALLE_COMPRA
-ADD CONSTRAINT DETALLE_COMPRA_INVENTARIO_FK FOREIGN KEY
+ADD CONSTRAINT DETALLE_COMPRA_IMPLEMENTO_FK FOREIGN KEY
 (
-INVENTARIO_inv_id
+IMPLEMENTO_inv_id
 )
-REFERENCES INVENTARIO
+REFERENCES IMPLEMENTO
 (
-inv_id
+imp_id
 )
 ON
 DELETE
@@ -1355,7 +1365,7 @@ INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-PERSONA_per_id
+ins_id
 )
 ON
 DELETE
@@ -1385,7 +1395,7 @@ INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-PERSONA_per_id
+ins_id
 )
 ON
 DELETE
@@ -1415,7 +1425,7 @@ INSCRIPCION_PERSONA_per_id
 )
 REFERENCES INSCRIPCION
 (
-PERSONA_per_id
+ins_id
 )
 ON
 DELETE
@@ -1430,7 +1440,7 @@ INSCRIPCION_PERSONA_per_id1
 )
 REFERENCES INSCRIPCION
 (
-PERSONA_per_id
+ins_id
 )
 ON
 DELETE
