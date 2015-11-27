@@ -100,6 +100,9 @@ namespace DominioSKD
         /// <returns>El exito o fallo del proceso</returns>
         public bool limpiar()
         {
+            this.listaImplemento = null;
+            this.listaEvento = null;
+            this.listaMatricula = null;
             return true;
         }
         #endregion
