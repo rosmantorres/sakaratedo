@@ -25,6 +25,7 @@ namespace LogicaNegociosSKD.Modulo12
         }
         #endregion
 
+        #region Metodos Logica
         public LogicaCompetencias()
         {
             laListaDeCompetencias = obtenerListaDeCompetencias();
@@ -98,5 +99,7 @@ namespace LogicaNegociosSKD.Modulo12
                 throw ex;
             }
         }
+        #endregion
+ 
     }
 }

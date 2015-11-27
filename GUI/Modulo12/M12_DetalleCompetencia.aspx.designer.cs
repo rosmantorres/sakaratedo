@@ -58,6 +58,15 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.WebControls.Label statusComp;
         
         /// <summary>
+        /// costoComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label costoComp;
+        
+        /// <summary>
         /// inicioComp control.
         /// </summary>
         /// <remarks>
@@ -74,15 +83,6 @@ namespace templateApp.GUI.Modulo12 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label finComp;
-        
-        /// <summary>
-        /// costoComp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label costoComp;
         
         /// <summary>
         /// categIniComp control.
