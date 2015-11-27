@@ -22,7 +22,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public  void PruebaInicioSesionFallida()
         {
-            login lg = new login();
+            logicaLogin lg = new logicaLogin();
             string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebaErrorCorreo, RecursosPU_Mod1.PruebaErrorClave);
             Assert.AreEqual(resp, null);
 
@@ -31,7 +31,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public  void PruebaInicioSesionCorrecto()
         {
-            login lg = new login();
+            logicaLogin lg = new logicaLogin();
             string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebaCorrectoCorreo, RecursosPU_Mod1.PruebaCorrectoClave);
             Assert.AreEqual(resp[0], RecursosPU_Mod1.PruebaCorrectoResultado);
 
@@ -41,7 +41,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ArgumentNullException))]
         public  void PruebaEnviarCorreoFallidoEXC()
         {
-            login lg = new login();
+            logicaLogin lg = new logicaLogin();
             bool resp = lg.EnviarCorreo(null);
             resp.ToString();
 
@@ -51,7 +51,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(NullReferenceException))]
         public  void PruebaIniciarSesionFallidoEXC()
         {
-            login lg = new login();
+            logicaLogin lg = new logicaLogin();
             string[] resp = lg.iniciarSesion(null,null);
             resp.ToString();
 
@@ -61,7 +61,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public  void PruebaEnviarCorreoCorrecto()
         {
-            login lg = new login();
+            logicaLogin lg = new logicaLogin();
             bool resp = lg.EnviarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
             Assert.AreEqual(resp, true);
 
@@ -71,9 +71,9 @@ namespace PruebasUnitariasSKD.Modulo1
 
         public void PruebaHashCorrecto()
         {
-           
 
-            Assert.AreEqual(login.hash(RecursosPU_Mod1.pruebaHash2), login.hash(RecursosPU_Mod1.pruebaHash));
+
+            Assert.AreEqual(logicaLogin.hash(RecursosPU_Mod1.pruebaHash2), logicaLogin.hash(RecursosPU_Mod1.pruebaHash));
             
         }
         [Test]
@@ -81,7 +81,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ArgumentNullException))]
         public void PruebaHashFallido()
         {
-            string resp = login.hash(null);
+            string resp = logicaLogin.hash(null);
         }
         // Prueba unitaria del metodo ValidarCorreo() de forma correcta
        /*[Test]

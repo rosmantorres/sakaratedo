@@ -25,7 +25,7 @@ namespace PruebasUnitariasSKD.Modulo1.Datos
         public void PruebaReestablecerContrasena()
         {
 
-            bool True = BDReestablecer.ReestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
+            bool True = BDRestablecer.ReestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
             Assert.AreEqual(True,true);
 
         }
