@@ -61,6 +61,15 @@ namespace DatosSKD.Modulo2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M2_AgregarRole.
+        /// </summary>
+        internal static string AgregarRolProcedure {
+            get {
+                return ResourceManager.GetString("AgregarRolProcedure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descripcion.
         /// </summary>
         internal static string AliasDescripcionRol {
@@ -70,7 +79,16 @@ namespace DatosSKD.Modulo2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Id_rol.
+        ///   Busca una cadena traducida similar a fecha_creacion.
+        /// </summary>
+        internal static string aliasFechaCreacion {
+            get {
+                return ResourceManager.GetString("aliasFechaCreacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a id_rol.
         /// </summary>
         internal static string AliasIdRol {
             get {
@@ -79,7 +97,16 @@ namespace DatosSKD.Modulo2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre.
+        ///   Busca una cadena traducida similar a id_usuario.
+        /// </summary>
+        internal static string aliasIdUsuario {
+            get {
+                return ResourceManager.GetString("aliasIdUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a nombre.
         /// </summary>
         internal static string AliasNombreRol {
             get {
@@ -97,11 +124,20 @@ namespace DatosSKD.Modulo2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M1_RestablecerContrasena.
+        ///   Busca una cadena traducida similar a M2_ConsultarRolesUsuario.
         /// </summary>
-        internal static string COnsultarRolesSistema1 {
+        internal static string ConsultarRolesUsuario {
             get {
-                return ResourceManager.GetString("COnsultarRolesSistema1", resourceCulture);
+                return ResourceManager.GetString("ConsultarRolesUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_EliminarRole.
+        /// </summary>
+        internal static string EliminarRolProcedure {
+            get {
+                return ResourceManager.GetString("EliminarRolProcedure", resourceCulture);
             }
         }
     }
