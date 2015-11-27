@@ -59,7 +59,7 @@ namespace templateApp.GUI.Modulo14
             aCookie.Values["id"] = Request.QueryString["idPlan"];
             aCookie.Values["nombre"] = Request.QueryString["nombre"];
             aCookie.Values["tipo"] = Request.QueryString["tipo"];
-            aCookie.Values["diseño"] = "1";
+            aCookie.Values["diseno"] = "1";
             aCookie.Expires = DateTime.Now.AddMinutes(15);
             Response.Cookies.Add(aCookie);
             HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");

@@ -30,7 +30,7 @@ namespace templateApp.GUI.Modulo14
                         idPlanilla = Convert.ToInt32(Request.Cookies["Planilla"]["id"]);
                         this.tipoPlanilla.Text = Request.Cookies["Planilla"]["tipo"].ToString();
                         this.Planilla.Text = Request.Cookies["Planilla"]["nombre"].ToString();
-                        if (Request.Cookies["Planilla"]["diseño"].ToString() != "")
+                        if (Request.Cookies["Planilla"]["diseno"].ToString() != "")
                         {
                             dis = logica.ConsultarDiseñoPuro(idPlanilla);
                             CKEditor1.Text = Server.HtmlDecode(dis.Contenido);
@@ -57,7 +57,7 @@ namespace templateApp.GUI.Modulo14
             DominioSKD.Diseño diseño = new DominioSKD.Diseño(CKEditor1.Text);
             try
             {
-                if (Request.Cookies["Planilla"]["diseño"].ToString() != "")
+                if (Request.Cookies["Planilla"]["diseno"].ToString() != "")
                 {
                    
                     if (CKEditor1.Text != "")
