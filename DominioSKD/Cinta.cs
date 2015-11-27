@@ -13,6 +13,7 @@ namespace DominioSKD
         private String color_nombre;
         private String rango;
         private String clasificacion;
+        private int orden;
         private String significado;
         private int id_restriccion;
         
@@ -40,6 +41,12 @@ namespace DominioSKD
             set { clasificacion = value; }
         }
 
+        public int Orden
+        {
+            get { return orden; }
+            set { orden = value; }
+        }
+
         public String Significado
         {
             get { return significado; }
@@ -57,26 +64,29 @@ namespace DominioSKD
             color_nombre = "";
             rango="";
             clasificacion = "";
+            orden = 0;
             significado = "";
             id_restriccion = 0;
         }
         
-        public Cinta(int elId, String elColor, String elRango, String laClasificacion, String elSignificado, int elIdRestriccion)
+        public Cinta(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             id_cinta = elId;
             color_nombre = elColor;
             rango = elRango;
             clasificacion = laClasificacion;
+            orden = elOrden;
             significado = elSignificado;
             id_restriccion = elIdRestriccion;
 
         }
 
-        public Cinta( String elColor, String elRango, String laClasificacion, String elSignificado, int elIdRestriccion)
+        public Cinta( String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             color_nombre = elColor;
             rango = elRango;
             clasificacion = laClasificacion;
+            orden = elOrden;
             significado = elSignificado;
             id_restriccion = elIdRestriccion;
 

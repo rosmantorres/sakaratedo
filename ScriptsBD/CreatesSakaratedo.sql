@@ -814,8 +814,9 @@ GO
 CREATE
   TABLE ROL
   (
-    rol_id     INTEGER NOT NULL ,
+    rol_id     INTEGER IDENTITY(1,1) NOT NULL,
     rol_nombre VARCHAR (150) NOT NULL ,
+	rol_descripcion VARCHAR(200) NOT NULL,
     CONSTRAINT ROL_PK PRIMARY KEY CLUSTERED (rol_id)
 WITH
   (
