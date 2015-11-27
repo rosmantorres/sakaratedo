@@ -46,6 +46,18 @@ namespace DominioSKD
             this.horario = horario;
         }
 
+
+        #region Constructor Modulo16
+        /// <summary>
+        /// Constructor vacio de la clase
+        /// </summary>
+        public Evento()
+        {
+
+        }
+        #endregion
+
+
         #endregion
 
 
