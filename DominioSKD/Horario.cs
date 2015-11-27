@@ -26,6 +26,11 @@ namespace DominioSKD
             this.horaFin = horaFin;
         }
 
+        public Horario()
+        {
+
+        }
+
         #endregion
 
         #region Propiedades

@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AliasFechaFinHorario" xml:space="preserve">
+    <value>fechaFin</value>
+  </data>
+  <data name="AliasFechaInicioHorario" xml:space="preserve">
+    <value>fechaInicio</value>
+  </data>
+  <data name="AliasHoraFinHorario" xml:space="preserve">
+    <value>horaFin</value>
+  </data>
+  <data name="AliasHoraInicioHorario" xml:space="preserve">
+    <value>horaInicio</value>
+  </data>
+  <data name="AliasIdHorario" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="ConsultarHorarioXId" xml:space="preserve">
+    <value>M7_ConsultarHorario</value>
+  </data>
+  <data name="ParamIdHorario" xml:space="preserve">
+    <value>@hor_id</value>
+  </data>
 </root>

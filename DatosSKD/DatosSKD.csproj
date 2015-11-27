@@ -124,6 +124,7 @@
     </Compile>
     <Compile Include="Modulo7\BDCinta.cs" />
     <Compile Include="Modulo7\BDEvento.cs" />
+    <Compile Include="Modulo7\BDHorario.cs" />
     <Compile Include="Modulo7\Reporte4.cs" />
     <Compile Include="Modulo7\RecursosBDModulo7.Designer.cs">
       <AutoGen>True</AutoGen>

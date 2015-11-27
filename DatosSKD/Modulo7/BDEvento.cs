@@ -20,8 +20,8 @@ namespace DatosSKD.Modulo7
             TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
             Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
             DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
-            DateTime fechaFin = Convert.ToDateTime("16/08/2008"); 
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 400, 300);
+            DateTime fechaFin = Convert.ToDateTime("16/08/2008");
+            Horario horario = BDHorario.DetallarHorario(1);
             Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeEventoAsistidos.Add(evento);
 
