@@ -49,6 +49,7 @@
     <Compile Include="Organizacion.cs" />
     <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestriccionCompetencia.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Ubicacion.cs" />
