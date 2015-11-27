@@ -46,6 +46,10 @@ namespace LogicaNegociosSKD.Modulo14
             info = info.Replace("$doj_rif", "L369229-j");
             info = info.Replace("$doj_email", "sudoku@gmail.com");
 
+            info = info.Replace("$sol_pla_fecha_creacion",DateTime.Now.ToString());
+            info = info.Replace("$sol_pla_fecha_retiro", DateTime.Now.AddDays(2).ToString());
+            info = info.Replace("$sol_pla_fecha_reincorporacion", DateTime.Now.AddDays(8).ToString());
+            info = info.Replace("$sol_pla_motivo", "No puedo ir, porque no me da la gana");
             return info;
 
         }
