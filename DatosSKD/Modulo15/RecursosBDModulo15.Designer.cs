@@ -133,7 +133,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @_dojNombre.
+        ///   Looks up a localized string similar to @_dojId.
         /// </summary>
         internal static string parametroDojoIdImplemento {
             get {

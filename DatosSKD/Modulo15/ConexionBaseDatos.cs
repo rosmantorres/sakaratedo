@@ -28,24 +28,28 @@ namespace DatosSKD.Modulo15
        Parametro parametro;
        try
        {
+           float precioNuevo = (float)precio_implemento;
            laConexion = new BDConexion();
            parametros = new List<Parametro>();
            parametro = new Parametro(RecursosBDModulo15.parametroNombreImplemento, SqlDbType.VarChar, nombre_implemento,false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroTipoImplemento, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroTipoImplemento, SqlDbType.VarChar, tipo_implemento, false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroMarcaImplemento, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroMarcaImplemento, SqlDbType.VarChar, marca_implemento, false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroColorImplemento, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroColorImplemento, SqlDbType.VarChar, color_implemento, false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroTallaImplemento, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroTallaImplemento, SqlDbType.VarChar, talla_implemento, false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroCantidadInventario, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroPrecioImplemento, SqlDbType.Float, precioNuevo.ToString(), false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroStockMinimoImplemento, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroStockMinimoImplemento, SqlDbType.Int, stock_minimo.ToString(), false);
            parametros.Add(parametro);
-           parametro = new Parametro(RecursosBDModulo15.parametroPrecioImplemento, SqlDbType.VarChar, nombre_implemento, false);
+           parametro = new Parametro(RecursosBDModulo15.parametroCantidadInventario, SqlDbType.Int, cantidad.ToString(), false);
            parametros.Add(parametro);
+           parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, dojo.ToString(), false);
+           parametros.Add(parametro);
+
            laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureAgregarInventario, parametros);
        }catch(Exception ex){
 
@@ -225,7 +229,9 @@ namespace DatosSKD.Modulo15
        #endregion
 
        #region modificarInventarioDatos
-       public static void modificarInventarioDatos(String nombre_implemento,
+       public static void modificarInventarioDatos(
+                                                  int id_implemento,
+                                               String nombre_implemento,
                                              String tipo_implemento,
                                              String marca_implemento,
                                              String color_implemento,
@@ -239,25 +245,33 @@ namespace DatosSKD.Modulo15
            BDConexion laConexion;
            List<Parametro> parametros;
            Parametro parametro;
+           float precioNuevo = (float)precio_implemento;
+
            try
            {
                laConexion = new BDConexion();
                parametros = new List<Parametro>();
+               parametro = new Parametro(RecursosBDModulo15.parametroIdimplemento, SqlDbType.Int, id_implemento.ToString(), false);
+               parametros.Add(parametro);
                parametro = new Parametro(RecursosBDModulo15.parametroNombreImplemento, SqlDbType.VarChar, nombre_implemento, false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroTipoImplemento, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroTipoImplemento, SqlDbType.VarChar, tipo_implemento, false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroMarcaImplemento, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroMarcaImplemento, SqlDbType.VarChar, marca_implemento, false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroColorImplemento, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroColorImplemento, SqlDbType.VarChar, color_implemento, false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroTallaImplemento, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroTallaImplemento, SqlDbType.VarChar, talla_implemento, false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroCantidadInventario, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroPrecioImplemento, SqlDbType.Float, precioNuevo.ToString(), false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroStockMinimoImplemento, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroStockMinimoImplemento, SqlDbType.Int, stock_minimo.ToString(), false);
                parametros.Add(parametro);
-               parametro = new Parametro(RecursosBDModulo15.parametroPrecioImplemento, SqlDbType.VarChar, nombre_implemento, false);
+               parametro = new Parametro(RecursosBDModulo15.parametroCantidadInventario, SqlDbType.Int, cantidad.ToString(), false);
+               parametros.Add(parametro);
+               parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, dojo.ToString(), false);
+               parametros.Add(parametro);
+               parametro = new Parametro(RecursosBDModulo15.parametroEstatusImplemento, SqlDbType.VarChar,estatus_implemento, false);
                parametros.Add(parametro);
                laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureModificarInventario, parametros);
            }

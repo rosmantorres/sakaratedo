@@ -39,6 +39,26 @@ Gesti&oacuten de Inventario
  </div>    
        <%--fin de Alerta de confirmación--%>
 
+    
+
+
+
+    <script runat=server>
+        public void refrescar() { 
+         
+            
+        
+        
+        }     
+ 
+    
+    
+     </script>
+
+    
+    
+    
+    
                  <!-- Elementos generales del formulario -->
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -46,16 +66,18 @@ Gesti&oacuten de Inventario
                 </div><!-- /.box-header -->
 
               <!-- Comienzo del formulario -->
-                <form role="form" id="modificar_implemento" method="post" action="M15_ConsultarImplemento.aspx?modificar=exito">
+                <form role="form" id="modificar_implemento"  runat="server" method="post" action="M15_ConsultarImplemento.aspx">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <input type="hidden" id="id_implemento" name="id_implemento" value="id_implemento" class="form-control" runat="server" />            
+
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea" runat="server"/>            
+                        <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea" runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                          <p><b>Tipo Implemento:</b></p>
-                        <select id="tipo_implemento" class="form-control" runat="server">
+                        <select id="tipo_implemento"  name="tipo_implemento" class="form-control" runat="server">
                                <option value="1" >Vestimenta</option>
                                <option selected value="2" >Accesorios</option>
                                <option value="3" >Otros</option>
@@ -64,27 +86,27 @@ Gesti&oacuten de Inventario
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
+                           <input type="text" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="text" id="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
+                        <input type="text" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control" value="Rojo" runat="server"/>            
+                         <input type="text" id="color_implemento" name="color_implemento" placeholder="*Color" class="form-control" value="Rojo" runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" value="Kombate" runat="server"/>            
+                       <input type="text" id="marca_implemento"  name="marca_implemento" placeholder="*Marca" class="form-control" value="Kombate" runat="server"/>            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                       <select id="talla_implemento" class="form-control" runat="server">
+                       <select id="talla_implemento" name="talla_implemento" class="form-control" runat="server">
                                <option value="1" >XS</option>
                                <option value="2" >S</option>
                                <option value="3" >M</option>
@@ -95,35 +117,23 @@ Gesti&oacuten de Inventario
                         </select>            
                       </div>
                       <br/>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Dojo:</b></p>
-                             <select id="nombre_dojo" class="form-control" runat="server">
-                                  <option value="1" >Green Dragon</option>
-                                  <option value="2" >Red Dragon</option>
-                                  <option value="3" >Blue Dragon</option>
-                                  <option value="4" >White Dragon</option>
-                                  <option value="5" >Black Dragon</option>
-                                  <option value="6" >Rainbow Dragon</option>
-                              </select>
-                                                       
-                    </div>
-                      <br/>
+                
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Stock m&iacutenimo:</b></p>
-                       <input type="text" id="stock_implemento"  placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
+                       <input type="text" id="stock_implemento" name="stock_implemento" placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
                     </div>
                       <br/>
                         
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
-                       <input type="file" id="imagen_implemento"  class="form-control" runat="server"/>            
+                       <input type="file" id="imagen_implemento" name="imagen_implemento" class="form-control" runat="server"/>            
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Estatus:</b></p>
-                             <select id="estatus_implemento" class="form-control" runat="server">
-                                  <option value="1" >Activo</option>
-                                  <option value="2" >Inactivo</option>                                  
+                             <select id="estatus_implemento" name="estatus_implemento" class="form-control" runat="server">
+                                  <option value="Activo" >Activo</option>
+                                  <option value="Inactivo" >Inactivo</option>                                  
                               </select>
                                                        
                       </div>
@@ -131,15 +141,17 @@ Gesti&oacuten de Inventario
                       
                          
                   </div><!--Fin del listado del formulario -->
+           <input type="hidden" id="modificar" name="modificar" value="modificar" class="form-control"  />            
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-agregarComp" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
+                       <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
                   </div>
 
                 </form>
+                 
               </div><!-- Fin del formulario-->
     
 
@@ -147,6 +159,9 @@ Gesti&oacuten de Inventario
   <script type="text/javascript">
 
       $(document).ready(function () {
+
+ 
+
           $("#alert").hide();
           $("#alert").attr("class", "alert alert-error alert-dismissible");
           $("#alert").attr("role", "alert");

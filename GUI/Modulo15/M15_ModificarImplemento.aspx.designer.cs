@@ -13,6 +13,24 @@ namespace templateApp.GUI.Modulo15 {
     public partial class WebForm2 {
         
         /// <summary>
+        /// modificar_implemento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_implemento;
+        
+        /// <summary>
+        /// id_implemento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden id_implemento;
+        
+        /// <summary>
         /// nombre_implemento control.
         /// </summary>
         /// <remarks>
@@ -31,13 +49,13 @@ namespace templateApp.GUI.Modulo15 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect tipo_implemento;
         
         /// <summary>
-        /// cantidad_inventario control.
+        /// cantidad_implemento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cantidad_inventario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cantidad_implemento;
         
         /// <summary>
         /// precio_implemento control.
@@ -74,15 +92,6 @@ namespace templateApp.GUI.Modulo15 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect talla_implemento;
-        
-        /// <summary>
-        /// nombre_dojo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect nombre_dojo;
         
         /// <summary>
         /// stock_implemento control.

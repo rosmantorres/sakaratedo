@@ -131,7 +131,9 @@ namespace templateApp.GUI.Modulo15
 
         #region modificarInventarioInterfaz 
 
-        public void modificarInventarioInterfaz(String nombre_implemento,
+        public void modificarInventarioInterfaz(
+                                         int id_implemento,
+                                          String nombre_implemento,
                                          String tipo_implemento,
                                          String marca_implemento,
                                          String color_implemento,
@@ -146,7 +148,9 @@ namespace templateApp.GUI.Modulo15
             try
             {
                 logicaImplemento = new LogicaImplemento();
-                logicaImplemento.modificarInventarioLogica(nombre_implemento,
+                logicaImplemento.modificarInventarioLogica(
+                                                      id_implemento,
+                                                      nombre_implemento,
                                                       tipo_implemento,
                                                       marca_implemento,
                                                       color_implemento,

@@ -1362,6 +1362,7 @@
     <Compile Include="GUI\Modulo14\M14_VisorInscripcion.aspx.designer.cs">
       <DependentUpon>M14_VisorInscripcion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo15\InterfazImplemento.cs" />
     <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
       <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

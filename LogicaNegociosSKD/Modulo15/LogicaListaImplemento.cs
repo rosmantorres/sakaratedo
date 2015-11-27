@@ -129,7 +129,9 @@ namespace LogicaNegociosSKD.Modulo15
         #endregion
 
         #region modificarInventarioLogica
-        public void modificarInventarioLogica(String nombre_implemento,
+        public void modificarInventarioLogica(
+                                              int id_implemento,
+                                             String nombre_implemento,
                                              String tipo_implemento,
                                              String marca_implemento,
                                              String color_implemento,
@@ -142,7 +144,9 @@ namespace LogicaNegociosSKD.Modulo15
             try
             {
 
-                ConexionBaseDatos.modificarInventarioDatos(nombre_implemento,
+                ConexionBaseDatos.modificarInventarioDatos(
+                                                     id_implemento,
+                                                     nombre_implemento,
                                                       tipo_implemento,
                                                       marca_implemento,
                                                       color_implemento,

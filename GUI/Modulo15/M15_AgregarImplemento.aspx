@@ -52,41 +52,41 @@ Agregar Implemento
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_articulo" name="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control"  runat="server"/>            
+                        <input  type="text" id="nombre_implemento" name="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" />            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                          <p><b>Tipo Implemento:</b></p>
-                        <select id="tipo_articulo" class="form-control" runat="server">
-                               <option value="1" >Vestimenta</option>
-                               <option value="2" >Accesorios</option>
-                               <option value="3" >Otros</option>
+                        <select id="tipo_implemento" name="tipo_implemento" class="form-control" >
+                               <option value="Vestimenta" >Vestimenta</option>
+                               <option value="Accesorios" >Accesorios</option>
+                               <option value="Otros" >Otros</option>
                         </select>            
                       </div>
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control"  runat="server" />            
+                           <input type="text" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control"   />            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control"  runat="server" />         
+                        <input type="text" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control"   />         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control"  runat="server" />            
+                         <input type="text" id="color_implemento" name="color_implemento"  placeholder="*Color" class="form-control"  />            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control"  runat="server"/>            
+                       <input type="text" id="marca_implemento" name="marca_implemento" placeholder="*Marca" class="form-control" />            
                     </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                        <select id="talla_implemento" class="form-control" runat="server">
+                        <select id="talla_implemento" name="talla_implemento" class="form-control" >
                                <option value="1" >XS</option>
                                <option value="2" >S</option>
                                <option value="3" >M</option>
@@ -98,41 +98,26 @@ Agregar Implemento
                       </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Dojo:</b></p>
-                             <select id="nombre_dojo" class="form-control" runat="server">
-                                  <option value="1" >Green Dragon</option>
-                                  <option value="2" >Red Dragon</option>
-                                  <option value="3" >Blue Dragon</option>
-                                  <option value="4" >White Dragon</option>
-                                  <option value="5" >Black Dragon</option>
-                                  <option value="6" >Rainbow Dragon</option>
-                              </select>
-                                                       
-                      </div>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Stock M&iacutenimo</b></p>
-                        <input type="text" id="stock_implemento" placeholder="*Stock Minimo" class="form-control"  runat="server" />         
+                        <input type="text" id="stock_implemento" name="stock_implemento" placeholder="*Stock Minimo" class="form-control"/>         
                      </div>
                       <br/>
-                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Proveedor:</b></p>
-                       <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" runat="server"/>            
-                    </div>
-                      <br/>
+                      
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
-                       <input type="file" id="imagen_implemento"  class="form-control"  runat="server" />            
+                       <input type="file" id="imagen_implemento"  name="imagen_implemento" class="form-control" />            
                     </div>
                       <br/>
 
+                       <input type="hidden" id="agregar" name="agregar" value="agregar" class="form-control"  />            
                                                   
                   </div><!--Fin del listado del formulario -->
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
-                <a id="btnagregar" type="button" class="btn btn-primary"  href="M15_ConsultarImplemento.aspx?agregar=true" >Agregar</a>
+                <button id="btnagregar" type="submit" class="btn btn-primary"  >Agregar</button>
                                       &nbsp;&nbsp
-             <!-- <button id="btnagregar"  type="submit">Agregar</button>-->
+                  
                            <a class="btn btn-default" href="M15_ConsultarImplemento.aspx" runat="server" >Cancelar</a>
                   </div>
 
@@ -156,8 +141,8 @@ Agregar Implemento
           // Alertas de cada uno de los campos vacios y los que pertenecen a numéricos
 
           $("#btndfagregarComp").click(function (evento) {
-              //  alert($("#nombre_articulo").val());
-              if ($("#nombre_articulo").val() == "") {
+              //  alert($("#nombre_implemento").val());
+              if ($("#nombre_implemento").val() == "") {
                   valor = "El campo nombre implemento es obligatorio </br>";
                   estado = true;
               }

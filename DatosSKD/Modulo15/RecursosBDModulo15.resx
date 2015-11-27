@@ -143,7 +143,7 @@
     <value>@_impColor</value>
   </data>
   <data name="parametroDojoIdImplemento" xml:space="preserve">
-    <value>@_dojNombre</value>
+    <value>@_dojId</value>
   </data>
   <data name="parametroEstatusImplemento" xml:space="preserve">
     <value>@_impEstatus</value>

@@ -20,8 +20,8 @@ namespace templateApp.GUI.Modulo15
             try
             {
 
-          /*  lista.agregarImplementoLogica(this.nombre_articulo.Value,
-                                          this.tipo_articulo.Value,
+          /*  lista.agregarImplementoLogica(this.nombre_implemento.Value,
+                                          this.tipo_implemento.Value,
                                           this.marca_implemento.Value,
                                           this.color_implemento.Value,
                                           this.talla_implemento.Value,
@@ -69,18 +69,14 @@ namespace templateApp.GUI.Modulo15
                 if (success.Equals("1"))
                 {
 
-                    if (Request.Form["contenidoCentral_nombre_articulo"] == "")
+                    if (Request.Form["contenidoCentral_nombre_implemento"] == "")
                     {
-                        valor = valor + "el nombres del articulo  esta Vacio</br>"; estado = true;
+                        valor = valor + "el nombres del implemento  esta Vacio</br>"; estado = true;
                     
                     }
                    
 
-                    if (tipo_articulo.Value == "")
-                    {
-                        valor = valor + "el tipo articulo  esta Vacio</br>"; estado = true;
-
-                    }
+     
 
 
                   

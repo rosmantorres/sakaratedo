@@ -54,13 +54,11 @@ Gesti&oacuten de Inventario
                 if (consultar.Equals("Activo"))
                 {
                     listaImplementos = listaImplementosInterfaz();
-                    this.estatus_implemento.Items[1].Selected = true;
 
                 }
                 else {
                     if (consultar.Equals("Inactivo")) {
 
-                        this.estatus_implemento.Items[1].Selected = true;
 
                         listaImplementos = listaImplementosInterfaz2();
                       //  this.estatus_implemento.Value = "2";
@@ -69,7 +67,6 @@ Gesti&oacuten de Inventario
                 }
             
             }else{
-                this.estatus_implemento.Items[1].Selected = true;
 
             listaImplementos = listaImplementosInterfaz();
             } 
@@ -125,7 +122,7 @@ Gesti&oacuten de Inventario
         <div class="col-lg-3"> 
 
 
-        <select id="estatus_implemento" class="form-control"  runat="server" >
+        <select id="estatus_implemento" class="form-control" >
         <option value="1">Activo</option>
         <option value="2">Inactivo</option>
         </select>
@@ -319,10 +316,17 @@ Gesti&oacuten de Inventario
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
-                var posicion = location.href;
-                if (posicion.split("=")[1]=="Activo") {
-                    $("#estatus_implmento option ").val(""
 
+                var posicion = location.href;
+                if (posicion.split("=")[1] == "Activo") {
+                    $("#estatus_implemento").val(1);
+                    
+                }
+                else {
+                    if (posicion.split("=")[1] == "Inactivo") {
+
+                        $("#estatus_implemento").val(2);
+                    }
                 }
 
                 $("#estatus_implemento").change(function(){
