@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo16
-{
-
-
-    public partial class M16_ConsultarProducto
-    {
-
+namespace templateApp.GUI.Modulo16 {
+    
+    
+    public partial class M16_ConsultarProducto {
+        
         /// <summary>
         /// Control alert.
         /// </summary>
@@ -22,7 +20,7 @@ namespace templateApp.GUI.Modulo16
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
-
+        
         /// <summary>
         /// Control laTabla.
         /// </summary>
@@ -31,16 +29,7 @@ namespace templateApp.GUI.Modulo16
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal laTabla;
-
-        /// <summary>
-        /// Control DropDownList1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList1;
-
+        
         /// <summary>
         /// Control Boton1.
         /// </summary>

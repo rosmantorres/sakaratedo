@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo16;
+using System.Web.Script.Serialization;
 
 namespace templateApp.GUI.Modulo16
 {
@@ -24,7 +25,7 @@ namespace templateApp.GUI.Modulo16
                 llenarModalInfo(int.Parse(detalleString));
             }
 
-            #region Llenar Data Table Con Inventario
+        #region Llenar Data Table Con Inventario
 
             Logicainventario logComp = new Logicainventario();
             if (!IsPostBack)
@@ -60,7 +61,7 @@ namespace templateApp.GUI.Modulo16
         }
             #endregion
 
-        #region Llenar el modal de informacion del producto
+        #region Llamada para el Detalle del Implemento por id
         protected void llenarModalInfo(int Id_implemento)
         {
             Implemento laCompetencia = new Implemento();
@@ -69,5 +70,16 @@ namespace templateApp.GUI.Modulo16
         }
         #endregion
 
+        #region Llenado del Modal de Informacion del producto
+        [System.Web.Services.WebMethod]
+        public static string prueba(string id)
+        {
+            Implemento laCompetencia = new Implemento();
+            Logicainventario logica = new Logicainventario();
+            laCompetencia = logica.detalleImplementoXId(int.Parse(id));
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(laCompetencia);
+            return json;
+        }
+        #endregion
     }
 }

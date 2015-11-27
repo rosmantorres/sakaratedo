@@ -70,29 +70,18 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-                                <img src="Imagenes/GuanteRojo.jpg" alt="">
+                                <p>
+									<input type="text" id="beta" value="" />
+								</p>
 								<h3>Nombre</h3>
 								<p>
-									Guantes Rojos
+									<input type="text" id="beta4" value="" />
 								</p>
 								<h3>Cantidad disponible</h3>
                                 <br />
                                 <form role="form" class="form-horizontal" method="POST">
                                      <div class="col-sm-8 col-md-8 col-lg-8" >
-         <div class="btn-group">
-            
-            <select ID="DropDownList1" class="combobox" style="width:80px; height:35px" runat="server" onchange="funcionCantidadObjetos(this.id);" >
-  <option value="-1">Cantidad</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-
-  </select>
-                
-         </div>
-      </div>
+                                     </div>
                                     <br />
                                
             					    <h3>Detalles</h3>
@@ -159,6 +148,36 @@
                      $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
+
+                 // Carga el modal con la informacion del producto de acuerdo al id
+                 $('#modal-info1').on('show.bs.modal', function (e) {
+
+                     $.ajax({
+                         cache: false,
+                         type: 'POST',
+                         url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/prueba',
+                         data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                         dataType: 'json',
+                         contentType: "application/json; charset=utf-8",
+
+                         success: function (data) {
+                             console.log(data);
+
+                             var aa = JSON.parse(data.d);
+
+                             $("#beta").val(aa.Imagen);
+                             $("#beta1").val(aa.Nombre);
+                             $("#beta2").val(aa.Tipo);
+                             $("#beta3").val(aa.Marca);
+                             $("#beta4").val(aa.Color);
+                             $("#beta5").val(aa.Talla);
+                             $("#beta6").val(aa.Estatus);
+                             $("#beta7").val(aa.Precio);
+                             $("#beta8").val(aa.descripcion);
+
+                         }
+                     });
+                 })
              });
 
         </script>
