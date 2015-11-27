@@ -16,40 +16,30 @@ namespace DatosSKD.Modulo7
         /// <returns>Lista de eventos</returns>
         public static List<Evento> ListarEventosAsistidos()
         {
+            Int16 id = 1;
+            String nombre = "Seminario Cintas Negras";
             List<Evento> laListaDeEventoAsistidos = new List<Evento>();
-            TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
-            Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
-            DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
-            DateTime fechaFin = Convert.ToDateTime("16/08/2008");
+            TipoEvento tipoEvento = BDTipoEvento.DetallarTipoEvento(1);
+            Ubicacion ubicacion = BDUbicacion.DetallarUbicacion(1);
             Horario horario = BDHorario.DetallarHorario(1);
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
+            Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeEventoAsistidos.Add(evento);
 
             return laListaDeEventoAsistidos;
         }
 
+        /// <summary>
+        /// Metodo que lista los eventos a los cuales estan inscritos los atletas
+        /// </summary>
+        /// <returns></returns>
         public static List<Evento> ListarEventosInscritos()
         {
-            /* BDConexion laConexion;
-             List<Evento> laListaDeEventoInscrito = new List<Evento>();
-             List<Parametro> parametros;
-             try
-             {
-                 laConexion = new BDConexion();
-                 parametros = new List<Parametro>();
-
-                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo12.ConsultarCompetencias, parametros);
-
-                 foreach (DataRow row in dt.Rows)
-             }*/
             List<Evento> laListaDeEventoInscrito = new List<Evento>();
             Int16 id = 1;
             String nombre = "Seminario Cintas Negras";
-            TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
-            Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
-            DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
-            DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
+            TipoEvento tipoEvento = BDTipoEvento.DetallarTipoEvento(1); 
+            Ubicacion ubicacion = BDUbicacion.DetallarUbicacion(1);
+            Horario horario = BDHorario.DetallarHorario(1);
             Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeEventoInscrito.Add(evento);
 
@@ -58,28 +48,30 @@ namespace DatosSKD.Modulo7
 
         public static List<Evento> ListarEventosPagos()
         {
+            Int16 id = 1;
+            String nombre = "Seminario Cintas Negras";
             List<Evento> laListaDeEventoPago = new List<Evento>();
-            TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
-            Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
-            DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
-            DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
+            TipoEvento tipoEvento = BDTipoEvento.DetallarTipoEvento(1);
+            Ubicacion ubicacion = BDUbicacion.DetallarUbicacion(1); 
+            Horario horario = BDHorario.DetallarHorario(1);
+            Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeEventoPago.Add(evento);
             
             return laListaDeEventoPago;
         }
-        
+   /// <summary>
+   /// Metodo que lista los horarios de practica del atleta
+   /// </summary>
+   /// <returns></returns>
+     
         public static List<Evento> ListarHorarioPractica()
         {
             List<Evento> laListaDeHorarioPractica = new List<Evento>();
             Int16 id = 1;
             String nombre = "Seminario Cintas Negras";
-            TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
-            Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
-            DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
-            DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
+            TipoEvento tipoEvento = BDTipoEvento.DetallarTipoEvento(1);
+            Ubicacion ubicacion = BDUbicacion.DetallarUbicacion(1); 
+            Horario horario = BDHorario.DetallarHorario(1);
             Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeHorarioPractica.Add(evento);
 
@@ -93,12 +85,12 @@ namespace DatosSKD.Modulo7
         /// <returns>Objeto de tipo Evento</returns>
         public static Evento DetallarEvento(int idEvento)
         {
-            TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
-            Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
-            DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
-            DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
+            Int16 id = 1;
+            String nombre = "Seminario Cintas Negras"; 
+            TipoEvento tipoEvento = BDTipoEvento.DetallarTipoEvento(1);
+            Ubicacion ubicacion = BDUbicacion.DetallarUbicacion(1);
+            Horario horario = BDHorario.DetallarHorario(1);
+            Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
 
             return evento;
         }

@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AliasCategoriaEventoId" xml:space="preserve">
+    <value>categoria</value>
+  </data>
+  <data name="AliasCiudad" xml:space="preserve">
+    <value>ciudad</value>
+  </data>
+  <data name="AliasCostoEvento" xml:space="preserve">
+    <value>costo</value>
+  </data>
+  <data name="AliasDescripcionEvento" xml:space="preserve">
+    <value>descripcion</value>
+  </data>
+  <data name="AliasDireccion" xml:space="preserve">
+    <value>direccion</value>
+  </data>
+  <data name="AliasDojoEventoId" xml:space="preserve">
+    <value>dojo</value>
+  </data>
+  <data name="AliasEstado" xml:space="preserve">
+    <value>estado</value>
+  </data>
   <data name="AliasFechaFinHorario" xml:space="preserve">
     <value>fechaFin</value>
   </data>
@@ -129,13 +150,64 @@
   <data name="AliasHoraInicioHorario" xml:space="preserve">
     <value>horaInicio</value>
   </data>
+  <data name="AliasHorarioEventoId" xml:space="preserve">
+    <value>horario</value>
+  </data>
+  <data name="AliasIdEvento" xml:space="preserve">
+    <value>id</value>
+  </data>
   <data name="AliasIdHorario" xml:space="preserve">
     <value>id</value>
+  </data>
+  <data name="AliasIdTipoEvento" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="AliasIdUbicacion" xml:space="preserve">
+    <value>id_ubicacion</value>
+  </data>
+  <data name="AliasLatitud" xml:space="preserve">
+    <value>latitud</value>
+  </data>
+  <data name="AliasLongitud" xml:space="preserve">
+    <value>longitud</value>
+  </data>
+  <data name="AliasNombreEvento" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasTipoEveEventoId" xml:space="preserve">
+    <value>tipoEvento</value>
+  </data>
+  <data name="AliasTipoEvento" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasUbicacionId" xml:space="preserve">
+    <value>ubicacion</value>
+  </data>
+  <data name="ConsultarEventosInscritos" xml:space="preserve">
+    <value>M7_ConsultaEventoInscrito</value>
+  </data>
+  <data name="ConsultarHorarioPractica" xml:space="preserve">
+    <value>M7_ConsultaHorarioPractica</value>
   </data>
   <data name="ConsultarHorarioXId" xml:space="preserve">
     <value>M7_ConsultarHorario</value>
   </data>
+  <data name="ConsultarTipoEventoXId" xml:space="preserve">
+    <value>M7_ConsultaTipoEvento</value>
+  </data>
+  <data name="ConsultaUbicacionXId" xml:space="preserve">
+    <value>M7_ConsultaUbicacion</value>
+  </data>
   <data name="ParamIdHorario" xml:space="preserve">
     <value>@hor_id</value>
+  </data>
+  <data name="ParamIdTipoEvento" xml:space="preserve">
+    <value>@idTipoEvento</value>
+  </data>
+  <data name="ParamIdUbicacion" xml:space="preserve">
+    <value>@idUbicacion</value>
+  </data>
+  <data name="ParamIdUsuarioLogueado" xml:space="preserve">
+    <value>@idAtleta</value>
   </data>
 </root>

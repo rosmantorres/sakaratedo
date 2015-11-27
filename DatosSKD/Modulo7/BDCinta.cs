@@ -21,7 +21,7 @@ namespace DatosSKD.Modulo7
             String rango = "kyu";
             String clasificacion = "quinto";
             String significado = "nose";
-            String orden = "5"; 
+            int orden = 5; 
             Cinta cinta = new Cinta(id, color_nombre, rango, clasificacion, significado, orden);
             laListaDeCintas.Add(cinta);
 
@@ -40,7 +40,7 @@ namespace DatosSKD.Modulo7
             String rango = "kyu";
             String clasificacion = "quinto";
             String significado = "nose";
-            String orden = "5";
+            int orden = 5;
             Cinta cinta = new Cinta(id, color_nombre, rango, clasificacion, significado, orden);
 
             return cinta;

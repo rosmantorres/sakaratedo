@@ -47,13 +47,13 @@ namespace templateApp.GUI.Modulo7
                     foreach (Cinta cinta in laLista)
                     {
                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Id.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Id_cinta.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Orden.ToString() + M7_Recursos.CerrarTD;
+                        //this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Orden.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString()+ M7_Recursos.CerrarTD;
                         //this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta.Id + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta.Id_cinta + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
