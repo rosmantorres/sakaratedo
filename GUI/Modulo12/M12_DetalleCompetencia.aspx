@@ -65,35 +65,61 @@
 <form runat="server" role="form" name="detalle_competencia" id="detalle_competencia" method="post">
 <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
 
-   <div class="form-group col-sm-10 col-md-10 col-lg-10">
+   <div class="form-group col-sm-6 col-md-6 col-lg-6">
       <br />
-      <h3>Nombre de Competencia</h3>
-      <input runat="server" type="text" name="nombreComp" id="nombreComp" class="form-control" readonly ="readonly"/>
+      <h4>Nombre de Competencia :</h4>
+      <asp:Label runat="server" name="nombreComp" id="nombreComp" Font-Size="Large"></asp:Label>
    </div>
    <br/>
-   <div class="form-group">
-      <div class="col-sm-10 col-md-10 col-lg-10">
-         <h3>Tipo de Competencia</h3>
-         <input runat="server" type="text" name="tipoComp" id="tipoComp" class="form-control" readonly ="readonly"/>
+   <div class="form-group col-sm-6 col-md-6 col-lg-6">
+         <h4>Tipo de Competencia :</h4>
+         <asp:Label runat="server" name="tipoComp" id="tipoComp" Font-Size="Large"></asp:Label>
          <br />
-      </div>
    </div>
-   <div class="form-group">
-      <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
-         <h3>Organizador(es)</h3>
-          <input runat="server" type="text" name="orgComp" id="orgComp" class="form-control" readonly ="readonly"/>
+   <div class="form-group col-sm-6 col-md-6 col-lg-6">
+         <h4>Organizador(es) :</h4>
+          <asp:Label runat="server" name="orgComp" id="orgComp" Font-Size="Large"></asp:Label>
          <br />
-      </div>
-   </div>
+    </div>
+    <div class="form-group col-sm-6 col-md-6 col-lg-6">
+         <h4>Status De Competencia :</h4>
+          <asp:Label runat="server" name="statusComp" id="statusComp" Font-Size="Large"></asp:Label>
+         <br />
+    </div>
+    <div class="form-group col-sm-6 col-md-6 col-lg-6">
+         <h4>Duración De Competencia :</h4>
+          <asp:Label runat="server" name="inicioComp" id="inicioComp" Font-Size="Large"></asp:Label>  -  <asp:Label runat="server" name="finComp" id="finComp" Font-Size="Large"></asp:Label>
+         <br />
+    </div>
+    <div class="form-group col-sm-6 col-md-6 col-lg-6">
+         <h4>Costo De Competencia :</h4>
+          <asp:Label runat="server" name="costoComp" id="costoComp" Font-Size="Large"></asp:Label>
+         <br />
+    </div>
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Ubicación de Competencia</h3>
+        <h4>Ubicación de Competencia</h4>
         <div id="googleMap" style="width:500px;height:250px;"></div>
         <br />
     </div>
-   < <br />
-
-
-
+   
+    <div class="panel-group col-sm-8 col-md-8 col-lg-8">
+        <div class="panel panel-primary">
+        <div class="panel-heading"><h4>Categoria de Competencia</h4></div>
+           <div class="panel-body">
+        <h4>Rango De Cintas</h4>
+         <asp:Label runat="server" name="categIniComp" id="categIniComp" Font-Size="Large"></asp:Label>  -  
+         <asp:Label runat="server" name="categFinComp" id="categFinComp" Font-Size="Large"></asp:Label>
+        <br />
+        <h4>Rango De Edades</h4>
+         <asp:Label runat="server" name="categEdadIniComp" id="categEdadIniComp" Font-Size="Large"></asp:Label>  -  
+         <asp:Label runat="server" name="categEdadFinComp" id="categEdadFinComp" Font-Size="Large"></asp:Label>
+        <br />
+        <h4>Sexo</h4>
+        <asp:Label runat="server" name="categSexoComp" id="categSexoComp" Font-Size="Large"></asp:Label>
+            </div>
+        </div>
+      </div>
+    <br />
 </div>
 
       <!-- /.box-body -->

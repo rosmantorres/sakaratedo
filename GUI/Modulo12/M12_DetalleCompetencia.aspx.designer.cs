@@ -28,7 +28,7 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombreComp;
+        protected global::System.Web.UI.WebControls.Label nombreComp;
         
         /// <summary>
         /// tipoComp control.
@@ -37,7 +37,7 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tipoComp;
+        protected global::System.Web.UI.WebControls.Label tipoComp;
         
         /// <summary>
         /// orgComp control.
@@ -46,6 +46,87 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText orgComp;
+        protected global::System.Web.UI.WebControls.Label orgComp;
+        
+        /// <summary>
+        /// statusComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label statusComp;
+        
+        /// <summary>
+        /// inicioComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label inicioComp;
+        
+        /// <summary>
+        /// finComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label finComp;
+        
+        /// <summary>
+        /// costoComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label costoComp;
+        
+        /// <summary>
+        /// categIniComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categIniComp;
+        
+        /// <summary>
+        /// categFinComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categFinComp;
+        
+        /// <summary>
+        /// categEdadIniComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categEdadIniComp;
+        
+        /// <summary>
+        /// categEdadFinComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categEdadFinComp;
+        
+        /// <summary>
+        /// categSexoComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categSexoComp;
     }
 }
