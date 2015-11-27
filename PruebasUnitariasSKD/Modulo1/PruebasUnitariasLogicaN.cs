@@ -10,7 +10,7 @@ using PruebasUnitariasSKD.Modulo1;
 namespace PruebasUnitariasSKD.Modulo1
 {
     [TestFixture]
-    class PruebasUnitariasLogin
+    class PruebasUnitariasLogicaN
     {
         [SetUp]
         protected  void parametros()

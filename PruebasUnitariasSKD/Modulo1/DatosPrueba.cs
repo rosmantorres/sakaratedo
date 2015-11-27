@@ -27,6 +27,7 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaObtenerUsuario()
         {
             Cuenta user = BDLogin.ObtenerUsuario(RecursosPU_Mod1.usuario);
+            Assert.AreEqual(user.Nombre_usuario, RecursosPU_Mod1.usuario);
          
         }
     }

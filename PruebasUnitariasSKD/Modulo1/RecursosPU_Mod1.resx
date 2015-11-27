@@ -145,8 +145,28 @@
     <value>hola</value>
     <comment>Prueba de hash</comment>
   </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Una descaripcion</value>
+    <comment>Dc</comment>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>13/11/1991</value>
+    <comment>Fecha</comment>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>1</value>
+    <comment>id del usuario</comment>
+  </data>
+  <data name="Rol" xml:space="preserve">
+    <value>Admin</value>
+    <comment>nombre del rol</comment>
+  </data>
   <data name="usuario" xml:space="preserve">
     <value>usuario04</value>
     <comment>nombre de usuario</comment>
+  </data>
+  <data name="Vacio" xml:space="preserve">
+    <value />
+    <comment>Vacio</comment>
   </data>
 </root>

@@ -13,20 +13,28 @@ using ExcepcionesSKD;
 namespace PruebasUnitariasSKD.Modulo1.Datos
 {
     [TestFixture]
-    class PruebasUnitariasLogin
+    class PruebasUnitariasDatos
     {
         [SetUp]
         protected  void parametros()
         {
            
         }
-         // Prueba unitaria del metodo IniciarSesion() de forma erronea
+        // Prueba unitaria del metodo  ReestablecerContrasena(string usuarioId,string contraseña)
         [Test]
-        [ExpectedException(typeof(ExceptionSKDConexionBD))]
-        public  void PruebaInicioSesionFallida()
+        public void PruebaReestablecerContrasena()
         {
-            Cuenta laCuenta = new Cuenta();
-            laCuenta = DatosSKD.Modulo1.BDLogin.ObtenerUsuario(RecursosPU_Mod1.pruebaErrorCorreo);
+
+            bool True = BDReestablecer.ReestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
+            Assert.AreEqual(True,true);
+
+        }
+        // Prueba unitaria del metodo  ObtenerUsuario(string usuario)
+        [Test]
+        public void PruebaObtenerUsuario()
+        {
+            Cuenta user = BDLogin.ObtenerUsuario(RecursosPU_Mod1.usuario);
+            Assert.AreEqual(user.Nombre_usuario, RecursosPU_Mod1.usuario);
 
         }
 
