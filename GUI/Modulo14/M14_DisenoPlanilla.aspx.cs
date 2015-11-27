@@ -20,9 +20,7 @@ namespace templateApp.GUI.Modulo14
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
-            
-            if(!IsPostBack)
-            {
+
                 try
                 {
                     if (Request.Cookies["Planilla"]["id"].ToString() != "")
@@ -30,25 +28,21 @@ namespace templateApp.GUI.Modulo14
                         idPlanilla = Convert.ToInt32(Request.Cookies["Planilla"]["id"]);
                         this.tipoPlanilla.Text = Request.Cookies["Planilla"]["tipo"].ToString();
                         this.Planilla.Text = Request.Cookies["Planilla"]["nombre"].ToString();
-                        if (Request.Cookies["Planilla"]["diseno"].ToString() != "")
+                        dis = logica.ConsultarDiseñoPuro(idPlanilla);
+                        if (!IsPostBack)
                         {
-                            dis = logica.ConsultarDiseñoPuro(idPlanilla);
                             CKEditor1.Text = Server.HtmlDecode(dis.Contenido);
-                            Request.Cookies["Planilla"].Expires = DateTime.Now;
                         }
+                        Request.Cookies["Planilla"].Expires = DateTime.Now;
+                        planilla1 = new DominioSKD.Planilla(this.idPlanilla, this.Planilla.Text, true, this.tipoPlanilla.Text);
                     }
                 }
                 catch (Exception exce)
                 {
                     string a = exce.Message;
-                    exito = false;
-                    this.idPlanilla = 1;
-                    this.tipoPlanilla.Text = "Retiro";
-                    this.Planilla.Text = "Vacaciones";
+                    //HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
                 }
-             }
-            dis = logica.ConsultarDiseñoPuro(1);
-            planilla1 = new DominioSKD.Planilla(1, this.Planilla.Text, true, this.tipoPlanilla.Text);
+            
         }
 
         protected void btnguardar_Click(object sender, EventArgs e)
@@ -57,7 +51,7 @@ namespace templateApp.GUI.Modulo14
             DominioSKD.Diseño diseño = new DominioSKD.Diseño(CKEditor1.Text);
             try
             {
-                if (Request.Cookies["Planilla"]["diseno"].ToString() != "")
+                if (dis.Contenido!= "")
                 {
                    
                     if (CKEditor1.Text != "")
