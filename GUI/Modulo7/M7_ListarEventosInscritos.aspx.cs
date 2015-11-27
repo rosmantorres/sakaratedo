@@ -14,6 +14,7 @@ namespace templateApp.GUI.Modulo7
     {
          #region Atributos
         private List<Evento> laLista = new List<Evento>();
+        private Horario horario;
         #endregion
         #region Page Load
         /// <summary>
@@ -34,7 +35,7 @@ namespace templateApp.GUI.Modulo7
 
             #region Llenar Data Table con Eventos
             LogicaEventosInscritos logEvento = new LogicaEventosInscritos();
-
+            
             if (!IsPostBack)
             {
                 try
@@ -46,9 +47,9 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.ToString() + M7_Recursos.CerrarTD;
-                        //this.laTabla.Text += M7_Recursos.AbrirTD + evento.FechaInicio.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("dd/MM/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;

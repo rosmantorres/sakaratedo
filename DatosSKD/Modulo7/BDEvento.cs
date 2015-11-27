@@ -30,13 +30,15 @@ namespace DatosSKD.Modulo7
 
         public static List<Evento> ListarEventosInscritos()
         {
+            Int16 id = 1;
+            String nombre = "Seminario Cintas Negras";
             List<Evento> laListaDeEventoInscrito = new List<Evento>();
             TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
             Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
             DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
             DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 400, 300);
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
+            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
+            Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeEventoInscrito.Add(evento);
 
             return laListaDeEventoInscrito;
@@ -49,7 +51,7 @@ namespace DatosSKD.Modulo7
             Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
             DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
             DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 400, 300);
+            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
             Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeEventoPago.Add(evento);
             
@@ -59,12 +61,14 @@ namespace DatosSKD.Modulo7
         public static List<Evento> ListarHorarioPractica()
         {
             List<Evento> laListaDeHorarioPractica = new List<Evento>();
+            Int16 id = 1;
+            String nombre = "Seminario Cintas Negras";
             TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
             Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
             DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
             DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 400, 300);
-            Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
+            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
+            Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
             laListaDeHorarioPractica.Add(evento);
 
             return laListaDeHorarioPractica;
@@ -81,7 +85,7 @@ namespace DatosSKD.Modulo7
             Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
             DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
             DateTime fechaFin = Convert.ToDateTime("16/08/2008");
-            Horario horario = new Horario(1, fechaInicio, fechaFin, 400, 300);
+            Horario horario = new Horario(1, fechaInicio, fechaFin, 1300, 1500);
             Evento evento = new Evento(Convert.ToInt16(RecursosEvento.Id1), RecursosEvento.Nombre1, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
 
             return evento;

@@ -30,13 +30,17 @@ namespace LogicaNegociosSKD.Modulo7
         }
         #endregion
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
          public LogicaEventosInscritos()
          {
              laListaDeEventoInscrito = obtenerListaDeEventos(); 
          }
 
-        /// <summary>
-        /// Metodo que obtiene la lista de eventos inscritos
+         #region Métodos
+         /// <summary>
+        /// Método que obtiene la lista de eventos inscritos
         /// </summary>
         /// <returns>
         /// Lista de objetos tipo Evento
@@ -53,7 +57,7 @@ namespace LogicaNegociosSKD.Modulo7
              }
          }
         /// <summary>
-        /// Metodo que devuelve el detalle del evento inscrito
+        /// Método que devuelve el detalle del evento inscrito
         /// </summary>
         /// <param name="idEvento"></param>
         /// <returns>
@@ -70,6 +74,8 @@ namespace LogicaNegociosSKD.Modulo7
                  throw e;
              }
          }
+        #endregion
+
 
     }
 }

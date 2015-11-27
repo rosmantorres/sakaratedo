@@ -32,8 +32,13 @@
     <script src="js/daterange.js"></script>
     <script src="js/jquery.ui.datepicker-es.js"></script>
 
-     <div id="alert" runat="server">
-    </div>
+    <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="css/daterange.css" rel="stylesheet" />
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/daterange.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+
+    <div id="alert" runat="server"></div>
 
     <div class="row">
             <div class="col-xs-12">
