@@ -30,9 +30,21 @@ namespace DatosSKD.Modulo7
 
         public static List<Evento> ListarEventosInscritos()
         {
+            /* BDConexion laConexion;
+             List<Evento> laListaDeEventoInscrito = new List<Evento>();
+             List<Parametro> parametros;
+             try
+             {
+                 laConexion = new BDConexion();
+                 parametros = new List<Parametro>();
+
+                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo12.ConsultarCompetencias, parametros);
+
+                 foreach (DataRow row in dt.Rows)
+             }*/
+            List<Evento> laListaDeEventoInscrito = new List<Evento>();
             Int16 id = 1;
             String nombre = "Seminario Cintas Negras";
-            List<Evento> laListaDeEventoInscrito = new List<Evento>();
             TipoEvento tipoEvento = new TipoEvento(1, "Seminario");
             Ubicacion ubicacion = new Ubicacion(1, "caracas", "distrito capital");
             DateTime fechaInicio = Convert.ToDateTime("15/08/2008");
