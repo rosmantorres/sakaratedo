@@ -36,9 +36,17 @@ namespace LogicaNegociosSKD.Modulo12
             {
                 return BDCompetencia.ListarCompetencias();
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw e;
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
             }
         
         }
@@ -49,9 +57,21 @@ namespace LogicaNegociosSKD.Modulo12
             {
                 return BDCompetencia.DetallarCompetencia(elIdCompetencia);
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw e;
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
             }
         }
 
@@ -61,7 +81,19 @@ namespace LogicaNegociosSKD.Modulo12
             {
                 return BDCompetencia.AgregarCompetencia(laCompetencia);
             }
-            catch (Exception ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 throw ex;
             }
