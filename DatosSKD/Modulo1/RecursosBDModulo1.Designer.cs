@@ -70,6 +70,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a correo_usuario.
+        /// </summary>
+        internal static string aliasCorreoUsuario {
+            get {
+                return ResourceManager.GetString("aliasCorreoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a fecha_creacion.
         /// </summary>
         internal static string AliasFechaCreacion {
@@ -138,6 +147,24 @@ namespace DatosSKD.Modulo1 {
         internal static string ConsultarRolesUsuario {
             get {
                 return ResourceManager.GetString("ConsultarRolesUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se encontró más de una cuenta con el correo asociado,comunicarse con la administracion de SAKARATEDO..
+        /// </summary>
+        internal static string exceptionCorreoMasUno {
+            get {
+                return ResourceManager.GetString("exceptionCorreoMasUno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M1_ValidarCorreo.
+        /// </summary>
+        internal static string ValidarCorreo {
+            get {
+                return ResourceManager.GetString("ValidarCorreo", resourceCulture);
             }
         }
     }
