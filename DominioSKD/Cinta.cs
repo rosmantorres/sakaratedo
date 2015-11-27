@@ -8,28 +8,18 @@ namespace DominioSKD
 {
     public class Cinta
     {
-        private int id;       
-        private String color_nombre;      
-        private String rango;      
-        private String clasificacion;      
-        private String significado;      
-        private String orden;
 
+        private int id_cinta;
+        private String color_nombre;
+        private String rango;
+        private String clasificacion;
+        private String significado;
+        private int id_restriccion;
 
-        public Cinta(int id, String color_nombre, String rango, String clasificacion, String significado, String orden) 
+        public int Id_cinta
         {
-            this.id = id;
-            this.color_nombre = color_nombre;
-            this.rango = rango;
-            this.clasificacion = clasificacion;
-            this.significado = significado;
-            this.orden = orden;
-        }
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
+            get { return id_cinta; }
+            set { id_cinta = value; }
         }
 
         public String Color_nombre
@@ -49,17 +39,49 @@ namespace DominioSKD
             get { return clasificacion; }
             set { clasificacion = value; }
         }
+
         public String Significado
         {
             get { return significado; }
             set { significado = value; }
         }
 
-        public String Orden
+        public int Id_restriccion
         {
-            get { return orden; }
-            set { orden = value; }
+            get { return id_restriccion; }
+            set { id_restriccion = value; }
         }
+        public Cinta()
+        {
+            id_cinta = 0;
+            color_nombre = "";
+            rango = "";
+            clasificacion = "";
+            significado = "";
+            id_restriccion = 0;
+        }
+
+        public Cinta(int elId, String elColor, String elRango, String laClasificacion, String elSignificado, int elIdRestriccion)
+        {
+            id_cinta = elId;
+            color_nombre = elColor;
+            rango = elRango;
+            clasificacion = laClasificacion;
+            significado = elSignificado;
+            id_restriccion = elIdRestriccion;
+
+        }
+
+        public Cinta(String elColor, String elRango, String laClasificacion, String elSignificado, int elIdRestriccion)
+        {
+            color_nombre = elColor;
+            rango = elRango;
+            clasificacion = laClasificacion;
+            significado = elSignificado;
+            id_restriccion = elIdRestriccion;
+
+        }
+
 
     }
 }
