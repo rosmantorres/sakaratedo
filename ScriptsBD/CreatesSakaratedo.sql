@@ -236,6 +236,7 @@ CREATE
 	eve_nombre       VARCHAR (120) NOT NULL ,
     eve_descripcion  VARCHAR (120) NOT NULL ,
     eve_costo FLOAT NOT NULL ,
+	eve_estado BIT Not Null,
     HORARIO_hor_id   INTEGER NOT NULL ,
     UBICACION_ubi_id INTEGER NOT NULL ,
     DOJO_doj_id      INTEGER ,
