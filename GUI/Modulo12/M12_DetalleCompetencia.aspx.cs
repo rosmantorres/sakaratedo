@@ -22,26 +22,29 @@ namespace templateApp.GUI.Modulo12
 
             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
             {
-                 laCompetencia = laLogica.detalleCompetenciaXId(int.Parse(detalleString));
-                 this.nombreComp.Text = laCompetencia.Nombre;
-                 this.tipoComp.Text = laCompetencia.TipoCompetencia.ToString();//Preguntar xq la competencia es un int
-                 if (laCompetencia.OrganizacionTodas.Equals(false))
-                     this.orgComp.Text = laCompetencia.Organizacion.Nombre;
-                 else
-                     this.orgComp.Text = "Todas";
-                 this.statusComp.Text = laCompetencia.Status;
-                 this.inicioComp.Text = laCompetencia.FechaInicio.ToShortDateString();
-                 this.finComp.Text = laCompetencia.FechaFin.ToShortDateString();
-                 this.categIniComp.Text = laCompetencia.Categoria.Cinta_inicial;
-                 this.categFinComp.Text = laCompetencia.Categoria.Cinta_final;
-                 this.categEdadIniComp.Text = laCompetencia.Categoria.Edad_inicial.ToString();
-                 this.categEdadFinComp.Text = laCompetencia.Categoria.Edad_final.ToString();
-                 this.categSexoComp.Text = laCompetencia.Categoria.Sexo;
-                 this.costoComp.Text = "Bs."+" "+laCompetencia.Costo.ToString();
-            }
-            if (IsPostBack)
-            {
-               
+                try
+                {
+
+                    laCompetencia = laLogica.detalleCompetenciaXId(int.Parse(detalleString));
+                    this.nombreComp.Text = laCompetencia.Nombre;
+                    this.tipoComp.Text = laCompetencia.TipoCompetencia.ToString();
+                    if (laCompetencia.OrganizacionTodas.Equals(false))
+                        this.orgComp.Text = laCompetencia.Organizacion.Nombre;
+                    else
+                        this.orgComp.Text = "Todas";
+                    this.statusComp.Text = laCompetencia.Status;
+                    this.inicioComp.Text = laCompetencia.FechaInicio.ToShortDateString();
+                    this.finComp.Text = laCompetencia.FechaFin.ToShortDateString();
+                    this.categIniComp.Text = laCompetencia.Categoria.Cinta_inicial;
+                    this.categFinComp.Text = laCompetencia.Categoria.Cinta_final;
+                    this.categEdadIniComp.Text = laCompetencia.Categoria.Edad_inicial.ToString();
+                    this.categEdadFinComp.Text = laCompetencia.Categoria.Edad_final.ToString();
+                    this.categSexoComp.Text = laCompetencia.Categoria.Sexo;
+                    this.costoComp.Text = "Bs." + " " + laCompetencia.Costo.ToString();
+                }
+                catch 
+                {
+                }
             }
         }
     }

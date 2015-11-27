@@ -97,7 +97,7 @@
          <br />
     </div>
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h4>Ubicación de Competencia</h4>
+        <h4>Ubicación de Competencia :</h4>
         <div id="googleMap" style="width:500px;height:250px;"></div>
         <br />
     </div>
