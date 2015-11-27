@@ -58,11 +58,7 @@ namespace DominioSKD
             set { id_estilo = value; }
         }
 
-        public Organizacion()
-        {
-            id_organizacion = 0;
-            nombre = "";
-        }
+       
 
         public Organizacion(int elId, String elNombre)
         {
