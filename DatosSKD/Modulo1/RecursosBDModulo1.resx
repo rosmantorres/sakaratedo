@@ -120,6 +120,9 @@
   <data name="AliasContrasena" xml:space="preserve">
     <value>contrasena</value>
   </data>
+  <data name="aliasCorreoUsuario" xml:space="preserve">
+    <value>correo_usuario</value>
+  </data>
   <data name="AliasFechaCreacion" xml:space="preserve">
     <value>fecha_creacion</value>
   </data>
@@ -143,5 +146,12 @@
   </data>
   <data name="ConsultarRolesUsuario" xml:space="preserve">
     <value>M1_ConsultarRolesUsuario</value>
+  </data>
+  <data name="exceptionCorreoMasUno" xml:space="preserve">
+    <value>Se encontró más de una cuenta con el correo asociado,comunicarse con la administracion de SAKARATEDO.</value>
+    <comment>Error que ocurre cuando hay mas de una cuenta con el mismo correo asociado</comment>
+  </data>
+  <data name="ValidarCorreo" xml:space="preserve">
+    <value>M1_ValidarCorreo</value>
   </data>
 </root>

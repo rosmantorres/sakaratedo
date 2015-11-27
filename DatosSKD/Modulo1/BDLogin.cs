@@ -62,6 +62,42 @@ namespace DatosSKD.Modulo1
                 throw e;
             }
         }
-   
+
+        public static Boolean ValidarCorreoUsuario(string correo_usuario)
+        {
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                List<String> elCorreo = new List<String>();
+
+                elParametro = new Parametro(RecursosBDModulo1.aliasCorreoUsuario, SqlDbType.VarChar, correo_usuario, false);
+                parametros.Add(elParametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo1.ValidarCorreo, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    elCorreo.Add(row[RecursosBDModulo1.aliasCorreoUsuario].ToString());
+                }
+                bool respuesta = false;
+                if (elCorreo.Count == 1)
+                    respuesta = true;
+                else if (elCorreo.Count > 1)
+                    throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno);
+
+                return respuesta;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

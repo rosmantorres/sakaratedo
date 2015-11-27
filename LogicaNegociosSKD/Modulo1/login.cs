@@ -13,6 +13,7 @@ namespace LogicaNegociosSKD.Modulo1
 {
     public class login
     {
+        
         MailMessage Mail = new MailMessage();
         SmtpClient SMTP = new SmtpClient();
         /// <summary>
@@ -27,6 +28,9 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
+                if (!validarCorreo(Destino))
+                    throw new Exception("correo no registrado en sistema");
+
                 String DireccionHTTP = "http://localhost:" + RecursosLogicaModulo1.puertoSAKARATEDO +
                 RecursosLogicaModulo1.direccionM1_RestablecerContraseña;
                 String mensajeDireccion = "<br>" +  DireccionHTTP + "</br>";
@@ -58,19 +62,19 @@ namespace LogicaNegociosSKD.Modulo1
                 throw  e;
             }
         }
-        /// <summary>
-        /// Proceso que conectara con la base de datos para pedir los usuarios en base a los datos introducidos en el login 
-        /// </summary>
-        /// <param name="id">Es el usuario que se introduce en el login</param>
-        /// <param name="contraseña">contraseña</param>
-        /// <param name="registro">se debe eliminar esto era para validar en base a los datos preguardados de cuentas</param>
-        /// <returns></returns>
-        public Boolean validaUsuario(string id, string contraseña,string[] registro)
+
+        public Boolean validarCorreo(string Destino)
         {
-            if (registro[0] == id && registro[1] == contraseña)
-                return true;
-            
-            return false;
+            Boolean respuesta;
+            try
+            {
+               respuesta= DatosSKD.Modulo1.BDLogin.ValidarCorreoUsuario(Destino);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return respuesta;
         }
 
         /// <summary>
@@ -83,18 +87,8 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-               //consularbasededatos(usuario,contrasea);
                 Cuenta user= BDLogin.ObtenerUsuario(usuario);
                 string[] respuesta = new string[4];
-                /*
-                string[] admin = { "admin@gmail.com", "12345","Sistema","juan","Perez","Atleta-Dojo-Sistema"};
-                string[] dojo = { "dojo@gmail.com", "12345", "Dojo","Javier","Dominguez","Dojo"};
-                string[] organizacion = { "organizacion@gmail.com", "12345", "Organizacion","Pepe","Lopez","Organizacion" };
-                string[] entrenador = { "entrenador@gmail.com", "12345", "Entrenador" ,"Rebeca","Larez","Entrenador"};
-                string[] atleta = { "atleta@gmail.com", "12345", "Atleta","Sandra","Villa","Atleta" };
-                string[] representante = { "representante@gmail.com", "12345", "Representante","Maria","Paz","Representante" };
-                string[] menorEdad = { "atletaM@gmail.com", "12345", "Atleta(Menor)", "Armando", "Paredes", "Atleta(Menor)" };
-                */
                string hashClave = hash(contraseña);
                if (hashClave == hash(user.Contrasena) && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
