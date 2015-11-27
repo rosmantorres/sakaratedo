@@ -20,12 +20,12 @@ namespace templateApp.GUI.Modulo1
             warningLog.Visible = false;
 
             if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] == RecursosInterfazModulo1.parametroURLCorreoEnviado))
-                mensajeLogin(true, RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
+                mensajeLogin( RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
             else
                 infoLog.Visible = false;
 
             if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] == RecursosInterfazModulo1.parametroURLReestablecerExito))
-                mensajeLogin(true, RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
+                mensajeLogin( RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
             else
                 successLog.Visible = false;
 
@@ -39,7 +39,7 @@ namespace templateApp.GUI.Modulo1
         public void ValidarUsuario(object sender, EventArgs e)
         {
 
-            validarUsuario();
+            consultarUsuario();
         }
         /// <summary>
         /// Metodo para Establecer un mensaje de alerta en el login
@@ -47,7 +47,7 @@ namespace templateApp.GUI.Modulo1
         /// <param name="visible">Si queremos que sea visible</param>
         /// <param name="mensaje">Mensaje que aparecerá en la alerta</param>
         /// <param name="tipo">stirng Error;Warning;Info;Sucess</param>
-        public void mensajeLogin(Boolean visible,string mensaje,string tipo)
+        public void mensajeLogin(string mensaje,string tipo)
         {
             switch (tipo)
             {
@@ -86,23 +86,26 @@ namespace templateApp.GUI.Modulo1
             
             //BD:End
             String CorreoDestino= RestablecerCorreo.Value;
-            if (CorreoDestino == "falla@gmail.com")
+            try
             {
-
-                mensajeLogin(true, RecursosInterfazModulo1.logWarning, RecursosInterfazModulo1.tipoWarning);
+               // mensajeLogin( RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
+                new login().EnviarCorreo(CorreoDestino);
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
+                    + RecursosInterfazModulo1.tipoInfo + "=" +
+                    RecursosInterfazModulo1.parametroURLCorreoEnviado);
             }
-            else
+            catch (Exception e)
             {
-                mensajeLogin(true, RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
-                new login().EnviarCorreo( CorreoDestino);
-
-                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?" + RecursosInterfazModulo1.tipoInfo + "=" + RecursosInterfazModulo1.parametroURLCorreoEnviado);
+                mensajeLogin(e.Message,RecursosInterfazModulo1.tipoErr);
             }
-            RestablecerCorreo.Value = "";
+            finally
+            {
+                RestablecerCorreo.Value = "";
+            }
                     
            
         }
-        public void validarUsuario()
+        public void consultarUsuario()
         {
             string correo = userIni.Value;
             string clave = passwordIni.Value;
@@ -114,10 +117,10 @@ namespace templateApp.GUI.Modulo1
                 Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
                 Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
                 Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
-                mensajeLogin(false, RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+                mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
             }
             else
-                mensajeLogin(true, RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+                mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
         }
            
     }
