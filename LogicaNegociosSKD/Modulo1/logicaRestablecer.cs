@@ -14,7 +14,7 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                BDRestablecer.ReestablecerContrasena(usuarioID, logicaLogin.hash(contraseña));
+                BDRestablecer.RestablecerContrasena(usuarioID, logicaLogin.hash(contraseña));
                 return true;
             }
             catch (Exception e)
