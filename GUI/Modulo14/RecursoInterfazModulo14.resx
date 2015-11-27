@@ -135,11 +135,17 @@
   <data name="BotonModificar" xml:space="preserve">
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
   </data>
+  <data name="BotonModificarRegistro" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx?idPlan=</value>
+  </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="idPlan" xml:space="preserve">
+    <value>idPlan</value>
   </data>
   <data name="Nombre" xml:space="preserve">
     <value>&amp;nombre=</value>

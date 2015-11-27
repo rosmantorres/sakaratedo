@@ -46,6 +46,7 @@
          <div id="alertlocal" runat="server">
           <!-- Alertas-->
           </div>
+          <input id="id_planilla" type="text" placeholder="" class="form-control" name="idPlanilla" runat="server" />
           <div class="col-sm-3 col-md-3 col-lg-3">
             <label>Seleccione el tipo de planilla:</label>  
           </div>
@@ -67,7 +68,7 @@
      <div class="form-group  col-sm-10 col-md-10 col-lg-10"">
       <br/>
       <h3>Nombre de Planilla</h3>
-      <input id="Text1" type="text" placeholder="NombrePlanilla" class="form-control" name="NombrePlanilla" runat="server" />
+      <input id="id_nombrePlanilla" type="text" placeholder="NombrePlanilla" class="form-control" name="NombrePlanilla" runat="server" />
      </div>
     
     <div class="form-group">
@@ -75,12 +76,11 @@
          <h3>Datos Disponibles</h3>
 
           <asp:ListBox ID="ListBox1" runat="server" Width="860px" Height="130px">
-             <asp:ListItem Text="Dojo" Value="Dojo" Selected="True" />
-             <asp:ListItem Text="Atleta" Value="Atleta" />
-             <asp:ListItem Text="Competencia" Value="Competencia" />
-             <asp:ListItem Text="Asistencia" Value="Asistencia"  />
-             <asp:ListItem Text="Instructor" Value="Instructor" />
-             <asp:ListItem Text="Representante" Value="#Representante" />
+             <asp:ListItem Text="DOJO" Value="DOJO" Selected="True" />
+             <asp:ListItem Text="ATLETA" Value="ATLETA" />
+             <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA" />
+             <asp:ListItem Text="EVENTO" Value="EVENTO"  />
+
           </asp:ListBox>
           <br/>
          <div class="text-center padding-small col-sm-10 col-md-10 col-lg-10">

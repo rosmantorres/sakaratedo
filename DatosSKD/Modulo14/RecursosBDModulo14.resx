@@ -255,4 +255,28 @@
     <value>M14_Procedure_ListarTipoPlanilla</value>
     <comment>Obtiene la lista de los tipos de planillas existentes</comment>
   </data>
+  <data name="ParametroIdPlanilla" xml:space="preserve">
+    <value>@pla_id</value>
+    <comment>parametro del id de la planilla</comment>
+  </data>
+  <data name="ProcedureAgregarDatoPlanillaID" xml:space="preserve">
+    <value>M14_ProcedureAgregarDatoPlanillaID</value>
+    <comment>procedimiento que agrega los datos por el id de la planilla</comment>
+  </data>
+  <data name="ProcedureConsultarDatosPlanillaId" xml:space="preserve">
+    <value>M14_ProcedureConsultarDatosPlanillaID</value>
+    <comment>procedimiento que devuelve los datos de una planilla por id</comment>
+  </data>
+  <data name="ProcedureConsultatPlanillaID" xml:space="preserve">
+    <value>M14_ProcedureConsultarPlanillaID</value>
+    <comment>procedimiento que devuelve una planilla por id</comment>
+  </data>
+  <data name="ProcedureEliminarDatosPlanilla" xml:space="preserve">
+    <value>M14_ProcedureEliminarDatosPlanilla</value>
+    <comment>procedimiento que elimina los datos de una planilla </comment>
+  </data>
+  <data name="ProcedureModificarPlanilla" xml:space="preserve">
+    <value>M14_ProcedureModificarPlanilla</value>
+    <comment>procedimiento que modifica una planilla</comment>
+  </data>
 </root>
