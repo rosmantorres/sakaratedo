@@ -14,11 +14,11 @@ namespace DatosSKD.Modulo9
         /// <summary>
         /// Metodo que permite agregar un Evento a la BD
         /// </summary>
-        /// <param name="evento"></param>
-        /// <returns></returns>
+        /// <param name="evento">El Evento a Agregar</param>
+        /// <returns>Retorna true o false</returns>
         public bool CrearEvento(Evento evento)
         {
-            /*try
+            try
                 {
                     //parametros para insertar un evento
                     List<Parametro> parametros = new List<Parametro>();
@@ -28,11 +28,31 @@ namespace DatosSKD.Modulo9
                     parametros.Add(parametro);
                     parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
                     parametros.Add(parametro);
-                    parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, proyecto.Moneda, false);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int,"1", false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroIdCategoria, SqlDbType.Int,evento.Categoria.Id_categoria.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo9.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
                     parametros.Add(parametro);
 
+
+
+
+
                     BDConexion con = new BDConexion();
-                    List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo4.ProcedimientoAgregarProyecto, parametros);
+                    List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo9.ProcedimientoAgregarEvento, parametros);
 
                     //si la creacion es correcta retorna true
 
@@ -52,13 +72,9 @@ namespace DatosSKD.Modulo9
                     throw e;
                 }
             }
-            else
-                //el codigo existe por lo tanto no se crea el proyecto
-                throw new ExcepcionesTotem.Modulo4.CodigoRepetidoException(RecursosBDModulo4.CodigoProyectoExiste,
-                           RecursosBDModulo4.MensajeCodigoProyectoExiste, new Exception());*/
-                           throw new NotImplementedException();
+
         }
 
 
-        }
-    }
+}
+

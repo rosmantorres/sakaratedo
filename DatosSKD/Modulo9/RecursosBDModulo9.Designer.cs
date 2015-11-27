@@ -79,11 +79,101 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @estado.
+        /// </summary>
+        internal static string ParametroEstadoEvento {
+            get {
+                return ResourceManager.GetString("ParametroEstadoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fechaFin.
+        /// </summary>
+        internal static string ParametroFechaFin {
+            get {
+                return ResourceManager.GetString("ParametroFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fechaInicio.
+        /// </summary>
+        internal static string ParametroFechaInicio {
+            get {
+                return ResourceManager.GetString("ParametroFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @horaFin.
+        /// </summary>
+        internal static string ParametroHoraFin {
+            get {
+                return ResourceManager.GetString("ParametroHoraFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @horaInicio.
+        /// </summary>
+        internal static string ParametroHoraInicio {
+            get {
+                return ResourceManager.GetString("ParametroHoraInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idCategoria.
+        /// </summary>
+        internal static string ParametroIdCategoria {
+            get {
+                return ResourceManager.GetString("ParametroIdCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idPersona.
+        /// </summary>
+        internal static string ParametroIdPersona {
+            get {
+                return ResourceManager.GetString("ParametroIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idTipoEvento.
+        /// </summary>
+        internal static string ParametroIdTipoEvento {
+            get {
+                return ResourceManager.GetString("ParametroIdTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idUbicacion.
+        /// </summary>
+        internal static string ParametroIdUbicacion {
+            get {
+                return ResourceManager.GetString("ParametroIdUbicacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @nombre.
         /// </summary>
         internal static string ParametroNombreEvento {
             get {
                 return ResourceManager.GetString("ParametroNombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_AgregarEventoCompletoV1.
+        /// </summary>
+        internal static string ProcedimientoAgregarEvento {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarEvento", resourceCulture);
             }
         }
     }

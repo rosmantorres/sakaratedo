@@ -125,8 +125,48 @@
     <value>@descripcion</value>
     <comment>Descripcion del Evento</comment>
   </data>
+  <data name="ParametroEstadoEvento" xml:space="preserve">
+    <value>@estado</value>
+    <comment>Estado del Evento</comment>
+  </data>
+  <data name="ParametroFechaFin" xml:space="preserve">
+    <value>@fechaFin</value>
+    <comment>Fecha Fin del evento</comment>
+  </data>
+  <data name="ParametroFechaInicio" xml:space="preserve">
+    <value>@fechaInicio</value>
+    <comment>Fecha inicio del Evento</comment>
+  </data>
+  <data name="ParametroHoraFin" xml:space="preserve">
+    <value>@horaFin</value>
+    <comment>Hora en que Finaliza el evento</comment>
+  </data>
+  <data name="ParametroHoraInicio" xml:space="preserve">
+    <value>@horaInicio</value>
+    <comment>Hora en que inicia el evento</comment>
+  </data>
+  <data name="ParametroIdCategoria" xml:space="preserve">
+    <value>@idCategoria</value>
+    <comment>Foranea de Categoria</comment>
+  </data>
+  <data name="ParametroIdPersona" xml:space="preserve">
+    <value>@idPersona</value>
+    <comment>Foranea de la persona para buscar a que Dojo pertenece</comment>
+  </data>
+  <data name="ParametroIdTipoEvento" xml:space="preserve">
+    <value>@idTipoEvento</value>
+    <comment>Foranea del Tipo de evento</comment>
+  </data>
+  <data name="ParametroIdUbicacion" xml:space="preserve">
+    <value>@idUbicacion</value>
+    <comment>Foranea de la ubicacion</comment>
+  </data>
   <data name="ParametroNombreEvento" xml:space="preserve">
     <value>@nombre</value>
     <comment>Nombre del Evento</comment>
+  </data>
+  <data name="ProcedimientoAgregarEvento" xml:space="preserve">
+    <value>M9_AgregarEventoCompletoV1</value>
+    <comment>Nombre del SP a Ejecutar</comment>
   </data>
 </root>
