@@ -66,13 +66,18 @@ namespace DatosSKD.Modulo12
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
             return laListaDeCompetencias;
@@ -84,6 +89,8 @@ namespace DatosSKD.Modulo12
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            Competencia laCompetencia = new Competencia();
+            laCompetencia.Id_competencia = idCompetencia;
             int diaFecha;
             int mesFecha;
             int anoFecha;
@@ -92,79 +99,88 @@ namespace DatosSKD.Modulo12
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Competencia laCompetencia = new Competencia();
-
-                elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int, idCompetencia.ToString(),
-                                            false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo12.ConsultarCompetenciasXId, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (!BuscarIDCompetencia(laCompetencia))
                 {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
 
 
-                    laCompetencia.Id_competencia = int.Parse(row[RecursosBDModulo12.AliasIdCompetencia].ToString());
-                    laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
-                    laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
+                    elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int, idCompetencia.ToString(),
+                                                false);
+                    parametros.Add(elParametro);
 
-                    if (laCompetencia.TipoCompetencia == "1")
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
-                    else
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                   RecursosBDModulo12.ConsultarCompetenciasXId, parametros);
 
-                    laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
-                    laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
-                    
-                    diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Day;
-                    mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Month;
-                    anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Year;
-                    fechaInicio = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
-                    laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
-                   
-                    diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Day;
-                    mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Month;
-                    anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Year;
-                    fechaFin = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
-                    laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
-                    
-                    laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
-
-                    if (laCompetencia.OrganizacionTodas == false)
-                        laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString())
-                                                                        , row[RecursosBDModulo12.AliasNombreOrganizacion].ToString());
-                    else
+                    foreach (DataRow row in dt.Rows)
                     {
-                        laCompetencia.Organizacion = new Organizacion(RecursosBDModulo12.TodasLasOrganizaciones);
+
+
+                        laCompetencia.Id_competencia = int.Parse(row[RecursosBDModulo12.AliasIdCompetencia].ToString());
+                        laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
+                        laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
+
+                        if (laCompetencia.TipoCompetencia == "1")
+                            laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
+                        else
+                            laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+
+                        laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
+                        laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
+
+                        diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Day;
+                        mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Month;
+                        anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Year;
+                        fechaInicio = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
+                        laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
+
+                        diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Day;
+                        mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Month;
+                        anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Year;
+                        fechaFin = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
+                        laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
+
+                        laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
+
+                        if (laCompetencia.OrganizacionTodas == false)
+                            laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString())
+                                                                            , row[RecursosBDModulo12.AliasNombreOrganizacion].ToString());
+                        else
+                        {
+                            laCompetencia.Organizacion = new Organizacion(RecursosBDModulo12.TodasLasOrganizaciones);
+                        }
+                        laCompetencia.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDModulo12.AliasIdUbicacion].ToString()),
+                                                                row[RecursosBDModulo12.AliasLatitudDireccion].ToString(),
+                                                                row[RecursosBDModulo12.AliasLongitudDireccion].ToString(),
+                                                                row[RecursosBDModulo12.AliasNombreCiudad].ToString(),
+                                                                row[RecursosBDModulo12.AliasNombreEstado].ToString(),
+                                                                row[RecursosBDModulo12.AliasNombreDireccion].ToString());
+
+                        laCompetencia.Categoria = new Categoria(int.Parse(row[RecursosBDModulo12.AliasIdCategoria].ToString()),
+                                                                 int.Parse(row[RecursosBDModulo12.AliasEdadInicio].ToString()),
+                                                                 int.Parse(row[RecursosBDModulo12.AliasEdadFin].ToString()),
+                                                                 row[RecursosBDModulo12.AliasCintaInicio].ToString(),
+                                                                 row[RecursosBDModulo12.AliasCintaFin].ToString(),
+                                                                 row[RecursosBDModulo12.AliasSexo].ToString());
+
+
                     }
-                    laCompetencia.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDModulo12.AliasIdUbicacion].ToString()),
-                                                            row[RecursosBDModulo12.AliasLatitudDireccion].ToString(),
-                                                            row[RecursosBDModulo12.AliasLongitudDireccion].ToString(),
-                                                            row[RecursosBDModulo12.AliasNombreCiudad].ToString(),
-                                                            row[RecursosBDModulo12.AliasNombreEstado].ToString(),
-                                                            row[RecursosBDModulo12.AliasNombreDireccion].ToString());
-
-                    laCompetencia.Categoria = new Categoria(int.Parse(row[RecursosBDModulo12.AliasIdCategoria].ToString()),
-                                                             int.Parse(row[RecursosBDModulo12.AliasEdadInicio].ToString()),
-                                                             int.Parse(row[RecursosBDModulo12.AliasEdadFin].ToString()),
-                                                             row[RecursosBDModulo12.AliasCintaInicio].ToString(),
-                                                             row[RecursosBDModulo12.AliasCintaFin].ToString(),
-                                                             row[RecursosBDModulo12.AliasSexo].ToString());
-
-
+                    return laCompetencia;
                 }
-                return laCompetencia;
-
-
+                else
+                    throw new ExcepcionesSKD.Modulo12.CompetenciaInexistenteException(RecursosBDModulo12.Codigo_Competencia_Inexistente,
+                                RecursosBDModulo12.Mensaje_Competencia_Inexistente, new Exception());
 
             }
             catch (SqlException ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
             {
@@ -176,7 +192,7 @@ namespace DatosSKD.Modulo12
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
 
@@ -212,9 +228,78 @@ namespace DatosSKD.Modulo12
                             retorno = false;
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return retorno;
+
+
+        }
+
+        public static bool BuscarIDCompetencia(Competencia laCompetencia)
+        {
+            bool retorno = false;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int
+                                                      , laCompetencia.Id_competencia.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo12.ParamSalidaNumCompetencia, SqlDbType.Int, true);
+                parametros.Add(elParametro);
+
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDModulo12.BuscarIDCompetencia
+                                             , parametros);
+
+                foreach (Resultado elResultado in resultados)
+                {
+                    if (elResultado.etiqueta == RecursosBDModulo12.ParamSalidaNumCompetencia)
+                        if (int.Parse(elResultado.valor) == 1)
+                            retorno = true;
+                        else
+                            throw new ExcepcionesSKD.Modulo12.CompetenciaInexistenteException(RecursosBDModulo12.Codigo_Competencia_Inexistente,
+                                RecursosBDModulo12.Mensaje_Competencia_Inexistente, new Exception());
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
             return retorno;
@@ -295,10 +380,27 @@ namespace DatosSKD.Modulo12
                     laConexion.EjecutarStoredProcedure(RecursosBDModulo12.AgregarCompetencia, parametros);
 
                 }
+                else
+                    throw new ExcepcionesSKD.Modulo12.CompetenciaExistenteException(RecursosBDModulo12.Codigo_Competencia_Existente,
+                                RecursosBDModulo12.Mensaje_Competencia_Existente, new Exception());
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return true;
         }
@@ -377,10 +479,27 @@ namespace DatosSKD.Modulo12
                     BDConexion laConexion = new BDConexion();
                     laConexion.EjecutarStoredProcedure(RecursosBDModulo12.ModificarCompetencia, parametros);
                 }
+                else
+                    throw new ExcepcionesSKD.Modulo12.CompetenciaExistenteException(RecursosBDModulo12.Codigo_Competencia_Existente,
+                                RecursosBDModulo12.Mensaje_Competencia_Existente, new Exception());
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return true;
         }

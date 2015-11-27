@@ -43,6 +43,7 @@
     <Compile Include="ExceptionSKDConexionBD.cs" />
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
+    <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
