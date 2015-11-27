@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 
+
 namespace DominioSKD
 {
     /// <summary>
@@ -91,7 +92,39 @@ namespace DominioSKD
         /// <returns>El exito o fallo del proceso</returns>
         public bool eliminarItem(int tipoObjeto, int objetoBorrar)
         {
-            return true;
+            //Preparamos la respuesta del proceso
+            bool respuesta = false;
+
+            //Si queremos borrar un implemento 
+            if (tipoObjeto == 1)
+            {
+                //Buscamos en la lista ese implemento que tenga ese id y borramos
+                foreach (Implemento aux in this.ListaImplemento.Reverse<Implemento>())
+                    if (aux.Id_implemento == objetoBorrar)
+                        this.ListaImplemento.Remove(aux);
+                respuesta = true;
+            }
+            //Si queremos borrar una matricula
+            else if (tipoObjeto == 2)
+            {
+                //Buscamos en la lista esa matricula que tenga ese id y borramos
+                foreach (Matricula aux2 in this.listaMatricula.Reverse<Matricula>())
+                    if (int.Parse(aux2.Mat_identificador) == objetoBorrar)
+                        this.listaMatricula.Remove(aux2);
+                respuesta = true;
+            }
+            //Si queremos borrar un evento
+            else
+            {
+                //Buscamos en la lista ese evento que tenga ese id y borramos
+                foreach (Evento aux3 in this.listaEvento.Reverse<Evento>())
+                    if (aux3.Id_evento == objetoBorrar)
+                        this.listaEvento.Remove(aux3);
+                respuesta = true;
+            }
+
+            //Retornamos la respuesta
+            return respuesta;
         }
 
         /// <summary>
@@ -100,9 +133,9 @@ namespace DominioSKD
         /// <returns>El exito o fallo del proceso</returns>
         public bool limpiar()
         {
-            this.listaImplemento = null;
-            this.listaEvento = null;
-            this.listaMatricula = null;
+            this.listaImplemento.Clear();
+            this.listaEvento.Clear();
+            this.listaMatricula.Clear();
             return true;
         }
         #endregion
