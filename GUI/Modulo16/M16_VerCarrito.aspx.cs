@@ -82,8 +82,7 @@ namespace templateApp.GUI.Modulo16
                     bool respuesta = Eliminaritem();
                     if (respuesta)
                     {
-                        //Si el eliminar fue exitoso mostramos esta alerta y eliminamos del carrito en la clase
-                        this.carritoCompras.eliminarItem(1, 1);
+                        //Si el eliminar fue exitoso mostramos esta alerta
                         alert.Attributes["class"] = "alert alert-success alert-dismissible";
                         alert.Attributes["role"] = "alert";
                         alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\""+
@@ -130,8 +129,10 @@ namespace templateApp.GUI.Modulo16
 
                 //Agrego los botones
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD;
+                //Arreglar el boton info
                 this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + inventario.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
-                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR + inventario.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO + inventario.Id_implemento +
+                    M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla1.Text += M16_Recursointerfaz.CERRAR_TD;
 
                 //Cierro la fila creada
@@ -152,10 +153,11 @@ namespace templateApp.GUI.Modulo16
                 this.laTabla2.Text += M16_Recursointerfaz.ABRIR_TD + "512 Bs." + M16_Recursointerfaz.CERRAR_TD;
 
                 //Agrego los botones
-                this.laTabla2.Text += M12_RecursoInterfaz.AbrirTD;
-                this.laTabla2.Text += M12_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla2.Text += M12_RecursoInterfaz.BotonEliminar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
-                this.laTabla2.Text += M12_RecursoInterfaz.CerrarTD;
+                this.laTabla2.Text += M16_RecursoInterfaz.AbrirTD;
+              //Arreglar el boton info
+                this.laTabla2.Text += M16_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
+                this.laTabla2.Text += M16_RecursoInterfaz.BOTON_ELIMINAR_ACCION_MATRICULA + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
+                this.laTabla2.Text += M16_RecursoInterfaz.CerrarTD;
 
                 //Cierro la fila creada
                 this.laTabla2.Text += M12_RecursoInterfaz.CerrarTR;
@@ -174,8 +176,10 @@ namespace templateApp.GUI.Modulo16
 
                 //Agrego los botones
                 this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD;
+                //Arreglar el boton info
                 this.laTabla3.Text += M16_Recursointerfaz.BOTON_INFO + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
-                this.laTabla3.Text += M16_Recursointerfaz.BOTON_ELIMINAR + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla3.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_EVENTO + evento.Id_evento + 
+                    M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TD;
 
                 //Cierro la fila creada
@@ -208,6 +212,9 @@ namespace templateApp.GUI.Modulo16
 
             //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
             bool respuesta = logicaCarrito.eliminarItem(tipoObjeto, objetoBorrar, 1);
+
+            if (respuesta)
+                this.carritoCompras.eliminarItem(tipoObjeto, objetoBorrar);
 
             //Retornamos la respuesta
             return respuesta;
