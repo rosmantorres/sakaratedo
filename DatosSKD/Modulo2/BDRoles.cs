@@ -9,11 +9,11 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace DatosSKD.Modulo1
+namespace DatosSKD.Modulo2
 {
-    class BDRoles
+    public class BDRoles
     {
-     /*  public static List<Rol> ObtenerUsuario(string nombre_usuario)
+       public static List<Rol> ObtenerRolesDeSistema()
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -23,38 +23,21 @@ namespace DatosSKD.Modulo1
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                Cuenta laCuenta = new Cuenta();
-
-                elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario, false);
-
-
-                parametros.Add(elParametro);
+                List<Rol> losRoles=new List<Rol>();
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo1.ConsultarNombreUsuarioContrasena, parametros);
+                               RecursosBDModulo2.ConsultarRolesSistema, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
-
-                    laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
-                    laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();
-                }
-
-                DataTable dt1 = laConexion.EjecutarStoredProcedureTuplas(
-                RecursosBDModulo1.ConsultarRolesUsuario, parametros);
-                List<Rol> listaRol = new List<Rol>();
-                foreach (DataRow row in dt1.Rows)
-                {
-
                     Rol elRol = new Rol();
-                    elRol.Id_rol = int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
-                    elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
-                    elRol.Fecha_creacion = (DateTime)row[RecursosBDModulo1.AliasFechaCreacion];
-                    listaRol.Add(elRol);
+                    elRol.Id_rol = int.Parse(row[RecursosBDModulo2.AliasIdRol].ToString());
+                    elRol.Nombre = row[RecursosBDModulo2.AliasNombreRol].ToString();
+                    elRol.Descripcion = row[RecursosBDModulo2.AliasDescripcionRol].ToString();
+                    losRoles.Add(elRol);
                 }
-                laCuenta.Roles = listaRol;
-                return laCuenta;
+               
+                return losRoles;
 
             }
             catch (Exception e)
@@ -62,7 +45,91 @@ namespace DatosSKD.Modulo1
                 throw e;
             }
         }
-   
-    */
+
+       public static bool EliminarRol(string idUsuario, string idRol)
+       {
+           BDConexion laConexion;
+           List<Parametro> parametros;
+           Parametro elParametro = new Parametro();
+
+           try
+           {
+               laConexion = new BDConexion();
+               parametros = new List<Parametro>();
+               elParametro = new Parametro(RecursosBDModulo2.AliasIdRol, SqlDbType.VarChar, idRol, false);
+               parametros.Add(elParametro); 
+               elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
+               parametros.Add(elParametro);
+               laConexion.EjecutarStoredProcedureTuplas( RecursosBDModulo2.EliminarRolProcedure, parametros);
+               return true;
+
+           }
+           catch (Exception e)
+           {
+               throw e;
+           }
+
+       }
+      
+        public static bool AgregarRol(string idUsuario, string idRol)
+       {
+           BDConexion laConexion;
+           List<Parametro> parametros;
+           Parametro elParametro = new Parametro();
+
+           try
+           {
+               laConexion = new BDConexion();
+               parametros = new List<Parametro>();
+               elParametro = new Parametro(RecursosBDModulo2.AliasIdRol, SqlDbType.VarChar, idRol, false);
+               parametros.Add(elParametro);
+               elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
+               parametros.Add(elParametro);
+               laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo2.AgregarRolProcedure, parametros);
+               return true;
+
+           }
+           catch (Exception e)
+           {
+               throw e;
+           }
+
+       }
+
+        public static List<Rol> consultarRolesUsuario(string idUsuario)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                List<Rol> losRoles = new List<Rol>();
+                elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
+                parametros.Add(elParametro);
+                DataTable dt= laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo2.ConsultarRolesUsuario, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Rol rol = new Rol();
+                    rol.Id_rol = int.Parse(row[RecursosBDModulo2.AliasIdRol].ToString());
+                    rol.Descripcion = row[RecursosBDModulo2.AliasDescripcionRol].ToString();
+                    rol.Nombre = row[RecursosBDModulo2.AliasNombreRol].ToString();
+                    rol.Fecha_creacion = (DateTime)row[RecursosBDModulo2.aliasFechaCreacion];
+                    losRoles.Add(rol);
+
+                }
+
+                
+                return losRoles;
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
     }
 }
