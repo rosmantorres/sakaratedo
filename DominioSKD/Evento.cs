@@ -93,7 +93,7 @@ namespace DominioSKD
             set { ubicacion = value; }
         }
 
-        
+
         public Categoria Categoria
         {
             get { return categoria; }
