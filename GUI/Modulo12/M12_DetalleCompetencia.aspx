@@ -5,7 +5,9 @@
 <script type="text/javascript">
 
     function initialize() {
-        var latlng = new google.maps.LatLng(10.5000, -66.9167);
+        var latitude = "<%=laLatitud%>";
+        var longitude = "<%=laLongitud%>"
+        var latlng = new google.maps.LatLng(latitude,longitude);
         var mapProp = {
             center: latlng,
             zoom: 5,
@@ -29,7 +31,7 @@
 
         var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-        var point = new google.maps.LatLng(10.5000, -66.9167);
+        var point = new google.maps.LatLng(latitude,longitude);
         var marker = new google.maps.Marker({
             position: point,
             map: map,
@@ -126,7 +128,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Cancelar</a>
+         <a class="btn btn-default" href="M12_ListarCompetencias.aspx">Volver</a>
       </div>
    </form>
 

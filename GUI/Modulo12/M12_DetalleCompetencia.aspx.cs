@@ -14,6 +14,8 @@ namespace templateApp.GUI.Modulo12
     {
         Competencia laCompetencia = new Competencia();
         LogicaCompetencias laLogica = new LogicaCompetencias();
+        public string laLatitud;
+        public string laLongitud;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,6 +43,8 @@ namespace templateApp.GUI.Modulo12
                     this.categEdadFinComp.Text = laCompetencia.Categoria.Edad_final.ToString();
                     this.categSexoComp.Text = laCompetencia.Categoria.Sexo;
                     this.costoComp.Text = "Bs." + " " + laCompetencia.Costo.ToString();
+                    laLatitud = laCompetencia.Ubicacion.Latitud.ToString();
+                    laLongitud = laCompetencia.Ubicacion.Longitud.ToString();
                 }
                 catch 
                 {
