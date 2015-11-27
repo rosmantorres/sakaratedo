@@ -1724,6 +1724,7 @@
     <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.designer.cs">
       <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Master\SKD.Master.cs">
       <DependentUpon>SKD.Master</DependentUpon>
