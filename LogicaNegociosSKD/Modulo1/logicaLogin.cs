@@ -11,7 +11,7 @@ using DominioSKD;
 
 namespace LogicaNegociosSKD.Modulo1
 {
-    public class login
+    public class logicaLogin
     {
         
         MailMessage Mail = new MailMessage();

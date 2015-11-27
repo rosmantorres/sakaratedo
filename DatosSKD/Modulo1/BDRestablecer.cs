@@ -11,7 +11,7 @@ using System.Configuration;
 
 namespace DatosSKD.Modulo1
 {
-    public class BDReestablecer
+    public class BDRestablecer
     {
         public static bool ReestablecerContrasena(string usuarioId,string contraseña)
         {

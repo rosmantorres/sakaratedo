@@ -7,14 +7,14 @@ using DatosSKD.Modulo1;
 
 namespace LogicaNegociosSKD.Modulo1
 {
-    public class Restablecer
+    public class logicaRestablecer
     {
 
         public Boolean restablecerContrasena(string usuarioID, string contraseña)
         {
             try
             {
-                BDReestablecer.ReestablecerContrasena(usuarioID, login.hash(contraseña));
+                BDRestablecer.ReestablecerContrasena(usuarioID, logicaLogin.hash(contraseña));
                 return true;
             }
             catch (Exception e)
@@ -23,5 +23,7 @@ namespace LogicaNegociosSKD.Modulo1
                 throw e;
             }
         }
+       
+
     }
 }
