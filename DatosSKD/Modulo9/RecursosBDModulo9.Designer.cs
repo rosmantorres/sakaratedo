@@ -59,5 +59,32 @@ namespace DatosSKD.Modulo9 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @costo.
+        /// </summary>
+        internal static string ParametroCostoEvento {
+            get {
+                return ResourceManager.GetString("ParametroCostoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @descripcion.
+        /// </summary>
+        internal static string ParametroDescripcionEvento {
+            get {
+                return ResourceManager.GetString("ParametroDescripcionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombre.
+        /// </summary>
+        internal static string ParametroNombreEvento {
+            get {
+                return ResourceManager.GetString("ParametroNombreEvento", resourceCulture);
+            }
+        }
     }
 }

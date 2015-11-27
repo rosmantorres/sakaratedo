@@ -14,16 +14,16 @@ namespace DominioSKD
         private String nombre;
         private String descripcion;
         private float costo;
+        private Boolean estado;
         private Ubicacion ubicacion;
         private Categoria categoria;
         private TipoEvento tipoEvento;
         private Horario horario;
-
         #endregion
 
         #region Constructores
 
-        public Evento(int id, String nombre, String descripcion, float costo, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
+        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
         {
             this.id = id;
             this.nombre = nombre;
@@ -112,9 +112,14 @@ namespace DominioSKD
             set { tipoEvento = value; }
         }
 
+        public Boolean Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+
         #endregion
-
-
 
     }
 }
