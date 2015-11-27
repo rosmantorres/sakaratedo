@@ -99,7 +99,7 @@ namespace DatosSKD.Modulo12
 
             try
             {
-                if (!BuscarIDCompetencia(laCompetencia))
+                if (BuscarIDCompetencia(laCompetencia))
                 {
                     laConexion = new BDConexion();
                     parametros = new List<Parametro>();
