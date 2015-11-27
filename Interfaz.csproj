@@ -185,6 +185,7 @@
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
+    <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
     <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
@@ -1214,6 +1215,13 @@
     </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.designer.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_DetalleCompetencia.aspx.cs">
+      <DependentUpon>M12_DetalleCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_DetalleCompetencia.aspx.designer.cs">
+      <DependentUpon>M12_DetalleCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo12\M12_ListarCompetencias.aspx.cs">
       <DependentUpon>M12_ListarCompetencias.aspx</DependentUpon>

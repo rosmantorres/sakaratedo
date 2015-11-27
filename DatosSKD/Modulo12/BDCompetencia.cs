@@ -84,6 +84,11 @@ namespace DatosSKD.Modulo12
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            int diaFecha;
+            int mesFecha;
+            int anoFecha;
+            string fechaInicio;
+            string fechaFin;
 
             try
             {
@@ -113,8 +118,19 @@ namespace DatosSKD.Modulo12
 
                     laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
                     laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
-                    laCompetencia.FechaInicio = Convert.ToDateTime(row[RecursosBDModulo12.AliasEdadInicio].ToString());
-                    laCompetencia.FechaFin = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin].ToString());
+                    
+                    diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Day;
+                    mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Month;
+                    anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Year;
+                    fechaInicio = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
+                    laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
+                   
+                    diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Day;
+                    mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Month;
+                    anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Year;
+                    fechaFin = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
+                    laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
+                    
                     laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
 
                     if (laCompetencia.OrganizacionTodas == false)
@@ -133,7 +149,7 @@ namespace DatosSKD.Modulo12
 
                     laCompetencia.Categoria = new Categoria(int.Parse(row[RecursosBDModulo12.AliasIdCategoria].ToString()),
                                                              int.Parse(row[RecursosBDModulo12.AliasEdadInicio].ToString()),
-                                                             int.Parse(row[RecursosBDModulo12.AliasFechaFin].ToString()),
+                                                             int.Parse(row[RecursosBDModulo12.AliasEdadFin].ToString()),
                                                              row[RecursosBDModulo12.AliasCintaInicio].ToString(),
                                                              row[RecursosBDModulo12.AliasCintaFin].ToString(),
                                                              row[RecursosBDModulo12.AliasSexo].ToString());
