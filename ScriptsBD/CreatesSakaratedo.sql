@@ -37,10 +37,10 @@ GO
 CREATE
   TABLE CINTA
   (
-    cin_id                       INTEGER NOT NULL ,
+    cin_id                       INTEGER IDENTITY(1,1) NOT NULL ,
     cin_color_nombre             VARCHAR (100) NOT NULL ,
-    cin_rango                    INTEGER NOT NULL ,
-    cin_clasificacion            INTEGER NOT NULL ,
+    cin_rango                    VARCHAR (100) NOT NULL ,
+    cin_clasificacion            VARCHAR (100) NOT NULL ,
     cin_significado              VARCHAR (150) NOT NULL ,
     cin_orden                    INTEGER NOT NULL ,
     RESTRICCION_CINTA_res_cin_id INTEGER NOT NULL ,
@@ -214,7 +214,7 @@ GO
 CREATE
   TABLE ESTILO
   (
-    est_id          INTEGER NOT NULL ,
+    est_id          INTEGER IDENTITY(1,1) NOT NULL ,
     est_nombre      VARCHAR (150) NOT NULL ,
     est_descripcion VARCHAR (150) NOT NULL ,
     CONSTRAINT ESTILO_PK PRIMARY KEY CLUSTERED (est_id)
@@ -466,7 +466,7 @@ GO
 CREATE
   TABLE ORGANIZACION
   (
-    org_id        INTEGER NOT NULL ,
+    org_id        INTEGER IDENTITY(1,1) NOT NULL ,
     org_nombre    VARCHAR (100) NOT NULL ,
     org_direccion VARCHAR (150) NOT NULL ,
     org_telefono  INTEGER NOT NULL ,
