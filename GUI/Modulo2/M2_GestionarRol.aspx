@@ -53,6 +53,8 @@
 
     <br />
     <div>
+        
+        <input type="hidden" name="country" value="Norway" id="RolSelect" runat="server">
         <table id="tableSolisitudes" class="table table-bordered table-striped dataTable">
             <thead>
                 <tr>
@@ -64,7 +66,23 @@
                 </tr>
             </thead>
             <tbody>
-                <%int cont = 0; %>
+                
+                <%foreach(DominioSKD.Rol rol in rolSinPermiso) %>
+                <%{ %>
+                 <tr style="background: rgb(224, 235, 235);">
+                    <td><%=rol.Nombre %></td>
+                    <td><%=rol.Descripcion %>
+                    </td>
+                    <td><%=rol.Fecha_creacion.ToString()%></td>
+                    <td >
+                        <a title="Info" class="btn btn-info glyphicon glyphicon-info-sign "  
+                          data-toggle="modal" data-target="#modal-info" 
+                          href="#"></a>
+                    </td>
+                </tr>
+                <%} %>
+
+
                <%foreach(DominioSKD.Rol rol in rolesDePersona) %>
                 <%{ %>
                  <tr>
@@ -73,7 +91,9 @@
                     </td>
                     <td><%=rol.Fecha_creacion.ToString()%></td>
                     <td >
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" value="1" data-toggle="modal" data-target="#modal-delete" href="#"><a id="IdRol<%=cont++.ToString() %>" style="visibility: hidden"><%=rol.Id_rol %></a></a>
+                        <a title="Eliminar" class="btn btn-danger glyphicon glyphicon-remove-sign  botonRol"  
+                          data-toggle="modal" data-target="#modal-delete" 
+                          data-id="<%=rol.Id_rol.ToString() %>" href="#"></a>
                     </td>
                 </tr>
                 <%} %>
@@ -83,43 +103,54 @@
                     <td><%=rol.Nombre %></td>
                     <td><%=rol.Descripcion %></td>
                     <td>-</td>
-                    <td>
-                        <a class="btn btn-success glyphicon glyphicon-plus-sign" value="2" data-toggle="modal" data-target="#modal-create" href="#" ><a id="IdRol<%=cont++.ToString()%>" style="visibility: hidden"><%=rol.Id_rol %></a></a>
+                    <td >
+                        <a title="Añadir" class="btn btn-success glyphicon glyphicon-plus-sign botonRol"  
+                         data-toggle="modal" data-target="#modal-create" 
+                         data-id="<%=rol.Id_rol.ToString() %>" href="#" />
                     </td>
                 </tr>
                 <%} %>
+                <script>
 
+                    $('a').click(function () {
+  
+                        valor = $(this).data('id');
+                        console.log(valor);
+                        valor = this.getAttribute("data-id");
+                        console.log(valor);
+                        document.getElementById("<%=RolSelect.ClientID%>").value = valor;
+
+                    });
+
+                </script>
             </tbody>
         </table>
     </div>
 
     <div id="modal-create" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+          <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header" aria-label="Close">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3>Agregar nuevo rol a usuario</h3>
-                </div>
-                <div class="modal-body" aria-label="Close">
-                            <div class="row form-group">
-                                <label for="selectRole" class="control-label col-xs-2">Rol:</label>
-                                <div class="col-xs-10" runat="server" id="DropDawnDiv" >
-                                    <asp:DropDownList ID="RolList" class="btn btn-default dropdown-toggle"  runat="server">
-
-                                    </asp:DropDownList>
-                                     <td>
-                                      <a class="btn btn-info glyphicon glyphicon-question-sign" data-toggle="modal" id="InfoButton" runat="server"  data-target="#info" href="#"></a>
-                                     </td>
-
-                                </div>
-                            </div>
-                     <div class="row form-group">
-
-                    </div>
+                    <h3>¿Esta seguro que desea <strong>agregar</strong> este rol?</h3>
                 </div>
                   <div class="modal-footer" style="text-align: center">
-                    <input type="button" runat="server" onserverclick="AgregarRol" value="Agregar" class="btn btn-success col-lg-offset-1" />
+                    <input id="Button1" type="button" runat="server" OnServerClick="AgregarRol" value="Agregar" class="btn btn-success col-lg-offset-1" />
                     <input type="button" data-dismiss="modal" value="Cancelar" class="btn btn-default col-lg-offset-1" />
+                  </div>
+            </div>
+        </div>
+    </div>
+
+     <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4>Usted no posee los permisos suficientes para modificar este rol</h4>
+                </div>
+                  <div class="modal-footer" style="text-align: center">
+                    <input type="button" data-dismiss="modal" value="Ok" class="btn btn-default btn-lg" />
                   </div>
             </div>
         </div>
@@ -130,7 +161,7 @@
             <div class="modal-content">
                 <div class="modal-header" aria-label="Close">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3>¿Esta seguro que desea eliminar este rol?</h3>
+                    <h3>¿Esta seguro que desea <strong>eliminar</strong> este rol?</h3>
                 </div>
                   <div class="modal-footer" style="text-align: center">
                     <input type="button" runat="server" OnServerClick="EliminarRol" value="Eliminar" class="btn btn-danger col-lg-offset-1" />
