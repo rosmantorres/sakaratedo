@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
+
     public class Rol
     {
         #region atributos
