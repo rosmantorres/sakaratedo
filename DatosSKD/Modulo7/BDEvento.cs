@@ -103,7 +103,7 @@ namespace DatosSKD.Modulo7
             return laListaDeEventoInscrito;
         }
 
-   
+   ///Metodo que lista los eventos pagos del atleta
         public static List<Evento> ListarEventosPagos()
         {
             
@@ -145,11 +145,7 @@ namespace DatosSKD.Modulo7
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
-            {
-                throw ex;
-            }*/
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;
