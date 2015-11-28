@@ -6,129 +6,166 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
+
     public class Implemento
     {
-        #region Atributos
 
-        private int id_implemento;
-        private string imagen;
-        private string nombre;
-        private string tipo;
-        private string marca;
-        private string color;
-        private string talla;
-        private string status;
-        private float precio;
-        private int stockmin;
-        private string descripcion;
-
+        #region atributos
+       private int id_implemento;
+       private String nombre_implemento;
+       private String tipo_implemento;
+       private String marca_implemento;
+       private String color_implemento;
+       private String talla_implemento;
+       private String imagen_implemento;
+       private int cantidad_implemento;
+       private int stock_minimo_implemento;
+       private String dojo_implemento;
+       private String estatus_implemento;
+       private double precio_implemento;
         #endregion
 
-        #region Get y Set
 
-        public int Id_implemento
-        {
-            get { return id_implemento; }
-            set { id_implemento = value; }
-        }
+       #region Constructores de Implementos
+       #region Constructor
+       public Implemento(String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String stock_implemento)
+       {
 
-        public String Imagen
-        {
-            get { return imagen; }
-            set { imagen = value; }
-        }
+       }
+       #endregion
 
-        public String Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+       #region Constructor vacio
+       public Implemento() { }
 
-        public String Tipo
-        {
-            get { return tipo; }
-            set { tipo = value; }
-        }
+       #endregion
 
-        public String Marca
-        {
-            get { return marca; }
-            set { marca = value; }
-        }
+       #endregion
 
-        public String Color
-        {
-            get { return color; }
-            set { color = value; }
-        }
-        public String Talla
-        {
-            get { return talla; }
-            set { talla = value; }
-        }
-        public String Status
-        {
-            get { return status; }
-            set { status = value; }
-        }
-        public float Precio
-        {
-            get { return precio; }
-            set { precio = value; }
-        }
-        public int Stockmin
-        {
-            get { return stockmin; }
-            set { stockmin = value; }
-        }
 
-        public String Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
+       #region set_get_id_implemento
+       public int Id_Implemento
+       {
+           get { return id_implemento; }
+
+           set { id_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_nombre_implemento
+       public String Nombre_Implemento
+       {
+           get { return nombre_implemento; }
+
+           set { nombre_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_tipo_implemento
+       public String Tipo_Implemento
+       {
+           get { return this.tipo_implemento; }
+
+           set { this.tipo_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_marca_implemento
+       public String Marca_Implemento
+       {
+           get { return this.marca_implemento; }
+
+           set { this.marca_implemento = value; }
+
+       }
         #endregion
 
-        #region Constructores
+       #region set_get_color_implemento
+       public String Color_Implemento
+       {
+           get { return this.color_implemento; }
 
-        public Implemento()
-        {
-            id_implemento = 0;
-            imagen = "";
-            nombre = "";
-            tipo = "";
-            marca = "";
-            color = "";
-            talla = "";
-            status = "";
-            precio = 0;
-            stockmin = 0;
-            descripcion = "";
-        }
+           set { this.color_implemento = value; }
 
-        public Implemento(int imp_id, string imp_imagen, string imp_nombre, string imp_tipo, string imp_marca, float imp_precio)
-        {
-            id_implemento = imp_id;
-            imagen = imp_imagen;
-            nombre = imp_nombre;
-            tipo = imp_tipo;
-            marca = imp_marca;
-            precio = imp_precio;
-        }
-
-        public Implemento(string imp_imagen, string imp_nombre, string imp_tipo, string imp_marca, string imp_color, string imp_talla, string imp_estatus, float imp_precio, string imp_descripcion)
-        {
-            imagen = imp_imagen;
-            nombre = imp_nombre;
-            tipo = imp_tipo;
-            marca = imp_marca;
-            color = imp_color;
-            talla = imp_talla;
-            status = imp_estatus;
-            precio = imp_precio;
-            descripcion = imp_descripcion;
-        }
+       }
         #endregion
+
+       #region set_get_talla_implemento
+       public String Talla_Implemento
+       {
+           get { return this.talla_implemento; }
+
+           set { this.talla_implemento = value; }
+
+       }
+        #endregion
+
+
+       #region set_get_imagen_implemento
+       public String Imagen_implemento
+       {
+           get { return imagen_implemento; }
+
+           set { imagen_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_cantidad_implemento
+       public int Cantida_implemento
+       {
+           get { return cantidad_implemento; }
+
+           set { cantidad_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_stock_minimo_implemento
+       public int Stock_Minimo_Implemento
+       {
+           get { return stock_minimo_implemento; }
+
+           set { stock_minimo_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_dojo_implemento
+       public String  Dojo_Implemento
+       {
+           get { return this.dojo_implemento; }
+
+           set { dojo_implemento = value; }
+
+       }
+       #endregion
+
+       #region set_get_Estatus_implemento
+       public String Estatus_Implemento
+       {
+           get { return this.estatus_implemento; }
+
+           set { estatus_implemento = value; }
+
+       }
+       #endregion
+
+
+       #region set_get_Precio_implemento
+       public double Precio_Implemento
+       {
+           get { return this.precio_implemento; }
+
+           set { precio_implemento = value; }
+
+       }
+       #endregion
+
+
+
     }
 }
 

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcepcionesSKDRecursosGenerales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExcepcionesSKDRecursosGenerales.resx</DependentUpon>
+    </Compile>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
     <Compile Include="Modulo16\AgregarEventoaCarritoFallidoException.cs" />
@@ -50,13 +59,17 @@
     <Compile Include="Modulo16\CarritosSinInventarioException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
     <Compile Include="Modulo16\ParametroIncorrectoException.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoggerException.cs" />
+    <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
+    <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
+    <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
@@ -69,6 +82,15 @@
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExcepcionesSKDRecursosGenerales.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExcepcionesSKDRecursosGenerales.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

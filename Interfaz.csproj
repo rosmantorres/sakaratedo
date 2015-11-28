@@ -185,6 +185,7 @@
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
+    <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
     <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
@@ -222,7 +223,7 @@
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
-    <Content Include="GUI\Modulo2\M2_Prueba.aspx" />
+    <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
@@ -1215,6 +1216,13 @@
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.designer.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo12\M12_DetalleCompetencia.aspx.cs">
+      <DependentUpon>M12_DetalleCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo12\M12_DetalleCompetencia.aspx.designer.cs">
+      <DependentUpon>M12_DetalleCompetencia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo12\M12_ListarCompetencias.aspx.cs">
       <DependentUpon>M12_ListarCompetencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1452,12 +1460,17 @@
       <DependentUpon>RestablecerContrasena.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo2\M2_Prueba.aspx.cs">
-      <DependentUpon>M2_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo2\M2_GestionarRol.aspx.cs">
+      <DependentUpon>M2_GestionarRol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo2\M2_Prueba.aspx.designer.cs">
-      <DependentUpon>M2_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo2\M2_GestionarRol.aspx.designer.cs">
+      <DependentUpon>M2_GestionarRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo2\RecursosInterfazModulo2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosInterfazModulo2.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
@@ -1718,6 +1731,7 @@
     <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.designer.cs">
       <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Master\SKD.Master.cs">
       <DependentUpon>SKD.Master</DependentUpon>
@@ -1758,6 +1772,10 @@
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
