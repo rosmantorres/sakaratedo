@@ -65,6 +65,13 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.True(auxiliar);
         }
 
+        [Test]
+        public void PruebaListarEventos()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            Assert.IsNotNull(baseDeDatosEvento.ListarEventos());
+        }
+
         #endregion
     }
 }

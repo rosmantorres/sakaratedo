@@ -61,6 +61,114 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to costoEvento.
+        /// </summary>
+        internal static string AliasCostoEvento {
+            get {
+                return ResourceManager.GetString("AliasCostoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descripcionEvento.
+        /// </summary>
+        internal static string AliasDescripcionEvento {
+            get {
+                return ResourceManager.GetString("AliasDescripcionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to estadoEvento.
+        /// </summary>
+        internal static string AliasEstadoEvento {
+            get {
+                return ResourceManager.GetString("AliasEstadoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaFin.
+        /// </summary>
+        internal static string AliasFechaFin {
+            get {
+                return ResourceManager.GetString("AliasFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaInicio.
+        /// </summary>
+        internal static string AliasFechaInicio {
+            get {
+                return ResourceManager.GetString("AliasFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horaFin.
+        /// </summary>
+        internal static string AliasHoraFin {
+            get {
+                return ResourceManager.GetString("AliasHoraFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horaInicio.
+        /// </summary>
+        internal static string AliasHoraInicio {
+            get {
+                return ResourceManager.GetString("AliasHoraInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idEvento.
+        /// </summary>
+        internal static string AliasIdEvento {
+            get {
+                return ResourceManager.GetString("AliasIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreEvento.
+        /// </summary>
+        internal static string AliasNombreEvento {
+            get {
+                return ResourceManager.GetString("AliasNombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tipoEvento.
+        /// </summary>
+        internal static string AliasTipoEvento {
+            get {
+                return ResourceManager.GetString("AliasTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @costo.
         /// </summary>
         internal static string ParametroCostoEvento {
@@ -174,6 +282,15 @@ namespace DatosSKD.Modulo9 {
         internal static string ProcedimientoAgregarEvento {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_ConsultarEventos.
+        /// </summary>
+        internal static string ProcedimientoConsultarEventos {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarEventos", resourceCulture);
             }
         }
     }

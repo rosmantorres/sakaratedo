@@ -117,6 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AliasCostoEvento" xml:space="preserve">
+    <value>costoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna costo</comment>
+  </data>
+  <data name="AliasDescripcionEvento" xml:space="preserve">
+    <value>descripcionEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna descripcion</comment>
+  </data>
+  <data name="AliasEstadoEvento" xml:space="preserve">
+    <value>estadoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna estado evento</comment>
+  </data>
+  <data name="AliasFechaFin" xml:space="preserve">
+    <value>fechaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha fin</comment>
+  </data>
+  <data name="AliasFechaInicio" xml:space="preserve">
+    <value>fechaInicio</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio</comment>
+  </data>
+  <data name="AliasHoraFin" xml:space="preserve">
+    <value>horaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna hora fin</comment>
+  </data>
+  <data name="AliasHoraInicio" xml:space="preserve">
+    <value>horaInicio</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna hora inicio</comment>
+  </data>
+  <data name="AliasIdEvento" xml:space="preserve">
+    <value>idEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id evento</comment>
+  </data>
+  <data name="AliasNombreEvento" xml:space="preserve">
+    <value>nombreEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre</comment>
+  </data>
+  <data name="AliasTipoEvento" xml:space="preserve">
+    <value>tipoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna tipo evento</comment>
+  </data>
+  <data name="CodigoErrorFormato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error de Parseo</comment>
+  </data>
+  <data name="MensajeErrorFormato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mejsaje de error de parseo</comment>
+  </data>
   <data name="ParametroCostoEvento" xml:space="preserve">
     <value>@costo</value>
     <comment>Costo del Evento</comment>
@@ -167,6 +215,10 @@
   </data>
   <data name="ProcedimientoAgregarEvento" xml:space="preserve">
     <value>M9_AgregarEventoCompletoV1</value>
+    <comment>Nombre del SP a Ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarEventos" xml:space="preserve">
+    <value>M9_ConsultarEventos</value>
     <comment>Nombre del SP a Ejecutar</comment>
   </data>
 </root>
