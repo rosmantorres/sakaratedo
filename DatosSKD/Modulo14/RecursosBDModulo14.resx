@@ -279,4 +279,7 @@
     <value>M14_ProcedureModificarPlanilla</value>
     <comment>procedimiento que modifica una planilla</comment>
   </data>
+  <data name="ProcedureCambiarStatusPlanilla" xml:space="preserve">
+    <value>M14_CambioDeStatusPlanilla</value>
+  </data>
 </root>

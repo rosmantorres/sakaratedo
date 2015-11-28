@@ -19,6 +19,10 @@ namespace DatosSKD.Modulo14
 
 
         #region metodos
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<DominioSKD.Planilla> ConsultarPlanillasCreadas()
         {
             SqlConnection conect = con.Conectar();
@@ -56,6 +60,38 @@ namespace DatosSKD.Modulo14
 
                         return null;
                     }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    con.Desconectar(conect);
+                }
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idPlanilla"></param>
+        public Boolean CambiarStatus(int idPlanilla)
+        {
+            SqlConnection conect = con.Conectar();
+                try
+                {
+
+                    SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureCambiarStatusPlanilla, conect);
+                    sqlcom.CommandType = CommandType.StoredProcedure;
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroIdPlanilla,
+                                SqlDbType.Int));
+                    sqlcom.Parameters[RecursosBDModulo14.ParametroIdPlanilla].Value = idPlanilla;
+                    SqlDataReader leer;
+                    conect.Open();
+
+                    leer = sqlcom.ExecuteReader();
+                    return true;
                 }
                 catch (Exception ex)
                 {

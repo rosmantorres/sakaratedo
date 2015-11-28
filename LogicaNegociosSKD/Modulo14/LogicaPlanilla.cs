@@ -13,6 +13,10 @@ namespace LogicaNegociosSKD.Modulo14
     {
         private DatosSKD.Modulo14.BDPlanilla datos = new DatosSKD.Modulo14.BDPlanilla();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<DominioSKD.Planilla> ConsultarPlanillas()
         {
             return datos.ConsultarPlanillasCreadas();
@@ -28,6 +32,11 @@ namespace LogicaNegociosSKD.Modulo14
             listaTipoPlanilla = BDPlanilla.ObtenerTipoPlanilla();
 
             return listaTipoPlanilla;
+        }
+
+        public Boolean CambiarStatusPlanilla(int idPlanilla)
+        {
+            return datos.CambiarStatus(idPlanilla);
         }
 
         /// <summary>Para verificar si el registro fue correcto</summary>

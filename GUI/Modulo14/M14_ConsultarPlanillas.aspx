@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M14_ConsultarPlanillas.aspx.cs" Inherits="templateApp.GUI.Modulo14.M14ConsultarPlanillas" %>
+﻿<%@ Page EnableEventValidation="true" Language="C#"  MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M14_ConsultarPlanillas.aspx.cs" Inherits="templateApp.GUI.Modulo14.M14ConsultarPlanillas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -23,7 +23,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Gestión de Planillas</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Consultar Planillas</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoCentral" runat="server">
-   
+   <div id="alert" runat="server">
+    </div>
   <div class="row">
    <div class="col-xs-12">
      <div class="box">
@@ -34,10 +35,10 @@
          
           <div class="box-body table-responsive">
              
-          <table id="planillascreadas" class="table table-bordered table-striped dataTable">
+          <table id="planillascreadas" class="table table-bordered table-striped dataTable" accesskey="">
            <thead>
             <tr>
-                <th>ID</th>
+                <th id="key">ID</th>
                 <th>Nombre</th>
                 <th>Tipo de Planilla</th>
                 <th>Datos</th>
@@ -71,7 +72,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div>

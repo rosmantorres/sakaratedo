@@ -79,6 +79,16 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
+        ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
+        /// </summary>
+        internal static string BotonActivarPlanilla {
+            get {
+                return ResourceManager.GetString("BotonActivarPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -88,11 +98,21 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
+        ///   Busca una cadena traducida similar a &gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar1 {
             get {
                 return ResourceManager.GetString("BotonCerrar1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
+        ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
+        /// </summary>
+        internal static string BotonDesactivarPlanilla {
+            get {
+                return ResourceManager.GetString("BotonDesactivarPlanilla", resourceCulture);
             }
         }
         
@@ -120,6 +140,15 @@ namespace templateApp.GUI.Modulo14 {
         internal static string BotonModificarRegistro {
             get {
                 return ResourceManager.GetString("BotonModificarRegistro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada&quot;.
+        /// </summary>
+        internal static string BotonModificarSolicitud {
+            get {
+                return ResourceManager.GetString("BotonModificarSolicitud", resourceCulture);
             }
         }
         

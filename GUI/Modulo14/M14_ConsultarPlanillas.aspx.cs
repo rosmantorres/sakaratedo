@@ -23,6 +23,7 @@ namespace templateApp.GUI.Modulo14
                 List<DominioSKD.Planilla> listaPlanilla = LlenarTabla();
                 LlenarInformacion(listaPlanilla);
             }
+            
             string exito = Request.QueryString["idPlan"];
             if (exito != null)
                 LlamarVentana_Click();
@@ -42,8 +43,12 @@ namespace templateApp.GUI.Modulo14
                 this.tabla.Text += RecursoInterfazModulo14.AbrirTD + plani.Status.ToString() + RecursoInterfazModulo14.CerrarTD;
                 this.tabla.Text += RecursoInterfazModulo14.AbrirTD;
                 this.tabla.Text += RecursoInterfazModulo14.BotonInfo + plani.ID + RecursoInterfazModulo14.BotonCerrar;
-                this.tabla.Text += RecursoInterfazModulo14.BotonModificar + plani.ID +RecursoInterfazModulo14.Nombre+ plani.Nombre +RecursoInterfazModulo14.Tipo+ plani.TipoPlanilla+ RecursoInterfazModulo14.BotonCerrar1;
-                this.tabla.Text += RecursoInterfazModulo14.BotonModificarRegistro + plani.ID + RecursoInterfazModulo14.Nombre + plani.Nombre + RecursoInterfazModulo14.Tipo + plani.TipoPlanilla + RecursoInterfazModulo14.BotonCerrar1;
+                this.tabla.Text += RecursoInterfazModulo14.BotonModificar + plani.ID +RecursoInterfazModulo14.Nombre+ plani.Nombre +RecursoInterfazModulo14.Tipo+ plani.TipoPlanilla+ RecursoInterfazModulo14.BotonCerrar;
+                this.tabla.Text += RecursoInterfazModulo14.BotonModificarRegistro + plani.ID + RecursoInterfazModulo14.Nombre + plani.Nombre + RecursoInterfazModulo14.Tipo + plani.TipoPlanilla + RecursoInterfazModulo14.BotonCerrar;
+                if (plani.Status)
+                    this.tabla.Text += RecursoInterfazModulo14.BotonActivarPlanilla + plani.ID + RecursoInterfazModulo14.BotonCerrar;
+                else
+                    this.tabla.Text += RecursoInterfazModulo14.BotonDesactivarPlanilla + plani.ID + RecursoInterfazModulo14.BotonCerrar;
                 this.tabla.Text += RecursoInterfazModulo14.CerrarTD;
                 this.tabla.Text += RecursoInterfazModulo14.CerrarTR;
             }
@@ -65,6 +70,13 @@ namespace templateApp.GUI.Modulo14
             Response.Cookies.Add(aCookie);
             HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
         }
+
+
+        protected void CambioDeStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
