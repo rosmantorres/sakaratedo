@@ -133,6 +133,7 @@ namespace templateApp.GUI.Modulo16
 
                 //Agrego los botones
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD;
+
                 //Arreglar el boton info
                 this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + implemento.Id_Implemento+ 
                     M16_Recursointerfaz.BOTON_CERRAR;
