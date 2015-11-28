@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DominioSKD;
+using ExcepcionesSKD.Modulo15;
+using ExcepcionesSKD;
 using LogicaNegociosSKD.Modulo15;
 
 namespace templateApp.GUI.Modulo15
@@ -21,6 +23,16 @@ namespace templateApp.GUI.Modulo15
                 logicaImplemento.agregarInventarioLogica(implemento);
 
             }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+                throw ex;
+            }
+
             catch (Exception ex)
             {
                 throw ex;
@@ -40,6 +52,17 @@ namespace templateApp.GUI.Modulo15
                 logicaImplemento = new LogicaImplemento();
                 listaImplementos = logicaImplemento.listarInventarioLogica(dojo);
             }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
             catch (Exception ex)
             {
 
@@ -47,6 +70,7 @@ namespace templateApp.GUI.Modulo15
             }
             return listaImplementos;
         }
+
         #endregion
 
 
@@ -61,13 +85,26 @@ namespace templateApp.GUI.Modulo15
                 logicaImplemento = new LogicaImplemento();
                 listaImplementos = logicaImplemento.listarInventarioLogica2(dojo);
             }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+
             return listaImplementos;
         }
+
         #endregion
 
 
@@ -82,13 +119,27 @@ namespace templateApp.GUI.Modulo15
                 logicaImplemento = new LogicaImplemento();
                 implemento = logicaImplemento.implementoInventarioLogica(idImplemento);
             }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
+
             catch (Exception ex)
             {
 
                 throw ex;
             }
+
             return implemento;
         }
+
         #endregion
 
 
@@ -102,15 +153,30 @@ namespace templateApp.GUI.Modulo15
                 logicaImplemento.eliminarInventarioLogica(idInventario);
 
             }
-            catch (Exception ex)
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ImplementoSinIDException ex)
             {
 
                 throw ex;
 
             }
-        
-        
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
+
         }
+
+        
+       
         #endregion
 
         #region modificarInventarioInterfaz 
@@ -125,8 +191,20 @@ namespace templateApp.GUI.Modulo15
                 logicaImplemento.modificarInventarioLogica(implemento);
 
             }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
+
             catch (Exception ex)
             {
+
                 throw ex;
             }
 

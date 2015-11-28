@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesSKD.Modulo15;
 
+using ExcepcionesSKD;
 using DatosSKD.Modulo15;
 using DominioSKD;
 
@@ -24,14 +26,25 @@ namespace LogicaNegociosSKD.Modulo15
 
         #region agregarInventarioLogica
         public void agregarInventarioLogica(Implemento implemento) {
-            try {
+            try
+            {
 
                 ConexionBaseDatos.agregarInventarioDatos(implemento);
-            
+
             }
-            
- 
-            catch(Exception ex){
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+        
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+                throw ex;
+            }
+
+            catch (Exception ex)
+            {
                 throw ex;
             }
         
@@ -42,14 +55,27 @@ namespace LogicaNegociosSKD.Modulo15
         #region listarInventarioLogica
         public List<Implemento> listarInventarioLogica(Dojo dojo)
         {
-                try
-                {
-                    listaImplementos = ConexionBaseDatos.listarInventarioDatos(dojo);
-                }
-                catch (Exception ex) {
+            try
+            {
+                listaImplementos = ConexionBaseDatos.listarInventarioDatos(dojo);
+            }
 
-                    throw ex;
-                }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
                 return listaImplementos;
         }
         #endregion
@@ -62,11 +88,23 @@ namespace LogicaNegociosSKD.Modulo15
             {
                 listaImplementos = ConexionBaseDatos.listarInventarioDatos2(dojo);
             }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+            
             return listaImplementos;
         }
         #endregion
@@ -80,11 +118,24 @@ namespace LogicaNegociosSKD.Modulo15
             {
                 implemento= ConexionBaseDatos.implementoInventarioDatos(idImplemento);
             }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+
+            }
+
             catch (Exception ex)
             {
 
                 throw ex;
             }
+            
             return implemento;
         }
         #endregion
@@ -99,11 +150,23 @@ namespace LogicaNegociosSKD.Modulo15
                 ConexionBaseDatos.eliminarInventarioDatos(idInventario);
               
             }
-            catch(Exception ex){
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ImplementoSinIDException ex)
+            {
 
                 throw ex;
-            
+
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         
         
         
@@ -124,11 +187,24 @@ namespace LogicaNegociosSKD.Modulo15
                 ConexionBaseDatos.modificarInventarioDatos(implemento);
 
             }
-            catch (Exception ex)
+
+            catch (ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
 
+                throw ex;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
         #endregion
     }
