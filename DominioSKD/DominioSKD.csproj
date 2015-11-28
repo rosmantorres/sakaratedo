@@ -41,9 +41,11 @@
   <ItemGroup>
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
+    <Compile Include="Cinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Diseño.cs" />
+    <Compile Include="Dojo.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Organizacion.cs" />
