@@ -10,6 +10,7 @@ namespace DominioSKD
     {
         private int id_dojo;
 
+       //prueba
         public Dojo() { }
 
         public Dojo(int id_dojo) {
