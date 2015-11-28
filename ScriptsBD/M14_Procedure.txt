@@ -1,0 +1,256 @@
+-------------------------------Procedure Módulo 14----------------------------
+
+----------------Listar los tipo de planillas-----------------
+
+CREATE PROCEDURE M14_Procedure_ListarTipoPlanilla
+	
+AS
+ BEGIN
+	SELECT tip_id , tip_nombre
+    FROM TIPO_PLANILLA;
+ END;
+GO
+
+----------------AGREGAR DATOS Y PLANILLA---------------------
+CREATE PROCEDURE M14_ProcedureAgregarDatoPlanilla
+	@pla_nombre [varchar](100),
+	@dat_nombre [varchar](100)
+	
+
+
+as
+ begin
+     
+   --insertar datos y planilla--
+    INSERT INTO PLA_DAT(DATO_dat_id,PLANILLA_pla_id) 
+	VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),(select MAX(pla_id) from PLANILLA where pla_nombre=@pla_nombre));  
+
+ end;
+GO
+
+---------------AGREGAR PLANILLA------------------------------
+CREATE PROCEDURE M14_ProcedureAgregarPlanilla
+	@pla_nombre [varchar] (100),
+	@pla_status [bit],
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+  
+    INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+GO
+
+------------------AGREGAR TIPO PLANILLA------------------------
+CREATE PROCEDURE M14_ProcedureAgregarTipoPlanilla
+	@tip_nombre [varchar] (100)
+
+as
+ begin
+  
+    INSERT INTO TIPO_PLANILLA(tip_nombre) 
+	VALUES(@tip_nombre); 
+
+ end;
+GO
+
+----------------Obtener Datos----------------------------------
+CREATE PROCEDURE M14_ProcedureDatosPlanilla
+	@pla_nombre [varchar] (100),
+	@pla_status [bit],
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+
+    INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+GO
+
+-------------------Listar Datos-------------
+CREATE PROCEDURE M14_Procedure_ListarDatos
+	
+AS
+ BEGIN
+	SELECT dat_nombre
+    FROM Dato;
+ END;
+GO
+
+-------------------------------Diseño---------------------------------------
+CREATE PROCEDURE M14_AgregarDiseño
+		 
+		@dis_contenido   [varchar](8000),
+		@PLANILLA_pla_id  int
+AS 
+BEGIN
+		INSERT INTO DISEÑO(dis_contenido, PLANILLA_pla_id)
+	    VALUES(@dis_contenido, @PLANILLA_pla_id)
+
+END;
+GO
+
+CREATE PROCEDURE M14_ConsultarDiseño
+	
+	@PLANILLA_pla_id [int]	
+	   
+AS
+ BEGIN
+	
+	SELECT D.dis_id, D.dis_contenido
+	FROM DISEÑO D
+	WHERE D.PLANILLA_pla_id = @PLANILLA_pla_id
+ END
+GO
+
+CREATE PROCEDURE M14_ModificarDiseño
+	@dis_id int,
+	@dis_contenido [varchar](8000)
+AS
+BEGIN
+	UPDATE DISEÑO 
+	    SET dis_contenido = @dis_contenido
+		where dis_id=@dis_id
+END;
+GO
+
+
+-------------------------------------------Planilla----------------------------------
+CREATE PROCEDURE M14_ConsultarPlanillasCreadas
+AS
+BEGIN
+	SELECT P.pla_id, P.pla_nombre, P.pla_status, T.tip_nombre, T.tip_id
+	FROM PLANILLA p, TIPO_PLANILLA T
+	WHERE P.TIPO_PLANILLA_tip_id=T.tip_id
+END
+GO
+
+------------------------------------------Solicitud Planilla----------------------------
+CREATE PROCEDURE M14_InsertarSolicitudPlanilla
+		@sol_pla_fecha_creacion          [date],
+		@sol_pla_fecha_retiro            [date],
+		@sol_pla_fecha_reincorporacion   [date],
+		@sol_pla_motivo                  [varchar](1000),
+		@PLANILLA_pla_id                 int,
+		@INSCRIPCION_ins_id              int,
+		@PERSONA_per_id                  int
+AS 
+BEGIN
+		INSERT INTO SOLICITUD_PLANILLA(sol_pla_fecha_creacion, sol_pla_fecha_retiro,
+		sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id,
+		PERSONA_per_id)
+	    VALUES(@sol_pla_fecha_creacion, @sol_pla_fecha_retiro,
+		@sol_pla_fecha_reincorporacion,@sol_pla_motivo,@PLANILLA_pla_id,@INSCRIPCION_ins_id,
+		@PERSONA_per_id)
+
+END;
+GO
+
+----------------------------Consultar planilla solicitada-----------------------
+CREATE PROCEDURE M14_ConsultarSolicitudPlanilla
+		@mat_identificador      [varchar](50)
+AS 
+BEGIN
+		SELECT S.sol_pla_fecha_creacion, S.sol_pla_fecha_retiro,
+		S.sol_pla_fecha_reincorporacion,S.sol_pla_motivo,S.PLANILLA_pla_id,S.INSCRIPCION_ins_id,
+		S.PERSONA_per_id, E.eve_nombre, C.comp_nombre
+		FROM SOLICITUD_PLANILLA S, INSCRIPCION I, EVENTO E, COMPETENCIA C
+		WHERE (SELECT M.PERSONA_per_id
+		        FROM  MATRICULA M
+				WHERE M.mat_identificador=@mat_identificador)= S.PERSONA_per_id AND 
+		       (I.EVENTO_eve_id= E.eve_id OR C.comp_id=I.COMPETENCIA_comp_id)
+	    
+
+END;
+GO
+
+---------------------Selencionar el id de tipo panilla----------------------
+
+CREATE PROCEDURE M14_Procedure_IdTipoPlanilla
+	
+	@tip_nombre [varchar] (100),
+	@tip_id [int] OUTPUT
+AS
+ BEGIN
+	SELECT @tip_id= tip_id
+    FROM TIPO_PLANILLA
+	where tip_nombre=@tip_nombre;
+	RETURN
+ END;
+GO
+
+------------agregar datos y planillas------------------------------------
+
+--PROCEDURE AGREGAR DATOS Y PLANILLA ID--
+CREATE PROCEDURE M14_ProcedureAgregarDatoPlanillaID
+	@pla_id [int],
+	@dat_nombre [varchar](100)
+
+as
+ begin
+     
+    INSERT INTO PLA_DAT(DATO_dat_id,PLANILLA_pla_id) 
+	VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),@pla_id);  
+
+ end;
+GO
+
+------------Cosultar datos de planilla por id--------------------------
+
+CREATE PROCEDURE M14_ProcedureConsultarDatosPlanillaID
+	@pla_id[int]
+AS
+ BEGIN
+	SELECT dat_nombre
+    FROM PLANILLA, DATO, PLA_DAT
+	WHERE pla_id=@pla_id and DATO_dat_id=dat_id and PLANILLA_pla_id=pla_id;
+ END;
+GO
+
+------------------Consultar una planilla por ID----------------------
+
+CREATE PROCEDURE M14_ProcedureConsultarPlanillaID
+	@pla_id[int]
+AS
+ BEGIN
+	SELECT pla_nombre,pla_status,tip_nombre
+    FROM PLANILLA, TIPO_PLANILLA
+	WHERE pla_id=@pla_id and tip_id=TIPO_PLANILLA_tip_id;
+ END;
+GO
+------Eliminar los datos de planilla----------------
+
+--PROCEDURE ELIMINA DATOS DE LA PLAILLA--
+CREATE PROCEDURE M14_ProcedureEliminarDatosPlanilla
+	@pla_id [int]
+
+as
+ begin
+		delete from PLA_DAT
+	where
+		PLANILLA_pla_id = @pla_id;
+ end;
+GO
+
+--PROCEDURE MODIFICAR UNA PLANILLA --
+CREATE PROCEDURE M14_ProcedureModificarPlanilla
+	@pla_id [int],
+	@pla_nombre [varchar](100),
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+		UPDATE PLANILLA
+	SET 
+		pla_nombre = @pla_nombre,
+		TIPO_PLANILLA_tip_id   = @TIPO_PLANILLA_tip_id
+	WHERE
+		pla_id = @pla_id;
+ end;
+GO
+
+---------------FIN PROCEDURE MODULO 14----------------------
