@@ -41,6 +41,9 @@
   <ItemGroup>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
+    <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
+    <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
+    <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
@@ -49,7 +52,6 @@
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo16\" />
