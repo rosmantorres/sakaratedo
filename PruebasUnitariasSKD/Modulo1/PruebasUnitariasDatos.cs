@@ -29,6 +29,16 @@ namespace PruebasUnitariasSKD.Modulo1.Datos
             Assert.AreEqual(True,true);
 
         }
+        // Prueba unitaria del metodo ValidarCorreoUsuario(string correo_usuario)
+
+        [Test]
+        public void PruebaValidarCorreoUsuario()
+        {
+
+            bool True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.pruebaCorrectoCorreo);
+            Assert.AreEqual(True, true);
+
+        }
         // Prueba unitaria del metodo  ObtenerUsuario(string usuario)
         [Test]
         public void PruebaObtenerUsuario()
