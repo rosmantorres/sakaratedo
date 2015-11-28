@@ -33,6 +33,7 @@ namespace PruebasUnitariasSKD.Modulo9
             Categoria categoria = new Categoria(15,16,"verde","amarillo","masculino");
             TipoEvento tipoEvento = new TipoEvento(1,"Pase de Cinta");
             Ubicacion ubicacion = new Ubicacion("10.499607", "66.788419", "Caracas", "Miranda","NULL");
+            ubicacion.Id_ubicacion = 1;
             elEvento = new Evento();
             elEvento.Nombre = "Prueba Unitaria";
             elEvento.Descripcion = "Pruebas Unitarias";
