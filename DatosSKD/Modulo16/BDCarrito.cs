@@ -62,7 +62,7 @@ namespace DatosSKD.Modulo16
                     parametros.Add(parametro);
 
                     //Seteamos el id del implemento
-                    elInventario.Id_implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
+                    elInventario.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
 
                     //Obtengo la informacion de los inventarios
                     conexion = new BDConexion();
@@ -72,11 +72,12 @@ namespace DatosSKD.Modulo16
                     //Por cada ID obtengo su informacion correspondiente
                     foreach (DataRow row2 in dt2.Rows)
                     {
-                        elInventario.Imagen = row2[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
-                        elInventario.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
-                        elInventario.Tipo = row2[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
-                        elInventario.Marca = row2[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
-                        elInventario.Precio = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());                        
+                        elInventario.Imagen_implemento = row2[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
+                        elInventario.Nombre_Implemento = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                        elInventario.Tipo_Implemento = row2[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
+                        elInventario.Marca_Implemento = row2[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
+                        elInventario.Precio_Implemento = int.Parse(
+                            row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());                        
                     }
 
                     //Agrego a la lista

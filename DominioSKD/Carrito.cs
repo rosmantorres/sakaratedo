@@ -100,7 +100,7 @@ namespace DominioSKD
             {
                 //Buscamos en la lista ese implemento que tenga ese id y borramos
                 foreach (Implemento aux in this.ListaImplemento.Reverse<Implemento>())
-                    if (aux.Id_implemento == objetoBorrar)
+                    if (aux.Id_Implemento == objetoBorrar)
                         this.ListaImplemento.Remove(aux);
                 respuesta = true;
             }
