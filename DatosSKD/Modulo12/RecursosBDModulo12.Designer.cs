@@ -268,6 +268,51 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M12_BuscarIDCompetencia.
+        /// </summary>
+        internal static string BuscarIDCompetencia {
+            get {
+                return ResourceManager.GetString("BuscarIDCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M12_BuscarNombreCompetencia.
+        /// </summary>
+        internal static string BuscarNombreCompetencia {
+            get {
+                return ResourceManager.GetString("BuscarNombreCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_006.
+        /// </summary>
+        internal static string Codigo_Competencia_Existente {
+            get {
+                return ResourceManager.GetString("Codigo_Competencia_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_005.
+        /// </summary>
+        internal static string Codigo_Competencia_Inexistente {
+            get {
+                return ResourceManager.GetString("Codigo_Competencia_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M12_ConsultarCompetencias.
         /// </summary>
         internal static string ConsultarCompetencias {
@@ -282,6 +327,42 @@ namespace DatosSKD.Modulo12 {
         internal static string ConsultarCompetenciasXId {
             get {
                 return ResourceManager.GetString("ConsultarCompetenciasXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre de las competencias debe ser único, la competencia ya existe.
+        /// </summary>
+        internal static string Mensaje_Competencia_Existente {
+            get {
+                return ResourceManager.GetString("Mensaje_Competencia_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La competencia no existe.
+        /// </summary>
+        internal static string Mensaje_Competencia_Inexistente {
+            get {
+                return ResourceManager.GetString("Mensaje_Competencia_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M12_ModificarCompetencia.
+        /// </summary>
+        internal static string ModificarCompetencia {
+            get {
+                return ResourceManager.GetString("ModificarCompetencia", resourceCulture);
             }
         }
         
@@ -430,6 +511,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @numCompetencia.
+        /// </summary>
+        internal static string ParamSalidaNumCompetencia {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @sexo.
         /// </summary>
         internal static string ParamSexo {
@@ -453,6 +543,15 @@ namespace DatosSKD.Modulo12 {
         internal static string ParamTipoCompetencia {
             get {
                 return ResourceManager.GetString("ParamTipoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         
