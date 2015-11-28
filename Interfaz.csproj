@@ -67,10 +67,6 @@
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\DataBase.mdf" />
-    <Content Include="App_Data\DataBase_log.ldf">
-      <DependentUpon>DataBase.mdf</DependentUpon>
-    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
