@@ -61,7 +61,7 @@ namespace DatosSKD {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T_00_001.
+        ///   Looks up a localized string similar to SKD_00_001.
         /// </summary>
         internal static string Codigo {
             get {
@@ -70,7 +70,7 @@ namespace DatosSKD {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T_00_003.
+        ///   Looks up a localized string similar to SKD_00_003.
         /// </summary>
         internal static string Codigo_Error_Desconexion {
             get {
@@ -79,7 +79,7 @@ namespace DatosSKD {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T_00_02.
+        ///   Looks up a localized string similar to SKD_00_02.
         /// </summary>
         internal static string Codigo_Parametro_Errado {
             get {
@@ -102,6 +102,15 @@ namespace DatosSKD {
         internal static string Mensaje_Error_Desconexion {
             get {
                 return ResourceManager.GetString("Mensaje_Error_Desconexion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No se pudo completar la operacion.
+        /// </summary>
+        internal static string Mensaje_Generico_Error {
+            get {
+                return ResourceManager.GetString("Mensaje_Generico_Error", resourceCulture);
             }
         }
         
