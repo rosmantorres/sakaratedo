@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Codigo" xml:space="preserve">
-    <value>T_00_001</value>
+    <value>SKD_00_001</value>
     <comment>Codigo de error en la conexion con la BD</comment>
   </data>
   <data name="Codigo_Error_Desconexion" xml:space="preserve">
-    <value>T_00_003</value>
+    <value>SKD_00_003</value>
     <comment>Codigo de error al cerrar sesion de la BD</comment>
   </data>
   <data name="Codigo_Parametro_Errado" xml:space="preserve">
-    <value>T_00_02</value>
+    <value>SKD_00_02</value>
     <comment>Codigo de error cuando se coloca un parametro errado</comment>
   </data>
   <data name="Mensaje" xml:space="preserve">
@@ -135,6 +135,9 @@
   </data>
   <data name="Mensaje_Error_Desconexion" xml:space="preserve">
     <value>Error al Desconectarse de la Base de Datos</value>
+  </data>
+  <data name="Mensaje_Generico_Error" xml:space="preserve">
+    <value>No se pudo completar la operacion</value>
   </data>
   <data name="Mensaje_Parametro_Errado" xml:space="preserve">
     <value>Error en un parametro del stored procedure</value>

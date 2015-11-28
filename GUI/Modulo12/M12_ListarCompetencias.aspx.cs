@@ -71,8 +71,8 @@ namespace templateApp.GUI.Modulo12
                     {
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTR;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
-                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Organizacion.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.TipoCompetencia.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Organizacion.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Ubicacion.Ciudad.ToString() + ", " + c.Ubicacion.Estado.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Status.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD;
