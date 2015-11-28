@@ -8,8 +8,6 @@ namespace DominioSKD
 {
     class Dojo
     {
-
-
         #region atributos
 
         private int id_dojo;
