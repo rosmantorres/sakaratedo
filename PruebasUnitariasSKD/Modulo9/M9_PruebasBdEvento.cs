@@ -59,7 +59,9 @@ namespace PruebasUnitariasSKD.Modulo9
         public void PruebaCrearEvento()
         {
             DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
-            Assert.True(baseDeDatosEvento.CrearEvento(elEvento));
+            Boolean auxiliar = baseDeDatosEvento.CrearEvento(elEvento);
+            Console.Out.WriteLine(auxiliar);
+            Assert.True(auxiliar);
         }
 
         #endregion
