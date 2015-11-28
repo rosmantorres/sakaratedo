@@ -117,28 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AbrirTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="Codigo_Error_Log" xml:space="preserve">
+    <value>SKD_ExcLog</value>
+    <comment>Codigo de error de excepcion en el logger</comment>
   </data>
-  <data name="AbrirTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
-  </data>
-  <data name="BotonCerrar" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compEliminar=</value>
-  </data>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M12_DetalleCompetencia.aspx?compDetalle=</value>
-  </data>
-  <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx?compMod=</value>
-  </data>
-  <data name="CerrarTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
-  </data>
-  <data name="CerrarTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+  <data name="Mensaje_Error_Log" xml:space="preserve">
+    <value>Ocurrio un error escribiendo en el logger</value>
+    <comment>Mensaje de error</comment>
   </data>
 </root>

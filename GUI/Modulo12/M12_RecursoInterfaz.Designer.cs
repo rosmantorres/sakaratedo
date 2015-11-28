@@ -97,7 +97,7 @@ namespace templateApp.GUI.Modulo12 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M12_ListarCompetencias.aspx?compDetalle=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M12_DetalleCompetencia.aspx?compDetalle=.
         /// </summary>
         internal static string BotonInfo {
             get {

@@ -39,18 +39,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asistencia.cs" />
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
+    <Compile Include="Cinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Diseño.cs" />
+    <Compile Include="Dojo.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="HistorialCinta.cs" />
     <Compile Include="Horario.cs" />
+    <Compile Include="Implemento.cs" />
+    <Compile Include="Inscripcion.cs" />
     <Compile Include="Organizacion.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="RestriccionCompetencia.cs" />
+    <Compile Include="ResultadoAscenso.cs" />
+    <Compile Include="ResultadoKata.cs" />
+    <Compile Include="ResultadoKumite.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Ubicacion.cs" />

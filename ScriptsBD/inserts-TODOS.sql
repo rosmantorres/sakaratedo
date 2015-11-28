@@ -3599,3 +3599,818 @@ VALUES (
     'plain_administrador@gmail.com',
     0
 );
+
+-- INSERTS UBICACION --
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.499607', '-66.788419', 'Caracas', 'Miranda', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.062028', '-69.4328889', 'Barquisimeto', 'Lara', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.1727434', '-68.0642649', 'Valencia', 'Carabobo', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.2673453', '-67.6754515', 'Maracay', 'Aragua', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.6338776', '-71.8170448', 'Maracaibo', 'Zulia', null)
+go
+
+-- INSERTS TIPO_EVENTO --
+INSERT INTO [dbo].[TIPO_EVENTO] ([tip_nombre]) VALUES ('Pase de Cinta')
+go
+
+INSERT INTO [dbo].[TIPO_EVENTO] ([tip_nombre]) VALUES ('Seminario')
+go
+
+INSERT INTO [dbo].[TIPO_EVENTO] ([tip_nombre]) VALUES ('Entrenamiento Especial')
+go
+
+INSERT INTO [dbo].[TIPO_EVENTO] ([tip_nombre]) VALUES ('Clases Regulares')
+go
+
+-- INSERTS HORARIO --
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-15',2,4) -- Clases -- 
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-12-15','2016-02-02',5,1) -- Seminario --
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-11-15','2015-11-15',1,3) -- Pase de Cita --  
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-01-15','2016-01-15',2,4) -- Clase Especial -- 
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-15',3,6) -- Clases -- 
+go
+
+-- INSERTS EVENTO -- 
+
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',0,'Clases regulares del atleta que va los dias asignados',1,null,null,1,4,1)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento 2',2000,'Entrenammiento para Competencia',1,null,null,4,3,2)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Pase a negra',1150,'Pase de cinta de los atletas',1,null,null,3,1,1)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,null,null,2,2,1)
+go
+
+--------------------------------Para Obtener los ID de los roles-------
+
+/*
+SELECT rol_id from ROL where rol_nombre='Admin Sistema';
+SELECT rol_id from ROL where rol_nombre='Admin Organización';
+SELECT rol_id from ROL where rol_nombre='Admin Dojo';
+SELECT rol_id from ROL where rol_nombre='Entrenador';
+SELECT rol_id from ROL where rol_nombre='Atleta';
+SELECT rol_id from ROL where rol_nombre='Representante';
+*/
+
+--------------------------Inserts de Roles-----------------------------------
+
+INSERT INTO  ROL VALUES ('Admin Sistema','El administrador tiene acceso a todo el sistema sin restricción,con la capacidad de dar seguimiento a todo los procesos.' );
+INSERT INTO  ROL VALUES ('Admin Organización','El administrador de la organizacion se encarga de gestionar la organización a la cual esta asociado, actualizando agregando y descartando información correspondiente.');
+INSERT INTO  ROL VALUES ('Admin Dojo','El administrador del dojo es el encargado de llevar un seguimiento y tener al día la información relevante con respecto al dojo asociado.');
+INSERT INTO  ROL VALUES ('Entrenador','El entrenador lleva un seguimiento de los atletas y los eventos realizados en el dojo.');
+INSERT INTO  ROL VALUES ('Atleta','El atleta es la persona en formación que recibe clases en un dojo particular.');
+INSERT INTO  ROL VALUES ('Representante','El representante como su nombre lo indica es el encargado del atleta menor, con lo cual puede dar seguimiento a las actividades realizadas por el menor.');
+
+--------------------------Inserts Personas tipo AdminSistema (Magurno, Rosman)------------------------------
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+	per_nombre_usuario,
+	per_clave,
+	per_imagen
+) 
+VALUES (
+    'CEDULA-N',
+    12813521,
+    'Carlo',
+    'Magurno',
+    'Venezolano',
+    'Mariscos',
+    '3da. Av. de Montalban. Res. Maracaibo. Piso 4. Apto. 4b',
+    'M',
+    'A+',
+    '1983-05-21',
+    1,
+    77,
+    1.72,
+    'carloadmin',
+    '12345',
+	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo'),
+    '02126627843'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo'),
+    '04125536420'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo'),
+    'sistemaadministrador.generico@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo'),
+    'sistemaplain_administrador@gmail.com',
+    0
+);
+
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+	per_nombre_usuario,
+	per_clave
+) 
+VALUES (
+    'CEDULA-N',
+    15673280,
+    'Rosman',
+    'Torres',
+    'Venezolano',
+    'Mariscos',
+    '3da. Av. de los Palos Grandes. Res. Juanas. Piso 2. Apto. 2c',
+    'M',
+    'A+',
+    '1990-05-21',
+    1,
+    77,
+    1.72,
+    'rosmanadmin',
+    '12345'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'),
+    '02126626345'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'),
+    '04142156345'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'),
+    'sistemaadministrador2.generico@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'),
+    'sistemaplain_administrador2@gmail.com',
+    0
+);
+
+
+----------------------------------Inserts Tabla Persona_Rol----------------------
+
+
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo',
+SELECT rol_id from ROL where rol_nombre='Admin Sistema'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'
+SELECT rol_id from ROL where rol_nombre='Admin Sistema'
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel',
+SELECT rol_id from ROL where rol_nombre='Atleta'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo',
+SELECT rol_id from ROL where rol_nombre='Entrenador'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel',
+SELECT rol_id from ROL where rol_nombre='Entrenador'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham',
+SELECT rol_id from ROL where rol_nombre='Admin Dojo'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto',
+SELECT rol_id from ROL where rol_nombre='Admin Dojo'
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio',
+SELECT rol_id from ROL where rol_nombre='Admin Dojo'
+);
+
+-------------------------------------------------------INSERT_M14-------------------------------------------------------
+
+
+INSERT INTO TIPO_PLANILLA (tip_nombre,tip_descripcion) values ('RETIRO','Este tipo de planilla se puede solicitar cuando se hacen retiros por compentencias');
+INSERT INTO TIPO_PLANILLA (tip_nombre,tip_descripcion) values ('AUSENCIA','Este tipo de planilla se puede solicitar cuando se hacen ausencias temporales,prolongados, por campeonato y entrenamiento');
+INSERT INTO TIPO_PLANILLA (tip_nombre,tip_descripcion) values ('ASISTENCIA','Este tipo de planilla se puede solicitar cuando se va a faltar a una competencia');
+INSERT INTO TIPO_PLANILLA (tip_nombre,tip_descripcion) values ('PARTICIPACION','Este tipo de planilla se puede solicitar cuando se requiere de participacion en arbitraje');
+INSERT INTO TIPO_PLANILLA (tip_nombre,tip_descripcion) values ('ESPECIAL','Este tipo de planilla se puede solicitar cuando requiere otros permisos especiales');
+
+
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('RETIRO COMPETENCIA',1,1);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('AUSENCIA TEMPORAL',1,2);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('RETIRO PROLONGADO',0,2);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('RETIRO CAMPEONATO',0,2);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('RETIRO ENTRENAMIENTO',1,2);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('ASISTENCIA COMPETENCIA',1,3);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('PAGO INSCRIPCION',1,4);
+INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('PARTICIPACION',0,4);
+
+
+
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ATLETA','ATL');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('COMPETENCIA','COM');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('DOJO','DOJ');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('EVENTO','EVE');
+
+
+
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (1,1);
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (1,2);
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (1,3);
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,1);
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (3,1);
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (4,3);
+INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
+
+INSERT INTO DISEÑO (dis_contenido,PLANILLA_pla_id) values ('PHA+Jm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgPHN0cm9uZz4mbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwO1BsYW5pbGxhIGRlIEluc2NyaXBjaSZvYWN1dGU7bjwvc3Ryb25nPjwvcD4NCg0KPHA+Jm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICRwZXJfaW1hZ2VuPC9wPg0KDQo8cD4mbmJzcDs8L3A+DQoNCjx0YWJsZSBib3JkZXI9IjEiIGNlbGxwYWRkaW5nPSIxIiBjZWxsc3BhY2luZz0iMSIgc3R5bGU9IndpZHRoOjcwMHB4Ij4NCgk8Y2FwdGlvbj48c3Ryb25nPkRhdG9zIFBlcnNvbmFsZXM8L3N0cm9uZz48L2NhcHRpb24+DQoJPHRib2R5Pg0KCQk8dHI+DQoJCQk8dGQ+PHN0cm9uZz5Ob21icmU8L3N0cm9uZz48L3RkPg0KCQkJPHRkPiRwZXJfbm9tYnJlPC90ZD4NCgkJCTx0ZD48c3Ryb25nPkFwZWxsaWRvPC9zdHJvbmc+PC90ZD4NCgkJCTx0ZD4kcGVyX2FwZWxsaWRvPC90ZD4NCgkJPC90cj4NCgkJPHRyPg0KCQkJPHRkPjxzdHJvbmc+VGlwbyBkZSBEb2N1bWVudG88L3N0cm9uZz48L3RkPg0KCQkJPHRkPiRwZXJfdGlwb19kb2NfaWQ8L3RkPg0KCQkJPHRkPjxzdHJvbmc+RG9jdW1lbnRvIElkZW50aWRhZDwvc3Ryb25nPjwvdGQ+DQoJCQk8dGQ+JHBlcl9udW1fZG9jX2lkPC90ZD4NCgkJPC90cj4NCgkJPHRyPg0KCQkJPHRkPjxzdHJvbmc+TmFjaW9uYWxpZGFkPC9zdHJvbmc+PC90ZD4NCgkJCTx0ZD4kcGVyX25hY2lvbmFsaWRhZDwvdGQ+DQoJCQk8dGQ+PHN0cm9uZz5EaXJlY2NpJm9hY3V0ZTtuPC9zdHJvbmc+PC90ZD4NCgkJCTx0ZD4kcGVyX2RpcmVjY2lvbjwvdGQ+DQoJCTwvdHI+DQoJCTx0cj4NCgkJCTx0ZD48c3Ryb25nPlNleG88L3N0cm9uZz48L3RkPg0KCQkJPHRkPiRwZXJfc2V4bzwvdGQ+DQoJCQk8dGQ+PHN0cm9uZz5GZWNoYSBkZSBOYWNpbWllbnRvPC9zdHJvbmc+PC90ZD4NCgkJCTx0ZD4kcGVyX2ZlY2hhX25hY2ltaWVudG88L3RkPg0KCQk8L3RyPg0KCTwvdGJvZHk+DQo8L3RhYmxlPg0KDQo8dGFibGUgYm9yZGVyPSIxIiBjZWxscGFkZGluZz0iMSIgY2VsbHNwYWNpbmc9IjEiIHN0eWxlPSJ3aWR0aDo3MDBweCI+DQoJPGNhcHRpb24+DQoJPHA+Jm5ic3A7PC9wPg0KDQoJPHA+PHN0cm9uZz5EYXRvcyBkZWwgRG9qbzwvc3Ryb25nPjwvcD4NCgk8L2NhcHRpb24+DQoJPHRib2R5Pg0KCQk8dHI+DQoJCQk8dGQ+PHN0cm9uZz5Ob21icmU8L3N0cm9uZz48L3RkPg0KCQkJPHRkPiRkb2pfbm9tYnJlPC90ZD4NCgkJCTx0ZD48c3Ryb25nPlRlbCZlYWN1dGU7Zm9ubzwvc3Ryb25nPjwvdGQ+DQoJCQk8dGQ+JGRval90ZWxlZm9ubzwvdGQ+DQoJCTwvdHI+DQoJCTx0cj4NCgkJCTx0ZD48c3Ryb25nPlJpZjwvc3Ryb25nPjwvdGQ+DQoJCQk8dGQ+JGRval9yaWY8L3RkPg0KCQkJPHRkPjxzdHJvbmc+RW1haWw8L3N0cm9uZz48L3RkPg0KCQkJPHRkPiRkb2pfZW1haWw8L3RkPg0KCQk8L3RyPg0KCTwvdGJvZHk+DQo8L3RhYmxlPg0KDQo8cD4mbmJzcDs8L3A+DQo=',4);
+
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id ,PERSONA_per_id) values ('01/02/2015','11/02/2015','12/02/2015','ENFERMEDAD',3,1,1);
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id ,PERSONA_per_id) values ('23/08/2014','26/08/2014','27/09/2015','VACACIONES',4,2,1);
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id ,PERSONA_per_id) values ('21/12/2013','08/01/2014','09/01/2014','FAMILIAR',5,2,2);
+
+INSERT INTO ORGANIZACION(org_nombre,org_direccion,org_telefono,org_email,org_estado,ESTILO_est_id) VALUES('Seito Karate-do','Av 24, calle 8 edificio Morales, Altamira, Caracas',2123117754,'seitokaratedo@gmail.com','Distrito Federal',1);
+
+INSERT INTO ORGANIZACION(org_nombre,org_direccion,org_telefono,org_email,org_estado,ESTILO_est_id) VALUES('Clash Cobra-do','Av principal,  edificio Torrealba, Edo Falcon',2123118854,'clashcobrado@gmail.com','Falcon',1);
+
+INSERT INTO ORGANIZACION(org_nombre,org_direccion,org_telefono,org_email,org_estado,ESTILO_est_id) VALUES('Shotokan Org','Av 8, calle 8 local numero 12',2123457754,'seseikaratedo@gmail.com','Carabobo',2);
+
+INSERT INTO ORGANIZACION(org_nombre,org_direccion,org_telefono,org_email,org_estado,ESTILO_est_id) VALUES('Seito Karate','Av 21, calle 3 edificio , Altamira, Caracas',2123116854,'seitokarate@gmail.com','Distrito Federal',2);
+
+INSERT INTO ORGANIZACION(org_nombre,org_direccion,org_telefono,org_email,org_estado,ESTILO_est_id) VALUES('Sempai Karate','Av 20, calle 8 Local numero 35',2123156754,'seitokaratedo@gmail.com','Guarico',3);
+
+
+
+INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Cobra-do','Fusión entre Karate-Do y Kung Fu. Fundado por el Maestro Jesús López. Caracas-Venezuela.');
+
+INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Sistema libre de Karate','Combinación entre fusión entre Karate-Do, Taekwondo, y Kung Fu. Fundado por los Maestros Francisco Delgado y Roland Casanova en los años 80 en la Universidad Central de Venezuela - Caracas.');
+
+INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Shotokan','con numerosas variantes siendo la más conocida, la JKA');
+
+
+
+INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id) VALUES(1,1);
+
+INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id) VALUES(1,2);
+
+INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id) VALUES(2,2);
+
+INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id) VALUES(3,3);
+
+
+/* INSERTS DEL MODULO 8*/
+/*--------------------------------Restricciones de cambio de cinta--------------------------------M8---------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (1,"BLANCA A AMARILLA",3,0,0,2);
+    
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (2,"AMARILLA A NARANJA",5,8,0,3);
+    
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (3,"NARANJA A VERDE",7,20,0,4);
+    
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (4,"VERDE A AZUL",10,25,2,5);
+    
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (5,"AZUL A MARRON",10,30,4,6);
+    
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (6,"MARRON A MARRON",12,40,7,7);
+    
+    INSERT INTO dbo.RESTRICCION_CINTA (
+    res_cin_id,
+    res_cin_descripcion,
+    res_cin_tiemp_min,
+    res_cin_punt_min,
+    res_cin_horas_docent,
+    CINTA_cin_id
+    ) 
+    VALUES (7,"MARRON A NEGRA",12,50,9,8);
+
+    
+
+
+
+-- =========================================================================--
+-- Inserts RESTRICCION_COMPETENCIA                           M8               --
+-- =========================================================================--
+INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min], [res_com_edad_max], [res_com_sexo], [res_com_modalidad]) VALUES
+('Rest. Competencia de 12 a 17 años todas las cintas unisex Kata',12,17,'B','Todas');
+
+INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min], [res_com_edad_max], [res_com_sexo], [res_com_modalidad]) VALUES
+('Rest. Competencia de 6 a 11 años todas las cintas unisex Kata',6,11,'B','kata');
+
+INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min], [res_com_edad_max], [res_com_sexo], [res_com_modalidad]) VALUES
+('Rest. Competencia de 18 a 25 años todas las cintas unisex Kata',18,25,'B','Todas');
+-- =========================================================================--
+-- Inserts COMP_REST_COMP                                    M8               --
+-- =========================================================================--
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,1);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,2);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,3);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,4);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(2,1);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(2,2);
+
+-- =========================================================================--
+-- Inserts RC_CINTA                                       M8           --
+-- =========================================================================--
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,1);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,2);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,3);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,4);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,5);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,6);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,1);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,2);
+
+
+-- =========================================================================--
+-- Inserts RESTRICCION_EVENTO  (descripcion,edadMIN,edadMAX,sexo)    M8     --
+-- =========================================================================--
+insert into RESTRICCION_EVENTO values ('Rest. evento evento1 de 18 a 25 años solo masculino',18,25,'m');
+insert into RESTRICCION_EVENTO values ('Rest. evento evento2 de 18 a 20 años solo femenino',18,20,'f');
+insert into RESTRICCION_EVENTO values ('Rest. evento evento3 de 20 a 25 años sexo combinado',20,25,'c');
+insert into RESTRICCION_EVENTO values ('Rest. evento evento4 de 20 a 25 años sexo combinado',20,25,'c');
+
+-- =========================================================================--
+-- Inserts EVENTO_RESTRICCION  (evento id, restriccionEve id)        M8     --
+-- =========================================================================--
+insert into EVENTO_RESTRICCION values (1,1);
+insert into EVENTO_RESTRICCION values (2,3);
+insert into EVENTO_RESTRICCION values (3,2);
+insert into EVENTO_RESTRICCION values (4,4);
+
+-- =========================================================================--
+-- Inserts RH_CINTA   (restriccionEve id, cinta id)                  M8     --
+-- =========================================================================--
+-- FALTA INSERT DE CINTA PARA COMPLETAR --
+insert into RH_CINTA values (1,);
+insert into RH_CINTA values (1,);
+insert into RH_CINTA values (2,);
+insert into RH_CINTA values (2,);
+insert into RH_CINTA values (3,);
+insert into RH_CINTA values (4,);
+insert into RH_CINTA values (4,);
+
+
+-- =========================================================================--
+-- Inserts RESTRICCION_COMPETENCIA                                          --
+-- =========================================================================--
+INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min], [res_com_edad_max], [res_com_sexo], [res_com_modalidad]) VALUES
+('Rest. Competencia de 12 a 17 años todas las cintas unisex Kata',12,17,'B','Todas');
+
+INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min], [res_com_edad_max], [res_com_sexo], [res_com_modalidad]) VALUES
+('Rest. Competencia de 6 a 11 años todas las cintas unisex Kata',6,11,'B','kata');
+
+INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min], [res_com_edad_max], [res_com_sexo], [res_com_modalidad]) VALUES
+('Rest. Competencia de 18 a 25 años todas las cintas unisex Kata',18,25,'B','Todas');
+-- =========================================================================--
+-- Inserts COMP_REST_COMP                                                   --
+-- =========================================================================--
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,1);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,2);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,3);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(1,4);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(2,1);
+
+INSERT INTO [dbo].[COMP_REST_COMP] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,COMPETENCIA_comp_id) VALUES
+(2,2);
+
+-- =========================================================================--
+-- Inserts RC_CINTA                                                  --
+-- =========================================================================--
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,1);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,2);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,3);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(1,4);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,5);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,6);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,1);
+
+INSERT INTO [dbo].[RC_CINTA] (comp_rest_comp_id,RESTRICCION_COMPETENCIA_res_com_id,CINTA_cin_id) VALUES
+(2,2);
+
+INSERT INTO INSCRIPCION VALUES (1,,'17/12/1992',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (2,,'11/07/2000',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (3,,'02/01/1990',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (4,,'21/06/1989',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (5,,'04/04/1982',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (6,,'19/05/2000',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (7,,'21/11/1991',NULL,NULL);
+
+INSERT INTO INSCRIPCION VALUES (8,,'12/08/1988',NULL,NULL);
+
+/*Se deben agregar los ID de las personas, ya que para este momento
+no se contaba con esa informacion */
+
+-- INSERTS UBICACION --
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.499607', '-66.788419', 'Caracas', 'Miranda', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.062028', '-69.4328889', 'Barquisimeto', 'Lara', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.1727434', '-68.0642649', 'Valencia', 'Carabobo', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.2673453', '-67.6754515', 'Maracay', 'Aragua', null)
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.6338776', '-71.8170448', 'Maracaibo', 'Zulia', null)
+go
+
+-- INSERTS CATEGORIA --
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Blanca','Naranja','M')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Blanca','Naranja','F')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Azul Celeste','Purpura','M')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Azul Celeste','Purpura','F')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Naranja','Verde','M')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Naranja','Verde','F')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Amarilla','Purpura','M')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Amarilla','Purpura','F')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Azul Oscuro','Marron','M')
+go
+
+INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Azul Oscuro','Marron','F')
+go
+
+--COMPETENCIA--
+
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Ryu Kobudo', 1, 1, N'Por Iniciar', N'2016-10-25 00:00:00', N'2016-10-27 00:00:00', 3, 4, NULL,1500)
+go
+
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Kobudo', 2, 1, N'Por Iniciar', N'2016-09-01 00:00:00', N'2016-09-03 00:00:00', 1, 1, NULL,1100)
+go
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Doo Kan', 2, 0, N'Por Iniciar', N'2016-10-15 00:00:00', N'2016-10-18 00:00:00', 1, 2, 1,900)
+go
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Yodan Ryu', 1, 0, N'Por Iniciar', N'2016-05-20 00:00:00', N'2016-05-23 00:00:00', 2, 3, 1,1000)
+go
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Shito Ryu', 1, 0, N'Por Iniciar', N'2016-06-20 00:00:00', N'2016-06-23 00:00:00', 2, 3, 2,900)
+go
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Inoue Ha', 1, 0, N'Por Iniciar', N'2016-03-19 00:00:00', N'2016-05-21 00:00:00', 2, 3, 3,1200)
+go
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Shoosei Kai', 1, 0, N'Por Iniciar', N'2016-01-10 00:00:00', N'2016-05-11 00:00:00', 2, 3, 4,1800)
+go
+
+
+
+
+
+
+
+    
