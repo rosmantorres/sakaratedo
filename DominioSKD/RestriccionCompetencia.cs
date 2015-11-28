@@ -18,14 +18,14 @@ namespace DominioSKD
         private char sexo;
         private String modalidad;
         private List<Competencia> listaCompetencias;
-        //private List<Cintas> listaCintas;
+        private List<Cinta> listaCintas;
         #endregion
 
         #region Propiedades
         public int IdRestriccionComp
         {
             get { return idRestriccionComp; }
-            //set { idRestriccionComp = value; }
+            set { idRestriccionComp = value; }
         }
 
         public String Descripcion
@@ -77,11 +77,11 @@ namespace DominioSKD
             set { listaCompetencias = value; }
         }
 
-        //public List<Cinta> ListaCintas
-        //{
-        //    get { return listaCintas; }
-        //    set { listaCintas = value; }
-        //}
+        public List<Cinta> ListaCintas
+        {
+            get { return listaCintas; }
+            set { listaCintas = value; }
+        }
 
         #endregion
 
@@ -97,7 +97,7 @@ namespace DominioSKD
             sexo = new char();
             modalidad = String.Empty;
             listaCompetencias = null;
-            //listaCintas = null;
+            listaCintas = null;
         }
 
         public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, DateTime inputFechaEdadMax, char inputSexo, String inputModalidad)
@@ -111,7 +111,7 @@ namespace DominioSKD
             sexo = inputSexo;
             modalidad = inputModalidad;
             listaCompetencias = null;
-            //listaCintas = null;
+            listaCintas = null;
         }
         #endregion
     }
