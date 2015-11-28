@@ -6,10 +6,11 @@ Los inserts de personas dependen de que los de Dojo hayan sido realizados.
 Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes expresiones:
 --ADMINISTRADORES--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham')
-(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio')
 
 --ATLETAS--
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel')
@@ -3463,7 +3464,7 @@ INSERT INTO dbo.PERSONA (
 VALUES (
     'CEDULA-N',
     21424696,
-    'Carlos Alberto',
+    'Freddy Jose',
     'Suarez Romero',
     'Venezolano',
     'Mariscos',
@@ -3485,7 +3486,7 @@ INSERT INTO dbo.TELEFONO (
     tel_numero
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     '02124423694'
 );
 
@@ -3494,7 +3495,7 @@ INSERT INTO dbo.TELEFONO (
     tel_numero
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     '04124456790'
 );
 
@@ -3504,7 +3505,7 @@ INSERT INTO dbo.EMAIL (
     ema_principal
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     'administrador.generico@ucab.edu.ve',
     1
 );
@@ -3515,7 +3516,7 @@ INSERT INTO dbo.EMAIL (
     ema_principal
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     'plain_administrador@gmail.com',
     0
 );
