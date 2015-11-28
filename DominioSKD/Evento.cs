@@ -14,6 +14,7 @@ namespace DominioSKD
         private String nombre;
         private String descripcion;
         private float costo;
+        //private Persona persona;
         private Ubicacion ubicacion;
         private Categoria categoria;
         private TipoEvento tipoEvento;
@@ -36,6 +37,20 @@ namespace DominioSKD
             this.horario = horario;
             this.estado = estado;
         }
+
+        /*public Evento(int id, String nombre, String descripcion, float costo, Boolean estado ,Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
+        {
+            this.id = id;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.persona = persona;
+            this.costo = costo;
+            this.ubicacion = ubicacion;
+            this.categoria = categoria;
+            this.tipoEvento = tipoEvento;
+            this.horario = horario;
+            this.estado = estado;
+        }*/
 
         public Evento(int id, String nombre, String descripcion, float costo, Ubicacion ubicacion, TipoEvento tipoEvento, Horario horario)
         {
@@ -120,6 +135,11 @@ namespace DominioSKD
             set { estado = value; }
         }
 
+        /*public Persona Persona
+        {
+            get { return persona; }
+            set { persona = value; }
+        }*/
         #endregion
 
 
