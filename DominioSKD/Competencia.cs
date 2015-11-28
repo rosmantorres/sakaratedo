@@ -101,17 +101,7 @@ namespace DominioSKD
         #region constructores
         public Competencia()
         {
-            id_competencia    = 0;
-            nombre            = "";
-            tipoCompetencia   = "";
-            organizacionTodas = false;
-            status            = "";
-            categoria         = null;
-            ubicacion         = null;
-            organizacion      = null;
-            fechaInicio       = default(DateTime);
-            fechaFin          = default(DateTime);
-            costo             = 0;
+
         }
 
         public Competencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)

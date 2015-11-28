@@ -6,10 +6,11 @@ Los inserts de personas dependen de que los de Dojo hayan sido realizados.
 Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes expresiones:
 --ADMINISTRADORES--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham')
-(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio')
 
 --ATLETAS--
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel')
@@ -20,6 +21,20 @@ Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita')
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina')
 */
 
 INSERT INTO dbo.PERSONA (
@@ -36,10 +51,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -147,10 +162,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -241,10 +256,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-E',
@@ -335,10 +350,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -429,10 +444,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -540,10 +555,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -651,10 +666,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -745,10 +760,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -839,10 +854,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -933,10 +948,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1027,10 +1042,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1138,10 +1153,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1249,10 +1264,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1360,10 +1375,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1471,10 +1486,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1582,10 +1597,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1693,10 +1708,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1790,6 +1805,1562 @@ VALUES (
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    21424693,
+    'Maria Antonieta',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'maritonieta',
+    '12345',
+    'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA7-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    21424694,
+    'Victoria Isabella',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'vickybella',
+    '12345',
+    'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA8-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    21424632,
+    'Melissa Nathalie',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'melilie',
+    '12345',
+    'http://www.noupe.com/wp-content/uploads/2010/01/26-portraits.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AA9-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    14020471,
+    'Elizabeth Antonia',
+    'Jaramillo Do Couto',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'elidocouto',
+    '12345',
+    'http://www.wallcoo.net/photography/markus-j-grimm_portrait_photography_02/images/Color_portrait_photo_15971497.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'AAA-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    14020472,
+    'Marco Alejandro',
+    'Sanz Arcila',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'marcosanz',
+    '12345',
+    'https://pixabay.com/static/uploads/photo/2013/11/20/23/01/man-214200_960_720.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC1-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    14020474,
+    'Jose Gregorio',
+    'Sanz Arcila',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'goyito',
+    '12345',
+    'https://c1.staticflickr.com/3/2835/9965420034_1b7450e257.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC2-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    14020475,
+    'Luis Armando',
+    'Pereira Alfonzo',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'armandito',
+    '12345',
+    'https://pixabay.com/static/uploads/photo/2015/01/16/15/01/man-601560_960_720.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC3-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    14020476,
+    'Federico Ernesto',
+    'Pereira Alfonzo',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'ernestof',
+    '12345',
+    'https://c1.staticflickr.com/3/2222/2088987724_f4f58e7aa7.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC4-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-E',
+    14086743,
+    'Liu Wa',
+    'Ping Hua',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'M',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'chinitowa',
+    '12345',
+    'https://pixabay.com/static/uploads/photo/2014/11/19/10/52/man-537136_960_720.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC5-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    4818341,
+    'Marta Carolina',
+    'Huertas Moncada',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'martica',
+    '12345',
+    'http://img.whitezine.com/Thomas-Lavelle-Portrait-Woman.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC6-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    4818342,
+    'Patricia Elena',
+    'Huertas Moncada',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'elenita',
+    '12345',
+    'https://pixabay.com/static/uploads/photo/2015/03/04/19/41/woman-659348_960_720.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC7-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    4818343,
+    'Neolida Margarita',
+    'Huertas Moncada',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'neomar',
+    '12345',
+    'http://digital-art-gallery.com/oid/21/632x833_5536_Alexz_Johnson_portrait_2d_realism_girl_portrait_realistic_beauty_woman_picture_image_digital_art.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC8-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    4818344,
+    'Nora Margarita',
+    'Lopez Villarroel',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'norita',
+    '12345',
+    'http://hd.wallpaperswide.com/thumbs/beautiful_woman_portrait-t2.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'EFC9-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+
+INSERT INTO dbo.PERSONA (
+    per_tipo_doc_id,
+    per_num_doc_id,
+    per_nombre,
+    per_apellido ,
+    per_nacionalidad,
+    per_alergias,
+    per_direccion,
+    per_sexo,
+    per_tipo_sangre,
+    per_fecha_nacimiento,
+    per_activo,
+    per_peso,
+    per_estatura,
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
+) 
+VALUES (
+    'CEDULA-N',
+    4818345,
+    'Sabrina',
+    'Flores Cisneros',
+    'Venezolano',
+    'Mariscos',
+    '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
+    'F',
+    'A+',
+    '1993-05-21',
+    1,
+    77,
+    1.72,
+    'norita',
+    '12345',
+    'http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/gorgeous-woman-portrait-anna-omelchenko.jpg',
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+    '02124423694'
+);
+
+INSERT INTO dbo.TELEFONO (
+    PERSONA_per_id,
+    tel_numero
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+    '04124456790'
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+    'ucab.genericoo@ucab.edu.ve',
+    1
+);
+
+INSERT INTO dbo.EMAIL (
+    PERSONA_per_id,
+    ema_email,
+    ema_principal
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+    'generico.prueba@gmail.com',
+    0
+);
+
+INSERT INTO dbo.SOLICITUD_INSCRIPCION (
+    PERSONA_per_id,
+    DOJO_doj_id,
+    sol_inc_fecha_creacion,
+    sol_inc_fecha_actualizacion,
+    sol_inc_estado
+)
+VALUES (
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    GETDATE(),
+    GETDATE(),
+    'ACEPTADO'
+);
+
+INSERT INTO dbo.MATRICULA (
+    mat_identificador,
+    mat_fecha_creacion,
+    mat_activa,
+    mat_fecha_ultimo_pago,
+    PERSONA_per_id,
+    DOJO_doj_id
+) 
+VALUES (
+    'BBA1-CAF-CAFE',
+    GETDATE(),
+    1,
+    GETDATE(),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+);
+
+
 /* ADMINISTRADORES */
 
 INSERT INTO dbo.PERSONA (
@@ -1806,10 +3377,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -1885,15 +3456,15 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
     21424696,
-    'Carlos Alberto',
+    'Freddy Jose',
     'Suarez Romero',
     'Venezolano',
     'Mariscos',
@@ -1915,7 +3486,7 @@ INSERT INTO dbo.TELEFONO (
     tel_numero
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     '02124423694'
 );
 
@@ -1924,7 +3495,7 @@ INSERT INTO dbo.TELEFONO (
     tel_numero
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     '04124456790'
 );
 
@@ -1934,7 +3505,7 @@ INSERT INTO dbo.EMAIL (
     ema_principal
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     'administrador.generico@ucab.edu.ve',
     1
 );
@@ -1945,7 +3516,7 @@ INSERT INTO dbo.EMAIL (
     ema_principal
 )
 VALUES (
-    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+    (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
     'plain_administrador@gmail.com',
     0
 );
@@ -1964,10 +3535,10 @@ INSERT INTO dbo.PERSONA (
     per_activo,
     per_peso,
     per_estatura,
-	per_nombre_usuario,
-	per_clave,
-	per_imagen,
-	DOJO_doj_id
+    per_nombre_usuario,
+    per_clave,
+    per_imagen,
+    DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
