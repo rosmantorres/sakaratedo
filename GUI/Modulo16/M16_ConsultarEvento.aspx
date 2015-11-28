@@ -49,6 +49,7 @@
                     <th style="text-align:right">Id</th>
                     <th style="text-align:right">Nombre</th>
 					<th style="text-align:right">Costo</th>
+                    <th style="text-align:right">Descripcion</th>
 					<th style="text-align:right">Acciones</th> 
             </tr>
         </thead>
@@ -147,6 +148,31 @@
                      $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
+
+                 // Carga el modal con la informacion del evento de acuerdo al id
+                 $('#modal-info1').on('show.bs.modal', function (e) {
+
+                     $.ajax({
+                         cache: false,
+                         type: 'POST',
+                         url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/prueba',
+                         data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                         dataType: 'json',
+                         contentType: "application/json; charset=utf-8",
+
+                         success: function (data) {
+                             console.log(data);
+
+                             var aa = JSON.parse(data.d);
+
+                             $("#beta").val(aa.id);
+                             $("#beta1").val(aa.Nombre);
+                             $("#beta7").val(aa.Precio);
+                             $("#beta8").val(aa.descripcion);
+
+                         }
+                     });
+                 })
              });
         </script>
 

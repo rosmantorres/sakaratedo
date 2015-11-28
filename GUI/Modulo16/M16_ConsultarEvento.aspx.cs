@@ -16,8 +16,14 @@ namespace templateApp.GUI.Modulo16
         {
             ((SKD)Page.Master).IdModulo = "16";
 
+            String detalleString = Request.QueryString["impDetalle"];
 
-            #region Llenar Data Table Con Evento
+            if (detalleString != null)
+            {
+                llenarModalInfo(int.Parse(detalleString));
+            }
+
+        #region Llenar Data Table Con Evento
 
             Logicaevento logComp = new Logicaevento();
             if (!IsPostBack)
@@ -47,8 +53,28 @@ namespace templateApp.GUI.Modulo16
                 }
             }
 
+        }
             #endregion
 
+        #region Llamada para el Detalle del Evento por id
+        protected void llenarModalInfo(int Id_evento)
+        {
+            Evento elEvento = new Evento();
+            Logicaevento logica = new Logicaevento();
+            elEvento = logica.detalleEventoXId(Id_evento);
         }
+        #endregion
+
+        #region Llenado del Modal de Informacion del evento
+        [System.Web.Services.WebMethod]
+        public static string prueba(string id)
+        {
+            Evento elEvento = new Evento();
+            Logicaevento logica = new Logicaevento();
+            elEvento = logica.detalleEventoXId(int.Parse(id));
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elEvento);
+            return json;
+        }
+        #endregion
     }
 }

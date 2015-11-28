@@ -298,4 +298,8 @@
     <value>M16_CONSULTAR_MATRICULA_ID</value>
     <comment>Stored procedure que obtiene la informacion de la matricula dado su id</comment>
   </data>
+  <data name="DETALLAR_EVENTO" xml:space="preserve">
+    <value>M16_DETALLAREVENTO</value>
+    <comment>Store procedure que muestra los detalles de un evento en especifico</comment>
+  </data>
 </root>

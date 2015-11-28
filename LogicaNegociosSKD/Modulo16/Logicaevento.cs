@@ -52,6 +52,23 @@ namespace LogicaNegociosSKD.Modulo16
         }
 
 
+        /// <summary>
+        /// Metodo que devueve el detalle completo de un implemento en especifico recibiendo como parametro su id.
+        /// </summary>
+        /// <param name="Id_implemento">Indica el objeto a detallar</param>
+        /// <returns>Retorna un implemento en especifico</returns>
+        public DominioSKD.Evento detalleEventoXId(int Id_evento)
+        {
+            try
+            {
+                return BDEvento.DetallarEvento(Id_evento);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         #endregion
     }
 }
