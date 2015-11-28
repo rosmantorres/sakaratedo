@@ -11,9 +11,9 @@ using System.Configuration;
 
 namespace DatosSKD.Modulo1
 {
-    public class BDReestablecer
+    public class BDRestablecer
     {
-        public static bool ReestablecerContrasena(string usuarioId,string contraseña)
+        public static bool RestablecerContrasena(string usuarioId,string contraseña)
         {
             BDConexion laConexion;
             List<Parametro> parametros;

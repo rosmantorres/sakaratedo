@@ -1460,6 +1460,11 @@
     <Compile Include="GUI\Modulo2\M2_GestionarRol.aspx.designer.cs">
       <DependentUpon>M2_GestionarRol.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo2\RecursosInterfazModulo2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosInterfazModulo2.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1755,6 +1760,10 @@
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

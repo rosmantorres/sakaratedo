@@ -89,7 +89,7 @@ namespace templateApp.GUI.Modulo1
             try
             {
                // mensajeLogin( RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
-                new login().EnviarCorreo(CorreoDestino);
+                new logicaLogin().EnviarCorreo(CorreoDestino);
                 Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                     + RecursosInterfazModulo1.tipoInfo + "=" +
                     RecursosInterfazModulo1.parametroURLCorreoEnviado);
@@ -109,7 +109,7 @@ namespace templateApp.GUI.Modulo1
         {
             string correo = userIni.Value;
             string clave = passwordIni.Value;
-            string[] Respuesta = new login().iniciarSesion(correo, clave);
+            string[] Respuesta = new logicaLogin().iniciarSesion(correo, clave);
             if (Respuesta != null)
             {
                 Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];

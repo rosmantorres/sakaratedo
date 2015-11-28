@@ -79,6 +79,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Descripcion.
+        /// </summary>
+        internal static string AliasDescripcionRol {
+            get {
+                return ResourceManager.GetString("AliasDescripcionRol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a fecha_creacion.
         /// </summary>
         internal static string AliasFechaCreacion {

@@ -15,13 +15,15 @@ namespace DatosSKD.Modulo1
     {
         public static Cuenta ObtenerUsuario(string nombre_usuario)
         {
-            BDConexion laConexion;
+            BDConexion laConexion;//COnsultar la persona
+            BDConexion laConexion2;//Consultar los roles de la persona
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
                 laConexion = new BDConexion();
+                laConexion2 = new BDConexion();
                 parametros = new List<Parametro>();
                 Cuenta laCuenta = new Cuenta();
 
@@ -38,10 +40,11 @@ namespace DatosSKD.Modulo1
 
                     laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
                     laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();          
+                    laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();  
+        
                 }
 
-               DataTable dt1 = laConexion.EjecutarStoredProcedureTuplas(
+               DataTable dt1 = laConexion2.EjecutarStoredProcedureTuplas(
                RecursosBDModulo1.ConsultarRolesUsuario, parametros);
                List<Rol> listaRol = new List<Rol>();
                foreach (DataRow row in dt1.Rows)
@@ -50,6 +53,7 @@ namespace DatosSKD.Modulo1
                     Rol elRol = new Rol();
                     elRol.Id_rol =int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
                     elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
+                    elRol.Descripcion = row[RecursosBDModulo1.AliasDescripcionRol].ToString();
                     elRol.Fecha_creacion = (DateTime)row[RecursosBDModulo1.AliasFechaCreacion];
                     listaRol.Add(elRol);
                }
