@@ -19,10 +19,16 @@ namespace templateApp.GUI.Modulo16
             ((SKD)Page.Master).IdModulo = "16";
 
             String detalleString = Request.QueryString["impDetalle"];
+            String agregarCarritoString = Request.QueryString["compAgregar"];
 
             if (detalleString != null)
             {
                 llenarModalInfo(int.Parse(detalleString));
+            }
+
+            if (agregarCarritoString != null)
+            {
+               // agregarCompraCarrito(int.Parse(agregarCarritoString));
             }
 
         #region Llenar Data Table Con Inventario
@@ -38,16 +44,16 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Marca.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Tipo.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen_implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Marca_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Tipo_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO + c.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_CARRITO + c.Id_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }

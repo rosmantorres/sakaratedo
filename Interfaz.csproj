@@ -1288,16 +1288,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Carnet.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\DiseñoDefault.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DiseñoDefault.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\Inscripcion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Inscripcion.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
       <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
