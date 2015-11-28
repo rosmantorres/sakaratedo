@@ -312,7 +312,8 @@ namespace DatosSKD.Modulo16
             {
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, 
+                Parametro parametro = new Parametro();
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, 
                     SqlDbType.VarChar, tipoPago, false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, 

@@ -114,15 +114,19 @@ namespace templateApp.GUI.Modulo16
             carritoCompras = logicaCarrito.verCarrito(1);
 
             //Recorro La lista de los inventarios en el carrito para anexarlas al GRIDVIEW
-            foreach (Implemento inventario in carritoCompras.ListaImplemento)
+            foreach (Implemento implemento in carritoCompras.ListaImplemento)
             {
                 //Creo la fila de la tabla
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + inventario.Id_implemento +">";
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + implemento.Id_Implemento +">";
 
                 //Agrego los datos correspondientes de la tabla con sus botones
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Imagen + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Nombre + M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Precio + M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
+                    M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Nombre_Implemento + 
+                    M16_Recursointerfaz.CERRAR_TD;
+                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Precio_Implemento + 
+                    M16_Recursointerfaz.CERRAR_TD;
+
                 //     this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Marca + M16_Recursointerfaz.CERRAR_TD;
                // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Tipo + M16_Recursointerfaz.CERRAR_TD;
                 
@@ -130,8 +134,9 @@ namespace templateApp.GUI.Modulo16
                 //Agrego los botones
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD;
                 //Arreglar el boton info
-                this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + inventario.Id_implemento + M16_Recursointerfaz.BOTON_CERRAR;
-                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO + inventario.Id_implemento +
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + implemento.Id_Implemento+ 
+                    M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO + implemento.Id_Implemento +
                     M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla1.Text += M16_Recursointerfaz.CERRAR_TD;
 
