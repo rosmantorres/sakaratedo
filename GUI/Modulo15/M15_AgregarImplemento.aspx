@@ -103,13 +103,13 @@ Agregar Implemento
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
                         <select id="talla_implemento" name="talla_implemento" class="form-control" >
-                               <option value="1" >XS</option>
-                               <option value="2" >S</option>
-                               <option value="3" >M</option>
-                               <option value="4" >L</option>
-                               <option value="5" >XL</option>
-                               <option value="6" >XXL</option>
-                               <option value="7" >XXXL</option>
+                               <option value="XS" >XS</option>
+                               <option value="S" >S</option>
+                               <option value="M" >M</option>
+                               <option value="L" >L</option>
+                               <option value="XL" >XL</option>
+                               <option value="XXL" >XXL</option>
+                               <option value="XXXL" >XXXL</option>
                         </select>            
                       </div>
                       <br/>
