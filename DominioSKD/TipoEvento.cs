@@ -22,7 +22,8 @@ namespace DominioSKD
 
         public TipoEvento()
         {
-            // TODO: Complete member initialization
+            id = 0;
+            nombre = "";
         }
         #endregion
 

@@ -57,6 +57,20 @@ namespace DominioSKD
             get { return id_estilo; }
             set { id_estilo = value; }
         }
+
+       
+
+        public Organizacion(int elId, String elNombre)
+        {
+            id_organizacion = elId;
+            nombre = elNombre;
+        }
+
+        public Organizacion(String elNombre)
+        {
+            nombre = elNombre;
+        }
+
         public Organizacion()
         {
             id_organizacion = 0;
