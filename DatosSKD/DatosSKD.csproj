@@ -127,6 +127,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\BDRestriccionComepetencia.cs" />
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
