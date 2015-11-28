@@ -8,6 +8,8 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using DominioSKD;
+using ExcepcionesSKD;
+using System.Globalization;
 
 namespace DatosSKD.Modulo12
 {
@@ -132,13 +134,19 @@ namespace DatosSKD.Modulo12
                         mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Month;
                         anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Year;
                         fechaInicio = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
-                        laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
+                        //laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
+
+                        laCompetencia.FechaInicio = DateTime.ParseExact(fechaInicio, "mm/dd/yyyy", 
+                            CultureInfo.InvariantCulture);
 
                         diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Day;
                         mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Month;
                         anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Year;
                         fechaFin = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
-                        laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
+                        //laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
+
+                        laCompetencia.FechaFin = DateTime.ParseExact(fechaFin, "mm/dd/yyyy",
+                            CultureInfo.InvariantCulture);
 
                         laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
 
@@ -485,6 +493,7 @@ namespace DatosSKD.Modulo12
             }
             catch (SqlException ex)
             {
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
