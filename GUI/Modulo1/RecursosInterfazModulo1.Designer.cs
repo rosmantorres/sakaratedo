@@ -106,6 +106,60 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a true.
+        /// </summary>
+        internal static string parametroURLCorreoEnviado {
+            get {
+                return ResourceManager.GetString("parametroURLCorreoEnviado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a false.
+        /// </summary>
+        internal static string parametroURLCorreoFalla {
+            get {
+                return ResourceManager.GetString("parametroURLCorreoFalla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a user.
+        /// </summary>
+        internal static string parametroURLID {
+            get {
+                return ResourceManager.GetString("parametroURLID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a true.
+        /// </summary>
+        internal static string parametroURLReestablecerExito {
+            get {
+                return ResourceManager.GetString("parametroURLReestablecerExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a false.
+        /// </summary>
+        internal static string parametroURLReestablecerFalla {
+            get {
+                return ResourceManager.GetString("parametroURLReestablecerFalla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
         internal static string tipoErr {

@@ -21,6 +21,14 @@ namespace DominioSKD
         #endregion
 
         #region propiedades
+    
+        public int Dojo_Id
+        {
+            get { return id_dojo; }
+
+            set { id_dojo = value; }
+
+        }
 
         public int Id_dojo
         {
@@ -108,6 +116,10 @@ namespace DominioSKD
             this.logo_dojo = Logo;
             this.status_dojo = Status;
             this.ubicacion = ubicacion;
+        }
+        public Dojo(int id_dojo)
+        {
+            this.id_dojo = id_dojo;
         }
 
         #endregion

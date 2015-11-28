@@ -41,7 +41,7 @@ namespace templateApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session[RecursosInterfazMaster.sessionUsuarioCorreo]!=null)
+            if(Session[RecursosInterfazMaster.sessionUsuarioID]!=null)
             {
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
@@ -68,11 +68,15 @@ namespace templateApp
         /// </summary>
         protected void asignarUsuario()
         {
+            //aqui debo pedir el nombre,apellido y foto del usuario
 
-            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] + " "
-                + Session[RecursosInterfazMaster.sessionUsuarioApellido];
-            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] + " "
-                + Session[RecursosInterfazMaster.sessionUsuarioApellido];
+            imageUsuario.Src = imageUsuario.Src + "www.one2onephotography.ca/image/portrait/men/men-images-1.jpg";
+            imageTag.Src = imageTag.Src+"www.one2onephotography.ca/image/portrait/men/men-images-1.jpg";
+
+            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
+
+            //aqui va el nombre y apellido
+            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
             string[] roles = Session[RecursosInterfazMaster.sessionRoles].ToString().Split(char.Parse(RecursosInterfazMaster.splitRoles));
             int cont = 0;
             foreach (string perfil in roles)
@@ -149,8 +153,7 @@ namespace templateApp
         {
             Session.Remove(RecursosInterfazMaster.sessionRol);
             Session.Remove(RecursosInterfazMaster.sessionRoles);
-            Session.Remove(RecursosInterfazMaster.sessionUsuarioApellido);
-            Session.Remove(RecursosInterfazMaster.sessionUsuarioCorreo);
+            Session.Remove(RecursosInterfazMaster.sessionUsuarioID);
             Session.Remove(RecursosInterfazMaster.sessionUsuarioNombre);
             Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
         }

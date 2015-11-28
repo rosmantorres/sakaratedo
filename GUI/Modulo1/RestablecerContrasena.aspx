@@ -21,8 +21,8 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                <section class="login-form">
-                  <form  method="post" role="login" id="loginUser"  action="<%=Page.ResolveUrl("~/GUI/Modulo1/Index.aspx?Success=true")%>">
-                                 
+                  <form  method="post" role="login" id="loginUser" runat="server" >
+                                
                       <div>         
                             <img src="../../dist/img/logofinal.png" class="img-responsive" alt=""/>
                       
@@ -34,10 +34,16 @@
                          <strong>una(1) letra minuscula</strong> y <strong>un(1) numero.</strong>
                        </div>
                     <hr />
-                      <input  type="password" title="Al menos ocho caracteres, una letra mayúscula, una letra minúscula y un número" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="input-lg form-control" name="password1" onchange="form.password2.pattern = this.value;" id="password3" placeholder="Contraseña nueva" autocomplete="off"/>
-                     <input type="password" title="Las contraseñas introducidas no coinciden" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control input-lg" name="password2" id="password4" placeholder="Repetir Contraseña" required="" />
+                      <div id="p1" class="form-group">
+                      <input runat="server" type="password"  class="input-lg form-control" name="password1"  id="password3" placeholder="Contraseña nueva"  />
+                          <span class="glyphicon glyphicon-ok form-control-feedback" ></span>
+                      </div>
+                      <div id="p2" class="form-group">
+                     <input type="password" class="form-control input-lg" name="password2" id="password4" runat="server"  placeholder="Repetir Contraseña" />
+                        <span class="glyphicon glyphicon-ok form-control-feedback" ></span>
+                      </div>
                      <div class="pwstrength_viewport_progress"></div>
-                     <button type="submit" name="go" class="btn btn-lg btn-primary btn-block"  ><span class="glyphicon glyphicon-refresh" aria-hidden="true" runat="server"  > Restablecer </span></button>
+                     <button id="Button1" type="submit" name="go" class="btn btn-lg btn-primary btn-block"  runat="server" onServerClick="redireccionarInicio" disabled><span class="glyphicon glyphicon-refresh" aria-hidden="true"   > Restablecer </span></button>
                     </form>  
                 </section>
             </div>
@@ -45,6 +51,7 @@
          </div>
       </div>
       <!-- script references -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
       <script src="../../bootstrap/js/bootstrap.min.js"></script>
       <script src="js/RestablecerContraseña.js"></script>
    </body>
