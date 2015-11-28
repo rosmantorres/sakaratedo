@@ -78,9 +78,9 @@ Gesti&oacuten de Inventario
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                          <p><b>Tipo Implemento:</b></p>
                         <select id="tipo_implemento"  name="tipo_implemento" class="form-control" runat="server">
-                               <option value="1" >Vestimenta</option>
-                               <option selected value="2" >Accesorios</option>
-                               <option value="3" >Otros</option>
+                               <option value="Vestimenta" >Vestimenta</option>
+                               <option selected value="Accesorios" >Accesorios</option>
+                               <option value="Otros" >Otros</option>
                         </select>            
                       </div>
                       <br/>
@@ -123,13 +123,13 @@ Gesti&oacuten de Inventario
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
                        <select id="talla_implemento" name="talla_implemento" class="form-control" runat="server">
-                               <option value="1" >XS</option>
-                               <option value="2" >S</option>
-                               <option value="3" >M</option>
-                               <option value="4" >L</option>
-                               <option value="5" >XL</option>
-                               <option value="6" >XXL</option>
-                               <option value="7" >XXXL</option>
+                              <option value="XS" >XS</option>
+                               <option value="S" >S</option>
+                               <option value="M" >M</option>
+                               <option value="L" >L</option>
+                               <option value="XL" >XL</option>
+                               <option value="XXL" >XXL</option>
+                               <option value="XXXL" >XXXL</option>
                         </select>            
                       </div>
                       <br/>
