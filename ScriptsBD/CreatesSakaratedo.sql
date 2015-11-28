@@ -109,7 +109,7 @@ GO
 CREATE
   TABLE DATO
   (
-    dat_id          INTEGER NOT NULL ,
+    dat_id          INTEGER IDENTITY(1,1) NOT NULL ,
     dat_nombre      VARCHAR (100) NOT NULL ,
     dat_abreviatura VARCHAR (20) NOT NULL ,
     CONSTRAINT DATO_PK PRIMARY KEY CLUSTERED (dat_id)
@@ -149,7 +149,7 @@ CREATE
   TABLE DISEÑO
   (
     dis_id          INTEGER NOT NULL ,
-    dis_contenido   VARCHAR (500) NOT NULL ,
+    dis_contenido   TEXT NOT NULL ,
     PLANILLA_pla_id INTEGER NOT NULL ,
     CONSTRAINT DISEÑO_PK PRIMARY KEY CLUSTERED (dis_id)
 WITH
@@ -558,7 +558,7 @@ GO
 CREATE
   TABLE PLANILLA
   (
-    pla_id     INTEGER NOT NULL ,
+    pla_id     INTEGER IDENTITY(1,1) NOT NULL ,
     pla_nombre VARCHAR (100) NOT NULL ,
     pla_status BIT NOT NULL ,
     DOJO_doj_id          INTEGER ,
@@ -577,7 +577,7 @@ GO
 CREATE
   TABLE PLA_DAT
   (
-    pd_id           INTEGER NOT NULL ,
+    pd_id           INTEGER IDENTITY(1,1) NOT NULL ,
     DATO_dat_id     INTEGER NOT NULL ,
     PLANILLA_pla_id INTEGER NOT NULL ,
     CONSTRAINT PLA_DAT_PK PRIMARY KEY CLUSTERED (pd_id, DATO_dat_id,
@@ -856,7 +856,7 @@ GO
 CREATE
   TABLE SOLICITUD_PLANILLA
   (
-    sol_pla_id                    INTEGER NOT NULL ,
+    sol_pla_id                    INTEGER IDENTITY(1,1) NOT NULL ,
     sol_pla_fecha_creacion        DATE NOT NULL ,
     sol_pla_fecha_retiro          DATE ,
     sol_pla_fecha_reincorporacion DATE ,
@@ -935,7 +935,7 @@ GO
 CREATE
   TABLE TIPO_PLANILLA
   (
-    tip_id          INTEGER NOT NULL ,
+    tip_id          INTEGER IDENTITY(1,1) NOT NULL UNIQUE ,
     tip_nombre      VARCHAR (100) NOT NULL ,
     tip_descripcion VARCHAR (150) ,
     CONSTRAINT TIPO_PLANILLA_PK PRIMARY KEY CLUSTERED (tip_id)
