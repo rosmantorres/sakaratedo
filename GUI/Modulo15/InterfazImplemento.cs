@@ -11,30 +11,14 @@ namespace templateApp.GUI.Modulo15
     {
 
         #region agregarInventarioInterfaz
-        public void agregarInventarioInterfaz(String nombre_implemento,
-                                          String tipo_implemento,
-                                          String marca_implemento,
-                                          String color_implemento,
-                                          String talla_implemento,
-                                          int dojo, int cantidad,
-                                          int stock_minimo,
-                                          String estatus_implemento,
-                                          double precio_implemento)
+        public void agregarInventarioInterfaz(Implemento implemento)
         {
 
             LogicaImplemento logicaImplemento=null;
             try
             {
                 logicaImplemento = new LogicaImplemento();
-                logicaImplemento.agregarInventarioLogica(nombre_implemento,
-                                                      tipo_implemento,
-                                                      marca_implemento,
-                                                      color_implemento,
-                                                      talla_implemento,
-                                                      dojo, cantidad,
-                                                      stock_minimo,
-                                                      estatus_implemento,
-                                                      precio_implemento);
+                logicaImplemento.agregarInventarioLogica(implemento);
 
             }
             catch (Exception ex)
@@ -46,7 +30,7 @@ namespace templateApp.GUI.Modulo15
         #endregion
 
         #region listarInventarioInterfaz
-        public List<Implemento> listarInventarioInterfaz()
+        public List<Implemento> listarInventarioInterfaz(Dojo dojo)
         {
             List<Implemento> listaImplementos = null;
             LogicaImplemento logicaImplemento = null;
@@ -54,7 +38,7 @@ namespace templateApp.GUI.Modulo15
             try
             {
                 logicaImplemento = new LogicaImplemento();
-                listaImplementos = logicaImplemento.listarInventarioLogica();
+                listaImplementos = logicaImplemento.listarInventarioLogica(dojo);
             }
             catch (Exception ex)
             {
@@ -67,7 +51,7 @@ namespace templateApp.GUI.Modulo15
 
 
         #region listarInventarioInterfaz2
-        public List<Implemento> listarInventarioInterfaz2()
+        public List<Implemento> listarInventarioInterfaz2(Dojo dojo)
         {
             List<Implemento> listaImplementos = null;
             LogicaImplemento logicaImplemento = null;
@@ -75,7 +59,7 @@ namespace templateApp.GUI.Modulo15
             try
             {
                 logicaImplemento = new LogicaImplemento();
-                listaImplementos = logicaImplemento.listarInventarioLogica2();
+                listaImplementos = logicaImplemento.listarInventarioLogica2(dojo);
             }
             catch (Exception ex)
             {
@@ -131,34 +115,14 @@ namespace templateApp.GUI.Modulo15
 
         #region modificarInventarioInterfaz 
 
-        public void modificarInventarioInterfaz(
-                                         int id_implemento,
-                                          String nombre_implemento,
-                                         String tipo_implemento,
-                                         String marca_implemento,
-                                         String color_implemento,
-                                         String talla_implemento,
-                                         int dojo, int cantidad,
-                                         int stock_minimo,
-                                         String estatus_implemento,
-                                         double precio_implemento)
+        public void modificarInventarioInterfaz(Implemento implemento)
         {
 
             LogicaImplemento logicaImplemento=null;
             try
             {
                 logicaImplemento = new LogicaImplemento();
-                logicaImplemento.modificarInventarioLogica(
-                                                      id_implemento,
-                                                      nombre_implemento,
-                                                      tipo_implemento,
-                                                      marca_implemento,
-                                                      color_implemento,
-                                                      talla_implemento,
-                                                      dojo, cantidad,
-                                                      stock_minimo,
-                                                      estatus_implemento,
-                                                      precio_implemento);
+                logicaImplemento.modificarInventarioLogica(implemento);
 
             }
             catch (Exception ex)

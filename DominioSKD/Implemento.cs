@@ -18,10 +18,10 @@ namespace DominioSKD
        private String talla_implemento;
        private String imagen_implemento;
        private int cantidad_implemento;
-       private int stock_minimo_implemento;
-       private String dojo_implemento;
+       private int stock_minimo_implemento;     
        private String estatus_implemento;
        private double precio_implemento;
+       private Dojo dojo;
         #endregion
 
        #region set_get_id_implemento
@@ -116,11 +116,11 @@ namespace DominioSKD
        #endregion
 
        #region set_get_dojo_implemento
-       public String  Dojo_Implemento
+       public Dojo  Dojo_Implemento
        {
-           get { return this.dojo_implemento; }
+           get { return this.dojo; }
 
-           set { dojo_implemento = value; }
+           set { dojo = value; }
 
        }
        #endregion
@@ -148,9 +148,20 @@ namespace DominioSKD
 
        #region Constructores de Implementos
        #region Constructor
-       public Implemento(String nombre_implemento,String tipo_implemento, String marca_implemento,String color_implemento, String talla_implemento,String stock_implemento)
+       public Implemento(int id_implemento,String nombre_implemento,String tipo_implemento,String marca_implemento,String color_implemento,String talla_implemento,String imagen_implemento,int cantidad_implemento,int stock_minimo_implemento,String estatus_implemento, double precio_implemento,Dojo dojo)
        {
-
+           this.id_implemento = id_implemento;
+           this.nombre_implemento = nombre_implemento;
+           this.tipo_implemento = tipo_implemento;
+           this.marca_implemento = marca_implemento;
+           this.color_implemento = color_implemento;
+           this.talla_implemento = talla_implemento;
+           this.imagen_implemento = imagen_implemento;
+           this.stock_minimo_implemento = stock_minimo_implemento;
+           this.estatus_implemento = estatus_implemento;
+           this.cantidad_implemento = cantidad_implemento;
+           this.precio_implemento = precio_implemento;
+           this.dojo = dojo;
        }
        #endregion
 

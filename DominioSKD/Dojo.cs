@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Dojo
+   public class Dojo
     {
+        private int id_dojo;
+
+        public Dojo() { }
+
+        public Dojo(int id_dojo) {
+            this.id_dojo = id_dojo;
+        }
+
+        public int Dojo_Id
+        {
+            get { return id_dojo; }
+
+            set { id_dojo = value; }
+
+        }
     }
 }

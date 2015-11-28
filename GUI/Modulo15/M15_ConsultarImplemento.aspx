@@ -45,7 +45,7 @@ Gesti&oacuten de Inventario
            
         }*/
     
-        public void imprimirLista()
+        public void imprimirLista(DominioSKD.Dojo dojo)
         {
             List<DominioSKD.Implemento> listaImplementos=null;
             String consultar = Request.QueryString["consultar"];
@@ -53,14 +53,14 @@ Gesti&oacuten de Inventario
             if (consultar != null) {
                 if (consultar.Equals("Activo"))
                 {
-                    listaImplementos = listaImplementosInterfaz();
+                    listaImplementos = listaImplementosInterfaz(dojo);
 
                 }
                 else {
                     if (consultar.Equals("Inactivo")) {
 
 
-                        listaImplementos = listaImplementosInterfaz2();
+                        listaImplementos = listaImplementosInterfaz2(dojo);
                       //  this.estatus_implemento.Value = "2";
                          
                     }
@@ -68,7 +68,7 @@ Gesti&oacuten de Inventario
             
             }else{
 
-            listaImplementos = listaImplementosInterfaz();
+            listaImplementos = listaImplementosInterfaz(dojo);
             } 
             foreach (DominioSKD.Implemento valorActual in listaImplementos)
             {
@@ -164,7 +164,9 @@ Gesti&oacuten de Inventario
 
 			<tbody>
 
-                   <% imprimirLista();  %>
+                   <% 
+                       DominioSKD.Dojo dojo=new DominioSKD.Dojo(1);
+                       imprimirLista(dojo);  %>
             
           
 

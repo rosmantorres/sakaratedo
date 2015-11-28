@@ -96,13 +96,29 @@ Gesti&oacuten de Inventario
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento" name="color_implemento" placeholder="*Color" class="form-control" value="Rojo" runat="server"/>            
+                         <select id="color_implemento" name="color_implemento" class="form-control" runat="server">
+                            <option value="AZUL" >AZUL</option>
+                               <option value="VERDE" >VERDE</option>
+                               <option value="AMARILLO" >AMARILLO</option>
+                               <option value="ROJO" >ROJO</option>
+                               <option value="NEGRO" >NEGRO</option>
+                               <option value="ROSADO" >ROSADO</option>
+                        </select>
+
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento"  name="marca_implemento" placeholder="*Marca" class="form-control" value="Kombate" runat="server"/>            
-                    </div>
+                      <select id="marca_implemento" name="marca_implemento" class="form-control" runat="server">
+                               <option value="ADIDAS" >ADIDAS</option>
+                               <option value="ARENA" >ARENA</option>
+                               <option value="PUMA" >PUMA</option>
+                               <option value="NIKE" >NIKE</option>
+                               <option value="KOMBA" >KOMBA</option>
+                               <option value="RS21" >RS21</option>
+                        </select>
+
+                        </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
