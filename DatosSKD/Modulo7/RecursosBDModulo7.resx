@@ -165,7 +165,7 @@
   <data name="AliasIdUbicacion" xml:space="preserve">
     <value>id</value>
   </data>
-  <data name="AliasNombreEvento" xml:space="preserve">
+  <data name="AliasEventoNombre" xml:space="preserve">
     <value>nombre</value>
   </data>
   <data name="AliasTipoEveEventoId" xml:space="preserve">
@@ -218,5 +218,14 @@
   </data>
   <data name="ParamIdPersona" xml:space="preserve">
     <value>@per_id</value>
+  </data>
+  <data name="AliasEventoCosto" xml:space="preserve">
+    <value>costo</value>
+  </data>
+  <data name="AliasEventoFechaInscripcion" xml:space="preserve">
+    <value>fechaInscripcion</value>
+  </data>
+  <data name="AliasTipoEventoNombre" xml:space="preserve">
+    <value>nombre</value>
   </data>
 </root>

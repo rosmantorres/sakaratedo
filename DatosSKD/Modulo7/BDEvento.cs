@@ -51,17 +51,16 @@ namespace DatosSKD.Modulo7
                 {
                     Evento evento = new Evento();
                     evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
-                    evento.Nombre = row[RecursosBDModulo7.AliasNombreEvento].ToString();
+                    evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                     evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
-                    evento.Costo = float.Parse(row[RecursosBDModulo7.AliasHoraInicioHorario].ToString());
+                    evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString());
                     evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
                     evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
                     evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                     laListaDeEventoAsistidos.Add(evento);
-
                 }
 
-                return laListaDeEventoAsistidos;
+                return laListaDeEventoAsistidos; 
 
             }
             catch (SqlException ex)

@@ -124,11 +124,38 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to costo.
+        /// </summary>
+        internal static string AliasEventoCosto {
+            get {
+                return ResourceManager.GetString("AliasEventoCosto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaInscripcion.
+        /// </summary>
+        internal static string AliasEventoFechaInscripcion {
+            get {
+                return ResourceManager.GetString("AliasEventoFechaInscripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idUbicacion.
         /// </summary>
         internal static string AliasEventoHorarioId {
             get {
                 return ResourceManager.GetString("AliasEventoHorarioId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string AliasEventoNombre {
+            get {
+                return ResourceManager.GetString("AliasEventoNombre", resourceCulture);
             }
         }
         
@@ -232,15 +259,6 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nombre.
-        /// </summary>
-        internal static string AliasNombreEvento {
-            get {
-                return ResourceManager.GetString("AliasNombreEvento", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to id.
         /// </summary>
         internal static string AliasTipoEveEventoId {
@@ -255,6 +273,15 @@ namespace DatosSKD.Modulo7 {
         internal static string AliasTipoEvento {
             get {
                 return ResourceManager.GetString("AliasTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string AliasTipoEventoNombre {
+            get {
+                return ResourceManager.GetString("AliasTipoEventoNombre", resourceCulture);
             }
         }
         

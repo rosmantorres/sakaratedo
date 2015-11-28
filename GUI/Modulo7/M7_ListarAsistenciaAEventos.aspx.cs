@@ -13,7 +13,7 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarAsistenciaAEventos : System.Web.UI.Page
     {
         #region Atributos
-        private List<Evento> laLista = new List<Evento>();
+        private List<DominioSKD.Evento> laLista;
         #endregion
 
         #region Page Load

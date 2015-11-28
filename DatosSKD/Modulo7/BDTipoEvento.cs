@@ -34,7 +34,7 @@ namespace DatosSKD.Modulo7
                 {
 
                     tipoE.Id = int.Parse(row[RecursosBDModulo7.AliasIdTipoEvento].ToString());
-                    tipoE.Nombre = row[RecursosBDModulo7.AliasNombreEvento].ToString();
+                    tipoE.Nombre = row[RecursosBDModulo7.AliasTipoEventoNombre].ToString();
 
                 }
 
