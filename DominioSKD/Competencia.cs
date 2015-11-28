@@ -11,7 +11,7 @@ namespace DominioSKD
         #region atributos
         private int id_competencia;
         private String nombre;
-        private int tipoCompetencia;
+        private String tipoCompetencia;
         private bool organizacionTodas;
         private String status;
         private float costo;
@@ -37,11 +37,12 @@ namespace DominioSKD
             set { nombre = value; }
         }
 
-        public int TipoCompetencia
+        public String TipoCompetencia
         {
             get { return tipoCompetencia; }
             set { tipoCompetencia = value; }
         }
+
 
         public bool OrganizacionTodas
         {
@@ -102,7 +103,7 @@ namespace DominioSKD
         {
             id_competencia    = 0;
             nombre            = "";
-            tipoCompetencia   = -1;
+            tipoCompetencia   = "";
             organizacionTodas = false;
             status            = "";
             categoria         = null;
@@ -113,7 +114,7 @@ namespace DominioSKD
             costo             = 0;
         }
 
-        public Competencia(int elId, String elNombre, int elTipo, bool orgTodas, String elStatus)
+        public Competencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
         {
             id_competencia    = elId;
             nombre            = elNombre;
@@ -124,7 +125,7 @@ namespace DominioSKD
 
         }
 
-        public Competencia(String elNombre, int elTipo, bool orgTodas, String elStatus)
+        public Competencia(String elNombre, String elTipo, bool orgTodas, String elStatus)
         {
             nombre = elNombre;
             tipoCompetencia = elTipo;
