@@ -117,22 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="etiquetaAperturaDropDawn" xml:space="preserve">
-    <value>&lt;asp:DropDownList id="RolList" class="btn btn-default dropdown-toggle" AutoPostBack="True" OnSelectedIndexChanged="Selection_Change" runat="server"&gt;</value>
-  </data>
-  <data name="etiquetaCierreDropDawn" xml:space="preserve">
-    <value>&lt;/asp:DropDownList&gt;</value>
-  </data>
-  <data name="subEtiquetaApertura" xml:space="preserve">
-    <value>&lt;asp:ListItem Value="</value>
-  </data>
-  <data name="subEtiquetaCierreApertura" xml:space="preserve">
-    <value>"&gt;</value>
-  </data>
-  <data name="subEtiquetaCierreTotal" xml:space="preserve">
-    <value>&lt;/asp:ListItem&gt;</value>
-  </data>
-  <data name="subEtiquetaSeleccionar" xml:space="preserve">
-    <value>&lt;asp:ListItem Selected="True" Value="select"&gt;-Seleccionar rol- &lt;/asp:ListItem&gt;</value>
+  <data name="parametroIDUsuario" xml:space="preserve">
+    <value>user</value>
   </data>
 </root>
