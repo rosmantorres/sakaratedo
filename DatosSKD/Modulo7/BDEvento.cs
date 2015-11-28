@@ -103,23 +103,66 @@ namespace DatosSKD.Modulo7
             return laListaDeEventoInscrito;
         }
 
+   ///Metodo que lista los eventos pagos del atleta
         public static List<Evento> ListarEventosPagos()
         {
-            Int16 id = 1;
-            String nombre = "Seminario Cintas Negras";
-            List<Evento> laListaDeEventoPago = new List<Evento>();
-            TipoEvento tipoEvento = BDTipoEvento.DetallarTipoEvento(1);
-            Ubicacion ubicacion = BDUbicacion.DetallarUbicacion(1); 
-            Horario horario = BDHorario.DetallarHorario(1);
-            Evento evento = new Evento(id, nombre, "desc:primer evento", 200, ubicacion, tipoEvento, horario);
-            laListaDeEventoPago.Add(evento);
             
-            return laListaDeEventoPago;
+            int idPersona = 1;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+            List<Evento> laListaDeEventoPago = new List<Evento>();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarEventosPagos,parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Evento evento = new Evento();
+                    evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
+                    evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
+                    evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
+                    evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString());
+                    evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
+                    evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
+                    evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                    laListaDeEventoPago.Add(evento);
+                }
+
+                return laListaDeEventoPago;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+
+            //return laListaDeEventosPagos;
         }
-   /// <summary>
-   /// Metodo que lista los horarios de practica del atleta
-   /// </summary>
-   /// <returns></returns>
+
+        /// <summary>
+        /// Metodo que lista los eventos a los cuales estan inscritos los atletas
+        /// </summary>
+        /// <returns></returns>
      
         public static List<Evento> ListarHorarioPractica()
         {

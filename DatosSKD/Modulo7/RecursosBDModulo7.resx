@@ -228,4 +228,7 @@
   <data name="AliasTipoEventoNombre" xml:space="preserve">
     <value>nombre</value>
   </data>
+  <data name="ConsultarEventosPagos" xml:space="preserve">
+    <value>M7_ConsultarEventosPagos</value>
+  </data>
 </root>

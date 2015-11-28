@@ -13,7 +13,7 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarPagosAEventos : System.Web.UI.Page
     { 
         #region Atributos
-        private List<Evento> laLista = new List<Evento>();
+        private List<DominioSKD.Evento> laLista;
         #endregion
         #region Page Load
         /// <summary>
@@ -47,6 +47,7 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         //this.laTabla.Text += M7_Recursos.AbrirTD + evento.FechaInicio.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
