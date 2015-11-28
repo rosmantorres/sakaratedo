@@ -88,6 +88,60 @@ namespace templateApp.GUI.Master {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Atleta.
+        /// </summary>
+        internal static string rolAtleta {
+            get {
+                return ResourceManager.GetString("rolAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Atleta(Menor).
+        /// </summary>
+        internal static string rolAtletaMenor {
+            get {
+                return ResourceManager.GetString("rolAtletaMenor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dojo.
+        /// </summary>
+        internal static string rolDojo {
+            get {
+                return ResourceManager.GetString("rolDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Organizacion.
+        /// </summary>
+        internal static string rolOrganizacion {
+            get {
+                return ResourceManager.GetString("rolOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Representante.
+        /// </summary>
+        internal static string rolRepresentante {
+            get {
+                return ResourceManager.GetString("rolRepresentante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sistema.
+        /// </summary>
+        internal static string rolSistema {
+            get {
+                return ResourceManager.GetString("rolSistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a logout.
         /// </summary>
         internal static string sessionLogout {
@@ -111,24 +165,6 @@ namespace templateApp.GUI.Master {
         internal static string sessionRoles {
             get {
                 return ResourceManager.GetString("sessionRoles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Apellido.
-        /// </summary>
-        internal static string sessionUsuarioApellido {
-            get {
-                return ResourceManager.GetString("sessionUsuarioApellido", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Correo.
-        /// </summary>
-        internal static string sessionUsuarioCorreo {
-            get {
-                return ResourceManager.GetString("sessionUsuarioCorreo", resourceCulture);
             }
         }
         
