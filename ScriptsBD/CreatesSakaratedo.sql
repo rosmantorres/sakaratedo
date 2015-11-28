@@ -478,7 +478,7 @@ WITH
 GO
 ALTER TABLE PERSONA
 ADD
-CHECK ( per_tipo_doc_id IN ('CEDULA NACIONAL', 'CEDULA EXTRAJERA', 'PASAPORTE') )
+CHECK ( per_tipo_doc_id IN ('CEDULA-N', 'CEDULA-E', 'PASAPORTE') )
 GO
 ALTER TABLE PERSONA
 ADD
@@ -1890,47 +1890,7 @@ DELETE
 UPDATE NO ACTION
 GO
 
-
----------------------------------------------------STORED PROCEDURES M12 -------------------------------------
-
---PROCEDURE CONSULTA LISTA DE COMPETENCIAS--
-CREATE procedure M12_ConsultarCompetencias
-as
-	begin
-		select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones,
-			   org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado
-		from COMPETENCIA comp LEFT OUTER JOIN ORGANIZACION org ON comp.ORGANIZACION_comp_id = org.org_id, UBICACION ubi
-		where comp.UBICACION_comp_id = ubi.ubi_id
-		
-	end;
-go
-
-	--PROCEDURE CONSULTA COMPETENCIA POR ID --
-CREATE procedure M12_ConsultarCompetenciasXId
-	@idCompetencia [int]
-as
-DECLARE 
-	@organizacionesTodas [bit]
-	begin
-	
-		select @organizacionesTodas = comp.comp_org_todas
-		from COMPETENCIA comp
-		where comp.comp_id = @idCompetencia
-
-		if(@organizacionesTodas = 0)
-			select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones, comp.comp_fecha_ini as fechaInicio, comp.comp_fecha_fin as fechaFin, comp.comp_costo as costoCompetencia,
-				   org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
-				   ubi.ubi_longitud as longitudDireccion, cat.cat_id as idCategoria, cat.cat_edad_ini as edadInicio, cat.cat_edad_fin as edadFin, cat.cat_cinta_ini as cintaInicio, cat_cinta_fin as cintaFin, cat_sexo as sexoCategoria
-			from COMPETENCIA comp, ORGANIZACION org, UBICACION ubi, CATEGORIA cat
-			where comp.ORGANIZACION_comp_id = org.org_id and comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
-		else
-			select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones, comp.comp_fecha_ini as fechaInicio, comp.comp_fecha_fin as fechaFin, comp.comp_costo as costoCompetencia,
-				   ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
-				   ubi.ubi_longitud as longitudDireccion, cat.cat_id as idCategoria, cat.cat_edad_ini as edadInicio, cat.cat_edad_fin as edadFin, cat.cat_cinta_ini as cintaInicio, cat_cinta_fin as cintaFin, cat_sexo as sexoCategoria
-			from COMPETENCIA comp, UBICACION ubi, CATEGORIA cat
-			where comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
-	end;
-	go
+---------------------------------------------------------STORED PROCEDURES M12--------------------------------------------------------------------
 
 --PROCEDURE AGREGAR COMPETENCIA--
 CREATE PROCEDURE M12_AgregarCompetencia
@@ -1956,41 +1916,31 @@ CREATE PROCEDURE M12_AgregarCompetencia
 as
  begin
 	declare @numCategoria as int;
-	declare @numCompetencia as int;
+	declare @numUbicacion as int;
 
 	select @numCategoria = count(*) from CATEGORIA where cat_cinta_fin = @cintaFin and cat_cinta_ini = @cintaIni
 													     and cat_edad_fin = @edadFin and cat_edad_ini = @edadIni
 														 and cat_sexo = @sexo;
-
-	select @numCompetencia = count(*) from COMPETENCIA where comp_nombre = @nombreCompetencia;
-
-		if(@numCompetencia = 0 and @numCategoria = 0)
+	select @numUbicacion = count(*) from UBICACION where ubi_latitud = @latitudDireccion and ubi_longitud = @longitudDireccion
+														 and ubi_ciudad = @nombreCiudad and ubi_estado = @nombreEstado
+														 and ubi_direccion = @nombreDireccion
+		if(@numCategoria = 0)
 				INSERT INTO CATEGORIA (cat_edad_ini, cat_edad_fin, cat_cinta_ini, cat_cinta_fin, cat_sexo) 
 				VALUES (@edadIni, @edadFin, @cintaIni, @cintaFin, @sexo);
 
-		if(@numCompetencia = 0 or @numCategoria = 0)
+		if(@numUbicacion = 0)
 				INSERT INTO UBICACION(ubi_latitud, ubi_longitud, ubi_ciudad, ubi_estado, ubi_direccion) 
 				VALUES (@latitudDireccion, @longitudDireccion, @nombreCiudad, @nombreEstado, @nombreDireccion);
 
 
 		if(@organizacionesTodas = 1)
-			if(@numCompetencia = 0 and @costoCompetencia >= 0)
 						
 					INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
 					VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
 						   (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
 						   (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
 						   null,@costoCompetencia);
-				
-				else
-					INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
-					VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
-						   (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
-						   (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
-						   null,@costoCompetencia);
-			
-		else
-			if(@numCompetencia = 0 and @costoCompetencia >= 0)		
+		else	
 				INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
 				VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
 					   (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
@@ -1998,4 +1948,152 @@ as
 					   (select org_id from ORGANIZACION where @nombreOrganizacion = org_nombre),@costoCompetencia);
 
  end;
-go
+ go
+
+ 
+--PROCEDURE CONSULTAR ID COMPETENCIA--
+CREATE PROCEDURE M12_BuscarIDCompetencia
+	@idCompetencia   [int],
+	@numCompetencia  [int] OUTPUT
+as
+ begin
+
+	select @numCompetencia = count(*) 
+	from COMPETENCIA 
+	where comp_id = @idCompetencia
+
+ end;
+ go
+
+ 
+--PROCEDURE CONSULTAR NOMBRE COMPETENCIA--
+CREATE PROCEDURE M12_BuscarNombreCompetencia
+	@nombreCompetencia   [varchar](100),
+	@numCompetencia      [int] OUTPUT
+as
+ begin
+
+	select @numCompetencia = count(*) 
+	from COMPETENCIA 
+	where comp_nombre = @nombreCompetencia
+
+ end;
+ go
+
+ 
+
+--PROCEDURE CONSULTA LISTA DE COMPETENCIAS--
+CREATE procedure M12_ConsultarCompetencias
+as
+	begin
+		select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones,
+			   org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado
+		from COMPETENCIA comp LEFT OUTER JOIN ORGANIZACION org ON comp.ORGANIZACION_comp_id = org.org_id, UBICACION ubi
+		where comp.UBICACION_comp_id = ubi.ubi_id
+		
+	end;
+
+	go
+
+	
+	--PROCEDURE CONSULTA COMPETENCIA POR ID --
+CREATE procedure M12_ConsultarCompetenciasXId
+	@idCompetencia [int]
+as
+DECLARE 
+	@organizacionesTodas [bit]
+	begin
+	
+		select @organizacionesTodas = comp.comp_org_todas
+		from COMPETENCIA comp
+		where comp.comp_id = @idCompetencia
+
+		if(@organizacionesTodas = 0)
+			select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones, comp.comp_fecha_ini as fechaInicio, comp.comp_fecha_fin as fechaFin, comp.comp_costo as costoCompetencia,
+				   org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
+				   ubi.ubi_longitud as longitudDireccion, cat.cat_id as idCategoria, cat.cat_edad_ini as edadInicio, cat.cat_edad_fin as edadFin, cat.cat_cinta_ini as cintaInicio, cat_cinta_fin as cintaFin, cat_sexo as sexoCategoria
+			from COMPETENCIA comp, ORGANIZACION org, UBICACION ubi, CATEGORIA cat
+			where comp.ORGANIZACION_comp_id = org.org_id and comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
+		else
+			select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones, comp.comp_fecha_ini as fechaInicio, comp.comp_fecha_fin as fechaFin, comp.comp_costo as costoCompetencia,
+				   ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
+				   ubi.ubi_longitud as longitudDireccion, cat.cat_id as idCategoria, cat.cat_edad_ini as edadInicio, cat.cat_edad_fin as edadFin, cat.cat_cinta_ini as cintaInicio, cat_cinta_fin as cintaFin, cat_sexo as sexoCategoria
+			from COMPETENCIA comp, UBICACION ubi, CATEGORIA cat
+			where comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
+	end;
+
+	go
+
+	--PROCEDURE MODIFICAR COMPETENCIA--
+CREATE PROCEDURE M12_ModificarCompetencia
+	@idCompetencia       [int],
+	@nombreCompetencia   [varchar](100),
+	@tipoCompetencia     [int],
+	@organizacionesTodas [bit],
+	@statusCompetencia   [varchar](100),
+	@fecha_ini		     [datetime],
+	@fecha_fin           [datetime],
+	@nombreOrganizacion  [varchar](100),
+	@nombreCiudad		 [varchar](100),
+	@nombreEstado        [varchar](100),
+	@nombreDireccion	 [varchar](100),
+	@latitudDireccion    [varchar](100),
+	@longitudDireccion   [varchar](100),
+	@edadIni			 [int],
+	@edadFin			 [int],
+	@cintaIni			 [varchar](100),
+	@cintaFin            [varchar](100),
+	@sexo				 [char](1),
+	@costoCompetencia	 [float]
+as
+ begin
+
+	declare @numCategoria as int;
+	declare @numUbicacion as int;
+
+	select @numCategoria = count(*) from CATEGORIA where cat_cinta_fin = @cintaFin and cat_cinta_ini = @cintaIni
+													     and cat_edad_fin = @edadFin and cat_edad_ini = @edadIni
+														 and cat_sexo = @sexo;
+	select @numUbicacion = count(*) from UBICACION where ubi_latitud = @latitudDireccion and ubi_longitud = @longitudDireccion
+														 and ubi_ciudad = @nombreCiudad and ubi_estado = @nombreEstado
+														 and ubi_direccion = @nombreDireccion
+	if(@numCategoria = 0)
+			INSERT INTO CATEGORIA (cat_edad_ini, cat_edad_fin, cat_cinta_ini, cat_cinta_fin, cat_sexo) 
+			VALUES (@edadIni, @edadFin, @cintaIni, @cintaFin, @sexo);
+
+	if(@numUbicacion = 0)
+			INSERT INTO UBICACION(ubi_latitud, ubi_longitud, ubi_ciudad, ubi_estado, ubi_direccion) 
+			VALUES (@latitudDireccion, @longitudDireccion, @nombreCiudad, @nombreEstado, @nombreDireccion);
+
+	if(@organizacionesTodas = 1)
+		UPDATE COMPETENCIA
+		SET 
+			comp_nombre       = @nombreCompetencia,
+			comp_tipo         = @tipoCompetencia,
+			comp_org_todas    = @organizacionesTodas,
+			comp_status       = @statusCompetencia,
+			comp_fecha_ini    = @fecha_ini,
+			comp_fecha_fin    = @fecha_fin,
+			comp_costo        = @costoCompetencia,
+			CATEGORIA_comp_id = (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
+			UBICACION_comp_id = (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion)
+		WHERE
+			comp_id = @idCompetencia;
+	else
+		UPDATE COMPETENCIA
+		SET 
+			comp_nombre          = @nombreCompetencia,
+			comp_tipo            = @tipoCompetencia,
+			comp_org_todas       = @organizacionesTodas,
+			comp_status          = @statusCompetencia,
+			comp_fecha_ini       = @fecha_ini,
+			comp_fecha_fin       = @fecha_fin,
+			comp_costo           = @costoCompetencia,
+			CATEGORIA_comp_id    = (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
+			UBICACION_comp_id    = (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion),
+			ORGANIZACION_comp_id = (select org_id from ORGANIZACION where org_nombre = @nombreOrganizacion)
+		WHERE
+			comp_id = @idCompetencia;
+ end;
+
+ go
