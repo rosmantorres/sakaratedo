@@ -130,7 +130,7 @@
     <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compEliminar=</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M12_DetalleCompetencia.aspx?compDetalle=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M12_ModificarCompetencias.aspx?compMod=</value>
