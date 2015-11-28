@@ -263,7 +263,7 @@ Gesti&oacuten de Inventario
 
                 $('a.eliminar_clase').click(function (e) {
                     idEliminar = $(this).attr("data-id");
-                    alert(idEliminar);
+                 //   alert(idEliminar);
                    $('#btneliminar').attr("href", "M15_ConsultarImplemento.aspx?eliminar=true&idImplemento=" + idEliminar);
                     
 
