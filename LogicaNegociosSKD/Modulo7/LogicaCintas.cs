@@ -30,10 +30,10 @@ namespace LogicaNegociosSKD.Modulo7
         /// <summary>
         /// Constructor
         /// </summary>
-        public LogicaCintas()
+        /*public LogicaCintas()
         {
             laListaDeCintas = obtenerListaDeCintas();
-        }
+        }*/
 
         #endregion
 
@@ -43,7 +43,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// Método que obtiene la lista de cintas de un atleta
         /// </summary>
         /// <returns>Lista de objetos tipo cinta</returns>
-        public List<DominioSKD.Cinta> obtenerListaDeCintas()
+       /* public List<DominioSKD.Cinta> obtenerListaDeCintas()
         {
             try
             {
@@ -53,14 +53,14 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 throw e;
             }
-        }
+        }*/
 
         /// <summary>
         /// Método que obtiene el detalle de cada cinta por su ID
         /// </summary>
         /// <param name="idCinta">Número entero que representa el id de la cinta</param>
         /// <returns>Objeto de tipo Cinta</returns>
-        public DominioSKD.Cinta detalleCintaID(int idCinta)
+        /*public DominioSKD.Cinta detalleCintaID(int idCinta)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 throw e;
             }
-        }
+        }*/
         #endregion
 
 

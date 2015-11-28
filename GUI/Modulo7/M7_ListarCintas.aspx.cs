@@ -38,7 +38,7 @@ namespace templateApp.GUI.Modulo7
 
             LogicaCintas logEvento = new LogicaCintas();
 
-            if (!IsPostBack)
+           /* if (!IsPostBack)
             {
                 try
                 {
@@ -63,7 +63,7 @@ namespace templateApp.GUI.Modulo7
                 {
                     throw ex;
                 }
-            }
+            }*/
 
 
             #endregion
