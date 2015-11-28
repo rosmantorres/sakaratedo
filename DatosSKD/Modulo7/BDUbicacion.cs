@@ -34,8 +34,6 @@ namespace DatosSKD.Modulo7
                 {
 
                     ubicacion.Id_ubicacion = int.Parse(row[RecursosBDModulo7.AliasIdUbicacion].ToString());
-                    ubicacion.Latitud = row[RecursosBDModulo7.AliasLatitud].ToString();
-                    ubicacion.Longitud = row[RecursosBDModulo7.AliasLongitud].ToString();
                     ubicacion.Ciudad = row[RecursosBDModulo7.AliasCiudad].ToString();
                     ubicacion.Estado = row[RecursosBDModulo7.AliasEstado].ToString();
                     ubicacion.Direccion = row[RecursosBDModulo7.AliasDireccion].ToString();

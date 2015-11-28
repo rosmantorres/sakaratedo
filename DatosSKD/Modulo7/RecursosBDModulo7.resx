@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AliasCategoriaEventoId" xml:space="preserve">
-    <value>categoria</value>
+    <value>id</value>
   </data>
   <data name="AliasCiudad" xml:space="preserve">
     <value>ciudad</value>
@@ -133,7 +133,7 @@
     <value>direccion</value>
   </data>
   <data name="AliasDojoEventoId" xml:space="preserve">
-    <value>dojo</value>
+    <value>id</value>
   </data>
   <data name="AliasEstado" xml:space="preserve">
     <value>estado</value>
@@ -151,7 +151,7 @@
     <value>horaInicio</value>
   </data>
   <data name="AliasHorarioEventoId" xml:space="preserve">
-    <value>horario</value>
+    <value>id</value>
   </data>
   <data name="AliasIdEvento" xml:space="preserve">
     <value>id</value>
@@ -163,25 +163,19 @@
     <value>id</value>
   </data>
   <data name="AliasIdUbicacion" xml:space="preserve">
-    <value>id_ubicacion</value>
-  </data>
-  <data name="AliasLatitud" xml:space="preserve">
-    <value>latitud</value>
-  </data>
-  <data name="AliasLongitud" xml:space="preserve">
-    <value>longitud</value>
+    <value>id</value>
   </data>
   <data name="AliasNombreEvento" xml:space="preserve">
     <value>nombre</value>
   </data>
   <data name="AliasTipoEveEventoId" xml:space="preserve">
-    <value>tipoEvento</value>
+    <value>id</value>
   </data>
   <data name="AliasTipoEvento" xml:space="preserve">
     <value>nombre</value>
   </data>
   <data name="AliasUbicacionId" xml:space="preserve">
-    <value>ubicacion</value>
+    <value>id</value>
   </data>
   <data name="ConsultarEventosInscritos" xml:space="preserve">
     <value>M7_ConsultaEventoInscrito</value>
@@ -209,5 +203,20 @@
   </data>
   <data name="ParamIdUsuarioLogueado" xml:space="preserve">
     <value>@idAtleta</value>
+  </data>
+  <data name="AliasEventoHorarioId" xml:space="preserve">
+    <value>idUbicacion</value>
+  </data>
+  <data name="AliasEventoTipoEveId" xml:space="preserve">
+    <value>idTipoEvento</value>
+  </data>
+  <data name="AliasEventoUbicacionId" xml:space="preserve">
+    <value>idUbicacion</value>
+  </data>
+  <data name="ConsultarEventosAsistidos" xml:space="preserve">
+    <value>M7_ConsultarEventosAsistidos</value>
+  </data>
+  <data name="ParamIdPersona" xml:space="preserve">
+    <value>@per_id</value>
   </data>
 </root>

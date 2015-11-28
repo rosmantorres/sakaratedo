@@ -26,8 +26,7 @@ namespace DatosSKD.Modulo7
                 parametros = new List<Parametro>();
                 Horario horario = new Horario();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdHorario, SqlDbType.Int, idHorario.ToString(),
-                                            false);
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdHorario, SqlDbType.Int, idHorario.ToString(), false);
                 parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
