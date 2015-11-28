@@ -76,23 +76,98 @@ namespace LogicaNegociosSKD.Modulo2
 
         public static List<Rol> filtrarRoles(List<Rol> usuarioRol, List<Rol> sistemaRol)
         {
+            bool diferente;
             try
             {
                 List<Rol> respuesta = new List<Rol>();
-                foreach (Rol rolusuario in usuarioRol)
+                foreach (Rol rolSistema in sistemaRol)
                 {
-                    foreach (Rol rolSistema in sistemaRol)
+                    diferente = true;
+                    foreach (Rol rolUsuario in usuarioRol)
                     {
-                        if (rolSistema.Id_rol == rolusuario.Id_rol)
-                            respuesta.Add(rolSistema);
+                        if (rolSistema.Id_rol == rolUsuario.Id_rol)
+                            diferente = false;
                     }
+                    if(diferente)
+                        respuesta.Add(rolSistema);
                 }
-                return sistemaRol;
+                return respuesta;
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
+
+        public static List<Rol> validarPrioridad(List<Rol> Roles,string usuarioRol)
+        {
+
+            List<Rol> respuesta = new List<Rol>();
+            try
+            {
+                foreach (Rol rol in Roles)
+                {
+                    if (prioridadRol(rol.Nombre) >= prioridadRol(usuarioRol))
+                        respuesta.Add(rol);
+
+                }
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+       /// <summary>
+       /// Metodo que retorna la importancia del rol en una forma ascendiente, el de mayor prioridad es el numero mas bajo
+       /// </summary>
+       /// <param name="nombreRol"></param>
+       /// <returns>La importancia del rol (Menor = Mejor).</returns>
+        public static int prioridadRol(string nombreRol)
+        {
+            switch (nombreRol)
+            {
+                case "Sistema": return 1;
+                case "Admin Sistema": return 1; 
+                case "Organización": return 2;
+                case "Admin Organización": return 2; 
+                case "Dojo": return 3;
+                case "Admin Dojo": return 3;
+                case "Entrenador": return 4;
+                case "Atleta": return 5;
+                case "Representante": return 6; 
+            }
+            throw new Exception("Rol no registrado/validado en sistema: LogicaNegociosSKD.logicaRol.prioridadRol()");
+        }
+
+        /// <summary>
+        /// Este metodo retorna los roles que el usuario a editar posee pero que no se pueden editar por el rol de la sesión
+        /// </summary>
+        /// <param name="Roles"></param>
+        /// <param name="usuarioRol"></param>
+        /// <returns></returns>
+        public static List<Rol> rolNoEditable(List<Rol> Roles, string usuarioRol)
+        {
+
+            List<Rol> respuesta = new List<Rol>();
+            try
+            {
+                foreach (Rol rol in Roles)
+                {
+                    if (prioridadRol(rol.Nombre) < prioridadRol(usuarioRol))
+                        respuesta.Add(rol);
+
+                }
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+    
     }
 }
