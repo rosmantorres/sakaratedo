@@ -57,15 +57,11 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="RestriccionCompetencia.cs" />
-=======
     <Compile Include="Rol.cs" />
     <Compile Include="RestriccionCompetencia.cs" />
     <Compile Include="ResultadoAscenso.cs" />
     <Compile Include="ResultadoKata.cs" />
     <Compile Include="ResultadoKumite.cs" />
->>>>>>> 803e7ce40adce5c424dffdf2669668cbc502a573
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Ubicacion.cs" />
