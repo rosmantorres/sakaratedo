@@ -53,12 +53,14 @@
                               </div>
                                   <div class="modal-body">
                                      <p>Introduzca el correo asociado a su cuenta, de no conocerlo contacte a su dojo</p>
-                                     <input type="email" name="correo" id="RestablecerCorreo" runat="server" placeholder="Correo" 
-                                      class="form-control input-lg" value="" />         
+                                      <div id="mail" class="form-group">
+                                        <input type="email" name="correo" id="RestablecerCorreo" runat="server" placeholder="Correo" class="form-control input-lg" value="" />   
+                                        <span class="glyphicon glyphicon-ok form-control-feedback" ></span>
+                                      </div>      
                                   </div>
                                   <div class="modal-footer">
-                                   <button type="button"   runat="server"  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"  
-                                    onserverclick="EnvioCorreo">Restablecer</button>
+                                   <button type="button"  id="restab" runat="server"  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"  
+                                    onserverclick="EnvioCorreo" attr="disabled">Restablecer</button>
                                       
                                      <!--  <asp:Button runat="server"  Text="Save Image" CssClass="Greengradiant btn- large" OnClick="EnvioCorreo" UseSubmitBehavior="false" data-dismiss="modal" />
 -->
@@ -84,5 +86,6 @@
       <!-- script references -->
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
       <script src="../../bootstrap/js/bootstrap.min.js"></script>
+       <script src="js/ValidarCorreo.js"></script>
    </body>
 </html>

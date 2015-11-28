@@ -220,6 +220,7 @@
     <Content Include="GUI\Modulo1\css\styles.css" />
     <Content Include="GUI\Modulo1\Index.aspx" />
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
+    <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
