@@ -19,6 +19,12 @@ namespace DominioSKD
             this.id = id;
             this.nombre = nombre;
         }
+
+        public TipoEvento()
+        {
+            id = 0;
+            nombre = "";
+        }
         #endregion
 
         #region Propiedades
