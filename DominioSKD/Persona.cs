@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-<<<<<<< HEAD
 
 namespace DominioSKD
 {
@@ -25,7 +24,7 @@ namespace DominioSKD
     public class Persona
     {
 
-        #region Aributos
+        #region Atributos
         /// <summary>
         /// Identificador en base de datos
         /// </summary>

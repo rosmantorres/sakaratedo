@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace DominioSKD
 {
 
-    public enum EstadoSolicitudInsciptcionDojo { Aceptada, Rechazada, Pendiente }
-    public class SolicitudInsciptcionDojo
+    public enum EstadoSolicitudInscripcionDojo { Aceptada, Rechazada, Pendiente }
+    public class SolicitudInscripcionDojo
     {
 
         private int _id;
@@ -16,14 +16,14 @@ namespace DominioSKD
         private DateTime _creacion;
         private DateTime _actualizacion;
 
-        public EstadoSolicitudInsciptcionDojo Estado;
+        public EstadoSolicitudInscripcionDojo Estado;
 
-        public SolicitudInsciptcionDojo(int id)
+        public SolicitudInscripcionDojo(int id)
         {
             this._id = id;
         }
 
-        public SolicitudInsciptcionDojo()
+        public SolicitudInscripcionDojo()
         {
             this._id = -1;
         }

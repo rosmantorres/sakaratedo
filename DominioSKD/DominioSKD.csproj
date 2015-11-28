@@ -45,7 +45,6 @@
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
-    <Compile Include="Persona.cs" />
     <Compile Include="SolicitudInsciptcionDojo.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="Asistencia.cs" />
