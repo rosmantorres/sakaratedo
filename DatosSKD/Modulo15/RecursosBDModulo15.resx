@@ -151,6 +151,9 @@
   <data name="parametroIdimplemento" xml:space="preserve">
     <value>@_impId</value>
   </data>
+  <data name="parametroImagenImplemento" xml:space="preserve">
+    <value>@_impImagen</value>
+  </data>
   <data name="parametroMarcaImplemento" xml:space="preserve">
     <value>@_impMarca</value>
   </data>
@@ -176,7 +179,7 @@
     <value>imp_color</value>
   </data>
   <data name="tabla_dojoImplemento" xml:space="preserve">
-    <value>nombre_dojo</value>
+    <value>id_dojo</value>
   </data>
   <data name="tabla_estatusImplemento" xml:space="preserve">
     <value>imp_estatus</value>

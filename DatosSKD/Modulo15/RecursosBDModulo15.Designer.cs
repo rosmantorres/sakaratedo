@@ -160,6 +160,15 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @_impImagen.
+        /// </summary>
+        internal static string parametroImagenImplemento {
+            get {
+                return ResourceManager.GetString("parametroImagenImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_impMarca.
         /// </summary>
         internal static string parametroMarcaImplemento {
@@ -232,7 +241,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nombre_dojo.
+        ///   Looks up a localized string similar to id_dojo.
         /// </summary>
         internal static string tabla_dojoImplemento {
             get {

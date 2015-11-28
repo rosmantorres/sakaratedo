@@ -48,7 +48,7 @@ Agregar Implemento
                 </div><!--Encabezado del formulario -->
 
                 <!-- Comienzo del formulario -->
-                <form role="form" id="agregar_implemento" method="post" action="M15_ConsultarImplemento.aspx">
+                <form role="form" id="agregar_implemento" method="post" action="M15_ConsultarImplemento.aspx"  enctype="multipart/form-data">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Nombre De Implemento:</b></p>
@@ -75,14 +75,30 @@ Agregar Implemento
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                          <p><b>Color:</b></p>
-                         <input type="text" id="color_implemento" name="color_implemento"  placeholder="*Color" class="form-control"  />            
+                        <p><b>Color:</b></p>
+                             <select id="color_implemento" name="color_implemento" class="form-control" >
+                               <option value="AZUL" >AZUL</option>
+                               <option value="VERDE" >VERDE</option>
+                               <option value="AMARILLO" >AMARILLO</option>
+                               <option value="ROJO" >ROJO</option>
+                               <option value="NEGRO" >NEGRO</option>
+                               <option value="ROSADO" >ROSADO</option>
+                        </select>
+
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Marca:</b></p>
-                       <input type="text" id="marca_implemento" name="marca_implemento" placeholder="*Marca" class="form-control" />            
-                    </div>
+                     <p><b>Marca:</b></p>
+                      <select id="marca_implemento" name="marca_implemento" class="form-control" >
+                               <option value="ADIDAS" >ADIDAS</option>
+                               <option value="ARENA" >ARENA</option>
+                               <option value="PUMA" >PUMA</option>
+                               <option value="NIKE" >NIKE</option>
+                               <option value="KOMBA" >KOMBA</option>
+                               <option value="RS21" >RS21</option>
+                        </select>
+
+                         </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
