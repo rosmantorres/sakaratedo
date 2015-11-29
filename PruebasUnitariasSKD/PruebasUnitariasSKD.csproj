@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod11.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo12\PruebaBDCompetencias.cs" />
     <Compile Include="Modulo12\RecursosPU_Mod12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +211,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -142,6 +142,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idCinta.
+        /// </summary>
+        internal static string AliasIdCinta {
+            get {
+                return ResourceManager.GetString("AliasIdCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCompetencia.
         /// </summary>
         internal static string AliasIdCompetencia {
@@ -183,6 +192,15 @@ namespace DatosSKD.Modulo12 {
         internal static string AliasLongitudDireccion {
             get {
                 return ResourceManager.GetString("AliasLongitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreCinta.
+        /// </summary>
+        internal static string AliasNombreCinta {
+            get {
+                return ResourceManager.GetString("AliasNombreCinta", resourceCulture);
             }
         }
         
@@ -313,6 +331,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M12_ConsultarCintas.
+        /// </summary>
+        internal static string ConsultarCintas {
+            get {
+                return ResourceManager.GetString("ConsultarCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M12_ConsultarCompetencias.
         /// </summary>
         internal static string ConsultarCompetencias {
@@ -327,6 +354,15 @@ namespace DatosSKD.Modulo12 {
         internal static string ConsultarCompetenciasXId {
             get {
                 return ResourceManager.GetString("ConsultarCompetenciasXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M12_ConsultarOrganizaciones.
+        /// </summary>
+        internal static string ConsultarOrganizaciones {
+            get {
+                return ResourceManager.GetString("ConsultarOrganizaciones", resourceCulture);
             }
         }
         
@@ -543,15 +579,6 @@ namespace DatosSKD.Modulo12 {
         internal static string ParamTipoCompetencia {
             get {
                 return ResourceManager.GetString("ParamTipoCompetencia", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

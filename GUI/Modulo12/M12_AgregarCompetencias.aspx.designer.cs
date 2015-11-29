@@ -22,6 +22,78 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_competencia;
         
         /// <summary>
+        /// nombreComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreComp;
+        
+        /// <summary>
+        /// input_tipo_kata control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_tipo_kata;
+        
+        /// <summary>
+        /// input_tipo_kumite control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_tipo_kumite;
+        
+        /// <summary>
+        /// input_tipo_ambos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_tipo_ambos;
+        
+        /// <summary>
+        /// organizaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox organizaciones;
+        
+        /// <summary>
+        /// tablacompetencias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable tablacompetencias;
+        
+        /// <summary>
+        /// edad_desde control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl edad_desde;
+        
+        /// <summary>
+        /// edad_hasta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl edad_hasta;
+        
+        /// <summary>
         /// divComboCintaDesde control.
         /// </summary>
         /// <remarks>
@@ -74,6 +146,24 @@ namespace templateApp.GUI.Modulo12 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList comboSexo;
+        
+        /// <summary>
+        /// input_status_porIniciar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_status_porIniciar;
+        
+        /// <summary>
+        /// input_status_enCurso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_status_enCurso;
         
         /// <summary>
         /// btn_agregarComp control.
