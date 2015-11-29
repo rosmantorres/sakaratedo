@@ -142,7 +142,7 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarCintas.aspx?compDetalle=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleCinta.aspx?cintaDetalle=.
         /// </summary>
         internal static string BotonInfoCintas {
             get {

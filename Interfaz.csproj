@@ -69,6 +69,9 @@
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
     <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
+      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -257,6 +260,7 @@
     <Content Include="GUI\Modulo7\js\daterange.js" />
     <Content Include="GUI\Modulo7\js\jquery-ui.js" />
     <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
+    <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarCintas.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx" />
@@ -1598,6 +1602,13 @@
     </Compile>
     <Compile Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx.designer.cs">
       <DependentUpon>M6_SolicitudInscripcionPre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.cs">
+      <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.designer.cs">
+      <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx.cs">
       <DependentUpon>M7_ListarAsistenciaAEventos.aspx</DependentUpon>

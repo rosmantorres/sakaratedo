@@ -54,7 +54,7 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Clasificacion.ToString()+ M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta.Id_cinta + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.BotonInfoCintas + cinta.Id_cinta + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
 

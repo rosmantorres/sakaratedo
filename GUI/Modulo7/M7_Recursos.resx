@@ -145,7 +145,7 @@
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info1"  id="</value>
   </data>
   <data name="BotonInfoCintas" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarCintas.aspx?compDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleCinta.aspx?cintaDetalle=</value>
   </data>
   <data name="BotonInfoEventosInscritos" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarEventosInscritos.aspx?compDetalle=</value>
