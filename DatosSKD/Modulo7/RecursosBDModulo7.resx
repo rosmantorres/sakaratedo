@@ -336,4 +336,13 @@
   <data name="ConsultarUltimaCinta" xml:space="preserve">
     <value>M7_ConsultarUltimaCinta</value>
   </data>
+  <data name="AliasEstadoMatricula" xml:space="preserve">
+    <value>status</value>
+  </data>
+  <data name="AliasIdentificadorMatricula" xml:space="preserve">
+    <value>identificador</value>
+  </data>
+  <data name="AliasMontoMatricula" xml:space="preserve">
+    <value>pago</value>
+  </data>
 </root>
