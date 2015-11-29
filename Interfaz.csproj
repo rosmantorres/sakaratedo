@@ -67,9 +67,9 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
+    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
+      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
     </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -188,6 +188,36 @@
     <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
+    <Content Include="GUI\Modulo13\Estilo\tournaments.css" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\1.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\2.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\3.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\4.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\5.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\5813.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\6.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\7.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\AlejandroGonzalez.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\EduardoSchwank.jpg" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\Venezuela.png" />
+    <Content Include="GUI\Modulo13\Imagenes\ITA.gif" />
+    <Content Include="GUI\Modulo13\Imagenes\reportes.jpg" />
+    <Content Include="GUI\Modulo13\Imagenes\ven.png" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\amarilla.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\azul-roja.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\azul.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\blanca-azul.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\celeste-amarillo.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\celeste.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\marron-blanco.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\marron-negro.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\marron.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\naranja-verde.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\naranja.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\negro-blanco.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\negro.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\purpura.jpg" />
+    <Content Include="GUI\Modulo13\Kyu-imagenes\verde.jpg" />
     <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
     <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
     <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
@@ -283,6 +313,7 @@
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\SKD.Master" />
+    <Content Include="GUI\Modulo13\Fotos-Atletas\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
