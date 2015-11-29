@@ -22,30 +22,21 @@ namespace templateApp.GUI.Modulo2 {
         protected global::System.Web.UI.HtmlControls.HtmlForm userRol;
         
         /// <summary>
-        /// Control DropDawnDiv.
+        /// Control RolSelect.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DropDawnDiv;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden RolSelect;
         
         /// <summary>
-        /// Control RolList.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RolList;
-        
-        /// <summary>
-        /// Control InfoButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor InfoButton;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton Button1;
     }
 }

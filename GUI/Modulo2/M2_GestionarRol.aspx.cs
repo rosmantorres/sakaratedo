@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo2;
 using DominioSKD;
 using System.Data;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo2
 {
@@ -18,36 +19,50 @@ namespace templateApp.GUI.Modulo2
         public List<Rol> losRolesDeSistema=new List<Rol>();
         public List<Rol> rolesDePersona = new List<Rol>();
         public List<Rol> rolesFiltrados = new List<Rol>();//los roles que el usuario aun no tiene permiso
+        public string rolID = "";
+        public int rolSelected = 0;
+        public int cont = 0;
+        public HiddenField Hidden =new HiddenField();
+        public List<Rol> rolSinPermiso = new List<Rol>();
+
         //public Persona usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+           
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
                 ((SKD)Page.Master).IdModulo = "2";
 
                 if (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario] != null)
                     rolesDePersona=logicaRol.consultarRolesUsuario
                         (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);
 
+
+                rolSinPermiso = logicaRol.rolNoEditable(rolesDePersona,
+                        Session[RecursosInterfazMaster.sessionRol].ToString());
+                rolesDePersona = logicaRol.validarPrioridad(rolesDePersona,
+                    Session[RecursosInterfazMaster.sessionRol].ToString());
+
+
+
                 losRolesDeSistema = logicaRol.cargarRoles();//Se cargan todos los roles del sistema
+               /* losRolesDeSistema=logicaRol.validarPrioridad(losRolesDeSistema,
+                    Session[RecursosInterfazMaster.sessionRol].ToString());
+            */
 
                 rolesFiltrados = logicaRol.filtrarRoles(rolesDePersona, losRolesDeSistema);
+                rolesFiltrados = logicaRol.validarPrioridad(rolesFiltrados,
+                    Session[RecursosInterfazMaster.sessionRol].ToString());
 
-                RolList.Items.Clear();
-                foreach (Rol rol in losRolesDeSistema)
-                {
-                    RolList.Items.Add(new ListItem(rol.Nombre.ToString(), rol.Id_rol.ToString()));
-                }
-    
-            }
+            
         }
         protected void EliminarRol(object sender, EventArgs e)
         {
             try
             {
-                logicaRol.eliminarRol(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario], "1");
+          
+                logicaRol.eliminarRol(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario], RolSelect.Value);
+                Response.Redirect(Request.RawUrl);
             }
             catch (Exception ex)
             {
@@ -58,7 +73,8 @@ namespace templateApp.GUI.Modulo2
         {
             try
             {
-                logicaRol.agregarRol(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario],"1");
+                logicaRol.agregarRol(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario], RolSelect.Value);
+                Response.Redirect(Request.RawUrl);
             }
             catch (Exception ex)
             {

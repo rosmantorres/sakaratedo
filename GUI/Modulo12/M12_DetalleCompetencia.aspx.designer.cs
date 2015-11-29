@@ -7,99 +7,126 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo1 {
+namespace templateApp.GUI.Modulo12 {
     
     
-    public partial class Index {
+    public partial class M12_DetalleCompetencia {
         
         /// <summary>
-        /// Head1 control.
+        /// detalle_competencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm detalle_competencia;
         
         /// <summary>
-        /// loginUser control.
+        /// nombreComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm loginUser;
+        protected global::System.Web.UI.WebControls.Label nombreComp;
         
         /// <summary>
-        /// errorLogin control.
+        /// tipoComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorLogin;
+        protected global::System.Web.UI.WebControls.Label tipoComp;
         
         /// <summary>
-        /// warningLog control.
+        /// orgComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl warningLog;
+        protected global::System.Web.UI.WebControls.Label orgComp;
         
         /// <summary>
-        /// infoLog control.
+        /// statusComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl infoLog;
+        protected global::System.Web.UI.WebControls.Label statusComp;
         
         /// <summary>
-        /// successLog control.
+        /// costoComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successLog;
+        protected global::System.Web.UI.WebControls.Label costoComp;
         
         /// <summary>
-        /// userIni control.
+        /// inicioComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userIni;
+        protected global::System.Web.UI.WebControls.Label inicioComp;
         
         /// <summary>
-        /// passwordIni control.
+        /// finComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordIni;
+        protected global::System.Web.UI.WebControls.Label finComp;
         
         /// <summary>
-        /// RestablecerCorreo control.
+        /// categIniComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl RestablecerCorreo;
+        protected global::System.Web.UI.WebControls.Label categIniComp;
         
         /// <summary>
-        /// restab control.
+        /// categFinComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton restab;
+        protected global::System.Web.UI.WebControls.Label categFinComp;
+        
+        /// <summary>
+        /// categEdadIniComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categEdadIniComp;
+        
+        /// <summary>
+        /// categEdadFinComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categEdadFinComp;
+        
+        /// <summary>
+        /// categSexoComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categSexoComp;
     }
 }
