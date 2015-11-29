@@ -88,5 +88,58 @@ namespace DatosSKD.Modulo7
 
             return cinta;
         }*/
+
+        /// <summary>
+        /// Método que devuelve la fecha de una inscripción
+        /// </summary>
+        /// <returns>Fecha de inscripción</returns>
+        public static DateTime fechaCinta(int idPersona, int idCinta)
+        {
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametroPersona = new Parametro();
+            Parametro elParametroCinta = new Parametro();
+            DateTime fechaCinta = new DateTime();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                elParametroCinta = new Parametro(RecursosBDModulo7.ParamIdCinta, SqlDbType.Int, idCinta.ToString(), false);
+                parametros.Add(elParametroPersona);
+                parametros.Add(elParametroCinta);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarFechaCinta, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    fechaCinta = DateTime.Parse(row[RecursosBDModulo7.AliasCintaFecha].ToString());
+                }
+
+                return fechaCinta;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }/*
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+        }
     }
 }

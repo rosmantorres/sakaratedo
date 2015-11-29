@@ -315,4 +315,13 @@
   <data name="ConsultarFechaInscripcion" xml:space="preserve">
     <value>M7_ConsultarFechaInscripcion</value>
   </data>
+  <data name="ParamIdCinta" xml:space="preserve">
+    <value>@cin_id</value>
+  </data>
+  <data name="ConsultarFechaCinta" xml:space="preserve">
+    <value>M7_ConsultarFechaCinta</value>
+  </data>
+  <data name="AliasCintaFecha" xml:space="preserve">
+    <value>fecha</value>
+  </data>
 </root>

@@ -83,6 +83,12 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+        /// <summary>
+        /// Método que obtiene la fecha de inscripción de una persona en un evento
+        /// </summary>
+        /// <param name="idPersona">Número entero que representa el ID de la persona</param>
+        /// <param name="idEvento">Número entero que representa el ID del evento</param>
+        /// <returns>DateTime con la fecha de inscripción</returns>
         public DateTime obtenerFechaInscripcion(int idPersona, int idEvento)
         {
             try

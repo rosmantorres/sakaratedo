@@ -71,6 +71,25 @@ namespace LogicaNegociosSKD.Modulo7
                 throw e;
             }
         }*/
+
+
+        /// <summary>
+        /// Método que obtiene la fecha de recibimiento de una cinta para una persona
+        /// </summary>
+        /// <param name="idPersona">Número entero que representa el ID de la persona</param>
+        /// <param name="idEvento">Número entero que representa el ID de la cinta</param>
+        /// <returns>DateTime con la fecha de inscripción</returns>
+        public DateTime obtenerFechaCinta(int idPersona, int idCinta)
+        {
+            try
+            {
+                return BDCinta.fechaCinta(idPersona, idCinta);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
         #endregion
 
 

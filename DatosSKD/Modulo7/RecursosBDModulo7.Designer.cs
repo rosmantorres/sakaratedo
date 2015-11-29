@@ -79,6 +79,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fecha.
+        /// </summary>
+        internal static string AliasCintaFecha {
+            get {
+                return ResourceManager.GetString("AliasCintaFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombre.
         /// </summary>
         internal static string AliasCintaNombre {
@@ -529,6 +538,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarFechaCinta.
+        /// </summary>
+        internal static string ConsultarFechaCinta {
+            get {
+                return ResourceManager.GetString("ConsultarFechaCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarFechaInscripcion.
         /// </summary>
         internal static string ConsultarFechaInscripcion {
@@ -588,6 +606,15 @@ namespace DatosSKD.Modulo7 {
         internal static string ConsultaUbicacionXId {
             get {
                 return ResourceManager.GetString("ConsultaUbicacionXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cin_id.
+        /// </summary>
+        internal static string ParamIdCinta {
+            get {
+                return ResourceManager.GetString("ParamIdCinta", resourceCulture);
             }
         }
         
