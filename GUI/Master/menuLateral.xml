@@ -222,7 +222,7 @@
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Inicio.aspx">
+  <opcion nombre="Información de Producto" link="~/GUI/Modulo13/M13_Info_Producto.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
