@@ -288,4 +288,25 @@
   <data name="ParamIdMatricula" xml:space="preserve">
     <value>@mat_id</value>
   </data>
+  <data name="AliasCintaClasificacion" xml:space="preserve">
+    <value>clasificacion</value>
+  </data>
+  <data name="AliasCintaNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasCintaOrden" xml:space="preserve">
+    <value>orden</value>
+  </data>
+  <data name="AliasCintaRango" xml:space="preserve">
+    <value>rango</value>
+  </data>
+  <data name="AliasCintaSignificado" xml:space="preserve">
+    <value>significado</value>
+  </data>
+  <data name="AliasIdCinta" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="ConsultarCintas" xml:space="preserve">
+    <value>M7_ConsultarCintas</value>
+  </data>
 </root>

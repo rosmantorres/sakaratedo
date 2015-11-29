@@ -54,9 +54,9 @@
        <table id="tablacintas" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>Nivel</th>
-                    <th>Tipo</th>
-					<th>Color</th>
+                    <th>Color</th>
+                    <th>Rango</th>
+					<th>Clasificacion</th>
                     <th>Fecha de obtención</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
