@@ -4452,20 +4452,35 @@ INSERT INTO RESULTADO_KUMITE VALUES (15,30,35,8,9);
 INSERT INTO RESULTADO_KUMITE VALUES (16,40,35,8,9);
 
 
---CINTA--
+-----HISTORIAL_CINTAS----------
 
-INSERT INTO CINTA VALUES ('Blanco');
-INSERT INTO CINTA VALUES ('Blanco-Amarillo');
-INSERT INTO CINTA VALUES ('Amarillo');
-INSERT INTO CINTA VALUES ('Amarillo-naranja');
-INSERT INTO CINTA VALUES ('Naranja');
-INSERT INTO CINTA VALUES ('Naranja-verde');
-INSERT INTO CINTA VALUES ('Verde');
-INSERT INTO CINTA VALUES ('Verde-azul');
-INSERT INTO CINTA VALUES ('Azul');
-INSERT INTO CINTA VALUES ('Azul-marron');
-INSERT INTO CINTA VALUES ('Marron');
-INSERT INTO CINTA VALUES ('Negro');
+INSERT INTO HISTORIAL_CINTAS VALUES (1,1,CONVERT(datetime,'2015-10-22',101),1);
+INSERT INTO HISTORIAL_CINTAS VALUES (2,2,CONVERT(datetime,'2015-06-12',101),2);
+INSERT INTO HISTORIAL_CINTAS VALUES (3,3,CONVERT(datetime,'2015-08-21',101),3);
+INSERT INTO HISTORIAL_CINTAS VALUES (4,4,CONVERT(datetime,'2015-11-22',101),4);
+INSERT INTO HISTORIAL_CINTAS VALUES (5,5,CONVERT(datetime,'2015-05-12',101),5);
+
+
+
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Blanco', '1er Kyu', 'Nivel inferior', 'Principiante', 1,1);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Amarillo', '2do Kyu', 'Nivel inferior', 'Iniciado', 2,2);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Verde', '3er Kyu', 'Nivel inferior', 'Aprendiz', 3,3);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Marron', '8vo Kyu', 'Nivel inferior', 'Aprendiz avanzado', 4,4);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '1er Dan', 'Nivel superior', 'Avanzado', 1,5);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '2do Dan', 'Nivel superior', 'Maestro iniciado', 2,6);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '3er Kyu', 'Nivel superior', 'Maestro medio', 3,7);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '4to Kyu', 'Nivel superior', 'Maestro superior', 4,8);
+
+
+
 
 
 
