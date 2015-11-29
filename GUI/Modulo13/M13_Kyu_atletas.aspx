@@ -39,7 +39,7 @@
             
 			
 				<tr>
-					<td><img src="Fotos-Atletas/2.jpg" class="img-responsive" /></td>
+					<td><img src="Fotos-Atletas/2.jpg" width="60" height="80" class="img-responsive" /></td>
 					<td>Jose</td>
 					<td>Perez</td>
 					<td>25</td>
@@ -51,7 +51,7 @@
 			
 			
 				<tr>
-					<td><img src="Fotos-Atletas/3.jpg" class="img-responsive" /></td>
+					<td><img src="Fotos-Atletas/3.jpg" width="60" height="80" class="img-responsive" /></td>
 					<td>Rodrigo</td>
 					<td>Yanez</td>
 					<td>19</td>
@@ -62,7 +62,7 @@
 			
             
 				<tr>
-					<td><img src="Fotos-Atletas/4.jpg" class="img-responsive" /></td>
+					<td><img src="Fotos-Atletas/4.jpg" width="60" height="80" class="img-responsive" /></td>
 					<td>Gregorio</td>
 					<td>Padron</td>
 					<td>26</td>
@@ -73,7 +73,7 @@
             		
 			
 				<tr>
-                	<td><img src="Fotos-Atletas/5.jpg" class="img-responsive" /></td>
+                	<td><img src="Fotos-Atletas/5.jpg" width="60" height="80" class="img-responsive" /></td>
 					<td>Alejandro</td>
 					<td>García</td>
 					<td>19</td>
@@ -86,7 +86,7 @@
 			
 			
 				<tr>
-					<td width="60" height="80"><img src="Fotos-Atletas/6.jpg" class="img-responsive" /></td>
+					<td width="60" height="80"><img src="Fotos-Atletas/6.jpg" width="60" height="80" class="img-responsive" /></td>
 				  <td>Pablo</td>
 					<td>Merchan</td>
 					<td>20</td>
