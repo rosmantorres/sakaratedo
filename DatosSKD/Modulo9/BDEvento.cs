@@ -9,8 +9,10 @@ using DominioSKD;
 
 namespace DatosSKD.Modulo9
 {
+
     public class BDEvento
     {
+       
         /// <summary>
         /// Metodo que permite agregar un Evento a la BD
         /// </summary>
@@ -23,7 +25,7 @@ namespace DatosSKD.Modulo9
                 //parametros para insertar un evento
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
-                parametros.Add(parametro);        
+                parametros.Add(parametro);          
                 parametro = new Parametro(RecursosBDModulo9.ParametroDescripcionEvento, SqlDbType.VarChar, evento.Descripcion, false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
