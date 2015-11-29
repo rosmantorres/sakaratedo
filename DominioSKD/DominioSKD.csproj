@@ -43,6 +43,7 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
+    <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="ResultadoKata.cs" />
     <Compile Include="ResultadoKumite.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
+    <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Ubicacion.cs" />
   </ItemGroup>
