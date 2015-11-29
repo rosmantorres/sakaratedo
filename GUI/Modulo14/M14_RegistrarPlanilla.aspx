@@ -76,10 +76,12 @@
          <h3>Datos Disponibles</h3>
 
           <asp:ListBox ID="ListBox1" runat="server" Width="860px" Height="130px">
-             <asp:ListItem Text="Dojo" Value="Dojo" Selected="True" />
-             <asp:ListItem Text="Atleta" Value="Atleta" />
-             <asp:ListItem Text="Evento" Value="Evento" />
-             <asp:ListItem Text="Competencia" Value="Competencia"  />
+             <asp:ListItem Text="DOJO" Value="DOJO" Selected="True" />
+             <asp:ListItem Text="PERSONA" Value="PERSONA" />
+             <asp:ListItem Text="EVENTO" Value="EVENTO" />
+             <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
+             <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
+
           </asp:ListBox>
           <br/>
          <div class="text-center padding-small col-sm-10 col-md-10 col-lg-10">

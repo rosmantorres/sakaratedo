@@ -21,9 +21,8 @@ namespace LogicaNegociosSKD.Modulo14
         {
             return datos.ConsultarPlanillasCreadas();
         }
-        /// <summary>Para verificar si el registro fue correcto</summary>
-        /// <param name="elUsuario">El usuario que se va a registrar</param>
-        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
+        /// <summary>Para obtener el tipo de planilla</summary>
+        /// <returns>Regresa una lista de planillas</returns>
         /// 
         public List<Planilla> ObtenerTipoPlanilla()
         {
@@ -39,9 +38,8 @@ namespace LogicaNegociosSKD.Modulo14
             return datos.CambiarStatus(idPlanilla);
         }
 
-        /// <summary>Para verificar si el registro fue correcto</summary>
-        /// <param name="elUsuario">El usuario que se va a registrar</param>
-        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
+        /// <summary>Para obtener los datos de la bd</summary>
+        /// <returns>Regresa una lista con los datos</returns>
         public List<String> ObtenerDatosBD()
         {
             List<String> listaDatos = new List<String>();
@@ -58,8 +56,8 @@ namespace LogicaNegociosSKD.Modulo14
             return listaDatos;
         }
 
-        /// <summary>Para verificar</summary>
-        /// <param name="elUsuario">El usuario que se va a registrar</param>
+        /// <summary>Para registrar una planilla</summary>
+        /// <param name="laPlanilla"> la planilla</param>
         /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
         public void RegistrarPlanilla(Planilla laPlanilla)
         {
@@ -99,8 +97,8 @@ namespace LogicaNegociosSKD.Modulo14
             return planilla;
         }
 
-        /// <summary>Modificar una planilla</summary>
-        /// <param name="idPlanilla">la planilla</param>
+        /// <summary>Modificar una planilla por id</summary>
+        /// <param name="laPlanilla">la planilla</param>
         /// <returns>Regresa true si se modifico y false si no</returns>
         /// 
         public Planilla ModificarPlanillaID(Planilla laPlanilla)
@@ -118,8 +116,8 @@ namespace LogicaNegociosSKD.Modulo14
         }
 
         /// <summary>Modificar una planilla</summary>
-        /// <param name="idPlanilla">la planilla</param>
-        /// <returns>Regresa true si se modifico y false si no</returns>
+        /// <param name="">la planilla y el tipo de planilla</param>
+        /// <returns>Regresa la planilla modificando su tipo de planilla</returns>
         /// 
         public Planilla ModificarPlanillaID(Planilla laPlanilla, String tipoPlanilla)
         {

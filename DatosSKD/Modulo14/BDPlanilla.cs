@@ -168,7 +168,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Registra una planilla en la base de datos
         /// </summary>
-        /// <param name="elUsuario">La planilla</param>
+        /// <param name="laPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
 
         public static Boolean RegistrarPlanillaBD(Planilla laPlanilla)
@@ -208,7 +208,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Registra los datos de una planilla en la BD
         /// </summary>
-        /// <param name="elUsuario">La planilla</param>
+        /// <param name="">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public static Boolean RegistrarDatosPlanillaBD(String nombrePlanilla, String datoPlanilla)
         {
@@ -243,7 +243,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Registra el Tipo de una planilla en la BD
         /// </summary>
-        /// <param name="elUsuario">La planilla</param>
+        /// <param name="nombreTipoPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public static Boolean RegistrarTipoPlanilla(String nombreTipoPlanilla)
         {
@@ -317,7 +317,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Obtiene una planilla por el ID
         /// </summary>
-        /// /// <param name="elUsuario">id planilla</param>
+        /// /// <param name="idPlanilla">id planilla</param>
         /// <returns>Planilla con nombre, status y tipo de planilla</returns>
         public static Planilla ObtenerPlanillaID(int idPlanilla)
         {
@@ -356,7 +356,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Obtiene los datos de una planilla id
         /// </summary>
-        /// /// <param name="elUsuario">id planilla</param>
+        /// /// <param name="idPlanilla">id planilla</param>
         /// <returns>datos de una planilla</returns>
         public static List<String> ObtenerDatosPlanillaID(int idPlanilla)
         {
@@ -393,7 +393,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Modifica una planilla en la base de datos
         /// </summary>
-        /// <param name="elUsuario">La planilla</param>
+        /// <param name="laPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
 
         public static Boolean ModificarPlanillaBD(Planilla laPlanilla)
@@ -435,7 +435,7 @@ namespace DatosSKD.Modulo14
         /// <summary>
         /// Modifica una planilla en la base de datos
         /// </summary>
-        /// <param name="elUsuario">La planilla</param>
+        /// <param name="idPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
 
         public static Boolean EliminarDatosPlanillaBD(int idPlanilla)
