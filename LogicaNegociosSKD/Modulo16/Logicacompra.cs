@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Modulo16
 {
@@ -22,7 +23,13 @@ namespace LogicaNegociosSKD.Modulo16
         #endregion
 
         #region Metodos
-        
+
+        public List<Dictionary<int,int>> ActualizarInventario() 
+        {
+                throw new NotImplementedException;
+        }
         #endregion
+
+
     }
 }
