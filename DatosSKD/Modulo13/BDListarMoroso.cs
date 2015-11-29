@@ -22,7 +22,7 @@ namespace DatosSKD.Modulo13
             List<Persona> laListaDeMorosos = new List<Persona>();
             //List<Parametro> parametros;
 
-            /*  try
+              try
               {
                   laConexion = new BDConexion();
                  // parametros = new List<Parametro>();
@@ -91,9 +91,9 @@ namespace DatosSKD.Modulo13
 
 
 
-      }*/
-            return laListaDeMorosos;
+      }
+          
         }
-    }
-}
+    
+
 

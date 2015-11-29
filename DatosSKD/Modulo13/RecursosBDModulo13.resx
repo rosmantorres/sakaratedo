@@ -117,6 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+<<<<<<< HEAD
   <data name="Cinta" xml:space="preserve">
     <value>cinta</value>
   </data>
@@ -128,5 +129,10 @@
   </data>
   <data name="ParamIdPersona" xml:space="preserve">
     <value>persona</value>
+=======
+  <data name="listamorosidad" xml:space="preserve">
+    <value>M13_ListarMorosos</value>
+    <comment>la lista de morosos</comment>
+>>>>>>> 771e78e45826d1e9535ee3a6885b807f4912d649
   </data>
 </root>
