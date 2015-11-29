@@ -145,6 +145,9 @@
   <data name="AliasIdCategoria" xml:space="preserve">
     <value>idCategoria</value>
   </data>
+  <data name="AliasIdCinta" xml:space="preserve">
+    <value>idCinta</value>
+  </data>
   <data name="AliasIdCompetencia" xml:space="preserve">
     <value>idCompetencia</value>
   </data>
@@ -159,6 +162,9 @@
   </data>
   <data name="AliasLongitudDireccion" xml:space="preserve">
     <value>longitudDireccion</value>
+  </data>
+  <data name="AliasNombreCinta" xml:space="preserve">
+    <value>nombreCinta</value>
   </data>
   <data name="AliasNombreCiudad" xml:space="preserve">
     <value>nombreCiudad</value>
@@ -204,6 +210,9 @@
     <value>SKD_00_004</value>
     <comment>Codigo de error en el parseo</comment>
   </data>
+  <data name="ConsultarCintas" xml:space="preserve">
+    <value>M12_ConsultarCintas</value>
+  </data>
   <data name="ConsultarCompetencias" xml:space="preserve">
     <value>M12_ConsultarCompetencias</value>
     <comment>Consulta las competencias en general</comment>
@@ -211,6 +220,9 @@
   <data name="ConsultarCompetenciasXId" xml:space="preserve">
     <value>M12_ConsultarCompetenciasXId</value>
     <comment>Consulta una competencia por su id</comment>
+  </data>
+  <data name="ConsultarOrganizaciones" xml:space="preserve">
+    <value>M12_ConsultarOrganizaciones</value>
   </data>
   <data name="Mensaje_Competencia_Existente" xml:space="preserve">
     <value>El nombre de las competencias debe ser único, la competencia ya existe</value>
@@ -284,9 +296,6 @@
   </data>
   <data name="ParamTipoCompetencia" xml:space="preserve">
     <value>@tipoCompetencia</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
   </data>
   <data name="TipoCompetenciaKata" xml:space="preserve">
     <value>Kata</value>

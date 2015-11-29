@@ -2078,6 +2078,26 @@ as
 
 
 
+--PROCEDURE CONSULTA LISTA DE ORGANIZACIONES--
+CREATE procedure M12_ConsultarOrganizaciones
+as
+	begin
+		select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
+		from ORGANIZACION as org		
+	end;
+go
+
+
+--PROCEDURE CONSULTA LISTA DE CINTAS--
+CREATE procedure M12_ConsultarCintas
+as
+	begin
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta
+		from CINTA as cin		
+	end;
+go
+
+
  ----------------------------------STORED PROCEDURES M1-------------------------------------
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA ------------
