@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Dojo
+    public class Dojo
     {
         #region atributos
 
