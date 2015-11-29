@@ -31,15 +31,22 @@ namespace DatosSKD.Modulo1
 
                 laConexion.EjecutarStoredProcedureTuplas(
                       RecursosBDModulo1.CambiarContraseña, parametros);
-
-
                 return true;
-
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
         }
    
     

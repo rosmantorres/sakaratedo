@@ -61,11 +61,30 @@ namespace DatosSKD.Modulo1
                 return laCuenta;
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
+                     RecursosBDModulo1.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
         }
+
+
+
+
 
         public static Boolean ValidarCorreoUsuario(string correo_usuario)
         {
@@ -98,10 +117,20 @@ namespace DatosSKD.Modulo1
                 return respuesta;
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
         }
     }
 }
