@@ -61,23 +61,23 @@ namespace DatosSKD.Modulo1
                 return laCuenta;
 
             }
-            catch (SqlException ex)
+            catch (SqlException e)
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, e);
             }
-            catch (FormatException ex)
+            catch (FormatException e)
             {
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
-                     RecursosBDModulo1.Mensaje_Error_Formato, ex);
+                     RecursosBDModulo1.Mensaje_Error_Formato, e);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
-                throw ex;
+                throw e;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
             }
 
         }
@@ -117,18 +117,18 @@ namespace DatosSKD.Modulo1
                 return respuesta;
 
             }
-            catch (SqlException ex)
+            catch (SqlException e)
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, e);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
-                throw ex;
+                throw e;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
             }
 
         }

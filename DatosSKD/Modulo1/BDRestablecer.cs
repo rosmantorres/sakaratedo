@@ -33,18 +33,18 @@ namespace DatosSKD.Modulo1
                       RecursosBDModulo1.CambiarContraseña, parametros);
                 return true;
             }
-            catch (SqlException ex)
+            catch (SqlException e)
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, e);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
-                throw ex;
+                throw e;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
             }
 
         }
