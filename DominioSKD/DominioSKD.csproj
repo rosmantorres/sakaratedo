@@ -45,7 +45,7 @@
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
-    <Compile Include="SolicitudInsciptcionDojo.cs" />
+    <Compile Include="SolicitudInscripcionDojo.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="Asistencia.cs" />
     <Compile Include="Carrito.cs" />

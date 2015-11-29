@@ -619,6 +619,15 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Modificar_Persona_Contacto.
+        /// </summary>
+        internal static string SP_Chg_Persona_Contacto {
+            get {
+                return ResourceManager.GetString("SP_Chg_Persona_Contacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modificar_Solicitud.
         /// </summary>
         internal static string SP_Chg_Solicitud {
@@ -637,11 +646,20 @@ namespace DatosSKD.Modulo6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cambiar_Estado_Usuario.
+        ///   Looks up a localized string similar to desactivar_persona.
         /// </summary>
-        internal static string SP_Chg_Usuario_Estado {
+        internal static string SP_Dis_Persona {
             get {
-                return ResourceManager.GetString("SP_Chg_Usuario_Estado", resourceCulture);
+                return ResourceManager.GetString("SP_Dis_Persona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to activar_persona.
+        /// </summary>
+        internal static string SP_Enl_Persona {
+            get {
+                return ResourceManager.GetString("SP_Enl_Persona", resourceCulture);
             }
         }
         

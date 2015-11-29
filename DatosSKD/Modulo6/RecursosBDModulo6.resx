@@ -279,9 +279,6 @@
   <data name="SP_Add_Usuario" xml:space="preserve">
     <value>Agregar_Usuario</value>
   </data>
-  <data name="SP_Chg_Usuario_Estado" xml:space="preserve">
-    <value>Cambiar_Estado_Usuario</value>
-  </data>
   <data name="SP_Get_Persona" xml:space="preserve">
     <value>Consulta_Persona</value>
   </data>
@@ -329,5 +326,14 @@
   </data>
   <data name="SP_Set_Correo_Principal" xml:space="preserve">
     <value>correo_principal</value>
+  </data>
+  <data name="SP_Dis_Persona" xml:space="preserve">
+    <value>desactivar_persona</value>
+  </data>
+  <data name="SP_Enl_Persona" xml:space="preserve">
+    <value>activar_persona</value>
+  </data>
+  <data name="SP_Chg_Persona_Contacto" xml:space="preserve">
+    <value>Modificar_Persona_Contacto</value>
   </data>
 </root>

@@ -230,21 +230,24 @@ END
 
 
 /*Setea el contacto de emergencia de una persona*/
-CREATE PROCEDURE Agregar_Relacion
+ALTER PROCEDURE Agregar_Relacion
 	@relacion_tipo varchar(15),
 	@persona_id INTEGER,
 	@id_persona_relacion INTEGER
 AS
 BEGIN
-	INSERT INTO dbo.RELACION(
-		rel_tipo,
-		PERSONA_per_id, 
-		PERSONA_per_id1
-	) VALUES (
-		@relacion_tipo, 
-		@persona_id,
-		@id_persona_Relacion
-	);	
+	IF NOT EXISTS (SELECT rel_tipo FROM dbo.RELACION WHERE PERSONA_per_id = @persona_id AND  PERSONA_per_id1 = @id_persona_Relacion)
+	BEGIN
+		INSERT INTO dbo.RELACION(
+			rel_tipo,
+			PERSONA_per_id, 
+			PERSONA_per_id1
+		) VALUES (
+			@relacion_tipo, 
+			@persona_id,
+			@id_persona_Relacion
+		)
+	END
 END
 
 ------------
@@ -299,20 +302,6 @@ END
 ---------------
 -- Modificar --
 ---------------
-/* Cambiar el estado de una persona */
-CREATE PROCEDURE Cambiar_Estado_Usuario
-	@persona_activo BIT,
-	@persona_id INTEGER
-AS
-BEGIN
-	UPDATE dbo.PERSONA
-	SET
-		per_activo = @persona_activo
-	WHERE
-		per_id = @persona_id
-	;
-END
-
 /* Cambiar la imagen del usuario */
 CREATE PROCEDURE Cambiar_Image_Usuario
 	@persona_imagen TEXT,
@@ -374,9 +363,26 @@ BEGIN
     ;
 END
 
+
+/* Cambiar los datos de una persona*/
+CREATE PROCEDURE Modificar_Persona_Contacto
+    @persona_nombre VARCHAR (256),
+    @persona_apellido VARCHAR (256),
+    @persona_sexo CHAR (1),
+	@persona_id INTEGER
+AS
+BEGIN
+    UPDATE dbo.PERSONA
+    SET per_nombre = @persona_nombre,
+        per_apellido = @persona_apellido,
+        per_sexo = @persona_sexo
+    WHERE per_id = @persona_id
+    ;
+END
+
 /* Modifica la informacion de un telefono */
 CREATE PROCEDURE Modificar_Telefono
-	@telefono_numero VARCHAR (10),
+	@telefono_numero VARCHAR (11),
 	@telefono_id INTEGER
 AS
 BEGIN
@@ -391,17 +397,15 @@ END
 /* Modifica la informacion de un correo */
 CREATE PROCEDURE Modificar_Correo
 	@correo_direccion VARCHAR (100),
-	@correo_principal BIT,
 	@correo_id INTEGER
 AS
 BEGIN
-	IF @correo_direccion <> (SELECT ema_email FROM dbo.EMAIL WHERE ema_id = @correo_id AND ema_principal = @correo_principal )
+	IF @correo_direccion <> (SELECT ema_email FROM dbo.EMAIL WHERE ema_id = @correo_id )
 	BEGIN
 		UPDATE dbo.EMAIL
 		SET
-			ema_email = @correo_direccion,
-			ema_principal = @correo_principal
-		WHERE ema_id = @correo_id;
+			ema_email = @correo_direccion
+			WHERE ema_id = @correo_id;
 	END
 END
 
@@ -460,4 +464,25 @@ BEGIN
 	UPDATE dbo.EMAIL
 	SET ema_principal = 1
 	WHERE ema_id = @correo_id;
+END
+
+
+/* Activar a ua persna */
+CREATE PROCEDURE dbo.activar_persona
+	@persona_id INTEGER
+AS
+BEGIN
+	UPDATE dbo.PERSONA
+	SET per_activo = 1
+	WHERE per_id = @persona_id;
+END
+
+/* Activar a ua persna */
+CREATE PROCEDURE dbo.desactivar_persona
+	@persona_id INTEGER
+AS
+BEGIN
+	UPDATE dbo.PERSONA
+	SET per_activo = 0
+	WHERE per_id = @persona_id;
 END

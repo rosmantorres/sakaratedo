@@ -73,9 +73,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo6\M6_PruebaClasesDominioDocumentoIdentidad.cs" />
-    <Compile Include="Modulo6\M6_PruebaClasesDominioPersona.cs" />
-    <Compile Include="Modulo6\M6_PruebaClasesDominioTelefono.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +104,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod5.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\PruebasDatos\M6_PruebaDatosPersona.cs" />
+    <Compile Include="Modulo6\PruebasDominio\M6_PruebaDominioDocumentoIdentidad.cs" />
+    <Compile Include="Modulo6\PruebasDominio\M6_PruebaDominioPersona.cs" />
+    <Compile Include="Modulo6\PruebasDominio\M6_PruebaDominioTelefono.cs" />
     <Compile Include="Modulo6\Pruebas_rapidas.cs" />
     <Compile Include="Modulo6\RecursosPU_Mod6.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

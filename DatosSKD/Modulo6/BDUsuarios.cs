@@ -10,9 +10,20 @@ using DatosSKD;
 
 namespace DatosSKD.Modulo6
 {
+    /// <summary>
+    /// Clase con metos estaticos para interactuar con
+    /// la basede datos. Todo lo relacionado con Personas
+    /// y Usuarios.
+    /// </summary>
     public class BDUsuarios
     {
 
+        /// <summary>
+        /// Metodo para obtener el string correspontiente
+        /// al tipo de documento en la base de datos
+        /// </summary>
+        /// <param name="per">Objeto persona</param>
+        /// <returns>String de como se guarda en base de datos</returns>
         private static String EnumDocId(Persona per)
         {
             if (per.DocumentoID == null)
@@ -26,6 +37,13 @@ namespace DatosSKD.Modulo6
                     return RecursosBDModulo6.Documento_Cedula_Extranjera;
         }
 
+        /// <summary>
+        /// Configura el tipo de documento de ua parsona
+        /// a partir de un String del campo correspondiente
+        /// en la base de datos
+        /// </summary>
+        /// <param name="Tipo">Valor del campo en la base de datos</param>
+        /// <param name="per">Objeto persona a condigurar</param>
         private static void EnumDocId(String Tipo, Persona per)
         {
             if (Tipo.Equals(RecursosBDModulo6.Documento_Cedula_Nacional))
@@ -45,6 +63,12 @@ namespace DatosSKD.Modulo6
                 
         }
 
+        /// <summary>
+        /// Metodo para obtener el caracter correspontiente
+        /// al la enumeracion de Sexo para la base de datos
+        /// </summary>
+        /// <param name="sex">Valor de la enumeracion Sexo</param>
+        /// <returns>Caracter guardado en base de datos.</returns>
         private static String EnumSexo(Sexo sex)
         {
             if (sex == Sexo.Femenino)
@@ -53,6 +77,12 @@ namespace DatosSKD.Modulo6
                 return RecursosBDModulo6.Sexo_Masculino;
         }
 
+        /// <summary>
+        /// Metodo para obtener el valor de una enumeracion
+        /// a partir de un charater en el campo de la base de datos
+        /// </summary>
+        /// <param name="sex">Valor en el campo de la base de datos</param>
+        /// <returns>Valor de la enumeracion Sexo</returns>
         private static Sexo EnumSexo(String sex)
         {
             if (sex == RecursosBDModulo6.Sexo_Femenino)
@@ -61,6 +91,12 @@ namespace DatosSKD.Modulo6
                 return Sexo.Masculino;
         }
 
+        /// <summary>
+        /// Obtine el valor en base de datos de la enumeracion
+        /// Sangre
+        /// </summary>
+        /// <param name="san">Valor de la enumeracion Sange</param>
+        /// <returns>String a guardar en la base de datos</returns>
         private static String EnumSangre(Sangre san)
         {
             switch (san)
@@ -85,6 +121,13 @@ namespace DatosSKD.Modulo6
             return null;
         }
 
+
+        /// <summary>
+        /// Apartir del valor del campo en la base de datos
+        /// retorna el valor correspondiente de la enumeracion Sangre
+        /// </summary>
+        /// <param name="san">Strig del campo de la base de datos</param>
+        /// <returns>Valor de la enumeracion Sangre</returns>
         private static Sangre EnumSangre(String san)
         {
             if (san.Equals(RecursosBDModulo6.Sangre_ABN))
@@ -105,6 +148,10 @@ namespace DatosSKD.Modulo6
             return Sangre.OP;
         }
 
+        /// <summary>
+        /// Guarda la estructura de una persona en la base de datos
+        /// </summary>
+        /// <param name="per">Objeto persona</param>
         public static void GuardarDatosDePersona(Persona per)
         {
             Parametro parametro;
@@ -151,6 +198,7 @@ namespace DatosSKD.Modulo6
 
             if (per.ID == -1)
             {
+                // Si es una nueva persona
                 parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, true);
                 parametros.Add(parametro);
                 res = BDUtils.getValues(RecursosBDModulo6.SP_Add_Persona, parametros);
@@ -158,20 +206,29 @@ namespace DatosSKD.Modulo6
             }
             else
             {
+                // Si ya tiene un id en base de datos
                 parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
                 parametros.Add(parametro);
                 res = BDUtils.getValues(RecursosBDModulo6.SP_Chg_Persona, parametros);
             }
+
+            // Guardar telefonos y correos
             GuardarTelefonos(per);
             GuardarCorreos(per);
+
             if (per.ContatoEmergencia != null)
             {
+                // Si tiene una persona de contacto, tambien guardarla.
                 BDUsuarios.GuardarDatosContacto(per.ContatoEmergencia);
                 BDUsuarios.GuardarContacto(per);
             }
         }
 
-
+        /// <summary>
+        /// Guarda en base de datos la información de una persona 
+        /// Representante
+        /// </summary>
+        /// <param name="per">Objeto Persona</param>
         public static void GuardarDatosDeRepresentante(Persona per)
         {
             Parametro parametro;
@@ -212,20 +269,23 @@ namespace DatosSKD.Modulo6
             {
                 parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
                 parametros.Add(parametro);
-                /* TODO
-                res = getValues(RecursosBDModulo6.SP_Chg_Persona, parametros);
-                 * */
+                /*
+                res = BDUtils.getValues(RecursosBDModulo6.SP_Chg_Persona_Contacto, parametros);*/
             }
             GuardarTelefonos(per);
             GuardarCorreos(per);
 
+            // Guardar sus representados
             foreach (Persona representado in per.Representados)
                 BDUsuarios.GuardarDatosDePersona(representado);
 
             BDUsuarios.GuardarRepresentados(per);
         }
 
-
+        /// <summary>
+        /// Guarda los datos de un contacto de emergencia
+        /// </summary>
+        /// <param name="per">Objeto persona a guardar</param>
         private static void GuardarDatosContacto(Persona per)
         {
 
@@ -255,14 +315,16 @@ namespace DatosSKD.Modulo6
             {
                 parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
                 parametros.Add(parametro);
-                /* TODO
-                res = getValues(RecursosBDModulo6.SP_Chg_Persona, parametros);
-                 * */
+                res = BDUtils.getValues(RecursosBDModulo6.SP_Chg_Persona_Contacto, parametros); ;
             }
             GuardarTelefonos(per);
             GuardarCorreos(per);
         }
 
+        /// <summary>
+        /// Guarda los telefonos de una persona
+        /// </summary>
+        /// <param name="per">Objeto persona a cuardar sus telefonos</param>
         private static void GuardarTelefonos(Persona per)
         {
             Parametro parametro;
@@ -297,6 +359,10 @@ namespace DatosSKD.Modulo6
             }
         }
 
+        /// <summary>
+        /// Guarda  los correos electronicos de una persona
+        /// </summary>
+        /// <param name="per">Objeto persona a cuardar sus correos</param>
         private static void GuardarCorreos(Persona per)
         {
             Parametro parametro;
@@ -323,10 +389,10 @@ namespace DatosSKD.Modulo6
                 }
                 else
                 {
-                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Telefono_Id, SqlDbType.Int, email.ID.ToString(), false);
+                    parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Correo_Id, SqlDbType.Int, email.ID.ToString(), false);
                     parametros.Add(parametro);
 
-                    res = BDUtils.getValues(RecursosBDModulo6.SP_Chg_Telefono, parametros);
+                    res = BDUtils.getValues(RecursosBDModulo6.SP_Chg_Correo, parametros);
                 }
                 if (email.Primario)
                 {
@@ -343,6 +409,11 @@ namespace DatosSKD.Modulo6
             }
         }
 
+        /// <summary>
+        /// Crea una objeto persona a partir de su id en base de datos.
+        /// </summary>
+        /// <param name="dbid">Id en base de datos</param>
+        /// <returns>Objeto persona constuido.</returns>
         public static Persona GetInfoPersonaByID(int dbid)
         {
             Parametro parametro;
@@ -403,6 +474,11 @@ namespace DatosSKD.Modulo6
             return null;
         }
 
+        /// <summary>
+        /// Agrega los telefonos de una persona guardados en la
+        /// base de datos
+        /// </summary>
+        /// <param name="per">Objeto Persona</param>
         private static void ListaTelefonos(Persona per)
         {
             Telefono telf;
@@ -420,12 +496,16 @@ namespace DatosSKD.Modulo6
             foreach (DataRow row in res.Rows)
             {
                 telf = new Telefono(int.Parse(row[RecursosBDModulo6.Atribute_Telefono_Id].ToString()));
-                Console.WriteLine(row[RecursosBDModulo6.Atribute_Telefono_numero].ToString()+"...........");
                 telf.Numero = row[RecursosBDModulo6.Atribute_Telefono_numero].ToString();
                 per.agregarTelefono(telf);
             }
 
         }
+        /// <summary>
+        /// Agrega los correos de una persona guardados en la
+        /// base de datos
+        /// </summary>
+        /// <param name="per"></param>
         private static void ListCorreos(Persona per)
         {
             Correo mail;
@@ -448,7 +528,10 @@ namespace DatosSKD.Modulo6
             }
         }
 
-
+        /// <summary>
+        /// Guarda la relacion Contacto de emergencia de una persona
+        /// </summary>
+        /// <param name="per">Objeto persona</param>
         private static void GuardarContacto(Persona per)
         {
             Parametro parametro;
@@ -472,6 +555,10 @@ namespace DatosSKD.Modulo6
 
         }
 
+        /// <summary>
+        /// Guarda la relazion de representante
+        /// </summary>
+        /// <param name="per">Objeto Persona </param>
         private static void GuardarRepresentados(Persona per)
         {
             Parametro parametro;
@@ -497,6 +584,10 @@ namespace DatosSKD.Modulo6
             }
         }
 
+        /// <summary>
+        /// Obtiene el contacto de emergencia de una persona
+        /// </summary>
+        /// <param name="per">Objeto persona</param>
         public static void GetContacto(Persona per)
         {
             Parametro parametro;
@@ -519,6 +610,11 @@ namespace DatosSKD.Modulo6
             }
 
         }
+
+        /// <summary>
+        /// Obtiene los representados de una persona
+        /// </summary>
+        /// <param name="per">Persona</param>
         public static void CargarRepresentados(Persona per)
         {
             Persona representado;
