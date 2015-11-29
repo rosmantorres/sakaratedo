@@ -231,4 +231,31 @@
   <data name="ConsultarEventosPagos" xml:space="preserve">
     <value>M7_ConsultarEventosPagos</value>
   </data>
+  <data name="AliasCompetenciaCosto" xml:space="preserve">
+    <value>costo</value>
+  </data>
+  <data name="AliasCompetenciaFechaFin" xml:space="preserve">
+    <value>fechaFin</value>
+  </data>
+  <data name="AliasCompetenciaFechaInicio" xml:space="preserve">
+    <value>fechaInicio</value>
+  </data>
+  <data name="AliasCompetenciaNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasCompetenciaUbicacionId" xml:space="preserve">
+    <value>idUbicacion</value>
+  </data>
+  <data name="AliasIdCompetencia" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="ConsultarCompetenciasAsistidas" xml:space="preserve">
+    <value>M7_ConsultarCompetenciasAsistidas</value>
+  </data>
+  <data name="ConsultarEventoXId" xml:space="preserve">
+    <value>M7_ConsultarEvento</value>
+  </data>
+  <data name="ParamIdEvento" xml:space="preserve">
+    <value>@eve_id</value>
+  </data>
 </root>
