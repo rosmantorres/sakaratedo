@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Dojo
+    public class Dojo
     {
         #region atributos
 
@@ -54,7 +54,7 @@ namespace DominioSKD
             get { return rif_dojo; }
             set { rif_dojo = value; }
         }
-        public String Orgaización_dojo
+        public String Organizacion_dojo
         {
             get { return organizacion_dojo; }
             set { organizacion_dojo = value; }

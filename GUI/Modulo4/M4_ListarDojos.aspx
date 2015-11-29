@@ -46,10 +46,6 @@
               <div class="box">
         <div class="box-header">
                       <h3 class="box-title">Dojos</h3>
-             &nbsp;&nbsp;&nbsp;&nbsp
-                     <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo">
-                        </a>
                     
         </div><!-- /.box-header -->
 
@@ -57,33 +53,17 @@
         <table id="tabladojos" class="table table-bordered table-striped dataTable">
             <thead>
 				<tr>
-                    <th style="text-align:center">Foto</th>
-                    <th style="text-align:center">Rif</th>
-					<th style="text-align:center">Nombre</th>
-                    <th style="text-align:center">Estado</th>
-                    <th style="text-align:center">Ciudad</th>
-                    <th style="text-align:center">Status</th>
-					<th style="text-align:center">Acciones</th>
+                    <th style="text-align:left">Foto</th>
+                    <th style="text-align:left">Rif</th>
+					<th style="text-align:left">Nombre</th>
+                    <th style="text-align:left">Organización</th>
+                    <th style="text-align:left">Ubicación</th>
+                    <th style="text-align:left">Status</th>
+					<th style="text-align:left">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-                     <td><img src="Imagenes\Aikido.png" alt="" style="width:50px; height:auto;"></td>
-					<td class="id">J-17280493-1</td>
-					<td>Aikido</td>
-                    <td>Río de Janeiro</td>
-                    <td>Río de Janeiro</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-               
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>               
 			    </tbody>
             </table>
            </div>
@@ -94,6 +74,7 @@
 
 
 
+        
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -110,8 +91,8 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+         <asp:Button id="btn_eliminarDojo" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarDojo_Click" Text="Eliminar"></asp:Button>
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
         </div><!-- /.modal-delete-dialog -->
