@@ -10,33 +10,33 @@ namespace DominioSKD
     /// <summary>
     /// Clase Compra con sus constructores y atributos
     /// </summary>
-    public class Compra
+    public partial class Compra
     {
         #region Atributos
         /// <summary>
         /// Atributos de la clase Carrito
         /// </summary>
-        /*
-        List<Inventario> listaInventario;
+        
+        List<Implemento> listaImplemento;
         List<Evento> listaEvento;
-        List<Matricula> listaMatricula;*/
+        List<Matricula> listaMatricula;
         DateTime fechaCompra;
         #endregion
 
         #region Propiedades
-        /*
+        
         /// <summary>
         /// Propiedad del atributo listaInventario
         /// </summary>
-        public List<Inventario> Listainventario
+        public List<Implemento> ListaImplemento
         {
             get
             {
-                return this.listaInventario;
+                return this.listaImplemento;
             }
             set
             {
-                this.listaInventario = value;
+                this.listaImplemento = value;
             }
         }
 
@@ -70,7 +70,6 @@ namespace DominioSKD
             }
         }
         
-        */
 
         /// <summary>
         /// Propiedad del atributo fechaCompra

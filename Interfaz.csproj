@@ -216,6 +216,7 @@
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
+    <Content Include="GUI\Modulo16\M16_ListarFacturas.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
     <Content Include="GUI\Modulo16\M16_VerCarrito.aspx" />
     <Content Include="GUI\Modulo1\css\styles.css" />
@@ -1420,6 +1421,13 @@
     </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarProducto.aspx.designer.cs">
       <DependentUpon>M16_ConsultarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_ListarFacturas.aspx.cs">
+      <DependentUpon>M16_ListarFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_ListarFacturas.aspx.designer.cs">
+      <DependentUpon>M16_ListarFacturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo16\M16_Prueba.aspx.cs">
       <DependentUpon>M16_Prueba.aspx</DependentUpon>
