@@ -40,7 +40,8 @@ namespace DatosSKD.Modulo1
 
                     laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
                     laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();  
+                    laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();
+                    laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString(); 
         
                 }
 
