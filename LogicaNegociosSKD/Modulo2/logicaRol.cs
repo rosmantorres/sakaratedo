@@ -7,6 +7,7 @@ using DatosSKD.Modulo2;
 using System.Collections.Generic;
 using DominioSKD;
 using System.Data;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo2
 {
@@ -45,7 +46,8 @@ namespace LogicaNegociosSKD.Modulo2
             }
             catch (Exception e)
             {
-                throw e;
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_EliminarRol,
+                          RecursosLogicaModulo2.Mensaje_Error_EliminarRol, e);
             }
         }
 
@@ -58,7 +60,8 @@ namespace LogicaNegociosSKD.Modulo2
               }
             catch (Exception e)
             {
-                throw e;
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_AgregarRol,
+                         RecursosLogicaModulo2.Mensaje_Error_AgregarRol, e);
             }
         }
 
@@ -70,7 +73,8 @@ namespace LogicaNegociosSKD.Modulo2
             }
             catch (Exception e)
             {
-                throw e;
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_ConsultarRolUsuario,
+                         RecursosLogicaModulo2.Mensaje_Error_ConsultarRolUsuario, e);
             }
         }
 
@@ -95,7 +99,8 @@ namespace LogicaNegociosSKD.Modulo2
             }
             catch (Exception e)
             {
-                throw e;
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_FiltrarRol,
+                         RecursosLogicaModulo2.Mensaje_Error_FiltarRol, e);
             }
         }
 
@@ -115,7 +120,8 @@ namespace LogicaNegociosSKD.Modulo2
             }
             catch (Exception e)
             {
-                throw e;
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_ValidarPrioridad,
+                                         RecursosLogicaModulo2.Mensaje_Error_ValidarPrioridad, e);
             }
 
         }
@@ -139,7 +145,7 @@ namespace LogicaNegociosSKD.Modulo2
                 case "Atleta": return 5;
                 case "Representante": return 6; 
             }
-            throw new Exception("Rol no registrado/validado en sistema: LogicaNegociosSKD.logicaRol.prioridadRol()");
+            throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Mensaje_Error_RolSinRegistro);
         }
 
         /// <summary>
@@ -164,7 +170,8 @@ namespace LogicaNegociosSKD.Modulo2
             }
             catch (Exception e)
             {
-                throw e;
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_RolNoEditable,
+                                                        RecursosLogicaModulo2.Mensaje_Error_RolNoEditable, e);
             }
 
         }
