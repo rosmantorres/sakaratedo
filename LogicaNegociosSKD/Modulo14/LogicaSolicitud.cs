@@ -20,5 +20,10 @@ namespace LogicaNegociosSKD.Modulo14
         {
             return datos.ConsultarSolicitudes(idPersona);
         }
+
+        public Boolean EliminarSolicitud(int idSolicitud)
+        {
+            return datos.EliminarSolicitudBD(idSolicitud);
+        }
     }
 }

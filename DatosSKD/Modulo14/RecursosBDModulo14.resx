@@ -289,4 +289,10 @@
   <data name="AtributoTipo" xml:space="preserve">
     <value>tipo</value>
   </data>
+  <data name="ParametroIdSolicitud" xml:space="preserve">
+    <value>@pla_sol_id</value>
+  </data>
+  <data name="ProcedureEliminarSolicitud" xml:space="preserve">
+    <value>M14_Eliminar_Solicitud</value>
+  </data>
 </root>
