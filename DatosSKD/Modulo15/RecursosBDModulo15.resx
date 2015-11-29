@@ -126,6 +126,9 @@
   <data name="nombreProcedureConsultarImplemento" xml:space="preserve">
     <value>Procedure_consultarImplemento</value>
   </data>
+  <data name="nombreProcedureConsultarImplementoU" xml:space="preserve">
+    <value>M15_ConsultarImplementoUltimo</value>
+  </data>
   <data name="nombreProcedureConsultarInventario" xml:space="preserve">
     <value>Procedure_consultarImplementoTotal</value>
     <comment>nombre del procedimiento para consultar el inventario</comment>

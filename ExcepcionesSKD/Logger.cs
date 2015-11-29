@@ -32,7 +32,7 @@ namespace ExcepcionesSKD
             }
             else
             {
-                throw new LoggerException(ExcepcionesSKDRecursosGenerales.Codigo_Error_Log,
+                throw new LoggerException(ExcepcionesSKDRecursosGenerales.Codigo_Error_Log, 
                     ExcepcionesSKDRecursosGenerales.Mensaje_Error_Log,
                     new LoggerException());
             }
