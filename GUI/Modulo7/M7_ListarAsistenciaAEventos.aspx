@@ -70,7 +70,7 @@
                 </div>
         </div>
 
-    		<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    		<div id="modal-info5" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -78,33 +78,9 @@
 						<h4 class="modal-title">Información detallada del evento</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info1">
+						<div class="container-fluid" id="info5">
 							<div class="row">
-								<h3>Nombre</h3>
-								<p>
-									Octavo encuentro de cintas amarillas 2do kyu
-								</p>
-								<h3>Tipo</h3>
-								<p>
-									Seminario
-								</p>
-								<h3>Fecha de inicio</h3>
-								<p>
-									24/10/2015
-								</p>
-								<h3>Fecha de finalización</h3>
-								<p>
-									26/10/2015
-								</p>
-                                <h3>Locación</h3>
-								<ul>
-									<li>Estado: Guarico</li>
-									<li>Ciudad: San Juan de los Morros</li>
-								</ul>
-								<h3>Descripción</h3>
-								<p>
-                                    Encuentro entre los cinturones amarillos de rango 2do Kyu
-    							</p>
+								<asp:Literal runat="server" ID="elModal"></asp:Literal>
 							</div>
 						</div>
 					</div>
@@ -112,7 +88,7 @@
 			</div>
 		</div>
 
-    <div id="modal-info2" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -265,7 +241,57 @@
 				</div>
 			</div>
 		</div>
+
+                      <!--MODAL PARA EL DETALLEDEL PRODUCTO -->
+<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada del Articulo</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info1">
+							<div class="row">
+                                <p>
+									<input type="text" id="beta" value="" />
+								</p>
+								<h3>Nombre</h3>
+								<p>
+									<input type="text" id="beta4" value="" />
+								</p>
+								<h3>Cantidad disponible</h3>
+                                <br />
+                                <form role="form" class="form-horizontal" method="POST">
+                                     <div class="col-sm-8 col-md-8 col-lg-8" >
+                                     </div>
+                                    <br />
+                               
+            					    <h3>Detalles</h3>
+								    <p>
+									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
+                                        golpes contra el contrincante o cuando se está practicando, con un diseño
+                                        particular de color rojo a gusto del atleta.
+								    </p>
+								    <div class="form-group">
+		                                <div class="box-footer">
+				                            <button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info1').modal('hide'); $('#prueba').show();" >Agregar al Carrito</button>
+                                             
+			                            </div>
+	                                </div>
+                                </form>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+ </div>
     
+    <!--VALIDACION PARA MODAL -->
+    <script src="js/Validacion.js"></script>
+
         <script type="text/javascript">
             $.datepicker.setDefaults($.datepicker.regional["es"]);
             $(document).ready(function () {
@@ -341,6 +367,25 @@
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
+
+                $('#modal-info1').on('show.bs.modal', function (e) {
+                    $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        url: 'http://localhost:23072/GUI/Modulo7/M7_ListarAsistenciaAEventos.aspx/prueba',
+                        data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            console.log(data);
+                            var aa = JSON.parse(data.d);
+                            $("#beta4").val(aa.ciudad);
+                   
+                        }
+                    });
+                })
             });
+
+            
         </script>
 </asp:Content>

@@ -8,6 +8,7 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarAsistenciaAEventos : System.Web.UI.Page
@@ -27,11 +28,12 @@ namespace templateApp.GUI.Modulo7
         {
             ((SKD)Page.Master).IdModulo = "7";
 
-            String detalleString = Request.QueryString["eventDetalle"];
+            String detalleString = Request.QueryString["impDetalle"];
 
             if (detalleString != null)
             {
-                llenarModalInfo(int.Parse(detalleString));
+                //llenarModalInfo(int.Parse(detalleString));
+                //llenarModalInfo1(1);
             }
 
             #region Llenar Data Table con Eventos
@@ -88,14 +90,38 @@ namespace templateApp.GUI.Modulo7
                 /*Evento evento = new Evento();
                 LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
                 evento = logica.detalleEventoID(idEvento);*/
-            }
+                //this.elModal.Text += M7_Recursos.AbrirTD + "hola" + M7_Recursos.CerrarTD;
 
         }
-            #endregion
-            
-            
 
-        
+        [System.Web.Services.WebMethod]
+        public static string prueba(int idEvento)
+        {
+            Ubicacion evento;
+            LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
+            evento = logica.obtenerUbicacion(1);
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(evento);
+            return json;
+        }
+
+        #region Llenado del Modal de Informacion del producto
+        [System.Web.Services.WebMethod]
+        public static string prueba(string id)
+        {
+            Ubicacion laCompetencia = new Ubicacion();
+            LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
+            laCompetencia = logica.obtenerUbicacion(int.Parse(id));
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(laCompetencia);
+            return json;
+        }
         #endregion
-        
+
+    }
+    #endregion
+
+
+
+
+#endregion
+
 }

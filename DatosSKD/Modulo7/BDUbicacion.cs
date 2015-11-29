@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DatosSKD.Modulo7
 {
-    class BDUbicacion
+    public class BDUbicacion
     {
         public static Ubicacion DetallarUbicacion(int idUbicacion)
         {

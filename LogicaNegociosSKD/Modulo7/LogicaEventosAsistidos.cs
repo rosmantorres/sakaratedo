@@ -83,6 +83,18 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+        public DominioSKD.Ubicacion obtenerUbicacion(int idUbicacion)
+        {
+            try
+            {
+                return BDUbicacion.DetallarUbicacion(idUbicacion);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         #endregion
 
     }

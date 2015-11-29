@@ -133,7 +133,7 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarAsistenciaAEventos.aspx?eventDetalle=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;   data-toggle=&quot;modal&quot; data-target=&quot;#modal-info1&quot;  id=&quot;.
         /// </summary>
         internal static string BotonInfoAsistenciaAEventos {
             get {
