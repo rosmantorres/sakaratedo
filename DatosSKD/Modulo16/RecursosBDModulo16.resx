@@ -308,5 +308,8 @@
   </data>
   <data name="PARAMETRO_ID_USUARIO" xml:space="preserve">
     <value>@per_id</value>
+  <data name="PROCEDIMIENTO_MATRICULAS_PAGADAS" xml:space="preserve">
+    <value>M16_MATRICULAS_PAGADAS</value>
+    <comment>Stored procedure que obtiene las ultimas matriculas pagadas por el usuario</comment>
   </data>
 </root>

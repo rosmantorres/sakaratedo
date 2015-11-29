@@ -83,17 +83,18 @@ namespace LogicaNegociosSKD.Modulo16
         /// <param name="tipoPago">Indica cual de las formas se eligio para pagar</param>
         /// <param name="datos">Todos los datos pertinentes de ese tipo de pago</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-        public bool registrarPago(int tipoPago, List<int> datos)
+        public bool registrarPago(int tipoPago, List<int> datos, int idUsuario)
         {
+            //Preparamos la respuesta del proceso
             bool respuesta;
 
             //Procedemos a procesar la compra de los productos que estan en el carrito
             if (tipoPago == 1)
-                respuesta = carritoBD.registrarPago("Tarjeta",null,1);
+                respuesta = carritoBD.registrarPago("Tarjeta",null,idUsuario);
             else if (tipoPago == 2)
-                respuesta = carritoBD.registrarPago("Deposito",null,1);
+                respuesta = carritoBD.registrarPago("Deposito",null,idUsuario);
             else
-                respuesta = carritoBD.registrarPago("Transferencia",null,1);
+                respuesta = carritoBD.registrarPago("Transferencia",null,idUsuario);
 
             //Limpiamos el carrito del Usuario
             carritoUsuario.limpiar();

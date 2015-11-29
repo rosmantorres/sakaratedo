@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD.Modulo16;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo16
 {
@@ -109,9 +110,12 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void Llenartabla()
         {
+            //Obtengo el ID del usuario
+            int idUsuario = (int)(Session[RecursosInterfazMaster.sessionUsuarioID]);
+
             //Instancio la logica correspondiente y me traigo el carrito de compras
             Logicacarrito logicaCarrito = new Logicacarrito();
-            carritoCompras = logicaCarrito.verCarrito(1);
+            carritoCompras = logicaCarrito.verCarrito(idUsuario);
 
             //Recorro La lista de los inventarios en el carrito para anexarlas al GRIDVIEW
             foreach (Implemento implemento in carritoCompras.ListaImplemento)
@@ -216,8 +220,11 @@ namespace templateApp.GUI.Modulo16
             //Obtenemos el id del objeto a borrar
             int objetoBorrar = int.Parse(Request.QueryString["id"]);
 
+            //Obtengo el ID del usuario
+            int idUsuario = (int)(Session[RecursosInterfazMaster.sessionUsuarioID]);
+
             //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
-            bool respuesta = logicaCarrito.eliminarItem(tipoObjeto, objetoBorrar, 1);
+            bool respuesta = logicaCarrito.eliminarItem(tipoObjeto, objetoBorrar, idUsuario);
 
             if (respuesta)
                 this.carritoCompras.eliminarItem(tipoObjeto, objetoBorrar);
@@ -262,8 +269,11 @@ namespace templateApp.GUI.Modulo16
                     datosPago.Add(int.Parse(Text10.Value));
                 }
 
+                //Obtengo el ID del usuario
+                int idUsuario = (int)(Session[RecursosInterfazMaster.sessionUsuarioID]);
+
                 //Se registra el pago y se obtiene el exito o fallo
-                bool exito = this.logicaCarrito.registrarPago(int.Parse(DropDownList1.Value), datosPago);
+                bool exito = this.logicaCarrito.registrarPago(int.Parse(DropDownList1.Value), datosPago, idUsuario);
 
                 //Analizamos las condiciones
                 if (exito)

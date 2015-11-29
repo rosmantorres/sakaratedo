@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 using DatosSKD.Modulo16;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3399a1ca4d519365f6ebc42dbbaa050ea2322f18
 
 namespace LogicaNegociosSKD.Modulo16
 {
@@ -36,6 +40,7 @@ namespace LogicaNegociosSKD.Modulo16
 
 
         #region Metodos
+<<<<<<< HEAD
 
         /// <summary>
         /// Metodo que obtiene todas las facturas del usuario conectado
@@ -53,6 +58,25 @@ namespace LogicaNegociosSKD.Modulo16
                 throw e;
             }
 
+=======
+        /// <summary>
+        /// Metodo que obtiene la o las ultimas matriculas pagadas por una persona
+        /// </summary>
+        /// /// <param name="idUsuario">El id del usuario el cual se desea saber las matriculas que pago</param>
+        /// <returns>Una lista con los id de las matriculas</returns>
+        public List<Matricula> MatriculasPagadas(int idUsuario) 
+        {
+            //Preparo la lista a devolver
+            List<Matricula> listaMatriculas = new List<Matricula>();
+
+            //Obtenemos de la base de Datos la lista
+            BDCompra bdCompra = new BDCompra();
+            listaMatriculas = bdCompra.MatriculasPagadas(idUsuario);
+
+            //Retornamos la respuesta
+            return listaMatriculas;
+          
+>>>>>>> 3399a1ca4d519365f6ebc42dbbaa050ea2322f18
         }
      
         #endregion
