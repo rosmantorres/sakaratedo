@@ -39,8 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcepcionesSKDRecursosGenerales.Designer.cs" />
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoggerException.cs" />
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
@@ -64,6 +67,9 @@
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExcepcionesSKDRecursosGenerales.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
