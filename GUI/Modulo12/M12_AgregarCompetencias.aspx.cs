@@ -45,8 +45,11 @@ namespace templateApp.GUI.Modulo12
                     laCompetencia.Status = input_status_porIniciar.Text;
                 if (input_status_enCurso.Checked == true)
                     laCompetencia.Status = input_status_enCurso.Text;
+                laCompetencia.Ubicacion.Latitud = txtLAT.Value;
+                laCompetencia.Ubicacion.Longitud = txtLONG.Value;
 
                 laLogica.agregarCompetencia(laCompetencia);
+                
                     
             }
             catch

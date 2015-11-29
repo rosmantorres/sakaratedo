@@ -4,6 +4,9 @@
    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
    <script type="text/javascript">
        function initialize() {
+           var latitude;
+           var longitude;
+           var latilong;
            var mapProp = {
                center: new google.maps.LatLng(10.5000, -66.9167),
                zoom: 5,
@@ -16,21 +19,31 @@
 
            // funcion que setea un marker si se clickea la primera vez sino borra el anterior y reescribe con el nuevo
            function placeMarker(location) {
-               if (marker) {
+               if (marker) { // si existe el marcador reemplaza solamente los valores y borra el otro
                    marker.setPosition(location);
-               } else {
+                   var latilong = marker.getPosition();//obtener elemento posicion
+                   var latitude = latilong.lat();// obtener latitud de la posicion
+                   var longitude = latilong.lng();// obtener longitud de la posicion
+                   document.getElementById("txtLAT").value = latitude;// ubicar input latitud html y setear valor
+                   document.getElementById("txtLONG").value = longitude;// ubicar input longitud html y setear valor
+               } else { // crear nuevo marcador
                    marker = new google.maps.Marker({
                        position: location,
                        map: map
+
                    });
+                   var latilong = marker.getPosition(); //Obtener elemento posicion
+                   var latitude = latilong.lat();// obtener latitud de la posicion
+                   var longitude = latilong.lng();// obtener longitud de la posicion
+                   document.getElementById("txtLAT").value = latitude; // ubicar input latitud html y setear valor
+                   document.getElementById("txtLONG").value = longitude; // ubicar input longitud html y setear valor
                }
            }
            // llamada la funcion placke marker cuando ocurre un evento de click
            google.maps.event.addListener(map, 'click', function (event) {
-                   placeMarker(event.latLng);
-               
+               placeMarker(event.latLng);
            });
-           
+
 
        }
 
@@ -84,16 +97,19 @@
                      <div class="col-sm-4 col-md-4 col-lg-4">
                         <h3>Tipo :</h3>
                         <label class="radio-inline">
-                        <asp:RadioButton runat="server" type="radio" Checked="true" Text="Kata" name="radioTipo" id="input_tipo_kata" onclick="return fillCodigoTextField();" /></label>
+                           <asp:RadioButton runat="server" type="radio" Checked="true" Text="Kata" name="radioTipo" id="input_tipo_kata" onclick="return fillCodigoTextField();" />
+                        </label>
                         <label class="radio-inline">
-                        <asp:RadioButton runat="server" type="radio" Text="Kumite" name="radioTipo" id="input_tipo_kumite"  onclick="return fillCodigoTextField();"/></label>
+                           <asp:RadioButton runat="server" type="radio" Text="Kumite" name="radioTipo" id="input_tipo_kumite"  onclick="return fillCodigoTextField();"/>
+                        </label>
                         <label class="radio-inline">
-                        <asp:RadioButton runat="server" type="radio" Text="Ambos" name="radioTipo" id="input_tipo_ambos"  onclick="return fillCodigoTextField();"/></label>
+                           <asp:RadioButton runat="server" type="radio" Text="Ambos" name="radioTipo" id="input_tipo_ambos"  onclick="return fillCodigoTextField();"/>
+                        </label>
                         <br />
                      </div>
-                      <div class="col-sm-4 col-md-4 col-lg-4">
-                      <h3>Organizador(es) :</h3>
-                           <asp:CheckBox runat="server" id="organizaciones" Width="300px" CssClass="checkbox" ClientIDMode="Static"></asp:CheckBox>
+                     <div class="col-sm-4 col-md-4 col-lg-4">
+                        <h3>Organizador(es) :</h3>
+                        <asp:CheckBox runat="server" id="organizaciones" Width="300px" CssClass="checkbox" ClientIDMode="Static"></asp:CheckBox>
                      </div>
                      <div class="form-group">
                         <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
@@ -134,6 +150,8 @@
                      </div>
                      <div class="form-group col-sm-12 col-md-12 col-lg-12" onload="initialize();">
                         <h3>Ubicación :</h3>
+                        <input type="text" id="txtLAT" runat="server" visible="false" disabled="disabled"><!--LATITUD DE UBICACION-->
+                        <input type="text" id="txtLONG" runat="server" visible="false" disabled="disabled"><!--LONGITUD DE UBICACION-->
                         <div id="googleMap" style="width:735px;height:350px;"></div>
                         <br />
                      </div>
@@ -195,9 +213,11 @@
                         <div class="col-sm-10 col-md-10 col-lg-10">
                            <p><b>Status:</b></p>
                            <label class="radio-inline">
-                           <asp:RadioButton runat="server" Text="Por Iniciar" type="radio" name="radioStatus" checked="true" id="input_status_porIniciar"/></label>
+                              <asp:RadioButton runat="server" Text="Por Iniciar" type="radio" name="radioStatus" checked="true" id="input_status_porIniciar"/>
+                           </label>
                            <label class="radio-inline">
-                           <asp:RadioButton runat="server" Text="En Curso" type="radio" name="radioStatus" id="input_status_enCurso"/></label>
+                              <asp:RadioButton runat="server" Text="En Curso" type="radio" name="radioStatus" id="input_status_enCurso"/>
+                           </label>
                            <label class="radio-inline">
                            <input type="radio" name="radioStatus" disabled="disabled" id="input_status_Finalizado"/>Finalizado</label>
                         </div>

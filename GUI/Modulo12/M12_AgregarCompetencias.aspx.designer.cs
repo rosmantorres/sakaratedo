@@ -76,6 +76,24 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.HtmlControls.HtmlTable tablacompetencias;
         
         /// <summary>
+        /// txtLAT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLAT;
+        
+        /// <summary>
+        /// txtLONG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLONG;
+        
+        /// <summary>
         /// edad_desde control.
         /// </summary>
         /// <remarks>
