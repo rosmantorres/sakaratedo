@@ -121,7 +121,7 @@
     <value>id</value>
   </data>
   <data name="AliasCiudad" xml:space="preserve">
-    <value>ciudad</value>
+    <value>Ciudad</value>
   </data>
   <data name="AliasCostoEvento" xml:space="preserve">
     <value>costo</value>
@@ -253,7 +253,7 @@
     <value>M7_ConsultarCompetenciasAsistidas</value>
   </data>
   <data name="ConsultarEventoXId" xml:space="preserve">
-    <value>M7_ConsultarEvento</value>
+    <value>M7_ConsultaEvento</value>
   </data>
   <data name="ParamIdEvento" xml:space="preserve">
     <value>@eve_id</value>

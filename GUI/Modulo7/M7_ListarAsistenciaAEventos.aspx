@@ -70,180 +70,10 @@
                 </div>
         </div>
 
-    		<div id="modal-info5" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del evento</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info5">
-							<div class="row">
-								<asp:Literal runat="server" ID="elModal"></asp:Literal>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    		
 
-    <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del evento</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info2">
-							<div class="row">
-								<h3>Nombre</h3>
-								<p>
-									Clase de Kata
-								</p>
-								<h3>Tipo</h3>
-								<p>
-									Entrenamiento especial
-								</p>
-								<h3>Fecha de inicio</h3>
-								<p>
-									01/11/2015
-								</p>
-								<h3>Fecha de finalización</h3>
-								<p>
-									01/11/2015
-								</p>
-                                <h3>Locación</h3>
-								<ul>
-									<li>Estado: Distrito Capital</li>
-									<li>Ciudad: Caracas</li>
-									<li>Dojo: SAKARATEDO</li>
-								</ul>
-                                <h3>Profesor</h3>
-								<p>
-									Juan Biltorgo
-								</p>
-                                <h3>Hora</h3>
-								<p>
-									8:00 pm
-								</p>
-                                <h3>Salón</h3>
-								<p>
-									A556
-								</p>
-								<h3>Descripción</h3>
-								<p>
-                                    Clase teorica-práctica de kata
-    							</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-    <div id="modal-info3" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del evento</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info3">
-							<div class="row">
-								<h3>Nombre</h3>
-								<p>
-									Competencia entre cintas blancas
-								</p>
-								<h3>Tipo</h3>
-								<p>
-									Competencia
-								</p>
-								<h3>Fecha de inicio</h3>
-								<p>
-									13/04/2015
-								</p>
-								<h3>Fecha de finalización</h3>
-								<p>
-									16/04/2015
-								</p>
-                                <h3>Tipo de competencia</h3>
-								<p>
-									Kata
-								</p>
-                                <h3>Categoria</h3>
-                                <ul>
-									<li>Edad: 12-18 años</li>
-									<li>Cinta: Blanca</li>
-									<li>Peso: 40-65 Kgs</li>
-								</ul>
-                                <h3>Estado</h3>
-								<p>
-									Finalizada
-								</p>
-                                <h3>Locación</h3>
-								<ul>
-									<li>Estado: Distrito Capital</li>
-									<li>Ciudad: Caracas</li>
-									<li>Dojo: SAKARATEDO</li>
-								</ul>
-								<h3>Descripción</h3>
-								<p>
-                                    Competencia solo entre cintas blancas en el dojo SAKARATEDO
-    							</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-    <div id="modal-info4" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del evento</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info4">
-							<div class="row">
-								<h3>Nombre</h3>
-								<p>
-									Cuarto encuentro de cintas blancas 1er kyu
-								</p>
-								<h3>Tipo</h3>
-								<p>
-									Seminario
-								</p>
-								<h3>Fecha de inicio</h3>
-								<p>
-									09/05/2010
-								</p>
-								<h3>Fecha de finalización</h3>
-								<p>
-									10/05/2015
-								</p>
-                                <h3>Locación</h3>
-								<ul>
-									<li>Estado: Guarico</li>
-									<li>Ciudad: San Juan de los Morros</li>
-								</ul>
-								<h3>Descripción</h3>
-								<p>
-                                    Encuentro entre los cinturones blancos 1er kyu
-    							</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-                      <!--MODAL PARA EL DETALLEDEL PRODUCTO -->
-<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    
+    <div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -260,6 +90,7 @@
 								<p>
 									<input type="text" id="beta4" value="" />
 								</p>
+
 								<h3>Cantidad disponible</h3>
                                 <br />
                                 <form role="form" class="form-horizontal" method="POST">
@@ -288,6 +119,9 @@
 				</div>
 			</div>
  </div>
+
+    
+                      
     
     <!--VALIDACION PARA MODAL -->
     <script src="js/Validacion.js"></script>
@@ -369,6 +203,7 @@
 
 
                 $('#modal-info1').on('show.bs.modal', function (e) {
+
                     $.ajax({
                         cache: false,
                         type: 'POST',
@@ -376,14 +211,20 @@
                         data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
                         dataType: 'json',
                         contentType: "application/json; charset=utf-8",
+
                         success: function (data) {
                             console.log(data);
+
                             var aa = JSON.parse(data.d);
-                            $("#beta4").val(aa.ciudad);
-                   
+
+                            $("#beta").val(aa.nombre);
+                            $("#beta4").val(aa.id);
+
                         }
                     });
                 })
+
+
             });
 
             

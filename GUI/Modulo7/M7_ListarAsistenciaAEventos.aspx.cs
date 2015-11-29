@@ -73,6 +73,22 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
+
+                    Evento evento1 = new Evento();
+                    LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
+                    evento1 = logica.detalleEventoID(1);
+
+                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + evento1.Id_evento.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + evento1.Nombre.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + evento1.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + evento1.Horario.FechaInicio.ToString("yyyy/dd/MM") + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + evento1.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento1.Id_evento + M7_Recursos.BotonCerrar;
+                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.CerrarTR;
+
                 }
                 catch (Exception ex)
                 {
@@ -93,28 +109,27 @@ namespace templateApp.GUI.Modulo7
                 //this.elModal.Text += M7_Recursos.AbrirTD + "hola" + M7_Recursos.CerrarTD;
 
         }
-
+        
         [System.Web.Services.WebMethod]
-        public static string prueba(int idEvento)
+        public static string prueba(string idEvento)
         {
-            Ubicacion evento;
+            Evento evento = new Evento();
             LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
-            evento = logica.obtenerUbicacion(1);
+            evento = logica.detalleEventoID(1);
             string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(evento);
             return json;
         }
-
+        /*
         #region Llenado del Modal de Informacion del producto
         [System.Web.Services.WebMethod]
         public static string prueba(string id)
         {
-            Ubicacion laCompetencia = new Ubicacion();
-            LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
-            laCompetencia = logica.obtenerUbicacion(int.Parse(id));
+            Implemento laCompetencia = new Implemento();
+            laCompetencia.Color_Implemento = "azul";
             string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(laCompetencia);
             return json;
         }
-        #endregion
+        #endregion*/
 
     }
     #endregion
@@ -122,6 +137,6 @@ namespace templateApp.GUI.Modulo7
 
 
 
-#endregion
+    #endregion
 
 }

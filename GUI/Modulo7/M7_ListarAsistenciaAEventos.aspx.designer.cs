@@ -31,15 +31,6 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.WebControls.Literal laTabla;
         
         /// <summary>
-        /// elModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal elModal;
-        
-        /// <summary>
         /// Boton1 control.
         /// </summary>
         /// <remarks>
