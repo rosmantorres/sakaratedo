@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
+using DatosSKD.Modulo1;
 
 namespace DatosSKD.Modulo2
 {
@@ -40,9 +41,23 @@ namespace DatosSKD.Modulo2
                 return losRoles;
 
             }
-            catch (Exception e)
+            catch (SqlException e)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, e);
+            }
+            catch (FormatException e)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
+                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
                 throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
             }
         }
 
@@ -64,11 +79,19 @@ namespace DatosSKD.Modulo2
                return true;
 
            }
-           catch (Exception e)
+           catch (SqlException e)
+           {
+               throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                   RecursoGeneralBD.Mensaje, e);
+           }
+           catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
            {
                throw e;
            }
-
+           catch (Exception e)
+           {
+               throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
+           }
        }
       
         public static bool AgregarRol(string idUsuario, string idRol)
@@ -89,9 +112,18 @@ namespace DatosSKD.Modulo2
                return true;
 
            }
-           catch (Exception e)
+           catch (SqlException e)
+           {
+               throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                   RecursoGeneralBD.Mensaje, e);
+           }
+           catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
            {
                throw e;
+           }
+           catch (Exception e)
+           {
+               throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
            }
 
        }
@@ -125,9 +157,23 @@ namespace DatosSKD.Modulo2
                 return losRoles;
 
             }
-            catch (Exception e)
+            catch (SqlException e)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, e);
+            }
+            catch (FormatException e)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
+                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
                 throw e;
+            }
+            catch (Exception e)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, e);
             }
 
         }
