@@ -17,6 +17,7 @@ namespace DominioSKD
         private String email_dojo;
         private String logo_dojo;
         private bool status_dojo;
+        private String organizacion_dojo;
         private Ubicacion ubicacion;
         #endregion
 
@@ -53,7 +54,11 @@ namespace DominioSKD
             get { return rif_dojo; }
             set { rif_dojo = value; }
         }
-
+        public String Orgaización_dojo
+        {
+            get { return organizacion_dojo; }
+            set { organizacion_dojo = value; }
+        }
         public String Nombre_dojo
         {
             get { return nombre_dojo; }
@@ -91,11 +96,12 @@ namespace DominioSKD
             this.email_dojo = "";
             this.logo_dojo = "";
             this.status_dojo = false;
+            this.organizacion_dojo = "";
             this.ubicacion = null;
         }
 
         //constructor con parametros 
-        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Ubicacion ubicacion)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, string organizacion, Ubicacion ubicacion)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
@@ -104,10 +110,11 @@ namespace DominioSKD
             this.email_dojo = Email;
             this.logo_dojo = Logo;
             this.status_dojo = Status;
+            this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
         }
         //constructor sin id 
-        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Ubicacion ubicacion)
+        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, string organizacion, Ubicacion ubicacion)
         {
             this.rif_dojo = Rif;
             this.nombre_dojo = Nombre;
@@ -115,14 +122,16 @@ namespace DominioSKD
             this.email_dojo = Email;
             this.logo_dojo = Logo;
             this.status_dojo = Status;
+            this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
         }
+        #endregion
         public Dojo(int id_dojo)
         {
             this.id_dojo = id_dojo;
         }
 
-        #endregion
+        
 
     }
 }
