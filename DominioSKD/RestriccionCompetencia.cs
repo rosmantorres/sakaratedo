@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class RestriccionCompetencia
+    public class RestriccionCompetencia
     {
         #region Atributos
         private int idRestriccionComp;

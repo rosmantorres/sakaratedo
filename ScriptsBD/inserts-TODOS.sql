@@ -4330,13 +4330,13 @@ insert into EVENTO_RESTRICCION values (4,4);
 -- Inserts RH_CINTA   (restriccionEve id, cinta id)                  M8     --
 -- =========================================================================--
 -- FALTA INSERT DE CINTA PARA COMPLETAR --
-insert into RH_CINTA values (1,);
-insert into RH_CINTA values (1,);
-insert into RH_CINTA values (2,);
-insert into RH_CINTA values (2,);
-insert into RH_CINTA values (3,);
-insert into RH_CINTA values (4,);
-insert into RH_CINTA values (4,);
+insert into RH_CINTA values (1,1);
+insert into RH_CINTA values (1,2);
+insert into RH_CINTA values (2,2);
+insert into RH_CINTA values (2,3);
+insert into RH_CINTA values (3,4);
+insert into RH_CINTA values (4,5);
+insert into RH_CINTA values (4,7);
 
 
 -- =========================================================================--
