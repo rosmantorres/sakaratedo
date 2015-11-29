@@ -140,21 +140,27 @@ namespace DatosSKD.Modulo9
         /// <param name="idEvento">Id del evento</param>
         /// <returns>Retorna un evento</returns>
 
-        public Evento ConsultarEvento(int idEvento)
+        public Evento ConsultarEvento(String idEvento)
         {
             BDConexion laConexion;
-            Evento evento = new Evento();
-            List<Parametro> parametros = new List<Parametro>();
-            Parametro parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.Int, idEvento.ToString(), false);
-            parametros.Add(parametro);
+            Evento evento;
             try
             {
+                Console.Out.WriteLine(idEvento);
                 laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                evento = new Evento();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                Console.Out.WriteLine(parametro.valor);
+                Console.Out.WriteLine(parametro.tipoDato);
+                Console.Out.WriteLine(RecursosBDModulo9.ParametroIdEvento);
+                parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimentoConsultarEventoXID, parametros);
+                
                 foreach (DataRow row in dt.Rows)
                 {
-                    evento.Nombre = row[RecursosBDModulo9.AliasNombreEvento].ToString();
+                    evento.Nombre = row[RecursosBDModulo9.AliasNombreEvento].ToString(); ;
+                    Console.Out.WriteLine(evento.Nombre);
                     evento.Descripcion = row[RecursosBDModulo9.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosBDModulo9.AliasEstadoEvento].ToString());
                     Horario horario = new Horario();
@@ -265,7 +271,6 @@ namespace DatosSKD.Modulo9
             try
             {
                 laConexion = new BDConexion();
-                parametros = new List<Parametro>();
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarEventosRangoFecha, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
@@ -383,7 +388,6 @@ namespace DatosSKD.Modulo9
             try
             {
                 laConexion = new BDConexion();
-                parametros = new List<Parametro>();
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarAscensosRangoFecha, parametros);
                 foreach (DataRow row in dt.Rows)
                 {

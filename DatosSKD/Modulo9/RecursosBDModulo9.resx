@@ -197,6 +197,10 @@
     <value>@idCategoria</value>
     <comment>Foranea de Categoria</comment>
   </data>
+  <data name="ParametroIdEvento" xml:space="preserve">
+    <value>@idEvento</value>
+    <comment>Id del evento</comment>
+  </data>
   <data name="ParametroIdPersona" xml:space="preserve">
     <value>@idPersona</value>
     <comment>Foranea de la persona para buscar a que Dojo pertenece</comment>
@@ -234,7 +238,7 @@
     <comment>Nombre del SP solicitado por M10 y M11</comment>
   </data>
   <data name="ProcedimientoConsultarFechasAscensos" xml:space="preserve">
-    <value>M9_TodasLasFechasAscencos</value>
+    <value>M9_TodasLasFechasAscensos</value>
     <comment>Nombre del SP solicitado por M10 y M11</comment>
   </data>
   <data name="ProcedimientoConsultarHorarios" xml:space="preserve">
