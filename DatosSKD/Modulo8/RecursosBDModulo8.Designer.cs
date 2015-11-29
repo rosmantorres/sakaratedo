@@ -59,5 +59,230 @@ namespace DatosSKD.Modulo8 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_AgregarRestriccionCompetencia.
+        /// </summary>
+        internal static string AgregarRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AgregarRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descripcion.
+        /// </summary>
+        internal static string AliasDescripcion {
+            get {
+                return ResourceManager.GetString("AliasDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to edadMax.
+        /// </summary>
+        internal static string AliasEdadMax {
+            get {
+                return ResourceManager.GetString("AliasEdadMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to edadMin.
+        /// </summary>
+        internal static string AliasEdadMin {
+            get {
+                return ResourceManager.GetString("AliasEdadMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaEdadMax.
+        /// </summary>
+        internal static string AliasFechaEdadMax {
+            get {
+                return ResourceManager.GetString("AliasFechaEdadMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaEdadMin.
+        /// </summary>
+        internal static string AliasFechaEdadMin {
+            get {
+                return ResourceManager.GetString("AliasFechaEdadMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idCompetencia.
+        /// </summary>
+        internal static string AliasIdCompetencia {
+            get {
+                return ResourceManager.GetString("AliasIdCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idCinta.
+        /// </summary>
+        internal static string AliasIdRcCinta {
+            get {
+                return ResourceManager.GetString("AliasIdRcCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id.
+        /// </summary>
+        internal static string AliasIdRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AliasIdRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modalidad.
+        /// </summary>
+        internal static string AliasModalidad {
+            get {
+                return ResourceManager.GetString("AliasModalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sexo.
+        /// </summary>
+        internal static string AliasSexo {
+            get {
+                return ResourceManager.GetString("AliasSexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_ConsultarRestriccionCompetencia.
+        /// </summary>
+        internal static string ConsultarTodasRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("ConsultarTodasRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_EliminarRestriccionCompetencia.
+        /// </summary>
+        internal static string EliminarRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("EliminarRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_ModificarRestriccionCompetencia.
+        /// </summary>
+        internal static string ModificarRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("ModificarRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_desc.
+        /// </summary>
+        internal static string ParamDescripcion {
+            get {
+                return ResourceManager.GetString("ParamDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_edadmax.
+        /// </summary>
+        internal static string ParamEdadMax {
+            get {
+                return ResourceManager.GetString("ParamEdadMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_edadmin.
+        /// </summary>
+        internal static string ParamEdadMin {
+            get {
+                return ResourceManager.GetString("ParamEdadMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ParamFechaEdadMax {
+            get {
+                return ResourceManager.GetString("ParamFechaEdadMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ParamFechaEdadMin {
+            get {
+                return ResourceManager.GetString("ParamFechaEdadMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cin_id.
+        /// </summary>
+        internal static string ParamIdCinta {
+            get {
+                return ResourceManager.GetString("ParamIdCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @com_id.
+        /// </summary>
+        internal static string ParamIdCompetencia {
+            get {
+                return ResourceManager.GetString("ParamIdCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @per_id.
+        /// </summary>
+        internal static string ParamIdPersona {
+            get {
+                return ResourceManager.GetString("ParamIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_id.
+        /// </summary>
+        internal static string ParamIdRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("ParamIdRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_modalidad.
+        /// </summary>
+        internal static string ParamModalidad {
+            get {
+                return ResourceManager.GetString("ParamModalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_sexo.
+        /// </summary>
+        internal static string ParamSexo {
+            get {
+                return ResourceManager.GetString("ParamSexo", resourceCulture);
+            }
+        }
     }
 }
