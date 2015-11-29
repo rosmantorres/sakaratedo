@@ -194,12 +194,12 @@ namespace LogicaNegociosSKD.Modulo16
         /// <param name="idInventario">Indica el identificador del Inventario</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
 
-        public bool agregarInventarioaCarrito(int idUsuario, int idInventario)
+        public bool agregarInventarioaCarrito(int idUsuario, int idInventario, int cantidad, int precio)
         {
 
             try
             {
-                return BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario);
+                return BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario, cantidad, precio);
             }
 
 

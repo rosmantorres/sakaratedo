@@ -277,6 +277,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @cantidad.
+        /// </summary>
+        internal static string PARAMETRO_CANTIDAD {
+            get {
+                return ResourceManager.GetString("PARAMETRO_CANTIDAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to impColor.
         /// </summary>
         internal static string PARAMETRO_COLOR {
@@ -304,6 +313,24 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @exito.
+        /// </summary>
+        internal static string PARAMETRO_EXITO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_EXITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idPersona.
+        /// </summary>
+        internal static string PARAMETRO_ID_PERSONA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_ID_PERSONA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @per_id.
         /// </summary>
         internal static string PARAMETRO_ID_USUARIO {
@@ -322,7 +349,7 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to idImplemento.
+        ///   Looks up a localized string similar to @idImplemento.
         /// </summary>
         internal static string PARAMETRO_IDIMPLEMENTO {
             get {
@@ -381,6 +408,15 @@ namespace DatosSKD.Modulo16 {
         internal static string PARAMETRO_PRECIO {
             get {
                 return ResourceManager.GetString("PARAMETRO_PRECIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @precio.
+        /// </summary>
+        internal static string PARAMETRO_PRECIO2 {
+            get {
+                return ResourceManager.GetString("PARAMETRO_PRECIO2", resourceCulture);
             }
         }
         
@@ -538,7 +574,7 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M16_agregarInventarioaCarrito.
+        ///   Looks up a localized string similar to M16_agregarImplementoaCarrito.
         /// </summary>
         internal static string StoreProcedureAgregarinventarioaCarrito {
             get {

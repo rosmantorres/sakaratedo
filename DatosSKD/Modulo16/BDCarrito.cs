@@ -491,26 +491,40 @@ namespace DatosSKD.Modulo16
         /// <param name="idUsuario">Indica cual de las formas se eligio para pagar</param>
         /// <param name="idInventario">Todos los datos pertinentes de ese tipo de pago</param>
         /// <returns>True o False si la operacion fue exitosa o fallida</returns>
-        public static bool agregarInventarioaCarrito(int idPersona, int idInventario)
+        public static bool agregarInventarioaCarrito(int idPersona, int idInventario, int cantidad, int precio)
         {
 
-
+            int respuesta = 1;
+            bool exito = false;
             try
             {
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.ParamIdPersona,
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
                     SqlDbType.Int, idPersona.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.ParamIdEvento,
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO,
                     SqlDbType.Int, idInventario.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
+                    SqlDbType.Int, cantidad.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
+                    SqlDbType.Int, respuesta.ToString(), true);
                 parametros.Add(parametro);
 
                 //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
                 BDConexion conexion = new BDConexion();
-                conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
+                List<Resultado> result = conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
+                
+                foreach (Resultado aux in result)
+                {
+                    if (aux.valor == "1")
+                        exito = true;
+                }
+                
 
-                return true;
+                return exito;
             }
 
             catch (ExceptionSKDConexionBD ex)

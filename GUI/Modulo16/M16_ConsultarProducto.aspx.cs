@@ -92,11 +92,11 @@ namespace templateApp.GUI.Modulo16
 
         #region Llenado del Modal para agregar el producto al carrito
         [System.Web.Services.WebMethod]
-        protected void agregarImplementoAcarrito(int usuario, int idMatricula)
+        protected void agregarImplementoAcarrito(int usuario, int idImplemento)
         {
             bool agregar = false;
             Logicacarrito logica = new Logicacarrito();
-            agregar = logica.agregarInventarioaCarrito(1, 1);
+            agregar = logica.agregarInventarioaCarrito(usuario, idImplemento, 1, 2);
         }
         #endregion
     }
