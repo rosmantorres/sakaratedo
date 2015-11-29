@@ -227,6 +227,7 @@
             $(document).ready(function () {
 
                 var table = $('#tablapractica').DataTable({
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
