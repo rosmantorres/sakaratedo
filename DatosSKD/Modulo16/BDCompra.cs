@@ -78,8 +78,6 @@ namespace DatosSKD.Modulo16
 
         }
 
-        #endregion
-
         /// <summary>
         /// Metodo que obtiene la o las ultimas matriculas pagadas por una persona en Base de Datos
         /// </summary>
@@ -128,7 +126,7 @@ namespace DatosSKD.Modulo16
             {
                 throw new ExceptionSKDConexionBD("blabla", "blabla", e);
             }
-           
+
         }
         #endregion
 

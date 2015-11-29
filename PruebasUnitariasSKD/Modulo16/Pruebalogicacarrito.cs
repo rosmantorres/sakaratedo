@@ -54,7 +54,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaRegistrarpago()
         {
-            Assert.IsTrue(this.logica.registrarPago(1,null));
+            Assert.IsTrue(this.logica.registrarPago(1,null,1));
         }
 
         /// <summary>
