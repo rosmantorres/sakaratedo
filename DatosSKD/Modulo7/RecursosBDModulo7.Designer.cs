@@ -430,6 +430,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fecha.
+        /// </summary>
+        internal static string AliasInscripcionFecha {
+            get {
+                return ResourceManager.GetString("AliasInscripcionFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to id.
         /// </summary>
         internal static string AliasTipoEveEventoId {
@@ -516,6 +525,15 @@ namespace DatosSKD.Modulo7 {
         internal static string ConsultarEventoXId {
             get {
                 return ResourceManager.GetString("ConsultarEventoXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarFechaInscripcion.
+        /// </summary>
+        internal static string ConsultarFechaInscripcion {
+            get {
+                return ResourceManager.GetString("ConsultarFechaInscripcion", resourceCulture);
             }
         }
         

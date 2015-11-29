@@ -29,6 +29,7 @@ namespace templateApp.GUI.Modulo7
             ((SKD)Page.Master).IdModulo = "7";
 
             String detalleString = Request.QueryString["impDetalle"];
+            DateTime fechaInscripcion;
 
             if (detalleString != null)
             {
@@ -43,16 +44,16 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laListaEventos = logEvento.obtenerListaDeEventos();
+                    laListaEventos = logEvento.obtenerListaDeEventos();                   
                     laListaCompetencias = logEvento.obtenerListaDeCompetencias();
                     
                     foreach (Evento evento in laListaEventos)
                     {
+                        fechaInscripcion = logEvento.obtenerFechaInscripcion(1, evento.Id_evento);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
@@ -63,7 +64,6 @@ namespace templateApp.GUI.Modulo7
                     foreach (Competencia competencia in laListaCompetencias)
                     {
                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Id_competencia.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
@@ -73,7 +73,7 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
-
+                    /*
                     Evento evento1 = new Evento();
                     LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
                     evento1 = logica.detalleEventoID(1);
@@ -87,7 +87,7 @@ namespace templateApp.GUI.Modulo7
                     this.laTabla.Text += M7_Recursos.AbrirTD;
                     this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento1.Id_evento + M7_Recursos.BotonCerrar;
                     this.laTabla.Text += M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.CerrarTR;
+                    this.laTabla.Text += M7_Recursos.CerrarTR;*/
 
                 }
                 catch (Exception ex)

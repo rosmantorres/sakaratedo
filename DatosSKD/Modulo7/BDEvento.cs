@@ -195,7 +195,58 @@ namespace DatosSKD.Modulo7
             }
         }
 
-       
+        /// <summary>
+        /// Método que devuelve la fecha de una inscripción
+        /// </summary>
+        /// <returns>Fecha de inscripción</returns>
+        public static DateTime fechaInscripcion(int idPersona, int idEvento)
+        {
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametroPersona = new Parametro();
+            Parametro elParametroEvento = new Parametro();
+            DateTime fechaInscripcion = new DateTime();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                elParametroEvento = new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idEvento.ToString(), false);
+                parametros.Add(elParametroPersona);
+                parametros.Add(elParametroEvento);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarFechaInscripcion, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    fechaInscripcion = DateTime.Parse(row[RecursosBDModulo7.AliasInscripcionFecha].ToString());
+                }
+
+                return fechaInscripcion;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }/*
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+        }
 
         /// <summary>
         /// Metodo que lista los eventos a los cuales estan inscritos los atletas

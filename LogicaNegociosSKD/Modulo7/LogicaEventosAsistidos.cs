@@ -83,11 +83,11 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
-        public DominioSKD.Ubicacion obtenerUbicacion(int idUbicacion)
+        public DateTime obtenerFechaInscripcion(int idPersona, int idEvento)
         {
             try
             {
-                return BDUbicacion.DetallarUbicacion(idUbicacion);
+                return BDEvento.fechaInscripcion(idPersona, idEvento);
             }
             catch (Exception e)
             {

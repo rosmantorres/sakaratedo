@@ -306,7 +306,13 @@
   <data name="AliasIdCinta" xml:space="preserve">
     <value>id</value>
   </data>
+  <data name="AliasInscripcionFecha" xml:space="preserve">
+    <value>fecha</value>
+  </data>
   <data name="ConsultarCintas" xml:space="preserve">
     <value>M7_ConsultarCintas</value>
+  </data>
+  <data name="ConsultarFechaInscripcion" xml:space="preserve">
+    <value>M7_ConsultarFechaInscripcion</value>
   </data>
 </root>

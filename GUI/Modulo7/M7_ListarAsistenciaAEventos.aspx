@@ -53,10 +53,9 @@
        <table id="tablaasistencia" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>ID</th>
-					<th>Evento</th>
+					<th>Nombre</th>
                     <th>Tipo</th>
-					<th>Fecha de Inicio</th>
+					<th>Fecha de Inscripcion</th>
                     <th>Locación</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
