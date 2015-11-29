@@ -137,6 +137,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\RecursosBDRestriccionCompetencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosBDRestriccionCompetencia.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,6 +216,10 @@
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo8\RecursosBDRestriccionCompetencia.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosBDRestriccionCompetencia.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\RecursosBDModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
