@@ -116,6 +116,15 @@ namespace LogicaNegociosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a User.
+        /// </summary>
+        internal static string parametroURLId {
+            get {
+                return ResourceManager.GetString("parametroURLId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a 587.
         /// </summary>
         internal static string puertoEnvioSAKARATEDO {
@@ -130,6 +139,69 @@ namespace LogicaNegociosSKD.Modulo1 {
         internal static string puertoSAKARATEDO {
             get {
                 return ResourceManager.GetString("puertoSAKARATEDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Atleta.
+        /// </summary>
+        internal static string rolAtleta {
+            get {
+                return ResourceManager.GetString("rolAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Atleta(Menor).
+        /// </summary>
+        internal static string rolAtletaMenor {
+            get {
+                return ResourceManager.GetString("rolAtletaMenor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dojo.
+        /// </summary>
+        internal static string rolDojo {
+            get {
+                return ResourceManager.GetString("rolDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Organizacion.
+        /// </summary>
+        internal static string rolOrganizacion {
+            get {
+                return ResourceManager.GetString("rolOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Representante.
+        /// </summary>
+        internal static string rolRepresentante {
+            get {
+                return ResourceManager.GetString("rolRepresentante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sistema.
+        /// </summary>
+        internal static string rolSistema {
+            get {
+                return ResourceManager.GetString("rolSistema", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a -.
+        /// </summary>
+        internal static string splitRoles {
+            get {
+                return ResourceManager.GetString("splitRoles", resourceCulture);
             }
         }
     }

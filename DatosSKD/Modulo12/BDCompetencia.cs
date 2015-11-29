@@ -512,5 +512,103 @@ namespace DatosSKD.Modulo12
             }
             return true;
         }
+
+        public static List<Organizacion> M12ListarOrganizaciones()
+        {
+            BDConexion laConexion;
+            List<Organizacion> laListaOrganizaciones = new List<Organizacion>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo12.ConsultarOrganizaciones, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Organizacion laOrganizacion = new Organizacion();
+
+                    laOrganizacion.Id_organizacion = int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString());
+                    laOrganizacion.Nombre = row[RecursosBDModulo12.AliasNombreOrganizacion].ToString();
+                    
+                    laListaOrganizaciones.Add(laOrganizacion);
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return laListaOrganizaciones;
+        }
+
+        public static List<Cinta> M12ListarCintas()
+        {
+            BDConexion laConexion;
+            List<Cinta> laListaCintas = new List<Cinta>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo12.ConsultarCintas, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Cinta laCinta = new Cinta();
+
+                    laCinta.Id_cinta = int.Parse(row[RecursosBDModulo12.AliasIdCinta].ToString());
+                    laCinta.Color_nombre = row[RecursosBDModulo12.AliasNombreCinta].ToString();
+
+                    laListaCintas.Add(laCinta);
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return laListaCintas;
+        }
     }
 }
