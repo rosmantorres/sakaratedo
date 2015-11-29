@@ -307,6 +307,10 @@
   <opcion nombre="Consultar Mensualidad" link="~/GUI/Modulo16/M16_ConsultarMensualidad.aspx">
     <modulo id="16"></modulo>
   </opcion>
+  
+  <opcion nombre="Consultar Facturas" link="~/GUI/Modulo16/M16_ListarFacturas.aspx">
+    <modulo id="16"></modulo>
+  </opcion>
 
   <!--FIN OPCIONES MODULO 16-->
 </menuLateral>
