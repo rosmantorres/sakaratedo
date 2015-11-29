@@ -106,11 +106,47 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kata.
+        /// </summary>
+        internal static string AliasCompetenciaKata {
+            get {
+                return ResourceManager.GetString("AliasCompetenciaKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kata y Kumite.
+        /// </summary>
+        internal static string AliasCompetenciaKataKumite {
+            get {
+                return ResourceManager.GetString("AliasCompetenciaKataKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kumite.
+        /// </summary>
+        internal static string AliasCompetenciaKumite {
+            get {
+                return ResourceManager.GetString("AliasCompetenciaKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombre.
         /// </summary>
         internal static string AliasCompetenciaNombre {
             get {
                 return ResourceManager.GetString("AliasCompetenciaNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tipo.
+        /// </summary>
+        internal static string AliasCompetenciaTipo {
+            get {
+                return ResourceManager.GetString("AliasCompetenciaTipo", resourceCulture);
             }
         }
         

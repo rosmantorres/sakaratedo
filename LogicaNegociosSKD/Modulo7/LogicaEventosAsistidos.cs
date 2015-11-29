@@ -51,6 +51,22 @@ namespace LogicaNegociosSKD.Modulo7
         }
 
         /// <summary>
+        /// Método que obtiene la lista de competencias asistidas
+        /// </summary>
+        /// <returns>Lista de objetos tipo Competencia</returns>
+        public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
+        {
+            try
+            {
+                return BDEvento.ListarCompetenciasAsistidas();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        /// <summary>
         /// Método que obtiene el detalle de cada evento por su ID
         /// </summary>
         /// <param name="idEvento">Número entero que representa el ID del evento</param>

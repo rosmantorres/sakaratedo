@@ -13,7 +13,8 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarAsistenciaAEventos : System.Web.UI.Page
     {
         #region Atributos
-        private List<DominioSKD.Evento> laLista;
+        private List<DominioSKD.Evento> laListaEventos;
+        private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
 
         #region Page Load
@@ -40,9 +41,10 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laLista = logEvento.obtenerListaDeEventos();
+                    laListaEventos = logEvento.obtenerListaDeEventos();
+                    laListaCompetencias = logEvento.obtenerListaDeCompetencias();
                     
-                    foreach (Evento evento in laLista)
+                    foreach (Evento evento in laListaEventos)
                     {
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
@@ -56,6 +58,19 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
 
+                    foreach (Competencia competencia in laListaCompetencias)
+                    {
+                        this.laTabla.Text += M7_Recursos.AbrirTR;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Id_competencia.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD;
+                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.CerrarTR;
+                    }
                 }
                 catch (Exception ex)
                 {

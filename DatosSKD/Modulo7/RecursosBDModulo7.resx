@@ -258,4 +258,16 @@
   <data name="ParamIdEvento" xml:space="preserve">
     <value>@eve_id</value>
   </data>
+  <data name="AliasCompetenciaKata" xml:space="preserve">
+    <value>Kata</value>
+  </data>
+  <data name="AliasCompetenciaKataKumite" xml:space="preserve">
+    <value>Kata y Kumite</value>
+  </data>
+  <data name="AliasCompetenciaKumite" xml:space="preserve">
+    <value>Kumite</value>
+  </data>
+  <data name="AliasCompetenciaTipo" xml:space="preserve">
+    <value>tipo</value>
+  </data>
 </root>
