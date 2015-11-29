@@ -57,7 +57,37 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta.Id_cinta + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
+
+                        
                     }
+                    /*
+                    Cinta cinta1 = new Cinta();
+                    LogicaCintas logica = new LogicaCintas();
+                    cinta1 = logica.obtenerUltimaCinta(1);
+                    fechaInscripcion = logEvento.obtenerFechaCinta(1, cinta1.Id_cinta);
+                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Color_nombre.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Rango.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Clasificacion.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("yyyy/dd/MM") + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta1.Id_cinta + M7_Recursos.BotonCerrar;
+                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.CerrarTR;*/
+                    /*
+                    Cinta cinta1 = new Cinta();
+                    LogicaCintas logica = new LogicaCintas();
+                    cinta1 = logica.detalleCintaID(1);
+                    fechaInscripcion = logEvento.obtenerFechaCinta(1, cinta1.Id_cinta);
+                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Color_nombre.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Rango.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Clasificacion.ToString() + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("yyyy/dd/MM") + M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta1.Id_cinta + M7_Recursos.BotonCerrar;
+                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                    this.laTabla.Text += M7_Recursos.CerrarTR;*/
 
                 }
                 catch (Exception ex)

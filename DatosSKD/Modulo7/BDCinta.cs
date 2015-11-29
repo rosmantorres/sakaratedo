@@ -76,18 +76,114 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idCinta">Número entero que representa el ID de la cinta</param>
         /// <returns>Objeto de tipo Cinta</returns>
-        /*public static Cinta DetallarCinta(int idCinta)
+        public static Cinta DetallarCinta(int idCinta)
         {
-            int id = 1;
-            String color_nombre = "Blanca";
-            String rango = "kyu";
-            String clasificacion = "quinto";
-            String significado = "nose";
-            int orden = 5;
-            Cinta cinta = new Cinta(id, color_nombre, rango, clasificacion, significado, orden);
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
 
-            return cinta;
-        }*/
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                Cinta cinta = new Cinta();
+
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdCinta, SqlDbType.Int, idCinta.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarCintaXId, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
+                    cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
+                    cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
+                    cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
+                    cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
+                    cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+
+                }
+
+                return cinta;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }/*
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+        }
+
+        /// <summary>
+        /// Método para obtener la ultima cinta de una persona
+        /// </summary>
+        /// <param name="idPersona">Número entero que representa el ID de la Persona</param>
+        /// <returns>Objeto de tipo Cinta</returns>
+        public static Cinta UltimaCinta(int idPersona)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                Cinta cinta = new Cinta();
+
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarUltimaCinta, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
+                    cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
+                    cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
+                    cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
+                    cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
+                    cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+
+                }
+
+                return cinta;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }/*
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+        }
 
         /// <summary>
         /// Método que devuelve la fecha de una inscripción

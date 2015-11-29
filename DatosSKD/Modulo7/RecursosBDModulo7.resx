@@ -330,4 +330,10 @@
   <data name="ConsultarCompetenciasInscritas" xml:space="preserve">
     <value>M7_ConsultaCompetenciaInscrita</value>
   </data>
+  <data name="ConsultarCintaXId" xml:space="preserve">
+    <value>M7_ConsultaCinta</value>
+  </data>
+  <data name="ConsultarUltimaCinta" xml:space="preserve">
+    <value>M7_ConsultarUltimaCinta</value>
+  </data>
 </root>

@@ -60,7 +60,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// </summary>
         /// <param name="idCinta">Número entero que representa el id de la cinta</param>
         /// <returns>Objeto de tipo Cinta</returns>
-        /*public DominioSKD.Cinta detalleCintaID(int idCinta)
+        public DominioSKD.Cinta detalleCintaID(int idCinta)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 throw e;
             }
-        }*/
+        }
 
 
         /// <summary>
@@ -90,6 +90,27 @@ namespace LogicaNegociosSKD.Modulo7
                 throw e;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idPersona"></param>
+        /// <param name="idCinta"></param>
+        /// <returns></returns>
+        public DominioSKD.Cinta obtenerUltimaCinta(int idPersona)
+        {
+            try
+            {
+                return BDCinta.UltimaCinta(idPersona);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+
         #endregion
 
 
