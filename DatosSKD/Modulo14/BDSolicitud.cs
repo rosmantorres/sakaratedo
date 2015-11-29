@@ -13,14 +13,19 @@ namespace DatosSKD.Modulo14
     {
         private BDConexion con = new BDConexion();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idPersona"></param>
+        /// <returns></returns>
         public List<DominioSKD.SolicitudPlanilla> ConsultarSolicitudes(int idPersona)
         {
             SqlConnection conect = con.Conectar();
             List<DominioSKD.SolicitudPlanilla> lista = new List<DominioSKD.SolicitudPlanilla>();
             SolicitudPlanilla solicitud;
             
-                //try
-               // {
+               try
+               {
 
                     SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarSolicitudPlanilla, conect);
                     sqlcom.CommandType = CommandType.StoredProcedure;
@@ -61,7 +66,7 @@ namespace DatosSKD.Modulo14
                    {
                        return null;
                     }
-               /* }
+                }
                 catch (Exception ex)
                 {
                     throw ex;
@@ -69,7 +74,41 @@ namespace DatosSKD.Modulo14
                 finally
                 {
                     con.Desconectar(conect);
-                }*/
+                }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="diseño"></param>
+        /// <param name="planilla"></param>
+        /// <returns></returns>
+        public Boolean EliminarSolicitudBD(int idSolicitud)
+        {
+            SqlConnection conect = con.Conectar();
+            try
+            {
+                    SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureEliminarSolicitud, conect);
+                    sqlcom.CommandType = CommandType.StoredProcedure;
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroIdSolicitud,
+                        SqlDbType.Int));
+
+                    sqlcom.Parameters[RecursosBDModulo14.ParametroIdSolicitud].Value = idSolicitud;
+
+                    SqlDataReader leer;
+                    conect.Open();
+
+                    leer = sqlcom.ExecuteReader();
+                    return true;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Desconectar(conect);
+            }
         }
     }
 }

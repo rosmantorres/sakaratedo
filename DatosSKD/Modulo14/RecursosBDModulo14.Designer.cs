@@ -286,6 +286,15 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @pla_sol_id.
+        /// </summary>
+        internal static string ParametroIdSolicitud {
+            get {
+                return ResourceManager.GetString("ParametroIdSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @tip_id.
         /// </summary>
         internal static string ParametroIdTipoPlanilla {
@@ -471,6 +480,15 @@ namespace DatosSKD.Modulo14 {
         internal static string ProcedureEliminarDatosPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureEliminarDatosPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_Eliminar_Solicitud.
+        /// </summary>
+        internal static string ProcedureEliminarSolicitud {
+            get {
+                return ResourceManager.GetString("ProcedureEliminarSolicitud", resourceCulture);
             }
         }
         

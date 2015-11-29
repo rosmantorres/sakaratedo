@@ -162,7 +162,7 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.
+        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx.
         /// </summary>
         internal static string BotonModificarSolicitud {
             get {
