@@ -302,4 +302,11 @@
     <value>M16_DETALLAREVENTO</value>
     <comment>Store procedure que muestra los detalles de un evento en especifico</comment>
   </data>
+  <data name="CONSULTAR_COMPRAS" xml:space="preserve">
+    <value>M16_CONSULTARCOMPRA</value>
+    <comment>Store procedure que lista todos las facturas existentes para el usuario logeado</comment>
+  </data>
+  <data name="PARAMETRO_ID_USUARIO" xml:space="preserve">
+    <value>@per_id</value>
+  </data>
 </root>

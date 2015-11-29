@@ -187,6 +187,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_CONSULTARCOMPRA.
+        /// </summary>
+        internal static string CONSULTAR_COMPRAS {
+            get {
+                return ResourceManager.GetString("CONSULTAR_COMPRAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_CONSULTAREVENTOS.
         /// </summary>
         internal static string CONSULTAR_EVENTOS {
@@ -291,6 +300,15 @@ namespace DatosSKD.Modulo16 {
         internal static string PARAMETRO_ESTATUS {
             get {
                 return ResourceManager.GetString("PARAMETRO_ESTATUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @per_id.
+        /// </summary>
+        internal static string PARAMETRO_ID_USUARIO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_ID_USUARIO", resourceCulture);
             }
         }
         

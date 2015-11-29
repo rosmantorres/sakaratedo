@@ -27,7 +27,7 @@ namespace DatosSKD.Modulo16
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                Parametro parametro = new Parametro("@per_id", SqlDbType.Int, IdPersona.ToString(), false);
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, IdPersona.ToString(), false);
                 parametros.Add(parametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
@@ -41,11 +41,6 @@ namespace DatosSKD.Modulo16
                     laMatricula.Mat_identificador = (row[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                     laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
                     laMatricula.FechaTope = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
-
-
-
-
-
                     laListaDeMatriculas.Add(laMatricula);
 
                 }

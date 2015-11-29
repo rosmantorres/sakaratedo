@@ -48,14 +48,15 @@ namespace DatosSKD.Modulo16
                     laListaDeInventario.Add(elInventario);
 
                 }
-
+             
+                return laListaDeInventario;
             }
             catch (Exception e)
             {
                 throw e;
             }
 
-            return laListaDeInventario;
+            
 
         }
 
