@@ -173,4 +173,13 @@
   <data name="BotonEliminarSolicitud" xml:space="preserve">
     <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
+  <data name="BotonSolicitarPlanilla" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
+  </data>
+  <data name="CerrarSolicitud" xml:space="preserve">
+    <value>"&gt;Solicitar&lt;/a&gt;</value>
+  </data>
+  <data name="IdDis" xml:space="preserve">
+    <value>&amp;idDis=</value>
+  </data>
 </root>

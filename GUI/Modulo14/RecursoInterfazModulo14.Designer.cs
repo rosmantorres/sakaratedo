@@ -171,6 +171,24 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary&quot; href=&quot;M14_SolicitudPlanilla.aspx?idPlan=.
+        /// </summary>
+        internal static string BotonSolicitarPlanilla {
+            get {
+                return ResourceManager.GetString("BotonSolicitarPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;Solicitar&lt;/a&gt;.
+        /// </summary>
+        internal static string CerrarSolicitud {
+            get {
+                return ResourceManager.GetString("CerrarSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/td&gt;.
         /// </summary>
         internal static string CerrarTD {
@@ -185,6 +203,15 @@ namespace templateApp.GUI.Modulo14 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;idDis=.
+        /// </summary>
+        internal static string IdDis {
+            get {
+                return ResourceManager.GetString("IdDis", resourceCulture);
             }
         }
         

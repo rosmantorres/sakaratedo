@@ -21,9 +21,23 @@ namespace LogicaNegociosSKD.Modulo14
             return datos.ConsultarSolicitudes(idPersona);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idSolicitud"></param>
+        /// <returns></returns>
         public Boolean EliminarSolicitud(int idSolicitud)
         {
             return datos.EliminarSolicitudBD(idSolicitud);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<DominioSKD.Planilla> ConsultarPlanillasASolicitar()
+        {
+            return datos.ConsultarPlanillasASolicitarBD();
         }
     }
 }

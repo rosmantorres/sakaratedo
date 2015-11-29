@@ -110,5 +110,60 @@ namespace DatosSKD.Modulo14
                 con.Desconectar(conect);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idPersona"></param>
+        /// <returns></returns>
+        public List<DominioSKD.Planilla> ConsultarPlanillasASolicitarBD()
+        {
+            SqlConnection conect = con.Conectar();
+            List<DominioSKD.Planilla> lista = new List<DominioSKD.Planilla>();
+             DominioSKD.Planilla planilla;
+
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarPlanillasASolicitar, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
+                    {
+                        planilla = new Planilla();
+                        Diseño diseño = new Diseño();
+                        planilla.Diseño = diseño;
+                        planilla.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdPlanilla]);
+                        planilla.Nombre = leer[RecursosBDModulo14.AtributoNombrePlanilla].ToString();
+                        planilla.Diseño.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdDiseño]);
+                        planilla.TipoPlanilla = leer[RecursosBDModulo14.AtributoTipo].ToString();
+                        lista.Add(planilla);
+                        diseño = null;
+                        planilla = null;
+
+                    }
+
+                    return lista;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Desconectar(conect);
+            }
+        }
     }
 }

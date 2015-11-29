@@ -295,4 +295,7 @@
   <data name="ProcedureEliminarSolicitud" xml:space="preserve">
     <value>M14_Eliminar_Solicitud</value>
   </data>
+  <data name="ProcedureConsultarPlanillasASolicitar" xml:space="preserve">
+    <value>M14_ConsultarPlanillasASolicitar</value>
+  </data>
 </root>

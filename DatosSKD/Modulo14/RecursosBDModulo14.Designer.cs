@@ -448,6 +448,15 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarPlanillasASolicitar.
+        /// </summary>
+        internal static string ProcedureConsultarPlanillasASolicitar {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarPlanillasASolicitar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M14_ConsultarPlanillasCreadas.
         /// </summary>
         internal static string ProcedureConsultarPlanillasCreadas {
