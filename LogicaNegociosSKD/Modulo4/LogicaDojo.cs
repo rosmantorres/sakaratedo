@@ -8,7 +8,7 @@ using DatosSKD.Modulo4;
 
 namespace LogicaNegociosSKD.Modulo4
 {
-    class LogicaDojo
+    public class LogicaDojo
     {
         #region Atributos
 
@@ -50,7 +50,7 @@ namespace LogicaNegociosSKD.Modulo4
         
         }
 
-        public List<DominioSKD.Dojo> M4obtenerListaDeOrganizaciones()
+        /*public List<DominioSKD.Dojo> M4obtenerListaDeOrganizaciones()
         {
             try
             {
@@ -95,7 +95,7 @@ namespace LogicaNegociosSKD.Modulo4
             }
         }
 
-     
+     */
         #endregion
     }
 }

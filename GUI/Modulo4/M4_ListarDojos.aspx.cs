@@ -22,14 +22,14 @@ namespace templateApp.GUI.Modulo4
             String detalleString = Request.QueryString["dojoDetalle"];
 
 
-            if (detalleString != null)
+           /* if (detalleString != null)
             {
                 llenarModalInfo(int.Parse(detalleString));
                             
             
             
             
-            }
+            }*/
 
 
 
@@ -75,7 +75,7 @@ namespace templateApp.GUI.Modulo4
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Organizacion_dojo + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
-                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Status_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Estilo_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
                     }
 
@@ -93,7 +93,7 @@ namespace templateApp.GUI.Modulo4
 
         }
 
-        protected void llenarModalInfo(int elIdDojo)
+       /* protected void llenarModalInfo(int elIdDojo)
         {
             Competencia laCompetencia = new Competencia();
             LogicaDojo logica = new LogicaDojo();
@@ -102,6 +102,6 @@ namespace templateApp.GUI.Modulo4
 
 
         
-        }
+        }*/
     }
 }

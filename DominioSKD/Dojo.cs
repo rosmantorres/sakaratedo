@@ -16,13 +16,21 @@ namespace DominioSKD
         private int telefono_dojo;
         private String email_dojo;
         private String logo_dojo;
-        private bool status_dojo;
+        private DateTime registro_dojo;
+        private String status_dojo;
+        private String estilo_dojo;
         private String organizacion_dojo;
         private Ubicacion ubicacion;
         #endregion
 
         #region propiedades
     
+        public DateTime Registro_dojo
+        {
+            get { return registro_dojo; }
+
+            set { registro_dojo = value; }
+        }
         public int Dojo_Id
         {
             get { return id_dojo; }
@@ -37,12 +45,16 @@ namespace DominioSKD
             set { id_dojo = value; }
         }
 
-        public bool Status_dojo
+        public String Status_dojo
         {
             get { return status_dojo; }
             set { status_dojo = value; }
         }
-
+        public String Estilo_dojo
+        {
+            get { return estilo_dojo; }
+            set { estilo_dojo = value; }
+        }
         public int Telefono_dojo
         {
             get { return telefono_dojo; }
@@ -95,13 +107,13 @@ namespace DominioSKD
             this.telefono_dojo = 0;
             this.email_dojo = "";
             this.logo_dojo = "";
-            this.status_dojo = false;
+            this.status_dojo ="";
             this.organizacion_dojo = "";
             this.ubicacion = null;
         }
 
         //constructor con parametros 
-        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, string organizacion, Ubicacion ubicacion)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
@@ -114,7 +126,7 @@ namespace DominioSKD
             this.ubicacion = ubicacion;
         }
         //constructor sin id 
-        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, string organizacion, Ubicacion ubicacion)
+        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion)
         {
             this.rif_dojo = Rif;
             this.nombre_dojo = Nombre;
@@ -130,8 +142,6 @@ namespace DominioSKD
         {
             this.id_dojo = id_dojo;
         }
-
-        
 
     }
 }
