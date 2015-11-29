@@ -129,6 +129,7 @@
     <Compile Include="Modulo7\BDCinta.cs" />
     <Compile Include="Modulo7\BDEvento.cs" />
     <Compile Include="Modulo7\BDHorario.cs" />
+    <Compile Include="Modulo7\BDMatricula.cs" />
     <Compile Include="Modulo7\BDTipoEvento.cs" />
     <Compile Include="Modulo7\BDUbicacion.cs" />
     <Compile Include="Modulo7\RecursosBDModulo7.Designer.cs">

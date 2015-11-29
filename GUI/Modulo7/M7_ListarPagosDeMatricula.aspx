@@ -65,47 +65,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-				    <td>Inscripción</td>
-					<td>Julio</td>
-                    <td>01/10/2015</td>
-					<td>8.000 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Mensualidad</td>
-                    <td>Agosto</td>
-					<td>07/10/2015</td>
-					<td>3.280 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>Mensualidad</td>
-                    <td>Septiembre</td>
-                    <td>02/11/2015</td>
-                    <td>2.000 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Mensualidad</td>
-                    <td>Octubre</td>
-					<td>05/11/2015</td>
-					<td>4.285 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>
-                
-
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>
 			</tbody>
     </table>
         </div>
