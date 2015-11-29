@@ -241,6 +241,15 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @idEvento.
+        /// </summary>
+        internal static string ParametroIdEvento {
+            get {
+                return ResourceManager.GetString("ParametroIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @idPersona.
         /// </summary>
         internal static string ParametroIdPersona {
@@ -322,7 +331,7 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M9_TodasLasFechasAscencos.
+        ///   Looks up a localized string similar to M9_TodasLasFechasAscensos.
         /// </summary>
         internal static string ProcedimientoConsultarFechasAscensos {
             get {

@@ -77,8 +77,9 @@ namespace PruebasUnitariasSKD.Modulo9
         public void PruebaConsultarEvento()
         {
             DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
-            Evento evento = baseDeDatosEvento.ConsultarEvento(11);
-            Assert.AreEqual(evento.Nombre, "Prueba Unitaria");
+            Evento evento = baseDeDatosEvento.ConsultarEvento("1");
+            Console.Out.WriteLine(evento.Nombre);
+            Assert.AreEqual(evento.Nombre, "Clase Regular");
         }
 
         [Test]
@@ -89,6 +90,34 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.Greater(horarios.Count,0);
         }
 
+        [Test]
+        public void PruebaEventosPorFecha()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            String fechaI = "2008-05-15";
+            String fechaF = "2016-06-05";
+            List<Evento> eventos = baseDeDatosEvento.EventosPorFecha(fechaI, fechaF);
+            Assert.Greater(eventos.Count, 0);
+
+        }
+
+        [Test]
+        public void PruebaListarHorariosAscensos()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            List<Horario> horarios = baseDeDatosEvento.ListarHorariosAscensos();
+            Assert.Greater(horarios.Count, 0);
+        }
+
+        [Test]
+        public void PruebaAcsensosPorFecha()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            String fechaI = "2008-05-15";
+            String fechaF = "2016-06-05";
+            List<Evento> eventos = baseDeDatosEvento.AcsensosPorFecha(fechaI, fechaF);
+            Assert.Greater(eventos.Count, 0);
+        }
 
         #endregion
     }
