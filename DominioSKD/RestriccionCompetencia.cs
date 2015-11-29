@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class RestriccionCompetencia
+    public class RestriccionCompetencia
     {
         #region Atributos
         private int idRestriccionComp;
@@ -15,7 +15,7 @@ namespace DominioSKD
         private int edadMaxima;
         private DateTime fechaEdadMin;
         private DateTime fechaEdadMax;
-        private char sexo;
+        private String sexo;
         private String modalidad;
         private List<Competencia> listaCompetencias;
         private List<Cinta> listaCintas;
@@ -59,7 +59,7 @@ namespace DominioSKD
             set { fechaEdadMax = value; }
         }
 
-        public char Sexo
+        public String Sexo
         {
             get { return sexo; }
             set { sexo = value; }
@@ -94,13 +94,13 @@ namespace DominioSKD
             edadMaxima = 0;
             fechaEdadMin = new DateTime();
             fechaEdadMax = new DateTime();
-            sexo = new char();
+            sexo = String.Empty;
             modalidad = String.Empty;
             listaCompetencias = null;
             listaCintas = null;
         }
 
-        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, DateTime inputFechaEdadMax, char inputSexo, String inputModalidad)
+        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, DateTime inputFechaEdadMax, String inputSexo, String inputModalidad)
         {
             idRestriccionComp = inputId;
             descripcion = inputDescripcion;
