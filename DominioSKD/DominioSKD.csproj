@@ -43,6 +43,7 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
+    <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="CompraMatricula.cs" />
     <Compile Include="Cuenta.cs" />
