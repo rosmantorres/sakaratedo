@@ -13,8 +13,7 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarEventosInscritos : System.Web.UI.Page
     {
          #region Atributos
-        private List<Evento> laLista = new List<Evento>();
-        private Horario horario;
+        private List<DominioSKD.Evento> laLista;
         #endregion
         #region Page Load
         /// <summary>
@@ -51,7 +50,7 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("dd/MM/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.BotonInfoEventosInscritos + evento.Id_evento + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
