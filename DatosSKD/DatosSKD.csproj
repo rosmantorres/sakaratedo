@@ -72,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo13\BDListarMoroso.cs" />
     <Compile Include="Modulo13\RecursosBDModulo13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

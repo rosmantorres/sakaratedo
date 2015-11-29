@@ -4427,9 +4427,9 @@ INSERT INTO MATRICULA VALUES ('129',CONVERT(datetime,'2012-04-13',101),1,CONVERT
 
 --HIST_MATRICULA--
 
-INSERT INTO HIST_MATRICULA VALUES (CONVERT(datetime, '2015-11-10', 101),'mensualidad','3250',1);
-INSERT INTO HIST_MATRICULA VALUES (CONVERT(datetime, '2013-09-10', 101),'mensualidad','2200',2);
-INSERT INTO HIST_MATRICULA VALUES (CONVERT(datetime, '2012-02-10', 101),'mensualidad','2000',3);
+INSERT INTO HISTORIAL_MATRICULA VALUES (CONVERT(datetime, '2015-11-10', 101),'mensualidad','3250',1);
+INSERT INTO HISTORIAL_MATRICULA VALUES (CONVERT(datetime, '2013-09-10', 101),'mensualidad','2200',2);
+INSERT INTO HISTORIAL_MATRICULA VALUES (CONVERT(datetime, '2012-02-10', 101),'mensualidad','2000',3);
 
 
 --RESULTADO_KUMITE--
@@ -4450,6 +4450,7 @@ INSERT INTO RESULTADO_KUMITE VALUES (13,35,45,7,8);
 INSERT INTO RESULTADO_KUMITE VALUES (14,20,40,7,8);
 INSERT INTO RESULTADO_KUMITE VALUES (15,30,35,8,9);
 INSERT INTO RESULTADO_KUMITE VALUES (16,40,35,8,9);
+
 
 
 -----HISTORIAL_CINTAS----------
@@ -4478,6 +4479,8 @@ INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion],
 INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '3er Kyu', 'Nivel superior', 'Maestro medio', 3,7);
 
 INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '4to Kyu', 'Nivel superior', 'Maestro superior', 4,8);
+
+
 
 
 
