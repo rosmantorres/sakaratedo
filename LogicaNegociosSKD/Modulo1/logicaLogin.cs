@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Security.Cryptography;
 using DatosSKD.Modulo1;
 using DominioSKD;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo1
 {
@@ -130,9 +131,8 @@ namespace LogicaNegociosSKD.Modulo1
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
-                Console.WriteLine("Mensaje: " + e.Message);
-                throw e;
+                throw new ExcepcionesSKD.Modulo1.InicioSesionException(RecursosLogicaModulo1.Codigo_Error_InicioSesion,
+                    RecursosLogicaModulo1.Mensaje_Error_InicioSesion, e);
             }
         }
 
@@ -156,9 +156,8 @@ namespace LogicaNegociosSKD.Modulo1
             }
         catch (Exception e)
         {
-            Console.WriteLine("Error encontrado en login.hash: " + e);
-            Console.WriteLine("Mensaje: " + e.Message);
-            throw e;
+            throw new ExcepcionesSKD.Modulo1.HashException(RecursosLogicaModulo1.Codigo_Error_Hash,
+                    RecursosLogicaModulo1.Mensaje_Error_Hash, e);
         }
         }
     }

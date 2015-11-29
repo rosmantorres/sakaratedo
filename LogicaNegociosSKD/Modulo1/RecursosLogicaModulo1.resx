@@ -121,6 +121,12 @@
     <value>SA-KARATEDO:Reestablecer contraseña</value>
     <comment>asunto del mensaje a enviar</comment>
   </data>
+  <data name="Codigo_Error_Hash" xml:space="preserve">
+    <value>SKD_00_10</value>
+  </data>
+  <data name="Codigo_Error_InicioSesion" xml:space="preserve">
+    <value>SKD_00_11</value>
+  </data>
   <data name="cuentaClaveSAKARATEDO" xml:space="preserve">
     <value>karate1234</value>
     <comment>contraseña de la cuenta de sakaratedo</comment>
@@ -140,6 +146,12 @@
     <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
            Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
     <comment>mensaje que se enviara al usuario</comment>
+  </data>
+  <data name="Mensaje_Error_Hash" xml:space="preserve">
+    <value>Error encontrado en login.hash</value>
+  </data>
+  <data name="Mensaje_Error_InicioSesion" xml:space="preserve">
+    <value>Error encontrado en login.iniciarSesion</value>
   </data>
   <data name="parametroURLId" xml:space="preserve">
     <value>User</value>
