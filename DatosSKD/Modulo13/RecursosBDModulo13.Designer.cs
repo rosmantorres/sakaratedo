@@ -59,5 +59,14 @@ namespace DatosSKD.Modulo13 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M13_ListarMorosos.
+        /// </summary>
+        internal static string listamorosidad {
+            get {
+                return ResourceManager.GetString("listamorosidad", resourceCulture);
+            }
+        }
     }
 }
