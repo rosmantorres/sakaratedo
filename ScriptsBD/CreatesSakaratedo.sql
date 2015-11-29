@@ -48,7 +48,6 @@ CREATE
     cin_clasificacion            VARCHAR (100) NOT NULL ,
     cin_significado              VARCHAR (150) NOT NULL ,
     cin_orden                    INTEGER NOT NULL ,
-    RESTRICCION_CINTA_res_cin_id INTEGER NOT NULL ,
     CONSTRAINT CINTA_PK PRIMARY KEY CLUSTERED (cin_id)
 WITH
   (
@@ -58,13 +57,6 @@ WITH
   ON "default"
   )
   ON "default"
-GO
-CREATE UNIQUE NONCLUSTERED INDEX
-CINTA__IDX ON CINTA
-(
-  RESTRICCION_CINTA_res_cin_id
-)
-ON "default"
 GO
 
 CREATE
@@ -624,13 +616,6 @@ WITH
   ON "default"
 GO
 CREATE UNIQUE NONCLUSTERED INDEX
-RESTRICCION_CINTA__IDX ON RESTRICCION_CINTA
-(
-  TIPO_PERIODO_tipo_per_id
-)
-ON "default"
-GO
-CREATE UNIQUE NONCLUSTERED INDEX
 RESTRICCION_CINTA__IDXv1 ON RESTRICCION_CINTA
 (
   CINTA_cin_id
@@ -946,20 +931,6 @@ DELETE
 UPDATE NO ACTION
 GO
 
-ALTER TABLE CINTA
-ADD CONSTRAINT CINTA_RESTRICCION_CINTA_FK FOREIGN KEY
-(
-RESTRICCION_CINTA_res_cin_id
-)
-REFERENCES RESTRICCION_CINTA
-(
-res_cin_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
 
 ALTER TABLE COMPETENCIA
 ADD CONSTRAINT COMPETENCIA_CATEGORIA_FK FOREIGN KEY
@@ -1741,21 +1712,6 @@ DELETE
 UPDATE NO ACTION
 GO
 
-ALTER TABLE RESTRICCION_CINTA
-ADD CONSTRAINT RESTRICCION_CINTA_TIPO_PERIODO_FK FOREIGN KEY
-(
-TIPO_PERIODO_tipo_per_id
-)
-REFERENCES TIPO_PERIODO
-(
-tipo_per_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
-
 ALTER TABLE RH_CINTA
 ADD CONSTRAINT RH_CINTA_CINTA_FK FOREIGN KEY
 (
@@ -2099,6 +2055,26 @@ as
 
  go
 
+
+
+--PROCEDURE CONSULTA LISTA DE ORGANIZACIONES--
+CREATE procedure M12_ConsultarOrganizaciones
+as
+	begin
+		select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
+		from ORGANIZACION as org		
+	end;
+go
+
+
+--PROCEDURE CONSULTA LISTA DE CINTAS--
+CREATE procedure M12_ConsultarCintas
+as
+	begin
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta
+		from CINTA as cin		
+	end;
+go
 
 
  ----------------------------------STORED PROCEDURES M1-------------------------------------
