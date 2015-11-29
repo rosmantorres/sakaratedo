@@ -67,6 +67,24 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.WebControls.CheckBox organizaciones;
         
         /// <summary>
+        /// input_fecha_ini control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_ini;
+        
+        /// <summary>
+        /// input_fecha_fin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_fin;
+        
+        /// <summary>
         /// tablacompetencias control.
         /// </summary>
         /// <remarks>
@@ -148,22 +166,22 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.WebControls.DropDownList comboCintaHasta;
         
         /// <summary>
-        /// divComboSexo control.
+        /// input_sexo_M control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboSexo;
+        protected global::System.Web.UI.WebControls.RadioButton input_sexo_M;
         
         /// <summary>
-        /// comboSexo control.
+        /// input_sexo_F control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboSexo;
+        protected global::System.Web.UI.WebControls.RadioButton input_sexo_F;
         
         /// <summary>
         /// input_status_porIniciar control.

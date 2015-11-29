@@ -97,13 +97,13 @@
                      <div class="col-sm-4 col-md-4 col-lg-4">
                         <h3>Tipo :</h3>
                         <label class="radio-inline">
-                           <asp:RadioButton runat="server" type="radio" Checked="true" Text="Kata" name="radioTipo" id="input_tipo_kata" onclick="return fillCodigoTextField();" />
+                           <asp:RadioButton runat="server" type="radio" Checked="true" Text="Kata" name="radioTipo" id="input_tipo_kata" GroupName="tipoComp" />
                         </label>
                         <label class="radio-inline">
-                           <asp:RadioButton runat="server" type="radio" Text="Kumite" name="radioTipo" id="input_tipo_kumite"  onclick="return fillCodigoTextField();"/>
+                           <asp:RadioButton runat="server" type="radio" Text="Kumite" name="radioTipo" id="input_tipo_kumite" GroupName="tipoComp"/>
                         </label>
                         <label class="radio-inline">
-                           <asp:RadioButton runat="server" type="radio" Text="Ambos" name="radioTipo" id="input_tipo_ambos"  onclick="return fillCodigoTextField();"/>
+                           <asp:RadioButton runat="server" type="radio" Text="Ambos" name="radioTipo" id="input_tipo_ambos" GroupName="tipoComp"/>
                         </label>
                         <br />
                      </div>
@@ -111,6 +111,28 @@
                         <h3>Organizador(es) :</h3>
                         <asp:CheckBox runat="server" id="organizaciones" Width="300px" CssClass="checkbox" ClientIDMode="Static"></asp:CheckBox>
                      </div>
+                     <!--Date picker FECHA-->
+                     <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                        <!--Date picker FECHA Inicio-->
+                        <div class="form-group col-sm-6 col-md-6 col-lg-6">
+                           <br />
+                           <h3>Fecha de Inicio:</h3>
+                           <div class="input-group input-append date" id="datePickerIni">
+                              <input runat="server" type="text" class="form-control" name="date" id="input_fecha_ini"/>
+                              <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                           </div>
+                        </div>
+                        <!--Date picker FECHA-->
+                        <div class="form-group col-sm-6 col-md-6 col-lg-6">
+                           <br />
+                           <h3>Fecha de Culminaci&oacute;n:</h3>
+                           <div class="input-group input-append date" id="datePickerFin">
+                              <input runat="server" type="text" class="form-control" name="date" id="input_fecha_fin"/>
+                              <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                           </div>
+                        </div>
+                     </div>
+                     <br/>
                      <div class="form-group">
                         <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
                            <div id="latabla">
@@ -176,7 +198,7 @@
                                  </div>
                               </div>
                               <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                 <!--COMBO 2-->
+                                 <!--AREA DE SELECCION DE CINTA-->
                                  <div class="col-sm-4 col-md-4 col-lg-4">
                                     <label>Seleccione la cinta:</label>  
                                  </div>
@@ -194,15 +216,15 @@
                                  </div>
                               </div>
                               <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                 <!--COMBO 3-->
+                                 <!--AREA DE SELECCION DE SEXO-->
                                  <div class="col-sm-4 col-md-4 col-lg-4">
-                                    <label>Seleccione el sexo:</label>  
-                                 </div>
-                                 <div class="col-sm-4 col-md-4 col-lg-4" >
-                                    <div class="dropdown" runat="server" id="divComboSexo">
-                                       <asp:DropDownList ID="comboSexo"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboSexo_SelectedIndexChanged" AutoPostBack="true">
-                                       </asp:DropDownList>
-                                    </div>
+                                    <p><b>Seleccione el sexo:</b></p>
+                                    <label class="radio-inline">
+                                       <asp:RadioButton runat="server" type="radio" Checked="true" Text="M" name="radioSexoM" id="input_sexo_M" GroupName="sexoCategoria"/>
+                                    </label>
+                                    <label class="radio-inline">
+                                       <asp:RadioButton runat="server" type="radio" Text="F" name="radioSexoF" id="input_sexo_F" GroupName="sexoCategoria"/>
+                                    </label>
                                  </div>
                               </div>
                            </div>
@@ -213,10 +235,10 @@
                         <div class="col-sm-10 col-md-10 col-lg-10">
                            <p><b>Status:</b></p>
                            <label class="radio-inline">
-                              <asp:RadioButton runat="server" Text="Por Iniciar" type="radio" name="radioStatus" checked="true" id="input_status_porIniciar"/>
+                              <asp:RadioButton runat="server" Text="Por Iniciar" type="radio" name="radioStatus" checked="true" id="input_status_porIniciar" GroupName="statusComp"/>
                            </label>
                            <label class="radio-inline">
-                              <asp:RadioButton runat="server" Text="En Curso" type="radio" name="radioStatus" id="input_status_enCurso"/>
+                              <asp:RadioButton runat="server" Text="En Curso" type="radio" name="radioStatus" id="input_status_enCurso" GroupName="statusComp"/>
                            </label>
                            <label class="radio-inline">
                            <input type="radio" name="radioStatus" disabled="disabled" id="input_status_Finalizado"/>Finalizado</label>
@@ -283,4 +305,28 @@
            document.getElementById("edad_hasta").value = ish;
        }
    </script>
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $('#datePickerIni')
+         .datepicker({
+             format: 'mm/dd/yyyy'
+         })
+         .on('changeDate', function (e) {
+             // Revalidate the date field
+         });
+     });
+
+     $(document).ready(function () {
+         $('#datePickerFin')
+         .datepicker({
+             format: 'mm/dd/yyyy'
+         })
+         .on('changeDate', function (e) {
+             // Revalidate the date field
+         });
+     });
+
+    </script>
+
 </asp:Content>
