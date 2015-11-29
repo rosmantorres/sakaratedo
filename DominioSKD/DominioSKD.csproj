@@ -58,6 +58,7 @@
     <Compile Include="Persona.cs" />
     <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestriccionEvento.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="RestriccionCompetencia.cs" />
     <Compile Include="ResultadoAscenso.cs" />
