@@ -111,11 +111,11 @@ namespace templateApp.GUI.Modulo16
         public void Llenartabla()
         {
             //Obtengo el ID del usuario
-            int idUsuario = (int)(Session[RecursosInterfazMaster.sessionUsuarioID]);
+            // Session[RecursosInterfazMaster.sessionUsuarioID] = idUsuario[0];
 
             //Instancio la logica correspondiente y me traigo el carrito de compras
             Logicacarrito logicaCarrito = new Logicacarrito();
-            carritoCompras = logicaCarrito.verCarrito(idUsuario);
+            carritoCompras = logicaCarrito.verCarrito(1);
 
             //Recorro La lista de los inventarios en el carrito para anexarlas al GRIDVIEW
             foreach (Implemento implemento in carritoCompras.ListaImplemento)
