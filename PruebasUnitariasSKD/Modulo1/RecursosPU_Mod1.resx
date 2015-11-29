@@ -121,12 +121,12 @@
     <value>12345</value>
     <comment>Clave Correcto</comment>
   </data>
-  <data name="pruebaCorrectoCorreo" xml:space="preserve">
-    <value>admin@gmail.com</value>
+  <data name="pruebainicioCorreo" xml:space="preserve">
+    <value>carloadmin</value>
     <comment>Correo Correcto</comment>
   </data>
   <data name="PruebaCorrectoResultado" xml:space="preserve">
-    <value>admin@gmail.com</value>
+    <value>perdomo21346@gmail.com</value>
     <comment>Resultado Correcto</comment>
   </data>
   <data name="PruebaErrorClave" xml:space="preserve">
@@ -145,14 +145,6 @@
     <value>hola</value>
     <comment>Prueba de hash</comment>
   </data>
-  <data name="Descripcion" xml:space="preserve">
-    <value>Una descaripcion</value>
-    <comment>Dc</comment>
-  </data>
-  <data name="Fecha" xml:space="preserve">
-    <value>13/11/1991</value>
-    <comment>Fecha</comment>
-  </data>
   <data name="Id" xml:space="preserve">
     <value>1</value>
     <comment>id del usuario</comment>
@@ -162,11 +154,19 @@
     <comment>nombre del rol</comment>
   </data>
   <data name="usuario" xml:space="preserve">
-    <value>usuario04</value>
+    <value>carloadmin</value>
     <comment>nombre de usuario</comment>
   </data>
   <data name="Vacio" xml:space="preserve">
     <value />
     <comment>Vacio</comment>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Una descaripcion</value>
+    <comment>Dc</comment>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>13/11/1991</value>
+    <comment>Fecha</comment>
   </data>
 </root>

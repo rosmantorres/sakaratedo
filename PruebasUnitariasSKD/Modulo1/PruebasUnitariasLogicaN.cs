@@ -32,13 +32,13 @@ namespace PruebasUnitariasSKD.Modulo1
         public  void PruebaInicioSesionCorrecto()
         {
             logicaLogin lg = new logicaLogin();
-            string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebaCorrectoCorreo, RecursosPU_Mod1.PruebaCorrectoClave);
-            Assert.AreEqual(resp[0], RecursosPU_Mod1.PruebaCorrectoResultado);
+            string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebainicioCorreo, RecursosPU_Mod1.PruebaCorrectoClave);
+            Assert.AreEqual(resp[1], RecursosPU_Mod1.pruebainicioCorreo);
 
         }
         // Prueba unitaria de la excepcion del metodo EnviarCorreo()
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public  void PruebaEnviarCorreoFallidoEXC()
         {
             logicaLogin lg = new logicaLogin();
@@ -48,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo1
         }
         // Prueba unitaria de la excepcion del metodo IniciarSesion()
         [Test]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(ExcepcionesSKD.Modulo1.InicioSesionException))]
         public  void PruebaIniciarSesionFallidoEXC()
         {
             logicaLogin lg = new logicaLogin();
@@ -78,34 +78,42 @@ namespace PruebasUnitariasSKD.Modulo1
         }
         [Test]
         // Prueba unitaria de la excepcion del metodo hash()
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(ExcepcionesSKD.Modulo1.HashException))]
         public void PruebaHashFallido()
         {
             string resp = logicaLogin.hash(null);
         }
         // Prueba unitaria del metodo ValidarCorreo() de forma correcta
-       /*[Test]
+       [Test]
         public void PruebaValidarCorreoCorrecto()
         {
-            login lg = new login();
-            string _respuesta;
+            logicaLogin lg = new logicaLogin();
+            bool _respuesta;
 
 
-            _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaCorrectoCorreo);
+            _respuesta = lg.validarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
 
             Assert.AreEqual(true, _respuesta);
-        } */
+        } 
         // Prueba unitaria del metodo ValidarCorreo() de forma Erronea
-        /* [Test]
+         [Test]
          public void PruebaValidarCorreoFallido()
          {
-             login lg = new login();
-             string _respuesta;
+             logicaLogin lg = new logicaLogin();
+             bool _respuesta;
 
 
-             _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaCorrectoCorreo);
-
+             _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaErrorCorreo);
              Assert.AreEqual(false, _respuesta);
-         } */
+         }
+         [Test]
+         // Prueba unitaria de la excepcion del metodo hash()
+         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+         public void PruebaValidarCorreoFallidoexc()
+         {
+             logicaLogin lg = new logicaLogin();
+             bool _respuesta;
+             _respuesta = lg.validarCorreo(null);
+         }
     }
 }

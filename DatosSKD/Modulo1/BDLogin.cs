@@ -57,6 +57,7 @@ namespace DatosSKD.Modulo1
                     elRol.Fecha_creacion = (DateTime)row[RecursosBDModulo1.AliasFechaCreacion];
                     listaRol.Add(elRol);
                }
+
                laCuenta.Roles = listaRol;
                 return laCuenta;
 
@@ -106,13 +107,15 @@ namespace DatosSKD.Modulo1
 
                 foreach (DataRow row in dt.Rows)
                 {
+
                     elCorreo.Add(row[RecursosBDModulo1.aliasCorreoUsuario].ToString());
                 }
                 bool respuesta = false;
+
                 if (elCorreo.Count == 1)
-                    respuesta = true;
+                { respuesta = true; }
                 else if (elCorreo.Count > 1)
-                    throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno);
+                { throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno); }
 
                 return respuesta;
 

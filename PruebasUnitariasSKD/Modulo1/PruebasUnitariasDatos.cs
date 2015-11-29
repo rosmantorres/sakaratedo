@@ -35,7 +35,7 @@ namespace PruebasUnitariasSKD.Modulo1.Datos
         public void PruebaValidarCorreoUsuario()
         {
 
-            bool True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.pruebaCorrectoCorreo);
+            bool True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.PruebaCorrectoResultado);
             Assert.AreEqual(True, true);
 
         }

@@ -97,16 +97,7 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to admin@gmail.com.
-        /// </summary>
-        internal static string pruebaCorrectoCorreo {
-            get {
-                return ResourceManager.GetString("pruebaCorrectoCorreo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to admin@gmail.com.
+        ///   Looks up a localized string similar to perdomo21346@gmail.com.
         /// </summary>
         internal static string PruebaCorrectoResultado {
             get {
@@ -151,6 +142,15 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to carloadmin.
+        /// </summary>
+        internal static string pruebainicioCorreo {
+            get {
+                return ResourceManager.GetString("pruebainicioCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         internal static string Rol {
@@ -160,7 +160,7 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to usuario04.
+        ///   Looks up a localized string similar to carloadmin.
         /// </summary>
         internal static string usuario {
             get {

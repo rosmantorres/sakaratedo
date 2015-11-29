@@ -185,8 +185,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo',
-SELECT rol_id from ROL where rol_nombre='Admin Sistema'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlo'),
+(SELECT rol_id from ROL where rol_nombre='Admin Sistema')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -196,8 +196,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'
-SELECT rol_id from ROL where rol_nombre='Admin Sistema'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'),
+(SELECT rol_id from ROL where rol_nombre='Admin Sistema'));
 
 INSERT INTO dbo.PERSONA_ROL  (
 per_rol_fecha,
@@ -206,31 +206,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro',
-SELECT rol_id from ROL where rol_nombre='Atleta'
-);
-
-
-INSERT INTO dbo.PERSONA_ROL  (
-per_rol_fecha,
-PERSONA_per_id,
-ROL_rol_id
-)
-VALUES (
-GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo',
-SELECT rol_id from ROL where rol_nombre='Atleta'
-);
-
-INSERT INTO dbo.PERSONA_ROL  (
-per_rol_fecha,
-PERSONA_per_id,
-ROL_rol_id
-)
-VALUES (
-GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 
@@ -241,8 +218,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -252,8 +229,20 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -263,8 +252,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -274,8 +263,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -285,8 +274,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -296,8 +285,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -307,8 +296,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel',
-SELECT rol_id from ROL where rol_nombre='Atleta'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -318,8 +307,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo',
-SELECT rol_id from ROL where rol_nombre='Entrenador'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -329,8 +318,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel',
-SELECT rol_id from ROL where rol_nombre='Entrenador'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
+(SELECT rol_id from ROL where rol_nombre='Entrenador')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -340,8 +329,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham',
-SELECT rol_id from ROL where rol_nombre='Admin Dojo'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
+(SELECT rol_id from ROL where rol_nombre='Entrenador')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -351,8 +340,8 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto',
-SELECT rol_id from ROL where rol_nombre='Admin Dojo'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham'),
+(SELECT rol_id from ROL where rol_nombre='Admin Dojo')
 );
 
 INSERT INTO dbo.PERSONA_ROL  (
@@ -362,6 +351,17 @@ ROL_rol_id
 )
 VALUES (
 GETDATE(),
-SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio',
-SELECT rol_id from ROL where rol_nombre='Admin Dojo'
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
+(SELECT rol_id from ROL where rol_nombre='Admin Dojo')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio'),
+(SELECT rol_id from ROL where rol_nombre='Admin Dojo')
 );
