@@ -28,7 +28,6 @@ namespace LogicaNegociosSKD.Modulo12
         #region Metodos Logica
         public LogicaCompetencias()
         {
-            laListaDeCompetencias = obtenerListaDeCompetencias();
         }
 
         public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
@@ -50,6 +49,46 @@ namespace LogicaNegociosSKD.Modulo12
                 throw ex;
             }
         
+        }
+
+        public List<DominioSKD.Organizacion> M12obtenerListaDeOrganizaciones()
+        {
+            try
+            {
+                return BDCompetencia.M12ListarOrganizaciones();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<DominioSKD.Cinta> M12obtenerListaDeCintas()
+        {
+            try
+            {
+                return BDCompetencia.M12ListarCintas();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
         }
 
         public DominioSKD.Competencia detalleCompetenciaXId(int elIdCompetencia)
