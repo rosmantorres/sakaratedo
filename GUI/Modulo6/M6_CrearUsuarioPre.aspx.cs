@@ -12,5 +12,10 @@ namespace templateApp.GUI.Modulo6
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void agreed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

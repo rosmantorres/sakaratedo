@@ -22,6 +22,33 @@ namespace templateApp.GUI.Modulo6 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
+        /// Control userBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox userBox;
+        
+        /// <summary>
+        /// Control passwordBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordBox;
+        
+        /// <summary>
+        /// Control password2Box.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox password2Box;
+        
+        /// <summary>
         /// Control nameBox.
         /// </summary>
         /// <remarks>
@@ -49,13 +76,22 @@ namespace templateApp.GUI.Modulo6 {
         protected global::System.Web.UI.WebControls.TextBox birthBox;
         
         /// <summary>
-        /// Control natBox.
+        /// Control divNatDrop.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox natBox;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNatDrop;
+        
+        /// <summary>
+        /// Control natDrop.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList natDrop;
         
         /// <summary>
         /// Control idBox.
@@ -94,13 +130,13 @@ namespace templateApp.GUI.Modulo6 {
         protected global::System.Web.UI.WebControls.TextBox emailBox;
         
         /// <summary>
-        /// Control telfBox.
+        /// Control phoneBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox telfBox;
+        protected global::System.Web.UI.WebControls.TextBox phoneBox;
         
         /// <summary>
         /// Control mobileBox.
@@ -121,48 +157,21 @@ namespace templateApp.GUI.Modulo6 {
         protected global::System.Web.UI.WebControls.TextBox addressBox;
         
         /// <summary>
-        /// Control divBloodDrop.
+        /// Control agreeButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divBloodDrop;
+        protected global::System.Web.UI.WebControls.Button agreeButton;
         
         /// <summary>
-        /// Control bloodDrop.
+        /// Control cancelButton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList bloodDrop;
-        
-        /// <summary>
-        /// Control alergyBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox alergyBox;
-        
-        /// <summary>
-        /// Control weightBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox weightBox;
-        
-        /// <summary>
-        /// Control heightBox.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox heightBox;
+        protected global::System.Web.UI.WebControls.Button cancelButton;
     }
 }
