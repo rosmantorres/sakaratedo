@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicaNegociosSKD.Modulo2 {
+namespace templateApp.GUI.Modulo2 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace LogicaNegociosSKD.Modulo2 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosLogicaModulo2 {
+    internal class RecursosInterfazModulo2 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosLogicaModulo2() {
+        internal RecursosInterfazModulo2() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace LogicaNegociosSKD.Modulo2 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaNegociosSKD.Modulo2.RecursosLogicaModulo2", typeof(RecursosLogicaModulo2).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo2.RecursosInterfazModulo2", typeof(RecursosInterfazModulo2).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,56 +61,11 @@ namespace LogicaNegociosSKD.Modulo2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;asp:DropDownList id=&quot;RolList&quot; class=&quot;btn btn-default dropdown-toggle&quot; AutoPostBack=&quot;True&quot; OnSelectedIndexChanged=&quot;Selection_Change&quot; runat=&quot;server&quot;&gt;.
+        ///   Busca una cadena traducida similar a user.
         /// </summary>
-        internal static string etiquetaAperturaDropDawn {
+        internal static string parametroIDUsuario {
             get {
-                return ResourceManager.GetString("etiquetaAperturaDropDawn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;/asp:DropDownList&gt;.
-        /// </summary>
-        internal static string etiquetaCierreDropDawn {
-            get {
-                return ResourceManager.GetString("etiquetaCierreDropDawn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;asp:ListItem Value=&quot;.
-        /// </summary>
-        internal static string subEtiquetaApertura {
-            get {
-                return ResourceManager.GetString("subEtiquetaApertura", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &quot;&gt;.
-        /// </summary>
-        internal static string subEtiquetaCierreApertura {
-            get {
-                return ResourceManager.GetString("subEtiquetaCierreApertura", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;/asp:ListItem&gt;.
-        /// </summary>
-        internal static string subEtiquetaCierreTotal {
-            get {
-                return ResourceManager.GetString("subEtiquetaCierreTotal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;asp:ListItem Selected=&quot;True&quot; Value=&quot;select&quot;&gt;-Seleccionar rol- &lt;/asp:ListItem&gt;.
-        /// </summary>
-        internal static string subEtiquetaSeleccionar {
-            get {
-                return ResourceManager.GetString("subEtiquetaSeleccionar", resourceCulture);
+                return ResourceManager.GetString("parametroIDUsuario", resourceCulture);
             }
         }
     }

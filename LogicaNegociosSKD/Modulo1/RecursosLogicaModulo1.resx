@@ -141,6 +141,9 @@
            Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
     <comment>mensaje que se enviara al usuario</comment>
   </data>
+  <data name="parametroURLId" xml:space="preserve">
+    <value>User</value>
+  </data>
   <data name="puertoEnvioSAKARATEDO" xml:space="preserve">
     <value>587</value>
     <comment>puerto de envio del mensaje</comment>
@@ -148,5 +151,27 @@
   <data name="puertoSAKARATEDO" xml:space="preserve">
     <value>23072</value>
     <comment>puerto del localhost para generar el link al archivo</comment>
+  </data>
+  <data name="rolAtleta" xml:space="preserve">
+    <value>Atleta</value>
+  </data>
+  <data name="rolAtletaMenor" xml:space="preserve">
+    <value>Atleta(Menor)</value>
+  </data>
+  <data name="rolDojo" xml:space="preserve">
+    <value>Dojo</value>
+  </data>
+  <data name="rolOrganizacion" xml:space="preserve">
+    <value>Organizacion</value>
+  </data>
+  <data name="rolRepresentante" xml:space="preserve">
+    <value>Representante</value>
+  </data>
+  <data name="rolSistema" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="splitRoles" xml:space="preserve">
+    <value>-</value>
+    <comment>este mismo se encuentra en RecursosMaster</comment>
   </data>
 </root>
