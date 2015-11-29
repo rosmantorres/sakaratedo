@@ -37,7 +37,7 @@ namespace PruebasUnitariasSKD.Modulo9
             elEvento = new Evento();
             elEvento.Nombre = "Prueba Unitaria";
             elEvento.Descripcion = "Pruebas Unitarias";
-            elEvento.Costo = 50;
+            elEvento.Costo = 55;
             elEvento.Estado = true;
             elEvento.Categoria = categoria;
             elEvento.Horario = horario;
