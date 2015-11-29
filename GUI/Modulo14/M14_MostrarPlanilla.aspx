@@ -18,6 +18,9 @@
   <!-- form start -->
          <form role="form" name="mostrar_planilla" id="mostrar_planilla" method="post" action="M14_MostrarPlanilla.aspx"  runat="server">
              <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+                 <asp:Label ID="NombrePanilla" runat="server"></asp:Label>
+             </div>
+                 <div class="col-xs-12 col-lg-12 col-md-12">
                  <div class="col-xs-12 col-lg-12 col-md-12">
                      <div class="col-sm-9 col-lg-9 col-md-9">
                         <asp:Label ID="informacion" runat="server"></asp:Label>

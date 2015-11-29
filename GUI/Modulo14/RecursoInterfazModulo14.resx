@@ -162,6 +162,15 @@
                             &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
   </data>
   <data name="BotonModificarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada"</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada</value>
+  </data>
+  <data name="BotonInfoSolicitud" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
+  </data>
+  <data name="IdPlanilla" xml:space="preserve">
+    <value>&amp;idPlanilla=</value>
+  </data>
+  <data name="BotonEliminarSolicitud" xml:space="preserve">
+    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
 </root>

@@ -162,37 +162,17 @@
   <data name="AtributoIdTipoPlanilla" xml:space="preserve">
     <value>tip_id</value>
   </data>
-  <data name="AtributocontenidoDiseño1" xml:space="preserve">
-    <value>dis_contenido</value>
-  </data>
   <data name="AtributoIdDato" xml:space="preserve">
     <value>dat_id</value>
     <comment>atributo del id de Dato</comment>
-  </data>
-  <data name="AtributoIdDiseño1" xml:space="preserve">
-    <value>dis_id</value>
   </data>
   <data name="AtributoIdPlanillaDatos" xml:space="preserve">
     <value>PLANILLA_pla_id</value>
     <comment>id de la planilla en datos</comment>
   </data>
-  <data name="AtributoIdTipoPlanilla1" xml:space="preserve">
-    <value>tip_id</value>
-    <comment>atributo del id Tipo_Planilla</comment>
-  </data>
-  <data name="AtributoNombreTipoPlanilla1" xml:space="preserve">
-    <value>tip_nombre</value>
-    <comment>atributo del nombre de Tipo_Planilla</comment>
-  </data>
   <data name="AtributoNombre_Dato" xml:space="preserve">
     <value>dat_nombre</value>
     <comment>atributo del nombre Dato</comment>
-  </data>
-  <data name="ParametroContenido1" xml:space="preserve">
-    <value>@dis_contenido</value>
-  </data>
-  <data name="ParametroDiseñoPlanilla1" xml:space="preserve">
-    <value>@PLANILLA_pla_id</value>
   </data>
   <data name="ParametroIdDatos" xml:space="preserve">
     <value>@DATO_dat_id</value>
@@ -209,9 +189,6 @@
   <data name="ParametroNombrePlanilla" xml:space="preserve">
     <value>@pla_nombre</value>
     <comment>parametro para el nombre de la planilla</comment>
-  </data>
-  <data name="ParametroPlanilla1" xml:space="preserve">
-    <value>@PLANILLA_pla_id</value>
   </data>
   <data name="ParametroSatusPlanilla" xml:space="preserve">
     <value>@pla_status</value>
@@ -241,15 +218,9 @@
     <value>M14_ProcedureAgregarPlanilla</value>
     <comment>Procedimiento para insertar una planilla</comment>
   </data>
-  <data name="ProcedureConsultarDiseño1" xml:space="preserve">
-    <value>M14_ConsultarDiseño</value>
-  </data>
   <data name="ProcedureConsultarListaDatos" xml:space="preserve">
     <value>M14_Procedure_ListarDatos</value>
     <comment>Obtiene todos los Datos de la tabla Dato</comment>
-  </data>
-  <data name="ProcedureGuardarDiseño1" xml:space="preserve">
-    <value>M14_AgregarDiseño</value>
   </data>
   <data name="ProcedureListaTipoPlanilla" xml:space="preserve">
     <value>M14_Procedure_ListarTipoPlanilla</value>
@@ -281,5 +252,41 @@
   </data>
   <data name="ProcedureCambiarStatusPlanilla" xml:space="preserve">
     <value>M14_CambioDeStatusPlanilla</value>
+  </data>
+  <data name="AtriburoPersonaId" xml:space="preserve">
+    <value>PERSONA_per_id</value>
+  </data>
+  <data name="AtributoCompetenciaNombre" xml:space="preserve">
+    <value>comp_nombre</value>
+  </data>
+  <data name="AtributoEventoNombre" xml:space="preserve">
+    <value>eve_nombre</value>
+  </data>
+  <data name="AtributoFechaCreacion" xml:space="preserve">
+    <value>sol_pla_fecha_creacion</value>
+  </data>
+  <data name="AtributoFechaReincorporacion" xml:space="preserve">
+    <value>sol_pla_fecha_reincorporacion</value>
+  </data>
+  <data name="AtributoFechaRetiro" xml:space="preserve">
+    <value>sol_pla_fecha_retiro</value>
+  </data>
+  <data name="AtributoIdSolicitud" xml:space="preserve">
+    <value>sol_pla_id</value>
+  </data>
+  <data name="AtributoInscripcion" xml:space="preserve">
+    <value>INSCRIPCION_ins_id</value>
+  </data>
+  <data name="AtributoMotivo" xml:space="preserve">
+    <value>sol_pla_motivo</value>
+  </data>
+  <data name="ParametroPersonaPerId" xml:space="preserve">
+    <value>@PERSONA_per_id</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudPlanilla" xml:space="preserve">
+    <value>M14_ConsultarSolicitudPlanilla</value>
+  </data>
+  <data name="AtributoTipo" xml:space="preserve">
+    <value>tipo</value>
   </data>
 </root>

@@ -17,18 +17,44 @@ namespace templateApp.GUI.Modulo14
         private DominioSKD.Planilla planilla1;
         private LogicaNegociosSKD.Modulo14.LogicaDiseño logica = new LogicaNegociosSKD.Modulo14.LogicaDiseño();
         private string contenido;
+        private int idSolicitud;
+        private int idPlanilla;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
+            try
+            {
+                if (Request.Cookies["Solicitud"]["id"].ToString() != "")
+                {
+                    idSolicitud = Convert.ToInt32(Request.Cookies["Solicitud"]["id"]);
+                    this.NombrePanilla.Text = Request.Cookies["Solicitud"]["nombre"].ToString();
+                    idPlanilla = Convert.ToInt32(Request.Cookies["Solicitud"]["idPlanilla"]);
+                    Request.Cookies["Planilla"].Expires = DateTime.Now;
+                    MostrarInformacion();
+                }
+            }
+            catch (Exception exce)
+            {
+                string a = exce.Message;
+                //HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
+            }
             MostrarInformacion();
         }
 
         public void MostrarInformacion()
         {
-            planilla1 = new DominioSKD.Planilla(1,"Retiro", true, "Vacaciones");
-            DominioSKD.Diseño diseño = logica.ConsultarDiseño(planilla1.ID);
-            contenido = diseño.Contenido;
-            this.informacion.Text = contenido;
+            try
+            {
+                DominioSKD.Diseño diseño = logica.ConsultarDiseño(idPlanilla);
+                contenido = diseño.Contenido;
+                this.informacion.Text = contenido;
+            }
+            catch (Exception ex)
+            {
+                string error= ex.Message;
+                Response.Redirect("M14_ConsultarPlanillas.aspx");
+            }
         }
 
         protected void imprimir_Click(object sender, EventArgs e)
@@ -67,7 +93,7 @@ namespace templateApp.GUI.Modulo14
                 Response.ContentType = "application/pdf";
 
                 //Set default file Name as current datetime 
-                Response.AddHeader("content-disposition", "attachment; filename=Planilla.pdf");
+                Response.AddHeader("content-disposition", "attachment; filename="+this.NombrePanilla.Text+".pdf");
                 System.Web.HttpContext.Current.Response.Write(pdfDoc);
 
                 Response.Flush();

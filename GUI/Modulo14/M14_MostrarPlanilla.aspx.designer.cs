@@ -31,6 +31,15 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlForm mostrar_planilla;
         
         /// <summary>
+        /// Control NombrePanilla.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NombrePanilla;
+        
+        /// <summary>
         /// Control informacion.
         /// </summary>
         /// <remarks>

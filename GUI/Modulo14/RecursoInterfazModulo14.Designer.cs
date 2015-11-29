@@ -117,11 +117,29 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
+        /// </summary>
+        internal static string BotonEliminarSolicitud {
+            get {
+                return ResourceManager.GetString("BotonEliminarSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;.
         /// </summary>
         internal static string BotonInfo {
             get {
                 return ResourceManager.GetString("BotonInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idSolici=.
+        /// </summary>
+        internal static string BotonInfoSolicitud {
+            get {
+                return ResourceManager.GetString("BotonInfoSolicitud", resourceCulture);
             }
         }
         
@@ -144,7 +162,7 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada&quot;.
+        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.
         /// </summary>
         internal static string BotonModificarSolicitud {
             get {
@@ -176,6 +194,15 @@ namespace templateApp.GUI.Modulo14 {
         internal static string idPlan {
             get {
                 return ResourceManager.GetString("idPlan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;idPlanilla=.
+        /// </summary>
+        internal static string IdPlanilla {
+            get {
+                return ResourceManager.GetString("IdPlanilla", resourceCulture);
             }
         }
         

@@ -19,9 +19,17 @@ namespace LogicaNegociosSKD.Modulo14
 
         public DominioSKD.Diseño ConsultarDiseño(int planilla)
         {
-            diseñoPlanilla= datos.ConsultarDiseño(planilla);
-            diseñoPlanilla.Contenido = ReemplazarElementos(diseñoPlanilla.Contenido);
-            return diseñoPlanilla;
+            try
+            {
+                diseñoPlanilla = datos.ConsultarDiseño(planilla);
+                diseñoPlanilla.Contenido = ReemplazarElementos(diseñoPlanilla.Contenido);
+                return diseñoPlanilla;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public DominioSKD.Diseño ConsultarDiseñoPuro(int planilla)
