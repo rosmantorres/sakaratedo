@@ -39,6 +39,22 @@ namespace LogicaNegociosSKD.Modulo7
          }
 
          #region Métodos
+        /// <summary>
+        /// Metodo que obtiene la lista de competencias inscritas
+        /// </summary>
+        /// <returns></returns>
+         public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
+         {
+             try
+             {
+                 return BDEvento.ListarCompetenciasInscritas();
+             }
+             catch (Exception e)
+             {
+                 throw e;
+             }
+         }
+
          /// <summary>
         /// Método que obtiene la lista de eventos inscritos
         /// </summary>

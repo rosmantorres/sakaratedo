@@ -324,4 +324,10 @@
   <data name="AliasCintaFecha" xml:space="preserve">
     <value>fecha</value>
   </data>
+  <data name="AliasCompetenciaCategoriaId" xml:space="preserve">
+    <value>idCategoria</value>
+  </data>
+  <data name="ConsultarCompetenciasInscritas" xml:space="preserve">
+    <value>M7_ConsultaCompetenciaInscrita</value>
+  </data>
 </root>

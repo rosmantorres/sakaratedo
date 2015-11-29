@@ -137,6 +137,68 @@ namespace DatosSKD.Modulo7
             }
         }
 
+
+        /// <summary>
+        /// Método para listar las competencias inscritas del atleta
+        /// </summary>
+        /// <returns>Lista de competencias</returns>
+        public static List<Competencia> ListarCompetenciasInscritas()
+        {
+            int idPersona = 1;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+            List<Competencia> laListaDeCompetenciasInscritas = new List<Competencia>();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarCompetenciasInscritas, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Competencia competencia = new Competencia();
+                    competencia.Id_competencia = int.Parse(row[RecursosBDModulo7.AliasIdCompetencia].ToString());
+                    competencia.Nombre = row[RecursosBDModulo7.AliasCompetenciaNombre].ToString();
+                              if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
+                    competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKata;
+                         else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(2))
+                    competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKumite;
+                        else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(3))
+                    competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
+                    competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
+                    competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
+                    competencia.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasCompetenciaUbicacionId].ToString()));
+                    laListaDeCompetenciasInscritas.Add(competencia);
+                }
+
+                return laListaDeCompetenciasInscritas;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }/*
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+        }
         /// <summary>
         /// Método para listar los eventos asistidos del atleta
         /// </summary>

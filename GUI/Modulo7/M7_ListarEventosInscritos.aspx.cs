@@ -14,6 +14,7 @@ namespace templateApp.GUI.Modulo7
     {
          #region Atributos
         private List<DominioSKD.Evento> laLista;
+        private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
         #region Page Load
         /// <summary>
@@ -34,7 +35,7 @@ namespace templateApp.GUI.Modulo7
 
             #region Llenar Data Table con Eventos
             LogicaEventosInscritos logEvento = new LogicaEventosInscritos();
-            
+            laListaCompetencias = logEvento.obtenerListaDeCompetencias();
             if (!IsPostBack)
             {
                 try
@@ -44,13 +45,25 @@ namespace templateApp.GUI.Modulo7
                     foreach (Evento evento in laLista)
                     {
                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("dd/MM/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoEventosInscritos + evento.Id_evento + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.CerrarTR;
+                    }
+
+                    foreach (Competencia competencia in laListaCompetencias)
+                    {
+                        this.laTabla.Text += M7_Recursos.AbrirTR;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("dd/MM/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD;
+                        this.laTabla.Text += M7_Recursos.BotonInfoEventosInscritos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
