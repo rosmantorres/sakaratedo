@@ -29,7 +29,7 @@
     <div id="alert" runat="server">
     </div>
 
-    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    <div class="alert alert-success alert-dismissable" style="display:none" id="agregarEventoaCarrito">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
             El Evento se ha Agregado Exitosamente al Carrito.
         </div>

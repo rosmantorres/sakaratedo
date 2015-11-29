@@ -27,9 +27,10 @@
     <div id="alert" runat="server">
     </div>
 
-    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    
+    <div class="alert alert-success alert-dismissable" style="display:none" id="agregarImplementoAcarrito">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
-            El Articulo Deportivo se ha Agregado Exitosamente al Carrito.
+            la matricula se ha Agregado Exitosamente al Carrito.
         </div>
 
      <div class="box-body table-responsive">
@@ -53,6 +54,10 @@
 					<th style="text-align:right">Acciones</th>
 				</tr>
 		</thead>
+                        <div class="box-footer">
+				                            <button id="Button1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show();"  >Agregar al Carrito</button>
+                                          
+			                            </div>
 			<tbody>
                 <asp:Literal runat="server" ID="laTabla"></asp:Literal>
 		    </tbody>

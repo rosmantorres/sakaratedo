@@ -29,8 +29,12 @@
      
     
     <div id="alert" runat="server">
-     </div>
+    </div>
 
+    <div class="alert alert-success alert-dismissable" style="display:none" id="agregarMatriculaAcarrito">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
+            la matricula se ha Agregado Exitosamente al Carrito.
+        </div>
      
          <!--MODAL PARA EL DETALLE-->
      <!-- general form elements -->
@@ -49,22 +53,32 @@
                     <th style="text-align:left">Fecha Inicio</th>
                     <th style="text-align:left">Fecha tope para cancelar</th>
  					<th style="text-align:left">Acciones</th>
-
+                
                               
             </tr>
+
+             
         </thead>
+      
             <tbody>
                 <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+               
 		    </tbody>
+                  <div class="box-footer">
+				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show();"  >Agregar al Carrito</button>
+                                          
+			                            </div>
              </table>
           </div>
           </div>
           </div>
           </div>
+        <form role="form" class="form-horizontal" method="POST">
+    <div class="form-group">
+    
+        </div>     
         
-             
-        
-
+            </form>
 
 
      <!--VALIDACION PARA MODAL -->
@@ -106,7 +120,44 @@
                          $('#modal-delete').modal('hide');//se esconde el modal
                          $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
+
                      });
+
+
+
+                     $('#tablamatriculas tbody').on('click', 'a', function () {
+                         if ($(this).parent().hasClass('selected')) {
+                             req = $(this).parent().prev().prev().prev().text();
+                             tr = $(this).parents('tr');//se guarda la fila seleccionada
+                             $(this).parent().removeClass('selected');
+
+                         }
+                         else {
+                             req = $(this).parent().prev().prev().prev().text();
+                             tr = $(this).parents('tr');//se guarda la fila seleccionada
+                             table.$('tr.selected').removeClass('selected');
+                             $(this).parent().addClass('selected');
+                         }
+
+                     });
+
+                     $('#modal-agregar').on('show.bs.modal', function (event) {
+                         var modal = $(this)
+                         modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
+                         modal.find('#req').text(req)
+                     })
+                     $('#btn-agregar').on('click', function () {
+                         table.row(tr).valueOf.call;//se elimina la fila de la tabla
+                         $('#modal-delete').modal('hide');//se esconde el modal
+                         $('#prueba').show();//Muestra el mensaje de agregado exitosamente
+
+
+                     });
+
+
+
+
+
                  });
         </script>
 

@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 using DatosSKD.Modulo16;
+using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
+using ExcepcionesSKD.Modulo16;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo16
 {
@@ -110,42 +113,113 @@ namespace LogicaNegociosSKD.Modulo16
         /// <param name="idEvento">Indica el identificador del Evento</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
 
-         public bool agregarEventoaCarrito(int idUsuario, int idEvento) 
+        public bool agregarEventoaCarrito(int idUsuario, int idEvento)
         {
 
-            bool respuesta = carritoBD.agregarEventoaCarrito(1, 1);
-            return respuesta;
+            try
+            {
+                return BDCarrito.agregarEventoaCarrito(idUsuario, idEvento);
+            }
+
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
+                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+
+            }
+
+
+
         }
 
 
-         /// <summary>
-         /// Metodo que agrega las Matriculas al Carrito
-         /// </summary>
-         /// <param name="idUsuario">Indica el identificador del Usuario</param>
-         /// <param name="idMatricula">Indica el identificador del Evento</param>
-         /// <returns>Si la operacion fue exitosa o fallida</returns>
-
-         public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula)
-         {
-
-             bool respuesta = carritoBD.agregarMatriculaaCarrito(1, 1);
-             return respuesta;
-         }
 
 
-         /// <summary>
-         /// Metodo que agrega los Inventarios al Carrito
-         /// </summary>
-         /// <param name="idUsuario">Indica el identificador del Usuario</param>
-         /// <param name="idInventario">Indica el identificador del Inventario</param>
-         /// <returns>Si la operacion fue exitosa o fallida</returns>
 
-         public bool agregarInventarioaCarrito(int idUsuario, int idInventario)
-         {
+        /// <summary>
+        /// Metodo que agrega las Matriculas al Carrito
+        /// </summary>
+        /// <param name="idUsuario">Indica el identificador del Usuario</param>
+        /// <param name="idMatricula">Indica el identificador del Evento</param>
+        /// <returns>Si la operacion fue exitosa o fallida</returns>
 
-             bool respuesta = carritoBD.agregarInventarioaCarrito( 1, 1);
-             return respuesta;
-         }
+        public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula)
+        {
+
+            try
+            {
+                return BDCarrito.agregarMatriculaaCarrito(idUsuario, idMatricula);
+            }
+
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
+                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+
+            }
+
+
+        }
+
+
+
+
+
+        /// <summary>
+        /// Metodo que agrega los Inventarios al Carrito
+        /// </summary>
+        /// <param name="idUsuario">Indica el identificador del Usuario</param>
+        /// <param name="idInventario">Indica el identificador del Inventario</param>
+        /// <returns>Si la operacion fue exitosa o fallida</returns>
+
+        public bool agregarInventarioaCarrito(int idUsuario, int idInventario)
+        {
+
+            try
+            {
+                return BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario);
+            }
+
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
+                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+
+            }
+        }
         #endregion
     }
 }

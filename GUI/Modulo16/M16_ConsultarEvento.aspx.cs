@@ -17,10 +17,20 @@ namespace templateApp.GUI.Modulo16
             ((SKD)Page.Master).IdModulo = "16";
 
             String detalleString = Request.QueryString["impDetalle"];
+            String usuario = Request.QueryString["compAgregar"];
+            String evento = Request.QueryString["compAgregar"];
+
 
             if (detalleString != null)
             {
                 llenarModalInfo(int.Parse(detalleString));
+            }
+
+
+
+            if (usuario != null && evento != null)
+            {
+                agregarEventoaCarrito(1, 1);
             }
 
         #region Llenar Data Table Con Evento
@@ -76,5 +86,19 @@ namespace templateApp.GUI.Modulo16
             return json;
         }
         #endregion
+
+        #region Llenado del Modal para agregar el producto al carrito
+        [System.Web.Services.WebMethod]
+        protected void agregarEventoaCarrito(int usuario, int idMatricula)
+        {
+            bool agregar = false;
+            Logicacarrito logica = new Logicacarrito();
+            agregar = logica.agregarEventoaCarrito(1, 1);
+        }
+        #endregion
+
+
+
+
     }
 }

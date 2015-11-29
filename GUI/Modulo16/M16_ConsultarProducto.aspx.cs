@@ -19,16 +19,17 @@ namespace templateApp.GUI.Modulo16
             ((SKD)Page.Master).IdModulo = "16";
 
             String detalleString = Request.QueryString["impDetalle"];
-            String agregarCarritoString = Request.QueryString["compAgregar"];
+            String usuario = Request.QueryString["compAgregar"];
+            String producto = Request.QueryString["compAgregar"];
 
             if (detalleString != null)
             {
                 llenarModalInfo(int.Parse(detalleString));
             }
 
-            if (agregarCarritoString != null)
+            if (usuario != null && producto != null)
             {
-               // agregarCompraCarrito(int.Parse(agregarCarritoString));
+                agregarImplementoAcarrito(1, 1);
             }
 
         #region Llenar Data Table Con Inventario
@@ -85,6 +86,17 @@ namespace templateApp.GUI.Modulo16
             laCompetencia = logica.detalleImplementoXId(int.Parse(id));
             string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(laCompetencia);
             return json;
+        }
+        #endregion
+
+
+        #region Llenado del Modal para agregar el producto al carrito
+        [System.Web.Services.WebMethod]
+        protected void agregarImplementoAcarrito(int usuario, int idMatricula)
+        {
+            bool agregar = false;
+            Logicacarrito logica = new Logicacarrito();
+            agregar = logica.agregarInventarioaCarrito(1, 1);
         }
         #endregion
     }

@@ -22,6 +22,8 @@ namespace templateApp.GUI.Modulo16
         {
             ((SKD)Page.Master).IdModulo = "16";
             String success = Request.QueryString["success"];
+            String usuario = Request.QueryString["compAgregar"];
+            String matricula = Request.QueryString["compAgregar"];
 
 
 
@@ -32,6 +34,10 @@ namespace templateApp.GUI.Modulo16
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Matricula agregada exitosamente</div>";
+                }
+                if (usuario != null && matricula != null)
+                {
+                    agregarMatriculaAcarrito(1, 1);
                 }
 
             }
@@ -77,6 +83,16 @@ namespace templateApp.GUI.Modulo16
         }
             #endregion
 
+
+        #region Llamada para gregar a carrito
+        protected void agregarMatriculaAcarrito(int usuario, int idMatricula)
+        {
+            bool agregar = false;
+            Logicacarrito logica = new Logicacarrito();
+            agregar = logica.agregarMatriculaaCarrito(1, 1);
+        }
+
+        #endregion
 
     }
 

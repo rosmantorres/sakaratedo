@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExcepcionesSKD;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using DominioSKD;
-
+using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
+using ExcepcionesSKD;
+using System.Data.Sql;
+using System.Configuration;
 
 namespace DatosSKD.Modulo16
 {
@@ -350,9 +352,70 @@ namespace DatosSKD.Modulo16
         /// <param name="idUsuario">Indica el Indentificador del usuario que esta asociado al evento</param>
         /// <param name="idEvento">Indica el Identificador del Evento</param>
         /// <returns> True o False si la operacion fue exitosa o fallida</returns>
-        public bool agregarEventoaCarrito(int idUsuario, int idEvento)
+        /// <summary>
+        /// Metodo que agrega los eventos al carrito, en el ambiente de base de datos
+        /// </summary>
+        /// <param name="idUsuario">Indica el Indentificador del usuario que esta asociado al evento</param>
+        /// <param name="idEvento">Indica el Identificador del Evento</param>
+        /// <returns> True o False si la operacion fue exitosa o fallida</returns>
+        public static bool agregarEventoaCarrito(int idPersona, int idEvento)
         {
-            return true;
+
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+
+
+                Parametro parametro = new Parametro();
+
+
+                parametro = new Parametro(RecursosBDModulo16.ParamIdEvento,
+                     SqlDbType.Int, idEvento.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo16.ParamIdPersona,
+                   SqlDbType.Int, idPersona.ToString(), false);
+
+                parametros.Add(parametro);
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregareventoaCarrito, parametros);
+
+                return true;
+
+
+
+
+            }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+
+            }
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
+                    RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
+                    RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
+                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+
+            }
+
+
+
         }
 
         /// <summary>
@@ -361,10 +424,66 @@ namespace DatosSKD.Modulo16
         /// <param name="idUsuario">Indica el identificador del Usuario</param>
         /// <param name="idMatricula">Indica el Identificador de la Matricula</param>
         /// <returns>True o False si la operacion fue exitosa o fallida</returns>
-        public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula)
+        public static bool agregarMatriculaaCarrito(int idPersona, int idMatricula)
         {
-            return true;
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.ParamIdPersona,
+                    SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.ParamIdEvento,
+                    SqlDbType.Int, idMatricula.ToString(), false);
+                parametros.Add(parametro);
+
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregarmatriculaaCarrito, parametros);
+                return true;
+
+            }
+            catch (NullReferenceException ex)
+            {
+
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionNullReference,
+                    RecursosBDModulo16.Mensaje_ExcepcionNullReference, ex);
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+
+            }
+            catch (SqlException ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionSql,
+                    RecursosBDModulo16.Mensaje_ExcepcionSql, ex);
+
+            }
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
+                    RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
+                    RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
+                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+
+            }
+
         }
+
+
+
 
         /// <summary>
         /// Metodo que agrega los inventarios al carrito, en el ambiente de base de datos
@@ -372,8 +491,52 @@ namespace DatosSKD.Modulo16
         /// <param name="idUsuario">Indica cual de las formas se eligio para pagar</param>
         /// <param name="idInventario">Todos los datos pertinentes de ese tipo de pago</param>
         /// <returns>True o False si la operacion fue exitosa o fallida</returns>
-        public bool agregarInventarioaCarrito(int idUsuario, int idInventario)
+        public static bool agregarInventarioaCarrito(int idPersona, int idInventario)
         {
+
+
+            try
+            {
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.ParamIdPersona,
+                    SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.ParamIdEvento,
+                    SqlDbType.Int, idInventario.ToString(), false);
+                parametros.Add(parametro);
+
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                BDConexion conexion = new BDConexion();
+                conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
+
+                return true;
+            }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+
+            }
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
+                    RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
+                    RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
+                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+
+            }
             return true;
         }
 
