@@ -61,11 +61,29 @@ namespace DatosSKD.Modulo13 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to per_apellido.
+        /// </summary>
+        internal static string apellido {
+            get {
+                return ResourceManager.GetString("apellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M13_ListarMorosos.
         /// </summary>
         internal static string listamorosidad {
             get {
                 return ResourceManager.GetString("listamorosidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to per_nombre.
+        /// </summary>
+        internal static string nombre {
+            get {
+                return ResourceManager.GetString("nombre", resourceCulture);
             }
         }
     }
