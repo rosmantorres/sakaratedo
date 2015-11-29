@@ -140,6 +140,13 @@ Gesti&oacuten de Inventario
                     </div>
                       <br/>
                         
+                      
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Descripcion:</b></p>
+                       <input type="text" id="descripcion_implemento" name="descripcion_implemento" placeholder="*Descripcion" class="form-control" value="5" runat="server"/>            
+                    </div>
+                      <br/>
+
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
                        <input type="file" id="imagen_implemento" name="imagen_implemento" class="form-control" runat="server"/>            

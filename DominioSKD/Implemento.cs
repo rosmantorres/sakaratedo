@@ -20,7 +20,8 @@ namespace DominioSKD
        private int cantidad_implemento;
        private int stock_minimo_implemento;     
        private String estatus_implemento;
-       private double precio_implemento;
+       private String descripcion_implemento;
+        private double precio_implemento;
        private Dojo dojo;
         #endregion
 
@@ -135,6 +136,16 @@ namespace DominioSKD
        }
        #endregion
 
+       #region set_get_Descripcion_implemento
+       public String Descripcion_Implemento
+       {
+           get { return this.descripcion_implemento; }
+
+           set { descripcion_implemento = value; }
+
+       }
+       #endregion
+
 
        #region set_get_Precio_implemento
        public double Precio_Implemento
@@ -148,7 +159,7 @@ namespace DominioSKD
 
        #region Constructores de Implementos
        #region Constructor
-       public Implemento(int id_implemento,String nombre_implemento,String tipo_implemento,String marca_implemento,String color_implemento,String talla_implemento,String imagen_implemento,int cantidad_implemento,int stock_minimo_implemento,String estatus_implemento, double precio_implemento,Dojo dojo)
+       public Implemento(int id_implemento, String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String imagen_implemento, int cantidad_implemento, int stock_minimo_implemento, String estatus_implemento, double precio_implemento, String descripcion_implemento, Dojo dojo)
        {
            this.id_implemento = id_implemento;
            this.nombre_implemento = nombre_implemento;
@@ -160,6 +171,7 @@ namespace DominioSKD
            this.stock_minimo_implemento = stock_minimo_implemento;
            this.estatus_implemento = estatus_implemento;
            this.cantidad_implemento = cantidad_implemento;
+           this.descripcion_implemento = descripcion_implemento;
            this.precio_implemento = precio_implemento;
            this.dojo = dojo;
        }

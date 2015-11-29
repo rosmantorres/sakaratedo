@@ -95,7 +95,17 @@ namespace DatosSKD.Modulo15
            }
            else
                throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroCantidadInventario,
-                   RecursosBDModulo15.tabla_cantidadImplento, new Exception());
+                   RecursosBDModulo15.tabla_cantidadImplemento, new Exception());
+
+           if ((implemento.Descripcion_Implemento != null) && (implemento.Descripcion_Implemento != ""))
+           {
+
+               parametro = new Parametro(RecursosBDModulo15.parametroDescripcionImplemento, SqlDbType.VarChar, implemento.Descripcion_Implemento, false);
+               parametros.Add(parametro);
+           }
+           else
+               throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDescripcionImplemento,
+                   RecursosBDModulo15.tabla_descripcionImplemento, new Exception());
 
            if (implemento.Dojo_Implemento != null)
            {
@@ -158,7 +168,7 @@ namespace DatosSKD.Modulo15
                    implemento.Dojo_Implemento = new Dojo();
                    implemento.Id_Implemento =    Convert .ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento =row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento   =row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento  =row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
@@ -220,7 +230,7 @@ namespace DatosSKD.Modulo15
                    implemento.Dojo_Implemento = new Dojo();
                    implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
@@ -279,7 +289,7 @@ namespace DatosSKD.Modulo15
 
                    implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
@@ -289,6 +299,7 @@ namespace DatosSKD.Modulo15
                    implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                    implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
+                   implemento.Descripcion_Implemento =row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
                
 
            }
@@ -438,7 +449,17 @@ namespace DatosSKD.Modulo15
                }
                else
                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroCantidadInventario,
-                       RecursosBDModulo15.tabla_cantidadImplento, new Exception());
+                       RecursosBDModulo15.tabla_cantidadImplemento, new Exception());
+
+               if ((implemento.Descripcion_Implemento != null) && (implemento.Descripcion_Implemento != ""))
+               {
+
+                   parametro = new Parametro(RecursosBDModulo15.parametroDescripcionImplemento, SqlDbType.VarChar, implemento.Descripcion_Implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+                   throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDescripcionImplemento,
+                       RecursosBDModulo15.tabla_descripcionImplemento, new Exception());
 
                if (implemento.Dojo_Implemento != null)
                {
@@ -448,6 +469,7 @@ namespace DatosSKD.Modulo15
                else
                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
                        RecursosBDModulo15.tabla_dojoImplemento, new Exception());
+               
                if ((implemento.Estatus_Implemento != null) && (implemento.Estatus_Implemento != ""))
                {
                    parametro = new Parametro(RecursosBDModulo15.parametroEstatusImplemento, SqlDbType.VarChar, implemento.Estatus_Implemento, false);
@@ -456,6 +478,16 @@ namespace DatosSKD.Modulo15
                else
                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroEstatusImplemento,
                        RecursosBDModulo15.tabla_estatusImplemento, new Exception());
+
+               if ((implemento.Imagen_implemento != null) && (implemento.Imagen_implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroImagenImplemento, SqlDbType.VarChar, implemento.Imagen_implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+                   throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroImagenImplemento,
+                       RecursosBDModulo15.tabla_imagenImplemento, new Exception());
+               
 
                    laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureModificarInventario, parametros);
            }
@@ -475,6 +507,59 @@ namespace DatosSKD.Modulo15
 
        }
        #endregion 
+
+       #region listarCarrito
+
+       public static List<Implemento> listarInventarioDatos()
+       {
+           BDConexion laConexion;
+           List<Implemento> listaDeImplementos = new List<Implemento>();
+           List<Parametro> parametros;
+           parametros = new List<Parametro>();
+         
+          
+           try
+           {
+               laConexion = new BDConexion();
+               parametros = new List<Parametro>();
+               DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureConsultarCarrito, parametros);
+
+               foreach (DataRow row in dt.Rows)
+               {
+                   Implemento implemento = new Implemento();
+                   implemento.Dojo_Implemento = new Dojo();
+                   implemento.Id_Implemento =    Convert .ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
+                   implemento.Nombre_Implemento =row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+                   implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
+                   implemento.Tipo_Implemento   =row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
+                   implemento.Marca_Implemento  =row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
+                   implemento.Color_Implemento  =row[RecursosBDModulo15.tabla_colorImplemento].ToString();
+                   implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
+                   implemento.Dojo_Implemento.Dojo_Id =Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                   implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
+                   implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
+                   implemento.Precio_Implemento =Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
+
+                   listaDeImplementos.Add(implemento);
+
+               }
+
+           }
+           catch (SqlException ex)
+           {
+               throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                  RecursoGeneralBD.Mensaje, new Exception());
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+           }
+
+           return listaDeImplementos;
+
+       }
+       #endregion
 
 
    }

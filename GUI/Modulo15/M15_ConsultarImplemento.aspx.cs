@@ -157,6 +157,7 @@ namespace templateApp.GUI.Modulo15
             int cantidad=Convert.ToInt16(Request.Form["cantidad_implemento"]);
             int stock_minimo=Convert.ToInt16(Request.Form["stock_implemento"]);
             String estatus_implemento=Request.Form["estatus_implemento"];
+            String descripcion_implemento = Request.Form["descripcion_implemento"];
             double precio_implemento = Convert.ToDouble(Request.Form["precio_implemento"]);
 
             HttpPostedFile archivo = Request.Files["imagen_implemento"];
@@ -185,7 +186,7 @@ namespace templateApp.GUI.Modulo15
                     archivo.SaveAs(TargetLocation + imagen_implemento);
 
                     Dojo dojo = new Dojo(id_dojo);
-                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, dojo);
+                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                   
                     agregarImplementoInterfaz(implemento);
                 
@@ -213,11 +214,17 @@ namespace templateApp.GUI.Modulo15
                     stock_minimo = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$stock_implemento"]);
                     estatus_implemento = Request.Form["ctl00$contenidoCentral$estatus_implemento"];
                     precio_implemento = Convert.ToDouble(Request.Form["ctl00$contenidoCentral$precio_implemento"]);
+                    descripcion_implemento = Request.Form["ctl00$contenidoCentral$descripcion_implemento"];
+                    archivo = Request.Files["ctl00$contenidoCentral$imagen_implemento"];
+                    TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+                    imagen_implemento = archivo.FileName;
+                    archivo.SaveAs(TargetLocation + imagen_implemento);
+
                     id_dojo = 1;
                     #endregion 
 
                     Dojo dojo=new Dojo(id_dojo);
-                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, dojo);
+                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                     modificarImplementoInterfaz(implemento);
 
                 }

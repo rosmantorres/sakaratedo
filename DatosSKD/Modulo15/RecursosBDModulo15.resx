@@ -120,6 +120,9 @@
   <data name="nombreProcedureAgregarInventario" xml:space="preserve">
     <value>Procedure_agregarImplemento</value>
   </data>
+  <data name="nombreProcedureConsultarCarrito" xml:space="preserve">
+    <value>Procedure_consultarCarrito</value>
+  </data>
   <data name="nombreProcedureConsultarImplemento" xml:space="preserve">
     <value>Procedure_consultarImplemento</value>
   </data>
@@ -141,6 +144,9 @@
   </data>
   <data name="parametroColorImplemento" xml:space="preserve">
     <value>@_impColor</value>
+  </data>
+  <data name="parametroDescripcionImplemento" xml:space="preserve">
+    <value>@_impDescripcion</value>
   </data>
   <data name="parametroDojoIdImplemento" xml:space="preserve">
     <value>@_dojId</value>
@@ -172,14 +178,17 @@
   <data name="parametroTipoImplemento" xml:space="preserve">
     <value>@_impTipo</value>
   </data>
-  <data name="tabla_cantidadImplento" xml:space="preserve">
-    <value>inv_cantidad</value>
+  <data name="tabla_cantidadImplemento" xml:space="preserve">
+    <value>inv_cantidad_total</value>
   </data>
   <data name="tabla_colorImplemento" xml:space="preserve">
     <value>imp_color</value>
   </data>
+  <data name="tabla_descripcionImplemento" xml:space="preserve">
+    <value>imp_descripcion</value>
+  </data>
   <data name="tabla_dojoImplemento" xml:space="preserve">
-    <value>id_dojo</value>
+    <value>DOJO_doj_id</value>
   </data>
   <data name="tabla_estatusImplemento" xml:space="preserve">
     <value>imp_estatus</value>

@@ -25,6 +25,7 @@ namespace templateApp.GUI.Modulo15
                 this.precio_implemento.Value = implemento.Precio_Implemento.ToString();
                 this.stock_implemento.Value = implemento.Stock_Minimo_Implemento.ToString();
                 this.color_implemento.Value = implemento.Color_Implemento;
+                this.descripcion_implemento.Value = implemento.Descripcion_Implemento;
                 this.cantidad_implemento.Value = implemento.Cantida_implemento.ToString();
 
                  
