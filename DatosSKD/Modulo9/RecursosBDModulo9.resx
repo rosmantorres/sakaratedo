@@ -213,12 +213,32 @@
     <value>@nombre</value>
     <comment>Nombre del Evento</comment>
   </data>
+  <data name="ProcedimentoConsultarEventoXID" xml:space="preserve">
+    <value>M9_ConsultarEventoXID</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
   <data name="ProcedimientoAgregarEvento" xml:space="preserve">
-    <value>M9_AgregarEventoCompletoV1</value>
+    <value>M9_AgregarEventoCompleto</value>
     <comment>Nombre del SP a Ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarAscensosRangoFecha" xml:space="preserve">
+    <value>M9_ConsultarAscensosRangoFecha</value>
+    <comment>Nombre del SP solicitado por M10 y M11</comment>
   </data>
   <data name="ProcedimientoConsultarEventos" xml:space="preserve">
     <value>M9_ConsultarEventos</value>
     <comment>Nombre del SP a Ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarEventosRangoFecha" xml:space="preserve">
+    <value>M9_ConsultarEventosRangoFecha</value>
+    <comment>Nombre del SP solicitado por M10 y M11</comment>
+  </data>
+  <data name="ProcedimientoConsultarFechasAscensos" xml:space="preserve">
+    <value>M9_TodasLasFechasAscencos</value>
+    <comment>Nombre del SP solicitado por M10 y M11</comment>
+  </data>
+  <data name="ProcedimientoConsultarHorarios" xml:space="preserve">
+    <value>M9_TodasLasFechas</value>
+    <comment>Nombre del SP solicitado por M10 y M11</comment>
   </data>
 </root>

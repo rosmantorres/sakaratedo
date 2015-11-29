@@ -73,6 +73,23 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.Greater(listaEvento.Count,0);
         }
 
+        [Test]
+        public void PruebaConsultarEvento()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            Evento evento = baseDeDatosEvento.ConsultarEvento(11);
+            Assert.AreEqual(evento.Nombre, "Prueba Unitaria");
+        }
+
+        [Test]
+        public void PruebaListarHorarios()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            List<Horario> horarios = baseDeDatosEvento.ListarHorarios();
+            Assert.Greater(horarios.Count,0);
+        }
+
+
         #endregion
     }
 }

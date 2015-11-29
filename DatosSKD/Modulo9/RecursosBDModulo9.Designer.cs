@@ -277,11 +277,29 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M9_AgregarEventoCompletoV1.
+        ///   Looks up a localized string similar to M9_ConsultarEventoXID.
+        /// </summary>
+        internal static string ProcedimentoConsultarEventoXID {
+            get {
+                return ResourceManager.GetString("ProcedimentoConsultarEventoXID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_AgregarEventoCompleto.
         /// </summary>
         internal static string ProcedimientoAgregarEvento {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_ConsultarAscensosRangoFecha.
+        /// </summary>
+        internal static string ProcedimientoConsultarAscensosRangoFecha {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarAscensosRangoFecha", resourceCulture);
             }
         }
         
@@ -291,6 +309,33 @@ namespace DatosSKD.Modulo9 {
         internal static string ProcedimientoConsultarEventos {
             get {
                 return ResourceManager.GetString("ProcedimientoConsultarEventos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_ConsultarEventosRangoFecha.
+        /// </summary>
+        internal static string ProcedimientoConsultarEventosRangoFecha {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarEventosRangoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_TodasLasFechasAscencos.
+        /// </summary>
+        internal static string ProcedimientoConsultarFechasAscensos {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarFechasAscensos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_TodasLasFechas.
+        /// </summary>
+        internal static string ProcedimientoConsultarHorarios {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarHorarios", resourceCulture);
             }
         }
     }
