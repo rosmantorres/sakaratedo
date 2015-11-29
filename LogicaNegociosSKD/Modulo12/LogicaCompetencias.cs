@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosSKD;
 using DatosSKD.Modulo12;
 
+
 namespace LogicaNegociosSKD.Modulo12
 {
     public class LogicaCompetencias
