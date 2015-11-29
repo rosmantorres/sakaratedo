@@ -270,4 +270,22 @@
   <data name="AliasCompetenciaTipo" xml:space="preserve">
     <value>tipo</value>
   </data>
+  <data name="AliasFechaPagoMatricula" xml:space="preserve">
+    <value>fechaPag</value>
+  </data>
+  <data name="AliasFechaUltimoPagoMatricula" xml:space="preserve">
+    <value>fechaUltimoPago</value>
+  </data>
+  <data name="AliasIdMatricula" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="ConsultarMatriculasPagas" xml:space="preserve">
+    <value>M7_ConsultarMatriculasPagas</value>
+  </data>
+  <data name="ConsultarMatriculaXId" xml:space="preserve">
+    <value>M7_ConsultarMatricula</value>
+  </data>
+  <data name="ParamIdMatricula" xml:space="preserve">
+    <value>@mat_id</value>
+  </data>
 </root>

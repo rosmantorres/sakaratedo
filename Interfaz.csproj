@@ -262,8 +262,8 @@
     <Content Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarHorariodePractica.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx" />
-    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
@@ -1634,19 +1634,19 @@
     <Compile Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx.designer.cs">
       <DependentUpon>M7_ListarOrganizacionYDojo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.cs">
-      <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.designer.cs">
-      <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.cs">
       <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
       <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.cs">
+      <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.designer.cs">
+      <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_Recursos.Designer.cs">
       <AutoGen>True</AutoGen>
