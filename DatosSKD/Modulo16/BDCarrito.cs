@@ -53,7 +53,7 @@ namespace DatosSKD.Modulo16
                 foreach (DataRow row in dt.Rows)
                 {
                     //Me creo el Implemento
-                    Implemento elInventario = new Implemento();
+                    Implemento elImplemento = new Implemento();
 
                     //Preparo para obtener los datos de ese Inventario
                     parametros = new List<Parametro>();
@@ -62,9 +62,9 @@ namespace DatosSKD.Modulo16
                     parametros.Add(parametro);
 
                     //Seteamos el id del implemento
-                    elInventario.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
+                    elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
 
-                    //Obtengo la informacion de los inventarios
+                    //Obtengo la informacion de los implementos
                     conexion = new BDConexion();
                     DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_INVENTARIO_ID, parametros);
@@ -72,16 +72,18 @@ namespace DatosSKD.Modulo16
                     //Por cada ID obtengo su informacion correspondiente
                     foreach (DataRow row2 in dt2.Rows)
                     {
-                        elInventario.Imagen_implemento = row2[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
-                        elInventario.Nombre_Implemento = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
-                        elInventario.Tipo_Implemento = row2[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
-                        elInventario.Marca_Implemento = row2[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
-                        elInventario.Precio_Implemento = int.Parse(
-                            row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());                        
+                        elImplemento.Imagen_implemento = row2[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
+                        elImplemento.Nombre_Implemento = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                        elImplemento.Tipo_Implemento = row2[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
+                        elImplemento.Marca_Implemento = row2[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
+                        elImplemento.Precio_Implemento = int.Parse(
+                            row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+
+                        //Agrego a la lista
+                        laLista.Add(elImplemento);
                     }
 
-                    //Agrego a la lista
-                    laLista.Add(elInventario);
+                    
                 }
 
                 //Retorno la lista
@@ -100,17 +102,6 @@ namespace DatosSKD.Modulo16
                 throw new ExceptionSKDConexionBD("blabla", "blabla", e);
             }
         }
-
-        /// <summary>
-        /// Metodo que obtiene todas las matriculas en el carrito del usuario en la Base de Datos
-        /// </summary>
-        /// <param name="idUsuario">Usuario del que se desea ver las matriculas agregadas en carrito</param>
-        /// <returns>Lista con todas las matriculas que se encuentra en el carrito</returns>
-        /*
-        public List<Matricula> getMatricula(int idUsuario)
-        {
-
-        }*/
 
         /// <summary>
         /// Metodo que obtiene tos los eventos en el carrito el usuario en la Base de Datos
