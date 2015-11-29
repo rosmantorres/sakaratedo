@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class RestriccionEvento
+    public class RestriccionEvento
     {
         #region Atributos
         private int idRestEvento;
@@ -110,7 +110,5 @@ namespace DominioSKD
             fechaEdadMax = laFechaEdadMax;
         }
         #endregion
-    }
-}
     }
 }
