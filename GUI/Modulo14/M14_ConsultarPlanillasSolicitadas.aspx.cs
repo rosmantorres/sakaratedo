@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo14;
 using DominioSKD;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo14
 {
@@ -50,7 +51,7 @@ namespace templateApp.GUI.Modulo14
         }
         public List<DominioSKD.SolicitudPlanilla> LlenarTabla()
         {
-            return logica.ListarPlanillasSolicitadas(6);
+            return logica.ListarPlanillasSolicitadas(Convert.ToInt32( Session[RecursosInterfazMaster.sessionUsuarioID]));
         }
 
         public void LlamarVentana_Click()
