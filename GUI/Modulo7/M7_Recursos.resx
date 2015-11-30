@@ -166,7 +166,7 @@
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarOrganizacionYDojo.aspx?compDetalle=</value>
   </data>
   <data name="BotonInfoPagosAEventos" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarPagosAEventos.aspx?compDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoPago.aspx?eventoDetalle=</value>
   </data>
   <data name="BotonInfoPagosDeMatricula" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarPagosDeMatricula.aspx?compDetalle=</value>

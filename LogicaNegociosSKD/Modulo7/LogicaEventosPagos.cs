@@ -104,6 +104,24 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+        /// <summary>
+        /// Método que obtiene el detalle de cada competencia por su ID
+        /// </summary>
+        /// <param name="idCompetencia">Número entero que representa el ID de la competencia</param>
+        /// <returns>Objeto de tipo Competencia</returns>
+        public DominioSKD.Competencia detalleCompetenciaID(int idCompetencia)
+        {
+            try
+            {
+                BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
+                return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         #endregion
 
     }
