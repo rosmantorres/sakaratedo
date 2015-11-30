@@ -1,4 +1,4 @@
-
+﻿
 -- INSERTS CATEGORIA --
 INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Blanca','Naranja','M')
 go
@@ -479,6 +479,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -487,6 +488,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    5000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -872,6 +874,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -880,6 +883,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+     4500,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -983,6 +987,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -991,6 +996,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
@@ -1470,6 +1476,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -1478,6 +1485,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    3000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
@@ -1581,6 +1589,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -1589,6 +1598,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    3600,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -1692,6 +1702,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -1700,6 +1711,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    5500,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -1803,6 +1815,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -1811,6 +1824,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2780,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -1914,6 +1928,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -1922,6 +1937,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2678,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2025,6 +2041,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2033,6 +2050,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    4200,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Pedro Leonardo'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2136,6 +2154,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2144,6 +2163,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    5600,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Miguel'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2247,6 +2267,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2255,6 +2276,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2100,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2358,6 +2380,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2366,6 +2389,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    3900,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2469,6 +2493,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2477,6 +2502,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    5000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2580,6 +2606,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2588,6 +2615,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    4200,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2691,6 +2719,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2699,6 +2728,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2780,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2802,6 +2832,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2810,6 +2841,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    3700,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -2913,6 +2945,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -2921,6 +2954,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2900,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3024,6 +3058,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3032,6 +3067,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    2100,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3135,6 +3171,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3143,6 +3180,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    4600,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3246,6 +3284,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3254,6 +3293,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    7000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3357,6 +3397,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3365,6 +3406,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    6000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3468,6 +3510,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3476,6 +3519,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    3400,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3579,6 +3623,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3587,6 +3632,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    5900,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -3691,6 +3737,7 @@ INSERT INTO dbo.MATRICULA (
     mat_fecha_creacion,
     mat_activa,
     mat_fecha_ultimo_pago,
+    mat_precio,
     PERSONA_per_id,
     DOJO_doj_id
 ) 
@@ -3699,6 +3746,7 @@ VALUES (
     GETDATE(),
     1,
     GETDATE(),
+    4250,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
@@ -4310,20 +4358,6 @@ GETDATE(),
 );
 
 
-
-
-
--- INSERTS COMPRA CARRITO--
-
-
-
-
-
-
-
-
-
-
 -- INSERTS IMPLEMENTO--
 
 insert into implemento (imp_imagen,imp_nombre,imp_tipo,imp_marca,imp_color,imp_talla,imp_estatus,imp_precio,imp_stockmin,imp_descripcion) 
@@ -4365,14 +4399,6 @@ insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (22,3,5);
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (13,4,5);
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (4,5,5);
-
-
-
--- INSERTS DETALLE COMPRA--
-
-
-
-
 
 
 -- INSERTS PLA_DAT--
@@ -4600,3 +4626,52 @@ INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_
 
 
 -- INSERTS RESULTADO KUMITE--
+
+
+-- INSERTS COMPRA CARRITO Y DETALLE COMPRA --
+
+/*===================================INSERTS MODULO 16====================================*/
+
+
+/*-------------------------------COMPRA_CARRITO----------------------------*/
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-11-28','PAGADO',1);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Deposito','2016-11-28','PAGADO',2);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Transferencia','2015-11-28','PAGADO',3);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2016-11-28','PAGADO',4);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Deposito','2015-11-28','PAGADO',5);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Transferencia','2016-11-28','PAGADO',6);
+
+INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',7);
+
+INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',8);
+
+/*-------------------------------------------------------------------------*/
+
+/*------------------------------DETALLE_COMPRA-----------------------------*/
+
+INSERT INTO DETALLE_COMPRA VALUES (1,4500,4,NULL,NULL,1,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,3000,3,NULL,NULL,2,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,1200,2,NULL,NULL,4,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,5000,4,NULL,NULL,5,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,0,1,NULL,NULL,NULL,1,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,2000,1,NULL,NULL,NULL,2,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (7,1150,1,NULL,NULL,NULL,3,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (8,4500,5,NULL,NULL,3,NULL,NULL);
+
+/*-------------------------------------------------------------------------*/
+
+
+/*=======================================================================================*/
