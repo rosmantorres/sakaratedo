@@ -153,7 +153,7 @@
   <data name="AliasNombreEstado" xml:space="preserve">
     <value>nombreEstado</value>
   </data>
-  <data name="AliasNombreOrganizacion" xml:space="preserve">
+  <data name="AliasIdOrganizacion" xml:space="preserve">
     <value>organizacionDojo</value>
   </data>
   <data name="AliasRifDojo" xml:space="preserve">

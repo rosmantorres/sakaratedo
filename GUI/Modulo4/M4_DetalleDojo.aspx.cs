@@ -33,9 +33,10 @@ namespace templateApp.GUI.Modulo4
                         this.rifDojo.Text = elDojo.Rif_dojo.ToString();
                         this.telefonoDojo.Text = elDojo.Telefono_dojo.ToString();
                         this.emailDojo.Text = elDojo.Email_dojo.ToString();
-                        this.statusDojo.Text = elDojo.Status_dojo.ToString();
-                        this.estiloDojo.Text = elDojo.Estilo_dojo.ToString();
-                        this.orgDojo.Text = elDojo.Organizacion_dojo.ToString();
+                        if (String.Compare(elDojo.Status_dojo, "True") == 0)
+                           this.statusDojo.Text = "Activo";
+                        else
+                            this.statusDojo.Text = "Inactivo";
                         laLatitud = elDojo.Ubicacion.Latitud;
                         laLongitud = elDojo.Ubicacion.Longitud;
                     }

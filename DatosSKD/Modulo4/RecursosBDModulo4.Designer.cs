@@ -97,6 +97,15 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a organizacionDojo.
+        /// </summary>
+        internal static string AliasIdOrganizacion {
+            get {
+                return ResourceManager.GetString("AliasIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a idUbicacion.
         /// </summary>
         internal static string AliasIdUbicacion {
@@ -165,15 +174,6 @@ namespace DatosSKD.Modulo4 {
         internal static string AliasNombreEstado {
             get {
                 return ResourceManager.GetString("AliasNombreEstado", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a organizacionDojo.
-        /// </summary>
-        internal static string AliasNombreOrganizacion {
-            get {
-                return ResourceManager.GetString("AliasNombreOrganizacion", resourceCulture);
             }
         }
         

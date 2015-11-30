@@ -56,7 +56,6 @@
                     <th style="text-align:left">Foto</th>
                     <th style="text-align:left">Rif</th>
 					<th style="text-align:left">Nombre</th>
-                    <th style="text-align:left">Organización</th>
                     <th style="text-align:left">Ubicación</th>
                     <th style="text-align:left">Status</th>
 					<th style="text-align:left">Acciones</th>

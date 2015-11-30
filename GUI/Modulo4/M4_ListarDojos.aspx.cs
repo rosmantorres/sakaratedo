@@ -73,13 +73,16 @@ namespace templateApp.GUI.Modulo4
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Rif_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Organizacion_dojo + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
-                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Estilo_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                        if (String.Compare(d.Status_dojo,"True")==0)
+                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
+                        else
+                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Inactivo" + M4_RecursoInterfaz.CerrarTD;
+
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
-                        this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Dojo_Id + M4_RecursoInterfaz.BotonCerrar;
-                        this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Dojo_Id + M4_RecursoInterfaz.BotonCerrar;
-                        this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Dojo_Id + M4_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo+ M4_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
                         this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
                     }
