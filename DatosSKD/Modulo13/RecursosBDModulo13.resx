@@ -117,12 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-
   <data name="apellido" xml:space="preserve">
     <value>per_apellido</value>
   </data>
-
-
   <data name="Cinta" xml:space="preserve">
     <value>cinta</value>
   </data>
@@ -134,14 +131,27 @@
   </data>
   <data name="ParamIdPersona" xml:space="preserve">
     <value>persona</value>
-</data>
-
+  </data>
   <data name="listamorosidad" xml:space="preserve">
     <value>M13_ListarMorosos</value>
     <comment>la lista de morosos</comment>
-</data>
-
+  </data>
   <data name="nombre" xml:space="preserve">
     <value>per_nombre</value>
+  </data>
+  <data name="Edad" xml:space="preserve">
+    <value>per_fecha_nacimiento</value>
+  </data>
+  <data name="estatura" xml:space="preserve">
+    <value>per_estatura</value>
+  </data>
+  <data name="per_id" xml:space="preserve">
+    <value>persona_id</value>
+  </data>
+  <data name="peso" xml:space="preserve">
+    <value>per_peso</value>
+  </data>
+  <data name="sexo" xml:space="preserve">
+    <value>per_sexo</value>
   </data>
 </root>
