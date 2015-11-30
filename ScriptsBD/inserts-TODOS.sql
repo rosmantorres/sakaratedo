@@ -4080,7 +4080,89 @@ INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Sistema libre de Karate',
 
 INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Shotokan','con numerosas variantes siendo la más conocida, la JKA');
 
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-17280493-1','bushido',02126314625,'bushido@gmail.com','bushido.jpg','2014-11-13',1,2,2)
+go
 
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-13224369-3','bushido567',02123456789,'bushido34@gmail.com','bushido.jpg','2014-11-13',0,2,1)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-15403240-9','Dai-Fu',02124563322,'Dai-Fu@gmail.com','Dai-Fu.jpg','2014-10-18',1,3,4)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-18493618-8','hokuto',02126789876,'hokuto@gmail.com','hokuto.jpg','2011-11-11',1,4,3)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-11013997-1','Kaizen',02124756638,'Kaizen@gmail.com','Kaizen.jpg','2010-11-12',0,5,1)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-15374218-7','kate',02125698732,'kate@gmail.com','bushido.jpg','2014-11-13',1,2,2)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-14709720-1','karate Zen',02123456654,'karateZen@gmail.com','bushido.jpg','2014-11-13',1,2,3)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-13525491-7','Dai-Fu Manuela',02122245679,'daifu_manuela@gmail.com','Dai-Fu.jpg','2014-10-18',1,3,1)
+go
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-14795873-0','hokuto Zen',02125752632,'hokutozen@gmail.com','hokuto.jpg','2011-11-11',0,4,2)
+go
+
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2015-10-19','mensual',1554,1);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2014-2-23','mensual',1500,1);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2012-11-17','semestral',1300,1);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2011-1-21','mensual',1290,1);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2010-07-18','Trimestral',1100,1);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2015-10-19','mensual',1754,2);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2011-04-23','mensual',1500,2);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2010-11-17','semestral',1340,2);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2009-01-21','mensual',1290,2);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2006-08-18','Trimestral',500,2);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2015-10-19','mensual',1700,3);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2014-03-23','mensual',1500,3);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2013-11-17','semestral',1350,3);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2011-05-21','mensual',1200,3);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2010-04-18','Trimestral',1150,3);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2015-10-19','mensual',1554,4);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2014-09-23','mensual',1500,4);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2012-11-17','semestral',1300,4);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2010-04-18','Trimestral',1100,4);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2015-10-19','mensual',1754,5);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2011-12-23','mensual',1500,5);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2010-08-17','semestral',1340,5);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2009-12-21','mensual',1290,5);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2006-10-18','Trimestral',500,5);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2013-11-17','semestral',1350,6);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2011-06-21','mensual',1200,6);
+INSERT INTO HISTORIAL_MATRICULA (his_mat_fecha_vigente,his_mat_modalidad,his_mat_monto,DOJO_doj_id)
+VALUES ('2010-10-18','Trimestral',1150,6);
+
+INSERT INTO DOJO (doj_rif,doj_nombre,doj_telefono,doj_email,doj__logo,doj_fecha_registro,doj_status,ORGANIZACION_org_id,UBICACION_ubi_id) VALUES ('J-20022094-9','Kai',02123456799,'Kai@gmail.com','Kaizen.jpg','2010-11-12',1,5,1)
 
 INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id) VALUES(1,1);
 
@@ -4248,13 +4330,13 @@ insert into EVENTO_RESTRICCION values (4,4);
 -- Inserts RH_CINTA   (restriccionEve id, cinta id)                  M8     --
 -- =========================================================================--
 -- FALTA INSERT DE CINTA PARA COMPLETAR --
-insert into RH_CINTA values (1,);
-insert into RH_CINTA values (1,);
-insert into RH_CINTA values (2,);
-insert into RH_CINTA values (2,);
-insert into RH_CINTA values (3,);
-insert into RH_CINTA values (4,);
-insert into RH_CINTA values (4,);
+insert into RH_CINTA values (1,1);
+insert into RH_CINTA values (1,2);
+insert into RH_CINTA values (2,2);
+insert into RH_CINTA values (2,3);
+insert into RH_CINTA values (3,4);
+insert into RH_CINTA values (4,5);
+insert into RH_CINTA values (4,7);
 
 
 -- =========================================================================--
@@ -4427,9 +4509,9 @@ INSERT INTO MATRICULA VALUES ('129',CONVERT(datetime,'2012-04-13',101),1,CONVERT
 
 --HIST_MATRICULA--
 
-INSERT INTO HIST_MATRICULA VALUES (CONVERT(datetime, '2015-11-10', 101),'mensualidad','3250',1);
-INSERT INTO HIST_MATRICULA VALUES (CONVERT(datetime, '2013-09-10', 101),'mensualidad','2200',2);
-INSERT INTO HIST_MATRICULA VALUES (CONVERT(datetime, '2012-02-10', 101),'mensualidad','2000',3);
+INSERT INTO HISTORIAL_MATRICULA VALUES (CONVERT(datetime, '2015-11-10', 101),'mensualidad','3250',1);
+INSERT INTO HISTORIAL_MATRICULA VALUES (CONVERT(datetime, '2013-09-10', 101),'mensualidad','2200',2);
+INSERT INTO HISTORIAL_MATRICULA VALUES (CONVERT(datetime, '2012-02-10', 101),'mensualidad','2000',3);
 
 
 --RESULTADO_KUMITE--
@@ -4452,20 +4534,38 @@ INSERT INTO RESULTADO_KUMITE VALUES (15,30,35,8,9);
 INSERT INTO RESULTADO_KUMITE VALUES (16,40,35,8,9);
 
 
---CINTA--
 
-INSERT INTO CINTA VALUES ('Blanco');
-INSERT INTO CINTA VALUES ('Blanco-Amarillo');
-INSERT INTO CINTA VALUES ('Amarillo');
-INSERT INTO CINTA VALUES ('Amarillo-naranja');
-INSERT INTO CINTA VALUES ('Naranja');
-INSERT INTO CINTA VALUES ('Naranja-verde');
-INSERT INTO CINTA VALUES ('Verde');
-INSERT INTO CINTA VALUES ('Verde-azul');
-INSERT INTO CINTA VALUES ('Azul');
-INSERT INTO CINTA VALUES ('Azul-marron');
-INSERT INTO CINTA VALUES ('Marron');
-INSERT INTO CINTA VALUES ('Negro');
+-----HISTORIAL_CINTAS----------
+
+INSERT INTO HISTORIAL_CINTAS VALUES (1,1,CONVERT(datetime,'2015-10-22',101),1);
+INSERT INTO HISTORIAL_CINTAS VALUES (2,2,CONVERT(datetime,'2015-06-12',101),2);
+INSERT INTO HISTORIAL_CINTAS VALUES (3,3,CONVERT(datetime,'2015-08-21',101),3);
+INSERT INTO HISTORIAL_CINTAS VALUES (4,4,CONVERT(datetime,'2015-11-22',101),4);
+INSERT INTO HISTORIAL_CINTAS VALUES (5,5,CONVERT(datetime,'2015-05-12',101),5);
+
+
+
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Blanco', '1er Kyu', 'Nivel inferior', 'Principiante', 1,1);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Amarillo', '2do Kyu', 'Nivel inferior', 'Iniciado', 2,2);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Verde', '3er Kyu', 'Nivel inferior', 'Aprendiz', 3,3);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Marron', '8vo Kyu', 'Nivel inferior', 'Aprendiz avanzado', 4,4);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '1er Dan', 'Nivel superior', 'Avanzado', 1,5);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '2do Dan', 'Nivel superior', 'Maestro iniciado', 2,6);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '3er Kyu', 'Nivel superior', 'Maestro medio', 3,7);
+
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden], [RESTRICCION_CINTA_res_cin_id]) VALUES ('Negro', '4to Kyu', 'Nivel superior', 'Maestro superior', 4,8);
+
+
+
+
+
 
 
 

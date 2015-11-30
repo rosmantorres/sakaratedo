@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -188,36 +189,6 @@
     <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
-    <Content Include="GUI\Modulo13\Estilo\tournaments.css" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\1.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\2.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\3.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\4.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\5.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\5813.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\6.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\7.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\AlejandroGonzalez.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\EduardoSchwank.jpg" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\Venezuela.png" />
-    <Content Include="GUI\Modulo13\Imagenes\ITA.gif" />
-    <Content Include="GUI\Modulo13\Imagenes\reportes.jpg" />
-    <Content Include="GUI\Modulo13\Imagenes\ven.png" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\amarilla.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\azul-roja.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\azul.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\blanca-azul.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\celeste-amarillo.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\celeste.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\marron-blanco.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\marron-negro.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\marron.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\naranja-verde.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\naranja.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\negro-blanco.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\negro.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\purpura.jpg" />
-    <Content Include="GUI\Modulo13\Kyu-imagenes\verde.jpg" />
     <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
     <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
     <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
@@ -270,13 +241,32 @@
     <Content Include="GUI\Modulo6\M6_NuevoAdmin.aspx" />
     <Content Include="GUI\Modulo6\M6_procesarSolicitud.aspx" />
     <Content Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx" />
+    <Content Include="GUI\Modulo7\css\daterange.css" />
+    <Content Include="GUI\Modulo7\css\images\animated-overlay.gif" />
+    <Content Include="GUI\Modulo7\css\images\calendar.gif" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
+    <Content Include="GUI\Modulo7\css\jquery-ui.css" />
+    <Content Include="GUI\Modulo7\js\daterange.js" />
+    <Content Include="GUI\Modulo7\js\jquery-ui.js" />
+    <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarCintas.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarHorariodePractica.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx" />
-    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
@@ -313,7 +303,6 @@
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\SKD.Master" />
-    <Content Include="GUI\Modulo13\Fotos-Atletas\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1648,6 +1637,13 @@
     <Compile Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx.designer.cs">
       <DependentUpon>M7_ListarOrganizacionYDojo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.cs">
+      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
+      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.cs">
       <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1655,12 +1651,10 @@
     <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.designer.cs">
       <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.cs">
-      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
-      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo7\M7_Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M7_Recursos.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
@@ -1797,6 +1791,10 @@
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M7_Recursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
