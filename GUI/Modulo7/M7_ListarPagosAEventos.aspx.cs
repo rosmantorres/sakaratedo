@@ -8,12 +8,14 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarPagosAEventos : System.Web.UI.Page
     { 
         #region Atributos
         private List<DominioSKD.Evento> laLista;
+        private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
         #region Page Load
         /// <summary>
@@ -34,12 +36,14 @@ namespace templateApp.GUI.Modulo7
 
             #region Llenar Data Table con Eventos
             LogicaEventosPagos logEvento = new LogicaEventosPagos();
-
+             LogicaEventosInscritos logEvento2 = new LogicaEventosInscritos();
+             laListaCompetencias = logEvento2.obtenerListaDeCompetencias();
             if (!IsPostBack)
             {
                 try
                 {
                     laLista = logEvento.obtenerListaDeEventos();
+                    
 
                     foreach (Evento evento in laLista)
                     {
@@ -47,11 +51,23 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                        //this.laTabla.Text += M7_Recursos.AbrirTD + evento.FechaInicio.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.ToString() + M7_Recursos.CerrarTD;
+                      //  this.laTabla.Text += M7_Recursos.AbrirTD + evento.fecha.ToString() + M7_Recursos.CerrarTD;
+                      //this.laTabla.Text += M7_Recursos.AbrirTD + evento.monto.ToString() + M7_Recursos.CerrarTD;   
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.CerrarTR;
+                    }
+
+                    foreach (Competencia competencia in laListaCompetencias)
+                    {
+                        this.laTabla.Text += M7_Recursos.AbrirTR;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
+                        //this.laTabla.Text += M7_Recursos.AbrirTD + competencia.fecha.ToString() + M7_Recursos.CerrarTD;
+                        //this.laTabla.Text += M7_Recursos.AbrirTD + competencia.monto.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD;
+                        this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }
