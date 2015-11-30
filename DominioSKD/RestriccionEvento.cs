@@ -14,6 +14,7 @@ namespace DominioSKD
         private int edadMinima;
         private int edadMaxima;
         private char sexo;
+        private int idEvento;
 
         private List<Cinta> listaCintas;
         private List<Evento> listaEvento;
@@ -53,6 +54,12 @@ namespace DominioSKD
             set { sexo = value; }
         }
 
+        public int IdEvento
+        {
+            get { return idEvento; }
+            set { idEvento = value; }
+        }
+
         public List<Cinta> ListaCintas
         {
             get { return listaCintas; }
@@ -86,6 +93,7 @@ namespace DominioSKD
             edadMinima = 0;
             edadMaxima = 0;
             sexo = new char();
+            idEvento = 0;
 
             listaCintas = null;
             listaEvento = null;
@@ -95,13 +103,14 @@ namespace DominioSKD
 
         }
 
-        public RestriccionEvento(int elId, String laDescripcion, int laEdadMinima, int laEdadMaxima, DateTime laFechaEdadMin, DateTime laFechaEdadMax, char elSexo)
+        public RestriccionEvento(int elId, String laDescripcion, int laEdadMinima, int laEdadMaxima, char elSexo, int elIdEvento, DateTime laFechaEdadMin, DateTime laFechaEdadMax)
         {
             idRestEvento = elId;
             descripcion = laDescripcion;
             edadMinima = laEdadMinima;
             edadMaxima = laEdadMaxima;
             sexo = elSexo;
+            idEvento = elIdEvento;
             
             listaCintas = null;
             listaEvento = null;
