@@ -101,7 +101,7 @@ namespace LogicaNegociosSKD.Modulo1
                 Cuenta user= BDLogin.ObtenerUsuario(usuario);
                 string[] respuesta = new string[6];
                string hashClave = hash(contraseña);
-               if (hashClave == hash(user.Contrasena) && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
+               if (hashClave == user.Contrasena && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
                    respuesta[0] = user.Id_usuario.ToString();
                    respuesta[1] = user.Nombre_usuario;
