@@ -36,87 +36,20 @@
         </div>
 
     <div class="box-body table-responsive">
-        <table id="tablaplanillas" class="table table-bordered table-striped dataTable">
+        <table id="tablaPlanillasSolicitadas" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:center">ID</th>
-					<th style="text-align:center">Nombre</th>
-					<th style="text-align:center">Tipo</th>
-					<th style="text-align:center">Fecha</th>
-					<th style="text-align:center">Fecha de solicitud</th>
-                    <th style="text-align:center">Acciones</th>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Tipo</th>
+					<th>Fecha</th>
+					<th>Fecha de solicitud</th>
+                    <th>Evento</th>
+                    <th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-                    <td>Pla_001</td>
-                    <td>Inscripción</td>
-                    <td>_________</td>
-                    <td>10/03/2010</td>
-                    <td>01/03/2010</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" target="_blank" href="M14_VisorInscripcion.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_SolicitudPlanilla.aspx"></a>
-                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch">
-                            <input type="checkbox" checked data-toggle="toggle" data-on="On" data-off="Off" >
-                        </a>
-                     </td>
-                </tr>
-                <tr>
-                    <td>Pla_002</td>
-                    <td>Carnet</td>
-                    <td>________</td>
-                    <td>11/03/2010</td>
-                    <td>02/03/2010</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" target="_blank" href="M14_VisorCarnet.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_SolicitudPlanilla.aspx"></a>
-                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch">
-                            <input type="checkbox" checked data-toggle="toggle" data-on="On" data-off="Off" >
-                        </a>
-                     </td>
-				</tr><tr>
-                    <td>Pla_003</td>
-                    <td>Permiso</td>
-                    <td>Competencia</td>
-                    <td>12/07/2010</td>
-                    <td>05/07/2010</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_VisorInscripcion.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_SolicitudPlanilla.aspx"></a>
-                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch">
-                            <input type="checkbox" checked data-toggle="toggle" data-on="On" data-off="Off" >
-                        </a>
-                     </td>
-                </tr>
-                <tr>
-                    <td>Pla_004</td>
-                    <td>Permiso</td>
-                    <td>Temporal</td>
-                    <td>20/09/2010 - 30/09/2010</td>
-                    <td>12/09/2010</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_VisorInscripcion.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_SolicitudPlanilla.aspx"></a>
-                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch">
-                            <input type="checkbox" checked data-toggle="toggle" data-on="On" data-off="Off" >
-                        </a>
-                     </td>
-                </tr>
-                <tr>
-                    <td>Pla_005</td>
-                    <td>Ascenso</td>
-                    <td>Cinta azul</td>
-                    <td>30/11/2010</td>
-                    <td>23/11/2010</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_VisorInscripcion.aspx"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M14_SolicitudPlanilla.aspx"></a>
-                        <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch">
-                            <input type="checkbox" checked data-toggle="toggle" data-on="On" data-off="Off" >
-                        </a>
-                    </td>
-                </tr>
+				   <asp:Literal runat="server" ID="tabla"></asp:Literal>
 			    </tbody>
             </table>
            </div>

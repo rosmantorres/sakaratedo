@@ -3,13 +3,8 @@
   (
     asi_asistio CHAR(1) NOT NULL ,
     INSCRIPCION_ins_id INTEGER NOT NULL ,
-    CONSTRAINT ASISTENCIA_PK PRIMARY KEY CLUSTERED (INSCRIPCION_ins_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
+	EVENTO_eve_id      INTEGER NOT NULL,
+   
   )
   ON "default"
 GO
@@ -126,6 +121,7 @@ CREATE
     det_id                INTEGER IDENTITY(1,1) NOT NULL ,
 	COMPRA_CARRITO_com_id INTEGER NOT NULL,
     det_precio 	          FLOAT NOT NULL ,
+	det_cantidad		  INTEGER NOT NULL,
     MATRICULA_mat_id      INTEGER ,
     MATRICULA_per_id      INTEGER ,
     IMPLEMENTO_inv_id     INTEGER ,
@@ -145,7 +141,7 @@ GO
 CREATE
   TABLE DISEÑO
   (
-    dis_id          INTEGER NOT NULL ,
+    dis_id          INTEGER IDENTITY(1,1) NOT NULL ,
     dis_contenido   TEXT NOT NULL ,
     PLANILLA_pla_id INTEGER NOT NULL ,
     CONSTRAINT DISEÑO_PK PRIMARY KEY CLUSTERED (dis_id)
@@ -169,7 +165,7 @@ GO
 CREATE
   TABLE DOJO
   (
-    doj_id             INTEGER NOT NULL ,
+    doj_id             INTEGER IDENTITY(1,1) NOT NULL ,
     doj_rif            VARCHAR (150) NOT NULL ,
     doj_nombre         VARCHAR (150) NOT NULL ,
     doj_telefono       INTEGER NOT NULL ,
@@ -213,7 +209,7 @@ CREATE
   (
     est_id          INTEGER IDENTITY(1,1) NOT NULL ,
     est_nombre      VARCHAR (150) NOT NULL ,
-    est_descripcion VARCHAR (150) NOT NULL ,
+    est_descripcion VARCHAR (250) NOT NULL ,
     CONSTRAINT ESTILO_PK PRIMARY KEY CLUSTERED (est_id)
 WITH
   (
@@ -290,14 +286,8 @@ CREATE
     his_mat_fecha_vigente DATE NOT NULL ,
     his_mat_modalidad     VARCHAR (50) NOT NULL ,
     his_mat_monto FLOAT NOT NULL ,
-    DOJO_doj_id INTEGER NOT NULL ,
-    CONSTRAINT HISTORIAL_MATRICULA_PK PRIMARY KEY CLUSTERED (DOJO_doj_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
+    DOJO_doj_id INTEGER NOT NULL 
+	
   )
   ON "default"
 GO
@@ -324,7 +314,7 @@ GO
 CREATE
   TABLE IMPLEMENTO
   (
-    imp_id      INTEGER NOT NULL ,
+    imp_id      INTEGER IDENTITY(1,1) NOT NULL ,
     imp_imagen  VARCHAR (100) NOT NULL ,
     imp_nombre  VARCHAR (100) NOT NULL ,
     imp_tipo    VARCHAR (100) NOT NULL ,
@@ -352,8 +342,6 @@ CREATE
     ins_id                    		   INTEGER IDENTITY(1,1) NOT NULL ,
     PERSONA_per_id                     INTEGER NOT NULL ,
     ins_fecha                          DATE NOT NULL ,
-    SOLICITUD_PLANILLA_sol_pla_id      INTEGER ,
-    SOLICITUD_PLANILLA_PLANILLA_pla_id INTEGER ,
     COMPETENCIA_comp_id                INTEGER ,
     EVENTO_eve_id                      INTEGER ,
     CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (ins_id)
@@ -370,7 +358,7 @@ GO
 CREATE
   TABLE INVENTARIO
   (
-    inv_id             INTEGER NOT NULL ,
+    inv_id             INTEGER IDENTITY(1,1) NOT NULL ,
     inv_cantidad_total INTEGER NOT NULL ,
     IMPLEMENTO_imp_id  INTEGER NOT NULL ,
     DOJO_doj_id        INTEGER NOT NULL ,
@@ -393,6 +381,7 @@ CREATE
     mat_fecha_creacion DATETIME NOT NULL ,
     mat_activa BIT NOT NULL ,
     mat_fecha_ultimo_pago DATETIME NOT NULL ,
+    mat_precio            INTEGER NOT NULL,
     PERSONA_per_id        INTEGER NOT NULL ,
     DOJO_doj_id           INTEGER NOT NULL ,
     CONSTRAINT MATRICULA_PK PRIMARY KEY CLUSTERED (mat_id, PERSONA_per_id,
@@ -598,7 +587,7 @@ GO
 CREATE
   TABLE RESTRICCION_CINTA
   (
-    res_cin_id               INTEGER NOT NULL ,
+    res_cin_id               INTEGER IDENTITY(1,1) NOT NULL ,
     res_cin_descripcion      VARCHAR (255) NOT NULL ,
     res_cin_tiemp_min        INTEGER NOT NULL , /*# de meses*/
     res_cin_punt_min         INTEGER NOT NULL ,
@@ -614,13 +603,7 @@ WITH
   )
   ON "default"
 GO
-CREATE UNIQUE NONCLUSTERED INDEX
-RESTRICCION_CINTA__IDXv1 ON RESTRICCION_CINTA
-(
-  CINTA_cin_id
-)
-ON "default"
-GO
+
 
 CREATE
   TABLE RESTRICCION_COMPETENCIA
@@ -629,8 +612,11 @@ CREATE
     res_com_desc      VARCHAR (255) NOT NULL ,
     res_com_edad_min  INTEGER NOT NULL ,
     res_com_edad_max  INTEGER NOT NULL ,
+    res_com_rango_min INTEGER NOT NULL ,
+    res_com_rango_max INTEGER NOT NULL ,
     res_com_sexo      VARCHAR (1) NOT NULL ,
     res_com_modalidad VARCHAR (10) NOT NULL ,
+
     CONSTRAINT RESTRICCION_COMPETENCIA_PK PRIMARY KEY CLUSTERED (res_com_id)
 WITH
   (
@@ -648,15 +634,13 @@ CREATE
     comp_rest_comp_id                  INTEGER IDENTITY(1,1) NOT NULL ,
     RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
     COMPETENCIA_comp_id                INTEGER NOT NULL ,
-  )
-  ON "default"
-GO
-ALTER TABLE COMP_REST_COMP ADD CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY
-CLUSTERED (comp_rest_comp_id)
+ CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY CLUSTERED (comp_rest_comp_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
     ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
   )
   ON "default"
 GO
@@ -808,6 +792,7 @@ CREATE
     sol_pla_fecha_reincorporacion DATE ,
     sol_pla_motivo                VARCHAR (2000) ,
     PLANILLA_pla_id               INTEGER NOT NULL ,
+	INSCRIPCION_ins_id            INTEGER NOT NULL ,
     CONSTRAINT SOLICITUD_PLANILLA_PK PRIMARY KEY CLUSTERED (sol_pla_id,
     PLANILLA_pla_id)
 WITH
@@ -923,6 +908,21 @@ INSCRIPCION_ins_id
 REFERENCES INSCRIPCION
 (
 ins_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE ASISTENCIA
+ADD CONSTRAINT ASISTENCIA_EVENTO_FK FOREIGN KEY
+(
+EVENTO_eve_id
+)
+REFERENCES EVENTO
+(
+eve_id
 )
 ON
 DELETE
@@ -1395,22 +1395,6 @@ DELETE
 UPDATE NO ACTION
 GO
 
-ALTER TABLE INSCRIPCION
-ADD CONSTRAINT INSCRIPCION_SOLICITUD_PLANILLA_FK FOREIGN KEY
-(
-SOLICITUD_PLANILLA_sol_pla_id,
-SOLICITUD_PLANILLA_PLANILLA_pla_id
-)
-REFERENCES SOLICITUD_PLANILLA
-(
-sol_pla_id ,
-PLANILLA_pla_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
 
 ALTER TABLE INVENTARIO
 ADD CONSTRAINT INVENTARIO_DOJO_FK FOREIGN KEY
@@ -1633,9 +1617,10 @@ cin_id
 )
 ON
 DELETE
-  NO ACTION ON
+  CASCADE ON
 UPDATE NO ACTION
 GO
+
 
 ALTER TABLE RC_CINTA
 ADD CONSTRAINT RC_CINTA_RESTRICCION_COMPETENCIA_FK FOREIGN KEY
@@ -1648,7 +1633,7 @@ res_com_id
 )
 ON
 DELETE
-  NO ACTION ON
+  CASCADE ON
 UPDATE NO ACTION
 GO
 
@@ -1785,6 +1770,22 @@ DELETE
   NO ACTION ON
 UPDATE NO ACTION
 GO
+
+ALTER TABLE SOLICITUD_PLANILLA
+ADD CONSTRAINT SOLICITUD_PLANILLA_INSCRIPCION_FK FOREIGN KEY
+(
+INSCRIPCION_ins_id
+)
+REFERENCES INSCRIPCION
+(
+ins_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
 
 ALTER TABLE TELEFONO
 ADD CONSTRAINT TELEFONO_PERSONA_FK FOREIGN KEY
@@ -2070,7 +2071,7 @@ go
 CREATE procedure M12_ConsultarCintas
 as
 	begin
-		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
 		from CINTA as cin		
 	end;
 go
@@ -2167,3 +2168,212 @@ as
 	end;
 	go
 
+-------------------------------------------------Stored Procedure M14--------------------------
+CREATE PROCEDURE M14_AgregarDiseño
+		 
+		@dis_contenido   [varchar](8000),
+		@PLANILLA_pla_id  int
+AS 
+BEGIN
+		INSERT INTO DISEÑO(dis_contenido, PLANILLA_pla_id)
+	    VALUES(@dis_contenido, @PLANILLA_pla_id)
+
+END;
+GO
+
+CREATE PROCEDURE M14_CambioDeStatusPlanilla
+	@pla_id int
+AS
+BEGIN
+    IF((SELECT pla_status FROM PLANILLA WHERE pla_id= @pla_id)=1)
+	BEGIN
+	   UPDATE PLANILLA 
+	      SET pla_status =0
+		  WHERE pla_id=@pla_id
+	END
+	ELSE
+	BEGIN
+	   UPDATE PLANILLA 
+	      SET pla_status =1
+		  WHERE pla_id=@pla_id
+	END
+END;
+GO
+
+-----------------------------------------------------------
+CREATE PROCEDURE M14_ConsultarDiseño
+	
+	@PLANILLA_pla_id [int]	
+	   
+AS
+ BEGIN
+	
+	SELECT D.dis_id, D.dis_contenido
+	FROM DISEÑO D
+	WHERE D.PLANILLA_pla_id = @PLANILLA_pla_id
+ END
+ GO
+
+ -------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarPlanillasASolicitar
+	
+AS
+ BEGIN
+	
+	SELECT P.pla_id, P.pla_nombre,(SELECT T.tip_nombre FROM TIPO_PLANILLA T WHERE P.TIPO_PLANILLA_tip_id= T.tip_id) AS tipo, D.dis_id
+	FROM DISEÑO D, PLANILLA P
+	WHERE D.PLANILLA_pla_id= p.pla_id AND P.pla_status=1
+ END
+ GO
+ -----------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarPlanillasCreadas
+AS
+BEGIN
+	SELECT P.pla_id, P.pla_nombre, P.pla_status, T.tip_nombre, T.tip_id
+	FROM PLANILLA p, TIPO_PLANILLA T
+	WHERE P.TIPO_PLANILLA_tip_id=T.tip_id
+END
+GO
+---------------------------------------------------
+CREATE PROCEDURE M14_ConsultarSolicitudPlanilla
+		@PERSONA_per_id      [varchar](50)
+AS 
+BEGIN
+		SELECT S.sol_pla_id,S.INSCRIPCION_ins_id, S.sol_pla_fecha_creacion, S.sol_pla_fecha_retiro,
+		S.sol_pla_fecha_reincorporacion,S.sol_pla_motivo,S.PLANILLA_pla_id,
+		I.PERSONA_per_id, (SELECT E.eve_nombre FROM EVENTO E WHERE I.EVENTO_eve_id =E.eve_id and i.ins_id=s.INSCRIPCION_ins_id) as eve_nombre,(SELECT C.comp_nombre FROM COMPETENCIA C WHERE I.COMPETENCIA_comp_id = C.comp_id and i.ins_id=s.INSCRIPCION_ins_id) as comp_nombre,(SELECT p.pla_nombre FROM PLANILLA P WHERE P.pla_id= S.PLANILLA_pla_id) AS pla_nombre, (SELECT T.tip_nombre FROM TIPO_PLANILLA T WHERE P.TIPO_PLANILLA_tip_id =T.tip_id And P.pla_id= s.PLANILLA_pla_id) AS tipo
+		FROM SOLICITUD_PLANILLA S, INSCRIPCION I, PLANILLA P
+		WHERE @PERSONA_per_id= I.PERSONA_per_id and I.ins_id = s.INSCRIPCION_ins_id and (i.EVENTO_eve_id is not null or i.COMPETENCIA_comp_id is not null) and P.pla_id= s.PLANILLA_pla_id
+	    
+
+END;
+GO
+-------------------------------------------
+CREATE PROCEDURE M14_ELIMINAR_SOLICITUD
+   @pla_sol_id int
+AS 
+BEGIN
+    DELETE FROM SOLICITUD_PLANILLA
+	WHERE sol_pla_id= @pla_sol_id
+END
+GO
+-----------------------------------------------
+CREATE PROCEDURE M14_InsertarSolicitudPlanilla
+		@sol_pla_fecha_creacion          [date],
+		@sol_pla_fecha_retiro            [date],
+		@sol_pla_fecha_reincorporacion   [date],
+		@sol_pla_motivo                  [varchar](1000),
+		@PLANILLA_pla_id                 int,
+		@INSCRIPCION_ins_id              int
+AS 
+BEGIN
+		INSERT INTO SOLICITUD_PLANILLA(sol_pla_fecha_creacion, sol_pla_fecha_retiro,
+		sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id)
+	    VALUES(@sol_pla_fecha_creacion, @sol_pla_fecha_retiro,
+		@sol_pla_fecha_reincorporacion,@sol_pla_motivo,@PLANILLA_pla_id,@INSCRIPCION_ins_id)
+
+END;
+GO
+---------------------------------------------------------
+CREATE PROCEDURE M14_ModificarDiseño
+	@dis_id int,
+	@dis_contenido [varchar](8000)
+AS
+BEGIN
+	UPDATE DISEÑO 
+	    SET dis_contenido = @dis_contenido
+		where dis_id=@dis_id
+END;
+GO
+---------------------------------------------------
+CREATE PROCEDURE M14_Procedure_IdTipoPlanilla
+	
+	@tip_nombre [varchar] (100),
+	@tip_id [int] OUTPUT
+AS
+ BEGIN
+	SELECT @tip_id= tip_id
+    FROM TIPO_PLANILLA
+	where tip_nombre=@tip_nombre;
+	RETURN
+ END
+ GO
+ ------------------------------------------
+ CREATE PROCEDURE M14_Procedure_ListarDatos
+	
+AS
+ BEGIN
+	SELECT dat_nombre
+    FROM Dato;
+ END;
+ GO
+ -----------------------------------
+ CREATE PROCEDURE M14_Procedure_ListarTipoPlanilla
+	
+AS
+ BEGIN
+	SELECT tip_id , tip_nombre
+    FROM TIPO_PLANILLA;
+ END;
+ GO
+
+ ---------------------------
+ ----------------AGREGAR DATOS Y PLANILLA---------------------
+CREATE PROCEDURE M14_ProcedureAgregarDatoPlanilla
+	@pla_nombre [varchar](100),
+	@dat_nombre [varchar](100)
+	
+
+
+as
+ begin
+     
+   --insertar datos y planilla--
+    INSERT INTO PLA_DAT(DATO_dat_id,PLANILLA_pla_id) 
+	VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),(select MAX(pla_id) from PLANILLA where pla_nombre=@pla_nombre));  
+
+ end;
+ GO
+
+ -------------------------------
+ ---------------AGREGAR PLANILLA------------------------------
+CREATE PROCEDURE M14_ProcedureAgregarPlanilla
+	@pla_nombre [varchar] (100),
+	@pla_status [bit],
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+  
+    INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+ GO
+ -----------------------
+ ------------------AGREGAR TIPO PLANILLA------------------------
+CREATE PROCEDURE M14_ProcedureAgregarTipoPlanilla
+	@tip_nombre [varchar] (100)
+
+as
+ begin
+  
+    INSERT INTO TIPO_PLANILLA(tip_nombre) 
+	VALUES(@tip_nombre); 
+
+ end;
+ GO
+ ----------------Obtener Datos----------------------------------
+CREATE PROCEDURE M14_ProcedureDatosPlanilla
+	@pla_nombre [varchar] (100),
+	@pla_status [bit],
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+
+    INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+ GO
