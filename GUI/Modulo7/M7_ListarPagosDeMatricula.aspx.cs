@@ -44,11 +44,11 @@ namespace templateApp.GUI.Modulo7
                     foreach (Matricula matricula in laLista)
                     {
                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Id_matricula.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaInicio.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaUltimoPago.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.ID.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaCreacion.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.Id_matricula + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.ID + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }

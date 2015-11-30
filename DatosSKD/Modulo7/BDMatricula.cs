@@ -40,13 +40,13 @@ namespace DatosSKD.Modulo7
 
                 foreach (DataRow row in dt.Rows)
                 {
-
-                    matricula.Id_matricula = int.Parse(row[RecursosBDModulo7.AliasIdMatricula].ToString());
-                    matricula.Identificador_matricula = int.Parse(row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString());
-                    matricula.Status = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
-                    matricula.FechaInicio = row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString();
-                    matricula.FechaUltimoPago = row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString();
-                    matricula.Monto = float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
+                   
+                   
+                    matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
+                    //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
+                    matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
+                    matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
+                    //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
 
 
                 }
@@ -101,11 +101,11 @@ namespace DatosSKD.Modulo7
                 foreach (DataRow row in dt.Rows)
                 {
                     Matricula matricula = new Matricula();
-                    matricula.Identificador_matricula = int.Parse(row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString());
-                    matricula.Status = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
-                    matricula.FechaInicio = row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString();
-                    matricula.FechaUltimoPago = row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString();
-                    matricula.Monto = float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
+                     matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
+                    //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
+                    matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
+                    matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
+                    //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
                     laListaDeMatriculaPaga.Add(matricula);
                 }
 
