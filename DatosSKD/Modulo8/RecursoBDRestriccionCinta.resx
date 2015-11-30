@@ -119,10 +119,23 @@
   </resheader>
   <data name="AgregarRestriccionCinta" xml:space="preserve">
     <value>M8_Agregar_Restriccion_Cinta</value>
-    <comment>Llamada a funcion para agregar una rest. de cinta </comment>
+    <comment>Llamada a funcion para agregar una rest. de cinta</comment>
+  </data>
+  <data name="AliasDescripcionRestCinta" xml:space="preserve">
+    <value>DescripcionRestCinta</value>
   </data>
   <data name="AliasIdRestriccionCinta" xml:space="preserve">
     <value>IdRestriccionCinta</value>
+  </data>
+  <data name="AliasPuntosMinCintas" xml:space="preserve">
+    <value>PuntosMinCintas</value>
+  </data>
+  <data name="AliasTiempoDocente" xml:space="preserve">
+    <value>TiempoDocente</value>
+  </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error en el parseo</comment>
   </data>
   <data name="ConsultarRestriccionCinta" xml:space="preserve">
     <value>M8_Consultar_Restriccion_Cinta</value>
@@ -135,6 +148,10 @@
   <data name="EliminarRestriccionCinta" xml:space="preserve">
     <value>M8_Eliminar_Restriccion_Cinta</value>
     <comment>Llamada a funcion para eliminar una rest. de cinta</comment>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
   </data>
   <data name="ModificarRestriccionCinta" xml:space="preserve">
     <value>M8_Modificar_Restriccion_Cinta</value>

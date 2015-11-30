@@ -15,39 +15,100 @@ namespace DatosSKD.Modulo8
 {
     public class BDRestriccionCinta
     {
-        public static bool AgregarRestriccionCinta(RestriccionCinta laRestriccion, int NuevaCinta)
+        public static List<RestriccionCinta> ConsultarRestriccionCintaTodas()
         {
             
+            BDConexion laConexion;
+            List<RestriccionCinta> ListaRestriccionCinta = new List<RestriccionCinta>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursoBDRestriccionCinta.ConsultarRestriccionesCinta, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    RestriccionCinta laRestriccion = new RestriccionCinta();
+
+                    laRestriccion.IdRestriccionCinta = int.Parse(row[RecursoBDRestriccionCinta.AliasIdRestriccionCinta].ToString());
+                    laRestriccion.Descripcion = row[RecursoBDRestriccionCinta.AliasDescripcionRestCinta].ToString();
+                    laRestriccion.PuntosMinimos = int.Parse(row[RecursoBDRestriccionCinta.AliasPuntosMinCintas].ToString());
+                    laRestriccion.TiempoDocente = int.Parse(row[RecursoBDRestriccionCinta.AliasTiempoDocente].ToString());
+
+                    ListaRestriccionCinta.Add(laRestriccion);
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursoBDRestriccionCinta.Codigo_Error_Formato,
+                      RecursoBDRestriccionCinta.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            
+            return ListaRestriccionCinta;
+
+        }
+
+        public static bool AgregarRestriccionCinta(RestriccionCinta laRestriccion, int NuevaCinta)
+        {
+
             try
             {
                 List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
 
-                Parametro elParametro = new Parametro(RecursosBDModulo8.ParamDescripcionRestricionCinta, SqlDbType.VarChar,
+                Parametro elParametro = new Parametro(RecursoBDRestriccionCinta.ParamDescripcionRestricionCinta, SqlDbType.VarChar,
                     laRestriccion.Descripcion, false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamCintaNueva, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamCintaNueva, SqlDbType.Int,
                         NuevaCinta.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamTiempoMinimo, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamTiempoMinimo, SqlDbType.Int,
                         laRestriccion.TiempoMinimo.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamPuntosMinimos, SqlDbType.Int,
-                        laRestriccion.PuntosMinimos.ToString(),false);
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamPuntosMinimos, SqlDbType.Int,
+                        laRestriccion.PuntosMinimos.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamHorasDocentes, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamHorasDocentes, SqlDbType.Int,
                         laRestriccion.TiempoDocente.ToString(), false);
                 parametros.Add(elParametro);
 
-                
+
                 BDConexion laConexion = new BDConexion();
-                laConexion.EjecutarStoredProcedure(RecursosBDModulo8.AgregarRestriccionCinta, parametros);
+                laConexion.EjecutarStoredProcedure(RecursoBDRestriccionCinta.AgregarRestriccionCinta, parametros);
             }
 
-            catch (SqlException ex) 
+            catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
@@ -62,7 +123,7 @@ namespace DatosSKD.Modulo8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }    
+            }
 
             return true;
         }
@@ -73,28 +134,28 @@ namespace DatosSKD.Modulo8
             {
                 List<Parametro> parametros = new List<Parametro>();
 
-                Parametro elParametro = new Parametro(RecursosBDModulo8.ParamDescripcionRestricionCinta, SqlDbType.VarChar,
+                Parametro elParametro = new Parametro(RecursoBDRestriccionCinta.ParamDescripcionRestricionCinta, SqlDbType.VarChar,
                     laRestriccion.Descripcion, false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamIdRestriccion, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamIdRestriccion, SqlDbType.Int,
                         laRestriccion.IdRestriccionCinta.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamTiempoMinimo, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamTiempoMinimo, SqlDbType.Int,
                         laRestriccion.TiempoMinimo.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamPuntosMinimos, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamPuntosMinimos, SqlDbType.Int,
                         laRestriccion.PuntosMinimos.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDModulo8.ParamHorasDocentes, SqlDbType.Int,
+                elParametro = new Parametro(RecursoBDRestriccionCinta.ParamHorasDocentes, SqlDbType.Int,
                         laRestriccion.TiempoDocente.ToString(), false);
                 parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosBDModulo8.ModificarRestriccionCinta, parametros);
+                laConexion.EjecutarStoredProcedure(RecursoBDRestriccionCinta.ModificarRestriccionCinta, parametros);
 
             }
             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
@@ -109,7 +170,7 @@ namespace DatosSKD.Modulo8
             catch (Exception ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }   
+            }
 
             return true;
         }
@@ -120,12 +181,12 @@ namespace DatosSKD.Modulo8
             {
                 List<Parametro> parametros = new List<Parametro>();
 
-                Parametro elParametro = new Parametro(RecursosBDModulo8.ParamIdRestriccion, SqlDbType.Int,
+                Parametro elParametro = new Parametro(RecursoBDRestriccionCinta.ParamIdRestriccion, SqlDbType.Int,
                         laRestriccion.ToString(), false);
                 parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosBDModulo8.EliminarRestriccionCinta, parametros);
+                laConexion.EjecutarStoredProcedure(RecursoBDRestriccionCinta.EliminarRestriccionCinta, parametros);
 
             }
             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
@@ -151,12 +212,12 @@ namespace DatosSKD.Modulo8
             {
                 List<Parametro> parametros = new List<Parametro>();
 
-                Parametro elParametro = new Parametro(RecursosBDModulo8.ParamCinta, SqlDbType.Int,
+                Parametro elParametro = new Parametro(RecursoBDRestriccionCinta.ParamCinta, SqlDbType.Int,
                         laCinta.ToString(), false);
                 parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosBDModulo8.ConsultarRestriccionCinta, parametros);
+                laConexion.EjecutarStoredProcedure(RecursoBDRestriccionCinta.ConsultarRestriccionCinta, parametros);
 
             }
             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
@@ -175,6 +236,8 @@ namespace DatosSKD.Modulo8
 
             return true;
         }
+
+
     }
 
 }

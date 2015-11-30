@@ -22,14 +22,14 @@ namespace DatosSKD.Modulo8 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosBDModulo8 {
+    internal class RecursoBDRestriccionCinta {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosBDModulo8() {
+        internal RecursoBDRestriccionCinta() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo8 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.Modulo8.RecursosBDModulo8", typeof(RecursosBDModulo8).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.Modulo8.RecursoBDRestriccionCinta", typeof(RecursoBDRestriccionCinta).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -70,6 +70,51 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DescripcionRestCinta.
+        /// </summary>
+        internal static string AliasDescripcionRestCinta {
+            get {
+                return ResourceManager.GetString("AliasDescripcionRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IdRestriccionCinta.
+        /// </summary>
+        internal static string AliasIdRestriccionCinta {
+            get {
+                return ResourceManager.GetString("AliasIdRestriccionCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PuntosMinCintas.
+        /// </summary>
+        internal static string AliasPuntosMinCintas {
+            get {
+                return ResourceManager.GetString("AliasPuntosMinCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TiempoDocente.
+        /// </summary>
+        internal static string AliasTiempoDocente {
+            get {
+                return ResourceManager.GetString("AliasTiempoDocente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_Consultar_Restriccion_Cinta.
         /// </summary>
         internal static string ConsultarRestriccionCinta {
@@ -77,14 +122,12 @@ namespace DatosSKD.Modulo8 {
                 return ResourceManager.GetString("ConsultarRestriccionCinta", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to M8_Consultar_Restricciones_Cinta.
         /// </summary>
-        internal static string ConsultarRestriccionesCinta
-        {
-            get
-            {
+        internal static string ConsultarRestriccionesCinta {
+            get {
                 return ResourceManager.GetString("ConsultarRestriccionesCinta", resourceCulture);
             }
         }
@@ -95,6 +138,15 @@ namespace DatosSKD.Modulo8 {
         internal static string EliminarRestriccionCinta {
             get {
                 return ResourceManager.GetString("EliminarRestriccionCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
             }
         }
         
@@ -167,17 +219,6 @@ namespace DatosSKD.Modulo8 {
         internal static string ParamTiempoMinimo {
             get {
                 return ResourceManager.GetString("ParamTiempoMinimo", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to IdRestriccionCinta.
-        /// </summary>
-        internal static string AliasIdRestriccionCinta
-        {
-            get
-            {
-                return ResourceManager.GetString("AliasIdRestriccionCinta", resourceCulture);
             }
         }
     }
