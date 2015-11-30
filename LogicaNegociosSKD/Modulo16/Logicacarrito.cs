@@ -192,6 +192,8 @@ namespace LogicaNegociosSKD.Modulo16
         /// </summary>
         /// <param name="idUsuario">Indica el identificador del Usuario</param>
         /// <param name="idInventario">Indica el identificador del Inventario</param>
+        /// <param name="cantidad">Indica la cantidad que se desea agregar del producto</param>
+        /// <param name="precio">El precio actual del objeto</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
 
         public bool agregarInventarioaCarrito(int idUsuario, int idInventario, int cantidad, int precio)
@@ -219,6 +221,32 @@ namespace LogicaNegociosSKD.Modulo16
                  RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
 
             }
+        }
+
+        /// <summary>
+        /// Metodo que modifica la cantidad de implementos o eventos del carrito de un usuario
+        /// </summary>
+        /// <param name="idUsuario">El ID del usuario correspondiente</param>
+        /// <param name="idItem">el ID del implemento o matricula a cambiar su cantidad en el carrito</param>
+        /// <param name="cantidad">Cantidad nueva por la cual se cambiara en el carrito</param>
+        /// <param name="tipoObjeto">Indica si nos referimos a un implemento o un evento</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool modificarCarrito(int idUsuario, int idItem, int cantidad, String tipoObjeto)
+        {
+            //Instancio el objeto BDCarrito y una respuesta de la capa de Datos
+            BDCarrito carritoBD = new BDCarrito();
+            bool respuesta = false;
+
+            //Si es un item de tipo implemento ejecuto su modificar correspondiente y espero la respuesta
+            if (tipoObjeto == "I")
+                respuesta = carritoBD.modificarCarritoImplemento(idUsuario, idItem, cantidad);
+
+            //Caso contrario nos referiremos a un evento
+            else
+                respuesta = carritoBD.modificarCarritoEvento(idUsuario,idItem,cantidad);
+
+            //Retorno la respuesta
+            return respuesta;
         }
         #endregion
     }

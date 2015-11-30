@@ -486,18 +486,19 @@ namespace DatosSKD.Modulo16
 
 
         /// <summary>
-        /// Metodo que agrega los inventarios al carrito, en el ambiente de base de datos
+        /// Metodo que agrega los implementos al carrito, en el ambiente de base de datos
         /// </summary>
-        /// <param name="idUsuario">Indica cual de las formas se eligio para pagar</param>
+        /// <param name="idPersona">el ID del usuario a modificar el carrito</param>
         /// <param name="idInventario">Todos los datos pertinentes de ese tipo de pago</param>
+        /// <param name="cantidad">La cantidad que se agregaran de ese implemento</param>
+        /// <param name="precio">El precio del implemento</param>
         /// <returns>True o False si la operacion fue exitosa o fallida</returns>
         public static bool agregarInventarioaCarrito(int idPersona, int idInventario, int cantidad, int precio)
         {
-
+            //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
             int respuesta = 1;
             bool exito = false;
-            try
-            {
+                       
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
@@ -513,17 +514,22 @@ namespace DatosSKD.Modulo16
                     SqlDbType.Int, respuesta.ToString(), true);
                 parametros.Add(parametro);
 
-                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+           try
+           {
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure esperando un resultado de una variable
                 BDConexion conexion = new BDConexion();
-                List<Resultado> result = conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
+                List<Resultado> result = conexion.EjecutarStoredProcedure
+                    (RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
                 
+               //Recorro cada una de las respuestas en la lista
                 foreach (Resultado aux in result)
                 {
+                    //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
                     if (aux.valor == "1")
                         exito = true;
                 }
-                
-
+               
+               //Retorno la respuesta
                 return exito;
             }
 
@@ -551,12 +557,93 @@ namespace DatosSKD.Modulo16
                    RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
 
             }
-            return true;
+            
+        }
+        
+        /// <summary>
+        /// Metodo que modifica la cantidad de implementos en el carrito de un Usuario en BD
+        /// </summary>
+        /// <param name="idUsuario">el ID del usuario a modificarle el carrito</param>
+        /// <param name="idImplemento">el ID del Implemento a modificar en el carrito</param>
+        /// <param name="cantidad">La cantidad a la cual se actualizara en el carrito</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool modificarCarritoImplemento(int idUsuario, int idImplemento, int cantidad)
+        {
+            //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
+            int respuesta = 1;
+            bool exito = false;
+
+            //Creo la lista de los parametros para el stored procedure y los anexo
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
+                SqlDbType.Int, idUsuario.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO,
+                SqlDbType.Int, idImplemento.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
+                SqlDbType.Int, cantidad.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
+                SqlDbType.Int, respuesta.ToString(), true);
+            parametros.Add(parametro);
+
+            try
+            {
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure esperando un resultado de una variable
+                BDConexion conexion = new BDConexion();
+                List<Resultado> result = conexion.EjecutarStoredProcedure
+                    (RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
+
+                //Recorro cada una de las respuestas en la lista
+                foreach (Resultado aux in result)
+                {
+                    //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
+                    if (aux.valor == "1")
+                        exito = true;
+                }
+
+                //Retorno la respuesta
+                return exito;
+            }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+
+            }
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
+                    RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
+                    RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
+                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+
+            }
         }
 
-
-        
-
+        /// <summary>
+        /// Metodo que modifica la cantidad de eventos en el carrito de un Usuario en BD
+        /// </summary>
+        /// <param name="idUsuario">el ID del usuario a modificarle el carrito</param>
+        /// <param name="idEvento">el ID del evento a modificar en el carrito</param>
+        /// <param name="cantidad">La cantidad a la cual se actualizara en el carrito</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool modificarCarritoEvento(int idUsuario, int idEvento, int cantidad)
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion
     }

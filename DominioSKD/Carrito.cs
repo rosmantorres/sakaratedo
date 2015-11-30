@@ -109,7 +109,7 @@ namespace DominioSKD
             {
                 //Buscamos en la lista esa matricula que tenga ese id y borramos
                 foreach (Matricula aux2 in this.listaMatricula.Reverse<Matricula>())
-                    if (int.Parse(aux2.Mat_identificador) == objetoBorrar)
+                    if (aux2.ID == objetoBorrar)
                         this.listaMatricula.Remove(aux2);
                 respuesta = true;
             }
