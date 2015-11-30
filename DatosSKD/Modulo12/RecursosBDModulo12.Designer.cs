@@ -250,6 +250,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ordenCinta.
+        /// </summary>
+        internal static string AliasOrdenCinta {
+            get {
+                return ResourceManager.GetString("AliasOrdenCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sexoCategoria.
         /// </summary>
         internal static string AliasSexo {
@@ -331,6 +340,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string Concatenar0 {
+            get {
+                return ResourceManager.GetString("Concatenar0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M12_ConsultarCintas.
         /// </summary>
         internal static string ConsultarCintas {
@@ -367,6 +385,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MM/dd/yyyy.
+        /// </summary>
+        internal static string FormatoFecha {
+            get {
+                return ResourceManager.GetString("FormatoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to El nombre de las competencias debe ser único, la competencia ya existe.
         /// </summary>
         internal static string Mensaje_Competencia_Existente {
@@ -390,6 +417,24 @@ namespace DatosSKD.Modulo12 {
         internal static string Mensaje_Error_Formato {
             get {
                 return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
         
@@ -579,6 +624,51 @@ namespace DatosSKD.Modulo12 {
         internal static string ParamTipoCompetencia {
             get {
                 return ResourceManager.GetString("ParamTipoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /.
+        /// </summary>
+        internal static string SeparadorFecha {
+            get {
+                return ResourceManager.GetString("SeparadorFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string TipoCompetencia1 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string TipoCompetencia2 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string TipoCompetencia3 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ambos.
+        /// </summary>
+        internal static string TipoCompetenciaAmbos {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaAmbos", resourceCulture);
             }
         }
         
