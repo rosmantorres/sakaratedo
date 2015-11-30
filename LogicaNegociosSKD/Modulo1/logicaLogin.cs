@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using DatosSKD.Modulo1;
 using DominioSKD;
 using ExcepcionesSKD;
+using LogicaNegociosSKD.Modulo2;
 
 namespace LogicaNegociosSKD.Modulo1
 {
@@ -29,11 +30,20 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                if (!validarCorreo(Destino))
-                    throw new Exception("correo no registrado en sistema");
-
+                String idUser = validarCorreo(Destino);
+                if (idUser==null)
+                    throw new Exception(RecursosLogicaModulo1.Mensaje_Error_CorreoNoRegistrado);
+                
+                DateTime tiempoActual = DateTime.Now;
                 String DireccionHTTP = "http://localhost:" + RecursosLogicaModulo1.puertoSAKARATEDO +
-                RecursosLogicaModulo1.direccionM1_RestablecerContraseña;
+                RecursosLogicaModulo1.direccionM1_RestablecerContraseña+
+                RecursosLogicaModulo1.variableRestablecerHTTP+
+                AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres(idUser,RecursosLogicaModulo2.claveDES)+
+                RecursosLogicaModulo1.variableFechaHTTP +
+                AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                (tiempoActual.Date.ToString(), RecursosLogicaModulo2.claveDES);
+
+                
                 String mensajeDireccion = "<br>" +  DireccionHTTP + "</br>";
                 Mail.From = new MailAddress(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO);
                 Mail.To.Add(new MailAddress(Destino));
@@ -64,9 +74,9 @@ namespace LogicaNegociosSKD.Modulo1
             }
         }
 
-        public Boolean validarCorreo(string Destino)
+        public String validarCorreo(string Destino)
         {
-            Boolean respuesta;
+            String respuesta;
             try
             {
                respuesta= DatosSKD.Modulo1.BDLogin.ValidarCorreoUsuario(Destino);
