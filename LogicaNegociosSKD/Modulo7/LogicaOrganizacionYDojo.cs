@@ -1,10 +1,5 @@
 ﻿using DatosSKD.Modulo7;
 using DominioSKD;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Modulo7
 {
@@ -13,48 +8,22 @@ namespace LogicaNegociosSKD.Modulo7
     /// </summary>
     public class LogicaOrganizacionYDojo
     {
-        #region Atributos
-        private List<DominioSKD.Organizacion> laListaDeOrganizacion;
-        private List<DominioSKD.Dojo> laListaDeDojo;
-        private List<DominioSKD.Persona> laListaDePersona;
-        private Dojo elDojo = new Dojo();
-        #endregion
-
-        #region Gets y Sets
-        public List<DominioSKD.Organizacion> LaListaDeOrganizacion
-        {
-            get { return laListaDeOrganizacion; }
-            set { laListaDeOrganizacion = value; }
-        }
-
-        public List<DominioSKD.Dojo> LaListaDeDojo
-        {
-            get { return laListaDeDojo; }
-            set { laListaDeDojo = value; }
-        }
-
-        public List<DominioSKD.Persona> LaListaDePersona
-        {
-            get { return laListaDePersona; }
-            set { laListaDePersona = value; }
-        }
-        #endregion
-
         #region Metodos
         public LogicaOrganizacionYDojo()
         {
 
         }
         /// <summary>
-        /// Metodo que llama a consulta Organizacion por id
+        /// Metodo que llama a consulta Organizacion 
         /// </summary>
+        /// <param name="idOrg"></param>
         /// <returns></returns>
-        public Organizacion obtenerDetalleOrganizacion()
+        public Organizacion obtenerDetalleOrganizacion(int idOrg)
         {
             try
             {
                 BDOrganizacion baseDeDatosOrganizacion = new BDOrganizacion();
-                return baseDeDatosOrganizacion.DetallarOrganizacion(Convert.ToInt16(elDojo.Organizacion_dojo));
+                return baseDeDatosOrganizacion.DetallarOrganizacion(idOrg);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -70,16 +39,18 @@ namespace LogicaNegociosSKD.Modulo7
             }
 
         }
-        /// <summary>
-        /// Metodo que llama a consulta dojo por id
-        /// </summary>
-        /// <returns></returns>
-        public Dojo obtenerDetalleDojo()
+
+       /// <summary>
+        /// Metodo que llama a consulta Dojo
+       /// </summary>
+       /// <param name="idDojo"></param>
+       /// <returns></returns>
+        public Dojo obtenerDetalleDojo(int idDojo)
         {
             try
             {
                 BDDojo baseDeDatosDojo = new BDDojo();
-                return baseDeDatosDojo.DetallarDojo(1);
+                return baseDeDatosDojo.DetallarDojo(idDojo);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -95,16 +66,18 @@ namespace LogicaNegociosSKD.Modulo7
             }
 
         }
+       
         /// <summary>
-        /// Metodo que llama a consulta de persona por id
+        /// Metodo que llama a consulta Persona
         /// </summary>
+        /// <param name="idPersona"></param>
         /// <returns></returns>
-        public Persona obtenerDetallePersona()
+        public Persona obtenerDetallePersona(int idPersona)
         {
             try
             {
                 BDPersona baseDeDatosPersona = new BDPersona();
-                return baseDeDatosPersona.DetallarPersona(1);
+                return baseDeDatosPersona.DetallarPersona(idPersona);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

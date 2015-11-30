@@ -257,6 +257,7 @@
     <Content Include="GUI\Modulo7\css\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
     <Content Include="GUI\Modulo7\css\jquery-ui.css" />
+    <Content Include="GUI\Modulo7\DetalleEventoInscrito.aspx" />
     <Content Include="GUI\Modulo7\js\daterange.js" />
     <Content Include="GUI\Modulo7\js\jquery-ui.js" />
     <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
@@ -1603,6 +1604,13 @@
     </Compile>
     <Compile Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx.designer.cs">
       <DependentUpon>M6_SolicitudInscripcionPre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\DetalleEventoInscrito.aspx.cs">
+      <DependentUpon>DetalleEventoInscrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\DetalleEventoInscrito.aspx.designer.cs">
+      <DependentUpon>DetalleEventoInscrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.cs">
       <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>

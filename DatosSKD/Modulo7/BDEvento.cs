@@ -143,12 +143,12 @@ namespace DatosSKD.Modulo7
 
 
         /// <summary>
-        /// Método para listar las competencias inscritas del atleta
+        /// Metodo para listar las competencias asistidas del atleta
         /// </summary>
-        /// <returns>Lista de competencias</returns>
-        public List<Competencia> ListarCompetenciasInscritas()
+        /// <param name="idPersona"></param>
+        /// <returns></returns>
+        public List<Competencia> ListarCompetenciasInscritas(int idPersona)
         {
-            int idPersona = 1;
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -203,6 +203,8 @@ namespace DatosSKD.Modulo7
                 throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
             }
         }
+        
+        
         /// <summary>
         /// Método para listar los eventos asistidos del atleta
         /// </summary>
@@ -259,6 +261,7 @@ namespace DatosSKD.Modulo7
                 throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
             }
         }
+
 
         /// <summary>
         /// Método que devuelve la fecha de una inscripción
@@ -317,9 +320,8 @@ namespace DatosSKD.Modulo7
         /// Metodo que lista los eventos a los cuales estan inscritos los atletas
         /// </summary>
         /// <returns>Lista de Evento Isncrito</returns>
-        public List<Evento> ListarEventosInscritos()
+        public List<Evento> ListarEventosInscritos(int idPersona)
         {
-            int idPersona = 1;
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -424,15 +426,15 @@ namespace DatosSKD.Modulo7
 
             //return laListaDeEventosPagos;
         }
-
+            
         /// <summary>
-        /// Metodo que lista los eventos a los cuales estan inscritos los atletas
+        /// Metodo que lista los horarios de practica de los atletas
         /// </summary>
+        /// <param name="idPersona"></param>
         /// <returns>Lista de los horarios de practica</returns>
-     
-        public List<Evento> ListarHorarioPractica()
+         
+        public List<Evento> ListarHorarioPractica(int idPersona)
         {
-            int idPersona = 1;
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();

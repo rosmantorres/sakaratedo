@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD.Modulo7;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -38,7 +39,7 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laLista = logEvento.obtenerListaDePractica();
+                    laLista = logEvento.obtenerListaDePractica(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
 
                     foreach (Evento evento in laLista)
                     {

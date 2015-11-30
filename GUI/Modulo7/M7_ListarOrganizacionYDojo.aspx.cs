@@ -1,11 +1,8 @@
 ﻿using DominioSKD;
 using LogicaNegociosSKD.Modulo7;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -34,7 +31,9 @@ namespace templateApp.GUI.Modulo7
                  try
                  {
 
-                     laPersona = laLogica.obtenerDetallePersona();
+                     laPersona = laLogica.obtenerDetallePersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                     elDojo = laLogica.obtenerDetalleDojo(laPersona.ID);
+                     laOrganizacion = laLogica.obtenerDetalleOrganizacion(elDojo.Organizacion_dojo);
                      this.nombreAtleta.Text = laPersona.Nombre;
                      this.apellidoAtleta.Text = laPersona.Apellido;
                      this.fechaNac.Text = laPersona.FechaNacimiento.ToShortDateString();

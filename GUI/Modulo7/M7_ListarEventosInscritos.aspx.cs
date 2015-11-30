@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -35,12 +36,12 @@ namespace templateApp.GUI.Modulo7
 
             #region Llenar Data Table con Eventos
             LogicaEventosInscritos logEvento = new LogicaEventosInscritos();
-            laListaCompetencias = logEvento.obtenerListaDeCompetencias();
             if (!IsPostBack)
             {
                 try
                 {
-                    laLista = logEvento.obtenerListaDeEventos();
+                    laLista = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                    laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
 
                     foreach (Evento evento in laLista)
                     {

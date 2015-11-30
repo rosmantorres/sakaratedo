@@ -21,7 +21,7 @@ namespace DatosSKD.Modulo7
                 BDConexion laConexion;
                 List<Parametro> parametros;
                 Parametro elParametro = new Parametro();
-
+               
                 try
                 {
                     laConexion = new BDConexion();

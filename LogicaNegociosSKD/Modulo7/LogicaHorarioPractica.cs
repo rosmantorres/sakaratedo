@@ -30,9 +30,12 @@ namespace LogicaNegociosSKD.Modulo7
             }
             #endregion
 
+            #region Metodos
+            /// <summary>
+            /// COnstructor
+            /// </summary>
             public LogicaHorarioPractica()
             {
-                laListaDeHorarioPractica = obtenerListaDePractica();
             }
 
             /// <summary>
@@ -41,12 +44,12 @@ namespace LogicaNegociosSKD.Modulo7
             /// <returns>
             /// Lista de objetos tipo Evento
             /// </returns>
-            public List<DominioSKD.Evento> obtenerListaDePractica()
+            public List<DominioSKD.Evento> obtenerListaDePractica(int idPersona)
             {
                 try
                 {
                     BDEvento baseDeDatosEvento = new BDEvento();
-                    return baseDeDatosEvento.ListarHorarioPractica();
+                    return baseDeDatosEvento.ListarHorarioPractica(idPersona);
                 }
                 catch (Exception e)
                 {
@@ -72,6 +75,8 @@ namespace LogicaNegociosSKD.Modulo7
                     throw e;
                 }
             }
+
+            #endregion
 
         }
     }

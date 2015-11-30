@@ -35,20 +35,20 @@ namespace LogicaNegociosSKD.Modulo7
         /// </summary>
          public LogicaEventosInscritos()
          {
-             laListaDeEventoInscrito = obtenerListaDeEventos(); 
          }
 
          #region Métodos
-        /// <summary>
-        /// Metodo que obtiene la lista de competencias inscritas
-        /// </summary>
-        /// <returns></returns>
-         public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
+      /// <summary>
+      /// Metodo que devuelve la lista de competencias inscritas
+      /// </summary>
+      /// <param name="idPersona"></param>
+      /// <returns>Lista de competencias</returns>
+         public List<DominioSKD.Competencia> obtenerListaDeCompetencias(int idPersona)
          {
              try
              {
                 BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.ListarCompetenciasInscritas();
+                return baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
              }
              catch (Exception e)
              {
@@ -57,17 +57,16 @@ namespace LogicaNegociosSKD.Modulo7
          }
 
          /// <summary>
-        /// Método que obtiene la lista de eventos inscritos
-        /// </summary>
-        /// <returns>
-        /// Lista de objetos tipo Evento
-        /// </returns>
-         public List<DominioSKD.Evento> obtenerListaDeEventos()
+         /// Metodo que devuelve la lista de eventos inscritos
+         /// </summary>
+         /// <param name="idPersona"></param>
+         /// <returns>Lista de eventos</returns>
+         public List<DominioSKD.Evento> obtenerListaDeEventos(int idPersona)
          {
              try
              {
                 BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.ListarEventosInscritos();
+                return baseDeDatosEvento.ListarEventosInscritos(idPersona);
              }
              catch (Exception e)
              {
