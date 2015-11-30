@@ -8,9 +8,8 @@
 //------------------------------------------------------------------------------
 
 namespace templateApp.GUI.Modulo13 {
-
-
-    public partial class M13_Kyu_atletas
-    {
+    
+    
+    public partial class M13_Inicio {
     }
 }

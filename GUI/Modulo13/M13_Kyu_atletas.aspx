@@ -15,7 +15,7 @@
 
      <div class="box-body table-responsive">
 
-       <table id="example" class="table table-bordered table-striped dataTable">
+      <%-- <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>Foto</th>
@@ -95,7 +95,7 @@
                 </tr>               
                              
 			</tbody>
-</table>
+</table>--%>
         </div>
     <script type="text/javascript">
         $(document).ready(function () {
