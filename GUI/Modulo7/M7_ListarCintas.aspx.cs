@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
-
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -29,8 +29,7 @@ namespace templateApp.GUI.Modulo7
 
             String detalleString = Request.QueryString["compDetalle"];
             DateTime fechaInscripcion;
-            int idPersona = 1;
-
+            
             if (detalleString != null)
             {
                 llenarModalInfo(int.Parse(detalleString));
@@ -44,7 +43,7 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laLista = logEvento.obtenerListaDeCintas(idPersona);
+                    laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
 
                     foreach (Cinta cinta in laLista)
                     {

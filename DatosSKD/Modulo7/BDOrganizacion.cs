@@ -16,7 +16,7 @@ namespace DatosSKD.Modulo7
             /// </summary>
             /// <param name="idOrg"></param>
             /// <returns></returns>
-            public static Organizacion DetallarOrganizacion(int idOrg)
+            public Organizacion DetallarOrganizacion(int idOrg)
             {
                 BDConexion laConexion;
                 List<Parametro> parametros;

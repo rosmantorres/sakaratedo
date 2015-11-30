@@ -11,7 +11,7 @@ namespace DatosSKD.Modulo7
 {
     public class BDUbicacion
     {
-        public static Ubicacion DetallarUbicacion(int idUbicacion)
+        public Ubicacion DetallarUbicacion(int idUbicacion)
         {
              BDConexion laConexion;
             List<Parametro> parametros;

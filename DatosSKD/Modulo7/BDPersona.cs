@@ -16,7 +16,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idPersona"></param>
         /// <returns></returns>
-        public static Persona DetallarPersona(int idPersona)
+        public Persona DetallarPersona(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;

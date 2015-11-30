@@ -19,7 +19,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idEvento">Número entero que representa el ID del evento</param>
         /// <returns>Objeto de tipo Evento</returns>
-        public static Evento DetallarEvento(int idEvento)
+        public Evento DetallarEvento(int idEvento)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -79,7 +79,7 @@ namespace DatosSKD.Modulo7
         /// Método para listar las competencias asistidas del atleta
         /// </summary>
         /// <returns>Lista de competencias</returns>
-        public static List<Competencia> ListarCompetenciasAsistidas(int idPersona)
+        public List<Competencia> ListarCompetenciasAsistidas(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -141,7 +141,7 @@ namespace DatosSKD.Modulo7
         /// Método para listar las competencias inscritas del atleta
         /// </summary>
         /// <returns>Lista de competencias</returns>
-        public static List<Competencia> ListarCompetenciasInscritas()
+        public List<Competencia> ListarCompetenciasInscritas()
         {
             int idPersona = 1;
             BDConexion laConexion;
@@ -202,7 +202,7 @@ namespace DatosSKD.Modulo7
         /// Método para listar los eventos asistidos del atleta
         /// </summary>
         /// <returns>Lista de eventos</returns>
-        public static List<Evento> ListarEventosAsistidos(int idPersona)
+        public List<Evento> ListarEventosAsistidos(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -259,7 +259,7 @@ namespace DatosSKD.Modulo7
         /// Método que devuelve la fecha de una inscripción
         /// </summary>
         /// <returns>Fecha de inscripción</returns>
-        public static DateTime fechaInscripcion(int idPersona, int idEvento)
+        public DateTime fechaInscripcion(int idPersona, int idEvento)
         {
 
             BDConexion laConexion;
@@ -312,7 +312,7 @@ namespace DatosSKD.Modulo7
         /// Metodo que lista los eventos a los cuales estan inscritos los atletas
         /// </summary>
         /// <returns>Lista de Evento Isncrito</returns>
-        public static List<Evento> ListarEventosInscritos()
+        public List<Evento> ListarEventosInscritos()
         {
             int idPersona = 1;
             BDConexion laConexion;
@@ -365,7 +365,7 @@ namespace DatosSKD.Modulo7
         }
 
    ///Metodo que lista los eventos pagos del atleta
-        public static List<Evento> ListarEventosPagos()
+        public List<Evento> ListarEventosPagos()
         {
             
             int idPersona = 1;
@@ -425,7 +425,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <returns>Lista de los horarios de practica</returns>
      
-        public static List<Evento> ListarHorarioPractica()
+        public List<Evento> ListarHorarioPractica()
         {
             int idPersona = 1;
             BDConexion laConexion;

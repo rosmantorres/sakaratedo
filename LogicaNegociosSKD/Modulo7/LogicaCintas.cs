@@ -46,7 +46,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDCinta.ListarCintasObtenidas(idPersona);
+                BDCinta baseDeDatosCinta = new BDCinta();
+                return baseDeDatosCinta.ListarCintasObtenidas(idPersona);
             }
             catch (Exception e)
             {
@@ -63,7 +64,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDCinta.DetallarCinta(idCinta);
+                BDCinta baseDeDatosCinta = new BDCinta();
+                return baseDeDatosCinta.DetallarCinta(idCinta);
             }
             catch (Exception e)
             {
@@ -82,7 +84,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDCinta.fechaCinta(idPersona, idCinta);
+                BDCinta baseDeDatosCinta = new BDCinta();
+                return baseDeDatosCinta.fechaCinta(idPersona, idCinta);
             }
             catch (Exception e)
             {
@@ -100,7 +103,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDCinta.UltimaCinta(idPersona);
+                BDCinta baseDeDatosCinta = new BDCinta();
+                return baseDeDatosCinta.UltimaCinta(idPersona);
             }
             catch (Exception e)
             {

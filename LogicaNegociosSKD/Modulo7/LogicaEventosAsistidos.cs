@@ -41,7 +41,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try 
             {
-                return BDEvento.ListarEventosAsistidos(idPersona);
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.ListarEventosAsistidos(idPersona);
             }
             catch (Exception e)
             {
@@ -57,7 +58,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDEvento.ListarCompetenciasAsistidas(idPersona);
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
             }
             catch (Exception e)
             {
@@ -74,7 +76,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDEvento.DetallarEvento(idEvento);
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.DetallarEvento(idEvento);
             }
             catch (Exception e)
             {
@@ -92,7 +95,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDEvento.fechaInscripcion(idPersona, idEvento);
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.fechaInscripcion(idPersona, idEvento);
             }
             catch (Exception e)
             {

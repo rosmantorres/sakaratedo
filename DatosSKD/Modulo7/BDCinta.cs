@@ -17,7 +17,7 @@ namespace DatosSKD.Modulo7
         /// Método para listar las cintas obtenidas del atleta
         /// </summary>
         /// <returns>Lista de cintas</returns>
-        public static List<Cinta> ListarCintasObtenidas(int idPersona)
+        public List<Cinta> ListarCintasObtenidas(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -75,7 +75,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idCinta">Número entero que representa el ID de la cinta</param>
         /// <returns>Objeto de tipo Cinta</returns>
-        public static Cinta DetallarCinta(int idCinta)
+        public Cinta DetallarCinta(int idCinta)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -132,7 +132,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idPersona">Número entero que representa el ID de la Persona</param>
         /// <returns>Objeto de tipo Cinta</returns>
-        public static Cinta UltimaCinta(int idPersona)
+        public Cinta UltimaCinta(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -185,10 +185,10 @@ namespace DatosSKD.Modulo7
         }
 
         /// <summary>
-        /// Método que devuelve la fecha de una inscripción
+        /// Método que devuelve la fecha de la obtencion de las cintas para una persona
         /// </summary>
         /// <returns>Fecha de inscripción</returns>
-        public static DateTime fechaCinta(int idPersona, int idCinta)
+        public DateTime fechaCinta(int idPersona, int idCinta)
         {
 
             BDConexion laConexion;

@@ -11,7 +11,7 @@ namespace DatosSKD.Modulo7
 {
     class BDTipoEvento
     {
-        public static TipoEvento DetallarTipoEvento(int idTipoEvento)
+        public TipoEvento DetallarTipoEvento(int idTipoEvento)
         {
             BDConexion laConexion;
             List<Parametro> parametros;

@@ -42,7 +42,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try 
             {
-                return BDEvento.ListarEventosPagos();
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.ListarEventosPagos();
             }
             catch (Exception e)
             {
@@ -59,7 +60,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDEvento.DetallarEvento(idEvento);
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.DetallarEvento(idEvento);
             }
             catch (Exception e)
             {

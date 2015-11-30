@@ -19,7 +19,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idEvento">Número entero que representa el ID de la matricula</param>
         /// <returns>Objeto de tipo Matricula</returns>
-        public static Matricula DetallarMatricula(int idMatricula)
+        public Matricula DetallarMatricula(int idMatricula)
         {
 
             BDConexion laConexion;
@@ -79,7 +79,7 @@ namespace DatosSKD.Modulo7
         /// Método para listar las matriculas pagadas de los atletas
         /// </summary>
         /// <returns>Lista de matriculas</returns>
-        public static List<Matricula> ListarMatriculasPagas()
+        public List<Matricula> ListarMatriculasPagas()
         {
             int idPersona = 1;
             BDConexion laConexion;

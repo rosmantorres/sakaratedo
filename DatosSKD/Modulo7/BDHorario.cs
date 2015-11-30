@@ -14,7 +14,7 @@ namespace DatosSKD.Modulo7
     public class BDHorario
     {
 
-        public static Horario DetallarHorario(int idHorario)
+        public Horario DetallarHorario(int idHorario)
         {
             BDConexion laConexion;
             List<Parametro> parametros;

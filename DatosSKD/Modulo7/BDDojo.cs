@@ -19,7 +19,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idDojo"></param>
         /// <returns></returns>
-        public static Dojo DetallarDojo(int idDojo)
+        public Dojo DetallarDojo(int idDojo)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
