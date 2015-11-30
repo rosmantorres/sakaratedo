@@ -40,12 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asistencia.cs" />
+    <Compile Include="Atleta.cs" />
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
+    <Compile Include="Correo.cs" />
     <Compile Include="Cuenta.cs" />
+    <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="HistorialCinta.cs" />
+    <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Inscripcion.cs" />
+    <Compile Include="Matricula.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
@@ -66,6 +71,7 @@
     <Compile Include="ResultadoKumite.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
+    <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Ubicacion.cs" />
   </ItemGroup>
