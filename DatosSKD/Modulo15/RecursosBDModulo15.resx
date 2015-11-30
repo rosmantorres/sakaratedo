@@ -142,6 +142,9 @@
   <data name="nombreProcedureModificarInventario" xml:space="preserve">
     <value>Procedure_modificarImplemento</value>
   </data>
+  <data name="nombreProcedureUsuario" xml:space="preserve">
+    <value>M15_ConsultarUsuarioDojo</value>
+  </data>
   <data name="parametroCantidadInventario" xml:space="preserve">
     <value>@_invCantidad</value>
   </data>
@@ -184,6 +187,9 @@
   <data name="parametroTipoImplemento" xml:space="preserve">
     <value>@_impTipo</value>
   </data>
+  <data name="parametroUsuario" xml:space="preserve">
+    <value>@_perUsuario</value>
+  </data>
   <data name="tabla_cantidadImplemento" xml:space="preserve">
     <value>inv_cantidad_total</value>
   </data>
@@ -225,5 +231,8 @@
   </data>
   <data name="tabla_tipoImplemento" xml:space="preserve">
     <value>imp_tipo</value>
+  </data>
+  <data name="tabla_usuario" xml:space="preserve">
+    <value>Usuario</value>
   </data>
 </root>

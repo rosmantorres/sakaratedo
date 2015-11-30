@@ -8,7 +8,7 @@ using ExcepcionesSKD.Modulo15;
 using ExcepcionesSKD;
 using DatosSKD.Modulo15;
 using DominioSKD;
-
+using DatosSKD.Modulo4;
 namespace LogicaNegociosSKD.Modulo15
 {
     public class LogicaImplemento
@@ -109,6 +109,37 @@ namespace LogicaNegociosSKD.Modulo15
         }
         #endregion
 
+
+        #region usuarioImplementoLogica
+        public Dojo usuarioImplementoLogica(String usuario)
+        {
+            Dojo dojo = null;
+            int idDojo;
+            try
+            {
+                idDojo = ConexionBaseDatos.usuarioImplementoDatos(usuario);
+                dojo = BDDojo.DetallarDojo(idDojo);
+            }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return dojo;
+        }
+        #endregion
 
         #region implementoInventarioLogica
         public Implemento implementoInventarioLogica(int idImplemento)

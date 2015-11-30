@@ -17,7 +17,8 @@ namespace templateApp.GUI.Modulo15
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-
+        public String usuario;
+        private Dojo dojo;
 
         
         #region listaImplementosInterfaz
@@ -156,6 +157,12 @@ namespace templateApp.GUI.Modulo15
            
             ((SKD)Page.Master).IdModulo = "15";
             //variables agregar
+         
+            InterfazImplemento implementoInterfaz=null;
+            implementoInterfaz = new InterfazImplemento();
+
+
+
             int id_implemento = Convert.ToInt16(Request.Form["id_implemento"]);
             String nombre_implemento = Request.Form["nombre_implemento"];
             String tipo_implemento = Request.Form["tipo_implemento"];
@@ -185,7 +192,12 @@ namespace templateApp.GUI.Modulo15
             //usuario y rol para manejar
             String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
-          
+            Dojo dojo = implementoInterfaz.usuarioImplementoInterfaz(usuario);
+
+            this.usuario = usuario;
+            this.dojo = dojo;
+            this.nombre_dojo.InnerText=dojo.Nombre_dojo;
+            ///////////////////////////////////
 
 
             if (agregar != null){
@@ -197,7 +209,8 @@ namespace templateApp.GUI.Modulo15
                     imagen_implemento = archivo.FileName;
                     archivo.SaveAs(TargetLocation + imagen_implemento);
                     //pasar dado el usuario a que dojo pertenece
-                    Dojo dojo = new Dojo(id_dojo);
+
+
                     Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                     try
                     {
@@ -244,7 +257,7 @@ namespace templateApp.GUI.Modulo15
                     #endregion 
 
                     //con el usuario usar para para obtener el dojo 
-                    Dojo dojo=new Dojo(id_dojo);
+                  //  Dojo dojo=new Dojo(id_dojo);
                     Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                     try {
 
@@ -267,7 +280,7 @@ namespace templateApp.GUI.Modulo15
 
                 if (eliminar.Equals("true"))
                 {
-                    Dojo dojo = new Dojo(id_dojo);
+                   
 
                     int idInventario = Convert.ToInt16(Request.QueryString["idImplemento"]);
                     try {

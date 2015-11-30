@@ -133,6 +133,15 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarUsuarioDojo.
+        /// </summary>
+        internal static string nombreProcedureUsuario {
+            get {
+                return ResourceManager.GetString("nombreProcedureUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_invCantidad.
         /// </summary>
         internal static string parametroCantidadInventario {
@@ -259,6 +268,15 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @_perUsuario.
+        /// </summary>
+        internal static string parametroUsuario {
+            get {
+                return ResourceManager.GetString("parametroUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to inv_cantidad_total.
         /// </summary>
         internal static string tabla_cantidadImplemento {
@@ -381,6 +399,15 @@ namespace DatosSKD.Modulo15 {
         internal static string tabla_tipoImplemento {
             get {
                 return ResourceManager.GetString("tabla_tipoImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        internal static string tabla_usuario {
+            get {
+                return ResourceManager.GetString("tabla_usuario", resourceCulture);
             }
         }
     }

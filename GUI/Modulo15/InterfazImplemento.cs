@@ -73,7 +73,6 @@ namespace templateApp.GUI.Modulo15
 
         #endregion
 
-
         #region listarInventarioInterfaz2
         public List<Implemento> listarInventarioInterfaz2(Dojo dojo)
         {
@@ -106,7 +105,6 @@ namespace templateApp.GUI.Modulo15
         }
 
         #endregion
-
 
         #region implementoInventarioInterfaz
         public Implemento implementoInventarioInterfaz(int idImplemento)
@@ -141,7 +139,6 @@ namespace templateApp.GUI.Modulo15
         }
 
         #endregion
-
 
         #region eliminarInventarioInterfaz
         public void eliminarInventarioInterfaz(int idInventario,Dojo dojo) {
@@ -180,7 +177,6 @@ namespace templateApp.GUI.Modulo15
         #endregion
 
         #region modificarInventarioInterfaz 
-
         public void modificarInventarioInterfaz(Implemento implemento)
         {
 
@@ -210,6 +206,38 @@ namespace templateApp.GUI.Modulo15
 
         }
         #endregion
-    
+
+        #region usuarioImplementoInterfaz
+        public Dojo usuarioImplementoInterfaz(String usuario)
+        {
+            Dojo dojo=null;
+            LogicaImplemento logicaImplemento=null;
+            try
+            {
+               logicaImplemento=new LogicaImplemento();
+
+                dojo = logicaImplemento.usuarioImplementoLogica(usuario);
+            }
+
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ErrorEnParametroDeProcedure ex)
+            {
+
+                throw ex;
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return dojo;
+        }
+        #endregion
+
     }
 }

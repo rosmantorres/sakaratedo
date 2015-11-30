@@ -44,12 +44,15 @@ Gesti&oacuten de Inventario
             }
            
         }*/
-    
-        public void imprimirLista(DominioSKD.Dojo dojo)
+        public void imprimirLista()
         {
             List<DominioSKD.Implemento> listaImplementos=null;
             String consultar = Request.QueryString["consultar"];
-       
+
+
+            templateApp.GUI.Modulo15.InterfazImplemento interfazImplemento=new templateApp.GUI.Modulo15.InterfazImplemento();
+            DominioSKD.Dojo dojo= interfazImplemento.usuarioImplementoInterfaz(this.usuario);
+            
             if (consultar != null) {
                 if (consultar.Equals("Activo"))
                 {
@@ -117,7 +120,7 @@ Gesti&oacuten de Inventario
     <div id="alert2" runat="server">
     </div>
 
-       <h3 id="nombre-dojo">Dojo</h3>
+       <center><h3 id="nombre_dojo" runat="server">Dojo</h3></center>
        <div class ="row">
         <div class="col-lg-3"> 
 
@@ -165,8 +168,8 @@ Gesti&oacuten de Inventario
 			<tbody>
 
                    <% 
-                       DominioSKD.Dojo dojo=new DominioSKD.Dojo(1);
-                       imprimirLista(dojo);  %>
+        
+                       imprimirLista();  %>
             
           
 

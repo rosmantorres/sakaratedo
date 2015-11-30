@@ -59,5 +59,257 @@ namespace DatosSKD.Modulo4 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emailDojo.
+        /// </summary>
+        internal static string AliasEmailDojo {
+            get {
+                return ResourceManager.GetString("AliasEmailDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to estiloDojo.
+        /// </summary>
+        internal static string AliasEstiloDojo {
+            get {
+                return ResourceManager.GetString("AliasEstiloDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaRegistroDojo.
+        /// </summary>
+        internal static string AliasFechaDojo {
+            get {
+                return ResourceManager.GetString("AliasFechaDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idDojo.
+        /// </summary>
+        internal static string AliasIdDojo {
+            get {
+                return ResourceManager.GetString("AliasIdDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to organizacionDojo.
+        /// </summary>
+        internal static string AliasIdOrganizacion {
+            get {
+                return ResourceManager.GetString("AliasIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idUbicacion.
+        /// </summary>
+        internal static string AliasIdUbicacion {
+            get {
+                return ResourceManager.GetString("AliasIdUbicacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to latitudDireccion.
+        /// </summary>
+        internal static string AliasLatitudDireccion {
+            get {
+                return ResourceManager.GetString("AliasLatitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to logoDojo.
+        /// </summary>
+        internal static string AliasLogoDojo {
+            get {
+                return ResourceManager.GetString("AliasLogoDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to longitudDireccion.
+        /// </summary>
+        internal static string AliasLongitudDireccion {
+            get {
+                return ResourceManager.GetString("AliasLongitudDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreCiudad.
+        /// </summary>
+        internal static string AliasNombreCiudad {
+            get {
+                return ResourceManager.GetString("AliasNombreCiudad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreDireccion.
+        /// </summary>
+        internal static string AliasNombreDireccion {
+            get {
+                return ResourceManager.GetString("AliasNombreDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreDojo.
+        /// </summary>
+        internal static string AliasNombreDojo {
+            get {
+                return ResourceManager.GetString("AliasNombreDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreEstado.
+        /// </summary>
+        internal static string AliasNombreEstado {
+            get {
+                return ResourceManager.GetString("AliasNombreEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rifDojo.
+        /// </summary>
+        internal static string AliasRifDojo {
+            get {
+                return ResourceManager.GetString("AliasRifDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to statusDojo.
+        /// </summary>
+        internal static string AliasStatusDojo {
+            get {
+                return ResourceManager.GetString("AliasStatusDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to telefonoDojo.
+        /// </summary>
+        internal static string AliasTelefonoDojo {
+            get {
+                return ResourceManager.GetString("AliasTelefonoDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_BuscarIdDojo.
+        /// </summary>
+        internal static string BuscarIdDojo {
+            get {
+                return ResourceManager.GetString("BuscarIdDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_006.
+        /// </summary>
+        internal static string Codigo_Dojo_Existente {
+            get {
+                return ResourceManager.GetString("Codigo_Dojo_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_005.
+        /// </summary>
+        internal static string Codigo_Dojo_Inexistente {
+            get {
+                return ResourceManager.GetString("Codigo_Dojo_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarDojos.
+        /// </summary>
+        internal static string ConsultarDojos {
+            get {
+                return ResourceManager.GetString("ConsultarDojos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarDojosXId.
+        /// </summary>
+        internal static string ConsultarDojoXId {
+            get {
+                return ResourceManager.GetString("ConsultarDojoXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El rif del Dojo debe ser único, el Dojo ya existe.
+        /// </summary>
+        internal static string Mensaje_Dojo_Existente {
+            get {
+                return ResourceManager.GetString("Mensaje_Dojo_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El Dojo no existe.
+        /// </summary>
+        internal static string Mensaje_Dojo_Inexistente {
+            get {
+                return ResourceManager.GetString("Mensaje_Dojo_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idDojo.
+        /// </summary>
+        internal static string ParamIdDojo {
+            get {
+                return ResourceManager.GetString("ParamIdDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idOrganizacion.
+        /// </summary>
+        internal static string ParamIdOrganizacion {
+            get {
+                return ResourceManager.GetString("ParamIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numDojo.
+        /// </summary>
+        internal static string ParamSalidaNumDojo {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumDojo", resourceCulture);
+            }
+        }
     }
 }
