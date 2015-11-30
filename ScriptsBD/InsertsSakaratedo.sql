@@ -4358,20 +4358,6 @@ GETDATE(),
 );
 
 
-
-
-
--- INSERTS COMPRA CARRITO--
-
-
-
-
-
-
-
-
-
-
 -- INSERTS IMPLEMENTO--
 
 insert into implemento (imp_imagen,imp_nombre,imp_tipo,imp_marca,imp_color,imp_talla,imp_estatus,imp_precio,imp_stockmin,imp_descripcion) 
@@ -4413,14 +4399,6 @@ insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (22,3,5);
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (13,4,5);
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (4,5,5);
-
-
-
--- INSERTS DETALLE COMPRA--
-
-
-
-
 
 
 -- INSERTS PLA_DAT--
@@ -4648,3 +4626,52 @@ INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_
 
 
 -- INSERTS RESULTADO KUMITE--
+
+
+-- INSERTS COMPRA CARRITO Y DETALLE COMPRA --
+
+/*===================================INSERTS MODULO 16====================================*/
+
+
+/*-------------------------------COMPRA_CARRITO----------------------------*/
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-11-28','PAGADO',1);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Deposito','2016-11-28','PAGADO',2);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Transferencia','2015-11-28','PAGADO',3);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2016-11-28','PAGADO',4);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Deposito','2015-11-28','PAGADO',5);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Transferencia','2016-11-28','PAGADO',6);
+
+INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',7);
+
+INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',8);
+
+/*-------------------------------------------------------------------------*/
+
+/*------------------------------DETALLE_COMPRA-----------------------------*/
+
+INSERT INTO DETALLE_COMPRA VALUES (1,4500,4,NULL,NULL,1,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,3000,3,NULL,NULL,2,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,1200,2,NULL,NULL,4,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,5000,4,NULL,NULL,5,NULL,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,0,1,NULL,NULL,NULL,1,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (1,2000,1,NULL,NULL,NULL,2,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (7,1150,1,NULL,NULL,NULL,3,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (8,4500,5,NULL,NULL,3,NULL,NULL);
+
+/*-------------------------------------------------------------------------*/
+
+
+/*=======================================================================================*/
