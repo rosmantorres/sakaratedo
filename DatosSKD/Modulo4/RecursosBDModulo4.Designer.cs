@@ -250,7 +250,7 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M4_ConsultarDojoXId.
+        ///   Busca una cadena traducida similar a M4_ConsultarDojosXId.
         /// </summary>
         internal static string ConsultarDojoXId {
             get {

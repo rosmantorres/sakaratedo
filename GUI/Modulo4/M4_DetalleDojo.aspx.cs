@@ -36,8 +36,8 @@ namespace templateApp.GUI.Modulo4
                         this.statusDojo.Text = elDojo.Status_dojo.ToString();
                         this.estiloDojo.Text = elDojo.Estilo_dojo.ToString();
                         this.orgDojo.Text = elDojo.Organizacion_dojo.ToString();
-                        laLatitud = elDojo.Ubicacion.Latitud.ToString();
-                        laLongitud = elDojo.Ubicacion.Longitud.ToString();
+                        laLatitud = elDojo.Ubicacion.Latitud;
+                        laLongitud = elDojo.Ubicacion.Longitud;
                     }
                     catch (ExcepcionesSKD.ExceptionSKD ex)
                     {

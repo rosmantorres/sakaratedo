@@ -85,8 +85,7 @@ namespace DatosSKD.Modulo4
            
             try
             {
-                if (BuscarIDDojo(elDojo))
-                {
+                
                     laConexion = new BDConexion();
                     parametros = new List<Parametro>();
 
@@ -119,11 +118,7 @@ namespace DatosSKD.Modulo4
 
                     }
                     return elDojo;
-                }
-                else
-                    throw new ExcepcionesSKD.Modulo4.DojoInexistenteException(RecursosBDModulo4.Codigo_Dojo_Inexistente,
-                                RecursosBDModulo4.Mensaje_Dojo_Inexistente, new Exception());
-
+              
             }
             catch (SqlException ex)
             {
@@ -162,7 +157,7 @@ namespace DatosSKD.Modulo4
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosBDModulo4.ParamIdDojo, SqlDbType.Int
-                                                      , elDojo.Dojo_Id.ToString(), false);
+                                                      , elDojo.Id_dojo.ToString(), false);
                 parametros.Add(elParametro);
 
                 elParametro = new Parametro(RecursosBDModulo4.ParamSalidaNumDojo, SqlDbType.Int, true);

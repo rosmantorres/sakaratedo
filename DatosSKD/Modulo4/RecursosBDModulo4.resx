@@ -183,7 +183,7 @@
     <value>M4_ConsultarDojos</value>
   </data>
   <data name="ConsultarDojoXId" xml:space="preserve">
-    <value>M4_ConsultarDojoXId</value>
+    <value>M4_ConsultarDojosXId</value>
   </data>
   <data name="Mensaje_Dojo_Existente" xml:space="preserve">
     <value>El rif del Dojo debe ser único, el Dojo ya existe</value>
