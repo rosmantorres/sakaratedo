@@ -124,6 +124,9 @@
     <value>Contraseña y/o usuario incorrecto.</value>
     <comment>mensae para alertar sobre usuario y/o contrasea incorrecto en el login</comment>
   </data>
+  <data name="logErrRestablecer" xml:space="preserve">
+    <value>Su enlace ha caducado por favor vuelva a solicitar reestablecer su contraseña</value>
+  </data>
   <data name="logInfo" xml:space="preserve">
     <value>¡Correo enviado!</value>
   </data>

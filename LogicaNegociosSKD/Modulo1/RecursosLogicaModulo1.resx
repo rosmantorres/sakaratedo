@@ -186,4 +186,25 @@
     <value>-</value>
     <comment>este mismo se encuentra en RecursosMaster</comment>
   </data>
+  <data name="variableRestablecerHTTP" xml:space="preserve">
+    <value>?restablecer=</value>
+  </data>
+  <data name="Mensaje_Error_CorreoNoRegistrado" xml:space="preserve">
+    <value>El correo no se encuentra registrado en sistema</value>
+  </data>
+  <data name="variableFechaHTTP" xml:space="preserve">
+    <value>&amp;fecha=</value>
+  </data>
+  <data name="variableTiempoHTTP" xml:space="preserve">
+    <value>&amp;hora=</value>
+  </data>
+  <data name="variableFecha" xml:space="preserve">
+    <value>fecha</value>
+  </data>
+  <data name="variableRestablecer" xml:space="preserve">
+    <value>restablecer</value>
+  </data>
+  <data name="variableTiempo" xml:space="preserve">
+    <value>tiempo</value>
+  </data>
 </root>

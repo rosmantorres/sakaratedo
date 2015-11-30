@@ -43,7 +43,7 @@ namespace LogicaNegociosSKD.Modulo2
             return des;
         }
 
-        public string EncriptarCadenaDeCaracteres(string textoPlano, string contrasegnia)
+        public static string EncriptarCadenaDeCaracteres(string textoPlano, string contrasegnia)
         {
             // Primero debemos convertir el texto plano en `textoPlano`
             // en un arreglo de bytes:
@@ -66,7 +66,7 @@ namespace LogicaNegociosSKD.Modulo2
             return Convert.ToBase64String(flujoMemoria.ToArray());
         }
     
-        public string DesencriptarCadenaDeCaracteres(string textoEncriptado, string contrasegnia)
+        public static string DesencriptarCadenaDeCaracteres(string textoEncriptado, string contrasegnia)
         {
             // Primero debemos convertir el texto plano en `textoPlano`
             // en un arreglo de bytes:

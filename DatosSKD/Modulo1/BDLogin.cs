@@ -88,7 +88,7 @@ namespace DatosSKD.Modulo1
         }
 
 
-        public static Boolean ValidarCorreoUsuario(string correo_usuario)
+        public static String ValidarCorreoUsuario(string correo_usuario)
         {
 
             BDConexion laConexion;
@@ -113,12 +113,12 @@ namespace DatosSKD.Modulo1
                 }
                 bool respuesta = false;
                 Console.WriteLine(elCorreo.Count.ToString());
-                if (elCorreo.Count == 1)
-                 respuesta = true; 
+                if (elCorreo.Count == 0)
+                 return null; 
                 else if (elCorreo.Count > 1)
                  throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno); 
 
-                return respuesta;
+                return elCorreo[0];
 
             }
             catch (SqlException e)
