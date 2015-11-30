@@ -15,7 +15,6 @@
 			    Agregar Implemento
 		    </li>
 	    </ol>
-        <a href="M15_AgregarImplemento.aspx">M15_AgregarImplemento.aspx</a>
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
@@ -175,13 +174,13 @@ Agregar Implemento
                   cantidad_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90,
+                      maxlength: 8,
                       number:true
                   },
                   precio_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90,
+                      maxlength: 8,
                       number: true
                   },
                   color_implemento: {
@@ -197,18 +196,18 @@ Agregar Implemento
                   talla_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90
+                      maxlength: 5
                   },
                   stock_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90,
+                      maxlength: 8,
                       number: true
                   },
                   descripcion_implemento: {
                       required: true,
                       minlength: 5,
-                      maxlength: 90,
+                      maxlength: 120,
                   },
                   imagen_implemento: {
                       required: true
@@ -228,15 +227,19 @@ Agregar Implemento
                  },
                  cantidad_implemento: {
                      required: "Este campo es obligatorio",
-                     minlength: "Minimo tiene que ser 2 caracteres",
-                     maxlength: "Maximo tiene que ser 90 caracteres",
-                     number: "solo se aceptan numeros"
+                     minlength: "Minimo tiene que ser 1 digito",
+                     maxlength: "Maximo tiene que ser 8 digitos",
+                     number: "solo se aceptan numeros",
+                     range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
                  },
                  precio_implemento: {
                      required: "Este campo es obligatorio",
-                     minlength: "Minimo tiene que ser 2 caracteres",
-                     maxlength: "Maximo tiene que ser 90 caracteres",
-                     number: "solo se aceptan numeros"
+                     minlength: "Minimo tiene que ser 1 digito",
+                     maxlength: "Maximo tiene que ser 8 digitos",
+                     number: "solo se aceptan numeros",
+                     range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
 
                  },
                  color_implemento: {
@@ -251,20 +254,22 @@ Agregar Implemento
                  },
                  talla_implemento: {
                      required: "Este campo es obligatorio",
-                     minlength: "Minimo tiene que ser 2 caracteres",
-                     maxlength: "Maximo tiene que ser 90 caracteres"
+                     minlength: "Minimo tiene que ser 1 caracteres",
+                     maxlength: "Maximo tiene que ser 5 caracteres"
                  },
                  stock_implemento: {
                      required: "Este campo es obligatorio",
-                     minlength: "Minimo tiene que ser 2 caracteres",
-                     maxlength: "Maximo tiene que ser 90 caracteres",
-                     number: "solo se aceptan numeros"
+                     minlength: "Minimo tiene que ser 1 digito",
+                     maxlength: "Maximo tiene que ser 8 digitos",
+                     number: "solo se aceptan numeros",
+                     range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
 
                  },
                  descripcion_implemento: {
                      required: "Este campo es obligatorio",
                      minlength: "Minimo tiene que ser 5 caracteres",
-                     maxlength: "Maximo tiene que ser 90 caracteres"
+                     maxlength: "Maximo tiene que ser 120 caracteres"
 
                  },
                  imagen_implemento: {

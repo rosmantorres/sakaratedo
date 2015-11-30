@@ -211,14 +211,16 @@ Gesti&oacuten de Inventario
                   ctl00$contenidoCentral$cantidad_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90,
-                      number: true
+                      maxlength: 8,
+                      number: true,
+                      range: [0, 99999999]
                   },
                   ctl00$contenidoCentral$precio_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90,
-                      number: true
+                      maxlength: 8,
+                      number: true,
+                      range: [0, 99999999]
                   },
                   ctl00$contenidoCentral$color_implemento: {
                       required: true,
@@ -233,18 +235,19 @@ Gesti&oacuten de Inventario
                   ctl00$contenidoCentral$talla_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90
+                      maxlength: 5
                   },
                   ctl00$contenidoCentral$stock_implemento: {
                       required: true,
                       minlength: 1,
-                      maxlength: 90,
-                      number: true
+                      maxlength: 8,
+                      number: true,
+                      range: [0, 99999999]
                   },
                   ctl00$contenidoCentral$descripcion_implemento: {
                       required: true,
                       minlength: 5,
-                      maxlength: 90,
+                      maxlength: 120,
                   },
                   ctl00$contenidoCentral$imagen_implemento: {
                       required: true
@@ -266,15 +269,19 @@ Gesti&oacuten de Inventario
                   },
                   ctl00$contenidoCentral$cantidad_implemento: {
                       required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres",
-                      number: "solo se aceptan numeros"
+                      minlength: "Minimo tiene que ser 1 digito",
+                      maxlength: "Maximo tiene que ser 8 digitos",
+                      number: "solo se aceptan numeros",
+                      range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
                   },
                   ctl00$contenidoCentral$precio_implemento: {
                       required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres",
-                      number: "solo se aceptan numeros"
+                      minlength: "Minimo tiene que ser 1 digito",
+                      maxlength: "Maximo tiene que ser 8 digitos",
+                      number: "solo se aceptan numeros",
+                      range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
 
                   },
                   ctl00$contenidoCentral$color_implemento: {
@@ -289,20 +296,22 @@ Gesti&oacuten de Inventario
                   },
                   ctl00$contenidoCentral$talla_implemento: {
                       required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres"
+                      minlength: "Minimo tiene que ser 1 caracter",
+                      maxlength: "Maximo tiene que ser 5 caracteres"
                   },
                   ctl00$contenidoCentral$stock_implemento: {
                       required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres",
-                      number: "solo se aceptan numeros"
+                      minlength: "Minimo tiene que ser 1 digito",
+                      maxlength: "Maximo tiene que ser 8 digitos",
+                      number: "solo se aceptan numeros",
+                      range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
 
                   },
                   ctl00$contenidoCentral$descripcion_implemento: {
                       required: "Este campo es obligatorio",
                       minlength: "Minimo tiene que ser 5 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres"
+                      maxlength: "Maximo tiene que ser 120 caracteres"
 
                   },
                   ctl00$contenidoCentral$imagen_implemento: {
