@@ -132,15 +132,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img id="imageUsuario" runat="server" src="http://" class="user-image" alt="User Image">
-                  <span class="hidden-xs" id="userName" runat="server">Alexander Pierce</span>
+                  <span class="hidden-xs" id="userName" runat="server"></span>
                 </a>
                <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img id="imageTag" runat="server" src="http://" class="img-circle" alt="User Image">
                     <p runat="server" id="userTag">
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      <small id="fechaDeRol" runat="server"></small>
                     </p>
                   </li>
                     <!-- Menu Body -->
