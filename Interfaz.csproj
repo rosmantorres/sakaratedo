@@ -262,6 +262,7 @@
     <Content Include="GUI\Modulo7\js\jquery-ui.js" />
     <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoPago.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
@@ -1619,6 +1620,13 @@
     </Compile>
     <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.designer.cs">
       <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx.cs">
+      <DependentUpon>M7_DetalleMatriculaPaga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx.designer.cs">
+      <DependentUpon>M7_DetalleMatriculaPaga.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_DetalleEventoPago.aspx.cs">
       <DependentUpon>M7_DetalleEventoPago.aspx</DependentUpon>

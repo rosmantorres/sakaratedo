@@ -144,6 +144,12 @@
   <data name="AliasEventoInactivo" xml:space="preserve">
     <value>Inactivo</value>
   </data>
+  <data name="AliasMatriculaActiva" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="AliasMatriculaInactiva" xml:space="preserve">
+    <value>Inactiva</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
@@ -169,7 +175,7 @@
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoPago.aspx?eventoDetalle=</value>
   </data>
   <data name="BotonInfoPagosDeMatricula" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarPagosDeMatricula.aspx?compDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleMatriculaPaga.aspx?eventoDetalle=</value>
   </data>
   <data name="CerrarH3" xml:space="preserve">
     <value>&lt;/h3&gt;</value>

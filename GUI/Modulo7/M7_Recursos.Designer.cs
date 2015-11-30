@@ -142,6 +142,24 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Activa.
+        /// </summary>
+        internal static string AliasMatriculaActiva {
+            get {
+                return ResourceManager.GetString("AliasMatriculaActiva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inactiva.
+        /// </summary>
+        internal static string AliasMatriculaInactiva {
+            get {
+                return ResourceManager.GetString("AliasMatriculaInactiva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -214,7 +232,7 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M7_ListarPagosDeMatricula.aspx?compDetalle=.
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleMatriculaPaga.aspx?eventoDetalle=.
         /// </summary>
         internal static string BotonInfoPagosDeMatricula {
             get {
