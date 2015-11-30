@@ -31,18 +31,17 @@ namespace LogicaNegociosSKD.Modulo7
         /// </summary>
         public LogicaEventosAsistidos() 
         {
-            laListaDeEventos = obtenerListaDeEventos();
         }
 
         /// <summary>
         /// Método que obtiene la lista de eventos asistidos
         /// </summary>
         /// <returns>Lista de objetos tipo Evento</returns>
-        public List<DominioSKD.Evento> obtenerListaDeEventos() 
+        public List<DominioSKD.Evento> obtenerListaDeEventos(int idPersona) 
         {
             try 
             {
-                return BDEvento.ListarEventosAsistidos();
+                return BDEvento.ListarEventosAsistidos(idPersona);
             }
             catch (Exception e)
             {
@@ -54,11 +53,11 @@ namespace LogicaNegociosSKD.Modulo7
         /// Método que obtiene la lista de competencias asistidas
         /// </summary>
         /// <returns>Lista de objetos tipo Competencia</returns>
-        public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
+        public List<DominioSKD.Competencia> obtenerListaDeCompetencias(int idPersona)
         {
             try
             {
-                return BDEvento.ListarCompetenciasAsistidas();
+                return BDEvento.ListarCompetenciasAsistidas(idPersona);
             }
             catch (Exception e)
             {

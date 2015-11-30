@@ -30,6 +30,7 @@ namespace templateApp.GUI.Modulo7
 
             String detalleString = Request.QueryString["impDetalle"];
             DateTime fechaInscripcion;
+            int idPersona = 1;
 
             if (detalleString != null)
             {
@@ -44,8 +45,8 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laListaEventos = logEvento.obtenerListaDeEventos();                   
-                    laListaCompetencias = logEvento.obtenerListaDeCompetencias();
+                    laListaEventos = logEvento.obtenerListaDeEventos(idPersona);                   
+                    laListaCompetencias = logEvento.obtenerListaDeCompetencias(idPersona);
                     
                     foreach (Evento evento in laListaEventos)
                     {

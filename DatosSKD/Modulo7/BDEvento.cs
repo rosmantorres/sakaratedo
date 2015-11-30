@@ -79,9 +79,8 @@ namespace DatosSKD.Modulo7
         /// Método para listar las competencias asistidas del atleta
         /// </summary>
         /// <returns>Lista de competencias</returns>
-        public static List<Competencia> ListarCompetenciasAsistidas()
+        public static List<Competencia> ListarCompetenciasAsistidas(int idPersona)
         {
-            int idPersona = 1;
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -203,9 +202,8 @@ namespace DatosSKD.Modulo7
         /// Método para listar los eventos asistidos del atleta
         /// </summary>
         /// <returns>Lista de eventos</returns>
-        public static List<Evento> ListarEventosAsistidos()
+        public static List<Evento> ListarEventosAsistidos(int idPersona)
         {
-            int idPersona = 1;
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();

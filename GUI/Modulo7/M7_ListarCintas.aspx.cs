@@ -29,6 +29,7 @@ namespace templateApp.GUI.Modulo7
 
             String detalleString = Request.QueryString["compDetalle"];
             DateTime fechaInscripcion;
+            int idPersona = 1;
 
             if (detalleString != null)
             {
@@ -43,7 +44,7 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laLista = logEvento.obtenerListaDeCintas();
+                    laLista = logEvento.obtenerListaDeCintas(idPersona);
 
                     foreach (Cinta cinta in laLista)
                     {

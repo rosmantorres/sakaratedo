@@ -17,9 +17,8 @@ namespace DatosSKD.Modulo7
         /// Método para listar las cintas obtenidas del atleta
         /// </summary>
         /// <returns>Lista de cintas</returns>
-        public static List<Cinta> ListarCintasObtenidas()
+        public static List<Cinta> ListarCintasObtenidas(int idPersona)
         {
-            int idPersona = 1;
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
