@@ -86,12 +86,12 @@ Gesti&oacuten de Inventario
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
+                           <input type="number" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="text" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
+                        <input type="number" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -136,7 +136,7 @@ Gesti&oacuten de Inventario
                 
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Stock m&iacutenimo:</b></p>
-                       <input type="text" id="stock_implemento" name="stock_implemento" placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
+                       <input type="number" id="stock_implemento" name="stock_implemento" placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
                     </div>
                       <br/>
                         
@@ -177,11 +177,154 @@ Gesti&oacuten de Inventario
                  
               </div><!-- Fin del formulario-->
     
+<script src="../../plugins/jquery_validate/dist/jquery.validate.js"></script>
+<script src="../../plugins/jquery_validate/dist/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery_validate/dist/additional-methods.js"></script>
 
     <!-- Declaración de las alertas-->
   <script type="text/javascript">
 
       $(document).ready(function () {
+
+          // just for the demos, avoids form submit
+          jQuery.validator.setDefaults({
+              debug: true,
+              success: "valid"
+          });
+          $("#modificar_implemento").validate({
+              rules: {
+                  ctl00$contenidoCentral$nombre_implemento: {
+                      required: true,
+                      minlength: 2,
+                      maxlength: 90
+
+                  },
+                  ctl00$contenidoCentral$tipo_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+
+                  },
+                  ctl00$contenidoCentral$cantidad_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90,
+                      number: true
+                  },
+                  ctl00$contenidoCentral$precio_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90,
+                      number: true
+                  },
+                  ctl00$contenidoCentral$color_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+                  },
+                  ctl00$contenidoCentral$marca_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+                  },
+                  ctl00$contenidoCentral$talla_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+                  },
+                  ctl00$contenidoCentral$stock_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90,
+                      number: true
+                  },
+                  ctl00$contenidoCentral$descripcion_implemento: {
+                      required: true,
+                      minlength: 5,
+                      maxlength: 90,
+                  },
+                  ctl00$contenidoCentral$imagen_implemento: {
+                      required: true
+                  },
+                  ctl00$contenidoCentral$estatus_implemento: {
+                      required: true
+                  }
+              },
+              messages: {
+                  ctl00$contenidoCentral$nombre_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres"
+                  },
+                  ctl00$contenidoCentral$tipo_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres"
+                  },
+                  ctl00$contenidoCentral$cantidad_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres",
+                      number: "solo se aceptan numeros"
+                  },
+                  ctl00$contenidoCentral$precio_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres",
+                      number: "solo se aceptan numeros"
+
+                  },
+                  ctl00$contenidoCentral$color_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres"
+                  },
+                  ctl00$contenidoCentral$marca_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres"
+                  },
+                  ctl00$contenidoCentral$talla_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres"
+                  },
+                  ctl00$contenidoCentral$stock_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 2 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres",
+                      number: "solo se aceptan numeros"
+
+                  },
+                  ctl00$contenidoCentral$descripcion_implemento: {
+                      required: "Este campo es obligatorio",
+                      minlength: "Minimo tiene que ser 5 caracteres",
+                      maxlength: "Maximo tiene que ser 90 caracteres"
+
+                  },
+                  ctl00$contenidoCentral$imagen_implemento: {
+                      required: "La imagen es obligatoria"
+
+
+                  },
+                  ctl00$contenidoCentral$estatus_implemento: {
+                      required: "El estatus es obligatorio"
+
+
+                  }
+                  
+
+              },
+              submitHandler: function (form) {
+                  // some other code
+                  // maybe disabling submit button
+                  // then:
+                  form.submit();
+              }
+
+          });
+
+
 
  
 
