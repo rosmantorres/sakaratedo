@@ -17,7 +17,7 @@ namespace DominioSKD
         private int rangoMaximo;
         private DateTime fechaEdadMin;
         private DateTime fechaEdadMax;
-        private char sexo;
+        private String sexo;
         private String modalidad;
         private List<Competencia> listaCompetencias;
         private List<Cinta> listaCintas;
@@ -73,7 +73,7 @@ namespace DominioSKD
             set { fechaEdadMax = value; }
         }
 
-        public char Sexo
+        public String Sexo
         {
             get { return sexo; }
             set { sexo = value; }
@@ -110,13 +110,13 @@ namespace DominioSKD
             rangoMaximo = 20;
             fechaEdadMin = new DateTime();
             fechaEdadMax = new DateTime();
-            sexo = new char();
+            sexo = String.Empty;
             modalidad = String.Empty;
             listaCompetencias = null;
             listaCintas = null;
         }
 
-        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, int inputRangoMinimo, int inputRangoMaximo, DateTime inputFechaEdadMax, char inputSexo, String inputModalidad)
+        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, int inputRangoMinimo, int inputRangoMaximo, DateTime inputFechaEdadMax, String inputSexo, String inputModalidad)
         {
             idRestriccionComp = inputId;
             descripcion = inputDescripcion;
