@@ -47,7 +47,7 @@ namespace templateApp.GUI.Modulo7
                     //laLista = logEvento.obtenerListaDeCintas(1);
                     foreach (Cinta cinta in laLista)
                     {
-                        fechaInscripcion = logEvento.obtenerFechaCinta(1, cinta.Id_cinta);
+                        fechaInscripcion = logEvento.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), cinta.Id_cinta);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString() + M7_Recursos.CerrarTD;

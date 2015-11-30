@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -30,7 +31,8 @@ namespace templateApp.GUI.Modulo7
                     this.clasificacionCinta.Text = cinta.Clasificacion;
                     this.significadoCinta.Text = cinta.Significado;
                     this.ordenCinta.Text = cinta.Orden.ToString();
-                    this.fechaObtencionCinta.Text = laLogica.obtenerFechaCinta(1, int.Parse(detalleString)).ToString("MM/dd/yyyy");
+                    this.fechaObtencionCinta.Text = laLogica.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()),
+                                                                                int.Parse(detalleString)).ToString("MM/dd/yyyy");
                     
                 }
                 catch(Exception ex)

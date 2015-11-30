@@ -27,8 +27,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [SetUp]
         public void Init()
         {
-            idPersona = 1;
-            
+            idPersona = 35;        
         }
 
         [TearDown]
@@ -38,7 +37,7 @@ namespace PruebasUnitariasSKD.Modulo7
         }
         #endregion
 
-        #region Test`s
+        #region Test
 
         /// <summary>
         /// Método para probar que la lista de cintas obtenidas puede tener cero o mas cintas
