@@ -78,9 +78,16 @@ namespace LogicaNegociosSKD.Modulo9
             return baseDeDatosEvento.ListarEventos();
         }
 
+        /// <summary>
+        /// Metodo que retorna de la BD un evento dado el ID
+        /// </summary>
+        /// <param name="idEvento">Id del evento</param>
+        /// <returns>Objeto de tipo evento</returns>
+
         public Evento ConsultarEvento(String idEvento)
         {
-            throw new NotImplementedException();
+            BDEvento baseDeDatosEvento = new BDEvento();
+            return baseDeDatosEvento.ConsultarEvento(idEvento);
         }
 
         /// <summary>

@@ -130,5 +130,26 @@ namespace PruebasUnitariasSKD.Modulo9
             }
             Assert.Greater(listaEventos.Count, 0);
         }
+
+        [Test]
+
+        public void PruebaConsultarEvento()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            Evento evento = logicaEvento.ConsultarEvento("1");
+            Console.Out.WriteLine("Nombre de Evento:" + " " + evento.Nombre);
+            Console.Out.WriteLine("Descripcion de Evento:" + " " + evento.Descripcion);
+            Console.Out.WriteLine("Costo de Evento:" + " " + evento.Costo);
+            Console.Out.WriteLine("Estado de Evento:" + " " + evento.Estado);
+            Console.Out.WriteLine("Fecha Inicio de Evento:" + " " + evento.Horario.FechaInicio);
+            Console.Out.WriteLine("Fecha Fin de Evento:" + " " + evento.Horario.FechaFin);
+            Console.Out.WriteLine("Tipo de Evento:" + " " + evento.TipoEvento.Nombre);
+            Console.Out.WriteLine("Hora inicio de Evento:" + " " + evento.Horario.HoraInicio);
+            Console.Out.WriteLine("Hora fin de Evento:" + " " + evento.Horario.HoraFin);
+            Console.Out.WriteLine(" ");
+            Assert.AreEqual(evento.Nombre, "Clase Regular");
+
+
+        }
     }
 }

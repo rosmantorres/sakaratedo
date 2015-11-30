@@ -164,6 +164,7 @@ namespace DatosSKD.Modulo9
                     Console.Out.WriteLine(evento.Nombre);
                     evento.Descripcion = row[RecursosBDModulo9.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosBDModulo9.AliasEstadoEvento].ToString());
+                    evento.Costo = float.Parse(row[RecursosBDModulo9.AliasCostoEvento].ToString());
                     Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosBDModulo9.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosBDModulo9.AliasFechaFin].ToString());
