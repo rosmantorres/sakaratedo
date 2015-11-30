@@ -43,8 +43,8 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    //laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                    laLista = logEvento.obtenerListaDeCintas(1);
+                    laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                    //laLista = logEvento.obtenerListaDeCintas(1);
                     foreach (Cinta cinta in laLista)
                     {
                         fechaInscripcion = logEvento.obtenerFechaCinta(1, cinta.Id_cinta);

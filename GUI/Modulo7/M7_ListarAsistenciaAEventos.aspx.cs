@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
-
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -30,7 +30,7 @@ namespace templateApp.GUI.Modulo7
 
             String detalleString = Request.QueryString["impDetalle"];
             DateTime fechaInscripcion;
-            int idPersona = 1;
+            //int idPersona = 1;
 
             if (detalleString != null)
             {
@@ -45,12 +45,12 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    laListaEventos = logEvento.obtenerListaDeEventos(idPersona);                   
-                    laListaCompetencias = logEvento.obtenerListaDeCompetencias(idPersona);
+                    laListaEventos = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));                   
+                    laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                     
                     foreach (Evento evento in laListaEventos)
                     {
-                        fechaInscripcion = logEvento.obtenerFechaInscripcion(1, evento.Id_evento);
+                        fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
@@ -64,10 +64,11 @@ namespace templateApp.GUI.Modulo7
 
                     foreach (Competencia competencia in laListaCompetencias)
                     {
+                        fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), competencia.Id_competencia);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + competencia.Id_competencia + M7_Recursos.BotonCerrar;

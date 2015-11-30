@@ -37,7 +37,7 @@
             <div class="panel-group col-sm-12 col-md-12 col-lg-12">
                <div class="panel panel-primary">
                   <div class="panel-heading">
-                     <h4>Datos de el Evento</h4>
+                     <h4>Datos del Evento</h4>
                   </div>
                   <div class="panel-body">
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">

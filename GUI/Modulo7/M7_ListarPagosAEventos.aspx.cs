@@ -37,7 +37,7 @@ namespace templateApp.GUI.Modulo7
             #region Llenar Data Table con Eventos
             LogicaEventosPagos logEvento = new LogicaEventosPagos();
              LogicaEventosInscritos logEvento2 = new LogicaEventosInscritos();
-             laListaCompetencias = logEvento2.obtenerListaDeCompetencias();
+             laListaCompetencias = logEvento2.obtenerListaDeCompetencias(1);
             if (!IsPostBack)
             {
                 try
