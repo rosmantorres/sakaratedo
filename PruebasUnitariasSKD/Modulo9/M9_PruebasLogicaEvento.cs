@@ -104,5 +104,31 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.IsTrue(resultado);
 
         }
+
+        [Test]
+
+        public void PruebaListarEventos()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            List<Evento> listaEventos = logicaEvento.ListarEventos();
+            Console.Out.WriteLine("El tamaño de la lista es"+" "+listaEventos.Count);
+            Console.Out.WriteLine(" ");
+
+            foreach (Evento evento in listaEventos)
+            {
+                Console.Out.WriteLine("Nombre de Evento:"+" "+evento.Nombre);
+                Console.Out.WriteLine("Descripcion de Evento:" + " " + evento.Descripcion);
+                Console.Out.WriteLine("Costo de Evento:" + " " + evento.Costo);
+                Console.Out.WriteLine("Estado de Evento:" + " " + evento.Estado);
+                Console.Out.WriteLine("Fecha Inicio de Evento:" + " " + evento.Horario.FechaInicio);
+                Console.Out.WriteLine("Fecha Fin de Evento:" + " " + evento.Horario.FechaFin);
+                Console.Out.WriteLine("Tipo de Evento:" + " " + evento.TipoEvento.Nombre);
+                Console.Out.WriteLine("Hora inicio de Evento:" + " " + evento.Horario.HoraInicio);
+                Console.Out.WriteLine("Hora fin de Evento:" + " " + evento.Horario.HoraFin);
+                Console.Out.WriteLine(" ");
+
+            }
+            Assert.Greater(listaEventos.Count, 0);
+        }
     }
 }
