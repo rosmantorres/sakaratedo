@@ -129,6 +129,9 @@
   <data name="AliasEdadMin" xml:space="preserve">
     <value>edadMin</value>
   </data>
+  <data name="AliasExisteRestriccionCompetencia" xml:space="preserve">
+    <value>existeRestriccionCompetencia</value>
+  </data>
   <data name="AliasFechaEdadMax" xml:space="preserve">
     <value>fechaEdadMax</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="EliminarRestriccionCompetencia" xml:space="preserve">
     <value>M8_EliminarRestriccionCompetencia</value>
+  </data>
+  <data name="ExisteRestriccionCompetencia" xml:space="preserve">
+    <value>M8_ExisteRestriccionCompetencia</value>
   </data>
   <data name="ModificarRestriccionCompetencia" xml:space="preserve">
     <value>M8_ModificarRestriccionCompetencia</value>
@@ -200,6 +206,9 @@
   </data>
   <data name="ParamRangoMin" xml:space="preserve">
     <value>@rest_comp_rangomin</value>
+  </data>
+  <data name="ParamSalidaNumRestriccion" xml:space="preserve">
+    <value>@numRestriccion</value>
   </data>
   <data name="ParamSexo" xml:space="preserve">
     <value>@rest_comp_sexo</value>
