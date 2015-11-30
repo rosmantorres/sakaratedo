@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
+using DatosSKD.Modulo9;
 
 namespace LogicaNegociosSKD.Modulo9
 {
@@ -17,10 +18,53 @@ namespace LogicaNegociosSKD.Modulo9
 
         #region Metodos
 
+        /// <summary>
+        /// Metodo que crea un evento
+        /// </summary>
+        /// <param name="evento">El evento a crear</param>
+        /// <returns>Verdadero o Falso</returns>
+
         public bool CrearEvento(Evento evento)
         {
-            
-            throw new NotImplementedException();
+
+            if (ValidarCaracteres(evento.Nombre)) 
+            {
+                Console.Out.WriteLine("Nombre Valido");
+                if (ValidarCaracteres(evento.Descripcion))
+                {
+                    Console.Out.WriteLine("Descripcion Valido");
+                    if (ValidarCosto(evento.Costo))
+                    {
+                        Console.Out.WriteLine("Costo Valido");
+                        String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                        String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                        String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                        String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                        if (ValidarFormatoFecha(fechaInicio))
+                        {
+                            Console.Out.WriteLine("FechaI Valido");
+                             dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                             mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                             año = (evento.Horario.FechaFin.Date.Year.ToString());
+                             String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaFin))
+                            {
+                                Console.Out.WriteLine("FechaF Valido");
+                                if (ValidarFechaFinMayor(fechaInicio,fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaI <= FechaF");
+                                    BDEvento baseDeDatosEvento = new BDEvento();
+
+                                    return baseDeDatosEvento.CrearEvento(evento);
+
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            return false;
         }
 
         public List<Evento> ListarEventos()
@@ -46,16 +90,16 @@ namespace LogicaNegociosSKD.Modulo9
             String comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm123456789 ";
             for (int i=0;i<cadena.Length;i++)
             {
-                Console.Out.WriteLine(i);
+                /*Console.Out.WriteLine(i);
                 Console.Out.WriteLine(cadena.Length);
-                Console.Out.WriteLine(cadena[i]);
+                Console.Out.WriteLine(cadena[i]);*/
                 Boolean resultado = comparar.Contains(cadena[i]);
                 if (resultado == true)
                 {
                     contador++;
                 }
             }
-            Console.Out.WriteLine(contador);
+            //Console.Out.WriteLine(contador);
             if (contador == cadena.Length)
                 return true;
             else
@@ -75,16 +119,16 @@ namespace LogicaNegociosSKD.Modulo9
             int contador = 0;
             for (int i = 0; i < cadena.Length; i++)
             {
-                Console.Out.WriteLine(i);
+                /*Console.Out.WriteLine(i);
                 Console.Out.WriteLine(cadena.Length);
-                Console.Out.WriteLine(cadena[i]);
+                Console.Out.WriteLine(cadena[i]);*/
                 Boolean resultado = comparar.Contains(cadena[i]);
                 if (resultado == true)
                 {
                     contador++;
                 }
             }
-            Console.Out.WriteLine(contador);
+            //Console.Out.WriteLine(contador);
             if (contador == cadena.Length)
                 return true;
             else
@@ -116,9 +160,9 @@ namespace LogicaNegociosSKD.Modulo9
             String comparar= "0123456789/-";
             for (int i = 0; i < fecha.Length; i++)
             {
-                Console.Out.WriteLine(i);
+                /*Console.Out.WriteLine(i);
                 Console.Out.WriteLine(fecha.Length);
-                Console.Out.WriteLine(fecha[i]);
+                Console.Out.WriteLine(fecha[i]);*/
                 Boolean resultado = comparar.Contains(fecha[i]);
                 if (resultado == true)
                 {
@@ -126,7 +170,7 @@ namespace LogicaNegociosSKD.Modulo9
                 }
 
             }
-            Console.Out.WriteLine(contador);
+            //Console.Out.WriteLine(contador);
             if (contador == fecha.Length)
                 return true;
             else

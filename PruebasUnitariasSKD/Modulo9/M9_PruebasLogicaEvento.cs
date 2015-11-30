@@ -11,9 +11,39 @@ using LogicaNegociosSKD.Modulo9;
 namespace PruebasUnitariasSKD.Modulo9
 {
 
+
     [TestFixture]
     class M9_PruebasLogicaEvento
     {
+        private Evento elEvento;
+
+        [SetUp]
+        public void Init()
+        {
+            DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
+            DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
+            Horario horario = new Horario(1, fechaInicio, fechaFin, 10, 11);
+            Categoria categoria = new Categoria(15, 16, "verde", "amarillo", "masculino");
+            TipoEvento tipoEvento = new TipoEvento(1, "Pase de Cinta");
+            Ubicacion ubicacion = new Ubicacion("10.499607", "66.788419", "Caracas", "Miranda", "NULL");
+            ubicacion.Id_ubicacion = 1;
+            elEvento = new Evento();
+            elEvento.Nombre = "Prueba Unitaria Logica Evento";
+            elEvento.Descripcion = "Pruebas Unitarias Logica Evento";
+            elEvento.Costo = 55;
+            elEvento.Estado = true;
+            elEvento.Categoria = categoria;
+            elEvento.Horario = horario;
+            elEvento.Ubicacion = ubicacion;
+            elEvento.TipoEvento = tipoEvento;
+        }
+
+        [TearDown]
+
+        public void clean()
+        {
+            elEvento = null;
+        }
         [Test]
         public void PruebaValidarCaracteres()
         {
@@ -65,5 +95,14 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.IsTrue(resultado);
         }
 
+        [Test]
+
+        public void PruebaCrearEvento()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            Boolean resultado = logicaEvento.CrearEvento(elEvento);
+            Assert.IsTrue(resultado);
+
+        }
     }
 }
