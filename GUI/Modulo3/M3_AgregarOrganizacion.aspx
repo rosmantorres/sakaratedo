@@ -57,24 +57,24 @@
                       <p><b>* Nombre de la Organización:</b></p>
                       <input type="text" name="nombreOrg" id="nombreOrg" placeholder="Nombre" class="form-control" value="Karate">
                     </div>
-                      <br/> 
+                      <br/>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>* Email:</b></p>
+                      <input type="email" name="emailOrg" id="emailOrg" placeholder="Email" class="form-control" value="Aikido@Org.com">
+                    </div>     
+                      <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>* Número Telefónico:</b></p>
                       <input type="text" name="numeroOrg" id="numeroOrg" placeholder="Número" class="form-control" value="55-4567899">
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>* Email:</b></p>
-                      <input type="email" name="emailOrg" id="emailOrg" placeholder="Email" class="form-control" value="Aikido@Org.com">
-                    </div>
-                      <br/>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Contacto:</b></p>
-                      <input type="text" name="emailOrg" id="contactoOrg" placeholder="Contacto" class="form-control" value="Pedro Perez">
+                      <p><b>Direccion:</b></p>
+                      <input type="text" name="direccionOrg" id="direccionOrg" placeholder="Direccion" class="form-control" value="Direccion">
                     </div>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Numero Telefónico del contacto:</b></p>
-                      <input type="text" name="emailOrg" id="numeroContacto" placeholder="NumeroContacto" class="form-control" value="0412-5451984">
+                      <p><b>Estado:</b></p>
+                      <input type="text" name="estadoOrg" id="estadoContacto" placeholder="Estado" class="form-control" value="Estado">
                     </div>
                       <br/>
                       <br/>

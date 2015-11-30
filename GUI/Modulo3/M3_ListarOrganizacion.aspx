@@ -54,11 +54,11 @@
             <thead>
 				<tr>
                       <th style="text-align:center">Nombre</th>
-                    <th style="text-align:center">Técnica</th>
-					<th style="text-align:center">Teléfono</th>
                     <th style="text-align:center">Email</th>
-                    <th style="text-align:center">Persona de Contacto</th>
-                    <th style="text-align:center">Telefono de Contacto</th>
+					<th style="text-align:center">Teléfono</th>
+                    <th style="text-align:center">Estilo</th>
+                    <th style="text-align:center">Direccion</th>
+                    <th style="text-align:center">Estado</th>
                     <th style="text-align:center">Acciones</th>
                     
 				</tr>
@@ -67,11 +67,11 @@
 				<tr>
                      
 					<td class="id">Sakara IB</td>
-					<td>Karate</td>
-					<td>55-4567899</td>
                     <td>Aikido@Dojo.com</td>
-					<td>Rodrigo Peña</td>
                     <td>412-5464858</td>
+					<td>Karate</td>
+					<td>Direccion</td>
+					<td>Estado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
@@ -81,11 +81,11 @@
                <tr>
                      
 					<td class="id">Sakara IB</td>
-					<td>Karate</td>
-					<td>55-4567899</td>
                     <td>Aikido@Dojo.com</td>
-					<td>Rodrigo Peña</td>
                     <td>412-5464858</td>
+					<td>Karate</td>
+					<td>Direccion</td>
+					<td>Estado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
@@ -95,11 +95,11 @@
                 <tr>
                      
 					<td class="id">Sakara IB</td>
-					<td>Karate</td>
-					<td>55-4567899</td>
                     <td>Aikido@Dojo.com</td>
-					<td>Rodrigo Peña</td>
                     <td>412-5464858</td>
+					<td>Karate</td>
+					<td>Direccion</td>
+					<td>Estado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
@@ -109,11 +109,11 @@
                 <tr>
                      
 					<td class="id">Sakara IB</td>
-					<td>Karate</td>
-					<td>55-4567899</td>
                     <td>Aikido@Dojo.com</td>
-					<td>Rodrigo Peña</td>
                     <td>412-5464858</td>
+					<td>Karate</td>
+					<td>Direccion</td>
+					<td>Estado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
@@ -123,11 +123,11 @@
                 <tr>
                      
 					<td class="id">Sakara IB</td>
-					<td>Karate</td>
-					<td>55-4567899</td>
                     <td>Aikido@Dojo.com</td>
-					<td>Rodrigo Peña</td>
                     <td>412-5464858</td>
+					<td>Karate</td>
+					<td>Direccion</td>
+					<td>Estado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
@@ -137,11 +137,11 @@
                 <tr>
                      
 					<td class="id">Sakara IB</td>
-					<td>Karate</td>
-					<td>55-4567899</td>
                     <td>Aikido@Dojo.com</td>
-					<td>Rodrigo Peña</td>
                     <td>412-5464858</td>
+					<td>Karate</td>
+					<td>Direccion</td>
+					<td>Estado</td>
                     <td>
                         <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
