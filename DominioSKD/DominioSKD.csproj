@@ -43,7 +43,13 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
+<<<<<<< HEAD
     <Compile Include="DocumentoIdentidad.cs" />
+=======
+    <Compile Include="Correo.cs" />
+    <Compile Include="DocumentoIdentidad.cs" />
+    <Compile Include="InformacionPersonal.cs" />
+>>>>>>> e38929db290baa43a9c93ddf569dec975d7773ce
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
@@ -69,6 +75,12 @@
     <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Ubicacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
