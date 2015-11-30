@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo15;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo15;
+
 namespace templateApp.GUI.Modulo15
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -134,7 +137,7 @@ namespace templateApp.GUI.Modulo15
                 implementoInterfaz.modificarInventarioInterfaz(implemento);
 
             }
-            catch (Exception ex)
+            catch (ExceptionSKD ex)
             {
 
                 throw ex;
@@ -187,9 +190,19 @@ namespace templateApp.GUI.Modulo15
 
                     Dojo dojo = new Dojo(id_dojo);
                     Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
-                  
-                    agregarImplementoInterfaz(implemento);
-                
+                    try
+                    {
+                        agregarImplementoInterfaz(implemento);
+                        
+
+                    }
+                    catch (ExceptionSKD ex) {
+
+                        Response.Redirect("~/GUI/Modulo15/M15_AgregarImplemento.aspx?agregar=fallo");
+
+                    }
+
+                    
                 }
             
             }
@@ -197,8 +210,6 @@ namespace templateApp.GUI.Modulo15
 
             if (modificar != null)
             {
-
-    
 
                 if (modificar.Equals("modificar"))
                 {
@@ -225,7 +236,17 @@ namespace templateApp.GUI.Modulo15
 
                     Dojo dojo=new Dojo(id_dojo);
                     Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
-                    modificarImplementoInterfaz(implemento);
+                    try {
+
+                        modificarImplementoInterfaz(implemento);
+                    
+                    }
+                    catch(ExceptionSKD ex){
+
+                        Response.Redirect("~/GUI/Modulo15/M15_ModificarImplemento.aspx?modificar=fallo");
+
+                    }
+                    
 
                 }
 

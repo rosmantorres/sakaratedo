@@ -13,6 +13,15 @@ namespace templateApp.GUI.Modulo15 {
     public partial class WebForm2 {
         
         /// <summary>
+        /// alert2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert2;
+        
+        /// <summary>
         /// modificar_implemento control.
         /// </summary>
         /// <remarks>
