@@ -29,6 +29,14 @@ namespace PruebasUnitariasSKD.Modulo2
             Assert.AreNotEqual(null, _respuesta);
 
         }
+        [Test]
+        public void PruebaValidarObtenerRolesDeSistema()
+        {
+            List<Rol> _respuesta;
+            _respuesta = BDRoles.ObtenerRolesDeSistema();
+            Assert.AreNotEqual(null, _respuesta);
+
+        }
 
         [Test]
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
@@ -38,6 +46,7 @@ namespace PruebasUnitariasSKD.Modulo2
             _respuesta = BDRoles.consultarRolesUsuario(null);
 
         }
+
 
        
     }

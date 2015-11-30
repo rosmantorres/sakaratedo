@@ -73,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo2
                 _respuesta = logicaRol.prioridadRol(RecursosPU_Mod2.RolInvalido);
 
             }
-            // Prueba unitaria  del metodo agregarRol(),consultarRolesUsuario() ylogicaRol.eliminarRol();
+            // Prueba unitaria  del metodo agregarRol(),consultarRolesUsuario() y eliminarRol();
             [Test]
             public void PruebaagregarEliminarConsultarRol()
             {
@@ -86,6 +86,17 @@ namespace PruebasUnitariasSKD.Modulo2
 
                 List<Rol> RolesUsuario2 = logicaRol.consultarRolesUsuario(RecursosPU_Mod2.Id);
                 Assert.AreEqual(RolesUsuario.Count, RolesUsuario2.Count);
+
+            }
+            // Prueba unitaria  del metodo eliminarRol();Exc
+            [Test]
+            [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
+            public void PruebaEliminarRolEXC()
+            {
+                bool _respuesta2 = logicaRol.eliminarRol(null, "3");
+                Assert.AreEqual(false, _respuesta2);
+
+               
 
             }
         
