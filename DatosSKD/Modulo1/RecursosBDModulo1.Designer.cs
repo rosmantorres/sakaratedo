@@ -115,6 +115,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to imagen.
+        /// </summary>
+        internal static string AliasImagen {
+            get {
+                return ResourceManager.GetString("AliasImagen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombre.
         /// </summary>
         internal static string AliasNombreRol {
