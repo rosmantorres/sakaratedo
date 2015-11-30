@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_KyuPrograma.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_KyuPrograma" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_KyuPrograma.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Kyu_atletas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Programa T&eacutecnico por Kyu</asp:Content>

@@ -88,6 +88,24 @@ namespace DatosSKD.Modulo13 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to per_fecha_nacimiento.
+        /// </summary>
+        internal static string Edad {
+            get {
+                return ResourceManager.GetString("Edad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to per_estatura.
+        /// </summary>
+        internal static string estatura {
+            get {
+                return ResourceManager.GetString("estatura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to cin_id.
         /// </summary>
         internal static string idCinta {
@@ -120,6 +138,33 @@ namespace DatosSKD.Modulo13 {
         internal static string ParamIdPersona {
             get {
                 return ResourceManager.GetString("ParamIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to persona_id.
+        /// </summary>
+        internal static string per_id {
+            get {
+                return ResourceManager.GetString("per_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to per_peso.
+        /// </summary>
+        internal static string peso {
+            get {
+                return ResourceManager.GetString("peso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to per_sexo.
+        /// </summary>
+        internal static string sexo {
+            get {
+                return ResourceManager.GetString("sexo", resourceCulture);
             }
         }
     }

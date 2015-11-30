@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Inicio.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Inicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Kyu_atletas.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Inicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
 </asp:Content>
@@ -15,7 +15,7 @@
 
      <div class="box-body table-responsive">
 
-       <table id="example" class="table table-bordered table-striped dataTable">
+      <%-- <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>Foto</th>
@@ -95,7 +95,7 @@
                 </tr>               
                              
 			</tbody>
-</table>
+</table>--%>
         </div>
     <script type="text/javascript">
         $(document).ready(function () {
