@@ -70,154 +70,150 @@ namespace DatosSKD.Modulo8
         #endregion
 
 
-        //#region existeRestriccionCompetenciaSimilar
-        //public static bool ExisteRestriccionCompetenciaSimilar(RestriccionCompetencia laRestriccionCompetencia)
-        //{
-        //    bool retorno = false;
-        //    BDConexion laConexion;
-        //    List<Parametro> parametros;
+        #region existeRestriccionCompetenciaSimilar
+        public static bool ExisteRestriccionCompetenciaSimilar(RestriccionCompetencia laRestriccionCompetencia)
+        {
+            bool retorno = false;
+            BDConexion laConexion;
+            List<Parametro> parametros;
 
-        //    try
-        //    {
-        //        laConexion = new BDConexion();
-        //        parametros = new List<Parametro>();
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
 
-        //        Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
-        //               laRestriccionCompetencia.Descripcion, false);
-        //        parametros.Add(elParametro);
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
+                       laRestriccionCompetencia.Descripcion, false);
+                parametros.Add(elParametro);
 
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
-        //             laRestriccionCompetencia.EdadMinima.ToString(), false);
-        //        parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
+                     laRestriccionCompetencia.EdadMinima.ToString(), false);
+                parametros.Add(elParametro);
 
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
-        //            laRestriccionCompetencia.EdadMaxima.ToString(), false);
-        //        parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
+                    laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                parametros.Add(elParametro);
 
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
-        //             laRestriccionCompetencia.RangoMinimo.ToString(), false);
-        //        parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
+                     laRestriccionCompetencia.RangoMinimo.ToString(), false);
+                parametros.Add(elParametro);
 
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
-        //            laRestriccionCompetencia.RangoMaximo.ToString(), false);
-        //        parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
+                    laRestriccionCompetencia.RangoMaximo.ToString(), false);
+                parametros.Add(elParametro);
 
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
-        //            laRestriccionCompetencia.Sexo, false);
-        //        parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
+                    laRestriccionCompetencia.Sexo, false);
+                parametros.Add(elParametro);
 
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
-        //            laRestriccionCompetencia.Modalidad, false);
-        //        parametros.Add(elParametro);
-                
-
-        //        elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSalidaNumRestriccion, SqlDbType.Int, true);
-        //        parametros.Add(elParametro);
-
-        //        List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.ExisteRestriccionCompetencia
-        //                                     , parametros);
-
-        //        foreach (Resultado elResultado in resultados)
-        //        {
-        //            if (elResultado.etiqueta == RecursosBDRestriccionCompetencia.ParamSalidaNumRestriccion)
-        //                if (int.Parse(elResultado.valor) == 1)
-        //                    retorno = true;
-        //                else
-        //                    retorno = false;
-        //        }
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-        //            RecursoGeneralBD.Mensaje, ex);
-        //    }
-        //    catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-        //    }
-
-        //    return retorno;
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
+                    laRestriccionCompetencia.Modalidad, false);
+                parametros.Add(elParametro);
 
 
-        //}
-        //#endregion
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSalidaNumRestriccion, SqlDbType.Int, true);
+                parametros.Add(elParametro);
+
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.ExisteRestriccionCompetencia
+                                             , parametros);
+
+                foreach (Resultado elResultado in resultados)
+                {
+                    if (elResultado.etiqueta == RecursosBDRestriccionCompetencia.ParamSalidaNumRestriccion)
+                        if (int.Parse(elResultado.valor) == 1)
+                            retorno = true;
+                        else
+                            retorno = false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return retorno;
 
 
+        }
+        #endregion
 
 
+        #region Agregar Restriccion
+        public static bool AgregarRestriccionCompetencia(RestriccionCompetencia laRestriccionCompetencia)
+        {
+            try
+            {
+                if (!ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia))
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
+                        laRestriccionCompetencia.Descripcion, false);
+                    parametros.Add(elParametro);
 
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
+                         laRestriccionCompetencia.EdadMinima.ToString(), false);
+                    parametros.Add(elParametro);
 
-        //#region Agregar Restriccion
-        //public static bool AgregarRestriccionCompetencia(RestriccionCompetencia laRestriccionCompetencia)
-        //{
-        //    try
-        //    {
-        //        if (!ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia))
-        //        {
-        //            List<Parametro> parametros = new List<Parametro>();
-        //            Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
-        //                laRestriccionCompetencia.Descripcion, false);
-        //            parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
+                        laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                    parametros.Add(elParametro);
 
-        //            elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
-        //                 laRestriccionCompetencia.EdadMinima.ToString(), false);
-        //            parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
+                         laRestriccionCompetencia.EdadMinima.ToString(), false);
+                    parametros.Add(elParametro);
 
-        //            elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
-        //                laRestriccionCompetencia.EdadMaxima.ToString(), false);
-        //            parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
+                        laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                    parametros.Add(elParametro);
 
-        //            elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
-        //                 laRestriccionCompetencia.EdadMinima.ToString(), false);
-        //            parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
+                        laRestriccionCompetencia.Sexo, false);
+                    parametros.Add(elParametro);
 
-        //            elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
-        //                laRestriccionCompetencia.EdadMaxima.ToString(), false);
-        //            parametros.Add(elParametro);
-                    
-        //            elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
-        //                laRestriccionCompetencia.Sexo, false);
-        //            parametros.Add(elParametro);
-
-        //            elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
-        //                laRestriccionCompetencia.Modalidad, false);
-        //            parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
+                        laRestriccionCompetencia.Modalidad, false);
+                    parametros.Add(elParametro);
 
 
 
-        //            BDConexion laConexion = new BDConexion();
-        //            laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.AgregarRestriccionCompetencia, parametros);
+                    BDConexion laConexion = new BDConexion();
+                    laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.AgregarRestriccionCompetencia, parametros);
 
-        //        }
-        //        else
-        //            throw new ExcepcionesSKD.Modulo12.CompetenciaExistenteException(RecursosBDRestriccionCompetencia.Codigo_Competencia_Existente,
-        //                        RecursosBDRestriccionCompetencia.Mensaje_Competencia_Existente, new Exception());
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-        //            RecursoGeneralBD.Mensaje, ex);
-        //    }
-        //    catch (FormatException ex)
-        //    {
-        //        throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDRestriccionCompetencia.Codigo_Error_Formato,
-        //             RecursosBDRestriccionCompetencia.Mensaje_Error_Formato, ex);
-        //    }
-        //    catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-        //    }
-        //    return true;
-        //}
-        //#endregion
+                }
+                else
+                    throw new ExcepcionesSKD.Modulo8.RestriccionExistenteException(RecursosBDRestriccionCompetencia.Codigo_Restriccion_Competencia_Existente,
+                                RecursosBDRestriccionCompetencia.Mensaje_Restriccion_Competencia_Existente, new Exception());
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosBDRestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosBDRestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return true;
+        }
+        #endregion
 
     }
 }

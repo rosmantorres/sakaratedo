@@ -187,6 +187,24 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_08_001.
+        /// </summary>
+        internal static string Codigo_Restriccion_Competencia_Existente {
+            get {
+                return ResourceManager.GetString("Codigo_Restriccion_Competencia_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_ConsultarRestriccionCompetencia.
         /// </summary>
         internal static string ConsultarTodasRestriccionCompetencia {
@@ -210,6 +228,24 @@ namespace DatosSKD.Modulo8 {
         internal static string ExisteRestriccionCompetencia {
             get {
                 return ResourceManager.GetString("ExisteRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ya exite una restriccion con las especificacion introducidas. Por favor anexar su competencia a dicha restriccion.
+        /// </summary>
+        internal static string Mensaje_Restriccion_Competencia_Existente {
+            get {
+                return ResourceManager.GetString("Mensaje_Restriccion_Competencia_Existente", resourceCulture);
             }
         }
         

@@ -116,13 +116,8 @@ namespace DominioSKD
             listaCintas = null;
         }
 
-<<<<<<< HEAD
-
         public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, int inputRangoMinimo, int inputRangoMaximo, DateTime inputFechaEdadMax, String inputSexo, String inputModalidad)
 
-=======
-        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, int inputRangoMinimo, int inputRangoMaximo, DateTime inputFechaEdadMax, String inputSexo, String inputModalidad)
->>>>>>> 0165043f168f921d6199494c34e68617ef15bd4c
         {
             idRestriccionComp = inputId;
             descripcion = inputDescripcion;

@@ -159,6 +159,12 @@
   <data name="AliasSexo" xml:space="preserve">
     <value>sexo</value>
   </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>SKD_00_004</value>
+  </data>
+  <data name="Codigo_Restriccion_Competencia_Existente" xml:space="preserve">
+    <value>SKD_08_001</value>
+  </data>
   <data name="ConsultarTodasRestriccionCompetencia" xml:space="preserve">
     <value>M8_ConsultarRestriccionCompetencia</value>
   </data>
@@ -167,6 +173,12 @@
   </data>
   <data name="ExisteRestriccionCompetencia" xml:space="preserve">
     <value>M8_ExisteRestriccionCompetencia</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+  </data>
+  <data name="Mensaje_Restriccion_Competencia_Existente" xml:space="preserve">
+    <value>Ya exite una restriccion con las especificacion introducidas. Por favor anexar su competencia a dicha restriccion</value>
   </data>
   <data name="ModificarRestriccionCompetencia" xml:space="preserve">
     <value>M8_ModificarRestriccionCompetencia</value>
