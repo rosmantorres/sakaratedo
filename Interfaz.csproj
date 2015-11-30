@@ -192,10 +192,12 @@
     <Content Include="GUI\Modulo13\M13_Asistencia_Evento.aspx" />
     <Content Include="GUI\Modulo13\M13_AutoComplete.js" />
     <Content Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx" />
+    <Content Include="GUI\Modulo13\M13_Info_Producto.aspx" />
     <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
     <Content Include="GUI\Modulo13\M13_Kyu.aspx" />
     <Content Include="GUI\Modulo13\M13_KyuPrograma.aspx" />
     <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
+    <Content Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
@@ -1276,6 +1278,13 @@
     <Compile Include="GUI\Modulo13\M13_EstadisticaEntrenamiento.aspx.designer.cs">
       <DependentUpon>M13_EstadisticaEntrenamiento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo13\M13_Info_Producto.aspx.cs">
+      <DependentUpon>M13_Info_Producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Info_Producto.aspx.designer.cs">
+      <DependentUpon>M13_Info_Producto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo13\M13_Inicio.aspx.cs">
       <DependentUpon>M13_Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1289,6 +1298,13 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.designer.cs">
       <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx.cs">
+      <DependentUpon>M13_ListarMorosos - Copy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx.designer.cs">
+      <DependentUpon>M13_ListarMorosos - Copy.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
