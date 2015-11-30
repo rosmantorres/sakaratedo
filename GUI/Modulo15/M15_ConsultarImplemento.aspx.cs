@@ -6,6 +6,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo15;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo15;
+using templateApp.GUI.Modulo1;
+using templateApp.GUI.Master;
+using System.Web.SessionState;
+
+
 namespace templateApp.GUI.Modulo15
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -84,12 +91,12 @@ namespace templateApp.GUI.Modulo15
         #endregion 
         
         #region eliminarEvento
-        public void eliminarEvento(int idInventario) {
+        public void eliminarEvento(int idInventario,Dojo dojo) {
             InterfazImplemento interfazImplemento = null;
               
             try {
                 interfazImplemento = new InterfazImplemento();
-                interfazImplemento.eliminarInventarioInterfaz(idInventario);
+                interfazImplemento.eliminarInventarioInterfaz(idInventario,dojo);
             
             }
             catch(Exception ex){
@@ -134,7 +141,7 @@ namespace templateApp.GUI.Modulo15
                 implementoInterfaz.modificarInventarioInterfaz(implemento);
 
             }
-            catch (Exception ex)
+            catch (ExceptionSKD ex)
             {
 
                 throw ex;
@@ -145,6 +152,8 @@ namespace templateApp.GUI.Modulo15
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+           
             ((SKD)Page.Master).IdModulo = "15";
             //variables agregar
             int id_implemento = Convert.ToInt16(Request.Form["id_implemento"]);
@@ -171,12 +180,15 @@ namespace templateApp.GUI.Modulo15
             
             String agregar = Request.Form["agregar"];
             String modificar = Request.Form["modificar"];
-            
+
+
+            //usuario y rol para manejar
+            String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+            String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+          
 
 
             if (agregar != null){
-
-                
 
                 if (agregar.Equals("agregar")) {
                     
@@ -184,12 +196,22 @@ namespace templateApp.GUI.Modulo15
                     TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
                     imagen_implemento = archivo.FileName;
                     archivo.SaveAs(TargetLocation + imagen_implemento);
-
+                    //pasar dado el usuario a que dojo pertenece
                     Dojo dojo = new Dojo(id_dojo);
                     Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
-                  
-                    agregarImplementoInterfaz(implemento);
-                
+                    try
+                    {
+                        agregarImplementoInterfaz(implemento);
+                        
+
+                    }
+                    catch (ExceptionSKD ex) {
+
+                        Response.Redirect("~/GUI/Modulo15/M15_AgregarImplemento.aspx?agregar=fallo");
+
+                    }
+
+                    
                 }
             
             }
@@ -197,8 +219,6 @@ namespace templateApp.GUI.Modulo15
 
             if (modificar != null)
             {
-
-    
 
                 if (modificar.Equals("modificar"))
                 {
@@ -223,9 +243,20 @@ namespace templateApp.GUI.Modulo15
                     id_dojo = 1;
                     #endregion 
 
+                    //con el usuario usar para para obtener el dojo 
                     Dojo dojo=new Dojo(id_dojo);
                     Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
-                    modificarImplementoInterfaz(implemento);
+                    try {
+
+                        modificarImplementoInterfaz(implemento);
+                    
+                    }
+                    catch(ExceptionSKD ex){
+
+                        Response.Redirect("~/GUI/Modulo15/M15_ModificarImplemento.aspx?modificar=fallo");
+
+                    }
+                    
 
                 }
 
@@ -235,9 +266,9 @@ namespace templateApp.GUI.Modulo15
             {
                 if (eliminar.Equals("true"))
                 {
-
+                    Dojo dojo = new Dojo(id_dojo);
                     int idInventario =Convert.ToInt16(Request.QueryString["idImplemento"]);
-                    eliminarEvento(idInventario);
+                    eliminarEvento(idInventario,dojo);
 
           //          alert.Attributes["class"] = "alert alert-success alert-dismissible";
             //        alert.Attributes["role"] = "alert";

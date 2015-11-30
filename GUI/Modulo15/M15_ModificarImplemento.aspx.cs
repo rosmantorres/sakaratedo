@@ -45,8 +45,23 @@ namespace templateApp.GUI.Modulo15
             ((SKD)Page.Master).IdModulo = "15";
           //  this.btnmodificarImplemento.Click+= new EventHandler(this.evento_modificar);
             int idImplemento =Convert.ToInt16(Request.QueryString["idImplemento"]);
-            cargarDatosModificar(idImplemento);
+            if (idImplemento != 0) {
+                cargarDatosModificar(idImplemento);
+            
+            }
+            String modificar = Request.QueryString["modificar"];
+            if (modificar != null)
+            {
 
+                if (modificar.Equals("fallo"))
+                {
+                    alert2.Attributes["class"] = "alert alert-error alert-dismissible";
+                    alert2.Attributes["role"] = "alert";
+                    alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
+
+                }
+
+            }
 
         }
     }

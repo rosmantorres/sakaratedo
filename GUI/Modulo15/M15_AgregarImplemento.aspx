@@ -66,12 +66,12 @@ Agregar Implemento
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="text" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control"   />            
+                           <input type="number" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control"   />            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="text" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control"   />         
+                        <input type="number" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control"   />         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -115,7 +115,7 @@ Agregar Implemento
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Stock M&iacutenimo</b></p>
-                        <input type="text" id="stock_implemento" name="stock_implemento" placeholder="*Stock Minimo" class="form-control"/>         
+                        <input type="number" id="stock_implemento" name="stock_implemento" placeholder="*Stock Minimo" class="form-control"/>         
                      </div>
                       <br/>
                       
@@ -146,9 +146,146 @@ Agregar Implemento
                 </form>
               </div><!-- Fin del formulario-->
  
+<script src="../../plugins/jquery_validate/dist/jquery.validate.js"></script>
+<script src="../../plugins/jquery_validate/dist/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery_validate/dist/additional-methods.js"></script>
+
       <!-- Declaración de las alertas-->
      <script type="text/javascript">  
       $(document).ready(function () {
+          // just for the demos, avoids form submit
+          jQuery.validator.setDefaults({
+              debug: true,
+              success: "valid"
+          });
+          $("#agregar_implemento").validate({
+              rules: {
+                  nombre_implemento: {
+                      required: true,
+                      minlength:2,
+                      maxlength:90
+         
+                  },
+                  tipo_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+
+                  },
+                  cantidad_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90,
+                      number:true
+                  },
+                  precio_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90,
+                      number: true
+                  },
+                  color_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+                  },
+                  marca_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+                  },
+                  talla_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90
+                  },
+                  stock_implemento: {
+                      required: true,
+                      minlength: 1,
+                      maxlength: 90,
+                      number: true
+                  },
+                  descripcion_implemento: {
+                      required: true,
+                      minlength: 5,
+                      maxlength: 90,
+                  },
+                  imagen_implemento: {
+                      required: true
+                  }
+                 
+          },    
+      messages:{ 
+                 nombre_implemento:{ 
+                  required:"Este campo es obligatorio",
+                  minlength:"Minimo tiene que ser 2 caracteres",
+                  maxlength:"Maximo tiene que ser 90 caracteres"
+                 },
+                 tipo_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres"
+                 },
+                 cantidad_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres",
+                     number: "solo se aceptan numeros"
+                 },
+                 precio_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres",
+                     number: "solo se aceptan numeros"
+
+                 },
+                 color_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres"
+                 },
+                 marca_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres"
+                 },
+                 talla_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres"
+                 },
+                 stock_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 2 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres",
+                     number: "solo se aceptan numeros"
+
+                 },
+                 descripcion_implemento: {
+                     required: "Este campo es obligatorio",
+                     minlength: "Minimo tiene que ser 5 caracteres",
+                     maxlength: "Maximo tiene que ser 90 caracteres"
+
+                 },
+                 imagen_implemento: {
+                     required: "La imagen es obligatoria"
+                     
+
+                 }
+                
+                 
+      },
+      submitHandler: function (form) {
+          // some other code
+          // maybe disabling submit button
+          // then:
+          form.submit();
+      }
+
+    });
+
+
+
           $("#alert").hide();
           $("#alert").attr("class", "alert alert-error alert-dismissible");
           $("#alert").attr("role", "alert");

@@ -144,13 +144,13 @@ namespace templateApp.GUI.Modulo15
 
 
         #region eliminarInventarioInterfaz
-        public void eliminarInventarioInterfaz(int idInventario) {
+        public void eliminarInventarioInterfaz(int idInventario,Dojo dojo) {
             LogicaImplemento logicaImplemento = null;
 
             try
             {
                 logicaImplemento = new LogicaImplemento();
-                logicaImplemento.eliminarInventarioLogica(idInventario);
+                logicaImplemento.eliminarInventarioLogica(idInventario,dojo);
 
             }
 
