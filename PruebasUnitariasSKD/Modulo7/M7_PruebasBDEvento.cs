@@ -10,6 +10,9 @@ using DatosSKD.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7
 {
+    /// <summary>
+    /// Clase de pruebas para la clase BDEvento
+    /// </summary>
     [TestFixture]
     public class M7_PruebasBDEvento
     {
@@ -37,6 +40,9 @@ namespace PruebasUnitariasSKD.Modulo7
 
         #region Test
 
+        /// <summary>
+        /// Método para probar que se detalla un evento
+        /// </summary>
         [Test]
         public void PruebaDetallarEventoXId()
         {
@@ -45,6 +51,9 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.AreEqual("La vida en el Dojo", evento.Nombre);
         }
 
+        /// <summary>
+        /// Método para probar que un evento detallado no sea nulo
+        /// </summary>
         [Test]
         public void PruebaDetallarEventoXIdNoNulo()
         {
@@ -53,6 +62,9 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.NotNull(evento);
         }
 
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas eventos
+        /// </summary>
         [Test]
         public void PruebaListarEventosAsistidos()
         {
@@ -61,6 +73,9 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.GreaterOrEqual(listaEvento.Count, 0);
         }
 
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
         [Test]
         public void PruebaListarEventosAsistidosNoNulo()
         {
@@ -68,7 +83,10 @@ namespace PruebasUnitariasSKD.Modulo7
             List<Evento> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
             Assert.NotNull(listaEvento);
         }
-
+        
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas competencias
+        /// </summary>
         [Test]
         public void PruebaListarCompetenciasAsistidas()
         {
@@ -77,6 +95,9 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.GreaterOrEqual(listaCompetencia.Count, 0);
         }
 
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
         [Test]
         public void PruebaListarCompetenciasAsistidasNoNula()
         {
@@ -85,6 +106,9 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.NotNull(listaCompetencia);
         }
 
+        /// <summary>
+        /// Método para probar que devuelve la fecha de inscripción de un evento 
+        /// </summary>
         [Test]
         public void PruebaFechaInscripcion()
         {
@@ -93,6 +117,9 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.AreEqual("02/10/2015", fechaInscripcion.ToString("MM/dd/yyyy"));
         }
 
+        /// <summary>
+        /// Método para probar que no devuelva nula la fecha de inscripción de un evento
+        /// </summary>
         [Test]
         public void PruebaFechaInscripcionNoNula()
         {

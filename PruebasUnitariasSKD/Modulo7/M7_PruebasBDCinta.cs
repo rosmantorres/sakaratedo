@@ -63,10 +63,10 @@ namespace PruebasUnitariasSKD.Modulo7
         }
 
         /// <summary>
-        /// Método para probar que la cinta obtenida es correcta
+        /// Método para probar que se detalla una cinta
         /// </summary>
         [Test]
-        public void PruebaDetallarCintaxID()
+        public void PruebaDetallarCintaXId()
         {
             BDCinta baseDeDatosCinta = new BDCinta();
             Cinta cinta= baseDeDatosCinta.DetallarCinta(1);

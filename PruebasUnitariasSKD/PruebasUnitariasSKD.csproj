@@ -111,7 +111,10 @@
       <DependentUpon>RecursosPU_Mod6.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo7\M7_PruebasBDCinta.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDCompetencia.cs" />
     <Compile Include="Modulo7\M7_PruebasBDEvento.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDHorario.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDUbicacion.cs" />
     <Compile Include="Modulo7\RecursosPU_Mod7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

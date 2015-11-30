@@ -56,7 +56,7 @@ namespace templateApp.GUI.Modulo7
                          this.nombre_evento.Text = "hola";
                          this.descripcion_evento.Text = competencia.TipoCompetencia;
                          this.costo_evento.Text = competencia.Costo.ToString();
-                         this.estado_evento.Text = competencia.Status;
+                         this.estado_evento.Text = "";
                          this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
                          this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
                          this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
