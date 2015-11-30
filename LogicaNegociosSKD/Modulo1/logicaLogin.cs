@@ -133,7 +133,8 @@ namespace LogicaNegociosSKD.Modulo1
             {
                 Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
                 Console.WriteLine("Mensaje: " + e.Message);
-                throw e;
+                return null;
+                //throw e;
             }
         }
     }
