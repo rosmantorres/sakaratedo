@@ -44,7 +44,7 @@
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" name="diseno_planilla" id="diseno_planilla" method="post" action="M14_DisenoPlanilla.aspx?success=1"  runat="server">
+  <form role="form" name="diseno_planilla" id="diseno_planilla"  runat="server">
 
    
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
@@ -58,18 +58,28 @@
             <CKEditor:CKEditorControl ID="CKEditor1"  Height="620px" runat="server">
             </CKEditor:CKEditorControl>
           </div>
-          <div class="col-sm-2 col-lg-2 col-md-2">
+              <div class="col-sm-2 col-lg-2 col-md-2">
               <Label>Leyenda</Label>
               <br />
               <br />
-              <div class="dropdown" runat="server" id="divComboDatos" >
-                 <asp:DropDownList ID="comboDatos" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
+                  
+              <asp:ScriptManager ID="ScriptManager" runat="server" />
+                <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional"
+                     runat="server">
+                 <ContentTemplate>
+                 <asp:DropDownList ID="comboDatos" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboDatos_SelectedIndexChanged">
+                     <asp:ListItem Text="DOJO" Value="DOJO"/>
+                     <asp:ListItem Text="PERSONA" Value="PERSONA" />
+                     <asp:ListItem Text="MATRICULA" Value="MATRICULA"  />
+                     <asp:ListItem Text="EVENTO" Value="EVENTO" />
+                     <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
+                     <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
                  </asp:DropDownList>
-              </div>
-              <br />
-              
-              <asp:Label id="labelLeyenda" Text="" runat="server" />
-          </div>
+                 <br />             
+                 <asp:Label id="campos" Text="" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>                   
+          </div>         
         </div>
 
 
@@ -79,9 +89,7 @@
        </div>
         
       <!-- /.box-body -->
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
-       &nbsp;&nbsp;&nbsp;&nbsp
          <asp:Button id="btnguardar" class="btn btn-primary"  type="submit" runat="server" Text = "Guardar" OnClick="btnguardar_Click"  ></asp:Button>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M14_ConsultarPlanillas.aspx">Cancelar</a>

@@ -32,6 +32,12 @@ namespace templateApp.GUI.Modulo14
                         if (!IsPostBack)
                         {
                             CKEditor1.Text = Server.HtmlDecode(dis.Contenido);
+                            this.campos.Text = "";
+                            this.campos.Text += "$doj_rif<br/>";
+                            this.campos.Text += "$doj_nombre<br/>";
+                            this.campos.Text += "$doj_telefono<br/>";
+                            this.campos.Text += "$doj_email<br/>";
+                            this.campos.Text += "$doj_status<br/>";
                         }
                         Request.Cookies["Planilla"].Expires = DateTime.Now;
                         planilla1 = new DominioSKD.Planilla(this.idPlanilla, this.Planilla.Text, true, this.tipoPlanilla.Text);
@@ -96,6 +102,71 @@ namespace templateApp.GUI.Modulo14
                     }
                 }
             }
+        }
+
+        protected void comboDatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboDatos.SelectedValue == "DOJO")
+            {
+                this.campos.Text = "";
+                this.campos.Text += "$doj_rif<br/>";
+                this.campos.Text += "$doj_nombre<br/>";
+                this.campos.Text += "$doj_telefono<br/>";
+                this.campos.Text += "$doj_email<br/>";
+                this.campos.Text += "$doj_status<br/>";
+            }
+            else if (comboDatos.SelectedValue == "PERSONA")
+            {
+                this.campos.Text = "";
+                this.campos.Text += "$per_tipo_doc_id<br/>";
+                this.campos.Text += "$per_num_doc_id<br/>";
+                this.campos.Text += "$per_nombre<br/>";
+                this.campos.Text += "$per_apellido<br/>";
+                this.campos.Text += "$per_sexo<br/>";
+                this.campos.Text += "$per_fecha_nacimiento<br/>";
+                this.campos.Text += "$per_nombre_usuario<br/>";
+                this.campos.Text += "$per_peso<br/>";
+                this.campos.Text += "$per_estatura<br/>";
+                this.campos.Text += "$per_imagen<br/>";
+            }
+            else if (comboDatos.SelectedValue == "EVENTO")
+            {
+                this.campos.Text = "";
+                this.campos.Text += "$eve_descripcion<br/>";
+                this.campos.Text += "$eve_nombre<br/>";
+                this.campos.Text += "$eve_costo<br/>";
+                this.campos.Text += "$CATEGORIA_cat_id<br/>";
+                this.campos.Text += "$HORARIO_hor_id<br/>";
+                this.campos.Text += "$TIPO_EVENTO_TIPO_EVENTO<br/>";
+            }
+            else if (comboDatos.SelectedValue == "COMPETENCIA")
+            {
+                this.campos.Text = "";
+                this.campos.Text += "$comp_nombre<br/>";
+                this.campos.Text += "$comp_tipo<br/>";
+                this.campos.Text += "$CATEGORIA_comp_id<br/>";
+                this.campos.Text += "$comp_fecha_ini<br/>";
+                this.campos.Text += "$comp_fecha_fin<br/>";
+                this.campos.Text += "$comp_costo<br/>";
+            }
+            else if (comboDatos.SelectedValue == "ORGANIZACION")
+            {
+                this.campos.Text = "";
+                this.campos.Text += "$org_nombre<br/>";
+                this.campos.Text += "$org_direccion<br/>";
+                this.campos.Text += "$org_telefono<br/>";
+                this.campos.Text += "$org_email<br/>";
+            }
+            else if (comboDatos.SelectedValue == "MATRICULA")
+            {
+                this.campos.Text = "";
+                this.campos.Text += "$mat_identificador<br/>";
+                this.campos.Text += "$mat_fecha_creacion<br/>";
+                this.campos.Text += "$mat_activa<br/>";
+                this.campos.Text += "$mat_fecha_ultimo_pago<br/>";
+            }
+            else
+                this.campos.Text = "";
         }
         
     }

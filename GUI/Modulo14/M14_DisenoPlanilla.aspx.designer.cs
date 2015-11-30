@@ -58,13 +58,22 @@ namespace templateApp.GUI.Modulo14 {
         protected global::CKEditor.NET.CKEditorControl CKEditor1;
         
         /// <summary>
-        /// Control divComboDatos.
+        /// Control ScriptManager.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboDatos;
+        protected global::System.Web.UI.ScriptManager ScriptManager;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// Control comboDatos.
@@ -76,13 +85,13 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.WebControls.DropDownList comboDatos;
         
         /// <summary>
-        /// Control labelLeyenda.
+        /// Control campos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labelLeyenda;
+        protected global::System.Web.UI.WebControls.Label campos;
         
         /// <summary>
         /// Control btnguardar.
