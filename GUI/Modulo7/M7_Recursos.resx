@@ -138,11 +138,17 @@
   <data name="AbrirUL" xml:space="preserve">
     <value>&lt;ul&gt;</value>
   </data>
+  <data name="AliasEventoActivo" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="AliasEventoInactivo" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInfoAsistenciaAEventos" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info1"  id="</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoAsistido.aspx?eventoDetalle=</value>
   </data>
   <data name="BotonInfoCintas" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleCinta.aspx?cintaDetalle=</value>

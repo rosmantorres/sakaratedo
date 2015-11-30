@@ -17,7 +17,7 @@ namespace templateApp.GUI.Modulo7
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "12";
+            ((SKD)Page.Master).IdModulo = "7";
             String detalleString = Request.QueryString["cintaDetalle"];
 
             if (!IsPostBack) // verificar si la pagina se muestra por primera vez

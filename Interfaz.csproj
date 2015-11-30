@@ -261,6 +261,7 @@
     <Content Include="GUI\Modulo7\js\jquery-ui.js" />
     <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarCintas.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx" />
@@ -1609,6 +1610,13 @@
     </Compile>
     <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.designer.cs">
       <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx.cs">
+      <DependentUpon>M7_DetalleEventoAsistido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx.designer.cs">
+      <DependentUpon>M7_DetalleEventoAsistido.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx.cs">
       <DependentUpon>M7_ListarAsistenciaAEventos.aspx</DependentUpon>

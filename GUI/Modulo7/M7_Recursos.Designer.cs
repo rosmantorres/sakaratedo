@@ -124,6 +124,24 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activo.
+        /// </summary>
+        internal static string AliasEventoActivo {
+            get {
+                return ResourceManager.GetString("AliasEventoActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactivo.
+        /// </summary>
+        internal static string AliasEventoInactivo {
+            get {
+                return ResourceManager.GetString("AliasEventoInactivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -133,7 +151,7 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;   data-toggle=&quot;modal&quot; data-target=&quot;#modal-info1&quot;  id=&quot;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleEventoAsistido.aspx?eventoDetalle=.
         /// </summary>
         internal static string BotonInfoAsistenciaAEventos {
             get {
