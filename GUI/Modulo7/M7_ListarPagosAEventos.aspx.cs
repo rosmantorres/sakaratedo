@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
+using templateApp.GUI.Master;
 
 
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarPagosAEventos : System.Web.UI.Page
-    { 
+    {
         #region Atributos
         private List<DominioSKD.Evento> laLista;
         private List<DominioSKD.Competencia> laListaCompetencias;
@@ -26,33 +27,36 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
+            DateTime fechaInscripcion;
+            int idPersona = 1;
+
 
             String detalleString = Request.QueryString["eventDetalle"];
 
             if (detalleString != null)
             {
-                llenarModalInfo(int.Parse(detalleString));
+                //llenarModalInfo(int.Parse(detalleString));
             }
 
             #region Llenar Data Table con Eventos
             LogicaEventosPagos logEvento = new LogicaEventosPagos();
-             LogicaEventosInscritos logEvento2 = new LogicaEventosInscritos();
-             laListaCompetencias = logEvento2.obtenerListaDeCompetencias(1);
+
+
             if (!IsPostBack)
             {
                 try
                 {
-                    laLista = logEvento.obtenerListaDeEventos();
-                    
+                    laLista = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                    laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
 
                     foreach (Evento evento in laLista)
                     {
+                        fechaInscripcion = logEvento.obtenerFechaInscripcion(1, evento.Id_evento);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.ToString() + M7_Recursos.CerrarTD;
-                      //  this.laTabla.Text += M7_Recursos.AbrirTD + evento.fecha.ToString() + M7_Recursos.CerrarTD;
-                      //this.laTabla.Text += M7_Recursos.AbrirTD + evento.monto.ToString() + M7_Recursos.CerrarTD;   
+                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + "monto" + M7_Recursos.CerrarTD;   
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
@@ -64,8 +68,8 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                        //this.laTabla.Text += M7_Recursos.AbrirTD + competencia.fecha.ToString() + M7_Recursos.CerrarTD;
-                        //this.laTabla.Text += M7_Recursos.AbrirTD + competencia.monto.ToString() + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + "MM/dd/yyyy" + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Costo.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
@@ -79,24 +83,24 @@ namespace templateApp.GUI.Modulo7
                 }
             }
         }
-        
-            /// <summary>
-            /// Método que llena el modal con la información del evento
-            /// </summary>
-            /// <param name="idEvento">Número entero que representa el ID del evento</param>
-            protected void llenarModalInfo(int idEvento)
-            {
-                /*Evento evento = new Evento();
-                LogicaEventosPagos logica = new LogicaEventosPagos();
-                evento = logica.detalleEventoID(idEvento);*/
-            }
 
+        /// <summary>
+        /// Método que llena el modal con la información del evento
+        /// </summary>
+        /// <param name="idEvento">Número entero que representa el ID del evento</param>
+        protected void llenarModalInfo(int idEvento)
+        {
+            /*Evento evento = new Evento();
+            LogicaEventosPagos logica = new LogicaEventosPagos();
+            evento = logica.detalleEventoID(idEvento);*/
         }
-            #endregion
-            
-            
 
-        
+    }
+            #endregion
+
+
+
+
         #endregion
-        
+
 }
