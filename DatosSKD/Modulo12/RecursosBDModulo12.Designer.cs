@@ -250,6 +250,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ordenCinta.
+        /// </summary>
+        internal static string AliasOrdenCinta {
+            get {
+                return ResourceManager.GetString("AliasOrdenCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sexoCategoria.
         /// </summary>
         internal static string AliasSexo {

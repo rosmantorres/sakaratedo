@@ -181,6 +181,9 @@
   <data name="AliasNombreOrganizacion" xml:space="preserve">
     <value>nombreOrganizacion</value>
   </data>
+  <data name="AliasOrdenCinta" xml:space="preserve">
+    <value>ordenCinta</value>
+  </data>
   <data name="AliasSexo" xml:space="preserve">
     <value>sexoCategoria</value>
   </data>

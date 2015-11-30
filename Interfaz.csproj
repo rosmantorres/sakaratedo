@@ -166,6 +166,7 @@
     <Content Include="dist\img\logo-wkf.png" />
     <Content Include="dist\img\logofinal.png" />
     <Content Include="dist\img\Texture_Dark.jpg" />
+    <Content Include="Global.asax" />
     <Content Include="GUI\Master\menuLateral.xml" />
     <Content Include="GUI\Master\menuSuperior.xml">
       <SubType>Designer</SubType>
@@ -1113,6 +1114,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Master\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

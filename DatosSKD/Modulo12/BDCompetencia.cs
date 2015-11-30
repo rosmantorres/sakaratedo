@@ -699,6 +699,7 @@ namespace DatosSKD.Modulo12
 
                     laCinta.Id_cinta = int.Parse(row[RecursosBDModulo12.AliasIdCinta].ToString());
                     laCinta.Color_nombre = row[RecursosBDModulo12.AliasNombreCinta].ToString();
+                    laCinta.Orden = int.Parse(row[RecursosBDModulo12.AliasOrdenCinta].ToString());
 
                     laListaCintas.Add(laCinta);
 
