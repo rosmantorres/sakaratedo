@@ -371,11 +371,10 @@ namespace DatosSKD.Modulo7
             }
         }
 
-   ///Metodo que lista los eventos pagos del atleta
-        public List<Evento> ListarEventosPagos()
+        ///Metodo que lista los eventos pagos del atleta
+        public List<Evento> ListarEventosPagos(int idPersona)
         {
-            
-            int idPersona = 1;
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -387,22 +386,19 @@ namespace DatosSKD.Modulo7
                 parametros = new List<Parametro>();
 
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
                 parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarEventosPagos,parametros);
+                               RecursosBDModulo7.ConsultarEventosPagos, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
                     Evento evento = new Evento();
                     evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
                     evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
-                    evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
-                    evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString());
                     evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                    evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
-                    evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                    //  evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString
                     laListaDeEventoPago.Add(evento);
                 }
 
@@ -425,6 +421,62 @@ namespace DatosSKD.Modulo7
 
 
             //return laListaDeEventosPagos;
+        }
+
+        /// <summary>
+        /// Metodo para listar las competencias pagadas del atleta
+        /// </summary>
+        /// <param name="idPersona"></param>
+        /// <returns></returns>
+        public List<Competencia> ListarCompetenciasPagas(int idPersona)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+            List<Competencia> laListaDeCompetenciasPagas = new List<Competencia>();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo7.ConsultarCompetenciasInscritas, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Competencia competencia = new Competencia();
+
+                    competencia.Nombre = row[RecursosBDModulo7.AliasCompetenciaNombre].ToString();
+                    if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
+                        competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKata;
+                    else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(2))
+                        competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKumite;
+                    else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(3))
+                        competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
+                    competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
+                    laListaDeCompetenciasPagas.Add(competencia);
+                }
+
+                return laListaDeCompetenciasPagas;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
         }
             
         /// <summary>

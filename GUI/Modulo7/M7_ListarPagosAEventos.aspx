@@ -55,10 +55,10 @@
        <table id="tablapagoseventos" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>Factura</th>
-					<th>Evento</th>
-                    <th>Fecha</th>
-                    <th>Pago</th>
+                    <th>Evento</th>
+					<th>Tipo</th>
+                    <th>Fecha de Pago</th>
+                    <th>Monto</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
