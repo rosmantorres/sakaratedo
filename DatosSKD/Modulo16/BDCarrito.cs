@@ -353,11 +353,6 @@ namespace DatosSKD.Modulo16
         /// <param name="idEvento">Indica el Identificador del Evento</param>
         /// <returns> True o False si la operacion fue exitosa o fallida</returns>
         /// <summary>
-        /// Metodo que agrega los eventos al carrito, en el ambiente de base de datos
-        /// </summary>
-        /// <param name="idUsuario">Indica el Indentificador del usuario que esta asociado al evento</param>
-        /// <param name="idEvento">Indica el Identificador del Evento</param>
-        /// <returns> True o False si la operacion fue exitosa o fallida</returns>
         public static bool agregarEventoaCarrito(int idPersona, int idEvento)
         {
 
@@ -419,7 +414,7 @@ namespace DatosSKD.Modulo16
         }
 
         /// <summary>
-        /// Metodo que agrega los matriculas al carrito, en el ambiente de base de datos
+        /// Metodo que agrega las matriculas al carrito, en el ambiente de base de datos
         /// </summary>
         /// <param name="idUsuario">Indica el identificador del Usuario</param>
         /// <param name="idMatricula">Indica el Identificador de la Matricula</param>
