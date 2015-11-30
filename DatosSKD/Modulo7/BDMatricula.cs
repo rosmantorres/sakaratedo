@@ -21,7 +21,6 @@ namespace DatosSKD.Modulo7
         /// <returns>Objeto de tipo Matricula</returns>
         public Matricula DetallarMatricula(int idMatricula)
         {
-
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -30,7 +29,7 @@ namespace DatosSKD.Modulo7
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                Matricula matricula = new Matricula();
+                Matricula matricula  = new Matricula();
 
                 elParametro = new Parametro(RecursosBDModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.ToString(), false);
                 parametros.Add(elParametro);
@@ -40,14 +39,15 @@ namespace DatosSKD.Modulo7
 
                 foreach (DataRow row in dt.Rows)
                 {
-                   
-                   
+                  
+                    
                     matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
                     //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
                     matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
                     matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
                     //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
-
+                 
+                    
 
                 }
 
@@ -58,11 +58,7 @@ namespace DatosSKD.Modulo7
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
-            {
-                throw ex;
-            }*/
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;
@@ -79,9 +75,9 @@ namespace DatosSKD.Modulo7
         /// Método para listar las matriculas pagadas de los atletas
         /// </summary>
         /// <returns>Lista de matriculas</returns>
-        public List<Matricula> ListarMatriculasPagas()
+        public List<Matricula> ListarMatriculasPagas(int idPersona)
         {
-            int idPersona = 1;
+       
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -92,7 +88,7 @@ namespace DatosSKD.Modulo7
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
                 parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(

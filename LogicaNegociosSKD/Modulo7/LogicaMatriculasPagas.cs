@@ -31,19 +31,19 @@ namespace LogicaNegociosSKD.Modulo7
         /// </summary>
         public LogicaMatriculasPagas()
         {
-            laListaDeMatriculas = obtenerListaDeMatriculas();
+            
         }
 
         /// <summary>
         /// Método que obtiene la lista de matriculas que han sido pagadas
         /// </summary>
         /// <returns>Lista de objetos tipo Matricula</returns>
-        public List<DominioSKD.Matricula> obtenerListaDeMatriculas()
+        public List<DominioSKD.Matricula> obtenerListaDeMatriculas(int idPersona)
         {
             try
             {
                 BDMatricula baseDeDatosMatricula = new BDMatricula();
-                return baseDeDatosMatricula.ListarMatriculasPagas();
+                return baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
             }
             catch (Exception e)
             {
