@@ -111,6 +111,7 @@ namespace DatosSKD.Modulo4
                         elDojo.Status_dojo = row[RecursosBDModulo4.AliasStatusDojo].ToString();
                         elDojo.Registro_dojo = DateTime.Parse(row[RecursosBDModulo4.AliasFechaDojo].ToString());
                         elDojo.Organizacion_dojo = int.Parse(row[RecursosBDModulo4.AliasIdOrganizacion].ToString());
+                        elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasNombreOrganizacion].ToString();
                         elDojo.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDModulo4.AliasIdUbicacion].ToString()),
                                                                 row[RecursosBDModulo4.AliasNombreCiudad].ToString(),
                                                                 row[RecursosBDModulo4.AliasNombreEstado].ToString());
