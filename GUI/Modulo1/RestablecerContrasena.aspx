@@ -29,9 +29,13 @@
                             <h3>Restablecer Contraseña</h3>
                       </div>
 
-                        <div class="alert alert-info" id="infoRestablecer">
+                        <div class="alert alert-info" id="infoRestablecer" runat="server">
                                 La contraseña debe poseer de <strong>8-16 caracteres</strong> e incluir al menos <strong>una letra mayúscula </strong> ,
                          <strong> una letra minúscula</strong> y <strong>un número.</strong>
+                       </div>
+                      <div class="alert alert-warning" id="infoWarning" runat="server">
+                       </div>
+                      <div class="alert alert-danger" id="infoDanger" runat="server">
                        </div>
                     <hr />
                       <div id="p1" class="form-group">

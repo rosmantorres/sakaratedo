@@ -79,7 +79,7 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Su enlace ha caducado por favor vuelva a solicitar reestablecer su contraseña.
+        ///   Busca una cadena traducida similar a Su enlace ha caducado por favor vuelva a solicitar el reestablecimiento de su contraseña.
         /// </summary>
         internal static string logErrRestablecer {
             get {
@@ -93,6 +93,15 @@ namespace templateApp.GUI.Modulo1 {
         internal static string logInfo {
             get {
                 return ResourceManager.GetString("logInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string logRestablecerRequerimientos {
+            get {
+                return ResourceManager.GetString("logRestablecerRequerimientos", resourceCulture);
             }
         }
         
@@ -156,6 +165,24 @@ namespace templateApp.GUI.Modulo1 {
         internal static string parametroURLReestablecerFalla {
             get {
                 return ResourceManager.GetString("parametroURLReestablecerFalla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a caducado.
+        /// </summary>
+        internal static string parametroURLRestablecerCaducado {
+            get {
+                return ResourceManager.GetString("parametroURLRestablecerCaducado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

@@ -18,13 +18,20 @@ namespace templateApp.GUI.Modulo1
 
             errorLogin.Visible = false;
             warningLog.Visible = false;
+            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != ""))
+            {
+                if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo]
+                    == RecursosInterfazModulo1.parametroURLCorreoEnviado))
+                    mensajeLogin(RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
 
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] == RecursosInterfazModulo1.parametroURLCorreoEnviado))
-                mensajeLogin( RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
-            else
-                infoLog.Visible = false;
-
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] == RecursosInterfazModulo1.parametroURLReestablecerExito))
+                else if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo]
+                    == RecursosInterfazModulo1.parametroURLRestablecerCaducado))
+                    mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoInfo);
+                else
+                    infoLog.Visible = false;
+            }
+            if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] 
+                == RecursosInterfazModulo1.parametroURLReestablecerExito))
                 mensajeLogin( RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
             else
                 successLog.Visible = false;
