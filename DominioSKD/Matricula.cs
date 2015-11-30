@@ -6,76 +6,96 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
+
+    /// <summary>
+    /// Clase que representa una matricula de un Atleta con en un Dojo
+    /// </summary>
     public class Matricula
     {
-        private int id_matricula;
-        private int identificador_matricula;
-        private String fechaInicio;
-        private String fechaUltimoPago;
-        private Boolean status;
-        private float monto;
 
-        public int Id_matricula
+        #region Atributos
+        /// <summary>
+        /// Identificador en DB
+        /// </summary>
+        private int _id;
+
+        /// <summary>
+        /// Identificador de la matricula
+        /// </summary>
+        private String _identificador;
+
+        /// <summary>
+        /// Fecha de creación de la Matricula
+        /// </summary>
+        private DateTime _creacion;
+
+        /// <summary>
+        /// Ultima fecha de pago de la matrícula
+        /// </summary>
+        private DateTime _ultimaFechaPago;
+
+        /// <summary>
+        /// Estado de la matricula
+        /// </summary>
+        private Boolean _status;
+        #endregion
+
+        #region Constructores
+        public Matricula(int id)
         {
-            get { return id_matricula; }
-            set { id_matricula = value; }
+            this._id = id;
         }
-
-        public int Identificador_matricula
-        {
-            get { return identificador_matricula; }
-            set { identificador_matricula = value; }
-        }
-
-
-        public String FechaInicio
-        {
-            get { return fechaInicio; }
-            set { fechaInicio = value; }
-        }
-
-        public String FechaUltimoPago
-        {
-            get { return fechaUltimoPago; }
-            set { fechaUltimoPago = value; }
-        }
-
-        public Boolean Status
-        {
-            get { return status; }
-            set { status = value; }
-        }
-
-        public float Monto
-        {
-            get { return monto; }
-            set { monto = value; }
-        }
-
-
 
         public Matricula()
         {
-            id_matricula = 0;
-            identificador_matricula = 0;
-            fechaInicio = "";
-            fechaUltimoPago = "";
-
+            this._id = -1;
         }
+        #endregion
 
-        public Matricula(int elId, int identificador, Boolean estado, String fechaIni, String fechaPago)
+        #region Métodos
+        public int ID
         {
-            id_matricula = elId;
-            identificador_matricula = identificador;
-            status = estado;
-            fechaInicio = fechaIni;
-            fechaUltimoPago = fechaPago;
+            get { return this._id; }
         }
 
-
-        public Matricula(String fechaPago)
+        public String Identificador
         {
-            fechaUltimoPago = fechaPago;
+            set
+            {
+                this._identificador = value;
+            }
+            get
+            {
+                return this._identificador;
+            }
         }
+
+        public DateTime FechaCreacion
+        {
+            set
+            {
+                this._creacion = value;
+            }
+            get
+            {
+                return this._creacion;
+            }
+        }
+
+        public DateTime UltimaFechaPago
+        {
+            set
+            {
+                this._ultimaFechaPago = value;
+            }
+            get
+            {
+                return this._ultimaFechaPago;
+            }
+        }
+        #endregion
+
     }
+
+    
 }
