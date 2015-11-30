@@ -36,7 +36,7 @@ namespace PruebasUnitariasSKD.Modulo1
         public  void PruebaConstructorCuenta2()
         {
 
-            Cuenta cuenta = new Cuenta(Int32.Parse(RecursosPU_Mod1.Id), RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave,RecursosPU_Mod1.Vacio);
+            Cuenta cuenta = new Cuenta(Int32.Parse(RecursosPU_Mod1.Id), RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave,RecursosPU_Mod1.Vacio,RecursosPU_Mod1.Vacio);
 
             Assert.AreEqual(cuenta.Id_usuario, Int32.Parse(RecursosPU_Mod1.Id));
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
@@ -51,7 +51,7 @@ namespace PruebasUnitariasSKD.Modulo1
             elRol.Id_rol = Int32.Parse(RecursosPU_Mod1.Id);
             elRol.Nombre = RecursosPU_Mod1.usuario.ToString();
             listaRol.Add(elRol);
-            Cuenta cuenta = new Cuenta(RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, listaRol, RecursosPU_Mod1.Vacio);
+            Cuenta cuenta = new Cuenta(RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, listaRol, RecursosPU_Mod1.Vacio,RecursosPU_Mod1.Vacio);
 
             Assert.AreEqual(cuenta.Roles, listaRol);
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);

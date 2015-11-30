@@ -174,4 +174,13 @@
   <data name="subEtiquetaSeleccionar" xml:space="preserve">
     <value>&lt;asp:ListItem Selected="True" Value="select"&gt;-Seleccionar rol- &lt;/asp:ListItem&gt;</value>
   </data>
+  <data name="Codigo_Error_Hash" xml:space="preserve">
+    <value>SKD_00_10</value>
+  </data>
+  <data name="Mensaje_Error_Hash" xml:space="preserve">
+    <value>Error encontrado en login.hash</value>
+  </data>
+  <data name="claveDES" xml:space="preserve">
+    <value>SaKARAteDO2015</value>
+  </data>
 </root>

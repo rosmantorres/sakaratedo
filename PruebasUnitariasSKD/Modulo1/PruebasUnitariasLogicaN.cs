@@ -88,23 +88,23 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoCorrecto()
         {
             logicaLogin lg = new logicaLogin();
-            bool _respuesta;
+            string _respuesta;
 
 
             _respuesta = lg.validarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
 
-            Assert.AreEqual(true, _respuesta);
+            Assert.AreNotEqual(null, _respuesta);
         } 
         // Prueba unitaria del metodo ValidarCorreo() de forma Erronea
          [Test]
          public void PruebaValidarCorreoFallido()
          {
              logicaLogin lg = new logicaLogin();
-             bool _respuesta;
+             string _respuesta;
 
 
              _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaErrorCorreo);
-             Assert.AreEqual(false, _respuesta);
+             Assert.AreEqual(null, _respuesta);
          }
          [Test]
          // Prueba unitaria de la excepcion del metodo hash()
@@ -112,7 +112,7 @@ namespace PruebasUnitariasSKD.Modulo1
          public void PruebaValidarCorreoFallidoexc()
          {
              logicaLogin lg = new logicaLogin();
-             bool _respuesta;
+             string _respuesta;
              _respuesta = lg.validarCorreo(null);
          }
          // Prueba unitaria del metodo restablecerContrasena(string usuarioID, string contraseña) de forma Erronea

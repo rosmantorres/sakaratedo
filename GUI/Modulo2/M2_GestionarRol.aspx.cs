@@ -24,6 +24,7 @@ namespace templateApp.GUI.Modulo2
         public int cont = 0;
         public HiddenField Hidden =new HiddenField();
         public List<Rol> rolSinPermiso = new List<Rol>();
+        public Cuenta cuentaConsultada ;
 
         //public Persona usuario;
         protected void Page_Load(object sender, EventArgs e)
@@ -34,9 +35,12 @@ namespace templateApp.GUI.Modulo2
                 ((SKD)Page.Master).IdModulo = "2";
 
                 if (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario] != null)
-                    rolesDePersona=logicaRol.consultarRolesUsuario
-                        (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);
-
+                {
+                    rolesDePersona = logicaRol.consultarRolesUsuario
+                        (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);////QUITAR ESTE PROCEDIMIENTO Y SP
+                    cuentaConsultada =
+                    logicaRol.cuentaAConsultar(int.Parse(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]));                       rolesDePersona = cuentaConsultada.Roles;
+                }
 
                 rolSinPermiso = logicaRol.rolNoEditable(rolesDePersona,
                         Session[RecursosInterfazMaster.sessionRol].ToString());
@@ -54,7 +58,9 @@ namespace templateApp.GUI.Modulo2
                 rolesFiltrados = logicaRol.validarPrioridad(rolesFiltrados,
                     Session[RecursosInterfazMaster.sessionRol].ToString());
 
-            
+            //asigno la imagen del perfil
+                imageTag.Src = imageTag.Src + "marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png";
+
         }
         protected void EliminarRol(object sender, EventArgs e)
         {

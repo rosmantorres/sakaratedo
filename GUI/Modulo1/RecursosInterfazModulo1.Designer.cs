@@ -79,6 +79,15 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Su enlace ha caducado por favor vuelva a solicitar reestablecer su contraseña.
+        /// </summary>
+        internal static string logErrRestablecer {
+            get {
+                return ResourceManager.GetString("logErrRestablecer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¡Correo enviado!.
         /// </summary>
         internal static string logInfo {

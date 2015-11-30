@@ -16,7 +16,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Gestionar Usuario</a> 
+			    <a href="<%=Page.ResolveUrl("~/GUI/Modulo6/M6_ListaUsuarios.aspx") %>">Gestionar Usuario</a> 
 		    </li>
 		    <li class="active">
 			    Gestionar roles
@@ -29,19 +29,19 @@
     Gestión de roles
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-    Agregar o Quitar roles a un usuario
-    
-    <br />
-    Nombre(s):
-    <br />
-    Apellido(s):
-    <br />
-    Correo:
-    <br />
-    Identificador:
-    <br />
-    Dojo:
-    <br />
+
+
+        <img id="imageTag" runat="server" src="http://" class="img-circle" alt="User Image" height="150" width="150">   
+        <br />
+        <br />
+        Nombre completo:<strong><%=cuentaConsultada.NombreDePila %></strong>
+        <br /> 
+         <br />
+        Usuario:<strong> <%=cuentaConsultada.Nombre_usuario%></strong>
+
+                  <span class="hidden-xs" id="userName" runat="server"></span>
+
+
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">

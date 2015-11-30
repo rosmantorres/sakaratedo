@@ -8,12 +8,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
 using templateApp.GUI.Modulo1;
+using DominioSKD;
 
 namespace templateApp
 {
     public partial class SKD : System.Web.UI.MasterPage
     {
         private string idModulo;
+        public Cuenta userLogin = new Cuenta();
         private Dictionary<string, string> opcionesDelMenu = new Dictionary<string, string>();
         private Dictionary<string, string[,]> subOpcionesDelMenu = new Dictionary<string, string[,]>(); //Se guardaran las sub opciones del menú
         private string[] rolesUsuario = new string[10];//los roles que el usuario tiene registrado
@@ -68,19 +70,27 @@ namespace templateApp
         /// </summary>
         protected void asignarUsuario()
         {
-            //aqui debo pedir el nombre,apellido y foto del usuario
+            
             string Stringhttp = RecursosInterfazMaster.AliasHttp;
             char[] http = Stringhttp.ToCharArray();
             string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString().TrimStart(http);
 
+            if (imagen == "")
+            {
+                imagen = "../../dist/img/AvatarSKD.jpg";
+                imageUsuario.Src = imagen;
+                imageTag.Src = imagen;
 
-            imageUsuario.Src = imageUsuario.Src + imagen;
-            imageTag.Src = imageTag.Src + imagen;
-
+            }
+            else
+            {
+                imageUsuario.Src = imageUsuario.Src + imagen;
+                imageTag.Src = imageTag.Src + imagen;
+            }
             userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
 
             //aqui va el nombre y apellido
-            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
+            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionNombreCompleto] ;
             string[] roles = Session[RecursosInterfazMaster.sessionRoles].ToString().Split(char.Parse(RecursosInterfazMaster.splitRoles));
             int cont = 0;
             foreach (string perfil in roles)

@@ -36,8 +36,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuario()
         {
 
-            bool True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.PruebaCorrectoResultado);
-            Assert.AreEqual(True, true);
+            String True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.PruebaCorrectoResultado);
+            Assert.AreNotEqual(True, null);
 
         }
         // Prueba unitaria del metodo ValidarCorreoUsuario(string correo_usuario) EXC mas de un correo Principal
@@ -47,7 +47,7 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuarioExc()
         {
 
-            bool True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
+           String True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
 
         }
         // Prueba unitaria del metodo  ObtenerUsuario(string usuario)

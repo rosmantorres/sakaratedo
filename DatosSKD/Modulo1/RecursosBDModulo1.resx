@@ -166,4 +166,7 @@
   <data name="AliasImagen" xml:space="preserve">
     <value>imagen</value>
   </data>
+  <data name="AliasNombreDePila" xml:space="preserve">
+    <value>nombreDePila</value>
+  </data>
 </root>

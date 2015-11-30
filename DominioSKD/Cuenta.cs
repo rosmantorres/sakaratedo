@@ -14,6 +14,7 @@ namespace DominioSKD
         private String contrasena;
         private List<Rol> roles;
         private String imagen;
+        private String nombreDePila;
         #endregion
 
         #region propiedades
@@ -46,6 +47,12 @@ namespace DominioSKD
             get { return roles; }
             set { roles = value; }
         }
+
+        public String NombreDePila
+        {
+            get { return nombreDePila; }
+            set { nombreDePila = value; }
+        }
         #endregion
 
         #region constructores
@@ -55,21 +62,24 @@ namespace DominioSKD
             nombre_usuario = "";
             contrasena = "";
             imagen = "";
+            nombreDePila = "";
         }
 
-         public Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena, String laImagen)
+         public Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena, String laImagen,string elNombreDePila)
         {
             id_usuario = elIdUsuario;
             nombre_usuario = elNombreUsuario;
             contrasena = laContrasena;
             imagen = laImagen;
+            nombreDePila = elNombreDePila;
         }
-         public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen)
+         public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen, string elNombreDePila)
          {
              nombre_usuario = elNombreUsuario;
              contrasena = laContrasena;
              roles = listaRoles;
              imagen = laImagen;
+             nombreDePila=elNombreDePila;
          }
 
         #endregion

@@ -31,9 +31,11 @@
     <subopcion rol="Sistema-Dojo-Entrenador" nombre="Inventario" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx"/>
   </opcion>
 
-  <opcion rol="Sistema-Organización-Entrenador-Atleta-Representante" nombre="Planillas">
-    <subopcion rol="Sistema-Organización-Entrenador-Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
-  </opcion>
+    <opcion rol="Sistema-Organización-Entrenador-Atleta-Representante-Dojo" nombre="Planillas">
+      <subopcion rol="Sistema-Organización-Dojo" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillas.aspx"/>
+      <subopcion rol="Atleta-Representante" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_SolicitarPlanilla.aspx"/>
+      <subopcion rol="Entrenador" nombre="Gestión De Planillas" link="~/GUI/Modulo14/M14_ConsultarPlanillasDojo.aspx"/>
+    </opcion>
 
   <opcion rol="Sistema-Organización-Dojo-Entrenador-Atleta-Representante" nombre="Compras">
     <subopcion rol="Sistema-Organización-Dojo-Entrenador-Atleta-Representante" nombre="Gestión De Compras" link="~/GUI/Modulo16/M16_VerCarrito.aspx"/>
