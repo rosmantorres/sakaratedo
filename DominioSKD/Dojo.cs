@@ -18,9 +18,7 @@ namespace DominioSKD
         private String logo_dojo;
         private DateTime registro_dojo;
         private String status_dojo;
-        private String estilo_dojo;
-        private String organizacion_dojo;
-        private String matricula_dojo;
+        private int organizacion_dojo;
         private Ubicacion ubicacion;
         #endregion
 
@@ -32,14 +30,7 @@ namespace DominioSKD
 
             set { registro_dojo = value; }
         }
-        public int Dojo_Id
-        {
-            get { return id_dojo; }
-
-            set { id_dojo = value; }
-
-        }
-
+        
         public int Id_dojo
         {
             get { return id_dojo; }
@@ -51,16 +42,8 @@ namespace DominioSKD
             get { return status_dojo; }
             set { status_dojo = value; }
         }
-        public String Matricula_dojo
-        {
-            get { return matricula_dojo; }
-            set { matricula_dojo = value; }
-        }
-        public String Estilo_dojo
-        {
-            get { return estilo_dojo; }
-            set { estilo_dojo = value; }
-        }
+       
+       
         public int Telefono_dojo
         {
             get { return telefono_dojo; }
@@ -72,7 +55,7 @@ namespace DominioSKD
             get { return rif_dojo; }
             set { rif_dojo = value; }
         }
-        public String Organizacion_dojo
+        public int Organizacion_dojo
         {
             get { return organizacion_dojo; }
             set { organizacion_dojo = value; }
@@ -119,7 +102,7 @@ namespace DominioSKD
         }
 
         //constructor con parametros 
-        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion, string matricula)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion,)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
@@ -130,7 +113,6 @@ namespace DominioSKD
             this.status_dojo = Status;
             this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
-            this.matricula_dojo = matricula;
         }
         //constructor sin id 
         public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion)
