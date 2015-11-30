@@ -143,11 +143,11 @@ namespace LogicaNegociosSKD.Modulo15
 
 
         #region eliminarInventarioLogica
-        public void eliminarInventarioLogica(int idInventario) {
+        public void eliminarInventarioLogica(int idInventario,Dojo dojo) {
 
             try {
 
-                ConexionBaseDatos.eliminarInventarioDatos(idInventario);
+                ConexionBaseDatos.eliminarInventarioDatos(idInventario,dojo);
               
             }
 

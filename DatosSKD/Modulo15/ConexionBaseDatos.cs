@@ -396,7 +396,7 @@ namespace DatosSKD.Modulo15
 
 
        #region eliminarInventarioDatos
-       public  static void eliminarInventarioDatos(int idInventario)
+       public  static void eliminarInventarioDatos(int idInventario,Dojo dojo)
        {
 
            BDConexion laConexion;
@@ -414,6 +414,15 @@ namespace DatosSKD.Modulo15
                else
                    throw new ExcepcionesSKD.Modulo15.ImplementoSinIDException(RecursosBDModulo15.parametroIdimplemento,
                        RecursosBDModulo15.tabla_idImplemento, new Exception());
+
+               if (dojo != null)
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, dojo.Dojo_Id.ToString(), false);
+                   parametros.Add(parametro);
+               }
+               else
+                   throw new ExcepcionesSKD.Modulo15.ImplementoSinIDException(RecursosBDModulo15.parametroDojoIdImplemento,
+                       RecursosBDModulo15.tabla_dojoImplemento, new Exception());
 
                    laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureEliminarInventario, parametros);
            }
