@@ -50,21 +50,28 @@ namespace PruebasUnitariasSKD.Modulo15
             dojo = null;
         }
 
+        #region PruebaAgregarInventarioNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void PruebaAgregarInventarioNulo()
         {
+            implemento = null;
+            ConexionBaseDatos.agregarInventarioDatos(implemento);
 
-        
+       
         }
+        #endregion
 
+        #region PruebaAgregarInventarioAtributoNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void PruebaAgregarInventarioAtributoNulo()
         {
+            implemento.Nombre_Implemento = null;
+            ConexionBaseDatos.agregarInventarioDatos(implemento);
 
-          
         }
+        #endregion
 
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
@@ -81,37 +88,28 @@ namespace PruebasUnitariasSKD.Modulo15
 
         }
 
+        #region PruebaAgregarInventarioDatos
         [Test]
-        public void PruebaagregarInventarioDatos()
+        public void PruebaAgregarInventarioDatos()
         {
 
             ConexionBaseDatos.agregarInventarioDatos(implemento);
-            //implemento2 = ConexionBaseDatos.implementoInventarioDatosUltimo();
-            Assert.AreEqual(2, 2);
-        }
-        [Test]
-        public void PruebaagregarInventarioDatos()
-        {
+            implemento2 = ConexionBaseDatos.implementoInventarioDatosUltimo();
+            Assert.AreEqual(implemento.Nombre_Implemento, implemento2.Nombre_Implemento);
+            Assert.AreEqual(implemento.Tipo_Implemento, implemento2.Tipo_Implemento);
+            Assert.AreEqual(implemento.Marca_Implemento, implemento2.Marca_Implemento);
+            Assert.AreEqual(implemento.Color_Implemento, implemento2.Color_Implemento);
+            Assert.AreEqual(implemento.Talla_Implemento, implemento2.Talla_Implemento);
+            Assert.AreEqual(implemento.Precio_Implemento, implemento2.Precio_Implemento);
+            Assert.AreEqual(implemento.Cantida_implemento, implemento2.Cantida_implemento);
+            Assert.AreEqual("Activo", implemento2.Estatus_Implemento);
+            Assert.AreEqual(implemento.Stock_Minimo_Implemento, implemento2.Stock_Minimo_Implemento);
+            Assert.AreEqual(implemento.Imagen_implemento, implemento2.Imagen_implemento);
+            Assert.AreEqual(implemento.Descripcion_Implemento, implemento2.Descripcion_Implemento);
 
-            ConexionBaseDatos.agregarInventarioDatos(implemento);
-            //implemento2 = ConexionBaseDatos.implementoInventarioDatosUltimo();
-            Assert.AreEqual(2, 2);
         }
-        [Test]
-        public void PruebaagregarInventarioDatos()
-        {
+        #endregion
 
-            ConexionBaseDatos.agregarInventarioDatos(implemento);
-            //implemento2 = ConexionBaseDatos.implementoInventarioDatosUltimo();
-            Assert.AreEqual(2, 2);
-        }
-        [Test]
-        public void PruebaagregarInventarioDatos()
-        {
 
-            ConexionBaseDatos.agregarInventarioDatos(implemento);
-            //implemento2 = ConexionBaseDatos.implementoInventarioDatosUltimo();
-            Assert.AreEqual(2, 2);
-        }
     }
 }

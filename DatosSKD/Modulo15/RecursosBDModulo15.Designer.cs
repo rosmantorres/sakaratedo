@@ -196,6 +196,15 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to implemento nulo.
+        /// </summary>
+        internal static string parametroImplemento {
+            get {
+                return ResourceManager.GetString("parametroImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_impMarca.
         /// </summary>
         internal static string parametroMarcaImplemento {
@@ -309,6 +318,15 @@ namespace DatosSKD.Modulo15 {
         internal static string tabla_imagenImplemento {
             get {
                 return ResourceManager.GetString("tabla_imagenImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to implemento nulo.
+        /// </summary>
+        internal static string tabla_implemento {
+            get {
+                return ResourceManager.GetString("tabla_implemento", resourceCulture);
             }
         }
         

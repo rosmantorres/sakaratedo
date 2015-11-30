@@ -163,6 +163,9 @@
   <data name="parametroImagenImplemento" xml:space="preserve">
     <value>@_impImagen</value>
   </data>
+  <data name="parametroImplemento" xml:space="preserve">
+    <value>implemento nulo</value>
+  </data>
   <data name="parametroMarcaImplemento" xml:space="preserve">
     <value>@_impMarca</value>
   </data>
@@ -201,6 +204,9 @@
   </data>
   <data name="tabla_imagenImplemento" xml:space="preserve">
     <value>imp_imagen</value>
+  </data>
+  <data name="tabla_implemento" xml:space="preserve">
+    <value>implemento nulo</value>
   </data>
   <data name="tabla_marcaImplemento" xml:space="preserve">
     <value>imp_marca</value>

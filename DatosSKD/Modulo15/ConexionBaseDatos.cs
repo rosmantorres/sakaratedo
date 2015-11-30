@@ -25,152 +25,172 @@ namespace DatosSKD.Modulo15
            //float precioNuevo = (float)precio_implemento;
            laConexion = new BDConexion();
            parametros = new List<Parametro>();
-           if ((implemento.Nombre_Implemento != null) && (implemento.Nombre_Implemento != ""))
+           if (implemento != null)
            {
-               parametro = new Parametro(RecursosBDModulo15.parametroNombreImplemento, SqlDbType.VarChar, implemento.Nombre_Implemento, false);
 
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroNombreImplemento,
-                   RecursosBDModulo15.tabla_idImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos",ex);
-               throw ex;
-                          }
-           if ((implemento.Tipo_Implemento != null) && (implemento.Tipo_Implemento != ""))
-           {
-               parametro = new Parametro(RecursosBDModulo15.parametroTipoImplemento, SqlDbType.VarChar, implemento.Tipo_Implemento, false);
-               parametros.Add(parametro);
-           }
-           else
-           {  ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroTipoImplemento,
-                   RecursosBDModulo15.tabla_tipoImplemento, new Exception());
-              
-               throw ex;  
-           }
-           if ((implemento.Marca_Implemento != null) && (implemento.Marca_Implemento != ""))
-           {
-               parametro = new Parametro(RecursosBDModulo15.parametroMarcaImplemento, SqlDbType.VarChar, implemento.Marca_Implemento, false);
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroMarcaImplemento,
-                 RecursosBDModulo15.tabla_marcaImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos", ex);
-          
-               throw ex;
-           }
-           if ((implemento.Color_Implemento != null) && (implemento.Color_Implemento != ""))
-           {
-               parametro = new Parametro(RecursosBDModulo15.parametroColorImplemento, SqlDbType.VarChar, implemento.Color_Implemento, false);
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroColorImplemento,
-                  RecursosBDModulo15.tabla_colorImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos", ex);
-               throw ex;
-           }
-           if ((implemento.Talla_Implemento != null) && (implemento.Talla_Implemento != ""))
-           {
-               parametro = new Parametro(RecursosBDModulo15.parametroTallaImplemento, SqlDbType.VarChar, implemento.Talla_Implemento, false);
-               parametros.Add(parametro);
-           }
-           else
-           {      ErrorEnParametroDeProcedure ex= new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroTallaImplemento,
-                   RecursosBDModulo15.tabla_tallaImplemento, new Exception());
-                    Logger.EscribirError("ConexionBaseDatos", ex); 
+
+               if ((implemento.Nombre_Implemento != null) && (implemento.Nombre_Implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroNombreImplemento, SqlDbType.VarChar, implemento.Nombre_Implemento, false);
+
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroNombreImplemento,
+                       RecursosBDModulo15.tabla_idImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
                    throw ex;
-           }
-           if ((implemento.Precio_Implemento != null))
-           {
+               }
+               if ((implemento.Tipo_Implemento != null) && (implemento.Tipo_Implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroTipoImplemento, SqlDbType.VarChar, implemento.Tipo_Implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroTipoImplemento,
+                        RecursosBDModulo15.tabla_tipoImplemento, new Exception());
 
-               parametro = new Parametro(RecursosBDModulo15.parametroPrecioImplemento, SqlDbType.Float, ((float)implemento.Precio_Implemento).ToString(), false);
-               parametros.Add(parametro);
+                   throw ex;
+               }
+               if ((implemento.Marca_Implemento != null) && (implemento.Marca_Implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroMarcaImplemento, SqlDbType.VarChar, implemento.Marca_Implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroMarcaImplemento,
+                     RecursosBDModulo15.tabla_marcaImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+
+                   throw ex;
+               }
+               if ((implemento.Color_Implemento != null) && (implemento.Color_Implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroColorImplemento, SqlDbType.VarChar, implemento.Color_Implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroColorImplemento,
+                      RecursosBDModulo15.tabla_colorImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+               if ((implemento.Talla_Implemento != null) && (implemento.Talla_Implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroTallaImplemento, SqlDbType.VarChar, implemento.Talla_Implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroTallaImplemento,
+                    RecursosBDModulo15.tabla_tallaImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+               if ((implemento.Precio_Implemento != null))
+               {
+
+                   parametro = new Parametro(RecursosBDModulo15.parametroPrecioImplemento, SqlDbType.Float, ((float)implemento.Precio_Implemento).ToString(), false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroPrecioImplemento,
+                          RecursosBDModulo15.tabla_precioImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+
+                   throw ex;
+
+
+               }
+               if (implemento.Stock_Minimo_Implemento != null)
+               {
+
+                   parametro = new Parametro(RecursosBDModulo15.parametroStockMinimoImplemento, SqlDbType.Int, implemento.Stock_Minimo_Implemento.ToString(), false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroStockMinimoImplemento,
+                     RecursosBDModulo15.tabla_stockImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+
+               if (implemento.Cantida_implemento != null)
+               {
+
+                   parametro = new Parametro(RecursosBDModulo15.parametroCantidadInventario, SqlDbType.Int, implemento.Cantida_implemento.ToString(), false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroCantidadInventario,
+                       RecursosBDModulo15.tabla_cantidadImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+               if ((implemento.Descripcion_Implemento != null) && (implemento.Descripcion_Implemento != ""))
+               {
+
+                   parametro = new Parametro(RecursosBDModulo15.parametroDescripcionImplemento, SqlDbType.VarChar, implemento.Descripcion_Implemento, false);
+                   parametros.Add(parametro);
+
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDescripcionImplemento,
+                       RecursosBDModulo15.tabla_descripcionImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+
+               if (implemento.Dojo_Implemento != null)
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, implemento.Dojo_Implemento.Dojo_Id.ToString(), false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
+                       RecursosBDModulo15.tabla_dojoImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+               if ((implemento.Imagen_implemento != null) && (implemento.Imagen_implemento != ""))
+               {
+                   parametro = new Parametro(RecursosBDModulo15.parametroImagenImplemento, SqlDbType.VarChar, implemento.Imagen_implemento, false);
+                   parametros.Add(parametro);
+               }
+               else
+               {
+                   ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroImagenImplemento,
+                          RecursosBDModulo15.tabla_imagenImplemento, new Exception());
+                   Logger.EscribirError("ConexionBaseDatos", ex);
+                   throw ex;
+               }
+
+               laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureAgregarInventario, parametros);
            }
+
            else
            {
-             ErrorEnParametroDeProcedure ex= new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroPrecioImplemento,
-                    RecursosBDModulo15.tabla_precioImplemento, new Exception());
-             Logger.EscribirError("ConexionBaseDatos", ex); 
-         
-             throw ex;
-         
-           
-           }
-           if (implemento.Stock_Minimo_Implemento != null)
-           {
-
-               parametro = new Parametro(RecursosBDModulo15.parametroStockMinimoImplemento, SqlDbType.Int, implemento.Stock_Minimo_Implemento.ToString(), false);
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroStockMinimoImplemento,
-                 RecursosBDModulo15.tabla_stockImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos", ex); 
-               throw ex;
-           }
-
-           if (implemento.Cantida_implemento != null)
-           {
-
-               parametro = new Parametro(RecursosBDModulo15.parametroCantidadInventario, SqlDbType.Int, implemento.Cantida_implemento.ToString(), false);
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex= new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroCantidadInventario,
-                   RecursosBDModulo15.tabla_cantidadImplemento, new Exception());
+               ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroImplemento, RecursosBDModulo15.tabla_implemento, new Exception());
                Logger.EscribirError("ConexionBaseDatos", ex);
                throw ex;
-           }
-           if ((implemento.Descripcion_Implemento != null) && (implemento.Descripcion_Implemento != ""))
-           {
-
-               parametro = new Parametro(RecursosBDModulo15.parametroDescripcionImplemento, SqlDbType.VarChar, implemento.Descripcion_Implemento, false);
-               parametros.Add(parametro);
 
            }
-           else
-           {
-               ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDescripcionImplemento,
-                   RecursosBDModulo15.tabla_descripcionImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos", ex);
-               throw ex;
-           }
-
-           if (implemento.Dojo_Implemento != null)
-           {
-               parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, implemento.Dojo_Implemento.Dojo_Id.ToString(), false);
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex= new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
-                   RecursosBDModulo15.tabla_dojoImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos", ex);
-               throw ex;
-           }
-           if ((implemento.Imagen_implemento != null) && (implemento.Imagen_implemento != ""))
-           {
-               parametro = new Parametro(RecursosBDModulo15.parametroImagenImplemento, SqlDbType.VarChar, implemento.Imagen_implemento, false);
-               parametros.Add(parametro);
-           }
-           else
-           {
-               ErrorEnParametroDeProcedure ex= new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroImagenImplemento,
-                      RecursosBDModulo15.tabla_imagenImplemento, new Exception());
-               Logger.EscribirError("ConexionBaseDatos", ex);
-               throw ex;
-           }
-
-           laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureAgregarInventario, parametros);
        }
-       catch (Exception ex)
+       catch (ErrorEnParametroDeProcedure ex)
+       {
+
+           throw ex;
+       }
+       catch (ExceptionSKD ex)
        {
            Logger.EscribirError("ConexionBaseDatos", ex);
            throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
@@ -644,7 +664,7 @@ namespace DatosSKD.Modulo15
                implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
-
+               implemento.Descripcion_Implemento = row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
            }
            catch (Exception e)
            {
