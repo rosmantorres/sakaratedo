@@ -21,7 +21,7 @@ namespace DatosSKD.Modulo13
             BDConexion laConexion;
           
             List<Parametro> parametros;
-          string hola = "hola";
+          
               try
               {
                   laConexion = new BDConexion();
