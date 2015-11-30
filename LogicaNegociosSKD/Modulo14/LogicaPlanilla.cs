@@ -97,6 +97,17 @@ namespace LogicaNegociosSKD.Modulo14
             return planilla;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="idPlanilla"></param>
+        /// <returns></returns>
+        public List<string> ObtenerDatosPlanilla(int idPlanilla)
+        {
+            List<String> datos = BDPlanilla.ObtenerDatosPlanillaID(idPlanilla);
+            return datos;
+        }
+
         /// <summary>Modificar una planilla por id</summary>
         /// <param name="laPlanilla">la planilla</param>
         /// <returns>Regresa true si se modifico y false si no</returns>
