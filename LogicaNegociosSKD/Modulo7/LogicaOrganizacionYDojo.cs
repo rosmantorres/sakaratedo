@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DatosSKD.Modulo7;
+using DominioSKD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace LogicaNegociosSKD.Modulo7
         private List<DominioSKD.Organizacion> laListaDeOrganizacion;
         private List<DominioSKD.Dojo> laListaDeDojo;
         private List<DominioSKD.Persona> laListaDePersona;
+        private Dojo elDojo = new Dojo();
         #endregion
 
         #region Gets y Sets
@@ -42,27 +45,78 @@ namespace LogicaNegociosSKD.Modulo7
         {
 
         }
-
-        /*public List<DominioSKD.Competencia> obtenerDetalleOrganizacion()
+        /// <summary>
+        /// Metodo que llama a consulta Organizacion por id
+        /// </summary>
+        /// <returns></returns>
+        public Organizacion obtenerDetalleOrganizacion()
         {
             try
             {
-                return BDCompetencia.ListarCompetencias();
+                return BDOrganizacion.DetallarOrganizacion(Convert.ToInt16(elDojo.Organizacion_dojo));
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;
-            }
+            }/*
             catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
                 throw ex;
-            }
+            }*/
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 throw ex;
             }
 
-        }*/
+        }
+        /// <summary>
+        /// Metodo que llama a consulta dojo por id
+        /// </summary>
+        /// <returns></returns>
+        public Dojo obtenerDetalleDojo()
+        {
+            try
+            {
+                return BDDojo.DetallarDojo(1);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }/*
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+
+        }
+        /// <summary>
+        /// Metodo que llama a consulta de persona por id
+        /// </summary>
+        /// <returns></returns>
+        public Persona obtenerDetallePersona()
+        {
+            try
+            {
+                return BDPersona.DetallarPersona(1);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }/*
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }*/
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+
+        }
         #endregion
 
     }

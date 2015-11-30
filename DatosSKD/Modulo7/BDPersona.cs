@@ -11,6 +11,11 @@ namespace DatosSKD.Modulo7
 {
     public class BDPersona
     {
+        /// <summary>
+        /// MNetodo que busca la informacion de la persona logueada
+        /// </summary>
+        /// <param name="idPersona"></param>
+        /// <returns></returns>
         public static Persona DetallarPersona(int idPersona)
         {
             BDConexion laConexion;
@@ -27,18 +32,14 @@ namespace DatosSKD.Modulo7
                 parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ParamIdUsuarioLogueado, parametros);
+                               RecursosBDModulo7.ConsultaPersonaXId, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
-
-                    /*persona..Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
-                    cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
-                    cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
-                    cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
-                    cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
-                    cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());*/
-
+                    persona.Nombre = row[RecursosBDModulo7.AliasPersonaNombre].ToString();
+                    persona.Apellido = row[RecursosBDModulo7.AliasPersonaApellido].ToString();
+                    persona.FechaNacimiento = DateTime.Parse(row[RecursosBDModulo7.AliasPersonaFechaNacimiento].ToString());
+                    persona.Direccion = row[RecursosBDModulo7.AliasPersonaDireccion].ToString();
                 }
 
                 return persona;

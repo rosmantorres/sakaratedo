@@ -250,11 +250,65 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to email.
+        /// </summary>
+        internal static string AliasDojoEmail {
+            get {
+                return ResourceManager.GetString("AliasDojoEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to id.
         /// </summary>
         internal static string AliasDojoEventoId {
             get {
                 return ResourceManager.GetString("AliasDojoEventoId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id.
+        /// </summary>
+        internal static string AliasDojoId {
+            get {
+                return ResourceManager.GetString("AliasDojoId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string AliasDojoNombre {
+            get {
+                return ResourceManager.GetString("AliasDojoNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to organizacion.
+        /// </summary>
+        internal static string AliasDojoOrganizacionId {
+            get {
+                return ResourceManager.GetString("AliasDojoOrganizacionId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to telefono.
+        /// </summary>
+        internal static string AliasDojoTelefono {
+            get {
+                return ResourceManager.GetString("AliasDojoTelefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ubicacion.
+        /// </summary>
+        internal static string AliasDojoUbicacion {
+            get {
+                return ResourceManager.GetString("AliasDojoUbicacion", resourceCulture);
             }
         }
         
@@ -484,11 +538,65 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to direccion.
+        /// </summary>
+        internal static string AliasOrganizacionDireccion {
+            get {
+                return ResourceManager.GetString("AliasOrganizacionDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to email.
+        /// </summary>
+        internal static string AliasOrganizacionEmail {
+            get {
+                return ResourceManager.GetString("AliasOrganizacionEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id.
+        /// </summary>
+        internal static string AliasOrganizacionId {
+            get {
+                return ResourceManager.GetString("AliasOrganizacionId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string AliasOrganizacionNombre {
+            get {
+                return ResourceManager.GetString("AliasOrganizacionNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to telefono.
+        /// </summary>
+        internal static string AliasOrganizacionTelefono {
+            get {
+                return ResourceManager.GetString("AliasOrganizacionTelefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to apellido.
         /// </summary>
         internal static string AliasPersonaApellido {
             get {
                 return ResourceManager.GetString("AliasPersonaApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to direccion.
+        /// </summary>
+        internal static string AliasPersonaDireccion {
+            get {
+                return ResourceManager.GetString("AliasPersonaDireccion", resourceCulture);
             }
         }
         
@@ -516,24 +624,6 @@ namespace DatosSKD.Modulo7 {
         internal static string AliasPersonaNombreUsuario {
             get {
                 return ResourceManager.GetString("AliasPersonaNombreUsuario", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to numeroDocumento.
-        /// </summary>
-        internal static string AliasPersonaNumDocId {
-            get {
-                return ResourceManager.GetString("AliasPersonaNumDocId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to tipoDocumento.
-        /// </summary>
-        internal static string AliasPersonaTipoDocId {
-            get {
-                return ResourceManager.GetString("AliasPersonaTipoDocId", resourceCulture);
             }
         }
         
@@ -570,6 +660,24 @@ namespace DatosSKD.Modulo7 {
         internal static string AliasUbicacionId {
             get {
                 return ResourceManager.GetString("AliasUbicacionId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultaDojo.
+        /// </summary>
+        internal static string ConsultaDojoXId {
+            get {
+                return ResourceManager.GetString("ConsultaDojoXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultaOrganizacion.
+        /// </summary>
+        internal static string ConsultaOrganizacionXId {
+            get {
+                return ResourceManager.GetString("ConsultaOrganizacionXId", resourceCulture);
             }
         }
         

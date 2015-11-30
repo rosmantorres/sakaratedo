@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DominioSKD;
+using LogicaNegociosSKD.Modulo7;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +12,10 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarOrganizacionYDojo : System.Web.UI.Page
     {
         #region Atributos
-        private List<DominioSKD.Organizacion> laOrganizacion;
-        private List<DominioSKD.Dojo> elDojo;
-        private List<DominioSKD.Persona> laPersona;
+        private Organizacion laOrganizacion = new Organizacion();
+        private Dojo elDojo = new Dojo();
+        private Persona laPersona = new Persona();
+        LogicaOrganizacionYDojo laLogica = new LogicaOrganizacionYDojo();
         #endregion
 
         /// <summary>
@@ -22,50 +25,33 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            /* ((SKD)Page.Master).IdModulo = "7";
+             ((SKD)Page.Master).IdModulo = "7";
 
-             #region Llenar Data Table con Eventos
+             String detalleString = Request.QueryString["compDetalle"];
 
-             if (!IsPostBack)
+             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
              {
                  try
                  {
-                     laLista = logEvento.obtenerListaDeEventos();
 
-                     foreach (Evento evento in laLista)
-                     {
-                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("dd/MM/yyyy") + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                         this.laTabla.Text += M7_Recursos.BotonInfoEventosInscritos + evento.Id_evento + M7_Recursos.BotonCerrar;
-                         this.laTabla.Text += M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.CerrarTR;
-                     }
-
-                     foreach (Competencia competencia in laListaCompetencias)
-                     {
-                         this.laTabla.Text += M7_Recursos.AbrirTR;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("dd/MM/yyyy") + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                         this.laTabla.Text += M7_Recursos.BotonInfoEventosInscritos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
-                         this.laTabla.Text += M7_Recursos.CerrarTD;
-                         this.laTabla.Text += M7_Recursos.CerrarTR;
-                     }
-
+                     laPersona = laLogica.obtenerDetallePersona();
+                     this.nombreAtleta.Text = laPersona.Nombre;
+                     this.apellidoAtleta.Text = laPersona.Apellido;
+                     this.fechaNac.Text = laPersona.FechaNacimiento.ToShortDateString();
+                     this.direccion.Text = laPersona.Direccion;
+                     this.dojo.Text = elDojo.Nombre_dojo;
+                     this.dojoTlf.Text = elDojo.Telefono_dojo.ToString();
+                     this.dojoEmail.Text = elDojo.Email_dojo;
+                     this.dojoUbicacion.Text = elDojo.Ubicacion.Direccion;
+                     this.organizacion.Text = laOrganizacion.Nombre;
+                     this.organizacionTlf.Text = laOrganizacion.Telefono.ToString();
+                     this.organizacionEmail.Text = laOrganizacion.Email;
+                     this.organizacionUbica.Text = laOrganizacion.Direccion;
                  }
-                 catch (Exception ex)
+                 catch
                  {
-                     throw ex;
                  }
              }
-         }*/
-//#endregion
 
         }
         
