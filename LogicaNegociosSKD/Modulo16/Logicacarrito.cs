@@ -113,12 +113,12 @@ namespace LogicaNegociosSKD.Modulo16
         /// <param name="idEvento">Indica el identificador del Evento</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
 
-        public bool agregarEventoaCarrito(int idUsuario, int idEvento)
+        public bool agregarEventoaCarrito(int idUsuario, int idEvento, int cantidad, int precio)
         {
 
             try
             {
-                return BDCarrito.agregarEventoaCarrito(idUsuario, idEvento);
+                return BDCarrito.agregarEventoaCarrito(idUsuario, idEvento, cantidad, precio);
             }
 
 
@@ -142,11 +142,7 @@ namespace LogicaNegociosSKD.Modulo16
 
 
         }
-
-
-
-
-
+        
         /// <summary>
         /// Metodo que agrega las Matriculas al Carrito
         /// </summary>
@@ -182,10 +178,6 @@ namespace LogicaNegociosSKD.Modulo16
 
 
         }
-
-
-
-
 
         /// <summary>
         /// Metodo que agrega los Inventarios al Carrito

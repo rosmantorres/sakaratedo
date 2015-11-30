@@ -198,7 +198,7 @@
   <data name="PARAMETRO_IDEVENTO" xml:space="preserve">
     <value>idEvento</value>
   </data>
-  <data name="PARAMETRO_IDIMPLEMENTO" xml:space="preserve">
+  <data name="PARAMETRO_IDIMPLEMENTO2" xml:space="preserve">
     <value>@idImplemento</value>
   </data>
   <data name="PARAMETRO_IMAGEN" xml:space="preserve">
@@ -276,7 +276,7 @@
     <comment>Nombre del procedimiento que agrega evento al carrito</comment>
   </data>
   <data name="StoreProcedureAgregarinventarioaCarrito" xml:space="preserve">
-    <value>M16_agregarImplementoaCarrito</value>
+    <value>M16_AGREGAR_IMPLEMENTO_CARRITO</value>
     <comment>Nombre del procedimiento que agrega inventario al carrito</comment>
   </data>
   <data name="StoreProcedureAgregarmatriculaaCarrito" xml:space="preserve">
@@ -324,5 +324,15 @@
   </data>
   <data name="PARAMETRO_PRECIO2" xml:space="preserve">
     <value>@precio</value>
+  </data>
+  <data name="PARAMETRO_IDIMPLEMENTO" xml:space="preserve">
+    <value>idImplemento</value>
+  </data>
+  <data name="PROCEDIMIENTO_AGREGAR_EVENTO_CARRITO" xml:space="preserve">
+    <value>M16_AGREGAR_EVENTO_CARRITO</value>
+    <comment>Stored procedure que inserta una cantidad cualquiera de eventos al carrito</comment>
+  </data>
+  <data name="PROCEDIMIENTO_MODIFICAR_CANTIDAD_IMPLEMENTO" xml:space="preserve">
+    <value>M16_MODIFICAR_CANTIDAD_IMPLEMENTO</value>
   </data>
 </root>

@@ -29,6 +29,7 @@ namespace DatosSKD.Modulo16
         #endregion
 
         #region Metodos
+        #region VerCarrito
         /// <summary>
         /// Metodo que obtiene todos los items de implementos en el carrito del usuario de la Base de Datos
         /// </summary>
@@ -60,11 +61,11 @@ namespace DatosSKD.Modulo16
                     //Preparo para obtener los datos de ese Inventario
                     parametros = new List<Parametro>();
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int,
-                        row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString(), false);
+                        row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2].ToString(), false);
                     parametros.Add(parametro);
 
                     //Seteamos el id del implemento
-                    elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
+                    elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2].ToString());
 
                     //Obtengo la informacion de los implementos
                     conexion = new BDConexion();
@@ -244,7 +245,8 @@ namespace DatosSKD.Modulo16
                 throw new ExceptionSKDConexionBD("blabla", "blabla", e);
             }
         }*/
-        
+        #endregion
+        #region EliminarItem
         /// <summary>
         /// Metodo que elimina un objeto que haya en el carrito del usuario en la Base de Datos
         /// </summary>
@@ -289,7 +291,8 @@ namespace DatosSKD.Modulo16
             }
 
         }
-
+        #endregion
+        #region RegistrarPago
         /// <summary>
         /// Metodo que registra el pago de los productos existentes en el carrito de la base de datos
         /// La lista de datos actualmente no se usa, se deja asi para posibles futuros usos
@@ -332,56 +335,59 @@ namespace DatosSKD.Modulo16
                 throw new ExceptionSKDConexionBD("blabla", "blabla", e);
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #endregion
+        #region AgregarItem
         /// <summary>
         /// Metodo que agrega los eventos al carrito, en el ambiente de base de datos
         /// </summary>
-        /// <param name="idUsuario">Indica el Indentificador del usuario que esta asociado al evento</param>
+        /// <param name="idPersona">Indica el Indentificador del usuario que esta asociado al evento</param>
         /// <param name="idEvento">Indica el Identificador del Evento</param>
+        /// <param name="cantidad">Indica la cantidad que se estan agregando del evento</param>
+        /// <param name="precio">Indica el precio del evento para este momento</param>
         /// <returns> True o False si la operacion fue exitosa o fallida</returns>
         /// <summary>
-        public static bool agregarEventoaCarrito(int idPersona, int idEvento)
+        public static bool agregarEventoaCarrito(int idPersona, int idEvento, int cantidad, int precio)
         {
+            //Respuestas del metodo y del stored procedure
+            bool exito = false;
+            int respuesta = 0;
+
+            //Creo la lista de los parametros para el stored procedure y los anexo
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro();
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
+                    SqlDbType.Int, idPersona.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO,
+                    SqlDbType.Int, idEvento.ToString(), false);
+            parametros.Add(parametro);
+                        parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
+                    SqlDbType.Int, cantidad.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
+                    SqlDbType.Int, precio.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
+                SqlDbType.Int, respuesta.ToString(), true);
+            parametros.Add(parametro);
 
             try
             {
-                //Creo la lista de los parametros para el stored procedure y los anexo
-                List<Parametro> parametros = new List<Parametro>();
-
-
-                Parametro parametro = new Parametro();
-
-
-                parametro = new Parametro(RecursosBDModulo16.ParamIdEvento,
-                     SqlDbType.Int, idEvento.ToString(), false);
-                parametros.Add(parametro);
-
-                parametro = new Parametro(RecursosBDModulo16.ParamIdPersona,
-                   SqlDbType.Int, idPersona.ToString(), false);
-
-                parametros.Add(parametro);
-                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure esperando un resultado de una variable
                 BDConexion conexion = new BDConexion();
-                conexion.EjecutarStoredProcedure(RecursosBDModulo16.StoreProcedureAgregareventoaCarrito, parametros);
+                List<Resultado> result = conexion.EjecutarStoredProcedure
+                    (RecursosBDModulo16.PROCEDIMIENTO_AGREGAR_EVENTO_CARRITO, parametros);
 
-                return true;
+                //Recorro cada una de las respuestas en la lista
+                foreach (Resultado aux in result)
+                {
+                    //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
+                    if (aux.valor == "1")
+                        exito = true;
+                }
 
-
-
-
+                //Retorno la respuesta
+                return exito;
             }
 
             catch (ExceptionSKDConexionBD ex)
@@ -405,12 +411,22 @@ namespace DatosSKD.Modulo16
             catch (Exception ex)
             {
                 throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
-                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
+                    RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
 
             }
+           
+        }
 
-
-
+        /// <summary>
+        /// Metodo que modifica la cantidad de eventos en el carrito de un Usuario en BD
+        /// </summary>
+        /// <param name="idUsuario">el ID del usuario a modificarle el carrito</param>
+        /// <param name="idEvento">el ID del evento a modificar en el carrito</param>
+        /// <param name="cantidad">La cantidad a la cual se actualizara en el carrito</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool modificarCarritoEvento(int idUsuario, int idEvento, int cantidad)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -476,10 +492,7 @@ namespace DatosSKD.Modulo16
             }
 
         }
-
-
-
-
+        
         /// <summary>
         /// Metodo que agrega los implementos al carrito, en el ambiente de base de datos
         /// </summary>
@@ -491,7 +504,7 @@ namespace DatosSKD.Modulo16
         public static bool agregarInventarioaCarrito(int idPersona, int idInventario, int cantidad, int precio)
         {
             //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
-            int respuesta = 1;
+            int respuesta = 0;
             bool exito = false;
                        
                 //Creo la lista de los parametros para el stored procedure y los anexo
@@ -499,13 +512,16 @@ namespace DatosSKD.Modulo16
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
                     SqlDbType.Int, idPersona.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO,
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2,
                     SqlDbType.Int, idInventario.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
                     SqlDbType.Int, cantidad.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
+                        SqlDbType.Int, precio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
                     SqlDbType.Int, respuesta.ToString(), true);
                 parametros.Add(parametro);
 
@@ -565,7 +581,7 @@ namespace DatosSKD.Modulo16
         public bool modificarCarritoImplemento(int idUsuario, int idImplemento, int cantidad)
         {
             //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
-            int respuesta = 1;
+            int respuesta = 0;
             bool exito = false;
 
             //Creo la lista de los parametros para el stored procedure y los anexo
@@ -573,13 +589,13 @@ namespace DatosSKD.Modulo16
             Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
                 SqlDbType.Int, idUsuario.ToString(), false);
             parametros.Add(parametro);
-            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO,
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2,
                 SqlDbType.Int, idImplemento.ToString(), false);
             parametros.Add(parametro);
             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
                 SqlDbType.Int, cantidad.ToString(), false);
             parametros.Add(parametro);
-            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
                 SqlDbType.Int, respuesta.ToString(), true);
             parametros.Add(parametro);
 
@@ -588,7 +604,7 @@ namespace DatosSKD.Modulo16
                 //Creo la conexion a Base de Datos y ejecuto el Stored Procedure esperando un resultado de una variable
                 BDConexion conexion = new BDConexion();
                 List<Resultado> result = conexion.EjecutarStoredProcedure
-                    (RecursosBDModulo16.StoreProcedureAgregarinventarioaCarrito, parametros);
+                    (RecursosBDModulo16.PROCEDIMIENTO_MODIFICAR_CANTIDAD_IMPLEMENTO, parametros);
 
                 //Recorro cada una de las respuestas en la lista
                 foreach (Resultado aux in result)
@@ -627,19 +643,7 @@ namespace DatosSKD.Modulo16
 
             }
         }
-
-        /// <summary>
-        /// Metodo que modifica la cantidad de eventos en el carrito de un Usuario en BD
-        /// </summary>
-        /// <param name="idUsuario">el ID del usuario a modificarle el carrito</param>
-        /// <param name="idEvento">el ID del evento a modificar en el carrito</param>
-        /// <param name="cantidad">La cantidad a la cual se actualizara en el carrito</param>
-        /// <returns>El exito o fallo del proceso</returns>
-        public bool modificarCarritoEvento(int idUsuario, int idEvento, int cantidad)
-        {
-            throw new NotImplementedException();
-        }
-
+        #endregion
         #endregion
     }
 }
