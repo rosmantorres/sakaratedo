@@ -97,12 +97,12 @@ namespace DominioSKD
             this.email_dojo = "";
             this.logo_dojo = "";
             this.status_dojo = "";
-            this.organizacion_dojo = "";
+            this.organizacion_dojo = 0;
             this.ubicacion = null;
         }
 
         //constructor con parametros 
-        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion,)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
@@ -115,7 +115,7 @@ namespace DominioSKD
             this.ubicacion = ubicacion;
         }
         //constructor sin id 
-        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion)
+        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion)
         {
             this.rif_dojo = Rif;
             this.nombre_dojo = Nombre;

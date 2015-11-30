@@ -44,7 +44,7 @@ namespace DatosSKD.Modulo7
                     dojo.Telefono_dojo = int.Parse(row[RecursosBDModulo7.AliasDojoTelefono].ToString());
                     dojo.Email_dojo = row[RecursosBDModulo7.AliasDojoEmail].ToString();
                     dojo.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasDojoUbicacion].ToString()));
-                    dojo.Organizacion_dojo = row[RecursosBDModulo7.AliasDojoOrganizacionId].ToString();
+                    ///dojo.Organizacion_dojo = row[RecursosBDModulo7.AliasDojoOrganizacionId].ToString();
                 }
 
                 return dojo;
