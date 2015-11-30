@@ -60,12 +60,12 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.Mat_identificador.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.Identificador.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.FechaCreacion.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.FechaTope.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.UltimaFechaPago.ToString() + M16_Recursointerfaz.CERRAR_TD;
 
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_CARRITO + m.IdentificadorUsuario + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_CARRITO + m.ID + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
 

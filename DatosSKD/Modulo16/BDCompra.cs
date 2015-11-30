@@ -105,7 +105,7 @@ namespace DatosSKD.Modulo16
                 {
                     //Creo la matricula y le asigno el ID
                     Matricula matricula = new Matricula();
-                    matricula.Mat_identificador = row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString();
+                    matricula.Identificador = row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString();
 
                     //Agrego a la lista
                     listaMatriculas.Add(matricula);
