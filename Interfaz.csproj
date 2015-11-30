@@ -232,6 +232,7 @@
     <Content Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_DetalleDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
     <Content Include="GUI\Modulo5\M5_ListarCintas.aspx" />
@@ -1513,6 +1514,13 @@
     </Compile>
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.designer.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.cs">
+      <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.designer.cs">
+      <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>

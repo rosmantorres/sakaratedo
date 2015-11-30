@@ -205,20 +205,29 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_BuscarIdDojo.
+        /// </summary>
+        internal static string BuscarIdDojo {
+            get {
+                return ResourceManager.GetString("BuscarIdDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_006.
         /// </summary>
-        internal static string Codigo_Competencia_Existente {
+        internal static string Codigo_Dojo_Existente {
             get {
-                return ResourceManager.GetString("Codigo_Competencia_Existente", resourceCulture);
+                return ResourceManager.GetString("Codigo_Dojo_Existente", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_005.
         /// </summary>
-        internal static string Codigo_Competencia_Inexistente {
+        internal static string Codigo_Dojo_Inexistente {
             get {
-                return ResourceManager.GetString("Codigo_Competencia_Inexistente", resourceCulture);
+                return ResourceManager.GetString("Codigo_Dojo_Inexistente", resourceCulture);
             }
         }
         
@@ -237,6 +246,15 @@ namespace DatosSKD.Modulo4 {
         internal static string ConsultarDojos {
             get {
                 return ResourceManager.GetString("ConsultarDojos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarDojoXId.
+        /// </summary>
+        internal static string ConsultarDojoXId {
+            get {
+                return ResourceManager.GetString("ConsultarDojoXId", resourceCulture);
             }
         }
         
@@ -268,11 +286,29 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @idDojo.
+        /// </summary>
+        internal static string ParamIdDojo {
+            get {
+                return ResourceManager.GetString("ParamIdDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @idOrganizacion.
         /// </summary>
         internal static string ParamIdOrganizacion {
             get {
                 return ResourceManager.GetString("ParamIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @numDojo.
+        /// </summary>
+        internal static string ParamSalidaNumDojo {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumDojo", resourceCulture);
             }
         }
     }

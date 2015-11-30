@@ -20,11 +20,12 @@ namespace DominioSKD
         private String status_dojo;
         private String estilo_dojo;
         private String organizacion_dojo;
+        private String matricula_dojo;
         private Ubicacion ubicacion;
         #endregion
 
         #region propiedades
-    
+
         public DateTime Registro_dojo
         {
             get { return registro_dojo; }
@@ -49,6 +50,11 @@ namespace DominioSKD
         {
             get { return status_dojo; }
             set { status_dojo = value; }
+        }
+        public String Matricula_dojo
+        {
+            get { return matricula_dojo; }
+            set { matricula_dojo = value; }
         }
         public String Estilo_dojo
         {
@@ -107,12 +113,26 @@ namespace DominioSKD
             this.telefono_dojo = 0;
             this.email_dojo = "";
             this.logo_dojo = "";
-            this.status_dojo ="";
+            this.status_dojo = "";
             this.organizacion_dojo = "";
+            this.matricula_dojo = "";
             this.ubicacion = null;
         }
 
         //constructor con parametros 
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion, string matricula)
+        {
+            this.id_dojo = Id;
+            this.rif_dojo = Rif;
+            this.nombre_dojo = Nombre;
+            this.telefono_dojo = Telefono;
+            this.email_dojo = Email;
+            this.logo_dojo = Logo;
+            this.status_dojo = Status;
+            this.organizacion_dojo = organizacion;
+            this.ubicacion = ubicacion;
+            this.matricula_dojo = matricula;
+        }
         public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, string organizacion, Ubicacion ubicacion)
         {
             this.id_dojo = Id;

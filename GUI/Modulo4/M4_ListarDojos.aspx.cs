@@ -76,6 +76,11 @@ namespace templateApp.GUI.Modulo4
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Organizacion_dojo + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Estilo_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
+                        this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Dojo_Id + M4_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Dojo_Id + M4_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Dojo_Id + M4_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
                     }
 

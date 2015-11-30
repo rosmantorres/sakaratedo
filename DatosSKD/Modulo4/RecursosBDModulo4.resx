@@ -165,10 +165,13 @@
   <data name="AliasTelefonoDojo" xml:space="preserve">
     <value>telefonoDojo</value>
   </data>
-  <data name="Codigo_Competencia_Existente" xml:space="preserve">
+  <data name="BuscarIdDojo" xml:space="preserve">
+    <value>M4_BuscarIdDojo</value>
+  </data>
+  <data name="Codigo_Dojo_Existente" xml:space="preserve">
     <value>SKD_00_006</value>
   </data>
-  <data name="Codigo_Competencia_Inexistente" xml:space="preserve">
+  <data name="Codigo_Dojo_Inexistente" xml:space="preserve">
     <value>SKD_00_005</value>
     <comment>Codigo de error cuando no existe la competencia</comment>
   </data>
@@ -178,6 +181,9 @@
   </data>
   <data name="ConsultarDojos" xml:space="preserve">
     <value>M4_ConsultarDojos</value>
+  </data>
+  <data name="ConsultarDojoXId" xml:space="preserve">
+    <value>M4_ConsultarDojoXId</value>
   </data>
   <data name="Mensaje_Dojo_Existente" xml:space="preserve">
     <value>El rif del Dojo debe ser único, el Dojo ya existe</value>
@@ -189,7 +195,13 @@
     <value>Error de parseo</value>
     <comment>Mensaje de error cuando no puede parsear</comment>
   </data>
+  <data name="ParamIdDojo" xml:space="preserve">
+    <value>@idDojo</value>
+  </data>
   <data name="ParamIdOrganizacion" xml:space="preserve">
     <value>@idOrganizacion</value>
+  </data>
+  <data name="ParamSalidaNumDojo" xml:space="preserve">
+    <value>@numDojo</value>
   </data>
 </root>

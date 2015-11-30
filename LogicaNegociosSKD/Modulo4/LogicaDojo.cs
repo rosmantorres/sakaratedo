@@ -70,7 +70,7 @@ namespace LogicaNegociosSKD.Modulo4
             }
         }
 
-
+        */
         public DominioSKD.Dojo detalleDojoXId(int elIdDojo)
         {
             try
@@ -95,7 +95,7 @@ namespace LogicaNegociosSKD.Modulo4
             }
         }
 
-     */
+     
         #endregion
     }
 }
