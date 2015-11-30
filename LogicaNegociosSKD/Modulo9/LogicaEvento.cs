@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 using DatosSKD.Modulo9;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo9
 {
@@ -26,45 +27,57 @@ namespace LogicaNegociosSKD.Modulo9
 
         public bool CrearEvento(Evento evento)
         {
-
-            if (ValidarCaracteres(evento.Nombre)) 
+            try
             {
-                Console.Out.WriteLine("Nombre Valido");
-                if (ValidarCaracteres(evento.Descripcion))
+                if (ValidarCaracteres(evento.Nombre))
                 {
-                    Console.Out.WriteLine("Descripcion Valido");
-                    if (ValidarCosto(evento.Costo))
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
                     {
-                        Console.Out.WriteLine("Costo Valido");
-                        String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
-                        String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
-                        String año = (evento.Horario.FechaInicio.Date.Year.ToString());
-                        String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
-                        if (ValidarFormatoFecha(fechaInicio))
+                        Console.Out.WriteLine("Descripcion Valido");
+                        if (ValidarCosto(evento.Costo))
                         {
-                            Console.Out.WriteLine("FechaI Valido");
-                             dia = (evento.Horario.FechaFin.Date.Day.ToString());
-                             mes = (evento.Horario.FechaFin.Date.Month.ToString());
-                             año = (evento.Horario.FechaFin.Date.Year.ToString());
-                             String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
-                            if (ValidarFormatoFecha(fechaFin))
+                            Console.Out.WriteLine("Costo Valido");
+                            String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                            String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                            String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                            String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaInicio))
                             {
-                                Console.Out.WriteLine("FechaF Valido");
-                                if (ValidarFechaFinMayor(fechaInicio,fechaFin))
+                                Console.Out.WriteLine("FechaI Valido");
+                                dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                                mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                                año = (evento.Horario.FechaFin.Date.Year.ToString());
+                                String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                                if (ValidarFormatoFecha(fechaFin))
                                 {
-                                    Console.Out.WriteLine("FechaI <= FechaF");
-                                    BDEvento baseDeDatosEvento = new BDEvento();
+                                    Console.Out.WriteLine("FechaF Valido");
+                                    if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                    {
+                                        Console.Out.WriteLine("FechaI <= FechaF");
+                                        BDEvento baseDeDatosEvento = new BDEvento();
 
-                                    return baseDeDatosEvento.CrearEvento(evento);
+                                        return baseDeDatosEvento.CrearEvento(evento);
 
+                                    }
                                 }
                             }
                         }
                     }
+
                 }
-                
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             return false;
+
         }
 
         /// <summary>

@@ -152,9 +152,9 @@ namespace DatosSKD.Modulo9
                 evento = new Evento();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdEvento, SqlDbType.Int, idEvento, false);
-                Console.Out.WriteLine(parametro.valor);
+                /*Console.Out.WriteLine(parametro.valor);
                 Console.Out.WriteLine(parametro.tipoDato);
-                Console.Out.WriteLine(RecursosBDModulo9.ParametroIdEvento);
+                Console.Out.WriteLine(RecursosBDModulo9.ParametroIdEvento);*/
                 parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimentoConsultarEventoXID, parametros);
                 

@@ -10,8 +10,6 @@ using LogicaNegociosSKD.Modulo9;
 
 namespace PruebasUnitariasSKD.Modulo9
 {
-
-
     [TestFixture]
     class M9_PruebasLogicaEvento
     {
@@ -28,7 +26,7 @@ namespace PruebasUnitariasSKD.Modulo9
             Ubicacion ubicacion = new Ubicacion("10.499607", "66.788419", "Caracas", "Miranda", "NULL");
             ubicacion.Id_ubicacion = 1;
             elEvento = new Evento();
-            elEvento.Nombre = "Prueba Unitaria Logica Evento";
+            elEvento.Nombre = "Prueba Unitaria Logica/ Evento";
             elEvento.Descripcion = "Pruebas Unitarias Logica Evento";
             elEvento.Costo = 55;
             elEvento.Estado = true;
@@ -148,8 +146,6 @@ namespace PruebasUnitariasSKD.Modulo9
             Console.Out.WriteLine("Hora fin de Evento:" + " " + evento.Horario.HoraFin);
             Console.Out.WriteLine(" ");
             Assert.AreEqual(evento.Nombre, "Clase Regular");
-
-
         }
     }
 }
