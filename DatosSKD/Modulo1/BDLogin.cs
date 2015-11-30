@@ -27,13 +27,15 @@ namespace DatosSKD.Modulo1
                 parametros = new List<Parametro>();
                 Cuenta laCuenta = new Cuenta();
 
-                elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario,SqlDbType.VarChar,nombre_usuario,false);
 
-
+                elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario, false);
                 parametros.Add(elParametro);
-
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo1.ConsultarNombreUsuarioContrasena, parametros);
+                                RecursosBDModulo1.ConsultarNombreUsuarioContrasena, parametros);
+
+
+
+                
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -41,7 +43,8 @@ namespace DatosSKD.Modulo1
                     laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
                     laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
                     laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();
-                    laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString(); 
+                    laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString();
+                    laCuenta.NombreDePila = row[RecursosBDModulo1.AliasNombreDePila].ToString();
         
                 }
 
@@ -83,9 +86,6 @@ namespace DatosSKD.Modulo1
             }
 
         }
-
-
-
 
 
         public static Boolean ValidarCorreoUsuario(string correo_usuario)
@@ -136,5 +136,7 @@ namespace DatosSKD.Modulo1
             }
 
         }
+
+    
     }
 }
