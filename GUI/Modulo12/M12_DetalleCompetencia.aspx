@@ -5,7 +5,7 @@
    <script type="text/javascript">
        function initialize() {
            var latitude = "<%=laLatitud%>";
-          var longitude = "<%=laLongitud%>"
+           var longitude = "<%=laLongitud%>";
           var latlng = new google.maps.LatLng(latitude, longitude);
           var mapProp = {
               center: latlng,

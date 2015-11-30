@@ -6,178 +6,96 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
+
+    /// <summary>
+    /// Clase que representa una matricula de un Atleta con en un Dojo
+    /// </summary>
     public class Matricula
     {
 
         #region Atributos
         /// <summary>
-        /// Atributos de la clase Carrito
-        /// </summary>
 
-        #region Atributos
+        /// Identificador en DB
+        /// </summary>
+        private int _id;
+
         /// <summary>
-        /// Atributos de la clase Carrito
+        /// Identificador de la matricula
         /// </summary>
-        int mat_id;
-        string mat_identificador;
-        int mat_activa;
-        int id_Dojo;
-        int identificadorUsuario;
-        DateTime fechaCreacion;
-        DateTime ultimaFechapago;
-        string modalidad;
-        float costoPeriodo;
-        bool status;
+        private String _identificador;
 
+        /// <summary>
+        /// Fecha de creación de la Matricula
+        /// </summary>
+        private DateTime _creacion;
 
+        /// <summary>
+        /// Ultima fecha de pago de la matrícula
+        /// </summary>
+        private DateTime _ultimaFechaPago;
 
-
+        /// <summary>
+        /// Estado de la matricula
+        /// </summary>
+        private Boolean _status;
         #endregion
 
-        #region Propiedades
-
-
-        /// <summary>
-        /// Propiedad del atributo listaInventario
-        /// </summary>
-        public string Mat_identificador
+        #region Constructores
+        public Matricula(int id)
         {
-            get
-            {
-                return this.mat_identificador;
-            }
+            this._id = id;
+        }
+
+        public Matricula()
+        {
+            this._id = -1;
+        }
+        #endregion
+
+        #region Métodos
+        public int ID
+        {
+            get { return this._id; }
+        }
+
+        public String Identificador
+        {
             set
             {
-                this.mat_identificador = value;
+                this._identificador = value;
+            }
+            get
+            {
+                return this._identificador;
             }
         }
 
-
-
-
-        /// <summary>
-        /// Propiedad del atributo listaInventario
-        /// </summary>
-        public int IdentificadorUsuario
-        {
-            get
-            {
-                return this.identificadorUsuario;
-            }
-            set
-            {
-                this.identificadorUsuario = value;
-            }
-        }
-
-
-
-
-
-
-
-        /// <summary>
-        /// Propiedad del atributo listaEvento
-        /// </summary>
-        public DateTime FechaTope
-        {
-            get
-            {
-                return this.ultimaFechapago;
-            }
-            set
-            {
-                this.ultimaFechapago = value;
-            }
-        }
-
-        /// <summary>
-        /// Propiedad del atributo listaEvento
-        /// </summary>
         public DateTime FechaCreacion
         {
-            get
-            {
-                return this.fechaCreacion;
-            }
             set
             {
-                this.fechaCreacion = value;
+                this._creacion = value;
+            }
+            get
+            {
+                return this._creacion;
             }
         }
 
-        /// <summary>
-        /// Propiedad del atributo listaMatricula
-        /// </summary>
-        public DateTime UltimaFechapago
+        public DateTime UltimaFechaPago
         {
-            get
-            {
-                return this.ultimaFechapago;
-            }
             set
             {
-                this.ultimaFechapago = value;
+                this._ultimaFechaPago = value;
             }
-        }
-
-
-
-        /// <summary>
-        /// Propiedad del atributo listaMatricula
-        /// </summary>
-        public string Modalidad
-        {
             get
             {
-                return this.modalidad;
-            }
-            set
-            {
-                this.modalidad = value;
+                return this._ultimaFechaPago;
             }
         }
-
-
-
-        /// <summary>
-        /// Propiedad del atributo listaMatricula
-        /// </summary>
-        public float CostoPeriodo
-        {
-            get
-            {
-                return this.costoPeriodo;
-            }
-            set
-            {
-                this.costoPeriodo = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Propiedad del atributo listaMatricula
-        /// </summary>
-        public bool Status
-        {
-            get
-            {
-                return this.status;
-            }
-            set
-            {
-                this.status = value;
-            }
-        }
-
-
-
         #endregion
-
-
-        #endregion
-
 
     }
+
 }

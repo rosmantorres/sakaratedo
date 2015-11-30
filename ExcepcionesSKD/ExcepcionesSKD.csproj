@@ -59,6 +59,7 @@
     <Compile Include="Modulo16\CarritosSinInventarioException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
     <Compile Include="Modulo16\ParametroIncorrectoException.cs" />
+    <Compile Include="InformacionPersonalInvalidaException.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
