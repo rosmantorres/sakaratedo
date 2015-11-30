@@ -58,6 +58,8 @@
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo8\RestriccionExistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -131,8 +131,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\BDRestriccionCinta.cs" />
     <Compile Include="Modulo8\BDRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\BDRestriccionEvento.cs" />
+    <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs" />
     <Compile Include="Modulo8\RecursosBDRestriccionEvento.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +216,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx" />
     <EmbeddedResource Include="Modulo8\RecursosBDRestriccionEvento.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDRestriccionEvento.Designer.cs</LastGenOutput>
