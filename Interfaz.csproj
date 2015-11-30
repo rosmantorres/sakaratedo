@@ -195,10 +195,10 @@
     <Content Include="GUI\Modulo13\M13_Inicio.aspx" />
     <Content Include="GUI\Modulo13\M13_Kyu.aspx" />
     <Content Include="GUI\Modulo13\M13_KyuPrograma.aspx" />
-    <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
+    <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
     <Content Include="GUI\Modulo14\M14_AgregarEliminarDatos.js" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx" />
@@ -1303,6 +1303,13 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Kyu_atletas.aspx.cs">
+      <DependentUpon>M13_Kyu_atletas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Kyu_atletas.aspx.designer.cs">
+      <DependentUpon>M13_Kyu_atletas.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\Carnet.cs">
       <AutoGen>True</AutoGen>
