@@ -11,12 +11,18 @@ namespace templateApp.GUI.Modulo14
     public partial class M14_DisenoPlanilla : System.Web.UI.Page
     {
         private LogicaNegociosSKD.Modulo14.LogicaDiseño logica = new LogicaNegociosSKD.Modulo14.LogicaDiseño();
+        private LogicaNegociosSKD.Modulo14.LogicaPlanilla logica1 = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
         private DominioSKD.Planilla planilla1;
         private DominioSKD.Diseño dis;
         private Boolean exito;
         private string htmlEncode;
         private int idPlanilla;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
@@ -29,18 +35,20 @@ namespace templateApp.GUI.Modulo14
                         this.tipoPlanilla.Text = Request.Cookies["Planilla"]["tipo"].ToString();
                         this.Planilla.Text = Request.Cookies["Planilla"]["nombre"].ToString();
                         dis = logica.ConsultarDiseñoPuro(idPlanilla);
+                        planilla1 = new DominioSKD.Planilla(this.idPlanilla, this.Planilla.Text, true, this.tipoPlanilla.Text);
+                       
                         if (!IsPostBack)
                         {
+                            List<String> datos = logica1.ObtenerDatosPlanilla(idPlanilla);
+                            foreach (string dat in datos)
+                            {
+                                comboDatos.Items.Add(dat);
+                            }
+                            llenarCombo();
                             CKEditor1.Text = Server.HtmlDecode(dis.Contenido);
-                            this.campos.Text = "";
-                            this.campos.Text += "$doj_rif<br/>";
-                            this.campos.Text += "$doj_nombre<br/>";
-                            this.campos.Text += "$doj_telefono<br/>";
-                            this.campos.Text += "$doj_email<br/>";
-                            this.campos.Text += "$doj_status<br/>";
                         }
                         Request.Cookies["Planilla"].Expires = DateTime.Now;
-                        planilla1 = new DominioSKD.Planilla(this.idPlanilla, this.Planilla.Text, true, this.tipoPlanilla.Text);
+                        
                     }
                 }
                 catch (Exception exce)
@@ -104,7 +112,7 @@ namespace templateApp.GUI.Modulo14
             }
         }
 
-        protected void comboDatos_SelectedIndexChanged(object sender, EventArgs e)
+        public void llenarCombo()
         {
             if (comboDatos.SelectedValue == "DOJO")
             {
@@ -167,6 +175,10 @@ namespace templateApp.GUI.Modulo14
             }
             else
                 this.campos.Text = "";
+        }
+        protected void comboDatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            llenarCombo();
         }
         
     }
