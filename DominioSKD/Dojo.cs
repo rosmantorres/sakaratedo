@@ -102,7 +102,7 @@ namespace DominioSKD
         }
 
         //constructor con parametros 
-        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion,)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
