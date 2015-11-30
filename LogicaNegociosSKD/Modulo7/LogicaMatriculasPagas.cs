@@ -42,7 +42,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDMatricula.ListarMatriculasPagas();
+                BDMatricula baseDeDatosMatricula = new BDMatricula();
+                return baseDeDatosMatricula.ListarMatriculasPagas();
             }
             catch (Exception e)
             {
@@ -59,7 +60,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDMatricula.DetallarMatricula(idMatricula);
+                BDMatricula baseDeDatosMatricula = new BDMatricula();
+                return baseDeDatosMatricula.DetallarMatricula(idMatricula);
             }
             catch (Exception e)
             {

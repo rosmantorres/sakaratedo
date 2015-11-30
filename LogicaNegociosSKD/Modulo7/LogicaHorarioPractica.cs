@@ -45,7 +45,8 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 try
                 {
-                    return BDEvento.ListarHorarioPractica();
+                    BDEvento baseDeDatosEvento = new BDEvento();
+                    return baseDeDatosEvento.ListarHorarioPractica();
                 }
                 catch (Exception e)
                 {
@@ -63,7 +64,8 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 try
                 {
-                    return BDEvento.DetallarEvento(idEvento);
+                    BDEvento baseDeDatosEvento = new BDEvento();
+                    return baseDeDatosEvento.DetallarEvento(idEvento);
                 }
                 catch (Exception e)
                 {

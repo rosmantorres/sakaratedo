@@ -53,7 +53,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDOrganizacion.DetallarOrganizacion(Convert.ToInt16(elDojo.Organizacion_dojo));
+                BDOrganizacion baseDeDatosOrganizacion = new BDOrganizacion();
+                return baseDeDatosOrganizacion.DetallarOrganizacion(Convert.ToInt16(elDojo.Organizacion_dojo));
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -77,7 +78,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDDojo.DetallarDojo(1);
+                BDDojo baseDeDatosDojo = new BDDojo();
+                return baseDeDatosDojo.DetallarDojo(1);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -101,7 +103,8 @@ namespace LogicaNegociosSKD.Modulo7
         {
             try
             {
-                return BDPersona.DetallarPersona(1);
+                BDPersona baseDeDatosPersona = new BDPersona();
+                return baseDeDatosPersona.DetallarPersona(1);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
