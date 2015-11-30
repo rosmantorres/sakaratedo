@@ -256,10 +256,12 @@ VALUES ('2010-10-18','Trimestral',1150,6);
 
 -- INSERTS DATO-- 
 
-INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ATLETA','ATL');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('PERSONA','PER');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('COMPETENCIA','COM');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('DOJO','DOJ');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('EVENTO','EVE');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ORGANIZACION','ORG');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('MATRICULA','MAT');
 
 
 -- INSERTS TIPO PLANILLA --
