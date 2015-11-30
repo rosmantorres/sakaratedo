@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Modulo14\LogicaDiseño.cs" />
     <Compile Include="Modulo14\LogicaPlanilla.cs" />
+    <Compile Include="Modulo14\LogicaSolicitud.cs" />
     <Compile Include="Modulo14\RecursosLogicaModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
