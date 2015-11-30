@@ -38,7 +38,7 @@
      <tbody>
 
           <% 
-                       LogicaNegociosSKD.Modulo13. =new DominioSKD.Dojo(1);
+              LogicaNegociosSKD.Modulo13.LogicaInformacionProducto = new DominioSKD.Dojo(1);
                        imprimirLista(dojo); 
              %>
 
