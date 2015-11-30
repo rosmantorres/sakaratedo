@@ -143,13 +143,12 @@ namespace LogicaNegociosSKD.Modulo1
             }
             catch (Exception e)
             {
-                throw new ExcepcionesSKD.Modulo1.InicioSesionException(RecursosLogicaModulo1.Codigo_Error_InicioSesion,
-                    RecursosLogicaModulo1.Mensaje_Error_InicioSesion, e);
+
+                Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
+                Console.WriteLine("Mensaje: " + e.Message);
+                return null;
+                //throw e;
             }
         }
-
-
-
-      
     }
 }
