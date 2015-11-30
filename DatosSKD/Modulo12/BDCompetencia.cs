@@ -106,9 +106,9 @@ namespace DatosSKD.Modulo12
             Parametro elParametro = new Parametro();
             Competencia laCompetencia = new Competencia();
             laCompetencia.Id_competencia = idCompetencia;
-            int diaFecha;
-            int mesFecha;
-            int anoFecha;
+            string diaFecha;
+            string mesFecha;
+            string anoFecha;
             string fechaInicio;
             string fechaFin;
 
@@ -135,30 +135,52 @@ namespace DatosSKD.Modulo12
                         laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
                         laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
 
-                        if (laCompetencia.TipoCompetencia == "1")
+                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia1)
                             laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
-                        else
+                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia2)
                             laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia3)
+                            laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaAmbos;
 
                         laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
                         laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
 
-                        diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Day;
-                        mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Month;
-                        anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Year;
-                        fechaInicio = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
+                        diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Day.ToString();
+
+                        diaFecha = ModificarFechas(diaFecha);
+                       // if (int.Parse(diaFecha) < 10)
+                         //   diaFecha = "0" + diaFecha.ToString();
+
+                        mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Month.ToString();
+
+                        mesFecha = ModificarFechas(mesFecha);
+                        //if (int.Parse(mesFecha) < 10)
+                          //  mesFecha = "0" + mesFecha.ToString();
+
+                        anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaInicio]).Year.ToString();
+                        fechaInicio = mesFecha + RecursosBDModulo12.SeparadorFecha + diaFecha + RecursosBDModulo12.SeparadorFecha + anoFecha;
                         //laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
 
-                        laCompetencia.FechaInicio = DateTime.ParseExact(fechaInicio, "mm/dd/yyyy",
+                        laCompetencia.FechaInicio = DateTime.ParseExact(fechaInicio, RecursosBDModulo12.FormatoFecha,
                             CultureInfo.InvariantCulture);
 
-                        diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Day;
-                        mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Month;
-                        anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Year;
-                        fechaFin = mesFecha.ToString() + "/" + diaFecha.ToString() + "/" + anoFecha.ToString();
+                        diaFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Day.ToString();
+
+                        diaFecha = ModificarFechas(diaFecha);
+                        //if (int.Parse(diaFecha) < 10)
+                          //  diaFecha = "0" + diaFecha.ToString();
+
+                        mesFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Month.ToString();
+
+                        mesFecha = ModificarFechas(mesFecha);
+                        //if (int.Parse(mesFecha) < 10)
+                          //  mesFecha = "0" + mesFecha.ToString();
+
+                        anoFecha = Convert.ToDateTime(row[RecursosBDModulo12.AliasFechaFin]).Year.ToString();
+                        fechaFin = mesFecha + RecursosBDModulo12.SeparadorFecha + diaFecha + RecursosBDModulo12.SeparadorFecha + anoFecha;
                         //laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
 
-                        laCompetencia.FechaFin = DateTime.ParseExact(fechaFin, "mm/dd/yyyy",
+                        laCompetencia.FechaFin = DateTime.ParseExact(fechaFin, RecursosBDModulo12.FormatoFecha,
                             CultureInfo.InvariantCulture);
 
                         laCompetencia.Costo = float.Parse(row[RecursosBDModulo12.AliasCostoCompetencia].ToString());
@@ -374,11 +396,12 @@ namespace DatosSKD.Modulo12
                         laCompetencia.Nombre, false);
                     parametros.Add(elParametro);
 
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKata)
-                        laCompetencia.TipoCompetencia = "1";
-                    else
-                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKumite)
-                            laCompetencia.TipoCompetencia = "2";
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia1)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia2)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia3)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaAmbos;
 
                     elParametro = new Parametro(RecursosBDModulo12.ParamTipoCompetencia, SqlDbType.VarChar,
                         laCompetencia.TipoCompetencia, false);
@@ -490,11 +513,12 @@ namespace DatosSKD.Modulo12
                     elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar,
                         laCompetencia.Nombre, false);
                     parametros.Add(elParametro);
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKata)
-                        laCompetencia.TipoCompetencia = "1";
-                    else
-                        if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKumite)
-                            laCompetencia.TipoCompetencia = "2";
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia1)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia2)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia3)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaAmbos;
 
                     elParametro = new Parametro(RecursosBDModulo12.ParamTipoCompetencia, SqlDbType.VarChar,
                         laCompetencia.TipoCompetencia, false);
@@ -711,6 +735,14 @@ namespace DatosSKD.Modulo12
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return laListaCintas;
+        }
+
+        public static String ModificarFechas(string fecha)
+        {
+            if (int.Parse(fecha) < 10)
+                fecha = RecursosBDModulo12.Concatenar0 + fecha.ToString();
+
+            return fecha;
         }
     }
 }
