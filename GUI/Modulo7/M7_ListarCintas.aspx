@@ -56,8 +56,8 @@
 				<tr>
                     <th>Color</th>
                     <th>Rango</th>
-					<th>Clasificacion</th>
                     <th>Fecha de obtención</th>
+					<th>Clasificacion</th>                  
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>

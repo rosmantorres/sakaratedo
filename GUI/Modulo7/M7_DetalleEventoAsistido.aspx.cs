@@ -19,17 +19,17 @@ namespace templateApp.GUI.Modulo7
         {
             ((SKD)Page.Master).IdModulo = "7";
             String detalleStringEvento = Request.QueryString["eventoDetalle"];
-            String detalleStringCompetencia = Request.QueryString["compDetalle"];
+            String detalleStringCompetencia = Request.QueryString["compDetalle1"];
 
             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
             {
                 try
                 {
-                    if (int.Parse(detalleStringEvento) > 0)
-                    { 
+                    if (detalleStringEvento != null)
+                    {
                         evento = laLogica.detalleEventoID(int.Parse(detalleStringEvento));
                         this.nombre_evento.Text = evento.Nombre;
-                        this.descripcion_evento.Text = evento.Descripcion.ToString(); 
+                        this.descripcion_evento.Text = evento.Descripcion.ToString();
                         this.costo_evento.Text = evento.Costo.ToString();
                         if (evento.Estado.Equals(true))
                         {
@@ -38,7 +38,7 @@ namespace templateApp.GUI.Modulo7
                         else if (evento.Estado.Equals(false))
                         {
                             this.estado_evento.Text = M7_Recursos.AliasEventoInactivo;
-                        }                   
+                        }
                         this.horaInicio_evento.Text = evento.Horario.HoraInicio.ToString();
                         this.horaFin_evento.Text = evento.Horario.HoraFin.ToString();
                         this.fechaInicio_evento.Text = evento.Horario.FechaInicio.ToString("MM/dd/yyyy");
@@ -47,20 +47,10 @@ namespace templateApp.GUI.Modulo7
                         this.ciudad_evento.Text = evento.Ubicacion.Ciudad.ToString();
                         this.direccion_evento.Text = evento.Ubicacion.Direccion;
 
-                        /* competencia = laLogica.detalleCompetenciaID(int.Parse(detalleStringCompetencia));
-                         this.nombre_evento.Text = competencia.Nombre;
-                         this.descripcion_evento.Text = competencia.TipoCompetencia;
-                         this.costo_evento.Text = competencia.Costo.ToString();
-                         this.estado_evento.Text = competencia.Status;
-                         this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
-                         this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
-                         this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
-                         this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
-                         this.direccion_evento.Text = competencia.Ubicacion.Direccion;*/
                     }
 
-                    if (int.Parse(detalleStringCompetencia) > 0)
-                    {
+                    else
+                    { 
                        
                          competencia = laLogica.detalleCompetenciaID(int.Parse(detalleStringCompetencia));
                          this.nombre_evento.Text = "hola";
@@ -79,9 +69,7 @@ namespace templateApp.GUI.Modulo7
                 {
                 }
             }
-
-          
-
+       
         }
     }
 }

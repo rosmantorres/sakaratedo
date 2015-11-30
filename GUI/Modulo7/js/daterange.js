@@ -5,7 +5,7 @@
         var dateEnd = $("#fechaFin").val();
         // aData represents the table structure as an array of columns, so the script access the date value 
         // in the first column of the table via aData[0]
-        var evalDate = aData[3];
+        var evalDate = aData[2];
                      
         if (dateStart == "" && dateEnd == "") {
             return true;
