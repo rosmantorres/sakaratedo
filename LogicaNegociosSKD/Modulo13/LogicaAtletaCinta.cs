@@ -18,6 +18,20 @@ namespace LogicaNegociosSKD.Modulo13
             set { persona = value; }
         }
 
+        public List<DominioSKD.Persona> obtenerListaPersona()
+        {
+            try
+            {
+                return BDAtletasCinta.ListarPersonasCintas();
+            }
+
+            catch(Exception e)
+            {
+                throw e;
+ 
+            }
+        }
+
         
 
     }
