@@ -31,15 +31,6 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalle_competencia;
         
         /// <summary>
-        /// docIdentidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label docIdentidad;
-        
-        /// <summary>
         /// nombreAtleta control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.WebControls.Label fechaNac;
         
         /// <summary>
+        /// direccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label direccion;
+        
+        /// <summary>
         /// dojo control.
         /// </summary>
         /// <remarks>
@@ -74,6 +74,33 @@ namespace templateApp.GUI.Modulo7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label dojo;
+        
+        /// <summary>
+        /// dojoTlf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dojoTlf;
+        
+        /// <summary>
+        /// dojoEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dojoEmail;
+        
+        /// <summary>
+        /// dojoUbicacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dojoUbicacion;
         
         /// <summary>
         /// organizacion control.
@@ -85,12 +112,30 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.WebControls.Label organizacion;
         
         /// <summary>
-        /// fechaEnDojo control.
+        /// organizacionTlf control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaEnDojo;
+        protected global::System.Web.UI.WebControls.Label organizacionTlf;
+        
+        /// <summary>
+        /// organizacionEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label organizacionEmail;
+        
+        /// <summary>
+        /// organizacionUbica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label organizacionUbica;
     }
 }

@@ -44,13 +44,9 @@
                      <h4>Datos del Atleta</h4>
                   </div>
                   <div class="panel-body">
+                      <br/>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <br />
-                        <h4>Doc Identidad :</h4>
-                        <asp:Label runat="server" name="docIdentidad" id="docIdentidad" Font-Size="Large"></asp:Label>
-                     </div>
-                     <br/>
-                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                         <br />
                         <h4>Nombre :</h4>
                         <asp:Label runat="server" name="nombreAtleta" id="nombreAtleta" Font-Size="Large"></asp:Label>
                         <br />
@@ -60,15 +56,34 @@
                         <asp:Label runat="server" name="apellidoAtleta" id="apellidoAtleta" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
-                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <h4>Fecha de Nacimiento :</h4>
                         <asp:Label runat="server" name="fechaNac" id="fechaNac" Font-Size="Large"></asp:Label>
+                         </div>
                         <br />
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Direccion :</h4>
+                        <asp:Label runat="server" name="direccion" id="direccion" Font-Size="Large"></asp:Label>
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Dojo :</h4>
+                        <h4>Dojo al que pertenece:</h4>
                         <asp:Label runat="server" name="dojo" id="dojo" Font-Size="Large"></asp:Label>
                         <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Teléfono Dojo :</h4>
+                        <asp:Label runat="server" name="dojoTlf" id="dojoTlf" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Email Dojo :</h4>
+                        <asp:Label runat="server" name="dojoEmail" id="dojoEmail" Font-Size="Large"></asp:Label>
+                        <br />
+                    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Ubicacion Dojo :</h4>
+                        <asp:Label runat="server" name="dojoUbicacion" id="dojoUbicacion" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <h4>Organizacion :</h4>
@@ -76,8 +91,18 @@
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha inicio en Dojo :</h4>
-                        <asp:Label runat="server" name="fechaEnDojo" id="fechaEnDojo" Font-Size="Large"></asp:Label>
+                        <h4> Teléfono Organizacion :</h4>
+                        <asp:Label runat="server" name="organizacionTlf" id="organizacionTlf" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4> Email Organizacion :</h4>
+                        <asp:Label runat="server" name="organizacionEmail" id="organizacionEmail" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4> Ubicacion Organizacion :</h4>
+                        <asp:Label runat="server" name="organizacionUbica" id="organizacionUbica" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                     </div>
@@ -93,5 +118,4 @@
       </div>
      </div>
 	</div>
-   </div>
     </asp:Content>

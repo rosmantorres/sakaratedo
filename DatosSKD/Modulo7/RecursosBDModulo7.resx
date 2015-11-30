@@ -357,13 +357,49 @@
   <data name="AliasPersonaNombreUsuario" xml:space="preserve">
     <value>nombreUsuario</value>
   </data>
-  <data name="AliasPersonaNumDocId" xml:space="preserve">
-    <value>numeroDocumento</value>
-  </data>
-  <data name="AliasPersonaTipoDocId" xml:space="preserve">
-    <value>tipoDocumento</value>
+  <data name="AliasPersonaDireccion" xml:space="preserve">
+    <value>direccion</value>
   </data>
   <data name="ConsultaPersonaXId" xml:space="preserve">
     <value>M7_ConsultaPersona</value>
+  </data>
+  <data name="AliasDojoEmail" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="AliasDojoId" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="AliasDojoNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasDojoTelefono" xml:space="preserve">
+    <value>telefono</value>
+  </data>
+  <data name="AliasDojoUbicacion" xml:space="preserve">
+    <value>ubicacion</value>
+  </data>
+  <data name="AliasOrganizacionDireccion" xml:space="preserve">
+    <value>direccion</value>
+  </data>
+  <data name="AliasOrganizacionEmail" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="AliasOrganizacionId" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="AliasOrganizacionNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasOrganizacionTelefono" xml:space="preserve">
+    <value>telefono</value>
+  </data>
+  <data name="ConsultaDojoXId" xml:space="preserve">
+    <value>M7_ConsultaDojo</value>
+  </data>
+  <data name="ConsultaOrganizacionXId" xml:space="preserve">
+    <value>M7_ConsultaOrganizacion</value>
+  </data>
+  <data name="AliasDojoOrganizacionId" xml:space="preserve">
+    <value>organizacion</value>
   </data>
 </root>
