@@ -24,6 +24,7 @@ namespace DatosSKD.Modulo7
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            BDUbicacion baseDeDatosUbicacion = new BDUbicacion();
 
             try
             {
@@ -43,7 +44,7 @@ namespace DatosSKD.Modulo7
                     dojo.Nombre_dojo = row[RecursosBDModulo7.AliasDojoNombre].ToString();
                     dojo.Telefono_dojo = int.Parse(row[RecursosBDModulo7.AliasDojoTelefono].ToString());
                     dojo.Email_dojo = row[RecursosBDModulo7.AliasDojoEmail].ToString();
-                    dojo.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasDojoUbicacion].ToString()));
+                    dojo.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasDojoUbicacion].ToString()));
                     ///dojo.Organizacion_dojo = row[RecursosBDModulo7.AliasDojoOrganizacionId].ToString();
                 }
 

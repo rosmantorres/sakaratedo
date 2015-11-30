@@ -13,6 +13,11 @@ namespace DatosSKD.Modulo7
 {
     public class BDEvento
     {
+        #region Atributos
+        BDUbicacion baseDeDatosUbicacion = new BDUbicacion();
+        BDHorario baseDeDatosHorario = new BDHorario();
+        BDTipoEvento baseDeDatosTipoEvento = new BDTipoEvento();
+        #endregion
 
         /// <summary>
         /// Método que consulta en la BD para detallar un evento
@@ -44,9 +49,9 @@ namespace DatosSKD.Modulo7
                     evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                     evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
                     evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString());
-                    evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                    evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
-                    evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                    evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
+                    evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
+                    evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
 
                 }
 
@@ -110,7 +115,7 @@ namespace DatosSKD.Modulo7
                         competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
                     competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
                     competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
-                    competencia.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasCompetenciaUbicacionId].ToString()));
+                    competencia.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasCompetenciaUbicacionId].ToString()));
                     laListaDeCompetenciasAsistidas.Add(competencia);
                 }
 
@@ -173,7 +178,7 @@ namespace DatosSKD.Modulo7
                     competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
                     competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
                     competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
-                    competencia.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasCompetenciaUbicacionId].ToString()));
+                    competencia.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasCompetenciaUbicacionId].ToString()));
                     laListaDeCompetenciasInscritas.Add(competencia);
                 }
 
@@ -227,9 +232,9 @@ namespace DatosSKD.Modulo7
                     evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                     evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
                     evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString());
-                    evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                    evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
-                    evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                    evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
+                    evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
+                    evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                     laListaDeEventoAsistidos.Add(evento);
                 }
 
@@ -337,9 +342,9 @@ namespace DatosSKD.Modulo7
                         evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
-                        evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                        evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
-                        evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                        evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
+                        evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
+                        evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                         laListaDeEventoInscrito.Add(evento);
                 }
            
@@ -393,9 +398,9 @@ namespace DatosSKD.Modulo7
                     evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                     evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
                     evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString());
-                    evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                    evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
-                    evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                    evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
+                    evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
+                    evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                     laListaDeEventoPago.Add(evento);
                 }
 
@@ -451,9 +456,9 @@ namespace DatosSKD.Modulo7
                         evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosBDModulo7.AliasDescripcionEvento].ToString();
-                        evento.TipoEvento = BDTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                        evento.Horario = BDHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
-                        evento.Ubicacion = BDUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
+                        evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
+                        evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosBDModulo7.AliasEventoHorarioId].ToString()));
+                        evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                         laListaDeHorarioPractica.Add(evento);
                 }
 
