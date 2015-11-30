@@ -32,30 +32,46 @@ namespace templateApp.GUI.Modulo16
                 agregarImplementoAcarrito(1, 1);
             }
 
-        #region Llenar Data Table Con Inventario
-
+            #region Llenar Data Table Con Inventario
+            //Instancio la logica correspondiente
             Logicainventario logComp = new Logicainventario();
             if (!IsPostBack)
             {
                 try
                 {
+                    //me traigo los implementos disponibles
                     laLista = logComp.obtenerListaDeInventario();
+
+                    //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
                     foreach (Implemento c in laLista)
                     {
+                        //Creo la fila de la tabla
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen_implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Marca_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Tipo_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                        //Agrego los datos correspondientes de la tabla
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() 
+                            + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen_implemento.ToString() 
+                            + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre_Implemento.ToString()
+                            + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Marca_Implemento.ToString() 
+                            + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Tipo_Implemento.ToString() 
+                            + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio_Implemento.ToString() 
+                            + M16_Recursointerfaz.CERRAR_TD;
 
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_CARRITO + c.Id_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                        //Agrego los botones
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento 
+                            + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO + c.Id_Implemento 
+                            + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
+
+                        //Cierro la fila creada
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }
 
@@ -65,8 +81,39 @@ namespace templateApp.GUI.Modulo16
                     throw ex;
                 }
             }
-        }
             #endregion
+            /*
+            //Nos indica si hubo alguna accion de agregar, registrar pago o eliminar
+            String accion = Request.QueryString["accion"];
+            switch (accion)
+            {
+                //Si se viene de un agregar se procedera a mostrar la alerta correspondiente
+                case "1":
+                    //Obtenemos el ID del implemento
+                    String exito = Request.QueryString["id"];
+
+                    //Si el Agregar fue exitoso o no se procedera dar la alerta correspondiente
+                    if (exito.Equals("1"))
+                    {
+                        //Limpiamos y mostramos la informacion
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago se ha" +
+                            " realizado exitosamente</div>";
+                    }
+                    else
+                    {
+                        //Si el agregar fue fallido mostramos la alerta
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago no se ha" +
+                            " realizado exitosamente</div>";
+                    }
+                break;
+            }*/                
+        }
 
         #region Llamada para el Detalle del Implemento por id
         protected void llenarModalInfo(int Id_implemento)
