@@ -1,5 +1,4 @@
-﻿
--- INSERTS CATEGORIA --
+﻿-- INSERTS CATEGORIA --
 INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Blanca','Naranja','M')
 go
 
@@ -256,10 +255,12 @@ VALUES ('2010-10-18','Trimestral',1150,6);
 
 -- INSERTS DATO-- 
 
-INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ATLETA','ATL');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('PERSONA','PER');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('COMPETENCIA','COM');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('DOJO','DOJ');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('EVENTO','EVE');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ORGANIZACION','ORG');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('MATRICULA','MAT');
 
 
 -- INSERTS TIPO PLANILLA --
@@ -343,15 +344,12 @@ go
 
 /*
 INSERTS M6
-
 Los inserts de personas dependen de que los de Dojo hayan sido realizados.
-
 Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes expresiones:
 --ADMINISTRADORES--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio')
-
 --ATLETAS--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro')
@@ -4516,18 +4514,10 @@ INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min],
 
 -- INSERTS RESTRICCION EVENTO--
 
-insert into RESTRICCION_EVENTO values ('Rest. evento evento1 de 18 a 25 años solo masculino',18,25,'m');
-insert into RESTRICCION_EVENTO values ('Rest. evento evento2 de 18 a 20 años solo femenino',18,20,'f');
-insert into RESTRICCION_EVENTO values ('Rest. evento evento3 de 20 a 25 años sexo combinado',20,25,'c');
-insert into RESTRICCION_EVENTO values ('Rest. evento evento4 de 20 a 25 años sexo combinado',20,25,'c');
-
-
--- INSERTS EVENTO RESTRICCION--
-
-insert into EVENTO_RESTRICCION values (1,1);
-insert into EVENTO_RESTRICCION values (2,3);
-insert into EVENTO_RESTRICCION values (3,2);
-insert into EVENTO_RESTRICCION values (4,4);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento1 de 18 a 25 años solo masculino',18,25,'m',1);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento2 de 18 a 20 años solo femenino',18,20,'f',2);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento3 de 20 a 25 años sexo combinado',20,25,'c',3);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento4 de 20 a 25 años sexo combinado',20,25,'c',4);
 
 -- INSERTS RC_CINTA --
 
