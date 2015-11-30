@@ -31,7 +31,7 @@ namespace templateApp.GUI.Modulo13
                     Response.Write("<td>" + valor.Edad + "</td>");
                     Response.Write("<td>" + valor.Peso + "</td>");
                     Response.Write("<td>" + valor.Estatura + "</td>");
-
+                    Response.Write("</tr>");
                 }
 
             }
