@@ -2071,7 +2071,7 @@ go
 CREATE procedure M12_ConsultarCintas
 as
 	begin
-		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
 		from CINTA as cin		
 	end;
 go
