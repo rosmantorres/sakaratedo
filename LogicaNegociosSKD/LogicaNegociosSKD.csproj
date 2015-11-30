@@ -177,7 +177,7 @@
       <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosLogicaModulo3.resx">
