@@ -85,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\AlgoritmoDeEncriptacion.cs" />
     <Compile Include="Modulo2\logicaRol.cs" />
     <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
