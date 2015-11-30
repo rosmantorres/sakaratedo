@@ -30,8 +30,8 @@
                       </div>
 
                         <div class="alert alert-info" id="infoRestablecer">
-                                La contraseña debe tener al menos <strong>ocho(8) caracteres</strong>, <strong>una(1) letra mayuscula </strong> ,
-                         <strong>una(1) letra minuscula</strong> y <strong>un(1) numero.</strong>
+                                La contraseña debe poseer de <strong>8-16 caracteres</strong> e incluir al menos <strong>una letra mayúscula </strong> ,
+                         <strong> una letra minúscula</strong> y <strong>un número.</strong>
                        </div>
                     <hr />
                       <div id="p1" class="form-group">
