@@ -75,10 +75,18 @@ namespace templateApp
             char[] http = Stringhttp.ToCharArray();
             string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString().TrimStart(http);
 
+            if (imagen == "")
+            {
+                imagen = "../../dist/img/AvatarSKD.jpg";
+                imageUsuario.Src = imagen;
+                imageTag.Src = imagen;
 
-            imageUsuario.Src = imageUsuario.Src + imagen;
-            imageTag.Src = imageTag.Src + imagen;
-
+            }
+            else
+            {
+                imageUsuario.Src = imageUsuario.Src + imagen;
+                imageTag.Src = imageTag.Src + imagen;
+            }
             userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
 
             //aqui va el nombre y apellido
