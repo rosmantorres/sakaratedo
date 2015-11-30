@@ -56,11 +56,11 @@
        <table id="tablapagosmatricula" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>Factura</th>
-					<th>Detalle</th>
-                    <th>Período</th>
-                    <th>Fecha</th>
-                    <th>Pago</th>
+                    <th>Identificador</th>
+					<th>Estado</th>
+                    <th>Fecha Creacion</th>
+                    <th>Fecha Pago</th>
+                    <th>Monto</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
