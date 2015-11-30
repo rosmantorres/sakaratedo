@@ -115,6 +115,15 @@ namespace DatosSKD.Modulo2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M1_ConsultarNombreUsuarioContrasena_ID.
+        /// </summary>
+        internal static string ConsultarNombreUsuarioContrasena_ID {
+            get {
+                return ResourceManager.GetString("ConsultarNombreUsuarioContrasena_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M2_ConsultarRolesSistema.
         /// </summary>
         internal static string ConsultarRolesSistema {
