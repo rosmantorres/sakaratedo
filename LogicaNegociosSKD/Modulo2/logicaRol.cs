@@ -18,19 +18,6 @@ namespace LogicaNegociosSKD.Modulo2
         /// </summary>
         public static List<Rol> cargarRoles()
         {
-            /*
-            respuesta = RecursosLogicaModulo2.etiquetaAperturaDropDawn;
-            respuesta = respuesta + RecursosLogicaModulo2.subEtiquetaSeleccionar;
-            List<Rol> roles=BDRoles.ObtenerRolesDeSistema();
-            foreach (Rol rol in roles)
-            {
-                respuesta = respuesta 
-                    + RecursosLogicaModulo2.subEtiquetaApertura + rol.Id_rol.ToString()
-                    + RecursosLogicaModulo2.subEtiquetaCierreApertura + rol.Nombre 
-                    + RecursosLogicaModulo2.subEtiquetaCierreTotal;
-            }
-            respuesta = respuesta + RecursosLogicaModulo2.etiquetaCierreDropDawn;
-            */
 
             List<Rol> roles = BDRoles.ObtenerRolesDeSistema();
             return roles;
@@ -175,6 +162,17 @@ namespace LogicaNegociosSKD.Modulo2
             }
 
         }
-    
+
+        public static Cuenta cuentaAConsultar(int idUsuario)
+        {
+            try
+            {
+               return BDRoles.ObtenerUsuario(idUsuario);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
