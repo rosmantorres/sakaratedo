@@ -22,13 +22,19 @@ namespace templateApp.GUI.Modulo12
         {
             try
             {
+                //ARMAR OBJETO COMPETENCIA---->
+                //NOMBRE
                 laCompetencia.Nombre = nombreComp.Text;
+
+                //TIPO COMPETENCIA
                 if (input_tipo_kata.Checked == true)
                     laCompetencia.TipoCompetencia = input_tipo_kata.Text;
                 if (input_tipo_kumite.Checked == true)
                     laCompetencia.TipoCompetencia = input_tipo_kumite.Text;
                 if (input_tipo_ambos.Checked == true)
                     laCompetencia.TipoCompetencia = input_tipo_ambos.Text;
+
+                //ORGANIZACIONES
                 if (organizaciones.Checked == true)
                     laCompetencia.OrganizacionTodas = true;
                 if (organizaciones.Checked == false)
@@ -36,17 +42,44 @@ namespace templateApp.GUI.Modulo12
                     laCompetencia.OrganizacionTodas = false;
                     laCompetencia.Organizacion.Id_organizacion = 1;
                 }
+
+                //EDADES
                 laCompetencia.Categoria.Edad_inicial = int.Parse(edad_desde.Value);
                 laCompetencia.Categoria.Edad_final = int.Parse(edad_hasta.Value);
-                laCompetencia.Categoria.Cinta_inicial = comboCintaDesde.Text;
-                laCompetencia.Categoria.Cinta_final = comboCintaHasta.Text;
-                laCompetencia.Categoria.Sexo = comboSexo.Text;
+
+                //CINTAS
+                laCompetencia.Categoria.Cinta_inicial = "Azul"; //comboCintaDesde.Text;
+                laCompetencia.Categoria.Cinta_final = "Purpura"; //comboCintaHasta.Text;
+                
+                //SEXO
+                if (input_sexo_M.Checked == true)
+                    laCompetencia.Categoria.Sexo = input_sexo_M.Text;
+                if (input_sexo_F.Checked == true)
+                    laCompetencia.Categoria.Sexo = input_sexo_F.Text;
+
+                //FECHAS INI-FIN
+                laCompetencia.FechaInicio =  Convert.ToDateTime("01/02/2015"); //Convert.ToDateTime(input_fecha_ini.Value);
+                laCompetencia.FechaFin = Convert.ToDateTime("02/04/2015"); //Convert.ToDateTime(input_fecha_fin.Value);
+               
+                //STATUS
                 if (input_status_porIniciar.Checked == true)
                     laCompetencia.Status = input_status_porIniciar.Text;
                 if (input_status_enCurso.Checked == true)
                     laCompetencia.Status = input_status_enCurso.Text;
 
+                //UBICACION
+                laCompetencia.Ubicacion.Latitud = txtLAT.Value;
+                laCompetencia.Ubicacion.Longitud = txtLONG.Value;
+                laCompetencia.Ubicacion.Ciudad = "Caracas";
+                laCompetencia.Ubicacion.Estado = "Distrito Capital";
+                laCompetencia.Ubicacion.Direccion = "";
+
+                //COSTO
+                laCompetencia.Costo = 900;
+
+                //AGREGAR EN LOGICA OBJETO COMPETENCIA
                 laLogica.agregarCompetencia(laCompetencia);
+                
                     
             }
             catch

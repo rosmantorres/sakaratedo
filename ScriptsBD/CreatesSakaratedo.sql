@@ -3,13 +3,8 @@
   (
     asi_asistio CHAR(1) NOT NULL ,
     INSCRIPCION_ins_id INTEGER NOT NULL ,
-    CONSTRAINT ASISTENCIA_PK PRIMARY KEY CLUSTERED (INSCRIPCION_ins_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
+	EVENTO_eve_id      INTEGER NOT NULL,
+   
   )
   ON "default"
 GO
@@ -126,6 +121,7 @@ CREATE
     det_id                INTEGER IDENTITY(1,1) NOT NULL ,
 	COMPRA_CARRITO_com_id INTEGER NOT NULL,
     det_precio 	          FLOAT NOT NULL ,
+	det_cantidad		  INTEGER NOT NULL,
     MATRICULA_mat_id      INTEGER ,
     MATRICULA_per_id      INTEGER ,
     IMPLEMENTO_inv_id     INTEGER ,
@@ -145,7 +141,7 @@ GO
 CREATE
   TABLE DISEÑO
   (
-    dis_id          INTEGER NOT NULL ,
+    dis_id          INTEGER IDENTITY(1,1) NOT NULL ,
     dis_contenido   TEXT NOT NULL ,
     PLANILLA_pla_id INTEGER NOT NULL ,
     CONSTRAINT DISEÑO_PK PRIMARY KEY CLUSTERED (dis_id)
@@ -169,7 +165,7 @@ GO
 CREATE
   TABLE DOJO
   (
-    doj_id             INTEGER NOT NULL ,
+    doj_id             INTEGER IDENTITY(1,1) NOT NULL ,
     doj_rif            VARCHAR (150) NOT NULL ,
     doj_nombre         VARCHAR (150) NOT NULL ,
     doj_telefono       INTEGER NOT NULL ,
@@ -213,7 +209,7 @@ CREATE
   (
     est_id          INTEGER IDENTITY(1,1) NOT NULL ,
     est_nombre      VARCHAR (150) NOT NULL ,
-    est_descripcion VARCHAR (150) NOT NULL ,
+    est_descripcion VARCHAR (250) NOT NULL ,
     CONSTRAINT ESTILO_PK PRIMARY KEY CLUSTERED (est_id)
 WITH
   (
@@ -290,14 +286,8 @@ CREATE
     his_mat_fecha_vigente DATE NOT NULL ,
     his_mat_modalidad     VARCHAR (50) NOT NULL ,
     his_mat_monto FLOAT NOT NULL ,
-    DOJO_doj_id INTEGER NOT NULL ,
-    CONSTRAINT HISTORIAL_MATRICULA_PK PRIMARY KEY CLUSTERED (DOJO_doj_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
+    DOJO_doj_id INTEGER NOT NULL 
+	
   )
   ON "default"
 GO
@@ -324,7 +314,7 @@ GO
 CREATE
   TABLE IMPLEMENTO
   (
-    imp_id      INTEGER NOT NULL ,
+    imp_id      INTEGER IDENTITY(1,1) NOT NULL ,
     imp_imagen  VARCHAR (100) NOT NULL ,
     imp_nombre  VARCHAR (100) NOT NULL ,
     imp_tipo    VARCHAR (100) NOT NULL ,
@@ -352,8 +342,6 @@ CREATE
     ins_id                    		   INTEGER IDENTITY(1,1) NOT NULL ,
     PERSONA_per_id                     INTEGER NOT NULL ,
     ins_fecha                          DATE NOT NULL ,
-    SOLICITUD_PLANILLA_sol_pla_id      INTEGER ,
-    SOLICITUD_PLANILLA_PLANILLA_pla_id INTEGER ,
     COMPETENCIA_comp_id                INTEGER ,
     EVENTO_eve_id                      INTEGER ,
     CONSTRAINT INSCRIPCION_PK PRIMARY KEY CLUSTERED (ins_id)
@@ -370,7 +358,7 @@ GO
 CREATE
   TABLE INVENTARIO
   (
-    inv_id             INTEGER NOT NULL ,
+    inv_id             INTEGER IDENTITY(1,1) NOT NULL ,
     inv_cantidad_total INTEGER NOT NULL ,
     IMPLEMENTO_imp_id  INTEGER NOT NULL ,
     DOJO_doj_id        INTEGER NOT NULL ,
@@ -393,6 +381,7 @@ CREATE
     mat_fecha_creacion DATETIME NOT NULL ,
     mat_activa BIT NOT NULL ,
     mat_fecha_ultimo_pago DATETIME NOT NULL ,
+    mat_precio            INTEGER NOT NULL,
     PERSONA_per_id        INTEGER NOT NULL ,
     DOJO_doj_id           INTEGER NOT NULL ,
     CONSTRAINT MATRICULA_PK PRIMARY KEY CLUSTERED (mat_id, PERSONA_per_id,
@@ -598,7 +587,7 @@ GO
 CREATE
   TABLE RESTRICCION_CINTA
   (
-    res_cin_id               INTEGER NOT NULL ,
+    res_cin_id               INTEGER IDENTITY(1,1) NOT NULL ,
     res_cin_descripcion      VARCHAR (255) NOT NULL ,
     res_cin_tiemp_min        INTEGER NOT NULL , /*# de meses*/
     res_cin_punt_min         INTEGER NOT NULL ,
@@ -629,8 +618,11 @@ CREATE
     res_com_desc      VARCHAR (255) NOT NULL ,
     res_com_edad_min  INTEGER NOT NULL ,
     res_com_edad_max  INTEGER NOT NULL ,
+    res_com_rango_min INTEGER NOT NULL ,
+    res_com_rango_max INTEGER NOT NULL ,
     res_com_sexo      VARCHAR (1) NOT NULL ,
     res_com_modalidad VARCHAR (10) NOT NULL ,
+
     CONSTRAINT RESTRICCION_COMPETENCIA_PK PRIMARY KEY CLUSTERED (res_com_id)
 WITH
   (
@@ -648,15 +640,13 @@ CREATE
     comp_rest_comp_id                  INTEGER IDENTITY(1,1) NOT NULL ,
     RESTRICCION_COMPETENCIA_res_com_id INTEGER NOT NULL ,
     COMPETENCIA_comp_id                INTEGER NOT NULL ,
-  )
-  ON "default"
-GO
-ALTER TABLE COMP_REST_COMP ADD CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY
-CLUSTERED (comp_rest_comp_id)
+ CONSTRAINT COMP_REST_COMP_PK PRIMARY KEY CLUSTERED (comp_rest_comp_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
     ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
   )
   ON "default"
 GO
@@ -808,6 +798,7 @@ CREATE
     sol_pla_fecha_reincorporacion DATE ,
     sol_pla_motivo                VARCHAR (2000) ,
     PLANILLA_pla_id               INTEGER NOT NULL ,
+	INSCRIPCION_ins_id            INTEGER NOT NULL ,
     CONSTRAINT SOLICITUD_PLANILLA_PK PRIMARY KEY CLUSTERED (sol_pla_id,
     PLANILLA_pla_id)
 WITH
@@ -923,6 +914,21 @@ INSCRIPCION_ins_id
 REFERENCES INSCRIPCION
 (
 ins_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE ASISTENCIA
+ADD CONSTRAINT ASISTENCIA_EVENTO_FK FOREIGN KEY
+(
+EVENTO_eve_id
+)
+REFERENCES EVENTO
+(
+eve_id
 )
 ON
 DELETE
@@ -1395,22 +1401,6 @@ DELETE
 UPDATE NO ACTION
 GO
 
-ALTER TABLE INSCRIPCION
-ADD CONSTRAINT INSCRIPCION_SOLICITUD_PLANILLA_FK FOREIGN KEY
-(
-SOLICITUD_PLANILLA_sol_pla_id,
-SOLICITUD_PLANILLA_PLANILLA_pla_id
-)
-REFERENCES SOLICITUD_PLANILLA
-(
-sol_pla_id ,
-PLANILLA_pla_id
-)
-ON
-DELETE
-  NO ACTION ON
-UPDATE NO ACTION
-GO
 
 ALTER TABLE INVENTARIO
 ADD CONSTRAINT INVENTARIO_DOJO_FK FOREIGN KEY
@@ -1633,9 +1623,10 @@ cin_id
 )
 ON
 DELETE
-  NO ACTION ON
+  CASCADE ON
 UPDATE NO ACTION
 GO
+
 
 ALTER TABLE RC_CINTA
 ADD CONSTRAINT RC_CINTA_RESTRICCION_COMPETENCIA_FK FOREIGN KEY
@@ -1648,7 +1639,7 @@ res_com_id
 )
 ON
 DELETE
-  NO ACTION ON
+  CASCADE ON
 UPDATE NO ACTION
 GO
 
@@ -1785,6 +1776,22 @@ DELETE
   NO ACTION ON
 UPDATE NO ACTION
 GO
+
+ALTER TABLE SOLICITUD_PLANILLA
+ADD CONSTRAINT SOLICITUD_PLANILLA_INSCRIPCION_FK FOREIGN KEY
+(
+INSCRIPCION_ins_id
+)
+REFERENCES INSCRIPCION
+(
+ins_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
 
 ALTER TABLE TELEFONO
 ADD CONSTRAINT TELEFONO_PERSONA_FK FOREIGN KEY

@@ -224,6 +224,12 @@
   <data name="ConsultarOrganizaciones" xml:space="preserve">
     <value>M12_ConsultarOrganizaciones</value>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
   <data name="Mensaje_Competencia_Existente" xml:space="preserve">
     <value>El nombre de las competencias debe ser único, la competencia ya existe</value>
   </data>
