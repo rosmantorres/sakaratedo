@@ -4429,7 +4429,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('BLANCA A AMARILLA',3,0,0,2);
+    VALUES ('BLANCA A AMARILLA',3,20,0,2);
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4439,7 +4439,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('AMARILLA A NARANJA',5,8,0,3);
+    VALUES ('AMARILLA A NARANJA',5,40,0,3);
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4449,7 +4449,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('NARANJA A VERDE',7,20,0,4);
+    VALUES ('NARANJA A VERDE',7,80,0,4);
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4459,7 +4459,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('VERDE A AZUL',10,25,2,5);
+    VALUES ('VERDE A AZUL',10,120,2,5);
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4469,7 +4469,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('AZUL A MARRON',10,30,4,6);
+    VALUES ('AZUL A MARRON',10,170,4,6);
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4479,7 +4479,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('MARRON A MARRON',12,40,7,7);
+    VALUES ('MARRON A MARRON',12,210,7,7);
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4489,7 +4489,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
-    VALUES ('MARRON A NEGRA',12,50,9,8);
+    VALUES ('MARRON A NEGRA',12,300,9,8);
 
 
 
