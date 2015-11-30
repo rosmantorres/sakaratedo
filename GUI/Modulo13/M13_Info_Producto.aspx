@@ -36,6 +36,12 @@
               </tr>
         </thead>
      <tbody>
+
+          <% 
+                       LogicaNegociosSKD.Modulo13. =new DominioSKD.Dojo(1);
+                       imprimirLista(dojo); 
+             %>
+
               <tr>	
                    <td style="text-align:center"></td>
                    <td style="text-align:center"></td>

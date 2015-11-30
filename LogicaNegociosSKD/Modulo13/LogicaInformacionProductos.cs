@@ -29,7 +29,7 @@ namespace LogicaNegociosSKD.Modulo13
 
             try
             {
-                listaImplementos = ConexionBaseDatos.listarInventarioDatos(dojo);
+                listaImplementos = BD.listarInventarioDatos(dojo);
             }
 
             catch (ExceptionSKDConexionBD ex)
