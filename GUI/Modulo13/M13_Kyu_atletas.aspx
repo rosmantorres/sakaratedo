@@ -15,7 +15,7 @@
 
      <div class="box-body table-responsive">
 
-      <%-- <table id="example" class="table table-bordered table-striped dataTable">
+      <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>Foto</th>
@@ -27,75 +27,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><img src="Fotos-Atletas/1.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>AYKUT</td>
-					<td>KAYA</td>
-					<td>23</td>
-                    <td>75</td>
-                    <td>1,80</td>                  
-                </tr>                            
-			
-            
-			
-				<tr>
-					<td><img src="Fotos-Atletas/2.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Jose</td>
-					<td>Perez</td>
-					<td>25</td>
-                    <td>71</td>
-                    <td>1,70</td>
-                  
-                </tr>                            
-				
-			
-			
-				<tr>
-					<td><img src="Fotos-Atletas/3.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Rodrigo</td>
-					<td>Yanez</td>
-					<td>19</td>
-                    <td>69</td>
-                    <td>1,74</td>
-                  
-                </tr>                            
-			
-            
-				<tr>
-					<td><img src="Fotos-Atletas/4.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Gregorio</td>
-					<td>Padron</td>
-					<td>26</td>
-                    <td>79</td>
-                    <td>1,71</td>                  
-                </tr>               
-			
-            		
-			
-				<tr>
-                	<td><img src="Fotos-Atletas/5.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Alejandro</td>
-					<td>García</td>
-					<td>19</td>
-                    <td>80</td>
-                    <td>1,72</td>
-                  
-                </tr>
-                        
-			
-			
-			
-				<tr>
-					<td width="60" height="80"><img src="Fotos-Atletas/6.jpg" width="60" height="80" class="img-responsive" /></td>
-				  <td>Pablo</td>
-					<td>Merchan</td>
-					<td>20</td>
-                    <td>68</td>
-                    <td>1,90</td>                  
-                </tr>               
+				<%= Page.Page_Load()%>
                              
 			</tbody>
-</table>--%>
+</table>
         </div>
     <script type="text/javascript">
         $(document).ready(function () {
