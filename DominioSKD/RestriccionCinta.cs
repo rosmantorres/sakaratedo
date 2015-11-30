@@ -14,11 +14,11 @@ namespace DominioSKD
         private int tiempoMinimo;
         private int tiempoMaximo;
         private int tiempoDocente;
-        private List<Cinta> listaCintas;
+        private int puntosMinimos;
         #endregion
 
         #region Propiedades
-        public int IdRestriccionComp
+        public int IdRestriccionCinta
         {
             get { return idRestriccionCinta; }
             set { idRestriccionCinta = value; }
@@ -43,17 +43,18 @@ namespace DominioSKD
             set { tiempoMaximo = value; }
         }
 
+        public int PuntosMinimos
+        {
+            get { return puntosMinimos; }
+            set { puntosMinimos = value; }
+        }
+
         public int TiempoDocente
         {
             get { return tiempoDocente; }
             set { tiempoDocente = value; }
         }
-     
-        public List<Cinta> ListaCintas
-        {
-            get { return listaCintas; }
-            set { listaCintas = value; }
-        }
+
 
         #endregion
 
@@ -65,17 +66,17 @@ namespace DominioSKD
             tiempoMinimo = 0;
             tiempoMaximo = 0;
             tiempoDocente = 0;
-            listaCintas = null;
+            puntosMinimos = 0;
         }
 
-        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente)
+        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputPuntosMinimos, int inputTiempoDocente)
         {
             idRestriccionCinta = inputId;
             descripcion = inputDescripcion;
             tiempoMinimo = inputTiempoMinimo;
             tiempoMaximo = inputTiempoMaximo;
+            puntosMinimos = inputPuntosMinimos;
             tiempoDocente = inputTiempoDocente;
-            listaCintas = null;
         }
         #endregion
     }
