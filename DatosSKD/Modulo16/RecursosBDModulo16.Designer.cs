@@ -502,6 +502,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_AGREGAR_MATRICULA_CARRITO.
+        /// </summary>
+        internal static string PROCEDIMIENTO_AGREGAR_MATRICULA_CARRITO {
+            get {
+                return ResourceManager.GetString("PROCEDIMIENTO_AGREGAR_MATRICULA_CARRITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_CONSULTAR_EVENTO_ID.
         /// </summary>
         internal static string PROCEDIMIENTO_CONSULTAR_EVENTO_ID {

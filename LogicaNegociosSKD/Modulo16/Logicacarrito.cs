@@ -107,12 +107,46 @@ namespace LogicaNegociosSKD.Modulo16
         }
 
         /// <summary>
+        /// Metodo que agrega los Inventarios al Carrito
+        /// </summary>
+        /// <param name="idUsuario">Indica el identificador del Usuario</param>
+        /// <param name="idInventario">Indica el identificador del Inventario</param>
+        /// <param name="cantidad">Indica la cantidad que se desea agregar del producto</param>
+        /// <param name="precio">El precio actual del objeto</param>
+        /// <returns>Si la operacion fue exitosa o fallida</returns>
+        public bool agregarInventarioaCarrito(int idUsuario, int idInventario, int cantidad, int precio)
+        {
+
+            try
+            {
+                return BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario, cantidad, precio);
+            }
+
+
+            catch (ParametroIncorrectoException ex)
+            {
+                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
+                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
+            }
+            catch (AtributoIncorrectoException ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
+                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+
+            }
+        }
+
+        /// <summary>
         /// Metodo que agrega los eventos al Carrito
         /// </summary>
         /// <param name="idUsuario">Indica el identificador del Usuario</param>
         /// <param name="idEvento">Indica el identificador del Evento</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-
         public bool agregarEventoaCarrito(int idUsuario, int idEvento, int cantidad, int precio)
         {
 
@@ -138,9 +172,6 @@ namespace LogicaNegociosSKD.Modulo16
                  RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
 
             }
-
-
-
         }
         
         /// <summary>
@@ -149,51 +180,12 @@ namespace LogicaNegociosSKD.Modulo16
         /// <param name="idUsuario">Indica el identificador del Usuario</param>
         /// <param name="idMatricula">Indica el identificador del Evento</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-
-        public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula)
+        public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula, int cantidad, int precio)
         {
 
             try
             {
-                return BDCarrito.agregarMatriculaaCarrito(idUsuario, idMatricula);
-            }
-
-
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
-                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-
-            }
-
-
-        }
-
-        /// <summary>
-        /// Metodo que agrega los Inventarios al Carrito
-        /// </summary>
-        /// <param name="idUsuario">Indica el identificador del Usuario</param>
-        /// <param name="idInventario">Indica el identificador del Inventario</param>
-        /// <param name="cantidad">Indica la cantidad que se desea agregar del producto</param>
-        /// <param name="precio">El precio actual del objeto</param>
-        /// <returns>Si la operacion fue exitosa o fallida</returns>
-
-        public bool agregarInventarioaCarrito(int idUsuario, int idInventario, int cantidad, int precio)
-        {
-
-            try
-            {
-                return BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario, cantidad, precio);
+                return BDCarrito.agregarMatriculaaCarrito(idUsuario, idMatricula, cantidad, precio);
             }
 
 
@@ -227,18 +219,14 @@ namespace LogicaNegociosSKD.Modulo16
         {
             //Instancio el objeto BDCarrito y una respuesta de la capa de Datos
             BDCarrito carritoBD = new BDCarrito();
-            bool respuesta = false;
-
+            
             //Si es un item de tipo implemento ejecuto su modificar correspondiente y espero la respuesta
             if (tipoObjeto == "I")
-                respuesta = carritoBD.modificarCarritoImplemento(idUsuario, idItem, cantidad);
+                return carritoBD.modificarCarritoImplemento(idUsuario, idItem, cantidad);
 
             //Caso contrario nos referiremos a un evento
             else
-                respuesta = carritoBD.modificarCarritoEvento(idUsuario,idItem,cantidad);
-
-            //Retorno la respuesta
-            return respuesta;
+                return carritoBD.modificarCarritoEvento(idUsuario,idItem,cantidad);
         }
         #endregion
     }

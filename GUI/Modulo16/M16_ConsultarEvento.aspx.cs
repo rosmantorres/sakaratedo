@@ -93,7 +93,7 @@ namespace templateApp.GUI.Modulo16
         {
             bool agregar = false;
             Logicacarrito logica = new Logicacarrito();
-            agregar = logica.agregarEventoaCarrito(1, 1);
+            agregar = logica.agregarEventoaCarrito(1, 1, 1, 1);
         }
         #endregion
 
