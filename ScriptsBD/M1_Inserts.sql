@@ -1,4 +1,4 @@
---------------------------------Para Obtener los ID de los roles-------
+﻿--------------------------------Para Obtener los ID de los roles-------
 
 /*
 SELECT rol_id from ROL where rol_nombre='Admin Sistema';
