@@ -19,6 +19,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Organización y dojo al que pertenece actualmente</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div id="alert" runat="server">
+    </div>
+
+ <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                </div><!-- /.box-header -->
+
+    <div class="box-body table-responsive">
+						<div class="container-fluid" id="info">
  <!-- general form elements -->
    <div class="box box-primary">
       <div class="box-header with-border">
@@ -72,7 +82,7 @@
                      </div>
                     </div>
                   </div>
-                </div>
+                 </div>
                </div>        
           <!-- /.box-body -->
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -80,4 +90,8 @@
          </div>
          </form>
        </div>
+      </div>
+     </div>
+	</div>
+   </div>
     </asp:Content>
