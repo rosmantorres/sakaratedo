@@ -11,7 +11,7 @@ using System.Configuration;
 
 namespace DatosSKD.Modulo13
 {
-    public class ListarAtletasCinta
+    public class BDAtletasCinta
     {
         public static List<Persona> ListarPersonasCintas() 
         {
