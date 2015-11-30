@@ -264,15 +264,36 @@ namespace templateApp.GUI.Modulo15
 
             if (eliminar != null)
             {
+
                 if (eliminar.Equals("true"))
                 {
                     Dojo dojo = new Dojo(id_dojo);
-                    int idInventario =Convert.ToInt16(Request.QueryString["idImplemento"]);
-                    eliminarEvento(idInventario,dojo);
 
-          //          alert.Attributes["class"] = "alert alert-success alert-dismissible";
-            //        alert.Attributes["role"] = "alert";
-              //      alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Implemento deportivo eliminado exitosamente</div>";
+                    int idInventario = Convert.ToInt16(Request.QueryString["idImplemento"]);
+                    try {
+            
+                        eliminarEvento(idInventario, dojo);
+                        
+
+                    }
+                    catch(ExceptionSKD ex){
+
+                        Response.Redirect("~/GUI/Modulo15/M15_ConsultarImplemento.aspx?eliminar=fallo");
+
+                    }
+                }
+                else {
+                    if (eliminar.Equals("fallo")) {
+
+
+                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
+                        alert2.Attributes["role"] = "alert";
+                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Eliminar el Implemento</div>";
+ 
+                    }
+                
+                
+                
                 }
 
             }
