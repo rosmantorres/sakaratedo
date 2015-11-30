@@ -69,11 +69,15 @@ namespace templateApp
         protected void asignarUsuario()
         {
             //aqui debo pedir el nombre,apellido y foto del usuario
+            string Stringhttp = RecursosInterfazMaster.AliasHttp;
+            char[] http = Stringhttp.ToCharArray();
+            string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString().TrimStart(http);
 
-            imageUsuario.Src = imageUsuario.Src + "www.one2onephotography.ca/image/portrait/men/men-images-1.jpg";
-            imageTag.Src = imageTag.Src+"www.one2onephotography.ca/image/portrait/men/men-images-1.jpg";
 
-            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
+            imageUsuario.Src = imageUsuario.Src + imagen;
+            imageTag.Src = imageTag.Src + imagen;
+
+            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
 
             //aqui va el nombre y apellido
             userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
@@ -155,6 +159,7 @@ namespace templateApp
             Session.Remove(RecursosInterfazMaster.sessionRoles);
             Session.Remove(RecursosInterfazMaster.sessionUsuarioID);
             Session.Remove(RecursosInterfazMaster.sessionUsuarioNombre);
+            Session.Remove(RecursosInterfazMaster.sessionImagen);
             Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
         }
     }
