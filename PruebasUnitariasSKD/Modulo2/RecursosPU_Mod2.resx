@@ -228,4 +228,8 @@
     <value />
     <comment>vacio</comment>
   </data>
+  <data name="id3" xml:space="preserve">
+    <value>3</value>
+    <comment> id 3</comment>
+  </data>
 </root>
