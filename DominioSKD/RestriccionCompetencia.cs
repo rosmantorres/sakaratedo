@@ -13,6 +13,8 @@ namespace DominioSKD
         private String descripcion;
         private int edadMinima;
         private int edadMaxima;
+        private int rangoMinimo;
+        private int rangoMaximo;
         private DateTime fechaEdadMin;
         private DateTime fechaEdadMax;
         private String sexo;
@@ -45,6 +47,18 @@ namespace DominioSKD
         {
             get { return edadMaxima; }
             set { edadMaxima = value; }
+        }
+
+        public int RangoMinimo
+        {
+            get { return rangoMinimo; }
+            set { rangoMinimo = value; }
+        }
+
+        public int RangoMaximo
+        {
+            get { return rangoMaximo; }
+            set { rangoMaximo = value; }
         }
 
         public DateTime FechaEdadMin
@@ -92,6 +106,8 @@ namespace DominioSKD
             descripcion = String.Empty;
             edadMinima = 0;
             edadMaxima = 0;
+            rangoMinimo = 1;
+            rangoMaximo = 20;
             fechaEdadMin = new DateTime();
             fechaEdadMax = new DateTime();
             sexo = String.Empty;
@@ -100,12 +116,18 @@ namespace DominioSKD
             listaCintas = null;
         }
 
+<<<<<<< HEAD
         public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, DateTime inputFechaEdadMax, String inputSexo, String inputModalidad)
+=======
+        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, int inputRangoMinimo, int inputRangoMaximo, DateTime inputFechaEdadMax, char inputSexo, String inputModalidad)
+>>>>>>> 52f94df71cc87527fef06f6cceeabf214385fb5d
         {
             idRestriccionComp = inputId;
             descripcion = inputDescripcion;
             edadMinima = inputEdadMinima;
             edadMaxima = inputEdadMaxima;
+            rangoMinimo = inputRangoMinimo;
+            rangoMaximo = inputRangoMaximo;
             fechaEdadMin = inputFechaEdadMin;
             fechaEdadMax = inputFechaEdadMax;
             sexo = inputSexo;
