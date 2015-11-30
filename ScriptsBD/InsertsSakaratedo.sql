@@ -4516,18 +4516,10 @@ INSERT INTO [dbo].[RESTRICCION_COMPETENCIA] ([res_com_desc], [res_com_edad_min],
 
 -- INSERTS RESTRICCION EVENTO--
 
-insert into RESTRICCION_EVENTO values ('Rest. evento evento1 de 18 a 25 años solo masculino',18,25,'m');
-insert into RESTRICCION_EVENTO values ('Rest. evento evento2 de 18 a 20 años solo femenino',18,20,'f');
-insert into RESTRICCION_EVENTO values ('Rest. evento evento3 de 20 a 25 años sexo combinado',20,25,'c');
-insert into RESTRICCION_EVENTO values ('Rest. evento evento4 de 20 a 25 años sexo combinado',20,25,'c');
-
-
--- INSERTS EVENTO RESTRICCION--
-
-insert into EVENTO_RESTRICCION values (1,1);
-insert into EVENTO_RESTRICCION values (2,3);
-insert into EVENTO_RESTRICCION values (3,2);
-insert into EVENTO_RESTRICCION values (4,4);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento1 de 18 a 25 años solo masculino',18,25,'m',1);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento2 de 18 a 20 años solo femenino',18,20,'f',2);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento3 de 20 a 25 años sexo combinado',20,25,'c',3);
+insert into RESTRICCION_EVENTO values ('Rest. evento evento4 de 20 a 25 años sexo combinado',20,25,'c',4);
 
 -- INSERTS RC_CINTA --
 
