@@ -62,6 +62,12 @@ namespace LogicaNegociosSKD.Modulo9
                 return false;
         }
 
+        /// <summary>
+        /// Metodo que valida que el costo del evento este compuesto de numeros y que tenga decimales
+        /// </summary>
+        /// <param name="numero">El costo del proyecto</param>
+        /// <returns>Verdadero o Falso</returns>
+
         public bool ValidarCosto(double numero)
         {
             String comparar = "123456789,";
@@ -85,12 +91,24 @@ namespace LogicaNegociosSKD.Modulo9
                 return false;
         }
 
+        /// <summary>
+        /// Metodo que convierte las fechas de String a DateTime
+        /// </summary>
+        /// <param name="fecha">String Fecha</param>
+        /// <returns>la fecha en formato DateTime</returns>
+
         public DateTime ConvertirFecha(String fecha)
         {
             String[] convertirFechaInicio = fecha.Split('/');
             DateTime fechaResultado = new DateTime(int.Parse(convertirFechaInicio[2]), int.Parse(convertirFechaInicio[1]), int.Parse(convertirFechaInicio[0]),0,0,0);
             return fechaResultado;
         }
+
+        /// <summary>
+        /// Meetodo que valida que la fecha cumpla con el formato para BD y que no posea Letras
+        /// </summary>
+        /// <param name="fecha">fecha a validar</param>
+        /// <returns>Verdadero o Falso</returns>
 
         public bool ValidarFormatoFecha(String fecha)
         {
@@ -115,6 +133,13 @@ namespace LogicaNegociosSKD.Modulo9
                 return false;
 
         }
+
+        /// <summary>
+        /// Metodo que valida que la fecha fin sea mayor que la fecha inicio
+        /// </summary>
+        /// <param name="fechaInicio">fecha inicio</param>
+        /// <param name="fechaFin">fecha fin</param>
+        /// <returns>verdadero o falso</returns>
 
         public bool ValidarFechaFinMayor(String fechaInicio, String fechaFin)
         {
