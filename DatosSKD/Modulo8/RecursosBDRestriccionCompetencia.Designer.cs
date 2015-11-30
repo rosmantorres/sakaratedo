@@ -97,6 +97,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to existeRestriccionCompetencia.
+        /// </summary>
+        internal static string AliasExisteRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AliasExisteRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fechaEdadMax.
         /// </summary>
         internal static string AliasFechaEdadMax {
@@ -142,11 +151,29 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Modalidad.
+        ///   Looks up a localized string similar to modalidad.
         /// </summary>
         internal static string AliasModalidad {
             get {
                 return ResourceManager.GetString("AliasModalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rangoMax.
+        /// </summary>
+        internal static string AliasRangoMax {
+            get {
+                return ResourceManager.GetString("AliasRangoMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rangoMin.
+        /// </summary>
+        internal static string AliasRangoMin {
+            get {
+                return ResourceManager.GetString("AliasRangoMin", resourceCulture);
             }
         }
         
@@ -174,6 +201,15 @@ namespace DatosSKD.Modulo8 {
         internal static string EliminarRestriccionCompetencia {
             get {
                 return ResourceManager.GetString("EliminarRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_ExisteRestriccionCompetencia.
+        /// </summary>
+        internal static string ExisteRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("ExisteRestriccionCompetencia", resourceCulture);
             }
         }
         
@@ -273,6 +309,33 @@ namespace DatosSKD.Modulo8 {
         internal static string ParamModalidad {
             get {
                 return ResourceManager.GetString("ParamModalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_rangomax.
+        /// </summary>
+        internal static string ParamRangoMax {
+            get {
+                return ResourceManager.GetString("ParamRangoMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_rangomin.
+        /// </summary>
+        internal static string ParamRangoMin {
+            get {
+                return ResourceManager.GetString("ParamRangoMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numRestriccion.
+        /// </summary>
+        internal static string ParamSalidaNumRestriccion {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumRestriccion", resourceCulture);
             }
         }
         

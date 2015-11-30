@@ -145,7 +145,13 @@
     <value>id</value>
   </data>
   <data name="AliasModalidad" xml:space="preserve">
-    <value>Modalidad</value>
+    <value>modalidad</value>
+  </data>
+  <data name="AliasRangoMax" xml:space="preserve">
+    <value>rangoMax</value>
+  </data>
+  <data name="AliasRangoMin" xml:space="preserve">
+    <value>rangoMin</value>
   </data>
   <data name="AliasSexo" xml:space="preserve">
     <value>sexo</value>
@@ -188,6 +194,12 @@
   </data>
   <data name="ParamModalidad" xml:space="preserve">
     <value>@rest_comp_modalidad</value>
+  </data>
+  <data name="ParamRangoMax" xml:space="preserve">
+    <value>@rest_comp_rangomax</value>
+  </data>
+  <data name="ParamRangoMin" xml:space="preserve">
+    <value>@rest_comp_rangomin</value>
   </data>
   <data name="ParamSexo" xml:space="preserve">
     <value>@rest_comp_sexo</value>
