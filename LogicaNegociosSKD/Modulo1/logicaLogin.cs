@@ -89,12 +89,13 @@ namespace LogicaNegociosSKD.Modulo1
             try
             {
                 Cuenta user= BDLogin.ObtenerUsuario(usuario);
-                string[] respuesta = new string[4];
+                string[] respuesta = new string[5];
                string hashClave = hash(contraseña);
                if (hashClave == hash(user.Contrasena) && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
                    respuesta[0] = user.Id_usuario.ToString();
                    respuesta[1] = user.Nombre_usuario;
+                   respuesta[4] = user.Imagen;
                    string rolesConcat = "";
                    string split= RecursosLogicaModulo1.splitRoles;
                    int cantRoles=user.Roles.Count;

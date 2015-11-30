@@ -116,6 +116,7 @@ namespace templateApp.GUI.Modulo1
                 Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[1];
                 Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
                 Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
+                Session[RecursosInterfazMaster.sessionImagen] = Respuesta[4];
                 Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
             }
