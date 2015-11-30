@@ -204,4 +204,22 @@
   <data name="ParamSalidaNumDojo" xml:space="preserve">
     <value>@numDojo</value>
   </data>
+  <data name="AliasNombreOrganizacion" xml:space="preserve">
+    <value>orgNombreDojo</value>
+  </data>
+  <data name="AliasFechaMatricula" xml:space="preserve">
+    <value>fechaMatricula</value>
+  </data>
+  <data name="AliasIdMatricula" xml:space="preserve">
+    <value>idMatricula</value>
+  </data>
+  <data name="AliasModalidad" xml:space="preserve">
+    <value>modalMatricula</value>
+  </data>
+  <data name="AliasMonto" xml:space="preserve">
+    <value>montoMatricula</value>
+  </data>
+  <data name="ConsultarMatriculasXId" xml:space="preserve">
+    <value>M4_ConsultarMatriculasXid</value>
+  </data>
 </root>

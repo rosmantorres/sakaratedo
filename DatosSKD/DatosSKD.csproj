@@ -183,6 +183,7 @@
     <EmbeddedResource Include="Modulo1\RecursosBDModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosBDModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>

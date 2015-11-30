@@ -70,6 +70,33 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;td hidden=&quot;hidden&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTDhidden {
+            get {
+                return ResourceManager.GetString("AbrirTDhidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;th style=&quot;text-align:left&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTH {
+            get {
+                return ResourceManager.GetString("AbrirTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;th style=&quot;text-align:left&quot;  hidden=&quot;hidden&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTHhidden {
+            get {
+                return ResourceManager.GetString("AbrirTHhidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;tr&gt;.
         /// </summary>
         internal static string AbrirTR {
@@ -124,11 +151,29 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string CerrarTH {
+            get {
+                return ResourceManager.GetString("CerrarTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/tr&gt;.
         /// </summary>
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/asp:ListItem&gt;.
+        /// </summary>
+        internal static string FinalAspSelect {
+            get {
+                return ResourceManager.GetString("FinalAspSelect", resourceCulture);
             }
         }
         
@@ -142,11 +187,29 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;asp:ListItemValue=&quot;.
+        /// </summary>
+        internal static string InicioAspSelect {
+            get {
+                return ResourceManager.GetString("InicioAspSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;img src=&quot;Imagenes\.
         /// </summary>
         internal static string InicioImagen {
             get {
                 return ResourceManager.GetString("InicioImagen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;.
+        /// </summary>
+        internal static string MedioAspSelect {
+            get {
+                return ResourceManager.GetString("MedioAspSelect", resourceCulture);
             }
         }
     }

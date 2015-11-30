@@ -11,14 +11,14 @@ using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo4
 {
-    public partial class M4_ListarDojos : System.Web.UI.Page
+    public partial class M4_ListarHistorialMatricula : System.Web.UI.Page
     {
-        private List<Dojo> laLista = new List<Dojo>();
+        private List<Historial_Matricula> laLista = new List<Historial_Matricula>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "4";
-            
+
             String success = Request.QueryString["success"];
             String detalleString = Request.QueryString["dojoDetalle"];
 
@@ -30,46 +30,44 @@ namespace templateApp.GUI.Modulo4
                 {
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Dojo agregado exitosamente</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Matricula agregada exitosamente</div>";
                 }
 
                 if (success.Equals("2"))
                 {
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Dojo eliminado exitosamente</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Matricula eliminada exitosamente</div>";
                 }
 
                 if (success.Equals("3"))
                 {
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Dojo modificado exitosamente</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Matricula modificada exitosamente</div>";
                 }
 
             }
 
-            #region Llenar Data Table Con Dojos
+            #region Llenar Data Table Con Historial Matriculas
 
-            LogicaDojo logDojo = new LogicaDojo();
+            LogicaHistorial_Matricula logMatricula = new LogicaHistorial_Matricula();
             if (!IsPostBack)
             {
                 try
                 {
-                    String RolPersona= (Session[RecursosInterfazMaster.sessionRol].ToString());
+                    String RolPersona = (Session[RecursosInterfazMaster.sessionRol].ToString());
                     this.sta.Text += M4_RecursoInterfaz.AbrirTR;
-                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Logo" + M4_RecursoInterfaz.CerrarTH;
-                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Rif" + M4_RecursoInterfaz.CerrarTH;
-                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Nombtre" + M4_RecursoInterfaz.CerrarTH;
-                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Ubicación" + M4_RecursoInterfaz.CerrarTH;
-                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Status" + M4_RecursoInterfaz.CerrarTH;
+                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Fecha" + M4_RecursoInterfaz.CerrarTH;
+                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Modalidad" + M4_RecursoInterfaz.CerrarTH;
+                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Monto" + M4_RecursoInterfaz.CerrarTH;
                     if (String.Compare(RolPersona, "Sistema") == 0)
                     {
-                        this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Organización" + M4_RecursoInterfaz.CerrarTH;
+                        this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Dojo" + M4_RecursoInterfaz.CerrarTH;
                         this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Acciones" + M4_RecursoInterfaz.CerrarTH;
                         this.sta.Text += M4_RecursoInterfaz.CerrarTR;
-                        
-                        laLista = logDojo.obtenerListaDeDojos();
+
+                        laLista = logMatricula.obtenerListaDeMatriculas();
 
                         foreach (Dojo d in laLista)
                         {
@@ -97,8 +95,8 @@ namespace templateApp.GUI.Modulo4
                         {
                             this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Acciones" + M4_RecursoInterfaz.CerrarTH;
                             this.sta.Text += M4_RecursoInterfaz.CerrarTR;
-                            
-                            laLista = logDojo.obtenerListaDeDojos();
+
+                            laLista = logMatricula.obtenerListaDeDojos();
 
 
                             foreach (Dojo d in laLista)
@@ -124,7 +122,7 @@ namespace templateApp.GUI.Modulo4
                         }
 
 
-                    
+
 
                 }
                 catch (Exception ex)
@@ -133,24 +131,7 @@ namespace templateApp.GUI.Modulo4
                 }
             }
         }
-        #endregion
-
+            #endregion
         
-
-        protected void btn_eliminarDojo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       /* protected void llenarModalInfo(int elIdDojo)
-        {
-            Competencia laCompetencia = new Competencia();
-            LogicaDojo logica = new LogicaDojo();
-            laCompetencia = logica.detalleDojoXId(elIdDojo);
-
-
-
-        
-        }*/
     }
 }

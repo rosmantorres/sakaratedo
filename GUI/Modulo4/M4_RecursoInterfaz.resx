@@ -120,6 +120,15 @@
   <data name="AbrirTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
   </data>
+  <data name="AbrirTDhidden" xml:space="preserve">
+    <value>&lt;td hidden="hidden"&gt;</value>
+  </data>
+  <data name="AbrirTH" xml:space="preserve">
+    <value>&lt;th style="text-align:left"&gt;</value>
+  </data>
+  <data name="AbrirTHhidden" xml:space="preserve">
+    <value>&lt;th style="text-align:left"  hidden="hidden"&gt;</value>
+  </data>
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
@@ -138,13 +147,25 @@
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
+  <data name="CerrarTH" xml:space="preserve">
+    <value />
+  </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="FinalAspSelect" xml:space="preserve">
+    <value>&lt;/asp:ListItem&gt;</value>
   </data>
   <data name="FinalImagen" xml:space="preserve">
     <value>" alt="" style="width:50px; height:auto;"&gt;</value>
   </data>
+  <data name="InicioAspSelect" xml:space="preserve">
+    <value>&lt;asp:ListItemValue="</value>
+  </data>
   <data name="InicioImagen" xml:space="preserve">
     <value>&lt;img src="Imagenes\</value>
+  </data>
+  <data name="MedioAspSelect" xml:space="preserve">
+    <value>"&gt;</value>
   </data>
 </root>

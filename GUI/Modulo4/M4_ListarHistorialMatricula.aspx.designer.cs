@@ -10,16 +10,16 @@
 namespace templateApp.GUI.Modulo4 {
     
     
-    public partial class M4_ListarDojos {
+    public partial class M4_ListarHistorialMatricula {
         
         /// <summary>
-        /// Control eliminar_Dojo.
+        /// Control eliminar_matricula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm eliminar_Dojo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm eliminar_matricula;
         
         /// <summary>
         /// Control alert.
@@ -49,12 +49,12 @@ namespace templateApp.GUI.Modulo4 {
         protected global::System.Web.UI.WebControls.Literal laTabla;
         
         /// <summary>
-        /// Control btn_eliminarDojo.
+        /// Control btn_eliminarmatricula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_eliminarDojo;
+        protected global::System.Web.UI.WebControls.Button btn_eliminarmatricula;
     }
 }

@@ -32,15 +32,17 @@ namespace DatosSKD.Modulo4
                                RecursosBDModulo4.ConsultarDojos, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
+
                     Dojo elDojo = new Dojo();
 
                     elDojo.Id_dojo= int.Parse(row[RecursosBDModulo4.AliasIdDojo].ToString());
-                    elDojo.Rif_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
+                    elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
                     elDojo.Nombre_dojo = row[RecursosBDModulo4.AliasNombreDojo].ToString();
                     elDojo.Telefono_dojo = int.Parse(row[RecursosBDModulo4.AliasTelefonoDojo].ToString());
                     elDojo.Email_dojo = row[RecursosBDModulo4.AliasEmailDojo].ToString();
                     elDojo.Logo_dojo = row[RecursosBDModulo4.AliasLogoDojo].ToString();
                     elDojo.Status_dojo = row[RecursosBDModulo4.AliasStatusDojo].ToString();
+                    elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasNombreOrganizacion].ToString();
                     elDojo.Registro_dojo = DateTime.Parse(row[RecursosBDModulo4.AliasFechaDojo].ToString());
                     elDojo.Organizacion_dojo = int.Parse(row[RecursosBDModulo4.AliasIdOrganizacion].ToString());
                     elDojo.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDModulo4.AliasIdUbicacion].ToString()),
@@ -101,7 +103,7 @@ namespace DatosSKD.Modulo4
 
 
                         elDojo.Id_dojo = int.Parse(row[RecursosBDModulo4.AliasIdDojo].ToString());
-                        elDojo.Rif_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
+                        elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
                         elDojo.Nombre_dojo = row[RecursosBDModulo4.AliasNombreDojo].ToString();
                         elDojo.Telefono_dojo = int.Parse(row[RecursosBDModulo4.AliasTelefonoDojo].ToString());
                         elDojo.Email_dojo = row[RecursosBDModulo4.AliasEmailDojo].ToString();

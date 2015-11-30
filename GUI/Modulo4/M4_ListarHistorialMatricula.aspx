@@ -1,14 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarDojos.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarDojos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ListarHistorialMatricula.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ListarHistorialMatricula" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script src="M4_js/M4_JSGoogleMaps.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
-
 </asp:Content>
-
-<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
-	<%--Breadcrumbs--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
+    <%--Breadcrumbs--%>
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
@@ -30,12 +26,12 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Dojos
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Gestión de Dojos
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Listar Historial Matricula
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-      <form runat="server" role="form" name="eliminar_Dojo" id="eliminar_Dojo" method="post" action="M4_ListarDojos.aspx?success=2">
+<asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <form runat="server" role="form" name="eliminar_matricula" id="eliminar_matricula" method="post" action="M4_ListarHistorialMatricula.aspx?success=2">
 
         <div id="alert" runat="server">
     </div>
@@ -46,12 +42,12 @@
             <div class="col-xs-12">
               <div class="box">
         <div class="box-header">
-                      <h3 class="box-title">Dojos</h3>
+                      <h3 class="box-title">Historial Matricula</h3>
                     
         </div><!-- /.box-header -->
                  
     <div class="box-body table-responsive">
-         <table id="tablaDojo" class="table table-bordered table-striped dataTable" >
+         <table id="tablaMatricula" class="table table-bordered table-striped dataTable" >
             <thead>
 				
                     
@@ -71,18 +67,18 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n de Dojo</h4>
+              <h4 class="modal-title" >Eliminaci&oacute;n de Matricula</h4>
             </div>
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row">
-                    <p>Seguro que desea eliminar el Dojo:</p>
-                    <p id="dojo"></p>
+                    <p>Seguro que desea eliminar la Matricula:</p>
+                    <p id="mat"></p>
                 </div>
               </div>
             </div>
             <div class="modal-footer">  
-         <asp:Button id="btn_eliminarDojo" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarDojo_Click" Text="Eliminar"></asp:Button>
+         <asp:Button id="btn_eliminarmatricula" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarmatricula_Click" Text="Eliminar"></asp:Button>
                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
@@ -92,13 +88,13 @@
     </form>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#tablaDojo').DataTable();
+        $('#tablaMatricula').DataTable();
 
-        var table = $('#tablaDojo').DataTable();
-        var dojo;
+        var table = $('#tablaMatricula').DataTable();
+        var mat;
         var tr;
 
-        $('#tablaDojo tbody').on('click', 'a', function () {
+        $('#tablaMatricula tbody').on('click', 'a', function () {
             if ($(this).parent().hasClass('selected')) {
                 comp = $(this).parent().prev().prev().prev().prev().text();
                 tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -117,8 +113,8 @@
 
         $('#modal-delete').on('show.bs.modal', function (event) {
             var modal = $(this)
-            modal.find('.modal-title').text('Eliminar Dojo:  ' + dojo)
-            modal.find('#dojo').text(comp)
+            modal.find('.modal-title').text('Eliminar Matricula:  ' + mat)
+            modal.find('#mat').text(comp)
         })
         $('#btn-eliminar').on('click', function () {
             table.row(tr).remove().draw();//se elimina la fila de la tabla
