@@ -345,4 +345,25 @@
   <data name="AliasMontoMatricula" xml:space="preserve">
     <value>pago</value>
   </data>
+  <data name="AliasPersonaApellido" xml:space="preserve">
+    <value>apellido</value>
+  </data>
+  <data name="AliasPersonaFechaNacimiento" xml:space="preserve">
+    <value>fechaNacimiento</value>
+  </data>
+  <data name="AliasPersonaNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="AliasPersonaNombreUsuario" xml:space="preserve">
+    <value>nombreUsuario</value>
+  </data>
+  <data name="AliasPersonaNumDocId" xml:space="preserve">
+    <value>numeroDocumento</value>
+  </data>
+  <data name="AliasPersonaTipoDocId" xml:space="preserve">
+    <value>tipoDocumento</value>
+  </data>
+  <data name="ConsultaPersonaXId" xml:space="preserve">
+    <value>M7_ConsultaPersona</value>
+  </data>
 </root>
