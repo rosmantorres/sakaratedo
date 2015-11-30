@@ -151,6 +151,15 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleEventoAsistido.aspx?compDetalle=.
+        /// </summary>
+        internal static string BotonInfoAsistenciaACompetencias {
+            get {
+                return ResourceManager.GetString("BotonInfoAsistenciaACompetencias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleEventoAsistido.aspx?eventoDetalle=.
         /// </summary>
         internal static string BotonInfoAsistenciaAEventos {

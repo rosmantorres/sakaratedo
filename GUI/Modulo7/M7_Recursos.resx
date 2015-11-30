@@ -147,6 +147,9 @@
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
+  <data name="BotonInfoAsistenciaACompetencias" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoAsistido.aspx?compDetalle=</value>
+  </data>
   <data name="BotonInfoAsistenciaAEventos" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoAsistido.aspx?eventoDetalle=</value>
   </data>

@@ -71,7 +71,7 @@ namespace templateApp.GUI.Modulo7
                         this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaACompetencias + competencia.Id_competencia + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }

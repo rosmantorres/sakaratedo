@@ -127,6 +127,7 @@
       <DependentUpon>RecursosBDModulo6.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo7\BDCinta.cs" />
+    <Compile Include="Modulo7\BDCompetencia.cs" />
     <Compile Include="Modulo7\BDDojo.cs" />
     <Compile Include="Modulo7\BDEvento.cs" />
     <Compile Include="Modulo7\BDHorario.cs" />

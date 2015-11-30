@@ -402,4 +402,13 @@
   <data name="AliasDojoOrganizacionId" xml:space="preserve">
     <value>organizacion</value>
   </data>
+  <data name="ConsultarCompetenciaXId" xml:space="preserve">
+    <value>M7_ConsultaCompetencia</value>
+  </data>
+  <data name="ParamIdCompetencia" xml:space="preserve">
+    <value>@comp_id</value>
+  </data>
+  <data name="AliasCompetenciaStatus" xml:space="preserve">
+    <value>status</value>
+  </data>
 </root>
