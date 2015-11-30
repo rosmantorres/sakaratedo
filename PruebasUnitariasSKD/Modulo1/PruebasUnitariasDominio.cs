@@ -10,7 +10,7 @@ using DominioSKD;
 using ExcepcionesSKD;
 
 
-namespace PruebasUnitariasSKD.Modulo1.Dominio
+namespace PruebasUnitariasSKD.Modulo1
 {
     [TestFixture]
     class PruebasUnitariasDominio
@@ -28,8 +28,8 @@ namespace PruebasUnitariasSKD.Modulo1.Dominio
             Cuenta cuenta = new Cuenta();
 
             Assert.AreEqual(cuenta.Id_usuario, 0);
-            Assert.AreEqual(cuenta.Nombre_usuario,RecursosPU_Mod1.Vacio);
-            Assert.AreEqual(cuenta.Contrasena,RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.Vacio);
         }
         // Prueba unitaria del metodo Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena) 
         [Test]

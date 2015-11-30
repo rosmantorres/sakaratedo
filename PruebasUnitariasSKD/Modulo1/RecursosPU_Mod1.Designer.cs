@@ -70,6 +70,15 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to rafa91_1@hotmail.com.
+        /// </summary>
+        internal static string emailerrordoble {
+            get {
+                return ResourceManager.GetString("emailerrordoble", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 13/11/1991.
         /// </summary>
         internal static string Fecha {
@@ -84,6 +93,33 @@ namespace PruebasUnitariasSKD.Modulo1 {
         internal static string Id {
             get {
                 return ResourceManager.GetString("Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string id2 {
+            get {
+                return ResourceManager.GetString("id2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 15.
+        /// </summary>
+        internal static string Idrol {
+            get {
+                return ResourceManager.GetString("Idrol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        internal static string nuevoRol {
+            get {
+                return ResourceManager.GetString("nuevoRol", resourceCulture);
             }
         }
         
@@ -151,11 +187,110 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Admin.
+        ///   Looks up a localized string similar to 12345.
+        /// </summary>
+        internal static string PruebaRestablecerClave {
+            get {
+                return ResourceManager.GetString("PruebaRestablecerClave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistema.
         /// </summary>
         internal static string Rol {
             get {
                 return ResourceManager.GetString("Rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistema.
+        /// </summary>
+        internal static string Rol1 {
+            get {
+                return ResourceManager.GetString("Rol1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin Sistema.
+        /// </summary>
+        internal static string Rol2 {
+            get {
+                return ResourceManager.GetString("Rol2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Organización.
+        /// </summary>
+        internal static string Rol3 {
+            get {
+                return ResourceManager.GetString("Rol3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin Organización.
+        /// </summary>
+        internal static string Rol4 {
+            get {
+                return ResourceManager.GetString("Rol4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dojo.
+        /// </summary>
+        internal static string Rol5 {
+            get {
+                return ResourceManager.GetString("Rol5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin Dojo.
+        /// </summary>
+        internal static string Rol6 {
+            get {
+                return ResourceManager.GetString("Rol6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrenador.
+        /// </summary>
+        internal static string Rol7 {
+            get {
+                return ResourceManager.GetString("Rol7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atleta.
+        /// </summary>
+        internal static string Rol8 {
+            get {
+                return ResourceManager.GetString("Rol8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Representante.
+        /// </summary>
+        internal static string Rol9 {
+            get {
+                return ResourceManager.GetString("Rol9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dmin.
+        /// </summary>
+        internal static string RolInvalido {
+            get {
+                return ResourceManager.GetString("RolInvalido", resourceCulture);
             }
         }
         

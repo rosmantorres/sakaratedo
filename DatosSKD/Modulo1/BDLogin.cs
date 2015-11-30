@@ -111,11 +111,11 @@ namespace DatosSKD.Modulo1
                     elCorreo.Add(row[RecursosBDModulo1.aliasCorreoUsuario].ToString());
                 }
                 bool respuesta = false;
-
+                Console.WriteLine(elCorreo.Count.ToString());
                 if (elCorreo.Count == 1)
-                { respuesta = true; }
+                 respuesta = true; 
                 else if (elCorreo.Count > 1)
-                { throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno); }
+                 throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno); 
 
                 return respuesta;
 

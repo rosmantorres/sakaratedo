@@ -150,16 +150,16 @@
     <comment>id del usuario</comment>
   </data>
   <data name="Rol" xml:space="preserve">
-    <value>Admin</value>
+    <value>Sistema</value>
     <comment>nombre del rol</comment>
   </data>
   <data name="usuario" xml:space="preserve">
     <value>carloadmin</value>
     <comment>nombre de usuario</comment>
   </data>
-  <data name="Vacio" xml:space="preserve">
-    <value />
-    <comment>Vacio</comment>
+  <data name="RolInvalido" xml:space="preserve">
+    <value>dmin</value>
+    <comment>rol invalido</comment>
   </data>
   <data name="Descripcion" xml:space="preserve">
     <value>Una descaripcion</value>
@@ -168,5 +168,64 @@
   <data name="Fecha" xml:space="preserve">
     <value>13/11/1991</value>
     <comment>Fecha</comment>
+  </data>
+  <data name="id2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="PruebaRestablecerClave" xml:space="preserve">
+    <value>12345</value>
+    <comment>clave nueva</comment>
+  </data>
+  <data name="emailerrordoble" xml:space="preserve">
+    <value>rafa91_1@hotmail.com</value>
+    <comment>error de duplicidad</comment>
+  </data>
+  <data name="Idrol" xml:space="preserve">
+    <value>15</value>
+    <comment>idrol</comment>
+  </data>
+  <data name="nuevoRol" xml:space="preserve">
+    <value>Admin</value>
+    <comment>admin</comment>
+  </data>
+  <data name="Rol1" xml:space="preserve">
+    <value>Sistema</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol2" xml:space="preserve">
+    <value>Admin Sistema</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol3" xml:space="preserve">
+    <value>Organización</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol4" xml:space="preserve">
+    <value>Admin Organización</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol5" xml:space="preserve">
+    <value>Dojo</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol6" xml:space="preserve">
+    <value>Admin Dojo</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol7" xml:space="preserve">
+    <value>Entrenador</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol8" xml:space="preserve">
+    <value>Atleta</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Rol9" xml:space="preserve">
+    <value>Representante</value>
+    <comment>nombre del rol</comment>
+  </data>
+  <data name="Vacio" xml:space="preserve">
+    <value />
+    <comment>vacio</comment>
   </data>
 </root>

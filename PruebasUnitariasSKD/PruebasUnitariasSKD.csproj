@@ -82,16 +82,17 @@
     <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
     <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo1\PruebasUnitariasLogicaN.cs" />
-    <Compile Include="Modulo1\DatosPrueba.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\PruebasUnitariasDatos.cs" />
+    <Compile Include="Modulo2\PruebasUnitariasLogicaN.cs" />
     <Compile Include="Modulo2\RecursosPU_Mod2.Designer.cs">
+      <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>

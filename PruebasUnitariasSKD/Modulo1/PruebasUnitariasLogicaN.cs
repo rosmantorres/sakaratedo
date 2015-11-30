@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using LogicaNegociosSKD.Modulo1;
-using PruebasUnitariasSKD.Modulo1;
-
+using LogicaNegociosSKD.Modulo2;
+using DominioSKD;
 namespace PruebasUnitariasSKD.Modulo1
 {
     [TestFixture]
@@ -115,5 +115,27 @@ namespace PruebasUnitariasSKD.Modulo1
              bool _respuesta;
              _respuesta = lg.validarCorreo(null);
          }
+         // Prueba unitaria del metodo restablecerContrasena(string usuarioID, string contraseña) de forma Erronea
+         [Test]
+         public void PruebaValidarRestablecerContrasena()
+         {
+             logicaRestablecer lgr = new logicaRestablecer();
+             bool _respuesta;
+
+
+             _respuesta = lgr.restablecerContrasena(RecursosPU_Mod1.id2, RecursosPU_Mod1.PruebaRestablecerClave);
+             Assert.AreEqual(true, _respuesta);
+         }
+         // Prueba unitaria de la excepcion del metodo restablecerContrasena()
+          [Test]
+         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+         public void PruebaValidarRestablecerContrasenaexc()
+         {
+             logicaRestablecer lgr = new logicaRestablecer();
+             bool _respuesta;
+             _respuesta = lgr.restablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
+              
+         }
+          
     }
 }
