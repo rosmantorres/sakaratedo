@@ -28,7 +28,6 @@ namespace templateApp.GUI.Modulo7
             ((SKD)Page.Master).IdModulo = "7";
 
             String detalleString = Request.QueryString["EventInscDetalle"];
-            String detalleString = Request.QueryString["EventInscDetalle"];
 
             if (detalleString != null)
             {

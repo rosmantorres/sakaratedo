@@ -354,8 +354,8 @@
   <data name="AliasPersonaNombre" xml:space="preserve">
     <value>nombre</value>
   </data>
-  <data name="AliasPersonaNombreUsuario" xml:space="preserve">
-    <value>nombreUsuario</value>
+  <data name="AliasPersonaDojoId" xml:space="preserve">
+    <value>idDojo</value>
   </data>
   <data name="AliasPersonaDireccion" xml:space="preserve">
     <value>direccion</value>

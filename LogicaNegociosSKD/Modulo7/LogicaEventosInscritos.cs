@@ -92,6 +92,23 @@ namespace LogicaNegociosSKD.Modulo7
                  throw e;
              }
          }
+        /// <summary>
+        /// Metodo que devuelve detalle de competencia
+        /// </summary>
+        /// <param name="idCompetencia"></param>
+        /// <returns></returns>
+         public DominioSKD.Competencia detalleCompetenciaID(int idCompetencia)
+         {
+             try
+             {
+                 BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
+                 return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+             }
+             catch (Exception e)
+             {
+                 throw e;
+             }
+         }
         #endregion
 
 

@@ -32,7 +32,7 @@ namespace DatosSKD.Modulo7
                 parametros = new List<Parametro>();
                 Dojo dojo = new Dojo();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idDojo.ToString(), false);
+                elParametro = new Parametro(RecursosBDModulo7.AliasPersonaDojoId, SqlDbType.Int, idDojo.ToString(), false);
                 parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
@@ -45,7 +45,6 @@ namespace DatosSKD.Modulo7
                     dojo.Telefono_dojo = int.Parse(row[RecursosBDModulo7.AliasDojoTelefono].ToString());
                     dojo.Email_dojo = row[RecursosBDModulo7.AliasDojoEmail].ToString();
                     dojo.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasDojoUbicacion].ToString()));
-                    ///dojo.Organizacion_dojo = row[RecursosBDModulo7.AliasDojoOrganizacionId].ToString();
                 }
 
                 return dojo;

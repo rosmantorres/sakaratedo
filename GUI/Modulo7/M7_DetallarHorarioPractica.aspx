@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M7_DetalleEventoInscrito.aspx.cs" Inherits="templateApp.GUI.Modulo7.DetalleEventoInscrito" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M7_DetallarHorarioPractica.aspx.cs" Inherits="templateApp.GUI.Modulo7.M7_DetallarHorarioPractica" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
-    	<%--Breadcrumbs--%>
+    <%--Breadcrumbs--%>
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Consultar Eventos Inscritos
+			   Consultar Horario de Práctica
 		    </li>
 	    </ol>
     </div>
@@ -28,21 +28,21 @@
      <!-- general form elements -->
    <div class="box box-primary">
       <div class="box-header with-border">
-         <h3 class="box-title">Detalle De Evento Inscrito</h3>
+         <h3 class="box-title">Detalle De Horario Práctica</h3>
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form runat="server" role="form" name="detalleEventoIns" id="detalleEventoIns" method="post">
+      <form runat="server" role="form" name="detalleHorario" id="detalleHorario" method="post">
          <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
             <div class="panel-group col-sm-12 col-md-12 col-lg-12">
                <div class="panel panel-primary">
                   <div class="panel-heading">
-                     <h4>Datos del Evento</h4>
+                     <h4>Datos del Horario</h4>
                   </div>
                   <div class="panel-body">
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <br />
-                        <h4>Nombre :</h4>
+                        <h4>Nombre Clase:</h4>
                         <asp:Label runat="server" name="nombre_evento" id="nombre_evento" Font-Size="Large"></asp:Label>
                      </div>
                      <br/>
@@ -52,26 +52,11 @@
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Costo :</h4>
-                        <asp:Label runat="server" name="costo_evento" id="costo_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
-                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <h4>Estado :</h4>
                         <asp:Label runat="server" name="estado_evento" id="estado_evento" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha de Inicio :</h4>
-                        <asp:Label runat="server" name="fechaInicio_evento" id="fechaInicio_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
-                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha que Finaliza :</h4>
-                        <asp:Label runat="server" name="fechaFin_evento" id="fechaFin_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
-                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <h4>Hora de Inicio :</h4>
                         <asp:Label runat="server" name="horaInicio_evento" id="horaInicio_evento" Font-Size="Large"></asp:Label>
                         <br />
@@ -79,16 +64,6 @@
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <h4>Hora que Finaliza :</h4>
                         <asp:Label runat="server" name="horaFin_evento" id="horaFin_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
-                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Ciudad :</h4>
-                        <asp:Label runat="server" name="ciudad_evento" id="ciudad_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
-                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Estado :</h4>
-                        <asp:Label runat="server" name="estadoUbicacion_evento" id="estadoUbicacion_evento" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
@@ -100,7 +75,7 @@
             </div>
             <br />
             <div class="form-group col-sm-5 col-md-5 col-lg-5"> <!--BOTON VOLVER-->
-            <a class="btn btn-default" href="M7_ListarEventosInscritos.aspx">Volver</a>
+            <a class="btn btn-default" href="M7_ListarHorarioPractica.aspx">Volver</a>
             </div>
                   </div>
                </div>

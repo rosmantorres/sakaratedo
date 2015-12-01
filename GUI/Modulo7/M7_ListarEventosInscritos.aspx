@@ -326,7 +326,27 @@
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
+                $('#modal-info1').on('show.bs.modal', function (e) {
 
+                    $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        url: 'http://localhost:23072/GUI/Modulo7/M7_ListarEventosInscritos.aspx/prueba',
+                        data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+
+                        success: function (data) {
+                            console.log(data);
+
+                            var aa = JSON.parse(data.d);
+
+                            $("#beta").val(aa.nombre);
+                            $("#beta4").val(aa.id);
+
+                        }
+                    });
+                })
             });
 
         </script>
