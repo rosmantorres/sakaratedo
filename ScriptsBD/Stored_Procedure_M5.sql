@@ -7,7 +7,7 @@ as
 		select cin.cin_id as idCinta, cin.cin_color_nombre as colorCinta, cin.cin_rango as rangoCinta, 
 		cin.cin_clasificacion as ClasificacionCinta,
 		cin.cin_significado as significadoCinta, cin.cin_orden as ordenCinta,
-		org.org_nombre as nombreOrganizacion
+		org.org_id as idOrganizacion,org.org_nombre as nombreOrganizacion
 		from  CINTA cin, ORGANIZACION_CINTA orgcin, ORGANIZACION org
 		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	
 	end;
@@ -24,7 +24,7 @@ as
 		select cin.cin_id as idCinta, cin.cin_color_nombre as colorCinta, cin.cin_rango as rangoCinta, 
 		cin.cin_clasificacion as ClasificacionCinta,
 		cin.cin_significado as significadoCinta, cin.cin_orden as ordenCinta,
-		org.org_nombre as nombreOrganizacion
+		org.org_id as idOrganizacion,org.org_nombre as nombreOrganizacion
 		from  CINTA cin, ORGANIZACION_CINTA orgcin, ORGANIZACION org
 		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	and
 		org.org_id = @id_organizacion	
@@ -40,7 +40,8 @@ as
 	begin
 		select cin.cin_id as idCinta,cin.cin_color_nombre as colorCinta, cin.cin_rango as rangoCinta, 
 		cin.cin_clasificacion as ClasificacionCinta,
-		cin.cin_significado as significadoCinta, cin.cin_orden as ordenCinta,org.org_nombre as nombreOrganizacion		
+		cin.cin_significado as significadoCinta, cin.cin_orden as ordenCinta,
+		org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion		
 		from ORGANIZACION org , CINTA cin, ORGANIZACION_CINTA orgcin
 		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	
 		and @id_cinta = cin.cin_id  

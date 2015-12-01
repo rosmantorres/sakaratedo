@@ -97,6 +97,15 @@ namespace DatosSKD.Modulo5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idOrganizacion.
+        /// </summary>
+        internal static string AliasIdOrganizacion {
+            get {
+                return ResourceManager.GetString("AliasIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreOrganizacion.
         /// </summary>
         internal static string AliasNombreOrg {

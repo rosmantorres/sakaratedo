@@ -135,7 +135,8 @@ namespace DatosSKD.Modulo5
                     laCinta.Clasificacion = row[RecursosBDModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosBDModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosBDModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion.Nombre = row[RecursosBDModulo5.AliasNombreOrg].ToString();
+                    laCinta.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo5.AliasIdOrganizacion].ToString())
+                                                                        , row[RecursosBDModulo5.AliasNombreOrg].ToString());
                     laListaCintas.Add(laCinta);
 
                 }
@@ -182,7 +183,8 @@ namespace DatosSKD.Modulo5
                     laCinta.Clasificacion = row[RecursosBDModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosBDModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosBDModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion.Nombre = row[RecursosBDModulo5.AliasNombreOrg].ToString();
+                    laCinta.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo5.AliasIdOrganizacion].ToString())
+                                                                         , row[RecursosBDModulo5.AliasNombreOrg].ToString());
                     laListaCintas.Add(laCinta);
 
                 }
@@ -226,7 +228,8 @@ namespace DatosSKD.Modulo5
                     laCinta.Clasificacion = row[RecursosBDModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosBDModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosBDModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion.Nombre = row[RecursosBDModulo5.AliasNombreOrg].ToString();
+                    laCinta.Organizacion = new Organizacion(int.Parse(row[RecursosBDModulo5.AliasIdOrganizacion].ToString())
+                                                                         , row[RecursosBDModulo5.AliasNombreOrg].ToString());
 
 
                 }

@@ -129,6 +129,9 @@
   <data name="AliasIdCinta" xml:space="preserve">
     <value>idCinta</value>
   </data>
+  <data name="AliasIdOrganizacion" xml:space="preserve">
+    <value>idOrganizacion</value>
+  </data>
   <data name="AliasNombreOrg" xml:space="preserve">
     <value>nombreOrganizacion</value>
   </data>
