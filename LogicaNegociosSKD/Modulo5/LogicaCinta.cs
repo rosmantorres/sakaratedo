@@ -108,7 +108,7 @@ namespace LogicaNegociosSKD.Modulo5
 
         }
 
-        public bool agregarCompetencia(DominioSKD.Cinta laCinta)
+        public bool agregarCinta(DominioSKD.Cinta laCinta)
         {
            // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
@@ -138,7 +138,7 @@ namespace LogicaNegociosSKD.Modulo5
             }
         }
 
-        public bool modificarCompetencia(DominioSKD.Cinta laCinta)
+        public bool modificarCinta(DominioSKD.Cinta laCinta)
         {
             // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
@@ -168,7 +168,7 @@ namespace LogicaNegociosSKD.Modulo5
             }
         }
 
-        public bool eliminarCompetencia(int idCinta)
+        public bool eliminarCinta(int idCinta)
         {
             // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
