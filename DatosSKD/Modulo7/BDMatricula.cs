@@ -8,7 +8,8 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using DominioSKD;
-
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 namespace DatosSKD.Modulo7
 {
     public class BDMatricula
@@ -21,55 +22,74 @@ namespace DatosSKD.Modulo7
         /// <returns>Objeto de tipo Matricula</returns>
         public Matricula DetallarMatricula(int idMatricula)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+           
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            Matricula matricula;
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Matricula matricula = new Matricula();
-
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.ToString(), false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarMatriculaXId, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (idMatricula.GetType() == Type.GetType("System.Int32") && idMatricula > 0)
                 {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    matricula = new Matricula();
 
-                 
-                    //matricula.estado= row[RecursosBDModulo7.AliasEventoNombre].ToString();
-                    matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
-                    matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
-                  
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.ToString(), false);
+                    parametros.Add(elParametro);
 
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarMatriculaXId, parametros);
+
+                  foreach (DataRow row in dt.Rows)
+                  {
+
+                      //matricula.estado= row[RecursosBDModulo7.AliasEventoNombre].ToString();
+                      matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
+                      matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
+                  }
                 }
-
-                return matricula;
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return matricula;
         }
 
         /// <summary>
@@ -78,7 +98,11 @@ namespace DatosSKD.Modulo7
         /// <returns>Lista de matriculas</returns>
         public List<Matricula> ListarMatriculasPagas(int idPersona)
         {
-       
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -86,49 +110,69 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarMatriculasPagas, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
                 {
-                    Matricula matricula = new Matricula();
-                     matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
-                    //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
-                    matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
-                    matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
-                    //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
-                    laListaDeMatriculaPaga.Add(matricula);
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
+                    
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarMatriculasPagas, parametros);
+
+                 foreach (DataRow row in dt.Rows)
+                 {
+                      Matricula matricula = new Matricula();
+                      matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
+                      //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
+                      matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
+                      matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
+                      //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
+                      laListaDeMatriculaPaga.Add(matricula);
+                 }
+
+               }
+               else
+               {
+                        throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
-
-                return laListaDeMatriculaPaga;
-
+                
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return laListaDeMatriculaPaga;
         }
-
-
-    }
+          }
 }
-
