@@ -49,8 +49,8 @@
                       <h3 class="box-title">Eventos</h3>
         </div><!-- /.box-header -->
 
-    <div class="box-body table-responsive">
-        <table id="tablaasistenciae" class="table table-bordered table-striped dataTable">
+        <div class="box-body table-responsive">
+        <table id="tablaasistencia" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr> 
                     <th style="text-align:center">Referencia</th>
@@ -61,59 +61,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-                    <td class="id">1</td>
-					<td class="id">Evento 1</td>
-                    <td> 19/05/2001</td>
-					<td>Procesado</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">2</td>
-                    <td class="id">Evento 2</td>
-                    <td>09/04/2001</td>
-					<td>No Procesado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">3</td>
-                    <td class="id">Evento 3</td>
-                    <td>14/10/2001</td>
-					<td>Procesada</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">4</td>
-                    <td class="id">Evento 4</td>
-                    <td>01/01/2000</td>
-					<td>Procesada</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">5</td>
-                <td class="id">Evento 5</td>
-                    <td>05/04/2001</td>
-					<td>Procesada</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
-                    </td>
-                </tr>
-			    </tbody>
+                <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+		    </tbody>
             </table>
-           </div>
+           </div>  
        </div>
     </div>
 </div>
