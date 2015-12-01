@@ -37,7 +37,7 @@
                        <div class="alert alert-success" id="successLog" runat="server">
                        </div>
 
-                     <input type="text" id="userIni" placeholder="Usuario" runat="server" class="form-control input-lg"  />         
+                     <input type="text" id="userIni" maxlength="254" placeholder="Usuario" runat="server" class="form-control input-lg"  />         
                      <input type="password" maxlength="30" class="form-control input-lg" id="passwordIni" runat="server"  placeholder="Contraseña"/>                    
                      <div class="pwstrength_viewport_progress"></div>
                      <button type="button"  runat="server" name="go" class="btn btn-lg btn-primary btn-block" onserverclick="ValidarUsuario">Entrar</button>

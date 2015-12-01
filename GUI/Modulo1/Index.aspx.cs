@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using templateApp.GUI.Modulo1;
 using templateApp.GUI.Master;
 using LogicaNegociosSKD.Modulo1;
+using LogicaNegociosSKD.Modulo2;
 
 namespace templateApp.GUI.Modulo1
 {
@@ -18,31 +19,49 @@ namespace templateApp.GUI.Modulo1
 
             errorLogin.Visible = false;
             warningLog.Visible = false;
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != ""))
+            infoLog.Visible = false;
+            successLog.Visible = false;
+            string sessionRequest;
+            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != null))
             {
-                if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo]
-                    == RecursosInterfazModulo1.parametroURLCorreoEnviado))
+                sessionRequest = 
+               AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+               (Request.QueryString[RecursosInterfazModulo1.tipoInfo].ToString(), RecursosLogicaModulo2.claveDES);
+
+                if (sessionRequest == RecursosInterfazModulo1.parametroURLCorreoEnviado)
                     mensajeLogin(RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
 
-                else if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo]
-                    == RecursosInterfazModulo1.parametroURLRestablecerCaducado))
-                    mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoInfo);
+                else if (sessionRequest == RecursosInterfazModulo1.parametroURLRestablecerCaducado)
+                    mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoWarning);
                 else
-                    infoLog.Visible = false;
+                    warningLog.Visible = false;
             }
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] 
-                == RecursosInterfazModulo1.parametroURLReestablecerExito))
-                mensajeLogin( RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
-            else
-                successLog.Visible = false;
-
+            if (Request.QueryString[RecursosInterfazModulo1.tipoSucess] != null)
+            {
+                sessionRequest = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+                 (Request.QueryString[RecursosInterfazModulo1.tipoSucess].ToString(), RecursosLogicaModulo2.claveDES);
+                if (sessionRequest == RecursosInterfazModulo1.parametroURLReestablecerExito)
+                    mensajeLogin(RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
+                else
+                    successLog.Visible = false;
+            }
         }
-
+        /// <summary>
+        /// Metodo que envia 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void EnvioCorreo(object sender, EventArgs e)
         {
 
             EnviarCorreo();
         }
+
+        /// <summary>
+        /// Metodo resultante de accionar el acceder realiza la conexion con LogicaNegocioSKD para validar los input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
             List<String> campos=new List<String>();
@@ -53,6 +72,8 @@ namespace templateApp.GUI.Modulo1
               validarLogin.ValidarCaracteres(userIni.Value,true) &&
               validarLogin.ValidarCaracteres(passwordIni.Value,false))
                     consultarUsuario();
+           else
+                    mensajeLogin(RecursosInterfazModulo1.logCaracterInvalidos,RecursosInterfazModulo1.tipoErr);
         }
         /// <summary>
         /// Metodo para Establecer un mensaje de alerta en el login
@@ -95,17 +116,16 @@ namespace templateApp.GUI.Modulo1
         /// </summary>
         public void EnviarCorreo()
         {
-            //BD:Todo esto sera traido de la base de datos 
-            
-            //BD:End
             String CorreoDestino= RestablecerCorreo.Value;
             try
             {
-               // mensajeLogin( RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
                 new logicaLogin().EnviarCorreo(CorreoDestino);
+                string value= AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                 (RecursosInterfazModulo1.parametroURLCorreoEnviado,RecursosLogicaModulo2.claveDES);
+
                 Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                     + RecursosInterfazModulo1.tipoInfo + "=" +
-                    RecursosInterfazModulo1.parametroURLCorreoEnviado);
+                    value);
             }
             catch (Exception e)
             {
