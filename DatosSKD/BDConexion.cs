@@ -14,7 +14,7 @@ namespace DatosSKD
         private SqlConnection conexion;
         private string strConexion;
         private SqlCommand comando;
-        //private string query;
+        private string query;
         // cargar metodos despues de creacion del ER y mdf
 
 
@@ -160,7 +160,7 @@ namespace DatosSKD
                     comando.CommandType = CommandType.StoredProcedure;
 
 
-                   // AsignarParametros(parametros);
+                    AsignarParametros(parametros);
 
 
                     conexion.Open();
@@ -273,7 +273,7 @@ namespace DatosSKD
                     comando.CommandType = CommandType.StoredProcedure;
 
 
-                   //AsignarParametros(parametros);
+                    AsignarParametros(parametros);
 
 
                     conexion.Open();
