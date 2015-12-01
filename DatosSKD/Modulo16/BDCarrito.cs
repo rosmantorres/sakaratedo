@@ -361,10 +361,10 @@ namespace DatosSKD.Modulo16
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro();
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, 
-                    SqlDbType.VarChar, tipoPago, false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, 
                     SqlDbType.Int, idUsuario.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PAGO, 
+                    SqlDbType.VarChar, tipoPago, false);
                 parametros.Add(parametro);
 
                 //Creo la conexion a Base de Datos y ejecuto el Stored Procedure

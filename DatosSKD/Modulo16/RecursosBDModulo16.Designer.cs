@@ -412,6 +412,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @pago.
+        /// </summary>
+        internal static string PARAMETRO_PAGO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to impPrecio.
         /// </summary>
         internal static string PARAMETRO_PRECIO {

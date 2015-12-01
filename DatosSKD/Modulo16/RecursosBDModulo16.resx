@@ -340,4 +340,8 @@
     <value>M16_AGREGAR_MATRICULA_CARRITO</value>
     <comment>Stored procedure que inserta una cantidad cualquiera de matriculas al carrito</comment>
   </data>
+  <data name="PARAMETRO_PAGO" xml:space="preserve">
+    <value>@pago</value>
+    <comment>Tipo de pago a ser hecha la compra</comment>
+  </data>
 </root>
