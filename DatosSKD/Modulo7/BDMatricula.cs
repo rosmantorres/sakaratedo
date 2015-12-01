@@ -94,7 +94,7 @@ namespace DatosSKD.Modulo7
         }
 
         /// <summary>
-        /// Método que devuelve el monto pago de una matricula
+        /// Método que devuelve el id de una matricula
         /// </summary>
         /// <returns>Pago de matricula</returns>
         public int MatriculaID(int idPersona)

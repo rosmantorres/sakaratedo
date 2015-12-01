@@ -412,6 +412,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a fecha.
+        /// </summary>
+        internal static string AliasFechaPago {
+            get {
+                return ResourceManager.GetString("AliasFechaPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a fechaPag.
         /// </summary>
         internal static string AliasFechaPagoMatricula {
@@ -543,6 +552,15 @@ namespace DatosSKD.Modulo7 {
         internal static string AliasInscripcionFecha {
             get {
                 return ResourceManager.GetString("AliasInscripcionFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a monto.
+        /// </summary>
+        internal static string AliasMontoEvento {
+            get {
+                return ResourceManager.GetString("AliasMontoEvento", resourceCulture);
             }
         }
         
@@ -826,6 +844,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarFechaPagoEvento.
+        /// </summary>
+        internal static string ConsultarFechaPagoEvento {
+            get {
+                return ResourceManager.GetString("ConsultarFechaPagoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarFormaPagoMatricula.
         /// </summary>
         internal static string ConsultarFormaPagoMatricula {
@@ -853,6 +880,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarIdEvento.
+        /// </summary>
+        internal static string ConsultarIdEvento {
+            get {
+                return ResourceManager.GetString("ConsultarIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarIdMatricula.
         /// </summary>
         internal static string ConsultarIdMatricula {
@@ -876,6 +912,15 @@ namespace DatosSKD.Modulo7 {
         internal static string ConsultarMatriculaXId {
             get {
                 return ResourceManager.GetString("ConsultarMatriculaXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarMontoEvento.
+        /// </summary>
+        internal static string ConsultarMontoEvento {
+            get {
+                return ResourceManager.GetString("ConsultarMontoEvento", resourceCulture);
             }
         }
         

@@ -85,18 +85,40 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+       
+
         /// <summary>
-        /// Método que obtiene la fecha de inscripción de una persona en un evento
+        /// Método que obtiene el monto pagado por un atleta de un evento
+        /// </summary>
+        /// <param name="idEvento">Número entero que representa el ID del evento</param>
+        /// <param name="idPersona">Número entero que representa el ID del atleta</param>
+        /// <returns>un objeto de tipo Matricula</returns>
+
+        public float obtenerMontoEvento(int idPersona, int idEvento)
+        {
+            try
+            {
+                BDEvento baseDeDatosDetalleCompra = new BDEvento();
+                return baseDeDatosDetalleCompra.montoPagoEvento(idPersona, idEvento);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Método que obtiene la fecha de pago de  en un evento
         /// </summary>
         /// <param name="idPersona">Número entero que representa el ID de la persona</param>
         /// <param name="idEvento">Número entero que representa el ID del evento</param>
         /// <returns>DateTime con la fecha de inscripción</returns>
-        public DateTime obtenerFechaInscripcion(int idPersona, int idEvento)
+        public DateTime obtenerFechaPagoEvento(int idPersona, int idEvento)
         {
             try
             {
                 BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.fechaInscripcionEvento(idPersona, idEvento);
+                return baseDeDatosEvento.fechaPagoEvento(idPersona, idEvento);
             }
             catch (Exception e)
             {

@@ -45,7 +45,7 @@ namespace templateApp.GUI.Modulo7
                         this.fechaFin_evento.Text = evento.Horario.FechaFin.ToString("MM/dd/yyyy");
                         this.estadoUbicacion_evento.Text = evento.Ubicacion.Estado.ToString();
                         this.ciudad_evento.Text = evento.Ubicacion.Ciudad.ToString();
-                        this.direccion_evento.Text = evento.Ubicacion.Direccion;
+                      
 
                     }
 
@@ -61,7 +61,7 @@ namespace templateApp.GUI.Modulo7
                          this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
                          this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
                          this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
-                         this.direccion_evento.Text = competencia.Ubicacion.Direccion;
+                        
                     }
 
                 }

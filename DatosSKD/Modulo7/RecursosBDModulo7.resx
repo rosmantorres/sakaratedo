@@ -438,4 +438,19 @@
   <data name="ConsultarFormaPagoMatricula" xml:space="preserve">
     <value>M7_ConsultarFormaPagoMatricula</value>
   </data>
+  <data name="AliasMontoEvento" xml:space="preserve">
+    <value>monto</value>
+  </data>
+  <data name="ConsultarIdEvento" xml:space="preserve">
+    <value>M7_ConsultarIdEvento</value>
+  </data>
+  <data name="ConsultarMontoEvento" xml:space="preserve">
+    <value>M7_ConsultarMontoEvento</value>
+  </data>
+  <data name="AliasFechaPago" xml:space="preserve">
+    <value>fecha</value>
+  </data>
+  <data name="ConsultarFechaPagoEvento" xml:space="preserve">
+    <value>M7_ConsultarFechaPagoEvento</value>
+  </data>
 </root>

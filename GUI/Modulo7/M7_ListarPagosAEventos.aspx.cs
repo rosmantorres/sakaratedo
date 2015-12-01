@@ -27,9 +27,9 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-            DateTime fechaInscripcion;
-            int idPersona = 1;
-
+            DateTime fechaPago;
+            float monto;
+            int idEvento;
 
             String detalleString = Request.QueryString["eventDetalle"];
 
@@ -51,12 +51,14 @@ namespace templateApp.GUI.Modulo7
 
                     foreach (Evento evento in laLista)
                     {
-                        fechaInscripcion = logEvento.obtenerFechaInscripcion(1, evento.Id_evento);
+                    
+                        monto = logEvento.obtenerMontoEvento(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
+                        fechaPago = logEvento.obtenerFechaPagoEvento(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + "monto" + M7_Recursos.CerrarTD;   
+                        this.laTabla.Text += M7_Recursos.AbrirTD + fechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString()+ M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;

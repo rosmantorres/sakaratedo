@@ -91,11 +91,7 @@
                         <asp:Label runat="server" name="estadoUbicacion_evento" id="estadoUbicacion_evento" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
-                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Dirección :</h4>
-                        <asp:Label runat="server" name="direccion_evento" id="direccion_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
+                    
                       <div class="panel-group col-sm-10 col-md-10 col-lg-10">
                        
             </div>
