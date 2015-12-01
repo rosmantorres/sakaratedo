@@ -3,8 +3,8 @@
   (
     asi_asistio CHAR(1) NOT NULL ,
     INSCRIPCION_ins_id INTEGER NOT NULL ,
-	EVENTO_eve_id      INTEGER NOT NULL,
-   
+	EVENTO_eve_id      INTEGER,
+	COMPETENCIA_comp_id INTEGER
   )
   ON "default"
 GO
@@ -249,17 +249,9 @@ CREATE
   TABLE HISTORIAL_CINTAS
   (
     PERSONA_per_id INTEGER NOT NULL ,
-    EVENTO_eve_id  INTEGER NOT NULL ,
+    EVENTO_eve_id  INTEGER ,
     his_cin_fecha  DATE NOT NULL ,
-    CINTA_cin_id   INTEGER NOT NULL ,
-    CONSTRAINT HISTORIAL_CINTAS_PK PRIMARY KEY CLUSTERED (PERSONA_per_id,
-    CINTA_cin_id, EVENTO_eve_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
+    CINTA_cin_id   INTEGER NOT NULL 
   )
   ON "default"
 GO
@@ -883,6 +875,21 @@ WITH
   ON "default"
   )
   ON "default"
+GO
+
+ALTER TABLE ASISTENCIA
+ADD CONSTRAINT ASISTENCIA_COMPETENCIA_FK FOREIGN KEY
+(
+COMPETENCIA_comp_id
+)
+REFERENCES COMPETENCIA
+(
+comp_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
 GO
 
 ALTER TABLE ASISTENCIA
