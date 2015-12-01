@@ -3,8 +3,13 @@
   (
     asi_asistio CHAR(1) NOT NULL ,
     INSCRIPCION_ins_id INTEGER NOT NULL ,
+<<<<<<< HEAD
   EVENTO_eve_id      INTEGER NOT NULL,
    
+=======
+	EVENTO_eve_id      INTEGER,
+	COMPETENCIA_comp_id INTEGER
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
   )
   ON "default"
 GO
@@ -249,17 +254,9 @@ CREATE
   TABLE HISTORIAL_CINTAS
   (
     PERSONA_per_id INTEGER NOT NULL ,
-    EVENTO_eve_id  INTEGER NOT NULL ,
+    EVENTO_eve_id  INTEGER ,
     his_cin_fecha  DATE NOT NULL ,
-    CINTA_cin_id   INTEGER NOT NULL ,
-    CONSTRAINT HISTORIAL_CINTAS_PK PRIMARY KEY CLUSTERED (PERSONA_per_id,
-    CINTA_cin_id, EVENTO_eve_id)
-WITH
-  (
-    ALLOW_PAGE_LOCKS = ON ,
-    ALLOW_ROW_LOCKS  = ON
-  )
-  ON "default"
+    CINTA_cin_id   INTEGER NOT NULL 
   )
   ON "default"
 GO
@@ -883,6 +880,21 @@ WITH
   ON "default"
   )
   ON "default"
+GO
+
+ALTER TABLE ASISTENCIA
+ADD CONSTRAINT ASISTENCIA_COMPETENCIA_FK FOREIGN KEY
+(
+COMPETENCIA_comp_id
+)
+REFERENCES COMPETENCIA
+(
+comp_id
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
 GO
 
 ALTER TABLE ASISTENCIA
@@ -2040,10 +2052,17 @@ go
 --PROCEDURE CONSULTA LISTA DE CINTAS--
 CREATE procedure M12_ConsultarCintas
 as
+<<<<<<< HEAD
   begin
     select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
     from CINTA as cin   
   end;
+=======
+	begin
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
+		from CINTA as cin		
+	end;
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 go
 
 
@@ -2331,19 +2350,415 @@ as
     INSERT INTO TIPO_PLANILLA(tip_nombre) 
   VALUES(@tip_nombre); 
 
+<<<<<<< HEAD
+=======
+-------------------------------------------------Stored Procedure M14--------------------------
+CREATE PROCEDURE M14_AgregarDiseño
+		 
+		@dis_contenido   [varchar](8000),
+		@PLANILLA_pla_id  int
+AS 
+BEGIN
+		INSERT INTO DISEÑO(dis_contenido, PLANILLA_pla_id)
+	    VALUES(@dis_contenido, @PLANILLA_pla_id)
+
+END;
+GO
+
+CREATE PROCEDURE M14_CambioDeStatusPlanilla
+	@pla_id int
+AS
+BEGIN
+    IF((SELECT pla_status FROM PLANILLA WHERE pla_id= @pla_id)=1)
+	BEGIN
+	   UPDATE PLANILLA 
+	      SET pla_status =0
+		  WHERE pla_id=@pla_id
+	END
+	ELSE
+	BEGIN
+	   UPDATE PLANILLA 
+	      SET pla_status =1
+		  WHERE pla_id=@pla_id
+	END
+END;
+GO
+
+-----------------------------------------------------------
+CREATE PROCEDURE M14_ConsultarDiseño
+	
+	@PLANILLA_pla_id [int]	
+	   
+AS
+ BEGIN
+	
+	SELECT D.dis_id, D.dis_contenido
+	FROM DISEÑO D
+	WHERE D.PLANILLA_pla_id = @PLANILLA_pla_id
+ END
+ GO
+
+ -------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarPlanillasASolicitar
+	
+AS
+ BEGIN
+	
+	SELECT P.pla_id, P.pla_nombre,(SELECT T.tip_nombre FROM TIPO_PLANILLA T WHERE P.TIPO_PLANILLA_tip_id= T.tip_id) AS tipo, D.dis_id
+	FROM DISEÑO D, PLANILLA P
+	WHERE D.PLANILLA_pla_id= p.pla_id AND P.pla_status=1
+ END
+ GO
+ -----------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarPlanillasCreadas
+AS
+BEGIN
+	SELECT P.pla_id, P.pla_nombre, P.pla_status, T.tip_nombre, T.tip_id
+	FROM PLANILLA p, TIPO_PLANILLA T
+	WHERE P.TIPO_PLANILLA_tip_id=T.tip_id
+END
+GO
+---------------------------------------------------
+CREATE PROCEDURE M14_ConsultarSolicitudPlanilla
+		@PERSONA_per_id      [varchar](50)
+AS 
+BEGIN
+		SELECT S.sol_pla_id,S.INSCRIPCION_ins_id, S.sol_pla_fecha_creacion, S.sol_pla_fecha_retiro,
+		S.sol_pla_fecha_reincorporacion,S.sol_pla_motivo,S.PLANILLA_pla_id,
+		I.PERSONA_per_id, (SELECT E.eve_nombre FROM EVENTO E WHERE I.EVENTO_eve_id =E.eve_id and i.ins_id=s.INSCRIPCION_ins_id) as eve_nombre,(SELECT C.comp_nombre FROM COMPETENCIA C WHERE I.COMPETENCIA_comp_id = C.comp_id and i.ins_id=s.INSCRIPCION_ins_id) as comp_nombre,(SELECT p.pla_nombre FROM PLANILLA P WHERE P.pla_id= S.PLANILLA_pla_id) AS pla_nombre, (SELECT T.tip_nombre FROM TIPO_PLANILLA T WHERE P.TIPO_PLANILLA_tip_id =T.tip_id And P.pla_id= s.PLANILLA_pla_id) AS tipo
+		FROM SOLICITUD_PLANILLA S, INSCRIPCION I, PLANILLA P
+		WHERE @PERSONA_per_id= I.PERSONA_per_id and I.ins_id = s.INSCRIPCION_ins_id and (i.EVENTO_eve_id is not null or i.COMPETENCIA_comp_id is not null) and P.pla_id= s.PLANILLA_pla_id
+	    
+
+END;
+GO
+-------------------------------------------
+CREATE PROCEDURE M14_ELIMINAR_SOLICITUD
+   @pla_sol_id int
+AS 
+BEGIN
+    DELETE FROM SOLICITUD_PLANILLA
+	WHERE sol_pla_id= @pla_sol_id
+END
+GO
+-----------------------------------------------
+CREATE PROCEDURE M14_InsertarSolicitudPlanilla
+		@sol_pla_fecha_creacion          [date],
+		@sol_pla_fecha_retiro            [date],
+		@sol_pla_fecha_reincorporacion   [date],
+		@sol_pla_motivo                  [varchar](1000),
+		@PLANILLA_pla_id                 int,
+		@INSCRIPCION_ins_id              int
+AS 
+BEGIN
+		INSERT INTO SOLICITUD_PLANILLA(sol_pla_fecha_creacion, sol_pla_fecha_retiro,
+		sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id)
+	    VALUES(@sol_pla_fecha_creacion, @sol_pla_fecha_retiro,
+		@sol_pla_fecha_reincorporacion,@sol_pla_motivo,@PLANILLA_pla_id,@INSCRIPCION_ins_id)
+
+END;
+GO
+---------------------------------------------------------
+CREATE PROCEDURE M14_ModificarDiseño
+	@dis_id int,
+	@dis_contenido [varchar](8000)
+AS
+BEGIN
+	UPDATE DISEÑO 
+	    SET dis_contenido = @dis_contenido
+		where dis_id=@dis_id
+END;
+GO
+---------------------------------------------------
+CREATE PROCEDURE M14_Procedure_IdTipoPlanilla
+	
+	@tip_nombre [varchar] (100),
+	@tip_id [int] OUTPUT
+AS
+ BEGIN
+	SELECT @tip_id= tip_id
+    FROM TIPO_PLANILLA
+	where tip_nombre=@tip_nombre;
+	RETURN
+ END
+ GO
+ ------------------------------------------
+ CREATE PROCEDURE M14_Procedure_ListarDatos
+	
+AS
+ BEGIN
+	SELECT dat_nombre
+    FROM Dato;
+ END;
+ GO
+ -----------------------------------
+ CREATE PROCEDURE M14_Procedure_ListarTipoPlanilla
+	
+AS
+ BEGIN
+	SELECT tip_id , tip_nombre
+    FROM TIPO_PLANILLA;
+ END;
+ GO
+
+ ---------------------------
+ ----------------AGREGAR DATOS Y PLANILLA---------------------
+CREATE PROCEDURE M14_ProcedureAgregarDatoPlanilla
+	@pla_nombre [varchar](100),
+	@dat_nombre [varchar](100)
+	
+
+
+as
+ begin
+     
+   --insertar datos y planilla--
+    INSERT INTO PLA_DAT(DATO_dat_id,PLANILLA_pla_id) 
+	VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),(select MAX(pla_id) from PLANILLA where pla_nombre=@pla_nombre));  
+
+ end;
+ GO
+
+ -------------------------------
+ ---------------AGREGAR PLANILLA------------------------------
+CREATE PROCEDURE M14_ProcedureAgregarPlanilla
+	@pla_nombre [varchar] (100),
+	@pla_status [bit],
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+  
+    INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+ GO
+ -----------------------
+ ------------------AGREGAR TIPO PLANILLA------------------------
+CREATE PROCEDURE M14_ProcedureAgregarTipoPlanilla
+	@tip_nombre [varchar] (100)
+
+as
+ begin
+  
+    INSERT INTO TIPO_PLANILLA(tip_nombre) 
+	VALUES(@tip_nombre); 
+
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
  end;
  GO
  ----------------Obtener Datos----------------------------------
 CREATE PROCEDURE M14_ProcedureDatosPlanilla
+<<<<<<< HEAD
   @pla_nombre [varchar] (100),
   @pla_status [bit],
   @TIPO_PLANILLA_tip_id [int]
+=======
+	@pla_nombre [varchar] (100),
+	@pla_status [bit],
+	@TIPO_PLANILLA_tip_id [int]
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 
 as
  begin
 
     INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+<<<<<<< HEAD
   VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
 
  end;
  GO
+=======
+	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+ GO
+ 
+ --------------------------------------Stored Procedures M9-------------------------------------------------------
+CREATE PROCEDURE M9_AgregarHorario
+	
+    @hor_fecha_inicio [DATE], 
+    @hor_fecha_fin    [DATE] ,
+    @hor_hora_inicio  [INTEGER],
+    @hor_hora_fin     [INTEGER] 
+as
+	begin
+		INSERT INTO HORARIO (hor_fecha_inicio,hor_fecha_fin,hor_hora_inicio,hor_hora_fin) VALUES (@hor_fecha_inicio,@hor_fecha_fin,@hor_hora_inicio, @hor_hora_fin) ;
+
+	end;
+
+GO
+
+
+CREATE PROCEDURE M9_AgregarEventoCompleto
+	@nombre       [VARCHAR](120),
+    @descripcion  [VARCHAR](120),
+    @costo [FLOAT]  ,
+	@estado [BIT],
+	@idPersona [INTEGER],
+    @idUbicacion [INTEGER],
+    @idTipoEvento [INTEGER],
+	@idCategoria [INTEGER],
+	@fechaInicio [DATE], 
+    @fechaFin    [DATE] ,
+    @horaInicio  [INTEGER],
+    @horaFin     [INTEGER] 	
+	
+
+AS
+	
+	BEGIN
+		DECLARE @idHorario as integer ;
+		DECLARE @idDojo as integer;
+		exec "M9_AgregarHorario" @hor_fecha_inicio=@fechaInicio, @hor_fecha_fin = @fechaFin, @hor_hora_inicio = @horaInicio , @hor_hora_fin = @horaFin
+		Select @idHorario =  Count(*) From HORARIO;
+		Select @idDojo = persona.DOJO_doj_id from PERSONA persona WHERE persona.per_id = @idPersona;
+		if (@idCategoria = null) and (@idDojo = null)
+			INSERT INTO EVENTO (eve_nombre,eve_costo,eve_descripcion,eve_estado,DOJO_doj_id,CATEGORIA_cat_id,HORARIO_hor_id,TIPO_EVENTO_tip_id,UBICACION_ubi_id) 
+			VALUES (@nombre,@costo,@descripcion,1,null,null,@idHorario,@idTipoEvento,@idUbicacion);
+		else
+			INSERT INTO EVENTO (eve_nombre,eve_costo,eve_descripcion,eve_estado,DOJO_doj_id,CATEGORIA_cat_id,HORARIO_hor_id,TIPO_EVENTO_tip_id,UBICACION_ubi_id) 
+			VALUES (@nombre,@costo,@descripcion,1,@idDojo,@idCategoria,@idHorario,@idTipoEvento,@idUbicacion);
+			
+	
+	
+	END
+	
+GO
+
+
+
+
+CREATE PROCEDURE M9_AgregarTipoEvento
+	@nombre   [varchar](100)
+as
+	begin
+		INSERT INTO TIPO_EVENTO (tip_nombre) VALUES (@nombre);
+	end;
+	
+GO
+
+
+CREATE procedure M9_ConsultarAscensosRangoFecha
+@fechaInicio date,
+@fechaFin date
+as
+	begin
+		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where (tipo.tip_id = evento.TIPO_EVENTO_tip_id)and (tipo.tip_nombre='Pase de Cinta')and(evento.HORARIO_hor_id = horario.hor_id) and (evento.TIPO_EVENTO_tip_id = tipo.tip_id) and (horario.hor_fecha_inicio>=@fechaInicio) and (horario.hor_fecha_fin <=@fechaFin) and (evento.eve_estado = 'True')
+
+		
+	end;
+	
+GO
+
+CREATE procedure M9_ConsultarEventos
+as
+	begin
+		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where evento.HORARIO_hor_id = horario.hor_id and evento.TIPO_EVENTO_tip_id = tipo.tip_id
+
+		
+	end;
+	
+GO
+
+CREATE procedure M9_ConsultarEventosRangoFecha
+@fechaInicio date,
+@fechaFin date
+as
+	begin
+		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where (evento.HORARIO_hor_id = horario.hor_id) and (evento.TIPO_EVENTO_tip_id = tipo.tip_id) and (horario.hor_fecha_inicio>=@fechaInicio) and (horario.hor_fecha_fin <=@fechaFin) and (evento.eve_estado = 'True')
+
+		
+	end;
+
+GO
+
+CREATE PROCEDURE M9_ConsultarEventoXID
+	@idEvento integer
+	
+
+AS
+	
+	BEGIN
+		select evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where (evento.HORARIO_hor_id = horario.hor_id) and (evento.TIPO_EVENTO_tip_id = tipo.tip_id) and (evento.eve_id = @idEvento)
+	
+	
+	END
+
+GO
+
+CREATE PROCEDURE M9_ConsultarHorario
+	
+	@id [integer],
+	@id2 [integer] output,
+	@fechaInicio [DATE] output, 
+    @fechaFin    [DATE] output,
+    @horaInicio  [INTEGER] output,
+    @horaFin     [INTEGER] output	   
+AS
+ BEGIN
+	
+	SELECT @id2=hor_id, @fechaInicio= hor_fecha_inicio , @fechaFin = hor_fecha_fin , @horaInicio = hor_hora_inicio , @horaFin = hor_hora_fin 
+	FROM HORARIO H
+	WHERE (H.hor_id=@id) 
+	RETURN
+ END
+ 
+GO
+
+ CREATE PROCEDURE M9_ConsultarUbicacion
+	
+	@id [integer],
+	@id2       [INTEGER] output,
+    @latitud   [VARCHAR] (100) output ,
+    @longitud  [VARCHAR] (100) output,
+    @ciudad    [VARCHAR] (100) output,
+    @estado    [VARCHAR](100) output,
+    @direccion [VARCHAR] (100)    
+	
+AS
+ BEGIN
+	
+	SELECT @id2=ubi_id, @latitud= ubi_latitud , @longitud = ubi_longitud , @ciudad = ubi_ciudad , @estado = ubi_estado, @direccion = ubi_direccion
+	FROM UBICACION U
+	WHERE (U.ubi_id=@id) 
+	RETURN
+ END
+ 
+GO
+
+CREATE PROCEDURE M9_TodasLasFechas
+AS
+ BEGIN
+		Select horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		from EVENTO evento, HORARIO horario
+		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id
+ END
+ 
+GO
+
+ CREATE PROCEDURE M9_TodasLasFechasAscensos
+AS
+ BEGIN
+		Select horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
+		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
+ END
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9

@@ -36,7 +36,7 @@ INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion],
 
 INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden]) VALUES ('Amarillo', '2do Kyu', 'Nivel inferior', 'Iniciado', 2);
 
-INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden]) VALUES ('Verde', '3er Kyu', 'Nivel inferior', 'Aprendiz', 3);
+INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden]) VALUES ('Naranja', '3er Kyu', 'Nivel inferior', 'Aprendiz', 3);
 
 INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion], [cin_significado], [cin_orden]) VALUES ('Marron', '8vo Kyu', 'Nivel inferior', 'Aprendiz avanzado', 4);
 
@@ -115,13 +115,14 @@ INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], 
 VALUES (N'Yodan Ryu', 1, 0, N'Por Iniciar', N'2016-05-20 00:00:00', N'2016-05-23 00:00:00', 2, 3, 1,1000)
 go
 INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
-VALUES (N'Shito Ryu', 1, 0, N'Por Iniciar', N'2016-06-20 00:00:00', N'2016-06-23 00:00:00', 2, 3, 2,900)
+VALUES (N'Shito Ryu', 1, 0, N'Por Iniciar', N'2015-06-20 00:00:00', N'2015-06-20 00:00:00', 2, 3, 2,900)
+go
+
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Inoue Ha', 2, 0, N'Por Iniciar', N'2015-03-19 00:00:00', N'2015-03-19 00:00:00', 2, 3, 3,1200)
 go
 INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
-VALUES (N'Inoue Ha', 1, 0, N'Por Iniciar', N'2016-03-19 00:00:00', N'2016-05-21 00:00:00', 2, 3, 3,1200)
-go
-INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
-VALUES (N'Shoosei Kai', 1, 0, N'Por Iniciar', N'2016-01-10 00:00:00', N'2016-05-11 00:00:00', 2, 3, 4,1800)
+VALUES (N'Shoosei Kai', 3, 0, N'Por Iniciar', N'2015-10-11 00:00:00', N'2015-10-11 00:00:00', 2, 3, 2,1800)
 go
 
 
@@ -350,6 +351,11 @@ Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio')
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 --ATLETAS--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro')
@@ -407,7 +413,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2002-05-21',
     1,
     77,
     1.72,
@@ -520,14 +526,14 @@ VALUES (
     '3ra. Transversal de Los Palos Grandes. Res. Guarani. Piso 3. Apto. 3-A',
     'F',
     'O-',
-    '1988-11-15',
+    '2001-11-15',
     1,
     63,
     1.60,
     'adrijo',
     '12345',
     'http://tphsartjdoerrer.weebly.com/uploads/7/7/0/2/7702116/152821360.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -579,7 +585,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Adriana Josefina'), 
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),   
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),   
     GETDATE(),
     GETDATE(),
     'RECHAZADO'
@@ -614,7 +620,7 @@ VALUES (
     'Calle Montserrat de Carapita. Quinta Los Reales.',
     'M',
     'B+',
-    '1956-08-31',
+    '2001-08-31',
     0,
     83,
     1.84,
@@ -708,7 +714,7 @@ VALUES (
     'Calle principal de Santa Paula. Res. Caroni. Piso 12. PH-B',
     'M',
     'AB-',
-    '1979-02-27',
+    '2000-02-27',
     1,
     74,
     1.75,
@@ -802,7 +808,7 @@ VALUES (
     '2da. Avenida de La Lagunita. Quinta Los Querubines.',
     'M',
     'O-',
-    '1968-03-05',
+    '2002-03-05',
     1,
     88,
     1.78,
@@ -885,7 +891,6 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
-
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
     per_num_doc_id,
@@ -915,14 +920,14 @@ VALUES (
     '2da. Avenida de La Lagunita. Quinta Los Querubines.',
     'M',
     'O-',
-    '1968-03-05',
+    '2000-03-05',
     1,
     88,
     1.78,
     'mariaisa',
     '12345',
     'http://guildfordphotographer.co.uk/wp-content/uploads/2011/01/lucy.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -974,7 +979,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel'),    
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -1026,9 +1031,9 @@ VALUES (
     'Venezolano',
     'Coco',
     '2da. Avenida de La Lagunita. Quinta Los Querubines.',
-    'M',
+    'F',
     'O-',
-    '1968-03-05',
+    '2001-03-05',
     1,
     88,
     1.78,
@@ -1122,7 +1127,7 @@ VALUES (
     '2da. Avenida de La Lagunita. Quinta Los Querubines.',
     'M',
     'O-',
-    '1968-03-05',
+    '2001-03-05',
     1,
     88,
     1.78,
@@ -1216,7 +1221,7 @@ VALUES (
     'Boulevard del Cafetal. Res. Adriatica. Piso 8. Apto. 8A',
     'M',
     'O-',
-    '1968-03-05',
+    '2000-03-05',
     1,
     88,
     1.78,
@@ -1308,9 +1313,9 @@ VALUES (
     'Venezolano',
     'Mariscos',
     'Boulevard del Cafetal. Res. Adriatica. Piso 8. Apto. 8A',
-    'M',
+    'F',
     'O-',
-    '1968-03-05',
+    '2002-03-05',
     1,
     88,
     1.78,
@@ -1404,14 +1409,14 @@ VALUES (
     'Boulevard del Cafetal. Res. Adriatica. Piso 8. Apto. 8A',
     'M',
     'O-',
-    '1968-03-05',
+    '2000-03-05',
     1,
     88,
     1.78,
     'marioale',
     '12345',
     'http://tedslater.com/wp-content/uploads/2010/07/shutterstock_202093444.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1463,7 +1468,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro'),    
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -1517,14 +1522,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
     'eltercera',
     '12345',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1576,7 +1581,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -1600,6 +1605,7 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
+
 
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
@@ -1630,7 +1636,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
@@ -1743,7 +1749,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
@@ -1856,7 +1862,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.,
@@ -1969,7 +1975,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
@@ -2082,7 +2088,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
@@ -2195,14 +2201,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
     'maritonieta',
     '12345',
     'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2254,7 +2260,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -2278,6 +2284,7 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
+
 
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
@@ -2308,14 +2315,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
     'vickybella',
     '12345',
     'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2367,7 +2374,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -2391,6 +2398,7 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
+
 
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
@@ -2421,14 +2429,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
     'melilie',
     '12345',
     'http://www.noupe.com/wp-content/uploads/2010/01/26-portraits.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2480,7 +2488,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -2504,6 +2512,7 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
+
 
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
@@ -2534,14 +2543,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
     'elidocouto',
     '12345',
     'http://www.wallcoo.net/photography/markus-j-grimm_portrait_photography_02/images/Color_portrait_photo_15971497.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2593,7 +2602,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -2647,7 +2656,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
@@ -2730,7 +2739,6 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
-
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
     per_num_doc_id,
@@ -2760,7 +2768,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2002-05-21',
     1,
     77,
     1.72,
@@ -2844,6 +2852,7 @@ VALUES (
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
+
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
     per_num_doc_id,
@@ -2873,7 +2882,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
@@ -2986,7 +2995,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
@@ -3070,6 +3079,7 @@ VALUES (
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
+
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
     per_num_doc_id,
@@ -3099,7 +3109,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
@@ -3212,14 +3222,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
     'martica',
     '12345',
     'http://img.whitezine.com/Thomas-Lavelle-Portrait-Woman.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3271,7 +3281,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -3325,14 +3335,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
     'elenita',
     '12345',
     'https://pixabay.com/static/uploads/photo/2015/03/04/19/41/woman-659348_960_720.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3384,7 +3394,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -3408,6 +3418,7 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
+
 
 INSERT INTO dbo.PERSONA (
     per_tipo_doc_id,
@@ -3438,14 +3449,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
     'neomar',
     '12345',
     'http://digital-art-gallery.com/oid/21/632x833_5536_Alexz_Johnson_portrait_2d_realism_girl_portrait_realistic_beauty_woman_picture_image_digital_art.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3497,7 +3508,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -3551,14 +3562,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
     'norita',
     '12345',
     'http://hd.wallpaperswide.com/thumbs/beautiful_woman_portrait-t2.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3610,7 +3621,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -3665,14 +3676,14 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'F',
     'A+',
-    '1993-05-21',
+    '2001-05-21',
     1,
     77,
     1.72,
     'norita',
     '12345',
     'http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/gorgeous-woman-portrait-anna-omelchenko.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3724,7 +3735,7 @@ INSERT INTO dbo.SOLICITUD_INSCRIPCION (
 )
 VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3'),
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9'),
     GETDATE(),
     GETDATE(),
     'ACEPTADO'
@@ -3748,6 +3759,7 @@ VALUES (
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
+
 
 
 /* ADMINISTRADORES */
@@ -3860,7 +3872,7 @@ VALUES (
     '2da. Av. de Montalban. Res. Capricornio. Piso 5. Apto. 10',
     'M',
     'A+',
-    '1993-05-21',
+    '2000-05-21',
     1,
     77,
     1.72,
@@ -3988,7 +4000,7 @@ VALUES (
     'plain_administrador@gmail.com',
     0
 );
-
+--FIN--
 
 
 --------------------------Inserts Personas tipo AdminSistema (Magurno, Rosman)------------------------------
@@ -4356,6 +4368,238 @@ GETDATE(),
 );
 
 
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Adriana Josefina'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Christian Jose'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Cesar Augusto'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jesus Enrique'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Gustavo Antonio'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jessica Alejandra'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Antonieta'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Victoria Isabella'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Melissa Nathalie'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Luis Armando'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Federico Ernesto'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Liu Wa'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marta Carolina'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Patricia Elena'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Neolida Margarita'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Nora Margarita'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Sabrina'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
+
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
 -- INSERTS IMPLEMENTO--
 
 insert into implemento (imp_imagen,imp_nombre,imp_tipo,imp_marca,imp_color,imp_talla,imp_estatus,imp_precio,imp_stockmin,imp_descripcion) 
@@ -4421,8 +4665,7 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
 
 -- INSERTS RESTRICCION CINTA--
 
- 
-   INSERT INTO dbo.RESTRICCION_CINTA (
+  INSERT INTO dbo.RESTRICCION_CINTA (
     res_cin_descripcion,
     res_cin_tiemp_min,
     res_cin_punt_min,
@@ -4459,7 +4702,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
     VALUES ('VERDE A AZUL',10,120,2,5);
+=======
+    VALUES ('VERDE A AZUL',10,160,2,5);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4469,7 +4716,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
     VALUES ('AZUL A MARRON',10,170,4,6);
+=======
+    VALUES ('AZUL A MARRON',10,320,4,6);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4479,7 +4730,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
     VALUES ('MARRON A MARRON',12,210,7,7);
+=======
+    VALUES ('MARRON A MARRON',12,640,6,7);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4489,7 +4744,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
     VALUES ('MARRON A NEGRA',12,300,9,8);
+=======
+    VALUES ('MARRON A NEGRA',12,1280,9,8);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 
 
 
@@ -4558,30 +4817,102 @@ insert into RH_CINTA values (4,7);
 
 -- INSERTS HISTORIAL CINTAS--
 
-
-
-
-
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	1	,	NULL	,	'2015-05-20'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	3	,	NULL	,	'2015-04-10'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	4	,	NULL	,	'2015-03-15'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	5	,	NULL	,	'2015-01-27'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	8	,	NULL	,	'2015-03-04'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	9	,	NULL	,	'2015-05-11'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	12	,	NULL	,	'2015-05-14'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	33	,	NULL	,	'2015-05-13'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	2	,	NULL	,	'2015-02-19'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	6	,	NULL	,	'2015-02-10'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	10	,	NULL	,	'2015-01-01'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	18	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	19	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	20	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	21	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	27	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	11	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	13	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	14	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	15	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	16	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	17	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	22	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	23	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	24	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	25	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	26	,	3	,	'2015-11-15'	,	2	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	28	,	NULL	,	'2015-05-20'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	29	,	NULL	,	'2015-04-10'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	30	,	NULL	,	'2015-03-15'	,	1	);
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	31	,	NULL	,	'2015-01-27'	,	1	);
 
 
 
 
 -- INSERTS INSCRIPCION--
-INSERT INTO INSCRIPCION VALUES (1,'1992-12-17',NULL,NULL);
+INSERT INTO	INSCRIPCION	VALUES	(	1	,	'2015-05-20'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	3	,	'2015-04-10'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	4	,	'2015-03-15'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	5	,	'2015-01-27'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	8	,	'2015-03-04'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	9	,	'2015-05-11'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	12	,	'2015-05-14'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	33	,	'2015-05-13'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	2	,	'2015-02-19'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	6	,	'2015-02-10'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	10	,	'2015-01-01'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	18	,	'2014-11-27'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	19	,	'2014-12-11'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	20	,	'2015-02-20'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	21	,	'2015-02-03'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	27	,	'2015-02-16'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	28	,	'2015-05-13'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	29	,	'2015-02-19'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	30	,	'2015-02-10'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	31	,	'2015-01-01'	,	6	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	11	,	'2015-09-21'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	13	,	'2015-04-30'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	14	,	'2015-02-21'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	15	,	'2015-01-15'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	16	,	'2015-05-01'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	17	,	'2015-06-23'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	22	,	'2015-09-21'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	23	,	'2015-07-16'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	24	,	'2015-02-18'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	25	,	'2015-08-22'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	26	,	'2015-09-11'	,	7	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	18	,	'2015-05-20'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	19	,	'2015-04-10'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	20	,	'2015-03-15'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	21	,	'2015-01-27'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	27	,	'2015-03-04'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	11	,	'2015-05-11'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	13	,	'2015-05-14'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	14	,	'2015-05-13'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	15	,	'2015-02-19'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	16	,	'2015-02-10'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	17	,	'2015-01-01'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	22	,	'2014-11-27'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	23	,	'2014-12-11'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	24	,	'2015-02-20'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	25	,	'2015-02-03'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	26	,	'2015-02-16'	,	NULL	,	3	);
+INSERT INTO	INSCRIPCION	VALUES	(	14	,	'2015-09-21'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	16	,	'2015-04-30'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	3	,	'2015-02-21'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	5	,	'2015-01-15'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	25	,	'2015-05-01'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	13	,	'2015-06-23'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	1	,	'2015-09-21'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	23	,	'2015-07-16'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	26	,	'2015-02-18'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	24	,	'2015-08-22'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	22	,	'2015-09-11'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	17	,	'2015-05-20'	,	NULL	,	1	);
 
-INSERT INTO INSCRIPCION VALUES (2,'2000-07-11',NULL,NULL);
-
-INSERT INTO INSCRIPCION VALUES (3,'1990-01-02',NULL,NULL);
-
-INSERT INTO INSCRIPCION VALUES (4,'1989-06-21',NULL,NULL);
-
-INSERT INTO INSCRIPCION VALUES (5,'1982-04-04',NULL,NULL);
-
-INSERT INTO INSCRIPCION VALUES (5,'2000-05-19',NULL,NULL);
-
-INSERT INTO INSCRIPCION VALUES (6,'2001-11-09',NULL,NULL);
-
-INSERT INTO INSCRIPCION VALUES (7,'1988-01-01',NULL,NULL);
 
 
 -- INSERTS SOLICITUD PLANILLA--
@@ -4589,17 +4920,30 @@ INSERT INTO INSCRIPCION VALUES (7,'1988-01-01',NULL,NULL);
 INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2015-01-02','2015-02-11','2015-02-12','ENFERMEDAD',3,1);
 INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2014-08-23','2014-08-26','2015-09-27','VACACIONES',4,2);
 INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2013-12-21','2014-01-08','2014-09-01','FAMILIAR',5,2);
-
-
-
-
-
-
-
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2015-03-13','2015-03-03','2015-09-01','FAMILIAR',1,17);
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2015-01-11','2015-01-09','2015-10-19','ENFERMEDAD',1,18);
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2015-01-02','2014-12-18','2015-09-01','FAMILIAR',1,19);
+INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) values ('2014-12-01','2014-11-08','2015-08-01','VACACIONES',1,20);
 
 
 -- INSERTS RESULTADO ASCENSO--
 
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	1	,	'S'	,	32	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	2	,	'S'	,	33	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	3	,	'S'	,	34	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	4	,	'S'	,	35	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	5	,	'S'	,	36	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	6	,	'S'	,	37	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	7	,	'S'	,	38	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	8	,	'S'	,	39	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	9	,	'S'	,	40	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	10	,	'S'	,	41	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	11	,	'S'	,	42	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	12	,	'S'	,	43	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	13	,	'S'	,	44	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	14	,	'S'	,	45	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	15	,	'S'	,	46	);
+INSERT INTO	RESULTADO_ASCENSO	VALUES	(	16	,	'S'	,	47	);
 
 
 
@@ -4610,12 +4954,108 @@ INSERT INTO SOLICITUD_PLANILLA (sol_pla_fecha_Creacion,sol_pla_fecha_retiro,sol_
 
 -- INSERTS RESULTADO KATA--
 
+INSERT INTO	RESULTADO_KATA	VALUES	(	1	,	7	,	10	,	3	,	1	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	2	,	6	,	9	,	5	,	2	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	3	,	3	,	5	,	2	,	3	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	4	,	5	,	8	,	7	,	4	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	5	,	10	,	5	,	10	,	5	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	6	,	2	,	4	,	5	,	6	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	7	,	7	,	10	,	8	,	7	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	8	,	9	,	7	,	5	,	8	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	9	,	8	,	3	,	6	,	17	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	10	,	10	,	3	,	9	,	18	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	11	,	2	,	8	,	7	,	19	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	12	,	3	,	6	,	4	,	20	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	13	,	10	,	1	,	4	,	21	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	14	,	1	,	9	,	9	,	22	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	15	,	9	,	1	,	4	,	23	);
+INSERT INTO	RESULTADO_KATA	VALUES	(	16	,	9	,	7	,	9	,	24	);
 
 
 
 
 
 -- INSERTS RESULTADO KUMITE--
+
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	1	,	5	,	9	,	9	,	11	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	2	,	6	,	3	,	10	,	15	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	3	,	7	,	8	,	12	,	13	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	4	,	5	,	3	,	14	,	16	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	5	,	4	,	3	,	11	,	14	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	6	,	1	,	3	,	10	,	13	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	7	,	7	,	4	,	11	,	13	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	8	,	1	,	5	,	28	,	26	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	9	,	8	,	9	,	25	,	24	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	10	,	10	,	3	,	21	,	23	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	11	,	9	,	6	,	27	,	22	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	12	,	2	,	5	,	26	,	27	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	13	,	7	,	6	,	21	,	24	);
+INSERT INTO	RESULTADO_KUMITE	VALUES	(	14	,	10	,	5	,	27	,	21	);
+
+-- INSERTS ASISTENCIA--
+
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	1	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	2	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	3	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	4	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	5	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	6	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	7	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	8	,	NULL	,	5	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	9	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	10	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	11	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	12	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	13	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	14	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	15	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	16	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	17	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	18	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	19	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	20	,	NULL	,	6	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	21	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	22	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	23	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	24	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	25	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	26	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	27	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	28	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	29	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	30	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	31	,	NULL	,	7	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	32	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	33	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	34	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	35	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	36	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	37	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	38	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	39	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	40	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	41	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	42	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	43	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	44	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	45	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	46	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	47	,	3	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	48	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	49	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	50	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	51	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	52	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	53	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	54	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	55	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'N'	,	56	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	57	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	58	,	1	,	NULL	);
+INSERT INTO	ASISTENCIA	VALUES	(	'S'	,	59	,	1	,	NULL	);
+
+
+
 
 
 -- INSERTS COMPRA CARRITO Y DETALLE COMPRA --
