@@ -232,6 +232,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M8_EliminarCompetenciaRestriccionCompetencia.
+        /// </summary>
+        internal static string EliminarCompetenciaRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("EliminarCompetenciaRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_EliminarRestriccionCompetencia.
         /// </summary>
         internal static string EliminarRestriccionCompetencia {

@@ -300,7 +300,45 @@ namespace DatosSKD.Modulo8
         #endregion
 
         #region EliminarRestriccion
-        
+        public static bool EliminarRestriccionEvento(RestriccionCompetencia laRestriccion)
+        {
+            try
+            {
+                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+
+                Parametro elParametro = new Parametro(RecursosBDRestriccionEvento.ParamIdRestriccionEvento, SqlDbType.Int,
+                    laRestriccion.IdRestriccionComp.ToString(), false);
+                //parametro recibe: el alias de la accion (en este caso es la descripcion de mi restriccion de cinta que apunta a un atributo que se llama @DescripcionRestriccionCinta), SqlDbType es el tipo de dato que tiene ese atributo en la base de datos (en este caso es varchar), el elemento que se desea poner en ese lugar (aqui se usa la clase dominio), el false lo dejas asi
+                parametros.Add(elParametro);
+                //agregas eso que acabas de hacer a la lista de parametros.
+                //repites hasta que tengas todos los parametros de tu stored procedure asociado
+
+                BDConexion laConexion = new BDConexion();// abres la conexion
+                laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.EliminarRestriccionCompetencia
+                                             , parametros);
+
+              }
+
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+
+            return true;
+        }
         #endregion
 
         #region atletasQueCumplenRestriccion
@@ -431,6 +469,21 @@ namespace DatosSKD.Modulo8
         }
         #endregion
 
+        #region traerListaDeCompetenciasAsociadasALaRestriccion
+        
+        #endregion
+
+        #region traerListaDeCompetenciasNoAsociadasALaRestriccion
+
+        #endregion
+
+        #region traerIdCompetencia
+
+        #endregion
+
+        #region eliminarCompetenciaDeRestriccionCompetencia
+            
+        #endregion
 
     }
 }
