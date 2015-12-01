@@ -77,6 +77,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\BDDiseño.cs" />
+    <Compile Include="Modulo14\BDPlanilla.cs" />
+    <Compile Include="Modulo14\BDSolicitud.cs" />
     <Compile Include="Modulo14\RecursosBDModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +152,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDRestriccionCompetencia.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\BDEvento.cs" />
     <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

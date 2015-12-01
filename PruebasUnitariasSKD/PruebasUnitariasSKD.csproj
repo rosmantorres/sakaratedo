@@ -120,6 +120,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\M9_PruebasBdEvento.cs" />
+    <Compile Include="Modulo9\M9_PruebasLogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosPU_Mod9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
