@@ -113,6 +113,11 @@ namespace DominioSKD
         /// Estado de la persona en el sistema.
         /// </summary>
         public Boolean Estado = false;
+
+        /// <summary>
+        /// id del Dojo de la persona
+        /// </summary>
+        private int _dojoPersona;
         #endregion
 
         #region Constructores
@@ -299,6 +304,18 @@ namespace DominioSKD
             {
                 return this._documentoID;
             }
+        }
+        public int DojoPersona
+        {
+            set
+            {
+                _dojoPersona = value;
+            }
+            get
+            { 
+                return this._dojoPersona; 
+            }
+            
         }
         #endregion
 
