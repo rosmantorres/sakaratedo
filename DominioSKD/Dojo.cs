@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    class Dojo
+    public class Dojo
     {
         #region atributos
 
@@ -16,24 +16,34 @@ namespace DominioSKD
         private int telefono_dojo;
         private String email_dojo;
         private String logo_dojo;
-        private bool status_dojo;
+        private DateTime registro_dojo;
+        private String status_dojo;
+        private int organizacion_dojo;
         private Ubicacion ubicacion;
         #endregion
 
         #region propiedades
 
+        public DateTime Registro_dojo
+        {
+            get { return registro_dojo; }
+
+            set { registro_dojo = value; }
+        }
+        
         public int Id_dojo
         {
             get { return id_dojo; }
             set { id_dojo = value; }
         }
 
-        public bool Status_dojo
+        public String Status_dojo
         {
             get { return status_dojo; }
             set { status_dojo = value; }
         }
-
+       
+       
         public int Telefono_dojo
         {
             get { return telefono_dojo; }
@@ -45,7 +55,11 @@ namespace DominioSKD
             get { return rif_dojo; }
             set { rif_dojo = value; }
         }
-
+        public int Organizacion_dojo
+        {
+            get { return organizacion_dojo; }
+            set { organizacion_dojo = value; }
+        }
         public String Nombre_dojo
         {
             get { return nombre_dojo; }
@@ -82,12 +96,13 @@ namespace DominioSKD
             this.telefono_dojo = 0;
             this.email_dojo = "";
             this.logo_dojo = "";
-            this.status_dojo = false;
+            this.status_dojo = "";
+            this.organizacion_dojo = 0;
             this.ubicacion = null;
         }
 
         //constructor con parametros 
-        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Ubicacion ubicacion)
+        public Dojo(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion)
         {
             this.id_dojo = Id;
             this.rif_dojo = Rif;
@@ -96,10 +111,11 @@ namespace DominioSKD
             this.email_dojo = Email;
             this.logo_dojo = Logo;
             this.status_dojo = Status;
+            this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
         }
         //constructor sin id 
-        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Ubicacion ubicacion)
+        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, Ubicacion ubicacion)
         {
             this.rif_dojo = Rif;
             this.nombre_dojo = Nombre;
@@ -107,10 +123,14 @@ namespace DominioSKD
             this.email_dojo = Email;
             this.logo_dojo = Logo;
             this.status_dojo = Status;
+            this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
         }
-
         #endregion
+        public Dojo(int id_dojo)
+        {
+            this.id_dojo = id_dojo;
+        }
 
     }
 }

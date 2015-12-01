@@ -22,6 +22,114 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_competencia;
         
         /// <summary>
+        /// nombreComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreComp;
+        
+        /// <summary>
+        /// input_tipo_kata control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_tipo_kata;
+        
+        /// <summary>
+        /// input_tipo_kumite control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_tipo_kumite;
+        
+        /// <summary>
+        /// input_tipo_ambos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_tipo_ambos;
+        
+        /// <summary>
+        /// organizaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox organizaciones;
+        
+        /// <summary>
+        /// input_fecha_ini control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_ini;
+        
+        /// <summary>
+        /// input_fecha_fin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_fin;
+        
+        /// <summary>
+        /// tablacompetencias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable tablacompetencias;
+        
+        /// <summary>
+        /// txtLAT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLAT;
+        
+        /// <summary>
+        /// txtLONG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLONG;
+        
+        /// <summary>
+        /// edad_desde control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl edad_desde;
+        
+        /// <summary>
+        /// edad_hasta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl edad_hasta;
+        
+        /// <summary>
         /// divComboCintaDesde control.
         /// </summary>
         /// <remarks>
@@ -58,22 +166,40 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.WebControls.DropDownList comboCintaHasta;
         
         /// <summary>
-        /// divComboSexo control.
+        /// input_sexo_M control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboSexo;
+        protected global::System.Web.UI.WebControls.RadioButton input_sexo_M;
         
         /// <summary>
-        /// comboSexo control.
+        /// input_sexo_F control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboSexo;
+        protected global::System.Web.UI.WebControls.RadioButton input_sexo_F;
+        
+        /// <summary>
+        /// input_status_porIniciar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_status_porIniciar;
+        
+        /// <summary>
+        /// input_status_enCurso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton input_status_enCurso;
         
         /// <summary>
         /// btn_agregarComp control.

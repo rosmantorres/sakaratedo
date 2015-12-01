@@ -142,6 +142,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idCinta.
+        /// </summary>
+        internal static string AliasIdCinta {
+            get {
+                return ResourceManager.GetString("AliasIdCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCompetencia.
         /// </summary>
         internal static string AliasIdCompetencia {
@@ -187,6 +196,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nombreCinta.
+        /// </summary>
+        internal static string AliasNombreCinta {
+            get {
+                return ResourceManager.GetString("AliasNombreCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreCiudad.
         /// </summary>
         internal static string AliasNombreCiudad {
@@ -228,6 +246,15 @@ namespace DatosSKD.Modulo12 {
         internal static string AliasNombreOrganizacion {
             get {
                 return ResourceManager.GetString("AliasNombreOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ordenCinta.
+        /// </summary>
+        internal static string AliasOrdenCinta {
+            get {
+                return ResourceManager.GetString("AliasOrdenCinta", resourceCulture);
             }
         }
         
@@ -313,6 +340,24 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string Concatenar0 {
+            get {
+                return ResourceManager.GetString("Concatenar0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M12_ConsultarCintas.
+        /// </summary>
+        internal static string ConsultarCintas {
+            get {
+                return ResourceManager.GetString("ConsultarCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M12_ConsultarCompetencias.
         /// </summary>
         internal static string ConsultarCompetencias {
@@ -327,6 +372,24 @@ namespace DatosSKD.Modulo12 {
         internal static string ConsultarCompetenciasXId {
             get {
                 return ResourceManager.GetString("ConsultarCompetenciasXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M12_ConsultarOrganizaciones.
+        /// </summary>
+        internal static string ConsultarOrganizaciones {
+            get {
+                return ResourceManager.GetString("ConsultarOrganizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MM/dd/yyyy.
+        /// </summary>
+        internal static string FormatoFecha {
+            get {
+                return ResourceManager.GetString("FormatoFecha", resourceCulture);
             }
         }
         
@@ -354,6 +417,24 @@ namespace DatosSKD.Modulo12 {
         internal static string Mensaje_Error_Formato {
             get {
                 return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
         
@@ -547,11 +628,47 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to /.
         /// </summary>
-        internal static string String1 {
+        internal static string SeparadorFecha {
             get {
-                return ResourceManager.GetString("String1", resourceCulture);
+                return ResourceManager.GetString("SeparadorFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string TipoCompetencia1 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string TipoCompetencia2 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string TipoCompetencia3 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ambos.
+        /// </summary>
+        internal static string TipoCompetenciaAmbos {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaAmbos", resourceCulture);
             }
         }
         
