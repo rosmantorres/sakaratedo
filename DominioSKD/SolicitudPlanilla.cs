@@ -18,11 +18,14 @@ namespace DominioSKD
         private Planilla planilla;
         private int idInscripcion;
         private int idPersona;
+        private string evento;
 
         #endregion
 
         #region metodos
-
+        public SolicitudPlanilla()
+        {
+        }
         public SolicitudPlanilla(DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
             string motivo, Planilla planilla, int idInscripcion, int idPersona)
         {
@@ -114,6 +117,12 @@ namespace DominioSKD
         {
             get { return idPersona; }
             set { idPersona = value; }
+        }
+
+        public string Evento
+        {
+            get { return evento; }
+            set { evento = value; }
         }
         #endregion
 
