@@ -1,0 +1,25 @@
+﻿Merge branch 'master' into M9
+
+# Conflicts:
+#	DominioSKD/Evento.cs
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch M9
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   DominioSKD/Cinta.cs
+#	modified:   DominioSKD/Organizacion.cs
+#	new file:   DominioSKD/RestriccionCompetencia.cs
+#	modified:   ScriptsBD/CreatesSakaratedo.sql
+#	new file:   ScriptsBD/M1_Inserts.sql
+#	new file:   ScriptsBD/M1_StoreProcedure.sql
+#
+
