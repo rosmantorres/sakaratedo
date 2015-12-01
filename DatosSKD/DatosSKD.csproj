@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="BDSolicitud.cs" />
+    <Compile Include="ListaImplemento.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +87,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo15\ConexionBaseDatos.cs" />
     <Compile Include="Modulo15\RecursosBDModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +255,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatosSKD.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
