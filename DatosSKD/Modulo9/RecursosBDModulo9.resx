@@ -149,6 +149,10 @@
     <value>idEvento</value>
     <comment>Alias colocado en el Stored Procedure referente a la columna id evento</comment>
   </data>
+  <data name="AliasIDTipoEvento" xml:space="preserve">
+    <value>idTipo</value>
+    <comment>Alias colocado en el SP a la columna Id Tipo Evento</comment>
+  </data>
   <data name="AliasNombreEvento" xml:space="preserve">
     <value>nombreEvento</value>
     <comment>Alias colocado en el Stored Procedure referente a la columna nombre</comment>
@@ -244,5 +248,9 @@
   <data name="ProcedimientoConsultarHorarios" xml:space="preserve">
     <value>M9_TodasLasFechas</value>
     <comment>Nombre del SP solicitado por M10 y M11</comment>
+  </data>
+  <data name="ProcedimientoConsultarTiposEventos" xml:space="preserve">
+    <value>M9_TodosLosTiposEvento</value>
+    <comment>Nombre del SP a ejecutar</comment>
   </data>
 </root>

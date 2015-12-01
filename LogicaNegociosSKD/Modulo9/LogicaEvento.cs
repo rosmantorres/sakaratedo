@@ -225,6 +225,13 @@ namespace LogicaNegociosSKD.Modulo9
 
             
         }
+
+        public List<TipoEvento> ConsultarTiposEventos()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            return baseDeDatosEvento.ListarTiposEventos();
+
+        }
         #endregion
 
     }

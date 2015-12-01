@@ -135,11 +135,65 @@ namespace DatosSKD.Modulo9
 
         }
 
+
+        /// <summary>
+        /// Metodo que trae de BD todos los tipos de eventos con sus ID
+        /// </summary>
+        /// <returns>Lista de TipoEvento</returns>
+
+
+        public List<TipoEvento> ListarTiposEventos()
+        {
+            BDConexion laConexion;
+            List<TipoEvento> listaTipos = new List<TipoEvento>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarTiposEventos, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    TipoEvento tipo = new TipoEvento();
+
+                    tipo.Id = int.Parse(row[RecursosBDModulo9.AliasIDTipoEvento].ToString());
+                    //Console.Out.WriteLine(evento.Id_evento);
+                    tipo.Nombre = row[RecursosBDModulo9.AliasTipoEvento].ToString();
+                    listaTipos.Add(tipo);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaTipos;
+
+        }
+
         /// <summary>
         /// Metodo que permite Consultar un evento por id
         /// </summary>
         /// <param name="idEvento">Id del evento</param>
         /// <returns>Retorna un evento</returns>
+
+
 
         public Evento ConsultarEvento(String idEvento)
         {

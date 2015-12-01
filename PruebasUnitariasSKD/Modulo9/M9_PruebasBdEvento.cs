@@ -123,6 +123,22 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.Greater(eventos.Count, 0);
         }
 
+        [Test]
+        public void PruebaConsultarTipoEventos()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            List<TipoEvento> tipos = baseDeDatosEvento.ListarTiposEventos();
+            foreach (TipoEvento tipo in tipos)
+            {
+                Console.Out.WriteLine("Id Tipo de Evento:" + " " + tipo.Id);
+                Console.Out.WriteLine("Nombre:" + " " + tipo.Nombre);
+                
+                Console.Out.WriteLine(" ");
+
+            }
+            Assert.Greater(tipos.Count, 0);
+
+        }
         #endregion
     }
 }

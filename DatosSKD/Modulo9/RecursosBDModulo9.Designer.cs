@@ -133,6 +133,15 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idTipo.
+        /// </summary>
+        internal static string AliasIDTipoEvento {
+            get {
+                return ResourceManager.GetString("AliasIDTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreEvento.
         /// </summary>
         internal static string AliasNombreEvento {
@@ -345,6 +354,15 @@ namespace DatosSKD.Modulo9 {
         internal static string ProcedimientoConsultarHorarios {
             get {
                 return ResourceManager.GetString("ProcedimientoConsultarHorarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_TodosLosTiposEvento.
+        /// </summary>
+        internal static string ProcedimientoConsultarTiposEventos {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarTiposEventos", resourceCulture);
             }
         }
     }
