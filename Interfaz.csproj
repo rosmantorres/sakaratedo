@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\documents-export-2015-11-30\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -48,7 +48,7 @@
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
+      <HintPath>..\documents-export-2015-11-30\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -205,7 +205,6 @@
     <Content Include="GUI\Modulo13\M13_Kyu.aspx" />
     <Content Include="GUI\Modulo13\M13_KyuPrograma.aspx" />
     <Content Include="GUI\Modulo13\M13_Kyu_atletas.aspx" />
-    <Content Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx" />
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
@@ -1623,13 +1622,6 @@
     </Compile>
     <Compile Include="GUI\Modulo13\M13_Kyu_atletas.aspx.designer.cs">
       <DependentUpon>M13_Kyu_atletas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx.cs">
-      <DependentUpon>M13_ListarMorosos - Copy.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx.designer.cs">
-      <DependentUpon>M13_ListarMorosos - Copy.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos.aspx.cs">
       <DependentUpon>M13_ListarMorosos.aspx</DependentUpon>
