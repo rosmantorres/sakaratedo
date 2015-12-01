@@ -3,13 +3,13 @@
   (
     asi_asistio CHAR(1) NOT NULL ,
     INSCRIPCION_ins_id INTEGER NOT NULL ,
-<<<<<<< HEAD
+
   EVENTO_eve_id      INTEGER NOT NULL,
    
-=======
+
 	EVENTO_eve_id      INTEGER,
 	COMPETENCIA_comp_id INTEGER
->>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+
   )
   ON "default"
 GO
