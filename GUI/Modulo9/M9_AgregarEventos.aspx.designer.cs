@@ -40,6 +40,24 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.WebControls.TextBox nombreEvento;
         
         /// <summary>
+        /// comboTipoEvento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl comboTipoEvento;
+        
+        /// <summary>
+        /// comboTipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboTipo;
+        
+        /// <summary>
         /// input_fecha_ini control.
         /// </summary>
         /// <remarks>

@@ -42,5 +42,12 @@ namespace templateApp.GUI.Modulo9
                 }
             }
         }
+        protected void comboSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
     }
 }

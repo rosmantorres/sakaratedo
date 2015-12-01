@@ -63,16 +63,17 @@
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-6 col-md-6 col-lg-6" >
                                 <h3>Tipo de Evento:</h3>
-                                <div class="btn-group">
-                                    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Seleccionar Evento <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Clases</a></li>
-                                        <li><a href="#">Charlas</a></li>
-                                        <li><a href="#">Seminarios</a></li>
-                                        <li><a href="#">Otros</a></li>
-                                    </ul>   
+                                <div class="btn-group"> 
+                                 <!--COMBO 3-->
+                                 <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <label>Seleccione el sexo:</label>  
+                                 </div>
+                                 <div class="col-sm-4 col-md-4 col-lg-4" >
+                                    <div class="dropdown" runat="server" id="divComboSexo">
+                                       <asp:DropDownList ID="comboSexo"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboSexo_SelectedIndexChanged" AutoPostBack="true">
+                                       </asp:DropDownList>
+                                    </div>
+                                 </div>
                                 </div>
                             </div>
                         </div>
