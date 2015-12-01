@@ -107,10 +107,10 @@ namespace LogicaNegociosSKD.Modulo1
                string hashClave =AlgoritmoDeEncriptacion.hash(contraseña);
                if (hashClave == user.Contrasena && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
-                   respuesta[0] = user.Id_usuario.ToString();
+                   respuesta[0] = user.PersonaUsuario._Id.ToString();
                    respuesta[1] = user.Nombre_usuario;
                    respuesta[4] = user.Imagen;
-                   respuesta[5] = user.NombreDePila;
+                   respuesta[5] = user.PersonaUsuario._Nombre+' '+user.PersonaUsuario._Apellido ;
                    string rolesConcat = "";
                    string split= RecursosLogicaModulo1.splitRoles;
                    int cantRoles=user.Roles.Count;

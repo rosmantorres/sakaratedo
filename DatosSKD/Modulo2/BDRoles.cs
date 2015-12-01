@@ -187,15 +187,22 @@ namespace DatosSKD.Modulo2
         {
             BDConexion laConexion;//COnsultar la persona
             BDConexion laConexion2;//Consultar los roles de la persona
+            BDConexion laConexion3;//Consultar la persona
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+
+            List<Parametro> parametros2;
 
             try
             {
                 laConexion = new BDConexion();
                 laConexion2 = new BDConexion();
+                laConexion3 = new BDConexion();
                 parametros = new List<Parametro>();
+                parametros2 = new List<Parametro>();
                 Cuenta laCuenta = new Cuenta();
+              
+                string idUsuario = "0";
 
                 elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, id_usuario.ToString(), false);
                 parametros.Add(elParametro);
@@ -206,10 +213,9 @@ namespace DatosSKD.Modulo2
                 foreach (DataRow row in dt.Rows)
                 {
 
-                    laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
+                    idUsuario = (row[RecursosBDModulo1.AliasIdUsuario].ToString());
                     laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
                     laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString();
-                    laCuenta.NombreDePila = row[RecursosBDModulo1.AliasNombreDePila].ToString();
 
                 }
 
@@ -228,6 +234,21 @@ namespace DatosSKD.Modulo2
                 }
 
                 laCuenta.Roles = listaRol;
+
+                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
+                parametros2.Add(elParametro);
+                DataTable dt2 = laConexion3.EjecutarStoredProcedureTuplas(
+                                RecursosBDModulo1.consultarPersona, parametros2);
+
+                PersonaM1 laPersona = new PersonaM1();
+                foreach (DataRow row in dt2.Rows)
+                {
+
+                    laPersona._Id = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
+                    laPersona._Nombre = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
+                    laPersona._Apellido = row[RecursosBDModulo1.aliasApellidoUsuario].ToString();
+                }
+                laCuenta.PersonaUsuario = laPersona;
                 return laCuenta;
 
             }
