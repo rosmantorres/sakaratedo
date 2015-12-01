@@ -107,7 +107,7 @@ namespace DatosSKD.Modulo14
         /// Obtiene la lista de los tipo de planillas
         /// </summary>
         /// <returns>Lista de los tipos de planillas</returns>
-        public static List<Planilla> ObtenerTipoPlanilla()
+        public  List<Planilla> ObtenerTipoPlanilla()
         {
             BDConexion laConexion;
             List<Planilla> listaTipoPlanilla = new List<Planilla>();
@@ -137,7 +137,7 @@ namespace DatosSKD.Modulo14
         /// Obtiene la lista de los datos
         /// </summary>
         /// <returns>Lista de los datos que se encuentran</returns>
-        public static List<String> ObtenerDatosBD()
+        public  List<String> ObtenerDatosBD()
         {
             BDConexion laConexion;
             List<String> listaDatos = new List<String>();
@@ -171,7 +171,7 @@ namespace DatosSKD.Modulo14
         /// <param name="laPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
 
-        public static Boolean RegistrarPlanillaBD(Planilla laPlanilla)
+        public Boolean RegistrarPlanillaBD(Planilla laPlanilla)
         {
 
 
@@ -210,7 +210,7 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-        public static Boolean RegistrarDatosPlanillaBD(String nombrePlanilla, String datoPlanilla)
+        public  Boolean RegistrarDatosPlanillaBD(String nombrePlanilla, String datoPlanilla)
         {
 
 
@@ -245,7 +245,7 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="nombreTipoPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-        public static Boolean RegistrarTipoPlanilla(String nombreTipoPlanilla)
+        public Boolean RegistrarTipoPlanilla(String nombreTipoPlanilla)
         {
 
 
@@ -279,7 +279,7 @@ namespace DatosSKD.Modulo14
         /// Obtiene la lista de los tipo de planillas
         /// </summary>
         /// <returns>Lista de los tipos de planillas</returns>
-        public static int ObtenerIdTipoPlanilla(String nombreTipo)
+        public int ObtenerIdTipoPlanilla(String nombreTipo)
         {
             BDConexion laConexion;
             int idTipolanilla;
@@ -319,7 +319,7 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// /// <param name="idPlanilla">id planilla</param>
         /// <returns>Planilla con nombre, status y tipo de planilla</returns>
-        public static Planilla ObtenerPlanillaID(int idPlanilla)
+        public Planilla ObtenerPlanillaID(int idPlanilla)
         {
             BDConexion laConexion;
             Planilla planilla = null;
@@ -358,7 +358,7 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// /// <param name="idPlanilla">id planilla</param>
         /// <returns>datos de una planilla</returns>
-        public static List<String> ObtenerDatosPlanillaID(int idPlanilla)
+        public List<String> ObtenerDatosPlanillaID(int idPlanilla)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -396,7 +396,7 @@ namespace DatosSKD.Modulo14
         /// <param name="laPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
 
-        public static Boolean ModificarPlanillaBD(Planilla laPlanilla)
+        public Boolean ModificarPlanillaBD(Planilla laPlanilla)
         {
 
 
@@ -438,7 +438,7 @@ namespace DatosSKD.Modulo14
         /// <param name="idPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
 
-        public static Boolean EliminarDatosPlanillaBD(int idPlanilla)
+        public Boolean EliminarDatosPlanillaBD(int idPlanilla)
         {
 
 
@@ -471,7 +471,7 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="">idPlanilla y dato de la planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-        public static Boolean RegistrarDatosPlanillaIdBD(int idPlanilla, String datoPlanilla)
+        public Boolean RegistrarDatosPlanillaIdBD(int idPlanilla, String datoPlanilla)
         {
 
 

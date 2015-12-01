@@ -27,8 +27,8 @@ namespace LogicaNegociosSKD.Modulo14
         public List<Planilla> ObtenerTipoPlanilla()
         {
             List<Planilla> listaTipoPlanilla = new List<Planilla>();
-
-            listaTipoPlanilla = BDPlanilla.ObtenerTipoPlanilla();
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            listaTipoPlanilla = BaseDeDatoPlanilla.ObtenerTipoPlanilla();
 
             return listaTipoPlanilla;
         }
@@ -45,8 +45,8 @@ namespace LogicaNegociosSKD.Modulo14
             List<String> listaDatos = new List<String>();
             try
             {
-                listaDatos = BDPlanilla.ObtenerDatosBD();
-
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                listaDatos = BaseDeDatoPlanilla.ObtenerDatosBD();
             }
             catch (Exception e)
             {
@@ -61,25 +61,29 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
         public void RegistrarPlanilla(Planilla laPlanilla)
         {
-            Boolean resultPlanilla = BDPlanilla.RegistrarPlanillaBD(laPlanilla);
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            Boolean resultPlanilla = BaseDeDatoPlanilla.RegistrarPlanillaBD(laPlanilla);
 
             foreach (String nombreDato in laPlanilla.Dato)
             {
-                Boolean resultdatos = BDPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
-
+                
+                Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
+                
             }
         }
 
         public void RegistrarPlanilla(Planilla laPlanilla, String nombreTipo)
         {
-            int idTipoPlanilla = BDPlanilla.ObtenerIdTipoPlanilla(nombreTipo);
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(nombreTipo);
             laPlanilla.IDtipoPlanilla = idTipoPlanilla;
             RegistrarPlanilla(laPlanilla);
         }
 
         public void NuevoTipoPlanilla(String nombreTipo)
         {
-            Boolean result = BDPlanilla.RegistrarTipoPlanilla(nombreTipo);
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            Boolean result = BaseDeDatoPlanilla.RegistrarTipoPlanilla(nombreTipo);
 
         }
 
@@ -91,10 +95,23 @@ namespace LogicaNegociosSKD.Modulo14
         {
             Planilla planilla = new Planilla();
 
-            planilla = BDPlanilla.ObtenerPlanillaID(idPlanilla);
-            planilla.Dato = BDPlanilla.ObtenerDatosPlanillaID(idPlanilla);
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            planilla = BaseDeDatoPlanilla.ObtenerPlanillaID(idPlanilla);
+            planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
 
             return planilla;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="idPlanilla"></param>
+        /// <returns></returns>
+        public List<string> ObtenerDatosPlanilla(int idPlanilla)
+        {
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            List<String> datos = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
+            return datos;
         }
 
         /// <summary>Modificar una planilla por id</summary>
@@ -103,13 +120,13 @@ namespace LogicaNegociosSKD.Modulo14
         /// 
         public Planilla ModificarPlanillaID(Planilla laPlanilla)
         {
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
             Planilla planilla = new Planilla();
-
-            BDPlanilla.ModificarPlanillaBD(laPlanilla);
-            BDPlanilla.EliminarDatosPlanillaBD(laPlanilla.ID);
+            BaseDeDatoPlanilla.ModificarPlanillaBD(laPlanilla);
+            BaseDeDatoPlanilla.EliminarDatosPlanillaBD(laPlanilla.ID);
             foreach (String item in laPlanilla.Dato)
             {
-                BDPlanilla.RegistrarDatosPlanillaIdBD(laPlanilla.ID, item);                
+                BaseDeDatoPlanilla.RegistrarDatosPlanillaIdBD(laPlanilla.ID, item);                
             }
 
             return planilla;
@@ -121,7 +138,8 @@ namespace LogicaNegociosSKD.Modulo14
         /// 
         public Planilla ModificarPlanillaID(Planilla laPlanilla, String tipoPlanilla)
         {
-            int idTipoPlanilla = BDPlanilla.ObtenerIdTipoPlanilla(tipoPlanilla);
+            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+            int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(tipoPlanilla);
             laPlanilla.IDtipoPlanilla = idTipoPlanilla;
             ModificarPlanillaID(laPlanilla);
             return laPlanilla;
