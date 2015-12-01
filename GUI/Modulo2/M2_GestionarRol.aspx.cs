@@ -34,7 +34,7 @@ namespace templateApp.GUI.Modulo2
                 String rolUsuario=Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido=false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] {"Sistema", "Dojo"});
+                    (new string[] {RecursosInterfazMaster.rolSistema,RecursosInterfazMaster.rolDojo});
                 foreach(String rol in rolesPermitidos){
                     if (rol == rolUsuario)
                         permitido = true;
@@ -57,13 +57,7 @@ namespace templateApp.GUI.Modulo2
                     rolesDePersona = logicaRol.validarPrioridad(rolesDePersona,
                         Session[RecursosInterfazMaster.sessionRol].ToString());
 
-
-
-                    losRolesDeSistema = logicaRol.cargarRoles();//Se cargan todos los roles del sistema
-                    /* losRolesDeSistema=logicaRol.validarPrioridad(losRolesDeSistema,
-                         Session[RecursosInterfazMaster.sessionRol].ToString());
-                 */
-
+                    losRolesDeSistema = logicaRol.cargarRoles();
                     rolesFiltrados = logicaRol.filtrarRoles(rolesDePersona, losRolesDeSistema);
                     rolesFiltrados = logicaRol.validarPrioridad(rolesFiltrados,
                         Session[RecursosInterfazMaster.sessionRol].ToString());
