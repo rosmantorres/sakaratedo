@@ -133,6 +133,15 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idTipo.
+        /// </summary>
+        internal static string AliasIDTipoEvento {
+            get {
+                return ResourceManager.GetString("AliasIDTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreEvento.
         /// </summary>
         internal static string AliasNombreEvento {
@@ -286,6 +295,15 @@ namespace DatosSKD.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @nombreTipoEvento.
+        /// </summary>
+        internal static string ParametroNombreTipoEvento {
+            get {
+                return ResourceManager.GetString("ParametroNombreTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M9_ConsultarEventoXID.
         /// </summary>
         internal static string ProcedimentoConsultarEventoXID {
@@ -300,6 +318,15 @@ namespace DatosSKD.Modulo9 {
         internal static string ProcedimientoAgregarEvento {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_AgregarEventoConTipo.
+        /// </summary>
+        internal static string ProcedimientoAgregarEventoConTipo {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarEventoConTipo", resourceCulture);
             }
         }
         
@@ -345,6 +372,24 @@ namespace DatosSKD.Modulo9 {
         internal static string ProcedimientoConsultarHorarios {
             get {
                 return ResourceManager.GetString("ProcedimientoConsultarHorarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_TodosLosTiposEvento.
+        /// </summary>
+        internal static string ProcedimientoConsultarTiposEventos {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarTiposEventos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_ModificarEvento.
+        /// </summary>
+        internal static string ProcedimientoModificarEvento {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarEvento", resourceCulture);
             }
         }
     }

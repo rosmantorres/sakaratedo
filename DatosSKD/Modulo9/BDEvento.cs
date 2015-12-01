@@ -9,12 +9,20 @@ using DominioSKD;
 
 namespace DatosSKD.Modulo9
 {
+    /// <summary>
+    /// Clase encargada de Manejar Todas las Consultas a Base de Datos
+    /// </summary>
 
     public class BDEvento
     {
-        public BDEvento() { 
-        
+        #region Constructores
+        public BDEvento() {
+
         }
+
+        #endregion
+
+        #region Metodos
         /// <summary>
         /// Metodo que permite agregar un Evento a la BD
         /// </summary>
@@ -74,11 +82,129 @@ namespace DatosSKD.Modulo9
             }
         }
 
+
+        /// <summary>
+        /// Metodo que permite agregar un Evento a la BD con un tipo de evento Nuevo
+        /// </summary>
+        /// <param name="evento"></param>
+        /// <returns></returns>
+        public bool CrearEventoConTipo(Evento evento)
+        {
+            try
+            {
+                //parametros para insertar un evento
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroDescripcionEvento, SqlDbType.VarChar, evento.Descripcion, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroNombreTipoEvento, SqlDbType.VarChar, evento.TipoEvento.Nombre.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametros.Add(parametro);
+
+                BDConexion con = new BDConexion();
+                List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo9.ProcedimientoAgregarEventoConTipo, parametros);
+
+                //si la creacion es correcta retorna true
+
+                if (resultados != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo que modifica un evento en BD
+        /// </summary>
+        /// <param name="evento">Evento a modificar</param>
+        /// <returns>Verdadero o Falso</returns>
+        public bool ModificarEvento(Evento evento)
+        {
+            try
+            {
+
+                
+                //parametros para insertar un evento
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdEvento, SqlDbType.Int, evento.Id_evento.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroDescripcionEvento, SqlDbType.VarChar, evento.Descripcion, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametros.Add(parametro);
+
+                BDConexion con = new BDConexion();
+                List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo9.ProcedimientoModificarEvento, parametros);
+
+                //si la creacion es correcta retorna true
+
+                if (resultados != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+        }
+
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los eventos de un administrador
         /// </summary>
         /// <returns>lista de eventos</returns>
-
 
         public List<Evento> ListarEventos()
         {
@@ -137,11 +263,65 @@ namespace DatosSKD.Modulo9
 
         }
 
+
+        /// <summary>
+        /// Metodo que trae de BD todos los tipos de eventos con sus ID
+        /// </summary>
+        /// <returns>Lista de TipoEvento</returns>
+
+
+        public List<TipoEvento> ListarTiposEventos()
+        {
+            BDConexion laConexion;
+            List<TipoEvento> listaTipos = new List<TipoEvento>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarTiposEventos, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    TipoEvento tipo = new TipoEvento();
+
+                    tipo.Id = int.Parse(row[RecursosBDModulo9.AliasIDTipoEvento].ToString());
+                    //Console.Out.WriteLine(evento.Id_evento);
+                    tipo.Nombre = row[RecursosBDModulo9.AliasTipoEvento].ToString();
+                    listaTipos.Add(tipo);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaTipos;
+
+        }
+
         /// <summary>
         /// Metodo que permite Consultar un evento por id
         /// </summary>
         /// <param name="idEvento">Id del evento</param>
         /// <returns>Retorna un evento</returns>
+
+
 
         public Evento ConsultarEvento(String idEvento)
         {
@@ -437,6 +617,8 @@ namespace DatosSKD.Modulo9
             return listaEventos;
 
         }
+
+        #endregion
     }
 }
 

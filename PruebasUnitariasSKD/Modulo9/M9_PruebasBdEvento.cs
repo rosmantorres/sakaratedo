@@ -123,6 +123,46 @@ namespace PruebasUnitariasSKD.Modulo9
             Assert.Greater(eventos.Count, 0);
         }
 
+        [Test]
+        public void PruebaConsultarTipoEventos()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            List<TipoEvento> tipos = baseDeDatosEvento.ListarTiposEventos();
+            foreach (TipoEvento tipo in tipos)
+            {
+                Console.Out.WriteLine("Id Tipo de Evento:" + " " + tipo.Id);
+                Console.Out.WriteLine("Nombre:" + " " + tipo.Nombre);
+                
+                Console.Out.WriteLine(" ");
+
+            }
+            Assert.Greater(tipos.Count, 0);
+
+        }
+
+        [Test]
+        public void PruebaCrearEventoTipo()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            elEvento.TipoEvento.Nombre = "Prueba Unitaria";
+            Boolean auxiliar = baseDeDatosEvento.CrearEventoConTipo(elEvento);
+            Console.Out.WriteLine(auxiliar);
+            Assert.True(auxiliar);
+        }
+
+        [Test]
+        public void PruebaModificarEvento()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            elEvento.Id_evento = 3;
+            elEvento.Nombre = "PRobando el Modificar desde BD";
+            elEvento.Descripcion = "PRobando el Modificar desde BD";
+            elEvento.Estado = false;
+            Boolean auxiliar = baseDeDatosEvento.ModificarEvento(elEvento);
+            Assert.True(auxiliar);
+
+
+        }
         #endregion
     }
 }

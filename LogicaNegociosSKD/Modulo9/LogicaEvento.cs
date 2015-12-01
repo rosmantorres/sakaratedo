@@ -9,6 +9,9 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo9
 {
+    /// <summary>
+    /// Clase que maneja la logica para el Modulo de Eventos
+    /// </summary>
     public class LogicaEvento
     {
         #region Constructores
@@ -81,6 +84,72 @@ namespace LogicaNegociosSKD.Modulo9
         }
 
         /// <summary>
+        /// MEtodo Que permite Crear un evento Con un nuevo tipo de evento
+        /// </summary>
+        /// <param name="evento">Evento a agregar</param>
+        /// <returns>Verdadero o Falso</returns>
+
+        public bool CrearEventoConTipo(Evento evento)
+        {
+            try
+            {
+                if (ValidarCaracteres(evento.Nombre))
+                {
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
+                    {
+                        Console.Out.WriteLine("Descripcion Valido");
+                        if (ValidarCosto(evento.Costo))
+                        {
+                            Console.Out.WriteLine("Costo Valido");
+                            String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                            String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                            String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                            String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaInicio))
+                            {
+                                Console.Out.WriteLine("FechaI Valido");
+                                dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                                mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                                año = (evento.Horario.FechaFin.Date.Year.ToString());
+                                String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                                if (ValidarFormatoFecha(fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaF Valido");
+                                    if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                    {
+                                        Console.Out.WriteLine("FechaI <= FechaF");
+                                        if (ValidarCaracteres(evento.TipoEvento.Nombre))
+                                        {
+                                            Console.Out.WriteLine("Nombre de Evento Valido ");
+                                            
+                                            BDEvento baseDeDatosEvento = new BDEvento();
+
+                                            return baseDeDatosEvento.CrearEvento(evento);
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return false;
+
+        }
+
+        /// <summary>
         /// Metodo que retorna de la BD todos los eventos
         /// </summary>
         /// <returns>Lista de Eventos</returns>
@@ -92,6 +161,60 @@ namespace LogicaNegociosSKD.Modulo9
             return listaEventos;
         }
 
+        public bool ModificarEvento(Evento evento)
+        {
+            try
+            {
+                if (ValidarCaracteres(evento.Nombre))
+                {
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
+                    {
+                        Console.Out.WriteLine("Descripcion Valido");
+                        if (ValidarCosto(evento.Costo))
+                        {
+                            Console.Out.WriteLine("Costo Valido");
+                            String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                            String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                            String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                            String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaInicio))
+                            {
+                                Console.Out.WriteLine("FechaI Valido");
+                                dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                                mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                                año = (evento.Horario.FechaFin.Date.Year.ToString());
+                                String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                                if (ValidarFormatoFecha(fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaF Valido");
+                                    if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                    {
+                                        Console.Out.WriteLine("FechaI <= FechaF");
+                                        BDEvento baseDeDatosEvento = new BDEvento();
+
+                                        return baseDeDatosEvento.CrearEvento(evento);
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return false;
+
+        }
         /// <summary>
         /// Metodo que retorna de la BD un evento dado el ID
         /// </summary>
@@ -226,6 +349,19 @@ namespace LogicaNegociosSKD.Modulo9
 
             
         }
+
+        /// <summary>
+        /// Metodo que retorna todos los tipos de evento
+        /// </summary>
+        /// <returns>Lista de Tipos de Eventos</returns>
+        public List<TipoEvento> ConsultarTiposEventos()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            return baseDeDatosEvento.ListarTiposEventos();
+
+        }
+        
+        
         #endregion
 
     }

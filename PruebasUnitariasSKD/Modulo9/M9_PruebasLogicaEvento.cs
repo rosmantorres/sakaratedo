@@ -110,6 +110,17 @@ namespace PruebasUnitariasSKD.Modulo9
 
         [Test]
 
+        public void PruebaCrearEventoConTipo()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            elEvento.TipoEvento.Nombre = "PRuebas Unitarias desde Logica";
+            Boolean resultado = logicaEvento.CrearEventoConTipo(elEvento);
+            Assert.IsTrue(resultado);
+
+        }
+
+        [Test]
+
         public void PruebaListarEventos()
         {
             LogicaEvento logicaEvento = new LogicaEvento();
@@ -151,6 +162,37 @@ namespace PruebasUnitariasSKD.Modulo9
             Console.Out.WriteLine("Hora fin de Evento:" + " " + evento.Horario.HoraFin);
             Console.Out.WriteLine(" ");
             Assert.AreEqual(evento.Nombre, "Clase Regular");
+        }
+
+        [Test]
+        public void PruebaConsultarTipoEventos()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            List<TipoEvento> tipos = logicaEvento.ConsultarTiposEventos();
+            foreach (TipoEvento tipo in tipos)
+            {
+                Console.Out.WriteLine("Id Tipo de Evento:" + " " + tipo.Id);
+                Console.Out.WriteLine("Nombre:" + " " + tipo.Nombre);
+
+                Console.Out.WriteLine(" ");
+
+            }
+            Assert.Greater(tipos.Count, 0);
+
+        }
+
+        [Test]
+        public void PruebaModificarEvento()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            elEvento.Id_evento = 4;
+            elEvento.Nombre = "PRobando el Modificar desde Logica";
+            elEvento.Descripcion = "PRobando el Modificar desde Logica";
+            elEvento.Estado = false;
+            Boolean auxiliar = logicaEvento.ModificarEvento(elEvento);
+            Assert.True(auxiliar);
+
+
         }
     }
 }
