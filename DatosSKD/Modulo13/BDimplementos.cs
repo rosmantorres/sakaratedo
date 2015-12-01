@@ -7,11 +7,12 @@ using DominioSKD;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Data;
+
 namespace DatosSKD.Modulo13
 {
     class BDimplementos
     {
-
+       
         
         #region Listar Implementarios
 
@@ -19,6 +20,7 @@ namespace DatosSKD.Modulo13
         {
             BDConexion laConexion;
             List<Implemento> listaDeImplementos = new List<Implemento>();
+            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>;
 // List<Parametro> parametros;
   //          Parametro parametro;
     //        parametros = new List<Parametro>();
@@ -38,25 +40,20 @@ namespace DatosSKD.Modulo13
                         RecursosBDModulo15.tabla_dojoImplemento, new Exception());
                 */
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas("M13_inventario", null);
-/*
+
+                //Interfaz.Gui.Modulo13.M13_Info_Producto inventario = new Interfaz.Gui.Modulo13.M13_Info_Producto();
+
+                
+
                 foreach (DataRow row in dt.Rows)
                 {
-                    Implemento implemento = new Implemento();
-                    implemento.Dojo_Implemento = new Dojo();
-                    implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
-                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                    implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
-                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
-                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
-                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
-                    implemento.Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
-                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                    implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
-                    implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
-                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
-                    implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
+                    Reporte_Inventario inventario = new Reporte_Inventario();
 
-                    listaDeImplementos.Add(implemento);
+                    inventario.Nombre = row[imp_nombre].toString;
+                    inventario.Dojo = row[doj_nombre].toString;
+                    inventario.Cantidad_total = row[inv_cantidad_total].toString;           
+                    
+                    listainventario.Add(inventario);
 
                 }
 
@@ -70,18 +67,20 @@ namespace DatosSKD.Modulo13
             {
                 throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
             }
-                */
-            return dt;
+
+            return listainventario;
 
         }
         #endregion
 
-       
 
 
 
 
 
 
+
+
+        public static DataTable listainventario { get; set; }
     }
 }
