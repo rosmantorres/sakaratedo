@@ -60,6 +60,7 @@
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
+    <Compile Include="Modulo7\NumeroNoEnteroInvalidoException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,7 +75,6 @@
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo5\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
   </ItemGroup>

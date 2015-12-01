@@ -8,6 +8,8 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 
 namespace DatosSKD.Modulo7
 {
@@ -26,47 +28,55 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarCintas, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
                 {
-                    Cinta cinta = new Cinta();
-                    cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
-                    cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
-                    cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
-                    cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
-                    cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
-                    cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
 
-                    laListaDeCintas.Add(cinta);
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                   RecursosBDModulo7.ConsultarCintas, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Cinta cinta = new Cinta();
+                        cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
+                        cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
+                        cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
+                        cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
+                        cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
+                        cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+
+                        laListaDeCintas.Add(cinta);
+                    }
                 }
-
+                else
+                {
+                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
                 return laListaDeCintas;
+
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroNoEnteroInvalidoException ex)
             {
                 throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            }
+            catch (ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
         }
 
@@ -80,50 +90,57 @@ namespace DatosSKD.Modulo7
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            Cinta cinta;
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Cinta cinta = new Cinta();
-
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdCinta, SqlDbType.Int, idCinta.ToString(), false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarCintaXId, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (idCinta.GetType() == Type.GetType("System.Int32") && idCinta > 0)
                 {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    cinta = new Cinta();
 
-                    cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
-                    cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
-                    cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
-                    cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
-                    cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
-                    cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdCinta, SqlDbType.Int, idCinta.ToString(), false);
+                    parametros.Add(elParametro);
 
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                   RecursosBDModulo7.ConsultarCintaXId, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+
+                        cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
+                        cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
+                        cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
+                        cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
+                        cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
+                        cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+
+                    }
                 }
-
+                else
+                {
+                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
                 return cinta;
-
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroNoEnteroInvalidoException ex)
             {
                 throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            }
+            catch (ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
         }
 
@@ -137,29 +154,37 @@ namespace DatosSKD.Modulo7
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
-
+            Cinta cinta;
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Cinta cinta = new Cinta();
-
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarUltimaCinta, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
                 {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    cinta = new Cinta();
 
-                    cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
-                    cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
-                    cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
-                    cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
-                    cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
-                    cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
 
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                   RecursosBDModulo7.ConsultarUltimaCinta, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+
+                        cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
+                        cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
+                        cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
+                        cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
+                        cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
+                        cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
+
+                    }
+                }
+                else
+                {
+                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
 
                 return cinta;
@@ -167,20 +192,20 @@ namespace DatosSKD.Modulo7
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroNoEnteroInvalidoException ex)
             {
                 throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            }
+            catch (ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
         }
 
@@ -199,20 +224,29 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-
-                elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
-                elParametroCinta = new Parametro(RecursosBDModulo7.ParamIdCinta, SqlDbType.Int, idCinta.ToString(), false);
-                parametros.Add(elParametroPersona);
-                parametros.Add(elParametroCinta);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarFechaCinta, parametros);
-
-                foreach (DataRow row in dt.Rows)
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0 && 
+                    idCinta.GetType() == Type.GetType("System.Int32") && idCinta > 0)
                 {
-                    fechaCinta = DateTime.Parse(row[RecursosBDModulo7.AliasCintaFecha].ToString());
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+
+                    elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    elParametroCinta = new Parametro(RecursosBDModulo7.ParamIdCinta, SqlDbType.Int, idCinta.ToString(), false);
+                    parametros.Add(elParametroPersona);
+                    parametros.Add(elParametroCinta);
+
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                   RecursosBDModulo7.ConsultarFechaCinta, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        fechaCinta = DateTime.Parse(row[RecursosBDModulo7.AliasCintaFecha].ToString());
+                    }
+                }
+                else
+                {
+                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
 
                 return fechaCinta;
@@ -220,20 +254,20 @@ namespace DatosSKD.Modulo7
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroNoEnteroInvalidoException ex)
             {
                 throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            }
+            catch (ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
         }
     }
