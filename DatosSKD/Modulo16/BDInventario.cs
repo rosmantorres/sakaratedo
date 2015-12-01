@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo16
                 {
                     Implemento elInventario = new Implemento();
 
-                    elInventario.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                    elInventario.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
                     elInventario.Imagen_implemento = row[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
                     elInventario.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                     elInventario.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
