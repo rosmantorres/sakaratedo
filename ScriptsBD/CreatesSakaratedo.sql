@@ -2354,6 +2354,21 @@ as
 
  end;
  GO
+
+------------------------PROCEDURE CONSULTA DE ATLETAS POR CINTAS-----------------
+
+CREATE procedure M13_ConsultarAtletasCintas
+       @cin_color_nombre [varchar](100)
+
+as
+       begin
+          select p.per_nombre, p.per_apellido, DATEDIFF(yy,p.per_fecha_nacimiento,GETDATE()) AS edad, p.per_peso, p.per_estatura
+          from PERSONA p, HISTORIAL_CINTAS hc, CINTA c 
+          where p.per_id=hc.PERSONA_per_id and hc.PERSONA_per_id=hc.CINTA_cin_id; 
+
+       end;
+       go
+
  
  --------------------------------------Stored Procedures M9-------------------------------------------------------
 CREATE PROCEDURE M9_AgregarHorario
@@ -2541,3 +2556,4 @@ AS
 		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
 		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
  END
+

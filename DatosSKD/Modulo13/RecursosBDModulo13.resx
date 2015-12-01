@@ -132,7 +132,7 @@
   <data name="ParamIdPersona" xml:space="preserve">
     <value>persona</value>
   </data>
-  <data name="listamorosidad" xml:space="preserve">
+  <data name="ConsultarListaMorosidad" xml:space="preserve">
     <value>M13_ListarMorosos</value>
     <comment>la lista de morosos</comment>
   </data>
@@ -153,5 +153,17 @@
   </data>
   <data name="sexo" xml:space="preserve">
     <value>per_sexo</value>
+  </data>
+  <data name="dni" xml:space="preserve">
+    <value>per_num_doc_id</value>
+  </data>
+  <data name="DojoNombre" xml:space="preserve">
+    <value>doj_nombre</value>
+  </data>
+  <data name="meseMoroso" xml:space="preserve">
+    <value>meseMoroso</value>
+  </data>
+  <data name="MontoTotal" xml:space="preserve">
+    <value>monto</value>
   </data>
 </root>

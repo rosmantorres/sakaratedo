@@ -88,6 +88,33 @@ namespace DatosSKD.Modulo13 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M13_ListarMorosos.
+        /// </summary>
+        internal static string ConsultarListaMorosidad {
+            get {
+                return ResourceManager.GetString("ConsultarListaMorosidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to per_num_doc_id.
+        /// </summary>
+        internal static string dni {
+            get {
+                return ResourceManager.GetString("dni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to doj_nombre.
+        /// </summary>
+        internal static string DojoNombre {
+            get {
+                return ResourceManager.GetString("DojoNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to per_fecha_nacimiento.
         /// </summary>
         internal static string Edad {
@@ -115,11 +142,20 @@ namespace DatosSKD.Modulo13 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M13_ListarMorosos.
+        ///   Looks up a localized string similar to meseMoroso.
         /// </summary>
-        internal static string listamorosidad {
+        internal static string meseMoroso {
             get {
-                return ResourceManager.GetString("listamorosidad", resourceCulture);
+                return ResourceManager.GetString("meseMoroso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to monto.
+        /// </summary>
+        internal static string MontoTotal {
+            get {
+                return ResourceManager.GetString("MontoTotal", resourceCulture);
             }
         }
         

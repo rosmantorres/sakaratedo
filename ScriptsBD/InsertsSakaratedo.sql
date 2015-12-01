@@ -491,7 +491,7 @@ VALUES (
     'CAF-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-10-26',101),
     5000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -886,7 +886,7 @@ VALUES (
     '32-FE-A1',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-09-26',101),
      4500,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Eduardo'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -998,7 +998,7 @@ VALUES (
     'CEFA-FE-A65',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-05-26',101),
     2000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Maria Isabel'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
@@ -1487,7 +1487,7 @@ VALUES (
     '67F-31A-F2',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-11-26',101),
     3000,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Mario Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
@@ -1600,7 +1600,7 @@ VALUES (
     'AA1-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-09-26',101),
     3600,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Romulo Jose'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -1714,7 +1714,7 @@ VALUES (
     'AA2-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-06-26',101),
     5500,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Silfredo Augusto'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -1827,7 +1827,7 @@ VALUES (
     'AA3-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+   CONVERT(datetime,'2015-08-28',101),
     2780,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Saul Enrique'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -1940,7 +1940,7 @@ VALUES (
     'AA4-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-10-15',101),
     2678,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Guillermo Daniel'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -2621,7 +2621,7 @@ VALUES (
     'AAA-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-10-26',101),
     4200,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Elizabeth Antonia'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -2734,7 +2734,7 @@ VALUES (
     'EFC1-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-09-26',101),
     2780,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Marco Alejandro'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
@@ -2846,7 +2846,7 @@ VALUES (
     'EFC2-CAF-CAFE',
     GETDATE(),
     1,
-    GETDATE(),
+    CONVERT(datetime,'2015-05-26',101),
     3700,
     (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Jose Gregorio'),
     (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')

@@ -13,48 +13,70 @@ using System.Globalization;
 
 namespace DatosSKD.Modulo13
 {
-    class BDMoroso
+    public class BDMoroso
     {
 
-        public static DataTable ListarMorosos()
-        {
-            BDConexion laConexion;
+        #region atributos
 
-            List<Parametro> parametros;
+        private BDConexion con = new BDConexion();
+
+
+        #endregion
+
+        #region metodos
+        public List<DominioSKD.Morosidad> ConsultarMorosos()
+        {
+            SqlConnection conect = con.Conectar();
+            List<DominioSKD.Morosidad> lista = new List<DominioSKD.Morosidad>();
+            DominioSKD.Morosidad morosidad;
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+
+                SqlCommand sqlcom = new SqlCommand(RecursosBDModulo13.ConsultarListaMorosidad, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
+                    {
+                        morosidad = new DominioSKD.Morosidad();
+                        morosidad.Nombre =leer[RecursosBDModulo13.nombre].ToString();
+                        morosidad.Apellido = leer[RecursosBDModulo13.apellido].ToString();
+                        morosidad.Cedula = leer[RecursosBDModulo13.dni].ToString();
+                        morosidad.DojoNombre = leer[RecursosBDModulo13.DojoNombre].ToString();
+                        morosidad.MeseMoroso = leer[RecursosBDModulo13.meseMoroso].ToString();
+                        morosidad.Monto = leer[RecursosBDModulo13.MontoTotal].ToString();
 
 
-                DataTable laListaDeMorosos = laConexion.EjecutarStoredProcedureTuplas(
-                                RecursosBDModulo13.listamorosidad, parametros);
+                        lista.Add(morosidad);
+                        morosidad = null;
 
+                    }
 
+                    return lista;
+                }
+                else
+                {
 
-                return laListaDeMorosos;
-
-            }
-            catch (SqlException ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
+                    return null;
+                }
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw ex;
+            }
+            finally
+            {
+                con.Desconectar(conect);
             }
 
-
-
         }
-
+        #endregion
 
 
 
