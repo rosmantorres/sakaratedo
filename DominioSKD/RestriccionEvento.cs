@@ -15,12 +15,9 @@ namespace DominioSKD
         private int edadMaxima;
         private char sexo;
         private int idEvento;
+        private String nombreEvento;
 
         private List<Cinta> listaCintas;
-        private List<Evento> listaEvento;
-
-        private DateTime fechaEdadMin;
-        private DateTime fechaEdadMax;
         #endregion
 
         #region Propiedades
@@ -34,6 +31,12 @@ namespace DominioSKD
         {
             get { return descripcion; }
             set { descripcion = value; }
+        }
+
+        public String NombreEvento
+        {
+            get { return nombreEvento; }
+            set { nombreEvento = value; }
         }
 
         public int EdadMinima
@@ -65,24 +68,6 @@ namespace DominioSKD
             get { return listaCintas; }
             set { listaCintas = value; }
         }
-
-        public List<Evento> ListaEvento
-        {
-            get { return listaEvento; }
-            set { listaEvento = value; }
-        }
-
-        public DateTime FechaEdadMinima
-        {
-            get { return fechaEdadMin; }
-            set { fechaEdadMin = value; }
-        }
-
-        public DateTime FechaEdadMaxima
-        {
-            get { return fechaEdadMax; }
-            set { fechaEdadMax = value; }
-        }
         #endregion
 
         #region Constructores
@@ -94,16 +79,13 @@ namespace DominioSKD
             edadMaxima = 0;
             sexo = new char();
             idEvento = 0;
+            nombreEvento = String.Empty;
 
             listaCintas = null;
-            listaEvento = null;
-
-            fechaEdadMin = new DateTime();
-            fechaEdadMax = new DateTime();
 
         }
 
-        public RestriccionEvento(int elId, String laDescripcion, int laEdadMinima, int laEdadMaxima, char elSexo, int elIdEvento, DateTime laFechaEdadMin, DateTime laFechaEdadMax)
+        public RestriccionEvento(int elId, String laDescripcion, int laEdadMinima, int laEdadMaxima, char elSexo, int elIdEvento, String elNombreEvento)
         {
             idRestEvento = elId;
             descripcion = laDescripcion;
@@ -111,12 +93,12 @@ namespace DominioSKD
             edadMaxima = laEdadMaxima;
             sexo = elSexo;
             idEvento = elIdEvento;
+            nombreEvento = elNombreEvento;
             
             listaCintas = null;
-            listaEvento = null;
-
-            fechaEdadMin = laFechaEdadMin;
-            fechaEdadMax = laFechaEdadMax;
+            
+            //DateTime nacimiento = new DateTime(2000, 1, 25);
+            //int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
         }
         #endregion
     }
