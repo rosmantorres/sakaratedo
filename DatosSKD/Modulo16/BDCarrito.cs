@@ -10,6 +10,8 @@ using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
 using ExcepcionesSKD;
 using System.Data.Sql;
 using System.Configuration;
+using ExcepcionesSKD.Modulo16;
+
 
 namespace DatosSKD.Modulo16
 {
@@ -39,14 +41,15 @@ namespace DatosSKD.Modulo16
         public List<Implemento> getImplemento(int idUsuario)
         {
             List<Implemento> laLista = new List<Implemento>();
+            
+            //Creo la lista de los parametros para el stored procedure y los anexo
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                SqlDbType.Int, idUsuario.ToString(), false);
+            parametros.Add(parametro);
+
             try
             {
-                //Creo la lista de los parametros para el stored procedure y los anexo
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
-                    SqlDbType.Int, idUsuario.ToString(), false);
-                parametros.Add(parametro);
-
                 //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
                 BDConexion conexion = new BDConexion();
                 DataTable dt = conexion.EjecutarStoredProcedureTuplas
@@ -92,11 +95,27 @@ namespace DatosSKD.Modulo16
                 //Retorno la lista
                 return laLista;
             }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException();
+            }
             catch (SqlException e)
             {
                 throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
             {
                 throw e;
             }
@@ -115,14 +134,14 @@ namespace DatosSKD.Modulo16
         public List<Evento> getEvento(int idUsuario)
         {
             List<Evento> laLista= new List<Evento>();
+            
+            //Creo la lista de los parametros para el stored procedure y los anexo
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                SqlDbType.Int, idUsuario.ToString(), false);
+            parametros.Add(parametro);
             try
             {
-                //Creo la lista de los parametros para el stored procedure y los anexo
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
-                    SqlDbType.Int, idUsuario.ToString(), false);
-                parametros.Add(parametro);
-
                 //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
                 BDConexion conexion = new BDConexion();
                 DataTable dt = conexion.EjecutarStoredProcedureTuplas
@@ -161,11 +180,27 @@ namespace DatosSKD.Modulo16
                 //Retorno la lista
                 return laLista;
             }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException();
+            }
             catch (SqlException e)
             {
                 throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
             {
                 throw e;
             }
@@ -256,38 +291,55 @@ namespace DatosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool eliminarItem(int tipoObjeto, int objetoBorrar, int idUsuario)
         {
+            
+            //Creo la lista de los parametros para el stored procedure y los anexo
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, SqlDbType.Int, 
+                idUsuario.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
+                objetoBorrar.ToString(), false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, SqlDbType.Int, 
+                tipoObjeto.ToString(), false);
+            parametros.Add(parametro);
+
             //Procedo a intentar eliminar el Item en BD
             try
             {
-                //Creo la lista de los parametros para el stored procedure y los anexo
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, SqlDbType.Int, 
-                    idUsuario.ToString(), false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
-                    objetoBorrar.ToString(), false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, SqlDbType.Int, 
-                    tipoObjeto.ToString(), false);
-                parametros.Add(parametro);
-                
                 //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
                 BDConexion conexion = new BDConexion();
                 conexion.EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM,parametros);
 
                 return true;
             }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException();
+            }
             catch (SqlException e)
             {
-                throw new ExceptionSKDConexionBD("","",e);
+                throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (ParametroInvalidoException e)
             {
                 throw e;
             }
+            catch (ExceptionSKDConexionBD e)
+            {
+                throw e;
+            }
             catch (Exception e)
             {
-                throw new ExceptionSKDConexionBD("blabla","blabla",e);
+                throw new ExceptionSKDConexionBD("blabla", "blabla", e);
             }
         }
             #endregion
@@ -321,11 +373,27 @@ namespace DatosSKD.Modulo16
 
                 return true;
             }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException();
+            }
             catch (SqlException e)
             {
                 throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (ParametroInvalidoException e)
+            {
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
             {
                 throw e;
             }
@@ -386,31 +454,34 @@ namespace DatosSKD.Modulo16
                //Retorno la respuesta
                 return exito;
             }
-
-            catch (ExceptionSKDConexionBD ex)
-            {
-
-                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-
-            }
-
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionParametro,
-                    RecursosBDModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
-                    RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
-                   RecursosBDModulo16.Mensaje_ExcepcionGeneral, ex);
-
-            }            
+           catch (ArgumentNullException e)
+           {
+               throw new ParseoVacioException("bla", "bla", e);
+           }
+           catch (FormatException e)
+           {
+               throw new ParseoFormatoInvalidoException("bla", "bla", e);
+           }
+           catch (OverflowException e)
+           {
+               throw new ParseoEnSobrecargaException("bla","bla",e);
+           }
+           catch (SqlException e)
+           {
+               throw new ExceptionSKDConexionBD("", "", e);
+           }
+           catch (ParametroInvalidoException e)
+           {
+               throw e;
+           }
+           catch (ExceptionSKDConexionBD e)
+           {
+               throw e;
+           }
+           catch (Exception e)
+           {
+               throw new ExceptionSKDConexionBD("blabla", "blabla", e);
+           }       
         }
         
         /// <summary>
@@ -477,6 +548,18 @@ namespace DatosSKD.Modulo16
             {
                 throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
                     RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException();
             }
             catch (Exception ex)
             {
@@ -557,6 +640,22 @@ namespace DatosSKD.Modulo16
                 throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
                     RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
             }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException("bla", "bla", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
+            }
             catch (Exception ex)
             {
                 throw new BDMatriculaException(RecursosBDModulo16.Codigo_ExcepcionGeneral,
@@ -630,6 +729,22 @@ namespace DatosSKD.Modulo16
             {
                 throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
                     RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException("bla", "bla", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (Exception ex)
             {
@@ -706,6 +821,22 @@ namespace DatosSKD.Modulo16
             {
                 throw new AtributoIncorrectoException(RecursosBDModulo16.Codigo_ExcepcionAtributo,
                     RecursosBDModulo16.Mensaje_ExcepcionAtributo, ex);
+            }
+            catch (ArgumentNullException e)
+            {
+                throw new ParseoVacioException("bla", "bla", e);
+            }
+            catch (FormatException e)
+            {
+                throw new ParseoFormatoInvalidoException("bla", "bla", e);
+            }
+            catch (OverflowException e)
+            {
+                throw new ParseoEnSobrecargaException("bla", "bla", e);
+            }
+            catch (SqlException e)
+            {
+                throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (Exception ex)
             {

@@ -65,6 +65,9 @@
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo16\ParseoEnSobrecargaException.cs" />
+    <Compile Include="Modulo16\ParseoFormatoInvalidoException.cs" />
+    <Compile Include="Modulo16\ParseoVacioException.cs" />
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
@@ -78,9 +81,6 @@
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
-    <Folder Include="Modulo1\" />
-    <Folder Include="Modulo2\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo5\" />
