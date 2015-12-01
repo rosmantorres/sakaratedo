@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using templateApp.GUI.Modulo1;
 using templateApp.GUI.Master;
 using LogicaNegociosSKD.Modulo1;
+using LogicaNegociosSKD.Modulo2;
 
 namespace templateApp.GUI.Modulo1
 {
@@ -18,35 +19,61 @@ namespace templateApp.GUI.Modulo1
 
             errorLogin.Visible = false;
             warningLog.Visible = false;
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != ""))
+            infoLog.Visible = false;
+            successLog.Visible = false;
+            string sessionRequest;
+            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != null))
             {
-                if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo]
-                    == RecursosInterfazModulo1.parametroURLCorreoEnviado))
+                sessionRequest = 
+               AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+               (Request.QueryString[RecursosInterfazModulo1.tipoInfo].ToString(), RecursosLogicaModulo2.claveDES);
+
+                if (sessionRequest == RecursosInterfazModulo1.parametroURLCorreoEnviado)
                     mensajeLogin(RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
 
-                else if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo]
-                    == RecursosInterfazModulo1.parametroURLRestablecerCaducado))
-                    mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoInfo);
+                else if (sessionRequest == RecursosInterfazModulo1.parametroURLRestablecerCaducado)
+                    mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoWarning);
                 else
-                    infoLog.Visible = false;
+                    warningLog.Visible = false;
             }
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoSucess] 
-                == RecursosInterfazModulo1.parametroURLReestablecerExito))
-                mensajeLogin( RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
-            else
-                successLog.Visible = false;
-
+            if (Request.QueryString[RecursosInterfazModulo1.tipoSucess] != null)
+            {
+                sessionRequest = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+                 (Request.QueryString[RecursosInterfazModulo1.tipoSucess].ToString(), RecursosLogicaModulo2.claveDES);
+                if (sessionRequest == RecursosInterfazModulo1.parametroURLReestablecerExito)
+                    mensajeLogin(RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
+                else
+                    successLog.Visible = false;
+            }
         }
-
+        /// <summary>
+        /// Metodo que envia 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void EnvioCorreo(object sender, EventArgs e)
         {
 
             EnviarCorreo();
         }
+
+        /// <summary>
+        /// Metodo resultante de accionar el acceder realiza la conexion con LogicaNegocioSKD para validar los input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
-
-            consultarUsuario();
+            List<String> campos=new List<String>();
+            campos.Add(userIni.Value);
+            campos.Add(passwordIni.Value);
+            logicaLogin validarLogin = new logicaLogin();
+           if(validarLogin.ValidarCamposVacios(campos) && 
+              validarLogin.ValidarCaracteres(userIni.Value,true) &&
+              validarLogin.ValidarCaracteres(passwordIni.Value,false))
+                    consultarUsuario();
+           else
+                    mensajeLogin(RecursosInterfazModulo1.logCaracterInvalidos,RecursosInterfazModulo1.tipoErr);
         }
         /// <summary>
         /// Metodo para Establecer un mensaje de alerta en el login
@@ -89,17 +116,16 @@ namespace templateApp.GUI.Modulo1
         /// </summary>
         public void EnviarCorreo()
         {
-            //BD:Todo esto sera traido de la base de datos 
-            
-            //BD:End
             String CorreoDestino= RestablecerCorreo.Value;
             try
             {
-               // mensajeLogin( RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
                 new logicaLogin().EnviarCorreo(CorreoDestino);
+                string value= AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                 (RecursosInterfazModulo1.parametroURLCorreoEnviado,RecursosLogicaModulo2.claveDES);
+
                 Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                     + RecursosInterfazModulo1.tipoInfo + "=" +
-                    RecursosInterfazModulo1.parametroURLCorreoEnviado);
+                    value);
             }
             catch (Exception e)
             {
@@ -114,22 +140,29 @@ namespace templateApp.GUI.Modulo1
         }
         public void consultarUsuario()
         {
-            string correo = userIni.Value;
-            string clave = passwordIni.Value;
-            string[] Respuesta = new logicaLogin().iniciarSesion(correo, clave);
-            if (Respuesta != null)
+            try
             {
-                Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];
-                Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[1];
-                Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
-                Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
-                Session[RecursosInterfazMaster.sessionImagen] = Respuesta[4];
-                Session[RecursosInterfazMaster.sessionNombreCompleto] = Respuesta[5];
-                Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
-                mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+                string correo = userIni.Value;
+                string clave = passwordIni.Value;
+                string[] Respuesta = new logicaLogin().iniciarSesion(correo, clave);
+                if (Respuesta != null)
+                {
+                    Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];
+                    Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[1];
+                    Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
+                    Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
+                    Session[RecursosInterfazMaster.sessionImagen] = Respuesta[4];
+                    Session[RecursosInterfazMaster.sessionNombreCompleto] = Respuesta[5];
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
+                    mensajeLogin(RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+                }
+                else
+                    mensajeLogin(RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
             }
-            else
-                mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+            catch (Exception ex)
+            {
+                mensajeLogin(ex.Message, RecursosInterfazModulo1.tipoErr);
+            }
         }
            
     }

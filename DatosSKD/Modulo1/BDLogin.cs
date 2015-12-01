@@ -13,18 +13,28 @@ namespace DatosSKD.Modulo1
 {
     public class BDLogin
     {
-        public static Cuenta ObtenerUsuario(string nombre_usuario)
+        /// <summary>
+        /// Se hace la conexion a la base de datos para obtener los datos del usuario y llenar el objeto Cuenta
+        /// </summary>
+        /// <param name="nombre_usuario">Nombre de usuario</param>
+        /// <returns>retorna un objeto tipo Cuenta</returns>
+        public Cuenta ObtenerUsuario(string nombre_usuario)
         {
             BDConexion laConexion;//COnsultar la persona
             BDConexion laConexion2;//Consultar los roles de la persona
+            BDConexion laConexion3;//Crea el objeto PERSONA
             List<Parametro> parametros;
+            List<Parametro> parametros2;
             Parametro elParametro = new Parametro();
 
             try
             {
                 laConexion = new BDConexion();
                 laConexion2 = new BDConexion();
+                laConexion3 = new BDConexion();
                 parametros = new List<Parametro>();
+                parametros2 = new List<Parametro>();
+                string idUsuario="0";
                 Cuenta laCuenta = new Cuenta();
 
 
@@ -39,14 +49,16 @@ namespace DatosSKD.Modulo1
 
                 foreach (DataRow row in dt.Rows)
                 {
-
-                    laCuenta.Id_usuario = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
                     laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
                     laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();
                     laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString();
-                    laCuenta.NombreDePila = row[RecursosBDModulo1.AliasNombreDePila].ToString();
+                    idUsuario = row[RecursosBDModulo1.AliasIdUsuario].ToString();
         
                 }
+
+
+
+                //Llenar el usuario
 
                DataTable dt1 = laConexion2.EjecutarStoredProcedureTuplas(
                RecursosBDModulo1.ConsultarRolesUsuario, parametros);
@@ -63,6 +75,23 @@ namespace DatosSKD.Modulo1
                }
 
                laCuenta.Roles = listaRol;
+
+
+               elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int,idUsuario, false);
+               parametros2.Add(elParametro);
+               DataTable dt2 = laConexion3.EjecutarStoredProcedureTuplas(
+                               RecursosBDModulo1.consultarPersona,parametros2);
+
+               PersonaM1 laPersona = new PersonaM1();
+               foreach (DataRow row in dt2.Rows)
+               {
+
+                   laPersona._Id = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
+                   laPersona._Nombre = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
+                   laPersona._Apellido = row[RecursosBDModulo1.aliasApellidoUsuario].ToString();
+               }
+               laCuenta.PersonaUsuario = laPersona;
+
                 return laCuenta;
 
             }
@@ -87,8 +116,12 @@ namespace DatosSKD.Modulo1
 
         }
 
-
-        public static String ValidarCorreoUsuario(string correo_usuario)
+        /// <summary>
+        /// Se hace la conexion a la base de datos para validar si el correo se encuentra asociado a mas usuarios del sistema
+        /// </summary>
+        /// <param name="correo_usuario">Correo del usuario</param>
+        /// <returns>retorna un objeto tipo Cuenta</returns>
+        public  String ValidarCorreoUsuario(string correo_usuario)
         {
 
             BDConexion laConexion;

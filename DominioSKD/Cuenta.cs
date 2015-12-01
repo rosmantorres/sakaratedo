@@ -9,20 +9,15 @@ namespace DominioSKD
     public class Cuenta
     {
         #region atributos
-        private int id_usuario;
         private String nombre_usuario;
         private String contrasena;
+        private PersonaM1 personaUsuario;
         private List<Rol> roles;
         private String imagen;
-        private String nombreDePila;
         #endregion
 
         #region propiedades
-        public int Id_usuario
-        {
-            get { return id_usuario; }
-            set { id_usuario = value; }
-        }
+ 
 
         public String Nombre_usuario
         {
@@ -47,39 +42,34 @@ namespace DominioSKD
             get { return roles; }
             set { roles = value; }
         }
-
-        public String NombreDePila
+        public PersonaM1 PersonaUsuario
         {
-            get { return nombreDePila; }
-            set { nombreDePila = value; }
+            get { return personaUsuario; }
+            set { personaUsuario = value; }
         }
         #endregion
-
         #region constructores
         public Cuenta()
         {
-            id_usuario = 0;
             nombre_usuario = "";
             contrasena = "";
             imagen = "";
-            nombreDePila = "";
+            personaUsuario = new PersonaM1();
         }
 
-         public Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena, String laImagen,string elNombreDePila)
+         public Cuenta(PersonaM1 Usuario, String elNombreUsuario, String laContrasena, String laImagen,string elNombreDePila)
         {
-            id_usuario = elIdUsuario;
+            personaUsuario = Usuario;
             nombre_usuario = elNombreUsuario;
             contrasena = laContrasena;
             imagen = laImagen;
-            nombreDePila = elNombreDePila;
         }
-         public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen, string elNombreDePila)
+         public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen)
          {
              nombre_usuario = elNombreUsuario;
              contrasena = laContrasena;
              roles = listaRoles;
              imagen = laImagen;
-             nombreDePila=elNombreDePila;
          }
 
         #endregion

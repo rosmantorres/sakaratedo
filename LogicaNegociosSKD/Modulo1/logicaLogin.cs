@@ -70,7 +70,7 @@ namespace LogicaNegociosSKD.Modulo1
                 Console.Write(e.ToString());
                 Console.Write(e.Data.ToString());
                 Console.Write(e.Message);
-                throw  e;
+                throw e;
             }
         }
 
@@ -79,7 +79,9 @@ namespace LogicaNegociosSKD.Modulo1
             String respuesta;
             try
             {
-               respuesta= DatosSKD.Modulo1.BDLogin.ValidarCorreoUsuario(Destino);
+
+                BDLogin conexionBD = new BDLogin();
+               respuesta= conexionBD.ValidarCorreoUsuario(Destino);
             }
             catch (Exception e)
             {
@@ -98,15 +100,17 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                Cuenta user= BDLogin.ObtenerUsuario(usuario);
+
+                BDLogin conexionBD = new BDLogin();
+                Cuenta user= conexionBD.ObtenerUsuario(usuario);
                 string[] respuesta = new string[6];
                string hashClave =AlgoritmoDeEncriptacion.hash(contraseña);
                if (hashClave == user.Contrasena && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
-                   respuesta[0] = user.Id_usuario.ToString();
+                   respuesta[0] = user.PersonaUsuario._Id.ToString();
                    respuesta[1] = user.Nombre_usuario;
                    respuesta[4] = user.Imagen;
-                   respuesta[5] = user.NombreDePila;
+                   respuesta[5] = user.PersonaUsuario._Nombre+' '+user.PersonaUsuario._Apellido ;
                    string rolesConcat = "";
                    string split= RecursosLogicaModulo1.splitRoles;
                    int cantRoles=user.Roles.Count;
@@ -134,7 +138,7 @@ namespace LogicaNegociosSKD.Modulo1
                    if (rolesConcat != "")
                        return respuesta;
                    else
-                       return null;
+                       throw new Exception(RecursosLogicaModulo1.Mensaje_Error_Roles); ;
                    //ingresó a sistema
                }
 
@@ -146,9 +150,55 @@ namespace LogicaNegociosSKD.Modulo1
 
                 Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
                 Console.WriteLine("Mensaje: " + e.Message);
-                return null;
-                //throw e;
+                throw e;
             }
+        }
+
+
+
+        /// <summary>
+        /// Metodo que valida los carácteres ingresados en el lógin
+        /// </summary>
+        /// <param name="cadena">Cadena a validar</param>
+        /// <param name="userName">¿Nombre de usuario?</param>
+        /// <returns>True:Cumple con los parametros;False:No cumple.</returns>
+        public bool ValidarCaracteres(String cadena,bool userName)
+        {
+            String comparar;
+            if(userName)
+                comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_.";
+            else
+                comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .";
+            for (int i = 0; i < cadena.Length; i++)
+            {
+                Boolean resultado = comparar.Contains(cadena[i]);
+                if (resultado != true)
+                    return resultado;
+            }
+
+                return true;
+
+        }
+
+
+        ///<sumary>
+        ///Metodo que se encarga de validar si los datos de la lista alguno de ellos esta vacio  
+        ///</sumary>
+        ///<param name="datos">Lista de String con los datos a validar</param>
+        ///<returns>true, sin ningun dato en la lista esta vacio
+        ///         false, si al menos un dato es igual a vacio</returns>
+        public  bool ValidarCamposVacios(List<String> datos)
+        {
+            String caracterVacio = "";
+
+            for (int i = 0; i < datos.Count; i++)
+            {
+                if (datos[i].Equals(caracterVacio))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

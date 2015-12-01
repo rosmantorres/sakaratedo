@@ -18,6 +18,7 @@ namespace DominioSKD
         private String logo_dojo;
         private DateTime registro_dojo;
         private String status_dojo;
+        private String orgNombre_dojo;
         private int organizacion_dojo;
         private Ubicacion ubicacion;
         #endregion
@@ -30,7 +31,13 @@ namespace DominioSKD
 
             set { registro_dojo = value; }
         }
-        
+
+        public int Dojo_Id
+        {
+            get { return id_dojo; }
+            set { id_dojo = value; }
+        }
+      
         public int Id_dojo
         {
             get { return id_dojo; }
@@ -39,11 +46,10 @@ namespace DominioSKD
 
         public String Status_dojo
         {
-            get { return status_dojo; }
-            set { status_dojo = value; }
+            get { return orgNombre_dojo; }
+            set { orgNombre_dojo = value; }
         }
-       
-       
+
         public int Telefono_dojo
         {
             get { return telefono_dojo; }
@@ -54,6 +60,11 @@ namespace DominioSKD
         {
             get { return rif_dojo; }
             set { rif_dojo = value; }
+        }
+        public String OrgNombre_dojo
+        {
+            get { return orgNombre_dojo; }
+            set { orgNombre_dojo = value; }
         }
         public int Organizacion_dojo
         {
@@ -96,7 +107,7 @@ namespace DominioSKD
             this.telefono_dojo = 0;
             this.email_dojo = "";
             this.logo_dojo = "";
-            this.status_dojo = "";
+            this.orgNombre_dojo = "";
             this.organizacion_dojo = 0;
             this.ubicacion = null;
         }
@@ -110,7 +121,7 @@ namespace DominioSKD
             this.telefono_dojo = Telefono;
             this.email_dojo = Email;
             this.logo_dojo = Logo;
-            this.status_dojo = Status;
+            this.orgNombre_dojo = Status;
             this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
         }
@@ -122,11 +133,24 @@ namespace DominioSKD
             this.telefono_dojo = Telefono;
             this.email_dojo = Email;
             this.logo_dojo = Logo;
-            this.status_dojo = Status;
+            this.orgNombre_dojo = Status;
             this.organizacion_dojo = organizacion;
             this.ubicacion = ubicacion;
         }
+        public Dojo(string Rif, string Nombre, int Telefono, string Email, string Logo, String Status, int organizacion, string nombreOrg, Ubicacion ubicacion)
+        {
+            this.rif_dojo = Rif;
+            this.nombre_dojo = Nombre;
+            this.telefono_dojo = Telefono;
+            this.email_dojo = Email;
+            this.logo_dojo = Logo;
+            this.orgNombre_dojo = Status;
+            this.organizacion_dojo = organizacion;
+            this.ubicacion = ubicacion;
+            this.orgNombre_dojo = nombreOrg;
+        }
         #endregion
+
         public Dojo(int id_dojo)
         {
             this.id_dojo = id_dojo;

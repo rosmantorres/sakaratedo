@@ -61,6 +61,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a apellido_usuario.
+        /// </summary>
+        internal static string aliasApellidoUsuario {
+            get {
+                return ResourceManager.GetString("aliasApellidoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a contrasena.
         /// </summary>
         internal static string AliasContrasena {
@@ -174,6 +183,15 @@ namespace DatosSKD.Modulo1 {
         internal static string ConsultarNombreUsuarioContrasena {
             get {
                 return ResourceManager.GetString("ConsultarNombreUsuarioContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M1_ConsultarPersona_ID.
+        /// </summary>
+        internal static string consultarPersona {
+            get {
+                return ResourceManager.GetString("consultarPersona", resourceCulture);
             }
         }
         

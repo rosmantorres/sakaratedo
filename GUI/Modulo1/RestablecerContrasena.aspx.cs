@@ -13,6 +13,7 @@ namespace templateApp.GUI.Modulo1
     {
         
         string IdUser = "";
+        string value;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -25,12 +26,16 @@ namespace templateApp.GUI.Modulo1
                 fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString,
                     RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
-                if ((fecha.Date.Year != fechaActual.Date.Year) || 
+                if ((fecha.Date.Year != fechaActual.Date.Year) ||
                     (fecha.Date.Month != fechaActual.Date.Month) ||
                     (fecha.Date.Day != fechaActual.Date.Day))
+                {
+                     value=AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                        (RecursosInterfazModulo1.parametroURLRestablecerCaducado, RecursosLogicaModulo2.claveDES);
+
                     Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
-                       + RecursosInterfazModulo1.tipoErr + "=" +
-                       RecursosInterfazModulo1.logErrRestablecer);
+                       + RecursosInterfazModulo1.tipoInfo + "=" +value);
+                }
 
 
                 string idUsuario = Request.QueryString[RecursosLogicaModulo1.variableRestablecer].ToString();
@@ -49,12 +54,32 @@ namespace templateApp.GUI.Modulo1
                 string pass1 = password3.Value;
                 string pass2 = password4.Value;
                 logicaRestablecer Restablecer = new logicaRestablecer();
-                if (pass1 != "" && pass1 == pass2 && pass1.Length > 7 && IdUser != "")
+                if (pass1 != "" && pass1 == pass2
+                    && pass1.Length > 7 && IdUser != ""
+                    && Restablecer.ValidarCaracteres(pass1))
                 {
+
                     if (Restablecer.restablecerContrasena(IdUser, pass1))
+                    {
+                        value = AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                           (RecursosInterfazModulo1.parametroURLReestablecerExito, RecursosLogicaModulo2.claveDES);
                         Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
-                            + RecursosInterfazModulo1.tipoSucess + "=" +
-                            RecursosInterfazModulo1.parametroURLReestablecerExito);
+                            + RecursosInterfazModulo1.tipoSucess + "=" + value);
+                    }
+
+                }
+                else if (!Restablecer.ValidarCaracteres(pass1))
+                {
+                    warningCaracteres.Visible = true;
+                    warningCaracteres.InnerText = RecursosInterfazModulo1.logCaracterInvalidos;
+                    infoRestablecer.Visible = false;
+                }
+                else
+                {
+                    infoRestablecer.Visible = true;
+                    warningCaracteres.Visible = false;
+                    warningCaracteres.InnerText = "";
+
                 }
                
             }
