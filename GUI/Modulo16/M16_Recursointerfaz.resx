@@ -165,6 +165,9 @@
   <data name="BOTON_INFO_EVENTO" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info1"  id="</value>
   </data>
+  <data name="BOTON_INFO_EVENTO_CARRITO" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info2"  id="</value>
+  </data>
   <data name="BOTON_INFO_PRODUCTO" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info1"  id="</value>
   </data>

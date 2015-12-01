@@ -196,6 +196,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;   data-toggle=&quot;modal&quot; data-target=&quot;#modal-info2&quot;  id=&quot;.
+        /// </summary>
+        internal static string BOTON_INFO_EVENTO_CARRITO {
+            get {
+                return ResourceManager.GetString("BOTON_INFO_EVENTO_CARRITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;   data-toggle=&quot;modal&quot; data-target=&quot;#modal-info1&quot;  id=&quot;.
         /// </summary>
         internal static string BOTON_INFO_PRODUCTO {
