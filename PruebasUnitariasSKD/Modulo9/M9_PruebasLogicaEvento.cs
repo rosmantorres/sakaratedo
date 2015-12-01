@@ -18,22 +18,27 @@ namespace PruebasUnitariasSKD.Modulo9
         [SetUp]
         public void Init()
         {
+
             DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
             DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
             Horario horario = new Horario(1, fechaInicio, fechaFin, 10, 11);
             Categoria categoria = new Categoria(15, 16, "verde", "amarillo", "masculino");
             TipoEvento tipoEvento = new TipoEvento(1, "Pase de Cinta");
             Ubicacion ubicacion = new Ubicacion("10.499607", "66.788419", "Caracas", "Miranda", "NULL");
+            Persona persona = new Persona();
+            categoria.Id_categoria = 1;
+            persona.ID = 33;
             ubicacion.Id_ubicacion = 1;
             elEvento = new Evento();
-            elEvento.Nombre = "Prueba Unitaria Logica/ Evento";
-            elEvento.Descripcion = "Pruebas Unitarias Logica Evento";
+            elEvento.Nombre = "Prueba Unitaria Desde Logica de Negocios";
+            elEvento.Descripcion = "Pruebas Unitarias Logica de Negocios";
             elEvento.Costo = 55;
             elEvento.Estado = true;
             elEvento.Categoria = categoria;
             elEvento.Horario = horario;
             elEvento.Ubicacion = ubicacion;
             elEvento.TipoEvento = tipoEvento;
+            elEvento.Persona = persona;
         }
 
         [TearDown]
