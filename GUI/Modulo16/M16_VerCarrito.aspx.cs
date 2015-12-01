@@ -117,13 +117,13 @@ namespace templateApp.GUI.Modulo16
             Logicacarrito logicaCarrito = new Logicacarrito();
             carritoCompras = logicaCarrito.verCarrito(1);
 
-            //Recorro La lista de los inventarios en el carrito para anexarlas al GRIDVIEW
+            //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
             foreach (Implemento implemento in carritoCompras.ListaImplemento)
             {
                 //Creo la fila de la tabla
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + implemento.Id_Implemento +">";
 
-                //Agrego los datos correspondientes de la tabla con sus botones
+                //Agrego los datos correspondientes de la tabla
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
                     M16_Recursointerfaz.CERRAR_TD;
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Nombre_Implemento + 
@@ -138,7 +138,7 @@ namespace templateApp.GUI.Modulo16
                 //Agrego los botones
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                //Arreglar el boton info
+                //ARREGLAR BOTON INFO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + implemento.Id_Implemento+ 
                     M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO + implemento.Id_Implemento +

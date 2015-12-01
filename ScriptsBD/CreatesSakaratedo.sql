@@ -381,6 +381,7 @@ CREATE
     mat_fecha_creacion DATETIME NOT NULL ,
     mat_activa BIT NOT NULL ,
     mat_fecha_ultimo_pago DATETIME NOT NULL ,
+    mat_precio            INTEGER NOT NULL,
     PERSONA_per_id        INTEGER NOT NULL ,
     DOJO_doj_id           INTEGER NOT NULL ,
     CONSTRAINT MATRICULA_PK PRIMARY KEY CLUSTERED (mat_id, PERSONA_per_id,
@@ -602,13 +603,7 @@ WITH
   )
   ON "default"
 GO
-CREATE UNIQUE NONCLUSTERED INDEX
-RESTRICCION_CINTA__IDXv1 ON RESTRICCION_CINTA
-(
-  CINTA_cin_id
-)
-ON "default"
-GO
+
 
 CREATE
   TABLE RESTRICCION_COMPETENCIA

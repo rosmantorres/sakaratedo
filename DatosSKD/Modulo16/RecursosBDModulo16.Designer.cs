@@ -349,11 +349,20 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @idImplemento.
+        ///   Looks up a localized string similar to idImplemento.
         /// </summary>
         internal static string PARAMETRO_IDIMPLEMENTO {
             get {
                 return ResourceManager.GetString("PARAMETRO_IDIMPLEMENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idImplemento.
+        /// </summary>
+        internal static string PARAMETRO_IDIMPLEMENTO2 {
+            get {
+                return ResourceManager.GetString("PARAMETRO_IDIMPLEMENTO2", resourceCulture);
             }
         }
         
@@ -493,6 +502,24 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_AGREGAR_EVENTO_CARRITO.
+        /// </summary>
+        internal static string PROCEDIMIENTO_AGREGAR_EVENTO_CARRITO {
+            get {
+                return ResourceManager.GetString("PROCEDIMIENTO_AGREGAR_EVENTO_CARRITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_AGREGAR_MATRICULA_CARRITO.
+        /// </summary>
+        internal static string PROCEDIMIENTO_AGREGAR_MATRICULA_CARRITO {
+            get {
+                return ResourceManager.GetString("PROCEDIMIENTO_AGREGAR_MATRICULA_CARRITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_CONSULTAR_EVENTO_ID.
         /// </summary>
         internal static string PROCEDIMIENTO_CONSULTAR_EVENTO_ID {
@@ -534,6 +561,15 @@ namespace DatosSKD.Modulo16 {
         internal static string PROCEDIMIENTO_MATRICULAS_PAGADAS {
             get {
                 return ResourceManager.GetString("PROCEDIMIENTO_MATRICULAS_PAGADAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_MODIFICAR_CANTIDAD_IMPLEMENTO.
+        /// </summary>
+        internal static string PROCEDIMIENTO_MODIFICAR_CANTIDAD_IMPLEMENTO {
+            get {
+                return ResourceManager.GetString("PROCEDIMIENTO_MODIFICAR_CANTIDAD_IMPLEMENTO", resourceCulture);
             }
         }
         
@@ -583,7 +619,7 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M16_agregarImplementoaCarrito.
+        ///   Looks up a localized string similar to M16_AGREGAR_IMPLEMENTO_CARRITO.
         /// </summary>
         internal static string StoreProcedureAgregarinventarioaCarrito {
             get {
