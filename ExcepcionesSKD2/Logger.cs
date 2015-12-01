@@ -5,7 +5,7 @@ using System.Text;
 using log4net;
 using log4net.Config;
 using System.Threading.Tasks;
-using ExcepcionesSKD;
+
 
 namespace ExcepcionesSKD
 {
@@ -51,9 +51,10 @@ namespace ExcepcionesSKD
             {
                 XmlConfigurator.Configure();
                 ILog log = LogManager.GetLogger(clase);
-                log.Error("*******************************************************");
-                log.Error("Mensaje: " + mensaje);
-                log.Error("Metodo: " + metodo);
+                log.Info("*******************************************************");
+                log.Info("Clase: " + clase);
+                log.Info("Mensaje: " + mensaje);
+                log.Info("Metodo: " + metodo);
             }
             else
             {
@@ -76,9 +77,10 @@ namespace ExcepcionesSKD
             {
                 XmlConfigurator.Configure();
                 ILog log = LogManager.GetLogger(clase);
-                log.Error("*******************************************************");
-                log.Error("Mensaje: " + mensaje);
-                log.Error("Metodo: " + metodo);
+                log.Warn("*******************************************************");
+                log.Warn("Clase: " + clase);
+                log.Warn("Mensaje: " + mensaje);
+                log.Warn("Metodo: " + metodo);
             }
             else
             {

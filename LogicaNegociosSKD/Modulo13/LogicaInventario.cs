@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 using DatosSKD;
+using System.Data;
+using ExcepcionesSKD.Modulo15;
+using ExcepcionesSKD;
+
 namespace LogicaNegociosSKD.Modulo13
 {
      class LogicaInformacionProducto
@@ -24,12 +28,15 @@ namespace LogicaNegociosSKD.Modulo13
 
         #region listarimplementos
 
-        public List<Implemento> listarimplementos()
+        public DataTable L_Inventario()
         {
+            DataTable tabla;
 
             try
             {
-                listaImplementos = BD.listarInventarioDatos(dojo);
+                
+                tabla = DatosSKD.Modulo13.BDimplementos.D_Inventario;
+                   
             }
 
             catch (ExceptionSKDConexionBD ex)
@@ -48,7 +55,7 @@ namespace LogicaNegociosSKD.Modulo13
 
                 throw ex;
             }
-            return listaImplementos;
+            return tabla;
         }
         
         

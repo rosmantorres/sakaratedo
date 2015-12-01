@@ -15,7 +15,7 @@ namespace DatosSKD.Modulo13
         
         #region Listar Implementarios
 
-        public static List<Implemento> listarImplementos()
+        public static DataTable D_Inventario()
         {
             BDConexion laConexion;
             List<Implemento> listaDeImplementos = new List<Implemento>();
@@ -37,8 +37,8 @@ namespace DatosSKD.Modulo13
                     throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
                         RecursosBDModulo15.tabla_dojoImplemento, new Exception());
                 */
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas("", null);
-
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas("M13_inventario", null);
+/*
                 foreach (DataRow row in dt.Rows)
                 {
                     Implemento implemento = new Implemento();
@@ -70,8 +70,8 @@ namespace DatosSKD.Modulo13
             {
                 throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
             }
-
-            return listaDeImplementos;
+                */
+            return dt;
 
         }
         #endregion

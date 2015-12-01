@@ -38,8 +38,10 @@
      <tbody>
 
           <% 
-              LogicaNegociosSKD.Modulo13.= new DominioSKD.Dojo(1);
-                       imprimirLista(dojo); 
+              
+              LogicaNegociosSKD.Modulo13.LogicaInventario inventario = new LogicaNegociosSKD.Modulo13.LogicaInventario();
+              System.Data.DataTable tabla = inventario.L_Inventario();
+                       
              %>
 
               <tr>	
