@@ -68,12 +68,6 @@
                      runat="server">
                  <ContentTemplate>
                  <asp:DropDownList ID="comboDatos" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboDatos_SelectedIndexChanged">
-                     <asp:ListItem Text="DOJO" Value="DOJO"/>
-                     <asp:ListItem Text="PERSONA" Value="PERSONA" />
-                     <asp:ListItem Text="MATRICULA" Value="MATRICULA"  />
-                     <asp:ListItem Text="EVENTO" Value="EVENTO" />
-                     <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
-                     <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
                  </asp:DropDownList>
                  <br />             
                  <asp:Label id="campos" Text="" runat="server" />
