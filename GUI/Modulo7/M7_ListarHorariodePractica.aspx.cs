@@ -25,7 +25,7 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-            String detalleString = Request.QueryString["eventDetalle"];
+            String detalleString = Request.QueryString["horarioDetalle"];
 
             if (detalleString != null)
             {

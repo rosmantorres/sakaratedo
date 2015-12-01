@@ -24,7 +24,7 @@ namespace templateApp.GUI.Modulo7
         {
              ((SKD)Page.Master).IdModulo = "7";
 
-             String detalleString = Request.QueryString["compDetalle"];
+             String detalleString = Request.QueryString["OrgDojoDetalle"];
 
              if (!IsPostBack) // verificar si la pagina se muestra por primera vez
              {
