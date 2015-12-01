@@ -253,4 +253,16 @@
     <value>M9_TodosLosTiposEvento</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ParametroNombreTipoEvento" xml:space="preserve">
+    <value>@nombreTipoEvento</value>
+    <comment>Nombre tipo Evento</comment>
+  </data>
+  <data name="ProcedimientoAgregarEventoConTipo" xml:space="preserve">
+    <value>M9_AgregarEventoConTipo</value>
+    <comment>Nombre del SP a Ejecutar</comment>
+  </data>
+  <data name="ProcedimientoModificarEvento" xml:space="preserve">
+    <value>M9_ModificarEvento</value>
+    <comment>Nombre del SP a Ejecutar</comment>
+  </data>
 </root>
