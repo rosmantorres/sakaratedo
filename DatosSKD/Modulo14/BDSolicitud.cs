@@ -165,5 +165,123 @@ namespace DatosSKD.Modulo14
                 con.Desconectar(conect);
             }
         }
+
+        /// <summary>
+        /// Registra una solicitud de planilla en la base de datos
+        /// </summary>
+        /// <param name="">La solicitud</param>
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
+
+        public Boolean RegistrarSolicitudPlanillaBD(SolicitudP laSolicitud)
+        {
+
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroFechaRetiro,
+                SqlDbType.VarChar, laSolicitud.FechaRetiro.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroFechaReincorporacion,
+                SqlDbType.VarChar, laSolicitud.FechaReincorporacion.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroMotivo,
+                SqlDbType.VarChar, laSolicitud.Motivo, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroPlanillaID,
+                SqlDbType.VarChar, laSolicitud.IDPlanilla.ToString(), false);
+                parametros.Add(parametro);
+                string query = RecursosBDModulo14.ProcedimientoAgregarSolicitud;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
+
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Obtiene los eventos de una inscripcion
+        /// </summary>
+        /// /// <param name="">id persona</param>
+        /// <returns>eventos de una inscripcion</returns>
+        public  List<String> ObtenerEventosSolicitud(int idPersona)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+            List<String> listDatos = new List<String>();
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                
+                parametro = new Parametro(RecursosBDModulo14.ParametroPersonaPerId,
+                SqlDbType.VarChar, idPersona.ToString(), false);
+                parametros.Add(parametro);
+
+                DataTable resultadoConsulta = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo14.ProcedureConsultarEventoSolicitud, parametros);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listDatos.Add(row[RecursosBDModulo14.AtributoEventoNombre].ToString());
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return listDatos;
+        }
+
+        /// <summary>
+        /// Obtiene los eventos de una inscripcion
+        /// </summary>
+        /// /// <param name="">id persona</param>
+        /// <returns>eventos de una inscripcion</returns>
+        public List<String> ObtenerCompetenciaSolicitud(int idPersona)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+            List<String> listDatos = new List<String>();
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroPersonaPerId,
+                SqlDbType.VarChar, idPersona.ToString(), false);
+                parametros.Add(parametro);
+
+                DataTable resultadoConsulta = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo14.ProcedimientoConsultarCompeteniaSolicitud, parametros);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listDatos.Add(row[RecursosBDModulo14.AtributoCompetenciaNombre].ToString());
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return listDatos;
+        }
     }
 }

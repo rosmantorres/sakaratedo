@@ -298,4 +298,32 @@
   <data name="ProcedureConsultarPlanillasASolicitar" xml:space="preserve">
     <value>M14_ConsultarPlanillasASolicitar</value>
   </data>
+  <data name="ParametroFechaReincorporacion" xml:space="preserve">
+    <value>@sol_pla_fecha_reincorporacion</value>
+  </data>
+  <data name="ParametroFechaRetiro" xml:space="preserve">
+    <value>@sol_pla_fecha_retiro</value>
+  </data>
+  <data name="ParametroMotivo" xml:space="preserve">
+    <value>@sol_pla_motivo</value>
+  </data>
+  <data name="ParametroPlanillaID" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ProcedimientoAgregarSolicitud" xml:space="preserve">
+    <value>M14_ProcedureAgregarSolicitud</value>
+    <comment>procedimiento para agregar una solicitud</comment>
+  </data>
+  <data name="AtributoEventoID" xml:space="preserve">
+    <value>eve_id</value>
+  </data>
+  <data name="ParametroIdInscripcion" xml:space="preserve">
+    <value>@INSCRIPCION_ins_id</value>
+  </data>
+  <data name="ProcedimientoConsultarCompeteniaSolicitud" xml:space="preserve">
+    <value>M14_ConsultaCompetenciaSolicitud</value>
+  </data>
+  <data name="ProcedureConsultarEventoSolicitud" xml:space="preserve">
+    <value>M14_ConsultaEventoSolicitud</value>
+  </data>
 </root>
