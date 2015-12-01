@@ -13,6 +13,9 @@ using ExcepcionesSKD.Modulo7;
 
 namespace DatosSKD.Modulo7
 {
+    /// <summary>
+    /// Clase para el manejo de los objetos tipo Cinta con la Base de Datos
+    /// </summary>
     public class BDCinta
     {
         /// <summary>
@@ -21,6 +24,9 @@ namespace DatosSKD.Modulo7
         /// <returns>Lista de cintas</returns>
         public List<Cinta> ListarCintasObtenidas(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -32,7 +38,6 @@ namespace DatosSKD.Modulo7
                 {
                     laConexion = new BDConexion();
                     parametros = new List<Parametro>();
-
                     elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
                     parametros.Add(elParametro);
 
@@ -48,36 +53,53 @@ namespace DatosSKD.Modulo7
                         cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
                         cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
                         cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
-
                         laListaDeCintas.Add(cinta);
                     }
                 }
                 else
                 {
-                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
-                return laListaDeCintas;
+                
 
 
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (NumeroNoEnteroInvalidoException ex)
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return laListaDeCintas;
         }
 
         /// <summary>
@@ -87,6 +109,9 @@ namespace DatosSKD.Modulo7
         /// <returns>Objeto de tipo Cinta</returns>
         public Cinta DetallarCinta(int idCinta)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -108,40 +133,53 @@ namespace DatosSKD.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-
                         cinta.Id_cinta = int.Parse(row[RecursosBDModulo7.AliasIdCinta].ToString());
                         cinta.Color_nombre = row[RecursosBDModulo7.AliasCintaNombre].ToString();
                         cinta.Rango = row[RecursosBDModulo7.AliasCintaRango].ToString();
                         cinta.Clasificacion = row[RecursosBDModulo7.AliasCintaClasificacion].ToString();
                         cinta.Significado = row[RecursosBDModulo7.AliasCintaSignificado].ToString();
                         cinta.Orden = int.Parse(row[RecursosBDModulo7.AliasCintaOrden].ToString());
-
                     }
                 }
                 else
                 {
-                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
-                return cinta;
+                
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (NumeroNoEnteroInvalidoException ex)
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return cinta;
         }
 
         /// <summary>
@@ -151,6 +189,9 @@ namespace DatosSKD.Modulo7
         /// <returns>Objeto de tipo Cinta</returns>
         public Cinta UltimaCinta(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -183,30 +224,42 @@ namespace DatosSKD.Modulo7
                 }
                 else
                 {
-                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
-
-                return cinta;
-
+              
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (NumeroNoEnteroInvalidoException ex)
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return cinta;
         }
 
         /// <summary>
@@ -215,7 +268,8 @@ namespace DatosSKD.Modulo7
         /// <returns>Fecha de inscripción</returns>
         public DateTime fechaCinta(int idPersona, int idCinta)
         {
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametroPersona = new Parametro();
@@ -245,30 +299,43 @@ namespace DatosSKD.Modulo7
                 }
                 else
                 {
-                    throw new NumeroNoEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
                 }
-
-                return fechaCinta;
-
+                             
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (NumeroNoEnteroInvalidoException ex)
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return fechaCinta;
         }
     }
 }
