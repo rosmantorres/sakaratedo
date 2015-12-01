@@ -83,7 +83,31 @@ namespace PruebasUnitariasSKD.Modulo7
             List<Evento> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
             Assert.NotNull(listaEvento);
         }
+
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas eventos pagos
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosPagos()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
+            Assert.GreaterOrEqual(listaEvento.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosPagosNoNulo()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
+            Assert.NotNull(listaEvento);
+        }
         
+
         /// <summary>
         /// Método para probar que la lista obtenida tiene cero o mas competencias
         /// </summary>
@@ -105,6 +129,29 @@ namespace PruebasUnitariasSKD.Modulo7
             List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
             Assert.NotNull(listaCompetencia);
         }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas competencias pagadas por atleta
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciasPagas()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPagas(idPersona);
+            Assert.GreaterOrEqual(listaCompetencia.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciasPagasNoNula()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPagas(idPersona);
+            Assert.NotNull(listaCompetencia);
+        }
+
 
         /// <summary>
         /// Método para probar que devuelve la fecha de inscripción de un evento 
