@@ -7,21 +7,33 @@ using DominioSKD;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Data;
+
 namespace DatosSKD.Modulo13
 {
     class BDimplementos
     {
 
 
+
+
+       
+        
         #region Listar Implementarios
 
         public static DataTable D_Inventario()
         {
             BDConexion laConexion;
             List<Implemento> listaDeImplementos = new List<Implemento>();
+
             // List<Parametro> parametros;
             //          Parametro parametro;
             //        parametros = new List<Parametro>();
+
+            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>;
+// List<Parametro> parametros;
+  //          Parametro parametro;
+    //        parametros = new List<Parametro>();
+
 
 
             try
@@ -38,6 +50,7 @@ namespace DatosSKD.Modulo13
                                 RecursosBDModulo15.tabla_dojoImplemento, new Exception());
                         */
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas("M13_inventario", null);
+
                 /*
                                 foreach (DataRow row in dt.Rows)
                                 {
@@ -73,6 +86,24 @@ namespace DatosSKD.Modulo13
                                 */
                 return dt;
 
+
+                //Interfaz.Gui.Modulo13.M13_Info_Producto inventario = new Interfaz.Gui.Modulo13.M13_Info_Producto();
+
+                
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Reporte_Inventario inventario = new Reporte_Inventario();
+
+                    inventario.Nombre = row[imp_nombre].toString;
+                    inventario.Dojo = row[doj_nombre].toString;
+                    inventario.Cantidad_total = row[inv_cantidad_total].toString;           
+                    
+                    listainventario.Add(inventario);
+
+                }
+
+
             }
             catch (SqlException ex)
             {
@@ -83,6 +114,12 @@ namespace DatosSKD.Modulo13
             {
                 throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
             }
+
+
+            return listainventario;
+
+        }
+
         #endregion
 
 
@@ -93,6 +130,10 @@ namespace DatosSKD.Modulo13
 
 
 
+
         }
+
+        public static DataTable listainventario { get; set; }
+
     }
 }
