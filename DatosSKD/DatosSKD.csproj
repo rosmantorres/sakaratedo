@@ -112,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\BDCinta.cs" />
     <Compile Include="Modulo5\RecursosBDModulo5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

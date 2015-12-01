@@ -96,6 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\LogicaCinta.cs" />
     <Compile Include="Modulo5\RecursosLogicaModulo5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
