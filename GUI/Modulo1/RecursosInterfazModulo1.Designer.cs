@@ -70,6 +70,15 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Se introdujo carácteres no validos (&gt;&lt;*-+¡?=(/&amp;%$·&quot;!) verifíque y vuelva a ingresar..
+        /// </summary>
+        internal static string logCaracterInvalidos {
+            get {
+                return ResourceManager.GetString("logCaracterInvalidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña y/o usuario incorrecto..
         /// </summary>
         internal static string logErr {
