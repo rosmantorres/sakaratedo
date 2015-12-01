@@ -70,7 +70,7 @@ namespace LogicaNegociosSKD.Modulo1
                 Console.Write(e.ToString());
                 Console.Write(e.Data.ToString());
                 Console.Write(e.Message);
-                throw  e;
+                throw e;
             }
         }
 
@@ -134,7 +134,7 @@ namespace LogicaNegociosSKD.Modulo1
                    if (rolesConcat != "")
                        return respuesta;
                    else
-                       return null;
+                       throw new Exception(RecursosLogicaModulo1.Mensaje_Error_Roles); ;
                    //ingresó a sistema
                }
 
@@ -146,8 +146,7 @@ namespace LogicaNegociosSKD.Modulo1
 
                 Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
                 Console.WriteLine("Mensaje: " + e.Message);
-                return null;
-                //throw e;
+                throw e;
             }
         }
     }
