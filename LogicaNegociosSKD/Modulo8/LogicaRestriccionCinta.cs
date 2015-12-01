@@ -89,5 +89,37 @@ namespace LogicaNegociosSKD.Modulo8
             return true;
         }
 
+        public bool ModificarRestriccionCinta(int id, int Horas_docentes_mínimas, int Putaje_mínimo, int Tiempo_mínimo, int Cinta)
+        {
+            try
+            {
+                RestriccionCinta laRestriccion = new RestriccionCinta();
+                laRestriccion.PuntosMinimos = Putaje_mínimo;
+                laRestriccion.TiempoDocente = Horas_docentes_mínimas;
+                laRestriccion.TiempoMinimo = Horas_docentes_mínimas;
+                laRestriccion.TiempoMaximo = 0;
+                laRestriccion.Descripcion = null;
+                laRestriccion.IdRestriccionCinta = id;
+
+                return BDRestriccionCinta.ModificarRestriccionCinta(laRestriccion);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo8.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            return true;
+        }
     }
 }
