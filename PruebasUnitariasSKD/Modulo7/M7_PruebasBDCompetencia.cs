@@ -41,7 +41,7 @@ namespace PruebasUnitariasSKD.Modulo7
         /// Método para probar que se detalla una competencia
         /// </summary>
         [Test]
-        public void PruebaDetallarHorarioXId()
+        public void PruebaDetallarCompetenciaXId()
         {
             BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
             Competencia competencia = baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
@@ -52,7 +52,7 @@ namespace PruebasUnitariasSKD.Modulo7
         /// Método para probar que la competencia no es nula
         /// </summary>
         [Test]
-        public void PruebaDetallarHorarioXIdNoNulo()
+        public void PruebaDetallarCompetenciaXIdNoNulo()
         {
             BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
             Competencia competencia = baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);

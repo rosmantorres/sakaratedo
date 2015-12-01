@@ -52,7 +52,7 @@ namespace PruebasUnitariasSKD.Modulo7
         /// Método para probar que el tipo de evento no es nulo
         /// </summary>
         [Test]
-        public void PruebaDetallarHorarioXIdNoNulo()
+        public void PruebaDetallarTipoEventoXIdNoNulo()
         {
             BDTipoEvento baseDeDatosTipoEvento = new BDTipoEvento();
             TipoEvento tipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(idTipoEvento);
