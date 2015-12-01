@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Kyu_atletas.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Inicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Kyu_atletas.aspx.cs" Inherits="templateApp.GUI.Modulo13.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
 </asp:Content>
@@ -15,7 +15,7 @@
 
      <div class="box-body table-responsive">
 
-      <table id="example" class="table table-bordered table-striped dataTable">
+      <%--<table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>Foto</th>
@@ -26,11 +26,25 @@
                     <th >Altura</th>					
 				</tr>
 			</thead>
-			<tbody>
-				<%= Page.Page_Load()%>
-                             
-			</tbody>
-</table>
+			<tbody>--%>
+
+			<asp:Table ID="example" runat="server" CssClass="table table-bordered table-striped dataTable">
+                <asp:TableHeaderRow><asp:TableHeaderCell>Foto</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Nombre</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Apelido</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Edad</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Peso</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Altura</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Foto</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+			</asp:Table>
+                
+              
+           
+			<%--</tbody>
+</table>--%>
+
+         
         </div>
     <script type="text/javascript">
         $(document).ready(function () {
