@@ -40,6 +40,7 @@ namespace DatosSKD.Modulo7
                     persona.Apellido = row[RecursosBDModulo7.AliasPersonaApellido].ToString();
                     persona.FechaNacimiento = DateTime.Parse(row[RecursosBDModulo7.AliasPersonaFechaNacimiento].ToString());
                     persona.Direccion = row[RecursosBDModulo7.AliasPersonaDireccion].ToString();
+                    persona.DojoPersona = int.Parse(row[RecursosBDModulo7.AliasPersonaDojoId].ToString());
                 }
 
                 return persona;

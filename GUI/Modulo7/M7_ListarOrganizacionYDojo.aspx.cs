@@ -32,7 +32,7 @@ namespace templateApp.GUI.Modulo7
                  {
 
                      laPersona = laLogica.obtenerDetallePersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                     elDojo = laLogica.obtenerDetalleDojo(laPersona.ID);
+                     elDojo = laLogica.obtenerDetalleDojo(laPersona.DojoPersona);
                      laOrganizacion = laLogica.obtenerDetalleOrganizacion(elDojo.Organizacion_dojo);
                      this.nombreAtleta.Text = laPersona.Nombre;
                      this.apellidoAtleta.Text = laPersona.Apellido;
