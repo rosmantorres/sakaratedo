@@ -30,6 +30,8 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(cuenta.Id_usuario, 0);
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.Vacio);
             Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(cuenta.Imagen, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(cuenta.NombreDePila, RecursosPU_Mod1.Vacio);
         }
         // Prueba unitaria del metodo Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena) 
         [Test]
@@ -41,6 +43,9 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(cuenta.Id_usuario, Int32.Parse(RecursosPU_Mod1.Id));
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
             Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.PruebaErrorClave);
+            Assert.AreEqual(cuenta.Imagen, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(cuenta.NombreDePila, RecursosPU_Mod1.Vacio);
+
         }
         // Prueba unitaria del metodo   public Cuenta(String elNombreUsuario, String laContrasena,List<Rol> listaRoles)
         [Test]
@@ -56,6 +61,8 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(cuenta.Roles, listaRol);
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
             Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.PruebaErrorClave);
+            Assert.AreEqual(cuenta.Imagen, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(cuenta.NombreDePila, RecursosPU_Mod1.Vacio);
         }
         // Prueba unitaria del metodo   public Rol()
         [Test]
