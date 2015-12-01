@@ -59,5 +59,77 @@ namespace DatosSKD.Modulo10 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaInicioCompetencia.
+        /// </summary>
+        internal static string aliasFechaCompetencia {
+            get {
+                return ResourceManager.GetString("aliasFechaCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaInicioEvento.
+        /// </summary>
+        internal static string aliasFechaEvento {
+            get {
+                return ResourceManager.GetString("aliasFechaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idCompetencia.
+        /// </summary>
+        internal static string aliasIdCompetencia {
+            get {
+                return ResourceManager.GetString("aliasIdCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idEvento.
+        /// </summary>
+        internal static string aliasIdEvento {
+            get {
+                return ResourceManager.GetString("aliasIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreCompetencia.
+        /// </summary>
+        internal static string aliasNombreCompetencia {
+            get {
+                return ResourceManager.GetString("aliasNombreCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreEvento.
+        /// </summary>
+        internal static string aliasNombreEvento {
+            get {
+                return ResourceManager.GetString("aliasNombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarAsistenciaPasadaC.
+        /// </summary>
+        internal static string ProcedimentoConsultarCompetenciaAsistida {
+            get {
+                return ResourceManager.GetString("ProcedimentoConsultarCompetenciaAsistida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarAsistenciaPasadaE.
+        /// </summary>
+        internal static string ProcedimentoConsultarEventoAsistido {
+            get {
+                return ResourceManager.GetString("ProcedimentoConsultarEventoAsistido", resourceCulture);
+            }
+        }
     }
 }

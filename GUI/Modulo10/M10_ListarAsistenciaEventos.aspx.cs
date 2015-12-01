@@ -33,7 +33,7 @@ namespace templateApp.GUI.Modulo10
             }
         }
 
-            #region Carga de tabla de Eventos
+            #region Carga de tabla de Eventos y Competencias
         /*
             LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
