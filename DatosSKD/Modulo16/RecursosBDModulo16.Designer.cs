@@ -385,15 +385,6 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string PARAMETRO_IMPID {
-            get {
-                return ResourceManager.GetString("PARAMETRO_IMPID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to @iditem.
         /// </summary>
         internal static string PARAMETRO_ITEM {
