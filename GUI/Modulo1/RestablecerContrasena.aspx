@@ -28,7 +28,9 @@
                       
                             <h3>Restablecer Contraseña</h3>
                       </div>
+                      <div class="alert alert-warning" id="warningCaracteres" runat="server" visible="false">
 
+                      </div>
                         <div class="alert alert-info" id="infoRestablecer" runat="server">
                                 La contraseña debe poseer de <strong>8-30 caracteres</strong> e incluir al menos <strong>una letra mayúscula </strong> ,
                          <strong> una letra minúscula</strong> y <strong>un número.</strong>
