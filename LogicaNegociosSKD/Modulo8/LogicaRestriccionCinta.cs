@@ -61,6 +61,13 @@ namespace LogicaNegociosSKD.Modulo8
             try
             {
                 RestriccionCinta laRestriccion = new RestriccionCinta();
+                laRestriccion.PuntosMinimos = Putaje_mínimo;
+                laRestriccion.TiempoDocente = Horas_docentes_mínimas;
+                laRestriccion.TiempoMinimo = Horas_docentes_mínimas;
+                laRestriccion.TiempoMaximo = 0;
+                laRestriccion.Descripcion = null;
+                laRestriccion.IdRestriccionCinta = 0;
+                
                 return BDRestriccionCinta.AgregarRestriccionCinta(laRestriccion, NuevaCinta);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
