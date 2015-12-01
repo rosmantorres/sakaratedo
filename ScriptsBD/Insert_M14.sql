@@ -19,10 +19,13 @@ INSERT INTO PLANILLA (pla_nombre,pla_status,TIPO_PLANILLA_tip_id) values ('PARTI
 
 
 
-INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ATLETA','ATL');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('PERSONA','PER');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('COMPETENCIA','COM');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('DOJO','DOJ');
 INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('EVENTO','EVE');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('ORGANIZACION','ORG');
+INSERT INTO DATO (dat_nombre,dat_abreviatura) values ('MATRICULA','MAT');
+
 
 
 

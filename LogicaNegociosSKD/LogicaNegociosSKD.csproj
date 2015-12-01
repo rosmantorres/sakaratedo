@@ -60,6 +60,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\LogicaDiseño.cs" />
+    <Compile Include="Modulo14\LogicaPlanilla.cs" />
+    <Compile Include="Modulo14\LogicaSolicitud.cs" />
     <Compile Include="Modulo14\RecursosLogicaModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\AlgoritmoDeEncriptacion.cs" />
     <Compile Include="Modulo2\logicaRol.cs" />
     <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,7 +184,7 @@
       <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosLogicaModulo3.resx">
