@@ -45,18 +45,17 @@
        <table id="tablaproducto" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:right">Id</th>
-                    <th style="text-align:right">Imagen</th>
-                    <th style="text-align:right">Nombre</th>
-					<th style="text-align:right">Marca</th>
-                    <th style="text-align:right">Tipo</th>
-					<th style="text-align:right">Precio</th>
-					<th style="text-align:right">Acciones</th>
+					<th style="text-align:left">Id</th>
+                    <th style="text-align:left">Imagen</th>
+                    <th style="text-align:left">Nombre</th>
+					<th style="text-align:left">Marca</th>
+                    <th style="text-align:left">Tipo</th>
+					<th style="text-align:left">Precio</th>
+					<th style="text-align:left">Acciones</th>
 				</tr>
 		</thead>
                         <div class="box-footer">
-				                            <button id="Button1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show();"  >Agregar al Carrito</button>
-                                          
+				                                                                      
 			                            </div>
 			<tbody>
                 <asp:Literal runat="server" ID="laTabla"></asp:Literal>
@@ -75,35 +74,24 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-                                <p>
-									<input type="text" id="beta" value="" />
-								</p>
+                                <h3>Imagen</h3>
+									<h4><input type="text" id="beta" value=""/></h4>
 								<h3>Nombre</h3>
-								<p>
-									<input type="text" id="beta4" value="" />
-								</p>
-								<h3>Cantidad disponible</h3>
-                                <br />
-                                <form role="form" class="form-horizontal" method="POST">
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                     </div>
-                                    <br />
-                               
-            					    <h3>Detalles</h3>
-								    <p>
-									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
-                                        golpes contra el contrincante o cuando se está practicando, con un diseño
-                                        particular de color rojo a gusto del atleta.
-								    </p>
-								    <div class="form-group">
-		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info1').modal('hide'); $('#prueba').show();" >Agregar al Carrito</button>
-                                             
-			                            </div>
-	                                </div>
-                                </form>
-
-
+									<h4><input type="text" id="beta1" value="" /></h4>
+								<h3>Tipo Implemento</h3>
+                                    <h4><input type="text" id="beta2" value="" /></h4>
+                                <h3>Marca</h3>
+                                    <h4><input type="text" id="beta3" value="" /></h4>
+                                <h3>Color</h3>
+                                    <h4><input type="text" id="beta4" value="" /></h4>
+                                <h3>Talla</h3>
+                                    <h4><input type="text" id="beta5" value="" /></h4>
+                                <h3>Status</h3>
+                                    <h4><input type="text" id="beta6" value="" /></h4>
+                                <h3>Precio</h3>
+                                    <h4><input type="text" id="beta7" value="" /></h4>
+                                <h3>Descripcion</h3>
+                                    <h4><input type="text" id="beta8" value="" /></h4>
 							</div>
 						</div>
 					</div>
@@ -157,6 +145,8 @@
                  // Carga el modal con la informacion del producto de acuerdo al id
                  $('#modal-info1').on('show.bs.modal', function (e) {
 
+                     alert(e.relatedTarget.id);
+
                      $.ajax({
                          cache: false,
                          type: 'POST',
@@ -170,15 +160,17 @@
 
                              var aa = JSON.parse(data.d);
 
-                             $("#beta").val(aa.Imagen);
-                             $("#beta1").val(aa.Nombre);
-                             $("#beta2").val(aa.Tipo);
-                             $("#beta3").val(aa.Marca);
-                             $("#beta4").val(aa.Color);
-                             $("#beta5").val(aa.Talla);
-                             $("#beta6").val(aa.Estatus);
-                             $("#beta7").val(aa.Precio);
-                             $("#beta8").val(aa.descripcion);
+                             console.log(aa);
+
+                             $("#beta").val(aa.Imagen_implemento);
+                             $("#beta1").val(aa.Nombre_Implemento);
+                             $("#beta2").val(aa.Tipo_Implemento);
+                             $("#beta3").val(aa.Marca_Implemento);
+                             $("#beta4").val(aa.Color_Implemento);
+                             $("#beta5").val(aa.Talla_Implemento);
+                             $("#beta6").val(aa.Estatus_Implemento);
+                             $("#beta7").val(aa.Precio_Implemento);
+                             $("#beta8").val(aa.Descripcion_Implemento);
 
                          }
                      });

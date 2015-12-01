@@ -81,10 +81,10 @@ namespace templateApp.GUI.Modulo16
         [System.Web.Services.WebMethod]
         public static string prueba(string id)
         {
-            Implemento laCompetencia = new Implemento();
+            Implemento elProducto = new Implemento();
             Logicainventario logica = new Logicainventario();
-            laCompetencia = logica.detalleImplementoXId(int.Parse(id));
-            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(laCompetencia);
+            elProducto = logica.detalleImplementoXId(int.Parse(id));
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elProducto);
             return json;
         }
         #endregion

@@ -46,11 +46,11 @@
        <table id="tablaevento" class="table table-bordered table-striped dataTable">
         <thead>
             <tr>
-                    <th style="text-align:right">Id</th>
-                    <th style="text-align:right">Nombre</th>
-					<th style="text-align:right">Costo</th>
-                    <th style="text-align:right">Descripcion</th>
-					<th style="text-align:right">Acciones</th> 
+                    <th style="text-align:left">Identificador</th>
+                    <th style="text-align:left">Nombre</th>
+					<th style="text-align:left">Descripcion</th>
+                    <th style="text-align:left">Costo (Bs.)</th>
+					<th style="text-align:left">Acciones</th> 
             </tr>
         </thead>
  
@@ -70,35 +70,14 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-								<h3>Nombre</h3>
-									2DO Seminario Showakai Sakarate-Do
-                                <br />
-                                <h3>Tipo</h3>
-                                    Seminario
-                                <br />
-                                <h3>Lugar/ Fin</h3>
-                                    Caracas
-                                <br />
-								<h3>Fecha Inicio</h3>
-                                    01 Diciembre 2015
-                                <br />
-                                <h3>Fecha Fin</h3>
-                                    03 Diciembre 2015
-                                <br />
-                                
-                                <form role="form" class="form-horizontal" method="POST">
-								    <h3>Descricion</h3>
-								    <p>
-									    El 2do Seminario Showakai se presenta en la ciudad de Caracas para el deleite de todos los interesados, se ofrece material de apoyo mas las clases de practica.
-								    </p>
-								    <div class="form-group">
-		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show();"  >Agregar al Carrito</button>
-                                          
-			                            </div>
-	                                </div>
-                                </form>
-
+								<h3>Id</h3>
+									<h4><input type="text" id="beta" value=""/></h4>
+                                <h3>Nombre</h3>
+									<h4><input type="text" id="beta1" value=""/></h4>
+                                <h3>Descripcion</h3>
+									<h4><input type="text" id="beta2" value=""/></h4>
+                                <h3>Costo</h3>
+									<h4><input type="text" id="beta3" value=""/></h4>
 
 							</div>
 						</div>
@@ -113,7 +92,7 @@
              $(document).ready(function () {
 
                  var table = $('#tablaevento').DataTable({
-                     "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                      "language": {
                          "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                      }
@@ -151,11 +130,11 @@
 
                  // Carga el modal con la informacion del evento de acuerdo al id
                  $('#modal-info1').on('show.bs.modal', function (e) {
-
+                     alert(e.relatedTarget.id);
                      $.ajax({
                          cache: false,
                          type: 'POST',
-                         url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/prueba',
+                         url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarEvento.aspx/prueba',
                          data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
                          dataType: 'json',
                          contentType: "application/json; charset=utf-8",
@@ -164,11 +143,12 @@
                              console.log(data);
 
                              var aa = JSON.parse(data.d);
+                             console.log(aa);
 
-                             $("#beta").val(aa.id);
+                             $("#beta").val(aa.Id_evento);
                              $("#beta1").val(aa.Nombre);
-                             $("#beta7").val(aa.Precio);
-                             $("#beta8").val(aa.descripcion);
+                             $("#beta2").val(aa.Descripcion);
+                             $("#beta3").val(aa.Costo);
 
                          }
                      });
