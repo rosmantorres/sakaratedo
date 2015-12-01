@@ -153,5 +153,52 @@ namespace LogicaNegociosSKD.Modulo1
                 throw e;
             }
         }
+
+
+
+        /// <summary>
+        /// Metodo que valida los carácteres ingresados en el lógin
+        /// </summary>
+        /// <param name="cadena">Cadena a validar</param>
+        /// <param name="userName">¿Nombre de usuario?</param>
+        /// <returns>True:Cumple con los parametros;False:No cumple.</returns>
+        public bool ValidarCaracteres(String cadena,bool userName)
+        {
+            String comparar;
+            if(userName)
+                comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_.";
+            else
+                comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .";
+            for (int i = 0; i < cadena.Length; i++)
+            {
+                Boolean resultado = comparar.Contains(cadena[i]);
+                if (resultado != true)
+                    return resultado;
+            }
+
+                return true;
+
+        }
+
+
+        ///<sumary>
+        ///Metodo que se encarga de validar si los datos de la lista alguno de ellos esta vacio  
+        ///</sumary>
+        ///<param name="datos">Lista de String con los datos a validar</param>
+        ///<returns>true, sin ningun dato en la lista esta vacio
+        ///         false, si al menos un dato es igual a vacio</returns>
+        public  bool ValidarCamposVacios(List<String> datos)
+        {
+            String caracterVacio = "";
+
+            for (int i = 0; i < datos.Count; i++)
+            {
+                if (datos[i].Equals(caracterVacio))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

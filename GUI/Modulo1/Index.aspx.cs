@@ -48,7 +48,10 @@ namespace templateApp.GUI.Modulo1
             List<String> campos=new List<String>();
             campos.Add(userIni.Value);
             campos.Add(passwordIni.Value);
-           if(Validaciones.ValidarCamposVacios(campos) )
+            logicaLogin validarLogin = new logicaLogin();
+           if(validarLogin.ValidarCamposVacios(campos) && 
+              validarLogin.ValidarCaracteres(userIni.Value,true) &&
+              validarLogin.ValidarCaracteres(passwordIni.Value,false))
                     consultarUsuario();
         }
         /// <summary>
