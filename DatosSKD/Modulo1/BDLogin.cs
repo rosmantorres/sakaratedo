@@ -13,6 +13,11 @@ namespace DatosSKD.Modulo1
 {
     public class BDLogin
     {
+        /// <summary>
+        /// Se hace la conexion a la base de datos para obtener los datos del usuario y llenar el objeto Cuenta
+        /// </summary>
+        /// <param name="nombre_usuario">Nombre de usuario</param>
+        /// <returns>retorna un objeto tipo Cuenta</returns>
         public Cuenta ObtenerUsuario(string nombre_usuario)
         {
             BDConexion laConexion;//COnsultar la persona
@@ -111,7 +116,11 @@ namespace DatosSKD.Modulo1
 
         }
 
-
+        /// <summary>
+        /// Se hace la conexion a la base de datos para validar si el correo se encuentra asociado a mas usuarios del sistema
+        /// </summary>
+        /// <param name="correo_usuario">Correo del usuario</param>
+        /// <returns>retorna un objeto tipo Cuenta</returns>
         public  String ValidarCorreoUsuario(string correo_usuario)
         {
 
