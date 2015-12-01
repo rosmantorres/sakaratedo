@@ -24,13 +24,14 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
+                    
                     if (detalleStringMatricula != null)
                     {
                         matricula = Logica.detalleMatriculaID(int.Parse(detalleStringMatricula));
-                        this.identificador.Text = matricula.Identificador;
                         this.fecha_creacion.Text = matricula.FechaCreacion.ToString("MM/dd/yyyy");
                         this.fecha_ultimo_pago.Text = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
-                    }
+
+                    } 
                     /*  if (matricula.Estado.Equals(true))
                       {
                           this.estado_matricula.Text = M7_Recursos.AliasMatriculaActiva;

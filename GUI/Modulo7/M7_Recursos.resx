@@ -175,7 +175,7 @@
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoPago.aspx?eventoDetalle=</value>
   </data>
   <data name="BotonInfoPagosDeMatricula" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleMatriculaPaga.aspx?eventoDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleMatriculaPaga.aspx?matriculaDetalle=</value>
   </data>
   <data name="CerrarH3" xml:space="preserve">
     <value>&lt;/h3&gt;</value>

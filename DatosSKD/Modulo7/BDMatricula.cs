@@ -29,7 +29,7 @@ namespace DatosSKD.Modulo7
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                Matricula matricula  = new Matricula();
+                Matricula matricula = new Matricula();
 
                 elParametro = new Parametro(RecursosBDModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.ToString(), false);
                 parametros.Add(elParametro);
@@ -39,15 +39,12 @@ namespace DatosSKD.Modulo7
 
                 foreach (DataRow row in dt.Rows)
                 {
-                  
-                    
-                    matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
-                    //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
+
+                 
+                    //matricula.estado= row[RecursosBDModulo7.AliasEventoNombre].ToString();
                     matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
                     matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
-                    //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
-                 
-                    
+                  
 
                 }
 
@@ -58,7 +55,11 @@ namespace DatosSKD.Modulo7
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }
+            }/*
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                throw ex;
+            }*/
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;

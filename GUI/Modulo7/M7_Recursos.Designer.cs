@@ -232,7 +232,7 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleMatriculaPaga.aspx?eventoDetalle=.
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M7_DetalleMatriculaPaga.aspx?matriculaDetalle=.
         /// </summary>
         internal static string BotonInfoPagosDeMatricula {
             get {

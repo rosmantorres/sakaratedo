@@ -40,19 +40,14 @@
                      <h4>Datos de la matricula</h4>
                   </div>
                   <div class="panel-body">
+                     
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <br />
-                        <h4>Nombre :</h4>
-                        <asp:Label runat="server" name="identificador" id="identificador" Font-Size="Large"></asp:Label>
-                     </div>
-                     <br/>
-                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Descripcion :</h4>
+                        <h4>Fecha Creación :</h4>
                         <asp:Label runat="server" name="fecha_creacion" id="fecha_creacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Costo :</h4>
+                        <h4>Fecha Pago :</h4>
                         <asp:Label runat="server" name="fecha_ultimo_pago" id="fecha_ultimo_pago" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
@@ -68,7 +63,7 @@
             </div>
             <br />
             <div class="form-group col-sm-5 col-md-5 col-lg-5"> <!--BOTON VOLVER-->
-            <a class="btn btn-default" href="M7_ListarPagosAEventos.aspx">Volver</a>
+            <a class="btn btn-default" href="M7_ListarPagosDeMatricula.aspx">Volver</a>
             </div>
                   </div>
                </div>
