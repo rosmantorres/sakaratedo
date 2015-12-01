@@ -70,11 +70,29 @@
   </div>
    
     <div class="form-group">
-    <label for="cat" class="col-lg-2 control-label">*Categoria</label>
+    <label for="cat" class="col-lg-2 control-label">*Clasificacion</label>
     <div class="col-xs-5">
       <input type="email" class="form-control" id="cate" placeholder="Dan o Kyu">
     </div>
   </div>
+
+         <div class="form-group">
+    <label for="significado" class="col-lg-2 control-label">*Significado</label>
+    <div class="col-xs-5">
+      <input type="email" class="form-control" id="signi" placeholder="Significado de la cinta">
+    </div>
+  </div>
+
+
+                 <div class="form-group">
+    <label for="orden" class="col-lg-2 control-label">*Orden</label>
+    <div class="col-xs-5">
+      <input type="email" class="form-control" id="ord" placeholder="Orden de la cinta">
+    </div>
+  </div>
+
+
+
  
         <div class="col-lg-2 control-label">
      <p><b>* Campos obligatorios</b></p> 
@@ -98,11 +116,17 @@
 
 
     <script type="text/javascript">
+
         $(document).ready(function () {
-            $('#aceptar').on('click', function () {
+
+            $('#aceptar').on('click', function () {               
+
                 $('#alerta1').alert();
+
             });
+
         });
+
     </script>
 
 </asp:Content>

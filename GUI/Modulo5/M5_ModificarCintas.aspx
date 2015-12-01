@@ -58,13 +58,29 @@
   </div>
    
     <div class="form-group">
-    <label for="cat" class="col-lg-2 control-label">Categoria</label>
+    <label for="cat" class="col-lg-2 control-label">Clasificacion</label>
     <div class="col-xs-5">
       <input type="email" class="form-control" id="cate" placeholder="Kyu">
     </div>
   </div>
 
-    
+          <div class="form-group">
+    <label for="sig" class="col-lg-2 control-label">Significado</label>
+    <div class="col-xs-5">
+      <input type="email" class="form-control" id="signi" placeholder="Poseedor de gran disciplina">
+    </div>
+  </div>
+
+                <div class="form-group">
+    <label for="ord" class="col-lg-2 control-label">Orden</label>
+    <div class="col-xs-5">
+      <input type="email" class="form-control" id="orde" placeholder="2">
+    </div>
+  </div>
+
+
+
+
     <div class="box-footer text-center">
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-modificarCintas" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="alertModificarCinta();">Modificar</button>
