@@ -43,13 +43,13 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
-<<<<<<< HEAD
-=======
+
+
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="RestriccionCinta.cs" />
->>>>>>> 033e8da8f4395894e63a77056fea4884783f2564
+
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="Compra.cs" />
