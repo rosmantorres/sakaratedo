@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
+
 
 namespace DatosSKD.Modulo7
 {
@@ -21,22 +24,29 @@ namespace DatosSKD.Modulo7
         /// <returns></returns>
         public Dojo DetallarDojo(int idDojo)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+             
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
             BDUbicacion baseDeDatosUbicacion = new BDUbicacion();
+            Dojo dojo;
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Dojo dojo = new Dojo();
+                
+                if (idDojo.GetType() == Type.GetType("System.Int32") && idDojo > 0)
+                {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    dojo = new Dojo();
 
-                elParametro = new Parametro(RecursosBDModulo7.AliasPersonaDojoId, SqlDbType.Int, idDojo.ToString(), false);
-                parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo7.AliasPersonaDojoId, SqlDbType.Int, idDojo.ToString(), false);
+                    parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultaDojoXId, parametros);
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultaDojoXId, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -47,27 +57,47 @@ namespace DatosSKD.Modulo7
                     dojo.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasDojoUbicacion].ToString()));
                 }
 
-                return dojo;
-
+           
+              }
+               else
+              {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+               }
+                
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
-        }
-    }
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return dojo;
+        }
+       }
 }
