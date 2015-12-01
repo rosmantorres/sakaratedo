@@ -94,10 +94,11 @@ namespace DatosSKD.Modulo9
                     Evento evento = new Evento();
 
                     evento.Id_evento = int.Parse(row[RecursosBDModulo9.AliasIdEvento].ToString());
-                    Console.Out.WriteLine(evento.Id_evento);
+                    //Console.Out.WriteLine(evento.Id_evento);
                     evento.Nombre = row[RecursosBDModulo9.AliasNombreEvento].ToString();
                     evento.Descripcion = row[RecursosBDModulo9.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosBDModulo9.AliasEstadoEvento].ToString());
+                    evento.Costo = float.Parse(row[RecursosBDModulo9.AliasCostoEvento].ToString());
                     Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosBDModulo9.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosBDModulo9.AliasFechaFin].ToString());
@@ -151,9 +152,9 @@ namespace DatosSKD.Modulo9
                 evento = new Evento();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdEvento, SqlDbType.Int, idEvento, false);
-                Console.Out.WriteLine(parametro.valor);
+                /*Console.Out.WriteLine(parametro.valor);
                 Console.Out.WriteLine(parametro.tipoDato);
-                Console.Out.WriteLine(RecursosBDModulo9.ParametroIdEvento);
+                Console.Out.WriteLine(RecursosBDModulo9.ParametroIdEvento);*/
                 parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimentoConsultarEventoXID, parametros);
                 
@@ -163,6 +164,7 @@ namespace DatosSKD.Modulo9
                     Console.Out.WriteLine(evento.Nombre);
                     evento.Descripcion = row[RecursosBDModulo9.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosBDModulo9.AliasEstadoEvento].ToString());
+                    evento.Costo = float.Parse(row[RecursosBDModulo9.AliasCostoEvento].ToString());
                     Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosBDModulo9.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosBDModulo9.AliasFechaFin].ToString());
