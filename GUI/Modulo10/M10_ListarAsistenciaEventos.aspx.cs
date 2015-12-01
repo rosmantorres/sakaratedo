@@ -32,5 +32,46 @@ namespace templateApp.GUI.Modulo10
                 }
             }
         }
+
+            #region Carga de tabla de Eventos
+        /*
+            LogicaEvento logicaEvento = new LogicaEvento();
+            if (!IsPostBack)
+            {
+                try
+                {
+                    eventoLista = logicaEvento.ListarEventos();
+                    foreach (Evento evento in eventoLista)
+                    {
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTR;
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.TipoEvento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaInicio) + M9_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaFin) + M9_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Horario.HoraInicio.ToString()+":00"+ M9_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Horario.HoraFin.ToString()+":00"+ M9_RecursoInterfaz.CerrarTD;
+                        if (evento.Estado)
+                        {
+                            this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + "Activo" + M9_RecursoInterfaz.CerrarTD;
+                        }
+                        else {
+                            this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + "Inactivo" + M9_RecursoInterfaz.CerrarTD;
+                        }
+
+                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.BotonInfo + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
+                        this.dataTable.Text += M9_RecursoInterfaz.BotonModificar + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
+                        this.dataTable.Text += M9_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M9_RecursoInterfaz.CerrarTR;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }*/
+            #endregion
     }
 }

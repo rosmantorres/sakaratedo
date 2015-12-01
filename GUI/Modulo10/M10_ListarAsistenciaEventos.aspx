@@ -61,7 +61,7 @@
 				</tr>
 			</thead>
 			<tbody>
-                <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
 		    </tbody>
             </table>
            </div>  
