@@ -71,6 +71,27 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+ 
+        /// <summary>
+        /// Método que obtiene el estado de la matricula
+        /// </summary>
+        /// <param name="idPersona">Número entero que representa el ID del atleta</param>
+        /// <returns>un objeto de tipo  Matricula</returns>
+
+        public Boolean obtenerEstado(int idPersona)
+        {
+            try
+            {
+                BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
+                return baseDeDatosDetalleCompra.EstadoMatricula(idPersona);
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
 
         /// <summary>
         /// Método que obtiene el monto pagado de la matricula por un atlteta

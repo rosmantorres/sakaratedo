@@ -27,6 +27,7 @@ namespace templateApp.GUI.Modulo7
             ((SKD)Page.Master).IdModulo = "7";
             float monto;
             int id;
+            Boolean estado;
 
             String detalleString = Request.QueryString["eventDetalle"];
 
@@ -46,14 +47,23 @@ namespace templateApp.GUI.Modulo7
 
                     foreach (Matricula matricula in laLista)
                     {
-                       id = logMatricula.obtenerIdMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                      
-                       monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), id);
+                        String estadoFinal;
+                        id = logMatricula.obtenerIdMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                        monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), id);
+                        estado = logMatricula.obtenerEstado(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                        if (estado == true)
+                        {
+                            estadoFinal = "Activa";
+                        }
+                        else
+                        {
+                            estadoFinal = "No Activa";
+
+                        }
 
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Identificador.ToString() + M7_Recursos.CerrarTD;
-                    //por ahora--esperando por Romulo//
-                        this.laTabla.Text += M7_Recursos.AbrirTD + "estado" + M7_Recursos.CerrarTD;
+                        this.laTabla.Text += M7_Recursos.AbrirTD + estadoFinal + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;

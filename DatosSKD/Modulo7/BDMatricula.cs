@@ -250,6 +250,87 @@ namespace DatosSKD.Modulo7
             return monto;
         }
 
+  
+      
+             /// <summary>
+        /// Método que devuelve el estado  de una matricula
+        /// </summary>
+        /// <returns>Estado de la matricula</returns>
+        public Boolean  EstadoMatricula(int idPersona)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametroPersona = new Parametro();
+          
+            Boolean estado = new Boolean();
+
+            try
+            {
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+
+                    elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametroPersona);
+                   
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarEstadoMatricula, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
+                    }
+
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                              RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (NumeroEnteroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return estado;
+        }
+
+
+
         /// <summary>
         /// Método para listar las matriculas pagadas de los atletas
         /// </summary>

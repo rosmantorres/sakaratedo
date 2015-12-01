@@ -429,4 +429,13 @@
   <data name="ConsultarIdMatricula" xml:space="preserve">
     <value>M7_ConsultarIdMatricula</value>
   </data>
+  <data name="AliasFormaPago" xml:space="preserve">
+    <value>forma</value>
+  </data>
+  <data name="ConsultarEstadoMatricula" xml:space="preserve">
+    <value>M7_ConsultarEstadoMatricula</value>
+  </data>
+  <data name="ConsultarFormaPagoMatricula" xml:space="preserve">
+    <value>M7_ConsultarFormaPagoMatricula</value>
+  </data>
 </root>
