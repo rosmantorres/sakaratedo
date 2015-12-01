@@ -1972,11 +1972,6 @@
     <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.designer.cs">
       <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo7\M7_Recursos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>M7_Recursos.resx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2104,10 +2099,6 @@
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>M7_Recursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
