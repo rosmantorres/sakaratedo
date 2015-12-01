@@ -8,6 +8,9 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
+
 
 namespace DatosSKD.Modulo7
 {
@@ -26,21 +29,27 @@ namespace DatosSKD.Modulo7
         /// <returns>Objeto de tipo Evento</returns>
         public Evento DetallarEvento(int idEvento)
         {
-            BDConexion laConexion;
-            List<Parametro> parametros;
-            Parametro elParametro = new Parametro();
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+             
+                  BDConexion laConexion;
+                  List<Parametro> parametros;
+                  Parametro elParametro = new Parametro();
+                  Evento evento;
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Evento evento = new Evento();
+                if (idEvento.GetType() == Type.GetType("System.Int32") && idEvento > 0)
+                {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    evento = new Evento();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idEvento.ToString(), false);
-                parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idEvento.ToString(), false);
+                    parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarEventoXId, parametros);
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarEventoXId, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -55,30 +64,47 @@ namespace DatosSKD.Modulo7
 
                 }
 
-                return evento;
-
+              }
+               else
+              {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+               }
+                
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return evento;
         }
-
 
         /// <summary>
         /// Método para listar las competencias asistidas del atleta
@@ -86,6 +112,9 @@ namespace DatosSKD.Modulo7
         /// <returns>Lista de competencias</returns>
         public List<Competencia> ListarCompetenciasAsistidas(int idPersona)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -93,14 +122,15 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarCompetenciasAsistidas, parametros);
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarCompetenciasAsistidas, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -119,28 +149,54 @@ namespace DatosSKD.Modulo7
                     laListaDeCompetenciasAsistidas.Add(competencia);
                 }
 
-                return laListaDeCompetenciasAsistidas;
+           
+                }
+                else
+                {
+
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
+
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
-        }
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return laListaDeCompetenciasAsistidas;
+        }
+          
 
         /// <summary>
         /// Metodo para listar las competencias asistidas del atleta
@@ -149,6 +205,9 @@ namespace DatosSKD.Modulo7
         /// <returns></returns>
         public List<Competencia> ListarCompetenciasInscritas(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+              RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -156,6 +215,8 @@ namespace DatosSKD.Modulo7
 
             try
             {
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
@@ -182,28 +243,53 @@ namespace DatosSKD.Modulo7
                     laListaDeCompetenciasInscritas.Add(competencia);
                 }
 
-                return laListaDeCompetenciasInscritas;
+                 }
+                else
+                {
+
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+                
+
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            
+                return laListaDeCompetenciasInscritas;
         }
-        
         
         /// <summary>
         /// Método para listar los eventos asistidos del atleta
@@ -211,6 +297,9 @@ namespace DatosSKD.Modulo7
         /// <returns>Lista de eventos</returns>
         public List<Evento> ListarEventosAsistidos(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -218,14 +307,16 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                 if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
                 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(),false);
-                parametros.Add(elParametro);
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(),false);
+                    parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarEventosAsistidos, parametros);
+                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarEventosAsistidos, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -239,36 +330,61 @@ namespace DatosSKD.Modulo7
                     evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                     laListaDeEventoAsistidos.Add(evento);
                 }
+                }
+                 else
+                 {
 
-                return laListaDeEventoAsistidos; 
+                     throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                 }
+
+
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return laListaDeEventoAsistidos;
         }
-
-
+          
         /// <summary>
         /// Método que devuelve la fecha de una inscripción
         /// </summary>
         /// <returns>Fecha de inscripción</returns>
-        public DateTime fechaInscripcion(int idPersona, int idEvento)
+        public DateTime fechaInscripcionEvento(int idPersona, int idEvento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -278,43 +394,68 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                if ((idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0) && (idEvento.GetType() == Type.GetType("System.Int32") && idEvento > 0))
+                {
 
-                elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
-                elParametroEvento = new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idEvento.ToString(), false);
-                parametros.Add(elParametroPersona);
-                parametros.Add(elParametroEvento);
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarFechaInscripcion, parametros);
+                    elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    elParametroEvento = new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idEvento.ToString(), false);
+                    parametros.Add(elParametroPersona);
+                    parametros.Add(elParametroEvento);
+
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarFechaInscripcion, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
                     fechaInscripcion = DateTime.Parse(row[RecursosBDModulo7.AliasInscripcionFecha].ToString());
                 }
 
-                return fechaInscripcion;
+              }
+              else
+              {
+                      throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+              }
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return fechaInscripcion;
         }
+
 
         /// <summary>
         /// Metodo que lista los eventos a los cuales estan inscritos los atletas
@@ -322,6 +463,9 @@ namespace DatosSKD.Modulo7
         /// <returns>Lista de Evento Isncrito</returns>
         public List<Evento> ListarEventosInscritos(int idPersona)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -329,14 +473,14 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
 
-
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo7.ConsultarEventosInscritos, parametros);
 
                 foreach (DataRow row in dt.Rows){
@@ -349,45 +493,73 @@ namespace DatosSKD.Modulo7
                         evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosBDModulo7.AliasEventoUbicacionId].ToString()));
                         laListaDeEventoInscrito.Add(evento);
                 }
-           
-                return laListaDeEventoInscrito;
+
+                }
+                else
+                {
+
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return laListaDeEventoInscrito;
         }
+
 
         ///Metodo que lista los eventos pagos del atleta
         public List<Evento> ListarEventosPagos(int idPersona)
         {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
-            List<Parametro> parametros;
-            Parametro elParametro = new Parametro();
-            List<Evento> laListaDeEventoPago = new List<Evento>();
+                BDConexion laConexion;
+                List<Parametro> parametros;
+                Parametro elParametro = new Parametro();
+                List<Evento> laListaDeEventoPago = new List<Evento>();
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-
-
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                  
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo7.ConsultarEventosPagos, parametros);
@@ -401,27 +573,51 @@ namespace DatosSKD.Modulo7
                     //  evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString
                     laListaDeEventoPago.Add(evento);
                 }
-
-                return laListaDeEventoPago;
-
+              }
+               else
+              {
+                           throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+                
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (NumeroEnteroInvalidoException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            //return laListaDeEventosPagos;
+            return laListaDeEventoPago;
         }
+
+       
 
         /// <summary>
         /// Metodo para listar las competencias pagadas del atleta
@@ -430,6 +626,10 @@ namespace DatosSKD.Modulo7
         /// <returns></returns>
         public List<Competencia> ListarCompetenciasPagas(int idPersona)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -437,14 +637,15 @@ namespace DatosSKD.Modulo7
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                  if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                   laConexion = new BDConexion();
+                   parametros = new List<Parametro>();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
+                   elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                   parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo7.ConsultarCompetenciasInscritas, parametros);
+                   DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarCompetenciasInscritas, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -459,25 +660,52 @@ namespace DatosSKD.Modulo7
                         competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
                     competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
                     laListaDeCompetenciasPagas.Add(competencia);
+                 }
                 }
-
-                return laListaDeCompetenciasPagas;
-
+               else
+               {
+                        throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+                
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (NumeroEnteroInvalidoException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return laListaDeCompetenciasPagas;
         }
+
+      
             
         /// <summary>
         /// Metodo que lista los horarios de practica de los atletas
@@ -487,25 +715,32 @@ namespace DatosSKD.Modulo7
          
         public List<Evento> ListarHorarioPractica(int idPersona)
         {
-            BDConexion laConexion;
-            List<Parametro> parametros;
-            Parametro elParametro = new Parametro();
-            List<Evento> laListaDeHorarioPractica = new List<Evento>();
+                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                 RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                 BDConexion laConexion;
+                 List<Parametro> parametros;
+                 Parametro elParametro = new Parametro();
+                 List<Evento> laListaDeHorarioPractica = new List<Evento>();
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
+                
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                     laConexion = new BDConexion();
+                     parametros = new List<Parametro>();
 
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
+                     elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                     parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo7.ConsultarHorarioPractica, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
+           
                         Evento evento = new Evento();
                         evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
@@ -516,27 +751,54 @@ namespace DatosSKD.Modulo7
                         laListaDeHorarioPractica.Add(evento);
                 }
 
-            return laListaDeHorarioPractica;
                }
+            else
+               {
+
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+                
+
+
+            }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+             return laListaDeHorarioPractica;
         }
-
-
     }
 }
+           
+
+ 
