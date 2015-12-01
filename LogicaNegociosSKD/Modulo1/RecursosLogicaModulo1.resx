@@ -207,4 +207,7 @@
   <data name="variableTiempo" xml:space="preserve">
     <value>tiempo</value>
   </data>
+  <data name="Mensaje_Error_Roles" xml:space="preserve">
+    <value>El usuario no posee permiso para ingresar al sistema, comuníquese con un administrador de SAKARATEDO.</value>
+  </data>
 </root>
