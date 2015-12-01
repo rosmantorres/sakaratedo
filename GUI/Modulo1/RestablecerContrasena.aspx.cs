@@ -72,9 +72,11 @@ namespace templateApp.GUI.Modulo1
                 {
                     warningCaracteres.Visible = true;
                     warningCaracteres.InnerText = RecursosInterfazModulo1.logCaracterInvalidos;
+                    infoRestablecer.Visible = false;
                 }
                 else
                 {
+                    infoRestablecer.Visible = true;
                     warningCaracteres.Visible = false;
                     warningCaracteres.InnerText = "";
 
