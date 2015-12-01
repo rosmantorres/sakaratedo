@@ -56,17 +56,17 @@
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo8\RestriccionExistenteException.cs" />
     <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
     <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
-=======
+
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
->>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
