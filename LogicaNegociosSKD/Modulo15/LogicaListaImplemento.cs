@@ -118,7 +118,7 @@ namespace LogicaNegociosSKD.Modulo15
             try
             {
                 idDojo = ConexionBaseDatos.usuarioImplementoDatos(usuario);
-               // dojo = BDDojo.DetallarDojo(idDojo);
+                dojo = BDDojo.DetallarDojo(idDojo);
             }
 
             catch (ExceptionSKDConexionBD ex)
