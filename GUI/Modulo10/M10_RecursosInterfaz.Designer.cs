@@ -59,5 +59,86 @@ namespace templateApp.GUI.Modulo10 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;td&gt;.
+        /// </summary>
+        internal static string AbrirTD {
+            get {
+                return ResourceManager.GetString("AbrirTD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;tr&gt;.
+        /// </summary>
+        internal static string AbrirTR {
+            get {
+                return ResourceManager.GetString("AbrirTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonCerrar {
+            get {
+                return ResourceManager.GetString("BotonCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class= &quot;btn btn-primary glyphicon glyphicon-info-sign&quot;.
+        /// </summary>
+        internal static string BotonInfo {
+            get {
+                return ResourceManager.GetString("BotonInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class= &quot;btn btn-default glyphicon glyphicon-pencil&quot;.
+        /// </summary>
+        internal static string BotonModificar {
+            get {
+                return ResourceManager.GetString("BotonModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/td&gt;.
+        /// </summary>
+        internal static string CerrarTD {
+            get {
+                return ResourceManager.GetString("CerrarTD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/tr&gt;.
+        /// </summary>
+        internal static string CerrarTR {
+            get {
+                return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to competencia.
+        /// </summary>
+        internal static string Competencia {
+            get {
+                return ResourceManager.GetString("Competencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to evento.
+        /// </summary>
+        internal static string Evento {
+            get {
+                return ResourceManager.GetString("Evento", resourceCulture);
+            }
+        }
     }
 }

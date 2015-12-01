@@ -56,7 +56,7 @@
                     <th style="text-align:center">Referencia</th>
 					<th style="text-align:center">Nombre Evento</th>
                     <th style="text-align:center">Fecha</th>
-					<th style="text-align:center">Estatus de Asistencia</th>
+					<th style="text-align:center">Tipo</th>
 					<th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>
@@ -69,7 +69,7 @@
     </div>
 </div>
 
-        
+      <%--
         <div class="modal-dialog">
           <div class="modal-content">
           
@@ -132,7 +132,7 @@
 
                  });
 
-        </script>
+        </script>--%>
     
 </asp:Content>
 

@@ -42,29 +42,20 @@ namespace templateApp.GUI.Modulo10
                 try
                 {
                     eventos = LogicaAsistencia.ListarEventosAsistidos();
-                    /*foreach (Evento evento in eventos)
+                    foreach (Evento evento in eventos)
                     {
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTR;
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.TipoEvento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaInicio) + M9_RecursoInterfaz.CerrarTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaFin) + M9_RecursoInterfaz.CerrarTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Horario.HoraInicio.ToString()+":00"+ M9_RecursoInterfaz.CerrarTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Horario.HoraFin.ToString()+":00"+ M9_RecursoInterfaz.CerrarTD;
-                        if (evento.Estado)
-                        {
-                            this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + "Activo" + M9_RecursoInterfaz.CerrarTD;
-                        }
-                        else {
-                            this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + "Inactivo" + M9_RecursoInterfaz.CerrarTD;
-                        }
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTR;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + evento.Id_evento.ToString() + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + evento.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaInicio) + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + evento.TipoEvento.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
 
-                        this.dataTable.Text += M9_RecursoInterfaz.AbrirTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.BotonInfo + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
-                        this.dataTable.Text += M9_RecursoInterfaz.BotonModificar + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
-                        this.dataTable.Text += M9_RecursoInterfaz.CerrarTD;
-                        this.dataTable.Text += M9_RecursoInterfaz.CerrarTR;
-                    }*/
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonModificar + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
+                    }
                 }
                 catch (Exception ex)
                 {

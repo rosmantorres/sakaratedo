@@ -35,7 +35,10 @@ namespace DatosSKD.Modulo10
                     evento.Nombre = row[RecursosBDModulo10.aliasNombreEvento].ToString();
                     Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosBDModulo10.aliasFechaEvento].ToString());
+                    TipoEvento tipoEvento = new TipoEvento();
+                    tipoEvento.Nombre = row[RecursosBDModulo10.aliasTipoEvento].ToString();
                     evento.Horario = horario;
+                    evento.TipoEvento = tipoEvento;
                     listaEventos.Add(evento);
                 }
 

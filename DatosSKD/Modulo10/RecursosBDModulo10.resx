@@ -149,4 +149,8 @@
     <value>M10_ConsultarAsistenciaPasadaE</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="aliasTipoEvento" xml:space="preserve">
+    <value>tipoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna tipo evento</comment>
+  </data>
 </root>

@@ -115,6 +115,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to tipoEvento.
+        /// </summary>
+        internal static string aliasTipoEvento {
+            get {
+                return ResourceManager.GetString("aliasTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_ConsultarAsistenciaPasadaC.
         /// </summary>
         internal static string ProcedimentoConsultarCompetenciaAsistida {
