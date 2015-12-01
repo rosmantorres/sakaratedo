@@ -29,7 +29,7 @@ namespace templateApp.GUI.Modulo16
 
             if (usuario != null && producto != null)
             {
-                agregarImplementoAcarrito(1, 1);
+                agregarImplementoAcarrito(1, int.Parse(producto), 1, 1);
             }
 
             #region Llenar Data Table Con Inventario
@@ -46,7 +46,7 @@ namespace templateApp.GUI.Modulo16
                     foreach (Implemento c in laLista)
                     {
                         //Creo la fila de la tabla
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR + c.Id_Implemento + ">";
 
                         //Agrego los datos correspondientes de la tabla
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
@@ -67,8 +67,10 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento 
                             + M16_Recursointerfaz.BOTON_CERRAR;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO + c.Id_Implemento 
-                            + M16_Recursointerfaz.BOTON_CERRAR;
+                        /*this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO + c.Id_Implemento 
+                            + M16_Recursointerfaz.BOTON_CERRAR;*/
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR;
+                            
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
 
                         //Cierro la fila creada
@@ -136,10 +138,9 @@ namespace templateApp.GUI.Modulo16
         }
         #endregion
 
-
         #region Llenado del Modal para agregar el producto al carrito
         [System.Web.Services.WebMethod]
-        protected void agregarImplementoAcarrito(int usuario, int idImplemento)
+        protected void agregarImplementoAcarrito(int usuario, int idImplemento, int cantidad, int precio)
         {
             bool agregar = false;
             Logicacarrito logica = new Logicacarrito();

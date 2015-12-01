@@ -114,6 +114,12 @@
                  var req;
                  var tr;
 
+                 //Data table a modificar
+                 $('#tablaproducto').DataTable();
+
+                 //Variables a usar
+                 var tabla = $('#tablaproducto').DataTable();
+
                  $('#tablaproducto tbody').on('click', 'a', function () {
                      if ($(this).parent().hasClass('selected')) {
                          req = $(this).parent().prev().prev().prev().text();
@@ -141,6 +147,14 @@
                      $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
+
+                 $('.btn btn-danger glyphicon glyphicon-remove-sign').click(function (e) {
+
+                     alert("LOLAZO");
+
+
+                 });
+
 
                  // Carga el modal con la informacion del producto de acuerdo al id
                  $('#modal-info1').on('show.bs.modal', function (e) {

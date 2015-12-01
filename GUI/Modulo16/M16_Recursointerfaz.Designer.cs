@@ -106,6 +106,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot;  data-toggle=&quot;modal&quot; data-target=&quot;#modal-agregar&quot; href=&quot;#&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BOTON_AGREGAR {
+            get {
+                return ResourceManager.GetString("BOTON_AGREGAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M16_ConsultarMensualidad.aspx?compAgregar=.
         /// </summary>
         internal static string BOTON_AGREGAR_CARRITO {
@@ -115,7 +124,7 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M16_ConsultarProducto.aspx?accion=1&amp;id=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M16_ConsultarProducto.aspx?compAgregar=.
         /// </summary>
         internal static string BOTON_AGREGAR_IMPLEMENTO_CARRITO {
             get {

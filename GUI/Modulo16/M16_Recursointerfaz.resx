@@ -132,11 +132,14 @@
   <data name="ABRIR_TR_MATRICULA" xml:space="preserve">
     <value>&lt;tr id=M-</value>
   </data>
+  <data name="BOTON_AGREGAR" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign"  data-toggle="modal" data-target="#modal-agregar" href="#"&gt;&lt;/a&gt;</value>
+  </data>
   <data name="BOTON_AGREGAR_CARRITO" xml:space="preserve">
     <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M16_ConsultarMensualidad.aspx?compAgregar=</value>
   </data>
   <data name="BOTON_AGREGAR_IMPLEMENTO_CARRITO" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M16_ConsultarProducto.aspx?accion=1&amp;id=</value>
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M16_ConsultarProducto.aspx?compAgregar=</value>
   </data>
   <data name="BOTON_CERRAR" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
