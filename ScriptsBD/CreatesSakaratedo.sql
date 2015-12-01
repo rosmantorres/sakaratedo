@@ -2354,6 +2354,7 @@ as
 
  end;
  GO
+
 ------------------------PROCEDURE CONSULTA DE ATLETAS POR CINTAS-----------------
 
 CREATE procedure M13_ConsultarAtletasCintas
@@ -2367,3 +2368,192 @@ as
 
        end;
        go
+
+ 
+ --------------------------------------Stored Procedures M9-------------------------------------------------------
+CREATE PROCEDURE M9_AgregarHorario
+	
+    @hor_fecha_inicio [DATE], 
+    @hor_fecha_fin    [DATE] ,
+    @hor_hora_inicio  [INTEGER],
+    @hor_hora_fin     [INTEGER] 
+as
+	begin
+		INSERT INTO HORARIO (hor_fecha_inicio,hor_fecha_fin,hor_hora_inicio,hor_hora_fin) VALUES (@hor_fecha_inicio,@hor_fecha_fin,@hor_hora_inicio, @hor_hora_fin) ;
+
+	end;
+
+GO
+
+
+CREATE PROCEDURE M9_AgregarEventoCompleto
+	@nombre       [VARCHAR](120),
+    @descripcion  [VARCHAR](120),
+    @costo [FLOAT]  ,
+	@estado [BIT],
+	@idPersona [INTEGER],
+    @idUbicacion [INTEGER],
+    @idTipoEvento [INTEGER],
+	@idCategoria [INTEGER],
+	@fechaInicio [DATE], 
+    @fechaFin    [DATE] ,
+    @horaInicio  [INTEGER],
+    @horaFin     [INTEGER] 	
+	
+
+AS
+	
+	BEGIN
+		DECLARE @idHorario as integer ;
+		DECLARE @idDojo as integer;
+		exec "M9_AgregarHorario" @hor_fecha_inicio=@fechaInicio, @hor_fecha_fin = @fechaFin, @hor_hora_inicio = @horaInicio , @hor_hora_fin = @horaFin
+		Select @idHorario =  Count(*) From HORARIO;
+		Select @idDojo = persona.DOJO_doj_id from PERSONA persona WHERE persona.per_id = @idPersona;
+		if (@idCategoria = null) and (@idDojo = null)
+			INSERT INTO EVENTO (eve_nombre,eve_costo,eve_descripcion,eve_estado,DOJO_doj_id,CATEGORIA_cat_id,HORARIO_hor_id,TIPO_EVENTO_tip_id,UBICACION_ubi_id) 
+			VALUES (@nombre,@costo,@descripcion,1,null,null,@idHorario,@idTipoEvento,@idUbicacion);
+		else
+			INSERT INTO EVENTO (eve_nombre,eve_costo,eve_descripcion,eve_estado,DOJO_doj_id,CATEGORIA_cat_id,HORARIO_hor_id,TIPO_EVENTO_tip_id,UBICACION_ubi_id) 
+			VALUES (@nombre,@costo,@descripcion,1,@idDojo,@idCategoria,@idHorario,@idTipoEvento,@idUbicacion);
+			
+	
+	
+	END
+	
+GO
+
+
+
+
+CREATE PROCEDURE M9_AgregarTipoEvento
+	@nombre   [varchar](100)
+as
+	begin
+		INSERT INTO TIPO_EVENTO (tip_nombre) VALUES (@nombre);
+	end;
+	
+GO
+
+
+CREATE procedure M9_ConsultarAscensosRangoFecha
+@fechaInicio date,
+@fechaFin date
+as
+	begin
+		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where (tipo.tip_id = evento.TIPO_EVENTO_tip_id)and (tipo.tip_nombre='Pase de Cinta')and(evento.HORARIO_hor_id = horario.hor_id) and (evento.TIPO_EVENTO_tip_id = tipo.tip_id) and (horario.hor_fecha_inicio>=@fechaInicio) and (horario.hor_fecha_fin <=@fechaFin) and (evento.eve_estado = 'True')
+
+		
+	end;
+	
+GO
+
+CREATE procedure M9_ConsultarEventos
+as
+	begin
+		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where evento.HORARIO_hor_id = horario.hor_id and evento.TIPO_EVENTO_tip_id = tipo.tip_id
+
+		
+	end;
+	
+GO
+
+CREATE procedure M9_ConsultarEventosRangoFecha
+@fechaInicio date,
+@fechaFin date
+as
+	begin
+		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where (evento.HORARIO_hor_id = horario.hor_id) and (evento.TIPO_EVENTO_tip_id = tipo.tip_id) and (horario.hor_fecha_inicio>=@fechaInicio) and (horario.hor_fecha_fin <=@fechaFin) and (evento.eve_estado = 'True')
+
+		
+	end;
+
+GO
+
+CREATE PROCEDURE M9_ConsultarEventoXID
+	@idEvento integer
+	
+
+AS
+	
+	BEGIN
+		select evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
+		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
+		where (evento.HORARIO_hor_id = horario.hor_id) and (evento.TIPO_EVENTO_tip_id = tipo.tip_id) and (evento.eve_id = @idEvento)
+	
+	
+	END
+
+GO
+
+CREATE PROCEDURE M9_ConsultarHorario
+	
+	@id [integer],
+	@id2 [integer] output,
+	@fechaInicio [DATE] output, 
+    @fechaFin    [DATE] output,
+    @horaInicio  [INTEGER] output,
+    @horaFin     [INTEGER] output	   
+AS
+ BEGIN
+	
+	SELECT @id2=hor_id, @fechaInicio= hor_fecha_inicio , @fechaFin = hor_fecha_fin , @horaInicio = hor_hora_inicio , @horaFin = hor_hora_fin 
+	FROM HORARIO H
+	WHERE (H.hor_id=@id) 
+	RETURN
+ END
+ 
+GO
+
+ CREATE PROCEDURE M9_ConsultarUbicacion
+	
+	@id [integer],
+	@id2       [INTEGER] output,
+    @latitud   [VARCHAR] (100) output ,
+    @longitud  [VARCHAR] (100) output,
+    @ciudad    [VARCHAR] (100) output,
+    @estado    [VARCHAR](100) output,
+    @direccion [VARCHAR] (100)    
+	
+AS
+ BEGIN
+	
+	SELECT @id2=ubi_id, @latitud= ubi_latitud , @longitud = ubi_longitud , @ciudad = ubi_ciudad , @estado = ubi_estado, @direccion = ubi_direccion
+	FROM UBICACION U
+	WHERE (U.ubi_id=@id) 
+	RETURN
+ END
+ 
+GO
+
+CREATE PROCEDURE M9_TodasLasFechas
+AS
+ BEGIN
+		Select horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		from EVENTO evento, HORARIO horario
+		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id
+ END
+ 
+GO
+
+ CREATE PROCEDURE M9_TodasLasFechasAscensos
+AS
+ BEGIN
+		Select horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
+		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
+		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
+ END
+

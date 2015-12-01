@@ -160,7 +160,7 @@ namespace DatosSKD
                     comando.CommandType = CommandType.StoredProcedure;
 
 
-                   // AsignarParametros(parametros);
+                    AsignarParametros(parametros);
 
 
                     conexion.Open();
@@ -273,7 +273,7 @@ namespace DatosSKD
                     comando.CommandType = CommandType.StoredProcedure;
 
 
-                   //AsignarParametros(parametros);
+                    AsignarParametros(parametros);
 
 
                     conexion.Open();

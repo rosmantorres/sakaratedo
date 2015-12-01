@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo15\LogicaListaImplemento.cs" />
     <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +126,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\LogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -9,35 +9,35 @@ namespace DominioSKD
     public class Reporte_Inventario
     {
 
-        private string nombre;
+        public string nombre;
 
-        private string tipo;
+        public string tipo;
 
-        private string marca;
-
-
-        private string color;
+        public string marca;
 
 
-        private string talla;
+        public string color;
 
 
-        private string estatus;
+        public string talla;
 
 
-        private string precio;
+        public string estatus;
 
 
-        private string stockmin;
+        public string precio;
 
 
-        private string descripcion;
+        public string stockmin;
 
 
-        private string dojo;
+        public string descripcion;
 
 
-        private string cantidad_total;
+        public string dojo;
+
+
+        public string cantidad_total;
 
 
 

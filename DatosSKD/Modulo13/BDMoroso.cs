@@ -19,50 +19,47 @@ namespace DatosSKD.Modulo13
         public static DataTable ListarMorosos()
         {
             BDConexion laConexion;
-          
+
             List<Parametro> parametros;
-          
-              try
-              {
-                  laConexion = new BDConexion();
-                 parametros = new List<Parametro>();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
 
 
-                 DataTable laListaDeMorosos = laConexion.EjecutarStoredProcedureTuplas(
-                                 RecursosBDModulo13.listamorosidad, parametros);
-
-               
-
-                 return laListaDeMorosos;
-
-              }
-              catch (SqlException ex)
-              {
-                  throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                      RecursoGeneralBD.Mensaje, ex);
-              }
-             
-              catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-              {
-                  throw ex;
-              }
-              catch (Exception ex)
-              {
-                  throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-              }
-
-             
-
-          }
+                DataTable laListaDeMorosos = laConexion.EjecutarStoredProcedureTuplas(
+                                RecursosBDModulo13.listamorosidad, parametros);
 
 
 
+                return laListaDeMorosos;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
 
 
 
-      }
-          
         }
-    
 
 
+
+
+
+
+    }
+
+}
