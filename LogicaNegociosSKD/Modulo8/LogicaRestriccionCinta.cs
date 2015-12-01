@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosSKD;
 using DatosSKD.Modulo8;
 using ExcepcionesSKD;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Modulo8
 {
@@ -40,7 +41,7 @@ namespace LogicaNegociosSKD.Modulo8
             {
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo8.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
@@ -54,5 +55,32 @@ namespace LogicaNegociosSKD.Modulo8
             }
 
         }
+
+        public bool AgregarRestriccionCinta(int Horas_docentes_mínimas, int Putaje_mínimo, int Tiempo_mínimo,int NuevaCinta)
+        {
+            try
+            {
+                RestriccionCinta laRestriccion = new RestriccionCinta();
+                return BDRestriccionCinta.AgregarRestriccionCinta(laRestriccion, NuevaCinta);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo8.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            return true;
+        }
+
     }
 }
