@@ -36,6 +36,14 @@
               </tr>
         </thead>
      <tbody>
+
+          <% 
+              
+              LogicaNegociosSKD.Modulo13.LogicaInventario inventario = new LogicaNegociosSKD.Modulo13.LogicaInventario();
+              System.Data.DataTable tabla = inventario.L_Inventario();
+                       
+             %>
+
               <tr>	
                    <td style="text-align:center"></td>
                    <td style="text-align:center"></td>
