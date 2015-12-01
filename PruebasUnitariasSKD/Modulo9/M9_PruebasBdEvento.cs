@@ -33,6 +33,9 @@ namespace PruebasUnitariasSKD.Modulo9
             Categoria categoria = new Categoria(15,16,"verde","amarillo","masculino");
             TipoEvento tipoEvento = new TipoEvento(1,"Pase de Cinta");
             Ubicacion ubicacion = new Ubicacion("10.499607", "66.788419", "Caracas", "Miranda","NULL");
+            Persona persona = new Persona();
+            categoria.Id_categoria = 1;
+            persona.ID = 33;
             ubicacion.Id_ubicacion = 1;
             elEvento = new Evento();
             elEvento.Nombre = "Prueba Unitaria";
@@ -43,6 +46,7 @@ namespace PruebasUnitariasSKD.Modulo9
             elEvento.Horario = horario;
             elEvento.Ubicacion = ubicacion;
             elEvento.TipoEvento = tipoEvento;
+            elEvento.Persona = persona;
         }
 
         [TearDown]

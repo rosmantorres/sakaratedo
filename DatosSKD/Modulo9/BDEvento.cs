@@ -32,7 +32,7 @@ namespace DatosSKD.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, "1", false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
                 parametros.Add(parametro);
