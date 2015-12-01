@@ -115,7 +115,7 @@ namespace DatosSKD.Modulo2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M1_ConsultarNombreUsuarioContrasena_ID.
+        ///   Busca una cadena traducida similar a M2_ConsultarNombreUsuarioContrasena_ID.
         /// </summary>
         internal static string ConsultarNombreUsuarioContrasena_ID {
             get {

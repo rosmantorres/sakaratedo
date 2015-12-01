@@ -34,7 +34,7 @@
         <img id="imageTag" runat="server" src="http://" class="img-circle" alt="User Image" height="150" width="150">   
         <br />
         <br />
-        Nombre completo:<strong><%=cuentaConsultada.NombreDePila %></strong>
+        Nombre completo:<strong><%=cuentaConsultada.PersonaUsuario._Nombre+" "+cuentaConsultada.PersonaUsuario._Apellido %></strong>
         <br /> 
          <br />
         Usuario:<strong> <%=cuentaConsultada.Nombre_usuario%></strong>

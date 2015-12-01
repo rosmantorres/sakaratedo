@@ -49,7 +49,8 @@ namespace templateApp.GUI.Modulo2
                         rolesDePersona = logicaRol.consultarRolesUsuario
                             (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);////QUITAR ESTE PROCEDIMIENTO Y SP
                         cuentaConsultada =
-                        logicaRol.cuentaAConsultar(int.Parse(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario])); rolesDePersona = cuentaConsultada.Roles;
+                        logicaRol.cuentaAConsultar(int.Parse(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]));
+                        rolesDePersona = cuentaConsultada.Roles;
                     }
 
                     rolSinPermiso = logicaRol.rolNoEditable(rolesDePersona,
@@ -63,7 +64,7 @@ namespace templateApp.GUI.Modulo2
                         Session[RecursosInterfazMaster.sessionRol].ToString());
 
                     //asigno la imagen del perfil
-                    imageTag.Src = imageTag.Src + "marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png";
+                    imageTag.Src = imageTag.Src +cuentaConsultada.Imagen;
 
                 }
                 else
