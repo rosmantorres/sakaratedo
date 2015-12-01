@@ -32,7 +32,7 @@
   <ItemGroup>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod11.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo12\PruebaBDCompetencias.cs" />
     <Compile Include="Modulo12\RecursosPU_Mod12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +120,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\M9_PruebasBdEvento.cs" />
+    <Compile Include="Modulo9\M9_PruebasLogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosPU_Mod9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +212,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

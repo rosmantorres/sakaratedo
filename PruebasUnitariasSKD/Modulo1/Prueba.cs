@@ -14,9 +14,6 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void Prueba1()
         {
-            login lg = new login();
-            string[] resp = lg.iniciarSesion("man", "12345");
-            Assert.AreEqual(resp, null);
 
         }
     }

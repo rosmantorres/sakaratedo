@@ -126,6 +126,24 @@
   <data name="direccionMaster_MenuSuperior" xml:space="preserve">
     <value>~/GUI/Master/menuSuperior.xml</value>
   </data>
+  <data name="rolAtleta" xml:space="preserve">
+    <value>Atleta</value>
+  </data>
+  <data name="rolAtletaMenor" xml:space="preserve">
+    <value>Atleta(Menor)</value>
+  </data>
+  <data name="rolDojo" xml:space="preserve">
+    <value>Dojo</value>
+  </data>
+  <data name="rolOrganizacion" xml:space="preserve">
+    <value>Organizacion</value>
+  </data>
+  <data name="rolRepresentante" xml:space="preserve">
+    <value>Representante</value>
+  </data>
+  <data name="rolSistema" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
   <data name="sessionLogout" xml:space="preserve">
     <value>logout</value>
     <comment>tag para cerrar sesion</comment>
@@ -138,21 +156,13 @@
     <value>roles</value>
     <comment>Roles que puede tener un usuario</comment>
   </data>
-  <data name="sessionUsuarioApellido" xml:space="preserve">
-    <value>Apellido</value>
-    <comment>Apellido del usuario</comment>
-  </data>
-  <data name="sessionUsuarioCorreo" xml:space="preserve">
-    <value>Correo</value>
-    <comment>Correo del usuario</comment>
-  </data>
   <data name="sessionUsuarioID" xml:space="preserve">
     <value>usuarioID</value>
     <comment>contiene el ID del usuario para poder hacer todas las consultas en la Base de Datos</comment>
   </data>
   <data name="sessionUsuarioNombre" xml:space="preserve">
     <value>Nombre</value>
-    <comment>Nombre del usuario</comment>
+    <comment>Nombre de usuario</comment>
   </data>
   <data name="splitRoles" xml:space="preserve">
     <value>-</value>

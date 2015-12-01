@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD;
 using DatosSKD.Modulo12;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo12
 {
@@ -25,35 +26,173 @@ namespace LogicaNegociosSKD.Modulo12
         }
         #endregion
 
+        #region Metodos Logica
         public LogicaCompetencias()
         {
-            laListaDeCompetencias = obtenerListaDeCompetencias();
         }
 
         public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try 
             {
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return BDCompetencia.ListarCompetencias();
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw e;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
             }
         
         }
 
-        public DominioSKD.Competencia detalleCompetenciaXId(int elIdCompetencia)
+        public List<DominioSKD.Organizacion> M12obtenerListaDeOrganizaciones()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
-                return BDCompetencia.DetallarCompetencia(elIdCompetencia);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                return BDCompetencia.M12ListarOrganizaciones();
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw e;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
             }
         }
 
+        public List<DominioSKD.Cinta> M12obtenerListaDeCintas()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                return BDCompetencia.M12ListarCintas();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+        }
+
+        public DominioSKD.Competencia detalleCompetenciaXId(int elIdCompetencia)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                return BDCompetencia.DetallarCompetencia(elIdCompetencia);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+        }
+
+        public bool agregarCompetencia(DominioSKD.Competencia laCompetencia)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                return BDCompetencia.AgregarCompetencia(laCompetencia);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                
+                throw ex;
+            }
+        }
+        #endregion
+ 
     }
 }

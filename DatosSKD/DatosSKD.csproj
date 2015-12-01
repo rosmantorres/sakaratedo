@@ -77,11 +77,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\BDDiseño.cs" />
+    <Compile Include="Modulo14\BDPlanilla.cs" />
+    <Compile Include="Modulo14\BDSolicitud.cs" />
     <Compile Include="Modulo14\RecursosBDModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo15\ConexionBaseDatos.cs" />
     <Compile Include="Modulo15\RecursosBDModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,11 +96,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo1\BDLogin.cs" />
+    <Compile Include="Modulo1\BDRestablecer.cs" />
     <Compile Include="Modulo1\RecursosBDModulo1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\BDRol.cs" />
+    <Compile Include="Modulo2\BDRoles.cs" />
     <Compile Include="Modulo2\RecursosBDModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo3.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo4\BDDojo.cs" />
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,6 +142,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\BDEvento.cs" />
     <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
