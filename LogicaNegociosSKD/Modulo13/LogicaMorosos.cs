@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using DominioSKD;
 namespace LogicaNegociosSKD.Modulo13
 {
-   
 
+   public class LogicaInformacionProducto
+    {
 
     }
 }
