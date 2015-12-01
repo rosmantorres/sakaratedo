@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
+
 
 namespace DatosSKD.Modulo7
 {
@@ -18,18 +21,25 @@ namespace DatosSKD.Modulo7
         /// <returns></returns>
         public Persona DetallarPersona(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            Persona persona;
+            
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Persona persona = new Persona();
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    persona = new Persona();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
-                parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ToString(), false);
+                    parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo7.ConsultaPersonaXId, parametros);
@@ -43,26 +53,46 @@ namespace DatosSKD.Modulo7
                     persona.DojoPersona = int.Parse(row[RecursosBDModulo7.AliasPersonaDojoId].ToString());
                 }
 
-                return persona;
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return persona;
         }
     }
 }

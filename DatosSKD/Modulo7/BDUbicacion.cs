@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 
 namespace DatosSKD.Modulo7
 {
@@ -13,19 +15,23 @@ namespace DatosSKD.Modulo7
     {
         public Ubicacion DetallarUbicacion(int idUbicacion)
         {
-             BDConexion laConexion;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
+            Ubicacion ubicacion;
 
             try
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Ubicacion ubicacion = new Ubicacion();
+                if (idUbicacion.GetType() == Type.GetType("System.Int32") && idUbicacion > 0)
+                {
+                     laConexion = new BDConexion();
+                     parametros = new List<Parametro>();
+                     ubicacion = new Ubicacion();
 
-                elParametro = new Parametro(RecursosBDModulo7.ParamIdUbicacion, SqlDbType.Int, idUbicacion.ToString(),
-                                            false);
-                parametros.Add(elParametro);
+                     elParametro = new Parametro(RecursosBDModulo7.ParamIdUbicacion, SqlDbType.Int, idUbicacion.ToString(), false);
+                    parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo7.ConsultaUbicacionXId, parametros);
@@ -40,27 +46,46 @@ namespace DatosSKD.Modulo7
                     
                 }
 
-                return ubicacion;
+                  }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
 
             }
             catch (SqlException ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
-            }/*
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return ubicacion;
         }
     }
 }
