@@ -65,6 +65,10 @@
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo1\HashException.cs" />
+    <Compile Include="Modulo1\InicioSesionException.cs" />
+    <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +80,7 @@
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo1\" />
     <Folder Include="Modulo2\" />
+    <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo5\" />
