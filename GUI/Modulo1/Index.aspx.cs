@@ -45,8 +45,11 @@ namespace templateApp.GUI.Modulo1
         }
         public void ValidarUsuario(object sender, EventArgs e)
         {
-
-            consultarUsuario();
+            List<String> campos=new List<String>();
+            campos.Add(userIni.Value);
+            campos.Add(passwordIni.Value);
+           if(Validaciones.ValidarCamposVacios(campos) && Validaciones.ValidarExpresionRegular)
+                    consultarUsuario();
         }
         /// <summary>
         /// Metodo para Establecer un mensaje de alerta en el login
@@ -114,22 +117,29 @@ namespace templateApp.GUI.Modulo1
         }
         public void consultarUsuario()
         {
-            string correo = userIni.Value;
-            string clave = passwordIni.Value;
-            string[] Respuesta = new logicaLogin().iniciarSesion(correo, clave);
-            if (Respuesta != null)
+            try
             {
-                Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];
-                Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[1];
-                Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
-                Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
-                Session[RecursosInterfazMaster.sessionImagen] = Respuesta[4];
-                Session[RecursosInterfazMaster.sessionNombreCompleto] = Respuesta[5];
-                Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
-                mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+                string correo = userIni.Value;
+                string clave = passwordIni.Value;
+                string[] Respuesta = new logicaLogin().iniciarSesion(correo, clave);
+                if (Respuesta != null)
+                {
+                    Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];
+                    Session[RecursosInterfazMaster.sessionUsuarioNombre] = Respuesta[1];
+                    Session[RecursosInterfazMaster.sessionRoles] = Respuesta[2];
+                    Session[RecursosInterfazMaster.sessionUsuarioID] = Respuesta[0];
+                    Session[RecursosInterfazMaster.sessionImagen] = Respuesta[4];
+                    Session[RecursosInterfazMaster.sessionNombreCompleto] = Respuesta[5];
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
+                    mensajeLogin(RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+                }
+                else
+                    mensajeLogin(RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
             }
-            else
-                mensajeLogin( RecursosInterfazModulo1.logErr, RecursosInterfazModulo1.tipoErr);
+            catch (Exception ex)
+            {
+                mensajeLogin(ex.Message, RecursosInterfazModulo1.tipoErr);
+            }
         }
            
     }

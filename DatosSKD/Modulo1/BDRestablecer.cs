@@ -13,7 +13,7 @@ namespace DatosSKD.Modulo1
 {
     public class BDRestablecer
     {
-        public static bool RestablecerContrasena(string usuarioId,string contraseña)
+        public  bool RestablecerContrasena(string usuarioId,string contraseña)
         {
             BDConexion laConexion;
             List<Parametro> parametros;

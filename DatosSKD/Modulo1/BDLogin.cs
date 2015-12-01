@@ -13,7 +13,7 @@ namespace DatosSKD.Modulo1
 {
     public class BDLogin
     {
-        public static Cuenta ObtenerUsuario(string nombre_usuario)
+        public Cuenta ObtenerUsuario(string nombre_usuario)
         {
             BDConexion laConexion;//COnsultar la persona
             BDConexion laConexion2;//Consultar los roles de la persona
@@ -88,7 +88,7 @@ namespace DatosSKD.Modulo1
         }
 
 
-        public static String ValidarCorreoUsuario(string correo_usuario)
+        public  String ValidarCorreoUsuario(string correo_usuario)
         {
 
             BDConexion laConexion;
