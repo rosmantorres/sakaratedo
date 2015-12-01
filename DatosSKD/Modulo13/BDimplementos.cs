@@ -16,111 +16,108 @@ namespace DatosSKD.Modulo13
 
 
 
-       
-        
-        #region Listar Implementarios
-
-        public static DataTable D_Inventario()
-        {
-            BDConexion laConexion;
-            List<Implemento> listaDeImplementos = new List<Implemento>();
-
-            // List<Parametro> parametros;
-            //          Parametro parametro;
-            //        parametros = new List<Parametro>();
-
-            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>;
-// List<Parametro> parametros;
-  //          Parametro parametro;
-    //        parametros = new List<Parametro>();
 
 
 
-            try
-            {
-                laConexion = new BDConexion();
-                //          parametros = new List<Parametro>();
-                /*        if ((dojo != null) && (dojo.Dojo_Id != null))
-                        {
-                            parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, dojo.Dojo_Id.ToString(), false);
-                            parametros.Add(parametro);
-                        }
-                        else
-                            throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
-                                RecursosBDModulo15.tabla_dojoImplemento, new Exception());
-                        */
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas("M13_inventario", null);
+        //  public static DataTable D_Inventario()
+        //   {
+        //            BDConexion laConexion;
+        //            List<Implemento> listaDeImplementos = new List<Implemento>();
 
-                /*
-                                foreach (DataRow row in dt.Rows)
-                                {
-                                    Implemento implemento = new Implemento();
-                                    implemento.Dojo_Implemento = new Dojo();
-                                    implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
-                                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                                    implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
-                                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
-                                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
-                                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
-                                    implemento.Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
-                                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                                    implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
-                                    implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
-                                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
-                                    implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
+        //            // List<Parametro> parametros;
+        //            //          Parametro parametro;
+        //            //        parametros = new List<Parametro>();
 
-                                    listaDeImplementos.Add(implemento);
-
-                                }
-
-                            }
-                            catch (SqlException ex)
-                            {
-                                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                                   RecursoGeneralBD.Mensaje, new Exception());
-                            }
-                            catch (Exception ex)
-                            {
-                                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                            }
-                                */
-                return dt;
+        //            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>;
+        //// List<Parametro> parametros;
+        //  //          Parametro parametro;
+        //    //        parametros = new List<Parametro>();
 
 
-                //Interfaz.Gui.Modulo13.M13_Info_Producto inventario = new Interfaz.Gui.Modulo13.M13_Info_Producto();
 
-                
+        //            try
+        //            {
+        //                laConexion = new BDConexion();
+        //                //          parametros = new List<Parametro>();
+        //                /*        if ((dojo != null) && (dojo.Dojo_Id != null))
+        //                        {
+        //                            parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, dojo.Dojo_Id.ToString(), false);
+        //                            parametros.Add(parametro);
+        //                        }
+        //                        else
+        //                            throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
+        //                                RecursosBDModulo15.tabla_dojoImplemento, new Exception());
+        //                        */
+        //                DataTable dt = laConexion.EjecutarStoredProcedureTuplas("M13_inventario", null);
 
-                foreach (DataRow row in dt.Rows)
-                {
-                    Reporte_Inventario inventario = new Reporte_Inventario();
+        //                /*
+        //                                foreach (DataRow row in dt.Rows)
+        //                                {
+        //                                    Implemento implemento = new Implemento();
+        //                                    implemento.Dojo_Implemento = new Dojo();
+        //                                    implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
+        //                                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
+        //                                    implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+        //                                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
+        //                                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
+        //                                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
+        //                                    implemento.Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
+        //                                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
+        //                                    implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+        //                                    implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
+        //                                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
+        //                                    implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
 
-                    inventario.Nombre = row[imp_nombre].toString;
-                    inventario.Dojo = row[doj_nombre].toString;
-                    inventario.Cantidad_total = row[inv_cantidad_total].toString;           
-                    
-                    listainventario.Add(inventario);
+        //                                    listaDeImplementos.Add(implemento);
 
-                }
+        //                                }
 
-
-            }
-            catch (SqlException ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                   RecursoGeneralBD.Mensaje, new Exception());
-            }
-            catch (Exception ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-            }
+        //                            }
+        //                            catch (SqlException ex)
+        //                            {
+        //                                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+        //                                   RecursoGeneralBD.Mensaje, new Exception());
+        //                            }
+        //                            catch (Exception ex)
+        //                            {
+        //                                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+        //                            }
+        //                                */
+        //                return dt;
 
 
-            return listainventario;
+        //                //Interfaz.Gui.Modulo13.M13_Info_Producto inventario = new Interfaz.Gui.Modulo13.M13_Info_Producto();
 
-        }
 
-        #endregion
+
+        //                foreach (DataRow row in dt.Rows)
+        //                {
+        //                    Reporte_Inventario inventario = new Reporte_Inventario();
+
+        //                    inventario.Nombre = row[imp_nombre].toString;
+        //                    inventario.Dojo = row[doj_nombre].toString;
+        //                    inventario.Cantidad_total = row[inv_cantidad_total].toString;           
+
+        //                    listainventario.Add(inventario);
+
+        //                }
+
+
+        //            }
+        //            catch (SqlException ex)
+        //            {
+        //                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+        //                   RecursoGeneralBD.Mensaje, new Exception());
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+        //            }
+
+
+        //            return listainventario;
+
+        //        }
 
 
 
@@ -131,9 +128,14 @@ namespace DatosSKD.Modulo13
 
 
 
-        }
 
-        public static DataTable listainventario { get; set; }
 
+        //        }
+
+        //        public static DataTable listainventario { get; set; }
+
+
+
+        // }
     }
 }
