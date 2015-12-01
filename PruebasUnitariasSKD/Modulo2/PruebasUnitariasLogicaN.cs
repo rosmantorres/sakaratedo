@@ -99,6 +99,16 @@ namespace PruebasUnitariasSKD.Modulo2
                
 
             }
+            [Test]
+            public void Prueba1()
+            {   
+                string Archivo;
+                Archivo = AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres(RecursosPU_Mod2.Id, RecursosLogicaModulo2.claveDES);
+                Console.WriteLine(AlgoritmoDeEncriptacion.hash("12345"));
+                Archivo = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(Archivo, RecursosLogicaModulo2.claveDES);
+
+
+            }
         
     }
 }

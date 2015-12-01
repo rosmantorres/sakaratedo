@@ -187,7 +187,7 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 12345.
+        ///   Looks up a localized string similar to 5ae2bacffebdf3e8e37decdd343ac728.
         /// </summary>
         internal static string PruebaRestablecerClave {
             get {
