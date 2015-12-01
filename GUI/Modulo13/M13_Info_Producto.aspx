@@ -25,35 +25,47 @@
     <table id="example" class="table table-bordered table-striped dataTable">
        <thead>
               <tr>
+                   <th>Foto</th> 
                    <th>Nombre</th>
                    <th>Tipo</th>
                    <th>Marca</th>
                    <th>Color</th>
-                   <th>Talla</th>
+                   <th>Estatus</th>
                    <th>Precio</th>
-                  <th>Vendidos</th>
-
+                   <th>Stock Min</th>
+                   <th>Total</th>
+                   <th>Dojo</th>
               </tr>
         </thead>
      <tbody>
 
           <% 
               
-              List<DominioSKD.Reporte_Inventario> listainventario = new List<DominioSKD.Reporte_Inventario>();
-              listainventario = LogicaNegociosSKD.Modulo13.LogicaInventario.L_Inventario();
+              System.Data.SqlClient.SqlDataReader resultado;              
+              resultado = LogicaNegociosSKD.Modulo13.LogicaInventario.L_Inventario();
 
-              foreach (DominioSKD.Reporte_Inventario valorActual in listainventario)
-              {
-                  Response.Write("<tr>");
-                  Response.Write("<td>" + valorActual.nombre + "</td>");
-                  Response.Write("<td>" + valorActual.dojo + "</td>");
-                  Response.Write("<td>" + valorActual.cantidad_total + "</td>");
-                  Response.Write("</tr>");
-                  
-              }
-              
-              
-              
+          
+                  while (resultado.Read())
+                  {                     
+                      
+                      Response.Write("<tr>");                     
+					
+                     // Response.Write("<td> <img src="+((resultado[0])) + "</td>");
+                      Response.Write("<td>" + (resultado[1]) + "</td>");
+                      Response.Write("<td>" + (resultado[2]) + "</td>");
+                      Response.Write("<td>" + ((resultado[3])) +"</td>");
+                      Response.Write("<td>" + (resultado[4]) + "</td>");
+                      Response.Write("<td>" + (resultado[5]) + "</td>"); 
+                      Response.Write("<td>" + ((resultado[6])) + "</td>");
+                      Response.Write("<td>" + (resultado[7]) + "</td>");
+                      Response.Write("<td>" + (resultado[8]) + "</td>");
+                      Response.Write("<td>" + (resultado[9]) + "</td>");
+
+                      Response.Write("</tr>");
+                  }
+
+                resultado.Close();              
+                            
              %>
 
                                          
