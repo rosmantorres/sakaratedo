@@ -4589,6 +4589,17 @@ GETDATE(),
 );
 
 
+INSERT INTO dbo.PERSONA_ROL  (
+per_rol_fecha,
+PERSONA_per_id,
+ROL_rol_id
+)
+VALUES (
+GETDATE(),
+(SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose'),
+(SELECT rol_id from ROL where rol_nombre='Atleta')
+);
+
 -- INSERTS IMPLEMENTO--
 
 insert into implemento (imp_imagen,imp_nombre,imp_tipo,imp_marca,imp_color,imp_talla,imp_estatus,imp_precio,imp_stockmin,imp_descripcion) 
