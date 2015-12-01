@@ -39,35 +39,24 @@
 
           <% 
               
-              LogicaNegociosSKD.Modulo13.LogicaInventario inventario = new LogicaNegociosSKD.Modulo13.LogicaInventario();
-              System.Data.DataTable tabla = inventario.L_Inventario();
-                       
+              List<DominioSKD.Reporte_Inventario> listainventario = new List<DominioSKD.Reporte_Inventario>();
+              listainventario = LogicaNegociosSKD.Modulo13.LogicaInventario.L_Inventario();
+
+              foreach (DominioSKD.Reporte_Inventario valorActual in listainventario)
+              {
+                  Response.Write("<tr>");
+                  Response.Write("<td>" + valorActual.nombre + "</td>");
+                  Response.Write("<td>" + valorActual.dojo + "</td>");
+                  Response.Write("<td>" + valorActual.cantidad_total + "</td>");
+                  Response.Write("</tr>");
+                  
+              }
+              
+              
+              
              %>
 
-              <tr>	
-                   <td style="text-align:center"></td>
-                   <td style="text-align:center"></td>
-                   <td style="text-align:center"></td>
-                   <td style="text-align:center"></td>                  
-               </tr>                            
-    
-
-     
-               <tr>	
-                  <td style="text-align:center">Leopoldo</td>
-                  <td style="text-align:center">Mirabal</td>
-                   <td style="text-align:center">2</td>
-                   <td style="text-align:center">6000</td>                  
-               </tr>                            
-         
-
-       
-                <tr>	
-                   <td style="text-align:center">Eduardo</td>
-                   <td style="text-align:center">Pacheco</td>
-                   <td style="text-align:center">4</td>
-                   <td style="text-align:center">15000</td>                  
-               </tr>                            
+                                         
       </tbody>
 
         </table>
