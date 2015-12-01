@@ -174,6 +174,12 @@
   <data name="ExisteRestriccionCompetencia" xml:space="preserve">
     <value>M8_ExisteRestriccionCompetencia</value>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el metodo</value>
+  </data>
   <data name="Mensaje_Error_Formato" xml:space="preserve">
     <value>Error de parseo</value>
   </data>

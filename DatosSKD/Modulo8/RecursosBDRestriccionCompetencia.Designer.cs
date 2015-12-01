@@ -124,6 +124,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idAtleta.
+        /// </summary>
+        internal static string AliasIdAtleta {
+            get {
+                return ResourceManager.GetString("AliasIdAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCompetencia.
         /// </summary>
         internal static string AliasIdCompetencia {
@@ -187,6 +196,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M8_AtletasCumplenRestriccion.
+        /// </summary>
+        internal static string AtletasCumplenRestriccion {
+            get {
+                return ResourceManager.GetString("AtletasCumplenRestriccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_00_004.
         /// </summary>
         internal static string Codigo_Error_Formato {
@@ -223,6 +241,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M8_EventosQuePuedeAsistirAtleta.
+        /// </summary>
+        internal static string EventosQuePuedeAsistirUnAtleta {
+            get {
+                return ResourceManager.GetString("EventosQuePuedeAsistirUnAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_ExisteRestriccionCompetencia.
         /// </summary>
         internal static string ExisteRestriccionCompetencia {
@@ -246,6 +273,24 @@ namespace DatosSKD.Modulo8 {
         internal static string Mensaje_Restriccion_Competencia_Existente {
             get {
                 return ResourceManager.GetString("Mensaje_Restriccion_Competencia_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el metodo.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
         

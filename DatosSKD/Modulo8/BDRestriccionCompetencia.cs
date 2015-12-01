@@ -69,7 +69,6 @@ namespace DatosSKD.Modulo8
         } 
         #endregion
 
-
         #region existeRestriccionCompetenciaSimilar
         public static bool ExisteRestriccionCompetenciaSimilar(RestriccionCompetencia laRestriccionCompetencia)
         {
@@ -146,7 +145,6 @@ namespace DatosSKD.Modulo8
         }
         #endregion
 
-
         #region Agregar Restriccion
         public static bool AgregarRestriccionCompetencia(RestriccionCompetencia laRestriccionCompetencia)
         {
@@ -156,7 +154,7 @@ namespace DatosSKD.Modulo8
                 {
                     List<Parametro> parametros = new List<Parametro>();
                     Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
-                        laRestriccionCompetencia.Descripcion, false);
+                      laRestriccionCompetencia.Descripcion, false);
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
@@ -168,11 +166,11 @@ namespace DatosSKD.Modulo8
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
-                         laRestriccionCompetencia.EdadMinima.ToString(), false);
+                         laRestriccionCompetencia.RangoMinimo.ToString(), false);
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
-                        laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                        laRestriccionCompetencia.RangoMaximo.ToString(), false);
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
@@ -214,6 +212,225 @@ namespace DatosSKD.Modulo8
             return true;
         }
         #endregion
+
+        #region modificar Restriccion
+
+        public static bool ModificarCompetencia(RestriccionCompetencia laRestriccionCompetencia)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                if (!ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia))
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                        laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
+                        laRestriccionCompetencia.Descripcion, false);
+                    parametros.Add(elParametro);
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
+                         laRestriccionCompetencia.EdadMinima.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
+                        laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
+                         laRestriccionCompetencia.RangoMinimo.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
+                        laRestriccionCompetencia.RangoMaximo.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
+                        laRestriccionCompetencia.Sexo, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
+                        laRestriccionCompetencia.Modalidad, false);
+                    parametros.Add(elParametro);
+
+                    BDConexion laConexion = new BDConexion();
+                    laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.ModificarRestriccionCompetencia, parametros);
+                }
+                else
+                {
+                    Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.Mensaje_Restriccion_Competencia_Existente, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    throw new ExcepcionesSKD.Modulo8.RestriccionExistenteException(RecursosBDRestriccionCompetencia.Codigo_Restriccion_Competencia_Existente,
+                                 RecursosBDRestriccionCompetencia.Mensaje_Restriccion_Competencia_Existente, new Exception());
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosBDRestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosBDRestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
+        }
+
+        #endregion
+
+        #region EliminarRestriccion
+        
+        #endregion
+
+        #region atletasQueCumplenRestriccion
+        public static List<int> atletasQueCumplenRestriccion(RestriccionCompetencia laRestriccionCompetencia)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<int> listaIdAtletas = new List<int>();
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int
+                                                      , laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                parametros.Add(elParametro);
+
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDRestriccionCompetencia.AtletasCumplenRestriccion
+                                             , parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    int elId = new int();
+
+                    elId = int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdAtleta].ToString());
+
+
+                    listaIdAtletas.Add(elId);
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDRestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosBDRestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaIdAtletas;
+
+        }
+        #endregion
+
+        #region competenciasQuePuedeIrUnAtleta
+        public static List<int> competenciasQuePuedeIrUnAtleta(Persona laPersona)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<int> listaIdCompetencias = new List<int>();
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdPersona, SqlDbType.Int
+                                                      , laPersona.ID.ToString(), false);
+                parametros.Add(elParametro);
+
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDRestriccionCompetencia.EventosQuePuedeAsistirUnAtleta
+                                             , parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    int elId = new int();
+
+                    elId = int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdCompetencia].ToString());
+
+
+                    listaIdCompetencias.Add(elId);
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDRestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosBDRestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaIdCompetencias;
+
+        }
+        #endregion
+
 
     }
 }
