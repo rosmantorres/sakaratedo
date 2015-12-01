@@ -114,6 +114,8 @@
     <Compile Include="Modulo7\M7_PruebasBDCompetencia.cs" />
     <Compile Include="Modulo7\M7_PruebasBDEvento.cs" />
     <Compile Include="Modulo7\M7_PruebasBDHorario.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDPersona.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDTipoEvento.cs" />
     <Compile Include="Modulo7\M7_PruebasBDUbicacion.cs" />
     <Compile Include="Modulo7\RecursosPU_Mod7.Designer.cs">
       <AutoGen>True</AutoGen>
