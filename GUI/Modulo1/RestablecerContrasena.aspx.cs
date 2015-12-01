@@ -17,6 +17,9 @@ namespace templateApp.GUI.Modulo1
         {
             try
             {
+
+              
+
                 DateTime fechaActual = DateTime.Now;
                 string fechaString = Request.QueryString[RecursosLogicaModulo1.variableFecha].ToString();
                 fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString,
@@ -52,20 +55,20 @@ namespace templateApp.GUI.Modulo1
                 string pass1 = password3.Value;
                 string pass2 = password4.Value;
                 logicaRestablecer Restablecer = new logicaRestablecer();
-                if (pass1 != "" && pass1 == pass2 && pass1.Length > 7 && IdUser!="")
+                if (pass1 != "" && pass1 == pass2 && pass1.Length > 7 && IdUser != "")
                 {
                     if (Restablecer.restablecerContrasena(IdUser, pass1))
                         Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                             + RecursosInterfazModulo1.tipoSucess + "=" +
                             RecursosInterfazModulo1.parametroURLReestablecerExito);
                 }
-                // else
-                //  enviarMensajeconError
+               
             }
             catch (Exception ex)
             {
                //imprimirMensajePorPantallaCnERR
             }
         }
+      
     }
 }
