@@ -210,15 +210,20 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region PruebalistarInventarioDatos
+        #region PruebaEliminarInventarioDatos
         [Test]
-        public void PruebalistarInventarioDatos()
+        public void PruebaEliminarInventarioDatos()
         {
-            implementos = ConexionBaseDatos.listarInventarioDatos();
-            int numero = implementos.Count();
-            Assert.AreEqual(2 , 2);
+            ConexionBaseDatos.agregarInventarioDatos(implemento);
+            implemento = ConexionBaseDatos.implementoInventarioDatosUltimo();
+            ConexionBaseDatos.eliminarInventarioDatos(implemento.Id_Implemento, implemento.Dojo_Implemento);
+            bool condicion = ConexionBaseDatos.implementoInventarioDatosBool(implemento.Id_Implemento);
+            Assert.AreEqual(condicion, true);
+
         }
         #endregion
+
+
         
     }
 }
