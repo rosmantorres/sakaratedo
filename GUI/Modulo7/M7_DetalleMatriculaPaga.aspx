@@ -39,6 +39,13 @@
                   <div class="panel-heading">
                      <h4>Datos de la matricula</h4>
                   </div>
+                   div class="panel-body">
+                     
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Fecha Creación :</h4>
+                        <asp:Label runat="server" name="identificador" id="identificador" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
                   <div class="panel-body">
                      
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">

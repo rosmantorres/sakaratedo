@@ -20,6 +20,7 @@ namespace DatosSKD.Modulo7
         /// </summary>
         /// <param name="idEvento">Número entero que representa el ID de la matricula</param>
         /// <returns>Objeto de tipo Matricula</returns>
+        
         public Matricula DetallarMatricula(int idMatricula)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -90,6 +91,85 @@ namespace DatosSKD.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return matricula;
+        }
+
+        /// <summary>
+        /// Método que devuelve el monto pago de una matricula
+        /// </summary>
+        /// <returns>Pago de matricula</returns>
+        public float  montoPagoMatricula(int idPersona, int idMatricula)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametroPersona = new Parametro();
+            Parametro elParametroMatricula = new Parametro();
+            float monto = new float();
+
+            try
+            {
+                if ((idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0) && (idMatricula.GetType() == Type.GetType("System.Int32") && idMatricula > 0))
+                {
+
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+
+                    elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    elParametroMatricula = new Parametro(RecursosBDModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.ToString(), false);
+                    parametros.Add(elParametroPersona);
+                    parametros.Add(elParametroMatricula);
+
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarMontoMatricula, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        monto = float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
+                    }
+
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                              RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (NumeroEnteroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return monto;
         }
 
         /// <summary>

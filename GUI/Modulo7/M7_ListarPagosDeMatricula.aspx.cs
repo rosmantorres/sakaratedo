@@ -25,6 +25,7 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
+            float monto;
             
 
             String detalleString = Request.QueryString["eventDetalle"];
@@ -45,21 +46,16 @@ namespace templateApp.GUI.Modulo7
 
                     foreach (Matricula matricula in laLista)
                     {
+
+                       monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), 1);
+
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Identificador.ToString() + M7_Recursos.CerrarTD;
-
-                                    //por ahora//
+                    //por ahora--esperando por Romulo//
                         this.laTabla.Text += M7_Recursos.AbrirTD + "estado" + M7_Recursos.CerrarTD;
-                        //this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Estado.ToString() + M7_Recursos.CerrarTD;
-
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                       
-                        ////por ahora//
-
-                        this.laTabla.Text += M7_Recursos.AbrirTD + "monto" + M7_Recursos.CerrarTD;
-                        // this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Pago.ToString() + M7_Recursos.CerrarTD;
-
+                        this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
                         this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.ID + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;

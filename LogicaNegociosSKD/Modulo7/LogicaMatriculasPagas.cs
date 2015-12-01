@@ -31,7 +31,6 @@ namespace LogicaNegociosSKD.Modulo7
         /// </summary>
         public LogicaMatriculasPagas()
         {
-            
         }
 
         /// <summary>
@@ -51,11 +50,26 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+        public float obtenerMontoMatricula(int idPersona, int idMatricula)
+        {
+            try
+            {
+                BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
+                return baseDeDatosDetalleCompra.montoPagoMatricula(idPersona, idMatricula);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
         /// <summary>
         /// Método que obtiene el detalle de cada matricula por su ID
         /// </summary>
         /// <param name="idEvento">Número entero que representa el ID de la matricula</param>
         /// <returns>un objeto de tipo Matricula</returns>
+      
         public DominioSKD.Matricula detalleMatriculaID(int idMatricula)
         {
             try

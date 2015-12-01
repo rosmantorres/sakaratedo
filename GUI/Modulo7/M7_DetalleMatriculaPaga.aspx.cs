@@ -18,7 +18,7 @@ namespace templateApp.GUI.Modulo7
         {
             ((SKD)Page.Master).IdModulo = "7";
             String detalleStringMatricula = Request.QueryString["matriculaDetalle"];
-
+           
 
             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
             {
@@ -27,7 +27,8 @@ namespace templateApp.GUI.Modulo7
                     
                     if (detalleStringMatricula != null)
                     {
-                        matricula = Logica.detalleMatriculaID(int.Parse(detalleStringMatricula));
+                        matricula = Logica.detalleMatriculaID(1);  //arreglar
+                        this.identificador.Text = matricula.Identificador.ToString();
                         this.fecha_creacion.Text = matricula.FechaCreacion.ToString("MM/dd/yyyy");
                         this.fecha_ultimo_pago.Text = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
 

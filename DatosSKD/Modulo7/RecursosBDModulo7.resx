@@ -423,4 +423,7 @@
   <data name="Mensaje_Numero_Parametro_invalido" xml:space="preserve">
     <value>El número del parametro es invalido, debe ser un entero positivo</value>
   </data>
+  <data name="ConsultarMontoMatricula" xml:space="preserve">
+    <value>M7_ConsultarMontoMatricula</value>
+  </data>
 </root>
