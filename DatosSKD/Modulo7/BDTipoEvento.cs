@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DatosSKD.Modulo7
 {
-    class BDTipoEvento
+    public class BDTipoEvento
     {
         public TipoEvento DetallarTipoEvento(int idTipoEvento)
         {

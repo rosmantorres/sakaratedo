@@ -13,6 +13,8 @@ namespace PruebasUnitariasSKD.Modulo7
     /// <summary>
     /// Clase de pruebas para la clase BDHorario
     /// </summary>
+    ///
+    [TestFixture]
     public class M7_PruebasBDHorario
     {
         #region Atributos
