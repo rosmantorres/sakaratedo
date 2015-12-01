@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
-using DatosSKD;
+using DatosSKD.Modulo13;
 using System.Data;
 using ExcepcionesSKD.Modulo15;
 using ExcepcionesSKD;
@@ -28,14 +28,15 @@ namespace LogicaNegociosSKD.Modulo13
 
         #region listarimplementos
 
-        public DataTable L_Inventario()
+        public static List<Reporte_Inventario> L_Inventario()
         {
-            DataTable tabla;
+            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>();
+    
 
             try
             {
-                
-               tabla = new DataTable();
+
+                listainventario = DatosSKD.Modulo13.BDimplementos.D_Inventario();
                    
             }
 
@@ -55,7 +56,7 @@ namespace LogicaNegociosSKD.Modulo13
 
                 throw ex;
             }
-            return tabla;
+            return listainventario;
         }
         
         
