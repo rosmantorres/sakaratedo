@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Kyu_atletas.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Inicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Kyu_atletas.aspx.cs" Inherits="templateApp.GUI.Modulo13.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo12/M12_AgregarEliminarOrganizaciones.js") %>"></script>
 </asp:Content>
@@ -15,7 +15,7 @@
 
      <div class="box-body table-responsive">
 
-      <%-- <table id="example" class="table table-bordered table-striped dataTable">
+      <%--<table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
                     <th>Foto</th>
@@ -26,76 +26,25 @@
                     <th >Altura</th>					
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td><img src="Fotos-Atletas/1.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>AYKUT</td>
-					<td>KAYA</td>
-					<td>23</td>
-                    <td>75</td>
-                    <td>1,80</td>                  
-                </tr>                            
-			
-            
-			
-				<tr>
-					<td><img src="Fotos-Atletas/2.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Jose</td>
-					<td>Perez</td>
-					<td>25</td>
-                    <td>71</td>
-                    <td>1,70</td>
-                  
-                </tr>                            
-				
-			
-			
-				<tr>
-					<td><img src="Fotos-Atletas/3.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Rodrigo</td>
-					<td>Yanez</td>
-					<td>19</td>
-                    <td>69</td>
-                    <td>1,74</td>
-                  
-                </tr>                            
-			
-            
-				<tr>
-					<td><img src="Fotos-Atletas/4.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Gregorio</td>
-					<td>Padron</td>
-					<td>26</td>
-                    <td>79</td>
-                    <td>1,71</td>                  
-                </tr>               
-			
-            		
-			
-				<tr>
-                	<td><img src="Fotos-Atletas/5.jpg" width="60" height="80" class="img-responsive" /></td>
-					<td>Alejandro</td>
-					<td>García</td>
-					<td>19</td>
-                    <td>80</td>
-                    <td>1,72</td>
-                  
-                </tr>
-                        
-			
-			
-			
-				<tr>
-					<td width="60" height="80"><img src="Fotos-Atletas/6.jpg" width="60" height="80" class="img-responsive" /></td>
-				  <td>Pablo</td>
-					<td>Merchan</td>
-					<td>20</td>
-                    <td>68</td>
-                    <td>1,90</td>                  
-                </tr>               
-                             
-			</tbody>
+			<tbody>--%>
+
+			<asp:Table ID="example" runat="server" CssClass="table table-bordered table-striped dataTable">
+                <asp:TableHeaderRow><asp:TableHeaderCell>Foto</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Nombre</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Apelido</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Edad</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Peso</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Altura</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Foto</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+			</asp:Table>
+                
+              
+           
+			<%--</tbody>
 </table>--%>
+
+         
         </div>
     <script type="text/javascript">
         $(document).ready(function () {
