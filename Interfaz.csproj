@@ -1469,6 +1469,11 @@
     <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo10\M10_RecursosInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M10_RecursosInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
       <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2050,6 +2055,10 @@
     <EmbeddedResource Include="GUI\Master\RecursosInterfazMaster.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo10\M10_RecursosInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M10_RecursosInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>

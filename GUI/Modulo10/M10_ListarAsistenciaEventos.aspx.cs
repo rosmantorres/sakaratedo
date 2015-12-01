@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DominioSKD;
+using LogicaNegociosSKD.Modulo10;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,8 @@ namespace templateApp.GUI.Modulo10
 {
     public partial class M10_ListarAsistenciaEventos : System.Web.UI.Page
     {
+        List<Evento> eventos = new List<Evento>();
+        List<Competencia> competencias = new List<Competencia>();
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "10";
@@ -31,17 +35,14 @@ namespace templateApp.GUI.Modulo10
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Asistencia modificada exitosamente</div>";
                 }
             }
-        }
 
             #region Carga de tabla de Eventos y Competencias
-        /*
-            LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
             {
                 try
                 {
-                    eventoLista = logicaEvento.ListarEventos();
-                    foreach (Evento evento in eventoLista)
+                    eventos = LogicaAsistencia.ListarEventosAsistidos();
+                    /*foreach (Evento evento in eventos)
                     {
                         this.dataTable.Text += M9_RecursoInterfaz.AbrirTR;
                         this.dataTable.Text += M9_RecursoInterfaz.AbrirTD + evento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
@@ -63,15 +64,16 @@ namespace templateApp.GUI.Modulo10
                         this.dataTable.Text += M9_RecursoInterfaz.BotonModificar + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
                         this.dataTable.Text += M9_RecursoInterfaz.CerrarTD;
                         this.dataTable.Text += M9_RecursoInterfaz.CerrarTR;
-                    }
-
+                    }*/
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
             }
-        }*/
             #endregion
+        }
+
+
     }
 }
