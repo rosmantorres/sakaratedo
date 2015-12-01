@@ -116,6 +116,7 @@ as
 				VALUES (@idOrganizacion, @idCinta);
 		
  end;
+go
 
 --COMO PROBAR EL PROCEDIMIENTO execute M5_AgregarCinta 'Blanco', '1er Kyu', 'Nivel inferior', 'Principiante', '1', 'Clash Cobra-do';
 
