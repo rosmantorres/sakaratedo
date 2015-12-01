@@ -56,27 +56,25 @@
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
-<<<<<<< HEAD
+
 
     <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo8\RestriccionExistenteException.cs" />
     <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
     <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
 
-=======
+
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
->>>>>>> 033e8da8f4395894e63a77056fea4884783f2564
+
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
-<<<<<<< HEAD
 
-=======
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
->>>>>>> 033e8da8f4395894e63a77056fea4884783f2564
+
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
