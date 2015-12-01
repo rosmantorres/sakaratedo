@@ -30,26 +30,34 @@ namespace templateApp.GUI.Modulo13
                example.Rows.Add(fila);
                 //TABLA.Rows.Add();
 
-                //List<Persona> laLista;
-                //LogicaAtletaCinta logCinta = new LogicaAtletaCinta();
-                //laLista = logCinta.obtenerListaPersona();
+               List<Persona> laLista;
+               LogicaAtletaCinta logCinta = new LogicaAtletaCinta();
+               laLista = logCinta.obtenerListaPersona();
 
-                //foreach (DominioSKD.Persona valor in laLista)
-                //{
-
-                    
-                //    Response.Write("<tr>");
-                //    Response.Write("<td>" + valor.Nombre + "</td>");
-               // celda.Controls.Add(new LiteralControl(valor.nombre));
-               // fila.Cells.Add(celda);
-                //    Response.Write("<td>" + valor.Apellido + "</td>");
-                //    Response.Write("<td>" + valor.Edad + "</td>");
-                //    Response.Write("<td>" + valor.Peso + "</td>");
-                //    Response.Write("<td>" + valor.Estatura + "</td>");
+               foreach (DominioSKD.Persona valor in laLista)
+               {
 
 
-               // TABLA.Rows.Add(fila);
-                //}
+                   Response.Write("<tr>");
+                   Response.Write("<td>" + valor.Nombre + "</td>");
+                   celda.Controls.Add(new LiteralControl(valor.Nombre));
+                   fila.Cells.Add(celda);
+                   celda.Controls.Add(new LiteralControl(valor.Apellido));
+                   fila.Cells.Add(celda);
+                   celda.Controls.Add(new LiteralControl((valor.Edad).ToString()));
+                   fila.Cells.Add(celda);
+                   celda.Controls.Add(new LiteralControl(String.Format("{0:0,0.0000000}", valor.Estatura)));
+                   fila.Cells.Add(celda);
+                   celda.Controls.Add(new LiteralControl(String.Format("{0:0,0.0000000}", valor.Estatura)));
+                   fila.Cells.Add(celda);
+                   //Response.Write("<td>" + valor.Apellido + "</td>");
+                   //Response.Write("<td>" + valor.Edad + "</td>");
+                   //Response.Write("<td>" + valor.Peso + "</td>");
+                   //Response.Write("<td>" + valor.Estatura + "</td>");
+
+
+                   example.Rows.Add(fila);
+               }
 
 
             }
