@@ -14,7 +14,7 @@ namespace DatosSKD.Modulo2
 {
     public class BDRoles
     {
-       public static List<Rol> ObtenerRolesDeSistema()
+       public  List<Rol> ObtenerRolesDeSistema()
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -61,7 +61,7 @@ namespace DatosSKD.Modulo2
             }
         }
 
-       public static bool EliminarRol(string idUsuario, string idRol)
+       public  bool EliminarRol(string idUsuario, string idRol)
        {
            BDConexion laConexion;
            List<Parametro> parametros;
@@ -94,7 +94,7 @@ namespace DatosSKD.Modulo2
            }
        }
       
-        public static bool AgregarRol(string idUsuario, string idRol)
+        public  bool AgregarRol(string idUsuario, string idRol)
        {
            BDConexion laConexion;
            List<Parametro> parametros;
@@ -128,7 +128,7 @@ namespace DatosSKD.Modulo2
 
        }
 
-        public static List<Rol> consultarRolesUsuario(string idUsuario)
+        public  List<Rol> consultarRolesUsuario(string idUsuario)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -183,7 +183,7 @@ namespace DatosSKD.Modulo2
         /// </summary>
         /// <param name="id_usuario">ID del usuario a consultar</param> 
         /// <returns>Cuenta de usuario sin contraseña</returns>
-        public static Cuenta ObtenerUsuario(int id_usuario)
+        public  Cuenta ObtenerUsuario(int id_usuario)
         {
             BDConexion laConexion;//COnsultar la persona
             BDConexion laConexion2;//Consultar los roles de la persona

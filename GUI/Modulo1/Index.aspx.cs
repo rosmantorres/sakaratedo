@@ -48,7 +48,7 @@ namespace templateApp.GUI.Modulo1
             List<String> campos=new List<String>();
             campos.Add(userIni.Value);
             campos.Add(passwordIni.Value);
-           if(Validaciones.ValidarCamposVacios(campos) && Validaciones.ValidarExpresionRegular)
+           if(Validaciones.ValidarCamposVacios(campos) )
                     consultarUsuario();
         }
         /// <summary>

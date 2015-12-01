@@ -79,7 +79,9 @@ namespace LogicaNegociosSKD.Modulo1
             String respuesta;
             try
             {
-               respuesta= DatosSKD.Modulo1.BDLogin.ValidarCorreoUsuario(Destino);
+
+                BDLogin conexionBD = new BDLogin();
+               respuesta= conexionBD.ValidarCorreoUsuario(Destino);
             }
             catch (Exception e)
             {
@@ -98,7 +100,9 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                Cuenta user= BDLogin.ObtenerUsuario(usuario);
+
+                BDLogin conexionBD = new BDLogin();
+                Cuenta user= conexionBD.ObtenerUsuario(usuario);
                 string[] respuesta = new string[6];
                string hashClave =AlgoritmoDeEncriptacion.hash(contraseña);
                if (hashClave == user.Contrasena && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!

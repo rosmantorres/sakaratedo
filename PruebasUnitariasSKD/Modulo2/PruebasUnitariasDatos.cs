@@ -25,7 +25,8 @@ namespace PruebasUnitariasSKD.Modulo2
         public void PruebaValidarconsultarRolesUsuario()
         {
             List<Rol> _respuesta;
-            _respuesta = BDRoles.consultarRolesUsuario(RecursosPU_Mod1.Id);
+            BDRoles conexionBD = new BDRoles();
+            _respuesta = conexionBD.consultarRolesUsuario(RecursosPU_Mod1.Id);
             Assert.AreNotEqual(null, _respuesta);
 
         }
@@ -35,7 +36,8 @@ namespace PruebasUnitariasSKD.Modulo2
         public void PruebaValidarconsultarRolesUsuarioEXC()
         {
             List<Rol> _respuesta;
-            _respuesta = BDRoles.consultarRolesUsuario(null);
+            BDRoles conexionBD = new BDRoles();
+            _respuesta = conexionBD.consultarRolesUsuario(null);
 
         }
 

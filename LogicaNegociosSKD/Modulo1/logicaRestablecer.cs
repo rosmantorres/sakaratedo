@@ -15,7 +15,8 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                BDRestablecer.RestablecerContrasena(usuarioID,AlgoritmoDeEncriptacion.hash(contraseña));
+                BDRestablecer conexionBD = new BDRestablecer();
+                conexionBD.RestablecerContrasena(usuarioID,AlgoritmoDeEncriptacion.hash(contraseña));
                 return true;
             }
             catch (Exception e)

@@ -26,7 +26,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaReestablecerContrasena()
         {
 
-            bool True = BDRestablecer.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
+            BDRestablecer conexionBD = new BDRestablecer();
+            bool True = conexionBD.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
             Assert.AreEqual(True,true);
 
         }
@@ -36,7 +37,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuario()
         {
 
-            String True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.PruebaCorrectoResultado);
+            BDLogin conexionBD = new BDLogin();
+            String True = conexionBD.ValidarCorreoUsuario(RecursosPU_Mod1.PruebaCorrectoResultado);
             Assert.AreNotEqual(True, null);
 
         }
@@ -47,14 +49,17 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuarioExc()
         {
 
-           String True = BDLogin.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
+           BDLogin conexionBD = new BDLogin();
+           String True = conexionBD.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
 
         }
         // Prueba unitaria del metodo  ObtenerUsuario(string usuario)
         [Test]
         public void PruebaObtenerUsuario()
         {
-            Cuenta user = BDLogin.ObtenerUsuario(RecursosPU_Mod1.usuario);
+
+            BDLogin conexionBD = new BDLogin();
+            Cuenta user = conexionBD.ObtenerUsuario(RecursosPU_Mod1.usuario);
             Assert.AreEqual(user.Nombre_usuario, RecursosPU_Mod1.usuario);
 
         }
@@ -64,7 +69,9 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public void PruebaObtenerUsuarioEXC()
         {
-            Cuenta user = BDLogin.ObtenerUsuario(null);
+
+            BDLogin conexionBD = new BDLogin();
+            Cuenta user = conexionBD.ObtenerUsuario(null);
 
         }
         [Test]
@@ -72,7 +79,8 @@ namespace PruebasUnitariasSKD.Modulo1
         { 
             bool _respuesta;
 
-            _respuesta = BDRestablecer.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaRestablecerClave);
+            BDRestablecer conexionBD = new BDRestablecer();
+            _respuesta = conexionBD.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaRestablecerClave);
             Assert.AreEqual(true, _respuesta);
         }
         // Prueba unitaria de la excepcion del metodo restablecerContrasena()
@@ -81,7 +89,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarRestablecerContrasenaexc()
         {
             bool _respuesta;
-            _respuesta = BDRestablecer.RestablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
+            BDRestablecer conexionBD = new BDRestablecer();
+            _respuesta = conexionBD.RestablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
         }
        
 

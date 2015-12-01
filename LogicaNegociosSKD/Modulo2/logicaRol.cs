@@ -18,8 +18,8 @@ namespace LogicaNegociosSKD.Modulo2
         /// </summary>
         public static List<Rol> cargarRoles()
         {
-
-            List<Rol> roles = BDRoles.ObtenerRolesDeSistema();
+            BDRoles conexionBD = new BDRoles();
+            List<Rol> roles = conexionBD.ObtenerRolesDeSistema();
             return roles;
 
         }
@@ -28,7 +28,8 @@ namespace LogicaNegociosSKD.Modulo2
         {
             try
             {
-                BDRoles.EliminarRol(idUsuario, idRol);
+                BDRoles conexionBD = new BDRoles();
+                conexionBD.EliminarRol(idUsuario, idRol);
                 return true;
             }
             catch (Exception e)
@@ -42,7 +43,8 @@ namespace LogicaNegociosSKD.Modulo2
         {
             try
             {
-            BDRoles.AgregarRol(idUsuario, idRol);
+            BDRoles conexionBD = new BDRoles();
+            conexionBD.AgregarRol(idUsuario, idRol);
             return true;
               }
             catch (Exception e)
@@ -56,7 +58,8 @@ namespace LogicaNegociosSKD.Modulo2
         {
             try
             {
-                return BDRoles.consultarRolesUsuario(idUsuario);
+                BDRoles conexionBD = new BDRoles();
+                return conexionBD.consultarRolesUsuario(idUsuario);
             }
             catch (Exception e)
             {
@@ -167,7 +170,9 @@ namespace LogicaNegociosSKD.Modulo2
         {
             try
             {
-               return BDRoles.ObtenerUsuario(idUsuario);
+
+              BDRoles conexionBD = new BDRoles();
+               return conexionBD.ObtenerUsuario(idUsuario);
             }
             catch (Exception e)
             {
