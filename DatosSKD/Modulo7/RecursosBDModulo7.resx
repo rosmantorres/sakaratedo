@@ -426,4 +426,7 @@
   <data name="ConsultarMontoMatricula" xml:space="preserve">
     <value>M7_ConsultarMontoMatricula</value>
   </data>
+  <data name="ConsultarIdMatricula" xml:space="preserve">
+    <value>M7_ConsultarIdMatricula</value>
+  </data>
 </root>

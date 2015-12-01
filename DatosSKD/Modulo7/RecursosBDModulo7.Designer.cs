@@ -826,6 +826,15 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarIdMatricula.
+        /// </summary>
+        internal static string ConsultarIdMatricula {
+            get {
+                return ResourceManager.GetString("ConsultarIdMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarMatriculasPagas.
         /// </summary>
         internal static string ConsultarMatriculasPagas {
