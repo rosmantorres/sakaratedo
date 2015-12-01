@@ -115,7 +115,7 @@ namespace templateApp.GUI.Modulo16
 
             //Instancio la logica correspondiente y me traigo el carrito de compras
             Logicacarrito logicaCarrito = new Logicacarrito();
-            carritoCompras = logicaCarrito.verCarrito(7);
+            carritoCompras = logicaCarrito.verCarrito(8);
 
             //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
             foreach (Implemento implemento in carritoCompras.ListaImplemento)

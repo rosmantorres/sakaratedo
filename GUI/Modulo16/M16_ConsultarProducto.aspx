@@ -54,9 +54,7 @@
 					<th style="text-align:left">Acciones</th>
 				</tr>
 		</thead>
-                        <div class="box-footer">
-				                                                                      
-			                            </div>
+                      
 			<tbody>
                 <asp:Literal runat="server" ID="laTabla"></asp:Literal>
 		    </tbody>
