@@ -11,7 +11,7 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo13
 {
-     class LogicaInformacionProducto
+     public class LogicaInventario
     {
 
         #region
@@ -19,7 +19,7 @@ namespace LogicaNegociosSKD.Modulo13
         #endregion
 
          #region constructor
-        public LogicaInformacionProducto()
+        public LogicaInventario()
         {
             this.listaImplementos = null;
         }
@@ -35,7 +35,7 @@ namespace LogicaNegociosSKD.Modulo13
             try
             {
                 
-               tabla = DatosSKD.Modulo13.BDimplementos.D_Inventario;
+               tabla = new DataTable();
                    
             }
 

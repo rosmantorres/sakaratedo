@@ -7,7 +7,7 @@ using DominioSKD;
 namespace LogicaNegociosSKD.Modulo13
 {
 
-   public class LogicaInformacionProducto
+   public class LogicaMorosos
     {
 
     }
