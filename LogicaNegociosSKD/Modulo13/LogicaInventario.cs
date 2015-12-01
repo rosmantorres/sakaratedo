@@ -35,7 +35,7 @@ namespace LogicaNegociosSKD.Modulo13
             try
             {
                 
-                tabla = DatosSKD.Modulo13.BDimplementos.D_Inventario;
+               tabla = DatosSKD.Modulo13.BDimplementos.D_Inventario;
                    
             }
 
