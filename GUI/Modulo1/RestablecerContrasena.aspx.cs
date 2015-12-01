@@ -25,22 +25,16 @@ namespace templateApp.GUI.Modulo1
                 fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString,
                     RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
-                if (fecha.Date != fechaActual.Date)
+                if ((fecha.Date.Year != fechaActual.Date.Year) || 
+                    (fecha.Date.Month != fechaActual.Date.Month) ||
+                    (fecha.Date.Day != fechaActual.Date.Day))
                     Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                        + RecursosInterfazModulo1.tipoErr + "=" +
                        RecursosInterfazModulo1.logErrRestablecer);
 
 
                 string idUsuario = Request.QueryString[RecursosLogicaModulo1.variableRestablecer].ToString();
-                string[] idSplit = idUsuario.Split(' ');
-                if (idSplit.Count() > 1)
-                {
-                    idUsuario = idSplit[0];
-                    for (int i = 1; idSplit.Count() > i; i++)
-                    {
-                        idUsuario = idUsuario + '+' + idSplit[i];
-                    }
-                }
+                
                 idUsuario = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(idUsuario, RecursosLogicaModulo2.claveDES);
                 IdUser = idUsuario;
             }
