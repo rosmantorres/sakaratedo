@@ -96,7 +96,7 @@ namespace LogicaNegociosSKD.Modulo7
             try
             {
                 BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.fechaInscripcion(idPersona, idEvento);
+                return baseDeDatosEvento.fechaInscripcionEvento(idPersona, idEvento);
             }
             catch (Exception e)
             {
