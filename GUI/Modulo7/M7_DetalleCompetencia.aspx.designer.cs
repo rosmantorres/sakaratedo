@@ -10,114 +10,87 @@
 namespace templateApp.GUI.Modulo7 {
     
     
-    public partial class M7_ListarOrganizacionYDojo {
+    public partial class M7_DetalleCompetencia {
         
         /// <summary>
-        /// detalle_Persona control.
+        /// detalle_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm detalle_Persona;
+        protected global::System.Web.UI.HtmlControls.HtmlForm detalle_evento;
         
         /// <summary>
-        /// nombrePersona control.
+        /// nombre_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombrePersona;
+        protected global::System.Web.UI.WebControls.Label nombre_evento;
         
         /// <summary>
-        /// apellidoPersona control.
+        /// costo_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label apellidoPersona;
+        protected global::System.Web.UI.WebControls.Label costo_evento;
         
         /// <summary>
-        /// fechaNacimiento control.
+        /// tipo_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fechaNacimiento;
+        protected global::System.Web.UI.WebControls.Label tipo_evento;
         
         /// <summary>
-        /// direccion control.
+        /// fechaInicio_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label direccion;
+        protected global::System.Web.UI.WebControls.Label fechaInicio_evento;
         
         /// <summary>
-        /// nombreDojo control.
+        /// fechaFin_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreDojo;
+        protected global::System.Web.UI.WebControls.Label fechaFin_evento;
         
         /// <summary>
-        /// telefonoDojo control.
+        /// ciudad_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label telefonoDojo;
+        protected global::System.Web.UI.WebControls.Label ciudad_evento;
         
         /// <summary>
-        /// emailDojo control.
+        /// estadoUbicacion_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailDojo;
+        protected global::System.Web.UI.WebControls.Label estadoUbicacion_evento;
         
         /// <summary>
-        /// ubicacionDojo control.
+        /// direccion_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ubicacionDojo;
-        
-        /// <summary>
-        /// nombreOrganizacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombreOrganizacion;
-        
-        /// <summary>
-        /// emailOrganizacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailOrganizacion;
-        
-        /// <summary>
-        /// ubicacionOrganizacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ubicacionOrganizacion;
+        protected global::System.Web.UI.WebControls.Label direccion_evento;
     }
 }

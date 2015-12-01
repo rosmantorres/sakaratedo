@@ -16,6 +16,11 @@ namespace templateApp.GUI.Modulo7
         Cinta cinta = new Cinta();
         LogicaCintas laLogica = new LogicaCintas();
 
+        /// <summary>
+        /// Método que se ejecuta al cargar la página
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";

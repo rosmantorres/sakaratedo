@@ -1,58 +1,74 @@
-﻿using DominioSKD;
-using LogicaNegociosSKD.Modulo7;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using templateApp.GUI.Master;
+using DominioSKD;
+using LogicaNegociosSKD;
+using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarOrganizacionYDojo : System.Web.UI.Page
     {
-        #region Atributos
-        private Organizacion laOrganizacion = new Organizacion();
-        private Dojo elDojo = new Dojo();
-        private Persona laPersona = new Persona();
+        Persona persona = new Persona();
+        Dojo dojo = new Dojo();
+        Organizacion organizacion = new Organizacion();
         LogicaOrganizacionYDojo laLogica = new LogicaOrganizacionYDojo();
-        #endregion
+        
 
         /// <summary>
-        /// Metodo que se ejecuta al cargar la pagina
+        /// Método que se ejecuta al cargar la página
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-             ((SKD)Page.Master).IdModulo = "7";
+            ((SKD)Page.Master).IdModulo = "7";
+            try
+            {
+                String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
+                {
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
 
-             String detalleString = Request.QueryString["OrgDojoDetalle"];
+                    persona = laLogica.obtenerDetallePersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                    dojo = laLogica.obtenerDetalleDojo(persona.DojoPersona);
+                    organizacion = laLogica.obtenerDetalleOrganizacion(dojo.Organizacion_dojo);
+                    this.nombrePersona.Text = persona.Nombre;
+                    this.apellidoPersona.Text = persona.Apellido;
+                    this.fechaNacimiento.Text = persona.FechaNacimiento.ToShortDateString();
+                    this.direccion.Text = persona.Direccion;
+                    this.nombreDojo.Text = dojo.Nombre_dojo;
+                    this.telefonoDojo.Text = dojo.Telefono_dojo.ToString();
+                    this.emailDojo.Text = dojo.Email_dojo;
+                    this.ubicacionDojo.Text = dojo.Ubicacion.Direccion;
+                    this.nombreOrganizacion.Text = organizacion.Nombre;
+                    this.emailOrganizacion.Text = organizacion.Email;
+                    this.ubicacionOrganizacion.Text = organizacion.Direccion;
+                    
+                }
+                else
+                {
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
+                }
 
-             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
-             {
-                 try
-                 {
+            }
+            catch (NullReferenceException ex)
+            {
 
-                     laPersona = laLogica.obtenerDetallePersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                     elDojo = laLogica.obtenerDetalleDojo(laPersona.DojoPersona);
-                     laOrganizacion = laLogica.obtenerDetalleOrganizacion(elDojo.Organizacion_dojo);
-                     this.nombreAtleta.Text = laPersona.Nombre;
-                     this.apellidoAtleta.Text = laPersona.Apellido;
-                     this.fechaNac.Text = laPersona.FechaNacimiento.ToShortDateString();
-                     this.direccion.Text = laPersona.Direccion;
-                     this.dojo.Text = elDojo.Nombre_dojo;
-                     this.dojoTlf.Text = elDojo.Telefono_dojo.ToString();
-                     this.dojoEmail.Text = elDojo.Email_dojo;
-                     this.dojoUbicacion.Text = elDojo.Ubicacion.Direccion;
-                     this.organizacion.Text = laOrganizacion.Nombre;
-                     this.organizacionTlf.Text = laOrganizacion.Telefono.ToString();
-                     this.organizacionEmail.Text = laOrganizacion.Email;
-                     this.organizacionUbica.Text = laOrganizacion.Direccion;
-                 }
-                 catch
-                 {
-                 }
-             }
 
+            }
         }
-        
     }
 }

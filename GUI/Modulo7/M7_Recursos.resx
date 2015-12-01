@@ -150,11 +150,14 @@
   <data name="AliasMatriculaInactiva" xml:space="preserve">
     <value>Inactiva</value>
   </data>
+  <data name="AliasTipoEventoCompetencia" xml:space="preserve">
+    <value>Competencia</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInfoAsistenciaACompetencias" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoAsistido.aspx?compDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleCompetencia.aspx?compDetalle=</value>
   </data>
   <data name="BotonInfoAsistenciaAEventos" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleEventoAsistido.aspx?eventoDetalle=</value>

@@ -28,7 +28,7 @@ namespace DatosSKD.Modulo7
                     parametros = new List<Parametro>();
                     Organizacion org = new Organizacion();
 
-                    elParametro = new Parametro(RecursosBDModulo7.AliasDojoOrganizacionId, SqlDbType.Int, idOrg.ToString(), false);
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdOrganizacion, SqlDbType.Int, idOrg.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(

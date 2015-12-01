@@ -43,7 +43,7 @@ namespace DatosSKD.Modulo7
                     parametros = new List<Parametro>();
                     dojo = new Dojo();
 
-                    elParametro = new Parametro(RecursosBDModulo7.AliasPersonaDojoId, SqlDbType.Int, idDojo.ToString(), false);
+                    elParametro = new Parametro(RecursosBDModulo7.ParamIdDojo, SqlDbType.Int, idDojo.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultaDojoXId, parametros);

@@ -354,9 +354,6 @@
   <data name="AliasPersonaNombre" xml:space="preserve">
     <value>nombre</value>
   </data>
-  <data name="AliasPersonaDojoId" xml:space="preserve">
-    <value>idDojo</value>
-  </data>
   <data name="AliasPersonaDireccion" xml:space="preserve">
     <value>direccion</value>
   </data>
@@ -452,5 +449,14 @@
   </data>
   <data name="ConsultarFechaPagoEvento" xml:space="preserve">
     <value>M7_ConsultarFechaPagoEvento</value>
+  </data>
+  <data name="AliasPersonaDojoId" xml:space="preserve">
+    <value>idDojo</value>
+  </data>
+  <data name="ParamIdDojo" xml:space="preserve">
+    <value>@doj_id</value>
+  </data>
+  <data name="ParamIdOrganizacion" xml:space="preserve">
+    <value>@org_id</value>
   </data>
 </root>
