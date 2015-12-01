@@ -2028,6 +2028,11 @@
     <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.designer.cs">
       <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo9\M9_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M9_RecursoInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Master\SKD.Master.cs">
@@ -2061,6 +2066,10 @@
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
