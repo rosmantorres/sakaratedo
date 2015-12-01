@@ -325,4 +325,7 @@
   <data name="PARAMETRO_PRECIO2" xml:space="preserve">
     <value>@precio</value>
   </data>
+  <data name="PARAMETRO_IMPID" xml:space="preserve">
+    <value />
+  </data>
 </root>

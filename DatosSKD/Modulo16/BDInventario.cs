@@ -39,11 +39,11 @@ namespace DatosSKD.Modulo16
                 {
                     Implemento elInventario = new Implemento();
 
-                    elInventario.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
+                    elInventario.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                     elInventario.Imagen_implemento = row[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
                     elInventario.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
-                    elInventario.Marca_Implemento = row[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
                     elInventario.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
+                    elInventario.Marca_Implemento = row[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
                     elInventario.Precio_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                     laListaDeInventario.Add(elInventario);
 
@@ -95,7 +95,7 @@ namespace DatosSKD.Modulo16
                     elImplemento.Talla_Implemento = row[RecursosBDModulo16.PARAMETRO_TALLA].ToString();
                     elImplemento.Estatus_Implemento = row[RecursosBDModulo16.PARAMETRO_ESTATUS].ToString();
                     elImplemento.Precio_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
-                    //elImplemento.descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+                    elImplemento.Descripcion_Implemento = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
 
                 }
                 return elImplemento;

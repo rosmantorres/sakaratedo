@@ -41,20 +41,20 @@ namespace DatosSKD.Modulo16
 
                     elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                     elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                    elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
                     elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                     laListaDeEvento.Add(elEvento);
 
                 }
-
+               
+                return laListaDeEvento;
             }
             catch (Exception e)
             {
                 throw e;
             }
 
-            return laListaDeEvento;
-
-        }
+       }
 
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace DatosSKD.Modulo16
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_ITEM].ToString());
+                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                     elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                     elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                     elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
