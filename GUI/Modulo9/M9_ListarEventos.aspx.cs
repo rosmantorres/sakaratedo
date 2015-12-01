@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DominioSKD;
+using LogicaNegociosSKD.Modulo9;
 
 namespace templateApp.GUI.Modulo9
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        private List<Evento> eventoLista = new List<Evento>();
         protected void Page_Load(object sender, EventArgs e)
         {
             {
@@ -40,8 +43,49 @@ namespace templateApp.GUI.Modulo9
                     }
 
                 }
+            #region Carga de tabla de Eventos
+
+            LogicaEvento logicaEvento = new LogicaEvento();
+            if (!IsPostBack)
+            {
+                try
+                {
+                    eventoLista = logicaEvento.ListarEventos();
+                    foreach (Evento evento in eventoLista)
+                    {
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTR;
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD + evento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD + evento.TipoEvento.Nombre.ToString() + M9_RecursoInterfaz.CerrarTD;
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaInicio) + M9_RecursoInterfaz.CerrarTD;
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaFin) + M9_RecursoInterfaz.CerrarTD;
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD + evento.Horario.HoraInicio.ToString()+":00"+ M9_RecursoInterfaz.CerrarTD;
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD + evento.Horario.HoraFin.ToString()+":00"+ M9_RecursoInterfaz.CerrarTD;
+                        if (evento.Estado)
+                        {
+                            this.tabla.Text += M9_RecursoInterfaz.AbrirTD + "Activo" + M9_RecursoInterfaz.CerrarTD;
+                        }
+                        else {
+                            this.tabla.Text += M9_RecursoInterfaz.AbrirTD + "Inactivo" + M9_RecursoInterfaz.CerrarTD;
+                        }
+
+                        this.tabla.Text += M9_RecursoInterfaz.AbrirTD;
+                        this.tabla.Text += M9_RecursoInterfaz.BotonInfo + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
+                        this.tabla.Text += M9_RecursoInterfaz.BotonModificar + evento.Id_evento + M9_RecursoInterfaz.BotonCerrar;
+                        this.tabla.Text += M9_RecursoInterfaz.CerrarTD;
+                        this.tabla.Text += M9_RecursoInterfaz.CerrarTR;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+        #endregion
+
+
             }
 
         }
-    }
 }

@@ -88,7 +88,8 @@ namespace LogicaNegociosSKD.Modulo9
         {
 
             BDEvento baseDeDatosEvento = new BDEvento();
-            return baseDeDatosEvento.ListarEventos();
+            List<Evento> listaEventos = baseDeDatosEvento.ListarEventos();
+            return listaEventos;
         }
 
         /// <summary>

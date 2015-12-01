@@ -12,7 +12,9 @@ namespace DatosSKD.Modulo9
 
     public class BDEvento
     {
-
+        public BDEvento() { 
+        
+        }
         /// <summary>
         /// Metodo que permite agregar un Evento a la BD
         /// </summary>
