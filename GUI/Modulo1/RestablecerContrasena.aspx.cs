@@ -19,7 +19,8 @@ namespace templateApp.GUI.Modulo1
             {
                 DateTime fechaActual = DateTime.Now;
                 string fechaString = Request.QueryString[RecursosLogicaModulo1.variableFecha].ToString();
-                fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString, RecursosLogicaModulo2.claveDES);
+                fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString,
+                    RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
                 if (fecha.Date != fechaActual.Date)
                     Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"

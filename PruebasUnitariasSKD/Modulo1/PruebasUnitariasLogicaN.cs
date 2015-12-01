@@ -73,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo1
         {
 
 
-            Assert.AreEqual(logicaLogin.hash(RecursosPU_Mod1.pruebaHash2), logicaLogin.hash(RecursosPU_Mod1.pruebaHash));
+            Assert.AreEqual(AlgoritmoDeEncriptacion.hash(RecursosPU_Mod1.pruebaHash2), AlgoritmoDeEncriptacion.hash(RecursosPU_Mod1.pruebaHash));
             
         }
         [Test]
@@ -81,7 +81,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ExcepcionesSKD.Modulo1.HashException))]
         public void PruebaHashFallido()
         {
-            string resp = logicaLogin.hash(null);
+            string resp = AlgoritmoDeEncriptacion.hash(null);
         }
         // Prueba unitaria del metodo ValidarCorreo() de forma correcta
        [Test]

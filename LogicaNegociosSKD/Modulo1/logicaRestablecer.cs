@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Modulo1;
+using LogicaNegociosSKD.Modulo2;
 
 namespace LogicaNegociosSKD.Modulo1
 {
@@ -14,7 +15,7 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                BDRestablecer.RestablecerContrasena(usuarioID, logicaLogin.hash(contraseña));
+                BDRestablecer.RestablecerContrasena(usuarioID,AlgoritmoDeEncriptacion.hash(contraseña));
                 return true;
             }
             catch (Exception e)

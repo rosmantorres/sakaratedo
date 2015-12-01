@@ -100,7 +100,7 @@ namespace LogicaNegociosSKD.Modulo1
             {
                 Cuenta user= BDLogin.ObtenerUsuario(usuario);
                 string[] respuesta = new string[6];
-               string hashClave = hash(contraseña);
+               string hashClave =AlgoritmoDeEncriptacion.hash(contraseña);
                if (hashClave == user.Contrasena && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
                    respuesta[0] = user.Id_usuario.ToString();
@@ -143,34 +143,12 @@ namespace LogicaNegociosSKD.Modulo1
             }
             catch (Exception e)
             {
-                throw new ExcepcionesSKD.Modulo1.InicioSesionException(RecursosLogicaModulo1.Codigo_Error_InicioSesion,
-                    RecursosLogicaModulo1.Mensaje_Error_InicioSesion, e);
+
+                Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
+                Console.WriteLine("Mensaje: " + e.Message);
+                return null;
+                //throw e;
             }
-        }
-
-
-
-        public static string hash(string cadena)
-        { try
-            {
-            HashAlgorithm sha = new SHA1CryptoServiceProvider(); //se crea la variable que contrenda el SHA1
-            MD5 md5Hash = MD5.Create();// se crea la variable que contendrá el MD5
-            byte[] cadenaByte = Encoding.UTF8.GetBytes(cadena);// se pasa la cadena de caracteres a un arreglo de byte
-            byte[] hashByte = sha.ComputeHash(cadenaByte);// se realiza el hash SHA1
-            byte[] md5Byte = md5Hash.ComputeHash(hashByte);// se le aplica el hash MD5 al hash SHA1 para mayor seguridad
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < md5Byte.Length; i++)
-            {
-                sBuilder.Append(md5Byte[i].ToString("x2"));
-            }
-
-            return sBuilder.ToString();
-            }
-        catch (Exception e)
-        {
-            throw new ExcepcionesSKD.Modulo1.HashException(RecursosLogicaModulo1.Codigo_Error_Hash,
-                    RecursosLogicaModulo1.Mensaje_Error_Hash, e);
-        }
         }
     }
 }
