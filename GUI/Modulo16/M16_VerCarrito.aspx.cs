@@ -115,7 +115,7 @@ namespace templateApp.GUI.Modulo16
 
             //Instancio la logica correspondiente y me traigo el carrito de compras
             Logicacarrito logicaCarrito = new Logicacarrito();
-            carritoCompras = logicaCarrito.verCarrito(1);
+            carritoCompras = logicaCarrito.verCarrito(7);
 
             //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
             foreach (Implemento implemento in carritoCompras.ListaImplemento)
@@ -187,7 +187,7 @@ namespace templateApp.GUI.Modulo16
                 //Agrego los botones
                 this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD;
                 //Arreglar el boton info
-                this.laTabla3.Text += M16_Recursointerfaz.BOTON_INFO + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+                this.laTabla3.Text += M16_Recursointerfaz.BOTON_INFO_EVENTO_CARRITO + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla3.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_EVENTO + evento.Id_evento + 
                     M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TD;
@@ -200,8 +200,60 @@ namespace templateApp.GUI.Modulo16
         }
         #endregion
 
+        #region Llenar Modales de Implemento y Evento 
+
+                #region Llamada para el Detalle del Implemento por id
+                protected void llenarModalInfoImplemento(int Id_implemento)
+                {
+                    Implemento elProducto = new Implemento();
+                    Logicainventario logica = new Logicainventario();
+                    elProducto = logica.detalleImplementoXId(Id_implemento);
+                }
+                #endregion
+
+
+                #region Llamada para el Detalle del Evento por id
+                protected void llenarModalInfoEvento(int Id_evento)
+                {
+                    Evento elEvento = new Evento();
+                    Logicaevento logica = new Logicaevento();
+                    elEvento = logica.detalleEventoXId(Id_evento);
+                }
+                
+                #endregion
+
+        #endregion
+
+        #region Pintar la informacion en el modal
+
+                #region Llenado del Modal de Informacion del Implemento
+                [System.Web.Services.WebMethod]
+                public static string pruebaImplemento(string id)
+                {
+                    Implemento elProducto = new Implemento();
+                    Logicainventario logica = new Logicainventario();
+                    elProducto = logica.detalleImplementoXId(int.Parse(id));
+                    string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elProducto);
+                    return json;
+                }
+                #endregion
+
+                #region Llenado del Modal de Informacion del evento
+                [System.Web.Services.WebMethod]
+                public static string pruebaEvento(string id)
+                {
+                    Evento elEvento = new Evento();
+                    Logicaevento logica = new Logicaevento();
+                    elEvento = logica.detalleEventoXId(int.Parse(id));
+                    string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elEvento);
+                    return json;
+                }
+                #endregion
+
+        #endregion
+
         #region Eliminar y Registrar
-        /// <summary>
+                /// <summary>
         /// Metodo que se encarga de eliminar un item determinado del carrito
         /// </summary>
         /// <returns>El exito o fallo del proceso</returns>

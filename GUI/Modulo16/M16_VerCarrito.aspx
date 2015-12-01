@@ -32,7 +32,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
             El Pago se ha registrado Exitosamente.
         </div>
-<!--MODAL PARA EL DETALLE-->
+<!--TABLAS-->
      <!-- general form elements -->
     <form role="form" class="form-horizontal" method="POST">
               
@@ -118,31 +118,9 @@
     </div>
 </div>
 
-
-         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminar Producto</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>Seguro que desea eliminar el Producto:</p>
-                    <p id="req"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-                    <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-           </div>
-          </div><!-- /.modal-delete-content -->
-        </div><!-- /.modal-delete-dialog -->
-      </div><!-- /.modal-delete -->
-
-    		<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+   <!-- M  O  D  A  L  E  S-->
+       <!--MODAL PARA EL DETALLE IMPLEMENTO-->
+    	<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -152,29 +130,58 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-                                <img src="Imagenes/GuanteRojo.jpg" alt="">
-								<h3>Nombre</h3>
-								<p>
-									Guantes Rojos
-								</p>
-								<h3>Cantidad disponible</h3>
-								<p>
-									7
-								</p>
-								<h3>Detalles</h3>
-								<p>
-									Guantes de color rojos diseñados para proteger las manos al momento de impactar
-                                    golpes contra el contrincante o cuando se está practicando, con un diseño
-                                    particular de color rojo a gusto del atleta.
-								</p>
-								
+                                <h3>Imagen</h3>
+									<h4><input type="text" id="beta" value=""/></h4>
+                                <h3>Nombre</h3>
+                                    <h4><input type="text" id="beta1" value="" /></h4>
+								<h3>Tipo Implemento</h3>
+                                    <h4><input type="text" id="beta2" value="" /></h4>
+                                <h3>Marca</h3>
+                                    <h4><input type="text" id="beta3" value="" /></h4>
+                                <h3>Color</h3>
+                                    <h4><input type="text" id="beta4" value="" /></h4>
+                                <h3>Talla</h3>
+                                    <h4><input type="text" id="beta5" value="" /></h4>
+                                <h3>Status</h3>
+                                    <h4><input type="text" id="beta6" value="" /></h4>
+                                <h3>Precio</h3>
+                                    <h4><input type="text" id="beta7" value="" /></h4>
+                                <h3>Descripcion</h3>
+                                    <h4><input type="text" id="beta8" value="" /></h4>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
+
+        <!--MODAL PARA EL DETALLE EVENTO-->
+    	<div id="modal-info2" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada del Evento</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info2">
+							<div class="row">
+                                <h3>Id</h3>
+									<h4><input type="text" id="beta9" value=""/></h4>
+                                <h3>Nombre</h3>
+									<h4><input type="text" id="beta10" value=""/></h4>
+                                <h3>Descripcion</h3>
+									<h4><input type="text" id="beta11" value=""/></h4>
+                                <h3>Costo</h3>
+									<h4><input type="text" id="beta12" value=""/></h4>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   
 
 
 
@@ -197,7 +204,7 @@
 						<div class="container-fluid" id="info">
 
 
-                            <!--INFORMACION DEL MODAL PARA EL PAGO-->
+  <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
           <div id="alert_nombre" runat="server">
          </div>
@@ -519,6 +526,68 @@
                     $('#modal-delete').modal('hide');//se esconde el modal
                     $('#prueba').show();//Muestra el mensaje de borrado exitosamente
                 });
+
+
+            // Carga el modal con la informacion del IMPLEMENTO de acuerdo al id
+                $('#modal-info1').on('show.bs.modal', function (e) {
+
+                    alert(e.relatedTarget.id);
+
+                    $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        url: 'http://localhost:23072/GUI/Modulo16/M16_VerCarrito.aspx/pruebaImplemento',
+                        data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+
+                        success: function (data) {
+                            console.log(data);
+
+                            var aa = JSON.parse(data.d);
+
+                            console.log(aa);
+
+                            $("#beta").val(aa.Imagen_implemento);
+                            $("#beta1").val(aa.Nombre_Implemento);
+                            $("#beta2").val(aa.Tipo_Implemento);
+                            $("#beta3").val(aa.Marca_Implemento);
+                            $("#beta4").val(aa.Color_Implemento);
+                            $("#beta5").val(aa.Talla_Implemento);
+                            $("#beta6").val(aa.Estatus_Implemento);
+                            $("#beta7").val(aa.Precio_Implemento);
+                            $("#beta8").val(aa.Descripcion_Implemento);
+
+                        }
+                    });
+                })
+
+
+            // Carga el modal con la informacion del EVENTO de acuerdo al id
+                $('#modal-info2').on('show.bs.modal', function (e) {
+                    alert(e.relatedTarget.id);
+                    $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        url: 'http://localhost:23072/GUI/Modulo16/M16_VerCarrito.aspx/pruebaEvento',
+                        data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+
+                        success: function (data) {
+                            console.log(data);
+
+                            var aa = JSON.parse(data.d);
+                            console.log(aa);
+
+                            $("#beta9").val(aa.Id_evento);
+                            $("#beta10").val(aa.Nombre);
+                            $("#beta11").val(aa.Descripcion);
+                            $("#beta12").val(aa.Costo);
+
+                        }
+                    });
+                })
 
 
            });

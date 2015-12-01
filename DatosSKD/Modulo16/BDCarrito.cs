@@ -61,11 +61,11 @@ namespace DatosSKD.Modulo16
                     //Preparo para obtener los datos de ese Inventario
                     parametros = new List<Parametro>();
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int,
-                        row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2].ToString(), false);
+                        row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString(), false);
                     parametros.Add(parametro);
 
                     //Seteamos el id del implemento
-                    elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2].ToString());
+                    elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
 
                     //Obtengo la informacion de los implementos
                     conexion = new BDConexion();

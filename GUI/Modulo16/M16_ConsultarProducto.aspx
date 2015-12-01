@@ -76,8 +76,8 @@
 							<div class="row">
                                 <h3>Imagen</h3>
 									<h4><input type="text" id="beta" value=""/></h4>
-								<h3>Nombre</h3>
-									<h4><input type="text" id="beta1" value="" /></h4>
+                                <h3>Nombre</h3>
+                                    <h4><input type="text" id="beta1" value="" /></h4>
 								<h3>Tipo Implemento</h3>
                                     <h4><input type="text" id="beta2" value="" /></h4>
                                 <h3>Marca</h3>
