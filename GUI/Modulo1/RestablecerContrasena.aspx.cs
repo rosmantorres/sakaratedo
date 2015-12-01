@@ -17,27 +17,24 @@ namespace templateApp.GUI.Modulo1
         {
             try
             {
+
+              
+
                 DateTime fechaActual = DateTime.Now;
                 string fechaString = Request.QueryString[RecursosLogicaModulo1.variableFecha].ToString();
                 fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString,
                     RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
-                if (fecha.Date != fechaActual.Date)
+                if ((fecha.Date.Year != fechaActual.Date.Year) || 
+                    (fecha.Date.Month != fechaActual.Date.Month) ||
+                    (fecha.Date.Day != fechaActual.Date.Day))
                     Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                        + RecursosInterfazModulo1.tipoErr + "=" +
                        RecursosInterfazModulo1.logErrRestablecer);
 
 
                 string idUsuario = Request.QueryString[RecursosLogicaModulo1.variableRestablecer].ToString();
-                string[] idSplit = idUsuario.Split(' ');
-                if (idSplit.Count() > 1)
-                {
-                    idUsuario = idSplit[0];
-                    for (int i = 1; idSplit.Count() > i; i++)
-                    {
-                        idUsuario = idUsuario + '+' + idSplit[i];
-                    }
-                }
+                
                 idUsuario = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(idUsuario, RecursosLogicaModulo2.claveDES);
                 IdUser = idUsuario;
             }
@@ -52,20 +49,20 @@ namespace templateApp.GUI.Modulo1
                 string pass1 = password3.Value;
                 string pass2 = password4.Value;
                 logicaRestablecer Restablecer = new logicaRestablecer();
-                if (pass1 != "" && pass1 == pass2 && pass1.Length > 7 && IdUser!="")
+                if (pass1 != "" && pass1 == pass2 && pass1.Length > 7 && IdUser != "")
                 {
                     if (Restablecer.restablecerContrasena(IdUser, pass1))
                         Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                             + RecursosInterfazModulo1.tipoSucess + "=" +
                             RecursosInterfazModulo1.parametroURLReestablecerExito);
                 }
-                // else
-                //  enviarMensajeconError
+               
             }
             catch (Exception ex)
             {
                //imprimirMensajePorPantallaCnERR
             }
         }
+      
     }
 }

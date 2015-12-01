@@ -40,24 +40,6 @@ namespace templateApp.GUI.Modulo1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl infoRestablecer;
         
         /// <summary>
-        /// Control infoWarning.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl infoWarning;
-        
-        /// <summary>
-        /// Control infoDanger.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl infoDanger;
-        
-        /// <summary>
         /// Control password3.
         /// </summary>
         /// <remarks>

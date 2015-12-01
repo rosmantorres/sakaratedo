@@ -33,17 +33,14 @@
                                 La contraseña debe poseer de <strong>8-16 caracteres</strong> e incluir al menos <strong>una letra mayúscula </strong> ,
                          <strong> una letra minúscula</strong> y <strong>un número.</strong>
                        </div>
-                      <div class="alert alert-warning" id="infoWarning" runat="server">
-                       </div>
-                      <div class="alert alert-danger" id="infoDanger" runat="server">
-                       </div>
+                      
                     <hr />
                       <div id="p1" class="form-group">
-                      <input runat="server" type="password"  class="input-lg form-control" name="password1"  id="password3" placeholder="Contraseña nueva"  />
+                      <input runat="server" type="password"  maxlength="30" class="input-lg form-control" name="password1"  id="password3" placeholder="Contraseña nueva"  />
                           <span class="glyphicon glyphicon-ok form-control-feedback" ></span>
                       </div>
                       <div id="p2" class="form-group">
-                     <input type="password" class="form-control input-lg" name="password2" id="password4" runat="server"  placeholder="Repetir Contraseña" />
+                     <input type="password" class="form-control input-lg" maxlength="30" name="password2" id="password4" runat="server"  placeholder="Repetir Contraseña" />
                         <span class="glyphicon glyphicon-ok form-control-feedback" ></span>
                       </div>
                      <div class="pwstrength_viewport_progress"></div>
