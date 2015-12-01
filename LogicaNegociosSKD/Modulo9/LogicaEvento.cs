@@ -9,6 +9,9 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo9
 {
+    /// <summary>
+    /// Clase que maneja la logica para el Modulo de Eventos
+    /// </summary>
     public class LogicaEvento
     {
         #region Constructores
@@ -227,12 +230,18 @@ namespace LogicaNegociosSKD.Modulo9
             
         }
 
+        /// <summary>
+        /// Metodo que retorna todos los tipos de evento
+        /// </summary>
+        /// <returns>Lista de Tipos de Eventos</returns>
         public List<TipoEvento> ConsultarTiposEventos()
         {
             BDEvento baseDeDatosEvento = new BDEvento();
             return baseDeDatosEvento.ListarTiposEventos();
 
         }
+        
+        
         #endregion
 
     }

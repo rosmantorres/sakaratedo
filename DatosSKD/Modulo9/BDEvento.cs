@@ -9,12 +9,20 @@ using DominioSKD;
 
 namespace DatosSKD.Modulo9
 {
+    /// <summary>
+    /// Clase encargada de Manejar Todas las Consultas a Base de Datos
+    /// </summary>
 
     public class BDEvento
     {
+        #region Constructores
         public BDEvento() { 
         
         }
+
+        #endregion
+
+        #region Metodos
         /// <summary>
         /// Metodo que permite agregar un Evento a la BD
         /// </summary>
@@ -491,6 +499,8 @@ namespace DatosSKD.Modulo9
             return listaEventos;
 
         }
+
+        #endregion
     }
 }
 
