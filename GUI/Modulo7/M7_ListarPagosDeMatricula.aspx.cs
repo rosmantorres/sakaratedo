@@ -26,7 +26,7 @@ namespace templateApp.GUI.Modulo7
         {
             ((SKD)Page.Master).IdModulo = "7";
             float monto;
-            
+            int id;
 
             String detalleString = Request.QueryString["eventDetalle"];
 
@@ -46,8 +46,9 @@ namespace templateApp.GUI.Modulo7
 
                     foreach (Matricula matricula in laLista)
                     {
-
-                       monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), 1);
+                       id = logMatricula.obtenerIdMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                      
+                       monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), id);
 
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Identificador.ToString() + M7_Recursos.CerrarTD;

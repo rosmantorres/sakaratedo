@@ -50,6 +50,35 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
+
+        /// <summary>
+        /// Método que obtiene el id de la matricula  pagado por un atleta
+        /// </summary>
+        /// <param name="idPersona">Número entero que representa el ID del atleta</param>
+        /// <returns>un objeto de tipo Matricula</returns>
+
+        public int obtenerIdMatricula(int idPersona)
+        {
+            try
+            {
+                BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
+                return baseDeDatosDetalleCompra.MatriculaID(idPersona);
+                    
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        /// <summary>
+        /// Método que obtiene el monto pagado de la matricula por un atlteta
+        /// </summary>
+        /// <param name="idMatricula">Número entero que representa el ID de la matricula</param>
+        /// <param name="idPersona">Número entero que representa el ID del atleta</param>
+        /// <returns>un objeto de tipo Matricula</returns>
+      
         public float obtenerMontoMatricula(int idPersona, int idMatricula)
         {
             try
