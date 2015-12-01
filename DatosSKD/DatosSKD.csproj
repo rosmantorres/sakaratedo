@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="BDSolicitud.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +73,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo13\BDimplementos.cs" />
     <Compile Include="Modulo13\BDMoroso.cs" />
     <Compile Include="Modulo13\BDAtletasCinta.cs" />
     <Compile Include="Modulo13\RecursosBDModulo13.Designer.cs">

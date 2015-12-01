@@ -1617,6 +1617,13 @@
     <Compile Include="GUI\Modulo13\M13_KyuPrograma.aspx.designer.cs">
       <DependentUpon>M13_KyuPrograma.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo13\M13_Kyu_atletas.aspx.cs">
+      <DependentUpon>M13_Kyu_atletas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo13\M13_Kyu_atletas.aspx.designer.cs">
+      <DependentUpon>M13_Kyu_atletas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo13\M13_ListarMorosos - Copy.aspx.cs">
       <DependentUpon>M13_ListarMorosos - Copy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
