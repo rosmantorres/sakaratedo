@@ -7,10 +7,12 @@ using System.Collections.Specialized;
 using DominioSKD;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo6;
+using DatosSKD;
 using DatosSKD.Modulo6;
 
 namespace LogicaNegociosSKD.Modulo6
 {
+
     public class LogicaSolicitudInscripcion
     {
 
@@ -157,6 +159,7 @@ namespace LogicaNegociosSKD.Modulo6
             {
                 throw new SolicitudException("Error en la Base de datos.", e);
             }
+
         }
 
     }

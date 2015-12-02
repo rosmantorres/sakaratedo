@@ -13,5 +13,15 @@ namespace templateApp.GUI.Modulo6
         {
             ((SKD)Page.Master).IdModulo = "6";
         }
+
+        protected void natDropChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void agreeButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

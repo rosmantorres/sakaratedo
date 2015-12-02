@@ -13,5 +13,10 @@ namespace templateApp.GUI.Modulo6
         {
             ((SKD)Page.Master).IdModulo = "6";
         }
+
+        protected void agreed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

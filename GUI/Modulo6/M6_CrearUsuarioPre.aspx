@@ -87,26 +87,26 @@
         <fieldset class="scheduler-border">
             <legend class="scheduler-border">Usuario del Sistema</legend>
             <div class="form-group">
-                <label for="imputUserName" class="control-label col-xs-2 needed">Nombre de usuario:</label>
+                <label for="userBox" class="control-label col-xs-2 needed">Nombre de usuario:</label>
                 <div class="col-xs-10">
-                    <input type="text" class="form-control" id="imputUserName"  placeholder="ej: eltercera" required/>
+                    <asp:TextBox id="userBox" CssClass="form-control" runat="server" required></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
-                <label for="imputPassword" class="control-label col-xs-2 needed">Contraseña:</label>
+                <label for="passwordBox" class="control-label col-xs-2 needed">Contraseña:</label>
                 <div class="col-xs-10">
-                    <input type="password" class="form-control" id="imputPassword"  placeholder="" required/>
+                    <asp:TextBox id="passwordBox" CssClass="form-control" TextMode="password" runat="server" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="imputPasswordRe" class="control-label col-xs-2 needed">Repetir contraseña:</label>
+                <label for="password2Box" class="control-label col-xs-2 needed">Repetir contraseña:</label>
                 <div class="col-xs-10">
-                    <input type="password" class="form-control" id="imputPasswordRe"  placeholder="" required/>
+                    <asp:TextBox id="password2Box" CssClass="form-control" TextMode="password" runat="server" required/>
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" id="aceptar" class="btn btn-primary"> Agregar </button>
-                <button type="button" id="cancelar" class="btn btn-default"> Cancelar </button>
+                <asp:Button id="agreeButton" cssclass="btn btn-success col-lg-offset-1" Text="Aceptar" OnClick="agreed" runat="server"/>
+                <asp:Button id="cancelButton" cssclass="btn btn-success col-lg-offset-1" Text="Aceptar" OnClientClick="window.open('/Modulo1/Index.aspx', 'Inicio');" runat="server"/>
             </div>
         </fieldset>
     </form>
