@@ -85,7 +85,42 @@ namespace LogicaNegociosSKD.Modulo7
             }
         }
 
-       
+        /// <summary>
+        /// Método que obtiene el detalle de cada competencia paga por su ID
+        /// </summary>
+        /// <param name="idCompetencia">Número entero que representa el ID de la competencia</param>
+        /// <returns>Objeto de tipo Competencia</returns>
+        public DominioSKD.Competencia detalleCompetenciaPagaID(int idCompetencia)
+        {
+            try
+            {
+                BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
+                return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Método que obtiene la fecha de pago de cada competencia paga por su ID
+        /// </summary>
+        /// <param name="idCompetencia">Número entero que representa el ID de la competencia</param>
+        /// <param name="idPersona">Número entero que representa el ID de la Persona</param>
+        /// <returns>Objeto de tipo Competencia</returns>
+        public DateTime obtenerFechaInscripcion(int idPersona, int idCompetencia)
+        {
+            try
+            {
+                BDEvento baseDeDatosEvento = new BDEvento();
+                return baseDeDatosEvento.fechaInscripcionEvento(idPersona, idCompetencia);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
         /// <summary>
         /// Método que obtiene el monto pagado por un atleta de un evento

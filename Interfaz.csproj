@@ -247,6 +247,7 @@
     <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
     <Content Include="GUI\Modulo7\css\jquery-ui.css" />
     <Content Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx" />
@@ -1518,6 +1519,13 @@
     </Compile>
     <Compile Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx.designer.cs">
       <DependentUpon>M7_DetallarHorarioPractica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx.cs">
+      <DependentUpon>M7_DetalleCompetenciaPaga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx.designer.cs">
+      <DependentUpon>M7_DetalleCompetenciaPaga.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo7\M7_DetalleCompetencia.aspx.cs">
       <DependentUpon>M7_DetalleCompetencia.aspx</DependentUpon>
