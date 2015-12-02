@@ -70,6 +70,15 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¡Atención! Se introdujo una secuencia de caracteres no permitidos..
+        /// </summary>
+        internal static string logCadenaMaliciosa {
+            get {
+                return ResourceManager.GetString("logCadenaMaliciosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Se introdujo carácteres no validos (&gt;&lt;*-+¡?=(/&amp;%$·&quot;!) verifíque y vuelva a ingresar..
         /// </summary>
         internal static string logCaracterInvalidos {
@@ -201,6 +210,15 @@ namespace templateApp.GUI.Modulo1 {
         internal static string tipoErr {
             get {
                 return ResourceManager.GetString("tipoErr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a error.
+        /// </summary>
+        internal static string tipoErrMalicioso {
+            get {
+                return ResourceManager.GetString("tipoErrMalicioso", resourceCulture);
             }
         }
         

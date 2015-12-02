@@ -183,4 +183,10 @@
   <data name="logCaracterInvalidos" xml:space="preserve">
     <value>Se introdujo carácteres no validos (&gt;&lt;*-+¡?=(/&amp;%$·"!) verifíque y vuelva a ingresar.</value>
   </data>
+  <data name="logCadenaMaliciosa" xml:space="preserve">
+    <value>¡Atención! Se introdujo una secuencia de caracteres no permitidos.</value>
+  </data>
+  <data name="tipoErrMalicioso" xml:space="preserve">
+    <value>error</value>
+  </data>
 </root>
