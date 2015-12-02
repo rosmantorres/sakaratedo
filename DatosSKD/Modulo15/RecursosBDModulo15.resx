@@ -121,7 +121,7 @@
     <value>M15_AgregarImplemento</value>
   </data>
   <data name="nombreProcedureConsultarCarrito" xml:space="preserve">
-    <value>Procedure_consultarCarrito</value>
+    <value>M15_ConsultarCarrito</value>
   </data>
   <data name="nombreProcedureConsultarImplemento" xml:space="preserve">
     <value>M15_ConsultarImplemento</value>
