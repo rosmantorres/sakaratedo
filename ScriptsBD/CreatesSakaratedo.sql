@@ -2576,7 +2576,7 @@ AS
  END
 
 
-
+GO
 --------------------------------------------------------------Inicio Procedure M15 Inventario-------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2604,7 +2604,7 @@ AS
   END
 
 
-
+GO
   ----------------------------------------------------
 
 -----------M15_ConsultarUsuarioDojo------------------------------
@@ -2620,7 +2620,7 @@ AS
 
 -------------------------------------------------------------------
 
-
+GO
 /*-------------M15_AgregarImplemento----------------------*/
 CREATE PROCEDURE [dbo].[M15_AgregarImplemento]
 @_impNombre [varchar] (255),
@@ -2651,9 +2651,9 @@ BEGIN
       (@_invCantidad,@_impId,@_dojId);
       
     END
-END;
+END
 --------------------------------------------------------------------------
-
+GO
 ---------------------M15_ConsultarImplemento--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplemento]
   @_impId [int]
@@ -2679,7 +2679,7 @@ AS
   END
 
   ----------------------------------------------------
-
+GO
   ---------------------M15_ConsultarImplementoTotal--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal]
 @_dojId [int]
@@ -2698,13 +2698,15 @@ AS
         imp_estatus,
         DOJO_doj_id 
           FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
-    WHERE imp_estatus != 'Inactivo'
-    AND   imp_id = INV.IMPLEMENTO_imp_id
-    AND    inv.DOJO_doj_id = DOJ.doj_id
+    WHERE imp.imp_estatus != 'Inactivo'
+    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
+    AND      INV.DOJO_doj_id= DOJ.doj_id
+    AND      INV.DOJO_doj_id=@_dojId
   END
 
-  ------------------------------------------------------------------------
 
+  ------------------------------------------------------------------------
+GO
 
   ---------------------M15_ConsultarImplementoTotal2--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal2]
@@ -2731,7 +2733,7 @@ AS
   END
 
   ------------------------------------------------------------------------
-
+GO
 
   /*----------------M15_EliminarImplemento---------------------------------*/
 CREATE PROCEDURE [dbo].[M15_EliminarImplemento]
@@ -2743,9 +2745,9 @@ AS
     SET imp_estatus = 'Inactivo'
     WHERE @_impId = imp_id
     AND @_dojId=(select DOJO_doj_id from INVENTARIO where @_impId=IMPLEMENTO_imp_id )
-  END;
+  END
   --------------------------------------------------------------------------
-
+GO
   -------------------------- M15_ModificarImplemento---------------------------------
 CREATE PROCEDURE [dbo].[M15_ModificarImplemento]
 @_impId [int],
@@ -2781,11 +2783,47 @@ BEGIN
      WHERE IMPLEMENTO_imp_id = @_impId
    AND   DOJO_doj_id = @_dojId 
 
-END;
-
-------------------------------------------------------------------------------
+END
 
 
+  ---------------------M15_ConsultarImplementoTotal--------------------
 
+GO
+
+CREATE PROCEDURE [dbo].[M15_ConsultarCarrito]
+AS
+  BEGIN
+    SELECT  imp_id,
+            imp_nombre,
+            imp_imagen,
+        imp_tipo,
+        imp_color,
+        imp_marca ,
+        imp_talla ,
+        imp_precio ,
+        imp_stockmin,
+        inv_cantidad_total,
+        imp_estatus,
+        imp_descripcion,
+        DOJO_doj_id 
+          FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
+    WHERE imp.imp_estatus != 'Inactivo'
+    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
+    AND      INV.DOJO_doj_id= DOJ.doj_id
+  END
+
+GO
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE procedure M4_ConsultarDojosXId
+@idDojo [int]
+as
+  begin
+    select doj.doj_id as idDojo, doj.doj_rif as rifDojo, doj.doj_nombre as nombreDojo, doj.doj_telefono as telefonoDojo, doj.doj_email as emailDojo,
+     doj.doj__logo  as LogoDojo, doj.doj_fecha_registro as fechaRegistroDojo, doj.doj_status as statusDojo, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
+                   ubi.ubi_longitud as longitudDireccion, org.org_id as organizacionDojo , org.org_nombre as orgNombreDojo
+         From DOJO doj, ORGANIZACION org, UBICACION ubi
+    where doj.doj_id = @idDojo and doj.UBICACION_ubi_id = ubi.ubi_id and doj.ORGANIZACION_org_id = org.org_id 
+    
+  end;
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
