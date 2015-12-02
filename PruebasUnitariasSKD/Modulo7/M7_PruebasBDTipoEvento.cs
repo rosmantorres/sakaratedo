@@ -58,5 +58,16 @@ namespace PruebasUnitariasSKD.Modulo7
             TipoEvento tipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(idTipoEvento);
             Assert.IsNotNull(tipoEvento);
         }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detallar persona
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetallarTipoEventoNumeroEnteroException()
+        {
+            BDTipoEvento baseDeDatosTipoEvento = new BDTipoEvento();
+            TipoEvento tipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(-1);
+        }
     }
 }

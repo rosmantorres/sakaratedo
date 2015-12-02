@@ -58,5 +58,17 @@ namespace PruebasUnitariasSKD.Modulo7
             Organizacion organizacion = baseDeDatosOrganizacion.DetallarOrganizacion(idOrganizacion);
             Assert.IsNotNull(organizacion);
         }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detallar organizacion
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetallarOrganizacionNumeroEnteroException()
+        {
+            BDOrganizacion baseDeDatosOrganizacion = new BDOrganizacion();
+            Organizacion organizacion = baseDeDatosOrganizacion.DetallarOrganizacion(-1);
+        }
+
     }
 }

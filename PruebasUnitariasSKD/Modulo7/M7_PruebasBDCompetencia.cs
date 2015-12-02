@@ -58,5 +58,17 @@ namespace PruebasUnitariasSKD.Modulo7
             Competencia competencia = baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
             Assert.IsNotNull(competencia);
         }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de prueba detallar competencia
+        /// </summary>
+
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetalleCompetenciaNumeroEnteroException()
+        {
+            BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
+            baseDeDatosCompetencia.DetallarCompetencia(-1);
+        }
     }
 }

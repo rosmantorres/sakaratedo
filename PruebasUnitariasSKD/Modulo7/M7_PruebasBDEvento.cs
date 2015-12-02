@@ -63,6 +63,18 @@ namespace PruebasUnitariasSKD.Modulo7
         }
 
         /// <summary>
+        /// Método para probar la exception de número entero invalido de prueba detalle evento
+        /// </summary>
+
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetalleEventoNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            baseDeDatosEvento.DetallarEvento(-1);
+        }
+
+        /// <summary>
         /// Método para probar que la lista obtenida tiene cero o mas eventos
         /// </summary>
         [Test]
@@ -84,6 +96,16 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.NotNull(listaEvento);
         }
 
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos asistidos
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarEventoAsistidoNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(-1);
+        }
 
         /// <summary>
         /// Método para probar que la lista obtenida tiene cero o mas eventos pagos
@@ -106,7 +128,17 @@ namespace PruebasUnitariasSKD.Modulo7
             List<Evento> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
             Assert.NotNull(listaEvento);
         }
-        
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos pagos
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarEventoPagoNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosPagos(-1);
+        }
 
         /// <summary>
         /// Método para probar que la lista obtenida tiene cero o mas competencias
@@ -131,6 +163,16 @@ namespace PruebasUnitariasSKD.Modulo7
         }
 
         /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos asistidos
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarCompetenciaAsistidaNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(-1);
+        }
+        /// <summary>
         /// Método para probar que la lista obtenida tiene cero o mas competencias pagadas por atleta
         /// </summary>
         [Test]
@@ -152,6 +194,16 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.NotNull(listaCompetencia);
         }
 
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar competencias pagadas
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarCompetenciaPagaNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPagas(-1);
+        }
 
         /// <summary>
         /// Método para probar que devuelve la fecha de inscripción de un evento 
@@ -173,6 +225,118 @@ namespace PruebasUnitariasSKD.Modulo7
             BDEvento baseDeDatosEvento = new BDEvento();
             DateTime fechaInscripcion = baseDeDatosEvento.fechaInscripcionEvento(idPersona, 5);
             Assert.NotNull(fechaInscripcion);
+        }
+
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de prueba ultima cinta
+        /// </summary>
+
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void FechaInscripcionNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            DateTime fechaInscripcion = baseDeDatosEvento.fechaInscripcionEvento(idPersona, -2);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas eventos
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosInscritos()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosInscritos(idPersona);
+            Assert.GreaterOrEqual(listaEvento.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosInscritosNoNulo()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosInscritos(idPersona);
+            Assert.NotNull(listaEvento);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos inscritos
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarEventoInscritoNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventosInscritos(-1);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas competencias
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciaInscrita()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
+            Assert.GreaterOrEqual(listaCompetencia.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciaInscritaNoNula()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
+            Assert.NotNull(listaCompetencia);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar competencias asistidas
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarCompetenciaInscritaNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Competencia> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(-1);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas eventos
+        /// </summary>
+        [Test]
+        public void PruebaListarHorarioPractica()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Assert.GreaterOrEqual(listaEvento.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula
+        /// </summary>
+        [Test]
+        public void PruebaListarHorarioPracticaNoNulo()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Assert.NotNull(listaEvento);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar horario de practica
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarHorarioPracticaNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            List<Evento> listaEvento = baseDeDatosEvento.ListarHorarioPractica(-1);
         }
 
         #endregion

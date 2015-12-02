@@ -59,6 +59,15 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.IsNotNull(ubicacion);
         }
 
-
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detallar persona
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetallarUbicacionNumeroEnteroException()
+        {
+            BDUbicacion baseDeDatosUbicacion = new BDUbicacion();
+            Ubicacion ubicacion = baseDeDatosUbicacion.DetallarUbicacion(1);
+        }
     }
 }

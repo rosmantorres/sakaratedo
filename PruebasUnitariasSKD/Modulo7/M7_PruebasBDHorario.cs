@@ -7,6 +7,7 @@ using NUnit.Framework;
 using DominioSKD;
 using DatosSKD;
 using DatosSKD.Modulo7;
+using ExcepcionesSKD.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7
 {
@@ -57,6 +58,17 @@ namespace PruebasUnitariasSKD.Modulo7
             BDHorario baseDeDatosHorario = new BDHorario();
             Horario horario = baseDeDatosHorario.DetallarHorario(idHorario);
             Assert.IsNotNull(horario);
+        }
+         /// <summary>
+        /// Método para probar la exception de número entero invalido de prueba detalle horario
+        /// </summary>
+        
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void PruebaDetallarHorarioNumeroEnteroException()
+        {
+            BDHorario baseDeDatosHorario = new BDHorario();
+            Horario horario = baseDeDatosHorario.DetallarHorario(-1);
         }
     }
 }
