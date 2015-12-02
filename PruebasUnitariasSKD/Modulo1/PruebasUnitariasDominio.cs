@@ -103,6 +103,7 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(Pn._Id, 0);
             Assert.AreEqual(Pn._Nombre, RecursosPU_Mod1.Vacio);
             Assert.AreEqual(Pn._Apellido, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(Pn._DocumentoID, RecursosPU_Mod1.Vacio);
 
         }
         // Prueba unitaria del metodo    public PersonaM1(int id,string nombre,string apellido)
