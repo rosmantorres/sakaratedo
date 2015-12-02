@@ -25,13 +25,26 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
+                {
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
             ((SKD)Page.Master).IdModulo = "7";
 
             String detalleString = Request.QueryString["EventInscDetalle"];
 
             if (detalleString != null)
             {
-                llenarModalInfo(int.Parse(detalleString));
+               
             }
 
             #region Llenar Data Table con Eventos
@@ -75,23 +88,16 @@ namespace templateApp.GUI.Modulo7
                     throw ex;
                 }
             }
-        }
-        
-            /// <summary>
-            /// Método que llena el modal con la información del evento
-            /// </summary>
-            /// <param name="idEvento">Número entero que representa el ID del evento</param>
-            protected void llenarModalInfo(int idEvento)
-            {
-                /*Evento evento = new Evento();
-                LogicaEventosInscritos logica = new LogicaEventosInscritos();
-                evento = logica.detalleEventoID(idEvento);*/
+                    }
             }
+            catch
+            {
 
+            }
         }
             #endregion
-            
-            
+    }
+                   
         #endregion
       
     }
