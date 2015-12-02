@@ -31,7 +31,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
 
 
-        <img id="imageTag" runat="server" src="http://" class="img-circle" alt="User Image" height="150" width="150">   
+        <img id="imageTag" runat="server" src="" class="img-circle" alt="User Image" height="150" width="150">   
         <br />
         <br />
         Nombre completo:<strong><%=cuentaConsultada.PersonaUsuario._Nombre+" "+cuentaConsultada.PersonaUsuario._Apellido %></strong>

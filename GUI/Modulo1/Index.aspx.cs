@@ -137,8 +137,8 @@ namespace templateApp.GUI.Modulo1
                 string value= cripto.EncriptarCadenaDeCaracteres
                  (RecursosInterfazModulo1.parametroURLCorreoEnviado,RecursosLogicaModulo2.claveDES);
 
-                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
-                    + RecursosInterfazModulo1.tipoInfo + "=" +
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + RecursosInterfazModulo1.signoPregunta
+                    + RecursosInterfazModulo1.tipoInfo + RecursosInterfazModulo1.signoIgual +
                     value);
             }
             catch (Exception e)

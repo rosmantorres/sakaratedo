@@ -8,8 +8,9 @@ namespace ExcepcionesSKD.Modulo2
 {
     public class RolesException : ExceptionSKD
     {
-         public RolesException() : base()
-        {}
+        public RolesException()
+            : base()
+        { }
 
         public RolesException(string message)
             : base(message)

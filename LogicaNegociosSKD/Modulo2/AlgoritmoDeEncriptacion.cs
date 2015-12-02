@@ -27,7 +27,7 @@ namespace LogicaNegociosSKD.Modulo2
                 StringBuilder sBuilder = new StringBuilder();
                 for (int i = 0; i < md5Byte.Length; i++)
                 {
-                    sBuilder.Append(md5Byte[i].ToString("x2"));
+                    sBuilder.Append(md5Byte[i].ToString(RecursosLogicaModulo2.equis2));
                 }
 
                 return sBuilder.ToString();
@@ -90,7 +90,7 @@ namespace LogicaNegociosSKD.Modulo2
                         textoEncriptado = idSplit[0];
                         for (int i = 1; idSplit.Count() > i; i++)
                         {
-                            textoEncriptado = textoEncriptado + '+' + idSplit[i];
+                            textoEncriptado = textoEncriptado + RecursosLogicaModulo2.signoMas + idSplit[i];
                         }
                     }
                     // Primero debemos convertir el texto plano en `textoPlano`
