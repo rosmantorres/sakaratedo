@@ -39,13 +39,13 @@ namespace templateApp.GUI.Modulo16
 
             #region Llenar Data Table Con Inventario
             //Instancio la logica correspondiente
-            Logicainventario logComp = new Logicainventario();
+            Logicacarrito logComp = new Logicacarrito();
             if (!IsPostBack)
             {
                 try
                 {
                     //me traigo los implementos disponibles
-                    laLista = logComp.obtenerListaDeInventario();
+                    laLista = logComp.ListarImplemento();
 
                     //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
                     foreach (Implemento c in laLista)
@@ -55,8 +55,8 @@ namespace templateApp.GUI.Modulo16
 
                         //Agrego los datos correspondientes de la tabla
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() 
-                            + M16_Recursointerfaz.CERRAR_TD;
+                       // this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() 
+                       //   + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen_implemento.ToString() 
                             + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre_Implemento.ToString()
@@ -142,14 +142,14 @@ namespace templateApp.GUI.Modulo16
 
         #region Agregar el producto al carrito
         [System.Web.Services.WebMethod]
-        public static string agregarImplementoAcarrito(int idImplemento, int cantidad, float precio)
+        public static string agregarImplementoAcarrito(int idImplemento, int cantidad, int precio)
         {
 
             Logicacarrito logica = new Logicacarrito();
 
             bool agregar = false;
            
-            agregar = logica.agregarInventarioaCarrito(usuario, idImplemento, 1, 2);
+            agregar = logica.agregarInventarioaCarrito(usuario, idImplemento, cantidad, precio);
 
             string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(agregar);
             return json;

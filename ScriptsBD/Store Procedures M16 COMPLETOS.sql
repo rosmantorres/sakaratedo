@@ -81,7 +81,8 @@ AS
 		com_estado as estado
 	 		
 	FROM  COMPRA_CARRITO
-	WHERE PERSONA_per_id = @per_id;
+	WHERE PERSONA_per_id = @per_id and
+		  com_estado ='PAGADO';
  END
  GO
  

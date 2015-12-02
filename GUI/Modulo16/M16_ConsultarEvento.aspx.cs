@@ -6,19 +6,22 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo16;
 using DominioSKD;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo16
 {
     public partial class M16_ConsultarEvento : System.Web.UI.Page
     {
         private List<Evento> laLista = new List<Evento>();
+
+        public static int usuario = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "16";
 
+            M16_ConsultarEvento.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+
             String detalleString = Request.QueryString["impDetalle"];
-            String usuario = Request.QueryString["compAgregar"];
-            String evento = Request.QueryString["compAgregar"];
 
 
             if (detalleString != null)
@@ -26,12 +29,6 @@ namespace templateApp.GUI.Modulo16
                 llenarModalInfo(int.Parse(detalleString));
             }
 
-
-
-            if (usuario != null && evento != null)
-            {
-                agregarEventoaCarrito(1, 1);
-            }
 
         #region Llenar Data Table Con Evento
 
@@ -49,10 +46,11 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Descripcion.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Costo.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.COMBOCANTIDAD + c.Id_evento.ToString() + "_combo" + M16_Recursointerfaz.CERRAR_COMBO;
                         this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_EVENTO + c.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_EVENTO_CARRITO + c.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_EVENTO_CARRITO + c.Id_evento + "_" + c.Costo  +M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }
@@ -90,11 +88,17 @@ namespace templateApp.GUI.Modulo16
 
         #region Llenado del Modal para agregar el producto al carrito
         [System.Web.Services.WebMethod]
-        protected void agregarEventoaCarrito(int usuario, int idMatricula)
+
+        public static string agregarEventoaCarrito(int idEvento, int cantidad, int precio)
         {
-            bool agregar = false;
             Logicacarrito logica = new Logicacarrito();
-            agregar = logica.agregarEventoaCarrito(1, 1, 1, 1);
+
+            bool agregar = false;
+
+            agregar = logica.agregarEventoaCarrito(usuario, idEvento, cantidad, precio);
+
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(agregar);
+            return json;
         }
         #endregion
 

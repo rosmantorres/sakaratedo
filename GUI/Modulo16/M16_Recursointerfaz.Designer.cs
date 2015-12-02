@@ -250,7 +250,7 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;&gt;&lt;option value=1&gt;1&lt;/option&gt;&lt;option value=2&gt;2&lt;/option&gt;&lt;option value=3&gt;3&lt;/option&gt;&lt;option value=4&gt;4&lt;/option&gt;&lt;option value=5&gt;5&lt;/option&gt;&lt;option value=6&gt;6&lt;/option&gt;&lt;option value=7&gt;7&lt;/option&gt;&lt;option value=8&gt;8&lt;/option&gt;&lt;option value=9&gt;9&lt;/option&gt;&lt;option value=10&gt;10&lt;/option&gt; class=&quot;form-control&quot;
+        ///   Looks up a localized string similar to &apos;&gt;&lt;option value=1&gt;1&lt;/option&gt;&lt;option value=2&gt;2&lt;/option&gt;&lt;option value=3&gt;3&lt;/option&gt;&lt;option value=4&gt;4&lt;/option&gt;&lt;option value=5&gt;5&lt;/option&gt;&lt;option value=6&gt;6&lt;/option&gt;&lt;option value=7&gt;7&lt;/option&gt;&lt;option value=8&gt;8&lt;/option&gt;&lt;option value=9&gt;9&lt;/option&gt;&lt;option value=10&gt;10&lt;/option&gt;
         ///&lt;/select&gt;.
         /// </summary>
         internal static string CERRAR_COMBO {

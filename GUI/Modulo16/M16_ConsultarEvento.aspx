@@ -46,7 +46,7 @@
        <table id="tablaevento" class="table table-bordered table-striped dataTable">
         <thead>
             <tr>
-                    <th style="text-align:left">Identificador</th>
+                    
                     <th style="text-align:left">Nombre</th>
 					<th style="text-align:left">Descripcion</th>
                     <th style="text-align:left">Costo (Bs.)</th>
@@ -89,6 +89,58 @@
      <!--VALIDACION PARA MODAL -->
          
          <script type="text/javascript">
+
+             // Funcionalidad para el boton Agregar Evento al Carrito
+             function prueba3(e) {
+
+                 debugger
+
+                 if (e != undefined) {
+
+                     var arrayConDatosDelProducto = e.id.split("_");
+
+                     //Obtenemos el id del boton presionado.
+                     var aux = $("#" + arrayConDatosDelProducto[0] + "_combo");
+
+                     //Creamos un objeto con los datos a ser enviado al servidor.
+                     var producto = {
+                         idEvento: arrayConDatosDelProducto[0],
+                         cantidad: aux.val(),
+                         precio: arrayConDatosDelProducto[1]
+                     }
+
+                     var datos = JSON.stringify(producto);
+
+                     if (aux != undefined) {
+
+                         $.ajax({
+                             cache: false,
+                             type: 'POST',
+                             url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarEvento.aspx/agregarEventoaCarrito',
+                             data: datos,
+                             dataType: 'json',
+                             contentType: "application/json; charset=utf-8",
+
+                             success: function (data) {
+                                 debugger
+
+                                 console.log("Exito:" + data);
+
+                                 var aa = JSON.parse(data.d);
+
+                                 alert("Peticion ajax exitosa:" + aa);
+
+
+                             }
+
+                         });
+
+                     }
+                 }
+
+             }
+
+
              $(document).ready(function () {
 
                  var table = $('#tablaevento').DataTable({

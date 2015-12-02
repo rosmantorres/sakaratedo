@@ -45,13 +45,12 @@
        <table id="tablaproducto" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:left">Id</th>
                     <th style="text-align:left">Imagen</th>
                     <th style="text-align:left">Nombre</th>
 					<th style="text-align:left">Marca</th>
                     <th style="text-align:left">Tipo</th>
 					<th style="text-align:left">Precio</th>
-                    <th style="text-align:left">Cantidad</th>
+                   
 					<th style="text-align:left">Acciones</th>
 				</tr>
 		</thead>

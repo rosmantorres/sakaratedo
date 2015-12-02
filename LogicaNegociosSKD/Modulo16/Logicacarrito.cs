@@ -580,7 +580,7 @@ namespace LogicaNegociosSKD.Modulo16
                 //Creo la lista que retornara a la interfaz
                 List<Implemento> laLista = new List<Implemento>();
 
-                //Obtengo los implementos
+                //Obtengo los implementos que viene del modulo 15 haciendo la INTEGRACION
                 laLista = ConexionBaseDatos.listarInventarioDatos();
          
                 //Escribo en el logger la salida a este metodo
