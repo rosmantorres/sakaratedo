@@ -326,9 +326,6 @@
   <data name="ProcedureConsultarEventoSolicitud" xml:space="preserve">
     <value>M14_ConsultaEventoSolicitud</value>
   </data>
-  <data name="AtriburoPersonaId1" xml:space="preserve">
-    <value>PERSONA_per_id</value>
-  </data>
   <data name="AtributoActivaMatricula" xml:space="preserve">
     <value>mat_activa</value>
   </data>
@@ -512,20 +509,49 @@
   <data name="ParametroPersonaID" xml:space="preserve">
     <value>@per_id</value>
   </data>
-  <data name="ProcedimientoAgregarSolicitud1" xml:space="preserve">
-    <value>M14_ProcedureAgregarSolicitud</value>
-    <comment>procedimiento para agregar una solicitud</comment>
-  </data>
   <data name="ProcedimientoAgregarSolicitudIdP" xml:space="preserve">
     <value>M14_AgregarSolicitudIDPersona</value>
   </data>
-  <data name="ProcedureConsultarSolicitudID1" xml:space="preserve">
-    <value>M14_ProcedureConsultarSolicitudID</value>
-  </data>
-  <data name="ProcedureConsultarSolicitudPlanilla1" xml:space="preserve">
-    <value>M14_ConsultarSolicitudPlanilla</value>
-  </data>
   <data name="ProcedureModificarSolicitud" xml:space="preserve">
     <value>M14_ProcedureModificarSolicitud</value>
+  </data>
+  <data name="ClaseBDDatos" xml:space="preserve">
+    <value>BDDatos</value>
+  </data>
+  <data name="CodigoDisposedObject" xml:space="preserve">
+    <value>M14_04</value>
+  </data>
+  <data name="CodigoException" xml:space="preserve">
+    <value>M14_03</value>
+  </data>
+  <data name="CodigoFormatExceptio" xml:space="preserve">
+    <value>M14_05</value>
+  </data>
+  <data name="CodigoIoException" xml:space="preserve">
+    <value>M14_01</value>
+  </data>
+  <data name="CodigoNullReferencesExcep" xml:space="preserve">
+    <value>M14_02</value>
+  </data>
+  <data name="MensajeDisposedException" xml:space="preserve">
+    <value>El objeto que se esta utilizando no existe o se ha desechado</value>
+  </data>
+  <data name="MsjDeEntrada" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
+  <data name="MsjException" xml:space="preserve">
+    <value>Se ha establecido una excepcion</value>
+  </data>
+  <data name="MsjExceptionIO" xml:space="preserve">
+    <value>La ruta de acceso a los datos es inválida o no existe</value>
+  </data>
+  <data name="MsjFormatException" xml:space="preserve">
+    <value>Formato invalido</value>
+  </data>
+  <data name="MsjNullException" xml:space="preserve">
+    <value>Una referencia a objeto no se ha establecido</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudID1" xml:space="preserve">
+    <value>M14_ProcedureConsultarSolicitudId</value>
   </data>
 </root>

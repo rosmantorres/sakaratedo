@@ -4,7 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Configuration;
+using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo14;
+using System.Globalization;
+using System.IO;
+
 
 namespace DatosSKD.Modulo14
 {
@@ -17,18 +25,21 @@ namespace DatosSKD.Modulo14
         #endregion
 
         /// <summary>
-        /// 
+        /// Método que consulta los datos de una Persona
         /// </summary>
-        /// <param name="idPersona"></param>
-        /// <returns></returns>
+        /// <param name="idPersona">id de la Persona a consultar</param>
+        /// <returns>La clase Persona con sus datos</returns>
         public DominioSKD.Persona ConsultarPersona(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Persona persona = new DominioSKD.Persona();
             try
             {
 
                 SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarPersonas, conect);
+
                 sqlcom.CommandType = CommandType.StoredProcedure;
                 sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroPersona, idPersona));
 
@@ -62,9 +73,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
                 finally
                 {
@@ -73,10 +128,10 @@ namespace DatosSKD.Modulo14
             }
 
         /// <summary>
-        /// 
+        /// Método que consulta los datos de un dojo
         /// </summary>
-        /// <param name=""></param>
-        /// <returns></returns>
+        /// <param name="">Id del Dojo a consultar</param>
+        /// <returns>La clase Dojo</returns>
         public DominioSKD.Dojo ConsultarDojo(int idDojo)
         {
             SqlConnection conect = con.Conectar();
@@ -114,9 +169,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
             finally
             {
@@ -125,10 +224,13 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método que consulta los datos de una matricula,
+        /// segun la persona y el dojo en el que se encuentre inscrito
         /// </summary>
-        /// <param name="idDojo"></param>
-        /// <param name="idPersona"></param>
+        /// <param name="idDojo">Id del dojo relacionado con la
+        /// matricula</param>
+        /// <param name="idPersona">Id de la Persona relacionada
+        /// con la matricula</param>
         /// <returns></returns>
         public List<string> ConsultarMatricula(int idDojo, int idPersona)
         {
@@ -166,9 +268,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
             finally
             {
@@ -177,10 +323,11 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método que devuelve los datos de una organización
         /// </summary>
-        /// <param name="idOrganizacion"></param>
-        /// <returns></returns>
+        /// <param name="idOrganizacion">id de la organización que se
+        /// desea consultar</param>
+        /// <returns>La clase Organizacion</returns>
         public DominioSKD.Organizacion ConsultarOrganizacion(int idOrganizacion)
         {
             SqlConnection conect = con.Conectar();
@@ -215,9 +362,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
             finally
             {
@@ -226,10 +417,10 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método que consulta los datos del eventos segun, el id de inscripcion
         /// </summary>
-        /// <param name="idIns"></param>
-        /// <returns></returns>
+        /// <param name="idIns">Id de inscripcion relacionado con el evento</param>
+        /// <returns>La clase evento</returns>
         public DominioSKD.Evento ConsultarEvento(int idIns)
         {
             SqlConnection conect = con.Conectar();
@@ -278,9 +469,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
             finally
             {
@@ -289,9 +524,11 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método que consulta los datos de una competencia, segun el id
+        /// de inscripcion
         /// </summary>
-        /// <param name="idIns"></param>
+        /// <param name="idIns">Id de la inscripcion relacionada con la
+        /// competencia</param>
         /// <returns></returns>
         public DominioSKD.Competencia ConsultarCompetencia(int idIns)
         {
@@ -337,9 +574,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
             finally
             {
@@ -347,6 +628,11 @@ namespace DatosSKD.Modulo14
             }
         }
 
+        /// <summary>
+        /// Método que consulta los datos de una solicitud
+        /// </summary>
+        /// <param name="idSolicitud">Id de la solicitud a consultar</param>
+        /// <returns>La clase solicitud</returns>
         public DominioSKD.SolicitudPlanilla ConsultarSolicitud(int idSolicitud)
         {
             SqlConnection conect = con.Conectar();
@@ -381,16 +667,59 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDDatosException excep = new BDDatosException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDatos, excep);
+                throw excep;
             }
             finally
             {
                 con.Desconectar(conect);
             }
         }
-
         
     }
 }
