@@ -135,13 +135,9 @@ namespace DatosSKD.Modulo10
 
                     persona.ID = int.Parse(row[RecursosBDModulo10.aliasIdPersona].ToString());
                     persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString();
-                    Inscripcion inscripcion = new Inscripcion();
-                    inscripcion.Id_Inscripcion = int.Parse(row[RecursosBDModulo10.aliasIdInscripcion].ToString());
-                    persona.Inscripcion = inscripcion;
+                    persona.IdInscripcion = int.Parse(row[RecursosBDModulo10.aliasIdInscripcion].ToString());
                     personas.Add(persona);
                 }
-
-
             }
             catch (SqlException ex)
             {

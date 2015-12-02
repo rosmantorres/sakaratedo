@@ -20,7 +20,8 @@ namespace templateApp.GUI.Modulo10
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "10";
-
+            bIzquierdo.Attributes.Add("onClick", "return false;");
+            bDerecho.Attributes.Add("onClick", "return false;");
             LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
             {
@@ -50,6 +51,7 @@ namespace templateApp.GUI.Modulo10
 
         protected void bIzquierdo_Click(object sender, EventArgs e)
         {
+
             for (int i = listaAsistentes.Items.Count - 1; i >= 0; i--)
             {
                 if (listaAsistentes.Items[i].Selected == true)
@@ -59,6 +61,7 @@ namespace templateApp.GUI.Modulo10
                     listaAsistentes.Items.Remove(li);
                 }
             }
+
         }
 
         protected void bDerecho_Click(object sender, EventArgs e)
