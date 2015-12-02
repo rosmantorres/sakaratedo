@@ -61,6 +61,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a apellido_usuario.
+        /// </summary>
+        internal static string aliasApellidoUsuario {
+            get {
+                return ResourceManager.GetString("aliasApellidoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a contrasena.
         /// </summary>
         internal static string AliasContrasena {
@@ -115,6 +124,24 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a imagen.
+        /// </summary>
+        internal static string AliasImagen {
+            get {
+                return ResourceManager.GetString("AliasImagen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a nombreDePila.
+        /// </summary>
+        internal static string AliasNombreDePila {
+            get {
+                return ResourceManager.GetString("AliasNombreDePila", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a nombre.
         /// </summary>
         internal static string AliasNombreRol {
@@ -142,11 +169,29 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a SKD_00_004.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M1_ConsultarNombreUsuarioContrasena.
         /// </summary>
         internal static string ConsultarNombreUsuarioContrasena {
             get {
                 return ResourceManager.GetString("ConsultarNombreUsuarioContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M1_ConsultarPersona_ID.
+        /// </summary>
+        internal static string consultarPersona {
+            get {
+                return ResourceManager.GetString("consultarPersona", resourceCulture);
             }
         }
         
@@ -169,11 +214,11 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .
+        ///   Busca una cadena traducida similar a Error de parseo.
         /// </summary>
-        internal static string String1 {
+        internal static string Mensaje_Error_Formato {
             get {
-                return ResourceManager.GetString("String1", resourceCulture);
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
             }
         }
         
