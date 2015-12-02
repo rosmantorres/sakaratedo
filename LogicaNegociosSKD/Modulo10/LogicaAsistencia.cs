@@ -29,5 +29,17 @@ namespace LogicaNegociosSKD.Modulo10
             List<Competencia> listaCompetencias = BDAsistencia.ListarCompetenciasAsistidas();
             return listaCompetencias;
         }
+
+        /// <summary>
+        /// Metodo que retorna de la BD un evento dado el ID
+        /// </summary>
+        /// <param name="idEvento">Id del evento</param>
+        /// <returns>Objeto de tipo evento</returns>
+
+        public static List<Persona> listaAsistentes(String idEvento)
+        {
+            List<Persona> listaAtletas = BDAsistencia.listaAsistentes(idEvento);
+            return listaAtletas;
+        }
     }
 }

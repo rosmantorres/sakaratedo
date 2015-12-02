@@ -1,4 +1,5 @@
 ﻿using DominioSKD;
+using LogicaNegociosSKD.Modulo10;
 using LogicaNegociosSKD.Modulo9;
 using System;
 using System.Collections.Generic;
@@ -32,20 +33,18 @@ namespace templateApp.GUI.Modulo10
                     calendar.VisibleDate = new DateTime(evento.Horario.FechaInicio.Year,
                                                  evento.Horario.FechaInicio.Month, evento.Horario.FechaInicio.Day);
                     nombreEvento.Text = evento.Nombre;
+                    listaA = LogicaAsistencia.listaAsistentes(idEvento);
+
+                    foreach (Persona persona in listaA)
+                    {
+                        listaAsistentes.Items.Add(persona.ID + " " + persona.Nombre);
+                    }
+
                 }
                 else if (tipo.Equals("competencia"))
                 {
 
                 }
-
-                listaAsistentes.Items.Add("atleta1");
-                listaAsistentes.Items.Add("atleta2");
-                listaAsistentes.Items.Add("atleta3");
-                listaAsistentes.Items.Add("atleta4");
-                listaNoAsistieron.Items.Add("atleta5");
-                listaNoAsistieron.Items.Add("atleta6");
-                listaNoAsistieron.Items.Add("atleta7");
-                listaNoAsistieron.Items.Add("atleta8");
             }
         }
 

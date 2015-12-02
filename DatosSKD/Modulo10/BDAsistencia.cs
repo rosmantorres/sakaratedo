@@ -102,6 +102,7 @@ namespace DatosSKD.Modulo10
             {
                 /*throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);*/
+                throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -116,7 +117,7 @@ namespace DatosSKD.Modulo10
 
         }
 
-        public List<Persona> listaAsistentes(String idEvento)
+        public static List<Persona> listaAsistentes(String idEvento)
         {
             BDConexion laConexion;
             List<Persona> personas = new List<Persona>();
