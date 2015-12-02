@@ -43,6 +43,7 @@ namespace templateApp.GUI.Modulo7
                             competencia = laLogica.detalleCompetenciaID(int.Parse(detalleStringCompetencia));
                             this.nombre_evento.Text = competencia.Nombre;
                             this.costo_evento.Text = competencia.Costo.ToString();
+                            this.tipo_evento.Text = M7_Recursos.AliasTipoEventoCompetencia;
                             this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
                             this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
                             this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();

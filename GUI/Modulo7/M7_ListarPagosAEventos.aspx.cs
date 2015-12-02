@@ -68,14 +68,14 @@ namespace templateApp.GUI.Modulo7
 
                     foreach (Competencia competencia in laListaCompetencias)
                     {
-                        fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), competencia.Id_competencia);
+                      //  fechaInscripcion = logEvento.obtenerFechaInscripcioncompetencia(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), competencia.Id_competencia);
                         this.laTabla.Text += M7_Recursos.AbrirTR;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + "MM/dd/yyyy" + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Costo.ToString() + M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + competencia.Id_competencia + M7_Recursos.BotonCerrar;
+                        this.laTabla.Text += M7_Recursos.BotonInfoPagosACompetencias + competencia.Id_competencia + M7_Recursos.BotonCerrar;
                         this.laTabla.Text += M7_Recursos.CerrarTD;
                         this.laTabla.Text += M7_Recursos.CerrarTR;
                     }

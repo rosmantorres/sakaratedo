@@ -26,9 +26,14 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <div id="alert" runat="server">
-    </div>
-
+    <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="css/daterange.css" rel="stylesheet" />
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/daterange.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+       
+     <div id="alert" runat="server"> </div>
+   
     <div class="row">
             <div class="col-xs-12">
               <div class="box">
@@ -38,6 +43,15 @@
 
 
     <div class="box-body table-responsive">
+
+        <div class="center-block" id="baseFechaControl">
+            <div class="dateControlBlock">
+                 Desde fecha: <input type="text" name="fechaInicio" id="fechaInicio" class="datepicker" size="8"/> Hasta fecha:   
+                 <input type="text" name="fechaFin" id="fechaFin" class="datepicker" size="8"/>
+            </div>
+        </div>
+
+
 
        <table id="tablapractica" class="table table-bordered table-striped dataTable">
         <thead>

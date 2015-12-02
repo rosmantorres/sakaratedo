@@ -30,7 +30,7 @@ namespace templateApp.GUI.Modulo7
                 if (permitido)
                 {
                     ((SKD)Page.Master).IdModulo = "7";
-                    String detalleStringCompetencia = Request.QueryString["compPagaDetalle"];
+                    String detalleStringCompetencia = Request.QueryString["compDetalle"];
 
                     if (!IsPostBack) // verificar si la pagina se muestra por primera vez
                     {
