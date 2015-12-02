@@ -19,36 +19,30 @@
               <tr>
                    <th>Nombre</th>
                    <th>Apellido</th>
-                   <th>Numero de meses que adeuda</th>
+                   <th>Cedula</th>
+                   <th>Dojo</th>
+                   <th>Meses de Mora</th>
                    <th>Monto de deuda</th>
 
               </tr>
         </thead>
      <tbody>
-              <tr>	
-                   <td style="text-align:center">Rose</td>
-                   <td style="text-align:center">G&oacutemez</td>
-                   <td style="text-align:center">3</td>
-                   <td style="text-align:center">12000</td>                  
-               </tr>                            
-    
-
-     
-               <tr>	
-                  <td style="text-align:center">Leopoldo</td>
-                  <td style="text-align:center">Mirabal</td>
-                   <td style="text-align:center">2</td>
-                   <td style="text-align:center">6000</td>                  
-               </tr>                            
-         
-
-       
-                <tr>	
-                   <td style="text-align:center">Eduardo</td>
-                   <td style="text-align:center">Pacheco</td>
-                   <td style="text-align:center">4</td>
-                   <td style="text-align:center">15000</td>                  
-               </tr>                            
+            <%
+                List<DominioSKD.Morosidad> listaMorosoV = new List<DominioSKD.Morosidad>();
+                LogicaNegociosSKD.Modulo13.LogicaMorosos lmoroso = new LogicaNegociosSKD.Modulo13.LogicaMorosos();
+                listaMorosoV= lmoroso.ConsultarLosMorosos();
+                foreach (DominioSKD.Morosidad valorActual in listaMorosoV)
+                {
+                    Response.Write("<tr>");
+                    Response.Write("<td>" + valorActual.Nombre + "</td>");
+                    Response.Write("<td>" + valorActual.Apellido + "</td>");
+                    Response.Write("<td>" + valorActual.Cedula + "</td>");
+                    Response.Write("<td>" + valorActual.DojoNombre + "</td>");
+                    Response.Write("<td>" + valorActual.MeseMoroso + "</td>");
+                    Response.Write("<td>" + valorActual.Monto + "</td>");
+                }
+                
+                   %> 
       </tbody>
 
         </table>
