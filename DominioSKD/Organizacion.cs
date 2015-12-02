@@ -10,23 +10,55 @@ namespace DominioSKD
     {
         private int id_organizacion;
         private String nombre;
+        private String direccion;
+        private int telefono;
+        private String email;
+        private String estado;
+        private String estilo;
+
         public int Id_organizacion
         {
             get { return id_organizacion; }
             set { id_organizacion = value; }
         }
-        
+
         public String Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
 
-        public Organizacion()
+        public String Direccion
         {
-            id_organizacion = 0;
-            nombre = "";
+            get { return direccion; }
+            set { direccion = value; }
         }
+
+        public int Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
+
+        public String Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public String Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+        public String Estilo
+        {
+            get { return estilo; }
+            set { estilo = value; }
+        }
+
+
 
         public Organizacion(int elId, String elNombre)
         {
@@ -37,6 +69,39 @@ namespace DominioSKD
         public Organizacion(String elNombre)
         {
             nombre = elNombre;
+        }
+
+        public Organizacion()
+        {
+            id_organizacion = 0;
+            nombre = "";
+            direccion = "";
+            telefono = 0;
+            email = "";
+            estado = "";
+            estilo = "";
+        }
+
+        public Organizacion(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        {
+            id_organizacion = elId;
+            nombre = elNombre;
+            direccion = laDireccion;
+            telefono = elTelefono;
+            email = elEmail;
+            estado = elEstado;
+            estilo = elEstilo;
+
+        }
+
+        public Organizacion(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        {
+            nombre = elNombre;
+            direccion = laDireccion;
+            telefono = elTelefono;
+            email = elEmail;
+            estado = elEstado;
+            estilo = elEstilo;
         }
 
 

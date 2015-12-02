@@ -1,0 +1,4 @@
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DominioSKD\bin\Debug\DominioSKD.dll
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DominioSKD\bin\Debug\DominioSKD.pdb
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DominioSKD\obj\Debug\DominioSKD.dll
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DominioSKD\obj\Debug\DominioSKD.pdb

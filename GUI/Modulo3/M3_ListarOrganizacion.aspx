@@ -64,7 +64,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+                <asp:Literal runat="server" ID="tabla"></asp:Literal>
+				<%--<tr>
                      
 					<td class="id">Sakara IB</td>
                     <td>Aikido@Dojo.com</td>
@@ -147,7 +148,7 @@
                         <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
                         <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
                     </td>
-                </tr>
+                </tr>--%>
 			    </tbody>
             </table>
            </div>

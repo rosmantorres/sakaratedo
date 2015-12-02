@@ -102,6 +102,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo3\BDOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosBDModulo3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

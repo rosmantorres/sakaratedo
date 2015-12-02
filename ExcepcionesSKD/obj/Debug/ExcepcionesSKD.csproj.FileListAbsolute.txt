@@ -1,0 +1,4 @@
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\ExcepcionesSKD\bin\Debug\ExcepcionesSKD.dll
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\ExcepcionesSKD\bin\Debug\ExcepcionesSKD.pdb
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\ExcepcionesSKD\obj\Debug\ExcepcionesSKD.dll
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\ExcepcionesSKD\obj\Debug\ExcepcionesSKD.pdb

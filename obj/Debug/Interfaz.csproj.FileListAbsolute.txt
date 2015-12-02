@@ -8,3 +8,9 @@ C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\templateApp.GUI.Modulo12.M1
 C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\Interfaz.csproj.GenerateResource.Cache
 C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\templateApp.dll
 C:\Users\Diana\Documents\GitHub\sakaratedo\obj\Debug\templateApp.pdb
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\obj\Debug\Interfaz.csprojResolveAssemblyReference.cache
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\obj\Debug\templateApp.GUI.Master.RecursosInterfazMaster.resources
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\obj\Debug\templateApp.GUI.Modulo12.M12_RecursoInterfaz.resources
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\obj\Debug\templateApp.GUI.Modulo1.RecursosInterfazModulo1.resources
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\obj\Debug\Interfaz.csproj.GenerateResource.Cache
+C:\Users\Katherina Molina\Documents\GitHub\sakaratedo\obj\Debug\templateApp.dll
