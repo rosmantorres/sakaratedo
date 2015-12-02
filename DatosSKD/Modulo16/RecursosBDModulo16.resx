@@ -355,5 +355,36 @@
   </data>
   <data name="PARAMETRO_TIPO_PAGO" xml:space="preserve">
     <value>tipoPago</value>
+  <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
+    <value>Ingresando al metodo</value>
+    <comment>Mensaje de informacion que se escribira en el logger al entrar a un metodo</comment>
+  </data>
+  <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
+    <value>Saliendo del metodo</value>
+    <comment>Mensaje de informacion que se escribira en el logger al salir de un metodo</comment>
+  </data>
+  <data name="CODIGO_EXCEPCION_ARGUMENTO_NULO" xml:space="preserve">
+    <value>S_16_06</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_FORMATO_INVALIDO" xml:space="preserve">
+    <value>S_16_07</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_GENERICO" xml:space="preserve">
+    <value>S_16_01</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_SOBRECARGA" xml:space="preserve">
+    <value>S_16_08</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_ARGUMENTO_NULO" xml:space="preserve">
+    <value>Error en parsear un atributo nulo</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_FORMATO_INVALIDO" xml:space="preserve">
+    <value>Error en parsear un atributo invalido</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_GENERICO" xml:space="preserve">
+    <value>Ha ocurrido un error inesperado en la capa de datos</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_SOBRECARGA" xml:space="preserve">
+    <value>Error al parsear un atributo sobrecargado</value>
   </data>
 </root>

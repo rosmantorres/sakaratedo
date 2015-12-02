@@ -142,6 +142,42 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_06.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_ARGUMENTO_NULO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_ARGUMENTO_NULO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S_16_07.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_FORMATO_INVALIDO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_FORMATO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S_16_01.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_GENERICO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_GENERICO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S_16_08.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_SOBRECARGA {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_SOBRECARGA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_05.
         /// </summary>
         internal static string Codigo_ExcepcionAtributo {
@@ -241,6 +277,51 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingresando al metodo.
+        /// </summary>
+        internal static string MENSAJE_ENTRADA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_ENTRADA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error en parsear un atributo nulo.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_ARGUMENTO_NULO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_ARGUMENTO_NULO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error en parsear un atributo invalido.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_FORMATO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_FORMATO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ha ocurrido un error inesperado en la capa de datos.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_GENERICO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_GENERICO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al parsear un atributo sobrecargado.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_SOBRECARGA {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_SOBRECARGA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error uno de los atributos no existe en el procedimiento ejecutado.
         /// </summary>
         internal static string Mensaje_ExcepcionAtributo {
@@ -273,6 +354,15 @@ namespace DatosSKD.Modulo16 {
         internal static string Mensaje_ExcepcionSql {
             get {
                 return ResourceManager.GetString("Mensaje_ExcepcionSql", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saliendo del metodo.
+        /// </summary>
+        internal static string MENSAJE_SALIDA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
             }
         }
         
