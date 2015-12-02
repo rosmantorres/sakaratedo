@@ -11,7 +11,7 @@ using LogicaNegociosSKD.Modulo7;
 namespace PruebasUnitariasSKD.Modulo7
 {
     [TestFixture]
-    public class M7_PruebasLogicaEventosAsistidos
+    public class M7_PruebaLogicaEventosInscritos
     {
         #region Atributos
         /// <summary>
@@ -19,23 +19,23 @@ namespace PruebasUnitariasSKD.Modulo7
         /// </summary>
         private int idPersona;
         /// <summary>
-        /// Atributo que representa la clase LogicaEventosAsistidos
+        /// Atributo que representa la clase LogicaEventosInscritos
         /// </summary>
-        LogicaEventosAsistidos logicaEventosAsistidos;
+        LogicaEventosInscritos logicaEventosInscritos;
         #endregion
 
         #region SetUp & TearDown
         [SetUp]
         public void Init()
         {
-            logicaEventosAsistidos = new LogicaEventosAsistidos();
+            logicaEventosInscritos = new LogicaEventosInscritos();
             idPersona = 6;
         }
 
         [TearDown]
         public void Clean()
         {
-            logicaEventosAsistidos = null;
+            logicaEventosInscritos = null;
             idPersona = 0;
         }
         #endregion
@@ -46,42 +46,42 @@ namespace PruebasUnitariasSKD.Modulo7
         /// Método para probar que la lista obtenida puede tener cero o mas eventos
         /// </summary>
         [Test]
-        public void PruebaObtenerListaEventosAsistidos()
+        public void PruebaObtenerListaEventosInscritos()
         {
-            List<Evento> listaEvento = logicaEventosAsistidos.obtenerListaDeEventos(idPersona);
+            List<Evento> listaEvento = logicaEventosInscritos.obtenerListaDeEventos(idPersona);
             Assert.GreaterOrEqual(listaEvento.Count, 0);
         }
 
         /// <summary>
-        /// Método para probar la excepcion de número entero invalido de listar eventos asistidos
+        /// Método para probar la excepcion de número entero invalido de listar eventos inscritos
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
-        public void ListarEventosAsistidosNumeroEnteroException()
+        public void ListarEventosInscritosNumeroEnteroException()
         {
-            List<Evento> listaEvento = logicaEventosAsistidos.obtenerListaDeEventos(-1);
+            List<Evento> listaEvento = logicaEventosInscritos.obtenerListaDeEventos(-1);
         }
 
         /// <summary>
         /// Método para probar que la lista obtenida puede tener cero o mas competencia
         /// </summary>
         [Test]
-        public void PruebaObtenerListaCompetenciasAsistidas()
+        public void PruebaObtenerListaCompetenciasInscritas()
         {
-            List<Competencia> listaCompetencia = logicaEventosAsistidos.obtenerListaDeCompetencias(idPersona);
+            List<Competencia> listaCompetencia = logicaEventosInscritos.obtenerListaDeCompetencias(idPersona);
             Assert.GreaterOrEqual(listaCompetencia.Count, 0);
         }
 
         /// <summary>
-        /// Método para probar la excepcion de número entero invalido de listar competencias asistidos
+        /// Método para probar la excepcion de número entero invalido de listar competencias Inscritas
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
-        public void ListarCompetenciasAsistidasNumeroEnteroException()
+        public void ListarCompetenciasInscritasNumeroEnteroException()
         {
-            List<Competencia> listaCompetencia = logicaEventosAsistidos.obtenerListaDeCompetencias(-1);
+            List<Competencia> listaCompetencia = logicaEventosInscritos.obtenerListaDeCompetencias(-1);
         }
-        
+
 
         /// <summary>
         /// Método para probar que se detalla un evento
@@ -89,7 +89,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [Test]
         public void PruebaDetallarEvento()
         {
-            Evento evento = logicaEventosAsistidos.detalleEventoID(8);
+            Evento evento = logicaEventosInscritos.detalleEventoID(8);
             Assert.AreEqual("El Bushido", evento.Nombre);
         }
 
@@ -100,7 +100,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetallarEventoNumeroEnteroException()
         {
-            Evento listaEvento = logicaEventosAsistidos.detalleEventoID(-1);
+            Evento listaCinta = logicaEventosInscritos.detalleEventoID(-1);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [Test]
         public void PruebaObtenrDetalleCompetencia()
         {
-            Competencia competencia = logicaEventosAsistidos.detalleCompetenciaID(1);
+            Competencia competencia = logicaEventosInscritos.detalleCompetenciaID(1);
             Assert.AreEqual("Ryu Kobudo", competencia.Nombre);
         }
 
@@ -120,29 +120,10 @@ namespace PruebasUnitariasSKD.Modulo7
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetalleCompetenciaNumeroEnteroException()
         {
-            Competencia competencia = logicaEventosAsistidos.detalleCompetenciaID(-1);
-        }
-
-        /// <summary>
-        /// Método para probar que se obtiene la fecha de obtencion de un inscripcion
-        /// </summary>
-        [Test]
-        public void PruebaObtenerFechaInscripcion()
-        {
-            DateTime fechaCinta = logicaEventosAsistidos.obtenerFechaInscripcion(idPersona, 5);
-            Assert.AreEqual("02/10/2015", fechaCinta.ToString("MM/dd/yyyy"));
-        }        
-
-        /// <summary>
-        /// Método para probar la excepcion de número entero invalido de obtener fecha de inscripcion
-        /// </summary>
-        [Test]
-        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
-        public void FechaInscripcionNumeroEnteroException()
-        {
-            DateTime fechaCinta = logicaEventosAsistidos.obtenerFechaInscripcion(idPersona, -5);
+            Competencia competencia = logicaEventosInscritos.detalleCompetenciaID(-1);
         }
 
         #endregion
+
     }
 }

@@ -7,6 +7,7 @@ using NUnit.Framework;
 using DominioSKD;
 using DatosSKD;
 using DatosSKD.Modulo7;
+using ExcepcionesSKD.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7
 {
@@ -67,7 +68,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void DetallarUbicacionNumeroEnteroException()
         {
             BDUbicacion baseDeDatosUbicacion = new BDUbicacion();
-            Ubicacion ubicacion = baseDeDatosUbicacion.DetallarUbicacion(1);
+            Ubicacion ubicacion = baseDeDatosUbicacion.DetallarUbicacion(-1);
         }
     }
 }
