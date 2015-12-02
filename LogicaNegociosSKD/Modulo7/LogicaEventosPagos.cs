@@ -47,8 +47,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
                 BDEvento baseDeDatosEvento = new BDEvento();
                 return baseDeDatosEvento.ListarEventosPagos(idPersona);
+                 }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -88,8 +96,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.ListarCompetenciasPagas(idPersona);
+                  if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDEvento baseDeDatosEvento = new BDEvento();
+                    return baseDeDatosEvento.ListarCompetenciasPagas(idPersona);
+                }
+                  else
+                  {
+                      throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                  RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                  }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -130,8 +146,17 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.DetallarEvento(idEvento);
+                 if (idEvento.GetType() == Type.GetType("System.Int32") && idEvento > 0)
+                {
+                    BDEvento baseDeDatosEvento = new BDEvento();
+                    return baseDeDatosEvento.DetallarEvento(idEvento);
+                   
+                }
+                 else
+                 {
+                     throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                 }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -172,8 +197,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
-                return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+                 if (idCompetencia.GetType() == Type.GetType("System.Int32") && idCompetencia > 0)
+                {
+                    BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
+                    return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+                }
+                 else
+                 {
+                     throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                 }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -215,8 +248,17 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.fechaInscripcionCompetencia(idPersona, idCompetencia);
+                 if ((idCompetencia.GetType() == Type.GetType("System.Int32") && idCompetencia > 0 ) && (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0 ))
+                {
+                     BDEvento baseDeDatosEvento = new BDEvento();
+                     return baseDeDatosEvento.fechaInscripcionCompetencia(idPersona, idCompetencia);
+                    
+                }
+                 else
+                 {
+                     throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                 }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -257,10 +299,19 @@ namespace LogicaNegociosSKD.Modulo7
                 RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
+
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosDetalleCompra = new BDEvento();
-                return baseDeDatosDetalleCompra.montoPagoEvento(idPersona, idEvento);
+                   if ((idEvento.GetType() == Type.GetType("System.Int32") && idEvento > 0 ) && (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0 ))
+                {
+                     BDEvento baseDeDatosDetalleCompra = new BDEvento();
+                     return baseDeDatosDetalleCompra.montoPagoEvento(idPersona, idEvento);
+                }
+                   else
+                   {
+                       throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                   RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                   }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -302,8 +353,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.fechaPagoEvento(idPersona, idEvento);
+                if ((idEvento.GetType() == Type.GetType("System.Int32") && idEvento > 0) && (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0))
+                {
+                     BDEvento baseDeDatosEvento = new BDEvento();
+                     return baseDeDatosEvento.fechaPagoEvento(idPersona, idEvento);
+                 }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -344,8 +403,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
-                return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+                if (idCompetencia.GetType() == Type.GetType("System.Int32") && idCompetencia > 0)
+                {
+                  BDCompetencia baseDeDatosCompetencia = new BDCompetencia();
+                  return baseDeDatosCompetencia.DetallarCompetencia(idCompetencia);
+                 }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
