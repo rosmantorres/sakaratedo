@@ -48,12 +48,10 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="InformacionPersonal.cs" />
-<<<<<<< HEAD
 
-=======
     <Compile Include="Matricula.cs" />
     <Compile Include="PersonaM1.cs" />
->>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
+
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
