@@ -60,7 +60,6 @@
     <Compile Include="Horario.cs" />
     <Compile Include="Implemento.cs" />
     <Compile Include="Inscripcion.cs" />
-    <Compile Include="Matricula.cs" />
     <Compile Include="Organizacion.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Planilla.cs" />
