@@ -15,7 +15,7 @@ namespace DatosSKD.Modulo8
 {
     public class BDRestriccionEvento
     {
-        public static bool AgregarRestriccionEvento(RestriccionEvento laRestriccion)
+        public bool AgregarRestriccionEvento(RestriccionEvento laRestriccion)
         {
 
             try
@@ -70,7 +70,7 @@ namespace DatosSKD.Modulo8
             return true;
         }
 
-        public static bool ModificarRestriccionEvento(RestriccionEvento laRestriccion)
+        public bool ModificarRestriccionEvento(RestriccionEvento laRestriccion)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace DatosSKD.Modulo8
             return true;
         }
 
-        public static bool EliminarRestriccionEvento(RestriccionEvento laRestriccion)
+        public bool EliminarRestriccionEvento(RestriccionEvento laRestriccion)
         {
             try
             {
@@ -172,7 +172,7 @@ namespace DatosSKD.Modulo8
             return true;
         }
 
-        public static bool AgregarRh_Cinta(RestriccionEvento laRestriccion, int IdCinta)
+        public bool AgregarRh_Cinta(RestriccionEvento laRestriccion, int IdCinta)
         {
             try
             {
@@ -214,7 +214,7 @@ namespace DatosSKD.Modulo8
             return true;
         }
 
-        public static bool EliminarRh_Cinta(RestriccionEvento laRestriccion)
+        public bool EliminarRh_Cinta(RestriccionEvento laRestriccion)
         {
             try
             {
@@ -253,7 +253,7 @@ namespace DatosSKD.Modulo8
             return true;
         }
 
-        public static List<EventoSimple> ConsultarEventosSinRestriccion()
+        public List<EventoSimple> ConsultarEventosSinRestriccion()
         {
             BDConexion laConexion;
             List<EventoSimple> losEventosSimple = new List<EventoSimple>();
@@ -308,7 +308,7 @@ namespace DatosSKD.Modulo8
             return losEventosSimple;
         }
 
-        public static List<RestriccionEvento> ConsultarEventosConRestriccion()
+        public List<RestriccionEvento> ConsultarEventosConRestriccion()
         {
             BDConexion laConexion;
             List<RestriccionEvento> laListaRestriccionesEvento = new List<RestriccionEvento>();
@@ -368,7 +368,7 @@ namespace DatosSKD.Modulo8
             return laListaRestriccionesEvento;
         }
 
-        public static List<CintaSimple> ConsultarCintasRestriccionEvento(int RestEventoId)
+        public List<CintaSimple> ConsultarCintasRestriccionEvento(int RestEventoId)
         {
             BDConexion laConexion;
             List<CintaSimple> laListaCintasSimple = new List<CintaSimple>();
@@ -428,7 +428,7 @@ namespace DatosSKD.Modulo8
             return laListaCintasSimple;
         }
 
-        public static List<PersonaSimple> AtletasCumplenRestriccionEvento(int EventoId)
+        public List<PersonaSimple> AtletasCumplenRestriccionEvento(int EventoId)
         {
             BDConexion laConexion;
             List<PersonaSimple> laListaPersonasSimple = new List<PersonaSimple>();
@@ -487,7 +487,7 @@ namespace DatosSKD.Modulo8
             return laListaPersonasSimple;
         }
 
-        public static List<EventoSimple> EventosQuePuedeAsistirAtleta(int PersonaId)
+        public List<EventoSimple> EventosQuePuedeAsistirAtleta(int PersonaId)
         {
             BDConexion laConexion;
             List<EventoSimple> laListaEventosSimple = new List<EventoSimple>();
