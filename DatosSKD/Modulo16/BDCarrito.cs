@@ -291,54 +291,73 @@ namespace DatosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool eliminarItem(int tipoObjeto, int objetoBorrar, int idUsuario)
         {
-            
-            //Creo la lista de los parametros para el stored procedure y los anexo
-            List<Parametro> parametros = new List<Parametro>();
-            Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, SqlDbType.Int, 
-                idUsuario.ToString(), false);
-            parametros.Add(parametro);
-            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
-                objetoBorrar.ToString(), false);
-            parametros.Add(parametro);
-            parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, SqlDbType.Int, 
-                tipoObjeto.ToString(), false);
-            parametros.Add(parametro);
-
-            //Procedo a intentar eliminar el Item en BD
             try
             {
-                //Creo la conexion a Base de Datos y ejecuto el Stored Procedure
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER,System.Reflection.MethodBase.GetCurrentMethod().Name);
+                
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, SqlDbType.Int, 
+                    idUsuario.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, 
+                    objetoBorrar.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, SqlDbType.Int, 
+                    tipoObjeto.ToString(), false);
+                parametros.Add(parametro);
+
+                
+                //Procedo a intentar eliminar el item en BD ejecutando el stored procedure
                 BDConexion conexion = new BDConexion();
                 conexion.EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM,parametros);
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return true;
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,e);
+                throw e;
             }
             catch (ArgumentNullException e)
             {
-                throw new ParseoVacioException("bla", "bla", e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,e);
+                throw new ParseoVacioException();
             }
             catch (FormatException e)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ParseoFormatoInvalidoException("bla", "bla", e);
             }
             catch (OverflowException e)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ParseoEnSobrecargaException();
             }
             catch (SqlException e)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ExceptionSKDConexionBD("", "", e);
             }
             catch (ParametroInvalidoException e)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
             catch (ExceptionSKDConexionBD e)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
             catch (Exception e)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ExceptionSKDConexionBD("blabla", "blabla", e);
             }
         }

@@ -241,6 +241,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingresando al metodo.
+        /// </summary>
+        internal static string MENSAJE_ENTRADA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_ENTRADA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error uno de los atributos no existe en el procedimiento ejecutado.
         /// </summary>
         internal static string Mensaje_ExcepcionAtributo {
@@ -273,6 +282,15 @@ namespace DatosSKD.Modulo16 {
         internal static string Mensaje_ExcepcionSql {
             get {
                 return ResourceManager.GetString("Mensaje_ExcepcionSql", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saliendo del metodo.
+        /// </summary>
+        internal static string MENSAJE_SALIDA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
             }
         }
         
