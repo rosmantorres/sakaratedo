@@ -1,11 +1,11 @@
-﻿using System;
+﻿using DominioSKD;
+using LogicaNegociosSKD.Modulo7;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DominioSKD;
-using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
@@ -16,67 +16,58 @@ namespace templateApp.GUI.Modulo7
         private List<Evento> laLista = new List<Evento>();
         private Horario horario;
         #endregion
+
         #region Page Load
-        /// <summary>
-        /// Método que se ejecuta al cargar la página
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
-            String detalleString = Request.QueryString["horarioDetalle"];
-
-            if (detalleString != null)
-            {
-                llenarModalInfo(int.Parse(detalleString));
-            }
-
-            #region Llenar Data Table con Eventos
             LogicaHorarioPractica logEvento = new LogicaHorarioPractica();
-
-            if (!IsPostBack)
+            try
             {
-                try
+                String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
                 {
-                    laLista = logEvento.obtenerListaDePractica(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-
-                    foreach (Evento evento in laLista)
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
+                    ((SKD)Page.Master).IdModulo = "7";
+                    String detalleStringCompetencia = Request.QueryString["horarioDetalle"];
+                    if (!IsPostBack)
                     {
-                        this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Id_evento.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.HoraInicio.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.HoraFin.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoHorariodePractica + evento.Id_evento + M7_Recursos.BotonCerrar;
-                        this.laTabla.Text += M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.CerrarTR;
+                        try
+                        {
+                            laLista = logEvento.obtenerListaDePractica(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+
+                            foreach (Evento evento in laLista)
+                            {
+                                this.laTabla.Text += M7_Recursos.AbrirTR;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.HoraInicio.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.HoraFin.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD;
+                                this.laTabla.Text += M7_Recursos.BotonInfoHorariodePractica + evento.Id_evento + M7_Recursos.BotonCerrar;
+                                this.laTabla.Text += M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.CerrarTR;
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
                     }
-
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
                 }
             }
-        }
-        
-            /// <summary>
-            /// Método que llena el modal con la información del evento
-            /// </summary>
-            /// <param name="idEvento">Número entero que representa el ID del evento</param>
-            protected void llenarModalInfo(int idEvento)
+            catch
             {
-                /*Evento evento = new Evento();
-                LogicaHorarioPractica logica = new LogicaHorarioPractica();
-                evento = logica.detalleEventoID(idEvento);*/
+
             }
-
         }
-           
-            #endregion
-
         #endregion
+    }
 }

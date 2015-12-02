@@ -810,7 +810,7 @@ namespace DatosSKD.Modulo7
                     evento.Id_evento = int.Parse(row[RecursosBDModulo7.AliasIdEvento].ToString());
                     evento.Nombre = row[RecursosBDModulo7.AliasEventoNombre].ToString();
                     evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosBDModulo7.AliasEventoTipoEveId].ToString()));
-                    //  evento.Costo = float.Parse(row[RecursosBDModulo7.AliasEventoCosto].ToString
+                   
                     laListaDeEventoPago.Add(evento);
                 }
               }
@@ -898,6 +898,7 @@ namespace DatosSKD.Modulo7
                         competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKumite;
                     else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(3))
                         competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
+                    competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
                     competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
                     laListaDeCompetenciasPagas.Add(competencia);
                  }
