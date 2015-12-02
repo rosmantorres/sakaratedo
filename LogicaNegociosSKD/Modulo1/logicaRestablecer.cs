@@ -10,7 +10,12 @@ namespace LogicaNegociosSKD.Modulo1
 {
     public class logicaRestablecer
     {
-
+        /// <summary>
+        /// restablecer contraseña de la parte de logica el cual hace la conexion con la parte de datos
+        /// </summary>
+        /// <param name="usuarioID">el id del usuario</param>
+        /// <param name="contraseña"> la nueva contraseña</param>
+        /// <returns>devuelve true si puede hacer el cambio y false si no pudo efectuar el cambio</returns>
         public Boolean restablecerContrasena(string usuarioID, string contraseña)
         {
             try

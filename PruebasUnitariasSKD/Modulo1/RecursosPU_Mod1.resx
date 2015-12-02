@@ -173,7 +173,7 @@
     <value>2</value>
   </data>
   <data name="PruebaRestablecerClave" xml:space="preserve">
-    <value>12345</value>
+    <value>5ae2bacffebdf3e8e37decdd343ac728</value>
     <comment>clave nueva</comment>
   </data>
   <data name="emailerrordoble" xml:space="preserve">
@@ -227,5 +227,13 @@
   <data name="Vacio" xml:space="preserve">
     <value />
     <comment>vacio</comment>
+  </data>
+  <data name="Apellido" xml:space="preserve">
+    <value>Magurno</value>
+    <comment>apellido</comment>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>carlo</value>
+    <comment>nombre</comment>
   </data>
 </root>

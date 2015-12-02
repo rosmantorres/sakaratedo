@@ -23,7 +23,12 @@ namespace LogicaNegociosSKD.Modulo2
             return roles;
 
         }
-
+        /// <summary>
+        /// elimina un rol del usuario  conexion con datos
+        /// </summary>
+        /// <param name="idUsuario">id del usuario que se le eliminara el rol</param>
+        /// <param name="idRol">id del rol a eliminar</param>
+        /// <returns> true si  se pudo eliminar false si no se pudo eliminar el rol</returns>
         public static bool eliminarRol(String idUsuario, String idRol)
         {
             try
@@ -38,7 +43,12 @@ namespace LogicaNegociosSKD.Modulo2
                           RecursosLogicaModulo2.Mensaje_Error_EliminarRol, e);
             }
         }
-
+        /// <summary>
+        /// agrega un rol al usuario  conexion con datos
+        /// </summary>
+        /// <param name="idUsuario">id del usuario que se le Agregar el rol</param>
+        /// <param name="idRol">id del rol a Agregar</param>
+        /// <returns> true si  se pudo Agregar false si no se pudo Agregar el rol</returns>
         public static bool agregarRol(String idUsuario, String idRol)
         {
             try
@@ -53,7 +63,11 @@ namespace LogicaNegociosSKD.Modulo2
                          RecursosLogicaModulo2.Mensaje_Error_AgregarRol, e);
             }
         }
-
+        /// <summary>
+        ///  lista los roles del usuario con sus respectivos atributos
+        /// </summary>
+        /// <param name="idUsuario">id del usuario que le consultaran los roles</param>
+        /// <returns> lista de roles del usuario con sus respectivos atributos</returns>
         public static List<Rol> consultarRolesUsuario(string idUsuario)
         {
             try
@@ -93,7 +107,12 @@ namespace LogicaNegociosSKD.Modulo2
                          RecursosLogicaModulo2.Mensaje_Error_FiltarRol, e);
             }
         }
-
+        /// <summary>
+        /// valida la prioridad del rol recibido
+        /// </summary>
+        /// <param name="Roles">lista de roles con sus atributos</param>
+        /// <param name="usuarioRol">usuario al que se le validaran los roles</param>
+        /// <returns>lista de roles del usuario con la validacion de sus prioridades</returns>
         public static List<Rol> validarPrioridad(List<Rol> Roles,string usuarioRol)
         {
 
@@ -165,7 +184,11 @@ namespace LogicaNegociosSKD.Modulo2
             }
 
         }
-
+        /// <summary>
+        /// Retorna un usuario por su ID sin su contraseña
+        /// </summary>
+        /// <param name="id_usuario">ID del usuario a consultar</param> 
+        /// <returns>Cuenta de usuario sin contraseña</returns>
         public static Cuenta cuentaAConsultar(int idUsuario)
         {
             try

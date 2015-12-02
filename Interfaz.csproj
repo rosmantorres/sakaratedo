@@ -171,6 +171,7 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
+    <Content Include="CKEditor.NET.dll" />
     <Content Include="dist\css\inicio.css" />
     <Content Include="dist\img\AvatarSKD.jpg" />
     <Content Include="dist\img\Dojo1.jpg" />
@@ -567,6 +568,7 @@
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_ModificarEventos.aspx" />
+    <Content Include="itextsharp.dll" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
     <Content Include="plugins\ckeditor\LICENSE.md" />
     <Content Include="plugins\ckeditor\plugins\scayt\LICENSE.md" />

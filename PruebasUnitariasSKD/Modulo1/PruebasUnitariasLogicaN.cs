@@ -48,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo1
         }
         // Prueba unitaria de la excepcion del metodo IniciarSesion()
         [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.Modulo1.InicioSesionException))]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public  void PruebaIniciarSesionFallidoEXC()
         {
             logicaLogin lg = new logicaLogin();
@@ -136,6 +136,7 @@ namespace PruebasUnitariasSKD.Modulo1
              _respuesta = lgr.restablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
               
          }
+        
           
     }
 }

@@ -61,6 +61,15 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Magurno.
+        /// </summary>
+        internal static string Apellido {
+            get {
+                return ResourceManager.GetString("Apellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Una descaripcion.
         /// </summary>
         internal static string Descripcion {
@@ -111,6 +120,15 @@ namespace PruebasUnitariasSKD.Modulo1 {
         internal static string Idrol {
             get {
                 return ResourceManager.GetString("Idrol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to carlo.
+        /// </summary>
+        internal static string nombre {
+            get {
+                return ResourceManager.GetString("nombre", resourceCulture);
             }
         }
         
@@ -187,7 +205,7 @@ namespace PruebasUnitariasSKD.Modulo1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 12345.
+        ///   Looks up a localized string similar to 5ae2bacffebdf3e8e37decdd343ac728.
         /// </summary>
         internal static string PruebaRestablecerClave {
             get {
