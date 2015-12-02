@@ -8,7 +8,7 @@ using templateApp.GUI.Master;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
-using templateApp.GUI.Master;
+
 
 namespace templateApp.GUI.Modulo7
 {
