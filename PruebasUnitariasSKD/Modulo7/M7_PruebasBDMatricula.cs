@@ -47,8 +47,8 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaDetallarMatriculaXId()
         {
             BDMatricula baseDeDatosMatricula = new BDMatricula();
-            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(4);
-            Assert.AreEqual("A11", matricula.Identificador);
+            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(1);
+            Assert.AreEqual("CAF-CAF-CAFE", matricula.Identificador);
         }
 
         /// <summary>

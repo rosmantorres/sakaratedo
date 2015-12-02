@@ -27,7 +27,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [SetUp]
         public void Init()
         {
-            idPersona = 35;
+            idPersona = 6;
         }
 
         [TearDown]
@@ -45,7 +45,7 @@ namespace PruebasUnitariasSKD.Modulo7
         {
             BDPersona baseDeDatosPersona = new BDPersona();
             Persona persona = baseDeDatosPersona.DetallarPersona(idPersona);
-            Assert.AreEqual("Carlo", persona.Nombre);
+            Assert.AreEqual("Maria Isabel", persona.Nombre);
         }
 
         /// <summary>

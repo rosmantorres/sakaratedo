@@ -28,7 +28,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [SetUp]
         public void Init()
         {
-            idPersona = 35;
+            idPersona = 6;
         }
 
         [TearDown]
@@ -160,7 +160,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaFechaInscripcion()
         {
             BDEvento baseDeDatosEvento = new BDEvento();
-            DateTime fechaInscripcion = baseDeDatosEvento.fechaInscripcion(idPersona, 5);
+            DateTime fechaInscripcion = baseDeDatosEvento.fechaInscripcionEvento(idPersona, 5);
             Assert.AreEqual("02/10/2015", fechaInscripcion.ToString("MM/dd/yyyy"));
         }
 
@@ -171,7 +171,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaFechaInscripcionNoNula()
         {
             BDEvento baseDeDatosEvento = new BDEvento();
-            DateTime fechaInscripcion = baseDeDatosEvento.fechaInscripcion(idPersona, 5);
+            DateTime fechaInscripcion = baseDeDatosEvento.fechaInscripcionEvento(idPersona, 5);
             Assert.NotNull(fechaInscripcion);
         }
 
