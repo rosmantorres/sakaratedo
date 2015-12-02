@@ -55,10 +55,9 @@
        <table id="tablainscritos" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>ID</th>
 					<th>Evento</th>
-                    <th>Fecha</th>
-                    <th>Tipo</th>					
+                    <th>Tipo</th>	
+                    <th>Fecha</th>				
                     <th>Locación</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>

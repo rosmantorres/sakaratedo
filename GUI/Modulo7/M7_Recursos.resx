@@ -165,11 +165,14 @@
   <data name="BotonInfoCintas" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetalleCinta.aspx?cintaDetalle=</value>
   </data>
+  <data name="BotonInfoCompetenciaInscrita" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M7_DetalleCompetenciaInscrita.aspx?CompInscDetalle=</value>
+  </data>
   <data name="BotonInfoEventosInscritos" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarEventosInscritos.aspx?EventInscDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M7_DetalleEventoInscrito.aspx?EventInscDetalle=</value>
   </data>
   <data name="BotonInfoHorariodePractica" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarHorariodePractica.aspx?horarioDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M7_DetallarHorarioPractica.aspx?horarioDetalle=</value>
   </data>
   <data name="BotonInfoOrganizacionYDojo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M7_ListarOrganizacionYDojo.aspx?OrgDojoDetalle=</value>

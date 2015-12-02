@@ -42,11 +42,10 @@
        <table id="tablapractica" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>ID</th>
 					<th>Práctica</th>
                     <th>Hora Inicio</th>
                     <th>Hora Fin</th>
-                    <th>Salón</th>
+                    <th>Ubicación</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
