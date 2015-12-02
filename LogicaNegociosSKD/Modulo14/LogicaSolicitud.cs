@@ -65,17 +65,26 @@ namespace LogicaNegociosSKD.Modulo14
             Boolean result = datos.RegistrarSolicitudPlanillaBD(laSolicitud);
         }
 
+        /// <summary>Para registrar una solicitud por el id de la persona</summary>
+        /// <param name="laSolicitud"> la solicitud</param>
+        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
+        public void RegistrarSolicitudIDPersona(SolicitudP laSolicitud)
+        {
+            Boolean result = datos.RegistrarSolicitudIDPersonaBD(laSolicitud);
+        }
         /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
         /// <param name="idPlanilla"> id de la planilla solicitada</param>
         /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
 
-        public List<String> EventosSolicitud(int idPersona)
+        public List<SolicitudP> EventosSolicitud(int idPersona)
         {
-            List<String> eventos = new List<String>();
+            List<SolicitudP> eventos = new List<SolicitudP>();
             try
             {
                 eventos = datos.ObtenerEventosSolicitud(idPersona);
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
 
             }
             return eventos;
@@ -85,9 +94,9 @@ namespace LogicaNegociosSKD.Modulo14
         /// <param name="idPersona"> id persona</param>
         /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
 
-        public List<String> CompetenciasSolicitud(int idPersona)
+        public List<SolicitudP> CompetenciasSolicitud(int idPersona)
         {
-            List<String> eventos = new List<String>();
+            List<SolicitudP> eventos = new List<SolicitudP>();
             try
             {
                 eventos = datos.ObtenerCompetenciaSolicitud(idPersona);
@@ -97,6 +106,30 @@ namespace LogicaNegociosSKD.Modulo14
 
             }
             return eventos;
+        }
+        /// <summary>Obtener una solicitud por ID</summary>
+        /// <param name="idPlanilla"></param>
+        /// <returns>Regresa la solicitud con su fechar, fecharei y motivo</returns>
+        /// 
+        public SolicitudPlanilla ObtenerSolicitudID(int idSolicitud)
+        {
+            SolicitudPlanilla solicitud = new SolicitudPlanilla();
+
+            BDSolicitud BaseDeDatoPlanilla = new BDSolicitud();
+            solicitud = BaseDeDatoPlanilla.ObtenerSolicitudID(idSolicitud);
+            return solicitud;
+        }
+        /// <summary>Modificar una solicitud por id</summary>
+        /// <param name="laSolicitud">la solicitud</param>
+        /// <returns>Regresa true si se modifico y false si no</returns>
+        /// 
+        public SolicitudP ModificarSolicitudID(SolicitudP laSolicitud)
+        {
+            BDSolicitud BaseDeDatoSolicitud = new BDSolicitud();
+            SolicitudP solicitud = new SolicitudP();
+            BaseDeDatoSolicitud.ModificarSolicitudBD(laSolicitud);
+
+            return solicitud;
         }
     }
 }

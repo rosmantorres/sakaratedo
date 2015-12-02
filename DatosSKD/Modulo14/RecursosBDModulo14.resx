@@ -506,4 +506,26 @@
   <data name="ParametroInsId" xml:space="preserve">
     <value>@ins_id</value>
   </data>
+  <data name="AtributoInscripcionID" xml:space="preserve">
+    <value>ins_id</value>
+  </data>
+  <data name="ParametroPersonaID" xml:space="preserve">
+    <value>@per_id</value>
+  </data>
+  <data name="ProcedimientoAgregarSolicitud1" xml:space="preserve">
+    <value>M14_ProcedureAgregarSolicitud</value>
+    <comment>procedimiento para agregar una solicitud</comment>
+  </data>
+  <data name="ProcedimientoAgregarSolicitudIdP" xml:space="preserve">
+    <value>M14_AgregarSolicitudIDPersona</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudID1" xml:space="preserve">
+    <value>M14_ProcedureConsultarSolicitudID</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudPlanilla1" xml:space="preserve">
+    <value>M14_ConsultarSolicitudPlanilla</value>
+  </data>
+  <data name="ProcedureModificarSolicitud" xml:space="preserve">
+    <value>M14_ProcedureModificarSolicitud</value>
+  </data>
 </root>

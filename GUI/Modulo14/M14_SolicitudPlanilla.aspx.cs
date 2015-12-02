@@ -7,11 +7,13 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo14;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo14
 {
     public partial class SolicitudPlanilla : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
@@ -19,21 +21,46 @@ namespace templateApp.GUI.Modulo14
                int idPlanilla = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idPlan]);
                this.id_planilla.Value = idPlanilla.ToString(); 
                  id_planilla.Visible = false;
-                 llenarComboEventos();
-                 llenarComboCompetencia();
+                 
                  LogicaSolicitud lP = new LogicaSolicitud();
                  List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(idPlanilla);
                  if (datosRequeridos[0]==true){
-                     fechaRet.Visible = true;
+                     fechaRetiro.Visible = true;
                  }else{
-                     fechaRet.Visible = false;
+                     fechaRetiro.Visible = false;
                  }
                  if (datosRequeridos[1]==true){
-                     fechaRei.Visible = true;
+                     fechaReincorporacion.Visible = true;
                  }else{
-                     fechaRet.Visible = false;
+                     fechaReincorporacion.Visible = false;
+                 } 
+                 if (datosRequeridos[2] == true)
+                 {
+                     divComboEvento.Visible = true;
+                     labelEvento.Visible = true;
+                     llenarComboEventos();
+                    
                  }
-
+                 else
+                 {
+                     divComboEvento.Visible = false;
+                     labelEvento.Visible = false;
+                     
+                 }
+                 if (datosRequeridos[3] == true)
+                 {
+                     divComboCompetencia.Visible = true;
+                     labelCompetencia.Visible = true;
+                    llenarComboCompetencia();
+                    
+                 }
+                 else
+                 {
+                     divComboCompetencia.Visible = false;
+                     labelCompetencia.Visible = false;
+                     
+                 }
+               
              }
         }
 
@@ -42,12 +69,12 @@ namespace templateApp.GUI.Modulo14
         {
 
             LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
-            List<String> listEventos = lP.EventosSolicitud(1);
+            List<SolicitudP> listEventos = lP.EventosSolicitud(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (String item in listEventos)
+            foreach (SolicitudP item in listEventos)
             {
-                options.Add(item,item);
+                options.Add(item.ID.ToString(),item.NombreEvento);
             }
 
             comboEvento.DataSource = options;
@@ -61,14 +88,14 @@ namespace templateApp.GUI.Modulo14
 
         protected void llenarComboCompetencia()
         {
-
+           
             LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
-            List<String> listCompetencias = lP.CompetenciasSolicitud(1);
+            List<SolicitudP> listCompetencias = lP.CompetenciasSolicitud(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (String item in listCompetencias)
+            foreach (SolicitudP item in listCompetencias)
             {
-                options.Add(item, item);
+                options.Add(item.ID.ToString(), item.NombreEvento);
             }
 
             comboCompetencia.DataSource = options;
@@ -80,11 +107,29 @@ namespace templateApp.GUI.Modulo14
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-
+            Planilla planilla = new Planilla();
+            planilla.ID = Int32.Parse(this.id_planilla.Value);
             LogicaSolicitud lS = new LogicaSolicitud();
-
-            SolicitudP laSolicitud = new SolicitudP(this.id_fechaI.Value, this.id_fechaF.Value, this.id_motivo.Value, Int32.Parse(this.id_planilla.Value));
-            lS.RegistrarSolicitudPlanilla(laSolicitud);
+            
+            if (comboEvento.Visible==true){
+                SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
+                lS.RegistrarSolicitudPlanilla(laSolicitud);
+            }
+            if (comboCompetencia.Visible == true)
+            {
+                SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
+                lS.RegistrarSolicitudPlanilla(laSolicitud);
+            }
+            if (comboEvento.Visible == false && comboCompetencia.Visible == false)
+            {
+                SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+                lS.RegistrarSolicitudIDPersona(laSolicitud);
+            }
+          
+            
             Response.Redirect("../Modulo14/M14_SolicitarPlanilla.aspx?success=true");
         }
     }

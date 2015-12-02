@@ -197,9 +197,63 @@ namespace DatosSKD.Modulo14
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursosBDModulo14.ParametroPlanillaID,
-                SqlDbType.VarChar, laSolicitud.IDPlanilla.ToString(), false);
+                SqlDbType.VarChar, laSolicitud.Planilla.ID.ToString(), false);
                 parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdInscripcion,
+               SqlDbType.VarChar, laSolicitud.ID.ToString(), false);
+                parametros.Add(parametro);
+
                 string query = RecursosBDModulo14.ProcedimientoAgregarSolicitud;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
+
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Registra una solicitud de planilla en la base de datos por el ID de persona
+        /// </summary>
+        /// <param name="">La solicitud</param>
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
+
+        public Boolean RegistrarSolicitudIDPersonaBD(SolicitudP laSolicitud)
+        {
+
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroFechaRetiro,
+                SqlDbType.VarChar, laSolicitud.FechaRetiro.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroFechaReincorporacion,
+                SqlDbType.VarChar, laSolicitud.FechaReincorporacion.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroMotivo,
+                SqlDbType.VarChar, laSolicitud.Motivo, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroPlanillaID,
+                SqlDbType.VarChar, laSolicitud.Planilla.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroPersonaID,
+               SqlDbType.VarChar, laSolicitud.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                string query = RecursosBDModulo14.ProcedimientoAgregarSolicitudIdP;
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
@@ -215,17 +269,17 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// /// <param name="">id persona</param>
         /// <returns>eventos de una inscripcion</returns>
-        public  List<String> ObtenerEventosSolicitud(int idPersona)
+        public List<SolicitudP> ObtenerEventosSolicitud(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            List<String> listDatos = new List<String>();
+            List<SolicitudP> eventos = new List<SolicitudP>();
             try
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                
+
                 parametro = new Parametro(RecursosBDModulo14.ParametroPersonaPerId,
                 SqlDbType.VarChar, idPersona.ToString(), false);
                 parametros.Add(parametro);
@@ -234,7 +288,7 @@ namespace DatosSKD.Modulo14
 
                 foreach (DataRow row in resultadoConsulta.Rows)
                 {
-                    listDatos.Add(row[RecursosBDModulo14.AtributoEventoNombre].ToString());
+                    eventos.Add(new SolicitudP(Int32.Parse(row[RecursosBDModulo14.AtributoInscripcionID].ToString()), row[RecursosBDModulo14.AtributoEventoNombre].ToString()));
 
                 }
 
@@ -244,7 +298,7 @@ namespace DatosSKD.Modulo14
                 throw e;
             }
 
-            return listDatos;
+            return eventos;
         }
 
         /// <summary>
@@ -252,12 +306,12 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// /// <param name="">id persona</param>
         /// <returns>eventos de una inscripcion</returns>
-        public List<String> ObtenerCompetenciaSolicitud(int idPersona)
+        public List<SolicitudP> ObtenerCompetenciaSolicitud(int idPersona)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            List<String> listDatos = new List<String>();
+            List<SolicitudP> competencias = new List<SolicitudP>();
             try
             {
                 laConexion = new BDConexion();
@@ -271,7 +325,7 @@ namespace DatosSKD.Modulo14
 
                 foreach (DataRow row in resultadoConsulta.Rows)
                 {
-                    listDatos.Add(row[RecursosBDModulo14.AtributoCompetenciaNombre].ToString());
+                    competencias.Add(new SolicitudP(Int32.Parse(row[RecursosBDModulo14.AtributoInscripcionID].ToString()), row[RecursosBDModulo14.AtributoCompetenciaNombre].ToString()));
 
                 }
 
@@ -281,7 +335,96 @@ namespace DatosSKD.Modulo14
                 throw e;
             }
 
-            return listDatos;
+            return competencias;
+        }
+
+        /// <summary>
+        /// Obtiene una solicitud por el ID
+        /// </summary>
+        /// /// <param name="idSolicitud">id solicitud</param>
+        /// <returns>Planilla con nombre, status y tipo de planilla</returns>
+        public SolicitudPlanilla ObtenerSolicitudID(int idSolicitud)
+        {
+            BDConexion laConexion;
+            SolicitudPlanilla solicitud = null;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                Planilla planilla = null;
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdSolicitud,
+                SqlDbType.VarChar, idSolicitud.ToString(), false);
+                parametros.Add(parametro);
+
+                DataTable resultadoConsulta = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo14.ProcedureConsultarSolicitudID1, parametros);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    DateTime fechaRetiro = Convert.ToDateTime(row[RecursosBDModulo14.AtributoFechaRetiro].ToString());
+                    DateTime fechaReincorporacion = Convert.ToDateTime(row[RecursosBDModulo14.AtributoFechaReincorporacion].ToString());
+                    String motivo = row[RecursosBDModulo14.AtributoMotivo].ToString();
+                    int idPlanilla = Int32.Parse(row[RecursosBDModulo14.AtributoIdPlanillaDatos].ToString());
+                    planilla = new Planilla();
+                    planilla.ID = idPlanilla;
+                    solicitud = new SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return solicitud;
+        }
+
+
+        /// <summary>
+        /// Modifica una solicitud en la base de datos
+        /// </summary>
+        /// <param name="laSolicitud">La solicitud</param>
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
+
+        public Boolean ModificarSolicitudBD(SolicitudP laSolicitud)
+        {
+
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdSolicitud,
+                SqlDbType.VarChar, laSolicitud.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroFechaRetiro,
+                SqlDbType.VarChar, laSolicitud.FechaRetiro.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroFechaReincorporacion,
+                SqlDbType.VarChar, laSolicitud.FechaReincorporacion.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroMotivo,
+               SqlDbType.VarChar, laSolicitud.Motivo, false);
+                parametros.Add(parametro);
+
+                string query = RecursosBDModulo14.ProcedureModificarSolicitud;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
+
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

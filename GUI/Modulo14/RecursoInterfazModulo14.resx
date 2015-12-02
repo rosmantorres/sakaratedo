@@ -173,9 +173,6 @@
   <data name="BotonEliminarSolicitud" xml:space="preserve">
     <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
-  <data name="BotonSolicitarPlanilla" xml:space="preserve">
-    <value>&lt;a  class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
-  </data>
   <data name="CerrarSolicitud" xml:space="preserve">
     <value>"&gt;Solicitar&lt;/a&gt;</value>
   </data>
@@ -331,5 +328,11 @@
   </data>
   <data name="String1" xml:space="preserve">
     <value>nombre</value>
+  </data>
+  <data name="BotonSolicitarPlanilla" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
+  </data>
+  <data name="idSol" xml:space="preserve">
+    <value>idSol</value>
   </data>
 </root>

@@ -40,40 +40,58 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText id_planilla;
         
         /// <summary>
-        /// Control fechaRet.
+        /// Control fechaRetiro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaRet;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaRetiro;
         
         /// <summary>
-        /// Control id_fechaI.
+        /// Control idFechaI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_fechaI;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText idFechaI;
         
         /// <summary>
-        /// Control fechaRei.
+        /// Control fechaReincorporacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaRei;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaReincorporacion;
         
         /// <summary>
-        /// Control id_fechaF.
+        /// Control idFechaF.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_fechaF;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText idFechaF;
+        
+        /// <summary>
+        /// Control labelCompetencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labelCompetencia;
+        
+        /// <summary>
+        /// Control labelEvento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labelEvento;
         
         /// <summary>
         /// Control divComboEvento.

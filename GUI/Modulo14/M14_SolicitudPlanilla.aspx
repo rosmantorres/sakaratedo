@@ -46,44 +46,47 @@
           </div>
            <input id="id_planilla" type="text" placeholder="" class="form-control" name="idPlanilla" runat="server" />  
          </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-12">
-       <div class="col-sm-6 col-md-6 col-lg-6">
-            <div id="fechaRet" runat="server">
-                      <h3>Fecha Retiro:</h3>  
-                      <br />                
-                      <input type="date" id="id_fechaI"   class="form-control" runat="server"/>    
-                  </div>
-            </div>
-            </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-12">
-               <div class="col-sm-6 col-md-6 col-lg-6">
-            <div id="fechaRei" runat="server">
-                      <h3>Fecha Reincorporacion:</h3>  
-                      <br />                
-                      <input type="date" id="id_fechaF"  class="form-control" runat="server"/>    
-                  </div>
-            </div>
-            </div>
-        <div class="col-sm-3 col-md-3 col-lg-3">
+           <!--Date picker FECHA Retiro-->
+       
+       <div class="form-group col-sm-6 col-md-6 col-lg-6" id="fechaRetiro" runat="server">
+       
+         <h3>Fecha de Retiro:</h3>
+         <div class="input-group input-append date" id="id_fechai" >
+         <input type="text"  class="form-control" name="date" id="idFechaI" runat="server" />
+         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+      </div>
+     
+    </div>
+       <div class="form-group col-sm-6 col-md-6 col-lg-6" id="fechaReincorporacion" runat="server">
+        <h3>Fecha de Reincorporacion:</h3>
+         <div class="input-group input-append date" id="id_fechaf">
+         <input type="text" class="form-control" name="date" id="idFechaF" runat="server" />
+         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+       </div>
+      </div>
+       
+       <div class="col-sm-12 col-md-12 col-lg-12">
+        
+       <br/>
+        <div class="col-sm-3 col-md-3 col-lg-3" id="labelCompetencia" runat="server">
+            <label>Seleccione la competencia:</label>  
+          </div>
+         <div class="col-sm-3 col-md-3 col-lg-3" id="labelEvento" runat="server">
             <label>Seleccione el evento:</label>  
           </div>
-          <div class="col-sm-8 col-md-8 col-lg-84">
+        <div class="col-sm-8 col-md-8 col-lg-84">
              <div class="dropdown" runat="server" id="divComboEvento" >
                  <asp:DropDownList ID="comboEvento" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
                  </asp:DropDownList>
               </div>
            </div>
-       <br/>
-        <div class="col-sm-3 col-md-3 col-lg-3">
-            <label>Seleccione la competencia:</label>  
-          </div>
-        <div class="col-sm-8 col-md-8 col-lg-84">
+           <div class="col-sm-8 col-md-8 col-lg-84">
              <div class="dropdown" runat="server" id="divComboCompetencia" >
                  <asp:DropDownList ID="comboCompetencia" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
                  </asp:DropDownList>
               </div>
            </div>
-
+       </div>
          <div class="form-group col-sm-12 col-md-12 col-lg-12">
                   <div class="col-sm-8 col-md-8 col-lg-8">
                       <h3>Motivo:</h3>
@@ -101,8 +104,29 @@
         &nbsp;&nbsp
          <a class="btn btn-default" href="M14_SolicitarPlanilla.aspx">Cancelar</a>
       </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#id_fechai')
+                .datepicker({
+                    format: 'mm/dd/yyyy'
+                })
+                .on('changeDate', function (e) {
+                    // Revalidate the date field
+                });
+            });
+
+            $(document).ready(function () {
+                $('#id_fechaf')
+                .datepicker({
+                    format: 'mm/dd/yyyy'
+                })
+                .on('changeDate', function (e) {
+                    // Revalidate the date field
+                });
+            });
+   </script>
    </form>
-             </div>
+  </div>
    </div>
 
  </div>
