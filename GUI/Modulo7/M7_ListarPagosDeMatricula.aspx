@@ -60,7 +60,7 @@
 					<th>Estado</th>
                     <th>Fecha Creacion</th>
                     <th>Fecha Pago</th>
-                    <th>Monto</th>
+                    <th>Monto(Bs)</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>

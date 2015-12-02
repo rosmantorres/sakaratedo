@@ -58,7 +58,7 @@
                     <th>Evento</th>
 					<th>Tipo</th>
                     <th>Fecha de Pago</th>
-                    <th>Monto</th>
+                     <th>Monto(Bs)</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>

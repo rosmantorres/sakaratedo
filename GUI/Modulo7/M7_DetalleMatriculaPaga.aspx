@@ -32,30 +32,28 @@
       </div>
       <!-- /.box-header -->
       <!-- form start -->
-      <form runat="server" role="form" name="detalle_evento" id="detalle_evento" method="post">
+      <form runat="server" role="form" name="detalle_matricula" id="detalle_matricula" method="post">
          <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
             <div class="panel-group col-sm-12 col-md-12 col-lg-12">
                <div class="panel panel-primary">
                   <div class="panel-heading">
                      <h4>Datos de la matricula</h4>
                   </div>
-                   div class="panel-body">
-                     
-                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha Creación :</h4>
-                        <asp:Label runat="server" name="identificador" id="identificador" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
                   <div class="panel-body">
-                     
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha Creación :</h4>
+                        <br />
+                        <h4>Identificador :</h4>
+                        <asp:Label runat="server" name="identificador" id="identificador" Font-Size="Large"></asp:Label>
+                     </div>
+                     <br/>
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Fecha Creacion :</h4>
                         <asp:Label runat="server" name="fecha_creacion" id="fecha_creacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha Pago :</h4>
-                        <asp:Label runat="server" name="fecha_ultimo_pago" id="fecha_ultimo_pago" Font-Size="Large"></asp:Label>
+                        <h4>Fecha Pago:</h4>
+                        <asp:Label runat="server" name="fecha_pago" id="fecha_pago" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
@@ -64,7 +62,6 @@
                         <br />
                      </div>
                      
-                      
                       <div class="panel-group col-sm-10 col-md-10 col-lg-10">
                        
             </div>
