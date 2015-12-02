@@ -22,6 +22,7 @@
 		    </li>
 	    </ol>
     </div>
+
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
@@ -41,14 +42,16 @@
                 </div><!-- /.box-header -->
         <div class="text-center">
     <h3>Seleccione una Organización</h3>
-                                     <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
-                                     <option>Org A</option>
-                                     <option>Org B</option>
-                                     <option>Org C</option>      
-                                     </select>
-                                     <br />
-                                     <br />
-                                     </div>   
+              <select name="org_primary" class="form-control select select-primary select-block mbl">
+        <option>Org A</option>
+        <option>Org B</option>
+        <option>Org C</option>      
+    </select>
+           
+
+    <br />
+    <br />
+    </div>   
                          <!-- Lista de Organizaciones -->
 
     <form class="form-horizontal" role="form">
@@ -119,7 +122,7 @@
 
         $(document).ready(function () {
 
-            $('#aceptar').on('click', function () {               
+            $('#aceptar').on('click', function () {
 
                 $('#alerta1').alert();
 

@@ -12,6 +12,8 @@ namespace templateApp.GUI.Modulo5
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "5";
+
+            // ESTE ES TU CONTROLADOOOOORRRRR
         }
     }
 }

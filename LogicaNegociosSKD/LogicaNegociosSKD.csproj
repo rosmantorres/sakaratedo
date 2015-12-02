@@ -93,6 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo3\LogicaOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosLogicaModulo3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

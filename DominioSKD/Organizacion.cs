@@ -14,14 +14,14 @@ namespace DominioSKD
         private int telefono;
         private String email;
         private String estado;
-        private int id_estilo;
-        
+        private String estilo;
+
         public int Id_organizacion
         {
             get { return id_organizacion; }
             set { id_organizacion = value; }
         }
-        
+
         public String Nombre
         {
             get { return nombre; }
@@ -52,13 +52,13 @@ namespace DominioSKD
             set { estado = value; }
         }
 
-        public int Id_estilo
+        public String Estilo
         {
-            get { return id_estilo; }
-            set { id_estilo = value; }
+            get { return estilo; }
+            set { estilo = value; }
         }
 
-       
+
 
         public Organizacion(int elId, String elNombre)
         {
@@ -75,14 +75,14 @@ namespace DominioSKD
         {
             id_organizacion = 0;
             nombre = "";
-            direccion="";
+            direccion = "";
             telefono = 0;
             email = "";
-            estado="";
-            id_estilo = 0;
+            estado = "";
+            estilo = "";
         }
 
-        public Organizacion(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, int elIdEstilo)
+        public Organizacion(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
             id_organizacion = elId;
             nombre = elNombre;
@@ -90,18 +90,18 @@ namespace DominioSKD
             telefono = elTelefono;
             email = elEmail;
             estado = elEstado;
-            id_estilo = elIdEstilo;
+            estilo = elEstilo;
 
         }
 
-        public Organizacion(String elNombre,String laDireccion,int elTelefono,String elEmail,String elEstado,int elIdEstilo)
+        public Organizacion(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
             nombre = elNombre;
             direccion = laDireccion;
             telefono = elTelefono;
             email = elEmail;
             estado = elEstado;
-            id_estilo = elIdEstilo;
+            estilo = elEstilo;
         }
 
 

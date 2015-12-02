@@ -35,13 +35,14 @@
  
        <div class="form-group col-sm-10 col-md-10 col-lg-10 text-center"> 
                                      <h3>Seleccione una Organización</h3> 
-                                     <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl"> 
+
+                                     <select name="org_primary" class="form-control select select-primary select-block mbl" id="hola" runat="server"> 
                                      <option>Org A</option> 
                                      <option>Org B</option> 
                                      <option>Org C</option>       
-                                     </select> 
-                                     <br /> 
+                                     </select>
                         <br /> 
+                                     <br /> 
                         </div> <!-- Lista de Organizaciones --> 
  
      
