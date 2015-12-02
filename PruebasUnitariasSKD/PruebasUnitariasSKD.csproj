@@ -110,6 +110,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod6.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo7\M7_PruebaLogicaEventosPagos.cs" />
     <Compile Include="Modulo7\M7_PruebaLogicaCintas.cs" />
     <Compile Include="Modulo7\M7_PruebaLogicaEventosInscritos.cs" />
     <Compile Include="Modulo7\M7_PruebasBDCinta.cs" />
