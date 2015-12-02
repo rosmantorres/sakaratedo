@@ -210,8 +210,8 @@ END
 
 /*Agrega una nueva solicitud*/
 CREATE PROCEDURE Agregar_Solicitud
-	@id_persona INTEGER,
-	@id_dojo INTEGER
+	@persona_id INTEGER,
+	@dojo_id INTEGER
 AS
 BEGIN
 	INSERT INTO dbo.SOLICITUD_INSCRIPCION(
@@ -224,13 +224,13 @@ BEGIN
 		GETDATE(), 
 		GETDATE(),
 		'PENDIENTE', 
-		@id_persona, 
-		@id_dojo);	
+		@persona_id, 
+		@dojo_id);	
 END
 
 
 /*Setea el contacto de emergencia de una persona*/
-ALTER PROCEDURE Agregar_Relacion
+CREATE PROCEDURE Agregar_Relacion
 	@relacion_tipo varchar(15),
 	@persona_id INTEGER,
 	@id_persona_relacion INTEGER
@@ -342,8 +342,7 @@ CREATE PROCEDURE Modificar_Persona
     @persona_tipo_sangre VARCHAR (3),
     @persona_fecha_nacimiento DATETIME,
     @persona_peso FLOAT,
-    @persona_estatura FLOAT,
-	@id_usuario INTEGER
+    @persona_estatura FLOAT
 AS
 BEGIN
     UPDATE dbo.PERSONA

@@ -88,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo3\LogicaOrganizaciones.cs" />
     <Compile Include="Modulo3\RecursosLogicaModulo3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +104,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo5.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\LogicaSolicitudInscripcion.cs" />
     <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -69,7 +69,7 @@ namespace DatosSKD.Modulo6
         /// </summary>
         /// <param name="sex">Valor de la enumeracion Sexo</param>
         /// <returns>Caracter guardado en base de datos.</returns>
-        private static String EnumSexo(Sexo sex)
+        public static String EnumSexo(Sexo sex)
         {
             if (sex == Sexo.Femenino)
                 return RecursosBDModulo6.Sexo_Femenino;
@@ -83,7 +83,7 @@ namespace DatosSKD.Modulo6
         /// </summary>
         /// <param name="sex">Valor en el campo de la base de datos</param>
         /// <returns>Valor de la enumeracion Sexo</returns>
-        private static Sexo EnumSexo(String sex)
+        public static Sexo EnumSexo(String sex)
         {
             if (sex == RecursosBDModulo6.Sexo_Femenino)
                 return Sexo.Femenino;
@@ -97,7 +97,7 @@ namespace DatosSKD.Modulo6
         /// </summary>
         /// <param name="san">Valor de la enumeracion Sange</param>
         /// <returns>String a guardar en la base de datos</returns>
-        private static String EnumSangre(Sangre san)
+        public static String EnumSangre(Sangre san)
         {
             switch (san)
             {
@@ -128,7 +128,7 @@ namespace DatosSKD.Modulo6
         /// </summary>
         /// <param name="san">Strig del campo de la base de datos</param>
         /// <returns>Valor de la enumeracion Sangre</returns>
-        private static Sangre EnumSangre(String san)
+        public static Sangre EnumSangre(String san)
         {
             if (san.Equals(RecursosBDModulo6.Sangre_ABN))
                 return Sangre.ABN;
@@ -216,10 +216,10 @@ namespace DatosSKD.Modulo6
             GuardarTelefonos(per);
             GuardarCorreos(per);
 
-            if (per.ContatoEmergencia != null)
+            if (per.ContactoEmergencia != null)
             {
                 // Si tiene una persona de contacto, tambien guardarla.
-                BDUsuarios.GuardarDatosContacto(per.ContatoEmergencia);
+                BDUsuarios.GuardarDatosContacto(per.ContactoEmergencia);
                 BDUsuarios.GuardarContacto(per);
             }
         }
@@ -537,7 +537,7 @@ namespace DatosSKD.Modulo6
             Parametro parametro;
             List<Parametro> parametros;
 
-            if (per.ContatoEmergencia == null)
+            if (per.ContactoEmergencia == null)
                 return;
 
             parametros = new List<Parametro>();
@@ -545,7 +545,7 @@ namespace DatosSKD.Modulo6
             parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Id, SqlDbType.Int, per.ID.ToString(), false);
             parametros.Add(parametro);
 
-            parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Relacion, SqlDbType.Int, per.ContatoEmergencia.ID.ToString(), false);
+            parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Persona_Relacion, SqlDbType.Int, per.ContactoEmergencia.ID.ToString(), false);
             parametros.Add(parametro);
 
             parametro = new Parametro("@" + RecursosBDModulo6.Atribute_Relacion_Tipo, SqlDbType.VarChar, RecursosBDModulo6.Relacion_Contacto, false);
@@ -606,7 +606,7 @@ namespace DatosSKD.Modulo6
 
             if (res.Count == 1)
             {
-                per.ContatoEmergencia = BDUsuarios.GetInfoPersonaByID(Convert.ToInt32(res[0].valor.ToString()));
+                per.ContactoEmergencia = BDUsuarios.GetInfoPersonaByID(Convert.ToInt32(res[0].valor.ToString()));
             }
 
         }

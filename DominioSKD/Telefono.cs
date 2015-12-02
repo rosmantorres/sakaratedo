@@ -42,7 +42,7 @@ namespace DominioSKD
         private void CheckDigits(String value)
         {
             if (!value.All(char.IsDigit))
-                    throw new InformacionPersonalInvalidaException("La información de Telefono solo deben ser digitos.");
+                throw new InformacionPersonalInvalidaException("0", value + " Contiene caracteres que no son digitos.",new Exception());
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace DominioSKD
         private void CheckLength(String value, int length)
         {
             if (value.Length != length)
-                throw new InformacionPersonalInvalidaException("La información de Telefono no tiene el tamaño de un número telefónico.");
+                throw new InformacionPersonalInvalidaException("0", value + " No tiene el largo necesario", new Exception());
         }
         #endregion
 

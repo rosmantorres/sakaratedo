@@ -12,11 +12,11 @@ namespace DominioSKD
     {
 
         private int _id;
-        private String _numero;
         private DateTime _creacion;
         private DateTime _actualizacion;
-
         public EstadoSolicitudInscripcionDojo Estado;
+        private Persona _solicitante;
+        private Dojo _dojo;
 
         public SolicitudInscripcionDojo(int id)
         {
@@ -26,18 +26,6 @@ namespace DominioSKD
         public SolicitudInscripcionDojo()
         {
             this._id = -1;
-        }
-
-        public String Numero
-        {
-            set
-            {
-                this._numero = value;
-            }
-            get
-            {
-                return this._numero;
-            }
         }
 
         public DateTime FechaCreacion
@@ -64,7 +52,29 @@ namespace DominioSKD
             }
         }
 
+        public Persona Solicitante
+        {
+            set
+            {
+                this._solicitante = value;
+            }
+            get
+            {
+                return this._solicitante;
+            }
+        }
 
+        public Dojo Dojo
+        {
+            set
+            {
+                this._dojo = value;
+            }
+            get
+            {
+                return this._dojo;
+            }
+        }
 
     }
 }

@@ -183,7 +183,7 @@ namespace DominioSKD
             get { return this._direccion; }
         }
 
-        public Persona ContatoEmergencia
+        public Persona ContactoEmergencia
         {
             set { this._contatoEmergencia = value; }
             get { return this._contatoEmergencia; }

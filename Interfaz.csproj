@@ -66,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include=".jshintrc" />
     <Content Include="App_Data\BaseDeDatosSKD.mdf" />
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>

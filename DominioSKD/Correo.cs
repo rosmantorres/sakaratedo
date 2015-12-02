@@ -25,12 +25,27 @@ namespace DominioSKD
         public Correo(int id, String mail)
             : base(id)
         {
-            this._email = new MailAddress(mail);
+            try
+            {
+                this._email = new MailAddress(mail);
+            }
+            catch (Exception e)
+            {
+                throw new InformacionPersonalInvalidaException("0","Correo Invalido", e);
+            }
+            
         }
         public Correo(String mail)
             : base(-1)
         {
-            this._email = new MailAddress(mail);
+            try
+            {
+                this._email = new MailAddress(mail);
+            }
+            catch (Exception e)
+            {
+                throw new InformacionPersonalInvalidaException("0","Correo Invalido", e);
+            }
         }
         #endregion
 
