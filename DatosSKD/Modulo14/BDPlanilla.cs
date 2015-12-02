@@ -31,6 +31,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Lista de planillas creadas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillasCreadas()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             List<DominioSKD.Planilla> lista = new List<DominioSKD.Planilla>();
             DominioSKD.Planilla planilla;
@@ -128,6 +130,8 @@ namespace DatosSKD.Modulo14
         /// <param name="idPlanilla">id de la planilla a cambiar</param>
         public Boolean CambiarStatus(int idPlanilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
                 try
                 {
@@ -203,6 +207,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Lista de los tipos de planillas</returns>
         public  List<Planilla> ObtenerTipoPlanilla()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Planilla> listaTipoPlanilla = new List<Planilla>();
             List<Parametro> parametros;
@@ -277,6 +283,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Lista de los datos que se encuentran</returns>
         public  List<String> ObtenerDatosBD()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<String> listaDatos = new List<String>();
             List<Parametro> parametros;
@@ -352,11 +360,10 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="laPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-
         public Boolean RegistrarPlanillaBD(Planilla laPlanilla)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -438,8 +445,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public  Boolean RegistrarDatosPlanillaBD(String nombrePlanilla, String datoPlanilla)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -517,8 +524,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public Boolean RegistrarTipoPlanilla(String nombreTipoPlanilla)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -595,6 +602,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Lista de los tipos de planillas</returns>
         public int ObtenerIdTipoPlanilla(String nombreTipo)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             int idTipolanilla;
             List<Parametro> parametros;
@@ -679,6 +688,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Planilla con nombre, status y tipo de planilla</returns>
         public Planilla ObtenerPlanillaID(int idPlanilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             Planilla planilla = null;
             List<Parametro> parametros;
@@ -762,6 +773,8 @@ namespace DatosSKD.Modulo14
         /// <returns>datos de una planilla</returns>
         public List<String> ObtenerDatosPlanillaID(int idPlanilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -842,6 +855,8 @@ namespace DatosSKD.Modulo14
         /// <returns>datos de una planilla</returns>
         public static List<String> ObtenerDatosPlanillaID1(int idPlanilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -922,8 +937,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>           
         public Boolean ModificarPlanillaBD(Planilla laPlanilla)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -999,7 +1014,6 @@ namespace DatosSKD.Modulo14
             return true;
         }
 
-
         /// <summary>
         /// Modifica una planilla en la base de datos
         /// </summary>
@@ -1007,8 +1021,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public Boolean EliminarDatosPlanillaBD(int idPlanilla)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -1084,8 +1098,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public Boolean RegistrarDatosPlanillaIdBD(int idPlanilla, String datoPlanilla)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();

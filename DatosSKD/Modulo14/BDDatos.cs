@@ -134,6 +134,8 @@ namespace DatosSKD.Modulo14
         /// <returns>La clase Dojo</returns>
         public DominioSKD.Dojo ConsultarDojo(int idDojo)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Dojo dojo = new DominioSKD.Dojo();
             try
@@ -234,6 +236,8 @@ namespace DatosSKD.Modulo14
         /// <returns></returns>
         public List<string> ConsultarMatricula(int idDojo, int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             List<string> matricula = new List<string>();
             try
@@ -330,6 +334,8 @@ namespace DatosSKD.Modulo14
         /// <returns>La clase Organizacion</returns>
         public DominioSKD.Organizacion ConsultarOrganizacion(int idOrganizacion)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Organizacion organizacion = new DominioSKD.Organizacion();
             try
@@ -423,6 +429,8 @@ namespace DatosSKD.Modulo14
         /// <returns>La clase evento</returns>
         public DominioSKD.Evento ConsultarEvento(int idIns)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Evento evento = new DominioSKD.Evento();
             try
@@ -532,6 +540,8 @@ namespace DatosSKD.Modulo14
         /// <returns></returns>
         public DominioSKD.Competencia ConsultarCompetencia(int idIns)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Competencia competencia = new DominioSKD.Competencia();
             try
@@ -635,6 +645,8 @@ namespace DatosSKD.Modulo14
         /// <returns>La clase solicitud</returns>
         public DominioSKD.SolicitudPlanilla ConsultarSolicitud(int idSolicitud)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.SolicitudPlanilla solicitud = new DominioSKD.SolicitudPlanilla();
             try

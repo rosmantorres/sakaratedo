@@ -27,6 +27,8 @@ namespace DatosSKD.Modulo14
         /// <returns>una lista de solicitudes</returns>
         public List<DominioSKD.SolicitudPlanilla> ConsultarSolicitudes(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             List<DominioSKD.SolicitudPlanilla> lista = new List<DominioSKD.SolicitudPlanilla>();
             SolicitudPlanilla solicitud;
@@ -137,6 +139,8 @@ namespace DatosSKD.Modulo14
         /// <returns></returns>
         public Boolean EliminarSolicitudBD(int idSolicitud)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             try
             {
@@ -214,6 +218,8 @@ namespace DatosSKD.Modulo14
         /// <returns></returns>
         public List<DominioSKD.Planilla> ConsultarPlanillasASolicitarBD()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             List<DominioSKD.Planilla> lista = new List<DominioSKD.Planilla>();
              DominioSKD.Planilla planilla;
@@ -314,8 +320,8 @@ namespace DatosSKD.Modulo14
 
         public Boolean RegistrarSolicitudPlanillaBD(SolicitudP laSolicitud)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -406,8 +412,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public Boolean RegistrarSolicitudIDPersonaBD(SolicitudP laSolicitud)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -498,6 +504,8 @@ namespace DatosSKD.Modulo14
         /// <returns>eventos de una inscripcion</returns>
         public List<SolicitudP> ObtenerEventosSolicitud(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -579,6 +587,8 @@ namespace DatosSKD.Modulo14
         /// <returns>eventos de una inscripcion</returns>
         public List<SolicitudP> ObtenerCompetenciaSolicitud(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -660,6 +670,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Planilla con nombre, status y tipo de planilla</returns>
         public SolicitudPlanilla ObtenerSolicitudID(int idSolicitud)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             SolicitudPlanilla solicitud = null;
             List<Parametro> parametros;
@@ -748,8 +760,8 @@ namespace DatosSKD.Modulo14
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
         public Boolean ModificarSolicitudBD(SolicitudP laSolicitud)
         {
-
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();

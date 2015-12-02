@@ -33,6 +33,8 @@ namespace DatosSKD.Modulo14
         /// De lo contrario devuelve false</returns>
         public Boolean GuardarDiseñoBD(DominioSKD.Diseño diseño, DominioSKD.Planilla planilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             try
             {
@@ -122,6 +124,8 @@ namespace DatosSKD.Modulo14
         /// <returns>Retorna el diseño de la planilla</returns>
         public DominioSKD.Diseño ConsultarDiseño(int planilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Diseño diseño = new DominioSKD.Diseño();
             
@@ -223,6 +227,8 @@ namespace DatosSKD.Modulo14
         /// De lo contrario devueleve false</returns>
         public Boolean ModificarDiseño(DominioSKD.Diseño diseño)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
 
             if (diseño != null)
