@@ -257,17 +257,17 @@ namespace LogicaNegociosSKD.Modulo14
                     info = info.Replace(RecursosLogicaModulo14.EveNombre, evento.Nombre);
                     info = info.Replace(RecursosLogicaModulo14.EveDescripcion, evento.Descripcion);
                     info = info.Replace(RecursosLogicaModulo14.EveCosto, evento.Costo.ToString());
-                    string categoria = evento.Categoria.Sexo + RecursosLogicaModulo14.Linea;
-                    categoria += evento.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
-                    categoria += evento.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
-                    categoria += evento.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
-                    categoria += evento.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
+                    string categoria = "Categoria: Sexo: "+ evento.Categoria.Sexo + RecursosLogicaModulo14.Linea;
+                    categoria += "Cinta Inicial: "+ evento.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += "Cinta Final: "+evento.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
+                    categoria += "Edad Inicial: "+evento.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += "Edad Final: "+evento.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
                     info = info.Replace(RecursosLogicaModulo14.CategoriaCat, categoria);
                     info = info.Replace(RecursosLogicaModulo14.TipoEvento, evento.TipoEvento.Nombre);
-                    string horario = evento.Horario.FechaInicio.ToShortDateString() + RecursosLogicaModulo14.Linea;
-                    horario += evento.Horario.FechaFin.ToShortDateString() + RecursosLogicaModulo14.Linea;
-                    horario += evento.Horario.HoraInicio.ToString() + RecursosLogicaModulo14.Linea;
-                    horario += evento.Horario.HoraFin.ToString() + RecursosLogicaModulo14.Linea;
+                    string horario = "Horario de Evento: Fecha Inicio:"+evento.Horario.FechaInicio.ToShortDateString() + RecursosLogicaModulo14.Linea;
+                    horario += "Fecha Fin:"+evento.Horario.FechaFin.ToShortDateString() + RecursosLogicaModulo14.Linea;
+                    horario += "Hora Inicio: "+evento.Horario.HoraInicio.ToString() + RecursosLogicaModulo14.Linea;
+                    horario += "Hora Final: "+evento.Horario.HoraFin.ToString() + RecursosLogicaModulo14.Linea;
                     info = info.Replace(RecursosLogicaModulo14.HorarioHor, horario) + RecursosLogicaModulo14.Linea;
 
                 }
@@ -287,11 +287,11 @@ namespace LogicaNegociosSKD.Modulo14
                     info = info.Replace(RecursosLogicaModulo14.CompFechaIni, competencia.FechaInicio.ToShortDateString());
                     info = info.Replace(RecursosLogicaModulo14.CompFechaFin, competencia.FechaFin.ToShortDateString());
                     info = info.Replace(RecursosLogicaModulo14.CompCosto, competencia.Costo.ToString());
-                    string categoria = competencia.Categoria.Sexo + RecursosLogicaModulo14.Linea;
-                    categoria += competencia.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
-                    categoria += competencia.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
-                    categoria += competencia.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
-                    categoria += competencia.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
+                    string categoria ="Categoria: Sexo: "+ competencia.Categoria.Sexo + RecursosLogicaModulo14.Linea;
+                    categoria += "Cinta Inicial: " + competencia.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += "Cinta Final: " + competencia.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
+                    categoria += "Edad Inicial: " + competencia.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += "Edad Final: "+competencia.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
                     info = info.Replace(RecursosLogicaModulo14.CategoriaComp, categoria);
                 }
                 else
