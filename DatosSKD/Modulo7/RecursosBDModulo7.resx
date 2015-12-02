@@ -459,4 +459,10 @@
   <data name="ParamIdOrganizacion" xml:space="preserve">
     <value>@org_id</value>
   </data>
+  <data name="ConsultarFechaInscripcionCompetencia" xml:space="preserve">
+    <value>M7_ConsultarFechaInscripcionCompetencia</value>
+  </data>
+  <data name="AliasInscripcionFechaCompetencia" xml:space="preserve">
+    <value>fecha</value>
+  </data>
 </root>

@@ -535,6 +535,86 @@ namespace DatosSKD.Modulo7
             return fechaInscripcion;
         }
 
+        /// <summary>
+        /// Método que devuelve la fecha de una inscripción
+        /// </summary>
+        /// <returns>Fecha de inscripción</returns>
+        public DateTime fechaInscripcionCompetencia(int idPersona, int idCompetencia)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosBDModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametroPersona = new Parametro();
+            Parametro elParametroCompetencia = new Parametro();
+            DateTime fechaInscripcionCompetencia = new DateTime();
+
+            try
+            {
+                if ((idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0) && (idCompetencia.GetType() == Type.GetType("System.Int32") && idCompetencia > 0))
+                {
+
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+
+                    elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    elParametroCompetencia= new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idCompetencia.ToString(), false);
+                    parametros.Add(elParametroPersona);
+                    parametros.Add(elParametroCompetencia);
+
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo7.ConsultarFechaInscripcionCompetencia, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        fechaInscripcionCompetencia = DateTime.Parse(row[RecursosBDModulo7.AliasInscripcionFechaCompetencia].ToString());
+                    }
+
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                              RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (NumeroEnteroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosBDModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosBDModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return fechaInscripcionCompetencia;
+        }
+
+
 
         /// <summary>
         /// Metodo que lista los eventos a los cuales estan inscritos los atletas

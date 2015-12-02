@@ -207,7 +207,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// <param name="idCompetencia">Número entero que representa el ID de la competencia</param>
         /// <param name="idPersona">Número entero que representa el ID de la Persona</param>
         /// <returns>Objeto de tipo Competencia</returns>
-        public DateTime obtenerFechaInscripcion(int idPersona, int idCompetencia)
+        public DateTime obtenerFechaInscripcioncompetencia(int idPersona, int idCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -216,7 +216,7 @@ namespace LogicaNegociosSKD.Modulo7
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 BDEvento baseDeDatosEvento = new BDEvento();
-                return baseDeDatosEvento.fechaInscripcionEvento(idPersona, idCompetencia);
+                return baseDeDatosEvento.fechaInscripcionCompetencia(idPersona, idCompetencia);
             }
             catch (ExceptionSKDConexionBD ex)
             {
