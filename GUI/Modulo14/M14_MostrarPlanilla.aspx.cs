@@ -58,13 +58,13 @@ namespace templateApp.GUI.Modulo14
             }
             catch (NullReferenceException ex)
             {
-                Alerta(ex.Message);
+                //Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Alerta(ex.Message);
             }
-            //MostrarInformacion();
+            MostrarInformacion();
         }
 
         public void Alerta(string msj)
