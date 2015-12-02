@@ -98,7 +98,6 @@
     </Compile>
     <Compile Include="Modulo1\BDLogin.cs" />
     <Compile Include="Modulo1\BDRestablecer.cs" />
-    <Compile Include="Modulo2\BDRoles.cs" />
     <Compile Include="Modulo1\RecursosBDModulo1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +125,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo5.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\BDListarUsuarios.cs" />
     <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
