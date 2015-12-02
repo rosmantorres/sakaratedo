@@ -60,7 +60,7 @@ namespace templateApp.GUI.Modulo7
                             }
                             else
                             {
-                                throw new ListaNulaException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
                                 M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
                             }
 
@@ -70,11 +70,17 @@ namespace templateApp.GUI.Modulo7
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                             M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
+                        catch (NumeroEnteroInvalidoException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
                         catch (Exception ex)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                             ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
+
                     }
                 }
                 else

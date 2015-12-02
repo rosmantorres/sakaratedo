@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
+using ExcepcionesSKD.Modulo7;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -35,8 +37,10 @@ namespace templateApp.GUI.Modulo7
                     if (!IsPostBack) // verificar si la pagina se muestra por primera vez
                     {
                         try
-                        {                           
-                                competencia = laLogica.detalleCompetenciaPagaID(int.Parse(detalleStringCompetencia));
+                        {
+                            competencia = laLogica.detalleCompetenciaPagaID(int.Parse(detalleStringCompetencia));
+                            if (competencia != null)
+                            {
                                 this.nombre_evento.Text = competencia.Nombre;
                                 this.costo_evento.Text = competencia.Costo.ToString();
                                 this.tipo_evento.Text = M7_Recursos.AliasTipoEventoCompetencia;
@@ -44,25 +48,40 @@ namespace templateApp.GUI.Modulo7
                                 this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
                                 this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
                                 this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
-                                this.direccion_evento.Text = competencia.Ubicacion.Direccion;                                                     
+                                this.direccion_evento.Text = competencia.Ubicacion.Direccion;
+                            }
+                            else
+                            {
+                                throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.MensajeObjetoNuloLogger, new Exception());
+                            }
+                        }
+                        catch (ObjetoNuloException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                        catch (NumeroEnteroInvalidoException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                         catch (Exception ex)
                         {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
-
-
                 }
                 else
                 {
                     Response.Redirect(GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
                 }
-
             }
             catch (NullReferenceException ex)
             {
-
-
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
         }
     }

@@ -8,6 +8,8 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -44,16 +46,36 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
                             cinta = laLogica.detalleCintaID(int.Parse(detalleString));
-                            this.colorCinta.Text = cinta.Color_nombre;
-                            this.rangoCinta.Text = cinta.Rango;
-                            this.clasificacionCinta.Text = cinta.Clasificacion;
-                            this.significadoCinta.Text = cinta.Significado;
-                            this.ordenCinta.Text = cinta.Orden.ToString();
-                            this.fechaObtencionCinta.Text = laLogica.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()),
-                                                                                        int.Parse(detalleString)).ToString("MM/dd/yyyy");
+                            if (cinta != null)
+                            {
+                                this.colorCinta.Text = cinta.Color_nombre;
+                                this.rangoCinta.Text = cinta.Rango;
+                                this.clasificacionCinta.Text = cinta.Clasificacion;
+                                this.significadoCinta.Text = cinta.Significado;
+                                this.ordenCinta.Text = cinta.Orden.ToString();
+                                this.fechaObtencionCinta.Text = laLogica.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()),
+                                                                                            int.Parse(detalleString)).ToString("MM/dd/yyyy");
+                            }
+                            else
+                            {
+                                throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.MensajeObjetoNuloLogger, new Exception());
+                            }
+                        }
+                        catch (ObjetoNuloException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                        catch (NumeroEnteroInvalidoException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                         catch (Exception ex)
                         {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
                 }
@@ -64,6 +86,8 @@ namespace templateApp.GUI.Modulo7
             }
             catch (NullReferenceException ex)
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+               ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
         }
     }

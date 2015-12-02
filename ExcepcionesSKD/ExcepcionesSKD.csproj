@@ -66,6 +66,7 @@
     <Compile Include="Modulo7\NumeroEnteroInvalidoException.cs" />
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo7\ObjetoNuloException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

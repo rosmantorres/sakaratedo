@@ -1,4 +1,6 @@
 ﻿using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Modulo7;
 using System;
 using System.Collections.Generic;
@@ -41,32 +43,49 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
                             competencia = laLogica.detalleCompetenciaID(int.Parse(detalleStringCompetencia));
-                            this.nombre_evento.Text = competencia.Nombre;
-                            this.costo_evento.Text = competencia.Costo.ToString();
-                            this.tipo_evento.Text = M7_Recursos.AliasTipoEventoCompetencia;
-                            this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
-                            this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
-                            this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
-                            this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
-                            this.direccion_evento.Text = competencia.Ubicacion.Direccion;
+                            if (competencia != null)
+                            {
+                                this.nombre_evento.Text = competencia.Nombre;
+                                this.costo_evento.Text = competencia.Costo.ToString();
+                                this.tipo_evento.Text = M7_Recursos.AliasTipoEventoCompetencia;
+                                this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
+                                this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
+                                this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
+                                this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
+                                this.direccion_evento.Text = competencia.Ubicacion.Direccion;
+                            }
+                            else
+                            {
+                                throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.MensajeObjetoNuloLogger, new Exception());
+                            }
+                        }
+                        catch (ObjetoNuloException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                        catch (NumeroEnteroInvalidoException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                         catch (Exception ex)
                         {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
-
-
                 }
                 else
                 {
                     Response.Redirect(GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
                 }
-
             }
             catch (NullReferenceException ex)
             {
-
-
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
         }
     }

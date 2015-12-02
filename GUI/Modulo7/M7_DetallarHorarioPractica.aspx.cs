@@ -1,4 +1,6 @@
 ﻿using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Modulo7;
 using System;
 using System.Collections.Generic;
@@ -42,9 +44,9 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    if (detalleStringEvento != null)
-                    {
-                        evento = laLogica.detalleEventoID(int.Parse(detalleStringEvento));
+                    evento = laLogica.detalleEventoID(int.Parse(detalleStringEvento));
+                    if (evento != null)
+                    {                      
                         this.nombre_evento.Text = evento.Nombre;
                         this.descripcion_evento.Text = evento.Descripcion.ToString();
                         
@@ -59,25 +61,39 @@ namespace templateApp.GUI.Modulo7
                         this.horaInicio_evento.Text = evento.Horario.HoraInicio.ToString();
                         this.horaFin_evento.Text = evento.Horario.HoraFin.ToString();
                         this.direccion_evento.Text = evento.Ubicacion.Direccion;
-
+                    }
+                    else
+                    {
+                         throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                         M7_Recursos.MensajeObjetoNuloLogger, new Exception());
                     }
                 }
-                catch (Exception ex)
-                {
-                }
-            }
-
+                        catch (ObjetoNuloException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                        catch (NumeroEnteroInvalidoException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                    }
                 }
                 else
                 {
                     Response.Redirect(GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
                 }
-
             }
             catch (NullReferenceException ex)
             {
-
-
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
        
         }

@@ -331,11 +331,29 @@ namespace templateApp.GUI.Modulo7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SKD_00_007.
+        ///   Looks up a localized string similar to SKD_00_012.
+        /// </summary>
+        internal static string Codigo_Lista_Nula {
+            get {
+                return ResourceManager.GetString("Codigo_Lista_Nula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_010.
         /// </summary>
         internal static string Codigo_Numero_Parametro_Invalido {
             get {
                 return ResourceManager.GetString("Codigo_Numero_Parametro_Invalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_011.
+        /// </summary>
+        internal static string Codigo_Objeto_Nulo {
+            get {
+                return ResourceManager.GetString("Codigo_Objeto_Nulo", resourceCulture);
             }
         }
         
@@ -354,6 +372,15 @@ namespace templateApp.GUI.Modulo7 {
         internal static string MensajeListaNulaLogger {
             get {
                 return ResourceManager.GetString("MensajeListaNulaLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El metodo devolvio un objeto nulo.
+        /// </summary>
+        internal static string MensajeObjetoNuloLogger {
+            get {
+                return ResourceManager.GetString("MensajeObjetoNuloLogger", resourceCulture);
             }
         }
     }
