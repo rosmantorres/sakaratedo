@@ -135,6 +135,7 @@ namespace DominioSKD
         public Persona()
         {
             this._id = -1;
+            _inscripcion = new Inscripcion();
         }
 
         public int ID
