@@ -42,7 +42,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form runat="server" role="form" name="agregar_competencia" id="agregar_competencia" method="post">
+<form runat="server" role="form" name="agregarEvento" id="agregarEvento" method="post">
     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
         <div class="panel-group ">
             <div class="panel panel-primary">
@@ -61,28 +61,36 @@
 <!--COMBO 1-->
                     <div class="row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <div class="col-sm-6 col-md-6 col-lg-6" >
-                                <h3>Tipo de Evento:</h3>
+                            <div class="col-sm-4 col-md-4 col-lg-4" >
+                                <h3>Tipo de Evento</h3>
                                 <div class="btn-group"> 
-                                 <!--COMBO 3-->
-                                 <div class="col-sm-4 col-md-4 col-lg-4">
-                                    <label>Seleccione el sexo:</label>  
-                                 </div>
-                                 <div class="col-sm-4 col-md-4 col-lg-4" >
-                                    <div class="dropdown" runat="server" id="divComboSexo">
-                                       <asp:DropDownList ID="comboSexo"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboSexo_SelectedIndexChanged" AutoPostBack="true">
+                                    <div class="dropdown" runat="server" id="divComboTipoEvento">
+                                       <asp:DropDownList ID="comboTipoEvento"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged" AutoPostBack="true">
                                        </asp:DropDownList>
                                     </div>
-                                 </div>
+                                        <asp:TextBox runat="server" type="text" name="otroEvento" id="otroEvento" placeholder="Tipo de Evento" class="form-control"></asp:TextBox>
+                                    
                                 </div>
                             </div>
+
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Costo del Evento</h3>
+                                <asp:TextBox runat="server" type="number" name="costoEvento" id="costoEvento" placeholder="Costo" class="form-control"></asp:TextBox>
+                            </div>
+                    </div>
+                </div>
+
+
+
 
  <!--Date picker FECHA-->
                    <div class="row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12" >
-                        <!--Date picker FECHA Inicio-->
+            <!---Date picker FECHA Inicio-->
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Fecha de Inicio</h3>
                                 <div class="input-group input-append date" id="datePickerIni">
@@ -129,7 +137,7 @@
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-9 col-md-9 col-lg-9" >
                                 <h3>Descripci&oacute;n</h3>
-                                <asp:TextBox runat="server" type="text" TextMode="multiline" style = "resize:vertical" name="DescripcionEvento" id="Descripcion" placeholder="Nombre" class="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" type="text" TextMode="multiline" style = "resize:vertical" name="DescripcionEvento" id="descripcionEvento" placeholder="Breve descrici&oacute;n del evento" class="form-control"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -139,10 +147,11 @@
                             <div class="col-sm-10 col-md-10 col-lg-10">
                                 <p><b>Status:</b></p>
                                 <label class="radio-inline">
-                                <input type="radio" name="radioStatus" checked="checked" id="input_status_activo"/>Activo</label>
+                                    <asp:RadioButton runat="server" Text="Activo" type="radio" name="radioStatus" id="inputEstadoActivo" GroupName="statusEvento"/>
+                                </label>
                                 <label class="radio-inline">
-                                <input type="radio" name="radioStatus" id="input_status_inactivo"/>Inactivo</label>
-
+                                    <asp:RadioButton runat="server" Text="Inactivo" type="radio" name="radioStatus" id="inputEstadoInactivo" GroupName="statusEvento"/>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -154,7 +163,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarEvent" class="btn btn-primary" type="submit" href="M9_ListarEventos.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+         <asp:Button id="btn_agregarEvento" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarEventoClick" Text="Agregar"></asp:Button>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M9_ListarEventos.aspx">Cancelar</a>
       </div>
