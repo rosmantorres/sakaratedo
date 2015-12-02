@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo14
 {
-    class ErrorImprimirPDFException : ExceptionSKD
+    public class ErrorImprimirPDFException : ExceptionSKD
     {
         public ErrorImprimirPDFException(): base()
         { }

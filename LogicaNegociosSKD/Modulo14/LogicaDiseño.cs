@@ -39,7 +39,7 @@ namespace LogicaNegociosSKD.Modulo14
         /// <param name="idSolicitud">Id de la solicitud de la planilla que 
         /// contiene el diseño a consultar</param>
         /// <returns>Retorna la clase diseño, con los datos reemplazados</returns>
-        public DominioSKD.Diseño ConsultarDiseño(int planilla, int idPersona, int idIns)
+        public DominioSKD.Diseño ConsultarDiseño(int planilla, int idPersona, int idIns, int idSolici)
         {
             try
             {
@@ -57,6 +57,7 @@ namespace LogicaNegociosSKD.Modulo14
                 evento = datos1.ConsultarEvento(idIns);
                 competencia = datos1.ConsultarCompetencia(idIns);
                 organizacion = datos1.ConsultarOrganizacion(dojo.Organizacion_dojo);
+                solicitud = datos1.ConsultarSolicitud(idSolici);
                 diseñoPlanilla.Contenido = ReemplazarElementos(diseñoPlanilla.Contenido, persona, dojo,
                     evento, competencia, matricula, organizacion, solicitud);
                 return diseñoPlanilla;
@@ -97,8 +98,8 @@ namespace LogicaNegociosSKD.Modulo14
         {
             if (persona != null)
             {
-                info = info.Replace(RecursosLogicaModulo14.PerImagen, "<img src=" +
-                    persona.Alergias + "Height='80' Width='90'/>");
+                info = info.Replace(RecursosLogicaModulo14.PerImagen, "<img src='" +
+                    persona.Alergias + "'Height='80' Width='90'/>");
                 info = info.Replace(RecursosLogicaModulo14.PerNombre, persona.Nombre);
                 info = info.Replace(RecursosLogicaModulo14.PerApellido, persona.Apellido);
                 info = info.Replace(RecursosLogicaModulo14.PerNumDocId, persona.DocumentoID.Numero.ToString());

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo14
 {
-    class BDPLanillaException : ExceptionSKD
+    public class BDPLanillaException : ExceptionSKD
     {
         public BDPLanillaException(): base()
         { }

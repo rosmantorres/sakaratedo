@@ -47,7 +47,7 @@ namespace templateApp.GUI.Modulo14
         {
             // try
             // {
-            DominioSKD.Diseño diseño = logica.ConsultarDiseño(idPlanilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]), idIns);
+            DominioSKD.Diseño diseño = logica.ConsultarDiseño(idPlanilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]), idIns, idSolicitud);
             contenido = diseño.Contenido;
             this.informacion.Text = contenido;
             /*}

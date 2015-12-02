@@ -4,8 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Configuration;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo14;
+using System.Globalization;
+using System.IO;
 
 namespace DatosSKD.Modulo14
 {
@@ -20,9 +26,9 @@ namespace DatosSKD.Modulo14
 
         #region metodos
         /// <summary>
-        /// 
+        /// Método que consulta todas las planillas creadas
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Lista de planillas creadas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillasCreadas()
         {
             SqlConnection conect = con.Conectar();
@@ -61,9 +67,53 @@ namespace DatosSKD.Modulo14
                         return null;
                     }
                 }
+                catch (SqlException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (IOException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                        RecursosBDModulo14.MsjExceptionIO, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (NullReferenceException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                        RecursosBDModulo14.MsjNullException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (ObjectDisposedException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                        RecursosBDModulo14.MensajeDisposedException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                        RecursosBDModulo14.MsjFormatException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                        RecursosBDModulo14.MsjException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
                 }
                 finally
                 {
@@ -73,9 +123,9 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método cambia el status de una planilla
         /// </summary>
-        /// <param name="idPlanilla"></param>
+        /// <param name="idPlanilla">id de la planilla a cambiar</param>
         public Boolean CambiarStatus(int idPlanilla)
         {
             SqlConnection conect = con.Conectar();
@@ -93,9 +143,53 @@ namespace DatosSKD.Modulo14
                     leer = sqlcom.ExecuteReader();
                     return true;
                 }
+                catch (SqlException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (IOException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                        RecursosBDModulo14.MsjExceptionIO, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (NullReferenceException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                        RecursosBDModulo14.MsjNullException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (ObjectDisposedException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                        RecursosBDModulo14.MensajeDisposedException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                        RecursosBDModulo14.MsjFormatException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
+                }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                        RecursosBDModulo14.MsjException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                    throw excep;
                 }
                 finally
                 {
@@ -125,9 +219,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
 
             return listaTipoPlanilla;
@@ -156,9 +294,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
 
             return listaDatos;
@@ -198,9 +380,53 @@ namespace DatosSKD.Modulo14
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
             return true;
         }
@@ -233,9 +459,53 @@ namespace DatosSKD.Modulo14
                 string query = RecursosBDModulo14.ProcedureAgregarDatoPlanilla;
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
             return true;
         }
@@ -268,9 +538,53 @@ namespace DatosSKD.Modulo14
 
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
             return true;
         }
@@ -306,9 +620,53 @@ namespace DatosSKD.Modulo14
                     idTipolanilla = Int32.Parse(resultados[0].valor.ToString());
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
 
             return idTipolanilla;
@@ -345,9 +703,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
 
             return planilla;
@@ -381,9 +783,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
 
             return listDatos;
@@ -417,19 +863,63 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
 
             return listDatos;
         }
+        
         /// <summary>
         /// Modifica una planilla en la base de datos
         /// </summary>
         /// <param name="laPlanilla">La planilla</param>
-        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-
+        /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>           
         public Boolean ModificarPlanillaBD(Planilla laPlanilla)
         {
 
@@ -458,9 +948,53 @@ namespace DatosSKD.Modulo14
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
             return true;
         }
@@ -471,7 +1005,6 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="idPlanilla">La planilla</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-
         public Boolean EliminarDatosPlanillaBD(int idPlanilla)
         {
 
@@ -493,9 +1026,53 @@ namespace DatosSKD.Modulo14
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
             return true;
         }
@@ -528,9 +1105,53 @@ namespace DatosSKD.Modulo14
                 string query = RecursosBDModulo14.ProcedureAgregarDatoPlanillaID;
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDPlanilla, excep);
+                throw excep;
             }
             return true;
         }

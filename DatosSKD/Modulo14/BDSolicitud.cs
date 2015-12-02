@@ -4,8 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Configuration;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo14;
+using System.Globalization;
+using System.IO;
 
 namespace DatosSKD.Modulo14
 {
@@ -14,10 +20,11 @@ namespace DatosSKD.Modulo14
         private BDConexion con = new BDConexion();
 
         /// <summary>
-        /// 
+        /// Método que consulta las solicitudes que ha hecho una persona
         /// </summary>
-        /// <param name="idPersona"></param>
-        /// <returns></returns>
+        /// <param name="idPersona">id de la persona vinculada
+        /// a las solicitudes</param>
+        /// <returns>una lista de solicitudes</returns>
         public List<DominioSKD.SolicitudPlanilla> ConsultarSolicitudes(int idPersona)
         {
             SqlConnection conect = con.Conectar();
@@ -68,9 +75,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
             finally
             {
@@ -104,7 +155,51 @@ namespace DatosSKD.Modulo14
             }
             catch (SqlException ex)
             {
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
                 throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
             finally
             {
@@ -113,7 +208,7 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método que consulta las planillas que una persona puede solicitar
         /// </summary>
         /// <param name="idPersona"></param>
         /// <returns></returns>
@@ -157,9 +252,53 @@ namespace DatosSKD.Modulo14
                     return null;
                 }
             }
+            catch (SqlException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
             catch (Exception ex)
             {
-                throw ex;
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
             finally
             {
@@ -209,9 +348,53 @@ namespace DatosSKD.Modulo14
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
             return true;
         }
@@ -221,7 +404,6 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="">La solicitud</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-
         public Boolean RegistrarSolicitudIDPersonaBD(SolicitudP laSolicitud)
         {
 
@@ -258,9 +440,53 @@ namespace DatosSKD.Modulo14
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
             return true;
         }
@@ -294,9 +520,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
 
             return eventos;
@@ -331,9 +601,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
 
             return competencias;
@@ -374,9 +688,53 @@ namespace DatosSKD.Modulo14
                 }
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
 
             return solicitud;
@@ -388,7 +746,6 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="laSolicitud">La solicitud</param>
         /// <returns>returna true en caso de que se completara el registro, y false en caso de que no</returns>
-
         public Boolean ModificarSolicitudBD(SolicitudP laSolicitud)
         {
 
@@ -429,9 +786,53 @@ namespace DatosSKD.Modulo14
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                return false;
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDSolicitud, excep);
+                throw excep;
             }
             return true;
         }

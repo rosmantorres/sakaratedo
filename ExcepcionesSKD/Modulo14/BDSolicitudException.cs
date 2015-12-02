@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo14
 {
-    class BDSolicitudException : ExceptionSKD
+    public class BDSolicitudException : ExceptionSKD
     {
         public BDSolicitudException(): base()
         { }

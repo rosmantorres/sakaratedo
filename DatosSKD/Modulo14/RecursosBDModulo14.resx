@@ -551,7 +551,19 @@
   <data name="MsjNullException" xml:space="preserve">
     <value>Una referencia a objeto no se ha establecido</value>
   </data>
+  <data name="ParametroIDSolici" xml:space="preserve">
+    <value>@sol_pla_id</value>
+  </data>
   <data name="ProcedureConsultarSolicitudID1" xml:space="preserve">
     <value>M14_ProcedureConsultarSolicitudId</value>
+  </data>
+  <data name="ClaseBDDis" xml:space="preserve">
+    <value>BDDiseño</value>
+  </data>
+  <data name="ClaseBDPlanilla" xml:space="preserve">
+    <value>BDPlanilla</value>
+  </data>
+  <data name="ClaseBDSolicitud" xml:space="preserve">
+    <value>BDSolicitud</value>
   </data>
 </root>

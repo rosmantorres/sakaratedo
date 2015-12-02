@@ -691,6 +691,33 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a BDDiseño.
+        /// </summary>
+        internal static string ClaseBDDis {
+            get {
+                return ResourceManager.GetString("ClaseBDDis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BDPlanilla.
+        /// </summary>
+        internal static string ClaseBDPlanilla {
+            get {
+                return ResourceManager.GetString("ClaseBDPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BDSolicitud.
+        /// </summary>
+        internal static string ClaseBDSolicitud {
+            get {
+                return ResourceManager.GetString("ClaseBDSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M14_04.
         /// </summary>
         internal static string CodigoDisposedObject {
@@ -876,6 +903,15 @@ namespace DatosSKD.Modulo14 {
         internal static string ParametroIdPlanilla {
             get {
                 return ResourceManager.GetString("ParametroIdPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @sol_pla_id.
+        /// </summary>
+        internal static string ParametroIDSolici {
+            get {
+                return ResourceManager.GetString("ParametroIDSolici", resourceCulture);
             }
         }
         

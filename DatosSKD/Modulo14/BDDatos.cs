@@ -642,7 +642,7 @@ namespace DatosSKD.Modulo14
 
                 SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarSolicitudId, conect);
                 sqlcom.CommandType = CommandType.StoredProcedure;
-                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroIdSolicitud, idSolicitud));
+                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroIDSolici, idSolicitud));
 
                 SqlDataReader leer;
                 conect.Open();
