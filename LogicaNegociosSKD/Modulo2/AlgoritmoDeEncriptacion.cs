@@ -82,34 +82,38 @@ namespace LogicaNegociosSKD.Modulo2
         {
             try
             {
-                string[] idSplit = textoEncriptado.Split(' ');
-                if (idSplit.Count() > 1)
+                if (textoEncriptado != null)
                 {
-                    textoEncriptado = idSplit[0];
-                    for (int i = 1; idSplit.Count() > i; i++)
+                    string[] idSplit = textoEncriptado.Split(' ');
+                    if (idSplit.Count() > 1)
                     {
-                        textoEncriptado = textoEncriptado + '+' + idSplit[i];
+                        textoEncriptado = idSplit[0];
+                        for (int i = 1; idSplit.Count() > i; i++)
+                        {
+                            textoEncriptado = textoEncriptado + '+' + idSplit[i];
+                        }
                     }
+                    // Primero debemos convertir el texto plano en `textoPlano`
+                    // en un arreglo de bytes:
+                    byte[] bytesEncriptados = Convert.FromBase64String(textoEncriptado);
+
+                    // Uso de un flujo de memoria para la contención de los bytes:
+                    MemoryStream flujoMemoria = new MemoryStream();
+
+                    // Creación de la clave de protección y el vector de inicialización:
+                    TripleDES des = CrearDES(contrasegnia);
+
+                    // Creación de decodificador:
+                    CryptoStream flujoDesencriptacion = new CryptoStream(flujoMemoria, des.CreateDecryptor(), CryptoStreamMode.Write);
+
+                    // Escritura del arreglo de bytes sobre el flujo de memoria:
+                    flujoDesencriptacion.Write(bytesEncriptados, 0, bytesEncriptados.Length);
+                    flujoDesencriptacion.FlushFinalBlock();
+
+                    // Conversión del flujo de datos en una cadena de caracteres:
+                    return Encoding.Unicode.GetString(flujoMemoria.ToArray());
                 }
-                // Primero debemos convertir el texto plano en `textoPlano`
-                // en un arreglo de bytes:
-                byte[] bytesEncriptados = Convert.FromBase64String(textoEncriptado);
-
-                // Uso de un flujo de memoria para la contención de los bytes:
-                MemoryStream flujoMemoria = new MemoryStream();
-
-                // Creación de la clave de protección y el vector de inicialización:
-                TripleDES des = CrearDES(contrasegnia);
-
-                // Creación de decodificador:
-                CryptoStream flujoDesencriptacion = new CryptoStream(flujoMemoria, des.CreateDecryptor(), CryptoStreamMode.Write);
-
-                // Escritura del arreglo de bytes sobre el flujo de memoria:
-                flujoDesencriptacion.Write(bytesEncriptados, 0, bytesEncriptados.Length);
-                flujoDesencriptacion.FlushFinalBlock();
-
-                // Conversión del flujo de datos en una cadena de caracteres:
-                return Encoding.Unicode.GetString(flujoMemoria.ToArray());
+                return null;
             }
             catch (FormatException ex)
             {
