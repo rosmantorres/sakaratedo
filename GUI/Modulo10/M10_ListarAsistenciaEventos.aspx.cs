@@ -18,7 +18,6 @@ namespace templateApp.GUI.Modulo10
             ((SKD)Page.Master).IdModulo = "10";
 
             String success = Request.QueryString["success"];
-
             if (success != null)
             {
                 if (success.Equals("1"))
