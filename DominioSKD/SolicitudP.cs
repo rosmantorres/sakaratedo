@@ -13,30 +13,43 @@ namespace DominioSKD
         private String fechaRetiro;
         private String fechaReincorporacion;
         private String motivo;
-        private int idPlanilla;
-
+        private Planilla planilla;
+        private int id;
+        private String nombreEvento;
         #endregion
 
         #region metodos
         public SolicitudP()
         {
         }
-        public SolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int idPlanilla)
+        public SolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id)
         {
             this.fechaRetiro = fechaRetiro;
             this.fechaReincorporacion = fechaReincorporacion;
             this.motivo = motivo;
-            this.idPlanilla = idPlanilla;
+            this.id = id;
         }
+
+        public SolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, Planilla planilla,int id)
+        {
+            this.fechaRetiro = fechaRetiro;
+            this.fechaReincorporacion = fechaReincorporacion;
+            this.motivo = motivo;
+            this.planilla = planilla;
+            this.id = id;
+        }
+        public SolicitudP( int id, String nombreEvento)
+        {
+        
+            this.id = id;
+            this.nombreEvento = nombreEvento;
+        }
+      
+     
         #endregion
 
         #region gets y sets
 
-        public int IDPlanilla
-        {
-            get { return idPlanilla; }
-            set { idPlanilla = value; }
-        }
 
         public String FechaRetiro
         {
@@ -54,6 +67,21 @@ namespace DominioSKD
         {
             get { return motivo; }
             set { motivo = value; }
+        }
+        public Planilla Planilla
+        {
+            get { return planilla; }
+            set { planilla = value; }
+        }
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public String NombreEvento
+        {
+            get { return nombreEvento; }
+            set { nombreEvento = value; }
         }
 
         #endregion
