@@ -61,7 +61,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_AgregarImplemento.
+        ///   Looks up a localized string similar to Procedure_agregarImplemento.
         /// </summary>
         internal static string nombreProcedureAgregarInventario {
             get {
@@ -70,7 +70,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_ConsultarCarrito.
+        ///   Looks up a localized string similar to Procedure_consultarCarrito.
         /// </summary>
         internal static string nombreProcedureConsultarCarrito {
             get {
@@ -79,7 +79,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_ConsultarImplemento.
+        ///   Looks up a localized string similar to Procedure_consultarImplemento.
         /// </summary>
         internal static string nombreProcedureConsultarImplemento {
             get {
@@ -97,7 +97,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_ConsultarImplementoTotal.
+        ///   Looks up a localized string similar to Procedure_consultarImplementoTotal.
         /// </summary>
         internal static string nombreProcedureConsultarInventario {
             get {
@@ -106,7 +106,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_ConsultarImplementoTotal2.
+        ///   Looks up a localized string similar to Procedure_consultarImplementoTotal2.
         /// </summary>
         internal static string nombreProcedureConsultarInventario2 {
             get {
@@ -115,7 +115,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_EliminarImplemento.
+        ///   Looks up a localized string similar to Procedure_eliminarImplemento.
         /// </summary>
         internal static string nombreProcedureEliminarInventario {
             get {
@@ -124,7 +124,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M15_ModificarImplemento.
+        ///   Looks up a localized string similar to Procedure_modificarImplemento.
         /// </summary>
         internal static string nombreProcedureModificarInventario {
             get {

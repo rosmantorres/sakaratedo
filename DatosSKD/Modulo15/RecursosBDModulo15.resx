@@ -118,29 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="nombreProcedureAgregarInventario" xml:space="preserve">
-    <value>M15_AgregarImplemento</value>
+    <value>Procedure_agregarImplemento</value>
   </data>
   <data name="nombreProcedureConsultarCarrito" xml:space="preserve">
-    <value>M15_ConsultarCarrito</value>
+    <value>Procedure_consultarCarrito</value>
   </data>
   <data name="nombreProcedureConsultarImplemento" xml:space="preserve">
-    <value>M15_ConsultarImplemento</value>
+    <value>Procedure_consultarImplemento</value>
   </data>
   <data name="nombreProcedureConsultarImplementoU" xml:space="preserve">
     <value>M15_ConsultarImplementoUltimo</value>
   </data>
   <data name="nombreProcedureConsultarInventario" xml:space="preserve">
-    <value>M15_ConsultarImplementoTotal</value>
+    <value>Procedure_consultarImplementoTotal</value>
     <comment>nombre del procedimiento para consultar el inventario</comment>
   </data>
   <data name="nombreProcedureConsultarInventario2" xml:space="preserve">
-    <value>M15_ConsultarImplementoTotal2</value>
+    <value>Procedure_consultarImplementoTotal2</value>
   </data>
   <data name="nombreProcedureEliminarInventario" xml:space="preserve">
-    <value>M15_EliminarImplemento</value>
+    <value>Procedure_eliminarImplemento</value>
   </data>
   <data name="nombreProcedureModificarInventario" xml:space="preserve">
-    <value>M15_ModificarImplemento</value>
+    <value>Procedure_modificarImplemento</value>
   </data>
   <data name="nombreProcedureUsuario" xml:space="preserve">
     <value>M15_ConsultarUsuarioDojo</value>

@@ -144,7 +144,4 @@
   <data name="ConsultarRolesUsuario" xml:space="preserve">
     <value>M2_ConsultarRolesUsuario</value>
   </data>
-  <data name="ConsultarNombreUsuarioContrasena_ID" xml:space="preserve">
-    <value>M2_ConsultarNombreUsuarioContrasena_ID</value>
-  </data>
 </root>

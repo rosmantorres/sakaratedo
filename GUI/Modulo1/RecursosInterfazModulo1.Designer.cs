@@ -70,24 +70,6 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¡Atención! Se introdujo una secuencia de caracteres no permitidos..
-        /// </summary>
-        internal static string logCadenaMaliciosa {
-            get {
-                return ResourceManager.GetString("logCadenaMaliciosa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Se introdujo carácteres no validos (&gt;&lt;*-+¡?=(/&amp;%$·&quot;!) verifíque y vuelva a ingresar..
-        /// </summary>
-        internal static string logCaracterInvalidos {
-            get {
-                return ResourceManager.GetString("logCaracterInvalidos", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña y/o usuario incorrecto..
         /// </summary>
         internal static string logErr {
@@ -97,29 +79,11 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Su enlace ha caducado por favor vuelva a solicitar el reestablecimiento de su contraseña.
-        /// </summary>
-        internal static string logErrRestablecer {
-            get {
-                return ResourceManager.GetString("logErrRestablecer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a ¡Correo enviado!.
         /// </summary>
         internal static string logInfo {
             get {
                 return ResourceManager.GetString("logInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string logRestablecerRequerimientos {
-            get {
-                return ResourceManager.GetString("logRestablecerRequerimientos", resourceCulture);
             }
         }
         
@@ -187,15 +151,6 @@ namespace templateApp.GUI.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a caducado.
-        /// </summary>
-        internal static string parametroURLRestablecerCaducado {
-            get {
-                return ResourceManager.GetString("parametroURLRestablecerCaducado", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a .
         /// </summary>
         internal static string String1 {
@@ -210,15 +165,6 @@ namespace templateApp.GUI.Modulo1 {
         internal static string tipoErr {
             get {
                 return ResourceManager.GetString("tipoErr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a error.
-        /// </summary>
-        internal static string tipoErrMalicioso {
-            get {
-                return ResourceManager.GetString("tipoErrMalicioso", resourceCulture);
             }
         }
         

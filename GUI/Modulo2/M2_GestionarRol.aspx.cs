@@ -24,62 +24,37 @@ namespace templateApp.GUI.Modulo2
         public int cont = 0;
         public HiddenField Hidden =new HiddenField();
         public List<Rol> rolSinPermiso = new List<Rol>();
-        public Cuenta cuentaConsultada ;
 
         //public Persona usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                String rolUsuario=Session[RecursosInterfazMaster.sessionRol].ToString();
-                Boolean permitido=false;
-                List<String> rolesPermitidos = new List<string>
-                    (new string[] {RecursosInterfazMaster.rolSistema,RecursosInterfazMaster.rolDojo});
-                foreach(String rol in rolesPermitidos){
-                    if (rol == rolUsuario)
-                        permitido = true;
-                    }
-                if (permitido)
-                {
+           
 
-                    ((SKD)Page.Master).IdModulo = "2";
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
+                ((SKD)Page.Master).IdModulo = "2";
 
-                    if (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario] != null)
-                    {
-                        rolesDePersona = logicaRol.consultarRolesUsuario
-                            (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);////QUITAR ESTE PROCEDIMIENTO Y SP
-                        cuentaConsultada =
-                        logicaRol.cuentaAConsultar(int.Parse(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]));
-                        rolesDePersona = cuentaConsultada.Roles;
-                    }
+                if (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario] != null)
+                    rolesDePersona=logicaRol.consultarRolesUsuario
+                        (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);
 
-                    rolSinPermiso = logicaRol.rolNoEditable(rolesDePersona,
-                            Session[RecursosInterfazMaster.sessionRol].ToString());
-                    rolesDePersona = logicaRol.validarPrioridad(rolesDePersona,
+
+                rolSinPermiso = logicaRol.rolNoEditable(rolesDePersona,
                         Session[RecursosInterfazMaster.sessionRol].ToString());
-
-                    losRolesDeSistema = logicaRol.cargarRoles();
-                    rolesFiltrados = logicaRol.filtrarRoles(rolesDePersona, losRolesDeSistema);
-                    rolesFiltrados = logicaRol.validarPrioridad(rolesFiltrados,
-                        Session[RecursosInterfazMaster.sessionRol].ToString());
-
-                    //asigno la imagen del perfil
-                    imageTag.Src = imageTag.Src +cuentaConsultada.Imagen;
-
-                }
-                else
-                {
-                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
-                }
-             
-            }
-            catch (NullReferenceException ex)
-            {
+                rolesDePersona = logicaRol.validarPrioridad(rolesDePersona,
+                    Session[RecursosInterfazMaster.sessionRol].ToString());
 
 
-            }
 
+                losRolesDeSistema = logicaRol.cargarRoles();//Se cargan todos los roles del sistema
+               /* losRolesDeSistema=logicaRol.validarPrioridad(losRolesDeSistema,
+                    Session[RecursosInterfazMaster.sessionRol].ToString());
+            */
 
+                rolesFiltrados = logicaRol.filtrarRoles(rolesDePersona, losRolesDeSistema);
+                rolesFiltrados = logicaRol.validarPrioridad(rolesFiltrados,
+                    Session[RecursosInterfazMaster.sessionRol].ToString());
+
+            
         }
         protected void EliminarRol(object sender, EventArgs e)
         {

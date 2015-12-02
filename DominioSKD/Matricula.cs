@@ -19,7 +19,6 @@ namespace DominioSKD
         /// </summary>
         private int _id;
 
-
         /// <summary>
         /// Identificador de la matricula
         /// </summary>
@@ -39,8 +38,6 @@ namespace DominioSKD
         /// Estado de la matricula
         /// </summary>
         private Boolean _status;
-
-       
         #endregion
 
         #region Constructores
@@ -61,11 +58,6 @@ namespace DominioSKD
             get { return this._id; }
         }
 
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
         public String Identificador
         {
             set
@@ -100,12 +92,6 @@ namespace DominioSKD
             {
                 return this._ultimaFechaPago;
             }
-        }
-
-        public Boolean Status
-        {
-            get { return _status; }
-            set { _status = value; }
         }
         #endregion
 

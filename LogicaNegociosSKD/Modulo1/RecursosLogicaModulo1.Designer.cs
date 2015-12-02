@@ -22,7 +22,7 @@ namespace LogicaNegociosSKD.Modulo1 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class RecursosLogicaModulo1 {
+    internal class RecursosLogicaModulo1 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaNegociosSKD.Modulo1.RecursosLogicaModulo1", typeof(RecursosLogicaModulo1).Assembly);
@@ -51,7 +51,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,34 +63,16 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a SA-KARATEDO:Reestablecer contraseña.
         /// </summary>
-        public static string asuntoSAKARATEDO {
+        internal static string asuntoSAKARATEDO {
             get {
                 return ResourceManager.GetString("asuntoSAKARATEDO", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SKD_00_10.
-        /// </summary>
-        public static string Codigo_Error_Hash {
-            get {
-                return ResourceManager.GetString("Codigo_Error_Hash", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a SKD_00_11.
-        /// </summary>
-        public static string Codigo_Error_InicioSesion {
-            get {
-                return ResourceManager.GetString("Codigo_Error_InicioSesion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a karate1234.
         /// </summary>
-        public static string cuentaClaveSAKARATEDO {
+        internal static string cuentaClaveSAKARATEDO {
             get {
                 return ResourceManager.GetString("cuentaClaveSAKARATEDO", resourceCulture);
             }
@@ -99,7 +81,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a sakaratedo@gmail.com.
         /// </summary>
-        public static string cuentaCorreoSAKARATEDO {
+        internal static string cuentaCorreoSAKARATEDO {
             get {
                 return ResourceManager.GetString("cuentaCorreoSAKARATEDO", resourceCulture);
             }
@@ -108,7 +90,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a /GUI/Modulo1/RestablecerContrasena.aspx.
         /// </summary>
-        public static string direccionM1_RestablecerContraseña {
+        internal static string direccionM1_RestablecerContraseña {
             get {
                 return ResourceManager.GetString("direccionM1_RestablecerContraseña", resourceCulture);
             }
@@ -117,45 +99,9 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a smtp.gmail.com.
         /// </summary>
-        public static string hostSAKARATEDO {
+        internal static string hostSAKARATEDO {
             get {
                 return ResourceManager.GetString("hostSAKARATEDO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a El correo no se encuentra registrado en sistema.
-        /// </summary>
-        public static string Mensaje_Error_CorreoNoRegistrado {
-            get {
-                return ResourceManager.GetString("Mensaje_Error_CorreoNoRegistrado", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Error encontrado en login.hash.
-        /// </summary>
-        public static string Mensaje_Error_Hash {
-            get {
-                return ResourceManager.GetString("Mensaje_Error_Hash", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Error encontrado en login.iniciarSesion.
-        /// </summary>
-        public static string Mensaje_Error_InicioSesion {
-            get {
-                return ResourceManager.GetString("Mensaje_Error_InicioSesion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a El usuario no posee permiso para ingresar al sistema, comuníquese con un administrador de SAKARATEDO..
-        /// </summary>
-        public static string Mensaje_Error_Roles {
-            get {
-                return ResourceManager.GetString("Mensaje_Error_Roles", resourceCulture);
             }
         }
         
@@ -163,7 +109,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         ///   Busca una cadena traducida similar a Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
         ///           Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;.
         /// </summary>
-        public static string mensajeSAKARATEDO {
+        internal static string mensajeSAKARATEDO {
             get {
                 return ResourceManager.GetString("mensajeSAKARATEDO", resourceCulture);
             }
@@ -172,7 +118,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a User.
         /// </summary>
-        public static string parametroURLId {
+        internal static string parametroURLId {
             get {
                 return ResourceManager.GetString("parametroURLId", resourceCulture);
             }
@@ -181,7 +127,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a 587.
         /// </summary>
-        public static string puertoEnvioSAKARATEDO {
+        internal static string puertoEnvioSAKARATEDO {
             get {
                 return ResourceManager.GetString("puertoEnvioSAKARATEDO", resourceCulture);
             }
@@ -190,7 +136,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a 23072.
         /// </summary>
-        public static string puertoSAKARATEDO {
+        internal static string puertoSAKARATEDO {
             get {
                 return ResourceManager.GetString("puertoSAKARATEDO", resourceCulture);
             }
@@ -199,7 +145,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Atleta.
         /// </summary>
-        public static string rolAtleta {
+        internal static string rolAtleta {
             get {
                 return ResourceManager.GetString("rolAtleta", resourceCulture);
             }
@@ -208,7 +154,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Atleta(Menor).
         /// </summary>
-        public static string rolAtletaMenor {
+        internal static string rolAtletaMenor {
             get {
                 return ResourceManager.GetString("rolAtletaMenor", resourceCulture);
             }
@@ -217,7 +163,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Dojo.
         /// </summary>
-        public static string rolDojo {
+        internal static string rolDojo {
             get {
                 return ResourceManager.GetString("rolDojo", resourceCulture);
             }
@@ -226,7 +172,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Organizacion.
         /// </summary>
-        public static string rolOrganizacion {
+        internal static string rolOrganizacion {
             get {
                 return ResourceManager.GetString("rolOrganizacion", resourceCulture);
             }
@@ -235,7 +181,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Representante.
         /// </summary>
-        public static string rolRepresentante {
+        internal static string rolRepresentante {
             get {
                 return ResourceManager.GetString("rolRepresentante", resourceCulture);
             }
@@ -244,7 +190,7 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a Sistema.
         /// </summary>
-        public static string rolSistema {
+        internal static string rolSistema {
             get {
                 return ResourceManager.GetString("rolSistema", resourceCulture);
             }
@@ -253,63 +199,9 @@ namespace LogicaNegociosSKD.Modulo1 {
         /// <summary>
         ///   Busca una cadena traducida similar a -.
         /// </summary>
-        public static string splitRoles {
+        internal static string splitRoles {
             get {
                 return ResourceManager.GetString("splitRoles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a fecha.
-        /// </summary>
-        public static string variableFecha {
-            get {
-                return ResourceManager.GetString("variableFecha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &amp;fecha=.
-        /// </summary>
-        public static string variableFechaHTTP {
-            get {
-                return ResourceManager.GetString("variableFechaHTTP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a restablecer.
-        /// </summary>
-        public static string variableRestablecer {
-            get {
-                return ResourceManager.GetString("variableRestablecer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a ?restablecer=.
-        /// </summary>
-        public static string variableRestablecerHTTP {
-            get {
-                return ResourceManager.GetString("variableRestablecerHTTP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a tiempo.
-        /// </summary>
-        public static string variableTiempo {
-            get {
-                return ResourceManager.GetString("variableTiempo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &amp;hora=.
-        /// </summary>
-        public static string variableTiempoHTTP {
-            get {
-                return ResourceManager.GetString("variableTiempoHTTP", resourceCulture);
             }
         }
     }

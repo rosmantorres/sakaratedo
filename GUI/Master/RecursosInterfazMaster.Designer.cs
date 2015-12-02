@@ -61,15 +61,6 @@ namespace templateApp.GUI.Master {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://.
-        /// </summary>
-        internal static string AliasHttp {
-            get {
-                return ResourceManager.GetString("AliasHttp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a ~/GUI/Master/Inicio.aspx.
         /// </summary>
         internal static string direccionMaster_Inicio {
@@ -151,29 +142,11 @@ namespace templateApp.GUI.Master {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a imagen.
-        /// </summary>
-        internal static string sessionImagen {
-            get {
-                return ResourceManager.GetString("sessionImagen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a logout.
         /// </summary>
         internal static string sessionLogout {
             get {
                 return ResourceManager.GetString("sessionLogout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a nombreDePila.
-        /// </summary>
-        internal static string sessionNombreCompleto {
-            get {
-                return ResourceManager.GetString("sessionNombreCompleto", resourceCulture);
             }
         }
         
