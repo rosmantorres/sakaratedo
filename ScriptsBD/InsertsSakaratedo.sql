@@ -5086,3 +5086,8 @@ INSERT INTO DETALLE_COMPRA VALUES (8,4500,5,NULL,NULL,3,NULL,NULL);
 
 
 /*=======================================================================================*/
+
+
+update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
+
+    
