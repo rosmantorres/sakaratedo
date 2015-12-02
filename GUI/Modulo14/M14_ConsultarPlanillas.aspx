@@ -41,7 +41,8 @@
                 <th id="key">ID</th>
                 <th>Nombre</th>
                 <th>Tipo de Planilla</th>
-                <th>Datos</th>
+                <th>Status</th>
+                <th>Datos</th>               
                 <th style="text-align:center;">Acciones</th>
             </tr>
           </thead>
