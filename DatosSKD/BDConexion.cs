@@ -114,13 +114,14 @@ namespace DatosSKD
             {
                 Conectar();
 
-                using (conexion)
-                {
+                //using (conexion)
+                //{
                     comando = new SqlCommand(query, conexion);
+                    conexion.Open();
                     SqlDataReader resultado = comando.ExecuteReader();
+                  //  conexion.Close();
                     return resultado;
-                }
-
+                //}
 
             }
             catch (SqlException ex)
@@ -133,10 +134,7 @@ namespace DatosSKD
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
+            
         }
         #endregion
 

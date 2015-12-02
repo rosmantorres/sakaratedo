@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
+using DatosSKD;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Data;
@@ -14,67 +15,27 @@ namespace DatosSKD.Modulo13
     {
         
         
-        #region Listar Implementarios
+        #region Listar Inventario
 
-        public static  List<Reporte_Inventario> D_Inventario()
+        public static  SqlDataReader D_Inventario()
         {
-            BDConexion laConexion;
-            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>();
-            List<Implemento> listaDeImplementos = new List<Implemento>();
-// List<Parametro> parametros;
-  //          Parametro parametro;
-    //        parametros = new List<Parametro>();
+            // BDConexion laConexion;
+            String query = "  select imp.imp_imagen, imp_nombre,imp.imp_tipo, imp.imp_marca, imp.imp_color,  imp.imp_estatus, imp_precio, imp_stockmin, inv_cantidad_total, d.doj_nombre  from implemento as imp, inventario as inv, dojo as d where imp.imp_id=inv.IMPLEMENTO_imp_id and d.doj_id=inv.DOJO_doj_id;";
+            //laConexion = new BDConexion();
+            BDConexion objeto_con= new BDConexion();
+            SqlDataReader resultado = objeto_con.EjecutarQuery(query);               
+            
+            
 
 
-            try
-            {
-                laConexion = new BDConexion();
-      //          parametros = new List<Parametro>();
-        /*        if ((dojo != null) && (dojo.Dojo_Id != null))
-                {
-                    parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, dojo.Dojo_Id.ToString(), false);
-                    parametros.Add(parametro);
-                }
-                else
-                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
-                        RecursosBDModulo15.tabla_dojoImplemento, new Exception());
-                */
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas("M13_inventario", null);
 
-                //Interfaz.Gui.Modulo13.M13_Info_Producto inventario = new Interfaz.Gui.Modulo13.M13_Info_Producto();
 
-                
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    Reporte_Inventario inventario = new Reporte_Inventario();
-
-                    inventario.Nombre = row["imp_nombre"].ToString();
-                    inventario.Dojo = row["d.doj_nombre"].ToString();
-                    inventario.Cantidad_total = row["inv_cantidad_total "].ToString();           
-                    
-                    listainventario.Add(inventario);
-
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                   RecursoGeneralBD.Mensaje, new Exception());
-            }
-            catch (Exception ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-            }
-
-            return listainventario;
+            return resultado;
 
         }
         #endregion
 
-        
-        public static DataTable listainventario { get; set; }
+    
 
        
     }

@@ -8,6 +8,7 @@ using DatosSKD.Modulo13;
 using System.Data;
 using ExcepcionesSKD.Modulo15;
 using ExcepcionesSKD;
+using System.Data.SqlClient;
 
 namespace LogicaNegociosSKD.Modulo13
 {
@@ -26,17 +27,17 @@ namespace LogicaNegociosSKD.Modulo13
         #endregion
 
 
-        #region listarimplementos
+        #region Inventario
 
-        public static List<Reporte_Inventario> L_Inventario()
+        public static SqlDataReader L_Inventario()
         {
-            List<Reporte_Inventario> listainventario= new List<Reporte_Inventario>();
-    
+
+            SqlDataReader resultado;
 
             try
             {
 
-                listainventario = DatosSKD.Modulo13.BDimplementos.D_Inventario();
+                resultado = DatosSKD.Modulo13.BDimplementos.D_Inventario();
                    
             }
 
@@ -56,7 +57,7 @@ namespace LogicaNegociosSKD.Modulo13
 
                 throw ex;
             }
-            return listainventario;
+            return resultado;
         }
         
         
