@@ -1,4 +1,6 @@
 ﻿using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Modulo7;
 using System;
 using System.Collections.Generic;
@@ -41,7 +43,8 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
                             laLista = logEvento.obtenerListaDePractica(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-
+                            if (laLista != null) 
+                            { 
                             foreach (Evento evento in laLista)
                             {
                                 this.laTabla.Text += M7_Recursos.AbrirTR;
@@ -54,19 +57,37 @@ namespace templateApp.GUI.Modulo7
                                 this.laTabla.Text += M7_Recursos.CerrarTD;
                                 this.laTabla.Text += M7_Recursos.CerrarTR;
                             }
+                            }
+                            else
+                            {
+                                throw new ListaNulaException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
+                            }
 
+                        }
+                        catch (ListaNulaException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                         catch (Exception ex)
                         {
-                            throw ex;
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
                 }
-            }
-            catch
-            {
+                else
+                {
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
+                }
 
             }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }            
         }
         #endregion
     }
