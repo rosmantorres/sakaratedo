@@ -70,7 +70,16 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DescripcionRestCinta.
+        ///   Looks up a localized string similar to color.
+        /// </summary>
+        internal static string AliasColorCinta {
+            get {
+                return ResourceManager.GetString("AliasColorCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descripcion.
         /// </summary>
         internal static string AliasDescripcionRestCinta {
             get {
@@ -79,7 +88,16 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IdRestriccionCinta.
+        ///   Looks up a localized string similar to id_cinta.
+        /// </summary>
+        internal static string AliasId_cinta {
+            get {
+                return ResourceManager.GetString("AliasId_cinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id_restricion.
         /// </summary>
         internal static string AliasIdRestriccionCinta {
             get {
@@ -106,11 +124,29 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to tiempo_minimo.
+        /// </summary>
+        internal static string AliasTiempoMinCintas {
+            get {
+                return ResourceManager.GetString("AliasTiempoMinCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_00_004.
         /// </summary>
         internal static string Codigo_Error_Formato {
             get {
                 return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_Consultar_Cintas.
+        /// </summary>
+        internal static string ConsultarCinta {
+            get {
+                return ResourceManager.GetString("ConsultarCinta", resourceCulture);
             }
         }
         
@@ -169,7 +205,7 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @Cinta.
+        ///   Looks up a localized string similar to @Id_Cinta.
         /// </summary>
         internal static string ParamCintaNueva {
             get {
@@ -178,7 +214,7 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @DescripcionRestriccionCinta.
+        ///   Looks up a localized string similar to @descripcion.
         /// </summary>
         internal static string ParamDescripcionRestricionCinta {
             get {
@@ -187,7 +223,7 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @HorasDocentes.
+        ///   Looks up a localized string similar to @horas_docentes.
         /// </summary>
         internal static string ParamHorasDocentes {
             get {
@@ -205,7 +241,7 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @PuntajeMinimo.
+        ///   Looks up a localized string similar to @puntaje_minimo.
         /// </summary>
         internal static string ParamPuntosMinimos {
             get {
@@ -214,7 +250,7 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @TiempoMinimo.
+        ///   Looks up a localized string similar to @tiempo_minimo.
         /// </summary>
         internal static string ParamTiempoMinimo {
             get {

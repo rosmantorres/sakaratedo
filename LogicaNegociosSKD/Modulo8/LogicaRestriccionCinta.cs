@@ -26,49 +26,40 @@ namespace LogicaNegociosSKD.Modulo8
         }
         #endregion
 
-        public LogicaRestriccionCinta()
+        
+        /// <summary>Para obtener las restricciones de cinta</summary>
+        /// <returns>Regresa una lista de restricciones de cinta</returns>
+        /// 
+        public List<RestriccionCinta> obtenerListaDeRestriccionCinta()
         {
+            List<RestriccionCinta> listaRestriccionesCinta = new List<RestriccionCinta>();
+
+            listaRestriccionesCinta = BDRestriccionCinta.ConsultarRestriccionCintaTodas();
+
+            return listaRestriccionesCinta;            
         }
 
-        public List<DominioSKD.RestriccionCinta> obtenerListaDeRestriccionCinta()
+        /// <summary>Para obtener las cintas</summary>
+        /// <returns>Regresa una lista cintas</returns>
+        /// 
+        public List<Cinta> obtenerListaDeCinta()
         {
-             try
-            {
-                
-                return BDRestriccionCinta.ConsultarRestriccionCintaTodas();
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo8.FormatoIncorrectoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+            List<Cinta> listaRestriccionesCinta = new List<Cinta>();
 
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+            listaRestriccionesCinta = BDRestriccionCinta.ConsultarCintaTodas();
 
-                throw ex;
-            }
-
+            return listaRestriccionesCinta;
         }
 
-        public bool AgregarRestriccionCinta(int Horas_docentes_mínimas, int Putaje_mínimo, int Tiempo_mínimo,int NuevaCinta)
+        /// <summary>Para agregar una nueva restriccion de cintas</summary>
+        /// <returns>Regresa una lista bool</returns>
+        /// 
+        public bool AgregarRestriccionCinta(RestriccionCinta Restriccion, int NuevaCinta)
         {
             try
             {
-                RestriccionCinta laRestriccion = new RestriccionCinta();
-                laRestriccion.PuntosMinimos = Putaje_mínimo;
-                laRestriccion.TiempoDocente = Horas_docentes_mínimas;
-                laRestriccion.TiempoMinimo = Horas_docentes_mínimas;
-                laRestriccion.TiempoMaximo = 0;
-                laRestriccion.Descripcion = null;
-                laRestriccion.IdRestriccionCinta = 0;
-                
-                return BDRestriccionCinta.AgregarRestriccionCinta(laRestriccion, NuevaCinta);
+                              
+                return BDRestriccionCinta.AgregarRestriccionCinta(Restriccion, NuevaCinta);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -89,6 +80,9 @@ namespace LogicaNegociosSKD.Modulo8
             return true;
         }
 
+        /// <summary>Para modificar una restriccion de cintas</summary>
+        /// <returns>Regresa una lista bool</returns>
+        /// 
         public bool ModificarRestriccionCinta(int id, int Horas_docentes_mínimas, int Putaje_mínimo, int Tiempo_mínimo, int Cinta)
         {
             try

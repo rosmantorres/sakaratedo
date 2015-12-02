@@ -15,6 +15,11 @@ namespace DatosSKD.Modulo8
 {
     public class BDRestriccionCinta
     {
+
+        /// <summary>
+        /// Obtiene la lista de las restricciones de cinta
+        /// </summary>
+        /// <returns>Lista de las restricciones de cinta</returns>
         public static List<RestriccionCinta> ConsultarRestriccionCintaTodas()
         {
             
@@ -26,21 +31,15 @@ namespace DatosSKD.Modulo8
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursoBDRestriccionCinta.ConsultarRestriccionesCinta, parametros);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursoBDRestriccionCinta.ConsultarRestriccionCinta, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    RestriccionCinta laRestriccion = new RestriccionCinta();
-
-                    laRestriccion.IdRestriccionCinta = int.Parse(row[RecursoBDRestriccionCinta.AliasIdRestriccionCinta].ToString());
-                    laRestriccion.Descripcion = row[RecursoBDRestriccionCinta.AliasDescripcionRestCinta].ToString();
-                    laRestriccion.PuntosMinimos = int.Parse(row[RecursoBDRestriccionCinta.AliasPuntosMinCintas].ToString());
-                    laRestriccion.TiempoDocente = int.Parse(row[RecursoBDRestriccionCinta.AliasTiempoDocente].ToString());
-
-                    ListaRestriccionCinta.Add(laRestriccion);
-
+                    ListaRestriccionCinta.Add(new RestriccionCinta(Int32.Parse(row[RecursoBDRestriccionCinta.AliasIdRestriccionCinta].ToString()),
+                                                                               row[RecursoBDRestriccionCinta.AliasColorCinta].ToString(),
+                                                                   Int32.Parse(row[RecursoBDRestriccionCinta.AliasTiempoMinCintas].ToString()),
+                                                                   Int32.Parse(row[RecursoBDRestriccionCinta.AliasPuntosMinCintas].ToString()),
+                                                                   Int32.Parse(row[RecursoBDRestriccionCinta.AliasTiempoDocente].ToString())));                 
                 }
 
             }
@@ -73,6 +72,62 @@ namespace DatosSKD.Modulo8
 
             
             return ListaRestriccionCinta;
+
+        }
+
+
+        /// <summary>
+        /// Obtiene la lista de las cintas
+        /// </summary>
+        /// <returns>Lista de cintas</returns>
+        public static List<Cinta> ConsultarCintaTodas()
+        {
+
+            BDConexion laConexion;
+            List<Cinta> ListaCinta = new List<Cinta>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursoBDRestriccionCinta.ConsultarCinta, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListaCinta.Add(new Cinta(Int32.Parse(row[RecursoBDRestriccionCinta.AliasId_cinta].ToString()), row[RecursoBDRestriccionCinta.AliasColorCinta].ToString()));
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursoBDRestriccionCinta.Codigo_Error_Formato,
+                      RecursoBDRestriccionCinta.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+
+            return ListaCinta;
 
         }
 

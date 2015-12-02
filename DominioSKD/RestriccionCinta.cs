@@ -69,14 +69,39 @@ namespace DominioSKD
             puntosMinimos = 0;
         }
 
+        public RestriccionCinta(int inputId, string inputDescripcion)
+        {
+            this.idRestriccionCinta = inputId;
+            this.descripcion = inputDescripcion;
+
+        }
+
         public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputPuntosMinimos, int inputTiempoDocente)
         {
-            idRestriccionCinta = inputId;
-            descripcion = inputDescripcion;
-            tiempoMinimo = inputTiempoMinimo;
-            tiempoMaximo = inputTiempoMaximo;
-            puntosMinimos = inputPuntosMinimos;
-            tiempoDocente = inputTiempoDocente;
+            this.idRestriccionCinta = inputId;
+            this.descripcion = inputDescripcion;
+            this.tiempoMinimo = inputTiempoMinimo;
+            this.tiempoMaximo = inputTiempoMaximo;
+            this.puntosMinimos = inputPuntosMinimos;
+            this.tiempoDocente = inputTiempoDocente;
+        }
+
+        public RestriccionCinta( String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputPuntosMinimos, int inputTiempoDocente)
+        {
+            this.descripcion = inputDescripcion;
+            this.tiempoMinimo = inputTiempoMinimo;
+            this.tiempoMaximo = inputTiempoMaximo;
+            this.puntosMinimos = inputPuntosMinimos;
+            this.tiempoDocente = inputTiempoDocente;
+        }
+
+        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputPuntosMinimos, int inputTiempoDocente)
+        {
+            this.idRestriccionCinta = inputId;
+            this.descripcion = inputDescripcion;
+            this.tiempoMinimo = inputTiempoMinimo;
+            this.puntosMinimos = inputPuntosMinimos;
+            this.tiempoDocente = inputTiempoDocente;
         }
         #endregion
     }
