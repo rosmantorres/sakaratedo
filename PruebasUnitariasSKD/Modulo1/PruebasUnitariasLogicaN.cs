@@ -136,6 +136,36 @@ namespace PruebasUnitariasSKD.Modulo1
              _respuesta = lgr.restablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
               
          }
+          // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena)
+          [Test]
+          public void PruebaValidarCaracteres()
+          {
+              logicaRestablecer lgr = new logicaRestablecer();
+              bool _respuesta;
+
+
+              _respuesta = lgr.ValidarCaracteres(RecursosPU_Mod1.Descripcion);
+              Assert.AreEqual(true, _respuesta);
+          }
+          // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena) EXC
+          [Test]
+          [ExpectedException(typeof(NullReferenceException))]
+          public void PruebaValidarCaracteresEXC()
+          {
+              logicaRestablecer lgr = new logicaRestablecer();
+              bool _respuesta;
+              _respuesta = lgr.ValidarCaracteres(null);
+          }
+          [Test]
+          public void PruebaValidarCaracteres2()
+          {
+              logicaLogin lg = new logicaLogin();
+              bool _respuesta;
+
+
+              _respuesta = lg.ValidarCaracteres(RecursosPU_Mod1.usuario,true);
+              Assert.AreEqual(true, _respuesta);
+          }
         
           
     }

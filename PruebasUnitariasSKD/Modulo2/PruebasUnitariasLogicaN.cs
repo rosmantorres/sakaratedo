@@ -146,7 +146,35 @@ namespace PruebasUnitariasSKD.Modulo2
             _respuesta2 = logicaRol.validarPrioridad(_respuesta,RecursosPU_Mod2.Descripcion);
             Assert.AreEqual(_respuesta, _respuesta2);
         }
-
+        // Prueba unitaria  del metodo rolNoEditable()
+        [Test]
+        public void PruebaValidarrolNoEditable()
+        {
+            List<Rol> _respuesta;
+            List<Rol> _respuesta2;
+            _respuesta = logicaRol.cargarRoles();
+            _respuesta2 = logicaRol.rolNoEditable(_respuesta, RecursosPU_Mod2.Rol);
+            Assert.IsNotNull(_respuesta2);
+        }
+        // Prueba unitaria  del metodo rolNoEditable() EXC
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
+        public void PruebaValidarrolNoEditableEXC()
+        {
+            List<Rol> _respuesta;
+            List<Rol> _respuesta2;
+            _respuesta = logicaRol.cargarRoles();
+            _respuesta2 = logicaRol.rolNoEditable(_respuesta, RecursosPU_Mod2.Descripcion);
+        }
+        // Prueba unitaria  del metodo cuentaAConsultar()
+        [Test]
+        public void PruebaValidarcuentaAConsultar()
+        {
+            Cuenta _respuesta;
+            _respuesta = logicaRol.cuentaAConsultar(1);
+            Assert.AreEqual(_respuesta.Nombre_usuario,RecursosPU_Mod2.usuario);
+        }
+     
 
 
     }
