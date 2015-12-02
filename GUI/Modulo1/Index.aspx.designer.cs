@@ -85,6 +85,15 @@ namespace templateApp.GUI.Modulo1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordIni;
         
         /// <summary>
+        /// Control LoginButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton LoginButton;
+        
+        /// <summary>
         /// Control RestablecerCorreo.
         /// </summary>
         /// <remarks>

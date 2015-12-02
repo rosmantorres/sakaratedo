@@ -14,23 +14,36 @@ namespace templateApp.GUI.Modulo1
         
         string IdUser = "";
         string value;
+        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
 
-              
+                if (Request.QueryString[RecursosInterfazModulo1.tipoErrMalicioso] != null
+        && Request.QueryString[RecursosInterfazModulo1.tipoErrMalicioso].ToString() == "input_malicioso")
+                {
+                    warningCaracteres.Visible = true;
+                    warningCaracteres.InnerText = RecursosInterfazModulo1.logCadenaMaliciosa;
+                    infoRestablecer.Visible = false;
 
+                }
+                else
+                {
+                    infoRestablecer.Visible = true;
+                    warningCaracteres.Visible = false;
+                    warningCaracteres.InnerText = "";
+                }
                 DateTime fechaActual = DateTime.Now;
                 string fechaString = Request.QueryString[RecursosLogicaModulo1.variableFecha].ToString();
-                fechaString = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(fechaString,
+                fechaString = cripto.DesencriptarCadenaDeCaracteres(fechaString,
                     RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
                 if ((fecha.Date.Year != fechaActual.Date.Year) ||
                     (fecha.Date.Month != fechaActual.Date.Month) ||
                     (fecha.Date.Day != fechaActual.Date.Day))
                 {
-                     value=AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                     value=cripto.EncriptarCadenaDeCaracteres
                         (RecursosInterfazModulo1.parametroURLRestablecerCaducado, RecursosLogicaModulo2.claveDES);
 
                     Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
@@ -40,11 +53,12 @@ namespace templateApp.GUI.Modulo1
 
                 string idUsuario = Request.QueryString[RecursosLogicaModulo1.variableRestablecer].ToString();
                 
-                idUsuario = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(idUsuario, RecursosLogicaModulo2.claveDES);
+                idUsuario = cripto.DesencriptarCadenaDeCaracteres(idUsuario, RecursosLogicaModulo2.claveDES);
                 IdUser = idUsuario;
             }
             catch (NullReferenceException ex)
             {
+
             }
         }
         public void redireccionarInicio(object sender, EventArgs e)
@@ -61,7 +75,7 @@ namespace templateApp.GUI.Modulo1
 
                     if (Restablecer.restablecerContrasena(IdUser, pass1))
                     {
-                        value = AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                        value = cripto.EncriptarCadenaDeCaracteres
                            (RecursosInterfazModulo1.parametroURLReestablecerExito, RecursosLogicaModulo2.claveDES);
                         Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
                             + RecursosInterfazModulo1.tipoSucess + "=" + value);

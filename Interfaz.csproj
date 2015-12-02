@@ -526,6 +526,7 @@
     <Content Include="GUI\Modulo16\M16_VerCarrito.aspx" />
     <Content Include="GUI\Modulo1\css\styles.css" />
     <Content Include="GUI\Modulo1\Index.aspx" />
+    <Content Include="GUI\Modulo1\js\Login.js" />
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
