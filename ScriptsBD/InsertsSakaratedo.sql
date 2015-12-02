@@ -336,7 +336,6 @@ go
 
 
 -- INSERTS PERSONA, TELEFONO, EMAIL, SOLICITUD INSCRIPCION, MATRICULA -- 
-
 /*
 INSERTS M6
 
@@ -413,7 +412,7 @@ VALUES (
     'miguedro',
     '12345',
     'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -526,7 +525,7 @@ VALUES (
     'adrijo',
     '12345',
     'http://tphsartjdoerrer.weebly.com/uploads/7/7/0/2/7702116/152821360.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -620,7 +619,7 @@ VALUES (
     'chrisjo',
     '12345',
     'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -714,7 +713,7 @@ VALUES (
     'cesarau',
     '12345',
     'http://www.one2onephotography.ca/image/portrait/men/men-images-1.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -808,7 +807,7 @@ VALUES (
     'eduardo',
     '12345',
     'https://upload.wikimedia.org/wikipedia/en/2/28/Deep_Fried_Man_portrait_-_real_name_Daniel_Friedman_-_South_African_Comedian.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -920,7 +919,7 @@ VALUES (
     'mariaisa',
     '12345',
     'http://guildfordphotographer.co.uk/wp-content/uploads/2011/01/lucy.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1033,7 +1032,7 @@ VALUES (
     'carlosal',
     '12345',
     'https://c.stocksy.com/a/3iJ000/z0/75767.jpg',
-   2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1127,7 +1126,7 @@ VALUES (
     'jesusen',
     '12345',
     'http://www.offshoresailing.com/wp-content/uploads/2013/05/photodune-658305-portrait-of-a-good-looking-african-american-business-man-s7-300x247.png',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1221,7 +1220,7 @@ VALUES (
     'gustavoto',
     '12345',
     'http://thumbs.dreamstime.com/x/smiley-man-portrait-11016049.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1315,7 +1314,7 @@ VALUES (
     'jessiale',
     '12345',
     'http://thumbs.dreamstime.com/x/beautiful-woman-portrait-11713329.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1409,7 +1408,7 @@ VALUES (
     'marioale',
     '12345',
     'http://tedslater.com/wp-content/uploads/2010/07/shutterstock_202093444.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1522,7 +1521,7 @@ VALUES (
     'eltercera',
     '12345',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1636,7 +1635,7 @@ VALUES (
     'silfreau',
     '12345',
     'http://marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1749,7 +1748,7 @@ VALUES (
     'saulen',
     '12345',
     'http://www4.pictures.zimbio.com/gi/Solitary+Man+Portraits+2009+Toronto+International+kBVOjNQV9rzl.jpg',
-    4 
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1862,7 +1861,7 @@ VALUES (
     'guilleja',
     '12345',
     'http://previews.123rf.com/images/rido/rido1212/rido121200073/16732489-Closeup-portrait-of-smiling-young-man-isolated-on-white-background-Stock-Photo.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1975,7 +1974,7 @@ VALUES (
     'pedroleo',
     '12345',
     'https://c2.staticflickr.com/4/3147/3030821516_793151ecc1_z.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2088,7 +2087,7 @@ VALUES (
     'josemiguel',
     '12345',
     'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2201,7 +2200,7 @@ VALUES (
     'maritonieta',
     '12345',
     'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2315,7 +2314,7 @@ VALUES (
     'vickybella',
     '12345',
     'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
-     3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2429,7 +2428,7 @@ VALUES (
     'melilie',
     '12345',
     'http://www.noupe.com/wp-content/uploads/2010/01/26-portraits.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2543,7 +2542,7 @@ VALUES (
     'elidocouto',
     '12345',
     'http://www.wallcoo.net/photography/markus-j-grimm_portrait_photography_02/images/Color_portrait_photo_15971497.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2656,7 +2655,7 @@ VALUES (
     'marcosanz',
     '12345',
     'https://pixabay.com/static/uploads/photo/2013/11/20/23/01/man-214200_960_720.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2768,7 +2767,7 @@ VALUES (
     'goyito',
     '12345',
     'https://c1.staticflickr.com/3/2835/9965420034_1b7450e257.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2882,7 +2881,7 @@ VALUES (
     'armandito',
     '12345',
     'https://pixabay.com/static/uploads/photo/2015/01/16/15/01/man-601560_960_720.jpg',
-   2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2995,7 +2994,7 @@ VALUES (
     'ernestof',
     '12345',
     'https://c1.staticflickr.com/3/2222/2088987724_f4f58e7aa7.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3109,7 +3108,7 @@ VALUES (
     'chinitowa',
     '12345',
     'https://pixabay.com/static/uploads/photo/2014/11/19/10/52/man-537136_960_720.jpg',
-   4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3222,7 +3221,7 @@ VALUES (
     'martica',
     '12345',
     'http://img.whitezine.com/Thomas-Lavelle-Portrait-Woman.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3335,7 +3334,7 @@ VALUES (
     'elenita',
     '12345',
     'https://pixabay.com/static/uploads/photo/2015/03/04/19/41/woman-659348_960_720.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3449,7 +3448,7 @@ VALUES (
     'neomar',
     '12345',
     'http://digital-art-gallery.com/oid/21/632x833_5536_Alexz_Johnson_portrait_2d_realism_girl_portrait_realistic_beauty_woman_picture_image_digital_art.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3562,7 +3561,7 @@ VALUES (
     'norita',
     '12345',
     'http://hd.wallpaperswide.com/thumbs/beautiful_woman_portrait-t2.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3676,7 +3675,7 @@ VALUES (
     'norita',
     '12345',
     'http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/gorgeous-woman-portrait-anna-omelchenko.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3793,7 +3792,7 @@ VALUES (
     'ramirezadmin',
     '12345',
     'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg',
-    4
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3872,7 +3871,7 @@ VALUES (
     'suarezadmin',
     '12345',
     'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg',
-    2
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3951,7 +3950,7 @@ VALUES (
     'torresadmin',
     '12345',
     'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg',
-    3
+    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4016,6 +4015,7 @@ INSERT INTO dbo.PERSONA (
 	per_clave,
 	per_imagen,
 	DOJO_doj_id
+
 ) 
 VALUES (
     'CEDULA-N',
@@ -4034,7 +4034,8 @@ VALUES (
     'carloadmin',
     '12345',
 	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg',
-	3
+	    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4094,7 +4095,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	DOJO_doj_id
+    DOJO_doj_id
+
 ) 
 VALUES (
     'CEDULA-N',
@@ -4112,7 +4114,8 @@ VALUES (
     1.72,
     'rosmanadmin',
     '12345',
-    2
+        (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4614,6 +4617,11 @@ values('~/GUI/Modulo15/Imagenes/coderas.jpg', 'Coderas Karate-DO','Coderas','Kom
 
 -- INSERTS INVENTARIO--
 
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (45,1,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (19,2,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (75,3,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (95,4,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (6,5,1);
 
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (4,1,2);
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (70,2,2);
