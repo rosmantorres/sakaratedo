@@ -144,7 +144,6 @@ namespace DatosSKD.Modulo1
 
                     elCorreo.Add(row[RecursosBDModulo1.aliasCorreoUsuario].ToString());
                 }
-                bool respuesta = false;
                 Console.WriteLine(elCorreo.Count.ToString());
                 if (elCorreo.Count == 0)
                     return null;
