@@ -4214,6 +4214,8 @@ VALUES (
     0
 );
 
+INSERT INTO [dbo].[MATRICULA] ([mat_identificador],[mat_fecha_creacion],[mat_activa], [mat_fecha_ultimo_pago], [mat_precio],[PERSONA_per_id], [DOJO_doj_id]) VALUES ('CCA1-CAF-CAFE','2014-12-10',1,'2015-03-08',4200,6,1)
+go
 -- FIN DEL INSERT PERSONA--
 
 
@@ -5194,6 +5196,8 @@ INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,3,6,NULL,2,NULL);
 INSERT INTO DETALLE_COMPRA VALUES (7,1200,1,3,6,NULL,13,NULL);
 
 INSERT INTO DETALLE_COMPRA VALUES (6,1200,1,3,6,NULL,14,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,25,6,NULL,2,NULL);
 
 
 update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
