@@ -97,6 +97,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idInscripcion.
+        /// </summary>
+        internal static string aliasIdInscripcion {
+            get {
+                return ResourceManager.GetString("aliasIdInscripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idPersona.
         /// </summary>
         internal static string aliasIdPersona {

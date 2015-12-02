@@ -169,4 +169,7 @@
     <value>M10_AsistentesAlEvento</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="aliasIdInscripcion" xml:space="preserve">
+    <value>idInscripcion</value>
+  </data>
 </root>
