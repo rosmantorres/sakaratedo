@@ -46,8 +46,8 @@ namespace DatosSKD.Modulo7
 
                   foreach (DataRow row in dt.Rows)
                   {
-
-                      //matricula.estado= row[RecursosBDModulo7.AliasEventoNombre].ToString();
+                      //matricula.ID = int.Parse(row[RecursosBDModulo7.AliasIdMatricula].ToString());
+                      matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
                       matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
                       matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
                   }

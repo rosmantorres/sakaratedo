@@ -68,12 +68,12 @@ namespace templateApp.GUI.Modulo7
                                 M7_Recursos.MensajeObjetoNuloLogger, new Exception());
                             }
                         }
-                        catch (ObjetoNuloException ex)
+                        catch (ObjetoNuloException)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
-                        catch (NumeroEnteroInvalidoException ex)
+                        catch (NumeroEnteroInvalidoException)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
