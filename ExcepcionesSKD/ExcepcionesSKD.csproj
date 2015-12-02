@@ -65,6 +65,7 @@
     <Compile Include="Modulo14\TipoPlanilllaRepetidaException.cs" />
     <Compile Include="Modulo14\URLImagenException.cs" />
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
+    <Compile Include="Modulo15\ErrorInputInterfaz.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />

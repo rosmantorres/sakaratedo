@@ -2804,12 +2804,8 @@ AS
         imp_stockmin,
         inv_cantidad_total,
         imp_estatus,
-        imp_descripcion,
-        DOJO_doj_id 
-          FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
-    WHERE imp.imp_estatus != 'Inactivo'
-    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
-    AND      INV.DOJO_doj_id= DOJ.doj_id
+        imp_descripcion
+          FROM  IMPLEMENTO 
   END
 
 GO
@@ -2827,3 +2823,385 @@ as
     
   end;
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
+
+
+--------------------------------------------------------------P R O C E D U R E S   M 7--------------------------------------------------------------------- 
+
+---------------- Procedimiento para Consultar un Horario ----------------
+CREATE PROCEDURE M7_ConsultarHorario	
+	@hor_id [int]		   
+AS
+ BEGIN
+	SELECT	hor_id as id, hor_fecha_inicio as fechaInicio, hor_fecha_fin as fechaFin,hor_hora_inicio as horaInicio, hor_hora_fin as horaFin
+	FROM	HORARIO H
+	WHERE	(H.hor_id=@hor_id) 
+	RETURN
+END
+GO
+
+---------------- Procedimiento para Consultar una Ubicacion ----------------
+CREATE PROCEDURE M7_ConsultaUbicacion
+			@idUbicacion int
+AS
+BEGIN
+	SELECT	U.ubi_id as id, U.ubi_ciudad as ciudad, U.ubi_estado as estado, U.ubi_direccion as direccion
+	FROM	UBICACION U
+	WHERE	U.ubi_id = @idUbicacion
+END
+GO
+
+
+---------------- Procedimiento para Consultar un Tipo de Evento ----------------
+CREATE PROCEDURE M7_ConsultaTipoEvento
+			@idTipoEvento int
+AS
+BEGIN
+	SELECT	TE.tip_id as id, TE.tip_nombre as nombre
+	FROM	TIPO_EVENTO TE
+	WHERE	TE.tip_id = @idTipoEvento
+END
+GO
+
+
+---------------- Procedimiento para Consultar los Eventos Asistidos de un Atleta ----------------
+CREATE PROCEDURE M7_ConsultarEventosAsistidos
+			@per_id int
+AS
+BEGIN
+	SELECT	E.eve_id as id, E.eve_nombre as nombre, E.eve_descripcion as descripcion, E.eve_costo as costo,E.eve_estado as estado, 
+			E.HORARIO_hor_id as idHorario, E.UBICACION_ubi_id as idUbicacion,E.TIPO_EVENTO_tip_id as idTipoEvento, I.ins_fecha as fechaInscripcion
+	FROM	EVENTO E, INSCRIPCION I, PERSONA P
+	WHERE	I.PERSONA_per_id = @per_id  AND I.PERSONA_per_id = P.per_id AND I.EVENTO_eve_id = E.eve_id
+END
+GO
+
+
+---------------- Procedimiento para Consultar las Competencias Asistidas de un Atleta ----------------
+CREATE PROCEDURE M7_ConsultarCompetenciasAsistidas
+			@per_id int
+AS
+BEGIN
+	SELECT	C.comp_id as id, C.comp_nombre as nombre, C.comp_tipo as tipo, C.comp_fecha_ini as fechaInicio,
+			C.comp_fecha_fin as fechaFin, C.UBICACION_comp_id as idUbicacion, C.comp_costo as costo
+	FROM	COMPETENCIA C, INSCRIPCION I, PERSONA P
+	WHERE	I.PERSONA_per_id = @per_id  AND I.PERSONA_per_id = P.per_id AND I.COMPETENCIA_comp_id = C.comp_id
+END
+GO
+
+
+---------------- Procedimiento para Consultar un Evento ----------------
+CREATE PROCEDURE M7_ConsultaEvento
+			@eve_id int
+AS
+BEGIN
+	SELECT	E.eve_id as id, E.eve_nombre as nombre, E.eve_descripcion as descripcion, E.eve_costo as costo,E.eve_estado as estado, 
+			E.HORARIO_hor_id as idHorario, E.UBICACION_ubi_id as idUbicacion,E.TIPO_EVENTO_tip_id as idTipoEvento
+	FROM	EVENTO E
+	WHERE	E.eve_id = @eve_id
+END
+GO
+
+
+---------------- Procedimiento para Consultas las Cintas de un Atleta ----------------
+CREATE PROCEDURE M7_ConsultarCintas
+			@per_id int
+AS
+BEGIN
+	SELECT	C.cin_id as id, C.cin_color_nombre as nombre, C.cin_rango as rango, C.cin_clasificacion as clasificacion,
+			C.cin_significado as significado, C.cin_orden as orden
+	FROM	CINTA C, HISTORIAL_CINTAS H, PERSONA P
+	WHERE	H.PERSONA_per_id = @per_id  AND H.CINTA_cin_id = C.cin_id AND H.PERSONA_per_id = P.per_id
+END
+GO
+
+
+---------------- Procedimiento para Consultasr la Fecha de Inscripcion de un Evento ----------------
+CREATE PROCEDURE M7_ConsultarFechaInscripcion
+			@per_id int,
+			@eve_id int
+AS
+BEGIN
+	SELECT	I.ins_fecha as fecha
+	FROM	INSCRIPCION I
+	WHERE	I.PERSONA_per_id = @per_id  AND I.EVENTO_eve_id = @eve_id AND I.ins_fecha < cast(cast(getdate() as date) as datetime)
+END
+GO
+
+
+
+---------------- Procedimiento para consultar la Fecha de la Cinta ----------------
+CREATE PROCEDURE M7_ConsultarFechaCinta
+			@per_id int,
+			@cin_id int
+AS
+BEGIN
+	SELECT	H.his_cin_fecha as fecha
+	FROM	HISTORIAL_CINTAS H
+	WHERE	H.PERSONA_per_id = @per_id  AND H.CINTA_cin_id = @cin_id AND H.his_cin_fecha < cast(cast(getdate() as date) as datetime)
+END
+GO
+
+
+
+---------------- Procedimiento para Consultar una Cinta ----------------
+CREATE PROCEDURE M7_ConsultaCinta
+			@cin_id int
+AS
+BEGIN
+	SELECT	C.cin_id as id, C.cin_color_nombre as nombre, C.cin_rango as rango, C.cin_clasificacion as clasificacion,
+			C.cin_significado as significado, C.cin_orden as orden
+	FROM	CINTA C
+	WHERE	C.cin_id = @cin_id
+END
+GO
+
+
+---------------- Procedimiento para Consultar la Última Cinta de una Persona ----------------
+CREATE PROCEDURE M7_ConsultarUltimaCinta
+			@per_id int
+AS
+BEGIN
+	SELECT	H.his_cin_fecha as fecha, C.cin_id as id, C.cin_color_nombre as nombre, C.cin_rango as rango, C.cin_clasificacion as clasificacion,
+			C.cin_significado as significado, C.cin_orden as orden
+	FROM	CINTA C, HISTORIAL_CINTAS H, PERSONA P
+	WHERE	H.PERSONA_per_id = @per_id  AND H.CINTA_cin_id = C.cin_id AND H.PERSONA_per_id = P.per_id
+			AND H.his_cin_fecha = (	SELECT	MAX(H.his_cin_fecha)
+									FROM	CINTA C, HISTORIAL_CINTAS H, PERSONA P
+									WHERE	H.PERSONA_per_id = @per_id  AND H.CINTA_cin_id = C.cin_id AND H.PERSONA_per_id = P.per_id)
+END
+GO
+
+
+---------------- Procedimiento para Consultar un Dojo ----------------
+CREATE PROCEDURE M7_ConsultaDojo
+			@doj_id int
+AS
+BEGIN
+	SELECT	D.doj_id as id, D.doj_nombre as nombre, D.doj_telefono as telefono,
+			D.doj_email as email, D.UBICACION_ubi_id as ubicacion, D.ORGANIZACION_org_id as organizacion
+	FROM	DOJO D
+	WHERE	D.doj_id = @doj_id
+END
+GO
+
+
+---------------- Procedimiento para Consultar una Organización ----------------
+CREATE PROCEDURE M7_ConsultaOrganizacion
+			@org_id int
+AS
+BEGIN
+	SELECT	O.org_id as id, O.org_nombre as nombre, O.org_direccion as direccion,
+			O.org_telefono as telefono, O.org_email as email
+	FROM	ORGANIZACION O
+	WHERE	O.org_id = @org_id
+END
+GO
+
+
+---------------- Procedimiento para Consultar Eventos Inscritos ----------------
+CREATE PROCEDURE M7_ConsultaEventoInscrito
+			@idAtleta int
+AS
+BEGIN
+	SELECT	E.eve_id as id, E.eve_nombre as nombre, E.eve_descripcion as descripcion, E.eve_costo as costo,E.eve_estado as estado,
+			E.HORARIO_hor_id as idHorario, E.UBICACION_ubi_id as idUbicacion,E.TIPO_EVENTO_tip_id as idTipoEvento, H.hor_fecha_inicio as Fecha_Inicio
+	FROM	EVENTO E, DETALLE_COMPRA DC, COMPRA_CARRITO CC, TIPO_EVENTO TE, HORARIO H
+	WHERE	E.eve_id = DC.EVENTO_eve_id and DC.COMPRA_CARRITO_com_id = CC.com_id and CC.PERSONA_per_id = @idAtleta and TE.tip_id = E.TIPO_EVENTO_tip_id and 
+			TE.tip_id != 4 and H.hor_id = E.HORARIO_hor_id and H.hor_fecha_inicio > cast(cast(getdate() as date) as datetime)
+
+END
+GO
+
+
+---------------- Procedimiento para Consultar las Competencias Inscritas ----------------
+CREATE PROCEDURE M7_ConsultaCompetenciaInscrita
+			@idAtleta int
+AS
+BEGIN
+	SELECT	C.comp_id as id, C.comp_nombre as nombre, C.comp_tipo as tipo, C.comp_fecha_ini as fechaInicio, C.comp_fecha_fin as fechaFin, 
+			C.comp_costo as costo, C.CATEGORIA_comp_id as idCategoria, C.UBICACION_comp_id as idUbicacion
+	FROM	COMPETENCIA C, INSCRIPCION I 
+	WHERE	C.comp_id = I.COMPETENCIA_comp_id and I.PERSONA_per_id = @idAtleta 
+END
+GO
+
+
+---------------- Procedimiento para Cconsultar Horario de Práctica ----------------
+CREATE PROCEDURE M7_ConsultaHorarioPractica
+			@idAtleta int
+AS
+BEGIN
+	SELECT	E.eve_id as id, E.eve_nombre as nombre, E.eve_descripcion as descripcion, E.eve_costo as costo,E.eve_estado as estado, 
+			E.HORARIO_hor_id as idHorario, E.UBICACION_ubi_id as idUbicacion,E.TIPO_EVENTO_tip_id as idTipoEvento
+	FROM	EVENTO E, DETALLE_COMPRA DC, COMPRA_CARRITO CC, TIPO_EVENTO TE
+	WHERE	E.eve_id = DC.EVENTO_eve_id and DC.COMPRA_CARRITO_com_id = CC.com_id and CC.PERSONA_per_id = @idAtleta and E.TIPO_EVENTO_tip_id = TE.tip_id 
+			and TE.tip_id = 4
+END
+GO
+
+
+
+---------------- Procedimiento que Consulta una Persona por Id ---------------- 
+CREATE PROCEDURE M7_ConsultaPersona
+			@idAtleta int
+AS
+BEGIN
+	SELECT	p.per_id as id, p.per_nombre as nombre, p.per_apellido as apellido, p.per_fecha_nacimiento as fechaNacimiento, 
+			p.per_direccion as direccion, p.DOJO_doj_id as idDojo
+	FROM	PERSONA p
+	WHERE	p.per_id = @idAtleta 
+END
+GO
+
+
+---------------- Procedimiento para consultar una Matricula----------------------
+CREATE PROCEDURE M7_ConsultarMatricula	
+			@mat_id [int]		   
+AS
+ BEGIN
+	
+	SELECT	mat_identificador as identificador, mat_id as id, mat_fecha_creacion as fechaPag, mat_fecha_ultimo_pago as fechaUltimoPago
+	FROM	MATRICULA m 
+	WHERE	(M.mat_id=@mat_id)  AND M.mat_fecha_ultimo_pago < cast(cast(getdate() as date) as datetime) 
+			AND M.mat_fecha_creacion < cast(cast(getdate() as date) as datetime)
+	RETURN
+END
+GO
+
+---------------- Procedimiento para Consultar el Id de una Matrícula Pagada por un Atleta----------------------
+CREATE PROCEDURE M7_ConsultarIdMatricula	
+			@per_id [int]		   
+AS
+ BEGIN
+	
+	SELECT	mat_id as id
+	FROM	MATRICULA m 
+	WHERE	(M.PERSONA_per_id=@per_id) 
+	RETURN
+END
+GO
+
+---------------- Procedimiento para Consultasr la Fecha de Pago de un Evento ----------------
+
+CREATE PROCEDURE M7_ConsultarFechaPagoEvento
+			@per_id int,
+			@eve_id int
+AS
+BEGIN
+	SELECT	C.com_fecha_compra as fecha
+	FROM	COMPRA_CARRITO C, DETALLE_COMPRA D
+	WHERE	C.PERSONA_per_id = @per_id  AND D.EVENTO_eve_id = @eve_id
+	AND     C.com_fecha_compra < cast(cast(getdate() as date) as datetime)
+END
+GO
+
+---------------- Procedimiento para Consultar el Estado de una Matricula Pagada por un Atleta ---------------- 
+CREATE PROCEDURE M7_ConsultarEstadoMatricula
+			@per_id [int]		   
+AS
+ BEGIN
+	
+	SELECT  mat_activa as status
+	FROM	MATRICULA m 
+	WHERE	(M.PERSONA_per_id=@per_id) 
+	RETURN
+END
+GO
+
+
+---------------- Procedimiento para Consultar Monto de Pago Detalle Compra Matrícula ----------------
+CREATE PROCEDURE M7_ConsultarMontoMatricula
+			@per_id int,
+			@mat_id int
+AS
+BEGIN
+	SELECT	d.det_precio as pago
+	FROM	DETALLE_COMPRA D 
+	WHERE	D.MATRICULA_mat_id = @mat_id  AND D.MATRICULA_per_id = @per_id
+	
+END
+GO
+
+
+---------------- Procedimiento para Consultar Monto de Pago Detalle Compra Evento ---------------
+CREATE PROCEDURE M7_ConsultarMontoEvento
+			@per_id int,
+			@eve_id int
+AS
+BEGIN
+	SELECT	d.det_precio as monto
+	FROM	DETALLE_COMPRA D , COMPRA_CARRITO C
+	WHERE   D.EVENTO_eve_id = @eve_id  AND C.PERSONA_per_id = @per_id
+	
+END
+GO
+
+
+---------------- Procedimiento para Consultas las Matrículas Pagas de los Atletas------
+CREATE PROCEDURE M7_ConsultarMatriculasPagas
+			@idAtleta int
+AS
+BEGIN
+	
+	SELECT	M.mat_id as id, M.mat_identificador as identificador, M.mat_fecha_creacion as fechaPag,
+			M.mat_fecha_ultimo_pago as fechaUltimoPago, D.det_precio as pago
+	FROM	MATRICULA M, PERSONA P, DETALLE_COMPRA D
+	WHERE	M.PERSONA_per_id = @idAtleta  AND M.PERSONA_per_id = P.per_id AND D.MATRICULA_mat_id  = M.mat_id
+			AND M.mat_fecha_ultimo_pago < cast(cast(getdate() as date) as datetime) AND M.mat_fecha_creacion < cast(cast(getdate() as date) as datetime)
+END
+GO
+
+
+
+---------------- Procedimiento para Consultas Eventos Pagos de los Atletas ----------------
+CREATE PROCEDURE M7_ConsultarEventosPagos
+			@idAtleta int
+AS
+BEGIN
+	SELECT	E.eve_id as id, E.eve_nombre as nombre, E.TIPO_EVENTO_tip_id as idTipoEvento, 
+	        D.det_precio as pago, D.COMPRA_CARRITO_com_id as idCarrito, C.com_tipo_pago as tipoPago, C.com_fecha_compra as fechaPago
+	FROM	EVENTO E, DETALLE_COMPRA D, PERSONA P, COMPRA_CARRITO C
+	WHERE	C.PERSONA_per_id = @idAtleta AND C.PERSONA_per_id = P.per_id AND D.COMPRA_CARRITO_com_id = C.com_id  AND  D.EVENTO_eve_id = E.eve_id  
+	        AND C.com_fecha_compra < cast(cast(getdate() as date) as datetime)
+END
+GO
+
+
+---------------- Procedimiento para Consultas las Competencias Pagas de los Atletas ----------------
+CREATE PROCEDURE M7_ConsultarCompetenciasPagas
+			@idAtleta int
+AS
+BEGIN
+	SELECT	C.comp_id as id, C.comp_nombre as nombre, C.comp_tipo as tipo, C.comp_costo as costo, I.ins_fecha as fechaInscripcion
+	       		
+	FROM	COMPETENCIA C, INSCRIPCION I, PERSONA P
+	WHERE	 (I.PERSONA_per_id = @idAtleta AND I.PERSONA_per_id = P.per_id AND I.COMPETENCIA_comp_id  = C.comp_id AND 
+	         I.ins_fecha < cast(cast(getdate() as date) as datetime))	
+END
+GO
+
+
+-------------------------------- Procedimiento para consultar una Competencia----------------------
+CREATE PROCEDURE M7_ConsultaCompetencia
+			@comp_id int
+AS
+BEGIN
+	SELECT	C.comp_id as id, C.comp_nombre as nombre, C.comp_tipo as tipo, C.comp_fecha_ini as fechaInicio, C.comp_fecha_fin as fechaFin,
+	C.comp_costo as costo, C.CATEGORIA_comp_id as idCategoria, C.UBICACION_comp_id as idUbicacion
+	FROM	COMPETENCIA C
+	WHERE	C.comp_id = @comp_id
+END
+GO
+
+---------------- Procedimiento para Consultas las Fecha de Inscripcion de una Competencia ----------------
+CREATE PROCEDURE M7_ConsultarFechaInscripcionCompetencia
+			@per_id int,
+			@com_id int
+AS
+BEGIN
+	SELECT	I.ins_fecha as fechaInscripcion	
+	FROM	INSCRIPCION I
+	WHERE	 (I.PERSONA_per_id = @per_id AND  I.COMPETENCIA_comp_id  = @com_id AND I.ins_fecha < cast(cast(getdate() as date) as datetime))	
+END
+GO
+---------------------------------------------------------------FIN M7--------------------------------------------------------------------------

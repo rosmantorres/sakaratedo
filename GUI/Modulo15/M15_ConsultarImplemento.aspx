@@ -217,15 +217,14 @@ Gesti&oacuten de Inventario
 							<div class="row">
                                 <div class="col-lg-6">
                                 <p id="nombre_articulo"> Nombre del Implemento:</p>
+                                <p id="tipo_articulo"> Tipo de Implemento:</p>
                                 <p id="talla_articulo"> Talla :</p>
                                 <p id="color_articulo"> Color :</p>
                                 <p id="marca_articulo"> Marca :</p>
-                                <p id="dojo_articulo"> Dojo :</p>
                                 <p id="cantidad_articulo"> Cantidad :</p>
                                 <p id="stock_minimo_articulo">Stock M&iacutenimo :</p>
                                 <p id="precio_articulo"> Precio Bs :</p>
                                 <p id="monto_total_articulo"> Monto Total Bs :</p> 
-                                <p id="proveedor_articulo">Proveedor :</p>
                                     </div>
                                 <div class="col-lg-4">
 
@@ -302,17 +301,15 @@ Gesti&oacuten de Inventario
                 // imprime en el modal la información
                 $('#modal-info').on('show.bs.modal', function (event) {
                     var modal = $(this)
-                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#dojo_articulo').text("Dojo: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().prev().prev().prev().text());
-                    modal.find('#stock_minimo_articulo').html("Stock M&iacutenimo :" + tr.prev().prev().prev().prev().prev().text());
-                    modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().prev().text());
-                    modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().prev().text());
-                    modal.find('#proveedor_articulo').text("Proveedor: " + tr.prev().text());
+                    modal.find('#nombre_articulo').text("Nombre Implemento: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#tipo_articulo').text("Tipo: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#talla_articulo').text("Talla: " + tr.prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#color_articulo').text("Color: " + tr.prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#marca_articulo').text("Marca: " + tr.prev().prev().prev().prev().prev().prev().prev().prev().text());
+                    modal.find('#cantidad_articulo').text("Cantidad :" + tr.prev().prev().prev().prev().prev().text());
+                    modal.find('#stock_minimo_articulo').html("Stock M&iacutenimo :" + tr.prev().prev().prev().prev().text());
+                    modal.find('#precio_articulo').text("Precio (Bs): " + tr.prev().prev().text());
+                    modal.find('#monto_total_articulo').text("Monto Total: " + tr.prev().text());
 
                 });
 

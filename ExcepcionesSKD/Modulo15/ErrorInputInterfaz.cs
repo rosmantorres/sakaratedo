@@ -4,28 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcepcionesSKD.Modulo1
+namespace ExcepcionesSKD.Modulo15
 {
-    public class HashException : ExceptionSKD
+    public class ErrorInputInterfaz : ExceptionSKD
     {
-        public HashException()
+        
+        public ErrorInputInterfaz()
             : base()
         { }
 
-        public HashException(string message)
+        public ErrorInputInterfaz(string message)
             : base(message)
         {
         }
 
-        public HashException(string message, Exception inner)
+        public ErrorInputInterfaz(string message, Exception inner)
             : base(message, inner)
         {
         }
 
-        public HashException(string codigo, string message, Exception inner)
+        public ErrorInputInterfaz(string codigo, string message, Exception inner)
             : base(codigo, message, inner)
         {
         }
-
     }
 }
