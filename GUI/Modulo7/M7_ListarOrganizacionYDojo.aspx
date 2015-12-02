@@ -8,13 +8,9 @@
 		    <li>
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
-		
-		    <li>
-			    <a href="M7_ConsultarCintas.aspx">Consultar Cintas</a> 
-		    </li>
 
 		    <li class="active">
-			    Detallar Cinta
+			    Consultar Organizacion y Dojo
 		    </li>
 	    </ol>
     </div>
