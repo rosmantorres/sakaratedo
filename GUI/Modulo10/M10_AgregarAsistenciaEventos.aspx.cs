@@ -66,9 +66,18 @@ namespace templateApp.GUI.Modulo10
         protected void calendar_DayRender(object sender, DayRenderEventArgs e)
         {
             DateTime fecha = DateTime.Parse("2015-12-10");
+            DateTime fecha1 = DateTime.Parse("2015-12-15");
+            DateTime fecha2 = DateTime.Parse("2015-12-24");
+            DateTime fecha3 = DateTime.Parse("2015-12-06");
             if (e.Day.IsSelected)
                 e.Cell.BackColor = Color.Red;
             else if (e.Day.Date == fecha)
+                e.Cell.BackColor = Color.Blue;
+            else if (e.Day.Date == fecha1)
+                e.Cell.BackColor = Color.Blue;
+            else if (e.Day.Date == fecha2)
+                e.Cell.BackColor = Color.Blue;
+            else if (e.Day.Date == fecha3)
                 e.Cell.BackColor = Color.Blue;
         }
 
