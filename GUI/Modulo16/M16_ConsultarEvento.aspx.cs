@@ -52,7 +52,7 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
                         this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_EVENTO + c.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO + c.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_EVENTO_CARRITO + c.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }

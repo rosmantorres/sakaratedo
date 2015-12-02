@@ -131,23 +131,31 @@
 						<div class="container-fluid" id="info1">
 							<div class="row">
                                 <h3>Imagen</h3>
-									<h4><input type="text" id="beta" value=""/></h4>
+									<img src="" id="beta" />
+                                   
                                 <h3>Nombre</h3>
-                                    <h4><input type="text" id="beta1" value="" /></h4>
+                                    <label id="aux1" ></label>
+                                    
 								<h3>Tipo Implemento</h3>
-                                    <h4><input type="text" id="beta2" value="" /></h4>
+                                    <label id="aux2" ></label>
+                                    
                                 <h3>Marca</h3>
-                                    <h4><input type="text" id="beta3" value="" /></h4>
+                                    <label id="aux3" ></label>
+                                   
                                 <h3>Color</h3>
-                                    <h4><input type="text" id="beta4" value="" /></h4>
+                                    <label id="aux4" ></label>
+                                    
                                 <h3>Talla</h3>
-                                    <h4><input type="text" id="beta5" value="" /></h4>
+                                    <label id="aux5" ></label>
+                                    
                                 <h3>Status</h3>
-                                    <h4><input type="text" id="beta6" value="" /></h4>
+                                    <label id="aux6" ></label>
+                                    
                                 <h3>Precio</h3>
-                                    <h4><input type="text" id="beta7" value="" /></h4>
+                                    <label id="aux7" ></label>
+                                    
                                 <h3>Descripcion</h3>
-                                    <h4><input type="text" id="beta8" value="" /></h4>
+                                    <label id="aux8" ></label>
 							</div>
 						</div>
 					</div>
@@ -167,13 +175,13 @@
 						<div class="container-fluid" id="info2">
 							<div class="row">
                                 <h3>Id</h3>
-									<h4><input type="text" id="beta9" value=""/></h4>
+                                    <label id="aux9" ></label>
                                 <h3>Nombre</h3>
-									<h4><input type="text" id="beta10" value=""/></h4>
+									 <label id="aux10" ></label>
                                 <h3>Descripcion</h3>
-									<h4><input type="text" id="beta11" value=""/></h4>
+									 <label id="aux11" ></label>
                                 <h3>Costo</h3>
-									<h4><input type="text" id="beta12" value=""/></h4>
+									 <label id="aux12" ></label>
 
 							</div>
 						</div>
@@ -237,13 +245,7 @@
             <div class="col-sm-10 col-md-10 col-lg-10">
                  <div class="dropdown" runat="server" id="div1">
                      </div>
-             <%--     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"   onchange="example()"  runat="server" >
-                     <asp:ListItem Enabled="true" Text="Seleccione" Value="-1"></asp:ListItem>
-                     <asp:ListItem Text="Tarjeta" Value="1"></asp:ListItem>
-                     <asp:ListItem Text="Deposito" Value="2"></asp:ListItem>
-                     <asp:ListItem Text="Transferencia" Value="3"></asp:ListItem>
-               </asp:DropDownList>
-              --%>
+            
                  <div class="btn-group">
             
                                 <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
@@ -328,7 +330,7 @@
 
 
     </form>
-        </div>
+      
 
 
 <!--VALIDACION PARA EL MODAL DE PAGO-->
@@ -337,6 +339,8 @@
 
         function example() {
             if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
+
+             
 
                 $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
                 $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
@@ -358,6 +362,10 @@
                 $('#<%=Text8.ClientID %>').val('');
                 $('#<%=Text9.ClientID %>').val('');
                 $('#<%=Text10.ClientID %>').val('');
+                
+
+                //  $().hide() para esconder campo.
+                //     .show() para mostrar campo.
             }
             else
                 if ($('#<%=DropDownList1.ClientID %>').val() == 1) {
@@ -548,15 +556,15 @@
 
                             console.log(aa);
 
-                            $("#beta").val(aa.Imagen_implemento);
-                            $("#beta1").val(aa.Nombre_Implemento);
-                            $("#beta2").val(aa.Tipo_Implemento);
-                            $("#beta3").val(aa.Marca_Implemento);
-                            $("#beta4").val(aa.Color_Implemento);
-                            $("#beta5").val(aa.Talla_Implemento);
-                            $("#beta6").val(aa.Estatus_Implemento);
-                            $("#beta7").val(aa.Precio_Implemento);
-                            $("#beta8").val(aa.Descripcion_Implemento);
+                            $("#beta").attr("src", aa.Imagen_implemento);
+                            $("#aux1").html(aa.Nombre_implemento);
+                            $("#aux2").html(aa.Tipo_Implemento);
+                            $("#aux3").html(aa.Marca_Implemento);
+                            $("#aux4").html(aa.Color_Implemento);
+                            $("#aux5").html(aa.Talla_Implemento);
+                            $("#aux6").html(aa.Estatus_Implemento);
+                            $("#aux7").html(aa.Precio_Implemento);
+                            $("#aux8").html(aa.Descripcion_Implemento);
 
                         }
                     });
@@ -580,10 +588,10 @@
                             var aa = JSON.parse(data.d);
                             console.log(aa);
 
-                            $("#beta9").val(aa.Id_evento);
-                            $("#beta10").val(aa.Nombre);
-                            $("#beta11").val(aa.Descripcion);
-                            $("#beta12").val(aa.Costo);
+                            $("#aux9").html(aa.Id_evento);
+                            $("#aux10").html(aa.Nombre);
+                            $("#aux11").html(aa.Descripcion);
+                            $("#aux12").html(aa.Costo);
 
                         }
                     });

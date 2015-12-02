@@ -44,7 +44,7 @@ namespace templateApp.GUI.Modulo16
 
 
 
-            #region Llenar Data Table Con Matriculas
+        #region Llenar Data Table Con Matriculas
 
             Logicamatricula logComp = new Logicamatricula();
             if (!IsPostBack)
@@ -65,7 +65,7 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.UltimaFechaPago.ToString() + M16_Recursointerfaz.CERRAR_TD;
 
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_CARRITO + m.ID + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_MATRICULA_CARRITO + m.ID + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
 
@@ -82,7 +82,6 @@ namespace templateApp.GUI.Modulo16
             }
         }
             #endregion
-
 
         #region Llamada para gregar a carrito
         protected void agregarMatriculaAcarrito(int usuario, int idMatricula)

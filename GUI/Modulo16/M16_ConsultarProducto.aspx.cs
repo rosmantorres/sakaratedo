@@ -8,18 +8,23 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo16;
 using System.Web.Script.Serialization;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo16
 {
     public partial class M16_ConsultarProducto : System.Web.UI.Page
     {
         private List<Implemento> laLista = new List<Implemento>();
+
+        public static int usuario = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "16";
 
+           // M16_ConsultarProducto.usuario = Session["'" + RecursosInterfazMaster.sessionUsuarioID+ "'"] != null ? (int)Session["'" + RecursosInterfazMaster.sessionUsuarioID + "'"] : 0;
+            M16_ConsultarProducto.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()); 
+
             String detalleString = Request.QueryString["impDetalle"];
-            String usuario = Request.QueryString["compAgregar"];
             String producto = Request.QueryString["compAgregar"];
 
             if (detalleString != null)
@@ -29,7 +34,7 @@ namespace templateApp.GUI.Modulo16
 
             if (usuario != null && producto != null)
             {
-                agregarImplementoAcarrito(1, 1);
+               // agregarImplementoAcarrito(1, 1);
             }
 
             #region Llenar Data Table Con Inventario
@@ -63,12 +68,11 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio_Implemento.ToString() 
                             + M16_Recursointerfaz.CERRAR_TD;
 
-                        //Agrego los botones
+                        //Agrego los botones y combo
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento 
-                            + M16_Recursointerfaz.BOTON_CERRAR;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO + c.Id_Implemento 
-                            + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.COMBOCANTIDAD + c.Id_Implemento.ToString() + "_combo" + M16_Recursointerfaz.CERRAR_COMBO;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento  + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO_2 + c.Id_Implemento + "_" + c.Precio_Implemento + M16_Recursointerfaz.BOTON_CERRAR_IMPLEMENTO_CARRITO_2;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
 
                         //Cierro la fila creada
@@ -136,14 +140,19 @@ namespace templateApp.GUI.Modulo16
         }
         #endregion
 
-
-        #region Llenado del Modal para agregar el producto al carrito
+        #region Agregar el producto al carrito
         [System.Web.Services.WebMethod]
-        protected void agregarImplementoAcarrito(int usuario, int idImplemento)
+        public static string agregarImplementoAcarrito(int idImplemento, int cantidad, float precio)
         {
-            bool agregar = false;
+
             Logicacarrito logica = new Logicacarrito();
+
+            bool agregar = false;
+           
             agregar = logica.agregarInventarioaCarrito(usuario, idImplemento, 1, 2);
+
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(agregar);
+            return json;
         }
         #endregion
     }

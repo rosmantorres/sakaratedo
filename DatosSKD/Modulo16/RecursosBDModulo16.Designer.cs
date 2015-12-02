@@ -304,6 +304,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to estado.
+        /// </summary>
+        internal static string PARAMETRO_ESTADO_COMPRA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_ESTADO_COMPRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to impEstatus.
         /// </summary>
         internal static string PARAMETRO_ESTATUS {
@@ -318,6 +327,24 @@ namespace DatosSKD.Modulo16 {
         internal static string PARAMETRO_EXITO {
             get {
                 return ResourceManager.GetString("PARAMETRO_EXITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fecha.
+        /// </summary>
+        internal static string PARAMETRO_FECHA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_FECHA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idCompra.
+        /// </summary>
+        internal static string PARAMETRO_ID_COMPRA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_ID_COMPRA", resourceCulture);
             }
         }
         
@@ -462,6 +489,15 @@ namespace DatosSKD.Modulo16 {
         internal static string PARAMETRO_TIPO_ITEM {
             get {
                 return ResourceManager.GetString("PARAMETRO_TIPO_ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tipoPago.
+        /// </summary>
+        internal static string PARAMETRO_TIPO_PAGO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_TIPO_PAGO", resourceCulture);
             }
         }
         

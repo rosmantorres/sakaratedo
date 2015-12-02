@@ -9,6 +9,7 @@ using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
 
+
 namespace LogicaNegociosSKD.Modulo16
 {
     /// <summary>
@@ -228,6 +229,9 @@ namespace LogicaNegociosSKD.Modulo16
             else
                 return carritoBD.modificarCarritoEvento(idUsuario,idItem,cantidad);
         }
+
+
+
         #endregion
     }
 }

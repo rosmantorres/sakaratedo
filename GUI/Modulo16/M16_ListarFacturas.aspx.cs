@@ -9,16 +9,19 @@ using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo16;
 using templateApp.GUI.Master;
 
+
 namespace templateApp.GUI.Modulo16
 {
     public partial class M16_ListarFacturas : System.Web.UI.Page
     {
         private List<Compra> laLista = new List<Compra>();
-        private int idPersona;
-       
+        public static int usuario = 0;
+         
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "16";
+
+            M16_ListarFacturas.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()); 
 
             String detalleString = Request.QueryString["impDetalle"];
 
@@ -34,7 +37,7 @@ namespace templateApp.GUI.Modulo16
             {
                 try
                 {
-                    laLista = logComp.obtenerListaDeCompra(idPersona);
+                    laLista = logComp.obtenerListaDeCompra(usuario);
                     foreach (Compra c in laLista)
                     {
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR;
@@ -46,7 +49,7 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Com_estado.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Com_id + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_IMPRIMIR_FACTURA + c.Com_id + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }

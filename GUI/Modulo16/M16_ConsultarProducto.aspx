@@ -51,6 +51,7 @@
 					<th style="text-align:left">Marca</th>
                     <th style="text-align:left">Tipo</th>
 					<th style="text-align:left">Precio</th>
+                    <th style="text-align:left">Cantidad</th>
 					<th style="text-align:left">Acciones</th>
 				</tr>
 		</thead>
@@ -72,24 +73,34 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
+                                
                                 <h3>Imagen</h3>
-									<h4><input type="text" id="beta" value=""/></h4>
+									<img src="" id="beta" />
+                                   
                                 <h3>Nombre</h3>
-                                    <h4><input type="text" id="beta1" value="" /></h4>
+                                    <label id="aux1" ></label>
+                                    
 								<h3>Tipo Implemento</h3>
-                                    <h4><input type="text" id="beta2" value="" /></h4>
+                                    <label id="aux2" ></label>
+                                    
                                 <h3>Marca</h3>
-                                    <h4><input type="text" id="beta3" value="" /></h4>
+                                    <label id="aux3" ></label>
+                                   
                                 <h3>Color</h3>
-                                    <h4><input type="text" id="beta4" value="" /></h4>
+                                    <label id="aux4" ></label>
+                                    
                                 <h3>Talla</h3>
-                                    <h4><input type="text" id="beta5" value="" /></h4>
+                                    <label id="aux5" ></label>
+                                    
                                 <h3>Status</h3>
-                                    <h4><input type="text" id="beta6" value="" /></h4>
+                                    <label id="aux6" ></label>
+                                    
                                 <h3>Precio</h3>
-                                    <h4><input type="text" id="beta7" value="" /></h4>
+                                    <label id="aux7" ></label>
+                                    
                                 <h3>Descripcion</h3>
-                                    <h4><input type="text" id="beta8" value="" /></h4>
+                                    <label id="aux8" ></label>
+                                    
 							</div>
 						</div>
 					</div>
@@ -101,6 +112,57 @@
     <script src="js/Validacion.js"></script>
 
          <script type="text/javascript">
+             // Funcionalidad para el boton Agregar Producto al Carrito
+             function prueba3(e) {
+
+                 debugger
+
+                 if (e != undefined) {
+
+                     var arrayConDatosDelProducto = e.id.split("_");
+
+                     //Obtenemos el id del boton presionado.
+                     var aux = $("#" + arrayConDatosDelProducto[0] + "_combo");
+
+                     //Creamos un objeto con los datos a ser enviado al servidor.
+                     var producto = {
+                         idImplemento: arrayConDatosDelProducto[0],
+                         cantidad: aux.val(),
+                         precio: arrayConDatosDelProducto[1]
+                     }
+
+                     var datos = JSON.stringify(producto);
+
+                     if (aux != undefined) {
+
+                         $.ajax({
+                             cache: false,
+                             type: 'POST',
+                             url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/agregarImplementoAcarrito',
+                             data: datos,
+                             dataType: 'json',
+                             contentType: "application/json; charset=utf-8",
+
+                             success: function (data) {
+                                 debugger
+
+                                 console.log("Exito:" + data);
+
+                                 var aa = JSON.parse(data.d);
+
+                                 alert("Peticion ajax exitosa:" + aa);
+
+
+                             }
+
+                         });
+
+                     }
+                 }
+
+             }
+
+
              $(document).ready(function () {
 
                  var table = $('#tablaproducto').DataTable({
@@ -140,6 +202,8 @@
 
                  });
 
+                 
+
                  // Carga el modal con la informacion del producto de acuerdo al id
                  $('#modal-info1').on('show.bs.modal', function (e) {
 
@@ -160,15 +224,24 @@
 
                              console.log(aa);
 
-                             $("#beta").val(aa.Imagen_implemento);
-                             $("#beta1").val(aa.Nombre_Implemento);
-                             $("#beta2").val(aa.Tipo_Implemento);
-                             $("#beta3").val(aa.Marca_Implemento);
-                             $("#beta4").val(aa.Color_Implemento);
-                             $("#beta5").val(aa.Talla_Implemento);
-                             $("#beta6").val(aa.Estatus_Implemento);
-                             $("#beta7").val(aa.Precio_Implemento);
-                             $("#beta8").val(aa.Descripcion_Implemento);
+                            // $("#beta1").val(aa.Nombre_implemento);
+                             
+                             $("#beta").attr("src", aa.Imagen_implemento);
+                             $("#aux1").html(aa.Nombre_implemento);
+                             $("#aux2").html(aa.Tipo_Implemento);
+                             $("#aux3").html(aa.Marca_Implemento);
+                             $("#aux4").html(aa.Color_Implemento);
+                             $("#aux5").html(aa.Talla_Implemento);
+                             $("#aux6").html(aa.Estatus_Implemento);
+                             $("#aux7").html(aa.Precio_Implemento);
+                             $("#aux8").html(aa.Descripcion_Implemento);
+
+                          //   $("#beta2").val(aa.Tipo_Implemento);
+                           //  $("#beta3").val(aa.Marca_Implemento);
+                         //    $("#beta4").val(aa.Color_Implemento);
+                          //   $("#beta5").val(aa.Talla_Implemento);
+                          //   $("#beta7").val(aa.Precio_Implemento);
+                           //  $("#beta8").val(aa.Descripcion_Implemento);
 
                          }
                      });

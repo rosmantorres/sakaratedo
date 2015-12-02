@@ -71,13 +71,13 @@
 						<div class="container-fluid" id="info1">
 							<div class="row">
 								<h3>Id</h3>
-									<h4><input type="text" id="beta" value=""/></h4>
+                                    <label id="aux1" ></label>
                                 <h3>Nombre</h3>
-									<h4><input type="text" id="beta1" value=""/></h4>
+									 <label id="aux2" ></label>
                                 <h3>Descripcion</h3>
-									<h4><input type="text" id="beta2" value=""/></h4>
+									 <label id="aux3" ></label>
                                 <h3>Costo</h3>
-									<h4><input type="text" id="beta3" value=""/></h4>
+									 <label id="aux4" ></label>
 
 							</div>
 						</div>
@@ -145,10 +145,10 @@
                              var aa = JSON.parse(data.d);
                              console.log(aa);
 
-                             $("#beta").val(aa.Id_evento);
-                             $("#beta1").val(aa.Nombre);
-                             $("#beta2").val(aa.Descripcion);
-                             $("#beta3").val(aa.Costo);
+                             $("#aux1").html(aa.Id_evento);
+                             $("#aux2").html(aa.Nombre);
+                             $("#aux3").html(aa.Descripcion);
+                             $("#aux4").html(aa.Costo);
 
                          }
                      });

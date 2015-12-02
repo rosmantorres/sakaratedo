@@ -44,13 +44,11 @@
        <table id="tablafactura" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:right">Id</th>
-                    <th style="text-align:right">Imagen</th>
-                    <th style="text-align:right">Nombre</th>
-					<th style="text-align:right">Marca</th>
-                    <th style="text-align:right">Tipo</th>
-					<th style="text-align:right">Precio</th>
-					<th style="text-align:right">Acciones</th>
+					<th style="text-align:left">Id Factura</th>
+                    <th style="text-align:left">Tipo de Pago</th>
+                    <th style="text-align:left">Fecha de la Compra</th>
+					<th style="text-align:left">Estado de la Compra</th>
+					<th style="text-align:left">Acciones</th>
 				</tr>
 		</thead>
 			<tbody>

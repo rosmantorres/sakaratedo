@@ -64,10 +64,7 @@
                 <asp:Literal runat="server" ID="laTabla"></asp:Literal>
                
 		    </tbody>
-                  <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server"  class="btn btn-primary" type="button"  onclick="$('#modal-info1').modal('hide'); $('#prueba').show();"  >Agregar al Carrito</button>
-                                          
-			                            </div>
+                  
              </table>
           </div>
           </div>

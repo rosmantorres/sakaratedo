@@ -344,4 +344,16 @@
     <value>@pago</value>
     <comment>Tipo de pago a ser hecha la compra</comment>
   </data>
+  <data name="PARAMETRO_ESTADO_COMPRA" xml:space="preserve">
+    <value>estado</value>
+  </data>
+  <data name="PARAMETRO_FECHA" xml:space="preserve">
+    <value>fecha</value>
+  </data>
+  <data name="PARAMETRO_ID_COMPRA" xml:space="preserve">
+    <value>idCompra</value>
+  </data>
+  <data name="PARAMETRO_TIPO_PAGO" xml:space="preserve">
+    <value>tipoPago</value>
+  </data>
 </root>

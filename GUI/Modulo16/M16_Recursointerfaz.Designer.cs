@@ -115,11 +115,29 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M16_ConsultarProducto.aspx?accion=1&amp;id=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-success glyphicon glyphicon-shopping-cart&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
         /// </summary>
-        internal static string BOTON_AGREGAR_IMPLEMENTO_CARRITO {
+        internal static string BOTON_AGREGAR_EVENTO_CARRITO {
             get {
-                return ResourceManager.GetString("BOTON_AGREGAR_IMPLEMENTO_CARRITO", resourceCulture);
+                return ResourceManager.GetString("BOTON_AGREGAR_EVENTO_CARRITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-success glyphicon glyphicon-shopping-cart&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
+        /// </summary>
+        internal static string BOTON_AGREGAR_IMPLEMENTO_CARRITO_2 {
+            get {
+                return ResourceManager.GetString("BOTON_AGREGAR_IMPLEMENTO_CARRITO_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-success glyphicon glyphicon-shopping-cart&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
+        /// </summary>
+        internal static string BOTON_AGREGAR_MATRICULA_CARRITO {
+            get {
+                return ResourceManager.GetString("BOTON_AGREGAR_MATRICULA_CARRITO", resourceCulture);
             }
         }
         
@@ -129,6 +147,15 @@ namespace templateApp.GUI.Modulo16 {
         internal static string BOTON_CERRAR {
             get {
                 return ResourceManager.GetString("BOTON_CERRAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BOTON_CERRAR_IMPLEMENTO_CARRITO_2 {
+            get {
+                return ResourceManager.GetString("BOTON_CERRAR_IMPLEMENTO_CARRITO_2", resourceCulture);
             }
         }
         
@@ -165,6 +192,15 @@ namespace templateApp.GUI.Modulo16 {
         internal static string BOTON_ELIMINAR_ACCION_MATRICULA {
             get {
                 return ResourceManager.GetString("BOTON_ELIMINAR_ACCION_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon glyphicon-print&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
+        /// </summary>
+        internal static string BOTON_IMPRIMIR_FACTURA {
+            get {
+                return ResourceManager.GetString("BOTON_IMPRIMIR_FACTURA", resourceCulture);
             }
         }
         
@@ -214,6 +250,16 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;&gt;&lt;option value=1&gt;1&lt;/option&gt;&lt;option value=2&gt;2&lt;/option&gt;&lt;option value=3&gt;3&lt;/option&gt;&lt;option value=4&gt;4&lt;/option&gt;&lt;option value=5&gt;5&lt;/option&gt;&lt;option value=6&gt;6&lt;/option&gt;&lt;option value=7&gt;7&lt;/option&gt;&lt;option value=8&gt;8&lt;/option&gt;&lt;option value=9&gt;9&lt;/option&gt;&lt;option value=10&gt;10&lt;/option&gt; class=&quot;form-control&quot;
+        ///&lt;/select&gt;.
+        /// </summary>
+        internal static string CERRAR_COMBO {
+            get {
+                return ResourceManager.GetString("CERRAR_COMBO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;/td&gt;.
         /// </summary>
         internal static string CERRAR_TD {
@@ -228,6 +274,15 @@ namespace templateApp.GUI.Modulo16 {
         internal static string CERRAR_TR {
             get {
                 return ResourceManager.GetString("CERRAR_TR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select   id=&apos;.
+        /// </summary>
+        internal static string COMBOCANTIDAD {
+            get {
+                return ResourceManager.GetString("COMBOCANTIDAD", resourceCulture);
             }
         }
     }

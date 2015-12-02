@@ -59,10 +59,10 @@ namespace DatosSKD.Modulo16
                 {
                     Compra laCompra = new Compra();
 
-                    laCompra.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
-                    laCompra.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
-                    laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
-                    laCompra.Com_estado = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+                    laCompra.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_COMPRA].ToString());
+                    laCompra.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_TIPO_PAGO].ToString();
+                    laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAMETRO_FECHA].ToString());
+                    laCompra.Com_estado = row[RecursosBDModulo16.PARAMETRO_ESTADO_COMPRA].ToString();
 
                     laListaDeCompra.Add(laCompra);
 
