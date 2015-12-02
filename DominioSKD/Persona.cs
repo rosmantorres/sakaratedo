@@ -115,6 +115,11 @@ namespace DominioSKD
         /// id del Dojo de la persona
         /// </summary>
         private int _dojoPersona;
+
+        /// <summary>
+        /// Objeto Inscripcion
+        /// </summary>
+        private Inscripcion _inscripcion;
         #endregion
 
         #region Constructores
@@ -192,6 +197,12 @@ namespace DominioSKD
         {
             set { this._contatoEmergencia = value; }
             get { return this._contatoEmergencia; }
+        }
+
+        public Inscripcion Inscripcion
+        {
+            get { return _inscripcion; }
+            set { _inscripcion = value; }
         }
 
         /// <summary>
