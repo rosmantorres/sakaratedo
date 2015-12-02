@@ -23,58 +23,59 @@ namespace DatosSKD.Modulo14
             SqlConnection conect = con.Conectar();
             List<DominioSKD.SolicitudPlanilla> lista = new List<DominioSKD.SolicitudPlanilla>();
             SolicitudPlanilla solicitud;
-            
-               try
-               {
 
-                    SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarSolicitudPlanilla, conect);
-                    sqlcom.CommandType = CommandType.StoredProcedure;
-                    sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroPersonaPerId, idPersona));
+            try
+            {
 
-                    SqlDataReader leer;
-                    conect.Open();
+                SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarSolicitudPlanilla, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroPersonaPerId, idPersona));
 
-                    leer = sqlcom.ExecuteReader();
-                    if (leer != null)
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
                     {
-                        while (leer.Read())
-                        {
-                            solicitud = new SolicitudPlanilla();
-                            DominioSKD.Planilla planilla = new Planilla();
-                            solicitud.Planilla = planilla;
-                            solicitud.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdSolicitud]);
-                            solicitud.FechaCreacion = Convert.ToDateTime(leer[RecursosBDModulo14.AtributoFechaCreacion]);
-                            solicitud.FechaRetiro = Convert.ToDateTime(leer[RecursosBDModulo14.AtributoFechaRetiro]);
-                            solicitud.FechaReincorporacion = Convert.ToDateTime(leer[RecursosBDModulo14.AtributoFechaReincorporacion]);
-                            solicitud.Motivo = leer[RecursosBDModulo14.AtributoMotivo].ToString();
-                            solicitud.Planilla.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdPlanillaDatos]);
-                            solicitud.Planilla.Nombre = leer[RecursosBDModulo14.AtributoNombrePlanilla].ToString();
-                            solicitud.Planilla.TipoPlanilla = leer[RecursosBDModulo14.AtributoTipo].ToString();
-                            if(leer[RecursosBDModulo14.AtributoEventoNombre].ToString()!="")
-                                solicitud.Evento = leer[RecursosBDModulo14.AtributoEventoNombre].ToString();
-                            else
-                                solicitud.Evento = leer[RecursosBDModulo14.AtributoCompetenciaNombre].ToString();
-                            lista.Add(solicitud);
-                            planilla = null;
-                            solicitud = null;
-                            
-                        }
+                        solicitud = new SolicitudPlanilla();
+                        DominioSKD.Planilla planilla = new Planilla();
+                        solicitud.Planilla = planilla;
+                        solicitud.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdSolicitud]);
+                        solicitud.IdInscripcion = Convert.ToInt32(leer[RecursosBDModulo14.AtributoInscripcion]);
+                        solicitud.FechaCreacion = Convert.ToDateTime(leer[RecursosBDModulo14.AtributoFechaCreacion]);
+                        solicitud.FechaRetiro = Convert.ToDateTime(leer[RecursosBDModulo14.AtributoFechaRetiro]);
+                        solicitud.FechaReincorporacion = Convert.ToDateTime(leer[RecursosBDModulo14.AtributoFechaReincorporacion]);
+                        solicitud.Motivo = leer[RecursosBDModulo14.AtributoMotivo].ToString();
+                        solicitud.Planilla.ID = Convert.ToInt32(leer[RecursosBDModulo14.AtributoIdPlanillaDatos]);
+                        solicitud.Planilla.Nombre = leer[RecursosBDModulo14.AtributoNombrePlanilla].ToString();
+                        solicitud.Planilla.TipoPlanilla = leer[RecursosBDModulo14.AtributoTipo].ToString();
+                        if (leer[RecursosBDModulo14.AtributoEventoNombre].ToString() != "")
+                            solicitud.Evento = leer[RecursosBDModulo14.AtributoEventoNombre].ToString();
+                        else
+                            solicitud.Evento = leer[RecursosBDModulo14.AtributoCompetenciaNombre].ToString();
+                        lista.Add(solicitud);
+                        planilla = null;
+                        solicitud = null;
 
-                        return lista;
                     }
+
+                    return lista;
+                }
                 else
-                   {
-                       return null;
-                    }
-                }
-                catch (Exception ex)
                 {
-                    throw ex;
+                    return null;
                 }
-                finally
-                {
-                    con.Desconectar(conect);
-                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Desconectar(conect);
+            }
         }
 
         /// <summary>

@@ -19,7 +19,13 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Retorna una lista con todas las planillas registradas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillas()
         {
-            return datos.ConsultarPlanillasCreadas();
+            List<DominioSKD.Planilla> listaplanilla = new List<DominioSKD.Planilla>();
+            listaplanilla = datos.ConsultarPlanillasCreadas();
+            foreach (DominioSKD.Planilla planilla in listaplanilla)
+            {
+                planilla.Dato = BDPlanilla.ObtenerDatosPlanillaID1(planilla.ID);
+            }
+            return listaplanilla;
         }
         /// <summary>Para obtener el tipo de planilla</summary>
         /// <returns>Regresa una lista de planillas</returns>

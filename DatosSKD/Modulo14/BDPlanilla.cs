@@ -389,7 +389,41 @@ namespace DatosSKD.Modulo14
             return listDatos;
         }
 
+        /// <summary>
+        /// Obtiene los datos de una planilla id
+        /// </summary>
+        /// /// <param name="idPlanilla">id planilla</param>
+        /// <returns>datos de una planilla</returns>
+        public static List<String> ObtenerDatosPlanillaID1(int idPlanilla)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+            List<String> listDatos = new List<String>();
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdPlanilla,
+                SqlDbType.VarChar, idPlanilla.ToString(), false);
+                parametros.Add(parametro);
 
+                DataTable resultadoConsulta = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo14.ProcedureConsultarDatosPlanillaId, parametros);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listDatos.Add(row[RecursosBDModulo14.AtributoNombre_Dato].ToString());
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return listDatos;
+        }
         /// <summary>
         /// Modifica una planilla en la base de datos
         /// </summary>
