@@ -152,7 +152,7 @@
 						                    <% { %>
                                                 <%if ((opcion != null) && (opcion != Session["rol"].ToString()))%>
                                                  <% { %>
-							                    <li role="presentation"><a href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol="+opcion ) %>" class="rolButton"><%=opcion %></a></li>
+							                    <li role="presentation"><a href="<%=Page.ResolveUrl("~/GUI/Master/Inicio.aspx?rol="+ cripto.EncriptarCadenaDeCaracteres(opcion,DES)) %>" class="rolButton"><%=opcion %></a></li>
 						                         <% }%>
                                              <% } %> 
                             </ul> 

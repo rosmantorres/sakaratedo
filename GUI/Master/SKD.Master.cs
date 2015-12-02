@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
 using templateApp.GUI.Modulo1;
 using DominioSKD;
+using LogicaNegociosSKD.Modulo2;
 
 namespace templateApp
 {
@@ -16,6 +17,8 @@ namespace templateApp
     {
         private string idModulo;
         public Cuenta userLogin = new Cuenta();
+        public string DES=RecursosLogicaModulo2.claveDES;
+        public AlgoritmoDeEncriptacion cripto=new AlgoritmoDeEncriptacion();
         private Dictionary<string, string> opcionesDelMenu = new Dictionary<string, string>();
         private Dictionary<string, string[,]> subOpcionesDelMenu = new Dictionary<string, string[,]>(); //Se guardaran las sub opciones del menú
         private string[] rolesUsuario = new string[10];//los roles que el usuario tiene registrado
@@ -73,20 +76,15 @@ namespace templateApp
             
             string Stringhttp = RecursosInterfazMaster.AliasHttp;
             char[] http = Stringhttp.ToCharArray();
-            string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString().TrimStart(http);
+            string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString();
 
             if (imagen == "")
             {
                 imagen = "../../dist/img/AvatarSKD.jpg";
+            }
                 imageUsuario.Src = imagen;
                 imageTag.Src = imagen;
 
-            }
-            else
-            {
-                imageUsuario.Src = imageUsuario.Src + imagen;
-                imageTag.Src = imageTag.Src + imagen;
-            }
             userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
 
             //aqui va el nombre y apellido
@@ -98,11 +96,15 @@ namespace templateApp
                 rolesUsuario[cont] = perfil;
                 cont++;
             }
-            if (Request.QueryString[RecursosInterfazMaster.sessionRol] ==RecursosInterfazMaster.sessionLogout)
+            if (Request.QueryString[RecursosInterfazMaster.sessionRol] == RecursosInterfazMaster.sessionLogout)
                 logout();
-            if (Request.QueryString[RecursosInterfazMaster.sessionRol] != null)
-                Session[RecursosInterfazMaster.sessionRol] = Request.QueryString[RecursosInterfazMaster.sessionRol];
 
+                string rol = cripto.DesencriptarCadenaDeCaracteres
+                    (Request.QueryString[RecursosInterfazMaster.sessionRol], RecursosLogicaModulo2.claveDES);
+
+
+                if (rol != null)
+                    Session[RecursosInterfazMaster.sessionRol] = rol;
 
         }
 
