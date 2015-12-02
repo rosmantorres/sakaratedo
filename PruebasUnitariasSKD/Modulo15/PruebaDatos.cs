@@ -21,7 +21,7 @@ namespace PruebasUnitariasSKD.Modulo15
         private Dojo dojo;
         private Implemento implemento2;
         private List<Implemento> implementos;
-
+        private String usuario;
         [SetUp]
         public void Init()
         {
@@ -52,6 +52,9 @@ namespace PruebasUnitariasSKD.Modulo15
             implemento2.Dojo_Implemento = dojo;
             implemento2.Descripcion_Implemento = "Guantes Wola";
             implemento2.Imagen_implemento = "A.jpg";
+
+            usuario = "usuario02";
+            
         }
 
         [TearDown]
@@ -69,7 +72,6 @@ namespace PruebasUnitariasSKD.Modulo15
         {
             implemento = null;
             ConexionBaseDatos.agregarInventarioDatos(implemento);
-
        
         }
         #endregion
@@ -136,6 +138,17 @@ namespace PruebasUnitariasSKD.Modulo15
             Assert.AreEqual(implemento.Stock_Minimo_Implemento, implemento2.Stock_Minimo_Implemento);
             Assert.AreEqual(implemento.Imagen_implemento, implemento2.Imagen_implemento);
             Assert.AreEqual(implemento.Descripcion_Implemento, implemento2.Descripcion_Implemento);
+
+        }
+        #endregion
+
+        #region PruebaModificarInventarioNulo
+        [Test]
+        [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
+        public void PruebaModificarInventarioNulo()
+        {
+            implemento = null;
+            ConexionBaseDatos.modificarInventarioDatos(implemento);
 
         }
         #endregion
@@ -223,7 +236,78 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
+        #region PruebaEliminarInventarioDojoNulo
+        [Test]
+        [ExpectedException(typeof(ImplementoSinIDException))]
+        public void PruebaEliminarInventarioDojoNulo()
+        {
+            ConexionBaseDatos.agregarInventarioDatos(implemento);
+            implemento = ConexionBaseDatos.implementoInventarioDatosUltimo();
+            ConexionBaseDatos.eliminarInventarioDatos(implemento.Id_Implemento, null);
 
-        
+        }
+        #endregion
+
+        #region PruebaListarInventarioDatos
+        [Test]
+        public void PruebaListarInventarioDatos()
+        {
+            implementos = ConexionBaseDatos.listarInventarioDatos(dojo);
+            int n = implementos.Count;
+            Assert.AreEqual(n, implementos.Count);
+
+        }
+        #endregion
+
+        #region PruebaListarInventarioDatosDojoNulo
+        [Test]
+        [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
+        public void PruebaListarInventarioDatosDojoNulo()
+        {
+            implementos = ConexionBaseDatos.listarInventarioDatos(null);
+
+        }
+        #endregion
+
+        #region PruebaListarInventarioDatos2
+        [Test]
+        public void PruebaListarInventarioDatos2()
+        {
+            implementos = ConexionBaseDatos.listarInventarioDatos2(dojo);
+            int n = implementos.Count;
+            Assert.AreEqual(n, implementos.Count);
+
+        }
+        #endregion
+
+        #region PruebaListarInventarioDatos2DojoNulo
+        [Test]
+        [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
+        public void PruebaListarInventarioDatos2DojoNulo()
+        {
+            implementos = ConexionBaseDatos.listarInventarioDatos2(null);
+
+        }
+        #endregion
+
+        #region PruebaUsuarioImplementoDatos
+        [Test]
+        public void PruebaUsuarioImplementoDatos()
+        {
+            int n = ConexionBaseDatos.usuarioImplementoDatos(usuario);
+            Assert.AreEqual(n, ConexionBaseDatos.usuarioImplementoDatos(usuario));
+
+        }
+        #endregion
+
+        #region PruebaUsuarioImplementoDatosNulo
+        [Test]
+        [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
+        public void PruebaUsuarioImplementoDatosNulo()
+        {
+            ConexionBaseDatos.usuarioImplementoDatos(null);
+
+        }
+        #endregion
     }
 }
