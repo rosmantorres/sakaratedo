@@ -84,7 +84,7 @@ namespace templateApp.GUI.Modulo14
                     this.tabla.Text += RecursoInterfazModulo14.AbrirTD + solici.Evento + RecursoInterfazModulo14.CerrarTD;
                     this.tabla.Text += RecursoInterfazModulo14.AbrirTD;
                     this.tabla.Text += RecursoInterfazModulo14.BotonInfoSolicitud + solici.ID + RecursoInterfazModulo14.idIns + solici.IdInscripcion + RecursoInterfazModulo14.Nombre + solici.Planilla.Nombre + RecursoInterfazModulo14.IdPlanilla + solici.Planilla.ID + RecursoInterfazModulo14.BotonCerrar;
-                    this.tabla.Text += RecursoInterfazModulo14.BotonModificarSolicitud + RecursoInterfazModulo14.BotonCerrar;
+                    this.tabla.Text += RecursoInterfazModulo14.BotonModificarSolicitud + solici.ID + RecursoInterfazModulo14.BotonCerrar;
                     this.tabla.Text += RecursoInterfazModulo14.BotonEliminarSolicitud + solici.ID + RecursoInterfazModulo14.BotonCerrar;
                     this.tabla.Text += RecursoInterfazModulo14.CerrarTD;
                     this.tabla.Text += RecursoInterfazModulo14.CerrarTR;

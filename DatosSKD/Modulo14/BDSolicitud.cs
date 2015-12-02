@@ -668,12 +668,12 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// /// <param name="idSolicitud">id solicitud</param>
         /// <returns>Planilla con nombre, status y tipo de planilla</returns>
-        public SolicitudPlanilla ObtenerSolicitudID(int idSolicitud)
+        public SolicitudP ObtenerSolicitudID(int idSolicitud)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
-            SolicitudPlanilla solicitud = null;
+            SolicitudP solicitud = null;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
@@ -682,7 +682,7 @@ namespace DatosSKD.Modulo14
                 laConexion = new BDConexion();
                 Planilla planilla = null;
                 parametros = new List<Parametro>();
-                parametro = new Parametro(RecursosBDModulo14.ParametroIdSolicitud,
+                parametro = new Parametro(RecursosBDModulo14.ParametroIDSolici,
                 SqlDbType.VarChar, idSolicitud.ToString(), false);
                 parametros.Add(parametro);
 
@@ -690,13 +690,14 @@ namespace DatosSKD.Modulo14
 
                 foreach (DataRow row in resultadoConsulta.Rows)
                 {
-                    DateTime fechaRetiro = Convert.ToDateTime(row[RecursosBDModulo14.AtributoFechaRetiro].ToString());
-                    DateTime fechaReincorporacion = Convert.ToDateTime(row[RecursosBDModulo14.AtributoFechaReincorporacion].ToString());
+                    String fechaRetiro = row[RecursosBDModulo14.AtributoFechaRetiro].ToString();
+                    String fechaReincorporacion = row[RecursosBDModulo14.AtributoFechaReincorporacion].ToString();
                     String motivo = row[RecursosBDModulo14.AtributoMotivo].ToString();
                     int idPlanilla = Int32.Parse(row[RecursosBDModulo14.AtributoIdPlanillaDatos].ToString());
-                    planilla = new Planilla();
-                    planilla.ID = idPlanilla;
-                    solicitud = new SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
+                    int idInscripcion = Int32.Parse(row[RecursosBDModulo14.AtributoInscripcion].ToString());
+
+                    solicitud = new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, idPlanilla, idInscripcion);
+                
                 }
 
             }
@@ -770,7 +771,7 @@ namespace DatosSKD.Modulo14
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                parametro = new Parametro(RecursosBDModulo14.ParametroIdSolicitud,
+                parametro = new Parametro(RecursosBDModulo14.ParametroIDSolici,
                 SqlDbType.VarChar, laSolicitud.ID.ToString(), false);
                 parametros.Add(parametro);
 
@@ -784,10 +785,6 @@ namespace DatosSKD.Modulo14
 
                 parametro = new Parametro(RecursosBDModulo14.ParametroMotivo,
                 SqlDbType.VarChar, laSolicitud.Motivo, false);
-                parametros.Add(parametro);
-
-                parametro = new Parametro(RecursosBDModulo14.ParametroPlanillaID,
-                SqlDbType.VarChar, laSolicitud.Planilla.ID.ToString(), false);
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursosBDModulo14.ParametroIdInscripcion,

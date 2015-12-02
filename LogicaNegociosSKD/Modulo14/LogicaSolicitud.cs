@@ -251,9 +251,9 @@ namespace LogicaNegociosSKD.Modulo14
         /// <param name="idPlanilla"></param>
         /// <returns>Regresa la solicitud con su fechar, fecharei y motivo</returns>
         /// 
-        public SolicitudPlanilla ObtenerSolicitudID(int idSolicitud)
+        public SolicitudP ObtenerSolicitudID(int idSolicitud)
         {
-            SolicitudPlanilla solicitud = new SolicitudPlanilla();
+            SolicitudP solicitud = new SolicitudP();
             try
             {
                 BDSolicitud BaseDeDatoPlanilla = new BDSolicitud();

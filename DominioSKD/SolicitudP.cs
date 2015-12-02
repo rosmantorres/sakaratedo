@@ -55,6 +55,26 @@ namespace DominioSKD
             this.planilla = planilla;
             this.idInscripcion = idInscripcion;
         }
+
+        public SolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id, int idInscripcion)
+        {
+
+            this.fechaRetiro = fechaRetiro;
+            this.fechaReincorporacion = fechaReincorporacion;
+            this.motivo = motivo;
+            this.id = id;
+            this.idInscripcion = idInscripcion;
+        }
+
+
+        public SolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, int idInscripcion)
+        {
+            this.id = id;
+            this.fechaRetiro = fechaRetiro;
+            this.fechaReincorporacion = fechaReincorporacion;
+            this.motivo = motivo;
+            this.idInscripcion = idInscripcion;
+        }
         #endregion
 
         #region gets y sets
