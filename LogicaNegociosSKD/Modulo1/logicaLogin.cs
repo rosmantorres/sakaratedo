@@ -18,6 +18,7 @@ namespace LogicaNegociosSKD.Modulo1
         
         MailMessage Mail = new MailMessage();
         SmtpClient SMTP = new SmtpClient();
+        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         /// <summary>
         /// Procedimiento para el envio de correo para el reestablecimiento de la contraseña
         /// </summary>
@@ -38,9 +39,9 @@ namespace LogicaNegociosSKD.Modulo1
                 String DireccionHTTP = "http://localhost:" + RecursosLogicaModulo1.puertoSAKARATEDO +
                 RecursosLogicaModulo1.direccionM1_RestablecerContraseña+
                 RecursosLogicaModulo1.variableRestablecerHTTP+
-                AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres(idUser,RecursosLogicaModulo2.claveDES)+
+                cripto.EncriptarCadenaDeCaracteres(idUser,RecursosLogicaModulo2.claveDES)+
                 RecursosLogicaModulo1.variableFechaHTTP +
-                AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                cripto.EncriptarCadenaDeCaracteres
                 (tiempoActual.Date.ToString(), RecursosLogicaModulo2.claveDES);
 
                 
@@ -104,7 +105,7 @@ namespace LogicaNegociosSKD.Modulo1
                 BDLogin conexionBD = new BDLogin();
                 Cuenta user= conexionBD.ObtenerUsuario(usuario);
                 string[] respuesta = new string[6];
-               string hashClave =AlgoritmoDeEncriptacion.hash(contraseña);
+               string hashClave =cripto.hash(contraseña);
                if (hashClave == user.Contrasena && usuario!="" && contraseña!="")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
                {
                    respuesta[0] = user.PersonaUsuario._Id.ToString();

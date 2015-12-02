@@ -18,10 +18,11 @@ namespace LogicaNegociosSKD.Modulo1
         /// <returns>devuelve true si puede hacer el cambio y false si no pudo efectuar el cambio</returns>
         public Boolean restablecerContrasena(string usuarioID, string contraseña)
         {
+            AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
             try
             {
                 BDRestablecer conexionBD = new BDRestablecer();
-                conexionBD.RestablecerContrasena(usuarioID,AlgoritmoDeEncriptacion.hash(contraseña));
+                conexionBD.RestablecerContrasena(usuarioID,cripto.hash(contraseña));
                 return true;
             }
             catch (Exception e)

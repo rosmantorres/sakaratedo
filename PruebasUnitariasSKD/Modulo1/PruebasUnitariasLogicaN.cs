@@ -12,10 +12,10 @@ namespace PruebasUnitariasSKD.Modulo1
     [TestFixture]
     class PruebasUnitariasLogicaN
     {
+        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         [SetUp]
         protected  void parametros()
         {
-           
         }
 
         // Prueba unitaria del metodo IniciarSesion() de forma erronea
@@ -73,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo1
         {
 
 
-            Assert.AreEqual(AlgoritmoDeEncriptacion.hash(RecursosPU_Mod1.pruebaHash2), AlgoritmoDeEncriptacion.hash(RecursosPU_Mod1.pruebaHash));
+            Assert.AreEqual(cripto.hash(RecursosPU_Mod1.pruebaHash2), cripto.hash(RecursosPU_Mod1.pruebaHash));
             
         }
         [Test]
@@ -81,7 +81,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ExcepcionesSKD.Modulo1.HashException))]
         public void PruebaHashFallido()
         {
-            string resp = AlgoritmoDeEncriptacion.hash(null);
+            string resp = cripto.hash(null);
         }
         // Prueba unitaria del metodo ValidarCorreo() de forma correcta
        [Test]

@@ -14,6 +14,7 @@ namespace templateApp.GUI.Modulo1
     public partial class Index : System.Web.UI.Page
     {
         public Boolean valueInfo = false;
+        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,10 +25,13 @@ namespace templateApp.GUI.Modulo1
                 infoLog.Visible = false;
                 successLog.Visible = false;
                 string sessionRequest;
+
+                
+
                 if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != null))
                 {
                     sessionRequest =
-                   AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+                   cripto.DesencriptarCadenaDeCaracteres
                    (Request.QueryString[RecursosInterfazModulo1.tipoInfo].ToString(), RecursosLogicaModulo2.claveDES);
 
                     if (sessionRequest == RecursosInterfazModulo1.parametroURLCorreoEnviado)
@@ -40,13 +44,16 @@ namespace templateApp.GUI.Modulo1
                 }
                 if (Request.QueryString[RecursosInterfazModulo1.tipoSucess] != null)
                 {
-                    sessionRequest = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+                    sessionRequest = cripto.DesencriptarCadenaDeCaracteres
                      (Request.QueryString[RecursosInterfazModulo1.tipoSucess].ToString(), RecursosLogicaModulo2.claveDES);
                     if (sessionRequest == RecursosInterfazModulo1.parametroURLReestablecerExito)
                         mensajeLogin(RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
                     else
                         successLog.Visible = false;
                 }
+                if (Request.QueryString[RecursosInterfazModulo1.tipoErrMalicioso] != null
+                    && Request.QueryString[RecursosInterfazModulo1.tipoErrMalicioso].ToString() == "input_malicioso")
+                    mensajeLogin(RecursosInterfazModulo1.logCadenaMaliciosa,RecursosInterfazModulo1.tipoErr);
             }
             else
                 Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
@@ -73,12 +80,14 @@ namespace templateApp.GUI.Modulo1
             campos.Add(userIni.Value);
             campos.Add(passwordIni.Value);
             logicaLogin validarLogin = new logicaLogin();
-           if(validarLogin.ValidarCamposVacios(campos) && 
-              validarLogin.ValidarCaracteres(userIni.Value,true) &&
-              validarLogin.ValidarCaracteres(passwordIni.Value,false))
+            if (validarLogin.ValidarCamposVacios(campos))
+            {
+                if (validarLogin.ValidarCaracteres(userIni.Value, true) &&
+                   validarLogin.ValidarCaracteres(passwordIni.Value, false))
                     consultarUsuario();
-           else
-                    mensajeLogin(RecursosInterfazModulo1.logCaracterInvalidos,RecursosInterfazModulo1.tipoErr);
+                else
+                    mensajeLogin(RecursosInterfazModulo1.logCaracterInvalidos, RecursosInterfazModulo1.tipoErr);
+            }
         }
         /// <summary>
         /// Metodo para Establecer un mensaje de alerta en el login
@@ -125,7 +134,7 @@ namespace templateApp.GUI.Modulo1
             try
             {
                 new logicaLogin().EnviarCorreo(CorreoDestino);
-                string value= AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres
+                string value= cripto.EncriptarCadenaDeCaracteres
                  (RecursosInterfazModulo1.parametroURLCorreoEnviado,RecursosLogicaModulo2.claveDES);
 
                 Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"

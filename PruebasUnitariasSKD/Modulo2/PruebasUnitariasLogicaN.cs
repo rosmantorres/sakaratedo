@@ -14,6 +14,7 @@ namespace PruebasUnitariasSKD.Modulo2
 
     class PruebasUnitariasLogicaN
     {
+        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
 
         [SetUp]
         protected void parametros()
@@ -100,9 +101,9 @@ namespace PruebasUnitariasSKD.Modulo2
         public void PreubaEncriptadoYdesencriptado()
         {
             string Archivo;
-            Archivo = AlgoritmoDeEncriptacion.EncriptarCadenaDeCaracteres(RecursosPU_Mod2.Id, RecursosLogicaModulo2.claveDES);
-            Console.WriteLine(AlgoritmoDeEncriptacion.hash("12345"));
-            Archivo = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres(Archivo, RecursosLogicaModulo2.claveDES);
+            Archivo = cripto.EncriptarCadenaDeCaracteres(RecursosPU_Mod2.Id, RecursosLogicaModulo2.claveDES);
+            Console.WriteLine(cripto.hash("12345"));
+            Archivo = cripto.DesencriptarCadenaDeCaracteres(Archivo, RecursosLogicaModulo2.claveDES);
         }
 
         // Prueba unitaria  del metodo cargarRoles()
