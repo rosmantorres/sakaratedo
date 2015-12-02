@@ -96,6 +96,11 @@
                         <asp:Label runat="server" name="ubicacionOrganizacion" id="ubicacionOrganizacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Cinta Actual :</h4>
+                        <asp:Label runat="server" name="cintaActual" id="cintaActual" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
                       <div class="panel-group col-sm-10 col-md-10 col-lg-10">
             </div>
             <br />

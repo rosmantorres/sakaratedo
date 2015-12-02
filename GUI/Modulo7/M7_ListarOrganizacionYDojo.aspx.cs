@@ -17,7 +17,9 @@ namespace templateApp.GUI.Modulo7
         Persona persona = new Persona();
         Dojo dojo = new Dojo();
         Organizacion organizacion = new Organizacion();
+        Cinta cinta = new Cinta();
         LogicaOrganizacionYDojo laLogica = new LogicaOrganizacionYDojo();
+        LogicaCintas laLogicaCinta = new LogicaCintas();
         
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace templateApp.GUI.Modulo7
                     persona = laLogica.obtenerDetallePersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                     dojo = laLogica.obtenerDetalleDojo(persona.DojoPersona);
                     organizacion = laLogica.obtenerDetalleOrganizacion(dojo.Organizacion_dojo);
+                    cinta = laLogicaCinta.obtenerUltimaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                     this.nombrePersona.Text = persona.Nombre;
                     this.apellidoPersona.Text = persona.Apellido;
                     this.fechaNacimiento.Text = persona.FechaNacimiento.ToShortDateString();
@@ -56,6 +59,7 @@ namespace templateApp.GUI.Modulo7
                     this.nombreOrganizacion.Text = organizacion.Nombre;
                     this.emailOrganizacion.Text = organizacion.Email;
                     this.ubicacionOrganizacion.Text = organizacion.Direccion;
+                    this.cintaActual.Text = cinta.Color_nombre;
                     
                 }
                 else
