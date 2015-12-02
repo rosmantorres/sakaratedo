@@ -183,14 +183,14 @@ namespace LogicaNegociosSKD.Modulo9
         /// Metodo que retorna de la BD todos los eventos
         /// </summary>
         /// <returns>Lista de Eventos</returns>
-        public List<Evento> ListarEventos()
+        public List<Evento> ListarEventos(int idPersona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Evento> listaEventos = new List<Evento>();
             try
             {
                 BDEvento baseDeDatosEvento = new BDEvento();
-                listaEventos = baseDeDatosEvento.ListarEventos();
+                listaEventos = baseDeDatosEvento.ListarEventos(idPersona);
                
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

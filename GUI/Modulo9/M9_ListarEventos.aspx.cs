@@ -50,7 +50,7 @@ namespace templateApp.GUI.Modulo9
             {
                 try
                 {
-                    eventoLista = logicaEvento.ListarEventos();
+                    eventoLista = logicaEvento.ListarEventos(33);
                     foreach (Evento evento in eventoLista)
                     {
                         this.tabla.Text += M9_RecursoInterfaz.AbrirTR;

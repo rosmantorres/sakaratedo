@@ -280,7 +280,7 @@ namespace DatosSKD.Modulo9
         /// </summary>
         /// <returns>lista de eventos</returns>
 
-        public List<Evento> ListarEventos()
+        public List<Evento> ListarEventos(int idPersona)
         {
             BDConexion laConexion;
             List<Evento> listaEventos = new List<Evento>();
@@ -291,6 +291,8 @@ namespace DatosSKD.Modulo9
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarEventos, parametros);
                 foreach (DataRow row in dt.Rows)
                 {

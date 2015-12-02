@@ -124,7 +124,7 @@ namespace PruebasUnitariasSKD.Modulo9
         public void PruebaListarEventos()
         {
             LogicaEvento logicaEvento = new LogicaEvento();
-            List<Evento> listaEventos = logicaEvento.ListarEventos();
+            List<Evento> listaEventos = logicaEvento.ListarEventos(elEvento.Persona.ID);
             Console.Out.WriteLine("El tamaño de la lista es"+" "+listaEventos.Count);
             Console.Out.WriteLine(" ");
 

@@ -79,13 +79,14 @@ as
 GO
 
 CREATE procedure M9_ConsultarEventos
+@idPersona integer
 as
 	begin
 		select evento.eve_id as idEvento, evento.eve_nombre as nombreEvento, evento.eve_costo as costoEvento, evento.eve_descripcion as descripcionEvento, evento.eve_estado as estadoEvento, tipo.tip_nombre as tipoEvento,
 		horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
 		
-		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo
-		where evento.HORARIO_hor_id = horario.hor_id and evento.TIPO_EVENTO_tip_id = tipo.tip_id
+		from EVENTO evento, HORARIO horario, TIPO_EVENTO tipo , PERSONA persona
+		where evento.HORARIO_hor_id = horario.hor_id and evento.TIPO_EVENTO_tip_id = tipo.tip_id and persona.per_id = @idPersona and persona.DOJO_doj_id = evento.eve_id
 
 		
 	end;
@@ -210,7 +211,7 @@ AS
 
 		Update EVENTO set eve_nombre = @nombre , eve_descripcion = @descripcion, eve_estado = @estado , eve_costo = @costo, TIPO_EVENTO_tip_id = @idTipoEvento, HORARIO_hor_id = @nuevoIdHorario, UBICACION_ubi_id = @idUbicacion WHERE eve_id = @idEvento;
 
-		Delete From HORARIO WHERE hor_id = @idHorario;
+		/*Delete From HORARIO WHERE hor_id = @idHorario;*/
 		
 	END
 

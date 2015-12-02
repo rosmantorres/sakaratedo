@@ -75,7 +75,7 @@ namespace PruebasUnitariasSKD.Modulo9
         public void PruebaListarEventos()
         {
             DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
-            List<Evento> listaEvento = baseDeDatosEvento.ListarEventos(); 
+            List<Evento> listaEvento = baseDeDatosEvento.ListarEventos(elEvento.Persona.ID); 
             Assert.Greater(listaEvento.Count,0);
         }
 
