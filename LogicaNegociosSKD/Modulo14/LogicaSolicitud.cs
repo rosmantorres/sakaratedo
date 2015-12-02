@@ -51,10 +51,10 @@ namespace LogicaNegociosSKD.Modulo14
 
             List<bool> datosRequeridos = new List<bool>();
 
-            datosRequeridos.Add(resultDiseño.Contenido.Contains("$sol_pla_fecha_retiro"));
-            datosRequeridos.Add(resultDiseño.Contenido.Contains("$sol_pla_fecha_reincorporacion"));
-            datosRequeridos.Add(resultDiseño.Contenido.Contains("$eve_nombre"));
-            datosRequeridos.Add(resultDiseño.Contenido.Contains("$comp_nombre"));
+            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaRetiro));
+            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaReincor));
+            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.EveNombre));
+            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.CompNombre));
 
             return datosRequeridos;
         }
