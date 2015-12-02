@@ -182,56 +182,6 @@
   <data name="IdDis" xml:space="preserve">
     <value>&amp;idDis=</value>
   </data>
-  <data name="AbrirTD1" xml:space="preserve">
-    <value>&lt;td&gt;</value>
-  </data>
-  <data name="AbrirTR1" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
-  </data>
-  <data name="BotonActivarPlanilla1" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
-  </data>
-  <data name="BotonCerrar11" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonCerrar2" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonDesactivarPlanilla1" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
-  </data>
-  <data name="BotonEliminarSolicitud1" xml:space="preserve">
-    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
-  </data>
-  <data name="BotonInfo1" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
-  </data>
-  <data name="BotonInfoSolicitud1" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
-  </data>
-  <data name="BotonModificar1" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
-  </data>
-  <data name="BotonModificarRegistro1" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx?idPlan=</value>
-  </data>
-  <data name="BotonModificarSolicitud1" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx</value>
-  </data>
-  <data name="BotonSolicitarPlanilla1" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
-  </data>
-  <data name="CerrarSolicitud1" xml:space="preserve">
-    <value>"&gt;Solicitar&lt;/a&gt;</value>
-  </data>
-  <data name="CerrarTD1" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
-  </data>
-  <data name="CerrarTR1" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
-  </data>
   <data name="Competencia" xml:space="preserve">
     <value>COMPETENCIA</value>
   </data>
@@ -292,17 +242,8 @@
   <data name="FechaRetiro" xml:space="preserve">
     <value>$fecha_retiro&lt;br/&gt;</value>
   </data>
-  <data name="IdDis1" xml:space="preserve">
-    <value>&amp;idDis=</value>
-  </data>
   <data name="idIns" xml:space="preserve">
     <value>&amp;idIns=</value>
-  </data>
-  <data name="idPlan1" xml:space="preserve">
-    <value>idPlan</value>
-  </data>
-  <data name="IdPlanilla1" xml:space="preserve">
-    <value>&amp;idPlanilla=</value>
   </data>
   <data name="linea" xml:space="preserve">
     <value>&lt;br/&gt;</value>
@@ -330,9 +271,6 @@
   </data>
   <data name="MsjPlanillaGuardada" xml:space="preserve">
     <value>Diseño de Plantilla guardado satisfactoriamente</value>
-  </data>
-  <data name="Nombre1" xml:space="preserve">
-    <value>&amp;nombre=</value>
   </data>
   <data name="Numero1" xml:space="preserve">
     <value>1</value>
@@ -393,8 +331,5 @@
   </data>
   <data name="String1" xml:space="preserve">
     <value>nombre</value>
-  </data>
-  <data name="Tipo1" xml:space="preserve">
-    <value>&amp;tipo=</value>
   </data>
 </root>

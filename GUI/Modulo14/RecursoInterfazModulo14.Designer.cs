@@ -70,29 +70,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;td&gt;.
-        /// </summary>
-        internal static string AbrirTD1 {
-            get {
-                return ResourceManager.GetString("AbrirTD1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &lt;tr&gt;.
         /// </summary>
         internal static string AbrirTR {
             get {
                 return ResourceManager.GetString("AbrirTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;tr&gt;.
-        /// </summary>
-        internal static string AbrirTR1 {
-            get {
-                return ResourceManager.GetString("AbrirTR1", resourceCulture);
             }
         }
         
@@ -103,16 +85,6 @@ namespace templateApp.GUI.Modulo14 {
         internal static string BotonActivarPlanilla {
             get {
                 return ResourceManager.GetString("BotonActivarPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
-        ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
-        /// </summary>
-        internal static string BotonActivarPlanilla1 {
-            get {
-                return ResourceManager.GetString("BotonActivarPlanilla1", resourceCulture);
             }
         }
         
@@ -135,40 +107,12 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &gt;&lt;/a&gt;.
-        /// </summary>
-        internal static string BotonCerrar11 {
-            get {
-                return ResourceManager.GetString("BotonCerrar11", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
-        /// </summary>
-        internal static string BotonCerrar2 {
-            get {
-                return ResourceManager.GetString("BotonCerrar2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
         /// </summary>
         internal static string BotonDesactivarPlanilla {
             get {
                 return ResourceManager.GetString("BotonDesactivarPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
-        ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
-        /// </summary>
-        internal static string BotonDesactivarPlanilla1 {
-            get {
-                return ResourceManager.GetString("BotonDesactivarPlanilla1", resourceCulture);
             }
         }
         
@@ -182,29 +126,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
-        /// </summary>
-        internal static string BotonEliminarSolicitud1 {
-            get {
-                return ResourceManager.GetString("BotonEliminarSolicitud1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;.
         /// </summary>
         internal static string BotonInfo {
             get {
                 return ResourceManager.GetString("BotonInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;.
-        /// </summary>
-        internal static string BotonInfo1 {
-            get {
-                return ResourceManager.GetString("BotonInfo1", resourceCulture);
             }
         }
         
@@ -218,29 +144,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idSolici=.
-        /// </summary>
-        internal static string BotonInfoSolicitud1 {
-            get {
-                return ResourceManager.GetString("BotonInfoSolicitud1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
         /// </summary>
         internal static string BotonModificar {
             get {
                 return ResourceManager.GetString("BotonModificar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonModificar1 {
-            get {
-                return ResourceManager.GetString("BotonModificar1", resourceCulture);
             }
         }
         
@@ -254,29 +162,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;M14_ModificarPlanillaCreada.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonModificarRegistro1 {
-            get {
-                return ResourceManager.GetString("BotonModificarRegistro1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx.
         /// </summary>
         internal static string BotonModificarSolicitud {
             get {
                 return ResourceManager.GetString("BotonModificarSolicitud", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx.
-        /// </summary>
-        internal static string BotonModificarSolicitud1 {
-            get {
-                return ResourceManager.GetString("BotonModificarSolicitud1", resourceCulture);
             }
         }
         
@@ -290,29 +180,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary&quot; href=&quot;M14_SolicitudPlanilla.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonSolicitarPlanilla1 {
-            get {
-                return ResourceManager.GetString("BotonSolicitarPlanilla1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;Solicitar&lt;/a&gt;.
         /// </summary>
         internal static string CerrarSolicitud {
             get {
                 return ResourceManager.GetString("CerrarSolicitud", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &quot;&gt;Solicitar&lt;/a&gt;.
-        /// </summary>
-        internal static string CerrarSolicitud1 {
-            get {
-                return ResourceManager.GetString("CerrarSolicitud1", resourceCulture);
             }
         }
         
@@ -326,29 +198,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;/td&gt;.
-        /// </summary>
-        internal static string CerrarTD1 {
-            get {
-                return ResourceManager.GetString("CerrarTD1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/tr&gt;.
         /// </summary>
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &lt;/tr&gt;.
-        /// </summary>
-        internal static string CerrarTR1 {
-            get {
-                return ResourceManager.GetString("CerrarTR1", resourceCulture);
             }
         }
         
@@ -542,15 +396,6 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &amp;idDis=.
-        /// </summary>
-        internal static string IdDis1 {
-            get {
-                return ResourceManager.GetString("IdDis1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &amp;idIns=.
         /// </summary>
         internal static string idIns {
@@ -569,29 +414,11 @@ namespace templateApp.GUI.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a idPlan.
-        /// </summary>
-        internal static string idPlan1 {
-            get {
-                return ResourceManager.GetString("idPlan1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a &amp;idPlanilla=.
         /// </summary>
         internal static string IdPlanilla {
             get {
                 return ResourceManager.GetString("IdPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &amp;idPlanilla=.
-        /// </summary>
-        internal static string IdPlanilla1 {
-            get {
-                return ResourceManager.GetString("IdPlanilla1", resourceCulture);
             }
         }
         
@@ -682,15 +509,6 @@ namespace templateApp.GUI.Modulo14 {
         internal static string Nombre {
             get {
                 return ResourceManager.GetString("Nombre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &amp;nombre=.
-        /// </summary>
-        internal static string Nombre1 {
-            get {
-                return ResourceManager.GetString("Nombre1", resourceCulture);
             }
         }
         
@@ -880,15 +698,6 @@ namespace templateApp.GUI.Modulo14 {
         internal static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &amp;tipo=.
-        /// </summary>
-        internal static string Tipo1 {
-            get {
-                return ResourceManager.GetString("Tipo1", resourceCulture);
             }
         }
     }

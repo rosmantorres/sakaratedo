@@ -108,6 +108,18 @@ namespace LogicaNegociosSKD.Modulo14
                 info = info.Replace(RecursosLogicaModulo14.PerEstatura, persona.Estatura.ToString());
                 info = info.Replace(RecursosLogicaModulo14.PerNacionalidad, persona.Nacionalidad.ToString());
             }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.PerImagen, "");
+                info = info.Replace(RecursosLogicaModulo14.PerNombre, "");
+                info = info.Replace(RecursosLogicaModulo14.PerApellido, "");
+                info = info.Replace(RecursosLogicaModulo14.PerNumDocId, "");
+                info = info.Replace(RecursosLogicaModulo14.PerDireccion, "");
+                info = info.Replace(RecursosLogicaModulo14.PerFechaNac, "");
+                info = info.Replace(RecursosLogicaModulo14.PerPeso, "");
+                info = info.Replace(RecursosLogicaModulo14.PerEstatura, "");
+                info = info.Replace(RecursosLogicaModulo14.PerNacionalidad, "");
+            }
 
             if (solicitud != null)
             {
@@ -115,6 +127,13 @@ namespace LogicaNegociosSKD.Modulo14
                 info = info.Replace(RecursosLogicaModulo14.FechaRetiro, solicitud.FechaRetiro.ToShortTimeString());
                 info = info.Replace(RecursosLogicaModulo14.FechaReincor, solicitud.FechaReincorporacion.ToShortDateString());
                 info = info.Replace(RecursosLogicaModulo14.Motivo, solicitud.Motivo);
+            }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.FechaCreacionPlanilla, "");
+                info = info.Replace(RecursosLogicaModulo14.FechaRetiro, "");
+                info = info.Replace(RecursosLogicaModulo14.FechaReincor, "");
+                info = info.Replace(RecursosLogicaModulo14.Motivo, "");
             }
 
             if (dojo != null)
@@ -124,6 +143,13 @@ namespace LogicaNegociosSKD.Modulo14
                 info = info.Replace(RecursosLogicaModulo14.DojRif, dojo.Rif_dojo);
                 info = info.Replace(RecursosLogicaModulo14.DojEmail, dojo.Email_dojo);
             }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.DojNombre, "");
+                info = info.Replace(RecursosLogicaModulo14.DojTelefono, "");
+                info = info.Replace(RecursosLogicaModulo14.DojRif, "");
+                info = info.Replace(RecursosLogicaModulo14.DojEmail, "");
+            }
             if (matricula != null)
             {
                 info = info.Replace(RecursosLogicaModulo14.MatIdenti, matricula[0]);
@@ -132,12 +158,27 @@ namespace LogicaNegociosSKD.Modulo14
                 info = info.Replace(RecursosLogicaModulo14.MatActiva, matricula[3]);
                 info = info.Replace(RecursosLogicaModulo14.MatPrecio, matricula[4]);
             }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.MatIdenti,"");
+                info = info.Replace(RecursosLogicaModulo14.MatFechaCreacion, "");
+                info = info.Replace(RecursosLogicaModulo14.MatFechaPago, "");
+                info = info.Replace(RecursosLogicaModulo14.MatActiva, "");
+                info = info.Replace(RecursosLogicaModulo14.MatPrecio, "");
+            }
             if (organizacion != null)
             {
                 info = info.Replace(RecursosLogicaModulo14.OrgNombre, organizacion.Nombre);
                 info = info.Replace(RecursosLogicaModulo14.OrgDireccion, organizacion.Direccion);
                 info = info.Replace(RecursosLogicaModulo14.OrgTelefono, organizacion.Telefono.ToString());
                 info = info.Replace(RecursosLogicaModulo14.OrgEmail, organizacion.Email.ToString());
+            }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.OrgNombre, "");
+                info = info.Replace(RecursosLogicaModulo14.OrgDireccion, "");
+                info = info.Replace(RecursosLogicaModulo14.OrgTelefono, "");
+                info = info.Replace(RecursosLogicaModulo14.OrgEmail, "");
             }
             if (evento != null)
             {
@@ -158,6 +199,15 @@ namespace LogicaNegociosSKD.Modulo14
                 info = info.Replace(RecursosLogicaModulo14.HorarioHor, horario) + RecursosLogicaModulo14.Linea;
 
             }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.EveNombre, "");
+                info = info.Replace(RecursosLogicaModulo14.EveDescripcion, "");
+                info = info.Replace(RecursosLogicaModulo14.EveCosto, "");
+                info = info.Replace(RecursosLogicaModulo14.CategoriaCat, "");
+                info = info.Replace(RecursosLogicaModulo14.TipoEvento, "");
+                info = info.Replace(RecursosLogicaModulo14.HorarioHor, "") + RecursosLogicaModulo14.Linea;
+            }
             if (competencia != null)
             {
                 info = info.Replace(RecursosLogicaModulo14.CompNombre, competencia.Nombre);
@@ -171,6 +221,15 @@ namespace LogicaNegociosSKD.Modulo14
                 categoria += competencia.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
                 categoria += competencia.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
                 info = info.Replace(RecursosLogicaModulo14.CategoriaComp, categoria);
+            }
+            else
+            {
+                info = info.Replace(RecursosLogicaModulo14.CompNombre, "");
+                info = info.Replace(RecursosLogicaModulo14.CompTipo, "");
+                info = info.Replace(RecursosLogicaModulo14.CompFechaIni, "");
+                info = info.Replace(RecursosLogicaModulo14.CompFechaFin,"");
+                info = info.Replace(RecursosLogicaModulo14.CompCosto, "");
+                info = info.Replace(RecursosLogicaModulo14.CategoriaComp,"");
             }
 
             return info;
