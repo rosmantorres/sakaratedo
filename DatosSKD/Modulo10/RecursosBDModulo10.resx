@@ -153,4 +153,20 @@
     <value>tipoEvento</value>
     <comment>Alias colocado en el Stored Procedure referente a la columna tipo evento</comment>
   </data>
+  <data name="aliasIdPersona" xml:space="preserve">
+    <value>idPersona</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id persona</comment>
+  </data>
+  <data name="aliasNombrePersona" xml:space="preserve">
+    <value>nombrePersona</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre persona</comment>
+  </data>
+  <data name="ParametroIdEvento" xml:space="preserve">
+    <value>@_idEvento</value>
+    <comment>Id del Evento a modificar su asistencia</comment>
+  </data>
+  <data name="ProcedimientoAtletasAsistentes" xml:space="preserve">
+    <value>M10_AsistentesAlEvento</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

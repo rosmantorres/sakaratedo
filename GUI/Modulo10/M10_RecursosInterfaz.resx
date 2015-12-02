@@ -129,8 +129,11 @@
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEventos.aspx?compDetalle=</value>
   </data>
-  <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?compMod=</value>
+  <data name="BotonModificarCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=competencia&amp;modificar=</value>
+  </data>
+  <data name="BotonModificarEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=evento&amp;modificar=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>

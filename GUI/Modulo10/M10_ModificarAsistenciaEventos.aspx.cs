@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DominioSKD;
+using LogicaNegociosSKD.Modulo9;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,12 +12,32 @@ namespace templateApp.GUI.Modulo10
 {
     public partial class M10_ModificarAsistenciaEventos : System.Web.UI.Page
     {
+        Evento evento = new Evento();
+        Competencia competencia = new Competencia();
+        List<Persona> listaA = new List<Persona>();
+        String tipo;
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "10";
 
+            LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
             {
+                String idEvento = Request.QueryString["modificar"];
+                tipo = Request.QueryString["tipo"];
+
+                if (tipo.Equals("evento"))
+                {
+                    evento = logicaEvento.ConsultarEvento(idEvento);
+                    calendar.VisibleDate = new DateTime(evento.Horario.FechaInicio.Year,
+                                                 evento.Horario.FechaInicio.Month, evento.Horario.FechaInicio.Day);
+                    nombreEvento.Text = evento.Nombre;
+                }
+                else if (tipo.Equals("competencia"))
+                {
+
+                }
+
                 listaAsistentes.Items.Add("atleta1");
                 listaAsistentes.Items.Add("atleta2");
                 listaAsistentes.Items.Add("atleta3");
@@ -24,7 +46,6 @@ namespace templateApp.GUI.Modulo10
                 listaNoAsistieron.Items.Add("atleta6");
                 listaNoAsistieron.Items.Add("atleta7");
                 listaNoAsistieron.Items.Add("atleta8");
-                calendar.VisibleDate = new DateTime(2014, 4, 1);
             }
         }
 
@@ -56,7 +77,7 @@ namespace templateApp.GUI.Modulo10
 
         protected void bModificar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("M10_ListarAsistenciaEventos.aspx?eliminacionSuccess=2");
+            Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=2");
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)
@@ -66,11 +87,21 @@ namespace templateApp.GUI.Modulo10
 
         protected void calendar_DayRender(object sender, DayRenderEventArgs e)
         {
-            DateTime fecha = DateTime.Parse("2014-04-01");
-            if (e.Day.IsSelected)
-                e.Cell.BackColor = Color.Red;
-            else if (e.Day.Date == fecha)
-                e.Cell.BackColor = Color.Blue;
+            if (tipo.Equals("evento"))
+            {
+                if (e.Day.IsSelected)
+                    e.Cell.BackColor = Color.Red;
+                else if (e.Day.Date == evento.Horario.FechaInicio)
+                    e.Cell.BackColor = Color.Blue;
+            }
+            else if (tipo.Equals("competencia"))
+            {
+                if (e.Day.IsSelected)
+                    e.Cell.BackColor = Color.Red;
+                else if (e.Day.Date == competencia.FechaInicio)
+                    e.Cell.BackColor = Color.Blue;
+            }
+
         }
     }
 }

@@ -51,6 +51,8 @@
        <br />
        <h3>Fecha del Evento:</h3>
        <asp:Calendar ID="calendar" runat="server" OnDayRender="calendar_DayRender" Enabled="false"></asp:Calendar>
+       <h3>Nombre del Evento:</h3>
+       <asp:TextBox ID="nombreEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
    </div>
  
     <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->

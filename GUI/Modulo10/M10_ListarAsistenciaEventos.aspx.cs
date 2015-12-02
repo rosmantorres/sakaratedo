@@ -17,7 +17,7 @@ namespace templateApp.GUI.Modulo10
         {
             ((SKD)Page.Master).IdModulo = "10";
 
-            String success = Request.QueryString["eliminacionSuccess"];
+            String success = Request.QueryString["success"];
 
             if (success != null)
             {
@@ -52,7 +52,7 @@ namespace templateApp.GUI.Modulo10
 
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
                         this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
-                        this.dataTable.Text += M10_RecursosInterfaz.BotonModificar + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonModificarEvento + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
                     }
@@ -68,7 +68,7 @@ namespace templateApp.GUI.Modulo10
 
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
                         this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
-                        this.dataTable.Text += M10_RecursosInterfaz.BotonModificar + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonModificarCompetencia + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
                     }

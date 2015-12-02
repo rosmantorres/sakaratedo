@@ -97,6 +97,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idPersona.
+        /// </summary>
+        internal static string aliasIdPersona {
+            get {
+                return ResourceManager.GetString("aliasIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to nombreCompetencia.
         /// </summary>
         internal static string aliasNombreCompetencia {
@@ -115,11 +124,29 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nombrePersona.
+        /// </summary>
+        internal static string aliasNombrePersona {
+            get {
+                return ResourceManager.GetString("aliasNombrePersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to tipoEvento.
         /// </summary>
         internal static string aliasTipoEvento {
             get {
                 return ResourceManager.GetString("aliasTipoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idEvento.
+        /// </summary>
+        internal static string ParametroIdEvento {
+            get {
+                return ResourceManager.GetString("ParametroIdEvento", resourceCulture);
             }
         }
         
@@ -138,6 +165,15 @@ namespace DatosSKD.Modulo10 {
         internal static string ProcedimentoConsultarEventoAsistido {
             get {
                 return ResourceManager.GetString("ProcedimentoConsultarEventoAsistido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_AsistentesAlEvento.
+        /// </summary>
+        internal static string ProcedimientoAtletasAsistentes {
+            get {
+                return ResourceManager.GetString("ProcedimientoAtletasAsistentes", resourceCulture);
             }
         }
     }

@@ -55,7 +55,7 @@ namespace templateApp.GUI.Modulo10
 
         protected void bAgregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("M10_ListarAsistenciaEventos.aspx?eliminacionSuccess=1");
+            Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=1");
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)

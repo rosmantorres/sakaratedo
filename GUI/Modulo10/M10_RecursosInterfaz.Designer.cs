@@ -97,11 +97,20 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?compMod=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?tipo=competencia&amp;modificar=.
         /// </summary>
-        internal static string BotonModificar {
+        internal static string BotonModificarCompetencia {
             get {
-                return ResourceManager.GetString("BotonModificar", resourceCulture);
+                return ResourceManager.GetString("BotonModificarCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?tipo=evento&amp;modificar=.
+        /// </summary>
+        internal static string BotonModificarEvento {
+            get {
+                return ResourceManager.GetString("BotonModificarEvento", resourceCulture);
             }
         }
         
