@@ -185,5 +185,14 @@ namespace DatosSKD.Modulo10 {
                 return ResourceManager.GetString("ProcedimientoAtletasAsistentes", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_InasistenteAlEvento.
+        /// </summary>
+        internal static string ProcedimientoAtletasInasitentes {
+            get {
+                return ResourceManager.GetString("ProcedimientoAtletasInasitentes", resourceCulture);
+            }
+        }
     }
 }

@@ -172,4 +172,8 @@
   <data name="aliasIdInscripcion" xml:space="preserve">
     <value>idInscripcion</value>
   </data>
+  <data name="ProcedimientoAtletasInasitentes" xml:space="preserve">
+    <value>M10_InasistenteAlEvento</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

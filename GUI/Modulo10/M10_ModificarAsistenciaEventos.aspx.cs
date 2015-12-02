@@ -16,7 +16,7 @@ namespace templateApp.GUI.Modulo10
         Evento evento = new Evento();
         Competencia competencia = new Competencia();
         List<Persona> listaA = new List<Persona>();
-        String tipo;
+        List<Persona> listaI = new List<Persona>();
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "10";
@@ -24,7 +24,7 @@ namespace templateApp.GUI.Modulo10
             if (!IsPostBack)
             {
                 String idEvento = Request.QueryString["modificar"];
-                tipo = Request.QueryString["tipo"];
+                String tipo = Request.QueryString["tipo"];
 
                 Session["M10_IdEvento"] = idEvento;
                 Session["M10_tipo"] = tipo;
@@ -36,12 +36,17 @@ namespace templateApp.GUI.Modulo10
                     nombreEvento.Text = evento.Nombre;
 
                     listaA = LogicaAsistencia.listaAsistentes(Session["M10_IdEvento"].ToString());
+                    listaI = LogicaAsistencia.listaNoAsistentes(Session["M10_IdEvento"].ToString());
 
                     foreach (Persona persona in listaA)
                     {
                         listaAsistentes.Items.Add(persona.ID + " " + persona.Nombre);
                     }
-
+                    
+                    foreach (Persona persona in listaI)
+                    {
+                        listaNoAsistieron.Items.Add(persona.ID + " " + persona.Nombre);
+                    }
                 }
                 else if (Session["M10_tipo"].Equals("competencia"))
                 {
