@@ -16,7 +16,7 @@ as
     VALUES (@descripcion,@edad_minima,@edad_maxima,@sexo,@eventoid);
 
  end;
-
+GO
 -----------------------PROCEDURE MODIFICAR RESTRICCION_EVENTO---------------------------
 CREATE PROCEDURE M8_Modificar_Restriccion_Evento
 	@res_eve_id         int,
@@ -33,7 +33,7 @@ as
 	SET res_eve_desc = @descripcion, res_eve_edad_min = @edad_minima, res_eve_edad_max = @edad_maxima, res_eve_sexo = @sexo
 	WHERE res_eve_id = @res_eve_id
  end;
-
+GO
 -----------------------PROCEDURE ELIMINAR RESTRICCION_EVENTO---------------------------
 CREATE PROCEDURE M8_Eliminar_Restriccion_Evento
 	@res_eve_id         int
@@ -44,7 +44,7 @@ as
 	DELETE FROM dbo.RESTRICCION_EVENTO
 	WHERE res_eve_id = @res_eve_id
  end;
-
+GO
 -----------------------PROCEDURE CONSULTAR EVENTOS SIN RESTRICCION---------------------------
 CREATE PROCEDURE M8_CONSULTAR_EVENTOS_SINRESTRICCION
 as
@@ -56,7 +56,7 @@ as
     from RESTRICCION_EVENTO r1, EVENTO e1
     where r1.res_eve_id = e1.eve_id)
  end;
-
+GO
  -----------------------PROCEDURE CONSULTAR EVENTOS CON RESTRICCION---------------------------
 CREATE PROCEDURE M8_CONSULTAR_EVENTOS_CONRESTRICCION
 as
@@ -67,7 +67,7 @@ as
 	from RESTRICCION_EVENTO as res, Evento as ev
 	where res.EVENTO_eve_id = ev.eve_id
  end;
-
+GO
  -----------------------PROCEDURE CONSULTAR CINTAS DE RESTRICCION_EVENTO---------------------------
 CREATE PROCEDURE M8_CONSULTAR_CINTAS_RESTRICCION_EVENTO
 	@res_eve_id         int
@@ -77,7 +77,7 @@ as
 	SELECT rh.CINTA_cin_id as cinta_id, cin.cin_color_nombre as cin_color_nombre  FROM RH_CINTA as rh, CINTA as cin
 	WHERE rh.RESTRICCION_EVENTO_res_eve_id = @res_eve_id and rh.CINTA_cin_id = cin.cin_id	
  end;
-
+GO
 -----------------------PROCEDURE RH_CINTA----------------------------------------------------------------------
 -----------------------PROCEDURE RH_CINTA----------------------------------------------------------------------
 -----------------------PROCEDURE RH_CINTA----------------------------------------------------------------------
@@ -93,7 +93,7 @@ as
     VALUES (@res_eve_id ,@cintaid);
 
  end;
-
+GO
 -----------------------PROCEDURE ELIMINAR RH_CINTA TODO---------------------------
 CREATE PROCEDURE M8_Eliminar_RH_Cinta
 	@res_eve_id         int
@@ -104,7 +104,7 @@ as
 	DELETE FROM dbo.RH_Cinta
 	WHERE  RESTRICCION_EVENTO_res_eve_id = @res_eve_id  
  end;
-
+GO
 -- ========================================================================= --
 -- RETORNAR TODOS LOS ID DE ATLETAS QUE CUMPLEN CON UNA RESTRICCION          --
 -- ========================================================================= --
@@ -158,7 +158,7 @@ AS
 			where 
 				@id_cinta = CINTA_cin_id
 	end;
-
+GO
 
 ------------------PROCEDURE AGREGAR NUEVA RESTRICCION DE CINTA------------
 
@@ -185,7 +185,7 @@ as
     VALUES (@descripcion,@tiempo_minimo,@puntaje_minimo,@horas_docentes,@id_cinta);
 
  end;
-
+GO
 
 ----Execute M8_Agregar_Restriccion_Cinta "INSERT DE PRUEBA",10,2,3,9;--
 
@@ -205,6 +205,7 @@ AS
 		WHERE
 			res_cin_id = @id_restriccion;
 	end;
+GO
 
 CREATE procedure M8_Consultar_Restricciones_Cinta
 as
@@ -213,6 +214,7 @@ as
 		from RESTRICCION_CINTA
 		
 	end;
+GO
 
 CREATE procedure M8_Consultar_Cintas
 as
@@ -221,11 +223,4 @@ as
 		from CINTA
 		
 	end;	
-
-
-	public RestriccionCinta(int inputId, string inputDescripcion)
-        {
-            this.idRestriccionCinta = inputId;
-            this.descripcion = inputDescripcion;
-
-        }
+GO

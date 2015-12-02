@@ -36,7 +36,7 @@ namespace DatosSKD.Modulo8
                         laRestriccion.EdadMaxima.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDRestriccionEvento.ParamSexoRestricionEvento, SqlDbType.Int,
+                elParametro = new Parametro(RecursosBDRestriccionEvento.ParamSexoRestricionEvento, SqlDbType.VarChar,
                         laRestriccion.Sexo.ToString(), false);
                 parametros.Add(elParametro);
 
@@ -94,7 +94,7 @@ namespace DatosSKD.Modulo8
                         laRestriccion.EdadMaxima.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosBDRestriccionEvento.ParamSexoRestricionEvento, SqlDbType.Int,
+                elParametro = new Parametro(RecursosBDRestriccionEvento.ParamSexoRestricionEvento, SqlDbType.VarChar,
                         laRestriccion.Sexo.ToString(), false);
                 parametros.Add(elParametro);
 
