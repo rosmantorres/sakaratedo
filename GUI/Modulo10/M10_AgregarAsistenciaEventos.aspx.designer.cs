@@ -13,84 +13,84 @@ namespace templateApp.GUI.Modulo10 {
     public partial class M10_AgregarAsistenciaEventos {
         
         /// <summary>
-        /// DivComboEve control.
+        /// agregar_asistencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivComboEve;
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_asistencia;
         
         /// <summary>
-        /// comboEve control.
+        /// div1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboEve;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1;
         
         /// <summary>
-        /// DivComboCat control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivComboCat;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// comboCat control.
+        /// listaInscritos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboCat;
+        protected global::System.Web.UI.WebControls.ListBox listaInscritos;
         
         /// <summary>
-        /// ListBox1 control.
+        /// bIzquierdo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.LinkButton bIzquierdo;
         
         /// <summary>
-        /// buttonAgregar control.
+        /// bDerecho control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonAgregar;
+        protected global::System.Web.UI.WebControls.LinkButton bDerecho;
         
         /// <summary>
-        /// buttonEliminar control.
+        /// listaAsistentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonEliminar;
+        protected global::System.Web.UI.WebControls.ListBox listaAsistentes;
         
         /// <summary>
-        /// ListBox2 control.
+        /// bAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox2;
+        protected global::System.Web.UI.WebControls.LinkButton bAgregar;
         
         /// <summary>
-        /// btn_agregarAsist control.
+        /// bCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregarAsist;
+        protected global::System.Web.UI.WebControls.LinkButton bCancelar;
     }
 }

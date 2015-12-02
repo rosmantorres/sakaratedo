@@ -45,7 +45,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_asistencia" id="agregar_asistencia" method="post" action="#">
+<form role="form" name="agregar_asistencia" id="agregar_asistencia" method="post" runat="server">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
    
@@ -65,39 +65,18 @@
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-             <div class="dropdown" runat="server" id="DivComboEve">
-             <asp:DropDownList class="btn btn-default btn-lg dropdown-toggle" ID="comboEve" runat="server" OnSelectedIndexChanged="comboEve_SelectedIndexChanged" AutoPostBack="true"  >
-             </asp:DropDownList>
-            <ul class="dropdown-menu">
-               <li><a href="#">Evento #1</a></li>
-               <li><a href="#">Evento #2</a></li>
-               <li><a href="#">Evento #3</a></li>
-               <li><a href="#">Evento #4</a></li>
-          </ul>
-        </div>
+    <div class="dropdown" runat="server" id="div1">
+        <asp:DropDownList ID="DropDownList1"  class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
+              <asp:ListItem>Allahabad</asp:ListItem>
+              <asp:ListItem>Kanpur</asp:ListItem>
+              <asp:ListItem>Rewa</asp:ListItem>
+              <asp:ListItem>Bhopal</asp:ListItem>
+              <asp:ListItem>Indore</asp:ListItem>
+              <asp:ListItem>Jabalpur</asp:ListItem>
+        </asp:DropDownList>
+    </div>
       </div>
     </div>
-     <!-- FIN COMBO EVENTO-->
-
-    <!--COMBO CATEGORIA-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Categoria:</h3>
-      <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="dropdown" runat="server" id="DivComboCat">
-          <asp:DropDownList class="btn btn-default btn-lg dropdown-toggle" ID="comboCat" runat="server" OnSelectedIndexChanged="comboCat_SelectedIndexChanged" AutoPostBack="true"  >
-          </asp:DropDownList>
-          <ul class="dropdown-menu">
-               <li><a href="#">Categoria #1</a></li>
-               <li><a href="#">Categoria #2</a></li>
-               <li><a href="#">Categoria #3</a></li>
-               <li><a href="#">Categoria #4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-     <!-- FIN COMBO CATEGORIA-->
-   <br/>
-
 
         <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
     <div class="form-group">
@@ -116,31 +95,22 @@
                </tr>
         <tr>
             <td>
-         <asp:ListBox id="ListBox1" size="4" SelectionMode="Multiple" runat="server" style="height:120px" Width="100%">
-            <asp:ListItem>Atleta #1</asp:ListItem>
-          <asp:ListItem>Atleta #2</asp:ListItem>
-             <asp:ListItem>Atleta #3</asp:ListItem>
-             <asp:ListItem>Atleta #8</asp:ListItem>
-             <asp:ListItem>Atleta #5</asp:ListItem>
-             <asp:ListItem>Atleta #6</asp:ListItem>
-             <asp:ListItem>Atleta #7</asp:ListItem>
+         <asp:ListBox Runat="server" ID="listaInscritos" SelectionMode="Multiple" CssClass="form-control select select-primary select-block mbl" Height="150px">
          </asp:ListBox>
        </td>
             <td>
          <div class="text-center padding-small">
-            <asp:button runat="server" id="buttonAgregar" Text=">>" onclick="agregarOrg()"></asp:button>
-            <asp:button runat="server" id="buttonEliminar" Text="<<" onclick="eliminarOrg()"></asp:button>
+            <asp:LinkButton ID="bIzquierdo" runat="server" CssClass="btn btn-primary" OnClick="bIzquierdo_Click">
+            <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+            </asp:LinkButton>
+            <asp:LinkButton ID="bDerecho" runat="server" CssClass="btn btn-primary" OnClick="bDerecho_Click">
+            <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+            </asp:LinkButton>
          </div>
            </td>
             
            <td>
-         <asp:ListBox id="ListBox2" size="4" SelectionMode="Multiple" runat="server" style="height:120px" Width="100%">
-            <asp:ListItem>Atleta #4</asp:ListItem>
-             <asp:ListItem>Atleta #9</asp:ListItem>
-             <asp:ListItem>Atleta #10</asp:ListItem>
-             <asp:ListItem>Atleta #11</asp:ListItem>
-             <asp:ListItem>Atleta #12</asp:ListItem>
-      
+         <asp:ListBox Runat="server" ID="listaAsistentes" SelectionMode="Multiple" CssClass="form-control select select-primary select-block mbl" Height="150px">
          </asp:ListBox>
        </td>
         </tr>
@@ -282,9 +252,9 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="btn_agregarAsist" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarAsist_Click" Text="Agregar"></asp:Button>
+         <asp:LinkButton ID="bAgregar" runat="server" CssClass="btn btn-primary" OnClick="bAgregar_Click">Agregar</asp:LinkButton>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M10_ListarAsistenciaEventos.aspx">Cancelar</a>
+         <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>
    </form>
 
