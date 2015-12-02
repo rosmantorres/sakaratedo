@@ -88,22 +88,75 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool registrarPago(int tipoPago, List<int> datos, int idUsuario)
         {
-            //Preparamos la respuesta del proceso
-            bool respuesta;
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER, 
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            //Procedemos a procesar la compra de los productos que estan en el carrito
-            if (tipoPago == 1)
-                respuesta = carritoBD.registrarPago("Tarjeta",null,idUsuario);
-            else if (tipoPago == 2)
-                respuesta = carritoBD.registrarPago("Deposito",null,idUsuario);
-            else
-                respuesta = carritoBD.registrarPago("Transferencia",null,idUsuario);
+                //Preparamos la respuesta del proceso
+                bool respuesta;
 
-            //Limpiamos el carrito del Usuario
-            carritoUsuario.limpiar();
+                //Procedemos a procesar la compra de los productos que estan en el carrito
+                if (tipoPago == 1)
+                    respuesta = carritoBD.registrarPago("Tarjeta", null, idUsuario);
+                else if (tipoPago == 2)
+                    respuesta = carritoBD.registrarPago("Deposito", null, idUsuario);
+                else
+                    respuesta = carritoBD.registrarPago("Transferencia", null, idUsuario);
 
-            //Retonarmos el exito o fallo del proceso
-            return respuesta;
+                //Limpiamos el carrito del Usuario
+                carritoUsuario.limpiar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER,System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retonarmos el exito o fallo del proceso
+                return respuesta;
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
         }
 
         /// <summary>
@@ -116,28 +169,66 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool agregarInventarioaCarrito(int idUsuario, int idInventario, int cantidad, int precio)
         {
-
             try
             {
-                return BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario, cantidad, precio);
-            }
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+                //Preparamos la respuesta
+                bool respuesta = false;
 
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
-                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+                //Obtenemos la respuesta
+                respuesta = BDCarrito.agregarInventarioaCarrito(idUsuario, idInventario, cantidad, precio);
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER,System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retonarmos el exito o fallo del proceso
+                return respuesta;
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
         }
 
@@ -149,28 +240,66 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool agregarEventoaCarrito(int idUsuario, int idEvento, int cantidad, int precio)
         {
-
             try
             {
-                return BDCarrito.agregarEventoaCarrito(idUsuario, idEvento, cantidad, precio);
-            }
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+                //Preparamos la respuesta
+                bool respuesta = false;
 
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
-                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+                //Obtenemos la respuesta
+                respuesta = BDCarrito.agregarEventoaCarrito(idUsuario, idEvento, cantidad, precio);
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER,System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retonarmos el exito o fallo del proceso
+                return respuesta;
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
         }
         
@@ -182,28 +311,66 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>Si la operacion fue exitosa o fallida</returns>
         public bool agregarMatriculaaCarrito(int idUsuario, int idMatricula, int cantidad, int precio)
         {
-
             try
             {
-                return BDCarrito.agregarMatriculaaCarrito(idUsuario, idMatricula, cantidad, precio);
-            }
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+                //Preparamos la respuesta
+                bool respuesta = false;
 
-            catch (ParametroIncorrectoException ex)
-            {
-                throw new ParametroIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionParametro,
-                    RecursosLogicaModulo16.Mensaje__ExcepcionParametro, ex);
-            }
-            catch (AtributoIncorrectoException ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                    RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
-            }
-            catch (Exception ex)
-            {
-                throw new AtributoIncorrectoException(RecursosLogicaModulo16.Codigo_ExcepcionAtributo,
-                 RecursosLogicaModulo16.Mensaje_ExcepcionAtributo, ex);
+                //Obtenemos la respuesta
+                respuesta = BDCarrito.agregarMatriculaaCarrito(idUsuario, idMatricula, cantidad, precio);
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retonarmos el exito o fallo del proceso
+                return respuesta;                
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
         }
 
@@ -217,16 +384,75 @@ namespace LogicaNegociosSKD.Modulo16
         /// <returns>El exito o fallo del proceso</returns>
         public bool modificarCarrito(int idUsuario, int idItem, int cantidad, String tipoObjeto)
         {
-            //Instancio el objeto BDCarrito y una respuesta de la capa de Datos
-            BDCarrito carritoBD = new BDCarrito();
-            
-            //Si es un item de tipo implemento ejecuto su modificar correspondiente y espero la respuesta
-            if (tipoObjeto == "I")
-                return carritoBD.modificarCarritoImplemento(idUsuario, idItem, cantidad);
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            //Caso contrario nos referiremos a un evento
-            else
-                return carritoBD.modificarCarritoEvento(idUsuario,idItem,cantidad);
+                //Preparamos la respuesta
+                bool respuesta;
+
+                //Instancio el objeto BDCarrito y una respuesta de la capa de Datos
+                BDCarrito carritoBD = new BDCarrito();
+
+                //Si es un item de tipo implemento ejecuto su modificar correspondiente y espero la respuesta
+                if (tipoObjeto == "I")
+                    respuesta = carritoBD.modificarCarritoImplemento(idUsuario, idItem, cantidad);
+
+                //Caso contrario nos referiremos a un evento
+                else
+                    respuesta = carritoBD.modificarCarritoEvento(idUsuario, idItem, cantidad);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retonarmos el exito o fallo del proceso
+                return respuesta;
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
         }
         #endregion
     }

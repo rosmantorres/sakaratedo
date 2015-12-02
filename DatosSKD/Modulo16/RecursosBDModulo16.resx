@@ -371,7 +371,7 @@
     <value>Error en parsear un atributo invalido</value>
   </data>
   <data name="MENSAJE_EXCEPCION_GENERICO" xml:space="preserve">
-    <value>Ha ocurrido un error inesperado</value>
+    <value>Ha ocurrido un error inesperado en la capa de datos</value>
   </data>
   <data name="MENSAJE_EXCEPCION_SOBRECARGA" xml:space="preserve">
     <value>Error al parsear un atributo sobrecargado</value>

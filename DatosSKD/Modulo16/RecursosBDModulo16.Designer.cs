@@ -304,7 +304,7 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ha ocurrido un error inesperado.
+        ///   Looks up a localized string similar to Ha ocurrido un error inesperado en la capa de datos.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_GENERICO {
             get {

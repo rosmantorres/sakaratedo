@@ -138,6 +138,11 @@ namespace DatosSKD.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -433,6 +438,11 @@ namespace DatosSKD.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -512,10 +522,15 @@ namespace DatosSKD.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKDConexionBD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
                     RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
         }
@@ -613,10 +628,15 @@ namespace DatosSKD.Modulo16
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                throw e;
            }
+           catch(ExceptionSKD e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
            catch (Exception e)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-               throw new ExceptionSKDConexionBD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+               throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
            }     
         }
@@ -704,6 +724,11 @@ namespace DatosSKD.Modulo16
                 throw e;
             }
             catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -809,6 +834,11 @@ namespace DatosSKD.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -901,6 +931,11 @@ namespace DatosSKD.Modulo16
                 throw e;
             }
             catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -999,6 +1034,11 @@ namespace DatosSKD.Modulo16
                 throw e;
             }
             catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
