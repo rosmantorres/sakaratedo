@@ -94,7 +94,25 @@ namespace LogicaNegociosSKD.Modulo4
                 throw ex;
             }
         }
-
+        public void eliminarDojo(int idDojo)
+        {
+            try
+            {
+                BDDojo.eliminarDojo(idDojo);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
      
         #endregion
     }

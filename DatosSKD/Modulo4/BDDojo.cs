@@ -36,7 +36,7 @@ namespace DatosSKD.Modulo4
                     Dojo elDojo = new Dojo();
 
                     elDojo.Id_dojo= int.Parse(row[RecursosBDModulo4.AliasIdDojo].ToString());
-                    elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
+                    elDojo.Rif_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
                     elDojo.Nombre_dojo = row[RecursosBDModulo4.AliasNombreDojo].ToString();
                     elDojo.Telefono_dojo = int.Parse(row[RecursosBDModulo4.AliasTelefonoDojo].ToString());
                     elDojo.Email_dojo = row[RecursosBDModulo4.AliasEmailDojo].ToString();
@@ -103,12 +103,13 @@ namespace DatosSKD.Modulo4
 
 
                         elDojo.Id_dojo = int.Parse(row[RecursosBDModulo4.AliasIdDojo].ToString());
-                        elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
+                        elDojo.Rif_dojo = row[RecursosBDModulo4.AliasRifDojo].ToString();
                         elDojo.Nombre_dojo = row[RecursosBDModulo4.AliasNombreDojo].ToString();
                         elDojo.Telefono_dojo = int.Parse(row[RecursosBDModulo4.AliasTelefonoDojo].ToString());
                         elDojo.Email_dojo = row[RecursosBDModulo4.AliasEmailDojo].ToString();
                         elDojo.Logo_dojo = row[RecursosBDModulo4.AliasLogoDojo].ToString();
                         elDojo.Status_dojo = row[RecursosBDModulo4.AliasStatusDojo].ToString();
+                        elDojo.Estilo_dojo = row[RecursosBDModulo4.AliasEstiloDojo].ToString();
                         elDojo.Registro_dojo = DateTime.Parse(row[RecursosBDModulo4.AliasFechaDojo].ToString());
                         elDojo.Organizacion_dojo = int.Parse(row[RecursosBDModulo4.AliasIdOrganizacion].ToString());
                         elDojo.OrgNombre_dojo = row[RecursosBDModulo4.AliasNombreOrganizacion].ToString();
@@ -200,6 +201,45 @@ namespace DatosSKD.Modulo4
             return retorno;
 
 
+        }
+
+        public static void eliminarDojo(int idDojo)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+
+            try
+            {
+
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                elParametro = new Parametro(RecursosBDModulo4.ParamIdDojo, SqlDbType.Int, idDojo.ToString(),
+                                               false);
+                parametros.Add(elParametro);
+
+                laConexion.EjecutarStoredProcedure(RecursosBDModulo4.EliminarDojo, parametros);
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosBDModulo4.Codigo_Error_Formato,
+                     RecursosBDModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
         }
     }
 }

@@ -31,9 +31,12 @@ namespace LogicaNegociosSKD.Modulo4
 
         public List<DominioSKD.Historial_Matricula> obtenerListaDeMatriculas(int idDojo)
         {
+            List<DominioSKD.Historial_Matricula> lista = new List<DominioSKD.Historial_Matricula>();
             try 
             {
-                return BDHistorial_Matricula.ListarMatriculas(idDojo);
+                lista = BDHistorial_Matricula.ListarMatriculas(idDojo);
+                return lista;
+                                   
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -49,6 +52,68 @@ namespace LogicaNegociosSKD.Modulo4
             }
         
         }
+        public List<DominioSKD.Historial_Matricula> obtenerListaDeMatriculas()
+        {
+            try
+            {
+                return BDHistorial_Matricula.ListarMatriculas();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+
+        }
  #endregion
+
+        public int obtenerDojoPersona(int idusuario)
+        {
+            int id = 0;
+            try
+            {
+               id = BDHistorial_Matricula.obtenerDojoPersona(idusuario);
+               return id;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void eliminarMatricula(int idmatricula)
+        {
+            try
+            {
+                BDHistorial_Matricula.eliminarMatricula(idmatricula);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

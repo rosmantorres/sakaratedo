@@ -115,7 +115,16 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M4_ListarDojos.aspx?dojoEliminar=.
+        ///   Busca una cadena traducida similar a &quot; href=&quot;#&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonCerrar2 {
+            get {
+                return ResourceManager.GetString("BotonCerrar2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Eliminar&quot; class=&quot;eliminar_clase btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-delete&quot; data-id=&quot;.
         /// </summary>
         internal static string BotonEliminar {
             get {
@@ -138,6 +147,15 @@ namespace templateApp.GUI.Modulo4 {
         internal static string BotonModificar {
             get {
                 return ResourceManager.GetString("BotonModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M4_ModificarHistorialMatricula.aspx?matriculaMod=.
+        /// </summary>
+        internal static string BotonModificarM {
+            get {
+                return ResourceManager.GetString("BotonModificarM", resourceCulture);
             }
         }
         

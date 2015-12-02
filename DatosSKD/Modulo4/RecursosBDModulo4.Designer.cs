@@ -106,6 +106,15 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a idDojoPersona.
+        /// </summary>
+        internal static string AliasIdDojoPersona {
+            get {
+                return ResourceManager.GetString("AliasIdDojoPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a idMatricula.
         /// </summary>
         internal static string AliasIdMatricula {
@@ -304,11 +313,56 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarIdPersona.
+        /// </summary>
+        internal static string ConsultarIdPersona {
+            get {
+                return ResourceManager.GetString("ConsultarIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarMatriculas.
+        /// </summary>
+        internal static string ConsultarMatriculas {
+            get {
+                return ResourceManager.GetString("ConsultarMatriculas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarMatriculasXDojo.
+        /// </summary>
+        internal static string ConsultarMatriculasXDojo {
+            get {
+                return ResourceManager.GetString("ConsultarMatriculasXDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M4_ConsultarMatriculasXid.
         /// </summary>
         internal static string ConsultarMatriculasXId {
             get {
                 return ResourceManager.GetString("ConsultarMatriculasXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_EliminarDojo.
+        /// </summary>
+        internal static string EliminarDojo {
+            get {
+                return ResourceManager.GetString("EliminarDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_EliminarHMatricula.
+        /// </summary>
+        internal static string EliminarHMatricula {
+            get {
+                return ResourceManager.GetString("EliminarHMatricula", resourceCulture);
             }
         }
         
@@ -349,11 +403,29 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @idmatricula.
+        /// </summary>
+        internal static string ParamIdMatricula {
+            get {
+                return ResourceManager.GetString("ParamIdMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @idOrganizacion.
         /// </summary>
         internal static string ParamIdOrganizacion {
             get {
                 return ResourceManager.GetString("ParamIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @idPersona.
+        /// </summary>
+        internal static string ParamIdUsuario {
+            get {
+                return ResourceManager.GetString("ParamIdUsuario", resourceCulture);
             }
         }
         

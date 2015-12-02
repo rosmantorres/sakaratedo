@@ -135,14 +135,20 @@
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
+  <data name="BotonCerrar2" xml:space="preserve">
+    <value>" href="#"&gt;&lt;/a&gt;</value>
+  </data>
   <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M4_ListarDojos.aspx?dojoEliminar=</value>
+    <value>&lt;a title="Eliminar" class="eliminar_clase btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" data-id="</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M4_DetalleDojo.aspx?dojoDetalle=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarDojo.aspx?dojoMod=</value>
+  </data>
+  <data name="BotonModificarM" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarHistorialMatricula.aspx?matriculaMod=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>

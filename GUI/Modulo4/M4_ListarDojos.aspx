@@ -82,7 +82,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-         <asp:Button id="btn_eliminarDojo" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarDojo_Click" Text="Eliminar"></asp:Button>
+         <a id="btneliminarmatricula" type="button" class="btn btn-primary"  href="M4_ListarDojos.aspx?dojoEliminar=0" >Eliminar</a>
                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
@@ -98,15 +98,31 @@
         var dojo;
         var tr;
 
+        var idEliminar;
+
+        // imprimir mensaje de confirmación de eliminar
+        $('a.eliminar_clase').click(function (e) {
+            idEliminar = $(this).attr("data-id");
+            //   alert(idEliminar);
+            $('#btneliminarmatricula').attr("href", "M4_ListarDojos.aspx?dojoEliminar=" + idEliminar);
+
+        });
+        $('#tablaDojo tbody').on('click', 'a.eliminar_clase', function (e) {
+            idEliminar = $(this).attr("data-id");
+            //   alert(idEliminar);
+            $('#btneliminarmatricula').attr("href", "M4_ListarDojos.aspx?dojoEliminar=" + idEliminar);
+
+        });
+
         $('#tablaDojo tbody').on('click', 'a', function () {
             if ($(this).parent().hasClass('selected')) {
-                comp = $(this).parent().prev().prev().prev().prev().text();
+                dojo = $(this).parent().prev().prev().prev().prev().prev().text();
                 tr = $(this).parents('tr');//se guarda la fila seleccionada
                 $(this).parent().removeClass('selected');
 
             }
             else {
-                comp = $(this).parent().prev().prev().prev().prev().text();
+                dojo = $(this).parent().prev().prev().prev().prev().prev().text();
                 tr = $(this).parents('tr');//se guarda la fila seleccionada
                 table.$('tr.selected').removeClass('selected');
                 $(this).parent().addClass('selected');
@@ -118,7 +134,7 @@
         $('#modal-delete').on('show.bs.modal', function (event) {
             var modal = $(this)
             modal.find('.modal-title').text('Eliminar Dojo:  ' + dojo)
-            modal.find('#dojo').text(comp)
+            modal.find('#dojo').text(dojo)
         })
         $('#btn-eliminar').on('click', function () {
             table.row(tr).remove().draw();//se elimina la fila de la tabla

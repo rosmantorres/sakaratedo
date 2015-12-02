@@ -20,8 +20,13 @@ namespace templateApp.GUI.Modulo4
             ((SKD)Page.Master).IdModulo = "4";
 
             String success = Request.QueryString["success"];
-            String detalleString = Request.QueryString["dojoDetalle"];
+            String info = Request.QueryString["info"];
+            String detalleString = Request.QueryString["matriculaEliminar"];
 
+            if (detalleString != null)
+            {
+                Eliminarmatricula(detalleString);
+            }
 
 
             if (success != null)
@@ -48,6 +53,7 @@ namespace templateApp.GUI.Modulo4
                 }
 
             }
+          
 
             #region Llenar Data Table Con Historial Matriculas
 
@@ -60,7 +66,7 @@ namespace templateApp.GUI.Modulo4
                     this.sta.Text += M4_RecursoInterfaz.AbrirTR;
                     this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Fecha" + M4_RecursoInterfaz.CerrarTH;
                     this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Modalidad" + M4_RecursoInterfaz.CerrarTH;
-                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Monto" + M4_RecursoInterfaz.CerrarTH;
+                    this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Monto BsF." + M4_RecursoInterfaz.CerrarTH;
                     if (String.Compare(RolPersona, "Sistema") == 0)
                     {
                         this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Dojo" + M4_RecursoInterfaz.CerrarTH;
@@ -68,56 +74,58 @@ namespace templateApp.GUI.Modulo4
                         this.sta.Text += M4_RecursoInterfaz.CerrarTR;
 
                         laLista = logMatricula.obtenerListaDeMatriculas();
+                      if (laLista.Count != 0)
+                            foreach (Historial_Matricula h in laLista)
+                            {
 
-                        foreach (Dojo d in laLista)
-                        {
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + h.Fecha_historial_matricula.ToString("dd/MM/yyyy") + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + h.Modalidad_historial_matricula.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bsf. " + h.Monto_historial_matricula.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + h.DojoNombre_historial_matricula.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + h.Id_historial_matricula + M4_RecursoInterfaz.BotonCerrar;
+                                this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + h.Id_historial_matricula + M4_RecursoInterfaz.BotonCerrar;
+                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
+                            }
+                      else
+                      {
+                          alert.Attributes["class"] = "alert alert-info alert-dismissible";
+                          alert.Attributes["role"] = "alert";
+                          alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se encontraron registros asociados a su solicitud</div>";
 
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            if (String.Compare(d.Status_dojo, "True") == 0)
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
-                            else
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bloqueado" + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                            this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                            this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                            this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
-                        }
+                      }
+
                     }
                     else
                         if (String.Compare(RolPersona, "Organización") == 0)
                         {
                             this.sta.Text += M4_RecursoInterfaz.AbrirTH + "Acciones" + M4_RecursoInterfaz.CerrarTH;
                             this.sta.Text += M4_RecursoInterfaz.CerrarTR;
+                            int id = 0;
+                            id = BuscarDojoPersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                            laLista = logMatricula.obtenerListaDeMatriculas(id);
+                            if (laLista.Count != 0)
+                                foreach (Historial_Matricula h in laLista)
+                                {
 
-                            laLista = logMatricula.obtenerListaDeDojos();
-
-
-                            foreach (Dojo d in laLista)
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + h.Fecha_historial_matricula.ToString("dd/MM/yyyy") + M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + h.Modalidad_historial_matricula.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bsf. " + h.Monto_historial_matricula.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + h.Id_historial_matricula + M4_RecursoInterfaz.BotonCerrar;
+                                    this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + h.Id_historial_matricula + M4_RecursoInterfaz.BotonCerrar2;
+                                    this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
+                                }
+                            else
                             {
-
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
-                                if (String.Compare(d.Status_dojo, "True") == 0)
-                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
-                                else
-                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bloqueado" + M4_RecursoInterfaz.CerrarTD;
-
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                                this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                                this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
+                                alert.Attributes["class"] = "alert alert-info alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se encontraron registros asociados a su solicitud</div>";
+                 
                             }
                         }
 
@@ -130,8 +138,42 @@ namespace templateApp.GUI.Modulo4
                     throw ex;
                 }
             }
+
         }
             #endregion
-        
+
+        protected int BuscarDojoPersona(int idusuario)
+        {
+            LogicaHistorial_Matricula logMatricula = new LogicaHistorial_Matricula();
+            int idDojo=0;
+            try 
+            {
+                 idDojo = logMatricula.obtenerDojoPersona(idusuario);
+                 return idDojo;
+                    
+            }
+            catch (Exception ex)
+            {
+                   throw ex;
+            }
+           
+        }
+
+        protected void Eliminarmatricula(String matriculaEliminar)
+        {
+            int idmatricula = int.Parse(matriculaEliminar);
+            LogicaHistorial_Matricula logMatricula = new LogicaHistorial_Matricula();
+            try
+            {
+                logMatricula.eliminarMatricula(idmatricula);
+                Response.Redirect("M4_ListarHistorialMatricula.aspx?success=2");
+               
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

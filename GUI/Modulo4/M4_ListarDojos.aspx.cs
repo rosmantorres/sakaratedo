@@ -21,7 +21,12 @@ namespace templateApp.GUI.Modulo4
             
             String success = Request.QueryString["success"];
             String detalleString = Request.QueryString["dojoDetalle"];
+            String detalleString1 = Request.QueryString["dojoEliminar"];
 
+            if (detalleString1 != null)
+            {
+                EliminarDojo(detalleString1);
+            }
 
 
             if (success != null)
@@ -70,26 +75,33 @@ namespace templateApp.GUI.Modulo4
                         this.sta.Text += M4_RecursoInterfaz.CerrarTR;
                         
                         laLista = logDojo.obtenerListaDeDojos();
+                        if (laLista.Count != 0)
+                            foreach (Dojo d in laLista)
+                            {
 
-                        foreach (Dojo d in laLista)
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Rif_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                if (String.Compare(d.Status_dojo, "True") == 0)
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
+                                else
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bloqueado" + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                                this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                                this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
+                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
+                            }
+                        else
                         {
+                            alert.Attributes["class"] = "alert alert-info alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se encontraron registros asociados a su solicitud</div>";
 
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            if (String.Compare(d.Status_dojo, "True") == 0)
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
-                            else
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bloqueado" + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                            this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                            this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                            this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
-                            this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
                         }
                     }
                     else
@@ -100,26 +112,32 @@ namespace templateApp.GUI.Modulo4
                             
                             laLista = logDojo.obtenerListaDeDojos();
 
+                            if (laLista.Count != 0)
+                                foreach (Dojo d in laLista)
+                                {
 
-                            foreach (Dojo d in laLista)
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Rif_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
+                                    if (String.Compare(d.Status_dojo, "True") == 0)
+                                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
+                                    else
+                                        this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bloqueado" + M4_RecursoInterfaz.CerrarTD;
+
+                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                                    this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                                    this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
+                                    this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
+                                    this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
+                                }
                             {
+                                alert.Attributes["class"] = "alert alert-info alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se encontraron registros asociados a su solicitud</div>";
 
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTR;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + M4_RecursoInterfaz.InicioImagen + d.Logo_dojo + M4_RecursoInterfaz.FinalImagen + M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.OrgNombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Nombre_dojo.ToString() + M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + d.Ubicacion.Ciudad.ToString() + ", " + d.Ubicacion.Estado.ToString() + M4_RecursoInterfaz.CerrarTD;
-                                if (String.Compare(d.Status_dojo, "True") == 0)
-                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Activo" + M4_RecursoInterfaz.CerrarTD;
-                                else
-                                    this.laTabla.Text += M4_RecursoInterfaz.AbrirTD + "Bloqueado" + M4_RecursoInterfaz.CerrarTD;
-
-                                this.laTabla.Text += M4_RecursoInterfaz.AbrirTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.BotonInfo + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                                this.laTabla.Text += M4_RecursoInterfaz.BotonModificar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                                this.laTabla.Text += M4_RecursoInterfaz.BotonEliminar + d.Id_dojo + M4_RecursoInterfaz.BotonCerrar;
-                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTD;
-                                this.laTabla.Text += M4_RecursoInterfaz.CerrarTR;
                             }
                         }
 
@@ -135,10 +153,22 @@ namespace templateApp.GUI.Modulo4
         }
         #endregion
 
-        
 
-        protected void btn_eliminarDojo_Click(object sender, EventArgs e)
+
+        protected void EliminarDojo(String dojoEliminar)
         {
+            int idDojo = int.Parse(dojoEliminar);
+            LogicaDojo logDojo = new LogicaDojo();
+            try
+            {
+                logDojo.eliminarDojo(idDojo);
+                Response.Redirect("M4_ListarDojos.aspx?success=2");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 

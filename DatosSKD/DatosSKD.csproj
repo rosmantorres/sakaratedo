@@ -112,6 +112,7 @@
       <DependentUpon>RecursosBDModulo3.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\BDDojo.cs" />
+    <Compile Include="Modulo4\BDHistorial_Matricula.cs" />
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

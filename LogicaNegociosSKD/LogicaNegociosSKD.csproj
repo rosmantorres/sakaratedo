@@ -94,6 +94,7 @@
       <DependentUpon>RecursosLogicaModulo3.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\LogicaDojo.cs" />
+    <Compile Include="Modulo4\LogicaHistorial_Matricula.cs" />
     <Compile Include="Modulo4\RecursosLogicaModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

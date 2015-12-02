@@ -78,7 +78,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-         <asp:Button id="btn_eliminarmatricula" class="btn btn-primary" type="submit" runat="server" OnClick="btn_eliminarmatricula_Click" Text="Eliminar"></asp:Button>
+         <a id="btneliminarmatricula" type="button" class="btn btn-primary"  href="M4_ListarHistorialMatricula.aspx?matriculaEliminar=0" >Eliminar</a>
                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
@@ -93,16 +93,31 @@
         var table = $('#tablaMatricula').DataTable();
         var mat;
         var tr;
+        var idEliminar;
+
+        // imprimir mensaje de confirmación de eliminar
+        $('a.eliminar_clase').click(function (e) {
+            idEliminar = $(this).attr("data-id");
+            //   alert(idEliminar);
+            $('#btneliminarmatricula').attr("href", "M4_ListarHistorialMatricula.aspx?matriculaElimiar=" + idEliminar);
+
+        });
+        $('#tablaMatricula tbody').on('click', 'a.eliminar_clase', function (e) {
+            idEliminar = $(this).attr("data-id");
+            //   alert(idEliminar);
+            $('#btneliminarmatricula').attr("href", "M4_ListarHistorialMatricula.aspx?matriculaEliminar=" + idEliminar);
+
+        });
 
         $('#tablaMatricula tbody').on('click', 'a', function () {
             if ($(this).parent().hasClass('selected')) {
-                comp = $(this).parent().prev().prev().prev().prev().text();
+                mat = $(this).parent().prev().prev().prev().text();
                 tr = $(this).parents('tr');//se guarda la fila seleccionada
                 $(this).parent().removeClass('selected');
 
             }
             else {
-                comp = $(this).parent().prev().prev().prev().prev().text();
+                mat = $(this).parent().prev().prev().prev().text();
                 tr = $(this).parents('tr');//se guarda la fila seleccionada
                 table.$('tr.selected').removeClass('selected');
                 $(this).parent().addClass('selected');
@@ -114,7 +129,7 @@
         $('#modal-delete').on('show.bs.modal', function (event) {
             var modal = $(this)
             modal.find('.modal-title').text('Eliminar Matricula:  ' + mat)
-            modal.find('#mat').text(comp)
+            modal.find('#mat').text(mat)
         })
         $('#btn-eliminar').on('click', function () {
             table.row(tr).remove().draw();//se elimina la fila de la tabla
