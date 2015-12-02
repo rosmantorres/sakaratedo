@@ -97,7 +97,7 @@ namespace templateApp.GUI.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M9_ModificarEventos.aspx?EventMod=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M9_ModificarEvento.aspx?EventMod=.
         /// </summary>
         internal static string BotonModificar {
             get {

@@ -557,10 +557,10 @@
     <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
+    <Content Include="GUI\Modulo9\M9_ModificarEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
-    <Content Include="GUI\Modulo9\M9_ModificarEventos.aspx" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
     <Content Include="plugins\ckeditor\LICENSE.md" />
     <Content Include="plugins\ckeditor\plugins\scayt\LICENSE.md" />
@@ -2329,6 +2329,13 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.cs">
       <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2349,13 +2356,6 @@
     </Compile>
     <Compile Include="GUI\Modulo9\M9_AgregarEventos.aspx.designer.cs">
       <DependentUpon>M9_AgregarEventos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.cs">
-      <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.designer.cs">
-      <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_RecursoInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>

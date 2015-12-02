@@ -6,11 +6,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
+using LogicaNegociosSKD.Modulo9;
 
 namespace templateApp.GUI.Modulo9
 {
-    public partial class M9_AgregarEventos : System.Web.UI.Page
+    public partial class M9_ModificarEvento : System.Web.UI.Page
     {
+       
         private List<TipoEvento> listEvento = new List<TipoEvento>();
         private LogicaNegociosSKD.Modulo9.LogicaEvento logicaEvento = new LogicaNegociosSKD.Modulo9.LogicaEvento();
         private Evento evento = new Evento();
@@ -18,6 +20,7 @@ namespace templateApp.GUI.Modulo9
         protected void Page_Load(object sender, EventArgs e)
         {
             {
+                String idEvento = Request.QueryString["EventMod"];
                 ((SKD)Page.Master).IdModulo = "9";
 
                 String success = Request.QueryString["eliminacionSuccess"];
@@ -47,6 +50,44 @@ namespace templateApp.GUI.Modulo9
                     }
 
                 }
+                //Se precargan los datos
+
+                
+                Evento evento = new Evento();
+                LogicaEvento logica = new LogicaEvento();
+                if (!IsPostBack) 
+                {
+
+                    try
+                    {
+
+                        evento = logica.ConsultarEvento(idEvento);
+                        this.nombreEvento.Text = evento.Nombre;
+                        this.costoEvento.Text = evento.Costo.ToString();
+                        this.descripcionEvento.Text = evento.Descripcion;
+
+                        if (evento.Estado==true) {
+                            this.inputEstadoActivo.Checked=true;
+                        }
+                        else {
+                            this.inputEstadoInactivo.Checked=true;  
+                        }
+  
+                    }
+                    catch
+                    {
+                    }
+                }
+
+        
+                //
+
+
+
+
+
+
+
             }
             #region LLENAR COMBO TIPO DE EVENTOS
             if (!IsPostBack)
@@ -94,6 +135,7 @@ namespace templateApp.GUI.Modulo9
         {
             int size = comboTipoEvento.Items.Count;
             int index = comboTipoEvento.SelectedIndex + 1;
+            String idEvento = Request.QueryString["EventMod"];
             try
             {
                 Horario horario = new Horario();
@@ -101,6 +143,7 @@ namespace templateApp.GUI.Modulo9
                 String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();
                 persona.ID = int.Parse(idPersona);
                 evento.Persona = persona;
+                evento.Id_evento = int.Parse(idEvento);
                 if (!nombreEvento.Text.Equals(""))
                 {
                     evento.Nombre = nombreEvento.Text;
@@ -109,18 +152,6 @@ namespace templateApp.GUI.Modulo9
                 {
                     //error
                 }
-                if (!descripcionEvento.Text.Equals(""))
-                {
-                    evento.Descripcion = descripcionEvento.Text;
-                }
-                else
-                {
-                    //error
-                }
-
-
-
-
                 if (!costoEvento.Text.Equals(""))
                 {
                     String costo=costoEvento.Text;
@@ -165,7 +196,7 @@ namespace templateApp.GUI.Modulo9
                     TipoEvento tipoEvento = new TipoEvento();
                     tipoEvento.Id = comboTipoEvento.SelectedIndex;
                     evento.TipoEvento = tipoEvento;
-                    logicaEvento.CrearEvento(evento);
+                    logicaEvento.ModificarEvento(evento);
                 }
 
 
