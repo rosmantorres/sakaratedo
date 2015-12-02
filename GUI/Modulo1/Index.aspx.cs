@@ -17,34 +17,39 @@ namespace templateApp.GUI.Modulo1
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            errorLogin.Visible = false;
-            warningLog.Visible = false;
-            infoLog.Visible = false;
-            successLog.Visible = false;
-            string sessionRequest;
-            if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != null))
+            if (Session[RecursosInterfazMaster.sessionUsuarioID] == null)
             {
-                sessionRequest = 
-               AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
-               (Request.QueryString[RecursosInterfazModulo1.tipoInfo].ToString(), RecursosLogicaModulo2.claveDES);
+                errorLogin.Visible = false;
+                warningLog.Visible = false;
+                infoLog.Visible = false;
+                successLog.Visible = false;
+                string sessionRequest;
+                if ((Request.QueryString[RecursosInterfazModulo1.tipoInfo] != null))
+                {
+                    sessionRequest =
+                   AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+                   (Request.QueryString[RecursosInterfazModulo1.tipoInfo].ToString(), RecursosLogicaModulo2.claveDES);
 
-                if (sessionRequest == RecursosInterfazModulo1.parametroURLCorreoEnviado)
-                    mensajeLogin(RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
+                    if (sessionRequest == RecursosInterfazModulo1.parametroURLCorreoEnviado)
+                        mensajeLogin(RecursosInterfazModulo1.logInfo, RecursosInterfazModulo1.tipoInfo);
 
-                else if (sessionRequest == RecursosInterfazModulo1.parametroURLRestablecerCaducado)
-                    mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoWarning);
-                else
-                    warningLog.Visible = false;
+                    else if (sessionRequest == RecursosInterfazModulo1.parametroURLRestablecerCaducado)
+                        mensajeLogin(RecursosInterfazModulo1.logErrRestablecer, RecursosInterfazModulo1.tipoWarning);
+                    else
+                        warningLog.Visible = false;
+                }
+                if (Request.QueryString[RecursosInterfazModulo1.tipoSucess] != null)
+                {
+                    sessionRequest = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
+                     (Request.QueryString[RecursosInterfazModulo1.tipoSucess].ToString(), RecursosLogicaModulo2.claveDES);
+                    if (sessionRequest == RecursosInterfazModulo1.parametroURLReestablecerExito)
+                        mensajeLogin(RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
+                    else
+                        successLog.Visible = false;
+                }
             }
-            if (Request.QueryString[RecursosInterfazModulo1.tipoSucess] != null)
-            {
-                sessionRequest = AlgoritmoDeEncriptacion.DesencriptarCadenaDeCaracteres
-                 (Request.QueryString[RecursosInterfazModulo1.tipoSucess].ToString(), RecursosLogicaModulo2.claveDES);
-                if (sessionRequest == RecursosInterfazModulo1.parametroURLReestablecerExito)
-                    mensajeLogin(RecursosInterfazModulo1.logSuccess, RecursosInterfazModulo1.tipoSucess);
-                else
-                    successLog.Visible = false;
-            }
+            else
+                Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
         }
         /// <summary>
         /// Metodo que envia 
