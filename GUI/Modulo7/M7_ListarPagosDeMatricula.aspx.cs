@@ -40,7 +40,7 @@ namespace templateApp.GUI.Modulo7
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -76,7 +76,7 @@ namespace templateApp.GUI.Modulo7
                                     this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
                                     this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;
                                     this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.ID + M7_Recursos.BotonCerrar;
+                                    this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.Id + M7_Recursos.BotonCerrar;
                                     this.laTabla.Text += M7_Recursos.CerrarTD;
                                     this.laTabla.Text += M7_Recursos.CerrarTR;
                                 }

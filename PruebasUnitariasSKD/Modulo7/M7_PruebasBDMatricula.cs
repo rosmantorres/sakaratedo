@@ -48,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaDetallarMatriculaXId()
         {
             BDMatricula baseDeDatosMatricula = new BDMatricula();
-            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(1);
+            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(6);
             Assert.AreEqual("CAF-CAF-CAFE", matricula.Identificador);
         }
 
@@ -59,7 +59,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaDetallarMatriculaXIdNoNulo()
         {
             BDMatricula baseDeDatosMatricula = new BDMatricula();
-            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(4);
+            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(1);
             Assert.NotNull(matricula);
         }
 
@@ -82,7 +82,7 @@ namespace PruebasUnitariasSKD.Modulo7
         {
             BDMatricula baseDeDatosMatricula = new BDMatricula();
             List<Matricula> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
-            Assert.GreaterOrEqual(listaMatricula.Count, 0);
+            Assert.Greater(listaMatricula.Count, 0);
         }
 
         /// <summary>

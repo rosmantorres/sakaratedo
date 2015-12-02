@@ -27,7 +27,7 @@ namespace templateApp.GUI.Modulo7
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -45,6 +45,12 @@ namespace templateApp.GUI.Modulo7
                                 this.identificador.Text = matricula.Identificador.ToString();
                                 this.fecha_creacion.Text = matricula.FechaCreacion.ToString("MM/dd/yyyy");
                                 this.fecha_pago.Text = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
+                                bool estado = Logica.obtenerEstado(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+
+                                if (estado)
+                                    this.estado_matricula.Text = "Activa";
+                                else if (!estado)
+                                    this.estado_matricula.Text = "Inactiva";
                             }
                             else
                             {
