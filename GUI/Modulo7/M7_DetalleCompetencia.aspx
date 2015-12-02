@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
-    dcrumbs--%>
+    <%--Breadcrumbs--%>
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Detallar Cinta
+			    Detallar Evento
 		    </li>
 	    </ol>
     </div>

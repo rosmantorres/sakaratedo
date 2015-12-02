@@ -14,7 +14,7 @@
 		    </li>
 
 		    <li class="active">
-			    Detallar Cinta
+			    Detallar Evento
 		    </li>
 	    </ol>
     </div>
