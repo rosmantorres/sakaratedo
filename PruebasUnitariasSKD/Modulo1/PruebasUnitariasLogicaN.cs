@@ -14,13 +14,13 @@ namespace PruebasUnitariasSKD.Modulo1
     {
         AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         [SetUp]
-        protected  void parametros()
+        protected void parametros()
         {
         }
 
         // Prueba unitaria del metodo IniciarSesion() de forma erronea
         [Test]
-        public  void PruebaInicioSesionFallida()
+        public void PruebaInicioSesionFallida()
         {
             logicaLogin lg = new logicaLogin();
             string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebaErrorCorreo, RecursosPU_Mod1.PruebaErrorClave);
@@ -29,7 +29,7 @@ namespace PruebasUnitariasSKD.Modulo1
         }
         // Prueba unitaria del metodo IniciarSesion() de forma correcta
         [Test]
-        public  void PruebaInicioSesionCorrecto()
+        public void PruebaInicioSesionCorrecto()
         {
             logicaLogin lg = new logicaLogin();
             string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebainicioCorreo, RecursosPU_Mod1.PruebaCorrectoClave);
@@ -39,7 +39,7 @@ namespace PruebasUnitariasSKD.Modulo1
         // Prueba unitaria de la excepcion del metodo EnviarCorreo()
         [Test]
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
-        public  void PruebaEnviarCorreoFallidoEXC()
+        public void PruebaEnviarCorreoFallidoEXC()
         {
             logicaLogin lg = new logicaLogin();
             bool resp = lg.EnviarCorreo(null);
@@ -49,17 +49,17 @@ namespace PruebasUnitariasSKD.Modulo1
         // Prueba unitaria de la excepcion del metodo IniciarSesion()
         [Test]
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
-        public  void PruebaIniciarSesionFallidoEXC()
+        public void PruebaIniciarSesionFallidoEXC()
         {
             logicaLogin lg = new logicaLogin();
-            string[] resp = lg.iniciarSesion(null,null);
+            string[] resp = lg.iniciarSesion(null, null);
             resp.ToString();
 
         }
         // Prueba unitaria del metodo Enviarcorreo() de forma correcta
 
         [Test]
-        public  void PruebaEnviarCorreoCorrecto()
+        public void PruebaEnviarCorreoCorrecto()
         {
             logicaLogin lg = new logicaLogin();
             bool resp = lg.EnviarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
@@ -74,7 +74,7 @@ namespace PruebasUnitariasSKD.Modulo1
 
 
             Assert.AreEqual(cripto.hash(RecursosPU_Mod1.pruebaHash2), cripto.hash(RecursosPU_Mod1.pruebaHash));
-            
+
         }
         [Test]
         // Prueba unitaria de la excepcion del metodo hash()
@@ -84,7 +84,7 @@ namespace PruebasUnitariasSKD.Modulo1
             string resp = cripto.hash(null);
         }
         // Prueba unitaria del metodo ValidarCorreo() de forma correcta
-       [Test]
+        [Test]
         public void PruebaValidarCorreoCorrecto()
         {
             logicaLogin lg = new logicaLogin();
@@ -94,79 +94,79 @@ namespace PruebasUnitariasSKD.Modulo1
             _respuesta = lg.validarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
 
             Assert.AreNotEqual(null, _respuesta);
-        } 
+        }
         // Prueba unitaria del metodo ValidarCorreo() de forma Erronea
-         [Test]
-         public void PruebaValidarCorreoFallido()
-         {
-             logicaLogin lg = new logicaLogin();
-             string _respuesta;
+        [Test]
+        public void PruebaValidarCorreoFallido()
+        {
+            logicaLogin lg = new logicaLogin();
+            string _respuesta;
 
 
-             _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaErrorCorreo);
-             Assert.AreEqual(null, _respuesta);
-         }
-         [Test]
-         // Prueba unitaria de la excepcion del metodo hash()
-         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
-         public void PruebaValidarCorreoFallidoexc()
-         {
-             logicaLogin lg = new logicaLogin();
-             string _respuesta;
-             _respuesta = lg.validarCorreo(null);
-         }
-         // Prueba unitaria del metodo restablecerContrasena(string usuarioID, string contraseña) de forma Erronea
-         [Test]
-         public void PruebaValidarRestablecerContrasena()
-         {
-             logicaRestablecer lgr = new logicaRestablecer();
-             bool _respuesta;
+            _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaErrorCorreo);
+            Assert.AreEqual(null, _respuesta);
+        }
+        [Test]
+        // Prueba unitaria de la excepcion del metodo hash()
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void PruebaValidarCorreoFallidoexc()
+        {
+            logicaLogin lg = new logicaLogin();
+            string _respuesta;
+            _respuesta = lg.validarCorreo(null);
+        }
+        // Prueba unitaria del metodo restablecerContrasena(string usuarioID, string contraseña) de forma Erronea
+        [Test]
+        public void PruebaValidarRestablecerContrasena()
+        {
+            logicaRestablecer lgr = new logicaRestablecer();
+            bool _respuesta;
 
 
-             _respuesta = lgr.restablecerContrasena(RecursosPU_Mod1.id2, RecursosPU_Mod1.PruebaRestablecerClave);
-             Assert.AreEqual(true, _respuesta);
-         }
-         // Prueba unitaria de la excepcion del metodo restablecerContrasena()
-          [Test]
-         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
-         public void PruebaValidarRestablecerContrasenaexc()
-         {
-             logicaRestablecer lgr = new logicaRestablecer();
-             bool _respuesta;
-             _respuesta = lgr.restablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
-              
-         }
-          // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena)
-          [Test]
-          public void PruebaValidarCaracteres()
-          {
-              logicaRestablecer lgr = new logicaRestablecer();
-              bool _respuesta;
+            _respuesta = lgr.restablecerContrasena(RecursosPU_Mod1.id2, RecursosPU_Mod1.PruebaRestablecerClave);
+            Assert.AreEqual(true, _respuesta);
+        }
+        // Prueba unitaria de la excepcion del metodo restablecerContrasena()
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void PruebaValidarRestablecerContrasenaexc()
+        {
+            logicaRestablecer lgr = new logicaRestablecer();
+            bool _respuesta;
+            _respuesta = lgr.restablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
+
+        }
+        // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena)
+        [Test]
+        public void PruebaValidarCaracteres()
+        {
+            logicaRestablecer lgr = new logicaRestablecer();
+            bool _respuesta;
 
 
-              _respuesta = lgr.ValidarCaracteres(RecursosPU_Mod1.Descripcion);
-              Assert.AreEqual(true, _respuesta);
-          }
-          // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena) EXC
-          [Test]
-          [ExpectedException(typeof(NullReferenceException))]
-          public void PruebaValidarCaracteresEXC()
-          {
-              logicaRestablecer lgr = new logicaRestablecer();
-              bool _respuesta;
-              _respuesta = lgr.ValidarCaracteres(null);
-          }
-          [Test]
-          public void PruebaValidarCaracteres2()
-          {
-              logicaLogin lg = new logicaLogin();
-              bool _respuesta;
+            _respuesta = lgr.ValidarCaracteres(RecursosPU_Mod1.Descripcion);
+            Assert.AreEqual(true, _respuesta);
+        }
+        // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena) EXC
+        [Test]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void PruebaValidarCaracteresEXC()
+        {
+            logicaRestablecer lgr = new logicaRestablecer();
+            bool _respuesta;
+            _respuesta = lgr.ValidarCaracteres(null);
+        }
+        [Test]
+        public void PruebaValidarCaracteres2()
+        {
+            logicaLogin lg = new logicaLogin();
+            bool _respuesta;
 
 
-              _respuesta = lg.ValidarCaracteres(RecursosPU_Mod1.usuario,true);
-              Assert.AreEqual(true, _respuesta);
-          }
-        
-          
+            _respuesta = lg.ValidarCaracteres(RecursosPU_Mod1.usuario, true);
+            Assert.AreEqual(true, _respuesta);
+        }
+
+
     }
 }

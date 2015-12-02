@@ -12,14 +12,14 @@ using System.Configuration;
 namespace DatosSKD.Modulo1
 {
     public class BDRestablecer
-    {   
+    {
         /// <summary>
         /// Se hace la conexion a la base de datos para cambiar la contraseña del usuario
         /// </summary>
         /// <param name="usuarioId"> Id del usuario que solicito el cambio de contraseña</param>
         /// <param name="contraseña">nueva contraseña del usuario</param>
         /// <returns></returns>
-        public  bool RestablecerContrasena(string usuarioId,string contraseña)
+        public bool RestablecerContrasena(string usuarioId, string contraseña)
         {
             BDConexion laConexion;
             List<Parametro> parametros;
@@ -32,7 +32,7 @@ namespace DatosSKD.Modulo1
                 Cuenta laCuenta = new Cuenta();
                 elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, usuarioId, false);
                 parametros.Add(elParametro);
-                elParametro = new Parametro(RecursosBDModulo1.AliasContrasena, SqlDbType.VarChar,contraseña, false);
+                elParametro = new Parametro(RecursosBDModulo1.AliasContrasena, SqlDbType.VarChar, contraseña, false);
                 parametros.Add(elParametro);
 
                 laConexion.EjecutarStoredProcedureTuplas(
@@ -54,7 +54,7 @@ namespace DatosSKD.Modulo1
             }
 
         }
-   
-    
+
+
     }
 }

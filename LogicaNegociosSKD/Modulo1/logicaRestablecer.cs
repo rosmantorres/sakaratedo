@@ -22,7 +22,7 @@ namespace LogicaNegociosSKD.Modulo1
             try
             {
                 BDRestablecer conexionBD = new BDRestablecer();
-                conexionBD.RestablecerContrasena(usuarioID,cripto.hash(contraseña));
+                conexionBD.RestablecerContrasena(usuarioID, cripto.hash(contraseña));
                 return true;
             }
             catch (Exception e)
@@ -51,7 +51,7 @@ namespace LogicaNegociosSKD.Modulo1
 
         }
 
-       
+
 
     }
 }

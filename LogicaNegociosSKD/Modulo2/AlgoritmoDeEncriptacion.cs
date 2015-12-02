@@ -15,7 +15,7 @@ namespace LogicaNegociosSKD.Modulo2
         /// </summary>
         /// <param name="cadena"> recibe la cadena a la que la aplicara el hash</param>
         /// <returns>devuelve la cadena con el hash hecho</returns>
-        public  string hash(string cadena)
+        public string hash(string cadena)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace LogicaNegociosSKD.Modulo2
             }
         }
 
-        public  TripleDES CrearDES(string clave)
+        public TripleDES CrearDES(string clave)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             TripleDES des = new TripleDESCryptoServiceProvider();
@@ -48,7 +48,7 @@ namespace LogicaNegociosSKD.Modulo2
             return des;
         }
 
-        public  string EncriptarCadenaDeCaracteres(string textoPlano, string contrasegnia)
+        public string EncriptarCadenaDeCaracteres(string textoPlano, string contrasegnia)
         {
             try
             {
@@ -72,13 +72,13 @@ namespace LogicaNegociosSKD.Modulo2
                 // Retorna representación legible de la cadena encriptada:
                 return Convert.ToBase64String(flujoMemoria.ToArray());
             }
-            catch(FormatException ex)
+            catch (FormatException ex)
             {
                 throw ex;
             }
         }
-    
-        public  string DesencriptarCadenaDeCaracteres(string textoEncriptado, string contrasegnia)
+
+        public string DesencriptarCadenaDeCaracteres(string textoEncriptado, string contrasegnia)
         {
             try
             {
@@ -117,5 +117,5 @@ namespace LogicaNegociosSKD.Modulo2
             }
         }
     }
-    
+
 }

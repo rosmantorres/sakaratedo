@@ -17,7 +17,7 @@ namespace DominioSKD
         #endregion
 
         #region propiedades
- 
+
 
         public String Nombre_usuario
         {
@@ -67,7 +67,7 @@ namespace DominioSKD
         /// <param name="laImagen">la imagen del usuario</param>
         /// <param name="elNombreDePila">nombre de pila</param>
         /// 
-         public Cuenta(PersonaM1 Usuario, String elNombreUsuario, String laContrasena, String laImagen,string elNombreDePila)
+        public Cuenta(PersonaM1 Usuario, String elNombreUsuario, String laContrasena, String laImagen, string elNombreDePila)
         {
             personaUsuario = Usuario;
             nombre_usuario = elNombreUsuario;
@@ -81,13 +81,13 @@ namespace DominioSKD
         /// <param name="laContrasena">la contraseña del usuario</param>
         /// <param name="listaRoles">lsita de los roles a los cuales pertenece el usuario</param>
         /// <param name="laImagen">la imagen del usuario</param>
-         public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen)
-         {
-             nombre_usuario = elNombreUsuario;
-             contrasena = laContrasena;
-             roles = listaRoles;
-             imagen = laImagen;
-         }
+        public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen)
+        {
+            nombre_usuario = elNombreUsuario;
+            contrasena = laContrasena;
+            roles = listaRoles;
+            imagen = laImagen;
+        }
 
         #endregion
     }

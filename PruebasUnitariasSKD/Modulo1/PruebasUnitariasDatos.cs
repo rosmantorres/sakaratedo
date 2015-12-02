@@ -17,9 +17,9 @@ namespace PruebasUnitariasSKD.Modulo1
     class PruebasUnitariasDatos
     {
         [SetUp]
-        protected  void parametros()
+        protected void parametros()
         {
-           
+
         }
         // Prueba unitaria del metodo  ReestablecerContrasena(string usuarioId,string contraseña)
         [Test]
@@ -28,7 +28,7 @@ namespace PruebasUnitariasSKD.Modulo1
 
             BDRestablecer conexionBD = new BDRestablecer();
             bool True = conexionBD.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
-            Assert.AreEqual(True,true);
+            Assert.AreEqual(True, true);
 
         }
         // Prueba unitaria del metodo ValidarCorreoUsuario(string correo_usuario)
@@ -49,8 +49,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuarioExc()
         {
 
-           BDLogin conexionBD = new BDLogin();
-           String True = conexionBD.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
+            BDLogin conexionBD = new BDLogin();
+            String True = conexionBD.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
 
         }
         // Prueba unitaria del metodo  ObtenerUsuario(string usuario)
@@ -76,7 +76,7 @@ namespace PruebasUnitariasSKD.Modulo1
         }
         [Test]
         public void PruebaValidarRestablecerContrasena()
-        { 
+        {
             bool _respuesta;
 
             BDRestablecer conexionBD = new BDRestablecer();
@@ -92,8 +92,8 @@ namespace PruebasUnitariasSKD.Modulo1
             BDRestablecer conexionBD = new BDRestablecer();
             _respuesta = conexionBD.RestablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
         }
-       
 
-       
+
+
     }
 }

@@ -143,7 +143,7 @@ namespace PruebasUnitariasSKD.Modulo2
             List<Rol> _respuesta;
             List<Rol> _respuesta2;
             _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.validarPrioridad(_respuesta,RecursosPU_Mod2.Descripcion);
+            _respuesta2 = logicaRol.validarPrioridad(_respuesta, RecursosPU_Mod2.Descripcion);
             Assert.AreEqual(_respuesta, _respuesta2);
         }
         // Prueba unitaria  del metodo rolNoEditable()
@@ -172,9 +172,9 @@ namespace PruebasUnitariasSKD.Modulo2
         {
             Cuenta _respuesta;
             _respuesta = logicaRol.cuentaAConsultar(1);
-            Assert.AreEqual(_respuesta.Nombre_usuario,RecursosPU_Mod2.usuario);
+            Assert.AreEqual(_respuesta.Nombre_usuario, RecursosPU_Mod2.usuario);
         }
-     
+
 
 
     }

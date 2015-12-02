@@ -53,10 +53,10 @@ namespace LogicaNegociosSKD.Modulo2
         {
             try
             {
-            BDRoles conexionBD = new BDRoles();
-            conexionBD.AgregarRol(idUsuario, idRol);
-            return true;
-              }
+                BDRoles conexionBD = new BDRoles();
+                conexionBD.AgregarRol(idUsuario, idRol);
+                return true;
+            }
             catch (Exception e)
             {
                 throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_AgregarRol,
@@ -96,7 +96,7 @@ namespace LogicaNegociosSKD.Modulo2
                         if (rolSistema.Id_rol == rolUsuario.Id_rol)
                             diferente = false;
                     }
-                    if(diferente)
+                    if (diferente)
                         respuesta.Add(rolSistema);
                 }
                 return respuesta;
@@ -113,7 +113,7 @@ namespace LogicaNegociosSKD.Modulo2
         /// <param name="Roles">lista de roles con sus atributos</param>
         /// <param name="usuarioRol">usuario al que se le validaran los roles</param>
         /// <returns>lista de roles del usuario con la validacion de sus prioridades</returns>
-        public static List<Rol> validarPrioridad(List<Rol> Roles,string usuarioRol)
+        public static List<Rol> validarPrioridad(List<Rol> Roles, string usuarioRol)
         {
 
             List<Rol> respuesta = new List<Rol>();
@@ -135,24 +135,24 @@ namespace LogicaNegociosSKD.Modulo2
 
         }
 
-       /// <summary>
-       /// Metodo que retorna la importancia del rol en una forma ascendiente, el de mayor prioridad es el numero mas bajo
-       /// </summary>
-       /// <param name="nombreRol"></param>
-       /// <returns>La importancia del rol (Menor = Mejor).</returns>
+        /// <summary>
+        /// Metodo que retorna la importancia del rol en una forma ascendiente, el de mayor prioridad es el numero mas bajo
+        /// </summary>
+        /// <param name="nombreRol"></param>
+        /// <returns>La importancia del rol (Menor = Mejor).</returns>
         public static int prioridadRol(string nombreRol)
         {
             switch (nombreRol)
             {
                 case "Sistema": return 1;
-                case "Admin Sistema": return 1; 
+                case "Admin Sistema": return 1;
                 case "Organización": return 2;
-                case "Admin Organización": return 2; 
+                case "Admin Organización": return 2;
                 case "Dojo": return 3;
                 case "Admin Dojo": return 3;
                 case "Entrenador": return 4;
                 case "Atleta": return 5;
-                case "Representante": return 6; 
+                case "Representante": return 6;
             }
             throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Mensaje_Error_RolSinRegistro);
         }
@@ -194,8 +194,8 @@ namespace LogicaNegociosSKD.Modulo2
             try
             {
 
-              BDRoles conexionBD = new BDRoles();
-               return conexionBD.ObtenerUsuario(idUsuario);
+                BDRoles conexionBD = new BDRoles();
+                return conexionBD.ObtenerUsuario(idUsuario);
             }
             catch (Exception e)
             {
