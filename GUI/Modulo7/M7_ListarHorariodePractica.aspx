@@ -26,10 +26,9 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
     <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-    <link href="css/daterange.css" rel="stylesheet" />
+   
     <script src="js/jquery-ui.js"></script>
-    <script src="js/daterange.js"></script>
-    <script src="js/jquery.ui.datepicker-es.js"></script>
+
 
     <div id="alert" runat="server"></div>
 
@@ -37,19 +36,13 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Eventos Inscritos</h3>
+                  <h3 class="box-title">Horarios de Prácticas</h3>
                 </div><!-- /.box-header -->
 
 
     <div class="box-body table-responsive">
 
-        <div class="center-block" id="baseFechaControl">
-            <div class="dateControlBlock">
-                 Desde fecha: <input type="text" name="fechaInicio" id="fechaInicio" class="datepicker" size="8"/> Hasta fecha:   
-                 <input type="text" name="fechaFin" id="fechaFin" class="datepicker" size="8"/>
-            </div>
-        </div>
-        
+
             <table id="tablapractica" class="table table-bordered table-striped dataTable">
                     <thead>
 				            <tr>
@@ -126,7 +119,7 @@
         <script type="text/javascript">
             $.datepicker.setDefaults($.datepicker.regional["es"]);
             $(document).ready(function () {
-                var table = $('#tablaasistencia').DataTable({
+                var table = $('#tablapractica').DataTable({
                     "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
@@ -135,58 +128,7 @@
                 var req;
                 var tr;       
      
-                $dateControls = $("#baseFechaControl").children("div").clone();
-                $("#feedbackTable_filter").prepend($dateControls);
-               
-                // Implementacion de jQuery UI Datepicker widget sobre los controles de fechas
-                $("#fechaInicio").datepicker({
-                    minDate: "-50Y",
-                    maxDate: "Y",
-                    changeMonth: true,
-                    changeYear: true,
-                    showButtonPanel: true,
-                    showOn: 'button',
-                    buttonImage: 'css/images/calendar.gif',
-                    buttonText: 'Mostrar Fecha',
-                    onClose: function (selectedDate) {
-                        $("#fechaFin").datepicker("option", "minDate", selectedDate);
-                    }
-                });
-                $("#fechaFin").datepicker({
-                    minDate: "-50Y",
-                    maxDate: "Y",
-                    changeMonth: true,
-                    changeYear: true,
-                    showButtonPanel: true,
-                    showOn: 'button',
-                    buttonImage: 'css/images/calendar.gif',
-                    buttonText: 'Mostrar Fecha',
-                    onClose: function (selectedDate) {
-                        $("#fechaInicio").datepicker("option", "maxDate", selectedDate);
-                    }
-                });
-
-                // Crea el evento listeners que va a filtrar la tabla siempre que el usuario escriba el usuario escriba
-                // en el datepicker 
-                $("#fechaInicio").keyup(function () { table.draw(); });
-                $("#fechaInicio").change(function () { table.draw(); });
-                $("#fechaFin").keyup(function () { table.draw(); });
-                $("#fechaFin").change(function () { table.draw(); });
-             
-                $('#tablaasistencia tbody').on('click', 'a', function () {
-                    if ($(this).parent().hasClass('selected')) {
-                        req = $(this).parent().prev().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        $(this).parent().removeClass('selected');
-
-                    }
-                    else {
-                        req = $(this).parent().prev().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        table.$('tr.selected').removeClass('selected');
-                        $(this).parent().addClass('selected');
-                    }
-                });
+            
 
                 $('#modal-delete').on('show.bs.modal', function (event) {
                     var modal = $(this)
@@ -197,29 +139,6 @@
                     table.row(tr).remove().draw();//se elimina la fila de la tabla
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
-
-
-                $('#modal-info1').on('show.bs.modal', function (e) {
-
-                    $.ajax({
-                        cache: false,
-                        type: 'POST',
-                        url: 'http://localhost:23072/GUI/Modulo7/M7_ListarHorariodePractica.aspx/prueba',
-                        data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
-                        dataType: 'json',
-                        contentType: "application/json; charset=utf-8",
-
-                        success: function (data) {
-                            console.log(data);
-
-                            var aa = JSON.parse(data.d);
-
-                            $("#beta").val(aa.nombre);
-                            $("#beta4").val(aa.id);
-
-                        }
-                    });
-                })
 
 
             });

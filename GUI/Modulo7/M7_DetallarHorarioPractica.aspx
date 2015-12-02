@@ -75,7 +75,7 @@
             </div>
             <br />
             <div class="form-group col-sm-5 col-md-5 col-lg-5"> <!--BOTON VOLVER-->
-            <a class="btn btn-default" href="M7_ListarHorarioPractica.aspx">Volver</a>
+            <a class="btn btn-default" href="M7_ListarHorarioDePractica.aspx">Volver</a>
             </div>
                   </div>
                </div>

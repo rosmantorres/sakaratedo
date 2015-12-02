@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo7
 {
-    public class ListaVaciaException : ExceptionSKD
+    public class ListaNulaException : ExceptionSKD
     {
-        public ListaVaciaException() : base()
+        public ListaNulaException() : base()
         { }
 
-        public ListaVaciaException(string message)
+        public ListaNulaException(string message)
             : base(message)
         {
         }
 
-        public ListaVaciaException(string message, Exception inner)
+        public ListaNulaException(string message, Exception inner)
             : base(message, inner)
         {
         }
 
-        public ListaVaciaException(string codigo, string message, Exception inner)
+        public ListaNulaException(string codigo, string message, Exception inner)
             : base(codigo, message, inner)
         {
         }
