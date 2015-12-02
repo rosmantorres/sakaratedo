@@ -58,6 +58,15 @@ namespace templateApp {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl userTag;
         
         /// <summary>
+        /// Control fechaDeRol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaDeRol;
+        
+        /// <summary>
         /// Control Div1.
         /// </summary>
         /// <remarks>

@@ -343,7 +343,6 @@ go
 
 
 -- INSERTS PERSONA, TELEFONO, EMAIL, SOLICITUD INSCRIPCION, MATRICULA -- 
-
 /*
 INSERTS M6
 
@@ -4022,6 +4021,7 @@ INSERT INTO dbo.PERSONA (
 	per_nombre_usuario,
 	per_clave,
 	per_imagen
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -4039,7 +4039,9 @@ VALUES (
     1.72,
     'carloadmin',
     '12345',
-	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg'
+
+	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg',
+	    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4098,7 +4100,9 @@ INSERT INTO dbo.PERSONA (
     per_peso,
     per_estatura,
 	per_nombre_usuario,
-	per_clave
+	per_clave,
+    DOJO_doj_id
+
 ) 
 VALUES (
     'CEDULA-N',
@@ -4115,7 +4119,8 @@ VALUES (
     77,
     1.72,
     'rosmanadmin',
-    '12345'
+    '12345',
+        (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4617,6 +4622,11 @@ values('~/GUI/Modulo15/Imagenes/coderas.jpg', 'Coderas Karate-DO','Coderas','Kom
 
 -- INSERTS INVENTARIO--
 
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (45,1,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (19,2,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (75,3,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (95,4,1);
+insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (6,5,1);
 
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (4,1,2);
 insert into inventario (inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) values (70,2,2);
@@ -5085,7 +5095,31 @@ INSERT INTO DETALLE_COMPRA VALUES (7,1150,1,NULL,NULL,NULL,3,NULL);
 
 INSERT INTO DETALLE_COMPRA VALUES (8,4500,5,NULL,NULL,3,NULL,NULL);
 
+INSERT INTO DETALLE_COMPRA VALUES (9,0,1,NULL,NULL,NULL,10,NULL); 
+
+INSERT INTO DETALLE_COMPRA VALUES (9,0,1,NULL,NULL,NULL,11,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (9,0,1,NULL,NULL,NULL,12,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (10,1000,1,NULL,NULL,NULL,13,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (11,3000,1,NULL,NULL,NULL,14,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (12,1200,1,NULL,NULL,NULL,15,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,3,6,NULL,2,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (7,1200,1,3,6,NULL,13,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (6,1200,1,3,6,NULL,14,NULL);
+
+
+update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
+
 /*-------------------------------------------------------------------------*/
 
 
 /*=======================================================================================*/
+
+
+
