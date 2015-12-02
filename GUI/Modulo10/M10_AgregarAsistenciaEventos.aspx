@@ -53,10 +53,7 @@
    <div class="form-group col-sm-10 col-md-10 col-lg-10">
        <br />
        <h3>Fecha del Evento:</h3>
-       <div class="input-group input-append date" id="datePicker">
-       <input type="text" class="form-control" name="date" />
-       <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-       </div>
+       <asp:Calendar ID="calendar" runat="server" OnDayRender="calendar_DayRender" OnSelectionChanged="calendar_SelectionChanged"></asp:Calendar>
    </div>
 
      

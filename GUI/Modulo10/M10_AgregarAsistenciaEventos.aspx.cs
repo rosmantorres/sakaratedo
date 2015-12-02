@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -22,6 +23,7 @@ namespace templateApp.GUI.Modulo10
                 listaAsistentes.Items.Add("atleta6");
                 listaAsistentes.Items.Add("atleta7");
                 listaAsistentes.Items.Add("atleta8");
+                
             }
         }
 
@@ -59,6 +61,20 @@ namespace templateApp.GUI.Modulo10
         protected void bCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("M10_ListarAsistenciaEventos.aspx");
+        }
+
+        protected void calendar_DayRender(object sender, DayRenderEventArgs e)
+        {
+            DateTime fecha = DateTime.Parse("2015-12-10");
+            if (e.Day.IsSelected)
+                e.Cell.BackColor = Color.Red;
+            else if (e.Day.Date == fecha)
+                e.Cell.BackColor = Color.Blue;
+        }
+
+        protected void calendar_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
