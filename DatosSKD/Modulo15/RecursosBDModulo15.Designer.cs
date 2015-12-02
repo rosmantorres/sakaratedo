@@ -70,7 +70,7 @@ namespace DatosSKD.Modulo15 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Procedure_consultarCarrito.
+        ///   Looks up a localized string similar to M15_ConsultarCarrito.
         /// </summary>
         internal static string nombreProcedureConsultarCarrito {
             get {

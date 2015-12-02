@@ -1824,6 +1824,7 @@ DELETE
 UPDATE NO ACTION
 GO
 
+
 ---------------------------------------------------------STORED PROCEDURES M12--------------------------------------------------------------------
 
 --PROCEDURE AGREGAR COMPETENCIA--
@@ -2054,18 +2055,36 @@ as
 go
 
 
- ----------------------------------STORED PROCEDURES M1-------------------------------------
+  ----------------------------------STORED PROCEDURES M1-------------------------------------
 
-------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA ------------
+-------*NUEVO*-------PROCEDURE CONSULTA PERSONA POR ID ----------------------
+
+CREATE procedure M1_ConsultarPersona_ID
+	@id_usuario [int]
+as
+	begin
+		select pers.per_nombre as nombre_usuario, pers.per_apellido as apellido_usuario, pers.per_id as id_usuario
+		from PERSONA pers
+		where pers.per_id = @id_usuario
+	end;
+	go
+
+
+
+
+
+------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR USERNAME--------*Nuevo*----
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
 	@nombre_usuario [varchar](25)
 as
 	begin
-		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena
+		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena,pers.per_imagen as imagen,
+		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
 		from PERSONA pers
 		where pers.per_nombre_usuario = @nombre_usuario
 	end;
 	go
+
 
 
 ------------------PROCEDURE CONSULTA ROLES DE USUARIO POR NOMBRE------------------
@@ -2101,8 +2120,7 @@ as
 		from EMAIL
 		where ema_email= @correo_usuario and ema_principal=1
 	end;
-	go
-
+go
 
 -----------------------------------STORED PROCEDURES M2--------------------------------------------------------
 
@@ -2142,6 +2160,21 @@ CREATE procedure M2_EliminarRole
 as
 	begin
 		delete  from PERSONA_ROL  where PERSONA_per_id=@id_usuario AND ROL_rol_id=@id_rol;
+	end;
+	go
+
+
+------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR ID--------*NUEVO*----
+
+
+CREATE procedure M2_ConsultarNombreUsuarioContrasena_ID
+	@id_usuario [int]
+as
+	begin
+		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario,pers.per_imagen as imagen,
+		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
+		from PERSONA pers
+		where pers.per_id = @id_usuario
 	end;
 	go
 
@@ -2543,7 +2576,7 @@ AS
  END
 
 
-
+GO
 --------------------------------------------------------------Inicio Procedure M15 Inventario-------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2571,7 +2604,7 @@ AS
   END
 
 
-
+GO
   ----------------------------------------------------
 
 -----------M15_ConsultarUsuarioDojo------------------------------
@@ -2587,7 +2620,7 @@ AS
 
 -------------------------------------------------------------------
 
-
+GO
 /*-------------M15_AgregarImplemento----------------------*/
 CREATE PROCEDURE [dbo].[M15_AgregarImplemento]
 @_impNombre [varchar] (255),
@@ -2618,9 +2651,9 @@ BEGIN
       (@_invCantidad,@_impId,@_dojId);
       
     END
-END;
+END
 --------------------------------------------------------------------------
-
+GO
 ---------------------M15_ConsultarImplemento--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplemento]
   @_impId [int]
@@ -2646,7 +2679,7 @@ AS
   END
 
   ----------------------------------------------------
-
+GO
   ---------------------M15_ConsultarImplementoTotal--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal]
 @_dojId [int]
@@ -2665,13 +2698,15 @@ AS
         imp_estatus,
         DOJO_doj_id 
           FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
-    WHERE imp_estatus != 'Inactivo'
-    AND   imp_id = INV.IMPLEMENTO_imp_id
-    AND    inv.DOJO_doj_id = DOJ.doj_id
+    WHERE imp.imp_estatus != 'Inactivo'
+    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
+    AND      INV.DOJO_doj_id= DOJ.doj_id
+    AND      INV.DOJO_doj_id=@_dojId
   END
 
-  ------------------------------------------------------------------------
 
+  ------------------------------------------------------------------------
+GO
 
   ---------------------M15_ConsultarImplementoTotal2--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal2]
@@ -2698,7 +2733,7 @@ AS
   END
 
   ------------------------------------------------------------------------
-
+GO
 
   /*----------------M15_EliminarImplemento---------------------------------*/
 CREATE PROCEDURE [dbo].[M15_EliminarImplemento]
@@ -2710,9 +2745,9 @@ AS
     SET imp_estatus = 'Inactivo'
     WHERE @_impId = imp_id
     AND @_dojId=(select DOJO_doj_id from INVENTARIO where @_impId=IMPLEMENTO_imp_id )
-  END;
+  END
   --------------------------------------------------------------------------
-
+GO
   -------------------------- M15_ModificarImplemento---------------------------------
 CREATE PROCEDURE [dbo].[M15_ModificarImplemento]
 @_impId [int],
@@ -2748,11 +2783,33 @@ BEGIN
      WHERE IMPLEMENTO_imp_id = @_impId
    AND   DOJO_doj_id = @_dojId 
 
-END;
-
-------------------------------------------------------------------------------
+END
 
 
+  ---------------------M15_ConsultarImplementoTotal--------------------
+
+GO
+
+CREATE PROCEDURE [dbo].[M15_ConsultarCarrito]
+AS
+  BEGIN
+    SELECT  imp_id,
+            imp_nombre,
+            imp_imagen,
+        imp_tipo,
+        imp_color,
+        imp_marca ,
+        imp_talla ,
+        imp_precio ,
+        imp_stockmin,
+        inv_cantidad_total,
+        imp_estatus,
+        DOJO_doj_id 
+          FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
+    WHERE imp.imp_estatus != 'Inactivo'
+    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
+    AND      INV.DOJO_doj_id= DOJ.doj_id
+  END
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
