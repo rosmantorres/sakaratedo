@@ -564,8 +564,11 @@ namespace LogicaNegociosSKD.Modulo16
             }
         }
 
-        /*
-        public List<Implemento> ListarInventario()
+        /// <summary>
+        /// Metodo que retorna la lista de todos los Implementos de la Base de Datos 
+        /// </summary>
+        /// <returns>La lista con toda la informacion de todos los implementos </returns>
+        public List<Implemento> ListarImplemento()
         {
             try
             {
@@ -585,7 +588,7 @@ namespace LogicaNegociosSKD.Modulo16
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER,System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Regreso la lista
-                return laLIsta;
+                return laLista;
             }
             catch (LoggerException e)
             {
@@ -629,7 +632,7 @@ namespace LogicaNegociosSKD.Modulo16
                     RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }        
            
-        }*/
+        }
         
         #endregion
     }

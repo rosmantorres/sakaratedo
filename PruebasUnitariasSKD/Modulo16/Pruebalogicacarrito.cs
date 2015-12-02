@@ -22,7 +22,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Carrito miCarrito;
 
         #endregion
-
+/*
         #region Pruebas Unitarias
         /// <summary>
         /// Preparamos los atributos que vamos a utilizar con valores de prueba
@@ -239,6 +239,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.carritoPrueba = null;
             miCarrito = null;
         }
-        #endregion
+        #endregion*/
     }
 }

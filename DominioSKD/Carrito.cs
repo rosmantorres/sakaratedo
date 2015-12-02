@@ -80,7 +80,6 @@ namespace DominioSKD
         {
 
         }
-
         #endregion
 
         #region Metodos

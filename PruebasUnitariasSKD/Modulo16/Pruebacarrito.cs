@@ -8,7 +8,7 @@ using NUnit.Framework;
 
 namespace PruebasUnitariasSKD.Modulo16
 {
-    /// <summary>
+  /*  /// <summary>
     /// Prueba Unitaria que trabaja sobre la entidad Carrito
     /// </summary>
     [TestFixture]
@@ -164,6 +164,6 @@ namespace PruebasUnitariasSKD.Modulo16
             horario = null;
             ubicacion = null;
 
-        }
-    }
+       }
+    }*/
 }
