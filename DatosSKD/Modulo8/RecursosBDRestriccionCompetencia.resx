@@ -204,6 +204,9 @@
   <data name="ConsultarCompetenciasAsociadasALaRestriccion" xml:space="preserve">
     <value>M8_ConsultarTodasLasCompetenciasAsociadas</value>
   </data>
+  <data name="ConsultarRestriccionCompetenciasXId" xml:space="preserve">
+    <value>ConsultarRestriccionCompetenciasXId</value>
+  </data>
   <data name="ConsultarTodasLasCompetenciasNoAsociadas" xml:space="preserve">
     <value>M8_ConsultarTodasLasCompetenciasNoAsociadas</value>
   </data>

@@ -14,7 +14,7 @@ using DatosSKD.Modulo12;
 
 namespace DatosSKD.Modulo8
 {
-    class BDRestriccionCompetencia
+    public class BDRestriccionCompetencia
     {
         #region ListarRestriccionesCompetencia
         /// <summary>
