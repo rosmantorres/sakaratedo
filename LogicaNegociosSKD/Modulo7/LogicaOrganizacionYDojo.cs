@@ -1,5 +1,8 @@
 ﻿using DatosSKD.Modulo7;
 using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
+using System;
 
 namespace LogicaNegociosSKD.Modulo7
 {
@@ -20,21 +23,37 @@ namespace LogicaNegociosSKD.Modulo7
         /// <returns></returns>
         public Organizacion obtenerDetalleOrganizacion(int idOrg)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 BDOrganizacion baseDeDatosOrganizacion = new BDOrganizacion();
                 return baseDeDatosOrganizacion.DetallarOrganizacion(idOrg);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
-            }/*
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
 
@@ -47,21 +66,37 @@ namespace LogicaNegociosSKD.Modulo7
        /// <returns></returns>
         public Dojo obtenerDetalleDojo(int idDojo)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 BDDojo baseDeDatosDojo = new BDDojo();
                 return baseDeDatosDojo.DetallarDojo(idDojo);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
-            }/*
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
 
@@ -74,21 +109,37 @@ namespace LogicaNegociosSKD.Modulo7
         /// <returns></returns>
         public Persona obtenerDetallePersona(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 BDPersona baseDeDatosPersona = new BDPersona();
                 return baseDeDatosPersona.DetallarPersona(idPersona);
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
-            }/*
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            }
+            catch (NumeroEnteroInvalidoException ex)
             {
-                throw ex;
-            }*/
-            catch (ExcepcionesSKD.ExceptionSKD ex)
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
 

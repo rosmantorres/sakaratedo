@@ -59,5 +59,41 @@ namespace LogicaNegociosSKD.Modulo7 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_007.
+        /// </summary>
+        internal static string Codigo_Numero_Parametro_Invalido {
+            get {
+                return ResourceManager.GetString("Codigo_Numero_Parametro_Invalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El número del parametro es invalido, debe ser un entero positivo.
+        /// </summary>
+        internal static string Mensaje_Numero_Parametro_invalido {
+            get {
+                return ResourceManager.GetString("Mensaje_Numero_Parametro_invalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
     }
 }
