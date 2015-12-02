@@ -355,6 +355,7 @@
   </data>
   <data name="PARAMETRO_TIPO_PAGO" xml:space="preserve">
     <value>tipoPago</value>
+    </data>
   <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
     <value>Ingresando al metodo</value>
     <comment>Mensaje de informacion que se escribira en el logger al entrar a un metodo</comment>
