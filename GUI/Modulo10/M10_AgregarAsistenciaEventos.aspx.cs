@@ -25,16 +25,6 @@ namespace templateApp.GUI.Modulo10
             }
         }
 
-        protected void comboCat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void comboEve_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void bDerecho_Click(object sender, EventArgs e)
         {
             for (int i = listaInscritos.Items.Count - 1; i >= 0; i--)
