@@ -38,7 +38,7 @@ namespace DatosSKD.Modulo1
                 Cuenta laCuenta = new Cuenta();
 
 
-                elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario, false);
+                elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario.ToLower(), false);
                 parametros.Add(elParametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                 RecursosBDModulo1.ConsultarNombreUsuarioContrasena, parametros);
