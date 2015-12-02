@@ -65,13 +65,6 @@ namespace PruebasUnitariasSKD.Modulo8
 
         #region PruebasUnitarias
 
-        [Test]
-        public void PruebaConsultarEventosConRestriccion()
-        {
-            DatosSKD.Modulo8.BDRestriccionEvento bdRestriccionEvento = new DatosSKD.Modulo8.BDRestriccionEvento();
-            List<RestriccionEvento> resEventos = bdRestriccionEvento.ConsultarEventosConRestriccion();
-            Assert.Greater(resEventos.Count, 0);
-        }
 
         [Test]
         public void PruebaAgregarRestriccionEvento()
@@ -85,6 +78,9 @@ namespace PruebasUnitariasSKD.Modulo8
         [Test]
         public void PruebaModificarRestriccionEvento()
         {
+            elResEvento.Descripcion = "Pruebas UnitariasREEEE";
+            elResEvento.EdadMinima = 15;
+            elResEvento.EdadMaxima = 21;
             DatosSKD.Modulo8.BDRestriccionEvento bdRestriccionEvento = new DatosSKD.Modulo8.BDRestriccionEvento();
             Boolean auxiliar = bdRestriccionEvento.ModificarRestriccionEvento(elResEvento);
             Console.Out.WriteLine(auxiliar);
@@ -123,7 +119,7 @@ namespace PruebasUnitariasSKD.Modulo8
         {
             DatosSKD.Modulo8.BDRestriccionEvento bdRestriccionEvento = new DatosSKD.Modulo8.BDRestriccionEvento();
             List<EventoSimple> listaEventoS = bdRestriccionEvento.ConsultarEventosSinRestriccion();
-            Assert.AreEqual(listaEventoS.Count, 0);
+            Assert.Greater(listaEventoS.Count, 0);
         }
 
         [Test]
