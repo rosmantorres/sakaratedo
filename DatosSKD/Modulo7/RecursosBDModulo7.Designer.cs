@@ -556,7 +556,7 @@ namespace DatosSKD.Modulo7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fecha.
+        ///   Looks up a localized string similar to fechaInscripcion.
         /// </summary>
         internal static string AliasInscripcionFechaCompetencia {
             get {
@@ -1020,6 +1020,15 @@ namespace DatosSKD.Modulo7 {
         internal static string ParamIdCompetencia {
             get {
                 return ResourceManager.GetString("ParamIdCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @com_id.
+        /// </summary>
+        internal static string ParamIdCompetenciaPaga {
+            get {
+                return ResourceManager.GetString("ParamIdCompetenciaPaga", resourceCulture);
             }
         }
         

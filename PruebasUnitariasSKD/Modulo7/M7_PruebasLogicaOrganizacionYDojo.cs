@@ -61,7 +61,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaObtenerDetalleOrganizacion()
         {
             Organizacion organizacion = logicaOrgDojo.obtenerDetalleOrganizacion(idOrganizacion);
-            Assert.AreEqual("Seito Karate-do", organizacion.Nombre);
+            Assert.AreEqual("Clash Cobra-do", organizacion.Nombre);
         }
 
         /// <summary>

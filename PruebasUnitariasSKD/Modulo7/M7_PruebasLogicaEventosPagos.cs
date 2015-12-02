@@ -174,7 +174,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaFechaEventoPago()
         {
             DateTime fechaPago = logicaEventosPagos.obtenerFechaPagoEvento(idPersona, 13);
-            Assert.AreEqual("07/10/2015", fechaPago.ToString("MM/dd/yyyy"));
+            Assert.AreEqual("03/10/2015", fechaPago.ToString("MM/dd/yyyy"));
         }
 
         /// <summary>

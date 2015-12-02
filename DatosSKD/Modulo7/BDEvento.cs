@@ -559,7 +559,7 @@ namespace DatosSKD.Modulo7
                     parametros = new List<Parametro>();
 
                     elParametroPersona = new Parametro(RecursosBDModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
-                    elParametroCompetencia= new Parametro(RecursosBDModulo7.ParamIdEvento, SqlDbType.Int, idCompetencia.ToString(), false);
+                    elParametroCompetencia= new Parametro(RecursosBDModulo7.ParamIdCompetenciaPaga, SqlDbType.Int, idCompetencia.ToString(), false);
                     parametros.Add(elParametroPersona);
                     parametros.Add(elParametroCompetencia);
 

@@ -463,6 +463,9 @@
     <value>M7_ConsultarFechaInscripcionCompetencia</value>
   </data>
   <data name="AliasInscripcionFechaCompetencia" xml:space="preserve">
-    <value>fecha</value>
+    <value>fechaInscripcion</value>
+  </data>
+  <data name="ParamIdCompetenciaPaga" xml:space="preserve">
+    <value>@com_id</value>
   </data>
 </root>

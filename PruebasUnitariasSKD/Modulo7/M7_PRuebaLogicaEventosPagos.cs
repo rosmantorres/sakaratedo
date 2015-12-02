@@ -128,8 +128,8 @@ namespace PruebasUnitariasSKD.Modulo7
         [Test]
         public void PruebaObtenerFechaInscripcionCompetencia()
         {
-            DateTime fechaCompetencia = logicaEventosPagos.obtenerFechaInscripcioncompetencia(idPersona, 8);
-            Assert.AreEqual("02/13/2014", fechaCompetencia.ToString("MM/dd/yyyy"));
+            DateTime fechaCompetencia = logicaEventosPagos.obtenerFechaInscripcioncompetencia(idPersona, 6);
+            Assert.AreEqual("07/10/2015", fechaCompetencia.ToString("MM/dd/yyyy"));
         }
 
         /// <summary>

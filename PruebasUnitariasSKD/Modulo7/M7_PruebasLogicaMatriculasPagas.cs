@@ -109,7 +109,7 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaObtenerMontoMatricula()
         {
             float monto = logicaM.obtenerMontoMatricula(idPersona, 3);
-            Assert.AreEqual(2000, monto);
+            Assert.AreEqual(1200, monto);
         }
 
         /// <summary>
@@ -128,8 +128,8 @@ namespace PruebasUnitariasSKD.Modulo7
         [Test]
         public void PruebaObtenerDetalleMatriculaXId()
         {
-            Matricula mat = logicaM.detalleMatriculaID(3);
-            Assert.AreEqual("CEFA-FE-A65", mat.Identificador);
+            Matricula mat = logicaM.detalleMatriculaID(25);
+            Assert.AreEqual("CCA1-CAF-CAFE", mat.Identificador);
         }
 
         /// <summary>

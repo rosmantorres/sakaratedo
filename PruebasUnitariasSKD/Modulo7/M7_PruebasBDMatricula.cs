@@ -29,7 +29,7 @@ namespace PruebasUnitariasSKD.Modulo7
         [SetUp]
         public void Init()
         {
-            idPersona = 25;
+            idPersona = 6;
         }
 
         [TearDown]
@@ -48,8 +48,8 @@ namespace PruebasUnitariasSKD.Modulo7
         public void PruebaDetallarMatriculaXId()
         {
             BDMatricula baseDeDatosMatricula = new BDMatricula();
-            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(6);
-            Assert.AreEqual("CAF-CAF-CAFE", matricula.Identificador);
+            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(25);
+            Assert.AreEqual("CCA1-CAF-CAFE", matricula.Identificador);
         }
 
         /// <summary>
