@@ -30,6 +30,8 @@ namespace LogicaNegociosSKD.Modulo9
 
         public bool CrearEvento(Evento evento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
                 if (ValidarCaracteres(evento.Nombre))
@@ -59,6 +61,7 @@ namespace LogicaNegociosSKD.Modulo9
                                     {
                                         Console.Out.WriteLine("FechaI <= FechaF");
                                         BDEvento baseDeDatosEvento = new BDEvento();
+                                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                                         return baseDeDatosEvento.CrearEvento(evento);
 
@@ -71,14 +74,26 @@ namespace LogicaNegociosSKD.Modulo9
                 }
 
             }
-            catch (ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
-            catch (Exception ex)
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return false;
 
         }
@@ -91,6 +106,8 @@ namespace LogicaNegociosSKD.Modulo9
 
         public bool CrearEventoConTipo(Evento evento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
                 if (ValidarCaracteres(evento.Nombre))
@@ -124,6 +141,7 @@ namespace LogicaNegociosSKD.Modulo9
                                             Console.Out.WriteLine("Nombre de Evento Valido ");
                                             
                                             BDEvento baseDeDatosEvento = new BDEvento();
+                                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                                             return baseDeDatosEvento.CrearEvento(evento);
                                         }
@@ -137,14 +155,26 @@ namespace LogicaNegociosSKD.Modulo9
                 }
 
             }
-            catch (ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
-            catch (Exception ex)
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return false;
 
         }
@@ -153,16 +183,43 @@ namespace LogicaNegociosSKD.Modulo9
         /// Metodo que retorna de la BD todos los eventos
         /// </summary>
         /// <returns>Lista de Eventos</returns>
-        public List<Evento> ListarEventos()
+        public List<Evento> ListarEventos(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            List<Evento> listaEventos = new List<Evento>();
+            try
+            {
+                BDEvento baseDeDatosEvento = new BDEvento();
+                listaEventos = baseDeDatosEvento.ListarEventos(idPersona);
+               
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            BDEvento baseDeDatosEvento = new BDEvento();
-            List<Evento> listaEventos = baseDeDatosEvento.ListarEventos();
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return listaEventos;
         }
 
         public bool ModificarEvento(Evento evento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
                 if (ValidarCaracteres(evento.Nombre))
@@ -204,14 +261,26 @@ namespace LogicaNegociosSKD.Modulo9
                 }
 
             }
-            catch (ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
-            catch (Exception ex)
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return false;
 
         }
@@ -223,8 +292,34 @@ namespace LogicaNegociosSKD.Modulo9
 
         public Evento ConsultarEvento(String idEvento)
         {
-            BDEvento baseDeDatosEvento = new BDEvento();
-            return baseDeDatosEvento.ConsultarEvento(idEvento);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Evento evento = new Evento();
+            try
+            {
+                BDEvento baseDeDatosEvento = new BDEvento();
+               evento = baseDeDatosEvento.ConsultarEvento(idEvento);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return evento;
         }
 
         /// <summary>
