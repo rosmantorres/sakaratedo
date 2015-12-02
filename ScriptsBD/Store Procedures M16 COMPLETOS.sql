@@ -214,16 +214,24 @@ CREATE PROCEDURE M16_ELIMINAR_ITEM
 		@tipoitem int
 AS
 BEGIN
+
+	--Buscamos el ID del carrito de la persona correspondiente
 	DECLARE @idcarrito INTEGER;
 	SET @idcarrito = (SELECT com_id FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idusuario AND com_estado = 'CARRITO');
 
+	--Evaluamos a que tipo de item nos estamos refiriendo y lo eliminamos
 	IF (@tipoitem = 1)
 		DELETE FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito AND IMPLEMENTO_inv_id = @iditem;
 	ELSE IF (@tipoitem = 2)
 		DELETE FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito AND MATRICULA_mat_id = @iditem;
 	ELSE IF (@tipoitem = 3)
 		DELETE FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito AND EVENTO_eve_id = @iditem;
+
+	--Si el carrito se quedo sin detalles lo eliminamos
+	IF NOT EXISTS (SELECT det_id FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito)
+		DELETE FROM COMPRA_CARRITO WHERE com_id = @idcarrito;
 	
+
 END
 GO
 
