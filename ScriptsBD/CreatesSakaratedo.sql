@@ -2812,4 +2812,16 @@ AS
   END
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE procedure M4_ConsultarDojosXId
+@idDojo [int]
+as
+  begin
+    select doj.doj_id as idDojo, doj.doj_rif as rifDojo, doj.doj_nombre as nombreDojo, doj.doj_telefono as telefonoDojo, doj.doj_email as emailDojo,
+     doj.doj__logo  as LogoDojo, doj.doj_fecha_registro as fechaRegistroDojo, doj.doj_status as statusDojo, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
+                   ubi.ubi_longitud as longitudDireccion, org.org_id as organizacionDojo , org.org_nombre as orgNombreDojo
+         From DOJO doj, ORGANIZACION org, UBICACION ubi
+    where doj.doj_id = @idDojo and doj.UBICACION_ubi_id = ubi.ubi_id and doj.ORGANIZACION_org_id = org.org_id 
+    
+  end;
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
