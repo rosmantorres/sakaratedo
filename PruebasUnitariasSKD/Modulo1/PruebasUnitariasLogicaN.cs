@@ -156,6 +156,16 @@ namespace PruebasUnitariasSKD.Modulo1
               bool _respuesta;
               _respuesta = lgr.ValidarCaracteres(null);
           }
+          [Test]
+          public void PruebaValidarCaracteres2()
+          {
+              logicaLogin lg = new logicaLogin();
+              bool _respuesta;
+
+
+              _respuesta = lg.ValidarCaracteres(RecursosPU_Mod1.usuario,true);
+              Assert.AreEqual(true, _respuesta);
+          }
         
           
     }
