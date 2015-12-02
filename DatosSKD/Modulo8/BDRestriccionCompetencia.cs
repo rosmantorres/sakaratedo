@@ -300,7 +300,7 @@ namespace DatosSKD.Modulo8
         #endregion
 
         #region EliminarRestriccion
-        public static bool EliminarRestriccionEvento(RestriccionCompetencia laRestriccion)
+        public static bool EliminarRestriccionCompetencia(RestriccionCompetencia laRestriccion)
         {
             try
             {
@@ -477,15 +477,101 @@ namespace DatosSKD.Modulo8
 
         #endregion
 
-        #region traerIdCompetencia
-
-        #endregion
-
-        #region eliminarCompetenciaDeRestriccionCompetencia
+        #region traerIdCompetenciaPorNombre
             
         #endregion
 
-        #region ExisteAsociacionCompetenciaRetriccionCompetencia
+        #region EliminarCompetenciaRestriccionCompetencia
+        public static bool EliminarCompetenciaRestriccionCompetencia(RestriccionCompetencia laRestriccionCompetencia, Competencia laCompetencia)
+        {
+            try
+            {
+
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                  laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdCompetencia, SqlDbType.Int,
+                     laCompetencia.Id_competencia.ToString(), false);
+                parametros.Add(elParametro);
+
+
+
+
+
+                BDConexion laConexion = new BDConexion();
+                laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.EliminarCompetenciaRestriccionCompetencia, parametros);
+
+            }
+
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+
+            return true;
+        }
+        #endregion
+
+        #region AgregarCompetenciaRestriccionCompetencia
+        public static bool AgregarCompetenciaRestriccionCompetencia(RestriccionCompetencia laRestriccionCompetencia, Competencia laCompetencia)
+        {
+            try
+            {
+                
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                      laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdCompetencia, SqlDbType.Int,
+                         laCompetencia.Id_competencia.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    
+
+
+
+                    BDConexion laConexion = new BDConexion();
+                    laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.AgregarCompetenciaRestriccionCompetencia, parametros);
+
+              
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosBDRestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosBDRestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return true;
+        }
+       
         #endregion
 
     }

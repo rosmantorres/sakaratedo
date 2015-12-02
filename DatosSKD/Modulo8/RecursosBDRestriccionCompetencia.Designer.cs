@@ -61,6 +61,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M8_AgregarCompetenciaRestriccionCompetencia.
+        /// </summary>
+        internal static string AgregarCompetenciaRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AgregarCompetenciaRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_AgregarRestriccionCompetencia.
         /// </summary>
         internal static string AgregarRestriccionCompetencia {
