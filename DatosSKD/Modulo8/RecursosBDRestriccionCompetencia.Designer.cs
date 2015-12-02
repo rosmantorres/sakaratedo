@@ -151,6 +151,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idOrganizacion.
+        /// </summary>
+        internal static string AliasIdOrganizacion {
+            get {
+                return ResourceManager.GetString("AliasIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCinta.
         /// </summary>
         internal static string AliasIdRcCinta {
@@ -169,11 +178,56 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idUbicacion.
+        /// </summary>
+        internal static string AliasIdUbicacion {
+            get {
+                return ResourceManager.GetString("AliasIdUbicacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to modalidad.
         /// </summary>
         internal static string AliasModalidad {
             get {
                 return ResourceManager.GetString("AliasModalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreCiudad.
+        /// </summary>
+        internal static string AliasNombreCiudad {
+            get {
+                return ResourceManager.GetString("AliasNombreCiudad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreCompetencia.
+        /// </summary>
+        internal static string AliasNombreCompetencia {
+            get {
+                return ResourceManager.GetString("AliasNombreCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreEstado.
+        /// </summary>
+        internal static string AliasNombreEstado {
+            get {
+                return ResourceManager.GetString("AliasNombreEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreOrganizacion.
+        /// </summary>
+        internal static string AliasNombreOrganizacion {
+            get {
+                return ResourceManager.GetString("AliasNombreOrganizacion", resourceCulture);
             }
         }
         
@@ -205,6 +259,33 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to statusCompetencia.
+        /// </summary>
+        internal static string AliasStatusCompetencia {
+            get {
+                return ResourceManager.GetString("AliasStatusCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tipoCompetencia.
+        /// </summary>
+        internal static string AliasTipoCompetencia {
+            get {
+                return ResourceManager.GetString("AliasTipoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to todasOrganizaciones.
+        /// </summary>
+        internal static string AliasTodasOrganizaciones {
+            get {
+                return ResourceManager.GetString("AliasTodasOrganizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_AtletasCumplenRestriccion.
         /// </summary>
         internal static string AtletasCumplenRestriccion {
@@ -228,6 +309,24 @@ namespace DatosSKD.Modulo8 {
         internal static string Codigo_Restriccion_Competencia_Existente {
             get {
                 return ResourceManager.GetString("Codigo_Restriccion_Competencia_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_ConsultarTodasLasCompetenciasAsociadas.
+        /// </summary>
+        internal static string ConsultarCompetenciasAsociadasALaRestriccion {
+            get {
+                return ResourceManager.GetString("ConsultarCompetenciasAsociadasALaRestriccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_ConsultarTodasLasCompetenciasNoAsociadas.
+        /// </summary>
+        internal static string ConsultarTodasLasCompetenciasNoAsociadas {
+            get {
+                return ResourceManager.GetString("ConsultarTodasLasCompetenciasNoAsociadas", resourceCulture);
             }
         }
         
@@ -444,6 +543,33 @@ namespace DatosSKD.Modulo8 {
         internal static string ParamSexo {
             get {
                 return ResourceManager.GetString("ParamSexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kata.
+        /// </summary>
+        internal static string TipoCompetenciaKata {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kumite.
+        /// </summary>
+        internal static string TipoCompetenciaKumite {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Todas.
+        /// </summary>
+        internal static string TodasLasOrganizaciones {
+            get {
+                return ResourceManager.GetString("TodasLasOrganizaciones", resourceCulture);
             }
         }
     }

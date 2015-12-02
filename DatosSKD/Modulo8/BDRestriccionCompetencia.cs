@@ -69,7 +69,7 @@ namespace DatosSKD.Modulo8
         } 
         #endregion
 
-        #region existeRestriccionCompetenciaSimilar
+        #region ExisteRestriccionCompetenciaSimilar
         public static bool ExisteRestriccionCompetenciaSimilar(RestriccionCompetencia laRestriccionCompetencia)
         {
             bool retorno = false;
@@ -341,7 +341,7 @@ namespace DatosSKD.Modulo8
         }
         #endregion
 
-        #region atletasQueCumplenRestriccion
+        #region AtletasQueCumplenRestriccion
         public static List<int> atletasQueCumplenRestriccion(RestriccionCompetencia laRestriccionCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -470,15 +470,145 @@ namespace DatosSKD.Modulo8
         #endregion
 
         #region traerListaDeCompetenciasAsociadasALaRestriccion
-        
-        #endregion
+        public static List<Competencia> ListarCompetenciasAsociadasALaRestriccion(RestriccionCompetencia laRestriccionCompetencia)
+        {
+            BDConexion laConexion;
+            List<Competencia> listaDeCompetencias = new List<Competencia>();
+            List<Parametro> parametros;
+                   
 
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                                                      laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDRestriccionCompetencia.ConsultarCompetenciasAsociadasALaRestriccion, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Competencia laCompetencia = new Competencia();
+
+                     laCompetencia.Id_competencia = int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdCompetencia].ToString());
+                    laCompetencia.Nombre = row[RecursosBDRestriccionCompetencia.AliasNombreCompetencia].ToString();
+                    laCompetencia.TipoCompetencia = row[RecursosBDRestriccionCompetencia.AliasTipoCompetencia].ToString();
+
+                    if (laCompetencia.TipoCompetencia == "1")
+                        laCompetencia.TipoCompetencia = RecursosBDRestriccionCompetencia.TipoCompetenciaKata;
+                    else
+                        laCompetencia.TipoCompetencia = RecursosBDRestriccionCompetencia.TipoCompetenciaKumite;
+
+                    laCompetencia.Status = row[RecursosBDRestriccionCompetencia.AliasStatusCompetencia].ToString();
+                    laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDRestriccionCompetencia.AliasTodasOrganizaciones].ToString());
+
+                    if (laCompetencia.OrganizacionTodas == false)
+                        laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdOrganizacion].ToString())
+                                                                        , row[RecursosBDRestriccionCompetencia.AliasNombreOrganizacion].ToString());
+                    else
+                    {
+                        laCompetencia.Organizacion = new Organizacion(RecursosBDRestriccionCompetencia.TodasLasOrganizaciones);
+                    }
+                    laCompetencia.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdUbicacion].ToString()),
+                                                            row[RecursosBDRestriccionCompetencia.AliasNombreCiudad].ToString(),
+                                                            row[RecursosBDRestriccionCompetencia.AliasNombreEstado].ToString());
+
+                    listaDeCompetencias.Add(laCompetencia);
+               }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaDeCompetencias;
+        } 
+        #endregion
+      
         #region traerListaDeCompetenciasNoAsociadasALaRestriccion
+        public static List<Competencia> ListarCompetenciasNoAsociadasALaRestriccion(RestriccionCompetencia laRestriccionCompetencia)
+        {
+            BDConexion laConexion;
+            List<Competencia> listaDeCompetencias = new List<Competencia>();
+            List<Parametro> parametros;
 
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                                                      laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosBDRestriccionCompetencia.ConsultarTodasLasCompetenciasNoAsociadas, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Competencia laCompetencia = new Competencia();
+
+                    laCompetencia.Id_competencia = int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdCompetencia].ToString());
+                    laCompetencia.Nombre = row[RecursosBDRestriccionCompetencia.AliasNombreCompetencia].ToString();
+                    laCompetencia.TipoCompetencia = row[RecursosBDRestriccionCompetencia.AliasTipoCompetencia].ToString();
+
+                    if (laCompetencia.TipoCompetencia == "1")
+                        laCompetencia.TipoCompetencia = RecursosBDRestriccionCompetencia.TipoCompetenciaKata;
+                    else
+                        laCompetencia.TipoCompetencia = RecursosBDRestriccionCompetencia.TipoCompetenciaKumite;
+
+                    laCompetencia.Status = row[RecursosBDRestriccionCompetencia.AliasStatusCompetencia].ToString();
+                    laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDRestriccionCompetencia.AliasTodasOrganizaciones].ToString());
+
+                    if (laCompetencia.OrganizacionTodas == false)
+                        laCompetencia.Organizacion = new Organizacion(int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdOrganizacion].ToString())
+                                                                        , row[RecursosBDRestriccionCompetencia.AliasNombreOrganizacion].ToString());
+                    else
+                    {
+                        laCompetencia.Organizacion = new Organizacion(RecursosBDRestriccionCompetencia.TodasLasOrganizaciones);
+                    }
+                    laCompetencia.Ubicacion = new Ubicacion(int.Parse(row[RecursosBDRestriccionCompetencia.AliasIdUbicacion].ToString()),
+                                                            row[RecursosBDRestriccionCompetencia.AliasNombreCiudad].ToString(),
+                                                            row[RecursosBDRestriccionCompetencia.AliasNombreEstado].ToString());
+
+                    listaDeCompetencias.Add(laCompetencia);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaDeCompetencias;
+        } 
         #endregion
 
-        #region traerIdCompetenciaPorNombre
-            
+        #region PENDIENTE traerIdCompetenciaPorNombre PENDIENTE
+
         #endregion
 
         #region EliminarCompetenciaRestriccionCompetencia
