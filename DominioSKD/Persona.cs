@@ -119,7 +119,7 @@ namespace DominioSKD
         /// <summary>
         /// Objeto Inscripcion
         /// </summary>
-        private Inscripcion _inscripcion;
+        private Inscripcion _inscripcion = new Inscripcion();
         #endregion
 
         #region Constructores
@@ -135,7 +135,7 @@ namespace DominioSKD
         public Persona()
         {
             this._id = -1;
-            _inscripcion = new Inscripcion();
+        
         }
 
         public int ID
