@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
 using DatosSKD;
+using log4net;
+using log4net.Config;
 
 namespace PruebasUnitariasSKD.Modulo9
 {
