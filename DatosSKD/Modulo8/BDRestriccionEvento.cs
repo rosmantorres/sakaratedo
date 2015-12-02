@@ -64,7 +64,7 @@ namespace DatosSKD.Modulo8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }   
+            }
 
 
             return true;
@@ -123,7 +123,7 @@ namespace DatosSKD.Modulo8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }   
+            }
 
 
             return true;
@@ -166,12 +166,12 @@ namespace DatosSKD.Modulo8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }   
+            }
 
 
             return true;
         }
-     
+
         public static bool AgregarRh_Cinta(RestriccionEvento laRestriccion, int IdCinta)
         {
             try
@@ -208,7 +208,7 @@ namespace DatosSKD.Modulo8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }   
+            }
 
 
             return true;
@@ -311,7 +311,7 @@ namespace DatosSKD.Modulo8
         public static List<RestriccionEvento> ConsultarEventosConRestriccion()
         {
             BDConexion laConexion;
-            List<RestriccionEvento> laListaRestriccionesEvento= new List<RestriccionEvento>();
+            List<RestriccionEvento> laListaRestriccionesEvento = new List<RestriccionEvento>();
             List<Parametro> parametros = new List<Parametro>();
 
             try
@@ -495,7 +495,7 @@ namespace DatosSKD.Modulo8
 
             Parametro elParametro = new Parametro(RecursosBDRestriccionEvento.ParamIdPersona, SqlDbType.Int,
                     PersonaId.ToString(), false);
-            
+
             parametros.Add(elParametro);
 
             try
@@ -510,6 +510,7 @@ namespace DatosSKD.Modulo8
                     EventoSimple elEvento = new EventoSimple();
 
                     elEvento.IdEvento = int.Parse(row[RecursosBDRestriccionEvento.AliasIdEvento].ToString());
+                    elEvento.NombreEvento = row[RecursosBDRestriccionEvento.AliasNombreEvento].ToString();
 
                     laListaEventosSimple.Add(elEvento);
 

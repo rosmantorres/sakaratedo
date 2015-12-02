@@ -17,7 +17,7 @@ namespace DominioSKD
         private int idEvento;
         private String nombreEvento;
 
-        private List<Cinta> listaCintas;
+        private List<CintaSimple> listaCintas;
         #endregion
 
         #region Propiedades
@@ -63,7 +63,7 @@ namespace DominioSKD
             set { idEvento = value; }
         }
 
-        public List<Cinta> ListaCintas
+        public List<CintaSimple> ListaCintas
         {
             get { return listaCintas; }
             set { listaCintas = value; }
@@ -94,9 +94,9 @@ namespace DominioSKD
             sexo = elSexo;
             idEvento = elIdEvento;
             nombreEvento = elNombreEvento;
-            
+
             listaCintas = null;
-            
+
             //DateTime nacimiento = new DateTime(2000, 1, 25);
             //int edad = DateTime.Today.AddTicks(-nacimiento.Ticks).Year - 1;
         }
