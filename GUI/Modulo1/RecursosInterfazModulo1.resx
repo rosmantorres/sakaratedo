@@ -189,4 +189,10 @@
   <data name="tipoErrMalicioso" xml:space="preserve">
     <value>error</value>
   </data>
+  <data name="signoIgual" xml:space="preserve">
+    <value>=</value>
+  </data>
+  <data name="signoPregunta" xml:space="preserve">
+    <value>?</value>
+  </data>
 </root>

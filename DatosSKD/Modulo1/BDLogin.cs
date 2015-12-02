@@ -34,7 +34,7 @@ namespace DatosSKD.Modulo1
                 laConexion3 = new BDConexion();
                 parametros = new List<Parametro>();
                 parametros2 = new List<Parametro>();
-                string idUsuario = "0";
+                string idUsuario = RecursosBDModulo1.idInicial;
                 Cuenta laCuenta = new Cuenta();
 
 
