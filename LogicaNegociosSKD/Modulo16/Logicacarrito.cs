@@ -630,8 +630,7 @@ namespace LogicaNegociosSKD.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
                     RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
-            }        
-           
+            }         
         }
         
         #endregion

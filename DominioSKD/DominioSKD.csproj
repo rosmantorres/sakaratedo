@@ -58,7 +58,6 @@
     <Compile Include="Dojo.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Inventario.cs" />
-    <Compile Include="Matricula.cs" />
     <Compile Include="HistorialCinta.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Implemento.cs" />
