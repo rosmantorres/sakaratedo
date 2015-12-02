@@ -8,6 +8,8 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
+using ExcepcionesSKD.Modulo7;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -54,39 +56,52 @@ namespace templateApp.GUI.Modulo7
                         {
                             laListaEventos = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                             laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-
-                            foreach (Evento evento in laListaEventos)
+                            if (laListaEventos != null && laListaCompetencias != null)
                             {
-                                fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
-                                this.laTabla.Text += M7_Recursos.AbrirTR;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD;
-                                this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
-                                this.laTabla.Text += M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.CerrarTR;
+                                foreach (Evento evento in laListaEventos)
+                                {
+                                    fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
+                                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
+                                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.CerrarTR;
+                                }
+
+                                foreach (Competencia competencia in laListaCompetencias)
+                                {
+                                    fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), competencia.Id_competencia);
+                                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaACompetencias + competencia.Id_competencia + M7_Recursos.BotonCerrar;
+                                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.CerrarTR;
+                                }
                             }
-
-                            foreach (Competencia competencia in laListaCompetencias)
+                            else
                             {
-                                fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), competencia.Id_competencia);
-                                this.laTabla.Text += M7_Recursos.AbrirTR;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD;
-                                this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaACompetencias + competencia.Id_competencia + M7_Recursos.BotonCerrar;
-                                this.laTabla.Text += M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.CerrarTR;
+                                throw new ListaNulaException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
                             }
 
                         }
+                        catch (ListaNulaException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
                         catch (Exception ex)
                         {
-                            throw ex;
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
                 }
@@ -98,8 +113,8 @@ namespace templateApp.GUI.Modulo7
             }
             catch (NullReferenceException ex)
             {
-
-
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
         }
                 

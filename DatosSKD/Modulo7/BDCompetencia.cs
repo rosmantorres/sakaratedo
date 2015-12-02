@@ -54,7 +54,6 @@ namespace DatosSKD.Modulo7
 
                     competencia.Id_competencia = int.Parse(row[RecursosBDModulo7.AliasIdCompetencia].ToString());
                     competencia.Nombre = row[RecursosBDModulo7.AliasCompetenciaNombre].ToString();
-                    //competencia.Status = row[RecursosBDModulo7.AliasCompetenciaStatus].ToString();
                     competencia.TipoCompetencia = row[RecursosBDModulo7.AliasCompetenciaTipo].ToString();
                     competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
                     competencia.FechaFin = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaFin].ToString());

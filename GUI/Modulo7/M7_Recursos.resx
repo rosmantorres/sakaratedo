@@ -207,4 +207,13 @@
   <data name="CerrarUL" xml:space="preserve">
     <value>&lt;/ul&gt;</value>
   </data>
+  <data name="Codigo_Numero_Parametro_Invalido" xml:space="preserve">
+    <value>SKD_00_007</value>
+  </data>
+  <data name="MensajeListaNulaLogger" xml:space="preserve">
+    <value>La lista que retorno el metodo es nula</value>
+  </data>
+  <data name="Mensaje_Numero_Parametro_invalido" xml:space="preserve">
+    <value>El número del parametro es invalido, debe ser un entero positivo</value>
+  </data>
 </root>

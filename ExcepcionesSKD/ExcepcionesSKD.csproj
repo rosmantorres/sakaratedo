@@ -62,6 +62,7 @@
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
+    <Compile Include="Modulo7\ListaVaciaException.cs" />
     <Compile Include="Modulo7\NumeroEnteroInvalidoException.cs" />
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
