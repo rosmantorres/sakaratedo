@@ -88,7 +88,7 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class= &quot;btn btn-primary glyphicon glyphicon-info-sign&quot;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M10_DetalleAsistenciaEventos.aspx?compDetalle=.
         /// </summary>
         internal static string BotonInfo {
             get {
@@ -97,7 +97,7 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class= &quot;btn btn-default glyphicon glyphicon-pencil&quot;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?compMod=.
         /// </summary>
         internal static string BotonModificar {
             get {
@@ -124,7 +124,7 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to competencia.
+        ///   Looks up a localized string similar to Competencia.
         /// </summary>
         internal static string Competencia {
             get {
@@ -133,7 +133,7 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to evento.
+        ///   Looks up a localized string similar to Evento.
         /// </summary>
         internal static string Evento {
             get {

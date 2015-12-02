@@ -56,6 +56,22 @@ namespace templateApp.GUI.Modulo10
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
                     }
+
+                    competencias = LogicaAsistencia.ListarCompetenciasAsistidas();
+                    foreach (Competencia competencia in competencias)
+                    {
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTR;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + competencia.Id_competencia.ToString() + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + competencia.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", competencia.FechaInicio) + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + M10_RecursosInterfaz.Competencia + M10_RecursosInterfaz.CerrarTD;
+
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonModificar + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
+                    }
                 }
                 catch (Exception ex)
                 {

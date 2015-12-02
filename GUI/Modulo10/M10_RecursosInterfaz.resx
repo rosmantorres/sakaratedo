@@ -127,10 +127,10 @@
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class= "btn btn-primary glyphicon glyphicon-info-sign"</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEventos.aspx?compDetalle=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class= "btn btn-default glyphicon glyphicon-pencil"</value>
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?compMod=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
@@ -139,9 +139,9 @@
     <value>&lt;/tr&gt;</value>
   </data>
   <data name="Competencia" xml:space="preserve">
-    <value>competencia</value>
+    <value>Competencia</value>
   </data>
   <data name="Evento" xml:space="preserve">
-    <value>evento</value>
+    <value>Evento</value>
   </data>
 </root>
