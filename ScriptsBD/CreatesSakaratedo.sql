@@ -2773,6 +2773,7 @@ AS
         imp_stockmin,
         inv_cantidad_total,
         imp_estatus,
+        imp_descripcion,
         DOJO_doj_id 
           FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
     WHERE imp.imp_estatus != 'Inactivo'
