@@ -62,7 +62,16 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.NotNull(matricula);
         }
 
-     
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detallar matricula pagada
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetallarMatriculaPagaNumeroEnteroException()
+        {
+            BDMatricula baseDeDatosMatricula = new BDMatricula();
+            Matricula matricula = baseDeDatosMatricula.DetallarMatricula(-1);
+        }
        
         /// <summary>
         /// Método para probar que la lista obtenida tiene  cero o mas matriculas pagas
@@ -85,7 +94,17 @@ namespace PruebasUnitariasSKD.Modulo7
             List<Matricula> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
             Assert.NotNull(listaMatricula);
         }
-       
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar matriculas pagas
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarMatriculasPagasEnteroException()
+        {
+            BDMatricula baseDeDatosMatricula = new BDMatricula();
+            List<Matricula> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(-1);
+        }
 
         #endregion
 

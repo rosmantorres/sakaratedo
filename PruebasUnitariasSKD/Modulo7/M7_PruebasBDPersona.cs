@@ -58,5 +58,16 @@ namespace PruebasUnitariasSKD.Modulo7
             Persona persona = baseDeDatosPersona.DetallarPersona(idPersona);
             Assert.IsNotNull(persona);
         }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detallar persona
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetallarPersonaNumeroEnteroException()
+        {
+            BDPersona baseDeDatosPersona = new BDPersona();
+            Persona persona = baseDeDatosPersona.DetallarPersona(-1);
+        }
     }
 }

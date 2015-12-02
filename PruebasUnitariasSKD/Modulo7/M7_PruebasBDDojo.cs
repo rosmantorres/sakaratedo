@@ -58,5 +58,16 @@ namespace PruebasUnitariasSKD.Modulo7
             Dojo dojo = baseDeDatosDojo.DetallarDojo(idDojo);
             Assert.IsNotNull(dojo);
         }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detalle dojo
+
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetalleDojoNumeroEnteroException()
+        {
+            BDDojo baseDeDatosDojo = new BDDojo();
+            baseDeDatosDojo.DetallarDojo(-1);
+        }
     }
 }
