@@ -98,7 +98,7 @@ namespace templateApp.GUI.Modulo9
             {
                 Horario horario = new Horario();
                 Persona persona = new Persona();
-                String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID];
+             //   String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID];
                 if (!nombreEvento.Text.Equals(""))
                 {
                     evento.Nombre = nombreEvento.Text;
