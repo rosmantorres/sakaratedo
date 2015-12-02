@@ -16,6 +16,7 @@ namespace DominioSKD
         private Planilla planilla;
         private int id;
         private String nombreEvento;
+        private int idInscripcion;
         #endregion
 
         #region metodos
@@ -44,8 +45,16 @@ namespace DominioSKD
             this.id = id;
             this.nombreEvento = nombreEvento;
         }
-      
-     
+
+        public SolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, Planilla planilla, int idInscripcion)
+        {
+            this.id = id;
+            this.fechaRetiro = fechaRetiro;
+            this.fechaReincorporacion = fechaReincorporacion;
+            this.motivo = motivo;
+            this.planilla = planilla;
+            this.idInscripcion = idInscripcion;
+        }
         #endregion
 
         #region gets y sets
@@ -83,7 +92,11 @@ namespace DominioSKD
             get { return nombreEvento; }
             set { nombreEvento = value; }
         }
-
+        public int IDInscripcion
+        {
+            get { return idInscripcion; }
+            set { idInscripcion = value; }
+        }
         #endregion
 
 

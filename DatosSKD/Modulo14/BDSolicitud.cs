@@ -413,7 +413,15 @@ namespace DatosSKD.Modulo14
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursosBDModulo14.ParametroMotivo,
-               SqlDbType.VarChar, laSolicitud.Motivo, false);
+                SqlDbType.VarChar, laSolicitud.Motivo, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroPlanillaID,
+                SqlDbType.VarChar, laSolicitud.Planilla.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosBDModulo14.ParametroIdInscripcion,
+                SqlDbType.VarChar, laSolicitud.IDInscripcion.ToString(), false);
                 parametros.Add(parametro);
 
                 string query = RecursosBDModulo14.ProcedureModificarSolicitud;

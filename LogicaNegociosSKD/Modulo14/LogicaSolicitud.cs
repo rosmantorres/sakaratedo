@@ -53,6 +53,8 @@ namespace LogicaNegociosSKD.Modulo14
 
             datosRequeridos.Add(resultDiseño.Contenido.Contains("$sol_pla_fecha_retiro"));
             datosRequeridos.Add(resultDiseño.Contenido.Contains("$sol_pla_fecha_reincorporacion"));
+            datosRequeridos.Add(resultDiseño.Contenido.Contains("$eve_nombre"));
+            datosRequeridos.Add(resultDiseño.Contenido.Contains("$comp_nombre"));
 
             return datosRequeridos;
         }
