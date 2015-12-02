@@ -88,6 +88,141 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to cin_color_nombre.
+        /// </summary>
+        internal static string AliasCintaColorNombre {
+            get {
+                return ResourceManager.GetString("AliasCintaColorNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to edad_max.
+        /// </summary>
+        internal static string AliasEdadMax {
+            get {
+                return ResourceManager.GetString("AliasEdadMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to edad_min.
+        /// </summary>
+        internal static string AliasEdadMin {
+            get {
+                return ResourceManager.GetString("AliasEdadMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idAtleta.
+        /// </summary>
+        internal static string AliasIdAtleta {
+            get {
+                return ResourceManager.GetString("AliasIdAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cinta_id.
+        /// </summary>
+        internal static string AliasIdCinta {
+            get {
+                return ResourceManager.GetString("AliasIdCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idEvento.
+        /// </summary>
+        internal static string AliasIdEvento {
+            get {
+                return ResourceManager.GetString("AliasIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to res_eve_id.
+        /// </summary>
+        internal static string AliasIdRestriccionEvento {
+            get {
+                return ResourceManager.GetString("AliasIdRestriccionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombreEvento.
+        /// </summary>
+        internal static string AliasNombreEvento {
+            get {
+                return ResourceManager.GetString("AliasNombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to res_eve_desc.
+        /// </summary>
+        internal static string AliasResDescripcion {
+            get {
+                return ResourceManager.GetString("AliasResDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sexo.
+        /// </summary>
+        internal static string AliasSexo {
+            get {
+                return ResourceManager.GetString("AliasSexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_AtletasCumplenRestriccionEvento.
+        /// </summary>
+        internal static string ConsultarAtletasCumplanRE {
+            get {
+                return ResourceManager.GetString("ConsultarAtletasCumplanRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_CONSULTAR_CINTAS_RESTRICCION_EVENTO.
+        /// </summary>
+        internal static string ConsultarCintasDeRestriccionEvento {
+            get {
+                return ResourceManager.GetString("ConsultarCintasDeRestriccionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_CONSULTAR_EVENTOS_CONRESTRICCION.
+        /// </summary>
+        internal static string ConsultarEventosConRestriccion {
+            get {
+                return ResourceManager.GetString("ConsultarEventosConRestriccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_EventosQuePuedeAsistirAtleta.
+        /// </summary>
+        internal static string ConsultarEventosCumplaREAtleta {
+            get {
+                return ResourceManager.GetString("ConsultarEventosCumplaREAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_CONSULTAR_EVENTOS_SINRESTRICCION.
+        /// </summary>
+        internal static string ConsultarEventosSinRestriccion {
+            get {
+                return ResourceManager.GetString("ConsultarEventosSinRestriccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_Eliminar_Evento_Restriccion.
         /// </summary>
         internal static string EliminarEventoRestriccion {
@@ -165,6 +300,15 @@ namespace DatosSKD.Modulo8 {
         internal static string ParamIdEvento {
             get {
                 return ResourceManager.GetString("ParamIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @per_id.
+        /// </summary>
+        internal static string ParamIdPersona {
+            get {
+                return ResourceManager.GetString("ParamIdPersona", resourceCulture);
             }
         }
         

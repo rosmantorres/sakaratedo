@@ -13,7 +13,7 @@ namespace DominioSKD
         private String descripcion;
         private int edadMinima;
         private int edadMaxima;
-        private char sexo;
+        private String sexo;
         private int idEvento;
         private String nombreEvento;
 
@@ -51,7 +51,7 @@ namespace DominioSKD
             set { edadMaxima = value; }
         }
 
-        public char Sexo
+        public String Sexo
         {
             get { return sexo; }
             set { sexo = value; }
@@ -77,7 +77,7 @@ namespace DominioSKD
             descripcion = String.Empty;
             edadMinima = 0;
             edadMaxima = 0;
-            sexo = new char();
+            sexo = String.Empty;
             idEvento = 0;
             nombreEvento = String.Empty;
 
@@ -85,7 +85,7 @@ namespace DominioSKD
 
         }
 
-        public RestriccionEvento(int elId, String laDescripcion, int laEdadMinima, int laEdadMaxima, char elSexo, int elIdEvento, String elNombreEvento)
+        public RestriccionEvento(int elId, String laDescripcion, int laEdadMinima, int laEdadMaxima, String elSexo, int elIdEvento, String elNombreEvento)
         {
             idRestEvento = elId;
             descripcion = laDescripcion;
@@ -102,4 +102,106 @@ namespace DominioSKD
         }
         #endregion
     }
+
+    public class EventoSimple
+    {
+        #region Atributos
+        private int idEvento;
+        private String nombreEvento;
+        #endregion
+
+        #region Propiedades
+        public int IdEvento
+        {
+            get { return idEvento; }
+            set { idEvento = value; }
+        }
+
+        public String NombreEvento
+        {
+            get { return nombreEvento; }
+            set { nombreEvento = value; }
+        }
+        #endregion
+
+        #region Constructores
+        public EventoSimple()
+        {
+            idEvento = 0;
+            nombreEvento = String.Empty;
+
+        }
+
+        public EventoSimple(int elId, String elNombre)
+        {
+            idEvento = elId;
+            nombreEvento = elNombre;
+        }
+        #endregion
+    }
+
+    public class CintaSimple
+    {
+        #region Atributos
+        private int idCinta;
+        private String colorCinta;
+        #endregion
+
+        #region Propiedades
+        public int IdCinta
+        {
+            get { return idCinta; }
+            set { idCinta = value; }
+        }
+
+        public String ColorCinta
+        {
+            get { return colorCinta; }
+            set { colorCinta = value; }
+        }
+        #endregion
+
+        #region Constructores
+        public CintaSimple()
+        {
+            idCinta = 0;
+            colorCinta = String.Empty;
+
+        }
+
+        public CintaSimple(int elId, String elColor)
+        {
+            idCinta = elId;
+            colorCinta = elColor;
+        }
+        #endregion
+    }
+
+    public class PersonaSimple
+    {
+        #region Atributos
+        private int idPersona;
+        #endregion
+
+        #region Propiedades
+        public int IdPersona
+        {
+            get { return idPersona; }
+            set { idPersona = value; }
+        }
+        #endregion
+
+        #region Constructores
+        public PersonaSimple()
+        {
+            idPersona = 0;
+        }
+
+        public PersonaSimple(int elId)
+        {
+            idPersona = elId;
+        }
+        #endregion
+    }
+
 }

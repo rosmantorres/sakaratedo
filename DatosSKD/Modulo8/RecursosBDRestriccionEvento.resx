@@ -159,4 +159,52 @@
   <data name="ParamSexoRestricionEvento" xml:space="preserve">
     <value>@sexo</value>
   </data>
+  <data name="ConsultarAtletasCumplanRE" xml:space="preserve">
+    <value>M8_AtletasCumplenRestriccionEvento</value>
+  </data>
+  <data name="ConsultarCintasDeRestriccionEvento" xml:space="preserve">
+    <value>M8_CONSULTAR_CINTAS_RESTRICCION_EVENTO</value>
+  </data>
+  <data name="ConsultarEventosConRestriccion" xml:space="preserve">
+    <value>M8_CONSULTAR_EVENTOS_CONRESTRICCION</value>
+  </data>
+  <data name="ConsultarEventosCumplaREAtleta" xml:space="preserve">
+    <value>M8_EventosQuePuedeAsistirAtleta</value>
+  </data>
+  <data name="ConsultarEventosSinRestriccion" xml:space="preserve">
+    <value>M8_CONSULTAR_EVENTOS_SINRESTRICCION</value>
+  </data>
+  <data name="ParamIdPersona" xml:space="preserve">
+    <value>@per_id</value>
+  </data>
+  <data name="AliasCintaColorNombre" xml:space="preserve">
+    <value>cin_color_nombre</value>
+  </data>
+  <data name="AliasEdadMax" xml:space="preserve">
+    <value>edad_max</value>
+  </data>
+  <data name="AliasEdadMin" xml:space="preserve">
+    <value>edad_min</value>
+  </data>
+  <data name="AliasIdAtleta" xml:space="preserve">
+    <value>idAtleta</value>
+  </data>
+  <data name="AliasIdCinta" xml:space="preserve">
+    <value>cinta_id</value>
+  </data>
+  <data name="AliasIdEvento" xml:space="preserve">
+    <value>idEvento</value>
+  </data>
+  <data name="AliasIdRestriccionEvento" xml:space="preserve">
+    <value>res_eve_id</value>
+  </data>
+  <data name="AliasNombreEvento" xml:space="preserve">
+    <value>nombreEvento</value>
+  </data>
+  <data name="AliasResDescripcion" xml:space="preserve">
+    <value>res_eve_desc</value>
+  </data>
+  <data name="AliasSexo" xml:space="preserve">
+    <value>sexo</value>
+  </data>
 </root>
