@@ -122,6 +122,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\PruebaBDRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\PruebaDBRestriccionEvento.cs" />
     <Compile Include="Modulo8\RecursosPU_Mod8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

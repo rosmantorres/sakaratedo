@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgregarCompetenciaRestriccionCompetencia" xml:space="preserve">
+    <value>M8_AgregarCompetenciaRestriccionCompetencia</value>
+  </data>
   <data name="AgregarRestriccionCompetencia" xml:space="preserve">
     <value>M8_AgregarRestriccionCompetencia</value>
   </data>
@@ -144,14 +147,32 @@
   <data name="AliasIdCompetencia" xml:space="preserve">
     <value>idCompetencia</value>
   </data>
+  <data name="AliasIdOrganizacion" xml:space="preserve">
+    <value>idOrganizacion</value>
+  </data>
   <data name="AliasIdRcCinta" xml:space="preserve">
     <value>idCinta</value>
   </data>
   <data name="AliasIdRestriccionCompetencia" xml:space="preserve">
     <value>id</value>
   </data>
+  <data name="AliasIdUbicacion" xml:space="preserve">
+    <value>idUbicacion</value>
+  </data>
   <data name="AliasModalidad" xml:space="preserve">
     <value>modalidad</value>
+  </data>
+  <data name="AliasNombreCiudad" xml:space="preserve">
+    <value>nombreCiudad</value>
+  </data>
+  <data name="AliasNombreCompetencia" xml:space="preserve">
+    <value>nombreCompetencia</value>
+  </data>
+  <data name="AliasNombreEstado" xml:space="preserve">
+    <value>nombreEstado</value>
+  </data>
+  <data name="AliasNombreOrganizacion" xml:space="preserve">
+    <value>nombreOrganizacion</value>
   </data>
   <data name="AliasRangoMax" xml:space="preserve">
     <value>rangoMax</value>
@@ -162,6 +183,15 @@
   <data name="AliasSexo" xml:space="preserve">
     <value>sexo</value>
   </data>
+  <data name="AliasStatusCompetencia" xml:space="preserve">
+    <value>statusCompetencia</value>
+  </data>
+  <data name="AliasTipoCompetencia" xml:space="preserve">
+    <value>tipoCompetencia</value>
+  </data>
+  <data name="AliasTodasOrganizaciones" xml:space="preserve">
+    <value>todasOrganizaciones</value>
+  </data>
   <data name="AtletasCumplenRestriccion" xml:space="preserve">
     <value>M8_AtletasCumplenRestriccion</value>
   </data>
@@ -170,6 +200,12 @@
   </data>
   <data name="Codigo_Restriccion_Competencia_Existente" xml:space="preserve">
     <value>SKD_08_001</value>
+  </data>
+  <data name="ConsultarCompetenciasAsociadasALaRestriccion" xml:space="preserve">
+    <value>M8_ConsultarTodasLasCompetenciasAsociadas</value>
+  </data>
+  <data name="ConsultarTodasLasCompetenciasNoAsociadas" xml:space="preserve">
+    <value>M8_ConsultarTodasLasCompetenciasNoAsociadas</value>
   </data>
   <data name="ConsultarTodasRestriccionCompetencia" xml:space="preserve">
     <value>M8_ConsultarRestriccionCompetencia</value>
@@ -242,5 +278,14 @@
   </data>
   <data name="ParamSexo" xml:space="preserve">
     <value>@rest_comp_sexo</value>
+  </data>
+  <data name="TipoCompetenciaKata" xml:space="preserve">
+    <value>Kata</value>
+  </data>
+  <data name="TipoCompetenciaKumite" xml:space="preserve">
+    <value>Kumite</value>
+  </data>
+  <data name="TodasLasOrganizaciones" xml:space="preserve">
+    <value>Todas</value>
   </data>
 </root>
