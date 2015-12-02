@@ -608,12 +608,14 @@
     <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="GUI\Modulo14\ckeditor\skins\moono\readme.md" />
     <Content Include="plugins\jquery_validate\demo\captcha\fonts\Anorexia.ttf" />
+
     <Content Include="plugins\jquery_validate\demo\captcha\images\image.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\image_req.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\index.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\newsession.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\process.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\rand.php" />
+
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
     <None Include="Web.Debug.config">
@@ -1383,6 +1385,14 @@
     <Content Include="plugins\jquery_validate\demo\ajaxSubmit-integration-demo.html" />
     <Content Include="plugins\jquery_validate\demo\captcha\captcha.js" />
     <Content Include="plugins\jquery_validate\demo\captcha\images\button.png" />
+
+    <Content Include="plugins\jquery_validate\demo\captcha\images\image.php" />
+    <Content Include="plugins\jquery_validate\demo\captcha\image_req.php" />
+    <Content Include="plugins\jquery_validate\demo\captcha\index.php" />
+    <Content Include="plugins\jquery_validate\demo\captcha\newsession.php" />
+    <Content Include="plugins\jquery_validate\demo\captcha\process.php" />
+    <Content Include="plugins\jquery_validate\demo\captcha\rand.php" />
+
     <Content Include="plugins\jquery_validate\demo\captcha\style.css" />
     <Content Include="plugins\jquery_validate\demo\css\cmxform.css" />
     <Content Include="plugins\jquery_validate\demo\css\cmxformTemplate.css" />
