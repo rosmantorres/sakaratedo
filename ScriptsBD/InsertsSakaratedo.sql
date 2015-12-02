@@ -5195,12 +5195,14 @@ INSERT INTO DETALLE_COMPRA VALUES (7,1200,1,3,6,NULL,13,NULL);
 
 INSERT INTO DETALLE_COMPRA VALUES (6,1200,1,3,6,NULL,14,NULL);
 
+
+update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
+
 /*-------------------------------------------------------------------------*/
 
 
 /*=======================================================================================*/
 
 
-update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
 
     
