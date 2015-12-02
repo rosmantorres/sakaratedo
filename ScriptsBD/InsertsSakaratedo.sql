@@ -305,13 +305,6 @@ INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio
 go
 
 
--- INSERTS IMPLEMENTO --
-
-
-
-
-
-
 
 
 
