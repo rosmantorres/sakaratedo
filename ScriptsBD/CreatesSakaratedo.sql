@@ -2541,3 +2541,218 @@ AS
 		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
 		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
  END
+
+
+
+--------------------------------------------------------------Inicio Procedure M15 Inventario-------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------M15_ConsultarImplementoUltimo--------------------
+CREATE PROCEDURE [dbo].[M15_ConsultarImplementoUltimo]
+AS
+  BEGIN
+    SELECT  TOP(1) imp_id,
+            imp_nombre,
+        imp_imagen,
+        imp_tipo ,
+        imp_color,
+        imp_marca,
+        imp_talla ,
+        imp_precio,
+        imp_stockmin,
+        inv_cantidad_total,
+          imp_estatus,
+        imp_descripcion,
+        DOJO_doj_id
+    FROM  IMPLEMENTO, INVENTARIO, DOJO
+    WHERE imp_id = IMPLEMENTO_imp_id
+    AND   DOJO_doj_id = doj_id
+    ORDER BY imp_id DESC;
+  END
+
+
+
+  ----------------------------------------------------
+
+-----------M15_ConsultarUsuarioDojo------------------------------
+CREATE PROCEDURE [dbo].[M15_ConsultarUsuarioDojo]
+  @_perUsuario [varchar] (255)
+AS
+  BEGIN
+    SELECT DOJO_doj_id
+    FROM PERSONA, DOJO
+    WHERE per_nombre_usuario = @_perUsuario
+    AND   doj_id=DOJO_doj_id
+  END
+
+-------------------------------------------------------------------
+
+
+/*-------------M15_AgregarImplemento----------------------*/
+CREATE PROCEDURE [dbo].[M15_AgregarImplemento]
+@_impNombre [varchar] (255),
+@_impTipo [varchar] (255),
+@_impMarca [varchar] (255),
+@_impColor [varchar] (255),
+@_impTalla [varchar] (255), 
+@_impPrecio [float], 
+@_impStockmin [int],
+@_invCantidad [int],
+@_impDescripcion [varchar] (255),
+@_dojId [int],
+@_impImagen [varchar] (255)
+
+AS
+
+DECLARE @_impId int = 0
+
+BEGIN
+  set @_impId = (Select (max(imp_id)+1) from IMPLEMENTO);
+    BEGIN
+      INSERT INTO IMPLEMENTO (imp_nombre,imp_imagen,imp_estatus,imp_tipo,imp_marca,imp_color,imp_talla,imp_precio,imp_stockmin,imp_descripcion) VALUES
+      (@_impNombre ,@_impImagen,'Activo',@_impTipo,@_impMarca,@_impColor,@_impTalla,@_impPrecio,@_impStockmin,@_impDescripcion);
+        END   
+
+    BEGIN
+      INSERT INTO INVENTARIO(inv_cantidad_total,IMPLEMENTO_imp_id,DOJO_doj_id) VALUES
+      (@_invCantidad,@_impId,@_dojId);
+      
+    END
+END;
+--------------------------------------------------------------------------
+
+---------------------M15_ConsultarImplemento--------------------
+CREATE PROCEDURE [dbo].[M15_ConsultarImplemento]
+  @_impId [int]
+AS
+  BEGIN
+    SELECT  imp_id,
+            imp_nombre,
+        imp_imagen,
+        imp_tipo ,
+        imp_color,
+        imp_marca,
+        imp_talla ,
+        imp_precio,
+        imp_stockmin,
+        inv_cantidad_total,
+          imp_estatus,
+        DOJO_doj_id,
+        imp_descripcion
+    FROM  IMPLEMENTO, INVENTARIO, DOJO
+    WHERE imp_id = ISNULL(@_impId,imp_id)
+    AND   imp_id = IMPLEMENTO_imp_id
+    AND   DOJO_doj_id = doj_id
+  END
+
+  ----------------------------------------------------
+
+  ---------------------M15_ConsultarImplementoTotal--------------------
+CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal]
+@_dojId [int]
+AS
+  BEGIN
+    SELECT  imp_id,
+            imp_nombre,
+            imp_imagen,
+        imp_tipo,
+        imp_color,
+        imp_marca ,
+        imp_talla ,
+        imp_precio ,
+        imp_stockmin,
+        inv_cantidad_total,
+        imp_estatus,
+        DOJO_doj_id 
+          FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
+    WHERE imp_estatus != 'Inactivo'
+    AND   imp_id = INV.IMPLEMENTO_imp_id
+    AND    inv.DOJO_doj_id = DOJ.doj_id
+  END
+
+  ------------------------------------------------------------------------
+
+
+  ---------------------M15_ConsultarImplementoTotal2--------------------
+CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal2]
+@_dojId [int]
+AS
+  BEGIN
+    SELECT  imp_id,
+            imp_nombre,
+            imp_imagen,
+        imp_tipo,
+        imp_color,
+        imp_marca ,
+        imp_talla ,
+        imp_precio ,
+        imp_stockmin,
+        inv_cantidad_total ,
+        imp_estatus,
+        DOJO_doj_id
+    FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
+    WHERE imp_estatus != 'Activo'
+    AND   imp_id = IMPLEMENTO_imp_id
+    AND   DOJO_doj_id = doj_id
+    AND     doj_id = @_dojId
+  END
+
+  ------------------------------------------------------------------------
+
+
+  /*----------------M15_EliminarImplemento---------------------------------*/
+CREATE PROCEDURE [dbo].[M15_EliminarImplemento]
+@_impId [int],
+@_dojId [int]
+AS
+  BEGIN
+    UPDATE  IMPLEMENTO 
+    SET imp_estatus = 'Inactivo'
+    WHERE @_impId = imp_id
+    AND @_dojId=(select DOJO_doj_id from INVENTARIO where @_impId=IMPLEMENTO_imp_id )
+  END;
+  --------------------------------------------------------------------------
+
+  -------------------------- M15_ModificarImplemento---------------------------------
+CREATE PROCEDURE [dbo].[M15_ModificarImplemento]
+@_impId [int],
+@_impNombre [varchar] (255),
+@_impTipo [varchar] (255),
+@_impMarca [varchar] (255),
+@_impColor [varchar] (255),
+@_impTalla [varchar] (255), 
+@_impPrecio [varchar] (255), 
+@_impStockmin [varchar] (255),
+@_invCantidad [int],
+@_impDescripcion [varchar] (255),
+@_dojId [int],
+@_impEstatus [varchar] (255),
+@_impImagen [varchar] (255)
+AS
+BEGIN
+
+     UPDATE IMPLEMENTO 
+     SET imp_nombre = @_impNombre,
+     imp_estatus = @_impEstatus,
+         imp_tipo = @_impTipo,
+         imp_marca = @_impMarca,
+         imp_color = @_impColor,
+         imp_talla = @_impTalla,
+         imp_precio = @_impPrecio,
+      imp_descripcion = @_impDescripcion,
+      imp_imagen = @_impImagen,
+         imp_stockmin = @_impStockmin  
+   WHERE imp_id = @_impId           
+     UPDATE INVENTARIO 
+     SET inv_cantidad_total= @_invCantidad
+     WHERE IMPLEMENTO_imp_id = @_impId
+   AND   DOJO_doj_id = @_dojId 
+
+END;
+
+------------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
