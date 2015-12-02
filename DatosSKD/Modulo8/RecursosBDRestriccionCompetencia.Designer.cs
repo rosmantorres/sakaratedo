@@ -322,6 +322,15 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ConsultarRestriccionCompetenciasXId.
+        /// </summary>
+        internal static string ConsultarRestriccionCompetenciasXId {
+            get {
+                return ResourceManager.GetString("ConsultarRestriccionCompetenciasXId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_ConsultarTodasLasCompetenciasNoAsociadas.
         /// </summary>
         internal static string ConsultarTodasLasCompetenciasNoAsociadas {
