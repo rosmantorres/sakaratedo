@@ -57,6 +57,7 @@
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
+    <Compile Include="Modulo15\ErrorInputInterfaz.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />

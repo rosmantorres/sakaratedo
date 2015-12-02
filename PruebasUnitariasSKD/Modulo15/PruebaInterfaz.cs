@@ -47,46 +47,46 @@ namespace PruebasUnitariasSKD.Modulo15
             dojo = null;
         }
 
-        #region PruebaAgregarInventarioInterfaz
+        #region M15_PruebaAgregarInventarioInterfaz
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void PruebaAgregarInventarioInterfaz()
+        public void M15_PruebaAgregarInventarioInterfaz()
         {
             interfaz.agregarInventarioInterfaz(null);
         }
         #endregion
 
-        #region PruebaListarInventarioInterfaz
+        #region M15_PruebaListarInventarioInterfaz
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void PruebaListarInventarioInterfaz()
+        public void M15_PruebaListarInventarioInterfaz()
         {
             interfaz.listarInventarioInterfaz(null);
         }
         #endregion
 
-        #region PruebaListarInventarioLogica2
+        #region M15_PruebaListarInventarioLogica2
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void PruebaListarInventarioInterfaz2()
+        public void M15_PruebaListarInventarioInterfaz2()
         {
             interfaz.listarInventarioInterfaz2(null);
         }
         #endregion
 
-        #region PruebaUsuarioImplementoInterfaz
+        #region M15_PruebaUsuarioImplementoInterfaz
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void PruebaUsuarioImplementoInterfaz()
+        public void M15_PruebaUsuarioImplementoInterfaz()
         {
             interfaz.usuarioImplementoInterfaz(null);
         }
         #endregion
 
-        #region PruebamodificarInventarioInterfaz
+        #region M15_PruebamodificarInventarioInterfaz
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void PruebaeliminarInventarioInterfaz()
+        public void M15_PruebaeliminarInventarioInterfaz()
         {
             interfaz.modificarInventarioInterfaz(null);
         }

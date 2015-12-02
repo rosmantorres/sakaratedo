@@ -60,12 +60,13 @@ namespace templateApp.GUI.Modulo15
             ((SKD)Page.Master).IdModulo = "15";
             String success = Request.QueryString["success"];
             String agregar =Request.QueryString["agregar"];
+            String excepcion =Request.QueryString["excepcion"];
             String valor="";
             Boolean estado = false;
 
             if (agregar!= null) {
 
-                if (agregar.Equals("fallo")) {
+                if ((agregar.Equals("fallo"))&&(excepcion.Equals("ErrorInputInterfaz"))) {
                     alert2.Attributes["class"] = "alert alert-error alert-dismissible";
                     alert2.Attributes["role"] = "alert";
                     alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Agregar el Implemento</div>";  
