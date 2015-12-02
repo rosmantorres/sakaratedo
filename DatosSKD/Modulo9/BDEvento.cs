@@ -48,11 +48,11 @@ namespace DatosSKD.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int,"1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdCategoria, SqlDbType.Int, evento.Categoria.Id_categoria.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdCategoria, SqlDbType.Int, "1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
                 parametros.Add(parametro);
@@ -132,7 +132,7 @@ namespace DatosSKD.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, "1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroNombreTipoEvento, SqlDbType.VarChar, evento.TipoEvento.Nombre.ToString(), false);
                 parametros.Add(parametro);

@@ -94,7 +94,7 @@
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Fecha de Inicio</h3>
                                 <div class="input-group input-append date" id="datePickerIni">
-                                    <input runat="server" type="text" class="form-control" name="date" id="input_fecha_ini"/>
+                                    <input runat="server" type="text" class="form-control" name="date" id="fechaInicio"/>
                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Fecha de Culminaci&oacute;n</h3>
                                 <div class="input-group input-append date" id="datePickerFin">
-                                    <input runat="server" type="text" class="form-control" name="date" id="input_fecha_fin"/>
+                                    <input runat="server" type="text" class="form-control" name="date" id="fechaFin"/>
                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
                             </div>
@@ -116,8 +116,11 @@
                            <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Hora de Inicio</h3>
                                 <div class="input-group input-append date" id="hourPickerIni">
-                                    <input type="time" class="form-control" name="date" />
-                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+                                    <asp:TextBox TextMode="Time" Class="form-control" ID="horaInicio" runat="server">
+
+                                    </asp:TextBox>
+                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+                                   
                                 </div>
                            </div>
                             <!--Date picker Hora Fin-->
@@ -125,8 +128,8 @@
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Hora de Culminaci&oacute;n</h3>
                                 <div class="input-group input-append date" id="hourPickerFin">
-                                    <input type="time" class="form-control" name="date" />
-                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+                                    <asp:TextBox TextMode="Time" class="form-control" ID="horaFin" runat="server">
+                                   </asp:TextBox><span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +150,7 @@
                             <div class="col-sm-10 col-md-10 col-lg-10">
                                 <p><b>Status:</b></p>
                                 <label class="radio-inline">
-                                    <asp:RadioButton runat="server" Text="Activo" type="radio" name="radioStatus" id="inputEstadoActivo" GroupName="statusEvento"/>
+                                    <asp:RadioButton runat="server" Text="Activo"  checked="true" type="radio" name="radioStatus" id="inputEstadoActivo" GroupName="statusEvento"/>
                                 </label>
                                 <label class="radio-inline">
                                     <asp:RadioButton runat="server" Text="Inactivo" type="radio" name="radioStatus" id="inputEstadoInactivo" GroupName="statusEvento"/>

@@ -88,7 +88,7 @@ namespace templateApp.GUI.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M9_DetalleCompetencia.aspx?compDetalle=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M9_DetalleEvento.aspx?EventDetalle=.
         /// </summary>
         internal static string BotonInfo {
             get {
@@ -97,7 +97,7 @@ namespace templateApp.GUI.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M9_ModificarCompetencias.aspx?compMod=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M9_ModificarEventos.aspx?EventMod=.
         /// </summary>
         internal static string BotonModificar {
             get {

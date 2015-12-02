@@ -60,10 +60,21 @@ namespace LogicaNegociosSKD.Modulo9
                                     if (ValidarFechaFinMayor(fechaInicio, fechaFin))
                                     {
                                         Console.Out.WriteLine("FechaI <= FechaF");
-                                        BDEvento baseDeDatosEvento = new BDEvento();
-                                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                                        if (ValidarHora(evento.Horario.HoraInicio.ToString()))
+                                        {
+                                            Console.Out.WriteLine("HoraI Valido");
+                                            if (ValidarHora(evento.Horario.HoraFin.ToString()))
+                                            {
+                                                Console.Out.WriteLine("HoraF Valido");
+                                                if (evento.Horario.HoraInicio < evento.Horario.HoraFin)
+                                                {
+                                                    BDEvento baseDeDatosEvento = new BDEvento();
+                                                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                                        return baseDeDatosEvento.CrearEvento(evento);
+                                                    return baseDeDatosEvento.CrearEvento(evento);
+                                                }
+                                            }
+                                        }
 
                                     }
                                 }
@@ -143,7 +154,7 @@ namespace LogicaNegociosSKD.Modulo9
                                             BDEvento baseDeDatosEvento = new BDEvento();
                                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                                            return baseDeDatosEvento.CrearEvento(evento);
+                                            return baseDeDatosEvento.CrearEventoConTipo(evento);
                                         }
 
                                     }
@@ -443,6 +454,31 @@ namespace LogicaNegociosSKD.Modulo9
             }
 
             
+        }
+
+        public bool ValidarHora(String hora)
+        {
+            int contador = 0;
+            String comparar = "0123456789";
+            for (int i = 0; i < hora.Length; i++)
+            {
+                /*Console.Out.WriteLine(i);
+                Console.Out.WriteLine(fecha.Length);
+                Console.Out.WriteLine(fecha[i]);*/
+                Boolean resultado = comparar.Contains(hora[i]);
+                if (resultado == true)
+                {
+                    contador++;
+                }
+
+            }
+            //Console.Out.WriteLine(contador);
+            if (contador == hora.Length)
+                return true;
+            else
+                return false;
+
+
         }
 
         /// <summary>

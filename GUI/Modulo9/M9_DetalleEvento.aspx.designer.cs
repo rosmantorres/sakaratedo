@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo9 {
     
     
-    public partial class M9_DetalleEventos {
+    public partial class M9_DetalleEvento {
         
         /// <summary>
         /// alert control.
@@ -40,6 +40,15 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.WebControls.Label nombreEvento;
         
         /// <summary>
+        /// tipoEvento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tipoEvento;
+        
+        /// <summary>
         /// costoEvento control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace templateApp.GUI.Modulo9 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label fechaInicio;
+        
+        /// <summary>
+        /// fechaFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fechaFin;
         
         /// <summary>
         /// horaInicio control.
@@ -76,13 +94,13 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.WebControls.Label horaFin;
         
         /// <summary>
-        /// detalleEvento control.
+        /// descripcionEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label detalleEvento;
+        protected global::System.Web.UI.WebControls.Label descripcionEvento;
         
         /// <summary>
         /// statusEvento control.
@@ -92,14 +110,5 @@ namespace templateApp.GUI.Modulo9 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label statusEvento;
-        
-        /// <summary>
-        /// btn_agregarEvento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregarEvento;
     }
 }

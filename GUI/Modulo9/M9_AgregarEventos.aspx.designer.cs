@@ -76,22 +76,40 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.WebControls.TextBox costoEvento;
         
         /// <summary>
-        /// input_fecha_ini control.
+        /// fechaInicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_ini;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaInicio;
         
         /// <summary>
-        /// input_fecha_fin control.
+        /// fechaFin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_fin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaFin;
+        
+        /// <summary>
+        /// horaInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox horaInicio;
+        
+        /// <summary>
+        /// horaFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox horaFin;
         
         /// <summary>
         /// descripcionEvento control.

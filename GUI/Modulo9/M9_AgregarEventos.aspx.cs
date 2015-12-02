@@ -98,7 +98,9 @@ namespace templateApp.GUI.Modulo9
             {
                 Horario horario = new Horario();
                 Persona persona = new Persona();
-             //   String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID];
+                String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();
+                persona.ID = int.Parse(idPersona);
+                evento.Persona = persona;
                 if (!nombreEvento.Text.Equals(""))
                 {
                     evento.Nombre = nombreEvento.Text;
@@ -110,22 +112,27 @@ namespace templateApp.GUI.Modulo9
                 if (!costoEvento.Text.Equals(""))
                 {
                     String costo=costoEvento.Text;
+                  //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "showError","alert('" +"es:"+costoEvento.Text + "');", true);
                     evento.Costo = float.Parse(costo);
                 }
                 else
                 {
                     //error
                 }
-
-               
-                horario.FechaInicio = Convert.ToDateTime(input_fecha_ini.Value);
-                horario.FechaFin = Convert.ToDateTime(input_fecha_fin.Value);
+                String inicio = horaInicio.Text.ToString();
+                String fin = horaFin.Text.ToString();
+                string[] cadena=inicio.Split(':');
+                horario.HoraInicio = int.Parse(cadena[0]);
+                cadena = fin.Split(':');
+                horario.HoraFin = int.Parse(cadena[0]);
+                horario.FechaInicio = Convert.ToDateTime(fechaInicio.Value);
+                horario.FechaFin = Convert.ToDateTime(fechaFin.Value);
                 evento.Horario = horario;
                 if (inputEstadoActivo.Checked == true)
-                    evento.Estado = inputEstadoActivo.Checked;
-                if (inputEstadoInactivo.Checked == true)
-                    evento.Estado = inputEstadoInactivo.Checked;
-                evento.Descripcion = descripcionEvento.Text;
+                    evento.Estado = true;
+                else
+                    evento.Estado = false;
+
                 if (index.Equals(0))
                 {
                     //error seleccione un tipo de evento
@@ -144,7 +151,7 @@ namespace templateApp.GUI.Modulo9
                 else
                 {
                     TipoEvento tipoEvento = new TipoEvento();
-                    tipoEvento.Nombre = comboTipoEvento.SelectedItem.Text;
+                    tipoEvento.Id = comboTipoEvento.SelectedIndex;
                     evento.TipoEvento = tipoEvento;
                     logicaEvento.CrearEvento(evento);
                 }
@@ -153,7 +160,7 @@ namespace templateApp.GUI.Modulo9
             }
             catch (Exception ex)
             {
-
+                Console.Out.WriteLine(ex);
             }
 
         }

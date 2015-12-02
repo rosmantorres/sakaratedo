@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_DetalleEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_DetalleEventos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_DetalleEvento.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_DetalleEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
 <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
@@ -56,55 +56,44 @@
                                 <h3>Nombre del Evento</h3>
                                 <asp:label runat="server"  name="nombreEvento" id="nombreEvento" Font-Size="Large"></asp:Label>
                             </div>
-                    </div>
-                </div>
-<!--COMBO 1-->
-                    <div class="row">
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-4 col-md-4 col-lg-4" >
                                 <h3>Tipo de Evento</h3>
-                                        <asp:label runat="server"name="otroEvento" id="otroEvento" Font-Size="Large"></asp:Label>
+                                       <asp:label runat="server"  name="tipoEvento" id="tipoEvento" Font-Size="Large"></asp:Label>
                             </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Costo del Evento</h3>
+                       
                                 <asp:label runat="server" name="costoEvento" id="costoEvento" Font-Size="Large"></asp:Label>
+
                             </div>
                     </div>
                 </div>
-
-
 
 
  <!--Date picker FECHA-->
                    <div class="row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12" >
-            <!---Date picker FECHA Inicio-->
+            <!---FECHA Inicio-->
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Fecha de Inicio</h3>
                                 <asp:label runat="server" name="fechaInicio" id="fechaInicio" Font-Size="Large"></asp:Label>
                                 </div>
-                 <!--Date picker FECHA-->
+                 <!-- FECHA-->
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Fecha de Culminaci&oacute;n</h3>
-                                c
+                                <asp:label runat="server" name="fechaFin" id="fechaFin" Font-Size="Large"></asp:Label>
                             </div>
                        </div>
                     </div>
      <!--Date picker Hora-->
                     <div class="row">
                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <!--Date picker Hora Inicio-->
+                            <!--Hora Inicio-->
                            <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Hora de Inicio</h3>
                                <asp:label runat="server" name="horaInicio" id="horaInicio" Font-Size="Large"></asp:Label>
                            </div>
                             <!--Date picker Hora Fin-->
-                           <div class="col-sm-1 col-md-1 col-lg-1"></div>
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Hora de Culminaci&oacute;n</h3>
                                <asp:label runat="server" name="horaFin" id="horaFin" Font-Size="Large"></asp:Label>
@@ -117,7 +106,7 @@
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-9 col-md-9 col-lg-9" >
                                 <h3>Descripci&oacute;n</h3>
-                                <asp:label runat="server" name="detalleEvento" id="detalleEvento" Font-Size="Large"></asp:Label>
+                                <asp:label runat="server" name="descripcionEvento" id="descripcionEvento" Font-Size="Large"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -125,7 +114,7 @@
                     <div class="row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-10 col-md-10 col-lg-10">
-                                <p><b>Status:</b></p>
+                                <h3>Status</h3>
                                 <asp:label runat="server" name="statusEvento" id="statusEvento" Font-Size="Large"></asp:Label>
                             </div>
                         </div>
@@ -137,36 +126,9 @@
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
-         &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="btn_agregarEvento" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarEventoClick" Text="Agregar"></asp:Button>
-         &nbsp;&nbsp
-         <a class="btn btn-default" href="M9_ListarEventos.aspx">Cancelar</a>
+
       </div>
    </form>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function () {
-    $('#datePickerIni')
-    .datepicker({
-        format: 'mm/dd/yyyy'
-    })
-    .on('changeDate', function (e) {
-                // Revalidate the date field
-            });
-    });
-
-$(document).ready(function () {
-    $('#datePickerFin')
-    .datepicker({
-        format: 'mm/dd/yyyy'
-    })
-    .on('changeDate', function (e) {
-        // Revalidate the date field
-    });
-});
-
-    </script>
-
-<!-- /.box -->
 </asp:Content>

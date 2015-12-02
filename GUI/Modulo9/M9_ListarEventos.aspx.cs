@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD.Modulo9;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo9
 {
@@ -50,7 +51,8 @@ namespace templateApp.GUI.Modulo9
             {
                 try
                 {
-                    eventoLista = logicaEvento.ListarEventos(33);
+                    String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();
+                    eventoLista = logicaEvento.ListarEventos(int.Parse(idPersona));
                     foreach (Evento evento in eventoLista)
                     {
                         this.tabla.Text += M9_RecursoInterfaz.AbrirTR;
