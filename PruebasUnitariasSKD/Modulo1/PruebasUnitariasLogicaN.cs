@@ -48,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo1
         }
         // Prueba unitaria de la excepcion del metodo IniciarSesion()
         [Test]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public  void PruebaIniciarSesionFallidoEXC()
         {
             logicaLogin lg = new logicaLogin();

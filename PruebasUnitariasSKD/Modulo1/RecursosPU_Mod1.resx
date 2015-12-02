@@ -228,4 +228,12 @@
     <value />
     <comment>vacio</comment>
   </data>
+  <data name="Apellido" xml:space="preserve">
+    <value>Magurno</value>
+    <comment>apellido</comment>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>carlo</value>
+    <comment>nombre</comment>
+  </data>
 </root>

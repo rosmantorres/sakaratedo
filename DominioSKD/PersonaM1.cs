@@ -23,7 +23,7 @@ namespace DominioSKD
         /// Apellido de la persona
         /// </summary>
         private String _apellido;
-        
+
         #endregion
 
         #region Propiedades
@@ -52,7 +52,7 @@ namespace DominioSKD
             _Apellido = "";
 
         }
-        public PersonaM1(int id,string nombre,string apellido)
+        public PersonaM1(int id, string nombre, string apellido)
         {
             _Id = id;
             _Nombre = nombre;

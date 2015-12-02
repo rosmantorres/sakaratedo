@@ -17,9 +17,9 @@ namespace PruebasUnitariasSKD.Modulo2
     class PruebasUnitariasDatos
     {
         [SetUp]
-        protected  void parametros()
+        protected void parametros()
         {
-           
+
         }
         [Test]
         public void PruebaValidarconsultarRolesUsuario()
@@ -33,8 +33,9 @@ namespace PruebasUnitariasSKD.Modulo2
         [Test]
         public void PruebaValidarObtenerRolesDeSistema()
         {
+            BDRoles conexionBD = new BDRoles();
             List<Rol> _respuesta;
-            _respuesta = BDRoles.ObtenerRolesDeSistema();
+            _respuesta = conexionBD.ObtenerRolesDeSistema();
             Assert.AreNotEqual(null, _respuesta);
 
         }
@@ -48,8 +49,17 @@ namespace PruebasUnitariasSKD.Modulo2
             _respuesta = conexionBD.consultarRolesUsuario(null);
 
         }
+        [Test]
+        public void PruebaValidarObtenerUsuario()
+        {
+            BDRoles conexionBD = new BDRoles();
+            Cuenta _respuesta;
+            _respuesta = conexionBD.ObtenerUsuario(1);
+            Assert.AreNotEqual(null, _respuesta);
 
-
+        }
        
+
+
     }
 }

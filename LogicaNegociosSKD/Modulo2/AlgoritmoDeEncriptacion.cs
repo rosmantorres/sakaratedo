@@ -10,6 +10,11 @@ namespace LogicaNegociosSKD.Modulo2
 {
     public class AlgoritmoDeEncriptacion
     {
+        /// <summary>
+        /// metodo que aplica hash con MD5 y SHA1
+        /// </summary>
+        /// <param name="cadena"> recibe la cadena a la que la aplicara el hash</param>
+        /// <returns>devuelve la cadena con el hash hecho</returns>
         public static string hash(string cadena)
         {
             try

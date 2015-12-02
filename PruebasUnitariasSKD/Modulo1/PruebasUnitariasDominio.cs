@@ -16,9 +16,9 @@ namespace PruebasUnitariasSKD.Modulo1
     class PruebasUnitariasDominio
     {
         [SetUp]
-        protected  void parametros()
+        protected void parametros()
         {
-           
+
         }
         // Prueba unitaria del metodo Cuenta() 
         [Test]
@@ -33,11 +33,10 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.Vacio);
             Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.Vacio);
             Assert.AreEqual(cuenta.Imagen, RecursosPU_Mod1.Vacio);
-            Assert.AreEqual(cuenta.NombreDePila, RecursosPU_Mod1.Vacio);
         }
         // Prueba unitaria del metodo Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena) 
         [Test]
-        public  void PruebaConstructorCuenta2()
+        public void PruebaConstructorCuenta2()
         {
 
             Cuenta cuenta = new Cuenta(new PersonaM1(int.Parse(RecursosPU_Mod1.Id)), RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, RecursosPU_Mod1.Vacio, RecursosPU_Mod1.Vacio);
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
             Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.PruebaErrorClave);
             Assert.AreEqual(cuenta.Imagen, RecursosPU_Mod1.Vacio);
-            Assert.AreEqual(cuenta.NombreDePila, RecursosPU_Mod1.Vacio);
 
         }
         // Prueba unitaria del metodo   public Cuenta(String elNombreUsuario, String laContrasena,List<Rol> listaRoles)
@@ -58,13 +56,12 @@ namespace PruebasUnitariasSKD.Modulo1
             elRol.Id_rol = Int32.Parse(RecursosPU_Mod1.Id);
             elRol.Nombre = RecursosPU_Mod1.usuario.ToString();
             listaRol.Add(elRol);
-            Cuenta cuenta = new Cuenta(RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, listaRol,RecursosPU_Mod1.Vacio);
+            Cuenta cuenta = new Cuenta(RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, listaRol, RecursosPU_Mod1.Vacio);
 
             Assert.AreEqual(cuenta.Roles, listaRol);
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
             Assert.AreEqual(cuenta.Contrasena, RecursosPU_Mod1.PruebaErrorClave);
             Assert.AreEqual(cuenta.Imagen, RecursosPU_Mod1.Vacio);
-            Assert.AreEqual(cuenta.NombreDePila, RecursosPU_Mod1.Vacio);
         }
         // Prueba unitaria del metodo   public Rol()
         [Test]
@@ -98,7 +95,36 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(rl.Nombre, RecursosPU_Mod1.Rol);
             Assert.AreEqual(rl.Descripcion, RecursosPU_Mod1.Descripcion);
         }
+        [Test]
+        public void PruebaConstructorPersonaM1_1()
+        {
 
-       
+            PersonaM1 Pn = new PersonaM1();
+            Assert.AreEqual(Pn._Id, 0);
+            Assert.AreEqual(Pn._Nombre, RecursosPU_Mod1.Vacio);
+            Assert.AreEqual(Pn._Apellido, RecursosPU_Mod1.Vacio);
+
+        }
+        // Prueba unitaria del metodo    public PersonaM1(int id,string nombre,string apellido)
+        [Test]
+        public void PruebaConstructorPersonaM1_2()
+        {
+
+            PersonaM1 Pn = new PersonaM1(1, RecursosPU_Mod1.nombre, RecursosPU_Mod1.Apellido);
+            Assert.AreEqual(Pn._Id, 1);
+            Assert.AreEqual(Pn._Nombre, RecursosPU_Mod1.nombre);
+            Assert.AreEqual(Pn._Apellido, RecursosPU_Mod1.Apellido);
+
+        }
+        // Prueba unitaria del metodo      public PersonaM1(int id)
+        [Test]
+        public void PruebaConstructorPersonaM1_3()
+        {
+            PersonaM1 Pn = new PersonaM1(1);
+            Assert.AreEqual(Pn._Id, 1);
+
+        }
+
+
     }
 }

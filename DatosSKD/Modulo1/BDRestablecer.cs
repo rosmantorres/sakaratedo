@@ -12,7 +12,13 @@ using System.Configuration;
 namespace DatosSKD.Modulo1
 {
     public class BDRestablecer
-    {
+    {   
+        /// <summary>
+        /// Se hace la conexion a la base de datos para cambiar la contraseña del usuario
+        /// </summary>
+        /// <param name="usuarioId"> Id del usuario que solicito el cambio de contraseña</param>
+        /// <param name="contraseña">nueva contraseña del usuario</param>
+        /// <returns></returns>
         public  bool RestablecerContrasena(string usuarioId,string contraseña)
         {
             BDConexion laConexion;
