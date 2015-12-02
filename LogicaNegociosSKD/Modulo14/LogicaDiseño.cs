@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatosSKD.Modulo14;
+using ExcepcionesSKD;
+
 
 namespace LogicaNegociosSKD.Modulo14
 {
@@ -26,8 +29,33 @@ namespace LogicaNegociosSKD.Modulo14
         /// De lo contrario devuelve false</returns>
         public Boolean AgregarDiseño(DominioSKD.Diseño diseño, DominioSKD.Planilla planilla)
         {
-            diseño.Base64Encode();
-            return  datos.GuardarDiseñoBD(diseño, planilla);
+            try
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo14.MsjLoggerInfo, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                diseño.Base64Encode();
+                return datos.GuardarDiseñoBD(diseño, planilla);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -62,8 +90,25 @@ namespace LogicaNegociosSKD.Modulo14
                     evento, competencia, matricula, organizacion, solicitud);
                 return diseñoPlanilla;
             }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
 
@@ -76,7 +121,31 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Retorna la clase diseño a consultar</returns>
         public DominioSKD.Diseño ConsultarDiseñoPuro(int planilla)
         {
-            return diseñoPlanilla = datos.ConsultarDiseño(planilla);
+            try
+            {
+                return diseñoPlanilla = datos.ConsultarDiseño(planilla);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -96,144 +165,168 @@ namespace LogicaNegociosSKD.Modulo14
             DominioSKD.Evento evento, DominioSKD.Competencia competencia, List<string> matricula,
             DominioSKD.Organizacion organizacion, DominioSKD.SolicitudPlanilla solicitud)
         {
-            if (persona != null)
+            try
             {
-                info = info.Replace(RecursosLogicaModulo14.PerImagen, "<img src='" +
-                    persona.Alergias + "'Height='80' Width='90'/>");
-                info = info.Replace(RecursosLogicaModulo14.PerNombre, persona.Nombre);
-                info = info.Replace(RecursosLogicaModulo14.PerApellido, persona.Apellido);
-                info = info.Replace(RecursosLogicaModulo14.PerNumDocId, persona.DocumentoID.Numero.ToString());
-                info = info.Replace(RecursosLogicaModulo14.PerDireccion, persona.Direccion);
-                info = info.Replace(RecursosLogicaModulo14.PerFechaNac, persona.FechaNacimiento.ToShortDateString());
-                info = info.Replace(RecursosLogicaModulo14.PerPeso, persona.Peso.ToString());
-                info = info.Replace(RecursosLogicaModulo14.PerEstatura, persona.Estatura.ToString());
-                info = info.Replace(RecursosLogicaModulo14.PerNacionalidad, persona.Nacionalidad.ToString());
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.PerImagen, "");
-                info = info.Replace(RecursosLogicaModulo14.PerNombre, "");
-                info = info.Replace(RecursosLogicaModulo14.PerApellido, "");
-                info = info.Replace(RecursosLogicaModulo14.PerNumDocId, "");
-                info = info.Replace(RecursosLogicaModulo14.PerDireccion, "");
-                info = info.Replace(RecursosLogicaModulo14.PerFechaNac, "");
-                info = info.Replace(RecursosLogicaModulo14.PerPeso, "");
-                info = info.Replace(RecursosLogicaModulo14.PerEstatura, "");
-                info = info.Replace(RecursosLogicaModulo14.PerNacionalidad, "");
-            }
+                if (persona != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.PerImagen, "<img src='" +
+                        persona.Alergias + "'Height='80' Width='90'/>");
+                    info = info.Replace(RecursosLogicaModulo14.PerNombre, persona.Nombre);
+                    info = info.Replace(RecursosLogicaModulo14.PerApellido, persona.Apellido);
+                    info = info.Replace(RecursosLogicaModulo14.PerNumDocId, persona.DocumentoID.Numero.ToString());
+                    info = info.Replace(RecursosLogicaModulo14.PerDireccion, persona.Direccion);
+                    info = info.Replace(RecursosLogicaModulo14.PerFechaNac, persona.FechaNacimiento.ToShortDateString());
+                    info = info.Replace(RecursosLogicaModulo14.PerPeso, persona.Peso.ToString());
+                    info = info.Replace(RecursosLogicaModulo14.PerEstatura, persona.Estatura.ToString());
+                    info = info.Replace(RecursosLogicaModulo14.PerNacionalidad, persona.Nacionalidad.ToString());
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.PerImagen, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerNombre, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerApellido, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerNumDocId, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerDireccion, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerFechaNac, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerPeso, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerEstatura, "");
+                    info = info.Replace(RecursosLogicaModulo14.PerNacionalidad, "");
+                }
 
-            if (solicitud != null)
-            {
-                info = info.Replace(RecursosLogicaModulo14.FechaCreacionPlanilla, solicitud.FechaCreacion.ToShortDateString());
-                info = info.Replace(RecursosLogicaModulo14.FechaRetiro, solicitud.FechaRetiro.ToShortTimeString());
-                info = info.Replace(RecursosLogicaModulo14.FechaReincor, solicitud.FechaReincorporacion.ToShortDateString());
-                info = info.Replace(RecursosLogicaModulo14.Motivo, solicitud.Motivo);
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.FechaCreacionPlanilla, "");
-                info = info.Replace(RecursosLogicaModulo14.FechaRetiro, "");
-                info = info.Replace(RecursosLogicaModulo14.FechaReincor, "");
-                info = info.Replace(RecursosLogicaModulo14.Motivo, "");
-            }
+                if (solicitud != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.FechaCreacionPlanilla, solicitud.FechaCreacion.ToShortDateString());
+                    info = info.Replace(RecursosLogicaModulo14.FechaRetiro, solicitud.FechaRetiro.ToShortTimeString());
+                    info = info.Replace(RecursosLogicaModulo14.FechaReincor, solicitud.FechaReincorporacion.ToShortDateString());
+                    info = info.Replace(RecursosLogicaModulo14.Motivo, solicitud.Motivo);
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.FechaCreacionPlanilla, "");
+                    info = info.Replace(RecursosLogicaModulo14.FechaRetiro, "");
+                    info = info.Replace(RecursosLogicaModulo14.FechaReincor, "");
+                    info = info.Replace(RecursosLogicaModulo14.Motivo, "");
+                }
 
-            if (dojo != null)
-            {
-                info = info.Replace(RecursosLogicaModulo14.DojNombre, dojo.Nombre_dojo);
-                info = info.Replace(RecursosLogicaModulo14.DojTelefono, dojo.Telefono_dojo.ToString());
-                info = info.Replace(RecursosLogicaModulo14.DojRif, dojo.Rif_dojo);
-                info = info.Replace(RecursosLogicaModulo14.DojEmail, dojo.Email_dojo);
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.DojNombre, "");
-                info = info.Replace(RecursosLogicaModulo14.DojTelefono, "");
-                info = info.Replace(RecursosLogicaModulo14.DojRif, "");
-                info = info.Replace(RecursosLogicaModulo14.DojEmail, "");
-            }
-            if (matricula != null)
-            {
-                info = info.Replace(RecursosLogicaModulo14.MatIdenti, matricula[0]);
-                info = info.Replace(RecursosLogicaModulo14.MatFechaCreacion, matricula[1]);
-                info = info.Replace(RecursosLogicaModulo14.MatFechaPago, matricula[2]);
-                info = info.Replace(RecursosLogicaModulo14.MatActiva, matricula[3]);
-                info = info.Replace(RecursosLogicaModulo14.MatPrecio, matricula[4]);
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.MatIdenti,"");
-                info = info.Replace(RecursosLogicaModulo14.MatFechaCreacion, "");
-                info = info.Replace(RecursosLogicaModulo14.MatFechaPago, "");
-                info = info.Replace(RecursosLogicaModulo14.MatActiva, "");
-                info = info.Replace(RecursosLogicaModulo14.MatPrecio, "");
-            }
-            if (organizacion != null)
-            {
-                info = info.Replace(RecursosLogicaModulo14.OrgNombre, organizacion.Nombre);
-                info = info.Replace(RecursosLogicaModulo14.OrgDireccion, organizacion.Direccion);
-                info = info.Replace(RecursosLogicaModulo14.OrgTelefono, organizacion.Telefono.ToString());
-                info = info.Replace(RecursosLogicaModulo14.OrgEmail, organizacion.Email.ToString());
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.OrgNombre, "");
-                info = info.Replace(RecursosLogicaModulo14.OrgDireccion, "");
-                info = info.Replace(RecursosLogicaModulo14.OrgTelefono, "");
-                info = info.Replace(RecursosLogicaModulo14.OrgEmail, "");
-            }
-            if (evento != null)
-            {
-                info = info.Replace(RecursosLogicaModulo14.EveNombre, evento.Nombre);
-                info = info.Replace(RecursosLogicaModulo14.EveDescripcion, evento.Descripcion);
-                info = info.Replace(RecursosLogicaModulo14.EveCosto, evento.Costo.ToString());
-                string categoria = evento.Categoria.Sexo + RecursosLogicaModulo14.Linea;
-                categoria += evento.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
-                categoria += evento.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
-                categoria += evento.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
-                categoria += evento.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
-                info = info.Replace(RecursosLogicaModulo14.CategoriaCat, categoria);
-                info = info.Replace(RecursosLogicaModulo14.TipoEvento, evento.TipoEvento.Nombre);
-                string horario = evento.Horario.FechaInicio.ToShortDateString() + RecursosLogicaModulo14.Linea;
-                horario += evento.Horario.FechaFin.ToShortDateString() + RecursosLogicaModulo14.Linea;
-                horario += evento.Horario.HoraInicio.ToString() + RecursosLogicaModulo14.Linea;
-                horario += evento.Horario.HoraFin.ToString() + RecursosLogicaModulo14.Linea;
-                info = info.Replace(RecursosLogicaModulo14.HorarioHor, horario) + RecursosLogicaModulo14.Linea;
+                if (dojo != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.DojNombre, dojo.Nombre_dojo);
+                    info = info.Replace(RecursosLogicaModulo14.DojTelefono, dojo.Telefono_dojo.ToString());
+                    info = info.Replace(RecursosLogicaModulo14.DojRif, dojo.Rif_dojo);
+                    info = info.Replace(RecursosLogicaModulo14.DojEmail, dojo.Email_dojo);
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.DojNombre, "");
+                    info = info.Replace(RecursosLogicaModulo14.DojTelefono, "");
+                    info = info.Replace(RecursosLogicaModulo14.DojRif, "");
+                    info = info.Replace(RecursosLogicaModulo14.DojEmail, "");
+                }
+                if (matricula != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.MatIdenti, matricula[0]);
+                    info = info.Replace(RecursosLogicaModulo14.MatFechaCreacion, matricula[1]);
+                    info = info.Replace(RecursosLogicaModulo14.MatFechaPago, matricula[2]);
+                    info = info.Replace(RecursosLogicaModulo14.MatActiva, matricula[3]);
+                    info = info.Replace(RecursosLogicaModulo14.MatPrecio, matricula[4]);
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.MatIdenti, "");
+                    info = info.Replace(RecursosLogicaModulo14.MatFechaCreacion, "");
+                    info = info.Replace(RecursosLogicaModulo14.MatFechaPago, "");
+                    info = info.Replace(RecursosLogicaModulo14.MatActiva, "");
+                    info = info.Replace(RecursosLogicaModulo14.MatPrecio, "");
+                }
+                if (organizacion != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.OrgNombre, organizacion.Nombre);
+                    info = info.Replace(RecursosLogicaModulo14.OrgDireccion, organizacion.Direccion);
+                    info = info.Replace(RecursosLogicaModulo14.OrgTelefono, organizacion.Telefono.ToString());
+                    info = info.Replace(RecursosLogicaModulo14.OrgEmail, organizacion.Email.ToString());
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.OrgNombre, "");
+                    info = info.Replace(RecursosLogicaModulo14.OrgDireccion, "");
+                    info = info.Replace(RecursosLogicaModulo14.OrgTelefono, "");
+                    info = info.Replace(RecursosLogicaModulo14.OrgEmail, "");
+                }
+                if (evento != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.EveNombre, evento.Nombre);
+                    info = info.Replace(RecursosLogicaModulo14.EveDescripcion, evento.Descripcion);
+                    info = info.Replace(RecursosLogicaModulo14.EveCosto, evento.Costo.ToString());
+                    string categoria = evento.Categoria.Sexo + RecursosLogicaModulo14.Linea;
+                    categoria += evento.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += evento.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
+                    categoria += evento.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += evento.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
+                    info = info.Replace(RecursosLogicaModulo14.CategoriaCat, categoria);
+                    info = info.Replace(RecursosLogicaModulo14.TipoEvento, evento.TipoEvento.Nombre);
+                    string horario = evento.Horario.FechaInicio.ToShortDateString() + RecursosLogicaModulo14.Linea;
+                    horario += evento.Horario.FechaFin.ToShortDateString() + RecursosLogicaModulo14.Linea;
+                    horario += evento.Horario.HoraInicio.ToString() + RecursosLogicaModulo14.Linea;
+                    horario += evento.Horario.HoraFin.ToString() + RecursosLogicaModulo14.Linea;
+                    info = info.Replace(RecursosLogicaModulo14.HorarioHor, horario) + RecursosLogicaModulo14.Linea;
 
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.EveNombre, "");
-                info = info.Replace(RecursosLogicaModulo14.EveDescripcion, "");
-                info = info.Replace(RecursosLogicaModulo14.EveCosto, "");
-                info = info.Replace(RecursosLogicaModulo14.CategoriaCat, "");
-                info = info.Replace(RecursosLogicaModulo14.TipoEvento, "");
-                info = info.Replace(RecursosLogicaModulo14.HorarioHor, "") + RecursosLogicaModulo14.Linea;
-            }
-            if (competencia != null)
-            {
-                info = info.Replace(RecursosLogicaModulo14.CompNombre, competencia.Nombre);
-                info = info.Replace(RecursosLogicaModulo14.CompTipo, competencia.TipoCompetencia);
-                info = info.Replace(RecursosLogicaModulo14.CompFechaIni, competencia.FechaInicio.ToShortDateString());
-                info = info.Replace(RecursosLogicaModulo14.CompFechaFin, competencia.FechaFin.ToShortDateString());
-                info = info.Replace(RecursosLogicaModulo14.CompCosto, competencia.Costo.ToString());
-                string categoria = competencia.Categoria.Sexo + RecursosLogicaModulo14.Linea;
-                categoria += competencia.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
-                categoria += competencia.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
-                categoria += competencia.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
-                categoria += competencia.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
-                info = info.Replace(RecursosLogicaModulo14.CategoriaComp, categoria);
-            }
-            else
-            {
-                info = info.Replace(RecursosLogicaModulo14.CompNombre, "");
-                info = info.Replace(RecursosLogicaModulo14.CompTipo, "");
-                info = info.Replace(RecursosLogicaModulo14.CompFechaIni, "");
-                info = info.Replace(RecursosLogicaModulo14.CompFechaFin,"");
-                info = info.Replace(RecursosLogicaModulo14.CompCosto, "");
-                info = info.Replace(RecursosLogicaModulo14.CategoriaComp,"");
-            }
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.EveNombre, "");
+                    info = info.Replace(RecursosLogicaModulo14.EveDescripcion, "");
+                    info = info.Replace(RecursosLogicaModulo14.EveCosto, "");
+                    info = info.Replace(RecursosLogicaModulo14.CategoriaCat, "");
+                    info = info.Replace(RecursosLogicaModulo14.TipoEvento, "");
+                    info = info.Replace(RecursosLogicaModulo14.HorarioHor, "") + RecursosLogicaModulo14.Linea;
+                }
+                if (competencia != null)
+                {
+                    info = info.Replace(RecursosLogicaModulo14.CompNombre, competencia.Nombre);
+                    info = info.Replace(RecursosLogicaModulo14.CompTipo, competencia.TipoCompetencia);
+                    info = info.Replace(RecursosLogicaModulo14.CompFechaIni, competencia.FechaInicio.ToShortDateString());
+                    info = info.Replace(RecursosLogicaModulo14.CompFechaFin, competencia.FechaFin.ToShortDateString());
+                    info = info.Replace(RecursosLogicaModulo14.CompCosto, competencia.Costo.ToString());
+                    string categoria = competencia.Categoria.Sexo + RecursosLogicaModulo14.Linea;
+                    categoria += competencia.Categoria.Cinta_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += competencia.Categoria.Cinta_final + RecursosLogicaModulo14.Linea;
+                    categoria += competencia.Categoria.Edad_inicial + RecursosLogicaModulo14.Linea;
+                    categoria += competencia.Categoria.Edad_final + RecursosLogicaModulo14.Linea;
+                    info = info.Replace(RecursosLogicaModulo14.CategoriaComp, categoria);
+                }
+                else
+                {
+                    info = info.Replace(RecursosLogicaModulo14.CompNombre, "");
+                    info = info.Replace(RecursosLogicaModulo14.CompTipo, "");
+                    info = info.Replace(RecursosLogicaModulo14.CompFechaIni, "");
+                    info = info.Replace(RecursosLogicaModulo14.CompFechaFin, "");
+                    info = info.Replace(RecursosLogicaModulo14.CompCosto, "");
+                    info = info.Replace(RecursosLogicaModulo14.CategoriaComp, "");
+                }
 
-            return info;
+                return info;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
 
         }
 
@@ -245,8 +338,32 @@ namespace LogicaNegociosSKD.Modulo14
         /// De lo contrario devuelve False</returns>
         public Boolean ModificarDiseño(DominioSKD.Diseño diseño)
         {
-            diseño.Base64Encode();
-            return datos.ModificarDiseño(diseño);
+            try
+            {
+                diseño.Base64Encode();
+                return datos.ModificarDiseño(diseño);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
         #endregion
     }

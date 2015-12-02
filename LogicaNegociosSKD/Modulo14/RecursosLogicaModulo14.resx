@@ -198,6 +198,9 @@
   <data name="Motivo" xml:space="preserve">
     <value>$motivo</value>
   </data>
+  <data name="MsjLoggerInfo" xml:space="preserve">
+    <value>Entrade del Metodo</value>
+  </data>
   <data name="OrgDireccion" xml:space="preserve">
     <value>$org_direccion</value>
   </data>

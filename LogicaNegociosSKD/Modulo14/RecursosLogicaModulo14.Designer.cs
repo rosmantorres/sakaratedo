@@ -304,6 +304,15 @@ namespace LogicaNegociosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Entrade del Metodo.
+        /// </summary>
+        internal static string MsjLoggerInfo {
+            get {
+                return ResourceManager.GetString("MsjLoggerInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a $org_direccion.
         /// </summary>
         internal static string OrgDireccion {

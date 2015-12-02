@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 using DatosSKD.Modulo14;
+using ExcepcionesSKD;
 namespace LogicaNegociosSKD.Modulo14
 {
     public class LogicaSolicitud
@@ -18,7 +19,26 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Retorna una lista de solicitudes</returns>
         public List<DominioSKD.SolicitudPlanilla> ListarPlanillasSolicitadas(int idPersona)
         {
-            return datos.ConsultarSolicitudes(idPersona);
+            try
+            {
+                return datos.ConsultarSolicitudes(idPersona);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -29,7 +49,26 @@ namespace LogicaNegociosSKD.Modulo14
         /// De lo contrario devuelve false</returns>
         public Boolean EliminarSolicitud(int idSolicitud)
         {
-            return datos.EliminarSolicitudBD(idSolicitud);
+            try
+            {
+                return datos.EliminarSolicitudBD(idSolicitud);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -38,25 +77,62 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>retorna una lista de planillas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillasASolicitar()
         {
-            return datos.ConsultarPlanillasASolicitarBD();
+            try
+            {
+                return datos.ConsultarPlanillasASolicitarBD();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
     
         /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
         /// <param name="idPlanilla"> id de la planilla solicitada</param>
         /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
-
         public List<Boolean> DatosRequeridosSolicitud(int idPlanilla)
         {
-            Diseño resultDiseño = diseño.ConsultarDiseño(idPlanilla);
+            try
+            {
+                Diseño resultDiseño = diseño.ConsultarDiseño(idPlanilla);
 
-            List<bool> datosRequeridos = new List<bool>();
+                List<bool> datosRequeridos = new List<bool>();
 
-            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaRetiro));
-            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaReincor));
-            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.EveNombre));
-            datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.CompNombre));
+                datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaRetiro));
+                datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaReincor));
+                datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.EveNombre));
+                datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.CompNombre));
 
-            return datosRequeridos;
+                return datosRequeridos;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Para registrar una solicitud</summary>
@@ -64,7 +140,26 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
         public void RegistrarSolicitudPlanilla(SolicitudP laSolicitud)
         {
-            Boolean result = datos.RegistrarSolicitudPlanillaBD(laSolicitud);
+            try
+            {
+                Boolean result = datos.RegistrarSolicitudPlanillaBD(laSolicitud);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Para registrar una solicitud por el id de la persona</summary>
@@ -72,43 +167,86 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
         public void RegistrarSolicitudIDPersona(SolicitudP laSolicitud)
         {
-            Boolean result = datos.RegistrarSolicitudIDPersonaBD(laSolicitud);
+            try
+            {
+                Boolean result = datos.RegistrarSolicitudIDPersonaBD(laSolicitud);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
+      
         /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
         /// <param name="idPlanilla"> id de la planilla solicitada</param>
         /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
-
         public List<SolicitudP> EventosSolicitud(int idPersona)
         {
             List<SolicitudP> eventos = new List<SolicitudP>();
             try
             {
                 eventos = datos.ObtenerEventosSolicitud(idPersona);
+                return eventos;
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                throw ex;
             }
-            return eventos;
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
         /// <param name="idPersona"> id persona</param>
         /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
-
         public List<SolicitudP> CompetenciasSolicitud(int idPersona)
         {
             List<SolicitudP> eventos = new List<SolicitudP>();
             try
             {
                 eventos = datos.ObtenerCompetenciaSolicitud(idPersona);
+                return eventos;
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                throw ex;
             }
-            return eventos;
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
+      
         /// <summary>Obtener una solicitud por ID</summary>
         /// <param name="idPlanilla"></param>
         /// <returns>Regresa la solicitud con su fechar, fecharei y motivo</returns>
@@ -116,11 +254,30 @@ namespace LogicaNegociosSKD.Modulo14
         public SolicitudPlanilla ObtenerSolicitudID(int idSolicitud)
         {
             SolicitudPlanilla solicitud = new SolicitudPlanilla();
+            try
+            {
+                BDSolicitud BaseDeDatoPlanilla = new BDSolicitud();
+                solicitud = BaseDeDatoPlanilla.ObtenerSolicitudID(idSolicitud);
+                return solicitud;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            BDSolicitud BaseDeDatoPlanilla = new BDSolicitud();
-            solicitud = BaseDeDatoPlanilla.ObtenerSolicitudID(idSolicitud);
-            return solicitud;
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
+       
         /// <summary>Modificar una solicitud por id</summary>
         /// <param name="laSolicitud">la solicitud</param>
         /// <returns>Regresa true si se modifico y false si no</returns>
@@ -129,9 +286,28 @@ namespace LogicaNegociosSKD.Modulo14
         {
             BDSolicitud BaseDeDatoSolicitud = new BDSolicitud();
             SolicitudP solicitud = new SolicitudP();
-            BaseDeDatoSolicitud.ModificarSolicitudBD(laSolicitud);
+            try
+            {
+                BaseDeDatoSolicitud.ModificarSolicitudBD(laSolicitud);
 
-            return solicitud;
+                return solicitud;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
     }
 }

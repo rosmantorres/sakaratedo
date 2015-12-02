@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DominioSKD;
 using DatosSKD;
 using DatosSKD.Modulo14;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo14
 {
@@ -19,24 +20,62 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Retorna una lista con todas las planillas registradas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillas()
         {
-            List<DominioSKD.Planilla> listaplanilla = new List<DominioSKD.Planilla>();
-            listaplanilla = datos.ConsultarPlanillasCreadas();
-            foreach (DominioSKD.Planilla planilla in listaplanilla)
+            try
             {
-                planilla.Dato = BDPlanilla.ObtenerDatosPlanillaID1(planilla.ID);
+                List<DominioSKD.Planilla> listaplanilla = new List<DominioSKD.Planilla>();
+                listaplanilla = datos.ConsultarPlanillasCreadas();
+                foreach (DominioSKD.Planilla planilla in listaplanilla)
+                {
+                    planilla.Dato = BDPlanilla.ObtenerDatosPlanillaID1(planilla.ID);
+                }
+                return listaplanilla;
             }
-            return listaplanilla;
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
         /// <summary>Para obtener el tipo de planilla</summary>
         /// <returns>Regresa una lista de planillas</returns>
         /// 
         public List<Planilla> ObtenerTipoPlanilla()
         {
-            List<Planilla> listaTipoPlanilla = new List<Planilla>();
-            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            listaTipoPlanilla = BaseDeDatoPlanilla.ObtenerTipoPlanilla();
+            try
+            {
+                List<Planilla> listaTipoPlanilla = new List<Planilla>();
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                listaTipoPlanilla = BaseDeDatoPlanilla.ObtenerTipoPlanilla();
 
-            return listaTipoPlanilla;
+                return listaTipoPlanilla;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -47,7 +86,27 @@ namespace LogicaNegociosSKD.Modulo14
         /// De lo contrario devuelve False</returns>
         public Boolean CambiarStatusPlanilla(int idPlanilla)
         {
-            return datos.CambiarStatus(idPlanilla);
+            try
+            {
+
+                return datos.CambiarStatus(idPlanilla);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Para obtener los datos de la bd</summary>
@@ -59,13 +118,24 @@ namespace LogicaNegociosSKD.Modulo14
             {
                 BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
                 listaDatos = BaseDeDatoPlanilla.ObtenerDatosBD();
+                return listaDatos;
             }
-            catch (Exception e)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw e;
-            }
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            return listaDatos;
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Para registrar una planilla</summary>
@@ -73,14 +143,33 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
         public void RegistrarPlanilla(Planilla laPlanilla)
         {
-            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            Boolean resultPlanilla = BaseDeDatoPlanilla.RegistrarPlanillaBD(laPlanilla);
-
-            foreach (String nombreDato in laPlanilla.Dato)
+            try
             {
-                
-                Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
-                
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                Boolean resultPlanilla = BaseDeDatoPlanilla.RegistrarPlanillaBD(laPlanilla);
+
+                foreach (String nombreDato in laPlanilla.Dato)
+                {
+
+                    Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
+
+                }
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
             }
         }
 
@@ -92,9 +181,28 @@ namespace LogicaNegociosSKD.Modulo14
         public void RegistrarPlanilla(Planilla laPlanilla, String nombreTipo)
         {
             BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(nombreTipo);
-            laPlanilla.IDtipoPlanilla = idTipoPlanilla;
-            RegistrarPlanilla(laPlanilla);
+            try
+            {
+                int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(nombreTipo);
+                laPlanilla.IDtipoPlanilla = idTipoPlanilla;
+                RegistrarPlanilla(laPlanilla);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -103,8 +211,27 @@ namespace LogicaNegociosSKD.Modulo14
         /// <param name="nombreTipo">Recibe el nombre del nuevo tipo de planilla</param>
         public void NuevoTipoPlanilla(String nombreTipo)
         {
-            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            Boolean result = BaseDeDatoPlanilla.RegistrarTipoPlanilla(nombreTipo);
+            try
+            {
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                Boolean result = BaseDeDatoPlanilla.RegistrarTipoPlanilla(nombreTipo);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
 
         }
 
@@ -115,12 +242,31 @@ namespace LogicaNegociosSKD.Modulo14
         public Planilla ObtenerPlanillaID(int idPlanilla)
         {
             Planilla planilla = new Planilla();
+            try
+            {
 
-            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            planilla = BaseDeDatoPlanilla.ObtenerPlanillaID(idPlanilla);
-            planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                planilla = BaseDeDatoPlanilla.ObtenerPlanillaID(idPlanilla);
+                planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
+                return planilla;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            return planilla;
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
         }
 
         /// <summary>
@@ -132,9 +278,28 @@ namespace LogicaNegociosSKD.Modulo14
         /// <returns>Regresa la lista con dichos datos</returns>
         public List<string> ObtenerDatosPlanilla(int idPlanilla)
         {
-            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            List<String> datos = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
-            return datos;
+            try
+            {
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                List<String> datos = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
+                return datos;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Modificar una planilla por id</summary>
@@ -144,15 +309,34 @@ namespace LogicaNegociosSKD.Modulo14
         public Planilla ModificarPlanillaID(Planilla laPlanilla)
         {
             BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            Planilla planilla = new Planilla();
-            BaseDeDatoPlanilla.ModificarPlanillaBD(laPlanilla);
-            BaseDeDatoPlanilla.EliminarDatosPlanillaBD(laPlanilla.ID);
-            foreach (String item in laPlanilla.Dato)
+            try
             {
-                BaseDeDatoPlanilla.RegistrarDatosPlanillaIdBD(laPlanilla.ID, item);                
-            }
+                Planilla planilla = new Planilla();
+                BaseDeDatoPlanilla.ModificarPlanillaBD(laPlanilla);
+                BaseDeDatoPlanilla.EliminarDatosPlanillaBD(laPlanilla.ID);
+                foreach (String item in laPlanilla.Dato)
+                {
+                    BaseDeDatoPlanilla.RegistrarDatosPlanillaIdBD(laPlanilla.ID, item);
+                }
 
-            return planilla;
+                return planilla;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }
 
         /// <summary>Modificar una planilla</summary>
@@ -161,11 +345,30 @@ namespace LogicaNegociosSKD.Modulo14
         /// 
         public Planilla ModificarPlanillaID(Planilla laPlanilla, String tipoPlanilla)
         {
-            BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
-            int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(tipoPlanilla);
-            laPlanilla.IDtipoPlanilla = idTipoPlanilla;
-            ModificarPlanillaID(laPlanilla);
-            return laPlanilla;
+            try
+            {
+                BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
+                int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(tipoPlanilla);
+                laPlanilla.IDtipoPlanilla = idTipoPlanilla;
+                ModificarPlanillaID(laPlanilla);
+                return laPlanilla;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
         }  
 
     }
