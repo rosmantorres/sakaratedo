@@ -131,11 +131,10 @@ namespace DatosSKD.Modulo10
         //        foreach (DataRow row in dt.Rows)
         //        {
         //            Persona persona = new Persona();
-                    
+
         //            persona.ID = int.Parse(row[RecursosBDModulo10.aliasIdPersona].ToString());
-        //            persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString(); 
-        //            evento.Descripcion = row[RecursosBDModulo9.AliasDescripcionEvento].ToString();
-        //            evento.Estado = Boolean.Parse(row[RecursosBDModulo9.AliasEstadoEvento].ToString());
+        //            persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString();
+        //            Inscripcion inscripcion = new Inscripcion();
         //            evento.Costo = float.Parse(row[RecursosBDModulo9.AliasCostoEvento].ToString());
         //            Horario horario = new Horario();
         //            horario.FechaInicio = DateTime.Parse(row[RecursosBDModulo9.AliasFechaInicio].ToString());
