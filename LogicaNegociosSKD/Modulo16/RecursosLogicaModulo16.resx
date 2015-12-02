@@ -132,6 +132,9 @@
   <data name="Codigo_ExcepcionSql" xml:space="preserve">
     <value>S_16_02</value>
   </data>
+  <data name="CODIGO_EXCEPCION_GENERICO" xml:space="preserve">
+    <value>S_16_01</value>
+  </data>
   <data name="Mensaje_ExcepcionAtributo" xml:space="preserve">
     <value>Error uno de los atributos no existe en el procedimiento ejecutado</value>
   </data>
@@ -144,7 +147,16 @@
   <data name="Mensaje_ExcepcionSql" xml:space="preserve">
     <value>Error existe un conflicto con la conexión a la base de datos</value>
   </data>
+  <data name="MENSAJE_EXCEPCION_GENERICO" xml:space="preserve">
+    <value>Ha ocurrido un error inesperado en la capa de datos</value>
+  </data>
   <data name="Mensaje__ExcepcionParametro" xml:space="preserve">
     <value>Error uno de los parametros no existe en el procedimiento ejecutado</value>
+  </data>
+  <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
+    <value>Ingresando al metodo</value>
+  </data>
+  <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
+    <value>Saliendo del metodo</value>
   </data>
 </root>
