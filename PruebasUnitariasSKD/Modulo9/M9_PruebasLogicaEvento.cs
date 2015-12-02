@@ -59,7 +59,7 @@ namespace PruebasUnitariasSKD.Modulo9
         [Test]
         public void PruebaValidarCosto()
         {
-            double numeroPrueba = 85269.56;
+            float numeroPrueba = 85269;
             LogicaEvento logicaEvento = new LogicaEvento();
             Boolean auxiliar = logicaEvento.ValidarCosto(numeroPrueba);
             Assert.IsTrue(auxiliar);

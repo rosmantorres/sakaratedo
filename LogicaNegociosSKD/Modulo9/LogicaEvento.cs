@@ -40,8 +40,7 @@ namespace LogicaNegociosSKD.Modulo9
                     if (ValidarCaracteres(evento.Descripcion))
                     {
                         Console.Out.WriteLine("Descripcion Valido");
-                        if (ValidarCosto(evento.Costo))
-                        {
+
                             Console.Out.WriteLine("Costo Valido");
                             String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
                             String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
@@ -60,26 +59,19 @@ namespace LogicaNegociosSKD.Modulo9
                                     if (ValidarFechaFinMayor(fechaInicio, fechaFin))
                                     {
                                         Console.Out.WriteLine("FechaI <= FechaF");
-                                        if (ValidarHora(evento.Horario.HoraInicio.ToString()))
-                                        {
-                                            Console.Out.WriteLine("HoraI Valido");
-                                            if (ValidarHora(evento.Horario.HoraFin.ToString()))
-                                            {
-                                                Console.Out.WriteLine("HoraF Valido");
-                                                if (evento.Horario.HoraInicio < evento.Horario.HoraFin)
-                                                {
-                                                    BDEvento baseDeDatosEvento = new BDEvento();
-                                                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                                        
+                                        BDEvento baseDeDatosEvento = new BDEvento();
+                                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                                                    return baseDeDatosEvento.CrearEvento(evento);
-                                                }
-                                            }
-                                        }
+                                        return baseDeDatosEvento.CrearEvento(evento);
+                                                
+                                            
+                                        
 
                                     }
                                 }
                             }
-                        }
+                        
                     }
 
                 }
@@ -127,8 +119,7 @@ namespace LogicaNegociosSKD.Modulo9
                     if (ValidarCaracteres(evento.Descripcion))
                     {
                         Console.Out.WriteLine("Descripcion Valido");
-                        if (ValidarCosto(evento.Costo))
-                        {
+
                             Console.Out.WriteLine("Costo Valido");
                             String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
                             String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
@@ -160,7 +151,7 @@ namespace LogicaNegociosSKD.Modulo9
                                     }
                                 }
                             }
-                        }
+                        
                     }
 
                 }
@@ -239,8 +230,7 @@ namespace LogicaNegociosSKD.Modulo9
                     if (ValidarCaracteres(evento.Descripcion))
                     {
                         Console.Out.WriteLine("Descripcion Valido");
-                        if (ValidarCosto(evento.Costo))
-                        {
+
                             Console.Out.WriteLine("Costo Valido");
                             String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
                             String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
@@ -261,12 +251,12 @@ namespace LogicaNegociosSKD.Modulo9
                                         Console.Out.WriteLine("FechaI <= FechaF");
                                         BDEvento baseDeDatosEvento = new BDEvento();
 
-                                        return baseDeDatosEvento.CrearEvento(evento);
+                                        return baseDeDatosEvento.ModificarEvento(evento);
 
                                     }
                                 }
                             }
-                        }
+                        
                     }
 
                 }
@@ -329,6 +319,7 @@ namespace LogicaNegociosSKD.Modulo9
 
                 throw ex;
             }
+
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return evento;
         }
@@ -367,7 +358,7 @@ namespace LogicaNegociosSKD.Modulo9
         /// <param name="numero">El costo del proyecto</param>
         /// <returns>Verdadero o Falso</returns>
 
-        public bool ValidarCosto(double numero)
+        public bool ValidarCosto(float numero)
         {
             String comparar = "123456789,";
             String cadena = numero.ToString();

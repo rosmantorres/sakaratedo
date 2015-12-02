@@ -152,6 +152,16 @@ namespace templateApp.GUI.Modulo9
                 {
                     //error
                 }
+                if (!descripcionEvento.Text.Equals(""))
+                {
+                    evento.Descripcion = descripcionEvento.Text;
+                }
+                else
+                {
+                    //error
+                }
+
+
                 if (!costoEvento.Text.Equals(""))
                 {
                     String costo=costoEvento.Text;
@@ -187,7 +197,22 @@ namespace templateApp.GUI.Modulo9
                         TipoEvento tipoEvento = new TipoEvento();
                         tipoEvento.Nombre = otroEvento.Text;
                         evento.TipoEvento = tipoEvento;
-                        logicaEvento.CrearEventoConTipo(evento);
+                        bool resultado = logicaEvento.CrearEventoConTipo(evento);
+                        if (resultado)
+                        {
+                            alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Evento modificado exitosamente</div>";
+
+                        }
+                        else
+                        {
+                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Campos Invalidos</div>";
+
+                        }
+
                     }
                 }
 
@@ -196,14 +221,62 @@ namespace templateApp.GUI.Modulo9
                     TipoEvento tipoEvento = new TipoEvento();
                     tipoEvento.Id = comboTipoEvento.SelectedIndex;
                     evento.TipoEvento = tipoEvento;
-                    logicaEvento.ModificarEvento(evento);
+                    bool resultado = logicaEvento.ModificarEvento(evento);
+                    if (resultado)
+                    {
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Evento modificado exitosamente</div>";
+
+                    }
+                    else
+                    {
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Campos Invalidos</div>";
+
+                    }
                 }
 
+
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error de Conxeion con BD</div>";
+
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Formato de Atributos Incorrecto</div>";
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+
+            }
+            catch (NullReferenceException ex)
+            {
+
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
 
             }
             catch (Exception ex)
             {
-                Console.Out.WriteLine(ex);
+
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+
             }
 
         }

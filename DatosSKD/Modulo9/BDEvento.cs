@@ -216,7 +216,7 @@ namespace DatosSKD.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, "1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
                 parametros.Add(parametro);
