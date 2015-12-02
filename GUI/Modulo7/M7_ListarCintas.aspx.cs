@@ -29,86 +29,61 @@ namespace templateApp.GUI.Modulo7
 
             String detalleString = Request.QueryString["compDetalle"];
             DateTime fechaInscripcion;
-            
-            if (detalleString != null)
-            {
-                llenarModalInfo(int.Parse(detalleString));
-            }
 
             #region Llenar DataTable con Cintas
 
             LogicaCintas logEvento = new LogicaCintas();
 
-            if (!IsPostBack)
+            try
             {
-                try
+                String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
                 {
-                    laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                    //laLista = logEvento.obtenerListaDeCintas(1);
-                    foreach (Cinta cinta in laLista)
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
+                    if (!IsPostBack)
                     {
-                        fechaInscripcion = logEvento.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), cinta.Id_cinta);
-                        this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Clasificacion.ToString()+ M7_Recursos.CerrarTD;                     
-                        this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoCintas + cinta.Id_cinta + M7_Recursos.BotonCerrar;
-                        this.laTabla.Text += M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.CerrarTR;
+                        try
+                        {
+                            laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                            foreach (Cinta cinta in laLista)
+                            {
+                                fechaInscripcion = logEvento.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), cinta.Id_cinta);
+                                this.laTabla.Text += M7_Recursos.AbrirTR;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Clasificacion.ToString() + M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.AbrirTD;
+                                this.laTabla.Text += M7_Recursos.BotonInfoCintas + cinta.Id_cinta + M7_Recursos.BotonCerrar;
+                                this.laTabla.Text += M7_Recursos.CerrarTD;
+                                this.laTabla.Text += M7_Recursos.CerrarTR;
+                            }
 
-                        
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
                     }
-                    /*
-                    Cinta cinta1 = new Cinta();
-                    LogicaCintas logica = new LogicaCintas();
-                    cinta1 = logica.obtenerUltimaCinta(1);
-                    fechaInscripcion = logEvento.obtenerFechaCinta(1, cinta1.Id_cinta);
-                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Color_nombre.ToString() + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Rango.ToString() + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Clasificacion.ToString() + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("yyyy/dd/MM") + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta1.Id_cinta + M7_Recursos.BotonCerrar;
-                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.CerrarTR;*/
-                    /*
-                    Cinta cinta1 = new Cinta();
-                    LogicaCintas logica = new LogicaCintas();
-                    cinta1 = logica.detalleCintaID(1);
-                    fechaInscripcion = logEvento.obtenerFechaCinta(1, cinta1.Id_cinta);
-                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Color_nombre.ToString() + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Rango.ToString() + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta1.Clasificacion.ToString() + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("yyyy/dd/MM") + M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + cinta1.Id_cinta + M7_Recursos.BotonCerrar;
-                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                    this.laTabla.Text += M7_Recursos.CerrarTR;*/
-
                 }
-                catch (Exception ex)
+                else
                 {
-                    throw ex;
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 }
+
+            }
+            catch (NullReferenceException ex)
+            {
             }
 
-
             #endregion
-        }
-
-        /// <summary>
-        /// Método que llena el modal con la información de la cinta
-        /// </summary>
-        /// <param name="idCinta">Número entero que representa el id de la cinta</param>
-        protected void llenarModalInfo(int idCinta)
-        {
-            /*Evento evento = new Evento();
-            LogicaEventosAsistidos logica = new LogicaEventosAsistidos();
-            evento = logica.detalleEventoID(idEvento);*/
         }
     }
 

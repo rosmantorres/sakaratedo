@@ -50,19 +50,14 @@ namespace templateApp.GUI.Modulo7
                         {
                         }
                     }
-
-
                 }
                 else
                 {
                     Response.Redirect(GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
                 }
-
             }
             catch (NullReferenceException ex)
             {
-
-
             }
         }
     }
