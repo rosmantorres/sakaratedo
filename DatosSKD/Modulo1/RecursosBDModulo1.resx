@@ -178,4 +178,10 @@
   <data name="idInicial" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="AliasDocumento" xml:space="preserve">
+    <value>documento_usuario</value>
+  </data>
+  <data name="listarUsuarios" xml:space="preserve">
+    <value>M1_ConsultarNombreUsuarioContrasena_listar</value>
+  </data>
 </root>
