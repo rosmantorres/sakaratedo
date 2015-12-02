@@ -183,4 +183,10 @@
   <data name="claveDES" xml:space="preserve">
     <value>SaKARAteDO2015</value>
   </data>
+  <data name="equis2" xml:space="preserve">
+    <value>x2</value>
+  </data>
+  <data name="signoMas" xml:space="preserve">
+    <value>+</value>
+  </data>
 </root>

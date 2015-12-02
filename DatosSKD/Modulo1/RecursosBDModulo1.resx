@@ -175,4 +175,7 @@
   <data name="consultarPersona" xml:space="preserve">
     <value>M1_ConsultarPersona_ID</value>
   </data>
+  <data name="idInicial" xml:space="preserve">
+    <value>0</value>
+  </data>
 </root>
