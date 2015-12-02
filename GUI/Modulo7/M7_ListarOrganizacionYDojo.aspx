@@ -100,9 +100,6 @@
                       <div class="panel-group col-sm-10 col-md-10 col-lg-10">
             </div>
             <br />
-            <div class="form-group col-sm-5 col-md-5 col-lg-5"> <!--BOTON VOLVER-->
-            <a class="btn btn-default" href="M7_ListarCintas.aspx">Volver</a>
-            </div>
                   </div>
                </div>
             </div>
