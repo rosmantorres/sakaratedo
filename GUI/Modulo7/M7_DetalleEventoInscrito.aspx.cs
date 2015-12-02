@@ -21,6 +21,19 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
+                {
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
             ((SKD)Page.Master).IdModulo = "7";
             String detalleStringEvento = Request.QueryString["EventInscDetalle"];
             String detalleStringCompetencia = Request.QueryString["compDetalle1"];
@@ -52,26 +65,24 @@ namespace templateApp.GUI.Modulo7
                         this.direccion_evento.Text = evento.Ubicacion.Direccion;
 
                     }
-                    else
-                    {
-
-                        competencia = laLogica.detalleCompetenciaID(int.Parse(detalleStringCompetencia));
-                        this.nombre_evento.Text = competencia.Nombre;
-                        this.descripcion_evento.Text = competencia.TipoCompetencia;
-                        this.costo_evento.Text = competencia.Costo.ToString();
-                        this.estado_evento.Text = "";
-                        this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
-                        this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
-                        this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
-                        this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
-                        this.direccion_evento.Text = competencia.Ubicacion.Direccion;
-                    }
                 }
                 catch (Exception ex)
                 {
                 }
             }
        
+                }
+                else
+                {
+                    Response.Redirect(GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
+                }
+
+            }
+            catch (NullReferenceException ex)
+            {
+
+
+            }
 
         }
     }

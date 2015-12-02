@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M7_DetallarHorarioPractica.aspx.cs" Inherits="templateApp.GUI.Modulo7.M7_DetallarHorarioPractica" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M7_DetalleHorarioPractica.aspx.cs" Inherits="templateApp.GUI.Modulo7.M7_DetalleHorarioPractica" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
@@ -10,7 +10,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="M7_ListarHorariodePractica.aspx">Consulta Horario Practica</a> 
+			    <a href="M7_ListarOrganizacionYDojo.aspx">Consulta Atletas</a> 
 		    </li>
 
 		    <li class="active">
@@ -20,9 +20,9 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Consulta Atleta
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Detalle Horario Práctica
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Detalle Horario Práctica
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Horario Práctica
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
      <!-- general form elements -->

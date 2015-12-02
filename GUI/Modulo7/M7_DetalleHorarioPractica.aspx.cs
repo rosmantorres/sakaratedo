@@ -9,10 +9,9 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_DetallarHorarioPractica : System.Web.UI.Page
+    public partial class M7_DetalleHorarioPractica : System.Web.UI.Page
     {
         Evento evento = new Evento();
-        Competencia competencia = new Competencia();
         LogicaHorarioPractica laLogica = new LogicaHorarioPractica();
 
         /// <summary>
@@ -22,21 +21,8 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
-                Boolean permitido = false;
-                List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
-                foreach (String rol in rolesPermitidos)
-                {
-                    if (rol == rolUsuario)
-                        permitido = true;
-                }
-                if (permitido)
-                {
-                    ((SKD)Page.Master).IdModulo = "7";
-                    String detalleStringEvento = Request.QueryString["horarioDetalle"];
+            ((SKD)Page.Master).IdModulo = "7";
+            String detalleStringEvento = Request.QueryString["horarioDetalle"];
 
             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
             {
@@ -65,19 +51,6 @@ namespace templateApp.GUI.Modulo7
                 catch (Exception ex)
                 {
                 }
-            }
-
-                }
-                else
-                {
-                    Response.Redirect(GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
-                }
-
-            }
-            catch (NullReferenceException ex)
-            {
-
-
             }
        
         }

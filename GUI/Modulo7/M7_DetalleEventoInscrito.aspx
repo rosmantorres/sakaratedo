@@ -10,7 +10,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="M7_ListarOrganizacionYDojo.aspx">Consulta Atletas</a> 
+			    <a href="M7_ListarEventosInscritos.aspx">Consulta Eventos Inscritos</a> 
 		    </li>
 
 		    <li class="active">
@@ -20,9 +20,9 @@
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Consulta de Atleta
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Detalle Evento
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
      <!-- general form elements -->
