@@ -50,12 +50,40 @@ namespace PruebasUnitariasSKD.Modulo14
         /// Prueba para el metodo registrar planilla
         /// </summary>
         [Test]
-        /*public void PruebaRegistrarPlanilla()
+        public void PruebaRegistrarPlanilla()
         {
-            Planilla planilla = new Planilla("Inscripcion", true, 1);
+
+            Planilla planilla = new Planilla("RETIRO VACACIONES", true, 1);
             LogicaPlanilla logica = new LogicaPlanilla();
-            Assert.IsTrue(logica.RegistrarPlanilla());
-        }*/
+            BDPlanilla BaseDeDatosPlanilla = new BDPlanilla();
+            Assert.IsTrue(BaseDeDatosPlanilla.RegistrarPlanillaBD(planilla));
+            //Assert.IsTrue(logica.RegistrarPlanilla(planilla));
+               
+        }
+        /// <summary>
+        /// Prueba para el metodo para Cambiar Status Planilla
+        /// </summary>
+        [Test]
+        public void PruebaCambiarStatusPlanilla()
+        {
+            Planilla planilla = new Planilla(1,"RETIRO COMPETENCIA",true,"RETIRO");
+            LogicaPlanilla logica = new LogicaPlanilla();
+            Assert.IsTrue(logica.CambiarStatusPlanilla(1));
+        }
+
+        /// <summary>
+        /// Prueba para el metodo nuevo tipo de planilla
+        /// </summary>
+        [Test]
+        public void PruebaNuevoTipoPlanilla()
+        {
+            Planilla planilla = new Planilla(1,"RETIRO");
+            LogicaPlanilla logica = new LogicaPlanilla();
+            BDPlanilla BaseDeDatosPlanilla = new BDPlanilla();
+            Assert.IsTrue(BaseDeDatosPlanilla.RegistrarTipoPlanilla("RETIRO"));
+        
+        }
+
         [TearDown]
         public void Limpiar()
         {
