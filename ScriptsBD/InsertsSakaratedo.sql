@@ -65,6 +65,12 @@ go
 INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.6338776', '-71.8170448', 'Maracaibo', 'Zulia', null)
 go
 
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.499607', '-66.788419', 'Caracas', 'Miranda', 'Quinta transversal chacaito, casa Karate Do') 
+go
+
+INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.499607', '-66.788419', 'Caracas', 'Miranda', 'Altamira, dojo OldSensei') 
+go
+
 -- INSERTS ESTILO --
 
 INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Cobra-do','Fusión entre Karate-Do y Kung Fu. Fundado por el Maestro Jesús López. Caracas-Venezuela.');
@@ -124,6 +130,14 @@ go
 INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
 VALUES (N'Shoosei Kai', 3, 0, N'Por Iniciar', N'2015-10-11 00:00:00', N'2015-10-11 00:00:00', 2, 3, 2,1800)
 go
+
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Shoosei Kai', 1, 0, N'Finalizada', N'2014-05-10 00:00:00', N'2014-05-14 00:00:00', 2, 3, 2,1800)
+go 
+
+INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
+VALUES (N'Gashumi Io', 1, 0, N'Inscrita', N'2015-05-10 00:00:00', N'2015-05-14 00:00:00', 2, 3, 2,3000)
+go 
 
 
 --INSERTS RESTRICCION COMPETENCIA--
@@ -302,14 +316,27 @@ INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio
 go
 INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-15',3,6) -- Clases -- 
 go
-
-
--- INSERTS IMPLEMENTO --
-
-
-
-
-
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-03-10','2015-03-10',15,18)
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-04-15','2016-04-15',1,3)  
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-07-22','2016-07-22',18,20)  
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-08-03','2016-08-03',13,18) 
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-17',10,18) 
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-15',2,4)  
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-16','2016-10-16',4,6) 
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-17','2016-10-17',3,5)  
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-01-15','2016-01-18',5,1) 
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-02-15','2016-02-15',1,3)  
+go
+INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-01-11','2016-01-12',2,4) 
 
 
 
@@ -337,6 +364,28 @@ go
 INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Pase a negra',1150,'Pase de cinta de los atletas',1,null,null,3,1,1)
 go
 INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,null,null,2,2,1)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,1,null,6,2,6)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',520,'Clase para cualquier nivel de cinta',1,1,null,7,4,7) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento Especial',740,'Entrenamiento dedicado a perfeccionar las patadas',1,1,null,8,3,7) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('El Bushido',450,'Charla explicativa sobre el codigo Bushido',1,1,null,9,2,6) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Congreso sobre el Karate Do',2500,'Tercer Congreso para hablar sobre el Karate Do',1,1,null,10,2,6) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',0,'Clases regulares del atleta que va los dias asignados',1,1,null,11,4,6) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',0,'Clases regulares del atleta que va los dias asignados',1,1,null,12,4,6) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',0,'Clases regulares del atleta que va los dias asignados',1,1,null,13,4,6) 
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento Especial',1000,'Entrenamiento para Competencia',1,1,null,16,3,7)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Karate Deporte o Defensa Personal',3000,'Charla para los atletas, el karate como forma de defensa',1,1,null,14,2,7)
+go
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Pse de Cinta',1300,'Pase de cinta de los atletas',1,1,null,15,1,6)
 go
 
 
@@ -420,7 +469,7 @@ VALUES (
     'miguedro',
     '12345',
     'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -533,7 +582,7 @@ VALUES (
     'adrijo',
     '12345',
     'http://tphsartjdoerrer.weebly.com/uploads/7/7/0/2/7702116/152821360.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -627,7 +676,7 @@ VALUES (
     'chrisjo',
     '12345',
     'http://www.morganstanley.com/assets/images/people/tiles/michael-asmar.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -721,7 +770,7 @@ VALUES (
     'cesarau',
     '12345',
     'http://www.one2onephotography.ca/image/portrait/men/men-images-1.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -815,7 +864,7 @@ VALUES (
     'eduardo',
     '12345',
     'https://upload.wikimedia.org/wikipedia/en/2/28/Deep_Fried_Man_portrait_-_real_name_Daniel_Friedman_-_South_African_Comedian.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -927,7 +976,7 @@ VALUES (
     'mariaisa',
     '12345',
     'http://guildfordphotographer.co.uk/wp-content/uploads/2011/01/lucy.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1040,7 +1089,7 @@ VALUES (
     'carlosal',
     '12345',
     'https://c.stocksy.com/a/3iJ000/z0/75767.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
+   2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1134,7 +1183,7 @@ VALUES (
     'jesusen',
     '12345',
     'http://www.offshoresailing.com/wp-content/uploads/2013/05/photodune-658305-portrait-of-a-good-looking-african-american-business-man-s7-300x247.png',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1228,7 +1277,7 @@ VALUES (
     'gustavoto',
     '12345',
     'http://thumbs.dreamstime.com/x/smiley-man-portrait-11016049.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1322,7 +1371,7 @@ VALUES (
     'jessiale',
     '12345',
     'http://thumbs.dreamstime.com/x/beautiful-woman-portrait-11713329.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1416,7 +1465,7 @@ VALUES (
     'marioale',
     '12345',
     'http://tedslater.com/wp-content/uploads/2010/07/shutterstock_202093444.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1529,7 +1578,7 @@ VALUES (
     'eltercera',
     '12345',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1643,7 +1692,7 @@ VALUES (
     'silfreau',
     '12345',
     'http://marshallmatlock.com/wp-content/gallery/mans-man-jon-hamm/thumbs/thumbs_jon%20hamm%20portrait%20suit.png',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1756,7 +1805,7 @@ VALUES (
     'saulen',
     '12345',
     'http://www4.pictures.zimbio.com/gi/Solitary+Man+Portraits+2009+Toronto+International+kBVOjNQV9rzl.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    4 
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1869,7 +1918,7 @@ VALUES (
     'guilleja',
     '12345',
     'http://previews.123rf.com/images/rido/rido1212/rido121200073/16732489-Closeup-portrait-of-smiling-young-man-isolated-on-white-background-Stock-Photo.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -1982,7 +2031,7 @@ VALUES (
     'pedroleo',
     '12345',
     'https://c2.staticflickr.com/4/3147/3030821516_793151ecc1_z.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2095,7 +2144,7 @@ VALUES (
     'josemiguel',
     '12345',
     'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2208,7 +2257,7 @@ VALUES (
     'maritonieta',
     '12345',
     'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2322,7 +2371,7 @@ VALUES (
     'vickybella',
     '12345',
     'http://pre14.deviantart.net/3404/th/pre/i/2013/181/8/a/portrait_of_beautiful_woman_by_vladimir_serov-d6b67i9.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+     3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2436,7 +2485,7 @@ VALUES (
     'melilie',
     '12345',
     'http://www.noupe.com/wp-content/uploads/2010/01/26-portraits.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2550,7 +2599,7 @@ VALUES (
     'elidocouto',
     '12345',
     'http://www.wallcoo.net/photography/markus-j-grimm_portrait_photography_02/images/Color_portrait_photo_15971497.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2663,7 +2712,7 @@ VALUES (
     'marcosanz',
     '12345',
     'https://pixabay.com/static/uploads/photo/2013/11/20/23/01/man-214200_960_720.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2775,7 +2824,7 @@ VALUES (
     'goyito',
     '12345',
     'https://c1.staticflickr.com/3/2835/9965420034_1b7450e257.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -2889,7 +2938,7 @@ VALUES (
     'armandito',
     '12345',
     'https://pixabay.com/static/uploads/photo/2015/01/16/15/01/man-601560_960_720.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+   2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3002,7 +3051,7 @@ VALUES (
     'ernestof',
     '12345',
     'https://c1.staticflickr.com/3/2222/2088987724_f4f58e7aa7.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3116,7 +3165,7 @@ VALUES (
     'chinitowa',
     '12345',
     'https://pixabay.com/static/uploads/photo/2014/11/19/10/52/man-537136_960_720.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+   4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3229,7 +3278,7 @@ VALUES (
     'martica',
     '12345',
     'http://img.whitezine.com/Thomas-Lavelle-Portrait-Woman.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3342,7 +3391,7 @@ VALUES (
     'elenita',
     '12345',
     'https://pixabay.com/static/uploads/photo/2015/03/04/19/41/woman-659348_960_720.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3456,7 +3505,7 @@ VALUES (
     'neomar',
     '12345',
     'http://digital-art-gallery.com/oid/21/632x833_5536_Alexz_Johnson_portrait_2d_realism_girl_portrait_realistic_beauty_woman_picture_image_digital_art.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3569,7 +3618,7 @@ VALUES (
     'norita',
     '12345',
     'http://hd.wallpaperswide.com/thumbs/beautiful_woman_portrait-t2.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3683,7 +3732,7 @@ VALUES (
     'norita',
     '12345',
     'http://images.fineartamerica.com/images/artworkimages/mediumlarge/1/gorgeous-woman-portrait-anna-omelchenko.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-15403240-9')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3800,7 +3849,7 @@ VALUES (
     'ramirezadmin',
     '12345',
     'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    4
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3879,7 +3928,7 @@ VALUES (
     'suarezadmin',
     '12345',
     'http://www.photographyblogger.net/wp-content/uploads/2013/05/1-jaco-van-den-hoven.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-17280493-1')
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -3958,7 +4007,7 @@ VALUES (
     'torresadmin',
     '12345',
     'http://st.depositphotos.com/1009647/1293/i/950/depositphotos_12933724-Bearded-man.jpg',
-    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
+    3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4021,7 +4070,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen
+	per_imagen,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -4039,7 +4089,8 @@ VALUES (
     1.72,
     'carloadmin',
     '12345',
-	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg'
+	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg',
+	3
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4098,7 +4149,8 @@ INSERT INTO dbo.PERSONA (
     per_peso,
     per_estatura,
 	per_nombre_usuario,
-	per_clave
+	per_clave,
+	DOJO_doj_id
 ) 
 VALUES (
     'CEDULA-N',
@@ -4115,7 +4167,8 @@ VALUES (
     77,
     1.72,
     'rosmanadmin',
-    '12345'
+    '12345',
+    2
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4848,7 +4901,7 @@ INSERT INTO	HISTORIAL_CINTAS	VALUES	(	28	,	NULL	,	'2015-05-20'	,	1	);
 INSERT INTO	HISTORIAL_CINTAS	VALUES	(	29	,	NULL	,	'2015-04-10'	,	1	);
 INSERT INTO	HISTORIAL_CINTAS	VALUES	(	30	,	NULL	,	'2015-03-15'	,	1	);
 INSERT INTO	HISTORIAL_CINTAS	VALUES	(	31	,	NULL	,	'2015-01-27'	,	1	);
-
+INSERT INTO	HISTORIAL_CINTAS	VALUES	(	6	,	NULL	,	'2015-08-21'	,	2	);
 
 
 
@@ -4912,7 +4965,22 @@ INSERT INTO	INSCRIPCION	VALUES	(	26	,	'2015-02-18'	,	NULL	,	1	);
 INSERT INTO	INSCRIPCION	VALUES	(	24	,	'2015-08-22'	,	NULL	,	1	);
 INSERT INTO	INSCRIPCION	VALUES	(	22	,	'2015-09-11'	,	NULL	,	1	);
 INSERT INTO	INSCRIPCION	VALUES	(	17	,	'2015-05-20'	,	NULL	,	1	);
-
+INSERT INTO INSCRIPCION VALUES (6,'2015-02-10',NULL,5); 
+INSERT INTO INSCRIPCION VALUES (6,'2015-04-05',NULL,6); 
+INSERT INTO INSCRIPCION VALUES (6,'2015-05-01',NULL,7); 
+INSERT INTO INSCRIPCION VALUES (6,'2015-07-15',NULL,8); 
+INSERT INTO INSCRIPCION VALUES (6,'2015-07-22',NULL,9); 
+INSERT INTO INSCRIPCION VALUES (6,'2014-02-13',8,NULL); 
+INSERT INTO INSCRIPCION VALUES (6,'2015-09-17',NULL,10); 
+INSERT INTO INSCRIPCION VALUES (6,'2015-09-17',NULL,11);
+INSERT INTO INSCRIPCION VALUES (6,'2015-09-17',NULL,12);
+INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',NULL,13);
+INSERT INTO INSCRIPCION VALUES (6,'2015-10-09',NULL,14);
+INSERT INTO INSCRIPCION VALUES (6,'2015-05-07',NULL,15);
+INSERT INTO INSCRIPCION VALUES (6,'2015-06-17',9,NULL);
+INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',4,4);
+INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',2,10);
+INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',6,7);
 
 
 -- INSERTS SOLICITUD PLANILLA--
@@ -5081,6 +5149,22 @@ INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',7);
 
 INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',8);
 
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-09-17','PAGADO',6);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Deposito','2015-07-10','PAGADO',6); 
+
+INSERT INTO COMPRA_CARRITO VALUES ('Transferencia','2015-10-09','PAGADO',6); 
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2016-05-07','PAGADO',6);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-04-10','PAGADO',6);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-03-11','CARRITO',6);
+
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-03-18','PAGADO',6);
+ 
+INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-03-10','CARRITO',6);
+
 /*-------------------------------------------------------------------------*/
 
 /*------------------------------DETALLE_COMPRA-----------------------------*/
@@ -5101,7 +5185,30 @@ INSERT INTO DETALLE_COMPRA VALUES (7,1150,1,NULL,NULL,NULL,3,NULL);
 
 INSERT INTO DETALLE_COMPRA VALUES (8,4500,5,NULL,NULL,3,NULL,NULL);
 
+INSERT INTO DETALLE_COMPRA VALUES (9,0,1,NULL,NULL,NULL,10,NULL); 
+
+INSERT INTO DETALLE_COMPRA VALUES (9,0,1,NULL,NULL,NULL,11,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (9,0,1,NULL,NULL,NULL,12,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (10,1000,1,NULL,NULL,NULL,13,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (11,3000,1,NULL,NULL,NULL,14,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (12,1200,1,NULL,NULL,NULL,15,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,3,6,NULL,2,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (7,1200,1,3,6,NULL,13,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (6,1200,1,3,6,NULL,14,NULL);
+
 /*-------------------------------------------------------------------------*/
 
 
 /*=======================================================================================*/
+
+
+update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
+
+    
