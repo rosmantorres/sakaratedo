@@ -12,7 +12,7 @@ namespace DominioSKD
         private int id_historial_matricula;
         private DateTime fecha_historial_matricula;
         private string modalidad_historial_matricula;
-        private int monto_historial_matricula;
+        private float monto_historial_matricula;
         private int dojoId_historial_matricula;
         private String dojoNombre_historial_matricula;
 
@@ -34,7 +34,7 @@ namespace DominioSKD
             get { return dojoNombre_historial_matricula; }
             set { dojoNombre_historial_matricula = value; }
         }
-        public int Monto_historial_matricula
+        public float Monto_historial_matricula
         {
             get { return monto_historial_matricula; }
             set { monto_historial_matricula = value; }

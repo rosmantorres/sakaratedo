@@ -61,6 +61,15 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;option value=&quot;.
+        /// </summary>
+        internal static string AbrirOpcion {
+            get {
+                return ResourceManager.GetString("AbrirOpcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;td&gt;.
         /// </summary>
         internal static string AbrirTD {
@@ -160,6 +169,15 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &quot; &gt;.
+        /// </summary>
+        internal static string CentroOpcion {
+            get {
+                return ResourceManager.GetString("CentroOpcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/td&gt;.
         /// </summary>
         internal static string CerrarTD {
@@ -183,6 +201,51 @@ namespace templateApp.GUI.Modulo4 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/option&gt;.
+        /// </summary>
+        internal static string CierreOpcion {
+            get {
+                return ResourceManager.GetString("CierreOpcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a                            &lt;/select&gt;            
+        ///                        &lt;/div&gt;
+        ///                        
+        ///                        &lt;br/&gt;.
+        /// </summary>
+        internal static string comboCerrar {
+            get {
+                return ResourceManager.GetString("comboCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;form-group col-sm-10 col-md-10 col-lg-10&quot;&gt;
+        ///                            &lt;h3&gt;Dojo:&lt;/h3&gt;
+        ///                            &lt;select name=&quot;comboDojo&quot; id=&quot;comboDojo&quot; class=&quot;form-control&quot; runat=&quot;server&quot;&gt;
+        ///                                .
+        /// </summary>
+        internal static string comboDojoInicio {
+            get {
+                return ResourceManager.GetString("comboDojoInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;form-group col-sm-10 col-md-10 col-lg-10&quot;&gt;
+        ///                            &lt;h3&gt;Organización:&lt;/h3&gt;
+        ///                            &lt;select name=&quot;comboOrg&quot; id=&quot;comboOrg&quot; class=&quot;form-control&quot; runat=&quot;server&quot;&gt;
+        ///                                .
+        /// </summary>
+        internal static string comboOrganizacionInicio {
+            get {
+                return ResourceManager.GetString("comboOrganizacionInicio", resourceCulture);
             }
         }
         
@@ -228,6 +291,15 @@ namespace templateApp.GUI.Modulo4 {
         internal static string MedioAspSelect {
             get {
                 return ResourceManager.GetString("MedioAspSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }

@@ -15,6 +15,49 @@ namespace DatosSKD.Modulo4
 {
     public class BDHistorial_Matricula
     {
+        public static bool AgregarHistorialMatricula(Historial_Matricula elHistMat, Dojo elHDojo)
+        {
+            try
+            {
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro elParametro = new Parametro(RecursosBDModulo4.ParametroFechaVigenteHistorial, SqlDbType.DateTime,
+                    elHistMat.Fecha_historial_matricula.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo4.ParametroModalidad, SqlDbType.VarChar,
+                    elHistMat.Modalidad_historial_matricula.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo4.ParametroMontoMatricula, SqlDbType.VarChar,
+                    elHistMat.Monto_historial_matricula.ToString(), false);
+                parametros.Add(elParametro);
+
+                BDConexion laConexion = new BDConexion();
+                laConexion.EjecutarStoredProcedure(RecursosBDModulo4.AgregarHistorialMatricula, parametros);
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosBDModulo4.Codigo_Error_Formato,
+                        RecursosBDModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
         public static List<Historial_Matricula> ListarMatriculas(int IdDojo)
         {
             BDConexion laConexion;

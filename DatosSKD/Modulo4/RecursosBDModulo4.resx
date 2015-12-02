@@ -246,4 +246,61 @@
   <data name="EliminarDojo" xml:space="preserve">
     <value>M4_EliminarDojo</value>
   </data>
+  <data name="AgregarDojo" xml:space="preserve">
+    <value>M4_AgregarDojo</value>
+  </data>
+  <data name="AgregarHistorialMatricula" xml:space="preserve">
+    <value>M4_AgregarHistorialMatricula</value>
+  </data>
+  <data name="BuscarRifDojo" xml:space="preserve">
+    <value>M4_BuscarRifDojo</value>
+  </data>
+  <data name="ParametroDireccion" xml:space="preserve">
+    <value>Direccion</value>
+  </data>
+  <data name="ParametroEmailDojo" xml:space="preserve">
+    <value>Email_dojo</value>
+  </data>
+  <data name="ParametroFechaRegistro" xml:space="preserve">
+    <value>fecha_reg_dojo</value>
+  </data>
+  <data name="ParametroFechaVigenteHistorial" xml:space="preserve">
+    <value>vigencia_historial</value>
+  </data>
+  <data name="ParametroLatitud" xml:space="preserve">
+    <value>Latitud</value>
+  </data>
+  <data name="ParametroLogoDojo" xml:space="preserve">
+    <value>Logo_dojo</value>
+  </data>
+  <data name="ParametroLongitud" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="ParametroModalidad" xml:space="preserve">
+    <value>modalidad_matricula</value>
+  </data>
+  <data name="ParametroMontoMatricula" xml:space="preserve">
+    <value>monto_matricula</value>
+  </data>
+  <data name="ParametroNombreCiudad" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="ParametroNombreDojo" xml:space="preserve">
+    <value>Nombre_dojo</value>
+  </data>
+  <data name="ParametroNombreEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="ParametroRifDojo" xml:space="preserve">
+    <value>Rif_dojo</value>
+  </data>
+  <data name="ParametroStatusDojo" xml:space="preserve">
+    <value>Status_dojo</value>
+  </data>
+  <data name="ParametroTelefonoDojo" xml:space="preserve">
+    <value>Telefono_dojo</value>
+  </data>
+  <data name="ParamRifDojo" xml:space="preserve">
+    <value>@rifDojo</value>
+  </data>
 </root>

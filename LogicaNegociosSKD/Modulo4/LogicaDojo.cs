@@ -25,8 +25,33 @@ namespace LogicaNegociosSKD.Modulo4
         #endregion
 
         #region Metodos Logica
+
         public LogicaDojo()
         {
+        }
+
+        public bool agregarDojo(DominioSKD.Dojo elDojo, DominioSKD.Historial_Matricula elHistorial, DominioSKD.Ubicacion laUbicacion)
+        {
+            try
+            {
+                return BDDojo.AgregarDojo(elDojo, elHistorial, laUbicacion);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.DojoExistenteException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
         }
 
         public List<DominioSKD.Dojo> obtenerListaDeDojos()

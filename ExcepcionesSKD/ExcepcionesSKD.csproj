@@ -57,7 +57,9 @@
     <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
+    <Compile Include="Modulo4\DojoRepetidoException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo4\HistorialRepetidoException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

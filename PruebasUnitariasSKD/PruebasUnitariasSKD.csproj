@@ -53,7 +53,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo12\PruebaBDCompetencias.cs" />
     <Compile Include="Modulo12\RecursosPU_Mod12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,7 +78,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\Prueba.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

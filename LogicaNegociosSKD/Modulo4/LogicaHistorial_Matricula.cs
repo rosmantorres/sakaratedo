@@ -72,7 +72,7 @@ namespace LogicaNegociosSKD.Modulo4
             }
 
         }
- #endregion
+
 
         public int obtenerDojoPersona(int idusuario)
         {
@@ -115,5 +115,25 @@ namespace LogicaNegociosSKD.Modulo4
                 throw ex;
             }
         }
+        public bool agregarHistorialMatricula(DominioSKD.Historial_Matricula elHistMat, DominioSKD.Dojo elDojoHM)
+        {
+            try
+            {
+                return BDHistorial_Matricula.AgregarHistorialMatricula(elHistMat, elDojoHM);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
     }
 }
