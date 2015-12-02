@@ -110,7 +110,7 @@ namespace templateApp.GUI.Modulo14
              catch (Exception ex)
              {
                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 throw ex;
+                 //throw ex;
              }
         }
 
