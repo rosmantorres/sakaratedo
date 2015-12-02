@@ -54,9 +54,17 @@ namespace LogicaNegociosSKD.Modulo7
                 {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosEvento = new BDEvento();
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDEvento baseDeDatosEvento = new BDEvento();
                     return baseDeDatosEvento.ListarHorarioPractica(idPersona);
                 }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+            }
             catch (ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -97,9 +105,17 @@ namespace LogicaNegociosSKD.Modulo7
                 {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDEvento baseDeDatosEvento = new BDEvento();
+                if (idEvento.GetType() == Type.GetType("System.Int32") && idEvento > 0)
+                {
+                    BDEvento baseDeDatosEvento = new BDEvento();
                     return baseDeDatosEvento.DetallarEvento(idEvento);
                 }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+            }
             catch (ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);

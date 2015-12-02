@@ -47,8 +47,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDMatricula baseDeDatosMatricula = new BDMatricula();
-                return baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDMatricula baseDeDatosMatricula = new BDMatricula();
+                    return baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -91,9 +99,17 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
-                return baseDeDatosDetalleCompra.MatriculaID(idPersona);
-                    
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
+                    return baseDeDatosDetalleCompra.MatriculaID(idPersona);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -136,8 +152,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
-                return baseDeDatosDetalleCompra.EstadoMatricula(idPersona);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
+                    return baseDeDatosDetalleCompra.EstadoMatricula(idPersona);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
 
             }
             catch (ExceptionSKDConexionBD ex)
@@ -182,8 +206,17 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
-                return baseDeDatosDetalleCompra.montoPagoMatricula(idPersona, idMatricula);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0 &&
+                    idMatricula.GetType() == Type.GetType("System.Int32") && idMatricula > 0)
+                {
+                    BDMatricula baseDeDatosDetalleCompra = new BDMatricula();
+                    return baseDeDatosDetalleCompra.montoPagoMatricula(idPersona, idMatricula);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -226,8 +259,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDMatricula baseDeDatosMatricula = new BDMatricula();
-                return baseDeDatosMatricula.DetallarMatricula(idMatricula);
+                if (idMatricula.GetType() == Type.GetType("System.Int32") && idMatricula > 0)
+                {
+                    BDMatricula baseDeDatosMatricula = new BDMatricula();
+                    return baseDeDatosMatricula.DetallarMatricula(idMatricula);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {

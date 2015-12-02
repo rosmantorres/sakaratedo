@@ -29,8 +29,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDOrganizacion baseDeDatosOrganizacion = new BDOrganizacion();
-                return baseDeDatosOrganizacion.DetallarOrganizacion(idOrg);
+                if (idOrg.GetType() == Type.GetType("System.Int32") && idOrg > 0)
+                {
+                    BDOrganizacion baseDeDatosOrganizacion = new BDOrganizacion();
+                    return baseDeDatosOrganizacion.DetallarOrganizacion(idOrg);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -72,8 +80,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDDojo baseDeDatosDojo = new BDDojo();
-                return baseDeDatosDojo.DetallarDojo(idDojo);
+                if (idDojo.GetType() == Type.GetType("System.Int32") && idDojo > 0)
+                {
+                    BDDojo baseDeDatosDojo = new BDDojo();
+                    return baseDeDatosDojo.DetallarDojo(idDojo);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -115,8 +131,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDPersona baseDeDatosPersona = new BDPersona();
-                return baseDeDatosPersona.DetallarPersona(idPersona);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDPersona baseDeDatosPersona = new BDPersona();
+                    return baseDeDatosPersona.DetallarPersona(idPersona);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {

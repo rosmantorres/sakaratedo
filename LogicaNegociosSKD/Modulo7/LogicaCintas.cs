@@ -52,8 +52,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDCinta baseDeDatosCinta = new BDCinta();
-                return baseDeDatosCinta.ListarCintasObtenidas(idPersona);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDCinta baseDeDatosCinta = new BDCinta();
+                    return baseDeDatosCinta.ListarCintasObtenidas(idPersona);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -94,8 +102,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                    RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDCinta baseDeDatosCinta = new BDCinta();
-                return baseDeDatosCinta.DetallarCinta(idCinta);
+                if (idCinta.GetType() == Type.GetType("System.Int32") && idCinta > 0)
+                {
+                    BDCinta baseDeDatosCinta = new BDCinta();
+                    return baseDeDatosCinta.DetallarCinta(idCinta);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -138,8 +154,17 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                    RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDCinta baseDeDatosCinta = new BDCinta();
-                return baseDeDatosCinta.fechaCinta(idPersona, idCinta);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0 &&
+                    idCinta.GetType() == Type.GetType("System.Int32") && idCinta > 0)
+                {
+                    BDCinta baseDeDatosCinta = new BDCinta();
+                    return baseDeDatosCinta.fechaCinta(idPersona, idCinta);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
@@ -181,8 +206,16 @@ namespace LogicaNegociosSKD.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                    RecursosLogicaModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDCinta baseDeDatosCinta = new BDCinta();
-                return baseDeDatosCinta.UltimaCinta(idPersona);
+                if (idPersona.GetType() == Type.GetType("System.Int32") && idPersona > 0)
+                {
+                    BDCinta baseDeDatosCinta = new BDCinta();
+                    return baseDeDatosCinta.UltimaCinta(idPersona);
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosLogicaModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosLogicaModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
             }
             catch (ExceptionSKDConexionBD ex)
             {
