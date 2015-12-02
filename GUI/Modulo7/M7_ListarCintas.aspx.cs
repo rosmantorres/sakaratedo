@@ -8,6 +8,8 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
+using ExcepcionesSKD.Modulo7;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -52,24 +54,38 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
                             laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            foreach (Cinta cinta in laLista)
+                            if (laLista != null)
                             {
-                                fechaInscripcion = logEvento.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), cinta.Id_cinta);
-                                this.laTabla.Text += M7_Recursos.AbrirTR;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Clasificacion.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD;
-                                this.laTabla.Text += M7_Recursos.BotonInfoCintas + cinta.Id_cinta + M7_Recursos.BotonCerrar;
-                                this.laTabla.Text += M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.CerrarTR;
+                                foreach (Cinta cinta in laLista)
+                                {
+                                    fechaInscripcion = logEvento.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), cinta.Id_cinta);
+                                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Clasificacion.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                                    this.laTabla.Text += M7_Recursos.BotonInfoCintas + cinta.Id_cinta + M7_Recursos.BotonCerrar;
+                                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.CerrarTR;
+                                }
+                            }
+                            else
+                            {
+                                throw new ListaNulaException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
                             }
 
                         }
+                        catch (ListaNulaException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
                         catch (Exception ex)
                         {
-                            throw ex;
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
                 }
@@ -81,6 +97,8 @@ namespace templateApp.GUI.Modulo7
             }
             catch (NullReferenceException ex)
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
 
             #endregion

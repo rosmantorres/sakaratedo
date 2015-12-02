@@ -8,6 +8,8 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
+using ExcepcionesSKD.Modulo7;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -28,76 +30,87 @@ namespace templateApp.GUI.Modulo7
             float monto;
             int id;
             Boolean estado;
-
             String detalleString = Request.QueryString["eventDetalle"];
-
-            if (detalleString != null)
-            {
-                llenarModalInfo(int.Parse(detalleString));
-            }
 
             #region Llenar Data Table con Matriculas
             LogicaMatriculasPagas logMatricula = new LogicaMatriculasPagas();
 
-            if (!IsPostBack)
+            try
             {
-                try
+                String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
                 {
-                    laLista = logMatricula.obtenerListaDeMatriculas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-
-                    foreach (Matricula matricula in laLista)
-                    {
-                        String estadoFinal;
-                        id = logMatricula.obtenerIdMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                        monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), id);
-                        estado = logMatricula.obtenerEstado(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                        if (estado == true)
-                        {
-                            estadoFinal = "Activa";
-                        }
-                        else
-                        {
-                            estadoFinal = "No Activa";
-
-                        }
-
-                        this.laTabla.Text += M7_Recursos.AbrirTR;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Identificador.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + estadoFinal + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.AbrirTD;
-                        this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.ID + M7_Recursos.BotonCerrar;
-                        this.laTabla.Text += M7_Recursos.CerrarTD;
-                        this.laTabla.Text += M7_Recursos.CerrarTR;
-                    }
-
+                    if (rol == rolUsuario)
+                        permitido = true;
                 }
-                catch (Exception ex)
+                if (permitido)
                 {
-                    throw ex;
+                    if (!IsPostBack)
+                    {
+                        try
+                        {
+                            laLista = logMatricula.obtenerListaDeMatriculas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                            if (laLista != null)
+                            {
+                                foreach (Matricula matricula in laLista)
+                                {
+                                    String estadoFinal;
+                                    id = logMatricula.obtenerIdMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                                    monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), id);
+                                    estado = logMatricula.obtenerEstado(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                                    if (estado == true)
+                                    {
+                                        estadoFinal = "Activa";
+                                    }
+                                    else
+                                    {
+                                        estadoFinal = "No Activa";
+                                    }
+                                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Identificador.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + estadoFinal + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                                    this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.ID + M7_Recursos.BotonCerrar;
+                                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.CerrarTR;
+                                }
+                            }
+                            else
+                            {
+                                throw new ListaNulaException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
+                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
+                            }
+                        }
+                        catch (ListaNulaException ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        }
+                    }
+                }
+                else
+                {
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 }
             }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
         }
-
-        /// <summary>
-        /// Método que llena el modal con la información de matricula
-        /// </summary>
-        /// <param name="idEvento">Número entero que representa el ID de la matricula</param>
-        protected void llenarModalInfo(int idMatricula)
-        {
-            Matricula matricula = new Matricula();
-            LogicaMatriculasPagas logica = new LogicaMatriculasPagas();
-            matricula = logica.detalleMatriculaID(idMatricula);
-        }
-
     }
             #endregion
-
-
-
-
         #endregion
-
 }

@@ -362,11 +362,10 @@ namespace DatosSKD.Modulo7
                  foreach (DataRow row in dt.Rows)
                  {
                       Matricula matricula = new Matricula();
+                      //matricula.ID = int.Parse(row[RecursosBDModulo7.AliasIdMatricula].ToString());
                       matricula.Identificador = row[RecursosBDModulo7.AliasIdentificadorMatricula].ToString();
-                      //matricula.Estado = Boolean.Parse(row[RecursosBDModulo7.AliasEstadoMatricula].ToString());
                       matricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo7.AliasFechaPagoMatricula].ToString());
                       matricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo7.AliasFechaUltimoPagoMatricula].ToString());
-                      //matricula.Monto= float.Parse(row[RecursosBDModulo7.AliasMontoMatricula].ToString());
                       laListaDeMatriculaPaga.Add(matricula);
                  }
 

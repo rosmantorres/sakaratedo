@@ -889,18 +889,18 @@ namespace DatosSKD.Modulo7
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Competencia competencia = new Competencia();
-
-                    competencia.Nombre = row[RecursosBDModulo7.AliasCompetenciaNombre].ToString();
-                    if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
-                        competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKata;
-                    else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(2))
-                        competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKumite;
-                    else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(3))
-                        competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
-                    competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
-                    competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
-                    laListaDeCompetenciasPagas.Add(competencia);
+                        Competencia competencia = new Competencia();
+                        competencia.Id_competencia = int.Parse(row[RecursosBDModulo7.AliasIdCompetencia].ToString());
+                        competencia.Nombre = row[RecursosBDModulo7.AliasCompetenciaNombre].ToString();
+                        if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
+                            competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKata;
+                        else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(2))
+                            competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKumite;
+                        else if (int.Parse(row[RecursosBDModulo7.AliasCompetenciaTipo].ToString()).Equals(3))
+                            competencia.TipoCompetencia = RecursosBDModulo7.AliasCompetenciaKataKumite;
+                        competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo7.AliasCompetenciaFechaInicio].ToString());
+                        competencia.Costo = int.Parse(row[RecursosBDModulo7.AliasCompetenciaCosto].ToString());
+                        laListaDeCompetenciasPagas.Add(competencia);
                  }
                 }
                else
