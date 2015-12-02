@@ -57,8 +57,8 @@
 				<tr>
                     <th>ID</th>
 					<th>Evento</th>
-                    <th>Tipo</th>
-					<th>Fecha</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>					
                     <th>Locación</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
