@@ -55,7 +55,21 @@ namespace templateApp.GUI.Modulo15
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+              try
+            {
+                String rolUsuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
+                {
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
+                    //Aqui va su codigo
+           
            
             ((SKD)Page.Master).IdModulo = "15";
             String success = Request.QueryString["success"];
@@ -102,6 +116,18 @@ namespace templateApp.GUI.Modulo15
             }
 
 
+                }
+                else
+                {
+                    Response.Redirect(templateApp.GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
+                }
+
+            }
+              catch (NullReferenceException ex)
+              {
+
+
+              }
         }
     }
 }
