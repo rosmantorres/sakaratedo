@@ -48,7 +48,7 @@ namespace templateApp.GUI.Modulo10
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + evento.Id_evento.ToString() + M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + evento.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + String.Format("{0:dd/MM/yyyy}", evento.Horario.FechaInicio) + M10_RecursosInterfaz.CerrarTD;
-                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + evento.TipoEvento.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
+                        this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + M10_RecursosInterfaz.Evento + " " + evento.TipoEvento.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
 
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
                         this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
