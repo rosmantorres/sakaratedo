@@ -18,6 +18,8 @@ namespace templateApp.GUI.Modulo14
         {
             ((SKD)Page.Master).IdModulo = "14";
              if (!IsPostBack){
+                 try
+                 {
                int idPlanilla = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idPlan]);
                this.id_planilla.Value = idPlanilla.ToString(); 
                  id_planilla.Visible = false;
@@ -60,11 +62,45 @@ namespace templateApp.GUI.Modulo14
                      labelCompetencia.Visible = false;
                      
                  }
+             }
+                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                 {
+                     Alerta(ex.Message);
+                 }
+                 catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+                 {
+                     Alerta(ex.Message);
+                 }
+                 catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+                 {
+                     Alerta(ex.Message);
+                 }
+                 catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+                 {
+                     Alerta(ex.Message);
+                 }
+                 catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+                 {
+                     Alerta(ex.Message);
+                 }
+                 catch (NullReferenceException ex)
+                 {
+                     Alerta(ex.Message);
+                 }
+                 catch (Exception ex)
+                 {
+                     Alerta(ex.Message);
+                 }
                
              }
         }
 
-
+        public void Alerta(string msj)
+        {
+            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+            alert.Attributes["role"] = "alert";
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
         protected void llenarComboEventos()
         {
 

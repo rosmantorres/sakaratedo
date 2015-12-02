@@ -13,6 +13,15 @@ namespace templateApp.GUI.Modulo14 {
     public partial class SolicitudPlanilla {
         
         /// <summary>
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// Control solicitud_planilla.
         /// </summary>
         /// <remarks>

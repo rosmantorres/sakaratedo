@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo14;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo14
 {
@@ -59,12 +60,42 @@ namespace templateApp.GUI.Modulo14
 
                 }
             }
-            catch (Exception exce)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                string a = exce.Message;
-                //HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
             }
 
+        }
+
+        public void Alerta(string msj)
+        {
+            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+            alert.Attributes["role"] = "alert";
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
         protected void btnguardar_Click(object sender, EventArgs e)
@@ -98,9 +129,34 @@ namespace templateApp.GUI.Modulo14
                 }
 
             }
-            catch (Exception exce)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                string a = exce.Message;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 if (CKEditor1.Text != "")
                 {
                     exito = logica.AgregarDiseño(diseño, planilla1);
@@ -117,6 +173,7 @@ namespace templateApp.GUI.Modulo14
                         alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MsjErrorNoGuardada + "</div>";
                     }
                 }
+                throw ex;
             }
         }
 

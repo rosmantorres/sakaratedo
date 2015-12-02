@@ -9,6 +9,7 @@ using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using templateApp.GUI.Master;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo14
 {
@@ -35,27 +36,82 @@ namespace templateApp.GUI.Modulo14
                     MostrarInformacion();
                 }
             }
-            catch (Exception exce)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                string a = exce.Message;
-                //HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
+                Alerta(ex.Message);
             }
-            MostrarInformacion();
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
+            }
+            //MostrarInformacion();
+        }
+
+        public void Alerta(string msj)
+        {
+            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+            alert.Attributes["role"] = "alert";
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
         public void MostrarInformacion()
         {
-            // try
-            // {
+             try
+             {
             DominioSKD.Diseño diseño = logica.ConsultarDiseño(idPlanilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]), idIns, idSolicitud);
             contenido = diseño.Contenido;
             this.informacion.Text = contenido;
-            /*}
-            catch (Exception ex)
-            {
-                string error= ex.Message;
-                Response.Redirect("M14_ConsultarPlanillas.aspx");
-            }*/
+            }
+             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 throw ex;
+             }
+             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 throw ex;
+             }
+             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 throw ex;
+             }
+             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 throw ex;
+             }
+             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 throw ex;
+             }
+             catch (Exception ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 throw ex;
+             }
         }
 
         protected void imprimir_Click(object sender, EventArgs e)
@@ -65,35 +121,24 @@ namespace templateApp.GUI.Modulo14
             try
             {
                 PdfWriter.GetInstance(pdfDoc, System.Web.HttpContext.Current.Response.OutputStream);
-
-                //Open PDF Document to write data 
                 pdfDoc.Open();
 
 
                 string cadenaFinal = contenido;
                 string path = Server.MapPath("img/Carnet_titulo.jpg");
-                /*if (contenido.Contains("<img src='img/perfil.jpg' Height='80' Width='90'/>"))
-                {
-                    string path1 = Server.MapPath("img/perfil.jpg");
-                    contenido.Replace("<img src='img/perfil.jpg' Height='80' Width='90'/>", "<img src='" + path1 + "' Height='80' Width='90'/>");
-                }*/
+
                 string encabezado = "<img src='" + path + "' Height='48' Width='570'/><br/><br/>";
-                //Assign Html content in a string to write in PDF 
+
                 string strContent = encabezado + cadenaFinal;
 
-                //Read string contents using stream reader and convert html to parsed conent 
                 var parsedHtmlElements = HTMLWorker.ParseToList(new StringReader(strContent), null);
 
-                //Get each array values from parsed elements and add to the PDF document 
                 foreach (var htmlElement in parsedHtmlElements)
                     pdfDoc.Add(htmlElement as IElement);
-
-                //Close your PDF 
                 pdfDoc.Close();
 
                 Response.ContentType = "application/pdf";
 
-                //Set default file Name as current datetime 
                 Response.AddHeader("content-disposition", "attachment; filename=" + this.NombrePanilla.Text + ".pdf");
                 System.Web.HttpContext.Current.Response.Write(pdfDoc);
 
@@ -101,9 +146,34 @@ namespace templateApp.GUI.Modulo14
                 Response.End();
 
             }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
             catch (Exception ex)
             {
-                Response.Write(ex.ToString());
+                Alerta(ex.Message);
+                //Response.Write(ex.ToString());
             }
         }
 

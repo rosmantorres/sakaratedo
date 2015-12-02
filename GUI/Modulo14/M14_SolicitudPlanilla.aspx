@@ -29,7 +29,8 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
    <!-- general form elements -->
- 
+     <div id="alert" runat="server">
+    </div>
      <div class="row">
    <div class="col-xs-12">
      <div class="box">
