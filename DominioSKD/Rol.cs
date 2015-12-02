@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-
     public class Rol
     {
         #region atributos
@@ -43,28 +42,42 @@ namespace DominioSKD
         #endregion
 
         #region constructores
-         public Rol()
+        /// <summary>
+        /// constructor sin parametros de rol
+        /// </summary>
+        public Rol()
         {
-            id_rol  = 0;
+            id_rol = 0;
             nombre = "";
             descripcion = "";
-            fecha_creacion =new DateTime();
+            fecha_creacion = new DateTime();
         }
-
-                public Rol(int  elId, String elNombre, String laDescripcion, DateTime laFecha)
+        /// <summary>
+        /// constructor con parametros de rol
+        /// </summary>
+        /// <param name="elId"> el id del rol</param>
+        /// <param name="elNombre">el nombre del rol</param>
+        /// <param name="laDescripcion"> la descripcion del rol</param>
+        /// <param name="laFecha">la fecha en que fue creado el rol</param>
+        public Rol(int elId, String elNombre, String laDescripcion, DateTime laFecha)
         {
             id_rol = elId;
             nombre = elNombre;
             descripcion = laDescripcion;
             fecha_creacion = laFecha;
         }
-
-                public Rol(int elId, String elNombre, String laDescripcion)
-                {
-                    id_rol = elId;
-                    nombre = elNombre;
-                    descripcion = laDescripcion;
-                }
+        /// <summary>
+        /// constructor numero 3 de rol el cual recibe algunos parametros
+        /// </summary>
+        /// <param name="elId">el id del rol</param>
+        /// <param name="elNombre">el nombre del rol</param>
+        /// <param name="laDescripcion">la descripcion del rol </param>
+        public Rol(int elId, String elNombre, String laDescripcion)
+        {
+            id_rol = elId;
+            nombre = elNombre;
+            descripcion = laDescripcion;
+        }
         #endregion
     }
 }
