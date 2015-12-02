@@ -6,22 +6,18 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-
     public class Cuenta
     {
         #region atributos
-        private int id_usuario;
         private String nombre_usuario;
         private String contrasena;
+        private PersonaM1 personaUsuario;
         private List<Rol> roles;
+        private String imagen;
         #endregion
 
         #region propiedades
-        public int Id_usuario
-        {
-            get { return id_usuario; }
-            set { id_usuario = value; }
-        }
+
 
         public String Nombre_usuario
         {
@@ -34,34 +30,64 @@ namespace DominioSKD
             get { return contrasena; }
             set { contrasena = value; }
         }
-        #endregion
+
+        public String Imagen
+        {
+            get { return imagen; }
+            set { imagen = value; }
+        }
 
         public List<Rol> Roles
         {
             get { return roles; }
             set { roles = value; }
         }
-
-        #region constructores
-         public Cuenta()
+        public PersonaM1 PersonaUsuario
         {
-            id_usuario = 0;
+            get { return personaUsuario; }
+            set { personaUsuario = value; }
+        }
+        #endregion
+        #region constructores
+        /// <summary>
+        /// constructor numero 1 de cuenta el cual no recibe   parametros
+        /// </summary>
+        public Cuenta()
+        {
             nombre_usuario = "";
             contrasena = "";
+            imagen = "";
+            personaUsuario = new PersonaM1();
         }
-
-         public Cuenta(int elIdUsuario, String elNombreUsuario, String laContrasena)
+        /// <summary>
+        /// constructor numero 2 de cuenta el cual recibe  parametros
+        /// </summary>
+        /// <param name="elNombreUsuario"> el nombre del usuario</param>
+        /// <param name="laContrasena">la contraseña del usuario</param>
+        /// <param name="laImagen">la imagen del usuario</param>
+        /// <param name="elNombreDePila">nombre de pila</param>
+        /// 
+        public Cuenta(PersonaM1 Usuario, String elNombreUsuario, String laContrasena, String laImagen, string elNombreDePila)
         {
-            id_usuario = elIdUsuario;
+            personaUsuario = Usuario;
             nombre_usuario = elNombreUsuario;
             contrasena = laContrasena;
+            imagen = laImagen;
         }
-         public Cuenta(String elNombreUsuario, String laContrasena,List<Rol> listaRoles)
-         {
-             nombre_usuario = elNombreUsuario;
-             contrasena = laContrasena;
-             roles = listaRoles;
-         }
+        /// <summary>
+        /// constructor numero 3 de cuenta el cual recibe mas parametros
+        /// </summary>
+        /// <param name="elNombreUsuario"> el nombre del usuario</param>
+        /// <param name="laContrasena">la contraseña del usuario</param>
+        /// <param name="listaRoles">lsita de los roles a los cuales pertenece el usuario</param>
+        /// <param name="laImagen">la imagen del usuario</param>
+        public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen)
+        {
+            nombre_usuario = elNombreUsuario;
+            contrasena = laContrasena;
+            roles = listaRoles;
+            imagen = laImagen;
+        }
 
         #endregion
     }
