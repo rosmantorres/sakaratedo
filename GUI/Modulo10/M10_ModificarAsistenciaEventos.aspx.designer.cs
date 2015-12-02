@@ -22,22 +22,13 @@ namespace templateApp.GUI.Modulo10 {
         protected global::System.Web.UI.HtmlControls.HtmlForm modificar_asistencia;
         
         /// <summary>
-        /// fechaEvento control.
+        /// calendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaEvento;
-        
-        /// <summary>
-        /// nombreEvento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreEvento;
+        protected global::System.Web.UI.WebControls.Calendar calendar;
         
         /// <summary>
         /// listaNoAsistieron control.

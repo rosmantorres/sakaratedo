@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -23,6 +24,7 @@ namespace templateApp.GUI.Modulo10
                 listaNoAsistieron.Items.Add("atleta6");
                 listaNoAsistieron.Items.Add("atleta7");
                 listaNoAsistieron.Items.Add("atleta8");
+                calendar.VisibleDate = new DateTime(2014, 4, 1);
             }
         }
 
@@ -60,6 +62,15 @@ namespace templateApp.GUI.Modulo10
         protected void bCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("M10_ListarAsistenciaEventos.aspx");
+        }
+
+        protected void calendar_DayRender(object sender, DayRenderEventArgs e)
+        {
+            DateTime fecha = DateTime.Parse("2014-04-01");
+            if (e.Day.IsSelected)
+                e.Cell.BackColor = Color.Red;
+            else if (e.Day.Date == fecha)
+                e.Cell.BackColor = Color.Blue;
         }
     }
 }

@@ -47,12 +47,10 @@
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
      <!--Date picker FECHA-->
-    <div class="form-group col-sm-10 col-md-10 col-lg-10">
-        <br />
-        <h3>Fecha del Evento:</h3>
-        <asp:TextBox ID="fechaEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
-        <h3>Evento:</h3>
-        <asp:TextBox ID="nombreEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+   <div class="form-group col-sm-10 col-md-10 col-lg-10">
+       <br />
+       <h3>Fecha del Evento:</h3>
+       <asp:Calendar ID="calendar" runat="server" OnDayRender="calendar_DayRender" Enabled="false"></asp:Calendar>
    </div>
  
     <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
