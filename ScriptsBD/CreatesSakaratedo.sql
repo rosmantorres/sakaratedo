@@ -2804,12 +2804,8 @@ AS
         imp_stockmin,
         inv_cantidad_total,
         imp_estatus,
-        imp_descripcion,
-        DOJO_doj_id 
-          FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
-    WHERE imp.imp_estatus != 'Inactivo'
-    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
-    AND      INV.DOJO_doj_id= DOJ.doj_id
+        imp_descripcion
+          FROM  IMPLEMENTO 
   END
 
 GO

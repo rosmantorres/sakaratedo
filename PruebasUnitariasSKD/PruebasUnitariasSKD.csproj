@@ -70,6 +70,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo15\PruebaDatos.cs" />
+    <Compile Include="Modulo15\PruebaInterfaz.cs" />
+    <Compile Include="Modulo15\PruebaLogica.cs" />
     <Compile Include="Modulo15\RecursosPU_Mod15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,6 +145,10 @@
     <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaz.csproj">
+      <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
+      <Name>Interfaz</Name>
     </ProjectReference>
     <ProjectReference Include="..\LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
