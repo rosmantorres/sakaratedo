@@ -97,8 +97,8 @@ namespace LogicaNegociosSKD.Modulo14
         {
             if (persona != null)
             {
-                info = info.Replace(RecursosLogicaModulo14.PerImagen, RecursosLogicaModulo14.ImageSRC +
-                    persona.Alergias + RecursosLogicaModulo14.MedidasImagen);
+                info = info.Replace(RecursosLogicaModulo14.PerImagen, "<img src=" +
+                    persona.Alergias + "Height='80' Width='90'/>");
                 info = info.Replace(RecursosLogicaModulo14.PerNombre, persona.Nombre);
                 info = info.Replace(RecursosLogicaModulo14.PerApellido, persona.Apellido);
                 info = info.Replace(RecursosLogicaModulo14.PerNumDocId, persona.DocumentoID.Numero.ToString());

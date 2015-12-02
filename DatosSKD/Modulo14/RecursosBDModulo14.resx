@@ -503,4 +503,7 @@
   <data name="ProcedurePersonaCompetencia" xml:space="preserve">
     <value>M14_ConsultarPersonaCompetencia</value>
   </data>
+  <data name="ParametroInsId" xml:space="preserve">
+    <value>@ins_id</value>
+  </data>
 </root>

@@ -239,7 +239,7 @@ namespace DatosSKD.Modulo14
 
                 SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedureConsultarPersonaEvento, conect);
                 sqlcom.CommandType = CommandType.StoredProcedure;
-                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroIdInscripcion, idIns));
+                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroInsId, idIns));
 
                 SqlDataReader leer;
                 conect.Open();
@@ -302,7 +302,7 @@ namespace DatosSKD.Modulo14
 
                 SqlCommand sqlcom = new SqlCommand(RecursosBDModulo14.ProcedurePersonaCompetencia, conect);
                 sqlcom.CommandType = CommandType.StoredProcedure;
-                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroIdInscripcion, idIns));
+                sqlcom.Parameters.Add(new SqlParameter(RecursosBDModulo14.ParametroInsId, idIns));
 
                 SqlDataReader leer;
                 conect.Open();

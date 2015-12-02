@@ -790,6 +790,15 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @ins_id.
+        /// </summary>
+        internal static string ParametroInsId {
+            get {
+                return ResourceManager.GetString("ParametroInsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @sol_pla_motivo.
         /// </summary>
         internal static string ParametroMotivo {
