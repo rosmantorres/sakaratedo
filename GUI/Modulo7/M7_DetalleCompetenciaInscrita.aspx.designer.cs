@@ -31,15 +31,6 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.WebControls.Label nombre_evento;
         
         /// <summary>
-        /// descripcion_evento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descripcion_evento;
-        
-        /// <summary>
         /// costo_evento control.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.WebControls.Label costo_evento;
         
         /// <summary>
-        /// estado_evento control.
+        /// tipo_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label estado_evento;
+        protected global::System.Web.UI.WebControls.Label tipo_evento;
         
         /// <summary>
         /// fechaInicio_evento control.
@@ -74,24 +65,6 @@ namespace templateApp.GUI.Modulo7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label fechaFin_evento;
-        
-        /// <summary>
-        /// horaInicio_evento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label horaInicio_evento;
-        
-        /// <summary>
-        /// horaFin_evento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label horaFin_evento;
         
         /// <summary>
         /// ciudad_evento control.
