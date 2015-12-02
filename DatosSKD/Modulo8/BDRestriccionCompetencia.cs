@@ -485,5 +485,8 @@ namespace DatosSKD.Modulo8
             
         #endregion
 
+        #region ExisteAsociacionCompetenciaRetriccionCompetencia
+        #endregion
+
     }
 }
