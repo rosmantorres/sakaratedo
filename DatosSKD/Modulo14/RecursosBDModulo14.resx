@@ -326,4 +326,362 @@
   <data name="ProcedureConsultarEventoSolicitud" xml:space="preserve">
     <value>M14_ConsultaEventoSolicitud</value>
   </data>
+  <data name="AtriburoPersonaId1" xml:space="preserve">
+    <value>PERSONA_per_id</value>
+  </data>
+  <data name="AtributoActivaMatricula" xml:space="preserve">
+    <value>mat_activa</value>
+  </data>
+  <data name="AtributoApellidoPersona" xml:space="preserve">
+    <value>per_apellido</value>
+  </data>
+  <data name="AtributoCintaFinCategoria" xml:space="preserve">
+    <value>cintafin</value>
+  </data>
+  <data name="AtributoCintaIniCategoria" xml:space="preserve">
+    <value>cintaini</value>
+  </data>
+  <data name="AtributoCompetenciaNombre1" xml:space="preserve">
+    <value>comp_nombre</value>
+  </data>
+  <data name="AtributocontenidoDiseño1" xml:space="preserve">
+    <value>dis_contenido</value>
+  </data>
+  <data name="AtributoCostoCompetencia" xml:space="preserve">
+    <value>comp_costo</value>
+  </data>
+  <data name="AtributoCostoEvento" xml:space="preserve">
+    <value>eve_costo</value>
+  </data>
+  <data name="AtributoDescripcionEvento" xml:space="preserve">
+    <value>eve_descripcion</value>
+  </data>
+  <data name="AtributoDireccionOrganizacion" xml:space="preserve">
+    <value>org_direccion</value>
+  </data>
+  <data name="AtributoDireccionPersona" xml:space="preserve">
+    <value>per_direccion</value>
+  </data>
+  <data name="AtributoDojoPersona" xml:space="preserve">
+    <value>DOJO_doj_id</value>
+  </data>
+  <data name="AtributoEdadFinCategoria" xml:space="preserve">
+    <value>cat_edad_fin</value>
+  </data>
+  <data name="AtributoEdadIniCategoria" xml:space="preserve">
+    <value>cat_edad_ini</value>
+  </data>
+  <data name="AtributoEmailDojo" xml:space="preserve">
+    <value>doj_email</value>
+  </data>
+  <data name="AtributoEmailOrganizacion" xml:space="preserve">
+    <value>org_email</value>
+  </data>
+  <data name="AtributoEstaturaPersona" xml:space="preserve">
+    <value>per_estatura</value>
+  </data>
+  <data name="AtributoEventoNombre1" xml:space="preserve">
+    <value>eve_nombre</value>
+  </data>
+  <data name="AtributoFechaCreacion1" xml:space="preserve">
+    <value>sol_pla_fecha_creacion</value>
+  </data>
+  <data name="AtributoFechaFinCompetencia" xml:space="preserve">
+    <value>comp_fecha_fin</value>
+  </data>
+  <data name="AtributoFechaFinHora" xml:space="preserve">
+    <value>hor_fecha_fin</value>
+  </data>
+  <data name="AtributoFechaIniCompetencia" xml:space="preserve">
+    <value>comp_fecha_ini</value>
+  </data>
+  <data name="AtributoFechaIniHora" xml:space="preserve">
+    <value>hor_fecha_inicio</value>
+  </data>
+  <data name="AtributoFechaMatricula" xml:space="preserve">
+    <value>mat_fecha_creacion</value>
+  </data>
+  <data name="AtributoFechaNacPersona" xml:space="preserve">
+    <value>per_fecha_nacimiento</value>
+  </data>
+  <data name="AtributoFechaReincorporacion1" xml:space="preserve">
+    <value>sol_pla_fecha_reincorporacion</value>
+  </data>
+  <data name="AtributoFechaRetiro1" xml:space="preserve">
+    <value>sol_pla_fecha_retiro</value>
+  </data>
+  <data name="AtributoHoraFinHora" xml:space="preserve">
+    <value>hor_hora_fin</value>
+  </data>
+  <data name="AtributoHoraIniHora" xml:space="preserve">
+    <value>hor_hora_inicio</value>
+  </data>
+  <data name="AtributoIdDato1" xml:space="preserve">
+    <value>dat_id</value>
+    <comment>atributo del id de Dato</comment>
+  </data>
+  <data name="AtributoIdDiseño1" xml:space="preserve">
+    <value>dis_id</value>
+  </data>
+  <data name="AtributoIdentificadorMatricula" xml:space="preserve">
+    <value>mat_identificador</value>
+  </data>
+  <data name="AtributoIdEvento" xml:space="preserve">
+    <value>eve_id</value>
+  </data>
+  <data name="AtributoIdPlanilla1" xml:space="preserve">
+    <value>pla_id</value>
+  </data>
+  <data name="AtributoIdPlanillaDatos1" xml:space="preserve">
+    <value>PLANILLA_pla_id</value>
+    <comment>id de la planilla en datos</comment>
+  </data>
+  <data name="AtributoIdSolicitud1" xml:space="preserve">
+    <value>sol_pla_id</value>
+  </data>
+  <data name="AtributoIdTipoPlanilla1" xml:space="preserve">
+    <value>tip_id</value>
+  </data>
+  <data name="AtributoImagenPersona" xml:space="preserve">
+    <value>per_imagen</value>
+  </data>
+  <data name="AtributoInscripcion1" xml:space="preserve">
+    <value>INSCRIPCION_ins_id</value>
+  </data>
+  <data name="AtributoLogoDojo" xml:space="preserve">
+    <value>doj__logo</value>
+  </data>
+  <data name="AtributoMotivo1" xml:space="preserve">
+    <value>sol_pla_motivo</value>
+  </data>
+  <data name="AtributoNacionalidadPersona" xml:space="preserve">
+    <value>per_nacionalidad</value>
+  </data>
+  <data name="AtributoNombreCompetencia" xml:space="preserve">
+    <value>comp_nombre</value>
+  </data>
+  <data name="AtributoNombreDojo" xml:space="preserve">
+    <value>doj_nombre</value>
+  </data>
+  <data name="AtributoNombreEvento" xml:space="preserve">
+    <value>eve_nombre</value>
+  </data>
+  <data name="AtributoNombreOrganizacion" xml:space="preserve">
+    <value>org_nombre</value>
+  </data>
+  <data name="AtributoNombrePersona" xml:space="preserve">
+    <value>per_nombre</value>
+  </data>
+  <data name="AtributoNombrePlanilla1" xml:space="preserve">
+    <value>pla_nombre</value>
+  </data>
+  <data name="AtributoNombreTipoPlanilla1" xml:space="preserve">
+    <value>tip_nombre</value>
+  </data>
+  <data name="AtributoNombre_Dato1" xml:space="preserve">
+    <value>dat_nombre</value>
+    <comment>atributo del nombre Dato</comment>
+  </data>
+  <data name="AtributoNumDocPersona" xml:space="preserve">
+    <value>per_num_doc_id</value>
+  </data>
+  <data name="AtributoOrgDojo" xml:space="preserve">
+    <value>ORGANIZACION_org_id</value>
+  </data>
+  <data name="AtributoPagoMatricula" xml:space="preserve">
+    <value>mat_fecha_ultimo_pago</value>
+  </data>
+  <data name="AtributoPesoPersona" xml:space="preserve">
+    <value>per_peso</value>
+  </data>
+  <data name="AtributoPrecioMatricula" xml:space="preserve">
+    <value>mat_precio</value>
+  </data>
+  <data name="AtributoRifDojo" xml:space="preserve">
+    <value>doj_rif</value>
+  </data>
+  <data name="AtributoSexoCategoria" xml:space="preserve">
+    <value>cat_sexo</value>
+  </data>
+  <data name="AtributoSexoCompetencia" xml:space="preserve">
+    <value>cat_sexo</value>
+  </data>
+  <data name="AtributoSexoPersona" xml:space="preserve">
+    <value>per_sexo</value>
+  </data>
+  <data name="AtributoStatusPlanilla1" xml:space="preserve">
+    <value>pla_status</value>
+  </data>
+  <data name="AtributoTelefonoDojo" xml:space="preserve">
+    <value>doj_telefono</value>
+  </data>
+  <data name="AtributoTelefonoOrganizacion" xml:space="preserve">
+    <value>org_telefono</value>
+  </data>
+  <data name="AtributoTipo1" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="AtributoTipoCompetencia" xml:space="preserve">
+    <value>comp_tipo</value>
+  </data>
+  <data name="AtributoTipoDocPersona" xml:space="preserve">
+    <value>per_tipo_doc_id</value>
+  </data>
+  <data name="AtributoUsuarioPersona" xml:space="preserve">
+    <value>per_nombre_usuario</value>
+  </data>
+  <data name="ParametroContenido1" xml:space="preserve">
+    <value>@dis_contenido</value>
+  </data>
+  <data name="ParametroDiseñoPlanilla1" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ParametroDojo" xml:space="preserve">
+    <value>@DOJO_doj_id</value>
+  </data>
+  <data name="ParametroDojoId" xml:space="preserve">
+    <value>@doj_id</value>
+  </data>
+  <data name="ParametroID1" xml:space="preserve">
+    <value>@dis_id</value>
+  </data>
+  <data name="ParametroIdDatos1" xml:space="preserve">
+    <value>@DATO_dat_id</value>
+    <comment>parametro del id del datos de una planilla</comment>
+  </data>
+  <data name="ParametroIdInscripcion1" xml:space="preserve">
+    <value>@ins_id</value>
+  </data>
+  <data name="ParametroIdPlanilla1" xml:space="preserve">
+    <value>@pla_id</value>
+    <comment>parametro del id de la planilla</comment>
+  </data>
+  <data name="ParametroIdSolicitud1" xml:space="preserve">
+    <value>@pla_sol_id</value>
+  </data>
+  <data name="ParametroIdTipoPlanilla1" xml:space="preserve">
+    <value>@tip_id</value>
+    <comment>parametro del id de tipo planilla</comment>
+  </data>
+  <data name="ParametroNombreDato1" xml:space="preserve">
+    <value>@dat_nombre</value>
+    <comment>parametro del nombre del dato</comment>
+  </data>
+  <data name="ParametroNombrePlanilla1" xml:space="preserve">
+    <value>@pla_nombre</value>
+    <comment>parametro para el nombre de la planilla</comment>
+  </data>
+  <data name="ParametroOrgId" xml:space="preserve">
+    <value>@org_id</value>
+  </data>
+  <data name="ParametroPersona" xml:space="preserve">
+    <value>@per_id</value>
+  </data>
+  <data name="ParametroPersonaPerId1" xml:space="preserve">
+    <value>@PERSONA_per_id</value>
+  </data>
+  <data name="ParametroPlanilla1" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ParametroSatusPlanilla1" xml:space="preserve">
+    <value>@pla_status</value>
+    <comment>parametro del status de la planilla</comment>
+  </data>
+  <data name="ParametroTipoPlanilla1" xml:space="preserve">
+    <value>@tip_nombre</value>
+    <comment>parametro del nombre del tipo planilla</comment>
+  </data>
+  <data name="ParametroTipoPlanillaFK1" xml:space="preserve">
+    <value>@TIPO_PLANILLA_tip_id</value>
+    <comment>parametro del tipo planilla de la planilla</comment>
+  </data>
+  <data name="ProcedimientoAgregarTipoPlanilla1" xml:space="preserve">
+    <value>M14_ProcedureAgregarTipoPlanilla</value>
+    <comment>Agrega el tipo de planilla</comment>
+  </data>
+  <data name="ProcedimientoObtenerIdTipoPlanilla1" xml:space="preserve">
+    <value>M14_Procedure_IdTipoPlanilla</value>
+    <comment>Obtiene el id de un tipo planilla</comment>
+  </data>
+  <data name="ProcedureAgregarDatoPlanilla1" xml:space="preserve">
+    <value>M14_ProcedureAgregarDatoPlanilla</value>
+    <comment>procedimiento que almacena los datos de la planilla</comment>
+  </data>
+  <data name="ProcedureAgregarDatoPlanillaID1" xml:space="preserve">
+    <value>M14_ProcedureAgregarDatoPlanillaID</value>
+    <comment>procedimiento que agrega los datos por el id de la planilla</comment>
+  </data>
+  <data name="ProcedureAgregarPlanilla1" xml:space="preserve">
+    <value>M14_ProcedureAgregarPlanilla</value>
+    <comment>Procedimiento para insertar una planilla</comment>
+  </data>
+  <data name="ProcedureCambiarStatusPlanilla1" xml:space="preserve">
+    <value>M14_CambioDeStatusPlanilla</value>
+  </data>
+  <data name="ProcedureConsultarDatosPlanillaId1" xml:space="preserve">
+    <value>M14_ProcedureConsultarDatosPlanillaID</value>
+    <comment>procedimiento que devuelve los datos de una planilla por id</comment>
+  </data>
+  <data name="ProcedureConsultarDiseño1" xml:space="preserve">
+    <value>M14_ConsultarDiseño</value>
+  </data>
+  <data name="ProcedureConsultarListaDatos1" xml:space="preserve">
+    <value>M14_Procedure_ListarDatos</value>
+    <comment>Obtiene todos los Datos de la tabla Dato</comment>
+  </data>
+  <data name="ProcedureConsultarOrganizacion" xml:space="preserve">
+    <value>M14_ConsultarOrganizacionDojo</value>
+  </data>
+  <data name="ProcedureConsultarPersonaEvento" xml:space="preserve">
+    <value>M14_ConsultarPersonaEvento</value>
+  </data>
+  <data name="ProcedureConsultarPersonas" xml:space="preserve">
+    <value>M14_ConsultarPersonas</value>
+  </data>
+  <data name="ProcedureConsultarPlanillasASolicitar1" xml:space="preserve">
+    <value>M14_ConsultarPlanillasASolicitar</value>
+  </data>
+  <data name="ProcedureConsultarPlanillasCreadas1" xml:space="preserve">
+    <value>M14_ConsultarPlanillasCreadas</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudId" xml:space="preserve">
+    <value>M14_ConsultarSolicitudId</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudPlanilla1" xml:space="preserve">
+    <value>M14_ConsultarSolicitudPlanilla</value>
+  </data>
+  <data name="ProcedureConsultatPlanillaID1" xml:space="preserve">
+    <value>M14_ProcedureConsultarPlanillaID</value>
+    <comment>procedimiento que devuelve una planilla por id</comment>
+  </data>
+  <data name="ProcedureDojoPersonas" xml:space="preserve">
+    <value>M14_ConsultarDojoPersonas</value>
+  </data>
+  <data name="ProcedureEliminarDatosPlanilla1" xml:space="preserve">
+    <value>M14_ProcedureEliminarDatosPlanilla</value>
+    <comment>procedimiento que elimina los datos de una planilla </comment>
+  </data>
+  <data name="ProcedureEliminarSolicitud1" xml:space="preserve">
+    <value>M14_Eliminar_Solicitud</value>
+  </data>
+  <data name="ProcedureGuardarDiseño1" xml:space="preserve">
+    <value>M14_AgregarDiseño</value>
+  </data>
+  <data name="ProcedureListaTipoPlanilla1" xml:space="preserve">
+    <value>M14_Procedure_ListarTipoPlanilla</value>
+    <comment>Obtiene la lista de los tipos de planillas existentes</comment>
+  </data>
+  <data name="ProcedureMatriculaPersona" xml:space="preserve">
+    <value>M14_ConsultarMatriculaPersona</value>
+  </data>
+  <data name="ProcedureModificarDiseño1" xml:space="preserve">
+    <value>M14_ModificarDiseño</value>
+  </data>
+  <data name="ProcedureModificarPlanilla1" xml:space="preserve">
+    <value>M14_ProcedureModificarPlanilla</value>
+    <comment>procedimiento que modifica una planilla</comment>
+  </data>
+  <data name="ProcedurePersonaCompetencia" xml:space="preserve">
+    <value>M14_ConsultarPersonaCompetencia</value>
+  </data>
 </root>

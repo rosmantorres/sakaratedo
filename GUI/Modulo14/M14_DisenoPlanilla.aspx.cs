@@ -25,38 +25,46 @@ namespace templateApp.GUI.Modulo14
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "14";
+            ((SKD)Page.Master).IdModulo = RecursoInterfazModulo14.NumeroModulo;
 
-                try
+            try
+            {
+                if (Request.Cookies[RecursoInterfazModulo14.CookiePlanilla][RecursoInterfazModulo14.CookieId].ToString() != "")
                 {
-                    if (Request.Cookies["Planilla"]["id"].ToString() != "")
+                    idPlanilla = Convert.ToInt32(Request.Cookies[RecursoInterfazModulo14.CookiePlanilla][RecursoInterfazModulo14.CookieId]);
+                    this.tipoPlanilla.Text = Request.Cookies[RecursoInterfazModulo14.CookiePlanilla][RecursoInterfazModulo14.CookieTipo].ToString();
+                    this.Planilla.Text = Request.Cookies[RecursoInterfazModulo14.CookiePlanilla][RecursoInterfazModulo14.CookieNombre].ToString();
+                    dis = logica.ConsultarDiseñoPuro(idPlanilla);
+                    planilla1 = new DominioSKD.Planilla(this.idPlanilla, this.Planilla.Text, true, this.tipoPlanilla.Text);
+
+                    if (!IsPostBack)
                     {
-                        idPlanilla = Convert.ToInt32(Request.Cookies["Planilla"]["id"]);
-                        this.tipoPlanilla.Text = Request.Cookies["Planilla"]["tipo"].ToString();
-                        this.Planilla.Text = Request.Cookies["Planilla"]["nombre"].ToString();
-                        dis = logica.ConsultarDiseñoPuro(idPlanilla);
-                        planilla1 = new DominioSKD.Planilla(this.idPlanilla, this.Planilla.Text, true, this.tipoPlanilla.Text);
-                       
-                        if (!IsPostBack)
+                        List<String> datos = logica1.ObtenerDatosPlanilla(idPlanilla);
+                        foreach (string dat in datos)
                         {
-                            List<String> datos = logica1.ObtenerDatosPlanilla(idPlanilla);
-                            foreach (string dat in datos)
-                            {
-                                comboDatos.Items.Add(dat);
-                            }
-                            llenarCombo();
-                            CKEditor1.Text = Server.HtmlDecode(dis.Contenido);
+                            comboDatos.Items.Add(dat);
                         }
-                        Request.Cookies["Planilla"].Expires = DateTime.Now;
-                        
+                        camposStatic.Text = RecursoInterfazModulo14.ParteSuperior;
+                        camposStatic.Text += RecursoInterfazModulo14.DatosPlanilla;
+                        camposStatic.Text += RecursoInterfazModulo14.ParteSuperior;
+                        camposStatic.Text += RecursoInterfazModulo14.FechaCreacionPlanilla;
+                        camposStatic.Text += RecursoInterfazModulo14.FechaRetiro;
+                        camposStatic.Text += RecursoInterfazModulo14.FechaRein;
+                        camposStatic.Text += RecursoInterfazModulo14.Motivo;
+                        camposStatic.Text += RecursoInterfazModulo14.ParteSuperior;
+                        llenarCombo();
+                        CKEditor1.Text = Server.HtmlDecode(dis.Contenido);
                     }
+                    Request.Cookies[RecursoInterfazModulo14.CookiePlanilla].Expires = DateTime.Now;
+
                 }
-                catch (Exception exce)
-                {
-                    string a = exce.Message;
-                    //HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
-                }
-            
+            }
+            catch (Exception exce)
+            {
+                string a = exce.Message;
+                //HttpContext.Current.Response.Redirect("M14_DisenoPlanilla.aspx");
+            }
+
         }
 
         protected void btnguardar_Click(object sender, EventArgs e)
@@ -65,9 +73,9 @@ namespace templateApp.GUI.Modulo14
             DominioSKD.Diseño diseño = new DominioSKD.Diseño(CKEditor1.Text);
             try
             {
-                if (dis.Contenido!= "")
+                if (dis.Contenido != "")
                 {
-                   
+
                     if (CKEditor1.Text != "")
                     {
                         dis.Contenido = this.CKEditor1.Text;
@@ -77,13 +85,13 @@ namespace templateApp.GUI.Modulo14
                         {
                             alert.Attributes["class"] = "alert alert-success alert-dismissible";
                             alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Diseño de Plantilla Modificado satisfactoriamente</div>";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MsjDiseñoPlanillaModificado + "</div>";
                         }
                         else
                         {
                             alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                             alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error no se pudo Modificar el diseño. Intente más tarde</div>";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MsjErrorPLanillaModificado + "</div>";
                         }
                     }
 
@@ -100,13 +108,13 @@ namespace templateApp.GUI.Modulo14
                     {
                         alert.Attributes["class"] = "alert alert-success alert-dismissible";
                         alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Diseño de Plantilla guardado satisfactoriamente</div>";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MsjPlanillaGuardada + "</div>";
                     }
                     else
                     {
                         alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                         alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error no se pudo guardar el diseño. Intente más tarde</div>";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MsjErrorNoGuardada + "</div>";
                     }
                 }
             }
@@ -114,50 +122,49 @@ namespace templateApp.GUI.Modulo14
 
         public void llenarCombo()
         {
-            if (comboDatos.SelectedValue == "DOJO")
+
+            if (comboDatos.SelectedValue == RecursoInterfazModulo14.Dojo)
             {
                 this.campos.Text = "";
-                this.campos.Text += "$doj_rif<br/>";
-                this.campos.Text += "$doj_nombre<br/>";
-                this.campos.Text += "$doj_telefono<br/>";
-                this.campos.Text += "$doj_email<br/>";
-                this.campos.Text += "$doj_status<br/>";
+                this.campos.Text += RecursoInterfazModulo14.DojRif;
+                this.campos.Text += RecursoInterfazModulo14.DojNombre;
+                this.campos.Text += RecursoInterfazModulo14.DojTlf;
+                this.campos.Text += RecursoInterfazModulo14.DojEmail;
             }
-            else if (comboDatos.SelectedValue == "PERSONA")
+            else if (comboDatos.SelectedValue == RecursoInterfazModulo14.Persona)
             {
                 this.campos.Text = "";
-                this.campos.Text += "$per_tipo_doc_id<br/>";
-                this.campos.Text += "$per_num_doc_id<br/>";
-                this.campos.Text += "$per_nombre<br/>";
-                this.campos.Text += "$per_apellido<br/>";
-                this.campos.Text += "$per_sexo<br/>";
-                this.campos.Text += "$per_fecha_nacimiento<br/>";
-                this.campos.Text += "$per_nombre_usuario<br/>";
-                this.campos.Text += "$per_peso<br/>";
-                this.campos.Text += "$per_estatura<br/>";
-                this.campos.Text += "$per_imagen<br/>";
+                this.campos.Text += RecursoInterfazModulo14.PerFechaNac;
+                this.campos.Text += RecursoInterfazModulo14.PerNumDoc;
+                this.campos.Text += RecursoInterfazModulo14.PerNombre;
+                this.campos.Text += RecursoInterfazModulo14.PerApellido;
+                this.campos.Text += RecursoInterfazModulo14.PerDir;
+                this.campos.Text += RecursoInterfazModulo14.PerNacionalidad;
+                this.campos.Text += RecursoInterfazModulo14.PerPeso;
+                this.campos.Text += RecursoInterfazModulo14.PerEstatura;
+                this.campos.Text += RecursoInterfazModulo14.PerImagen;
             }
-            else if (comboDatos.SelectedValue == "EVENTO")
+            else if (comboDatos.SelectedValue == RecursoInterfazModulo14.Evento)
             {
                 this.campos.Text = "";
                 this.campos.Text += "$eve_descripcion<br/>";
                 this.campos.Text += "$eve_nombre<br/>";
                 this.campos.Text += "$eve_costo<br/>";
-                this.campos.Text += "$CATEGORIA_cat_id<br/>";
-                this.campos.Text += "$HORARIO_hor_id<br/>";
-                this.campos.Text += "$TIPO_EVENTO_TIPO_EVENTO<br/>";
+                this.campos.Text += "$CATEGORIA_cat<br/>";
+                this.campos.Text += "$HORARIO_hor<br/>";
+                this.campos.Text += "$TIPO_EVENTO<br/>";
             }
-            else if (comboDatos.SelectedValue == "COMPETENCIA")
+            else if (comboDatos.SelectedValue == RecursoInterfazModulo14.Competencia)
             {
                 this.campos.Text = "";
                 this.campos.Text += "$comp_nombre<br/>";
                 this.campos.Text += "$comp_tipo<br/>";
-                this.campos.Text += "$CATEGORIA_comp_id<br/>";
+                this.campos.Text += "$CATEGORIA_comp<br/>";
                 this.campos.Text += "$comp_fecha_ini<br/>";
                 this.campos.Text += "$comp_fecha_fin<br/>";
                 this.campos.Text += "$comp_costo<br/>";
             }
-            else if (comboDatos.SelectedValue == "ORGANIZACION")
+            else if (comboDatos.SelectedValue == RecursoInterfazModulo14.Organizacion)
             {
                 this.campos.Text = "";
                 this.campos.Text += "$org_nombre<br/>";
@@ -165,13 +172,14 @@ namespace templateApp.GUI.Modulo14
                 this.campos.Text += "$org_telefono<br/>";
                 this.campos.Text += "$org_email<br/>";
             }
-            else if (comboDatos.SelectedValue == "MATRICULA")
+            else if (comboDatos.SelectedValue == RecursoInterfazModulo14.Matricula)
             {
                 this.campos.Text = "";
                 this.campos.Text += "$mat_identificador<br/>";
                 this.campos.Text += "$mat_fecha_creacion<br/>";
                 this.campos.Text += "$mat_activa<br/>";
                 this.campos.Text += "$mat_fecha_ultimo_pago<br/>";
+                this.campos.Text += "$mat_precio<br/>";
             }
             else
                 this.campos.Text = "";
@@ -180,6 +188,5 @@ namespace templateApp.GUI.Modulo14
         {
             llenarCombo();
         }
-        
     }
 }

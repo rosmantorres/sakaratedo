@@ -14,9 +14,9 @@ namespace LogicaNegociosSKD.Modulo14
         private DatosSKD.Modulo14.BDPlanilla datos = new DatosSKD.Modulo14.BDPlanilla();
 
         /// <summary>
-        /// 
+        /// Método que devuelve todas las planillas creadas
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna una lista con todas las planillas registradas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillas()
         {
             return datos.ConsultarPlanillasCreadas();
@@ -33,6 +33,12 @@ namespace LogicaNegociosSKD.Modulo14
             return listaTipoPlanilla;
         }
 
+        /// <summary>
+        /// Método que cambia el status de una planilla
+        /// </summary>
+        /// <param name="idPlanilla">Id de la planilla a modificar</param>
+        /// <returns>Retorna True se se realizo la modificación con éxito.
+        /// De lo contrario devuelve False</returns>
         public Boolean CambiarStatusPlanilla(int idPlanilla)
         {
             return datos.CambiarStatus(idPlanilla);
@@ -72,6 +78,11 @@ namespace LogicaNegociosSKD.Modulo14
             }
         }
 
+        /// <summary>
+        /// Método que registra una planilla
+        /// </summary>
+        /// <param name="laPlanilla">La clase planilla</param>
+        /// <param name="nombreTipo">El tipo de planilla al cual pertenece</param>
         public void RegistrarPlanilla(Planilla laPlanilla, String nombreTipo)
         {
             BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
@@ -80,6 +91,10 @@ namespace LogicaNegociosSKD.Modulo14
             RegistrarPlanilla(laPlanilla);
         }
 
+        /// <summary>
+        /// Método que registra un nuevo tipo de planilla
+        /// </summary>
+        /// <param name="nombreTipo">Recibe el nombre del nuevo tipo de planilla</param>
         public void NuevoTipoPlanilla(String nombreTipo)
         {
             BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();
@@ -103,10 +118,12 @@ namespace LogicaNegociosSKD.Modulo14
         }
 
         /// <summary>
-        ///
+        /// Método que devuelve una lista de sting con los datos que posee 
+        /// una planilla
         /// </summary>
-        /// <param name="idPlanilla"></param>
-        /// <returns></returns>
+        /// <param name="idPlanilla">iD de la planilla de la cual se desean 
+        /// saber sus datos</param>
+        /// <returns>Regresa la lista con dichos datos</returns>
         public List<string> ObtenerDatosPlanilla(int idPlanilla)
         {
             BDPlanilla BaseDeDatoPlanilla = new BDPlanilla();

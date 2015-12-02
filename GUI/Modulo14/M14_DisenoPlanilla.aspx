@@ -71,6 +71,7 @@
                  </asp:DropDownList>
                  <br />             
                  <asp:Label id="campos" Text="" runat="server" />
+                 <asp:Label id="camposStatic" Text="" runat="server" />
                 </ContentTemplate>
             </asp:UpdatePanel>                   
           </div>         

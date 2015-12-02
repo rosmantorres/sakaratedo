@@ -12,29 +12,30 @@ namespace LogicaNegociosSKD.Modulo14
         private BDSolicitud datos = new BDSolicitud();
         private BDDiseño diseño = new BDDiseño();
         /// <summary>
-        /// 
+        /// Metodo que lista todas las planillas que ha solicitado una persona
         /// </summary>
-        /// <param name="idPersona"></param>
-        /// <returns></returns>
+        /// <param name="idPersona"Id de la Persona </param>
+        /// <returns>Retorna una lista de solicitudes</returns>
         public List<DominioSKD.SolicitudPlanilla> ListarPlanillasSolicitadas(int idPersona)
         {
             return datos.ConsultarSolicitudes(idPersona);
         }
 
         /// <summary>
-        /// 
+        /// Método que elimina una solicitud dada
         /// </summary>
-        /// <param name="idSolicitud"></param>
-        /// <returns></returns>
+        /// <param name="idSolicitud">Id de la solicitud que se desea eliminar</param>
+        /// <returns>Retorna true si la operación se realizo con éxito.
+        /// De lo contrario devuelve false</returns>
         public Boolean EliminarSolicitud(int idSolicitud)
         {
             return datos.EliminarSolicitudBD(idSolicitud);
         }
 
         /// <summary>
-        /// 
+        /// Método que devuelve todas las planillas que un atleta puede solicitar
         /// </summary>
-        /// <returns></returns>
+        /// <returns>retorna una lista de planillas</returns>
         public List<DominioSKD.Planilla> ConsultarPlanillasASolicitar()
         {
             return datos.ConsultarPlanillasASolicitarBD();
