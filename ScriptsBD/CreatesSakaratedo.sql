@@ -3046,6 +3046,7 @@ AS
         imp_stockmin,
         inv_cantidad_total,
         imp_estatus,
+        imp_descripcion,
         DOJO_doj_id 
           FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
     WHERE imp.imp_estatus != 'Inactivo'
@@ -3053,6 +3054,7 @@ AS
     AND      INV.DOJO_doj_id= DOJ.doj_id
   END
 
+GO
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE procedure M4_ConsultarDojosXId
