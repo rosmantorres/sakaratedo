@@ -2543,7 +2543,7 @@ AS
  END
 
 
-
+GO
 --------------------------------------------------------------Inicio Procedure M15 Inventario-------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2571,7 +2571,7 @@ AS
   END
 
 
-
+GO
   ----------------------------------------------------
 
 -----------M15_ConsultarUsuarioDojo------------------------------
@@ -2587,7 +2587,7 @@ AS
 
 -------------------------------------------------------------------
 
-
+GO
 /*-------------M15_AgregarImplemento----------------------*/
 CREATE PROCEDURE [dbo].[M15_AgregarImplemento]
 @_impNombre [varchar] (255),
@@ -2618,9 +2618,9 @@ BEGIN
       (@_invCantidad,@_impId,@_dojId);
       
     END
-END;
+END
 --------------------------------------------------------------------------
-
+GO
 ---------------------M15_ConsultarImplemento--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplemento]
   @_impId [int]
@@ -2646,7 +2646,7 @@ AS
   END
 
   ----------------------------------------------------
-
+GO
   ---------------------M15_ConsultarImplementoTotal--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal]
 @_dojId [int]
@@ -2665,13 +2665,15 @@ AS
         imp_estatus,
         DOJO_doj_id 
           FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
-    WHERE imp_estatus != 'Inactivo'
-    AND   imp_id = INV.IMPLEMENTO_imp_id
-    AND    inv.DOJO_doj_id = DOJ.doj_id
+    WHERE imp.imp_estatus != 'Inactivo'
+    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
+    AND      INV.DOJO_doj_id= DOJ.doj_id
+    AND      INV.DOJO_doj_id=@_dojId
   END
 
-  ------------------------------------------------------------------------
 
+  ------------------------------------------------------------------------
+GO
 
   ---------------------M15_ConsultarImplementoTotal2--------------------
 CREATE PROCEDURE [dbo].[M15_ConsultarImplementoTotal2]
@@ -2698,7 +2700,7 @@ AS
   END
 
   ------------------------------------------------------------------------
-
+GO
 
   /*----------------M15_EliminarImplemento---------------------------------*/
 CREATE PROCEDURE [dbo].[M15_EliminarImplemento]
@@ -2710,9 +2712,9 @@ AS
     SET imp_estatus = 'Inactivo'
     WHERE @_impId = imp_id
     AND @_dojId=(select DOJO_doj_id from INVENTARIO where @_impId=IMPLEMENTO_imp_id )
-  END;
+  END
   --------------------------------------------------------------------------
-
+GO
   -------------------------- M15_ModificarImplemento---------------------------------
 CREATE PROCEDURE [dbo].[M15_ModificarImplemento]
 @_impId [int],
@@ -2748,11 +2750,33 @@ BEGIN
      WHERE IMPLEMENTO_imp_id = @_impId
    AND   DOJO_doj_id = @_dojId 
 
-END;
-
-------------------------------------------------------------------------------
+END
 
 
+  ---------------------M15_ConsultarImplementoTotal--------------------
+
+GO
+
+CREATE PROCEDURE [dbo].[M15_ConsultarCarrito]
+AS
+  BEGIN
+    SELECT  imp_id,
+            imp_nombre,
+            imp_imagen,
+        imp_tipo,
+        imp_color,
+        imp_marca ,
+        imp_talla ,
+        imp_precio ,
+        imp_stockmin,
+        inv_cantidad_total,
+        imp_estatus,
+        DOJO_doj_id 
+          FROM  IMPLEMENTO IMP, INVENTARIO INV, DOJO DOJ
+    WHERE imp.imp_estatus != 'Inactivo'
+    AND   imp.imp_id = INV.IMPLEMENTO_imp_id
+    AND      INV.DOJO_doj_id= DOJ.doj_id
+  END
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
