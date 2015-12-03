@@ -9,6 +9,9 @@ using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo16;
 using System.Web.Script.Serialization;
 using templateApp.GUI.Master;
+using ExcepcionesSKD.Modulo16;
+using ExcepcionesSKD;
+
 
 namespace templateApp.GUI.Modulo16
 {
@@ -21,29 +24,33 @@ namespace templateApp.GUI.Modulo16
         {
             ((SKD)Page.Master).IdModulo = "16";
 
-           // M16_ConsultarProducto.usuario = Session["'" + RecursosInterfazMaster.sessionUsuarioID+ "'"] != null ? (int)Session["'" + RecursosInterfazMaster.sessionUsuarioID + "'"] : 0;
-            M16_ConsultarProducto.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()); 
-
-            String detalleString = Request.QueryString["impDetalle"];
-            String producto = Request.QueryString["compAgregar"];
-
-            if (detalleString != null)
+            try
             {
-                llenarModalInfo(int.Parse(detalleString));
-            }
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            if (usuario != null && producto != null)
-            {
-               // agregarImplementoAcarrito(1, 1);
-            }
+                M16_ConsultarProducto.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
-            #region Llenar Data Table Con Inventario
-            //Instancio la logica correspondiente
-            Logicacarrito logComp = new Logicacarrito();
-            if (!IsPostBack)
-            {
-                try
+                String detalleString = Request.QueryString["impDetalle"];
+                String producto = Request.QueryString["compAgregar"];
+
+                if (detalleString != null)
                 {
+                    llenarModalInfo(int.Parse(detalleString));
+                }
+
+                if (usuario != null && producto != null)
+                {
+                    // agregarImplementoAcarrito(1, 1);
+                }
+
+                #region Llenar Data Table Con Inventario
+                //Instancio la logica correspondiente
+                Logicacarrito logComp = new Logicacarrito();
+                if (!IsPostBack)
+                {
+
                     //me traigo los implementos disponibles
                     laLista = logComp.ListarImplemento();
 
@@ -55,23 +62,23 @@ namespace templateApp.GUI.Modulo16
 
                         //Agrego los datos correspondientes de la tabla
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
-                       // this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() 
-                       //   + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen_implemento.ToString() 
+                        // this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Id_Implemento.ToString() 
+                        //   + M16_Recursointerfaz.CERRAR_TD;
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Imagen_implemento.ToString()
                             + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Nombre_Implemento.ToString()
                             + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Marca_Implemento.ToString() 
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Marca_Implemento.ToString()
                             + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Tipo_Implemento.ToString() 
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Tipo_Implemento.ToString()
                             + M16_Recursointerfaz.CERRAR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio_Implemento.ToString() 
+                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + c.Precio_Implemento.ToString()
                             + M16_Recursointerfaz.CERRAR_TD;
 
                         //Agrego los botones y combo
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.COMBOCANTIDAD + c.Id_Implemento.ToString() + "_combo" + M16_Recursointerfaz.CERRAR_COMBO;
-                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento  + M16_Recursointerfaz.BOTON_CERRAR;
+                        this.laTabla.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + c.Id_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla.Text += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO_2 + c.Id_Implemento + "_" + c.Precio_Implemento + M16_Recursointerfaz.BOTON_CERRAR_IMPLEMENTO_CARRITO_2;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
 
@@ -79,14 +86,10 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }
 
+
                 }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-            #endregion
-            /*
+                #endregion
+                
             //Nos indica si hubo alguna accion de agregar, registrar pago o eliminar
             String accion = Request.QueryString["accion"];
             switch (accion)
@@ -116,15 +119,230 @@ namespace templateApp.GUI.Modulo16
                             " realizado exitosamente</div>";
                     }
                 break;
-            }*/                
+            }
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            }
+            catch (System.Web.HttpException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "en esta pagina presentada</div>";
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error" +
+                    "al buscar alguno de los items de su carrito </div>";
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "interno</div>";
+
+            }
+            catch (ParseoVacioException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoFormatoInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoEnSobrecargaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }  
         }
 
         #region Llamada para el Detalle del Implemento por id
         protected void llenarModalInfo(int Id_implemento)
         {
-            Implemento laCompetencia = new Implemento();
-            Logicainventario logica = new Logicainventario();
-            laCompetencia = logica.detalleImplementoXId(Id_implemento);
+            try
+            {
+                //logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Implemento laCompetencia = new Implemento();
+                Logicainventario logica = new Logicainventario();
+                laCompetencia = logica.detalleImplementoXId(Id_implemento);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
+            catch (System.Web.HttpException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "en esta pagina presentada</div>";
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error" +
+                    "al buscar alguno de los items de su carrito </div>";
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "interno</div>";
+
+            }
+            catch (ParseoVacioException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoFormatoInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoEnSobrecargaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }  
+            
         }
         #endregion
 
@@ -132,11 +350,135 @@ namespace templateApp.GUI.Modulo16
         [System.Web.Services.WebMethod]
         public static string prueba(string id)
         {
-            Implemento elProducto = new Implemento();
-            Logicainventario logica = new Logicainventario();
-            elProducto = logica.detalleImplementoXId(int.Parse(id));
-            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elProducto);
-            return json;
+            try
+            {
+                //logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                Implemento elProducto = new Implemento();
+                Logicainventario logica = new Logicainventario();
+                elProducto = logica.detalleImplementoXId(int.Parse(id));
+                string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elProducto);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                return json;
+            }
+                         
+            catch (System.Web.HttpException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "en esta pagina presentada</div>";
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error" +
+                    "al buscar alguno de los items de su carrito </div>";
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "interno</div>";
+
+            }
+            catch (ParseoVacioException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoFormatoInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoEnSobrecargaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+
+            return null;
+            
         }
         #endregion
 
@@ -144,15 +486,143 @@ namespace templateApp.GUI.Modulo16
         [System.Web.Services.WebMethod]
         public static string agregarImplementoAcarrito(int idImplemento, int cantidad, int precio)
         {
+            try
+            {
+                //logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            Logicacarrito logica = new Logicacarrito();
+                Logicacarrito logica = new Logicacarrito();
 
-            bool agregar = false;
-           
-            agregar = logica.agregarInventarioaCarrito(usuario, idImplemento, cantidad, precio);
+                bool agregar = false;
 
-            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(agregar);
-            return json;
+                agregar = logica.agregarInventarioaCarrito(usuario, idImplemento, cantidad, precio);
+
+                string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(agregar);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=1");
+                
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
+
+                return json;
+            }
+
+            catch (System.Web.HttpException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "en esta pagina presentada</div>";
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error" +
+                    "al buscar alguno de los items de su carrito </div>";
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error " +
+                    "interno</div>";
+
+            }
+            catch (ParseoVacioException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoFormatoInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParseoEnSobrecargaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                System.Web.UI.HtmlControls.HtmlGenericControl alert = new System.Web.UI.HtmlControls.HtmlGenericControl();
+                alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                alert.Attributes["role"] = "alert";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                    "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los eventos no se han " +
+                    "podido consultar</div>";
+
+            }
+
+            return null;
+            
         }
         #endregion
     }
