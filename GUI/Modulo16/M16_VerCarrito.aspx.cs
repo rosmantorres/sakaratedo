@@ -20,6 +20,7 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public Carrito carritoCompras;
         public Logicacarrito logicaCarrito;
+        public static int usuario = 0;
 
         /// <summary>
         /// Metodo que carga las configuraciones por defecto y opciones especiales de su ventana correspondiente
@@ -29,6 +30,9 @@ namespace templateApp.GUI.Modulo16
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "16";
+
+            //Obtengo el ID del usuario
+            M16_VerCarrito.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()); 
 
             //Si estoy entrando por primera vez lleno la tabla
             if (!IsPostBack)
@@ -115,7 +119,7 @@ namespace templateApp.GUI.Modulo16
 
             //Instancio la logica correspondiente y me traigo el carrito de compras
             Logicacarrito logicaCarrito = new Logicacarrito();
-            carritoCompras = logicaCarrito.verCarrito(8);
+            carritoCompras = logicaCarrito.verCarrito(usuario);
 
             //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
             foreach (Implemento implemento in carritoCompras.ListaImplemento)
