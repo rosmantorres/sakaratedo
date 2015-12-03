@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
 using DatosSKD;
+using DatosSKD.Modulo10;
 
 namespace PruebasUnitariasSKD.Modulo10
 {
@@ -18,8 +19,13 @@ namespace PruebasUnitariasSKD.Modulo10
     class M10_PruebasBDAsistencia
     {
         #region Atributos
-        private int idDeEvento;
-        private Evento evento;
+        List<Evento> laLista;
+        Evento elEvento;
+        private string idDeEvento;
+        List<Competencia> laListaC;
+        Competencia laCompetencia;
+        List<Persona> ListaP;
+        Persona laPersona;
 
 
         #endregion
@@ -28,37 +34,53 @@ namespace PruebasUnitariasSKD.Modulo10
         #region SetUp&TearDown
 
         [SetUp]
-        public void Init()
+        public void init()
         {
-            idDeEvento = 1;
-            evento = new Evento();
-            evento.Nombre = "Pase a Negra";
-            DateTime fechaInicio = new DateTime(2015, 11, 15, 8, 30, 52);
-            DateTime fechaFin = new DateTime(2015, 11, 15, 1, 1, 1);
-            Horario Horarios = new Horario(3, fechaInicio, fechaFin, 1, 3);
-            TipoEvento TipoEvento = new TipoEvento();
-            TipoEvento = new TipoEvento();
-            TipoEvento.Nombre = "Pase de Cinta";
-            evento.Horario = Horarios;
-            evento.TipoEvento = TipoEvento;
-
+            laLista = new List<Evento>();
+            elEvento = new Evento();
+            laPersona = new Persona();
+            ListaP = new List<Persona>();
+            laListaC = new List<Competencia>();
+            laCompetencia = new Competencia();
+            idDeEvento = "1";
         }
+
+
         [TearDown]
 
         public void clean()
         {
-            idDeEvento = 0;
-            evento = null;
+            laLista = null;
+            laListaC = null;
         }
 
         #endregion
 
         #region Pruebas Unitarias
 
+        [Test]
+        public void PruebaListarEventosA()
+        {
+            laLista = BDAsistencia.ListarEventosAsistidos();
+            Assert.IsNotNull(laLista);
+    
+        }
 
         [Test]
-        public void ListarEventosAsistidos()
+        public void PruebaListarAsistente()
         {
+
+            ListaP = BDAsistencia.listaAsistentes(idDeEvento);
+            Assert.IsNotNull(ListaP);
+
+        }
+
+
+        [Test]
+        public void PruebaListarCompetenciasA()
+        {
+            laListaC = BDAsistencia.ListarCompetenciasAsistidas();
+            Assert.IsNotNull(laListaC);
 
         }
 
