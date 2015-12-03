@@ -5208,6 +5208,11 @@ INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,25,6,NULL,2,NULL);
 
 
 update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
+update EMAIL set ema_email='perdomo21346@gmail.com' where PERSONA_per_id=28 and ema_principal=1;
+update EMAIL set ema_email='rafa91_1@hotmail.com' where (PERSONA_per_id=31 or PERSONA_per_id=30 ) and ema_principal=1;
+
+
+
 
 /*-------------------------------------------------------------------------*/
 
