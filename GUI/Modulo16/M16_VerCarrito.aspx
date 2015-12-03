@@ -47,11 +47,10 @@
         <table id="tablainventario" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:left">Foto</th>
+					
 					<th style="text-align:left">Producto</th>
 					<th style="text-align:left">Precio Unitario</th>           
-                    <th style="text-align:left">Cantidad</th>
-                    <th style="text-align:left">Precio por Cantidad</th>
+                    
 					<th style="text-align:left">Acciones</th>
 				</tr>
 			</thead>
@@ -75,10 +74,10 @@
         <table id="tablamatricula" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:left">Producto</th>
-					<th style="text-align:left">Precio Unitario</th>           
-                    <th style="text-align:left">Cantidad</th>
-                    <th style="text-align:left">Precio por Cantidad</th>
+					<th style="text-align:left">Identificador de Matricula</th>
+					<th style="text-align:left">Fecha de Creacion</th>           
+                    <th style="text-align:left">Ultima Fecha de Pago</th>
+                    
 					<th style="text-align:left">Acciones</th>
 				</tr>
 			</thead>
@@ -102,10 +101,9 @@
         <table id="tablaevento" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-					<th style="text-align:left">Producto</th>
-					<th style="text-align:left">Precio Unitario</th>           
-                    <th style="text-align:left">Cantidad</th>
-                    <th style="text-align:left">Precio por Cantidad</th>
+					<th style="text-align:left">Nombre del evento</th>
+					<th style="text-align:left">Costo</th>           
+                 
 					<th style="text-align:left">Acciones</th>
 				</tr>
 			</thead>

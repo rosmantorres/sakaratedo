@@ -122,11 +122,11 @@ namespace templateApp.GUI.Modulo16
             foreach (Implemento implemento in carritoCompras.ListaImplemento)
             {
                 //Creo la fila de la tabla
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + implemento.Id_Implemento +">";
+                //this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + implemento.Id_Implemento +">";
 
                 //Agrego los datos correspondientes de la tabla
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
-                    M16_Recursointerfaz.CERRAR_TD;
+               // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
+                  //  M16_Recursointerfaz.CERRAR_TD;
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Nombre_Implemento + 
                     M16_Recursointerfaz.CERRAR_TD;
                 this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Precio_Implemento + 
