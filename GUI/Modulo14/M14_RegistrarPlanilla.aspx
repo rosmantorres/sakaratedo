@@ -31,7 +31,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Registrar Planilla</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
- 
+     <div id="alert" runat="server">
+    </div>
     <div class="row">
    <div class="col-xs-12">
      <div class="box">
@@ -81,6 +82,7 @@
              <asp:ListItem Text="EVENTO" Value="EVENTO" />
              <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
              <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
+            <asp:ListItem Text="MATRICULA" Value="MATRICULA"  />
 
           </asp:ListBox>
           <br/>

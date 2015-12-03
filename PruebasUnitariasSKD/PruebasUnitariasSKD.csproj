@@ -52,22 +52,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo12\PruebaBDCompetencias.cs" />
-    <Compile Include="Modulo12\RecursosPU_Mod12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPU_Mod12.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Modulo12\PruebaLogicaCompetencias.cs" />
+    <Compile Include="Modulo12\PruebasBDCompetencias.cs" />
     <Compile Include="Modulo13\RecursosPU_Mod13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\PruebaBDDiseno.cs" />
+    <Compile Include="Modulo14\PruebaBDPlanilla.cs" />
+    <Compile Include="Modulo14\PruebaLogicaDiseno.cs" />
+    <Compile Include="Modulo14\PruebaLogicaPlanilla.cs" />
     <Compile Include="Modulo14\RecursosPU_Mod14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo15\PruebaDatos.cs" />
+    <Compile Include="Modulo15\PruebaInterfaz.cs" />
+    <Compile Include="Modulo15\PruebaLogica.cs" />
     <Compile Include="Modulo15\RecursosPU_Mod15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,16 +81,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\Prueba.cs" />
+    <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
+    <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
+    <Compile Include="Modulo1\PruebasUnitariasLogicaN.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\PruebasUnitariasDatos.cs" />
+    <Compile Include="Modulo2\PruebasUnitariasLogicaN.cs" />
     <Compile Include="Modulo2\RecursosPU_Mod2.Designer.cs">
+      <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -141,6 +148,10 @@
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interfaz.csproj">
+      <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
+      <Name>Interfaz</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
       <Name>LogicaNegociosSKD</Name>
@@ -154,10 +165,6 @@
     <EmbeddedResource Include="Modulo11\RecursosPU_Mod11.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod11.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo12\RecursosPU_Mod12.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPU_Mod12.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo13\RecursosPU_Mod13.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -213,6 +220,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

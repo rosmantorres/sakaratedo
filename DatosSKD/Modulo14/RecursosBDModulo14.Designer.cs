@@ -70,6 +70,42 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a mat_activa.
+        /// </summary>
+        internal static string AtributoActivaMatricula {
+            get {
+                return ResourceManager.GetString("AtributoActivaMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_apellido.
+        /// </summary>
+        internal static string AtributoApellidoPersona {
+            get {
+                return ResourceManager.GetString("AtributoApellidoPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a cintafin.
+        /// </summary>
+        internal static string AtributoCintaFinCategoria {
+            get {
+                return ResourceManager.GetString("AtributoCintaFinCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a cintaini.
+        /// </summary>
+        internal static string AtributoCintaIniCategoria {
+            get {
+                return ResourceManager.GetString("AtributoCintaIniCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a comp_nombre.
         /// </summary>
         internal static string AtributoCompetenciaNombre {
@@ -84,6 +120,114 @@ namespace DatosSKD.Modulo14 {
         internal static string AtributocontenidoDiseño {
             get {
                 return ResourceManager.GetString("AtributocontenidoDiseño", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a comp_costo.
+        /// </summary>
+        internal static string AtributoCostoCompetencia {
+            get {
+                return ResourceManager.GetString("AtributoCostoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a eve_costo.
+        /// </summary>
+        internal static string AtributoCostoEvento {
+            get {
+                return ResourceManager.GetString("AtributoCostoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a eve_descripcion.
+        /// </summary>
+        internal static string AtributoDescripcionEvento {
+            get {
+                return ResourceManager.GetString("AtributoDescripcionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a org_direccion.
+        /// </summary>
+        internal static string AtributoDireccionOrganizacion {
+            get {
+                return ResourceManager.GetString("AtributoDireccionOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_direccion.
+        /// </summary>
+        internal static string AtributoDireccionPersona {
+            get {
+                return ResourceManager.GetString("AtributoDireccionPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DOJO_doj_id.
+        /// </summary>
+        internal static string AtributoDojoPersona {
+            get {
+                return ResourceManager.GetString("AtributoDojoPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a cat_edad_fin.
+        /// </summary>
+        internal static string AtributoEdadFinCategoria {
+            get {
+                return ResourceManager.GetString("AtributoEdadFinCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a cat_edad_ini.
+        /// </summary>
+        internal static string AtributoEdadIniCategoria {
+            get {
+                return ResourceManager.GetString("AtributoEdadIniCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a doj_email.
+        /// </summary>
+        internal static string AtributoEmailDojo {
+            get {
+                return ResourceManager.GetString("AtributoEmailDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a org_email.
+        /// </summary>
+        internal static string AtributoEmailOrganizacion {
+            get {
+                return ResourceManager.GetString("AtributoEmailOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_estatura.
+        /// </summary>
+        internal static string AtributoEstaturaPersona {
+            get {
+                return ResourceManager.GetString("AtributoEstaturaPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a eve_id.
+        /// </summary>
+        internal static string AtributoEventoID {
+            get {
+                return ResourceManager.GetString("AtributoEventoID", resourceCulture);
             }
         }
         
@@ -106,6 +250,60 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a comp_fecha_fin.
+        /// </summary>
+        internal static string AtributoFechaFinCompetencia {
+            get {
+                return ResourceManager.GetString("AtributoFechaFinCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a hor_fecha_fin.
+        /// </summary>
+        internal static string AtributoFechaFinHora {
+            get {
+                return ResourceManager.GetString("AtributoFechaFinHora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a comp_fecha_ini.
+        /// </summary>
+        internal static string AtributoFechaIniCompetencia {
+            get {
+                return ResourceManager.GetString("AtributoFechaIniCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a hor_fecha_inicio.
+        /// </summary>
+        internal static string AtributoFechaIniHora {
+            get {
+                return ResourceManager.GetString("AtributoFechaIniHora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a mat_fecha_creacion.
+        /// </summary>
+        internal static string AtributoFechaMatricula {
+            get {
+                return ResourceManager.GetString("AtributoFechaMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_fecha_nacimiento.
+        /// </summary>
+        internal static string AtributoFechaNacPersona {
+            get {
+                return ResourceManager.GetString("AtributoFechaNacPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a sol_pla_fecha_reincorporacion.
         /// </summary>
         internal static string AtributoFechaReincorporacion {
@@ -124,6 +322,24 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a hor_hora_fin.
+        /// </summary>
+        internal static string AtributoHoraFinHora {
+            get {
+                return ResourceManager.GetString("AtributoHoraFinHora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a hor_hora_inicio.
+        /// </summary>
+        internal static string AtributoHoraIniHora {
+            get {
+                return ResourceManager.GetString("AtributoHoraIniHora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a dat_id.
         /// </summary>
         internal static string AtributoIdDato {
@@ -138,6 +354,24 @@ namespace DatosSKD.Modulo14 {
         internal static string AtributoIdDiseño {
             get {
                 return ResourceManager.GetString("AtributoIdDiseño", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a mat_identificador.
+        /// </summary>
+        internal static string AtributoIdentificadorMatricula {
+            get {
+                return ResourceManager.GetString("AtributoIdentificadorMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a eve_id.
+        /// </summary>
+        internal static string AtributoIdEvento {
+            get {
+                return ResourceManager.GetString("AtributoIdEvento", resourceCulture);
             }
         }
         
@@ -178,11 +412,38 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a per_imagen.
+        /// </summary>
+        internal static string AtributoImagenPersona {
+            get {
+                return ResourceManager.GetString("AtributoImagenPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a INSCRIPCION_ins_id.
         /// </summary>
         internal static string AtributoInscripcion {
             get {
                 return ResourceManager.GetString("AtributoInscripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ins_id.
+        /// </summary>
+        internal static string AtributoInscripcionID {
+            get {
+                return ResourceManager.GetString("AtributoInscripcionID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a doj__logo.
+        /// </summary>
+        internal static string AtributoLogoDojo {
+            get {
+                return ResourceManager.GetString("AtributoLogoDojo", resourceCulture);
             }
         }
         
@@ -196,11 +457,65 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a per_nacionalidad.
+        /// </summary>
+        internal static string AtributoNacionalidadPersona {
+            get {
+                return ResourceManager.GetString("AtributoNacionalidadPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a dat_nombre.
         /// </summary>
         internal static string AtributoNombre_Dato {
             get {
                 return ResourceManager.GetString("AtributoNombre_Dato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a comp_nombre.
+        /// </summary>
+        internal static string AtributoNombreCompetencia {
+            get {
+                return ResourceManager.GetString("AtributoNombreCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a doj_nombre.
+        /// </summary>
+        internal static string AtributoNombreDojo {
+            get {
+                return ResourceManager.GetString("AtributoNombreDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a eve_nombre.
+        /// </summary>
+        internal static string AtributoNombreEvento {
+            get {
+                return ResourceManager.GetString("AtributoNombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a org_nombre.
+        /// </summary>
+        internal static string AtributoNombreOrganizacion {
+            get {
+                return ResourceManager.GetString("AtributoNombreOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_nombre.
+        /// </summary>
+        internal static string AtributoNombrePersona {
+            get {
+                return ResourceManager.GetString("AtributoNombrePersona", resourceCulture);
             }
         }
         
@@ -223,6 +538,87 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a per_num_doc_id.
+        /// </summary>
+        internal static string AtributoNumDocPersona {
+            get {
+                return ResourceManager.GetString("AtributoNumDocPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ORGANIZACION_org_id.
+        /// </summary>
+        internal static string AtributoOrgDojo {
+            get {
+                return ResourceManager.GetString("AtributoOrgDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a mat_fecha_ultimo_pago.
+        /// </summary>
+        internal static string AtributoPagoMatricula {
+            get {
+                return ResourceManager.GetString("AtributoPagoMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_peso.
+        /// </summary>
+        internal static string AtributoPesoPersona {
+            get {
+                return ResourceManager.GetString("AtributoPesoPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a mat_precio.
+        /// </summary>
+        internal static string AtributoPrecioMatricula {
+            get {
+                return ResourceManager.GetString("AtributoPrecioMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a doj_rif.
+        /// </summary>
+        internal static string AtributoRifDojo {
+            get {
+                return ResourceManager.GetString("AtributoRifDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a cat_sexo.
+        /// </summary>
+        internal static string AtributoSexoCategoria {
+            get {
+                return ResourceManager.GetString("AtributoSexoCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a cat_sexo.
+        /// </summary>
+        internal static string AtributoSexoCompetencia {
+            get {
+                return ResourceManager.GetString("AtributoSexoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_sexo.
+        /// </summary>
+        internal static string AtributoSexoPersona {
+            get {
+                return ResourceManager.GetString("AtributoSexoPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a pla_status.
         /// </summary>
         internal static string AtributoStatusPlanilla {
@@ -232,11 +628,191 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a doj_telefono.
+        /// </summary>
+        internal static string AtributoTelefonoDojo {
+            get {
+                return ResourceManager.GetString("AtributoTelefonoDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a org_telefono.
+        /// </summary>
+        internal static string AtributoTelefonoOrganizacion {
+            get {
+                return ResourceManager.GetString("AtributoTelefonoOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a tipo.
         /// </summary>
         internal static string AtributoTipo {
             get {
                 return ResourceManager.GetString("AtributoTipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a comp_tipo.
+        /// </summary>
+        internal static string AtributoTipoCompetencia {
+            get {
+                return ResourceManager.GetString("AtributoTipoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_tipo_doc_id.
+        /// </summary>
+        internal static string AtributoTipoDocPersona {
+            get {
+                return ResourceManager.GetString("AtributoTipoDocPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a per_nombre_usuario.
+        /// </summary>
+        internal static string AtributoUsuarioPersona {
+            get {
+                return ResourceManager.GetString("AtributoUsuarioPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BDDatos.
+        /// </summary>
+        internal static string ClaseBDDatos {
+            get {
+                return ResourceManager.GetString("ClaseBDDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BDDiseño.
+        /// </summary>
+        internal static string ClaseBDDis {
+            get {
+                return ResourceManager.GetString("ClaseBDDis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BDPlanilla.
+        /// </summary>
+        internal static string ClaseBDPlanilla {
+            get {
+                return ResourceManager.GetString("ClaseBDPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a BDSolicitud.
+        /// </summary>
+        internal static string ClaseBDSolicitud {
+            get {
+                return ResourceManager.GetString("ClaseBDSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_04.
+        /// </summary>
+        internal static string CodigoDisposedObject {
+            get {
+                return ResourceManager.GetString("CodigoDisposedObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_03.
+        /// </summary>
+        internal static string CodigoException {
+            get {
+                return ResourceManager.GetString("CodigoException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_05.
+        /// </summary>
+        internal static string CodigoFormatExceptio {
+            get {
+                return ResourceManager.GetString("CodigoFormatExceptio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_01.
+        /// </summary>
+        internal static string CodigoIoException {
+            get {
+                return ResourceManager.GetString("CodigoIoException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_02.
+        /// </summary>
+        internal static string CodigoNullReferencesExcep {
+            get {
+                return ResourceManager.GetString("CodigoNullReferencesExcep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El objeto que se esta utilizando no existe o se ha desechado.
+        /// </summary>
+        internal static string MensajeDisposedException {
+            get {
+                return ResourceManager.GetString("MensajeDisposedException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Entrada en el Método.
+        /// </summary>
+        internal static string MsjDeEntrada {
+            get {
+                return ResourceManager.GetString("MsjDeEntrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se ha establecido una excepcion.
+        /// </summary>
+        internal static string MsjException {
+            get {
+                return ResourceManager.GetString("MsjException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La ruta de acceso a los datos es inválida o no existe.
+        /// </summary>
+        internal static string MsjExceptionIO {
+            get {
+                return ResourceManager.GetString("MsjExceptionIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Formato invalido.
+        /// </summary>
+        internal static string MsjFormatException {
+            get {
+                return ResourceManager.GetString("MsjFormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Una referencia a objeto no se ha establecido.
+        /// </summary>
+        internal static string MsjNullException {
+            get {
+                return ResourceManager.GetString("MsjNullException", resourceCulture);
             }
         }
         
@@ -259,6 +835,42 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @DOJO_doj_id.
+        /// </summary>
+        internal static string ParametroDojo {
+            get {
+                return ResourceManager.GetString("ParametroDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @doj_id.
+        /// </summary>
+        internal static string ParametroDojoId {
+            get {
+                return ResourceManager.GetString("ParametroDojoId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @sol_pla_fecha_reincorporacion.
+        /// </summary>
+        internal static string ParametroFechaReincorporacion {
+            get {
+                return ResourceManager.GetString("ParametroFechaReincorporacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @sol_pla_fecha_retiro.
+        /// </summary>
+        internal static string ParametroFechaRetiro {
+            get {
+                return ResourceManager.GetString("ParametroFechaRetiro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @dis_id.
         /// </summary>
         internal static string ParametroID {
@@ -277,11 +889,29 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @INSCRIPCION_ins_id.
+        /// </summary>
+        internal static string ParametroIdInscripcion {
+            get {
+                return ResourceManager.GetString("ParametroIdInscripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @pla_id.
         /// </summary>
         internal static string ParametroIdPlanilla {
             get {
                 return ResourceManager.GetString("ParametroIdPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @sol_pla_id.
+        /// </summary>
+        internal static string ParametroIDSolici {
+            get {
+                return ResourceManager.GetString("ParametroIDSolici", resourceCulture);
             }
         }
         
@@ -304,6 +934,24 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @ins_id.
+        /// </summary>
+        internal static string ParametroInsId {
+            get {
+                return ResourceManager.GetString("ParametroInsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @sol_pla_motivo.
+        /// </summary>
+        internal static string ParametroMotivo {
+            get {
+                return ResourceManager.GetString("ParametroMotivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @dat_nombre.
         /// </summary>
         internal static string ParametroNombreDato {
@@ -322,6 +970,33 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @org_id.
+        /// </summary>
+        internal static string ParametroOrgId {
+            get {
+                return ResourceManager.GetString("ParametroOrgId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @per_id.
+        /// </summary>
+        internal static string ParametroPersona {
+            get {
+                return ResourceManager.GetString("ParametroPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @per_id.
+        /// </summary>
+        internal static string ParametroPersonaID {
+            get {
+                return ResourceManager.GetString("ParametroPersonaID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @PERSONA_per_id.
         /// </summary>
         internal static string ParametroPersonaPerId {
@@ -336,6 +1011,15 @@ namespace DatosSKD.Modulo14 {
         internal static string ParametroPlanilla {
             get {
                 return ResourceManager.GetString("ParametroPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @PLANILLA_pla_id.
+        /// </summary>
+        internal static string ParametroPlanillaID {
+            get {
+                return ResourceManager.GetString("ParametroPlanillaID", resourceCulture);
             }
         }
         
@@ -367,11 +1051,38 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M14_ProcedureAgregarSolicitud.
+        /// </summary>
+        internal static string ProcedimientoAgregarSolicitud {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_AgregarSolicitudIDPersona.
+        /// </summary>
+        internal static string ProcedimientoAgregarSolicitudIdP {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarSolicitudIdP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M14_ProcedureAgregarTipoPlanilla.
         /// </summary>
         internal static string ProcedimientoAgregarTipoPlanilla {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarTipoPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultaCompetenciaSolicitud.
+        /// </summary>
+        internal static string ProcedimientoConsultarCompeteniaSolicitud {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarCompeteniaSolicitud", resourceCulture);
             }
         }
         
@@ -439,11 +1150,47 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultaEventoSolicitud.
+        /// </summary>
+        internal static string ProcedureConsultarEventoSolicitud {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarEventoSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M14_Procedure_ListarDatos.
         /// </summary>
         internal static string ProcedureConsultarListaDatos {
             get {
                 return ResourceManager.GetString("ProcedureConsultarListaDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarOrganizacionDojo.
+        /// </summary>
+        internal static string ProcedureConsultarOrganizacion {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarPersonaEvento.
+        /// </summary>
+        internal static string ProcedureConsultarPersonaEvento {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarPersonaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarPersonas.
+        /// </summary>
+        internal static string ProcedureConsultarPersonas {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarPersonas", resourceCulture);
             }
         }
         
@@ -466,6 +1213,24 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarSolicitudId.
+        /// </summary>
+        internal static string ProcedureConsultarSolicitudId {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarSolicitudId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ProcedureConsultarSolicitudId.
+        /// </summary>
+        internal static string ProcedureConsultarSolicitudID1 {
+            get {
+                return ResourceManager.GetString("ProcedureConsultarSolicitudID1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M14_ConsultarSolicitudPlanilla.
         /// </summary>
         internal static string ProcedureConsultarSolicitudPlanilla {
@@ -480,6 +1245,15 @@ namespace DatosSKD.Modulo14 {
         internal static string ProcedureConsultatPlanillaID {
             get {
                 return ResourceManager.GetString("ProcedureConsultatPlanillaID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarDojoPersonas.
+        /// </summary>
+        internal static string ProcedureDojoPersonas {
+            get {
+                return ResourceManager.GetString("ProcedureDojoPersonas", resourceCulture);
             }
         }
         
@@ -520,6 +1294,15 @@ namespace DatosSKD.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarMatriculaPersona.
+        /// </summary>
+        internal static string ProcedureMatriculaPersona {
+            get {
+                return ResourceManager.GetString("ProcedureMatriculaPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M14_ModificarDiseño.
         /// </summary>
         internal static string ProcedureModificarDiseño {
@@ -534,6 +1317,24 @@ namespace DatosSKD.Modulo14 {
         internal static string ProcedureModificarPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureModificarPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ProcedureModificarSolicitud.
+        /// </summary>
+        internal static string ProcedureModificarSolicitud {
+            get {
+                return ResourceManager.GetString("ProcedureModificarSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M14_ConsultarPersonaCompetencia.
+        /// </summary>
+        internal static string ProcedurePersonaCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedurePersonaCompetencia", resourceCulture);
             }
         }
     }

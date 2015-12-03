@@ -8,15 +8,17 @@ using System.Net.Mail;
 using System.Security.Cryptography;
 using DatosSKD.Modulo1;
 using DominioSKD;
+using ExcepcionesSKD;
 using LogicaNegociosSKD.Modulo2;
 
 namespace LogicaNegociosSKD.Modulo1
 {
     public class logicaLogin
     {
-        
+
         MailMessage Mail = new MailMessage();
         SmtpClient SMTP = new SmtpClient();
+        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         /// <summary>
         /// Procedimiento para el envio de correo para el reestablecimiento de la contraseña
         /// </summary>
@@ -29,25 +31,34 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                if (!validarCorreo(Destino))
-                    throw new Exception("correo no registrado en sistema");
+                String idUser = validarCorreo(Destino);
+                if (idUser == null)
+                    throw new Exception(RecursosLogicaModulo1.Mensaje_Error_CorreoNoRegistrado);
 
-                String DireccionHTTP = "http://localhost:" + RecursosLogicaModulo1.puertoSAKARATEDO +
-                RecursosLogicaModulo1.direccionM1_RestablecerContraseña;
-                String mensajeDireccion = "<br>" +  DireccionHTTP + "</br>";
+                DateTime tiempoActual = DateTime.Now;
+                String DireccionHTTP = RecursosLogicaModulo1.localhost + RecursosLogicaModulo1.puertoSAKARATEDO +
+                RecursosLogicaModulo1.direccionM1_RestablecerContraseña +
+                RecursosLogicaModulo1.variableRestablecerHTTP +
+                cripto.EncriptarCadenaDeCaracteres(idUser, RecursosLogicaModulo2.claveDES) +
+                RecursosLogicaModulo1.variableFechaHTTP +
+                cripto.EncriptarCadenaDeCaracteres
+                (tiempoActual.Date.ToString(), RecursosLogicaModulo2.claveDES);
+
+
+                String mensajeDireccion = RecursosLogicaModulo1.lineBreak + DireccionHTTP + RecursosLogicaModulo1.slashLineBreak;
                 Mail.From = new MailAddress(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO);
                 Mail.To.Add(new MailAddress(Destino));
-                Mail.Body = RecursosLogicaModulo1.mensajeSAKARATEDO+mensajeDireccion;
+                Mail.Body = RecursosLogicaModulo1.mensajeSAKARATEDO + mensajeDireccion;
                 Mail.BodyEncoding = System.Text.Encoding.UTF8;
                 Mail.IsBodyHtml = true;//si queremos que se envie como codigo HTML
-                Mail.Subject =RecursosLogicaModulo1.asuntoSAKARATEDO ;
+                Mail.Subject = RecursosLogicaModulo1.asuntoSAKARATEDO;
                 Mail.SubjectEncoding = System.Text.Encoding.UTF8;
                 //Envia una copia de correo a sakaratedo@
                 Mail.Bcc.Add(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO);
                 //configuracion SMTP
                 SMTP.Host = RecursosLogicaModulo1.hostSAKARATEDO;
                 SMTP.Port = int.Parse(RecursosLogicaModulo1.puertoEnvioSAKARATEDO);
-                SMTP.Credentials = new NetworkCredential(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO,RecursosLogicaModulo1.cuentaClaveSAKARATEDO);
+                SMTP.Credentials = new NetworkCredential(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO, RecursosLogicaModulo1.cuentaClaveSAKARATEDO);
                 SMTP.EnableSsl = true;
                 SMTP.Send(Mail);
                 return true;
@@ -55,21 +66,23 @@ namespace LogicaNegociosSKD.Modulo1
             }
             catch (Exception e)
             {
-                Console.Write("Erro encontrado aqui:");
+                Console.Write(RecursosLogicaModulo1.errorGenerico);
                 Console.Write(e.StackTrace);
                 Console.Write(e.ToString());
                 Console.Write(e.Data.ToString());
                 Console.Write(e.Message);
-                throw  e;
+                throw e;
             }
         }
 
-        public Boolean validarCorreo(string Destino)
+        public String validarCorreo(string Destino)
         {
-            Boolean respuesta;
+            String respuesta;
             try
             {
-               respuesta= DatosSKD.Modulo1.BDLogin.ValidarCorreoUsuario(Destino);
+
+                BDLogin conexionBD = new BDLogin();
+                respuesta = conexionBD.ValidarCorreoUsuario(Destino);
             }
             catch (Exception e)
             {
@@ -88,54 +101,105 @@ namespace LogicaNegociosSKD.Modulo1
         {
             try
             {
-                Cuenta user= BDLogin.ObtenerUsuario(usuario);
-                string[] respuesta = new string[4];
-               string hashClave =AlgoritmoDeEncriptacion.hash(contraseña);
-               if (hashClave == AlgoritmoDeEncriptacion.hash(user.Contrasena) && usuario != "" && contraseña != "")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
-               {
-                   respuesta[0] = user.Id_usuario.ToString();
-                   respuesta[1] = user.Nombre_usuario;
-                   string rolesConcat = "";
-                   string split= RecursosLogicaModulo1.splitRoles;
-                   int cantRoles=user.Roles.Count;
-                   int contador=0;
-                   DateTime fechaRol= new DateTime(1900,1,1);
-                   foreach (Rol rol in user.Roles)
-                   {
-                       contador++;
-                       //se intenta quitar la palabra Admin del rol si es que la tiene
-                       string[] sinAdmin = rol.Nombre.Split(' ');
-                       string elRol = sinAdmin[sinAdmin.Length - 1];
-                       if(contador==cantRoles)
-                           split="";
-                      // if(elRol==RecursosLogicaModulo1.rolAtleta ) verificar si es menor de edad
-                       rolesConcat = rolesConcat + elRol + split;
-                       int d = DateTime.Compare(fechaRol, rol.Fecha_creacion);
-                       if (DateTime.Compare(fechaRol, rol.Fecha_creacion) == -1)
-                       {
-                           fechaRol = rol.Fecha_creacion;
-                           respuesta[3] = elRol;
-                       }
 
-                   }
-                   respuesta[2] = rolesConcat;
-                   if (rolesConcat != "")
-                       return respuesta;
-                   else
-                       return null;
-                   //ingresó a sistema
-               }
+                BDLogin conexionBD = new BDLogin();
+                Cuenta user = conexionBD.ObtenerUsuario(usuario);
+                string[] respuesta = new string[6];
+                string hashClave = cripto.hash(contraseña);
+                if (hashClave == user.Contrasena && usuario != "" && contraseña != "")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
+                {
+                    respuesta[0] = user.PersonaUsuario._Id.ToString();
+                    respuesta[1] = user.Nombre_usuario;
+                    respuesta[4] = user.Imagen;
+                    respuesta[5] = user.PersonaUsuario._Nombre + ' ' + user.PersonaUsuario._Apellido;
+                    string rolesConcat = "";
+                    string split = RecursosLogicaModulo1.splitRoles;
+                    int cantRoles = user.Roles.Count;
+                    int contador = 0;
+                    DateTime fechaRol = new DateTime(1900, 1, 1);
+                    foreach (Rol rol in user.Roles)
+                    {
+                        contador++;
+                        //se intenta quitar la palabra Admin del rol si es que la tiene
+                        string[] sinAdmin = rol.Nombre.Split(' ');
+                        string elRol = sinAdmin[sinAdmin.Length - 1];
+                        if (contador == cantRoles)
+                            split = "";
+                        // if(elRol==RecursosLogicaModulo1.rolAtleta ) verificar si es menor de edad
+                        rolesConcat = rolesConcat + elRol + split;
+                        int d = DateTime.Compare(fechaRol, rol.Fecha_creacion);
+                        if (DateTime.Compare(fechaRol, rol.Fecha_creacion) == -1)
+                        {
+                            fechaRol = rol.Fecha_creacion;
+                            respuesta[3] = elRol;
+                        }
 
-                    return null;
-               
+                    }
+                    respuesta[2] = rolesConcat;
+                    if (rolesConcat != "")
+                        return respuesta;
+                    else
+                        throw new Exception(RecursosLogicaModulo1.Mensaje_Error_Roles); ;
+                    //ingresó a sistema
+                }
+
+                return null;
+
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
-                Console.WriteLine("Mensaje: " + e.Message);
-                return null;
-                //throw e;
+
+                Console.WriteLine(RecursosLogicaModulo1.Mensaje_Error_InicioSesion + e);
+                Console.WriteLine(RecursosLogicaModulo1.mensajeGenerico + e.Message);
+                throw e;
             }
+        }
+
+
+
+        /// <summary>
+        /// Metodo que valida los carácteres ingresados en el lógin
+        /// </summary>
+        /// <param name="cadena">Cadena a validar</param>
+        /// <param name="userName">¿Nombre de usuario?</param>
+        /// <returns>True:Cumple con los parametros;False:No cumple.</returns>
+        public bool ValidarCaracteres(String cadena, bool userName)
+        {
+            String comparar;
+            if (userName)
+                comparar = RecursosLogicaModulo1.abc_;
+            else
+                comparar = RecursosLogicaModulo1.abc;
+            for (int i = 0; i < cadena.Length; i++)
+            {
+                Boolean resultado = comparar.Contains(cadena[i]);
+                if (resultado != true)
+                    return resultado;
+            }
+
+            return true;
+
+        }
+
+
+        ///<sumary>
+        ///Metodo que se encarga de validar si los datos de la lista alguno de ellos esta vacio  
+        ///</sumary>
+        ///<param name="datos">Lista de String con los datos a validar</param>
+        ///<returns>true, sin ningun dato en la lista esta vacio
+        ///         false, si al menos un dato es igual a vacio</returns>
+        public bool ValidarCamposVacios(List<String> datos)
+        {
+            String caracterVacio = "";
+
+            for (int i = 0; i < datos.Count; i++)
+            {
+                if (datos[i].Equals(caracterVacio))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

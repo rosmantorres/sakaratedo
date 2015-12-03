@@ -37,10 +37,10 @@
                        <div class="alert alert-success" id="successLog" runat="server">
                        </div>
 
-                     <input type="text" id="userIni" placeholder="Usuario" runat="server" class="form-control input-lg"  />         
-                     <input type="password" class="form-control input-lg" id="passwordIni" runat="server"  placeholder="Contraseña"/>                    
+                     <input type="text" id="userIni" maxlength="254" placeholder="Usuario" runat="server" class="form-control input-lg"  />         
+                     <input type="password" maxlength="30" class="form-control input-lg" id="passwordIni" runat="server"  placeholder="Contraseña"/>                    
                      <div class="pwstrength_viewport_progress"></div>
-                     <button type="button"  runat="server" name="go" class="btn btn-lg btn-primary btn-block" onserverclick="ValidarUsuario">Entrar</button>
+                     <button type="button"  id="LoginButton" runat="server" name="go" class="btn btn-lg btn-primary btn-block" onserverclick="ValidarUsuario">Entrar</button>
                      <div>
                         <a data-toggle="modal" data-target="#modalform" href="#" >¿Olvidaste tu contraseña?</a>
                      </div>
@@ -87,5 +87,6 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
       <script src="../../bootstrap/js/bootstrap.min.js"></script>
        <script src="js/ValidarCorreo.js"></script>
+       <script src="js/Login.js"></script>
    </body>
 </html>

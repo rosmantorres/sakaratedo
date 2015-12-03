@@ -84,6 +84,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\BDDatos.cs" />
     <Compile Include="Modulo14\BDDiseño.cs" />
     <Compile Include="Modulo14\BDPlanilla.cs" />
     <Compile Include="Modulo14\BDSolicitud.cs" />
@@ -110,7 +111,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo2\BDRol.cs" />
     <Compile Include="Modulo2\BDRoles.cs" />
     <Compile Include="Modulo2\RecursosBDModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -133,6 +133,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo5.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\BDListarUsuarios.cs" />
     <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

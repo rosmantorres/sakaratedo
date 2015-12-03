@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
+using templateApp.GUI.Master;
+
+
 namespace templateApp.GUI.Modulo15
 {
     public partial class WebForm2 : System.Web.UI.Page
@@ -33,7 +36,7 @@ namespace templateApp.GUI.Modulo15
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/GUI/Modulo15/M15_ConsultarImplemento.aspx?modificar=fallo");
             }
 
 
@@ -42,18 +45,35 @@ namespace templateApp.GUI.Modulo15
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+              try
+            {
+                String rolUsuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                Boolean permitido = false;
+                List<String> rolesPermitidos = new List<string>
+                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                foreach (String rol in rolesPermitidos)
+                {
+                    if (rol == rolUsuario)
+                        permitido = true;
+                }
+                if (permitido)
+                {
+                    //Aqui va su codigo
+
             ((SKD)Page.Master).IdModulo = "15";
           //  this.btnmodificarImplemento.Click+= new EventHandler(this.evento_modificar);
-            int idImplemento =Convert.ToInt16(Request.QueryString["idImplemento"]);
+            int idImplemento =Convert.ToInt32(Request.QueryString["idImplemento"]);
             if (idImplemento != 0) {
                 cargarDatosModificar(idImplemento);
             
             }
             String modificar = Request.QueryString["modificar"];
+            String excepcion = Request.QueryString["excepcion"];
+           
             if (modificar != null)
             {
 
-                if (modificar.Equals("fallo"))
+                if ((modificar.Equals("fallo"))&&(excepcion.Equals("ErrorInputInterfaz"))) 
                 {
                     alert2.Attributes["class"] = "alert alert-error alert-dismissible";
                     alert2.Attributes["role"] = "alert";
@@ -62,6 +82,19 @@ namespace templateApp.GUI.Modulo15
                 }
 
             }
+
+                }
+                else
+                {
+                    Response.Redirect(templateApp.GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
+                }
+
+            }
+              catch (NullReferenceException ex)
+              {
+
+
+              }
 
         }
     }
