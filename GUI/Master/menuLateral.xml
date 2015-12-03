@@ -23,19 +23,19 @@
 
 
   <!--OPCIONES DE MODULO 3-->
-  
+
   <opcion nombre="Agregar Organizacion" link="~/GUI/Modulo3/M3_AgregarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
-  
+
   <opcion nombre="Consultar Organizacion" link="~/GUI/Modulo3/M3_ConsultarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
-  
+
   <opcion nombre="Eliminar Organizacion" link="~/GUI/Modulo3/M3_EliminarOrganizacion.aspx">
     <modulo id="3"></modulo>
   </opcion>
-    
+
   <opcion nombre="Modificar Organizacion" link="~/GUI/Modulo3/M3_ModificarOrganizacion.aspx">
   </opcion>
 
@@ -48,12 +48,6 @@
     <modulo id="4"></modulo>
   </opcion>
   <opcion nombre="Agregar Dojo" link="~/GUI/Modulo4/M4_AgregarDojo.aspx">
-    <modulo id="4"></modulo>
-  </opcion>
-  <opcion nombre="Listar Historial Matricula" link="~/GUI/Modulo4/M4_ListarHistorialMatricula.aspx">
-    <modulo id="4"></modulo>
-  </opcion>
-  <opcion nombre="Agregar Historial Matricula" link="~/GUI/Modulo4/M4_AgregarHistorialMatricula.aspx">
     <modulo id="4"></modulo>
   </opcion>
   <!--FIN OPCIONES MODULO 4-->
@@ -91,10 +85,10 @@
 
   <!--OPCIONES DE MODULO 7-->
 
-<opcion nombre="Consultar Organización y Dojo" link="~/GUI/Modulo7/M7_ListarOrganizacionYDojo.aspx">
+  <opcion nombre="Consultar Organización y Dojo" link="~/GUI/Modulo7/M7_ListarOrganizacionYDojo.aspx">
     <modulo id="7"></modulo>
   </opcion>
-  
+
   <opcion nombre="Consultar Cintas" link="~/GUI/Modulo7/M7_ListarCintas.aspx">
     <modulo id="7"></modulo>
   </opcion>
@@ -258,23 +252,11 @@
   <!--OPCIONES DE MODULO 14-->
 
   <opcion nombre="Solicitar Planilla" link="~/GUI/Modulo14/M14_SolicitarPlanilla.aspx">
-    <modulo id="14"></modulo>
-  </opcion>
-
-  <opcion nombre="Solicitar Carnet" link="~/GUI/Modulo14/M14_VisorCarnet.aspx">
-    <modulo id="14"></modulo>
-  </opcion>
-
-  <opcion nombre="Solicitar planilla de Inscripción" link="~/GUI/Modulo14/M14_VisorInscripcion.aspx">
-    <modulo id="14"></modulo>
+    <modulo id="14.1"></modulo>
   </opcion>
 
   <opcion nombre="Planillas Solicitadas" link="~/GUI/Modulo14/M14_ConsultarPlanillasSolicitadas.aspx">
-    <modulo id="14"></modulo>
-  </opcion>
-
-  <opcion nombre="Planillas por Dojo" link="~/GUI/Modulo14/M14_ConsultarPlanillasDojo.aspx">
-    <modulo id="14"></modulo>
+    <modulo id="14.1"></modulo>
   </opcion>
 
   <opcion nombre="Registrar Planilla" link="~/GUI/Modulo14/M14_RegistrarPlanilla.aspx">
@@ -297,7 +279,7 @@
 
 
   <!--OPCIONES DE MODULO 16-->
-  
+
   <opcion nombre="Ver Carrito" link="~/GUI/Modulo16/M16_VerCarrito.aspx">
     <modulo id="16"></modulo>
   </opcion>
@@ -313,7 +295,7 @@
   <opcion nombre="Consultar Mensualidad" link="~/GUI/Modulo16/M16_ConsultarMensualidad.aspx">
     <modulo id="16"></modulo>
   </opcion>
-  
+
   <opcion nombre="Consultar Facturas" link="~/GUI/Modulo16/M16_ListarFacturas.aspx">
     <modulo id="16"></modulo>
   </opcion>

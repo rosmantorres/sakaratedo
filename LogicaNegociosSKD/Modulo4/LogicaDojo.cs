@@ -75,27 +75,7 @@ namespace LogicaNegociosSKD.Modulo4
         
         }
 
-        /*public List<DominioSKD.Dojo> M4obtenerListaDeOrganizaciones()
-        {
-            try
-            {
-                return BDDojo.M4ListarOrganizaciones();
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                throw ex;
-            }
-        }
-
-        */
+       
         public DominioSKD.Dojo detalleDojoXId(int elIdDojo)
         {
             try
