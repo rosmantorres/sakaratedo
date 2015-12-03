@@ -43,6 +43,7 @@ namespace PruebasUnitariasSKD.Modulo10
             laListaC = new List<Competencia>();
             laCompetencia = new Competencia();
             idDeEvento = "1";
+      
         }
 
 
@@ -71,6 +72,15 @@ namespace PruebasUnitariasSKD.Modulo10
         {
 
             ListaP = BDAsistencia.listaAsistentes(idDeEvento);
+            Assert.IsNotNull(ListaP);
+
+        }
+
+        [Test]
+        public  void PruebaListarNoAsistente()
+        {
+
+            ListaP = BDAsistencia.listaNoAsistentes(idDeEvento);
             Assert.IsNotNull(ListaP);
 
         }
