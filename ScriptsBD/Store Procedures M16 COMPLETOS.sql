@@ -59,15 +59,15 @@ END
 GO
 
 CREATE PROCEDURE M16_consultarMatriculas
-@per_id [int]
+
 AS
  BEGIN
-    SELECT	M.mat_identificador AS idIdentificadorMatricla, 
+    SELECT	M.mat_id AS idMatricula ,
+			M.mat_identificador AS idIdentificadorMatricla, 
 	        M.mat_fecha_creacion AS fechaInicio,
 		    M.mat_fecha_ultimo_pago AS fechaTope
 	 		
-	FROM  	MATRICULA M, PERSONA P
-	WHERE  M.PERSONA_per_id= @per_id;
+	FROM  MATRICULA M
  END
  GO
  
