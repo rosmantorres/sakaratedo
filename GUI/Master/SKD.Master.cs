@@ -46,27 +46,39 @@ namespace templateApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session[RecursosInterfazMaster.sessionUsuarioID]!=null)
+            try
             {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
-            idModulo = IdModulo;
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-                foreach (XmlNode subNode in node.ChildNodes)
-                    if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) && 
-                        subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(IdModulo))
-                    {
-                        OpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] =
-                            node.Attributes[RecursosInterfazMaster.tagLink].InnerText;
-                        break;
-                    }
-            asignarUsuario();
-            DropDownMenu();
-            }
-            else
-                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
+                if (Session[RecursosInterfazMaster.sessionUsuarioID].ToString() != null)
+                {
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
+                    idModulo = IdModulo;
+                    foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+                        foreach (XmlNode subNode in node.ChildNodes)
+                            if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) &&
+                                subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(IdModulo))
+                            {
+                                OpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] =
+                                    node.Attributes[RecursosInterfazMaster.tagLink].InnerText;
+                                break;
+                            }
+                    asignarUsuario();
+                    DropDownMenu();
+                }
+                else
+                    Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
 
+            }
+            catch (NullReferenceException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
+        
 
         /// <summary>
         /// Se realizan la asignacion de los datos de usuario a la plantilla (nombre,apellido, roles etc)

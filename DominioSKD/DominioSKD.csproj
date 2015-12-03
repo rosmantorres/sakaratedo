@@ -74,6 +74,7 @@
     <Compile Include="ResultadoKata.cs" />
     <Compile Include="ResultadoKumite.cs" />
     <Compile Include="SolicitudInscripcionDojo.cs" />
+    <Compile Include="SolicitudP.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />

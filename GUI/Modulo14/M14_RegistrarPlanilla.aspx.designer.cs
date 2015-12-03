@@ -13,7 +13,20 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_RegistrarPlanilla {
         
         /// <summary>
+<<<<<<< HEAD
         /// agregar_planilla control.
+=======
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
+        /// Control agregar_planilla.
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

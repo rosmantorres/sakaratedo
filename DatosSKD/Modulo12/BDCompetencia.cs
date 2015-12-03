@@ -16,7 +16,7 @@ namespace DatosSKD.Modulo12
     public class BDCompetencia
     {
 
-        public static List<Competencia> ListarCompetencias()
+        public List<Competencia> ListarCompetencias()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -29,9 +29,7 @@ namespace DatosSKD.Modulo12
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo12.ConsultarCompetencias, parametros);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo12.ConsultarCompetencias, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -41,10 +39,12 @@ namespace DatosSKD.Modulo12
                     laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
                     laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
 
-                    if (laCompetencia.TipoCompetencia == "1")
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia1)
                         laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
-                    else
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia2)
                         laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia3)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaAmbos;
 
                     laCompetencia.Status = row[RecursosBDModulo12.AliasStatusCompetencia].ToString();
                     laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosBDModulo12.AliasTodasOrganizaciones].ToString());
@@ -98,7 +98,7 @@ namespace DatosSKD.Modulo12
 
         }
 
-        public static Competencia DetallarCompetencia(int idCompetencia)
+        public Competencia DetallarCompetencia(int idCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion laConexion;
@@ -129,8 +129,6 @@ namespace DatosSKD.Modulo12
 
                     foreach (DataRow row in dt.Rows)
                     {
-
-
                         laCompetencia.Id_competencia = int.Parse(row[RecursosBDModulo12.AliasIdCompetencia].ToString());
                         laCompetencia.Nombre = row[RecursosBDModulo12.AliasNombreCompetencia].ToString();
                         laCompetencia.TipoCompetencia = row[RecursosBDModulo12.AliasTipoCompetencia].ToString();
@@ -253,14 +251,14 @@ namespace DatosSKD.Modulo12
 
         }
 
-        public static bool BuscarNombreCompetencia(Competencia laCompetencia)
+        public bool BuscarNombreCompetencia(Competencia laCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
             BDConexion laConexion;
             List<Parametro> parametros;
-
+            int contador = 0;
             try
             {
                 laConexion = new BDConexion();
@@ -273,6 +271,10 @@ namespace DatosSKD.Modulo12
                 elParametro = new Parametro(RecursosBDModulo12.ParamSalidaNumCompetencia, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
+                elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int,
+                    laCompetencia.Id_competencia.ToString(),false);
+                parametros.Add(elParametro);
+
                 List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDModulo12.BuscarNombreCompetencia
                                              , parametros);
 
@@ -281,8 +283,6 @@ namespace DatosSKD.Modulo12
                     if (elResultado.etiqueta == RecursosBDModulo12.ParamSalidaNumCompetencia)
                         if (int.Parse(elResultado.valor) == 1)
                             retorno = true;
-                        else
-                            retorno = false;
                 }
             }
             catch (SqlException ex)
@@ -316,7 +316,7 @@ namespace DatosSKD.Modulo12
 
         }
 
-        public static bool BuscarIDCompetencia(Competencia laCompetencia)
+        public bool BuscarIDCompetencia(Competencia laCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -383,25 +383,25 @@ namespace DatosSKD.Modulo12
 
         }
 
-        public static bool AgregarCompetencia(Competencia laCompetencia)
+        public bool AgregarCompetencia(Competencia laCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
-                if (!BuscarNombreCompetencia(laCompetencia))
+                if (!BuscarNombreCompetenciaAgregar(laCompetencia))
                 {
                     List<Parametro> parametros = new List<Parametro>();
                     Parametro elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar,
                         laCompetencia.Nombre, false);
                     parametros.Add(elParametro);
 
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia1)
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia2)
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia3)
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaAmbos;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKata)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetencia1;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKumite)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetencia2;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaAmbos)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetencia3;
 
                     elParametro = new Parametro(RecursosBDModulo12.ParamTipoCompetencia, SqlDbType.VarChar,
                         laCompetencia.TipoCompetencia, false);
@@ -418,9 +418,18 @@ namespace DatosSKD.Modulo12
                     elParametro = new Parametro(RecursosBDModulo12.ParamFechaFin, SqlDbType.DateTime,
                         laCompetencia.FechaFin.ToString(), false);
                     parametros.Add(elParametro);
-                    elParametro = new Parametro(RecursosBDModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
-                        laCompetencia.Organizacion.Nombre, false);
-                    parametros.Add(elParametro);
+                    if (laCompetencia.OrganizacionTodas == false)
+                    {
+                        elParametro = new Parametro(RecursosBDModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
+                            laCompetencia.Organizacion.Nombre, false);
+                        parametros.Add(elParametro);
+                    }
+                    else
+                    {
+                        elParametro = new Parametro(RecursosBDModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
+                            "Todas", false);
+                        parametros.Add(elParametro);
+                    }
                     elParametro = new Parametro(RecursosBDModulo12.ParamNombreCiudad, SqlDbType.VarChar,
                         laCompetencia.Ubicacion.Ciudad, false);
                     parametros.Add(elParametro);
@@ -481,6 +490,12 @@ namespace DatosSKD.Modulo12
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
                      RecursosBDModulo12.Mensaje_Error_Formato, ex);
             }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -498,13 +513,13 @@ namespace DatosSKD.Modulo12
             return true;
         }
 
-        public static bool ModificarCompetencia(Competencia laCompetencia)
+        public bool ModificarCompetencia(Competencia laCompetencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
-                if (!BuscarNombreCompetencia(laCompetencia))
+                if (BuscarIDCompetencia(laCompetencia) && (!BuscarNombreCompetencia(laCompetencia)))
                 {
                     List<Parametro> parametros = new List<Parametro>();
                     Parametro elParametro = new Parametro(RecursosBDModulo12.ParamIdCompetencia, SqlDbType.Int,
@@ -513,12 +528,13 @@ namespace DatosSKD.Modulo12
                     elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar,
                         laCompetencia.Nombre, false);
                     parametros.Add(elParametro);
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia1)
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKata;
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia2)
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaKumite;
-                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetencia3)
-                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetenciaAmbos;
+
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKata)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetencia1;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaKumite)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetencia2;
+                    if (laCompetencia.TipoCompetencia == RecursosBDModulo12.TipoCompetenciaAmbos)
+                        laCompetencia.TipoCompetencia = RecursosBDModulo12.TipoCompetencia3;
 
                     elParametro = new Parametro(RecursosBDModulo12.ParamTipoCompetencia, SqlDbType.VarChar,
                         laCompetencia.TipoCompetencia, false);
@@ -597,6 +613,12 @@ namespace DatosSKD.Modulo12
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
                      RecursosBDModulo12.Mensaje_Error_Formato, ex);
             }
+            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -615,7 +637,7 @@ namespace DatosSKD.Modulo12
             return true;
         }
 
-        public static List<Organizacion> M12ListarOrganizaciones()
+        public List<Organizacion> M12ListarOrganizaciones()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -676,7 +698,7 @@ namespace DatosSKD.Modulo12
             return laListaOrganizaciones;
         }
 
-        public static List<Cinta> M12ListarCintas()
+        public List<Cinta> M12ListarCintas()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -738,12 +760,78 @@ namespace DatosSKD.Modulo12
             return laListaCintas;
         }
 
-        public static String ModificarFechas(string fecha)
+        public String ModificarFechas(string fecha)
         {
             if (int.Parse(fecha) < 10)
                 fecha = RecursosBDModulo12.Concatenar0 + fecha.ToString();
 
             return fecha;
         }
+
+        public bool BuscarNombreCompetenciaAgregar(Competencia laCompetencia)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            bool retorno = false;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDModulo12.ParamNombreCompetencia, SqlDbType.VarChar
+                                                      , laCompetencia.Nombre, false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo12.ParamSalidaNumCompetencia, SqlDbType.Int, true);
+                parametros.Add(elParametro);
+
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDModulo12.BuscarNombreCompetenciaAgregar
+                                             , parametros);
+
+                foreach (Resultado elResultado in resultados)
+                {
+                    if (elResultado.etiqueta == RecursosBDModulo12.ParamSalidaNumCompetencia)
+                    {
+                        if (int.Parse(elResultado.valor) == 1)
+                            retorno = true;
+                    }
+                    else
+                        retorno = false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo12.Codigo_Error_Formato,
+                     RecursosBDModulo12.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return retorno;
+
+
+        }
+
     }
 }
