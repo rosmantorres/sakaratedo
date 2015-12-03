@@ -84,7 +84,7 @@ namespace templateApp.GUI.Modulo16
                 case "3":
 
                     //Se obtiene el exito o fallo de la eliminacion y se evalua
-                    bool respuesta = Eliminaritem();
+                bool respuesta = true;
                     if (respuesta)
                     {
                         //Si el eliminar fue exitoso mostramos esta alerta
@@ -114,9 +114,6 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void Llenartabla()
         {
-            //Obtengo el ID del usuario
-            // Session[RecursosInterfazMaster.sessionUsuarioID] = idUsuario[0];
-
             //Instancio la logica correspondiente y me traigo el carrito de compras
             Logicacarrito logicaCarrito = new Logicacarrito();
             carritoCompras = logicaCarrito.verCarrito(usuario);
@@ -145,7 +142,7 @@ namespace templateApp.GUI.Modulo16
                 //ARREGLAR BOTON INFO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + implemento.Id_Implemento+ 
                     M16_Recursointerfaz.BOTON_CERRAR;
-                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO + implemento.Id_Implemento +
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_GENERAL + implemento.Id_Implemento +"_I" +
                     M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla1.Text += M16_Recursointerfaz.CERRAR_TD;
 
@@ -192,7 +189,7 @@ namespace templateApp.GUI.Modulo16
                 this.laTabla3.Text += M16_Recursointerfaz.ABRIR_TD;
                 //Arreglar el boton info
                 this.laTabla3.Text += M16_Recursointerfaz.BOTON_INFO_EVENTO_CARRITO + evento.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
-                this.laTabla3.Text += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_EVENTO + evento.Id_evento + 
+                this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_GENERAL + evento.Id_evento + "_E" +
                     M16_Recursointerfaz.BOTON_CERRAR;
                 this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TD;
 
@@ -257,38 +254,25 @@ namespace templateApp.GUI.Modulo16
         #endregion
 
         #region Eliminar y Registrar
-                /// <summary>
+        /// <summary>
         /// Metodo que se encarga de eliminar un item determinado del carrito
         /// </summary>
         /// <returns>El exito o fallo del proceso</returns>
-        public bool Eliminaritem()
+        [System.Web.Services.WebMethod]
+        public static string eliminarItem(int tipoObjeto, int idObjeto)
         {
-            //Obtenemos el tipo de item al que nos estamos refiriendo
-            String item = Request.QueryString["item"];
-            int tipoObjeto = 0;
-            if (item.Equals("I"))
-                tipoObjeto = 1;
-            else if (item.Equals("M"))
-                tipoObjeto = 2;
-            else
-                tipoObjeto = 3;
+            //Creo el objeto de la capa de  Logica y la respuesta a recibir
+            Logicacarrito logica = new Logicacarrito();
+            bool exito = false;
 
-            //Obtenemos el id del objeto a borrar
-            int objetoBorrar = int.Parse(Request.QueryString["id"]);
+            //Recibo la respuesta del eliminar
+            exito = logica.eliminarItem(tipoObjeto, idObjeto, usuario);
 
-            //Obtengo el ID del usuario
-            int idUsuario = (int)(Session[RecursosInterfazMaster.sessionUsuarioID]);
-
-            //Ejecutamos el proceso de eliminar item y evaluamos su exito o fallo
-            bool respuesta = logicaCarrito.eliminarItem(tipoObjeto, objetoBorrar, idUsuario);
-
-            if (respuesta)
-                this.carritoCompras.eliminarItem(tipoObjeto, objetoBorrar);
-
-            //Retornamos la respuesta
-            return respuesta;
-
+            //Devuelvo la respuesta a la peticion ajax
+            string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(exito);
+            return json;
         }
+            
 
         /// <summary>
         /// Metodo que se encarga de efectuar el pago de los productos en el carrito

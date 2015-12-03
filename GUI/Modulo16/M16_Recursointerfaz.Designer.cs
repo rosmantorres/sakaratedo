@@ -196,6 +196,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
+        /// </summary>
+        internal static string BOTON_ELIMINAR_GENERAL {
+            get {
+                return ResourceManager.GetString("BOTON_ELIMINAR_GENERAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon glyphicon-print&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
         /// </summary>
         internal static string BOTON_IMPRIMIR_FACTURA {
