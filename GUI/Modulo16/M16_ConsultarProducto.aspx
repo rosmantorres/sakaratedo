@@ -24,9 +24,13 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <div class="alert alert-success alert-dismissable" style="display:none" id="prueba">
+    <div id="alert" runat="server">
+    </div>
+
+    
+    <div class="alert alert-success alert-dismissable" style="display:none" id="agregarImplementoAcarrito">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
-            El Articulo Deportivo se ha Agregado Exitosamente al Carrito.
+            la matricula se ha Agregado Exitosamente al Carrito.
         </div>
 
      <div class="box-body table-responsive">
@@ -37,65 +41,27 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Articulos Actuales</h3>
                 </div><!-- /.box-header -->
-
-       <table id="example" class="table table-bordered table-striped dataTable">
+              </div>
+       <table id="tablaproducto" class="table table-bordered table-striped dataTable">
         <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Articulo Deportivo</th>
-                <th>Precio (Bs)</th>
-                <th>Accion</th>
-                
-            </tr>
-        </thead>
- 
-        <tfoot>
-            <tr>
-                <th>Foto</th>
-                <th>Articulo Deportivo</th>
-                <th>Precio (BS)</th>
-                <th>Accion</th>
-            </tr>
-        </tfoot>
- 
-        <tbody>
-            <tr>
-                <td><img src="Imagenes\GuanteRojo.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Guantes Rojos</td>
-                <td>Bs 5000</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes\CintaBlanca.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Cinta Blanca</td>
-                <td>Bs 400</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes\Suspensorio.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Suspensorio</td>
-                <td>Bs 350</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-            
-            <tr>
-                <td><img src="Imagenes\ProtectorBucal.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Proteccion Bucal</td>
-                <td>Bs 3200</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
+				<tr>
+                    <th style="text-align:left">Imagen</th>
+                    <th style="text-align:left">Nombre</th>
+					<th style="text-align:left">Marca</th>
+                    <th style="text-align:left">Tipo</th>
+					<th style="text-align:left">Precio</th>
+                   
+					<th style="text-align:left">Acciones</th>
+				</tr>
+		</thead>
+                      
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla"></asp:Literal>
+		    </tbody>
+            </table>
+        </div>
 
-             <tr>
-                <td><img src="Imagenes\Karategi.jpg" alt="" style="width:60px; height:auto;"></td>
-                <td>Karategi</td>
-                <td>Bs 14000</td>
-                <td><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a></td>
-            </tr>
-
-        </tbody>
-    </table>
-
-                  <!--MODAL PARA EL DETALLE -->
+                  <!--MODAL PARA EL DETALLEDEL PRODUCTO -->
 <div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -106,62 +72,102 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-                                <img src="Imagenes/GuanteRojo.jpg" alt="">
-								<h3>Nombre</h3>
-								<p>
-									Guantes Rojos
-								</p>
-								<h3>Cantidad disponible</h3>
-                                <br />
-                                <form role="form" class="form-horizontal" method="POST">
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-         <div class="btn-group">
-            
-            <select ID="DropDownList1" class="combobox" style="width:80px; height:35px" runat="server" onchange="funcionCantidadObjetos(this.id);" >
-  <option value="-1">Cantidad</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-
-  </select>
-                
-         </div>
-      </div>
-                                    <br />
-                               
-            					    <h3>Detalles</h3>
-								    <p>
-									    Guantes de color rojos diseñados para proteger las manos al momento de impactar
-                                        golpes contra el contrincante o cuando se está practicando, con un diseño
-                                        particular de color rojo a gusto del atleta.
-								    </p>
-								    <div class="form-group">
-		                                <div class="box-footer">
-				                            <button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info1').modal('hide'); $('#prueba').show();" >Agregar al Carrito</button>
-                                             
-			                            </div>
-	                                </div>
-                                </form>
-
-
+                                
+                                <h3>Imagen</h3>
+									<img src="" id="beta" />
+                                   
+                                <h3>Nombre</h3>
+                                    <label id="aux1" ></label>
+                                    
+								<h3>Tipo Implemento</h3>
+                                    <label id="aux2" ></label>
+                                    
+                                <h3>Marca</h3>
+                                    <label id="aux3" ></label>
+                                   
+                                <h3>Color</h3>
+                                    <label id="aux4" ></label>
+                                    
+                                <h3>Talla</h3>
+                                    <label id="aux5" ></label>
+                                    
+                                <h3>Status</h3>
+                                    <label id="aux6" ></label>
+                                    
+                                <h3>Precio</h3>
+                                    <label id="aux7" ></label>
+                                    
+                                <h3>Descripcion</h3>
+                                    <label id="aux8" ></label>
+                                    
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
-    </div>
+ </div>
 
      <!--VALIDACION PARA MODAL -->
     <script src="js/Validacion.js"></script>
 
          <script type="text/javascript">
+             // Funcionalidad para el boton Agregar Producto al Carrito
+             function prueba3(e) {
+
+                 debugger
+
+                 if (e != undefined) {
+
+                     var arrayConDatosDelProducto = e.id.split("_");
+
+                     //Obtenemos el id del boton presionado.
+                     var aux = $("#" + arrayConDatosDelProducto[0] + "_combo");
+
+                     //Creamos un objeto con los datos a ser enviado al servidor.
+                     var producto = {
+                         idImplemento: arrayConDatosDelProducto[0],
+                         cantidad: aux.val(),
+                         precio: arrayConDatosDelProducto[1]
+                     }
+
+                     var datos = JSON.stringify(producto);
+
+                     if (aux != undefined) {
+
+                         $.ajax({
+                             cache: false,
+                             type: 'POST',
+                             url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/agregarImplementoAcarrito',
+                             data: datos,
+                             dataType: 'json',
+                             contentType: "application/json; charset=utf-8",
+
+                             success: function (data) {
+                                 debugger
+
+                                 console.log("Exito:" + data);
+
+                                 var aa = JSON.parse(data.d);
+
+                                 alert("Peticion ajax exitosa:" + aa);
+                                 
+
+                             }
+                             
+
+                         });
+                         window.location.href = "M16_VerCarrito.aspx?accion=1&exito=1";
+                        
+                     }
+                 }
+
+             }
+
+
              $(document).ready(function () {
 
-                 var table = $('#example').DataTable({
+                 var table = $('#tablaproducto').DataTable({
+                     "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                      "language": {
                          "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                      }
@@ -169,7 +175,7 @@
                  var req;
                  var tr;
 
-                 $('#example tbody').on('click', 'a', function () {
+                 $('#tablaproducto tbody').on('click', 'a', function () {
                      if ($(this).parent().hasClass('selected')) {
                          req = $(this).parent().prev().prev().prev().text();
                          tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -196,20 +202,52 @@
                      $('#prueba').show();//Muestra el mensaje de agregado exitosamente
 
                  });
-             });
-
-
-             function funcionCantidadObjetos(param) {
 
                  
 
-                 if ($('#<%=DropDownList1.ClientID %>').val() != -1) {
+                 // Carga el modal con la informacion del producto de acuerdo al id
+                 $('#modal-info1').on('show.bs.modal', function (e) {
 
-                     $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                 }
-                 else     
-                 $('#<%=Boton1.ClientID %>').attr("disabled", "disabled");
-             }
+                     alert(e.relatedTarget.id);
+
+                     $.ajax({
+                         cache: false,
+                         type: 'POST',
+                         url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/prueba',
+                         data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                         dataType: 'json',
+                         contentType: "application/json; charset=utf-8",
+
+                         success: function (data) {
+                             console.log(data);
+
+                             var aa = JSON.parse(data.d);
+
+                             console.log(aa);
+
+                            // $("#beta1").val(aa.Nombre_implemento);
+                             
+                             $("#beta").attr("src", aa.Imagen_implemento);
+                             $("#aux1").html(aa.Nombre_implemento);
+                             $("#aux2").html(aa.Tipo_Implemento);
+                             $("#aux3").html(aa.Marca_Implemento);
+                             $("#aux4").html(aa.Color_Implemento);
+                             $("#aux5").html(aa.Talla_Implemento);
+                             $("#aux6").html(aa.Estatus_Implemento);
+                             $("#aux7").html(aa.Precio_Implemento);
+                             $("#aux8").html(aa.Descripcion_Implemento);
+
+                          //   $("#beta2").val(aa.Tipo_Implemento);
+                           //  $("#beta3").val(aa.Marca_Implemento);
+                         //    $("#beta4").val(aa.Color_Implemento);
+                          //   $("#beta5").val(aa.Talla_Implemento);
+                          //   $("#beta7").val(aa.Precio_Implemento);
+                           //  $("#beta8").val(aa.Descripcion_Implemento);
+
+                         }
+                     });
+                 })
+             });
 
         </script>
 

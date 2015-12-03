@@ -41,6 +41,16 @@
     <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
     <Reference Include="CKEditor.NET">
       <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
+
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\itextsharp.dll</HintPath>
+      <HintPath>..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+
       <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
       <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
@@ -54,6 +64,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
       <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
+
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -85,7 +96,9 @@
     </Content>
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+
     </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -524,6 +537,7 @@
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
+    <Content Include="GUI\Modulo16\M16_ListarFacturas.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
     <Content Include="GUI\Modulo16\M16_VerCarrito.aspx" />
     <Content Include="GUI\Modulo1\css\styles.css" />
@@ -569,6 +583,10 @@
     <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
+
+    <Content Include="GUI\Modulo9\M9_ModificarEventos.aspx" />
+
+
     <Content Include="plugins\ckeditor\CHANGES.md" />
     <Content Include="plugins\ckeditor\LICENSE.md" />
     <Content Include="plugins\ckeditor\plugins\scayt\LICENSE.md" />
@@ -2055,6 +2073,13 @@
     <Compile Include="GUI\Modulo16\M16_ConsultarProducto.aspx.designer.cs">
       <DependentUpon>M16_ConsultarProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo16\M16_ListarFacturas.aspx.cs">
+      <DependentUpon>M16_ListarFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_ListarFacturas.aspx.designer.cs">
+      <DependentUpon>M16_ListarFacturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo16\M16_Prueba.aspx.cs">
       <DependentUpon>M16_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2068,6 +2093,11 @@
     </Compile>
     <Compile Include="GUI\Modulo16\M16_VerCarrito.aspx.designer.cs">
       <DependentUpon>M16_VerCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_Recursointerfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M16_Recursointerfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -2402,7 +2432,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="GUI\Modulo16\M16_Recursointerfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M16_Recursointerfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="GUI\Modulo14\RecursoInterfazModulo14.resx" />
+
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>

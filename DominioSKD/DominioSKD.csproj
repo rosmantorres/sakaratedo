@@ -54,11 +54,13 @@
 
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
+    <Compile Include="CompraMatricula.cs" />
     <Compile Include="Cuenta.cs" />
-    <Compile Include="Compra.cs" />
+    <Compile Include="CompraFactura.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="Inventario.cs" />
     <Compile Include="HistorialCinta.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Implemento.cs" />

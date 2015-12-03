@@ -50,6 +50,16 @@
     </Compile>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
+    <Compile Include="Modulo16\AgregarEventoaCarritoFallidoException.cs" />
+    <Compile Include="Modulo16\AtributoIncorrectoException.cs" />
+    <Compile Include="Modulo16\BDEventoException.cs" />
+    <Compile Include="Modulo16\BDMatriculaException.cs" />
+    <Compile Include="Modulo16\CarritoSinEventoException.cs" />
+    <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
+    <Compile Include="Modulo16\CarritosSinInventarioException.cs" />
+    <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
+    <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
+    <Compile Include="Modulo16\ParametroIncorrectoException.cs" />
     <Compile Include="InformacionPersonalInvalidaException.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
@@ -57,11 +67,16 @@
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
 
+    <Compile Include="Modulo16\ParseoEnSobrecargaException.cs" />
+    <Compile Include="Modulo16\ParseoFormatoInvalidoException.cs" />
+    <Compile Include="Modulo16\ParseoVacioException.cs" />
+
 
     <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo8\RestriccionExistenteException.cs" />
     <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
     <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
+
 
 
     <Compile Include="Modulo14\BDDatosException.cs" />
@@ -76,6 +91,10 @@
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
     <Compile Include="Modulo15\ErrorInputInterfaz.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
+
+    <Compile Include="Modulo16\ReferenciaNulaException.cs" />
+
+
 
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />
@@ -92,7 +111,6 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo5\" />
     <Folder Include="Modulo6\" />

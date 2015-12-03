@@ -75,6 +75,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo16\Logicacarrito.cs" />
+    <Compile Include="Modulo16\Logicacompra.cs" />
+    <Compile Include="Modulo16\Logicamatricula.cs" />
+    <Compile Include="Modulo16\Logicainventario.cs" />
+    <Compile Include="Modulo16\Logicaevento.cs" />
     <Compile Include="Modulo16\RecursosLogicaModulo16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

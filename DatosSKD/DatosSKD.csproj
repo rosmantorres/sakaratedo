@@ -93,6 +93,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo16\BDCarrito.cs" />
+    <Compile Include="Modulo16\BDCompra.cs" />
+    <Compile Include="Modulo16\BDEvento.cs" />
+    <Compile Include="Modulo16\BDInventario.cs" />
+    <Compile Include="Modulo16\BDMatricula.cs" />
     <Compile Include="Modulo16\RecursosBDModulo16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +283,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliminarItem.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
