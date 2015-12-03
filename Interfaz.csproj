@@ -40,24 +40,18 @@
   <ItemGroup>
     <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
     <Reference Include="CKEditor.NET">
-<<<<<<< HEAD
       <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
-=======
-      <HintPath>packages\CKEditor.NET.dll</HintPath>
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-<<<<<<< HEAD
-    <Reference Include="itextsharp">
-      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
-=======
+    <!--<Reference Include="itextsharp">
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>-->
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\itextsharp.dll</HintPath>
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>

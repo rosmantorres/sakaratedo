@@ -13,9 +13,9 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_RegistrarPlanilla {
         
         /// <summary>
-<<<<<<< HEAD
+
         /// agregar_planilla control.
-=======
+
         /// Control alert.
         /// </summary>
         /// <remarks>
@@ -26,7 +26,7 @@ namespace templateApp.GUI.Modulo14 {
         
         /// <summary>
         /// Control agregar_planilla.
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
