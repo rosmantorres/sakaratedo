@@ -283,7 +283,7 @@ namespace templateApp.GUI.Modulo16
             if(!DropDownList1.Value.Equals("-1"))
             {
                 //Si se ha elegido tarjeta se procede a guardar sus datos
-                if (DropDownList1.Equals("1"))
+                if (DropDownList1.Value.Equals("1"))
                 {
                     datosPago.Add(int.Parse(Text1.Value));
                     datosPago.Add(int.Parse(Text2.Value));
@@ -291,7 +291,7 @@ namespace templateApp.GUI.Modulo16
                     datosPago.Add(int.Parse(Text4.Value));
                 }
                 //Si se ha elegido deposito se procede a guardar sus datos
-                else if (DropDownList1.Equals("2"))
+                else if (DropDownList1.Value.Equals("2"))
                 {
                     datosPago.Add(int.Parse(Text5.Value));
                     datosPago.Add(int.Parse(Text6.Value));
@@ -306,10 +306,13 @@ namespace templateApp.GUI.Modulo16
                 }
 
                 //Obtengo el ID del usuario
-                int idUsuario = (int)(Session[RecursosInterfazMaster.sessionUsuarioID]);
+                //int idUsuario = (int)(Session[RecursosInterfaz);
+                int tipoPago = int.Parse(DropDownList1.Value);
+
+                Logicacarrito logica = new Logicacarrito();
 
                 //Se registra el pago y se obtiene el exito o fallo
-                bool exito = this.logicaCarrito.registrarPago(int.Parse(DropDownList1.Value), datosPago, idUsuario);
+                bool exito = logica.registrarPago(tipoPago, datosPago, usuario);
 
                 //Analizamos las condiciones
                 if (exito)

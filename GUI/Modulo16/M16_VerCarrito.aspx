@@ -34,7 +34,7 @@
         </div>
 <!--TABLAS-->
      <!-- general form elements -->
-    <form role="form" class="form-horizontal" method="POST">
+     <form id="form1" runat="server">
               
               <div class="row">
             <div class="col-xs-12">
@@ -199,6 +199,8 @@
          <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-info"">Pagar</button>
           &nbsp;&nbsp
          
+         
+         
     </div>
 
    <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
@@ -321,13 +323,14 @@
          <div class="form-group">
 		    <div class="box-footer">
 			<%--<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>--%>
-                <button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type ="submit" onserverclick ="registrarPago">Registrar Pago</button>
+               <%--  <asp:Button id="Boton1" style="align-content:flex-end" OnClick="registrarPago" runat="server" Disabled="disabled" class="btn btn-primary" Text="Registrar Pago" type ="submit" /> --%>
+                <asp:Button ID="Boton1" runat="server" Text="Button" OnClick ="registrarPago" />
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
 
 
-    </form>
+     </form>
       
 
 

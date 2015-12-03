@@ -63,6 +63,7 @@ namespace LogicaNegociosSKD.Modulo16
                 Carrito elCarrito = new Carrito();
                 elCarrito.ListaImplemento = listaImplemento;
                 elCarrito.Listaevento = listaEvento;
+                elCarrito.Listamatricula = listaMatricula;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -216,7 +217,7 @@ namespace LogicaNegociosSKD.Modulo16
                     respuesta = carritoBD.registrarPago("Transferencia", null, idUsuario);
 
                 //Limpiamos el carrito del Usuario
-                carritoUsuario.limpiar();
+               // carritoUsuario.limpiar();
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
