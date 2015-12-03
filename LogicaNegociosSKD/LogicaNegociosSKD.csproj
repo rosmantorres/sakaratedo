@@ -60,15 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo13.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo14\LogicaDiseño.cs" />
-    <Compile Include="Modulo14\LogicaPlanilla.cs" />
-    <Compile Include="Modulo14\LogicaSolicitud.cs" />
     <Compile Include="Modulo14\RecursosLogicaModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\LogicaListaImplemento.cs" />
     <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,7 +82,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo2\AlgoritmoDeEncriptacion.cs" />
     <Compile Include="Modulo2\logicaRol.cs" />
     <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -110,7 +105,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo5.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo6\LogicaListar.cs" />
     <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,14 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo7.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo8\LogicaRestriccionCompetencia.cs" />
-    <Compile Include="Modulo8\LogicaRestriccionCinta.cs" />
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo9\LogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,11 +171,11 @@
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosLogicaModulo3.resx">

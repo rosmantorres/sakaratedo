@@ -115,7 +115,6 @@ namespace LogicaNegociosSKD.Modulo4
                 throw ex;
             }
         }
-
         public bool agregarHistorialMatricula(DominioSKD.Historial_Matricula elHistMat, DominioSKD.Dojo elDojoHM)
         {
             try

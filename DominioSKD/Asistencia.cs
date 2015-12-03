@@ -11,31 +11,19 @@ namespace DominioSKD
         #region Atributos
         private string asistio;
         private Inscripcion inscripcion;
-        private Evento evento;
-        private Competencia competencia;
         #endregion
 
         #region Constructores
-        public Asistencia(String asistio, Inscripcion inscripcion, Evento evento)
+        public Asistencia(String asistio, Inscripcion inscripcion)
         {
             this.asistio = asistio;
             this.inscripcion = inscripcion;
-            this.evento = evento;
-        }
-
-        public Asistencia(String asistio, Inscripcion inscripcion, Competencia competencia)
-        {
-            this.asistio = asistio;
-            this.inscripcion = inscripcion;
-            this.competencia = competencia;
         }
 
         public Asistencia()
         {
             this.asistio = " ";
             this.inscripcion = new Inscripcion();
-            this.competencia = new Competencia();
-            this.evento = new Evento();
         }
 
         #endregion
@@ -51,18 +39,6 @@ namespace DominioSKD
         {
             get { return inscripcion; }
             set { inscripcion = value; }
-        }
-
-        public Evento Evento
-        {
-            get { return evento; }
-            set { evento = value; }
-        }
-
-        public Competencia Competencia
-        {
-            get { return competencia; }
-            set { competencia = value; }
         }
         #endregion
     }

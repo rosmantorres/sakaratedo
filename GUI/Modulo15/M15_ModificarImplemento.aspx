@@ -37,31 +37,8 @@ Gesti&oacuten de Inventario
  <div id="alert_confirmacion"  >
     <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
  </div>    
-
-    <div id="alert2" runat="server">
-    </div>
        <%--fin de Alerta de confirmación--%>
 
-    
-
-
-
-    <script runat=server>
-        public void refrescar() { 
-         
-            
-        
-        
-        }     
- 
-    
-    
-     </script>
-
-    
-    
-    
-    
                  <!-- Elementos generales del formulario -->
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -69,97 +46,88 @@ Gesti&oacuten de Inventario
                 </div><!-- /.box-header -->
 
               <!-- Comienzo del formulario -->
-                <form role="form" id="modificar_implemento"  runat="server" method="post" action="M15_ConsultarImplemento.aspx">
+                <form role="form" id="modificar_implemento" method="post" action="M15_ConsultarImplemento.aspx?modificar=exito">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <input type="hidden" id="id_implemento" name="id_implemento" value="id_implemento" class="form-control" runat="server" />            
-
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea" runat="server"/>            
+                        <input  type="text" id="nombre_articulo" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                          <p><b>Tipo Implemento:</b></p>
-                        <select id="tipo_implemento"  name="tipo_implemento" class="form-control" runat="server">
-                               <option value="Vestimenta" >Vestimenta</option>
-                               <option selected value="Accesorios" >Accesorios</option>
-                               <option value="Otros" >Otros</option>
+                        <select id="tipo_articulo" class="form-control">
+                               <option value="1" >Vestimenta</option>
+                               <option selected value="2" >Accesorios</option>
+                               <option value="3" >Otros</option>
                         </select>            
                       </div>
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="number" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
+                           <input type="text" id="cantidad_inventario" placeholder="*Cantidad" class="form-control" value="20"/>            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="number" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
+                        <input type="text" id="precio_producto" placeholder="*Precio" class="form-control" value="1000"/>         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <p><b>Color:</b></p>
-                         <select id="color_implemento" name="color_implemento" class="form-control" runat="server">
-                            <option value="AZUL" >AZUL</option>
-                               <option value="VERDE" >VERDE</option>
-                               <option value="AMARILLO" >AMARILLO</option>
-                               <option value="ROJO" >ROJO</option>
-                               <option value="NEGRO" >NEGRO</option>
-                               <option value="ROSADO" >ROSADO</option>
-                        </select>
-
+                         <input type="text" id="color_implemento"  placeholder="*Color" class="form-control" value="Rojo"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
-                      <select id="marca_implemento" name="marca_implemento" class="form-control" runat="server">
-                               <option value="ADIDAS" >ADIDAS</option>
-                               <option value="ARENA" >ARENA</option>
-                               <option value="PUMA" >PUMA</option>
-                               <option value="NIKE" >NIKE</option>
-                               <option value="KOMBA" >KOMBA</option>
-                               <option value="RS21" >RS21</option>
-                        </select>
-
-                        </div>
+                       <input type="text" id="marca_implemento"  placeholder="*Marca" class="form-control" value="Kombate"/>            
+                    </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
-                       <select id="talla_implemento" name="talla_implemento" class="form-control" runat="server">
-                              <option value="XS" >XS</option>
-                               <option value="S" >S</option>
-                               <option value="M" >M</option>
-                               <option value="L" >L</option>
-                               <option value="XL" >XL</option>
-                               <option value="XXL" >XXL</option>
-                               <option value="XXXL" >XXXL</option>
+                       <select id="Select1" class="form-control">
+                               <option value="1" >XS</option>
+                               <option value="2" >S</option>
+                               <option value="3" >M</option>
+                               <option value="4" >L</option>
+                               <option value="5" >XL</option>
+                               <option value="6" >XXL</option>
+                               <option value="7" >XXXL</option>
                         </select>            
                       </div>
                       <br/>
-                
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Dojo:</b></p>
+                             <select id="nombre_dojo" class="form-control">
+                                  <option value="1" >Green Dragon</option>
+                                  <option value="2" >Red Dragon</option>
+                                  <option value="3" >Blue Dragon</option>
+                                  <option value="4" >White Dragon</option>
+                                  <option value="5" >Black Dragon</option>
+                                  <option value="6" >Rainbow Dragon</option>
+                              </select>
+                                                       
+                    </div>
+                      <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Stock m&iacutenimo:</b></p>
-                       <input type="number" id="stock_implemento" name="stock_implemento" placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
+                       <input type="text" id="stock_implemento"  placeholder="*Stock m&iacutenimo" class="form-control" value="5"/>            
                     </div>
                       <br/>
-                        
-                      
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Descripcion:</b></p>
-                       <input type="text" id="descripcion_implemento" name="descripcion_implemento" placeholder="*Descripcion" class="form-control" value="5" runat="server"/>            
+                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                      <p><b>Proveedor:</b></p>
+                       <input type="text" id="proveedor_implemento"  placeholder="*Proveedor" class="form-control" value="Shirido"/>            
                     </div>
                       <br/>
-
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
-                       <input type="file" id="imagen_implemento" name="imagen_implemento" class="form-control" runat="server"/>            
+                       <input type="file" id="imagen_implemento"  class="form-control"/>            
                     </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Estatus:</b></p>
-                             <select id="estatus_implemento" name="estatus_implemento" class="form-control" runat="server">
-                                  <option value="Activo" >Activo</option>
-                                  <option value="Inactivo" >Inactivo</option>                                  
+                      <p><b>Condicion:</b></p>
+                             <select id="Select2" class="form-control" runat="server">
+                                  <option value="1" >Activo</option>
+                                  <option value="2" >Inactivo</option>                                  
                               </select>
                                                        
                       </div>
@@ -167,179 +135,22 @@ Gesti&oacuten de Inventario
                       
                          
                   </div><!--Fin del listado del formulario -->
-           <input type="hidden" id="modificar" name="modificar" value="modificar" class="form-control"  />            
 
                   <div class="box-footer">
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <button id="btn-agregarComp" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
                     &nbsp;&nbsp
-                       <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
+                    <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
                   </div>
 
                 </form>
-                 
               </div><!-- Fin del formulario-->
     
-<script src="../../plugins/jquery_validate/dist/jquery.validate.js"></script>
-<script src="../../plugins/jquery_validate/dist/jquery.validate.min.js"></script>
-<script src="../../plugins/jquery_validate/dist/additional-methods.js"></script>
 
     <!-- Declaración de las alertas-->
   <script type="text/javascript">
 
       $(document).ready(function () {
-
-          // just for the demos, avoids form submit
-          jQuery.validator.setDefaults({
-              debug: true,
-              success: "valid"
-          });
-          $("#modificar_implemento").validate({
-              rules: {
-                  ctl00$contenidoCentral$nombre_implemento: {
-                      required: true,
-                      minlength: 2,
-                      maxlength: 90
-
-                  },
-                  ctl00$contenidoCentral$tipo_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 90
-
-                  },
-                  ctl00$contenidoCentral$cantidad_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 8,
-                      number: true,
-                      range: [0, 99999999]
-                  },
-                  ctl00$contenidoCentral$precio_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 8,
-                      number: true,
-                      range: [0, 99999999]
-                  },
-                  ctl00$contenidoCentral$color_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 90
-                  },
-                  ctl00$contenidoCentral$marca_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 90
-                  },
-                  ctl00$contenidoCentral$talla_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 5
-                  },
-                  ctl00$contenidoCentral$stock_implemento: {
-                      required: true,
-                      minlength: 1,
-                      maxlength: 8,
-                      number: true,
-                      range: [0, 99999999]
-                  },
-                  ctl00$contenidoCentral$descripcion_implemento: {
-                      required: true,
-                      minlength: 5,
-                      maxlength: 120,
-                  },
-                  ctl00$contenidoCentral$imagen_implemento: {
-                      required: true
-                  },
-                  ctl00$contenidoCentral$estatus_implemento: {
-                      required: true
-                  }
-              },
-              messages: {
-                  ctl00$contenidoCentral$nombre_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres"
-                  },
-                  ctl00$contenidoCentral$tipo_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres"
-                  },
-                  ctl00$contenidoCentral$cantidad_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 1 digito",
-                      maxlength: "Maximo tiene que ser 8 digitos",
-                      number: "solo se aceptan numeros",
-                      range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
-
-                  },
-                  ctl00$contenidoCentral$precio_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 1 digito",
-                      maxlength: "Maximo tiene que ser 8 digitos",
-                      number: "solo se aceptan numeros",
-                      range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
-
-
-                  },
-                  ctl00$contenidoCentral$color_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres"
-                  },
-                  ctl00$contenidoCentral$marca_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 2 caracteres",
-                      maxlength: "Maximo tiene que ser 90 caracteres"
-                  },
-                  ctl00$contenidoCentral$talla_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 1 caracter",
-                      maxlength: "Maximo tiene que ser 5 caracteres"
-                  },
-                  ctl00$contenidoCentral$stock_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 1 digito",
-                      maxlength: "Maximo tiene que ser 8 digitos",
-                      number: "solo se aceptan numeros",
-                      range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
-
-
-                  },
-                  ctl00$contenidoCentral$descripcion_implemento: {
-                      required: "Este campo es obligatorio",
-                      minlength: "Minimo tiene que ser 5 caracteres",
-                      maxlength: "Maximo tiene que ser 120 caracteres"
-
-                  },
-                  ctl00$contenidoCentral$imagen_implemento: {
-                      required: "La imagen es obligatoria"
-
-
-                  },
-                  ctl00$contenidoCentral$estatus_implemento: {
-                      required: "El estatus es obligatorio"
-
-
-                  }
-                  
-
-              },
-              submitHandler: function (form) {
-                  // some other code
-                  // maybe disabling submit button
-                  // then:
-                  form.submit();
-              }
-
-          });
-
-
-
- 
-
           $("#alert").hide();
           $("#alert").attr("class", "alert alert-error alert-dismissible");
           $("#alert").attr("role", "alert");

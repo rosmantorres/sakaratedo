@@ -154,13 +154,13 @@
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificarHistorialMatricula.aspx?matriculaMod=</value>
   </data>
   <data name="CentroOpcion" xml:space="preserve">
-    <value>" onclick="select_Organizacion_Click(</value>
+    <value>" &gt;</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CerrarTH" xml:space="preserve">
-    <value>&lt;/th&gt;</value>
+    <value />
   </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
@@ -183,7 +183,8 @@
   <data name="comboOrganizacionInicio" xml:space="preserve">
     <value>&lt;div class="form-group col-sm-10 col-md-10 col-lg-10"&gt;
                             &lt;h3&gt;Organización:&lt;/h3&gt;
-                            &lt;select name="comboOrg" id="comboOrg" class="form-control"  runat="server"&gt;                      </value>
+                            &lt;select name="comboOrg" id="comboOrg" class="form-control" runat="server"&gt;
+                                </value>
   </data>
   <data name="FinalAspSelect" xml:space="preserve">
     <value>&lt;/asp:ListItem&gt;</value>
@@ -200,7 +201,7 @@
   <data name="MedioAspSelect" xml:space="preserve">
     <value>"&gt;</value>
   </data>
-  <data name="CentroOpcion2" xml:space="preserve">
-    <value>);"&gt;</value>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>

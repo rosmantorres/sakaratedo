@@ -16,33 +16,44 @@ namespace templateApp.GUI.Modulo12
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = M12_RecursoInterfaz.idModulo;
+            ((SKD)Page.Master).IdModulo = "12";
 
-            String success = Request.QueryString[M12_RecursoInterfaz.strSuccess];
-            String detalleString = Request.QueryString[M12_RecursoInterfaz.strCompDetalle];
+            String success = Request.QueryString["success"];
+            String detalleString = Request.QueryString["compDetalle"];
 
 
             if (detalleString != null)
             {
-                
+                llenarModalInfo(int.Parse(detalleString));
+                            
+            
+            
+            
             }
+
+
 
             if (success != null)
             {
-                if (success.Equals(M12_RecursoInterfaz.idAlertAgregar))
+                if (success.Equals("1"))
                 {
-                    alert.Attributes[M12_RecursoInterfaz.alertClase] = M12_RecursoInterfaz.alertaSuccess;
-                    alert.Attributes[M12_RecursoInterfaz.alertRole] = M12_RecursoInterfaz.tipoAlerta;
-                    alert.InnerHtml = M12_RecursoInterfaz.innerHtmlAlertAgregar;
-                    alert.Visible = true;
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Competencia agregada exitosamente</div>";
                 }
 
-                if (success.Equals(M12_RecursoInterfaz.idAlertModificar))
+                if (success.Equals("2"))
                 {
-                    alert.Attributes[M12_RecursoInterfaz.alertClase] = M12_RecursoInterfaz.alertaSuccess;
-                    alert.Attributes[M12_RecursoInterfaz.alertRole] = M12_RecursoInterfaz.tipoAlerta;
-                    alert.InnerHtml = M12_RecursoInterfaz.innerHtmlAlertModificar;
-                    alert.Visible = true;
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Competencia eliminada exitosamente</div>";
+                }
+
+                if (success.Equals("3"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Competencia modificada exitosamente</div>";
                 }
 
             }
@@ -62,22 +73,20 @@ namespace templateApp.GUI.Modulo12
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.TipoCompetencia.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Organizacion.Nombre.ToString() + M12_RecursoInterfaz.CerrarTD;
-                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Ubicacion.Ciudad.ToString() + M12_RecursoInterfaz.coma + c.Ubicacion.Estado.ToString() + M12_RecursoInterfaz.CerrarTD;
+                        this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Ubicacion.Ciudad.ToString() + ", " + c.Ubicacion.Estado.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD + c.Status.ToString() + M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.AbrirTD;
                         this.laTabla.Text += M12_RecursoInterfaz.BotonInfo + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
                         this.laTabla.Text += M12_RecursoInterfaz.BotonModificar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
+                        this.laTabla.Text += M12_RecursoInterfaz.BotonEliminar + c.Id_competencia + M12_RecursoInterfaz.BotonCerrar;
                         this.laTabla.Text += M12_RecursoInterfaz.CerrarTD;
                         this.laTabla.Text += M12_RecursoInterfaz.CerrarTR;
                     }
 
                 }
-                catch (ExcepcionesSKD.ExceptionSKD ex)
+                catch (Exception ex)
                 {
-                    this.alert.Attributes[M12_RecursoInterfaz.alertClase] = M12_RecursoInterfaz.alertaError;
-                    this.alert.Attributes[M12_RecursoInterfaz.alertRole] = M12_RecursoInterfaz.tipoAlerta;
-                    this.alert.InnerHtml = M12_RecursoInterfaz.alertaHtml + ex.Mensaje + M12_RecursoInterfaz.alertaHtmlFinal;
-                    this.alert.Visible = true;
+                    throw ex;
                 }
             }
         }
@@ -93,6 +102,8 @@ namespace templateApp.GUI.Modulo12
             Competencia laCompetencia = new Competencia();
             LogicaCompetencias logica = new LogicaCompetencias();
             laCompetencia = logica.detalleCompetenciaXId(elIdCompetencia);
+
+
 
         }
     }

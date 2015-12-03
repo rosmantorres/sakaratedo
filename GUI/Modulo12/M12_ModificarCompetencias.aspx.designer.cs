@@ -13,139 +13,13 @@ namespace templateApp.GUI.Modulo12 {
     public partial class M12_ModificarCompetencias {
         
         /// <summary>
-        /// alert control.
+        /// modificar_competencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
-        
-        /// <summary>
-        /// agregar_competencia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_competencia;
-        
-        /// <summary>
-        /// nombreComp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreComp;
-        
-        /// <summary>
-        /// input_tipo_kata control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_tipo_kata;
-        
-        /// <summary>
-        /// input_tipo_kumite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_tipo_kumite;
-        
-        /// <summary>
-        /// input_tipo_ambos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_tipo_ambos;
-        
-        /// <summary>
-        /// organizaciones control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox organizaciones;
-        
-        /// <summary>
-        /// fechaIni control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField fechaIni;
-        
-        /// <summary>
-        /// fechaFin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField fechaFin;
-        
-        /// <summary>
-        /// divComboOrg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboOrg;
-        
-        /// <summary>
-        /// comboOrgs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboOrgs;
-        
-        /// <summary>
-        /// txtLAT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField txtLAT;
-        
-        /// <summary>
-        /// txtLONG control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField txtLONG;
-        
-        /// <summary>
-        /// edad_desde control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edad_desde;
-        
-        /// <summary>
-        /// edad_hasta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edad_hasta;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_competencia;
         
         /// <summary>
         /// divComboCintaDesde control.
@@ -184,66 +58,30 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.WebControls.DropDownList comboCintaHasta;
         
         /// <summary>
-        /// input_sexo_M control.
+        /// divComboSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_sexo_M;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboSexo;
         
         /// <summary>
-        /// input_sexo_F control.
+        /// comboSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_sexo_F;
+        protected global::System.Web.UI.WebControls.DropDownList comboSexo;
         
         /// <summary>
-        /// input_status_porIniciar control.
+        /// btn_modificarComp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_status_porIniciar;
-        
-        /// <summary>
-        /// input_status_enCurso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_status_enCurso;
-        
-        /// <summary>
-        /// input_status_Finalizado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton input_status_Finalizado;
-        
-        /// <summary>
-        /// costoComp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox costoComp;
-        
-        /// <summary>
-        /// btn_modificarComp_Click control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modificarComp_Click;
+        protected global::System.Web.UI.WebControls.Button btn_modificarComp;
     }
 }

@@ -89,6 +89,7 @@
 				<tr>
 					<th style="text-align:center">Nombre</th>
 					<th style="text-align:center">Tipo</th>
+					<th style="text-align:center">Lugar</th>
 					<th style="text-align:center">Fecha Inicio</th>
                     <th style="text-align:center">Fecha Fin</th>
                     <th style="text-align:center">Hora Inicio</th>
@@ -97,15 +98,76 @@
                     <th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>
-			    <tbody>
-                    <asp:Literal runat="server" ID="tabla"></asp:Literal>    
+			<tbody>
+				<tr>
+					<td class="id">Evento 1</td>
+					<td>Entrenamiento Especial</td>
+					<td>Dojo A</td>
+					<td>01/11/2015</td>
+                    <td>03/11/2015</td>
+                    <td>02:00 PM</td>
+                    <td>07:00 PM</td>
+                    <td>Activo</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEventos.aspx"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+
+                				<tr>
+					<td class="id">Evento 2</td>
+					<td>Seminario</td>
+					<td>Dojo B</td>
+					<td>02/11/2015</td>
+                    <td>02/11/2015</td>
+                    <td>07:00 AM</td>
+                    <td>05:00 PM</td>
+                    <td>Activo</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEventos.aspx"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+                				<tr>
+					<td class="id">Evento 3</td>
+					<td>Clase</td>
+					<td>Dojo C</td>
+					<td>20/10/2015</td>
+                    <td>20/10/2015</td>
+                    <td>09:00 AM</td>
+                    <td>012:00 PM</td>
+                    <td>Inactivo</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEventos.aspx"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+                <tr>
+					<td class="id">Evento 4</td>
+					<td>Simulacro de Competencia</td>
+					<td>Parque del Este</td>
+					<td>25/10/2015</td>
+                    <td>25/10/2015</td>
+                    <td>07:00 AM</td>
+                    <td>04:00 PM</td>
+                    <td>Activo</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEventos.aspx"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+               
 			    </tbody>
             </table>
            </div>
        </div>
     </div>
 </div>
-<%-- 
+
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -188,7 +250,7 @@
 
             });
 
-        </script>--%>
+        </script>
     
 </asp:Content>
 

@@ -199,7 +199,7 @@
                          <!-- COMBO CIUDAD -->
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Ciudad:</h3>
-                            <select name="ciudad" id="ciudad" class="form-control" runat="server" >
+                            <select name="ciudad" id="ciudad" class="form-control" runat="server">
                                 <option value="Caracas" >Caracas</option>
                             </select>            
                         </div>
