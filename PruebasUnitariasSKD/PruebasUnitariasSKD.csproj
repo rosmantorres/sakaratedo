@@ -64,6 +64,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\PruebaBDDiseno.cs" />
+    <Compile Include="Modulo14\PruebaBDPlanilla.cs" />
+    <Compile Include="Modulo14\PruebaLogicaDiseno.cs" />
+    <Compile Include="Modulo14\PruebaLogicaPlanilla.cs" />
     <Compile Include="Modulo14\RecursosPU_Mod14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
