@@ -113,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo5.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\LogicaListar.cs" />
     <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,7 +181,7 @@
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">

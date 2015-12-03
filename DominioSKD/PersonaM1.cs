@@ -24,6 +24,8 @@ namespace DominioSKD
         /// </summary>
         private String _apellido;
 
+        private String _documentoID;
+
         #endregion
 
         #region Propiedades
@@ -42,6 +44,11 @@ namespace DominioSKD
             get { return _apellido; }
             set { _apellido = value; }
         }
+        public string _DocumentoID
+        {
+            get { return _documentoID; }
+            set { _documentoID = value; }
+        }
         #endregion
 
         #region Constructores
@@ -50,6 +57,7 @@ namespace DominioSKD
             _Id = 0;
             _Nombre = "";
             _Apellido = "";
+            _DocumentoID = "";
 
         }
         public PersonaM1(int id, string nombre, string apellido)

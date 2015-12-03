@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo1;
 using LogicaNegociosSKD.Modulo2;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo1
 {
@@ -75,10 +76,15 @@ namespace templateApp.GUI.Modulo1
 
                     if (Restablecer.restablecerContrasena(IdUser, pass1))
                     {
-                        value = cripto.EncriptarCadenaDeCaracteres
-                           (RecursosInterfazModulo1.parametroURLReestablecerExito, RecursosLogicaModulo2.claveDES);
-                        Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
-                            + RecursosInterfazModulo1.tipoSucess + "=" + value);
+                        if (Session[RecursosInterfazMaster.sessionUsuarioID] == null)
+                        {
+                            value = cripto.EncriptarCadenaDeCaracteres
+                               (RecursosInterfazModulo1.parametroURLReestablecerExito, RecursosLogicaModulo2.claveDES);
+                            Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
+                                + RecursosInterfazModulo1.tipoSucess + "=" + value);
+                        }
+                        else
+                            Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                     }
 
                 }

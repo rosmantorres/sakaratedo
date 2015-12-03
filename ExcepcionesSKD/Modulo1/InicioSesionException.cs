@@ -8,8 +8,9 @@ namespace ExcepcionesSKD.Modulo1
 {
     public class InicioSesionException : ExceptionSKD
     {
-         public InicioSesionException() : base()
-        {}
+        public InicioSesionException()
+            : base()
+        { }
 
         public InicioSesionException(string message)
             : base(message)

@@ -25,6 +25,8 @@ namespace templateApp.GUI.Modulo2
         public HiddenField Hidden =new HiddenField();
         public List<Rol> rolSinPermiso = new List<Rol>();
         public Cuenta cuentaConsultada ;
+        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
+        public String idUsuarioURL;
 
         //public Persona usuario;
         protected void Page_Load(object sender, EventArgs e)
@@ -46,10 +48,12 @@ namespace templateApp.GUI.Modulo2
 
                     if (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario] != null)
                     {
-                        rolesDePersona = logicaRol.consultarRolesUsuario
-                            (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]);////QUITAR ESTE PROCEDIMIENTO Y SP
+                       idUsuarioURL= cripto.DesencriptarCadenaDeCaracteres
+                            (Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario],RecursosLogicaModulo2.claveDES);
+                    
+                        rolesDePersona = logicaRol.consultarRolesUsuario(idUsuarioURL);
                         cuentaConsultada =
-                        logicaRol.cuentaAConsultar(int.Parse(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario]));
+                        logicaRol.cuentaAConsultar(int.Parse(idUsuarioURL));
                         rolesDePersona = cuentaConsultada.Roles;
                     }
 
@@ -64,7 +68,10 @@ namespace templateApp.GUI.Modulo2
                         Session[RecursosInterfazMaster.sessionRol].ToString());
 
                     //asigno la imagen del perfil
-                    imageTag.Src = imageTag.Src +cuentaConsultada.Imagen;
+                    if(cuentaConsultada.Imagen=="")
+                        imageTag.Src = "../../dist/img/AvatarSKD.jpg";
+                    else
+                        imageTag.Src = imageTag.Src +cuentaConsultada.Imagen;
 
                 }
                 else
@@ -86,7 +93,7 @@ namespace templateApp.GUI.Modulo2
             try
             {
           
-                logicaRol.eliminarRol(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario], RolSelect.Value);
+                logicaRol.eliminarRol(idUsuarioURL, RolSelect.Value);
                 Response.Redirect(Request.RawUrl);
             }
             catch (Exception ex)
@@ -98,7 +105,7 @@ namespace templateApp.GUI.Modulo2
         {
             try
             {
-                logicaRol.agregarRol(Request.QueryString[RecursosInterfazModulo2.parametroIDUsuario], RolSelect.Value);
+                logicaRol.agregarRol(idUsuarioURL, RolSelect.Value);
                 Response.Redirect(Request.RawUrl);
             }
             catch (Exception ex)

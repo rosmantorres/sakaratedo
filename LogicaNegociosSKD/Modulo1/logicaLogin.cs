@@ -36,7 +36,7 @@ namespace LogicaNegociosSKD.Modulo1
                     throw new Exception(RecursosLogicaModulo1.Mensaje_Error_CorreoNoRegistrado);
 
                 DateTime tiempoActual = DateTime.Now;
-                String DireccionHTTP = "http://localhost:" + RecursosLogicaModulo1.puertoSAKARATEDO +
+                String DireccionHTTP = RecursosLogicaModulo1.localhost + RecursosLogicaModulo1.puertoSAKARATEDO +
                 RecursosLogicaModulo1.direccionM1_RestablecerContraseña +
                 RecursosLogicaModulo1.variableRestablecerHTTP +
                 cripto.EncriptarCadenaDeCaracteres(idUser, RecursosLogicaModulo2.claveDES) +
@@ -45,7 +45,7 @@ namespace LogicaNegociosSKD.Modulo1
                 (tiempoActual.Date.ToString(), RecursosLogicaModulo2.claveDES);
 
 
-                String mensajeDireccion = "<br>" + DireccionHTTP + "</br>";
+                String mensajeDireccion = RecursosLogicaModulo1.lineBreak + DireccionHTTP + RecursosLogicaModulo1.slashLineBreak;
                 Mail.From = new MailAddress(RecursosLogicaModulo1.cuentaCorreoSAKARATEDO);
                 Mail.To.Add(new MailAddress(Destino));
                 Mail.Body = RecursosLogicaModulo1.mensajeSAKARATEDO + mensajeDireccion;
@@ -66,7 +66,7 @@ namespace LogicaNegociosSKD.Modulo1
             }
             catch (Exception e)
             {
-                Console.Write("Erro encontrado aqui:");
+                Console.Write(RecursosLogicaModulo1.errorGenerico);
                 Console.Write(e.StackTrace);
                 Console.Write(e.ToString());
                 Console.Write(e.Data.ToString());
@@ -149,8 +149,8 @@ namespace LogicaNegociosSKD.Modulo1
             catch (Exception e)
             {
 
-                Console.WriteLine("Error encontrado en login.iniciarSesion: " + e);
-                Console.WriteLine("Mensaje: " + e.Message);
+                Console.WriteLine(RecursosLogicaModulo1.Mensaje_Error_InicioSesion + e);
+                Console.WriteLine(RecursosLogicaModulo1.mensajeGenerico + e.Message);
                 throw e;
             }
         }
@@ -167,9 +167,9 @@ namespace LogicaNegociosSKD.Modulo1
         {
             String comparar;
             if (userName)
-                comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_.";
+                comparar = RecursosLogicaModulo1.abc_;
             else
-                comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .";
+                comparar = RecursosLogicaModulo1.abc;
             for (int i = 0; i < cadena.Length; i++)
             {
                 Boolean resultado = comparar.Contains(cadena[i]);
