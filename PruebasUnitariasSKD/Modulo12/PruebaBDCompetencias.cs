@@ -31,11 +31,12 @@ namespace PruebasUnitariasSKD.Modulo12
 
         [Test]
 
-        public void pruebaVacioListaCompetencias()
+        public void pruebaVacioListaRestriccionCompetencias()
         {
             laLista = BDCompetencia.ListarCompetencias();
             Assert.IsNotNull(laLista);
         }
+
         [Test]
         public void pruebaContarListaCompetencias()
         {

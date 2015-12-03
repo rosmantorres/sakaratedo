@@ -44,11 +44,14 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
+
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="InformacionPersonal.cs" />
+
     <Compile Include="Matricula.cs" />
     <Compile Include="PersonaM1.cs" />
+
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Cuenta.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="ResultadoKata.cs" />
     <Compile Include="ResultadoKumite.cs" />
     <Compile Include="SolicitudInscripcionDojo.cs" />
+    <Compile Include="SolicitudP.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />

@@ -82,6 +82,12 @@ namespace LogicaNegociosSKD.Modulo2
             }
         }
 
+        /// <summary>
+        /// Metodo que retorna los roles que el usuario NO tiene asignado
+        /// </summary>
+        /// <param name="usuarioRol">Lista de los roles que el usuario tiene asignado</param>
+        /// <param name="sistemaRol">Lista de los roles de sistema</param>
+        /// <returns>Lista de roles que el usuario no tiene asignado</returns>
         public static List<Rol> filtrarRoles(List<Rol> usuarioRol, List<Rol> sistemaRol)
         {
             bool diferente;

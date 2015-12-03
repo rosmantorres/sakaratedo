@@ -13,6 +13,15 @@ namespace templateApp.GUI.Modulo12 {
     public partial class M12_AgregarCompetencias {
         
         /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// agregar_competencia control.
         /// </summary>
         /// <remarks>
@@ -67,31 +76,40 @@ namespace templateApp.GUI.Modulo12 {
         protected global::System.Web.UI.WebControls.CheckBox organizaciones;
         
         /// <summary>
-        /// input_fecha_ini control.
+        /// fechaIni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_ini;
+        protected global::System.Web.UI.WebControls.HiddenField fechaIni;
         
         /// <summary>
-        /// input_fecha_fin control.
+        /// fechaFin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_fecha_fin;
+        protected global::System.Web.UI.WebControls.HiddenField fechaFin;
         
         /// <summary>
-        /// tablacompetencias control.
+        /// divComboOrg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable tablacompetencias;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboOrg;
+        
+        /// <summary>
+        /// comboOrgs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboOrgs;
         
         /// <summary>
         /// txtLAT control.
@@ -100,7 +118,7 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLAT;
+        protected global::System.Web.UI.WebControls.HiddenField txtLAT;
         
         /// <summary>
         /// txtLONG control.
@@ -109,7 +127,7 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLONG;
+        protected global::System.Web.UI.WebControls.HiddenField txtLONG;
         
         /// <summary>
         /// edad_desde control.
@@ -118,7 +136,7 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl edad_desde;
+        protected global::System.Web.UI.WebControls.TextBox edad_desde;
         
         /// <summary>
         /// edad_hasta control.
@@ -127,7 +145,7 @@ namespace templateApp.GUI.Modulo12 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl edad_hasta;
+        protected global::System.Web.UI.WebControls.TextBox edad_hasta;
         
         /// <summary>
         /// divComboCintaDesde control.
@@ -200,6 +218,15 @@ namespace templateApp.GUI.Modulo12 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton input_status_enCurso;
+        
+        /// <summary>
+        /// costoComp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox costoComp;
         
         /// <summary>
         /// btn_agregarComp control.

@@ -9,6 +9,9 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Modulo9
 {
+    /// <summary>
+    /// Clase que maneja la logica para el Modulo de Eventos
+    /// </summary>
     public class LogicaEvento
     {
         #region Constructores
@@ -27,6 +30,8 @@ namespace LogicaNegociosSKD.Modulo9
 
         public bool CrearEvento(Evento evento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
                 if (ValidarCaracteres(evento.Nombre))
@@ -35,8 +40,7 @@ namespace LogicaNegociosSKD.Modulo9
                     if (ValidarCaracteres(evento.Descripcion))
                     {
                         Console.Out.WriteLine("Descripcion Valido");
-                        if (ValidarCosto(evento.Costo))
-                        {
+
                             Console.Out.WriteLine("Costo Valido");
                             String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
                             String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
@@ -55,27 +59,124 @@ namespace LogicaNegociosSKD.Modulo9
                                     if (ValidarFechaFinMayor(fechaInicio, fechaFin))
                                     {
                                         Console.Out.WriteLine("FechaI <= FechaF");
+                                        
                                         BDEvento baseDeDatosEvento = new BDEvento();
+                                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                                         return baseDeDatosEvento.CrearEvento(evento);
+                                                
+                                            
+                                        
 
                                     }
                                 }
                             }
-                        }
+                        
                     }
 
                 }
 
             }
-            catch (ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
-            catch (Exception ex)
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return false;
+
+        }
+
+        /// <summary>
+        /// MEtodo Que permite Crear un evento Con un nuevo tipo de evento
+        /// </summary>
+        /// <param name="evento">Evento a agregar</param>
+        /// <returns>Verdadero o Falso</returns>
+
+        public bool CrearEventoConTipo(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                if (ValidarCaracteres(evento.Nombre))
+                {
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
+                    {
+                        Console.Out.WriteLine("Descripcion Valido");
+
+                            Console.Out.WriteLine("Costo Valido");
+                            String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                            String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                            String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                            String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaInicio))
+                            {
+                                Console.Out.WriteLine("FechaI Valido");
+                                dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                                mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                                año = (evento.Horario.FechaFin.Date.Year.ToString());
+                                String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                                if (ValidarFormatoFecha(fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaF Valido");
+                                    if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                    {
+                                        Console.Out.WriteLine("FechaI <= FechaF");
+                                        if (ValidarCaracteres(evento.TipoEvento.Nombre))
+                                        {
+                                            Console.Out.WriteLine("Nombre de Evento Valido ");
+                                            
+                                            BDEvento baseDeDatosEvento = new BDEvento();
+                                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                                            return baseDeDatosEvento.CrearEventoConTipo(evento);
+                                        }
+
+                                    }
+                                }
+                            }
+                        
+                    }
+
+                }
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return false;
 
         }
@@ -84,12 +185,186 @@ namespace LogicaNegociosSKD.Modulo9
         /// Metodo que retorna de la BD todos los eventos
         /// </summary>
         /// <returns>Lista de Eventos</returns>
-        public List<Evento> ListarEventos()
+        public List<Evento> ListarEventos(int idPersona)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            List<Evento> listaEventos = new List<Evento>();
+            try
+            {
+                BDEvento baseDeDatosEvento = new BDEvento();
+                listaEventos = baseDeDatosEvento.ListarEventos(idPersona);
+               
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            BDEvento baseDeDatosEvento = new BDEvento();
-            return baseDeDatosEvento.ListarEventos();
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaEventos;
         }
+
+        public bool ModificarEvento(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                if (ValidarCaracteres(evento.Nombre))
+                {
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
+                    {
+                        Console.Out.WriteLine("Descripcion Valido");
+
+                            Console.Out.WriteLine("Costo Valido");
+                            String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                            String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                            String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                            String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaInicio))
+                            {
+                                Console.Out.WriteLine("FechaI Valido");
+                                dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                                mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                                año = (evento.Horario.FechaFin.Date.Year.ToString());
+                                String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                                if (ValidarFormatoFecha(fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaF Valido");
+                                    if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                    {
+                                        if (ValidarCaracteres(evento.TipoEvento.Nombre))
+                                        {
+                                            Console.Out.WriteLine("Nombre de Evento Valido ");
+
+                                            BDEvento baseDeDatosEvento = new BDEvento();
+                                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                                            return baseDeDatosEvento.ModificarEvento(evento);
+                                        }
+
+                                    }
+                                }
+                            }
+                        
+                    }
+
+                }
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return false;
+
+        }
+
+        /// <summary>
+        /// Metodo que modifica un evento con un nuevo tipo de Evento
+        /// </summary>
+        /// <param name="evento">evento a modificar</param>
+        /// <returns>Verdadero o Falso</returns>
+
+        public bool ModificarEventoConTipo(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                if (ValidarCaracteres(evento.Nombre))
+                {
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
+                    {
+                        Console.Out.WriteLine("Descripcion Valido");
+
+                        Console.Out.WriteLine("Costo Valido");
+                        String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                        String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                        String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                        String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                        if (ValidarFormatoFecha(fechaInicio))
+                        {
+                            Console.Out.WriteLine("FechaI Valido");
+                            dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                            mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                            año = (evento.Horario.FechaFin.Date.Year.ToString());
+                            String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaFin))
+                            {
+                                Console.Out.WriteLine("FechaF Valido");
+                                if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaI <= FechaF");
+                                    BDEvento baseDeDatosEvento = new BDEvento();
+
+                                    return baseDeDatosEvento.ModificarEventoConTipo(evento);
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return false;
+
+        }
+
 
         /// <summary>
         /// Metodo que retorna de la BD un evento dado el ID
@@ -99,8 +374,35 @@ namespace LogicaNegociosSKD.Modulo9
 
         public Evento ConsultarEvento(String idEvento)
         {
-            BDEvento baseDeDatosEvento = new BDEvento();
-            return baseDeDatosEvento.ConsultarEvento(idEvento);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Evento evento = new Evento();
+            try
+            {
+                BDEvento baseDeDatosEvento = new BDEvento();
+               evento = baseDeDatosEvento.ConsultarEvento(idEvento);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return evento;
         }
 
         /// <summary>
@@ -137,7 +439,7 @@ namespace LogicaNegociosSKD.Modulo9
         /// <param name="numero">El costo del proyecto</param>
         /// <returns>Verdadero o Falso</returns>
 
-        public bool ValidarCosto(double numero)
+        public bool ValidarCosto(float numero)
         {
             String comparar = "123456789,";
             String cadena = numero.ToString();
@@ -225,6 +527,44 @@ namespace LogicaNegociosSKD.Modulo9
 
             
         }
+
+        public bool ValidarHora(String hora)
+        {
+            int contador = 0;
+            String comparar = "0123456789";
+            for (int i = 0; i < hora.Length; i++)
+            {
+                /*Console.Out.WriteLine(i);
+                Console.Out.WriteLine(fecha.Length);
+                Console.Out.WriteLine(fecha[i]);*/
+                Boolean resultado = comparar.Contains(hora[i]);
+                if (resultado == true)
+                {
+                    contador++;
+                }
+
+            }
+            //Console.Out.WriteLine(contador);
+            if (contador == hora.Length)
+                return true;
+            else
+                return false;
+
+
+        }
+
+        /// <summary>
+        /// Metodo que retorna todos los tipos de evento
+        /// </summary>
+        /// <returns>Lista de Tipos de Eventos</returns>
+        public List<TipoEvento> ConsultarTiposEventos()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            return baseDeDatosEvento.ListarTiposEventos();
+
+        }
+        
+        
         #endregion
 
     }

@@ -53,18 +53,38 @@
     <Compile Include="InformacionPersonalInvalidaException.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="Modulo12\CompetenciaExistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
-    <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
+
+
+    <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo8\RestriccionExistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
+
+
+    <Compile Include="Modulo14\BDDatosException.cs" />
+    <Compile Include="Modulo14\BDDiseñoException.cs" />
+    <Compile Include="Modulo14\BDPLanillaException.cs" />
+    <Compile Include="Modulo14\BDSolicitudException.cs" />
+    <Compile Include="Modulo14\ErrorImprimirPDFException.cs" />
+    <Compile Include="Modulo14\PlanillaRepetidaException.cs" />
+    <Compile Include="Modulo14\TipoPlanilllaRepetidaException.cs" />
+    <Compile Include="Modulo14\URLImagenException.cs" />
+
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
     <Compile Include="Modulo15\ErrorInputInterfaz.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
+
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
+
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
+
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,13 +92,11 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo14\" />
     <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo5\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
-    <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>
