@@ -43,73 +43,68 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="modificar_asistencia" id="modificar_asistencia" method="post" action="#">
+<form runat="server" role="form" name="modificar_asistencia" id="modificar_asistencia" method="post">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
      <!--Date picker FECHA-->
-    <div class="form-group col-sm-10 col-md-10 col-lg-10">
-        <br />
-        <h3>Fecha del Evento:</h3>
-        <div class="input-group input-append date" id="datePicker">
-        <input type="text" class="form-control" name="date" disabled />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-        </div>
-
-            <h3>Evento:</h3>
-    <input type="text" class="form-control" disabled >
-    </div>
-
-        <!--COMBO CATEGORIA-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Categoria:</h3>
-      <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Categoria <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Categoria #1</a></li>
-               <li><a href="#">Categoria #2</a></li>
-               <li><a href="#">Categoria #3</a></li>
-               <li><a href="#">Categoria #4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+   <div class="form-group col-sm-10 col-md-10 col-lg-10">
+       <br />
+       <h3>Fecha del Evento:</h3>
+       <asp:TextBox ID="fechaEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+       <h3>Nombre del Evento:</h3>
+       <asp:TextBox ID="nombreEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+   </div>
  
+    <!--LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
+    <div class="form-group">
+      <div id="div-org" class="col-sm-10 col-md-10 col-lg-10" style="height:200px">
+           <table style="width:100%; height:100% ">
+               <tr>
+                   <th >
+                       <h3 style="text-align:center">No Asistieron</h3>
+                   </th>
+                    <th>
+                       
+                   </th>
+                   <th>
+                       <h3 style="text-align:center">Asistieron</h3>
+                   </th>
+               </tr>
+        <tr>
+            <td>
+         <asp:ListBox Runat="server" ID="listaNoAsistieron" SelectionMode="Multiple" CssClass="form-control select select-primary select-block mbl" Height="150px">
+         </asp:ListBox>
+       </td>
+            <td>
 
-   <div class="form-group">
-      <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
-         <h3>Inscritos:</h3>
-         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
-             <option value="Atleta #1">Atleta #1</option>
-             <option value="Atleta #2">Atleta #2</option>
-             <option value="Atleta #3">Atleta #3</option>
-             <option value="Atleta #4">Atleta #4</option>
-             <option value="Atleta #5">Atleta #5</option>
-             <option value="Atleta #6">Atleta #6</option>
-         </select>
-         <br />
          <div class="text-center padding-small">
-            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-down" onclick="agregarOrg()"></button>
-            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-up" onclick="eliminarOrg()"></button>
+            <asp:LinkButton ID="bIzquierdo" runat="server" CssClass="btn btn-primary" OnClick="bIzquierdo_Click">
+            <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+            </asp:LinkButton>
+            <asp:LinkButton ID="bDerecho" runat="server" CssClass="btn btn-primary" OnClick="bDerecho_Click">
+            <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+            </asp:LinkButton>
          </div>
-         <h3>Asistieron:</h3>
-         <select multiple="multiple" name="org_secondary" size="4" class="form-control select select-primary select-block mbl"></select>
-         <br />
-         <br />
+
+           </td>
+             <td>
+         <asp:ListBox Runat="server" ID="listaAsistentes" SelectionMode="Multiple" CssClass="form-control select select-primary select-block mbl" Height="150px">
+         </asp:ListBox>
+            </td>
+        </tr>
+    </table>
       </div>
    </div>
+    <!--FIN LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
 
 </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-modificar" class="btn btn-primary" type="submit" href="M10_ListarAsistenciaEventos.aspx?eliminacionSuccess=2" onclick="#">Modificar</a>
-         &nbsp;&nbsp
-         <a class="btn btn-default" href="M10_ListarAsistenciaEventos.aspx"> Cancelar</a>
+          <asp:LinkButton ID="bModificar" runat="server" CssClass="btn btn-primary" OnClick="bModificar_Click">Modificar</asp:LinkButton>
+          &nbsp;&nbsp
+         <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>
    </form>
 </div>
