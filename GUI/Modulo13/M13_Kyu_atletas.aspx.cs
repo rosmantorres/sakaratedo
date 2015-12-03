@@ -27,7 +27,7 @@ namespace templateApp.GUI.Modulo13
                 celda.Controls.Add(new LiteralControl("valor"));
                 fila.Cells.Add(celda);
                 
-               example.Rows.Add(fila);
+               //example.Rows.Add(fila);
                 //TABLA.Rows.Add();
 
                List<Persona> laLista;
@@ -38,8 +38,8 @@ namespace templateApp.GUI.Modulo13
                {
 
 
-                   Response.Write("<tr>");
-                   Response.Write("<td>" + valor.Nombre + "</td>");
+                   //Response.Write("<tr>");
+                   //Response.Write("<td>" + valor.Nombre + "</td>");
                    celda.Controls.Add(new LiteralControl(valor.Nombre));
                    fila.Cells.Add(celda);
                    celda.Controls.Add(new LiteralControl(valor.Apellido));
