@@ -123,6 +123,27 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="agregarExito" xml:space="preserve">
+    <value>../Modulo12/M12_ListarCompetencias.aspx?success=1</value>
+  </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="alertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
@@ -140,5 +161,98 @@
   </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="coma" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="idAlertAgregar" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="idAlertModificar" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="idModulo" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="idModuloModificar" xml:space="preserve">
+    <value>12.1</value>
+  </data>
+  <data name="innerHtmlAlertAgregar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Competencia agregada exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Competencia modificada exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="keyCombo" xml:space="preserve">
+    <value>key</value>
+  </data>
+  <data name="modificarExito" xml:space="preserve">
+    <value>../Modulo12/M12_ListarCompetencias.aspx?success=2</value>
+  </data>
+  <data name="selectCinta" xml:space="preserve">
+    <value>Selecciona Una Cinta</value>
+  </data>
+  <data name="selectOrganizacion" xml:space="preserve">
+    <value>Selecciona Una Organizacion</value>
+  </data>
+  <data name="sexoF" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="sexoM" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="statusEnCurso" xml:space="preserve">
+    <value>En Curso</value>
+  </data>
+  <data name="statusFinalizado" xml:space="preserve">
+    <value>Finalizado</value>
+  </data>
+  <data name="statusPorIniciar" xml:space="preserve">
+    <value>Por Iniciar</value>
+  </data>
+  <data name="strCompDetalle" xml:space="preserve">
+    <value>compDetalle</value>
+  </data>
+  <data name="strCompMod" xml:space="preserve">
+    <value>compMod</value>
+  </data>
+  <data name="strSuccess" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="tipoAmbos" xml:space="preserve">
+    <value>Ambos</value>
+  </data>
+  <data name="tipoKata" xml:space="preserve">
+    <value>Kata</value>
+  </data>
+  <data name="tipoKumite" xml:space="preserve">
+    <value>Kumite</value>
+  </data>
+  <data name="valueCombo" xml:space="preserve">
+    <value>value</value>
+  </data>
+  <data name="orgTodas" xml:space="preserve">
+    <value>Todas</value>
+  </data>
+  <data name="camposVacios" xml:space="preserve">
+    <value>Existen campos vacios, todos los campos son obligatorios</value>
+  </data>
+  <data name="expresionSQL" xml:space="preserve">
+    <value>/\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix</value>
+  </data>
+  <data name="inputMalicioso" xml:space="preserve">
+    <value>Se ha detectado un ingreso de datos malicioso.</value>
+  </data>
+  <data name="errorGet" xml:space="preserve">
+    <value>error</value>
+  </data>
+  <data name="inputCaracteresEspeciales" xml:space="preserve">
+    <value>Los campos no deben tener caracteres especiales</value>
+  </data>
+  <data name="strErrorMalicioso" xml:space="preserve">
+    <value>input_malicioso</value>
   </data>
 </root>

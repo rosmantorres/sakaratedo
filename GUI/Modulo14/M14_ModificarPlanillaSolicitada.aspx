@@ -40,55 +40,63 @@
   <!-- /.box-header -->
   <!-- form start -->
   <form role="form" name="modificar_planilla" id="modificar_planilla" method="post" action="M14_ModificarPlanillaSolicitada.aspx?success=1"  runat="server">
-   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-    <div class="form-group col-sm-12 col-md-12 col-lg-12" name="calendar">
-    <!--Date picker FECHA Retiro-->
-      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-       <div id="alertlocal" runat="server">
-         <h3>Fecha de Retiro:</h3>
-         <div class="input-group input-append date" id="id_fechai">
-         <input type="text"  class="form-control" name="date" />
-         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-      </div>
-     </div>
-    </div>
-       <div class="form-group col-sm-4 col-md-3 col-lg-4">
-        <h3>Fecha de inicio:</h3>
-         <div class="input-group input-append date" id="id_fechaf">
-         <input type="text" class="form-control" name="date" />
-         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-       </div>
-      </div>
-   </div>
-       <%--<div class="form-group  col-sm-12 col-md-12 col-lg-12" >
+   
+      <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+      <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
          <div id="alertlocal" runat="server">
           <!-- Alertas-->
           </div>
-                  <div class="col-sm-3 col-md-3 col-lg-3">
-                      <label>Fecha retiro:</label>
-                  </div>     
-                  <div class="col-sm-8 col-md-8 col-lg-8">
-                      
-                      <input type="date" ID="id_fechai" Class="form-control"   runat="server"/>    
-                  </div>
+           <input id="id_solicitud" type="text" placeholder="" class="form-control" name="idSolicitud" runat="server" />  
+         </div>
+    
+         <!--Date picker FECHA Retiro-->
+       
+       <div class="form-group col-sm-6 col-md-6 col-lg-6" id="fechaRetiro" runat="server">
+       
+         <h3>Fecha de Retiro:</h3>
+         <div class="input-group input-append date" id="id_fechai" >
+         <input type="text"  class="form-control" name="date" id="idFechaI" runat="server" />
+         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
       </div>
-            <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                   <div class="col-sm-3 col-md-3 col-lg-3">
-                      <label>Fecha reincorporación:</label>
-                   </div>     
-                   <div class="col-sm-8 col-md-8 col-lg-8">
-                       <input type="date" ID="Id_fechaf" Class="form-control" runat="server"/>  
-                   </div>           
-             </div>--%>
-   
-                 <div class="form-group col-sm-4  col-md-3 col-lg-4">
-                   <h3>MOTIVO:</h3>
-                   <div class="col-sm-4 col-md-4 col-lg-4">
-                     <asp:TextBox id="TextBox1" placeholder="Escribe el Motivo" TextMode="multiline" Columns="106" Rows="10" runat="server" />     
-                   </div>
-             </div>
-
-
+     
+    </div>
+       <div class="form-group col-sm-6 col-md-6 col-lg-6" id="fechaReincorporacion" runat="server">
+        <h3>Fecha de Reincorporacion:</h3>
+         <div class="input-group input-append date" id="id_fechaf">
+         <input type="text" class="form-control" name="date" id="idFechaF" runat="server" />
+         <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+       </div>
+      </div>
+       
+       <div class="col-sm-12 col-md-12 col-lg-12">
+        
+       <br/>
+        <div class="col-sm-3 col-md-3 col-lg-3" id="labelCompetencia" runat="server">
+            <label>Seleccione la competencia:</label>  
+          </div>
+         <div class="col-sm-3 col-md-3 col-lg-3" id="labelEvento" runat="server">
+            <label>Seleccione el evento:</label>  
+          </div>
+        <div class="col-sm-8 col-md-8 col-lg-84">
+             <div class="dropdown" runat="server" id="divComboEvento" >
+                 <asp:DropDownList ID="comboEvento" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
+                 </asp:DropDownList>
+              </div>
+           </div>
+           <div class="col-sm-8 col-md-8 col-lg-84">
+             <div class="dropdown" runat="server" id="divComboCompetencia" >
+                 <asp:DropDownList ID="comboCompetencia" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
+                 </asp:DropDownList>
+              </div>
+           </div>
+       </div>
+         <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h3>Motivo:</h3>
+                      <br />  
+                       <textarea id="id_motivo" cols="120" rows="10"  class="form-control" runat="server"></textarea>
+                  </div>
+          </div>
  
 
  </div>

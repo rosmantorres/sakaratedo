@@ -4594,6 +4594,6 @@ INSERT INTO [dbo].[CINTA] ([cin_color_nombre], [cin_rango], [cin_clasificacion],
 
 
 
-
+update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
 
     

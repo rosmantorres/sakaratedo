@@ -26,7 +26,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Planillas</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Solicitar Planilla</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-
+    <div id="alert" runat="server">
+    </div>
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header with-border">
