@@ -165,6 +165,9 @@
     <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M16_VerCarrito?accion=3&amp;item=2&amp;id=</value>
     <comment>Implementacion del boton eliminar cuando se trata de una matricula</comment>
   </data>
+  <data name="BOTON_ELIMINAR_GENERAL" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info"  onclick="prueba3(this);" id="</value>
+  </data>
   <data name="BOTON_IMPRIMIR_FACTURA" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon glyphicon-print" data-toggle="modal" data-target="#modal-info"  onclick="prueba3(this);" id="</value>
   </data>

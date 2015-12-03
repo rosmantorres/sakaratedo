@@ -453,6 +453,60 @@
 
 
     <script type="text/javascript">
+
+        //Funcion que eliminara el producto dependiendo de cual sea
+        function prueba3(evento)
+        {
+            debugger
+
+            //Si el evento no es indefinido se realizaran las acciones pertinentes
+            if (e != undefined)
+            {
+                var numero = 0;
+
+                //Obtenemos a que tipo de objeto nos estamos refiriendo y le asignamos su numero
+                var arrayDatos = e.id.split("_");
+                if (arrayDatos[1] == "I")
+                    numero = 1;
+                else if (arrayDatos[1] == "M")
+                    numero = 2;
+                else
+                    numero = 3;
+
+                var producto = {
+                    tipo: numero,
+                    id: arrayDatos[0]
+
+                }
+
+                var datos = JSON.stringify(producto);
+
+                  $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/eliminarItem',
+                        data: datos,
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+
+                        success: function (data) {
+                            debugger
+
+                            console.log("Exito:" + data);
+
+                            var aa = JSON.parse(data.d);
+
+                            alert("Peticion ajax exitosa:" + aa);
+
+
+                        }
+
+                    });
+               
+            }
+        }
+
+
         $(document).ready(function () {
 
             var table1 = $('#tablainventario').DataTable({
