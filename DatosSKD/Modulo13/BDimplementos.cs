@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo13
 
 
         #region Listar Inventario
-        public static SqlDataReader D_Info_producto(String dojo)
+        public static void  D_Info_producto(String dojo)
         {        
           
             BDConexion conn;
@@ -57,22 +57,22 @@ namespace DatosSKD.Modulo13
                 parametros.Add(param);
 
                 DataTable dt = conn.EjecutarStoredProcedureTuplas("M13_Consultar_top5", parametros);
-
+                
                 foreach (DataRow row in dt.Rows)
                 {
                     Implemento implemento = new Implemento();
-                    implemento.Apellido = row[RecursosBDModulo13.apellido].ToString();
-                    personas.Nombre = row[RecursosBDModulo13.nombre].ToString();
-                    personas.Estatura = double.Parse(row[RecursosBDModulo13.estatura].ToString());
-                    personas.Peso = double.Parse(row[RecursosBDModulo13.peso].ToString());
-                    personas.FechaNacimiento = DateTime.Parse(row[RecursosBDModulo13.Edad].ToString());
+                    //implemento.Apellido = row[RecursosBDModulo13.apellido].ToString();
+                    //personas.Nombre = row[RecursosBDModulo13.nombre].ToString();
+                    //personas.Estatura = double.Parse(row[RecursosBDModulo13.estatura].ToString());
+                    //personas.Peso = double.Parse(row[RecursosBDModulo13.peso].ToString());
+                    //personas.FechaNacimiento = DateTime.Parse(row[RecursosBDModulo13.Edad].ToString());
 
-                    persona.Add(personas);
+                    //persona.Add(personas);
 
 
                 }
 
-                return persona;
+               // return aux;
 
             }
 

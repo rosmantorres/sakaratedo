@@ -25,14 +25,14 @@ namespace templateApp.GUI.Modulo13
                 example.Rows.Add(fila);
                 
                SqlDataReader resultado;
-               resultado = LogicaNegociosSKD.Modulo13.LogicaInfo_Producto.L_Info_Producto(DropDownList1.SelectedItem.Value);
+              // resultado = LogicaNegociosSKD.Modulo13.LogicaInfo_Producto.L_Info_Producto(DropDownList1.SelectedItem.Value);
                
                /*
                List<Persona> laLista;
                LogicaAtletaCinta logCinta = new LogicaAtletaCinta();
                laLista = logCinta.obtenerListaPersona();
                 */
-                while (resultado.Read())
+            /*    while (resultado.Read())
                {
 
                 //Response.Write("<tr>");
@@ -54,10 +54,10 @@ namespace templateApp.GUI.Modulo13
                 //Response.Write("<td>" + valor.Edad + "</td>");
                 //Response.Write("<td>" + valor.Peso + "</td>");
                 //Response.Write("<td>" + valor.Estatura + "</td>");
-                    */
+                    
 
                  example.Rows.Add(fila);
-               }
+               } */
             }
             catch (Exception ex)
             {

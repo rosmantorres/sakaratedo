@@ -29,12 +29,12 @@ namespace LogicaNegociosSKD.Modulo13
 
         #region Inventario
 
-        public static SqlDataReader L_Info_Producto(String dojo)
+        public static void L_Info_Producto(String dojo)
         {
             try
             {
                              
-                return (DatosSKD.Modulo13.BDimplementos.D_Info_producto(dojo));
+             //   return (DatosSKD.Modulo13.BDimplementos.D_Info_producto(dojo));
                    
             }
 
@@ -54,7 +54,7 @@ namespace LogicaNegociosSKD.Modulo13
 
                 throw ex;
             }
-            return resultado;
+            //return resultado;
         }
         
         
