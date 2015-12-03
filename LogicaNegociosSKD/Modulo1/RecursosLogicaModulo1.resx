@@ -210,4 +210,25 @@
   <data name="Mensaje_Error_Roles" xml:space="preserve">
     <value>El usuario no posee permiso para ingresar al sistema, comuníquese con un administrador de SAKARATEDO.</value>
   </data>
+  <data name="abc" xml:space="preserve">
+    <value>QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .</value>
+  </data>
+  <data name="abc_" xml:space="preserve">
+    <value>QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_.</value>
+  </data>
+  <data name="mensajeGenerico" xml:space="preserve">
+    <value>Mensaje:</value>
+  </data>
+  <data name="errorGenerico" xml:space="preserve">
+    <value>Error encontrado aqui:</value>
+  </data>
+  <data name="lineBreak" xml:space="preserve">
+    <value>&lt;br&gt;</value>
+  </data>
+  <data name="localhost" xml:space="preserve">
+    <value>http://localhost:</value>
+  </data>
+  <data name="slashLineBreak" xml:space="preserve">
+    <value>&lt;/br&gt;</value>
+  </data>
 </root>

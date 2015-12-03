@@ -8,8 +8,9 @@ namespace ExcepcionesSKD.Modulo1
 {
     public class FormatoIncorrectoException : ExceptionSKD
     {
-        public FormatoIncorrectoException() : base()
-        {}
+        public FormatoIncorrectoException()
+            : base()
+        { }
 
         public FormatoIncorrectoException(string message)
             : base(message)

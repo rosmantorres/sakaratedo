@@ -14,6 +14,16 @@ namespace templateApp.GUI.Modulo7 {
         
         /// <summary>
         /// Control detalle_evento.
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
+        /// Control modificar_planilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

@@ -43,10 +43,7 @@
            google.maps.event.addListener(map, 'click', function (event) {
                placeMarker(event.latLng);
            });
-
-
        }
-
        google.maps.event.addDomListener(window, 'load', initialize);
    </script>
 </asp:Content>
@@ -73,6 +70,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Competencias</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Competencia</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <div id="alert" runat="server"></div>
    <!-- general form elements -->
    <div class="box box-primary">
       <div class="box-header with-border">
@@ -118,8 +116,9 @@
                            <br />
                            <h3>Fecha de Inicio:</h3>
                            <div class="input-group input-append date" id="datePickerIni">
-                              <input runat="server" type="text" class="form-control" name="date" id="input_fecha_ini"/>
+                              <input type="text" class="form-control" name="date" id="input_fecha_ini"/>
                               <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                              <asp:HiddenField runat="server" id="fechaIni" ClientIDMode="Static"></asp:HiddenField>
                            </div>
                         </div>
                         <!--Date picker FECHA-->
@@ -127,43 +126,20 @@
                            <br />
                            <h3>Fecha de Culminaci&oacute;n:</h3>
                            <div class="input-group input-append date" id="datePickerFin">
-                              <input runat="server" type="text" class="form-control" name="date" id="input_fecha_fin"/>
+                              <input type="text" class="form-control" name="date" id="input_fecha_fin"/>
                               <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                              <asp:HiddenField runat="server" id="fechaFin" ClientIDMode="Static"/>
                            </div>
                         </div>
                      </div>
                      <br/>
                      <div class="form-group">
                         <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
-                           <div id="latabla">
+                           <div id="elComboOrgs">
                               <h3>Organizaciones Disponibles</h3>
-                              <div class="box-body table-responsive">
-                                 <table runat="server" id="tablacompetencias" class="table table-bordered table-striped dataTable">
-                                    <thead>
-                                       <tr>
-                                          <th style="width:100px;">Seleccionar</th>
-                                          <th style="width:auto;">Organización</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                          <th><input type="radio" name="radioSeleccion" id="radio1"  onclick="return fillCodigoTextField();"/></th>
-                                          <td class="id">Organización 1</td>
-                                       </tr>
-                                       <tr>
-                                          <th><input type="radio" name="radioSeleccion" id="radio2"  onclick="return fillCodigoTextField();"/></th>
-                                          <td class="id">Organización 2</td>
-                                       </tr>
-                                       <tr>
-                                          <th><input type="radio" name="radioSeleccion" id="radio3"  onclick="return fillCodigoTextField();"/></th>
-                                          <td class="id">Organización 3</td>
-                                       </tr>
-                                       <tr>
-                                          <th><input type="radio" name="radioSeleccion" id="radio4"  onclick="return fillCodigoTextField();"/></th>
-                                          <td class="id">Organización 4</td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
+                              <div class="dropdown" runat="server" id="divComboOrg">
+                                       <asp:DropDownList ID="comboOrgs" BackColor="White" class="btn btn-default dropdown-toggle col-sm-6 col-md-6 col-lg-6" runat="server" OnSelectedIndexChanged="comboOrgs_SelectedIndexChanged">
+                                       </asp:DropDownList>
                               </div>
                               <br />
                               <br />
@@ -172,8 +148,8 @@
                      </div>
                      <div class="form-group col-sm-12 col-md-12 col-lg-12" onload="initialize();">
                         <h3>Ubicación :</h3>
-                        <input type="text" id="txtLAT" runat="server" visible="false" disabled="disabled"><!--LATITUD DE UBICACION-->
-                        <input type="text" id="txtLONG" runat="server" visible="false" disabled="disabled"><!--LONGITUD DE UBICACION-->
+                        <asp:HiddenField runat="server" id="txtLAT" ClientIDMode="Static"></asp:HiddenField><!--LATITUD DE UBICACION-->
+                        <asp:HiddenField runat="server" id="txtLONG" ClientIDMode="Static"/><!--LONGITUD DE UBICACION-->
                         <div id="googleMap" style="width:735px;height:350px;"></div>
                         <br />
                      </div>
@@ -190,10 +166,10 @@
                                  </div>
                                  <div class="col-sm-8 col-md-8 col-lg-8" >
                                     <div class="col-sm-4 col-md-4 col-lg-4">
-                                       <label>Desde:</label>&nbsp;&nbsp;<input runat="server" id="edad_desde" type="number" onchange="updateInput(this.value)" value="10" min="10" max="60"/>
+                                       <label>Desde:</label>&nbsp;&nbsp;<asp:TextBox runat="server" id="edad_desde" type="number" Text="10" min="10" max="60" ClientIDMode="Static"/>
                                     </div>
                                     <div class="col-sm-4 col-md-4 col-lg-4">
-                                       <label>Hasta:</label>&nbsp;&nbsp;<input runat="server" id="edad_hasta" type="number" value="10" min="10" max="60"/>
+                                       <label>Hasta:</label>&nbsp;&nbsp;<asp:TextBox runat="server" id="edad_hasta" type="number" Text="10" min="10" max="60" ClientIDMode="Static"/>
                                     </div>
                                  </div>
                               </div>
@@ -204,13 +180,13 @@
                                  </div>
                                  <div class="col-sm-4 col-md-4 col-lg-4" >
                                     <div class="dropdown" runat="server" id="divComboCintaDesde">
-                                       <asp:DropDownList ID="comboCintaDesde"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboCintaDesde_SelectedIndexChanged" AutoPostBack="true">
+                                       <asp:DropDownList ID="comboCintaDesde" BackColor="White"  class="btn btn-default dropdown-toggle" runat="server" ClientIDMode="Static">
                                        </asp:DropDownList>
                                     </div>
                                  </div>
                                  <div class="col-sm-4 col-md-4 col-lg-4" >
                                     <div class="dropdown" runat="server" id="divComboCintaHasta">
-                                       <asp:DropDownList ID="comboCintaHasta"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboCintaHasta_SelectedIndexChanged" AutoPostBack="true">
+                                       <asp:DropDownList ID="comboCintaHasta" BackColor="White"  class="btn btn-default dropdown-toggle" runat="server" ClientIDMode="Static" OnSelectedIndexChanged="comboCintaHasta_SelectedIndexChanged">
                                        </asp:DropDownList>
                                     </div>
                                  </div>
@@ -232,8 +208,8 @@
                      </div>
                      <br />
                      <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                        <div class="col-sm-10 col-md-10 col-lg-10">
-                           <p><b>Status:</b></p>
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                           <h3>Status:</h3>
                            <label class="radio-inline">
                               <asp:RadioButton runat="server" Text="Por Iniciar" type="radio" name="radioStatus" checked="true" id="input_status_porIniciar" GroupName="statusComp"/>
                            </label>
@@ -243,6 +219,11 @@
                            <label class="radio-inline">
                            <input type="radio" name="radioStatus" disabled="disabled" id="input_status_Finalizado"/>Finalizado</label>
                         </div>
+                         <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                         <div class="col-sm-4 col-md-4 col-lg-4">
+                        <h3>Costo :</h3>
+                        <asp:TextBox runat="server" TextMode="Number" name="costoComp" id="costoComp" placeholder="Costo" class="form-control" MaxLength="4" ClientIDMode="Static"></asp:TextBox>
+                     </div>
                      </div>
                      <br />
                      <div class="form-group col-sm-5 col-md-5 col-lg-5">
@@ -280,16 +261,22 @@
    </script>
    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
    <script>
-       $(function () {
-           $('#organizaciones').change(function () {
-               if ($(this).prop('checked')) {
-                   $('#latabla').hide();
-               }
-               else {
-                   $('#latabla').show();
-               }
-           });
-       });
+        $(function () {
+            if ($('#organizaciones').is(":checked")) {
+                $('#elComboOrgs').hide();
+            }
+            else {
+                $('#elComboOrgs').show();
+            }
+            $('#organizaciones').change(function () {
+                if ($(this).prop('checked')) {
+                    $('#elComboOrgs').hide();
+                }
+                else {
+                    $('#elComboOrgs').show();
+                }
+            });
+        });
    </script>    
    <script>
        $(function () {
@@ -300,33 +287,56 @@
            });
        });
    </script>
+<script>
+    $(function () {
+        $('#comboCintaDesde').change(function () {
+            $('#comboCintaHasta').html('');
+            var cintaDesde = $('#comboCintaDesde').val();
+            var $options = $("#comboCintaDesde > option").clone();
+            $.each($options, function (i, item) {
+                if (item.value >= cintaDesde)
+                    $('#comboCintaHasta').append($('<option>', {
+                        value: item.value,
+                        text: item.text
+                    }));
+            });
+        });
+    });
+   </script>
+   <script>
+       $(function () {
+           $('#comboCintaHasta').change(function () {
+               return $('#comboCintaHasta').val();
+           })
+       });
+   </script>
    <script type="text/javascript">
        function updateInput(ish) {
            document.getElementById("edad_hasta").value = ish;
        }
    </script>
 
- <script type="text/javascript">
+ <script>
      $(document).ready(function () {
-         $('#datePickerIni')
-         .datepicker({
-             format: 'mm/dd/yyyy'
-         })
-         .on('changeDate', function (e) {
-             // Revalidate the date field
+         $("#input_fecha_fin").datepicker({
+             dateFormat: 'mm/dd/yy'
          });
-     });
-
-     $(document).ready(function () {
-         $('#datePickerFin')
-         .datepicker({
-             format: 'mm/dd/yyyy'
-         })
-         .on('changeDate', function (e) {
-             // Revalidate the date field
+         $("#input_fecha_ini").datepicker({
+             todayBtn: 1,
+             dateFormat: 'mm/dd/yy',
+             autoclose: true
+         }).on('changeDate', function (selected) {
+             var minDate = new Date(selected.date.valueOf());
+             document.getElementById("fechaIni").value = minDate;
+             $('#input_fecha_fin').datepicker('setStartDate', minDate);
          });
-     });
 
+         $("#input_fecha_fin").datepicker()
+             .on('changeDate', function (selected) {
+                 var minDate = new Date(selected.date.valueOf());
+                 document.getElementById("fechaFin").value = minDate;
+                 $('#input_fecha_ini').datepicker('setEndDate', minDate);
+             });
+     });
     </script>
-
 </asp:Content>
