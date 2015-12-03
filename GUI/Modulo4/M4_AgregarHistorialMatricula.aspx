@@ -74,7 +74,7 @@
                         <asp:Literal runat="server" ID="comboOrganizacion"></asp:Literal> 
 
                         <%-- Select Dojo--%>
-                        <asp:Literal runat="server" ID="comboDojo"></asp:Literal> 
+                        <asp:Literal runat="server" id="comboDojo"></asp:Literal> 
 
                         <%-- DATE PICKER FECHA --%>
                         <div class="form-group col-sm-4 col-md-3 col-lg-4">
