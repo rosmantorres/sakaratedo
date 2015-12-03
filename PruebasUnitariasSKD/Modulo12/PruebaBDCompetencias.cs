@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
-using DatosSKD;
 using DatosSKD.Modulo12;
 
 namespace PruebasUnitariasSKD.Modulo12
@@ -16,7 +15,7 @@ namespace PruebasUnitariasSKD.Modulo12
         List<Competencia> laLista;
         Competencia laCompetencia;
         [SetUp]
-        public void init()
+         public void init()
         {
             laLista         = new List<Competencia> ();
             laCompetencia   = new Competencia();
@@ -30,13 +29,13 @@ namespace PruebasUnitariasSKD.Modulo12
         }
 
         [Test]
-
-        public void pruebaVacioListaCompetencias()
+        public void pruebaVacioListaRestriccionCompetencias()
         {
             laLista = BDCompetencia.ListarCompetencias();
             Assert.IsNotNull(laLista);
         }
-        [Test]
+
+         [Test]
         public void pruebaContarListaCompetencias()
         {
             laLista = BDCompetencia.ListarCompetencias();
