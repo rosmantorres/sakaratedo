@@ -11,38 +11,32 @@
 
     <script src="https://twitter.github.io/typeahead.js/releases/0.10.4/typeahead.bundle.js"></script>
 
-    <script>
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	<script type="text/javascript">
 
+	    $(function () {
+	        var availableTags = [ <%= SuggestionList %>];
 
-        $(function () {
-            var $SelectedCompany = $('#selectedCompany').hide(),
-                companyList = [{ "Key": 1, "Value": "Alejandro Gonzalez" }, { "Key": 2, "Value": "Eduardo Schwank" }, { "Key": 4, "Value": "Eduardo Pacheco" }, { "Key": 5, "Value": "Chuck Norris" }];
+	    $("#<%= TextBox1.ClientID %>").autocomplete({
+	        source: availableTags
+	    });
+	});
 
-            var companies = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Value'),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                local: companyList
-            
-            });
-
-            companies.initialize();
-
-            $('#selecAtleta').typeahead({ highlight: true, minLength: 2 }, {
-                name: 'companies', displayKey: 'Value', source: companies.ttAdapter()
-            })
-            .on("typeahead:selected", function (obj, company) {
-                $SelectedCompany.html("Selected Company: " + JSON.stringify(company)).show();
-            });
-
-            $('#selecRival').typeahead({ highlight: true, minLength: 2 }, {
-                name: 'companies', displayKey: 'Value', source: companies.ttAdapter()
-            })
-            .on("typeahead:selected", function (obj, company) {
-                $SelectedCompany.html("Selected Company: " + JSON.stringify(company)).show();
-            });
-
-        });
-    </script>
+	</script>
+    
+    <form id="form1" runat="server">
+	<div>
+		<div class="ui-widget">
+			<label for="TextBox1">
+				Tags:
+			</label>
+			<asp:TextBox ID="TextBox1" runat="server" />
+		</div>
+	</div>
+	</form>
+    
 
     <form class="form-inline">
         <div class="form-group">
@@ -61,7 +55,7 @@
    
     
 
-    <table id="resultados" class="">
+    <table id="resultados">
 
         <tbody>
 

@@ -18,5 +18,16 @@ GO
 
 
 	
+CREATE PROCEDURE M13_BuscaPersona
+		@nombre1                  [varchar](1000),
+                @apellido1                 [varchar](1000),
+AS
+		
+BEGIN
+		select p.per_nombre,p.per_apellido,DATEDIFF(YEAR,p.per_fecha_nacimiento,GETDATE()) as Edad,p.per_peso,p.per_estatura   from persona p
+                where p.per_nombre = @nombre1 and p.per_apellido =  @apellido1
+END;
+GO
+
 
 
