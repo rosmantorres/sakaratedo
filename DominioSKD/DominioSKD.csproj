@@ -44,11 +44,14 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cinta.cs" />
+
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="InformacionPersonal.cs" />
+
     <Compile Include="Matricula.cs" />
     <Compile Include="PersonaM1.cs" />
+
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="CompraMatricula.cs" />

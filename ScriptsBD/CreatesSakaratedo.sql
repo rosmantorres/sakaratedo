@@ -3,8 +3,13 @@
   (
     asi_asistio CHAR(1) NOT NULL ,
     INSCRIPCION_ins_id INTEGER NOT NULL ,
+
+  EVENTO_eve_id      INTEGER NOT NULL,
+   
+
 	EVENTO_eve_id      INTEGER,
 	COMPETENCIA_comp_id INTEGER
+
   )
   ON "default"
 GO
@@ -87,7 +92,7 @@ CREATE
     com_fecha_compra DATE ,
     com_estado       VARCHAR (20) NOT NULL ,
     PERSONA_per_id   INTEGER NOT NULL ,
-	 CONSTRAINT COMPRA_CARRITO_PK PRIMARY KEY CLUSTERED (com_id)
+   CONSTRAINT COMPRA_CARRITO_PK PRIMARY KEY CLUSTERED (com_id)
 WITH
   (
     ALLOW_PAGE_LOCKS = ON ,
@@ -119,9 +124,9 @@ CREATE
   TABLE DETALLE_COMPRA
   (
     det_id                INTEGER IDENTITY(1,1) NOT NULL ,
-	COMPRA_CARRITO_com_id INTEGER NOT NULL,
-    det_precio 	          FLOAT NOT NULL ,
-	det_cantidad		  INTEGER NOT NULL,
+  COMPRA_CARRITO_com_id INTEGER NOT NULL,
+    det_precio            FLOAT NOT NULL ,
+  det_cantidad      INTEGER NOT NULL,
     MATRICULA_mat_id      INTEGER ,
     MATRICULA_per_id      INTEGER ,
     IMPLEMENTO_inv_id     INTEGER ,
@@ -225,10 +230,10 @@ CREATE
   TABLE EVENTO
   (
     eve_id           INTEGER IDENTITY(1,1) NOT NULL ,
-	eve_nombre       VARCHAR (120) NOT NULL ,
+  eve_nombre       VARCHAR (120) NOT NULL ,
     eve_descripcion  VARCHAR (120) NOT NULL ,
     eve_costo FLOAT NOT NULL ,
-	eve_estado BIT Not Null,
+  eve_estado BIT Not Null,
     HORARIO_hor_id   INTEGER NOT NULL ,
     UBICACION_ubi_id INTEGER NOT NULL ,
     DOJO_doj_id      INTEGER ,
@@ -263,7 +268,7 @@ CREATE
     his_mat_modalidad     VARCHAR (50) NOT NULL ,
     his_mat_monto FLOAT NOT NULL ,
     DOJO_doj_id INTEGER NOT NULL 
-	
+  
   )
   ON "default"
 GO
@@ -315,7 +320,7 @@ GO
 CREATE
   TABLE INSCRIPCION
   (
-    ins_id                    		   INTEGER IDENTITY(1,1) NOT NULL ,
+    ins_id                           INTEGER IDENTITY(1,1) NOT NULL ,
     PERSONA_per_id                     INTEGER NOT NULL ,
     ins_fecha                          DATE NOT NULL ,
     COMPETENCIA_comp_id                INTEGER ,
@@ -646,7 +651,7 @@ CREATE
   (
     res_asc_id INTEGER NOT NULL ,
     res_asc_aprobado CHAR(1) NOT NULL ,
-	INSCRIPCION_ins_id INTEGER NOT NULL,
+  INSCRIPCION_ins_id INTEGER NOT NULL,
     CONSTRAINT RESULTADO_ASCENSO_PK PRIMARY KEY CLUSTERED (res_asc_id)
 WITH
   (
@@ -670,7 +675,7 @@ CREATE
     res_kat_jurado1 INTEGER NOT NULL ,
     res_kat_jurado2 INTEGER NOT NULL ,
     res_kat_jurado3 INTEGER NOT NULL ,
-	INSCRIPCION_ins_id INTEGER NOT NULL ,
+  INSCRIPCION_ins_id INTEGER NOT NULL ,
     CONSTRAINT RESULTADO_KATA_PK PRIMARY KEY CLUSTERED (res_kat_id)
 WITH
   (
@@ -688,8 +693,8 @@ CREATE
     res_kum_id      INTEGER NOT NULL ,
     res_kum_atleta1 INTEGER NOT NULL ,
     res_kum_atleta2 INTEGER NOT NULL ,
-	INSCRIPCION_ins_id1 INTEGER NOT NULL ,
-	INSCRIPCION_ins_id2 INTEGER NOT NULL ,
+  INSCRIPCION_ins_id1 INTEGER NOT NULL ,
+  INSCRIPCION_ins_id2 INTEGER NOT NULL ,
     CONSTRAINT RESULTADO_KUMITE_PK PRIMARY KEY CLUSTERED (res_kum_id)
 WITH
   (
@@ -723,7 +728,7 @@ CREATE
   (
     rol_id     INTEGER IDENTITY(1,1) NOT NULL,
     rol_nombre VARCHAR (150) NOT NULL ,
-	rol_descripcion VARCHAR(200) NOT NULL,
+  rol_descripcion VARCHAR(200) NOT NULL,
     CONSTRAINT ROL_PK PRIMARY KEY CLUSTERED (rol_id)
 WITH
   (
@@ -769,7 +774,7 @@ CREATE
     sol_pla_fecha_reincorporacion DATE ,
     sol_pla_motivo                VARCHAR (2000) ,
     PLANILLA_pla_id               INTEGER NOT NULL ,
-	INSCRIPCION_ins_id            INTEGER NOT NULL ,
+  INSCRIPCION_ins_id            INTEGER NOT NULL ,
     CONSTRAINT SOLICITUD_PLANILLA_PK PRIMARY KEY CLUSTERED (sol_pla_id,
     PLANILLA_pla_id)
 WITH
@@ -1833,58 +1838,58 @@ GO
 
 --PROCEDURE AGREGAR COMPETENCIA--
 CREATE PROCEDURE M12_AgregarCompetencia
-	@nombreCompetencia   [varchar](100),
-	@tipoCompetencia     [int],
-	@organizacionesTodas [bit],
-	@statusCompetencia   [varchar](100),
-	@fecha_ini		     [datetime],
-	@fecha_fin           [datetime],
-	@nombreOrganizacion  [varchar](100),
-	@nombreCiudad		 [varchar](100),
-	@nombreEstado        [varchar](100),
-	@nombreDireccion	 [varchar](100),
-	@latitudDireccion    [varchar](100),
-	@longitudDireccion   [varchar](100),
-	@edadIni			 [int],
-	@edadFin			 [int],
-	@cintaIni			 [varchar](100),
-	@cintaFin            [varchar](100),
-	@sexo				 [char](1),
-	@costoCompetencia	 [float]
+  @nombreCompetencia   [varchar](100),
+  @tipoCompetencia     [int],
+  @organizacionesTodas [bit],
+  @statusCompetencia   [varchar](100),
+  @fecha_ini         [datetime],
+  @fecha_fin           [datetime],
+  @nombreOrganizacion  [varchar](100),
+  @nombreCiudad    [varchar](100),
+  @nombreEstado        [varchar](100),
+  @nombreDireccion   [varchar](100),
+  @latitudDireccion    [varchar](100),
+  @longitudDireccion   [varchar](100),
+  @edadIni       [int],
+  @edadFin       [int],
+  @cintaIni      [varchar](100),
+  @cintaFin            [varchar](100),
+  @sexo        [char](1),
+  @costoCompetencia  [float]
  
 as
  begin
-	declare @numCategoria as int;
-	declare @numUbicacion as int;
+  declare @numCategoria as int;
+  declare @numUbicacion as int;
 
-	select @numCategoria = count(*) from CATEGORIA where cat_cinta_fin = @cintaFin and cat_cinta_ini = @cintaIni
-													     and cat_edad_fin = @edadFin and cat_edad_ini = @edadIni
-														 and cat_sexo = @sexo;
-	select @numUbicacion = count(*) from UBICACION where ubi_latitud = @latitudDireccion and ubi_longitud = @longitudDireccion
-														 and ubi_ciudad = @nombreCiudad and ubi_estado = @nombreEstado
-														 and ubi_direccion = @nombreDireccion
-		if(@numCategoria = 0)
-				INSERT INTO CATEGORIA (cat_edad_ini, cat_edad_fin, cat_cinta_ini, cat_cinta_fin, cat_sexo) 
-				VALUES (@edadIni, @edadFin, @cintaIni, @cintaFin, @sexo);
+  select @numCategoria = count(*) from CATEGORIA where cat_cinta_fin = @cintaFin and cat_cinta_ini = @cintaIni
+                               and cat_edad_fin = @edadFin and cat_edad_ini = @edadIni
+                             and cat_sexo = @sexo;
+  select @numUbicacion = count(*) from UBICACION where ubi_latitud = @latitudDireccion and ubi_longitud = @longitudDireccion
+                             and ubi_ciudad = @nombreCiudad and ubi_estado = @nombreEstado
+                             and ubi_direccion = @nombreDireccion
+    if(@numCategoria = 0)
+        INSERT INTO CATEGORIA (cat_edad_ini, cat_edad_fin, cat_cinta_ini, cat_cinta_fin, cat_sexo) 
+        VALUES (@edadIni, @edadFin, @cintaIni, @cintaFin, @sexo);
 
-		if(@numUbicacion = 0)
-				INSERT INTO UBICACION(ubi_latitud, ubi_longitud, ubi_ciudad, ubi_estado, ubi_direccion) 
-				VALUES (@latitudDireccion, @longitudDireccion, @nombreCiudad, @nombreEstado, @nombreDireccion);
+    if(@numUbicacion = 0)
+        INSERT INTO UBICACION(ubi_latitud, ubi_longitud, ubi_ciudad, ubi_estado, ubi_direccion) 
+        VALUES (@latitudDireccion, @longitudDireccion, @nombreCiudad, @nombreEstado, @nombreDireccion);
 
 
-		if(@organizacionesTodas = 1)
-						
-					INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
-					VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
-						   (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
-						   (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
-						   null,@costoCompetencia);
-		else	
-				INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
-				VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
-					   (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
-					   (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
-					   (select org_id from ORGANIZACION where @nombreOrganizacion = org_nombre),@costoCompetencia);
+    if(@organizacionesTodas = 1)
+            
+          INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
+          VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
+               (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
+               (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
+               null,@costoCompetencia);
+    else  
+        INSERT INTO COMPETENCIA (comp_nombre, comp_tipo, comp_org_todas, comp_status, comp_fecha_ini, comp_fecha_fin, UBICACION_comp_id, CATEGORIA_comp_id, ORGANIZACION_comp_id, comp_costo)
+        VALUES (@nombreCompetencia, @tipoCompetencia, @organizacionesTodas, @statusCompetencia, @fecha_ini, @fecha_fin, 
+             (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion), 
+             (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
+             (select org_id from ORGANIZACION where @nombreOrganizacion = org_nombre),@costoCompetencia);
 
  end;
  go
@@ -1893,14 +1898,14 @@ as
 --PROCEDURE CONSULTAR ID COMPETENCIA--
 
 CREATE PROCEDURE M12_BuscarIDCompetencia
-	@idCompetencia   [int],
-	@numCompetencia  [int] OUTPUT
+  @idCompetencia   [int],
+  @numCompetencia  [int] OUTPUT
 as
  begin
 
-	select @numCompetencia = count(*) 
-	from COMPETENCIA 
-	where comp_id = @idCompetencia
+  select @numCompetencia = count(*) 
+  from COMPETENCIA 
+  where comp_id = @idCompetencia
 
  end;
  go
@@ -1908,14 +1913,24 @@ as
  
 --PROCEDURE CONSULTAR NOMBRE COMPETENCIA--
 CREATE PROCEDURE M12_BuscarNombreCompetencia
+<<<<<<< HEAD
+  @nombreCompetencia   [varchar](100),
+  @numCompetencia      [int] OUTPUT
+=======
 	@nombreCompetencia   [varchar](100),
 	@idCompetencia       [int],
 	@numCompetencia      [int] OUTPUT
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
 as
  begin
 	declare @aux as int;
 	set @aux = 0;
 
+<<<<<<< HEAD
+  select @numCompetencia = count(*) 
+  from COMPETENCIA 
+  where comp_nombre = @nombreCompetencia
+=======
 	select @aux = comp_id 
 	from COMPETENCIA 
 	where comp_nombre = @nombreCompetencia
@@ -1940,6 +1955,7 @@ as
 	select @numCompetencia = count(*)
 	from COMPETENCIA 
 	where comp_nombre = @nombreCompetencia
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
 
  end;
  go
@@ -1961,6 +1977,20 @@ as
 --PROCEDURE CONSULTA LISTA DE COMPETENCIAS--
 CREATE procedure M12_ConsultarCompetencias
 as
+<<<<<<< HEAD
+  begin
+    select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones,
+         org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado
+    from COMPETENCIA comp LEFT OUTER JOIN ORGANIZACION org ON comp.ORGANIZACION_comp_id = org.org_id, UBICACION ubi
+    where comp.UBICACION_comp_id = ubi.ubi_id
+    
+  end;
+
+  go
+
+  
+  --PROCEDURE CONSULTA COMPETENCIA POR ID --
+=======
 	begin
 		select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones,
 			   org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado
@@ -1973,10 +2003,37 @@ as
 	
 	
 	--PROCEDURE CONSULTA COMPETENCIA POR ID --
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
 CREATE procedure M12_ConsultarCompetenciasXId
-	@idCompetencia [int]
+  @idCompetencia [int]
 as
 DECLARE 
+<<<<<<< HEAD
+  @organizacionesTodas [bit]
+  begin
+  
+    select @organizacionesTodas = comp.comp_org_todas
+    from COMPETENCIA comp
+    where comp.comp_id = @idCompetencia
+
+    if(@organizacionesTodas = 0)
+      select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones, comp.comp_fecha_ini as fechaInicio, comp.comp_fecha_fin as fechaFin, comp.comp_costo as costoCompetencia,
+           org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
+           ubi.ubi_longitud as longitudDireccion, cat.cat_id as idCategoria, cat.cat_edad_ini as edadInicio, cat.cat_edad_fin as edadFin, cat.cat_cinta_ini as cintaInicio, cat_cinta_fin as cintaFin, cat_sexo as sexoCategoria
+      from COMPETENCIA comp, ORGANIZACION org, UBICACION ubi, CATEGORIA cat
+      where comp.ORGANIZACION_comp_id = org.org_id and comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
+    else
+      select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones, comp.comp_fecha_ini as fechaInicio, comp.comp_fecha_fin as fechaFin, comp.comp_costo as costoCompetencia,
+           ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado, ubi.ubi_direccion as nombreDireccion, ubi.ubi_latitud as latitudDireccion,
+           ubi.ubi_longitud as longitudDireccion, cat.cat_id as idCategoria, cat.cat_edad_ini as edadInicio, cat.cat_edad_fin as edadFin, cat.cat_cinta_ini as cintaInicio, cat_cinta_fin as cintaFin, cat_sexo as sexoCategoria
+      from COMPETENCIA comp, UBICACION ubi, CATEGORIA cat
+      where comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
+  end;
+
+  go
+
+  --PROCEDURE MODIFICAR COMPETENCIA--
+=======
 	@organizacionesTodas [bit]
 	begin
 	
@@ -2012,29 +2069,78 @@ as
 
 	
 	--PROCEDURE MODIFICAR COMPETENCIA--
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
 CREATE PROCEDURE M12_ModificarCompetencia
-	@idCompetencia       [int],
-	@nombreCompetencia   [varchar](100),
-	@tipoCompetencia     [int],
-	@organizacionesTodas [bit],
-	@statusCompetencia   [varchar](100),
-	@fecha_ini		     [datetime],
-	@fecha_fin           [datetime],
-	@nombreOrganizacion  [varchar](100),
-	@nombreCiudad		 [varchar](100),
-	@nombreEstado        [varchar](100),
-	@nombreDireccion	 [varchar](100),
-	@latitudDireccion    [varchar](100),
-	@longitudDireccion   [varchar](100),
-	@edadIni			 [int],
-	@edadFin			 [int],
-	@cintaIni			 [varchar](100),
-	@cintaFin            [varchar](100),
-	@sexo				 [char](1),
-	@costoCompetencia	 [float]
+  @idCompetencia       [int],
+  @nombreCompetencia   [varchar](100),
+  @tipoCompetencia     [int],
+  @organizacionesTodas [bit],
+  @statusCompetencia   [varchar](100),
+  @fecha_ini         [datetime],
+  @fecha_fin           [datetime],
+  @nombreOrganizacion  [varchar](100),
+  @nombreCiudad    [varchar](100),
+  @nombreEstado        [varchar](100),
+  @nombreDireccion   [varchar](100),
+  @latitudDireccion    [varchar](100),
+  @longitudDireccion   [varchar](100),
+  @edadIni       [int],
+  @edadFin       [int],
+  @cintaIni      [varchar](100),
+  @cintaFin            [varchar](100),
+  @sexo        [char](1),
+  @costoCompetencia  [float]
 as
  begin
 
+<<<<<<< HEAD
+  declare @numCategoria as int;
+  declare @numUbicacion as int;
+
+  select @numCategoria = count(*) from CATEGORIA where cat_cinta_fin = @cintaFin and cat_cinta_ini = @cintaIni
+                               and cat_edad_fin = @edadFin and cat_edad_ini = @edadIni
+                             and cat_sexo = @sexo;
+  select @numUbicacion = count(*) from UBICACION where ubi_latitud = @latitudDireccion and ubi_longitud = @longitudDireccion
+                             and ubi_ciudad = @nombreCiudad and ubi_estado = @nombreEstado
+                             and ubi_direccion = @nombreDireccion
+  if(@numCategoria = 0)
+      INSERT INTO CATEGORIA (cat_edad_ini, cat_edad_fin, cat_cinta_ini, cat_cinta_fin, cat_sexo) 
+      VALUES (@edadIni, @edadFin, @cintaIni, @cintaFin, @sexo);
+
+  if(@numUbicacion = 0)
+      INSERT INTO UBICACION(ubi_latitud, ubi_longitud, ubi_ciudad, ubi_estado, ubi_direccion) 
+      VALUES (@latitudDireccion, @longitudDireccion, @nombreCiudad, @nombreEstado, @nombreDireccion);
+
+  if(@organizacionesTodas = 1)
+    UPDATE COMPETENCIA
+    SET 
+      comp_nombre       = @nombreCompetencia,
+      comp_tipo         = @tipoCompetencia,
+      comp_org_todas    = @organizacionesTodas,
+      comp_status       = @statusCompetencia,
+      comp_fecha_ini    = @fecha_ini,
+      comp_fecha_fin    = @fecha_fin,
+      comp_costo        = @costoCompetencia,
+      CATEGORIA_comp_id = (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
+      UBICACION_comp_id = (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion)
+    WHERE
+      comp_id = @idCompetencia;
+  else
+    UPDATE COMPETENCIA
+    SET 
+      comp_nombre          = @nombreCompetencia,
+      comp_tipo            = @tipoCompetencia,
+      comp_org_todas       = @organizacionesTodas,
+      comp_status          = @statusCompetencia,
+      comp_fecha_ini       = @fecha_ini,
+      comp_fecha_fin       = @fecha_fin,
+      comp_costo           = @costoCompetencia,
+      CATEGORIA_comp_id    = (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
+      UBICACION_comp_id    = (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion),
+      ORGANIZACION_comp_id = (select org_id from ORGANIZACION where org_nombre = @nombreOrganizacion)
+    WHERE
+      comp_id = @idCompetencia;
+=======
 	declare @numCategoria as int;
 	declare @numUbicacion as int;
 
@@ -2082,30 +2188,82 @@ as
 			ORGANIZACION_comp_id = (select org_id from ORGANIZACION where org_nombre = @nombreOrganizacion)
 		WHERE
 			comp_id = @idCompetencia;
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
  end;
  go
+<<<<<<< HEAD
+
+
+
+--PROCEDURE CONSULTA LISTA DE ORGANIZACIONES--
+CREATE procedure M12_ConsultarOrganizaciones
+as
+  begin
+    select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
+    from ORGANIZACION as org    
+  end;
+go
+
+
+--PROCEDURE CONSULTA LISTA DE CINTAS--
+CREATE procedure M12_ConsultarCintas
+as
+<<<<<<< HEAD
+  begin
+    select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
+    from CINTA as cin   
+  end;
+=======
+	begin
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
+		from CINTA as cin		
+	end;
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+go
+
+
+=======
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
   ----------------------------------STORED PROCEDURES M1-------------------------------------
 
--------*NUEVO*-------PROCEDURE CONSULTA PERSONA POR ID ----------------------
+--------------------PROCEDURE CONSULTA PERSONA POR ID ----------------------
 
 CREATE procedure M1_ConsultarPersona_ID
 	@id_usuario [int]
 as
 	begin
-		select pers.per_nombre as nombre_usuario, pers.per_apellido as apellido_usuario, pers.per_id as id_usuario
+		select pers.per_nombre as nombre_usuario, pers.per_apellido as apellido_usuario, pers.per_id as id_usuario,
+		pers.per_num_doc_id as documento_usuario
 		from PERSONA pers
 		where pers.per_id = @id_usuario
 	end;
 	go
 
+-----------------------PROCEDURE LISTAR PERSONAS--------------------
 
+CREATE procedure M1_ConsultarNombreUsuarioContrasena_listar
+as
+	begin
+		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena,pers.per_imagen as imagen,
+		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
+		from PERSONA pers
+	end;
+	go
 
 
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR USERNAME--------*Nuevo*----
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
-	@nombre_usuario [varchar](25)
+  @nombre_usuario [varchar](25)
 as
+<<<<<<< HEAD
+  begin
+    select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena
+    from PERSONA pers
+    where pers.per_nombre_usuario = @nombre_usuario
+  end;
+  go
+=======
 	begin
 		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena,pers.per_imagen as imagen,
 		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
@@ -2113,84 +2271,95 @@ as
 		where pers.per_nombre_usuario = @nombre_usuario
 	end;
 	go
+>>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
 
 
 
 ------------------PROCEDURE CONSULTA ROLES DE USUARIO POR NOMBRE------------------
 CREATE procedure M1_ConsultarRolesUsuario
-	@nombre_usuario [varchar](25)
+  @nombre_usuario [varchar](25)
 as
-	begin
-		select roles.rol_id as id_rol, roles.rol_nombre as nombre,perol.per_rol_fecha as fecha_creacion,roles.rol_descripcion as descripcion
-		from ROL roles , PERSONA pers, PERSONA_ROL perol
-		where pers.per_id = perol.PERSONA_per_id AND perol.ROL_rol_id = roles.rol_id AND pers.per_nombre_usuario = @nombre_usuario
-	end;
-	go
+  begin
+    select roles.rol_id as id_rol, roles.rol_nombre as nombre,perol.per_rol_fecha as fecha_creacion,roles.rol_descripcion as descripcion
+    from ROL roles , PERSONA pers, PERSONA_ROL perol
+    where pers.per_id = perol.PERSONA_per_id AND perol.ROL_rol_id = roles.rol_id AND pers.per_nombre_usuario = @nombre_usuario
+  end;
+  go
 
 
 ------------------PROCEDURE RESTABLECER CONTRASENA ------------------
 CREATE procedure M1_RestablecerContrasena
-	@id_usuario [int],
-	@contrasena [varchar](64)
+  @id_usuario [int],
+  @contrasena [varchar](64)
 as
-	begin
-		UPDATE PERSONA 
-		SET per_clave = @contrasena
-		WHERE per_id = @id_usuario
-	end;
-	go
+  begin
+    UPDATE PERSONA 
+    SET per_clave = @contrasena
+    WHERE per_id = @id_usuario
+  end;
+  go
 
 -----------------PROCEDURE VALIDAR CORREO--------------------------
 CREATE procedure M1_ValidarCorreo
 @correo_usuario [varchar](25)
 as
+<<<<<<< HEAD
+  begin
+    select  PERSONA_per_id  as correo_usuario
+    from EMAIL
+    where ema_email= @correo_usuario and ema_principal=1
+  end;
+  go
+
+=======
 	begin
 		select  PERSONA_per_id  as correo_usuario
 		from EMAIL
 		where ema_email= @correo_usuario and ema_principal=1
 	end;
 go
+>>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
 
 -----------------------------------STORED PROCEDURES M2--------------------------------------------------------
 
 --------------PROCEDURE CONSULTA ROLES DE USUARIO POR ID----------------------
 CREATE procedure M2_ConsultarRolesUsuario
-	@id_usuario [varchar](25)
+  @id_usuario [varchar](25)
 as
-	begin
-		select roles.rol_id as id_rol, roles.rol_nombre as nombre,perol.per_rol_fecha as fecha_creacion,roles.rol_descripcion as descripcion
-		from ROL roles , PERSONA_ROL perol
-		where  perol.ROL_rol_id = roles.rol_id AND perol.PERSONA_per_id = CONVERT(INT,@id_usuario)
-	end;
+  begin
+    select roles.rol_id as id_rol, roles.rol_nombre as nombre,perol.per_rol_fecha as fecha_creacion,roles.rol_descripcion as descripcion
+    from ROL roles , PERSONA_ROL perol
+    where  perol.ROL_rol_id = roles.rol_id AND perol.PERSONA_per_id = CONVERT(INT,@id_usuario)
+  end;
 GO
-	
+  
 ------------------PROCEDURE CONSULTA ROLES DEL SISTEMA --------------------
 CREATE procedure M2_ConsultarRolesSistema
 as
-	begin
-		select rol_id as id_rol, rol_nombre as nombre, rol_descripcion as descripcion
-		from Rol 
-	end;
-	go
+  begin
+    select rol_id as id_rol, rol_nombre as nombre, rol_descripcion as descripcion
+    from Rol 
+  end;
+  go
 ---------------PROCEDURE AGREGAR ROL--------------------------
 
-	CREATE procedure M2_AgregarRole
-	@id_usuario [varchar](25),
-	@id_rol [varchar](25)
+  CREATE procedure M2_AgregarRole
+  @id_usuario [varchar](25),
+  @id_rol [varchar](25)
 as
-	begin
-		insert into PERSONA_ROL values(CONVERT (date, GETDATE()),@id_usuario,@id_rol);
-	end;
-	go
+  begin
+    insert into PERSONA_ROL values(CONVERT (date, GETDATE()),@id_usuario,@id_rol);
+  end;
+  go
 ------------------PROCEDURA ELIMINAR ROL-------------------------------
 CREATE procedure M2_EliminarRole
-	@id_usuario [varchar](25),
-	@id_rol [varchar](25)
+  @id_usuario [varchar](25),
+  @id_rol [varchar](25)
 as
-	begin
-		delete  from PERSONA_ROL  where PERSONA_per_id=@id_usuario AND ROL_rol_id=@id_rol;
-	end;
-	go
+  begin
+    delete  from PERSONA_ROL  where PERSONA_per_id=@id_usuario AND ROL_rol_id=@id_rol;
+  end;
+  go
 
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR ID--------*NUEVO*----
@@ -2208,6 +2377,201 @@ as
 	go
 
 -------------------------------------------M14---------------------------------------------------
+CREATE PROCEDURE M14_AgregarDiseño
+     
+    @dis_contenido   [varchar](8000),
+    @PLANILLA_pla_id  int
+AS 
+BEGIN
+    INSERT INTO DISEÑO(dis_contenido, PLANILLA_pla_id)
+      VALUES(@dis_contenido, @PLANILLA_pla_id)
+
+END;
+GO
+
+CREATE PROCEDURE M14_CambioDeStatusPlanilla
+  @pla_id int
+AS
+BEGIN
+    IF((SELECT pla_status FROM PLANILLA WHERE pla_id= @pla_id)=1)
+  BEGIN
+     UPDATE PLANILLA 
+        SET pla_status =0
+      WHERE pla_id=@pla_id
+  END
+  ELSE
+  BEGIN
+     UPDATE PLANILLA 
+        SET pla_status =1
+      WHERE pla_id=@pla_id
+  END
+END;
+GO
+
+-----------------------------------------------------------
+CREATE PROCEDURE M14_ConsultarDiseño
+  
+  @PLANILLA_pla_id [int]  
+     
+AS
+ BEGIN
+  
+  SELECT D.dis_id, D.dis_contenido
+  FROM DISEÑO D
+  WHERE D.PLANILLA_pla_id = @PLANILLA_pla_id
+ END
+ GO
+
+ -------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarPlanillasASolicitar
+  
+AS
+ BEGIN
+  
+  SELECT P.pla_id, P.pla_nombre,(SELECT T.tip_nombre FROM TIPO_PLANILLA T WHERE P.TIPO_PLANILLA_tip_id= T.tip_id) AS tipo, D.dis_id
+  FROM DISEÑO D, PLANILLA P
+  WHERE D.PLANILLA_pla_id= p.pla_id AND P.pla_status=1
+ END
+ GO
+ -----------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarPlanillasCreadas
+AS
+BEGIN
+  SELECT P.pla_id, P.pla_nombre, P.pla_status, T.tip_nombre, T.tip_id
+  FROM PLANILLA p, TIPO_PLANILLA T
+  WHERE P.TIPO_PLANILLA_tip_id=T.tip_id
+END
+GO
+---------------------------------------------------
+CREATE PROCEDURE M14_ConsultarSolicitudPlanilla
+    @PERSONA_per_id      [varchar](50)
+AS 
+BEGIN
+    SELECT S.sol_pla_id,S.INSCRIPCION_ins_id, S.sol_pla_fecha_creacion, S.sol_pla_fecha_retiro,
+    S.sol_pla_fecha_reincorporacion,S.sol_pla_motivo,S.PLANILLA_pla_id,
+    I.PERSONA_per_id, (SELECT E.eve_nombre FROM EVENTO E WHERE I.EVENTO_eve_id =E.eve_id and i.ins_id=s.INSCRIPCION_ins_id) as eve_nombre,(SELECT C.comp_nombre FROM COMPETENCIA C WHERE I.COMPETENCIA_comp_id = C.comp_id and i.ins_id=s.INSCRIPCION_ins_id) as comp_nombre,(SELECT p.pla_nombre FROM PLANILLA P WHERE P.pla_id= S.PLANILLA_pla_id) AS pla_nombre, (SELECT T.tip_nombre FROM TIPO_PLANILLA T WHERE P.TIPO_PLANILLA_tip_id =T.tip_id And P.pla_id= s.PLANILLA_pla_id) AS tipo
+    FROM SOLICITUD_PLANILLA S, INSCRIPCION I, PLANILLA P
+    WHERE @PERSONA_per_id= I.PERSONA_per_id and I.ins_id = s.INSCRIPCION_ins_id and (i.EVENTO_eve_id is not null or i.COMPETENCIA_comp_id is not null) and P.pla_id= s.PLANILLA_pla_id
+      
+
+END;
+GO
+-------------------------------------------
+CREATE PROCEDURE M14_ELIMINAR_SOLICITUD
+   @pla_sol_id int
+AS 
+BEGIN
+    DELETE FROM SOLICITUD_PLANILLA
+  WHERE sol_pla_id= @pla_sol_id
+END
+GO
+-----------------------------------------------
+CREATE PROCEDURE M14_InsertarSolicitudPlanilla
+    @sol_pla_fecha_creacion          [date],
+    @sol_pla_fecha_retiro            [date],
+    @sol_pla_fecha_reincorporacion   [date],
+    @sol_pla_motivo                  [varchar](1000),
+    @PLANILLA_pla_id                 int,
+    @INSCRIPCION_ins_id              int
+AS 
+BEGIN
+    INSERT INTO SOLICITUD_PLANILLA(sol_pla_fecha_creacion, sol_pla_fecha_retiro,
+    sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id)
+      VALUES(@sol_pla_fecha_creacion, @sol_pla_fecha_retiro,
+    @sol_pla_fecha_reincorporacion,@sol_pla_motivo,@PLANILLA_pla_id,@INSCRIPCION_ins_id)
+
+END;
+GO
+---------------------------------------------------------
+CREATE PROCEDURE M14_ModificarDiseño
+  @dis_id int,
+  @dis_contenido [varchar](8000)
+AS
+BEGIN
+  UPDATE DISEÑO 
+      SET dis_contenido = @dis_contenido
+    where dis_id=@dis_id
+END;
+GO
+---------------------------------------------------
+CREATE PROCEDURE M14_Procedure_IdTipoPlanilla
+  
+  @tip_nombre [varchar] (100),
+  @tip_id [int] OUTPUT
+AS
+ BEGIN
+  SELECT @tip_id= tip_id
+    FROM TIPO_PLANILLA
+  where tip_nombre=@tip_nombre;
+  RETURN
+ END
+ GO
+ ------------------------------------------
+ CREATE PROCEDURE M14_Procedure_ListarDatos
+  
+AS
+ BEGIN
+  SELECT dat_nombre
+    FROM Dato;
+ END;
+ GO
+ -----------------------------------
+ CREATE PROCEDURE M14_Procedure_ListarTipoPlanilla
+  
+AS
+ BEGIN
+  SELECT tip_id , tip_nombre
+    FROM TIPO_PLANILLA;
+ END;
+ GO
+
+ ---------------------------
+ ----------------AGREGAR DATOS Y PLANILLA---------------------
+CREATE PROCEDURE M14_ProcedureAgregarDatoPlanilla
+  @pla_nombre [varchar](100),
+  @dat_nombre [varchar](100)
+  
+
+
+as
+ begin
+     
+   --insertar datos y planilla--
+    INSERT INTO PLA_DAT(DATO_dat_id,PLANILLA_pla_id) 
+  VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),(select MAX(pla_id) from PLANILLA where pla_nombre=@pla_nombre));  
+
+ end;
+ GO
+
+ -------------------------------
+ ---------------AGREGAR PLANILLA------------------------------
+CREATE PROCEDURE M14_ProcedureAgregarPlanilla
+  @pla_nombre [varchar] (100),
+  @pla_status [bit],
+  @TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+  
+    INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+  VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+ GO
+ -----------------------
+ ------------------AGREGAR TIPO PLANILLA------------------------
+CREATE PROCEDURE M14_ProcedureAgregarTipoPlanilla
+  @tip_nombre [varchar] (100)
+
+as
+ begin
+  
+    INSERT INTO TIPO_PLANILLA(tip_nombre) 
+  VALUES(@tip_nombre); 
+
+<<<<<<< HEAD
+=======
+-------------------------------------------------Stored Procedure M14--------------------------
 CREATE PROCEDURE M14_AgregarDiseño
 		 
 		@dis_contenido   [varchar](8000),
@@ -2599,19 +2963,32 @@ as
     INSERT INTO TIPO_PLANILLA(tip_nombre) 
 	VALUES(@tip_nombre); 
 
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
  end;
 GO
 
 ------***----------Obtener Datos----------------------------------
 CREATE PROCEDURE M14_ProcedureDatosPlanilla
+<<<<<<< HEAD
+  @pla_nombre [varchar] (100),
+  @pla_status [bit],
+  @TIPO_PLANILLA_tip_id [int]
+=======
 	@pla_nombre [varchar] (100),
 	@pla_status [bit],
 	@TIPO_PLANILLA_tip_id [int]
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 
 as
  begin
 
     INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
+<<<<<<< HEAD
+  VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
+
+ end;
+ GO
+=======
 	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
 
  end;
@@ -2894,6 +3271,9 @@ AS
 		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
 		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
  END
+<<<<<<< HEAD
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+=======
 
 
 GO
@@ -3142,6 +3522,9 @@ as
     
   end;
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
+<<<<<<< HEAD
+>>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
+=======
 
 
 --------------------------------------------------------------P R O C E D U R E S   M 7--------------------------------------------------------------------- 
@@ -4074,3 +4457,4 @@ BEGIN
 END
 
 /*===============================================Stored Procedures Modulo 16 =======================*/
+>>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1

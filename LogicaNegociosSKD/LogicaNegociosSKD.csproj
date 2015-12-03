@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +125,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\LogicaRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\LogicaRestriccionCinta.cs" />
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

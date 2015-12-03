@@ -45,10 +45,11 @@
 				</div><!-- /.box-header -->
 
 	 
-	<div class="box-body table-responsive">
-
+<form role="form" name="consultar_rest" id="consultar_rest" runat="server">
+         
+    <div class="box-body table-responsive">
 	   <table id="RestriccionesCintas" class="table table-bordered table-striped dataTable">
-		<thead>
+		    <thead>
 				<tr>
 					<th>ID</th>
 					<th>Cinta</th>
@@ -57,36 +58,15 @@
 					<th >Mínimo Horas Docentes</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
-			</thead>
+		    </thead>
+              <asp:Literal runat="server" ID="tabla"></asp:Literal>
 			<tbody>
-				<tr>
-					<td class="id">RPC_1</td>
-					<td>Blanca</td>
-					<td>3 meses</td>
-					<td>30pts</td>
-					<td>0 horas</td>
-					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionAvanceCinta.aspx"></a>
-						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-					 </td>
-				</tr>
-
-				<tr>
-					<td class="id">RPC_2</td>
-					<td>Amarilla</td>
-					<td>5 meses</td>
-					<td>60pts</td>
-					<td>2 horas</td>
-					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionAvanceCinta.aspx"></a>
-						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-					 </td>
-				</tr>
-				
+								
 				
 			</tbody>
-	</table>
-
+	    </table>
+    </div>
+</form>
 					  
 
 		<div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
@@ -113,46 +93,43 @@
 	  </div><!-- /.modal-delete -->
 
 		<script type="text/javascript">
-			$(document).ready(function () {
+		    $(document).ready(function () {
+		        $('#tablarestriccioncinta').DataTable();
 
-			    var table = $('#RestriccionesCintas').DataTable({
-					"language": {
-						"url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-					}
-				});
-				var req;
-				var tr;
+		        var table = $('#tablarestriccioncinta').DataTable();
+		        var comp;
+		        var tr;
 
-				$('#RestriccionesCintas tbody').on('click', 'a', function () {
-					if ($(this).parent().hasClass('selected')) {
-						req = $(this).parent().prev().prev().prev().prev().text();
-						tr = $(this).parents('tr');//se guarda la fila seleccionada
-						$(this).parent().removeClass('selected');
+		        $('#tablarestriccioncinta tbody').on('click', 'a', function () {
+		            if ($(this).parent().hasClass('selected')) {
+		                comp = $(this).parent().prev().prev().prev().prev().text();
+		                tr = $(this).parents('tr');//se guarda la fila seleccionada
+		                $(this).parent().removeClass('selected');
 
-					}
-					else {
-						req = $(this).parent().prev().prev().prev().prev().text();
-						tr = $(this).parents('tr');//se guarda la fila seleccionada
-						table.$('tr.selected').removeClass('selected');
-						$(this).parent().addClass('selected');
-					}
-				});
+		            }
+		            else {
+		                comp = $(this).parent().prev().prev().prev().prev().text();
+		                tr = $(this).parents('tr');//se guarda la fila seleccionada
+		                table.$('tr.selected').removeClass('selected');
+		                $(this).parent().addClass('selected');
+		            }
+		        });
 
 
 
-				$('#modal-delete').on('show.bs.modal', function (event) {
-					var modal = $(this)
-					modal.find('.modal-title').text('Eliminar Restricción  ')
-					modal.find('#req').text(req)
-				})
-				$('#btn-eliminar').on('click', function () {
-					table.row(tr).remove().draw();//se elimina la fila de la tabla
-					$('#modal-delete').modal('hide');//se esconde el modal
-				});
+		        $('#modal-delete').on('show.bs.modal', function (event) {
+		            var modal = $(this)
+		            modal.find('.modal-title').text('Eliminar Cinta:  ' + comp)
+		            modal.find('#comp').text(comp)
+		        })
+		        $('#btn-eliminar').on('click', function () {
+		            table.row(tr).remove().draw();//se elimina la fila de la tabla
+		            $('#modal-delete').modal('hide');//se esconde el modal
+		        });
 
 
-			});
+		    });
 
-		</script>
+        </script>
 
 </asp:Content>

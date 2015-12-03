@@ -1,5 +1,4 @@
-﻿
--- INSERTS CATEGORIA --
+﻿-- INSERTS CATEGORIA --
 INSERT INTO [dbo].[CATEGORIA] ([cat_edad_ini], [cat_edad_fin], [cat_cinta_ini], [cat_cinta_fin], [cat_sexo]) VALUES (10,15,'Blanca','Naranja','M')
 go
 
@@ -394,16 +393,17 @@ go
 -- INSERTS PERSONA, TELEFONO, EMAIL, SOLICITUD INSCRIPCION, MATRICULA -- 
 /*
 INSERTS M6
-
 Los inserts de personas dependen de que los de Dojo hayan sido realizados.
-
 Para traer los IDs de personas INSCRITAS en DOJOS usar alguna de  las siguientes expresiones:
 --ADMINISTRADORES--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Alexander Abraham')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Freddy Jose')
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Javier Porfirio')
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 --ATLETAS--
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Carlos Alberto'),
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Miguel Alejandro')
@@ -4765,7 +4765,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
+    VALUES ('VERDE A AZUL',10,120,2,5);
+=======
     VALUES ('VERDE A AZUL',10,160,2,5);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4775,7 +4779,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
+    VALUES ('AZUL A MARRON',10,170,4,6);
+=======
     VALUES ('AZUL A MARRON',10,320,4,6);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4785,7 +4793,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
+    VALUES ('MARRON A MARRON',12,210,7,7);
+=======
     VALUES ('MARRON A MARRON',12,640,6,7);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
     
     INSERT INTO dbo.RESTRICCION_CINTA (
 
@@ -4795,7 +4807,11 @@ INSERT INTO PLA_DAT (DATO_dat_id,PLANILLA_pla_id) values (2,4);
     res_cin_horas_docent,
     CINTA_cin_id
     ) 
+<<<<<<< HEAD
+    VALUES ('MARRON A NEGRA',12,300,9,8);
+=======
     VALUES ('MARRON A NEGRA',12,1280,9,8);
+>>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
 
 
 
@@ -5208,6 +5224,11 @@ INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,25,6,NULL,2,NULL);
 
 
 update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';
+update EMAIL set ema_email='perdomo21346@gmail.com' where PERSONA_per_id=28 and ema_principal=1;
+update EMAIL set ema_email='rafa91_1@hotmail.com' where (PERSONA_per_id=31 or PERSONA_per_id=30 ) and ema_principal=1;
+
+
+
 
 /*-------------------------------------------------------------------------*/
 
