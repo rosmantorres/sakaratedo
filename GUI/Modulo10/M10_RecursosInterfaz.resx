@@ -117,101 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="aliasFechaCompetencia" xml:space="preserve">
-    <value>fechaInicioCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio competencia</comment>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="aliasFechaEvento" xml:space="preserve">
-    <value>fechaInicioEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio evento</comment>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="aliasIdCompetencia" xml:space="preserve">
-    <value>idCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna id competencia</comment>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="aliasIdEvento" xml:space="preserve">
-    <value>idEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna id evento</comment>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEventos.aspx?compDetalle=</value>
   </data>
-  <data name="aliasNombreCompetencia" xml:space="preserve">
-    <value>nombreCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna nombre competencia</comment>
+  <data name="BotonModificarCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=competencia&amp;modificar=</value>
   </data>
-  <data name="aliasNombreEvento" xml:space="preserve">
-    <value>nombreEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna nombre evento</comment>
+  <data name="BotonModificarEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=evento&amp;modificar=</value>
   </data>
-  <data name="ProcedimentoConsultarCompetenciaAsistida" xml:space="preserve">
-    <value>M10_ConsultarAsistenciaPasadaC</value>
-    <comment>Nombre del SP a ejecutar</comment>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="ProcedimentoConsultarEventoAsistido" xml:space="preserve">
-    <value>M10_ConsultarAsistenciaPasadaE</value>
-    <comment>Nombre del SP a ejecutar</comment>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
-  <data name="aliasTipoEvento" xml:space="preserve">
-    <value>tipoEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna tipo evento</comment>
+  <data name="Competencia" xml:space="preserve">
+    <value>Competencia</value>
   </data>
-  <data name="aliasIdPersona" xml:space="preserve">
-    <value>idPersona</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna id persona</comment>
-  </data>
-  <data name="aliasNombrePersona" xml:space="preserve">
-    <value>nombrePersona</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna nombre persona</comment>
-  </data>
-  <data name="ParametroIdEvento" xml:space="preserve">
-    <value>@_idEvento</value>
-    <comment>Id del Evento a modificar su asistencia</comment>
-  </data>
-  <data name="ProcedimientoAtletasAsistentes" xml:space="preserve">
-    <value>M10_AsistentesAlEvento</value>
-    <comment>Nombre del SP a ejecutar</comment>
-  </data>
-  <data name="aliasIdInscripcion" xml:space="preserve">
-    <value>idInscripcion</value>
-    <comment>Alias colocado en el Stored Procedure referende al id de inscripcion</comment>
-  </data>
-  <data name="ProcedimientoAtletasInasitentes" xml:space="preserve">
-    <value>M10_InasistenteAlEvento</value>
-    <comment>Nombre del SP a ejecutar</comment>
-  </data>
-  <data name="ParametroAsistencia" xml:space="preserve">
-    <value>@_asi_asistio</value>
-    <comment>parametro de asistencia</comment>
-  </data>
-  <data name="ParametroIdInscripcion" xml:space="preserve">
-    <value>@_idInscripcion</value>
-    <comment>Id de Inscripcion a modificar su asistencia</comment>
-  </data>
-  <data name="ProcedimientoModificarAsistenciaE" xml:space="preserve">
-    <value>M10_ModicarAsistenciaE</value>
-    <comment>Nombre del SP a ejecutar</comment>
-  </data>
-  <data name="ParametroIdCompetencia" xml:space="preserve">
-    <value>@_idCompetencia</value>
-    <comment>parametro id de competencia</comment>
-  </data>
-  <data name="ProcedimientoConsultarCompetenciaXID" xml:space="preserve">
-    <value>M10_ConsultarCompetenciaXid</value>
-    <comment>Nombre del SP a ejecutar</comment>
-  </data>
-  <data name="aliasFechaInicioCompetencia" xml:space="preserve">
-    <value>fechaInicioCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio</comment>
-  </data>
-  <data name="Concatenar0" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SeparadorFecha" xml:space="preserve">
-    <value>/</value>
-  </data>
-  <data name="FormatoFecha" xml:space="preserve">
-    <value>MM/dd/yyyy</value>
-  </data>
-  <data name="ProcedimientoAtletasAsistentesCompetencia" xml:space="preserve">
-    <value>M10_AsistentesCompetencia</value>
-    <comment>Nombre del SP a ejecutar</comment>
+  <data name="Evento" xml:space="preserve">
+    <value>Evento</value>
   </data>
 </root>

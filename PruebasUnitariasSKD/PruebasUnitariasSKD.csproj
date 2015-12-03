@@ -30,12 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\log4net.dll</HintPath>
     </Reference>
-=======
+
     <Reference Include="CKEditor.NET">
       <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
@@ -43,7 +43,7 @@
       <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
+
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo10\M10_PruebasBDAsistencia.cs" />
+    <Compile Include="Modulo10\M10_PruebasLogica.cs" />
     <Compile Include="Modulo10\RecursosPU_Mod10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,14 +241,14 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
     <None Include="App.config" />
-<<<<<<< HEAD
+
     <None Include="packages.config" />
-=======
+
     <Fakes Include="Fakes\nunit.framework.fakes" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

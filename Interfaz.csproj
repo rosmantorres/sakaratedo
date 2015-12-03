@@ -40,12 +40,9 @@
   <ItemGroup>
     <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
     <Reference Include="CKEditor.NET">
-<<<<<<< HEAD
       <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
-=======
       <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
-      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
+      <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -55,11 +52,8 @@
       <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>-->
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-<<<<<<< HEAD
       <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
-=======
       <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -91,10 +85,7 @@
     </Content>
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
-<<<<<<< HEAD
-=======
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -1807,6 +1798,11 @@
     <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo10\M10_RecursosInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M10_RecursosInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
       <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2342,19 +2338,14 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
       <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
-=======
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="GUI\Modulo8\RecursoInterfazMod8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoInterfazMod8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
       <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
@@ -2403,6 +2394,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo10\M10_RecursosInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M10_RecursosInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
@@ -2416,15 +2411,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo8\RecursoInterfazMod8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoInterfazMod8.Designer.cs</LastGenOutput>
->>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
