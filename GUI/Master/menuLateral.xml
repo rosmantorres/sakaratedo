@@ -241,7 +241,7 @@
     <modulo id="13"></modulo>
   </opcion>
 
-  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inicio.aspx">
+  <opcion nombre="Inventario Accesorios y Vestimenta" link="~/GUI/Modulo13/M13_Inventario.aspx">
     <modulo id="13"></modulo>
   </opcion>
 
