@@ -282,29 +282,29 @@ namespace templateApp.GUI.Modulo15
                     try
                     {
 
-                    #region datos_modificar
-                    id_implemento = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$id_implemento"]);
-                    nombre_implemento = Request.Form["ctl00$contenidoCentral$nombre_implemento"];
-                    tipo_implemento = Request.Form["ctl00$contenidoCentral$tipo_implemento"];
-                    marca_implemento = Request.Form["ctl00$contenidoCentral$marca_implemento"];
-                    color_implemento = Request.Form["ctl00$contenidoCentral$color_implemento"];
-                    talla_implemento = Request.Form["ctl00$contenidoCentral$talla_implemento"];
-                    cantidad = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$cantidad_implemento"]);
-                    stock_minimo = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$stock_implemento"]);
-                    estatus_implemento = Request.Form["ctl00$contenidoCentral$estatus_implemento"];
-                    precio_implemento = Convert.ToDouble(Request.Form["ctl00$contenidoCentral$precio_implemento"]);
-                    descripcion_implemento = Request.Form["ctl00$contenidoCentral$descripcion_implemento"];
-                    archivo = Request.Files["ctl00$contenidoCentral$imagen_implemento"];
-                    TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
-                    imagen_implemento = archivo.FileName;
-                    archivo.SaveAs(TargetLocation + imagen_implemento);
+                        #region datos_modificar
+                        id_implemento = Convert.ToInt32(Request.Form["ctl00$contenidoCentral$id_implemento"]);
+                        nombre_implemento = Request.Form["ctl00$contenidoCentral$nombre_implemento"];
+                        tipo_implemento = Request.Form["ctl00$contenidoCentral$tipo_implemento"];
+                        marca_implemento = Request.Form["ctl00$contenidoCentral$marca_implemento"];
+                        color_implemento = Request.Form["ctl00$contenidoCentral$color_implemento"];
+                        talla_implemento = Request.Form["ctl00$contenidoCentral$talla_implemento"];
+                        cantidad = Convert.ToInt32(Request.Form["ctl00$contenidoCentral$cantidad_implemento"]);
+                        stock_minimo = Convert.ToInt32(Request.Form["ctl00$contenidoCentral$stock_implemento"]);
+                        estatus_implemento = Request.Form["ctl00$contenidoCentral$estatus_implemento"];
+                        precio_implemento = Convert.ToDouble(Request.Form["ctl00$contenidoCentral$precio_implemento"]);
+                        descripcion_implemento = Request.Form["ctl00$contenidoCentral$descripcion_implemento"];
+                        archivo = Request.Files["ctl00$contenidoCentral$imagen_implemento"];
+                        TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+                        imagen_implemento = archivo.FileName;
+                        archivo.SaveAs(TargetLocation + imagen_implemento);
 
-                    #endregion 
+                        #endregion
 
 
-                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
-                    modificarImplementoInterfaz(implemento);
-                    
+                        Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
+                        modificarImplementoInterfaz(implemento);
+
                     }
                     catch (ErrorInputInterfaz ex2)
                     {
@@ -328,10 +328,21 @@ namespace templateApp.GUI.Modulo15
 
 
                     }
-                    
-                    
+
+
 
                 }
+                else {
+                    if (modificar.Equals("fallo")) {
+
+                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
+                        alert2.Attributes["role"] = "alert";
+                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Consultar el Implemento a Modificar</div>";
+
+                    }
+                
+                }
+
 
             }
 

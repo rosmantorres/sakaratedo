@@ -36,7 +36,7 @@ namespace templateApp.GUI.Modulo15
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/GUI/Modulo15/M15_ConsultarImplemento.aspx?modificar=fallo");
             }
 
 
