@@ -539,6 +539,7 @@ namespace DatosSKD.Modulo9
                     horario.HoraInicio = int.Parse(row[RecursosBDModulo9.AliasHoraInicio].ToString());
                     horario.HoraFin = int.Parse(row[RecursosBDModulo9.AliasHoraFin].ToString());
                     TipoEvento tipoEvento = new TipoEvento();
+                    tipoEvento.Id = int.Parse(row[RecursosBDModulo9.AliasIDTipoEvento].ToString());
                     tipoEvento.Nombre = row[RecursosBDModulo9.AliasTipoEvento].ToString();
                     evento.Horario = horario;
                     evento.TipoEvento = tipoEvento;

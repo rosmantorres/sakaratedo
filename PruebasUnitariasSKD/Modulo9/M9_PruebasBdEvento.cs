@@ -84,7 +84,8 @@ namespace PruebasUnitariasSKD.Modulo9
         {
             DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
             Evento evento = baseDeDatosEvento.ConsultarEvento("1");
-            Console.Out.WriteLine(evento.Nombre);
+
+            Console.Out.WriteLine(evento.TipoEvento.Id);
             Assert.AreEqual(evento.Nombre, "Clase Regular");
         }
 
