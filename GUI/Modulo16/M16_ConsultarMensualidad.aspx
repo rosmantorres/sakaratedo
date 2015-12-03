@@ -80,6 +80,58 @@
 
      <!--VALIDACION PARA MODAL -->
              <script type="text/javascript">
+
+                 // Funcionalidad para el boton Agregar Producto al Carrito
+                 function prueba3(e) {
+
+                     debugger
+
+                     if (e != undefined) {
+
+                         var arrayConDatosDelProducto = e.id.split("_");
+
+                         //Obtenemos el id del boton presionado.
+                         var aux = $("#" + arrayConDatosDelProducto[0]);
+
+                         //Creamos un objeto con los datos a ser enviado al servidor.
+                         var producto = {
+                             idMatricula: arrayConDatosDelProducto[0],
+                             precio: arrayConDatosDelProducto[1]
+                         }
+
+                         var datos = JSON.stringify(producto);
+
+                         if (aux != undefined) {
+
+                             $.ajax({
+                                 cache: false,
+                                 type: 'POST',
+                                 url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarMensualidad.aspx/agregarMatriculaAcarrito',
+                                 data: datos,
+                                 dataType: 'json',
+                                 contentType: "application/json; charset=utf-8",
+
+                                 success: function (data) {
+                                     debugger
+
+                                     console.log("Exito:" + data);
+
+                                     var aa = JSON.parse(data.d);
+
+                                     alert("Peticion ajax exitosa:" + aa);
+
+
+                                 }
+
+                             });
+
+                         }
+                     }
+
+                 }
+
+
+
                  $(document).ready(function () {
 
                      var table = $('#tablamatriculas').DataTable({

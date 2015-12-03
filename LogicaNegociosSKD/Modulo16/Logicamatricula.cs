@@ -36,12 +36,12 @@ namespace LogicaNegociosSKD.Modulo16
         /// </summary>
         /// <param name="idUsuario">El usuario el cual se desea ver las matriculas en su carrito</param>
         /// <returns>Todas las matriculas que tiene actualmente el cliente en su carrito</returns>
-        public List<DominioSKD.Matricula> mostrarMensualidadesmorosas(int idPersona)
+        public List<DominioSKD.Matricula> mostrarMensualidadesmorosas()
         {
 
             try
             {
-                return BDMatricula.mostrarMensualidadesmorosas(idPersona);
+                return BDMatricula.mostrarMensualidadesmorosas();
             }
 
 

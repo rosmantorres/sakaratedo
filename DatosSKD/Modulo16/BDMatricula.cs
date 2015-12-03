@@ -17,27 +17,25 @@ namespace DatosSKD.Modulo16
     {
 
 
-        public static List<DominioSKD.Matricula> mostrarMensualidadesmorosas(int IdPersona)
+        public static List<DominioSKD.Matricula> mostrarMensualidadesmorosas()
         {
             BDConexion laConexion;
             List<Matricula> laListaDeMatriculas = new List<Matricula>();
-            List<Parametro> parametros;
+            
 
             try
             {
                 laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, IdPersona.ToString(), false);
-                parametros.Add(parametro);
+               
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo16.StoreProcedureConsultarMatriculas, parametros);
+                               RecursosBDModulo16.StoreProcedureConsultarMatriculas, null);
 
                 foreach (DataRow row in dt.Rows)
                 {
                     Matricula laMatricula = new Matricula();
 
-
+                    laMatricula.Identificador = (row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
                     laMatricula.Identificador = (row[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                     laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
                     laMatricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
