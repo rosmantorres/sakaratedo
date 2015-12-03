@@ -46,8 +46,12 @@ namespace templateApp.GUI.Modulo12
                     laLatitud = laCompetencia.Ubicacion.Latitud.ToString();
                     laLongitud = laCompetencia.Ubicacion.Longitud.ToString();
                 }
-                catch 
+                catch (ExcepcionesSKD.ExceptionSKD ex)
                 {
+                    this.alert.Attributes[M12_RecursoInterfaz.alertClase] = M12_RecursoInterfaz.alertaError;
+                    this.alert.Attributes[M12_RecursoInterfaz.alertRole] = M12_RecursoInterfaz.tipoAlerta;
+                    this.alert.InnerHtml = M12_RecursoInterfaz.alertaHtml + ex.Mensaje + M12_RecursoInterfaz.alertaHtmlFinal;
+                    this.alert.Visible = true;
                 }
             }
         }

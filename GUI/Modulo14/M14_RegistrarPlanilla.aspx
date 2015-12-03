@@ -82,6 +82,7 @@
              <asp:ListItem Text="EVENTO" Value="EVENTO" />
              <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
              <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
+            <asp:ListItem Text="MATRICULA" Value="MATRICULA"  />
 
           </asp:ListBox>
           <br/>

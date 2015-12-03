@@ -53,17 +53,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo12\PruebaBDCompetencias.cs" />
-    <Compile Include="Modulo12\RecursosPU_Mod12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPU_Mod12.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Modulo12\PruebaLogicaCompetencias.cs" />
+    <Compile Include="Modulo12\PruebasBDCompetencias.cs" />
     <Compile Include="Modulo13\RecursosPU_Mod13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod13.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\PruebaBDDiseno.cs" />
+    <Compile Include="Modulo14\PruebaBDPlanilla.cs" />
+    <Compile Include="Modulo14\PruebaLogicaDiseno.cs" />
+    <Compile Include="Modulo14\PruebaLogicaPlanilla.cs" />
     <Compile Include="Modulo14\RecursosPU_Mod14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,10 +169,6 @@
     <EmbeddedResource Include="Modulo11\RecursosPU_Mod11.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod11.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo12\RecursosPU_Mod12.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPU_Mod12.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo13\RecursosPU_Mod13.resx">
       <Generator>ResXFileCodeGenerator</Generator>

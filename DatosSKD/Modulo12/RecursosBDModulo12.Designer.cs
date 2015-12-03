@@ -313,6 +313,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M12_BuscarNombreCompetenciaAgregar.
+        /// </summary>
+        internal static string BuscarNombreCompetenciaAgregar {
+            get {
+                return ResourceManager.GetString("BuscarNombreCompetenciaAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_00_006.
         /// </summary>
         internal static string Codigo_Competencia_Existente {

@@ -23,7 +23,7 @@ namespace templateApp.GUI.Modulo14
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "14";
+            ((SKD)Page.Master).IdModulo = "14.1";
             try
             {
                 if (Request.Cookies["Solicitud"]["id"].ToString() != "")
