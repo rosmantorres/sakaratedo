@@ -13,6 +13,15 @@ namespace templateApp.GUI.Modulo12 {
     public partial class M12_DetalleCompetencia {
         
         /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// detalle_competencia control.
         /// </summary>
         /// <remarks>
