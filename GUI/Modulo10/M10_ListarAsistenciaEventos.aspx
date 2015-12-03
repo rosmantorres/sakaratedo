@@ -49,95 +49,76 @@
                       <h3 class="box-title">Eventos</h3>
         </div><!-- /.box-header -->
 
-        <div class="box-body table-responsive">
-        <table id="tablaasistencia" class="table table-bordered table-striped dataTable">
+    <div class="box-body table-responsive">
+        <table id="tablaasistenciae" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr> 
-                    <th style="text-align:center">Referencia</th>
+                    <th style="text-align:center">Id</th>
 					<th style="text-align:center">Nombre Evento</th>
                     <th style="text-align:center">Fecha</th>
-					<th style="text-align:center">Tipo</th>
+					<th style="text-align:center">Estatus de Asistencia</th>
 					<th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
-		    </tbody>
+				<tr>
+                    <td class="id">1</td>
+					<td class="id">Evento 1</td>
+                    <td> 19/05/2001</td>
+					<td>Procesado</td>
+					
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+                </tr>
+                <tr>
+                    <td class="id">2</td>
+                    <td class="id">Evento 2</td>
+                    <td>09/04/2001</td>
+					<td>No Procesado</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+				</tr><tr>
+                    <td class="id">3</td>
+                    <td class="id">Evento 3</td>
+                    <td>14/10/2001</td>
+					<td>Procesada</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+                </tr>
+                <tr>
+                    <td class="id">4</td>
+                    <td class="id">Evento 4</td>
+                    <td>01/01/2000</td>
+					<td>Procesada</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                     </td>
+                </tr>
+                <tr>
+                    <td class="id">5</td>
+                <td class="id">Evento 5</td>
+                    <td>05/04/2001</td>
+					<td>Procesada</td>
+                    <td>
+                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx"></a>
+                    </td>
+                </tr>
+			    </tbody>
             </table>
-           </div>  
+           </div>
        </div>
     </div>
 </div>
 
-    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información de Competencia</h4>
-					</div>
-					<div class="modal-body">
-                        <div class="row">
-                            <h4 style="text-align:match-parent">&nbsp;&nbsp;&nbsp; Nombre de Competencia:</h4>
-                            <ul>
-                                <li>Competencia 1</li>
-                            </ul>
-                            <h4>&nbsp;&nbsp;&nbsp; Tipo de Competencia:</h4>
-                            <ul>
-                                <li>Kata</li>
-                            </ul>
-                            <h4>&nbsp;&nbsp;&nbsp; Organizaciones Involucradas:</h4>
-                            <ul>
-                                <li>Organización 1, Organización 2</li>
-                            </ul>
-                        </div>
-                        <h4>&nbsp;&nbsp;&nbsp; Ubicación de Competencia</h4>                     
-                        <div id="googleMap" style="width:500px;height:250px;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#tablaasistencia').DataTable();
-
-                var table = $('#tablaasistencia').DataTable();
-                var comp;
-                var tr;
-
-                $('#tablaasistencia tbody').on('click', 'a', function () {
-                    if ($(this).parent().hasClass('selected')) {
-                        comp = $(this).parent().prev().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        $(this).parent().removeClass('selected');
-
-                    }
-                    else {
-                        comp = $(this).parent().prev().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        table.$('tr.selected').removeClass('selected');
-                        $(this).parent().addClass('selected');
-                    }
-                });
-
-
-
-                $('#modal-delete').on('show.bs.modal', function (event) {
-                    var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar Competencia:  ' + comp)
-                    modal.find('#comp').text(comp)
-                })
-                $('#btn-eliminar').on('click', function () {
-                    table.row(tr).remove().draw();//se elimina la fila de la tabla
-                    $('#modal-delete').modal('hide');//se esconde el modal
-                });
-
-
-            });
-
-        </script>
-
-      <%--
+        
         <div class="modal-dialog">
           <div class="modal-content">
           
@@ -176,12 +157,12 @@
              <script type="text/javascript">
                  $(document).ready(function () {
                      $('#tablaasistenciae').DataTable();
-
+                    
                      var table = $('#tablaasistenciae').DataTable();
                      var comp;
                      var tr;
 
-
+        
 
                      $('#tablaasistenciae tbody').on('click', 'a', function () {
                          if ($(this).parent().hasClass('selected')) {
@@ -200,7 +181,7 @@
 
                  });
 
-        </script>--%>
+        </script>
     
 </asp:Content>
 
