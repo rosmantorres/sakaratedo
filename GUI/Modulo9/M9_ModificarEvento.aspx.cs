@@ -61,10 +61,40 @@ namespace templateApp.GUI.Modulo9
                     try
                     {
 
+                        #region LLENAR COMBO TIPO DE EVENTOS
+                        if (!IsPostBack)
+                        {
+                            try
+                            {
+                                Dictionary<string, string> options = new Dictionary<string, string>();
+                                listEvento = logicaEvento.ConsultarTiposEventos();
+
+                                foreach (TipoEvento o in listEvento)
+                                {
+                                    options.Add(o.Id.ToString(), o.Nombre);
+                                }
+                                options.Add("-1", "Otro");
+                                comboTipoEvento.DataSource = options;
+                                comboTipoEvento.DataTextField = "value";
+                                comboTipoEvento.DataValueField = "key";
+                                comboTipoEvento.DataBind();
+
+                            }
+                            catch (Exception ex)
+                            {
+                                throw ex;
+                            }
+                        }
+                        
+
                         evento = logica.ConsultarEvento(idEvento);
                         this.nombreEvento.Text = evento.Nombre;
                         this.costoEvento.Text = evento.Costo.ToString();
                         this.descripcionEvento.Text = evento.Descripcion;
+                        this.fechaInicio.Value = Convert.ToString(evento.Horario.FechaInicio.ToShortDateString());
+                        string index = evento.TipoEvento.Id.ToString();
+                        this.comboTipoEvento.SelectedValue = index;
+                        this.fechaFin.Value = Convert.ToString(evento.Horario.FechaFin.ToShortDateString());
 
                         if (evento.Estado==true) {
                             this.inputEstadoActivo.Checked=true;
@@ -79,42 +109,11 @@ namespace templateApp.GUI.Modulo9
                     }
                 }
 
-        
+                        #endregion
                 //
 
-
-
-
-
-
-
             }
-            #region LLENAR COMBO TIPO DE EVENTOS
-            if (!IsPostBack)
-            {
-                try
-                {
-                    Dictionary<string, string> options = new Dictionary<string, string>();
-                    options.Add("-2", "Seleccione Tipo De Evento");
-                    listEvento = logicaEvento.ConsultarTiposEventos();
 
-                    foreach (TipoEvento o in listEvento)
-                    {
-                        options.Add(o.Id.ToString(), o.Nombre);
-                    }
-                    options.Add("-1", "Otro");
-                    comboTipoEvento.DataSource = options;
-                    comboTipoEvento.DataTextField = "value";
-                    comboTipoEvento.DataValueField = "key";
-                    comboTipoEvento.DataBind();
-
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-            #endregion
 
         }
         //Muestra o esconde el textbox de otro una vez seleccionado en el combobox
@@ -245,7 +244,7 @@ namespace templateApp.GUI.Modulo9
             {
                 alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                 alert.Attributes["role"] = "alert";
-                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error de Conxeion con BD</div>";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error de Conexion con BD</div>";
 
             }
             catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
@@ -259,7 +258,7 @@ namespace templateApp.GUI.Modulo9
             {
                 alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                 alert.Attributes["role"] = "alert";
-                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un Error en el sistema</div>";
 
             }
             catch (NullReferenceException ex)
@@ -267,7 +266,7 @@ namespace templateApp.GUI.Modulo9
 
                 alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                 alert.Attributes["role"] = "alert";
-                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un Error en el sistema"</div>";
 
             }
             catch (Exception ex)
@@ -275,7 +274,7 @@ namespace templateApp.GUI.Modulo9
 
                 alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                 alert.Attributes["role"] = "alert";
-                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un Error en el sistema</div>";
 
             }
 
