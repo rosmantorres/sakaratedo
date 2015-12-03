@@ -59,5 +59,356 @@ namespace DatosSKD.Modulo15 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_AgregarImplemento.
+        /// </summary>
+        internal static string nombreProcedureAgregarInventario {
+            get {
+                return ResourceManager.GetString("nombreProcedureAgregarInventario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarCarrito.
+        /// </summary>
+        internal static string nombreProcedureConsultarCarrito {
+            get {
+                return ResourceManager.GetString("nombreProcedureConsultarCarrito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarImplemento.
+        /// </summary>
+        internal static string nombreProcedureConsultarImplemento {
+            get {
+                return ResourceManager.GetString("nombreProcedureConsultarImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarImplementoUltimo.
+        /// </summary>
+        internal static string nombreProcedureConsultarImplementoU {
+            get {
+                return ResourceManager.GetString("nombreProcedureConsultarImplementoU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarImplementoTotal.
+        /// </summary>
+        internal static string nombreProcedureConsultarInventario {
+            get {
+                return ResourceManager.GetString("nombreProcedureConsultarInventario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarImplementoTotal2.
+        /// </summary>
+        internal static string nombreProcedureConsultarInventario2 {
+            get {
+                return ResourceManager.GetString("nombreProcedureConsultarInventario2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_EliminarImplemento.
+        /// </summary>
+        internal static string nombreProcedureEliminarInventario {
+            get {
+                return ResourceManager.GetString("nombreProcedureEliminarInventario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ModificarImplemento.
+        /// </summary>
+        internal static string nombreProcedureModificarInventario {
+            get {
+                return ResourceManager.GetString("nombreProcedureModificarInventario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M15_ConsultarUsuarioDojo.
+        /// </summary>
+        internal static string nombreProcedureUsuario {
+            get {
+                return ResourceManager.GetString("nombreProcedureUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_invCantidad.
+        /// </summary>
+        internal static string parametroCantidadInventario {
+            get {
+                return ResourceManager.GetString("parametroCantidadInventario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impColor.
+        /// </summary>
+        internal static string parametroColorImplemento {
+            get {
+                return ResourceManager.GetString("parametroColorImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impDescripcion.
+        /// </summary>
+        internal static string parametroDescripcionImplemento {
+            get {
+                return ResourceManager.GetString("parametroDescripcionImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_dojId.
+        /// </summary>
+        internal static string parametroDojoIdImplemento {
+            get {
+                return ResourceManager.GetString("parametroDojoIdImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impEstatus.
+        /// </summary>
+        internal static string parametroEstatusImplemento {
+            get {
+                return ResourceManager.GetString("parametroEstatusImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impId.
+        /// </summary>
+        internal static string parametroIdimplemento {
+            get {
+                return ResourceManager.GetString("parametroIdimplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impImagen.
+        /// </summary>
+        internal static string parametroImagenImplemento {
+            get {
+                return ResourceManager.GetString("parametroImagenImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to implemento nulo.
+        /// </summary>
+        internal static string parametroImplemento {
+            get {
+                return ResourceManager.GetString("parametroImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impMarca.
+        /// </summary>
+        internal static string parametroMarcaImplemento {
+            get {
+                return ResourceManager.GetString("parametroMarcaImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impNombre.
+        /// </summary>
+        internal static string parametroNombreImplemento {
+            get {
+                return ResourceManager.GetString("parametroNombreImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impPrecio.
+        /// </summary>
+        internal static string parametroPrecioImplemento {
+            get {
+                return ResourceManager.GetString("parametroPrecioImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impStockmin.
+        /// </summary>
+        internal static string parametroStockMinimoImplemento {
+            get {
+                return ResourceManager.GetString("parametroStockMinimoImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impTalla.
+        /// </summary>
+        internal static string parametroTallaImplemento {
+            get {
+                return ResourceManager.GetString("parametroTallaImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_impTipo.
+        /// </summary>
+        internal static string parametroTipoImplemento {
+            get {
+                return ResourceManager.GetString("parametroTipoImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_perUsuario.
+        /// </summary>
+        internal static string parametroUsuario {
+            get {
+                return ResourceManager.GetString("parametroUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to inv_cantidad_total.
+        /// </summary>
+        internal static string tabla_cantidadImplemento {
+            get {
+                return ResourceManager.GetString("tabla_cantidadImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_color.
+        /// </summary>
+        internal static string tabla_colorImplemento {
+            get {
+                return ResourceManager.GetString("tabla_colorImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_descripcion.
+        /// </summary>
+        internal static string tabla_descripcionImplemento {
+            get {
+                return ResourceManager.GetString("tabla_descripcionImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DOJO_doj_id.
+        /// </summary>
+        internal static string tabla_dojoImplemento {
+            get {
+                return ResourceManager.GetString("tabla_dojoImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_estatus.
+        /// </summary>
+        internal static string tabla_estatusImplemento {
+            get {
+                return ResourceManager.GetString("tabla_estatusImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_id.
+        /// </summary>
+        internal static string tabla_idImplemento {
+            get {
+                return ResourceManager.GetString("tabla_idImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_imagen.
+        /// </summary>
+        internal static string tabla_imagenImplemento {
+            get {
+                return ResourceManager.GetString("tabla_imagenImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to implemento nulo.
+        /// </summary>
+        internal static string tabla_implemento {
+            get {
+                return ResourceManager.GetString("tabla_implemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_marca.
+        /// </summary>
+        internal static string tabla_marcaImplemento {
+            get {
+                return ResourceManager.GetString("tabla_marcaImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_nombre.
+        /// </summary>
+        internal static string tabla_nombreImplemento {
+            get {
+                return ResourceManager.GetString("tabla_nombreImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_precio.
+        /// </summary>
+        internal static string tabla_precioImplemento {
+            get {
+                return ResourceManager.GetString("tabla_precioImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_stockmin.
+        /// </summary>
+        internal static string tabla_stockImplemento {
+            get {
+                return ResourceManager.GetString("tabla_stockImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_talla.
+        /// </summary>
+        internal static string tabla_tallaImplemento {
+            get {
+                return ResourceManager.GetString("tabla_tallaImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to imp_tipo.
+        /// </summary>
+        internal static string tabla_tipoImplemento {
+            get {
+                return ResourceManager.GetString("tabla_tipoImplemento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        internal static string tabla_usuario {
+            get {
+                return ResourceManager.GetString("tabla_usuario", resourceCulture);
+            }
+        }
     }
 }

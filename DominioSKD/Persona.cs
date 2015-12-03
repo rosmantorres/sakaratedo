@@ -110,6 +110,18 @@ namespace DominioSKD
         /// Estado de la persona en el sistema.
         /// </summary>
         public Boolean Estado = false;
+
+        /// <summary>
+        /// id del Dojo de la persona
+        /// </summary>
+        private int _dojoPersona;
+
+        /// <summary>
+        /// Objeto Inscripcion
+        /// </summary>
+        private int _idInscripcion;
+
+
         #endregion
 
         #region Constructores
@@ -125,6 +137,7 @@ namespace DominioSKD
         public Persona()
         {
             this._id = -1;
+        
         }
 
         public int ID
@@ -188,6 +201,13 @@ namespace DominioSKD
             set { this._contatoEmergencia = value; }
             get { return this._contatoEmergencia; }
         }
+
+        public int IdInscripcion
+        {
+            get { return _idInscripcion; }
+            set { _idInscripcion = value; }
+        }
+    
 
         /// <summary>
         /// Agrega un teléfono a la lista, si no existe la
@@ -296,6 +316,18 @@ namespace DominioSKD
             {
                 return this._documentoID;
             }
+        }
+        public int DojoPersona
+        {
+            set
+            {
+                _dojoPersona = value;
+            }
+            get
+            { 
+                return this._dojoPersona; 
+            }
+            
         }
         #endregion
     }

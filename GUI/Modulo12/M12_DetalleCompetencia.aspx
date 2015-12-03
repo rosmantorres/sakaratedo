@@ -51,6 +51,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Gestión de Competencias</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Detalle Competencia</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <div id="alert" runat="server">
+    </div>
    <!-- general form elements -->
    <div class="box box-primary">
       <div class="box-header with-border">

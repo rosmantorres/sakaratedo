@@ -38,115 +38,135 @@
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
-   <h3 class="box-title">Nuevo Evento</h3>
+   <h1 class="box-title">Nuevo Evento</h1>
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_evento" id="agregar_evento" method="post" action="M9_ListarEventos.aspx?success=1">
-<div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-
-   <div class="form-group col-sm-10 col-md-10 col-lg-10">
-      <br />
-      <h3>Nombre del Evento</h3>
-      <input type="text" name="nombreEvent" id="nombreEvent" placeholder="Nombre" class="form-control">
-   </div>
-   <br/>
-   <div class="form-group col-sm-10 col-md-10 col-lg-10">
-      <br />
-      <h3>Lugar del Evento</h3>
-      <input type="text" name="lugarEvent" id="lugarEvent" placeholder="Lugar" class="form-control">
-   </div>
-    <br>
+<form runat="server" role="form" name="agregarEvento" id="agregarEvento" method="post">
+    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+        <div class="panel-group ">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>Datos del Evento</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Nombre del Evento</h3>
+                                <asp:TextBox runat="server" type="text" name="nombreEvento" id="nombreEvento" placeholder="Nombre" class="form-control"></asp:TextBox>
+                            </div>
+                    </div>
+                </div>
 <!--COMBO 1-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Tipo de Evento:</h3>
-      <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Evento <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Clases</a></li>
-               <li><a href="#">Charlas</a></li>
-               <li><a href="#">Seminarios</a></li>
-               <li><a href="#">Otros</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-4 col-md-4 col-lg-4" >
+                                <h3>Tipo de Evento</h3>
+                                <div class="btn-group"> 
+                                    <div class="dropdown" runat="server" id="divComboTipoEvento">
+                                       <asp:DropDownList ID="comboTipoEvento"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged" AutoPostBack="true">
+                                       </asp:DropDownList>
+                                    </div>
+                                        <asp:TextBox runat="server" type="text" name="otroEvento" id="otroEvento" placeholder="Tipo de Evento" class="form-control"></asp:TextBox>
+                                    
+                                </div>
+                            </div>
 
-    <br/>
-   <div class="form-group col-sm-10 col-md-10 col-lg-10">
-      <br />
-      <h3>Descripci&oacute;n</h3>
-      <input type="text" name="descripcionEvent" id="descripcionEvent" placeholder="Breve resumen del Evento" class="form-control">
-   </div>
-   <br/>
-     <!--Date picker FECHA-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12" name="calendar">
-    <!--Date picker FECHA Inicio-->
-    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-        <br />
-        <h3>Fecha de Inicio:</h3>
-        <div class="input-group input-append date" id="datePickerIni">
-        <input type="text" class="form-control" name="date" />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-        </div>
-    </div>
-    <!--Date picker FECHA-->
-    <div class="form-group col-sm-4 col-md-3 col-lg-4">
-        <br />
-        <h3>Fecha de Culminaci&oacute;n:</h3>
-        <div class="input-group input-append date" id="datePickerFin">
-        <input type="text" class="form-control" name="date" />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-        </div>
-    </div>
-   </div>
-    <br/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Costo del Evento</h3>
+                                <asp:TextBox runat="server" type="number" name="costoEvento" id="costoEvento" placeholder="Costo" class="form-control"></asp:TextBox>
+                            </div>
+                    </div>
+                </div>
+
+
+
+
+ <!--Date picker FECHA-->
+                   <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12" >
+            <!---Date picker FECHA Inicio-->
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Fecha de Inicio</h3>
+                                <div class="input-group input-append date" id="datePickerIni">
+                                    <input runat="server" type="text" class="form-control" name="date" id="fechaInicio"/>
+                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                            <!--Date picker FECHA-->
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Fecha de Culminaci&oacute;n</h3>
+                                <div class="input-group input-append date" id="datePickerFin">
+                                    <input runat="server" type="text" class="form-control" name="date" id="fechaFin"/>
+                                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
      <!--Date picker Hora-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-    <!--Date picker Hroa Inicio-->
-    <div class="form-group col-sm-4 col-md-4 col-lg-4">
-        <br />
-        <h3>Hora de Inicio:</h3>
-        <div class="input-group input-append date" id="hourPickerIni">
-        <input type="time" class="form-control" name="date" />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
-        </div>
-    </div>
-    <!--Date picker Hora Fin-->
-    <div class="form-group col-sm-4 col-md-3 col-lg-4">
-        <br />
-        <h3>Hora de Culminaci&oacute;n:</h3>
-        <div class="input-group input-append date" id="hourPickerFin">
-        <input type="time" class="form-control" name="date" />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
-        </div>
-    </div>
+                    <div class="row">
+                       <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <!--Date picker Hora Inicio-->
+                           <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Hora de Inicio</h3>
+                                <div class="input-group input-append date" id="hourPickerIni">
+                                    <asp:TextBox TextMode="Time" Class="form-control" ID="horaInicio" runat="server">
 
-
-    </div>
-
-
-    <br/>
- 
-        <div class="form-group col-sm-12 col-md-12 col-lg-12">
-            <div class="col-sm-10 col-md-10 col-lg-10">
-                <p><b>Status:</b></p>
-                <label class="radio-inline">
-                <input type="radio" name="radioStatus" checked="checked" id="input_status_activo"/>Activo</label>
-                <label class="radio-inline">
-                <input type="radio" name="radioStatus" id="input_status_inactivo"/>Inactivo</label>
-
+                                    </asp:TextBox>
+                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+                                   
+                                </div>
+                           </div>
+                            <!--Date picker Hora Fin-->
+                           <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                <h3>Hora de Culminaci&oacute;n</h3>
+                                <div class="input-group input-append date" id="hourPickerFin">
+                                    <asp:TextBox TextMode="Time" class="form-control" ID="horaFin" runat="server">
+                                   </asp:TextBox><span class="input-group-addon add-on"><span class="glyphicon glyphicon-time"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+<!--DESCRIPCION-->
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-9 col-md-9 col-lg-9" >
+                                <h3>Descripci&oacute;n</h3>
+                                <asp:TextBox runat="server" type="text" TextMode="multiline" style = "resize:vertical" name="DescripcionEvento" id="descripcionEvento" placeholder="Breve descrici&oacute;n del evento" class="form-control"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+ <!--ESTADO-->
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-sm-10 col-md-10 col-lg-10">
+                                <p><b>Status:</b></p>
+                                <label class="radio-inline">
+                                    <asp:RadioButton runat="server" Text="Activo"  checked="true" type="radio" name="radioStatus" id="inputEstadoActivo" GroupName="statusEvento"/>
+                                </label>
+                                <label class="radio-inline">
+                                    <asp:RadioButton runat="server" Text="Inactivo" type="radio" name="radioStatus" id="inputEstadoInactivo" GroupName="statusEvento"/>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
+    </div>
 </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarEvent" class="btn btn-primary" type="submit" href="M9_ListarEventos.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+         <asp:Button id="btn_agregarEvento" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarEventoClick" Text="Agregar"></asp:Button>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M9_ListarEventos.aspx">Cancelar</a>
       </div>

@@ -121,6 +121,12 @@
     <value>SA-KARATEDO:Reestablecer contraseña</value>
     <comment>asunto del mensaje a enviar</comment>
   </data>
+  <data name="Codigo_Error_Hash" xml:space="preserve">
+    <value>SKD_00_10</value>
+  </data>
+  <data name="Codigo_Error_InicioSesion" xml:space="preserve">
+    <value>SKD_00_11</value>
+  </data>
   <data name="cuentaClaveSAKARATEDO" xml:space="preserve">
     <value>karate1234</value>
     <comment>contraseña de la cuenta de sakaratedo</comment>
@@ -140,6 +146,12 @@
     <value>Estimado usuario, se ha solicitado desde la plataforma de SA-KARATEDO el reestablecimiento de la contraseña asociada a su cuenta, si usted no produjo dicha solicitud omitir la importancia del correo, de lo contrario deberá seguir los pasas que a continuacion se le presenta para poder reestablecer su contraseña:&lt;br&gt;
            Diríjase al siguiente enlace en el cual podrá asignar una nueva contraseña a su cuenta de SA-KARATEDO.&lt;/br&gt;&lt;br&gt;&lt;/br&gt;</value>
     <comment>mensaje que se enviara al usuario</comment>
+  </data>
+  <data name="Mensaje_Error_Hash" xml:space="preserve">
+    <value>Error encontrado en login.hash</value>
+  </data>
+  <data name="Mensaje_Error_InicioSesion" xml:space="preserve">
+    <value>Error encontrado en login.iniciarSesion</value>
   </data>
   <data name="parametroURLId" xml:space="preserve">
     <value>User</value>
@@ -173,5 +185,50 @@
   <data name="splitRoles" xml:space="preserve">
     <value>-</value>
     <comment>este mismo se encuentra en RecursosMaster</comment>
+  </data>
+  <data name="variableRestablecerHTTP" xml:space="preserve">
+    <value>?restablecer=</value>
+  </data>
+  <data name="Mensaje_Error_CorreoNoRegistrado" xml:space="preserve">
+    <value>El correo no se encuentra registrado en sistema</value>
+  </data>
+  <data name="variableFechaHTTP" xml:space="preserve">
+    <value>&amp;fecha=</value>
+  </data>
+  <data name="variableTiempoHTTP" xml:space="preserve">
+    <value>&amp;hora=</value>
+  </data>
+  <data name="variableFecha" xml:space="preserve">
+    <value>fecha</value>
+  </data>
+  <data name="variableRestablecer" xml:space="preserve">
+    <value>restablecer</value>
+  </data>
+  <data name="variableTiempo" xml:space="preserve">
+    <value>tiempo</value>
+  </data>
+  <data name="Mensaje_Error_Roles" xml:space="preserve">
+    <value>El usuario no posee permiso para ingresar al sistema, comuníquese con un administrador de SAKARATEDO.</value>
+  </data>
+  <data name="abc" xml:space="preserve">
+    <value>QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .</value>
+  </data>
+  <data name="abc_" xml:space="preserve">
+    <value>QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_.</value>
+  </data>
+  <data name="mensajeGenerico" xml:space="preserve">
+    <value>Mensaje:</value>
+  </data>
+  <data name="errorGenerico" xml:space="preserve">
+    <value>Error encontrado aqui:</value>
+  </data>
+  <data name="lineBreak" xml:space="preserve">
+    <value>&lt;br&gt;</value>
+  </data>
+  <data name="localhost" xml:space="preserve">
+    <value>http://localhost:</value>
+  </data>
+  <data name="slashLineBreak" xml:space="preserve">
+    <value>&lt;/br&gt;</value>
   </data>
 </root>

@@ -250,6 +250,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ordenCinta.
+        /// </summary>
+        internal static string AliasOrdenCinta {
+            get {
+                return ResourceManager.GetString("AliasOrdenCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sexoCategoria.
         /// </summary>
         internal static string AliasSexo {
@@ -304,6 +313,15 @@ namespace DatosSKD.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M12_BuscarNombreCompetenciaAgregar.
+        /// </summary>
+        internal static string BuscarNombreCompetenciaAgregar {
+            get {
+                return ResourceManager.GetString("BuscarNombreCompetenciaAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_00_006.
         /// </summary>
         internal static string Codigo_Competencia_Existente {
@@ -327,6 +345,15 @@ namespace DatosSKD.Modulo12 {
         internal static string Codigo_Error_Formato {
             get {
                 return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string Concatenar0 {
+            get {
+                return ResourceManager.GetString("Concatenar0", resourceCulture);
             }
         }
         
@@ -363,6 +390,15 @@ namespace DatosSKD.Modulo12 {
         internal static string ConsultarOrganizaciones {
             get {
                 return ResourceManager.GetString("ConsultarOrganizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MM/dd/yyyy.
+        /// </summary>
+        internal static string FormatoFecha {
+            get {
+                return ResourceManager.GetString("FormatoFecha", resourceCulture);
             }
         }
         
@@ -597,6 +633,51 @@ namespace DatosSKD.Modulo12 {
         internal static string ParamTipoCompetencia {
             get {
                 return ResourceManager.GetString("ParamTipoCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /.
+        /// </summary>
+        internal static string SeparadorFecha {
+            get {
+                return ResourceManager.GetString("SeparadorFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string TipoCompetencia1 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string TipoCompetencia2 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string TipoCompetencia3 {
+            get {
+                return ResourceManager.GetString("TipoCompetencia3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ambos.
+        /// </summary>
+        internal static string TipoCompetenciaAmbos {
+            get {
+                return ResourceManager.GetString("TipoCompetenciaAmbos", resourceCulture);
             }
         }
         

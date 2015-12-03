@@ -26,7 +26,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Planillas</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Solicitar Planilla</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-
+    <div id="alert" runat="server">
+    </div>
     <!-- general form elements -->
     <div class="box box-primary">
       <div class="box-header with-border">
@@ -41,75 +42,19 @@
             <div id="alertlocal" runat="server">
               <!-- Alertas-->
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-3">
-                <label>Seleccione el tipo de planilla:</label>  
-            </div>
-              <div class="btn-group">
-            <button id="id_tipos" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            Selecionar...<span class="caret"></span>
-            </button>
-            <ol id="dp1" class="dropdown-menu" role="menu"  onclick="cargartipo();">
-               <li value="1"><a href="#">Retiro</a></li>
-               <li value="2"><a href="#">Asistencia</a></li>
-            </ol>
-         </div>
            </div>
 
          <div class="box-body table-responsive">
            <table id="solicitarplanilla" class="table table-bordered table-striped dataTable">
             <thead>
              <tr>
-                <th>Nombre</th>
+                <th>Planilla</th>
                 <th>Tipo de Planilla</th>
                 <th>Acciones</th>
-
              </tr>
            </thead>
-           <tfoot>
-            <tr>
-                <th>Nombre</th>
-                <th>Tipo de Planilla</th>
-                <th>Acciones</th>
-            </tr>
-           </tfoot>
            <tbody>
-              <tr>
-                <td>Record Académico</td>
-                <td>Solicitud</td>
-                <td>
-                        <a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx">Solicitar</a>                                  
-                </td>
-            </tr>
-            <tr>
-                <td>Retiro de Competencias</td>
-                <td>Retiro</td>
-                <td>
-                        <a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx">Solicitar</a>                        
-
-                </td>
-            </tr>
-            <tr>
-                <td>Solicitud de Arbitaje</td>
-                <td>Solicitud</td>
-                <td>
-                        <a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx">Solicitar</a>                        
-            </tr>
-            <tr>
-                <td>Permiso de Inasistencia</td>
-                <td>Solicitud</td>
-                <td>
-                        <a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx">Solicitar</a>                        
-
-            </tr>
-            <tr>
-                <td>Retiro de Arbitraje</td>
-                <td>Retiro</td>
-                <td>
-                        <a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx">Solicitar</a>                        
-
-                </td>
-            </tr>
-            
+            <asp:Literal runat="server" ID="tabla"></asp:Literal>
           </tbody>
          </table>
        </div>

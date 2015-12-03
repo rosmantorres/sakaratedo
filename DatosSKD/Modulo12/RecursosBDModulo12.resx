@@ -181,6 +181,9 @@
   <data name="AliasNombreOrganizacion" xml:space="preserve">
     <value>nombreOrganizacion</value>
   </data>
+  <data name="AliasOrdenCinta" xml:space="preserve">
+    <value>ordenCinta</value>
+  </data>
   <data name="AliasSexo" xml:space="preserve">
     <value>sexoCategoria</value>
   </data>
@@ -199,6 +202,9 @@
   <data name="BuscarNombreCompetencia" xml:space="preserve">
     <value>M12_BuscarNombreCompetencia</value>
   </data>
+  <data name="BuscarNombreCompetenciaAgregar" xml:space="preserve">
+    <value>M12_BuscarNombreCompetenciaAgregar</value>
+  </data>
   <data name="Codigo_Competencia_Existente" xml:space="preserve">
     <value>SKD_00_006</value>
   </data>
@@ -209,6 +215,9 @@
   <data name="Codigo_Error_Formato" xml:space="preserve">
     <value>SKD_00_004</value>
     <comment>Codigo de error en el parseo</comment>
+  </data>
+  <data name="Concatenar0" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ConsultarCintas" xml:space="preserve">
     <value>M12_ConsultarCintas</value>
@@ -223,6 +232,9 @@
   </data>
   <data name="ConsultarOrganizaciones" xml:space="preserve">
     <value>M12_ConsultarOrganizaciones</value>
+  </data>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>MM/dd/yyyy</value>
   </data>
   <data name="MensajeFinInfoLogger" xml:space="preserve">
     <value>Salida del Método</value>
@@ -302,6 +314,21 @@
   </data>
   <data name="ParamTipoCompetencia" xml:space="preserve">
     <value>@tipoCompetencia</value>
+  </data>
+  <data name="SeparadorFecha" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="TipoCompetencia1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TipoCompetencia2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TipoCompetencia3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TipoCompetenciaAmbos" xml:space="preserve">
+    <value>Ambos</value>
   </data>
   <data name="TipoCompetenciaKata" xml:space="preserve">
     <value>Kata</value>

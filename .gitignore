@@ -183,3 +183,10 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+PruebasUnitariasSKD/App.config
+*.ncrunchproject
+Interfaz.v2.ncrunchsolution
+*.sql
+PruebasUnitariasSKD/App.config
+Interfaz.csproj
+DatosSKD/DatosSKD.csproj

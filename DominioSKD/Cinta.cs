@@ -81,6 +81,13 @@ namespace DominioSKD
 
         }
 
+        public Cinta(int elId, String elColor)
+        {
+            this.id_cinta = elId;
+            this.color_nombre = elColor;
+
+        }
+
         public Cinta( String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             color_nombre = elColor;

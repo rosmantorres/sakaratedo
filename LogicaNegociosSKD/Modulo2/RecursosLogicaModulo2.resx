@@ -117,11 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Codigo_Error_AgregarRol" xml:space="preserve">
+    <value>SKD_00_13</value>
+  </data>
+  <data name="Codigo_Error_ConsultarRolUsuario" xml:space="preserve">
+    <value>SKD_00_14</value>
+  </data>
+  <data name="Codigo_Error_EliminarRol" xml:space="preserve">
+    <value>SKD_00_12</value>
+  </data>
+  <data name="Codigo_Error_FiltrarRol" xml:space="preserve">
+    <value>SKD_00_15</value>
+  </data>
+  <data name="Codigo_Error_RolNoEditable" xml:space="preserve">
+    <value>SKD_17</value>
+  </data>
+  <data name="Codigo_Error_ValidarPrioridad" xml:space="preserve">
+    <value>SKD_00_16</value>
+  </data>
   <data name="etiquetaAperturaDropDawn" xml:space="preserve">
     <value>&lt;asp:DropDownList id="RolList" class="btn btn-default dropdown-toggle" AutoPostBack="True" OnSelectedIndexChanged="Selection_Change" runat="server"&gt;</value>
   </data>
   <data name="etiquetaCierreDropDawn" xml:space="preserve">
     <value>&lt;/asp:DropDownList&gt;</value>
+  </data>
+  <data name="Mensaje_Error_AgregarRol" xml:space="preserve">
+    <value>Error al agregar rol</value>
+  </data>
+  <data name="Mensaje_Error_ConsultarRolUsuario" xml:space="preserve">
+    <value>Error al consultar rol de usuario</value>
+  </data>
+  <data name="Mensaje_Error_EliminarRol" xml:space="preserve">
+    <value>Error al eliminar rol </value>
+  </data>
+  <data name="Mensaje_Error_FiltarRol" xml:space="preserve">
+    <value>Error al filtrar rol</value>
+  </data>
+  <data name="Mensaje_Error_RolNoEditable" xml:space="preserve">
+    <value>Error rol no editable</value>
+  </data>
+  <data name="Mensaje_Error_RolSinRegistro" xml:space="preserve">
+    <value>Rol no registrado/validado en sistema: LogicaNegociosSKD.logicaRol.prioridadRol()</value>
+  </data>
+  <data name="Mensaje_Error_ValidarPrioridad" xml:space="preserve">
+    <value>Error al validar prioridad</value>
   </data>
   <data name="subEtiquetaApertura" xml:space="preserve">
     <value>&lt;asp:ListItem Value="</value>
@@ -134,5 +173,20 @@
   </data>
   <data name="subEtiquetaSeleccionar" xml:space="preserve">
     <value>&lt;asp:ListItem Selected="True" Value="select"&gt;-Seleccionar rol- &lt;/asp:ListItem&gt;</value>
+  </data>
+  <data name="Codigo_Error_Hash" xml:space="preserve">
+    <value>SKD_00_10</value>
+  </data>
+  <data name="Mensaje_Error_Hash" xml:space="preserve">
+    <value>Error encontrado en login.hash</value>
+  </data>
+  <data name="claveDES" xml:space="preserve">
+    <value>SaKARAteDO2015</value>
+  </data>
+  <data name="equis2" xml:space="preserve">
+    <value>x2</value>
+  </data>
+  <data name="signoMas" xml:space="preserve">
+    <value>+</value>
   </data>
 </root>
