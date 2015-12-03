@@ -20,7 +20,11 @@ namespace DatosSKD.Modulo4
             try
             {
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro elParametro = new Parametro(RecursosBDModulo4.ParametroFechaVigenteHistorial, SqlDbType.DateTime,
+                Parametro elParametro = new Parametro(RecursosBDModulo4.ParamIdDojo, SqlDbType.Int,
+                    elHistMat.DojoId_historial_matricula.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo4.ParametroFechaVigenteHistorial, SqlDbType.DateTime,
                     elHistMat.Fecha_historial_matricula.ToString(), false);
                 parametros.Add(elParametro);
 
@@ -58,6 +62,8 @@ namespace DatosSKD.Modulo4
 
             return true;
         }
+        
+        
         public static List<Historial_Matricula> ListarMatriculas(int IdDojo)
         {
             BDConexion laConexion;

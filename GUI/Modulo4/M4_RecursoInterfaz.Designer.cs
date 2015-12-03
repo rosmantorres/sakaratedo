@@ -169,11 +169,20 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &quot; &gt;.
+        ///   Busca una cadena traducida similar a &quot; onclick=&quot;select_Organizacion_Click(.
         /// </summary>
         internal static string CentroOpcion {
             get {
                 return ResourceManager.GetString("CentroOpcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a );&quot;&gt;.
+        /// </summary>
+        internal static string CentroOpcion2 {
+            get {
+                return ResourceManager.GetString("CentroOpcion2", resourceCulture);
             }
         }
         
@@ -187,7 +196,7 @@ namespace templateApp.GUI.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .
+        ///   Busca una cadena traducida similar a &lt;/th&gt;.
         /// </summary>
         internal static string CerrarTH {
             get {
@@ -240,8 +249,7 @@ namespace templateApp.GUI.Modulo4 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;div class=&quot;form-group col-sm-10 col-md-10 col-lg-10&quot;&gt;
         ///                            &lt;h3&gt;Organización:&lt;/h3&gt;
-        ///                            &lt;select name=&quot;comboOrg&quot; id=&quot;comboOrg&quot; class=&quot;form-control&quot; runat=&quot;server&quot;&gt;
-        ///                                .
+        ///                            &lt;select name=&quot;comboOrg&quot; id=&quot;comboOrg&quot; class=&quot;form-control&quot;  runat=&quot;server&quot;&gt;                      .
         /// </summary>
         internal static string comboOrganizacionInicio {
             get {
@@ -291,15 +299,6 @@ namespace templateApp.GUI.Modulo4 {
         internal static string MedioAspSelect {
             get {
                 return ResourceManager.GetString("MedioAspSelect", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }

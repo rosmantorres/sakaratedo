@@ -303,4 +303,22 @@
   <data name="ParamRifDojo" xml:space="preserve">
     <value>@rifDojo</value>
   </data>
+  <data name="ConsultarOrganizaciones" xml:space="preserve">
+    <value>M4_ConsultarOrganizaciones</value>
+  </data>
+  <data name="ParametroIdOrg" xml:space="preserve">
+    <value>idOrg</value>
+  </data>
+  <data name="ParametroNombreOrg" xml:space="preserve">
+    <value>nombreOrg</value>
+  </data>
+  <data name="ParametroOrgPersona" xml:space="preserve">
+    <value>idPersona</value>
+  </data>
+  <data name="ConsultarOrgPersona" xml:space="preserve">
+    <value>M4_ConsultarOrgPersona</value>
+  </data>
+  <data name="AliasIdPersona" xml:space="preserve">
+    <value>idPersona</value>
+  </data>
 </root>

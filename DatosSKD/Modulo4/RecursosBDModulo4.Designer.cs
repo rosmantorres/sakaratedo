@@ -151,6 +151,15 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a idPersona.
+        /// </summary>
+        internal static string AliasIdPersona {
+            get {
+                return ResourceManager.GetString("AliasIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a idUbicacion.
         /// </summary>
         internal static string AliasIdUbicacion {
@@ -376,6 +385,24 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarOrganizaciones.
+        /// </summary>
+        internal static string ConsultarOrganizaciones {
+            get {
+                return ResourceManager.GetString("ConsultarOrganizaciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarOrgPersona.
+        /// </summary>
+        internal static string ConsultarOrgPersona {
+            get {
+                return ResourceManager.GetString("ConsultarOrgPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M4_EliminarDojo.
         /// </summary>
         internal static string EliminarDojo {
@@ -457,6 +484,15 @@ namespace DatosSKD.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a idOrg.
+        /// </summary>
+        internal static string ParametroIdOrg {
+            get {
+                return ResourceManager.GetString("ParametroIdOrg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Latitud.
         /// </summary>
         internal static string ParametroLatitud {
@@ -525,6 +561,24 @@ namespace DatosSKD.Modulo4 {
         internal static string ParametroNombreEstado {
             get {
                 return ResourceManager.GetString("ParametroNombreEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a nombreOrg.
+        /// </summary>
+        internal static string ParametroNombreOrg {
+            get {
+                return ResourceManager.GetString("ParametroNombreOrg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a idPersona.
+        /// </summary>
+        internal static string ParametroOrgPersona {
+            get {
+                return ResourceManager.GetString("ParametroOrgPersona", resourceCulture);
             }
         }
         

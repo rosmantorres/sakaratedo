@@ -75,7 +75,91 @@ namespace LogicaNegociosSKD.Modulo4
         
         }
 
-       
+\
+        public List<DominioSKD.Dojo> obtenerListaDeDojosXId(int idOrg)
+        {
+            try
+            {
+                return BDDojo.ListarDojosXId(idOrg);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+
+        public int obtenerIdOrg(int idPersona)
+        {
+            try
+            {
+                return BDDojo.ConsultarOrgPersona(idPersona);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public int obtenerIdDojo (int idPersona)
+        {
+            try
+            {
+                return BDDojo.ConsultarIdPersona(idPersona);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<DominioSKD.Organizacion> obtenerListaDeOrganizaciones()
+        {
+            try
+            {
+                return BDDojo.ListarOrganizaciones();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                throw ex;
+            }
+        }
+
         public DominioSKD.Dojo detalleDojoXId(int elIdDojo)
         {
             try
@@ -99,6 +183,7 @@ namespace LogicaNegociosSKD.Modulo4
                 throw ex;
             }
         }
+
         public void eliminarDojo(int idDojo)
         {
             try
