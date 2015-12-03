@@ -150,12 +150,14 @@
                                  var aa = JSON.parse(data.d);
 
                                  alert("Peticion ajax exitosa:" + aa);
-
+                                 
 
                              }
+                             
 
                          });
-
+                         window.location.href = "M16_VerCarrito.aspx?accion=1&exito=1";
+                        
                      }
                  }
 

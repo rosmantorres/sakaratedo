@@ -135,6 +135,8 @@
 
                          });
 
+                         window.location.href = "M16_VerCarrito.aspx?accion=1&exito=1";
+
                      }
                  }
 

@@ -53,13 +53,35 @@ namespace templateApp.GUI.Modulo16
 
                 //Nos indica si hubo alguna accion de agregar, registrar pago o eliminar
                 String accion = Request.QueryString["accion"];
+                String exito = Request.QueryString["exito"];
                 switch (accion)
                 {
+                    case "1":
+                       
+                        //Si el registrar pago fue exitoso o no se procedera dar la alerta correspondiente
+                        if (exito.Equals("1"))
+                        {
+                            //Limpiamos y mostramos la informacion
+                            this.carritoCompras.limpiar();
+                            alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                                "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El producto se ha" +
+                                " agregado exitosamente</div>";
+                        }
+                        else
+                        {
+                            //Si el registrar pago fue fallido mostramos la alerta
+                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                                "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El producto no se ha" +
+                                " agregado exitosamente</div>";
+                        }
+                        break;
                     //Si se viene de un registrar pago se procedera a mostrar la alerta correspondiente
                     case "2":
-                        //Obtenemos el exito o fallo del proceso
-                        String exito = Request.QueryString["exito"];
-
+                        
                         //Si el registrar pago fue exitoso o no se procedera dar la alerta correspondiente
                         if (exito.Equals("1"))
                         {
@@ -236,8 +258,8 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + implemento.Id_Implemento +">";
 
                         //Agrego los datos correspondientes de la tabla
-                        this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
-                            M16_Recursointerfaz.CERRAR_TD;
+                       // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
+                         //   M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Nombre_Implemento + 
                             M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Precio_Implemento + 
