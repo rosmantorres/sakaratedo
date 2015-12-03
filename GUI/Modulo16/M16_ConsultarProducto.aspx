@@ -149,7 +149,7 @@
 
                                  var aa = JSON.parse(data.d);
 
-                                 alert("Peticion ajax exitosa:" + aa);
+                                 
                                  
 
                              }
@@ -208,7 +208,7 @@
                  // Carga el modal con la informacion del producto de acuerdo al id
                  $('#modal-info1').on('show.bs.modal', function (e) {
 
-                     alert(e.relatedTarget.id);
+                     
 
                      $.ajax({
                          cache: false,

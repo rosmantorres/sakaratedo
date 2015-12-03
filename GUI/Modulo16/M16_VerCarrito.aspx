@@ -494,7 +494,7 @@
 
                             var aa = JSON.parse(data.d);
 
-                            alert("Peticion ajax exitosa:" + aa);
+                          
 
 
                         }
@@ -591,7 +591,7 @@
             // Carga el modal con la informacion del IMPLEMENTO de acuerdo al id
                 $('#modal-info1').on('show.bs.modal', function (e) {
 
-                    alert(e.relatedTarget.id);
+                    
 
                     $.ajax({
                         cache: false,
@@ -625,7 +625,7 @@
 
             // Carga el modal con la informacion del EVENTO de acuerdo al id
                 $('#modal-info2').on('show.bs.modal', function (e) {
-                    alert(e.relatedTarget.id);
+                    
                     $.ajax({
                         cache: false,
                         type: 'POST',
