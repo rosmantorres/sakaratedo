@@ -15,6 +15,7 @@ namespace DominioSKD
 
         #region Atributos
         /// <summary>
+
         /// Identificador en DB
         /// </summary>
         private int _id;
@@ -38,6 +39,12 @@ namespace DominioSKD
         /// Estado de la matricula
         /// </summary>
         private Boolean _status;
+
+        /// <summary>
+        /// Costo de la matricula
+        /// </summary>
+        private float costo;
+
         #endregion
 
         #region Constructores
@@ -50,9 +57,17 @@ namespace DominioSKD
         {
             this._id = -1;
         }
+
+
         #endregion
 
         #region Métodos
+
+        public float Costo
+        {
+            get { return costo; }
+            set { costo = value; }
+        }
         public int ID
         {
             get { return this._id; }
@@ -97,5 +112,4 @@ namespace DominioSKD
 
     }
 
-    
 }

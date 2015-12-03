@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD;
+
 
 namespace DominioSKD
 {
@@ -15,14 +17,12 @@ namespace DominioSKD
         /// <summary>
         /// Atributos de la clase Carrito
         /// </summary>
-
-       // List<Implemento> listaImplemento;
+        List<Implemento> listaImplemento;
         List<Evento> listaEvento;
-        //   List<Matricula> listaMatricula;
+        List<Matricula> listaMatricula;
         #endregion
 
         #region Propiedades
-/*
         /// <summary>
         /// Propiedad del atributo listaInventario
         /// </summary>
@@ -36,7 +36,8 @@ namespace DominioSKD
             {
                 this.listaImplemento = value;
             }
-        }*/
+
+        }
 
         /// <summary>
         /// Propiedad del atributo listaEvento
@@ -52,7 +53,7 @@ namespace DominioSKD
                 this.listaEvento = value;
             }
         }
-        /*
+        
         /// <summary>
         /// Propiedad del atributo listaMatricula
         /// </summary>
@@ -68,7 +69,7 @@ namespace DominioSKD
             }
         }
         
-        */
+        
         #endregion
 
         #region Constructores
@@ -79,20 +80,6 @@ namespace DominioSKD
         {
 
         }
-
-        /// <summary>
-        /// Constructor de la case que llena todos los atributos de la clase Carrito
-        /// </summary>
-        /// <param name="listaInventario">La lista de todos los inventarios que se han agregado al Carrito</param>
-        /// <param name="listaEvento">La lista de todos los eventos que se han agregado al Carrito</param>
-        /// <param name="listaMatricula">La lista de todas las mastriculas que se han agregado al Carrito</param>
-        /*
-        public Carrito(List<Inventario> listaInventario, List<Evento> listaEvento, List<Matricula> listaMatricula)
-        {
-            this.listaInventario = listaInventario;
-            this.listaEvento = listaEvento;
-            this.listaMatricula = listaMatricula;
-        }*/
         #endregion
 
         #region Metodos
@@ -104,7 +91,39 @@ namespace DominioSKD
         /// <returns>El exito o fallo del proceso</returns>
         public bool eliminarItem(int tipoObjeto, int objetoBorrar)
         {
-            return true;
+            //Preparamos la respuesta del proceso
+            bool respuesta = false;
+
+            //Si queremos borrar un implemento 
+            if (tipoObjeto == 1)
+            {
+                //Buscamos en la lista ese implemento que tenga ese id y borramos
+                foreach (Implemento aux in this.ListaImplemento.Reverse<Implemento>())
+                    if (aux.Id_Implemento == objetoBorrar)
+                        this.ListaImplemento.Remove(aux);
+                respuesta = true;
+            }
+            //Si queremos borrar una matricula
+            else if (tipoObjeto == 2)
+            {
+                //Buscamos en la lista esa matricula que tenga ese id y borramos
+                foreach (Matricula aux2 in this.listaMatricula.Reverse<Matricula>())
+                    if (aux2.ID == objetoBorrar)
+                        this.listaMatricula.Remove(aux2);
+                respuesta = true;
+            }
+            //Si queremos borrar un evento
+            else
+            {
+                //Buscamos en la lista ese evento que tenga ese id y borramos
+                foreach (Evento aux3 in this.listaEvento.Reverse<Evento>())
+                    if (aux3.Id_evento == objetoBorrar)
+                        this.listaEvento.Remove(aux3);
+                respuesta = true;
+            }
+
+            //Retornamos la respuesta
+            return respuesta;
         }
 
         /// <summary>
@@ -113,6 +132,9 @@ namespace DominioSKD
         /// <returns>El exito o fallo del proceso</returns>
         public bool limpiar()
         {
+            this.listaImplemento.Clear();
+            this.listaEvento.Clear();
+            this.listaMatricula.Clear();
             return true;
         }
         #endregion

@@ -38,10 +38,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
+
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\itextsharp.dll</HintPath>
+      <HintPath>..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+
+      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+
+    <!--<Reference Include="itextsharp">
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>-->
+    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
+
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -70,6 +96,9 @@
     <Content Include="App_Data\BaseDeDatosSKD.mdf" />
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+
     </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -218,6 +247,7 @@
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
+    <Content Include="GUI\Modulo16\M16_ListarFacturas.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
     <Content Include="GUI\Modulo16\M16_VerCarrito.aspx" />
     <Content Include="GUI\Modulo1\css\styles.css" />
@@ -265,7 +295,12 @@
     <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
+
+
     <Content Include="GUI\Modulo9\M9_ModificarEventos.aspx" />
+
+
+
     <Content Include="plugins\ckeditor\CHANGES.md" />
     <Content Include="plugins\ckeditor\LICENSE.md" />
     <Content Include="plugins\ckeditor\plugins\scayt\LICENSE.md" />
@@ -1151,6 +1186,11 @@
     <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo10\M10_RecursosInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M10_RecursosInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
       <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1426,6 +1466,13 @@
     <Compile Include="GUI\Modulo16\M16_ConsultarProducto.aspx.designer.cs">
       <DependentUpon>M16_ConsultarProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo16\M16_ListarFacturas.aspx.cs">
+      <DependentUpon>M16_ListarFacturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_ListarFacturas.aspx.designer.cs">
+      <DependentUpon>M16_ListarFacturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo16\M16_Prueba.aspx.cs">
       <DependentUpon>M16_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1439,6 +1486,11 @@
     </Compile>
     <Compile Include="GUI\Modulo16\M16_VerCarrito.aspx.designer.cs">
       <DependentUpon>M16_VerCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo16\M16_Recursointerfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M16_Recursointerfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -1732,12 +1784,26 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.designer.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\RecursoInterfazMod8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoInterfazMod8.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.designer.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ListarEventos.aspx.cs">
       <DependentUpon>M9_ListarEventos.aspx</DependentUpon>
@@ -1778,10 +1844,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo10\M10_RecursosInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M10_RecursosInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+
     <EmbeddedResource Include="GUI\Modulo14\Carnet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Carnet.cs</LastGenOutput>
@@ -1794,6 +1865,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inscripcion.cs</LastGenOutput>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="GUI\Modulo16\M16_Recursointerfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M16_Recursointerfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="GUI\Modulo14\RecursoInterfazModulo14.resx" />
+
+
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
@@ -1805,6 +1885,15 @@
     <EmbeddedResource Include="GUI\Modulo4\M4_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M4_RecursoInterfaz.Designer.cs</LastGenOutput>
+
+    <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo8\RecursoInterfazMod8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoInterfazMod8.Designer.cs</LastGenOutput>
+
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
