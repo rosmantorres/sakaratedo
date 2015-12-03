@@ -72,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo13\BDAsistenciaEvento.cs" />
     <Compile Include="Modulo13\BDimplementos.cs" />
     <Compile Include="Modulo13\BDMoroso.cs" />
     <Compile Include="Modulo13\BDAtletasCinta.cs" />

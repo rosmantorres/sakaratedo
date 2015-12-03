@@ -124,10 +124,10 @@
     <value>cinta</value>
   </data>
   <data name="ConsultarAtleta" xml:space="preserve">
-    <value>M13_ConsultarAtleta</value>
+    <value>M13_ConsultarAtletasCintas</value>
   </data>
   <data name="idCinta" xml:space="preserve">
-    <value>cin_id</value>
+    <value>@cin_id</value>
   </data>
   <data name="ParamIdPersona" xml:space="preserve">
     <value>persona</value>
@@ -165,5 +165,9 @@
   </data>
   <data name="MontoTotal" xml:space="preserve">
     <value>monto</value>
+  </data>
+  <data name="idEvento" xml:space="preserve">
+    <value>@ev_id</value>
+    <comment>parameto evento</comment>
   </data>
 </root>

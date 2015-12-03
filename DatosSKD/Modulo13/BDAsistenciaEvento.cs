@@ -1,5 +1,4 @@
-﻿using DominioSKD;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +7,15 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
+using DominioSKD;
 
 namespace DatosSKD.Modulo13
 {
-    public class BDAtletasCinta
+    class BDAsistenciaEvento
     {
-        public static List<Persona> ListarPersonasCintas(String idCinta) 
+        public static List<Persona> ListarPersonasEvento(String idevento)
         {
-           // string idCinta = "1";
+            // string idCinta = "1";
             BDConexion conn;
             List<Parametro> parametros;
             Parametro param = new Parametro();
@@ -27,7 +27,7 @@ namespace DatosSKD.Modulo13
                 conn = new BDConexion();
                 parametros = new List<Parametro>();
 
-                param = new Parametro(RecursosBDModulo13.idCinta, SqlDbType.Int,idCinta,false);
+                param = new Parametro(RecursosBDModulo13.idEvento, SqlDbType.Int, idevento, false);
                 parametros.Add(param);
 
                 DataTable dt = conn.EjecutarStoredProcedureTuplas(RecursosBDModulo13.ConsultarAtleta, parametros);
@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo13
                     personas.Nombre = row[RecursosBDModulo13.nombre].ToString();
                     personas.Estatura = double.Parse(row[RecursosBDModulo13.estatura].ToString());
                     personas.Peso = double.Parse(row[RecursosBDModulo13.peso].ToString());
-                    personas.FechaNacimiento =DateTime.Parse( row[RecursosBDModulo13.Edad].ToString());
+                    personas.FechaNacimiento = DateTime.Parse(row[RecursosBDModulo13.Edad].ToString());
 
                     persona.Add(personas);
 
@@ -66,6 +66,5 @@ namespace DatosSKD.Modulo13
 
 
         }
-        
     }
 }

@@ -79,7 +79,7 @@ namespace DatosSKD.Modulo13 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M13_ConsultarAtleta.
+        ///   Looks up a localized string similar to M13_ConsultarAtletasCintas.
         /// </summary>
         internal static string ConsultarAtleta {
             get {
@@ -133,11 +133,20 @@ namespace DatosSKD.Modulo13 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cin_id.
+        ///   Looks up a localized string similar to @cin_id.
         /// </summary>
         internal static string idCinta {
             get {
                 return ResourceManager.GetString("idCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ev_id.
+        /// </summary>
+        internal static string idEvento {
+            get {
+                return ResourceManager.GetString("idEvento", resourceCulture);
             }
         }
         

@@ -15,10 +15,10 @@
 
      <div class="box-body table-responsive">
 
-      <%--<table id="example" class="table table-bordered table-striped dataTable">
+      <table id="example" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>Foto</th>
+                   
 					<th>Nombre</th>
 					<th >Apellido</th>
 					<th>Edad</th>
@@ -26,23 +26,33 @@
                     <th >Altura</th>					
 				</tr>
 			</thead>
-			<tbody>--%>
+			
 
-			<asp:Table ID="example" runat="server" CssClass="table table-bordered table-striped dataTable">
-                <asp:TableHeaderRow><asp:TableHeaderCell>Foto</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Nombre</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Apelido</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Edad</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Peso</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Altura</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Foto</asp:TableHeaderCell>
-                </asp:TableHeaderRow>
-			</asp:Table>
+		<tbody>
+
+            <%
+                
+                List<DominioSKD.Persona> lista = new List<DominioSKD.Persona>();
+                LogicaNegociosSKD.Modulo13.LogicaAtletaCinta lcinta = new LogicaNegociosSKD.Modulo13.LogicaAtletaCinta();
+                String id = Request.QueryString["id"];
+                lista = lcinta.obtenerListaPersona(id);
+                foreach (DominioSKD.Persona valorActual in lista)
+                {
+                    Response.Write("<tr>");
+                    Response.Write("<td>" + valorActual.Nombre + "</td>");
+                    Response.Write("<td>" + valorActual.Apellido + "</td>");
+                    Response.Write("<td>" + valorActual.Edad + "</td>");
+                    Response.Write("<td>" + valorActual.Peso + "</td>");
+                    Response.Write("<td>" + valorActual.Estatura + "</td>");
+                    Response.Write("</tr>");
+                }
+                
+                   %> 
+      </tbody>
                 
               
-           
-			<%--</tbody>
-</table>--%>
+        
+</table>
 
          
         </div>

@@ -16,26 +16,20 @@
     <div align="center">
       <table class="table-hover table-bordered table-condensed">
         <tr>
-          <td><a href="M13_Kyu_atletas.aspx"><img src="Kyu-imagenes/blanca-azul.jpg" width="92" height="72" class="img-responsive" /></a></td>
-          <td><img src="Kyu-imagenes/celeste.jpg" width="92" height="72" class="img-responsive"/></td>
-          <td><img src="Kyu-imagenes/celeste-amarillo.jpg" width="92" height="72"class="img-responsive" /></td>
-          <td><img src="Kyu-imagenes/amarilla.jpg" width="92" height="72"class="img-responsive" /></td>
-          <td><img src="Kyu-imagenes/naranja.jpg" width="92" height="72" class="img-responsive"/></td>
+          <td><a href="M13_Kyu_atletas.aspx?id=1"><img src="Kyu-imagenes/blanca-azul.jpg" width="92" height="72" class="img-responsive" /></a></td>
+          <td><a href="M13_Kyu_atletas.aspx?id=2"><img src="Kyu-imagenes/celeste.jpg" width="92" height="72" class="img-responsive"/></a></td>
+          <td><a href="M13_Kyu_atletas.aspx?id=3"><img src="Kyu-imagenes/celeste-amarillo.jpg" width="92" height="72"class="img-responsive" /></a></td>
+          <td><a href="M13_Kyu_atletas.aspx?id=4"><img src="Kyu-imagenes/amarilla.jpg" width="92" height="72"class="img-responsive" /></a></td>
+        
           </tr>
         <tr>
           <td><img src="Kyu-imagenes/naranja-verde.jpg" width="92" height="72"class="img-responsive" /></td>
           <td><img src="Kyu-imagenes/verde.jpg" width="92" height="72"class="img-responsive" /></td>
           <td><img src="Kyu-imagenes/purpura.jpg" width="92" height="72" class="img-responsive"/></td>
           <td><img src="Kyu-imagenes/azul.jpg" width="92" height="72" class="img-responsive"/></td>
-          <td><img src="Kyu-imagenes/azul-roja.jpg" width="92" height="72" class="img-responsive"/></td>
+     
           </tr>
-        <tr>
-          <td><img src="Kyu-imagenes/marron.jpg" width="92" height="72" class="img-responsive"/></td>
-          <td><img src="Kyu-imagenes/marron-blanco.jpg" width="92" height="72"class="img-responsive" /></td>
-          <td><img src="Kyu-imagenes/marron-negro.jpg" width="92" height="72"class="img-responsive" /></td>
-          <td><img src="Kyu-imagenes/negro-blanco.jpg" width="92" height="72"class="img-responsive" /></td>
-          <td><img src="Kyu-imagenes/negro.jpg" width="92" height="72" class="img-responsive" /></td>
-          </tr>
+  
       </table>
     </div>
     </div>
