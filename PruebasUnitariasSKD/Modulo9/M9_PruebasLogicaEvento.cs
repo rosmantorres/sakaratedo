@@ -194,5 +194,20 @@ namespace PruebasUnitariasSKD.Modulo9
 
 
         }
+
+        [Test]
+        public void PruebaModificarEventoConTipo()
+        {
+            LogicaEvento logicaEvento = new LogicaEvento();
+            elEvento.Id_evento = 4;
+            elEvento.Nombre = "PRobando el Modificar desde Logica";
+            elEvento.Descripcion = "PRobando el Modificar desde Logica";
+            elEvento.Estado = false;
+            elEvento.TipoEvento.Nombre = "PRuebas Unitarias desde Logica";
+            Boolean auxiliar = logicaEvento.ModificarEvento(elEvento);
+            Assert.True(auxiliar);
+
+
+        }
     }
 }

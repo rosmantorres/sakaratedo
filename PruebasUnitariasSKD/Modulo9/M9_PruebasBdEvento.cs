@@ -165,6 +165,21 @@ namespace PruebasUnitariasSKD.Modulo9
 
 
         }
+
+        [Test]
+        public void PruebaModificarEventoConTipo()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            elEvento.Id_evento = 3;
+            elEvento.Nombre = "PRobando el Modificar desde BD";
+            elEvento.Descripcion = "PRobando el Modificar desde BD";
+            elEvento.TipoEvento.Nombre = "Probando el Modificar desde BD";
+            elEvento.Estado = false;
+            Boolean auxiliar = baseDeDatosEvento.ModificarEventoConTipo(elEvento);
+            Assert.True(auxiliar);
+
+
+        }
         #endregion
     }
 }

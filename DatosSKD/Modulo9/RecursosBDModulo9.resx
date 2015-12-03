@@ -271,4 +271,8 @@
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
   </data>
+  <data name="ProcedimientoModificarEventoConTipo" xml:space="preserve">
+    <value>M9_ModificarEventoConTipo</value>
+    <comment>Nombre del SP a Ejecutar</comment>
+  </data>
 </root>
