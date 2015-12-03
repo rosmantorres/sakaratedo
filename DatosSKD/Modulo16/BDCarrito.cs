@@ -257,7 +257,7 @@ namespace DatosSKD.Modulo16
             }
         }
 
-        /*
+        
         /// <summary>
         /// Metodo que obtiene todas las matriculas en el carrito del usuario de la Base de Datos
         /// </summary>
@@ -302,15 +302,18 @@ namespace DatosSKD.Modulo16
                     DataTable dt2 = conexion.EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_CONSULTAR_MATRICULA_ID, parametros);
 
-                    Matricula laMatricula = new Matricula();
-
                     //Por cada ID obtengo su informacion correspondiente
                     foreach (DataRow row2 in dt2.Rows)
                     {
                         //Me creo la matricula
-                        //TERMINAR ESTA PARTE!!!!!!!!!!!!!!!!!!!!!!
-                        laMatricula = 
+                        Matricula laMatricula = new Matricula();
+                        laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
+                        laMatricula.Identificador = (row[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
+                        laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
+                        laMatricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
 
+                        laLista.Add(laMatricula);
+                        
                         //Agrego a la lista
                         laLista.Add(laMatricula);
                      }
@@ -364,7 +367,7 @@ namespace DatosSKD.Modulo16
                 throw new ExceptionSKDConexionBD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
                     RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
-        }*/
+        }
             #endregion
             #region EliminarItem
         /// <summary>

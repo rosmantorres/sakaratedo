@@ -544,3 +544,17 @@ BEGIN
 		END
 	SET @exito = 1;
 END
+GO
+
+/* Consulta la informacion del evento dado el ID del evento en especifico */
+CREATE PROCEDURE M16_CONSULTAR_MATRICULA_ID
+		@iditem INTEGER
+AS
+BEGIN
+	--Selecciono la informacion del evento
+	SELECT M.mat_identificador AS idIdentificadorMatricla, 
+	        M.mat_fecha_creacion AS fechaInicio,
+		    M.mat_fecha_ultimo_pago AS fechaTope
+	 		
+	FROM  	MATRICULA M WHERE mat_id = 1;
+END
