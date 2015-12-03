@@ -358,21 +358,21 @@ go
 
 -- INSERTS EVENTO--
 
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',0,'Clases regulares del atleta que va los dias asignados',1,null,null,1,4,1)
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',0,'Clases regulares del atleta que va los dias asignados',1,null,2,1,4,1)
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento 2',2000,'Entrenammiento para Competencia',1,null,null,4,3,2)
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento 2',2000,'Entrenammiento para Competencia',1,null,3,4,3,2)
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Pase a negra',1150,'Pase de cinta de los atletas',1,null,null,3,1,1)
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Pase a negra',1150,'Pase de cinta de los atletas',1,null,4,3,1,1)
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,null,null,2,2,1)
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,null,5,2,2,1)
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,1,null,6,2,6)
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('La vida en el Dojo',1150,'Charla sobre los atletas en la vida real',1,1,2,6,2,6)
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',520,'Clase para cualquier nivel de cinta',1,1,null,7,4,7) 
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Clase Regular',520,'Clase para cualquier nivel de cinta',1,1,1,7,4,7) 
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento Especial',740,'Entrenamiento dedicado a perfeccionar las patadas',1,1,null,8,3,7) 
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Entrenamiento Especial',740,'Entrenamiento dedicado a perfeccionar las patadas',1,1,4,8,3,7) 
 go
-INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('El Bushido',450,'Charla explicativa sobre el codigo Bushido',1,1,null,9,2,6) 
+INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('El Bushido',450,'Charla explicativa sobre el codigo Bushido',1,1,5,9,2,6) 
 go
 INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Congreso sobre el Karate Do',2500,'Tercer Congreso para hablar sobre el Karate Do',1,1,null,10,2,6) 
 go
@@ -4214,6 +4214,8 @@ VALUES (
     0
 );
 
+INSERT INTO [dbo].[MATRICULA] ([mat_identificador],[mat_fecha_creacion],[mat_activa], [mat_fecha_ultimo_pago], [mat_precio],[PERSONA_per_id], [DOJO_doj_id]) VALUES ('CCA1-CAF-CAFE','2014-12-10',1,'2015-03-08',4200,6,1)
+go
 -- FIN DEL INSERT PERSONA--
 
 
@@ -4899,6 +4901,13 @@ INSERT INTO	HISTORIAL_CINTAS	VALUES	(	6	,	NULL	,	'2015-08-21'	,	2	);
 
 -- INSERTS INSCRIPCION--
 INSERT INTO	INSCRIPCION	VALUES	(	1	,	'2015-05-20'	,	5	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	1	,	'2015-04-10'	,	NULL	,	2	);
+INSERT INTO	INSCRIPCION	VALUES	(	1	,	'2015-05-10'	,	1	,	NULL);
+INSERT INTO	INSCRIPCION	VALUES	(	2	,	'2015-03-15'	,	4	,	NULL	);
+INSERT INTO	INSCRIPCION	VALUES	(	2	,	'2015-01-27'	,	NULL	,	1	);
+INSERT INTO	INSCRIPCION	VALUES	(	2	,	'2015-03-04'	,	NULL	,	3	);
+
+INSERT INTO	INSCRIPCION	VALUES	(	1	,	'2015-05-20'	,	5	,	NULL	);
 INSERT INTO	INSCRIPCION	VALUES	(	3	,	'2015-04-10'	,	5	,	NULL	);
 INSERT INTO	INSCRIPCION	VALUES	(	4	,	'2015-03-15'	,	5	,	NULL	);
 INSERT INTO	INSCRIPCION	VALUES	(	5	,	'2015-01-27'	,	5	,	NULL	);
@@ -5194,6 +5203,8 @@ INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,3,6,NULL,2,NULL);
 INSERT INTO DETALLE_COMPRA VALUES (7,1200,1,3,6,NULL,13,NULL);
 
 INSERT INTO DETALLE_COMPRA VALUES (6,1200,1,3,6,NULL,14,NULL);
+
+INSERT INTO DETALLE_COMPRA VALUES (8,1200,6,25,6,NULL,2,NULL);
 
 
 update PERSONA set per_clave='5ae2bacffebdf3e8e37decdd343ac728';

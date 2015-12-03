@@ -1,4 +1,4 @@
---------------------------------Para Obtener los ID de los roles-------
+﻿--------------------------------Para Obtener los ID de los roles-------
 
 /*
 SELECT rol_id from ROL where rol_nombre='Admin Sistema';
@@ -197,7 +197,7 @@ ROL_rol_id
 VALUES (
 GETDATE(),
 (SELECT per_id FROM dbo.PERSONA WHERE per_nombre = 'Rosman'),
-(SELECT rol_id from ROL where rol_nombre='Admin Sistema')
+(SELECT rol_id from ROL where rol_nombre='Admin Sistema'));
 
 INSERT INTO dbo.PERSONA_ROL  (
 per_rol_fecha,

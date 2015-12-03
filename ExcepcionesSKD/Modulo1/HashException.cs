@@ -8,8 +8,9 @@ namespace ExcepcionesSKD.Modulo1
 {
     public class HashException : ExceptionSKD
     {
-        public HashException() : base()
-        {}
+        public HashException()
+            : base()
+        { }
 
         public HashException(string message)
             : base(message)

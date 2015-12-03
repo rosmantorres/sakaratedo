@@ -119,7 +119,9 @@ namespace DominioSKD
         /// <summary>
         /// Objeto Inscripcion
         /// </summary>
-        private Inscripcion _inscripcion;
+        private int _idInscripcion;
+
+
         #endregion
 
         #region Constructores
@@ -135,7 +137,7 @@ namespace DominioSKD
         public Persona()
         {
             this._id = -1;
-            _inscripcion = new Inscripcion();
+        
         }
 
         public int ID
@@ -200,11 +202,12 @@ namespace DominioSKD
             get { return this._contatoEmergencia; }
         }
 
-        public Inscripcion Inscripcion
+        public int IdInscripcion
         {
-            get { return _inscripcion; }
-            set { _inscripcion = value; }
+            get { return _idInscripcion; }
+            set { _idInscripcion = value; }
         }
+    
 
         /// <summary>
         /// Agrega un teléfono a la lista, si no existe la
