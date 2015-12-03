@@ -10,6 +10,6 @@
 namespace templateApp.GUI.Modulo13 {
     
     
-    public partial class M13_Info_Producto {
+    public partial class M13_Inventario {
     }
 }
