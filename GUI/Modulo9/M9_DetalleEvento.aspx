@@ -28,7 +28,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gesti&oacute;n de Eventos</asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Evento</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Detalle del Evento</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
         <div id="alert" runat="server">
