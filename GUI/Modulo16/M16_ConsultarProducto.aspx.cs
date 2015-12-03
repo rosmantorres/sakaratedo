@@ -504,9 +504,14 @@ namespace templateApp.GUI.Modulo16
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=1");
-                
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
+                if (agregar)
+                {
+                    //Si se pudo registrar el pago
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=1");
+                }
+                else
+                    //Si no se pudo registrar el pago
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
 
                 return json;
             }
