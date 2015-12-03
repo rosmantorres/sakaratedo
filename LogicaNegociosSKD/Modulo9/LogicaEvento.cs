@@ -248,10 +248,15 @@ namespace LogicaNegociosSKD.Modulo9
                                     Console.Out.WriteLine("FechaF Valido");
                                     if (ValidarFechaFinMayor(fechaInicio, fechaFin))
                                     {
-                                        Console.Out.WriteLine("FechaI <= FechaF");
-                                        BDEvento baseDeDatosEvento = new BDEvento();
+                                        if (ValidarCaracteres(evento.TipoEvento.Nombre))
+                                        {
+                                            Console.Out.WriteLine("Nombre de Evento Valido ");
 
-                                        return baseDeDatosEvento.ModificarEvento(evento);
+                                            BDEvento baseDeDatosEvento = new BDEvento();
+                                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                                            return baseDeDatosEvento.ModificarEventoConTipo(evento);
+                                        }
 
                                     }
                                 }
@@ -285,6 +290,82 @@ namespace LogicaNegociosSKD.Modulo9
             return false;
 
         }
+
+        /// <summary>
+        /// Metodo que modifica un evento con un nuevo tipo de Evento
+        /// </summary>
+        /// <param name="evento">evento a modificar</param>
+        /// <returns>Verdadero o Falso</returns>
+
+        public bool ModificarEventoConTipo(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                if (ValidarCaracteres(evento.Nombre))
+                {
+                    Console.Out.WriteLine("Nombre Valido");
+                    if (ValidarCaracteres(evento.Descripcion))
+                    {
+                        Console.Out.WriteLine("Descripcion Valido");
+
+                        Console.Out.WriteLine("Costo Valido");
+                        String dia = (evento.Horario.FechaInicio.Date.Day.ToString());
+                        String mes = (evento.Horario.FechaInicio.Date.Month.ToString());
+                        String año = (evento.Horario.FechaInicio.Date.Year.ToString());
+                        String fechaInicio = String.Concat(dia + "/" + mes + "/" + año);
+                        if (ValidarFormatoFecha(fechaInicio))
+                        {
+                            Console.Out.WriteLine("FechaI Valido");
+                            dia = (evento.Horario.FechaFin.Date.Day.ToString());
+                            mes = (evento.Horario.FechaFin.Date.Month.ToString());
+                            año = (evento.Horario.FechaFin.Date.Year.ToString());
+                            String fechaFin = String.Concat(dia + "/" + mes + "/" + año);
+                            if (ValidarFormatoFecha(fechaFin))
+                            {
+                                Console.Out.WriteLine("FechaF Valido");
+                                if (ValidarFechaFinMayor(fechaInicio, fechaFin))
+                                {
+                                    Console.Out.WriteLine("FechaI <= FechaF");
+                                    BDEvento baseDeDatosEvento = new BDEvento();
+
+                                    return baseDeDatosEvento.ModificarEventoConTipo(evento);
+
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return false;
+
+        }
+
+
         /// <summary>
         /// Metodo que retorna de la BD un evento dado el ID
         /// </summary>

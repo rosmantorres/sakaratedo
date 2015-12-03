@@ -84,7 +84,8 @@ namespace PruebasUnitariasSKD.Modulo9
         {
             DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
             Evento evento = baseDeDatosEvento.ConsultarEvento("1");
-            Console.Out.WriteLine(evento.Nombre);
+
+            Console.Out.WriteLine(evento.TipoEvento.Id);
             Assert.AreEqual(evento.Nombre, "Clase Regular");
         }
 
@@ -161,6 +162,21 @@ namespace PruebasUnitariasSKD.Modulo9
             elEvento.Descripcion = "PRobando el Modificar desde BD";
             elEvento.Estado = false;
             Boolean auxiliar = baseDeDatosEvento.ModificarEvento(elEvento);
+            Assert.True(auxiliar);
+
+
+        }
+
+        [Test]
+        public void PruebaModificarEventoConTipo()
+        {
+            DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
+            elEvento.Id_evento = 3;
+            elEvento.Nombre = "PRobando el Modificar desde BD";
+            elEvento.Descripcion = "PRobando el Modificar desde BD";
+            elEvento.TipoEvento.Nombre = "Probando el Modificar desde BD";
+            elEvento.Estado = false;
+            Boolean auxiliar = baseDeDatosEvento.ModificarEventoConTipo(elEvento);
             Assert.True(auxiliar);
 
 

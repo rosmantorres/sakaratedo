@@ -410,5 +410,14 @@ namespace DatosSKD.Modulo9 {
                 return ResourceManager.GetString("ProcedimientoModificarEvento", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_ModificarEventoConTipo.
+        /// </summary>
+        internal static string ProcedimientoModificarEventoConTipo {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarEventoConTipo", resourceCulture);
+            }
+        }
     }
 }
