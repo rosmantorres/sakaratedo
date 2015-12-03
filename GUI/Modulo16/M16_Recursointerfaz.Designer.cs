@@ -287,11 +287,47 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_09.
+        /// </summary>
+        internal static string CODIGO_HTTP_EXCEPTION {
+            get {
+                return ResourceManager.GetString("CODIGO_HTTP_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S_16_10.
+        /// </summary>
+        internal static string CODIGO_REFERENCIA_NULA_EXCEPTION {
+            get {
+                return ResourceManager.GetString("CODIGO_REFERENCIA_NULA_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;select   id=&apos;.
         /// </summary>
         internal static string COMBOCANTIDAD {
             get {
                 return ResourceManager.GetString("COMBOCANTIDAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se produjo un error al interacturar con un componente HTTP.
+        /// </summary>
+        internal static string MENSAJE_HTTP_EXCEPTION {
+            get {
+                return ResourceManager.GetString("MENSAJE_HTTP_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se produjo un error al ingrear en un atributo en null.
+        /// </summary>
+        internal static string MENSAJE_REFERENCIA_NULA_EXCEPTION {
+            get {
+                return ResourceManager.GetString("MENSAJE_REFERENCIA_NULA_EXCEPTION", resourceCulture);
             }
         }
     }
