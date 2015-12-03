@@ -255,7 +255,7 @@ namespace LogicaNegociosSKD.Modulo9
                                             BDEvento baseDeDatosEvento = new BDEvento();
                                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                                            return baseDeDatosEvento.ModificarEventoConTipo(evento);
+                                            return baseDeDatosEvento.ModificarEvento(evento);
                                         }
 
                                     }
