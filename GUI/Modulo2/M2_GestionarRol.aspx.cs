@@ -10,6 +10,7 @@ using LogicaNegociosSKD.Modulo2;
 using DominioSKD;
 using System.Data;
 using templateApp.GUI.Master;
+using templateApp.GUI.Modulo1;
 
 namespace templateApp.GUI.Modulo2
 {
@@ -24,7 +25,7 @@ namespace templateApp.GUI.Modulo2
         public int cont = 0;
         public HiddenField Hidden =new HiddenField();
         public List<Rol> rolSinPermiso = new List<Rol>();
-        public Cuenta cuentaConsultada ;
+        public Cuenta cuentaConsultada =new Cuenta() ;
         public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
         public String idUsuarioURL;
 
@@ -82,8 +83,7 @@ namespace templateApp.GUI.Modulo2
             }
             catch (NullReferenceException ex)
             {
-
-
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
             }
 
 
