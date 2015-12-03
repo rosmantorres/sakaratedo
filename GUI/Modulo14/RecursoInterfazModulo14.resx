@@ -162,7 +162,7 @@
                             &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
   </data>
   <data name="BotonModificarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx?idSol=</value>
   </data>
   <data name="BotonInfoSolicitud" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
@@ -173,13 +173,166 @@
   <data name="BotonEliminarSolicitud" xml:space="preserve">
     <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
-  <data name="BotonSolicitarPlanilla" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
-  </data>
   <data name="CerrarSolicitud" xml:space="preserve">
     <value>"&gt;Solicitar&lt;/a&gt;</value>
   </data>
   <data name="IdDis" xml:space="preserve">
     <value>&amp;idDis=</value>
+  </data>
+  <data name="Competencia" xml:space="preserve">
+    <value>COMPETENCIA</value>
+  </data>
+  <data name="CookieDis" xml:space="preserve">
+    <value>diseno</value>
+  </data>
+  <data name="CookieId" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="CookieIdIns" xml:space="preserve">
+    <value>idIns</value>
+  </data>
+  <data name="CookieIdPlanilla" xml:space="preserve">
+    <value>idPlanilla</value>
+  </data>
+  <data name="CookieNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="CookiePlanilla" xml:space="preserve">
+    <value>Planilla</value>
+  </data>
+  <data name="CookieSolicitud" xml:space="preserve">
+    <value>Solicitud</value>
+  </data>
+  <data name="CookieTipo" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="DatosPlanilla" xml:space="preserve">
+    <value>Datos de la Solicitud&lt;br/&gt;</value>
+  </data>
+  <data name="DojEmail" xml:space="preserve">
+    <value>$doj_email&lt;br/&gt;</value>
+  </data>
+  <data name="DojNombre" xml:space="preserve">
+    <value>$doj_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="Dojo" xml:space="preserve">
+    <value>DOJO</value>
+  </data>
+  <data name="DojRif" xml:space="preserve">
+    <value>$doj_rif&lt;br/&gt;</value>
+  </data>
+  <data name="DojTlf" xml:space="preserve">
+    <value>$doj_telefono&lt;br/&gt;</value>
+  </data>
+  <data name="Espacio" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="Evento" xml:space="preserve">
+    <value>EVENTO</value>
+  </data>
+  <data name="FechaCreacionPlanilla" xml:space="preserve">
+    <value>$fecha_creacionDelaPlanilla&lt;br/&gt;</value>
+  </data>
+  <data name="FechaRein" xml:space="preserve">
+    <value>$fecha_reincorporacion&lt;br/&gt;</value>
+  </data>
+  <data name="FechaRetiro" xml:space="preserve">
+    <value>$fecha_retiro&lt;br/&gt;</value>
+  </data>
+  <data name="idIns" xml:space="preserve">
+    <value>&amp;idIns=</value>
+  </data>
+  <data name="linea" xml:space="preserve">
+    <value>&lt;br/&gt;</value>
+  </data>
+  <data name="Matricula" xml:space="preserve">
+    <value>MATRICULA</value>
+  </data>
+  <data name="Motivo" xml:space="preserve">
+    <value>$motivo&lt;br/&gt;</value>
+  </data>
+  <data name="MsjDiseñoPlanillaModificado" xml:space="preserve">
+    <value>Diseño de Plantilla Modificado satisfactoriamente</value>
+  </data>
+  <data name="MSJEliminacionSolicitud" xml:space="preserve">
+    <value>Eliminación de Solicitud satisfactoria</value>
+  </data>
+  <data name="MsjErrorEliminacionSolicitud" xml:space="preserve">
+    <value>Error no se pudo Eliminar la Solicitud. Intente más tarde</value>
+  </data>
+  <data name="MsjErrorNoGuardada" xml:space="preserve">
+    <value>Error no se pudo guardar el diseño. Intente más tarde</value>
+  </data>
+  <data name="MsjErrorPLanillaModificado" xml:space="preserve">
+    <value>Error no se pudo Modificar el diseño. Intente más tarde</value>
+  </data>
+  <data name="MsjPlanillaGuardada" xml:space="preserve">
+    <value>Diseño de Plantilla guardado satisfactoriamente</value>
+  </data>
+  <data name="Numero1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NumeroModulo" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Organizacion" xml:space="preserve">
+    <value>ORGANIZACION</value>
+  </data>
+  <data name="PaginaDisenoPlanilla" xml:space="preserve">
+    <value>M14_DisenoPlanilla.aspx</value>
+  </data>
+  <data name="PaginaMostrarPlanilla" xml:space="preserve">
+    <value>M14_MostrarPlanilla.aspx</value>
+  </data>
+  <data name="ParteSuperior" xml:space="preserve">
+    <value>________________________________&lt;br/&gt;</value>
+  </data>
+  <data name="PerApellido" xml:space="preserve">
+    <value>$per_apellido&lt;br/&gt;</value>
+  </data>
+  <data name="PerDir" xml:space="preserve">
+    <value>$per_direccion&lt;br/&gt;</value>
+  </data>
+  <data name="PerEstatura" xml:space="preserve">
+    <value>$per_estatura&lt;br/&gt;</value>
+  </data>
+  <data name="PerFechaNac" xml:space="preserve">
+    <value>$per_fecha_nacimiento&lt;br/&gt;</value>
+  </data>
+  <data name="PerImagen" xml:space="preserve">
+    <value>$per_imagen&lt;br/&gt;</value>
+  </data>
+  <data name="PerNacionalidad" xml:space="preserve">
+    <value>$per_nacionalidad&lt;br/&gt;</value>
+  </data>
+  <data name="PerNombre" xml:space="preserve">
+    <value>$per_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="PerNumDoc" xml:space="preserve">
+    <value>$per_num_doc_id&lt;br/&gt;</value>
+  </data>
+  <data name="PerPeso" xml:space="preserve">
+    <value>$per_peso&lt;br/&gt;</value>
+  </data>
+  <data name="Persona" xml:space="preserve">
+    <value>PERSONA</value>
+  </data>
+  <data name="QueryIdEliminar" xml:space="preserve">
+    <value>idEliminar</value>
+  </data>
+  <data name="QueryIdPlan" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="QueryIdSolici" xml:space="preserve">
+    <value>idSolici</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="BotonSolicitarPlanilla" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
+  </data>
+  <data name="idSol" xml:space="preserve">
+    <value>idSol</value>
   </data>
 </root>
