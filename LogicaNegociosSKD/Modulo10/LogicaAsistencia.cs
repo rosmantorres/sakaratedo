@@ -52,5 +52,22 @@ namespace LogicaNegociosSKD.Modulo10
         {
              BDAsistencia.ModificarAsistenciaE(ins, eve, asistio);
         }
+
+        public static Competencia consultarCompetenciasXID(String idCompetencia)
+        {
+            Competencia competencia = BDAsistencia.consultarCompetenciasXID(idCompetencia);
+            return competencia;
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD un evento dado el ID
+        /// </summary>
+        /// <param name="idEvento">Id del evento</param>
+        /// <returns>Objeto de tipo evento</returns>
+        public static List<Persona> listaAsistentesCompetencia(String idEvento)
+        {
+            List<Persona> listaAtletas = BDAsistencia.listaAsistentesCompetencia(idEvento);
+            return listaAtletas;
+        }
     }
 }

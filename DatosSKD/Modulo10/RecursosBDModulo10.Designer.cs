@@ -79,6 +79,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fechaInicioCompetencia.
+        /// </summary>
+        internal static string aliasFechaInicioCompetencia {
+            get {
+                return ResourceManager.GetString("aliasFechaInicioCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCompetencia.
         /// </summary>
         internal static string aliasIdCompetencia {
@@ -151,11 +160,38 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string Concatenar0 {
+            get {
+                return ResourceManager.GetString("Concatenar0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MM/dd/yyyy.
+        /// </summary>
+        internal static string FormatoFecha {
+            get {
+                return ResourceManager.GetString("FormatoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_asi_asistio.
         /// </summary>
         internal static string ParametroAsistencia {
             get {
                 return ResourceManager.GetString("ParametroAsistencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idCompetencia.
+        /// </summary>
+        internal static string ParametroIdCompetencia {
+            get {
+                return ResourceManager.GetString("ParametroIdCompetencia", resourceCulture);
             }
         }
         
@@ -205,6 +241,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_AsistentesCompetencia.
+        /// </summary>
+        internal static string ProcedimientoAtletasAsistentesCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoAtletasAsistentesCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_InasistenteAlEvento.
         /// </summary>
         internal static string ProcedimientoAtletasInasitentes {
@@ -214,11 +259,29 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarCompetenciaXid.
+        /// </summary>
+        internal static string ProcedimientoConsultarCompetenciaXID {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarCompetenciaXID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_ModicarAsistenciaE.
         /// </summary>
         internal static string ProcedimientoModificarAsistenciaE {
             get {
                 return ResourceManager.GetString("ProcedimientoModificarAsistenciaE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /.
+        /// </summary>
+        internal static string SeparadorFecha {
+            get {
+                return ResourceManager.GetString("SeparadorFecha", resourceCulture);
             }
         }
     }

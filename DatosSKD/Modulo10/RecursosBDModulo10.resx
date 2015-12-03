@@ -171,6 +171,7 @@
   </data>
   <data name="aliasIdInscripcion" xml:space="preserve">
     <value>idInscripcion</value>
+    <comment>Alias colocado en el Stored Procedure referende al id de inscripcion</comment>
   </data>
   <data name="ProcedimientoAtletasInasitentes" xml:space="preserve">
     <value>M10_InasistenteAlEvento</value>
@@ -186,6 +187,31 @@
   </data>
   <data name="ProcedimientoModificarAsistenciaE" xml:space="preserve">
     <value>M10_ModicarAsistenciaE</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ParametroIdCompetencia" xml:space="preserve">
+    <value>@_idCompetencia</value>
+    <comment>parametro id de competencia</comment>
+  </data>
+  <data name="ProcedimientoConsultarCompetenciaXID" xml:space="preserve">
+    <value>M10_ConsultarCompetenciaXid</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="aliasFechaInicioCompetencia" xml:space="preserve">
+    <value>fechaInicioCompetencia</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio</comment>
+  </data>
+  <data name="Concatenar0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SeparadorFecha" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>MM/dd/yyyy</value>
+  </data>
+  <data name="ProcedimientoAtletasAsistentesCompetencia" xml:space="preserve">
+    <value>M10_AsistentesCompetencia</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
 </root>
