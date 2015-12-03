@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo16
 {
-    public class ReferenciaNulaException: ExceptionSKD;
+    public class ReferenciaNulaException: ExceptionSKD
     {
         public ReferenciaNulaException() : base() {}
 
@@ -14,7 +14,7 @@ namespace ExcepcionesSKD.Modulo16
 
         public ReferenciaNulaException(String mensaje, Exception e) : base(mensaje, e) {}
 
-        public ReferenciaNulaException(String codigo, String mensaje, Exception e):base(codigo,menaje,e) {}
+        public ReferenciaNulaException(String codigo, String mensaje, Exception e):base(codigo,mensaje,e) {}
 
 
     }

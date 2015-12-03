@@ -34,6 +34,10 @@ namespace templateApp.GUI.Modulo16
             ((SKD)Page.Master).IdModulo = "16";
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);               
+
                 //Obtengo el ID del usuario
                 M16_VerCarrito.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
@@ -104,6 +108,10 @@ namespace templateApp.GUI.Modulo16
                         break;
 
                 }
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             }
             catch (ReferenciaNulaException ex)
@@ -215,7 +223,10 @@ namespace templateApp.GUI.Modulo16
         public void Llenartabla()
         {
             try
-            {            
+            {        //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                 M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);   
+    
                     //Instancio la logica correspondiente y me traigo el carrito de compras
                     Logicacarrito logicaCarrito = new Logicacarrito();
                     carritoCompras = logicaCarrito.verCarrito(usuario);
@@ -299,6 +310,9 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla3.Text += M16_Recursointerfaz.CERRAR_TR;
 
                     }
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                        M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 }
             catch (NullReferenceException ex)
             {
@@ -365,9 +379,17 @@ namespace templateApp.GUI.Modulo16
                 {
                     try
                     {
+                        //Escribo en el logger la entrada a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                         M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);   
+
                         Implemento elProducto = new Implemento();
                         Logicainventario logica = new Logicainventario();
                         elProducto = logica.detalleImplementoXId(Id_implemento);
+
+                        //Escribo en el logger la salida a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     }
                     catch (NullReferenceException ex)
                     {
@@ -467,9 +489,17 @@ namespace templateApp.GUI.Modulo16
                 {
                     try
                     {
+                        //Escribo en el logger la entrada a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                         M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);   
+
                         Evento elEvento = new Evento();
                         Logicaevento logica = new Logicaevento();
                         elEvento = logica.detalleEventoXId(Id_evento);
+
+                        //Escribo en el logger la salida a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     }
                     catch (NullReferenceException ex)
                     {
@@ -575,10 +605,18 @@ namespace templateApp.GUI.Modulo16
                 {
                     try
                     {
+                        //Escribo en el logger la entrada a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                         M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name); 
+
                         Implemento elProducto = new Implemento();
                         Logicainventario logica = new Logicainventario();
                         elProducto = logica.detalleImplementoXId(int.Parse(id));
                         string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elProducto);
+
+                        //Escribo en el logger la salida a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         return json;
                     }
                     catch (NullReferenceException ex)
@@ -691,10 +729,18 @@ namespace templateApp.GUI.Modulo16
                 {
                     try
                     {
+                        //Escribo en el logger la entrada a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                         M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name); 
+
                         Evento elEvento = new Evento();
                         Logicaevento logica = new Logicaevento();
                         elEvento = logica.detalleEventoXId(int.Parse(id));
                         string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elEvento);
+
+                        //Escribo en el logger la salida a este metodo
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         return json;
                     }
                     catch (NullReferenceException ex)
@@ -813,6 +859,10 @@ namespace templateApp.GUI.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                 M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name); 
+
                 //Creo el objeto de la capa de  Logica y la respuesta a recibir
             Logicacarrito logica = new Logicacarrito();
             bool exito = false;
@@ -822,6 +872,11 @@ namespace templateApp.GUI.Modulo16
 
             //Devuelvo la respuesta a la peticion ajax
             string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(exito);
+
+            //Escribo en el logger la salida a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return json;
             }
             catch (NullReferenceException ex)
@@ -935,7 +990,9 @@ namespace templateApp.GUI.Modulo16
         {
             try
             {
-
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                 M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name); 
 
                 //Lista que almacenara los datos correspondientes segun el tipo de pago
                 List<int> datosPago = new List<int>();
@@ -986,6 +1043,11 @@ namespace templateApp.GUI.Modulo16
                         HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
 
                 }
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             }
             catch(ArgumentOutOfRangeException ex)
             {

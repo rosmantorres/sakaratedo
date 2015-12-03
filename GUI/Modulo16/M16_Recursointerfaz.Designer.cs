@@ -314,6 +314,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingresando al metodo.
+        /// </summary>
+        internal static string MENSAJE_ENTRADA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_ENTRADA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Se produjo un error al interacturar con un componente HTTP.
         /// </summary>
         internal static string MENSAJE_HTTP_EXCEPTION {
@@ -328,6 +337,15 @@ namespace templateApp.GUI.Modulo16 {
         internal static string MENSAJE_REFERENCIA_NULA_EXCEPTION {
             get {
                 return ResourceManager.GetString("MENSAJE_REFERENCIA_NULA_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saliendo del metodo.
+        /// </summary>
+        internal static string MENSAJE_SALIDA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
             }
         }
     }

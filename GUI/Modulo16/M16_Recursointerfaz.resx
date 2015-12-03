@@ -206,10 +206,16 @@
     <value>&lt;select   id='</value>
     <comment>Combo box que muestra 10 valores del 1 al 10</comment>
   </data>
+  <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
+    <value>Ingresando al metodo</value>
+  </data>
   <data name="MENSAJE_HTTP_EXCEPTION" xml:space="preserve">
     <value>Se produjo un error al interacturar con un componente HTTP</value>
   </data>
   <data name="MENSAJE_REFERENCIA_NULA_EXCEPTION" xml:space="preserve">
     <value>Se produjo un error al ingrear en un atributo en null</value>
+  </data>
+  <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
+    <value>Saliendo del metodo</value>
   </data>
 </root>
