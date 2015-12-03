@@ -21,7 +21,7 @@ namespace templateApp.GUI.Modulo16
         public Carrito carritoCompras;
         public Logicacarrito logicaCarrito;
         public static int usuario = 0;
-
+       
         /// <summary>
         /// Metodo que carga las configuraciones por defecto y opciones especiales de su ventana correspondiente
         /// </summary>
