@@ -117,48 +117,69 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AgregarRestriccionCinta" xml:space="preserve">
-    <value>M8_Agregar_Restriccion_Cinta</value>
-    <comment>Llamada a funcion para agregar una rest. de cinta </comment>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="AliasIdRestriccionCinta" xml:space="preserve">
-    <value>IdRestriccionCinta</value>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="ConsultarRestriccionCinta" xml:space="preserve">
-    <value>M8_Consultar_Restriccion_Cinta</value>
-    <comment>Llamada a funcion para consultar una rest. de cinta</comment>
+  <data name="BotonActivarPlanilla" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
   </data>
-  <data name="ConsultarRestriccionesCinta" xml:space="preserve">
-    <value>M8_Consultar_Restricciones_Cinta</value>
-    <comment>Llamada a funcion para consultar todas las rest. de cinta</comment>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="EliminarRestriccionCinta" xml:space="preserve">
-    <value>M8_Eliminar_Restriccion_Cinta</value>
-    <comment>Llamada a funcion para eliminar una rest. de cinta</comment>
+  <data name="BotonCerrar1" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
   </data>
-  <data name="ModificarRestriccionCinta" xml:space="preserve">
-    <value>M8_Modificar_Restriccion_Cinta</value>
-    <comment>Llamada a funcion para modificar una rest. de cinta</comment>
+  <data name="BotonDesactivarPlanilla" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
   </data>
-  <data name="ParamCinta" xml:space="preserve">
-    <value>@CintaConsulta</value>
+  <data name="BotonEliminarSolicitud" xml:space="preserve">
+    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
-  <data name="ParamCintaNueva" xml:space="preserve">
-    <value>@Cinta</value>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
   </data>
-  <data name="ParamDescripcionRestricionCinta" xml:space="preserve">
-    <value>@DescripcionRestriccionCinta</value>
+  <data name="BotonInfoSolicitud" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
   </data>
-  <data name="ParamHorasDocentes" xml:space="preserve">
-    <value>@HorasDocentes</value>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionAvanceCinta.aspx" hidden="rest.IdRestriccionCinta.ToString()"&gt;</value>
   </data>
-  <data name="ParamIdRestriccion" xml:space="preserve">
-    <value>@IdRestriccion</value>
+  <data name="BotonModificarRegistro" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionAvanceCinta.aspx"</value>
   </data>
-  <data name="ParamPuntosMinimos" xml:space="preserve">
-    <value>@PuntajeMinimo</value>
+  <data name="BotonModificarSolicitud" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx</value>
   </data>
-  <data name="ParamTiempoMinimo" xml:space="preserve">
-    <value>@TiempoMinimo</value>
+  <data name="BotonSolicitarPlanilla" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
+  </data>
+  <data name="CerrarSolicitud" xml:space="preserve">
+    <value>"&gt;Solicitar&lt;/a&gt;</value>
+  </data>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="IdDis" xml:space="preserve">
+    <value>&amp;idDis=</value>
+  </data>
+  <data name="idPlan" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="IdPlanilla" xml:space="preserve">
+    <value>&amp;idPlanilla=</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>&amp;nombre=</value>
+  </data>
+  <data name="Tipo" xml:space="preserve">
+    <value>&amp;tipo=</value>
   </data>
 </root>

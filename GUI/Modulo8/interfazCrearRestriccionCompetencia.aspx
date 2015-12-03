@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazModificarRestriccionEvento.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazModificarRestriccionEvento" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazCrearRestriccionCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazCrearRestriccionEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
@@ -19,7 +19,7 @@
 		</li>
 		
 		<li class="active">
-			Modificar Restricciones de Eventos
+			Agregar Restricciones de Eventos
 		</li>
 	
 	</ol>
@@ -33,21 +33,21 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 
-    Modificar Restricciones de Eventos
+    Agregar Restricciones de Eventos
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <div id="alert" runat="server">
+     <div id="alert" runat="server">
     </div>
   
-  <select class="combobox" style="width:500px; height:35px">
-  <option value="">Seleccione Restricción de evento a modificar</option>
-  <option value="1">Entrenamiento Especial 1/1/2016  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a marrón Sexo: Ambos Categoría: N/A Especialidad N/A</option>
-  <option value="2">Competencia 1/2/2016  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a marrón Sexo: Femenino Categoría: N/Peso Pluma Especialidad: Kumite</option>
-  <option value="3">Entrenamiento Especial 1/1/2016  12:00 a 14:00  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a marrón Sexo: Ambos Categoría: N/A Especialidad N/A</option>
-  <option value="4">Competencia 1/2/2016  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a marrón Sexo: Femenino Categoría: N/Peso Pluma Especialidad: Kumite</option>
-  <option value="5">Entrenamiento Especial 1/1/2016  12:00 a 14:00  12:00 a 14:00 Rango Edades: 10 a 18 Rango Cintas: Blanca a marrón Sexo: Ambos Categoría: N/A Especialidad N/A</option>
+  <select class="combobox" style="width:300px; height:35px">
+  <option value="">Seleccione Evento</option>
+  <option value="1">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
+  <option value="2">Competencia 1/2/2016  12:00 a 14:00</option>
+  <option value="3">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
+  <option value="4">Competencia 1/2/2016  12:00 a 14:00</option>
+  <option value="5">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
   </select>
  
   
@@ -57,7 +57,7 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input type="text" placeholder="Edad mínima" class="form-control" id="edad_menor">
+					<input type="text" placeholder="Edad Mínima" class="form-control" id="edad_menor">
 					
 					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
 						
@@ -94,7 +94,7 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-                    <input type="text" placeholder="Edad máxima" class="form-control" id="rango_mayor">
+                    <input type="text" placeholder="Edad Máxima" class="form-control" id="rango_mayor">
 					
 					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
 						
@@ -123,7 +123,7 @@
 				    
                     <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesEventos.aspx">Cancelar</a>
                     
-                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesEventos.aspx?actionSuccess=3"> Modificar</a>
+                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesEventos.aspx?actionSuccess=1"> Agregar</a>
 				
                 </div>
 			</div>

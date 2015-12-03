@@ -137,10 +137,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
+    <Compile Include="Modulo8\BDRestriccionCinta.cs" />
+    <Compile Include="Modulo8\BDRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\BDRestriccionEvento.cs" />
+    <Compile Include="Modulo8\RecursoBDRestriccionCinta.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
+      <DependentUpon>RecursoBDRestriccionCinta.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo8\RecursosBDRestriccionEvento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosBDRestriccionEvento.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo8\RecursosBDRestriccionCompetencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosBDRestriccionCompetencia.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo9\BDEvento.cs" />
     <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
@@ -214,9 +227,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
+    <EmbeddedResource Include="Modulo8\RecursoBDRestriccionCinta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursoBDRestriccionCinta.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo8\RecursosBDRestriccionEvento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosBDRestriccionEvento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo8\RecursosBDRestriccionCompetencia.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosBDRestriccionCompetencia.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\RecursosBDModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>

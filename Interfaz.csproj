@@ -19,7 +19,6 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,16 +38,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
     <Reference Include="CKEditor.NET">
+<<<<<<< HEAD
       <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
+=======
+      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+>>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <!--<Reference Include="itextsharp">
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>-->
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+<<<<<<< HEAD
       <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
+=======
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
+>>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -75,9 +86,15 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
-    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+<<<<<<< HEAD
+=======
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+>>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -207,7 +224,6 @@
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
-    <Content Include="GUI\Modulo14\img\Carnet_titulo.jpg" />
     <Content Include="GUI\Modulo14\ckeditor\adapters\jquery.js" />
     <Content Include="GUI\Modulo14\ckeditor\build-config.js" />
     <Content Include="GUI\Modulo14\ckeditor\ckeditor.js" />
@@ -498,6 +514,8 @@
     <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\refresh.png" />
     <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="GUI\Modulo14\ckeditor\styles.js" />
+    <Content Include="GUI\Modulo14\img\Carnet_titulo.jpg" />
+    <Content Include="GUI\Modulo14\img\perfil.jpg" />
     <Content Include="GUI\Modulo14\M14_AgregarEliminarDatos.js" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
     <Content Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx" />
@@ -509,7 +527,6 @@
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
-    <Content Include="GUI\Modulo14\img\perfil.jpg" />
     <Content Include="GUI\Modulo15\M15_AgregarImplemento.aspx" />
     <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
     <Content Include="GUI\Modulo15\M15_ModificarImplemento.aspx" />
@@ -548,14 +565,14 @@
     <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
-    <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
+    <Content Include="GUI\Modulo8\interfazCrearRestriccionCompetencia.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
     <Content Include="GUI\Modulo8\interfazMenuRestriccionesCintasYEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx" />
-    <Content Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx" />
+    <Content Include="GUI\Modulo8\interfazModificarRestriccionCompetencia.aspx" />
     <Content Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
-    <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
+    <Content Include="GUI\Modulo8\interfazRestriccionesCompetencia.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
     <Content Include="GUI\Modulo9\M9_ModificarEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
@@ -1998,11 +2015,7 @@
     <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.designer.cs">
       <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo14\RecursoInterfazModulo14.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
-    </Compile>
+    <Compile Include="GUI\Modulo14\RecursoInterfazModulo14.Designer.cs" />
     <Compile Include="GUI\Modulo15\InterfazImplemento.cs" />
     <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
       <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
@@ -2266,12 +2279,12 @@
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.designer.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.cs">
-      <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionCompetencia.aspx.cs">
+      <DependentUpon>interfazCrearRestriccionCompetencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx.designer.cs">
-      <DependentUpon>interfazCrearRestriccionEvento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazCrearRestriccionCompetencia.aspx.designer.cs">
+      <DependentUpon>interfazCrearRestriccionCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx.cs">
       <DependentUpon>interfazCrearRestriccionHorario.aspx</DependentUpon>
@@ -2294,12 +2307,12 @@
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionAvanceCinta.aspx.designer.cs">
       <DependentUpon>interfazModificarRestriccionAvanceCinta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.cs">
-      <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionCompetencia.aspx.cs">
+      <DependentUpon>interfazModificarRestriccionCompetencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo8\interfazModificarRestriccionEvento.aspx.designer.cs">
-      <DependentUpon>interfazModificarRestriccionEvento.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazModificarRestriccionCompetencia.aspx.designer.cs">
+      <DependentUpon>interfazModificarRestriccionCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazModificarRestriccionHorario.aspx.cs">
       <DependentUpon>interfazModificarRestriccionHorario.aspx</DependentUpon>
@@ -2315,12 +2328,12 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesAvanceCinta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.cs">
-      <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesCompetencia.aspx.cs">
+      <DependentUpon>interfazRestriccionesCompetencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo8\interfazRestriccionesEventos.aspx.designer.cs">
-      <DependentUpon>interfazRestriccionesEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo8\interfazRestriccionesCompetencia.aspx.designer.cs">
+      <DependentUpon>interfazRestriccionesCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
@@ -2329,8 +2342,18 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
       <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
+=======
+    <Compile Include="GUI\Modulo8\RecursoInterfazMod8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoInterfazMod8.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
+      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+>>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
@@ -2384,10 +2407,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Modulo14\RecursoInterfazModulo14.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursoInterfazModulo14.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo14\RecursoInterfazModulo14.resx" />
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
@@ -2396,12 +2416,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
+=======
+    <EmbeddedResource Include="GUI\Modulo8\RecursoInterfazMod8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoInterfazMod8.Designer.cs</LastGenOutput>
+>>>>>>> a3d964d328a45c44bb903abe9fccc4a7c08f5a0a
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="DatosSKD\DatosSKD.csproj">
+      <Project>{27cf82c4-c713-4057-81e0-8e4de0978481}</Project>
+      <Name>DatosSKD</Name>
+    </ProjectReference>
     <ProjectReference Include="DominioSKD\DominioSKD.csproj">
       <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
       <Name>DominioSKD</Name>

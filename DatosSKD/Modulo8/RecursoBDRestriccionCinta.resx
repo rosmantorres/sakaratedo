@@ -119,10 +119,36 @@
   </resheader>
   <data name="AgregarRestriccionCinta" xml:space="preserve">
     <value>M8_Agregar_Restriccion_Cinta</value>
-    <comment>Llamada a funcion para agregar una rest. de cinta </comment>
+    <comment>Llamada a funcion para agregar una rest. de cinta</comment>
+  </data>
+  <data name="AliasColorCinta" xml:space="preserve">
+    <value>color</value>
+  </data>
+  <data name="AliasDescripcionRestCinta" xml:space="preserve">
+    <value>descripcion</value>
   </data>
   <data name="AliasIdRestriccionCinta" xml:space="preserve">
-    <value>IdRestriccionCinta</value>
+    <value>id_restricion</value>
+  </data>
+  <data name="AliasId_cinta" xml:space="preserve">
+    <value>id_cinta</value>
+  </data>
+  <data name="AliasPuntosMinCintas" xml:space="preserve">
+    <value>PuntosMinCintas</value>
+  </data>
+  <data name="AliasTiempoDocente" xml:space="preserve">
+    <value>TiempoDocente</value>
+  </data>
+  <data name="AliasTiempoMinCintas" xml:space="preserve">
+    <value>tiempo_minimo</value>
+  </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error en el parseo</comment>
+  </data>
+  <data name="ConsultarCinta" xml:space="preserve">
+    <value>M8_Consultar_Cintas</value>
+    <comment>Llamada a funcion para consultar cintas</comment>
   </data>
   <data name="ConsultarRestriccionCinta" xml:space="preserve">
     <value>M8_Consultar_Restriccion_Cinta</value>
@@ -136,6 +162,10 @@
     <value>M8_Eliminar_Restriccion_Cinta</value>
     <comment>Llamada a funcion para eliminar una rest. de cinta</comment>
   </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
+  </data>
   <data name="ModificarRestriccionCinta" xml:space="preserve">
     <value>M8_Modificar_Restriccion_Cinta</value>
     <comment>Llamada a funcion para modificar una rest. de cinta</comment>
@@ -144,21 +174,21 @@
     <value>@CintaConsulta</value>
   </data>
   <data name="ParamCintaNueva" xml:space="preserve">
-    <value>@Cinta</value>
+    <value>@Id_Cinta</value>
   </data>
   <data name="ParamDescripcionRestricionCinta" xml:space="preserve">
-    <value>@DescripcionRestriccionCinta</value>
+    <value>@descripcion</value>
   </data>
   <data name="ParamHorasDocentes" xml:space="preserve">
-    <value>@HorasDocentes</value>
+    <value>@horas_docentes</value>
   </data>
   <data name="ParamIdRestriccion" xml:space="preserve">
     <value>@IdRestriccion</value>
   </data>
   <data name="ParamPuntosMinimos" xml:space="preserve">
-    <value>@PuntajeMinimo</value>
+    <value>@puntaje_minimo</value>
   </data>
   <data name="ParamTiempoMinimo" xml:space="preserve">
-    <value>@TiempoMinimo</value>
+    <value>@tiempo_minimo</value>
   </data>
 </root>

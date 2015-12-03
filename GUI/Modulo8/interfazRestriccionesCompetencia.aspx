@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesEventos.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesEventos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesEventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
@@ -128,7 +128,8 @@
 			$(document).ready(function () {
 
 			    var table = $('#RestriccionesEventos').DataTable({
-					"language": {
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+			        "language": {
 						"url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
 					}
 				});
