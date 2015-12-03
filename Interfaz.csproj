@@ -199,7 +199,6 @@
     <Content Include="GUI\Modulo11\M11_ModificarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
-    <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
     <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
