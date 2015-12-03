@@ -4,7 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Configuration;
+using DominioSKD;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo14;
+using System.Globalization;
+using System.IO;
 
 namespace DatosSKD.Modulo14
 {
@@ -18,13 +25,16 @@ namespace DatosSKD.Modulo14
 
         #region metodos
         /// <summary>
-        /// 
+        /// Método que guarda un diseño en la bd
         /// </summary>
-        /// <param name="diseño"></param>
-        /// <param name="planilla"></param>
-        /// <returns></returns>
+        /// <param name="diseño">Clase diseño a guardar</param>
+        /// <param name="planilla">Clase Planilla a la cual le pertenece el diseño</param>
+        /// <returns>True si se realizo con exito la operación.
+        /// De lo contrario devuelve false</returns>
         public Boolean GuardarDiseñoBD(DominioSKD.Diseño diseño, DominioSKD.Planilla planilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             try
             {
@@ -54,7 +64,51 @@ namespace DatosSKD.Modulo14
             }
             catch (SqlException ex)
             {
+                BDDiseñoException excep = new BDDiseñoException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoIoException,
+                    RecursosBDModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                    RecursosBDModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoDisposedObject,
+                    RecursosBDModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, ex);
+
                 throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoFormatExceptio,
+                    RecursosBDModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoException,
+                    RecursosBDModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                throw excep;
             }
             finally
             {
@@ -63,12 +117,15 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Metodo que consulta el diseño de una planilla
         /// </summary>
-        /// <param name="planilla"></param>
-        /// <returns></returns>
+        /// <param name="planilla">Id de la planilla a la cual se desea consultar
+        /// el diseño</param>
+        /// <returns>Retorna el diseño de la planilla</returns>
         public DominioSKD.Diseño ConsultarDiseño(int planilla)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
             DominioSKD.Diseño diseño = new DominioSKD.Diseño();
             
@@ -103,9 +160,53 @@ namespace DatosSKD.Modulo14
                         return null;
                     }
                 }
+                catch (SqlException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (IOException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoIoException,
+                        RecursosBDModulo14.MsjExceptionIO, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (NullReferenceException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                        RecursosBDModulo14.MsjNullException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (ObjectDisposedException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoDisposedObject,
+                        RecursosBDModulo14.MensajeDisposedException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, ex);
+
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoFormatExceptio,
+                        RecursosBDModulo14.MsjFormatException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoException,
+                        RecursosBDModulo14.MsjException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
                 }
                 finally
                 {
@@ -119,12 +220,15 @@ namespace DatosSKD.Modulo14
         }
 
         /// <summary>
-        /// 
+        /// Método que modifica el diseño de una planilla
         /// </summary>
-        /// <param name="diseño"></param>
-        /// <returns></returns>
+        /// <param name="diseño">Clase diseño que se desea modificar</param>
+        /// <returns>True si el diseño se modifico con exito.
+        /// De lo contrario devueleve false</returns>
         public Boolean ModificarDiseño(DominioSKD.Diseño diseño)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
 
             if (diseño != null)
@@ -148,9 +252,53 @@ namespace DatosSKD.Modulo14
                     leer = sqlcom.ExecuteReader();
                     return true;
                 }
+                catch (SqlException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (IOException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoIoException,
+                        RecursosBDModulo14.MsjExceptionIO, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (NullReferenceException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoNullReferencesExcep,
+                        RecursosBDModulo14.MsjNullException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (ObjectDisposedException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoDisposedObject,
+                        RecursosBDModulo14.MensajeDisposedException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, ex);
+
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoFormatExceptio,
+                        RecursosBDModulo14.MsjFormatException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    BDDiseñoException excep = new BDDiseñoException(RecursosBDModulo14.CodigoException,
+                        RecursosBDModulo14.MsjException, ex);
+                    Logger.EscribirError(RecursosBDModulo14.ClaseBDDis, excep);
+                    throw excep;
                 }
                 finally
                 {

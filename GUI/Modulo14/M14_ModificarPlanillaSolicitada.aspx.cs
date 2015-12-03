@@ -4,46 +4,150 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LogicaNegociosSKD;
+using LogicaNegociosSKD.Modulo14;
+using DominioSKD;
+using templateApp.GUI.Master;
+
 
 namespace templateApp.GUI.Modulo14
 {
     public partial class ModificarPlanillaSolicitada : System.Web.UI.Page
     {
+        private int idIns; 
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14";
+            if (!IsPostBack)
+            {
+                int idSolicitud = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idSol]);
+                this.id_solicitud.Value = idSolicitud.ToString();
+                id_solicitud.Visible = false;
+                SolicitudP laSolicitud = new SolicitudP();
+                LogicaSolicitud lP = new LogicaSolicitud();
+                laSolicitud = lP.ObtenerSolicitudID(Int32.Parse(this.id_solicitud.Value));
+                this.idFechaI.Value = laSolicitud.FechaRetiro;
+                this.idFechaF.Value = laSolicitud.FechaReincorporacion;
+                this.id_motivo.Value = laSolicitud.Motivo;
+                idIns = laSolicitud.IDInscripcion;
+
+                List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(laSolicitud.ID);
+                if (datosRequeridos[0] == true)
+                {
+                    fechaRetiro.Visible = true;
+                }
+                else
+                {
+                    fechaRetiro.Visible = false;
+                }
+                if (datosRequeridos[1] == true)
+                {
+                    fechaReincorporacion.Visible = true;
+                }
+                else
+                {
+                    fechaReincorporacion.Visible = false;
+                }
+                if (datosRequeridos[2] == true)
+                {
+                    divComboEvento.Visible = true;
+                    labelEvento.Visible = true;
+                    llenarComboEventos();
+
+                }
+                else
+                {
+                    divComboEvento.Visible = false;
+                    labelEvento.Visible = false;
+
+                }
+                if (datosRequeridos[3] == true)
+                {
+                    divComboCompetencia.Visible = true;
+                    labelCompetencia.Visible = true;
+                    llenarComboCompetencia();
+
+                }
+                else
+                {
+                    divComboCompetencia.Visible = false;
+                    labelCompetencia.Visible = false;
+
+                }
+
+            }
+
         }
+
+        protected void llenarComboEventos()
+        {
+
+            LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
+            List<SolicitudP> listEventos = lP.EventosSolicitud(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+            Dictionary<string, string> options = new Dictionary<string, string>();
+
+            foreach (SolicitudP item in listEventos)
+            {
+
+                options.Add(item.ID.ToString(), item.NombreEvento);
+            }
+
+
+
+            comboEvento.DataSource = options;
+            comboEvento.DataTextField = "value";
+            comboEvento.DataValueField = "key";
+            comboEvento.DataBind();
+
+
+
+        }
+
+        protected void llenarComboCompetencia()
+        {
+
+            LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
+            List<SolicitudP> listCompetencias = lP.CompetenciasSolicitud(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+            Dictionary<string, string> options = new Dictionary<string, string>();
+
+            foreach (SolicitudP item in listCompetencias)
+            {
+                options.Add(item.ID.ToString(), item.NombreEvento);
+            }
+
+            comboCompetencia.DataSource = options;
+            comboCompetencia.DataTextField = "value";
+            comboCompetencia.DataValueField = "key";
+            comboCompetencia.DataBind();
+
+        }
+
 
         protected void boteditar_Click(object sender, EventArgs e)
         {
-            //if (id_fechai.Value == "")
-            //{
-            //    this.alertlocal.Attributes["class"] = "alert alert-danger";
-            //    this.alertlocal.Attributes["role"] = "alert";
-            //    this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has seleccionado la fecha de retiro.</div>";
-            //    this.alertlocal.Visible = true;
+            LogicaSolicitud lS = new LogicaSolicitud();
+
+            if (comboEvento.Visible == true)
+            {
+                SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, Int32.Parse(this.comboEvento.SelectedValue));
+                lS.ModificarSolicitudID(laSolicitud);
+            }
+            if (comboCompetencia.Visible == true)
+            {
+                SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, Int32.Parse(this.comboCompetencia.SelectedValue));
+                lS.ModificarSolicitudID(laSolicitud);
+            }
+            if (comboEvento.Visible == false && comboCompetencia.Visible == false)
+            {
+                SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, idIns);
+                lS.ModificarSolicitudID(laSolicitud);
             }
 
-            //if (Id_fechaf.Value == "")
-            //{
-            //    this.alertlocal.Attributes["class"] = "alert alert-danger";
-            //    this.alertlocal.Attributes["role"] = "alert";
-            //    this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has seleccionado la fecha reincorporacion.</div>";
-            //    this.alertlocal.Visible = true;
-            //}
-            //if (TextBox1.Text == "")
-            //{
-            //    this.alertlocal.Attributes["class"] = "alert alert-danger";
-            //    this.alertlocal.Attributes["role"] = "alert";
-            //    this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has introduccido el motivo.</div>";
-            //    this.alertlocal.Visible = true;
-            //}
-            //if (id_fechai.Value != "" && Id_fechaf.Value != "" && TextBox1.Text != "")
-            //{
-            //    this.alertlocal.Attributes["class"] = "alert alert-success";
-            //    this.alertlocal.Attributes["role"] = "alert";
-            //    this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Se ha modificado la solicitud de planilla.</div>";
-            //    this.alertlocal.Visible = true;
-            //}
+
+            Response.Redirect("../Modulo14/M14_SolicitarPlanilla.aspx?success=true");
         }
     }
+}

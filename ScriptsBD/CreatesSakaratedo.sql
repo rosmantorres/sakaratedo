@@ -2178,7 +2178,7 @@ as
 	end;
 	go
 
--------------------------------------------------Stored Procedure M14--------------------------
+-------------------------------------------M14---------------------------------------------------
 CREATE PROCEDURE M14_AgregarDiseño
 		 
 		@dis_contenido   [varchar](8000),
@@ -2210,7 +2210,17 @@ BEGIN
 END;
 GO
 
------------------------------------------------------------
+CREATE PROCEDURE M14_ConsultarDatosPlanilla
+		@PLANILLA_pla_id         int
+AS 
+BEGIN
+        
+		SELECT D.dat_nombre FROM DATO D, PLA_DAT P
+		WHERE P.PLANILLA_pla_id = @PLANILLA_pla_id AND P.DATO_dat_id = D.dat_id
+
+END;
+GO
+
 CREATE PROCEDURE M14_ConsultarDiseño
 	
 	@PLANILLA_pla_id [int]	
@@ -2224,7 +2234,97 @@ AS
  END
  GO
 
- -------------------------------------------------------
+ CREATE PROCEDURE M14_ConsultarDojoPersonas
+	
+	@doj_id [int]	
+	   
+AS
+ BEGIN
+	
+	SELECT D.doj_rif, D.doj_nombre, D.doj_telefono, D.doj_email, D.doj__logo, D.ORGANIZACION_org_id
+	FROM DOJO D
+	WHERE D.doj_id = @doj_id
+ END
+ GO
+
+ CREATE PROCEDURE M14_ConsultarMatriculaPersona
+	
+	@per_id [int],	
+	@DOJO_doj_id [int]
+	   
+AS
+ BEGIN
+	
+	SELECT M.mat_identificador, M.mat_fecha_creacion, M.mat_fecha_ultimo_pago, M.mat_activa, M.mat_precio
+	FROM MATRICULA M, PERSONA P
+	WHERE M.PERSONA_per_id = @per_id AND M.DOJO_doj_id = @DOJO_doj_id
+ END
+ GO
+
+ CREATE PROCEDURE M14_ConsultarOrganizacionDojo
+	
+	@org_id [int]
+	   
+AS
+ BEGIN
+	
+	SELECT O.org_nombre, O.org_direccion, O.org_telefono, O.org_email
+	FROM ORGANIZACION O
+	WHERE O.org_id = @org_id
+ END
+ GO
+
+ CREATE PROCEDURE M14_ConsultarPersonaCompetencia
+	@ins_id [int]	   
+AS
+ BEGIN
+	
+	 SELECT C.comp_nombre,C.comp_fecha_ini,C.comp_fecha_fin,C.comp_costo, C.comp_tipo,
+ (SELECT Ca.cat_sexo FROM CATEGORIA Ca WHERE Ca.cat_id = C.CATEGORIA_comp_id) AS cat_sexo,
+ (SELECT Ca.cat_cinta_fin FROM CATEGORIA Ca WHERE Ca.cat_id = C.CATEGORIA_comp_id) AS cintafin, 
+ (SELECT Ca.cat_cinta_ini FROM CATEGORIA Ca WHERE Ca.cat_id = C.CATEGORIA_comp_id) AS cintaini,
+ (SELECT Ca.cat_edad_fin FROM CATEGORIA Ca WHERE Ca.cat_id = C.CATEGORIA_comp_id) AS cat_edad_fin, 
+ (SELECT Ca.cat_edad_ini FROM CATEGORIA Ca WHERE Ca.cat_id = C.CATEGORIA_comp_id) AS cat_edad_ini
+	FROM COMPETENCIA C, INSCRIPCION I
+	WHERE i.ins_id = @ins_id AND I.COMPETENCIA_comp_id = c.comp_id
+ END
+ GO
+
+ CREATE PROCEDURE M14_ConsultarPersonaEvento
+	@ins_id [int]	   
+AS
+ BEGIN
+	
+	SELECT E.eve_id,E.eve_nombre, E.eve_descripcion, E.eve_costo, 
+ (SELECT C.cat_sexo FROM CATEGORIA C WHERE C.cat_id = E.CATEGORIA_cat_id) AS cat_sexo,
+ (SELECT C.cat_cinta_fin FROM CATEGORIA C WHERE C.cat_id = E.CATEGORIA_cat_id) AS cintafin, 
+ (SELECT C.cat_cinta_ini FROM CATEGORIA C WHERE C.cat_id = E.CATEGORIA_cat_id) AS cintaini,
+ (SELECT C.cat_edad_fin FROM CATEGORIA C WHERE C.cat_id = E.CATEGORIA_cat_id) AS cat_edad_fin, 
+ (SELECT cat_edad_ini FROM CATEGORIA C WHERE C.cat_id = E.CATEGORIA_cat_id) AS cat_edad_ini,
+	(SELECT T.tip_nombre FROM TIPO_EVENTO T WHERE T.tip_id = E.TIPO_EVENTO_tip_id) AS tipo,
+	(SELECT H.hor_fecha_inicio FROM HORARIO H WHERE H.hor_id= E.HORARIO_hor_id) AS hor_fecha_inicio, 
+	(SELECT H.hor_fecha_fin FROM HORARIO H WHERE H.hor_id= E.HORARIO_hor_id) AS hor_fecha_fin, 
+	(SELECT H.hor_hora_inicio FROM HORARIO H WHERE H.hor_id= E.HORARIO_hor_id) AS hor_hora_inicio, 
+	(SELECT H.hor_hora_fin FROM HORARIO H WHERE H.hor_id=  E.HORARIO_hor_id) AS hor_hora_fin
+	FROM EVENTO E, INSCRIPCION I
+	WHERE i.ins_id = @ins_id AND I.EVENTO_eve_id = E.eve_id 
+ END
+ GO
+
+ CREATE PROCEDURE M14_ConsultarPersonas
+	
+	@per_id [int]	
+	   
+AS
+ BEGIN
+	
+	SELECT P.per_num_doc_id,P.per_nombre, P.per_apellido, P.per_sexo , P.per_direccion,
+	P.per_fecha_nacimiento, P.per_peso, P.per_estatura, P.per_imagen, P.DOJO_doj_id, P.per_nacionalidad
+	FROM Persona P
+	WHERE P.per_id = @per_id
+ END
+ GO
+
  CREATE PROCEDURE M14_ConsultarPlanillasASolicitar
 	
 AS
@@ -2235,7 +2335,7 @@ AS
 	WHERE D.PLANILLA_pla_id= p.pla_id AND P.pla_status=1
  END
  GO
- -----------------------------------------------------------
+
  CREATE PROCEDURE M14_ConsultarPlanillasCreadas
 AS
 BEGIN
@@ -2244,8 +2344,22 @@ BEGIN
 	WHERE P.TIPO_PLANILLA_tip_id=T.tip_id
 END
 GO
----------------------------------------------------
-CREATE PROCEDURE M14_ConsultarSolicitudPlanilla
+
+CREATE PROCEDURE M14_ConsultarSolicitudId
+	
+	@sol_pla_id [int]	
+	   
+AS
+ BEGIN
+	
+	SELECT S.sol_pla_fecha_creacion, S.sol_pla_fecha_reincorporacion, S.sol_pla_fecha_retiro,
+	S.sol_pla_motivo
+	FROM SOLICITUD_PLANILLA S
+	WHERE S.sol_pla_id = @sol_pla_id
+ END
+ GO
+
+ CREATE PROCEDURE M14_ConsultarSolicitudPlanilla
 		@PERSONA_per_id      [varchar](50)
 AS 
 BEGIN
@@ -2258,7 +2372,7 @@ BEGIN
 
 END;
 GO
--------------------------------------------
+
 CREATE PROCEDURE M14_ELIMINAR_SOLICITUD
    @pla_sol_id int
 AS 
@@ -2267,7 +2381,7 @@ BEGIN
 	WHERE sol_pla_id= @pla_sol_id
 END
 GO
------------------------------------------------
+
 CREATE PROCEDURE M14_InsertarSolicitudPlanilla
 		@sol_pla_fecha_creacion          [date],
 		@sol_pla_fecha_retiro            [date],
@@ -2284,7 +2398,7 @@ BEGIN
 
 END;
 GO
----------------------------------------------------------
+
 CREATE PROCEDURE M14_ModificarDiseño
 	@dis_id int,
 	@dis_contenido [varchar](8000)
@@ -2295,7 +2409,7 @@ BEGIN
 		where dis_id=@dis_id
 END;
 GO
----------------------------------------------------
+
 CREATE PROCEDURE M14_Procedure_IdTipoPlanilla
 	
 	@tip_nombre [varchar] (100),
@@ -2308,27 +2422,113 @@ AS
 	RETURN
  END
  GO
- ------------------------------------------
- CREATE PROCEDURE M14_Procedure_ListarDatos
-	
+
+ ------Eliminar los datos de planilla----------------
+
+--PROCEDURE ELIMINA DATOS DE LA PLAILLA--
+CREATE PROCEDURE M14_ProcedureEliminarDatosPlanilla
+	@pla_id [int]
+
+as
+ begin
+		delete from PLA_DAT
+	where
+		PLANILLA_pla_id = @pla_id;
+ end;
+GO
+
+
+
+------------agregar datos y planillas------------------------------------
+
+---****------PROCEDURE AGREGAR DATOS Y PLANILLA ID--
+CREATE PROCEDURE M14_ProcedureAgregarDatoPlanillaID
+	@pla_id [int],
+	@dat_nombre [varchar](100)
+
+as
+ begin
+     
+    INSERT INTO PLA_DAT(DATO_dat_id,PLANILLA_pla_id) 
+	VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),@pla_id);  
+
+ end;
+GO
+
+----****--------Cosultar datos de planilla por id--------------------------
+
+CREATE PROCEDURE M14_ProcedureConsultarDatosPlanillaID
+	@pla_id[int]
 AS
  BEGIN
 	SELECT dat_nombre
-    FROM Dato;
+    FROM PLANILLA, DATO, PLA_DAT
+	WHERE pla_id=@pla_id and DATO_dat_id=dat_id and PLANILLA_pla_id=pla_id;
  END;
- GO
- -----------------------------------
- CREATE PROCEDURE M14_Procedure_ListarTipoPlanilla
+GO
+
+-----***-------------Consultar una planilla por ID----------------------
+
+CREATE PROCEDURE M14_ProcedureConsultarPlanillaID
+	@pla_id[int]
+AS
+ BEGIN
+	SELECT pla_nombre,pla_status,tip_nombre
+    FROM PLANILLA, TIPO_PLANILLA
+	WHERE pla_id=@pla_id and tip_id=TIPO_PLANILLA_tip_id;
+ END;
+GO
+----*******--------PROCEDURE MODIFICAR UNA PLANILLA --
+CREATE PROCEDURE M14_ProcedureModificarPlanilla
+	@pla_id [int],
+	@pla_nombre [varchar](100),
+	@TIPO_PLANILLA_tip_id [int]
+
+as
+ begin
+		UPDATE PLANILLA
+	SET 
+		pla_nombre = @pla_nombre,
+		TIPO_PLANILLA_tip_id   = @TIPO_PLANILLA_tip_id
+	WHERE
+		pla_id = @pla_id;
+ end;
+GO
+
+
+-----***----------AGREGAR SOLICITUD PLANILLA------------------------------
+CREATE PROCEDURE M14_ProcedureAgregarSolicitud
+	
+	@sol_pla_fecha_retiro [date],
+	@sol_pla_fecha_reincorporacion [date],
+	@sol_pla_motivo [varchar] (2000),
+	@PLANILLA_pla_id [int],
+	@INSCRIPCION_ins_id [int]
+
+as
+ begin
+  
+    INSERT INTO SOLICITUD_PLANILLA(sol_pla_fecha_creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) 
+	VALUES((SELECT CONVERT (date, SYSDATETIME())),@sol_pla_fecha_retiro,@sol_pla_fecha_reincorporacion,@sol_pla_motivo,@PLANILLA_pla_id,@INSCRIPCION_ins_id);  
+
+ end;
+GO
+
+
+
+
+----***------------Listar los tipo de planillas-----------------
+
+CREATE PROCEDURE M14_Procedure_ListarTipoPlanilla
 	
 AS
  BEGIN
 	SELECT tip_id , tip_nombre
     FROM TIPO_PLANILLA;
  END;
- GO
+GO
 
- ---------------------------
- ----------------AGREGAR DATOS Y PLANILLA---------------------
+---***-----------AGREGAR DATOS Y PLANILLA---------------------
 CREATE PROCEDURE M14_ProcedureAgregarDatoPlanilla
 	@pla_nombre [varchar](100),
 	@dat_nombre [varchar](100)
@@ -2343,10 +2543,9 @@ as
 	VALUES((select dat_id from DATO where dat_nombre=@dat_nombre),(select MAX(pla_id) from PLANILLA where pla_nombre=@pla_nombre));  
 
  end;
- GO
+GO
 
- -------------------------------
- ---------------AGREGAR PLANILLA------------------------------
+------***---------AGREGAR PLANILLA------------------------------
 CREATE PROCEDURE M14_ProcedureAgregarPlanilla
 	@pla_nombre [varchar] (100),
 	@pla_status [bit],
@@ -2359,9 +2558,9 @@ as
 	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
 
  end;
- GO
- -----------------------
- ------------------AGREGAR TIPO PLANILLA------------------------
+GO
+
+---------***---------AGREGAR TIPO PLANILLA------------------------
 CREATE PROCEDURE M14_ProcedureAgregarTipoPlanilla
 	@tip_nombre [varchar] (100)
 
@@ -2372,8 +2571,9 @@ as
 	VALUES(@tip_nombre); 
 
  end;
- GO
- ----------------Obtener Datos----------------------------------
+GO
+
+------***----------Obtener Datos----------------------------------
 CREATE PROCEDURE M14_ProcedureDatosPlanilla
 	@pla_nombre [varchar] (100),
 	@pla_status [bit],
@@ -2386,8 +2586,99 @@ as
 	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
 
  end;
- GO
- 
+GO
+-----***--------------Listar Datos-------------
+CREATE PROCEDURE M14_Procedure_ListarDatos
+	
+AS
+ BEGIN
+	SELECT dat_nombre
+    FROM Dato;
+ END;
+GO
+
+--------****---------------------------------------------------------------
+CREATE PROCEDURE M14_ConsultaEventoSolicitud
+	@PERSONA_per_id [int]
+AS
+ BEGIN
+
+
+	SELECT i.ins_id, e.eve_nombre
+    FROM  INSCRIPCION as i, EVENTO as e
+	WHERE i.PERSONA_per_id=@PERSONA_per_id and i.EVENTO_eve_id=e.eve_id and i.COMPETENCIA_comp_id is null;
+	
+ END;
+GO
+
+------*****-------------------------------------------------------------------
+CREATE PROCEDURE M14_ConsultaCompetenciaSolicitud
+	@PERSONA_per_id [int]
+AS
+ BEGIN
+
+
+	SELECT i.ins_id, c.comp_nombre
+    FROM  INSCRIPCION as i, COMPETENCIA as c
+	WHERE i.PERSONA_per_id=@PERSONA_per_id and i.COMPETENCIA_comp_id=c.comp_id;
+	
+ END;
+GO
+
+--------****-----------------------------------------------------------------
+CREATE PROCEDURE M14_AgregarSolicitudIDPersona
+	
+	@sol_pla_fecha_retiro [date],
+	@sol_pla_fecha_reincorporacion [date],
+	@sol_pla_motivo [varchar] (2000),
+	@PLANILLA_pla_id [int],
+	@per_id [int]
+
+as
+ begin
+  
+  
+    INSERT INTO SOLICITUD_PLANILLA(sol_pla_fecha_creacion,sol_pla_fecha_retiro,sol_pla_fecha_reincorporacion,sol_pla_motivo,PLANILLA_pla_id,INSCRIPCION_ins_id) 
+	VALUES((SELECT CONVERT (date, SYSDATETIME())),@sol_pla_fecha_retiro,@sol_pla_fecha_reincorporacion,@sol_pla_motivo,@PLANILLA_pla_id,(SELECT ins_id FROM INSCRIPCION WHERE PERSONA_per_id=@per_id and COMPETENCIA_comp_id is null and EVENTO_eve_id is null));  
+
+ end;
+GO
+
+-----------*******-------------------------------------------------------------
+CREATE PROCEDURE M14_ProcedureConsultarSolicitudID
+	@sol_pla_id [int]
+AS
+ BEGIN
+	SELECT sol_pla_fecha_creacion, sol_pla_fecha_reincorporacion,sol_pla_fecha_retiro,sol_pla_motivo,PLANILLA_pla_id, INSCRIPCION_ins_id
+    FROM SOLICITUD_PLANILLA
+	WHERE  sol_pla_id=@sol_pla_id;
+ END;
+GO
+
+----------****------------------------------------------------------------
+--PROCEDURE MODIFICAR UNA SOLICITUD --
+CREATE PROCEDURE M14_ProcedureModificarSolicitud
+	@sol_pla_id [int],
+	@sol_pla_fecha_retiro [date],
+	@sol_pla_fecha_reincorporacion [date],
+	@sol_pla_motivo [varchar](2000),
+	@INSCRIPCION_ins_id [int]
+	
+
+as
+ begin
+		UPDATE SOLICITUD_PLANILLA
+	SET 
+		sol_pla_fecha_retiro = @sol_pla_fecha_retiro,
+		sol_pla_fecha_reincorporacion = @sol_pla_fecha_reincorporacion,
+		sol_pla_motivo = @sol_pla_motivo ,INSCRIPCION_ins_id=@INSCRIPCION_ins_id
+	WHERE
+		sol_pla_id = @sol_pla_id;
+ end;
+GO
+---------------FIN PROCEDURE MODULO 14----------------------
+
+
  --------------------------------------Stored Procedures M9-------------------------------------------------------
 CREATE PROCEDURE M9_AgregarHorario
 	
