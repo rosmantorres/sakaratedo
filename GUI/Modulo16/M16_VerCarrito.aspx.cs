@@ -222,33 +222,9 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void Llenartabla()
         {
-
-            //Instancio la logica correspondiente y me traigo el carrito de compras
-            Logicacarrito logicaCarrito = new Logicacarrito();
-            carritoCompras = logicaCarrito.verCarrito(usuario);
-
-            //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
-            foreach (Implemento implemento in carritoCompras.ListaImplemento)
-            {
-                //Creo la fila de la tabla
-                //this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TR_INVENTARIO + implemento.Id_Implemento +">";
-
-                //Agrego los datos correspondientes de la tabla
-               // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Imagen_implemento + 
-                  //  M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Nombre_Implemento + 
-                    M16_Recursointerfaz.CERRAR_TD;
-                this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Precio_Implemento + 
-                    M16_Recursointerfaz.CERRAR_TD;
-
-                //     this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Marca + M16_Recursointerfaz.CERRAR_TD;
-               // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Tipo + M16_Recursointerfaz.CERRAR_TD;
-
             try
-            {        //Escribo en el logger la entrada a este metodo
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                 M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);   
-    
+            {   
+                
                     //Instancio la logica correspondiente y me traigo el carrito de compras
                     Logicacarrito logicaCarrito = new Logicacarrito();
                     carritoCompras = logicaCarrito.verCarrito(usuario);
@@ -267,15 +243,10 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + implemento.Precio_Implemento + 
                             M16_Recursointerfaz.CERRAR_TD;
 
-                        //     this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Marca + M16_Recursointerfaz.CERRAR_TD;
-                       // this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD + inventario.Tipo + M16_Recursointerfaz.CERRAR_TD;
-
-                
-
                         //Agrego los botones
                         this.laTabla1.Text += M16_Recursointerfaz.ABRIR_TD;
 
-                        //ARREGLAR BOTON INFO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        
                         this.laTabla1.Text += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + implemento.Id_Implemento+ 
                             M16_Recursointerfaz.BOTON_CERRAR;
                         this.laTabla1.Text += M16_Recursointerfaz.BOTON_ELIMINAR_GENERAL + implemento.Id_Implemento +"_I" +
