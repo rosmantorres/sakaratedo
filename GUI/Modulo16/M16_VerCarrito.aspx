@@ -232,11 +232,9 @@
         <div id="alertlocal" runat="server">
         </div>
 
+        <%-- <h4 class="modal-title" id ="preciofinal"></h4> --%>
 
-        <h4 class="modal-title">Total: 26.096 Bs</h4>
-
-    
-         <div class="form-group">
+        <div class="form-group">
         <!-- El form iba aqui -->
         
               
