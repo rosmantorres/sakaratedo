@@ -2557,3 +2557,23 @@ AS
 		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
  END
 
+GO
+CREATE PROCEDURE M13_ATLETA_EVENTO
+      @id_evento [INTEGER]
+AS
+
+select p.per_nombre, p.per_apellido,c.comp_nombre, c.comp_status, c.comp_tipo from COMPETENCIA c, PERSONA p, INSCRIPCION i 
+where p.per_id=i.PERSONA_per_id and c.comp_id=i.COMPETENCIA_comp_id group by
+ c.comp_nombre, c.comp_status, c.comp_tipo, p.per_nombre, p.per_apellido; 
+GO
+
+CREATE procedure M13_ConsultarAtletasCintas
+       @cin_id [int]
+
+as
+       begin
+          select p.per_nombre, p.per_apellido, per_fecha_nacimiento, p.per_peso, p.per_estatura
+          from PERSONA p, HISTORIAL_CINTAS hc, CINTA c 
+          where p.per_id=hc.PERSONA_per_id and @cin_id=hc.CINTA_cin_id group by p.per_nombre, p.per_apellido, per_fecha_nacimiento, p.per_peso, p.per_estatura; 
+
+       end;
