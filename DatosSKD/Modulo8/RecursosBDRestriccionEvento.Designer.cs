@@ -61,15 +61,6 @@ namespace DatosSKD.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M8_Agregar_Evento_Restriccion.
-        /// </summary>
-        internal static string AgregarEventoRestriccion {
-            get {
-                return ResourceManager.GetString("AgregarEventoRestriccion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to M8_Agregar_Restriccion_Evento.
         /// </summary>
         internal static string AgregarRestriccionEvento {

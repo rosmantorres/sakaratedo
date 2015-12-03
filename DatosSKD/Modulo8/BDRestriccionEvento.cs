@@ -189,7 +189,7 @@ namespace DatosSKD.Modulo8
                 parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosBDRestriccionEvento.AgregarEventoRestriccion
+                laConexion.EjecutarStoredProcedure(RecursosBDRestriccionEvento.AgregarRestriccionEvento
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
             }
 
