@@ -97,6 +97,15 @@ namespace DatosSKD.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a documento_usuario.
+        /// </summary>
+        internal static string AliasDocumento {
+            get {
+                return ResourceManager.GetString("AliasDocumento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a fecha_creacion.
         /// </summary>
         internal static string AliasFechaCreacion {
@@ -210,6 +219,24 @@ namespace DatosSKD.Modulo1 {
         internal static string exceptionCorreoMasUno {
             get {
                 return ResourceManager.GetString("exceptionCorreoMasUno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 0.
+        /// </summary>
+        internal static string idInicial {
+            get {
+                return ResourceManager.GetString("idInicial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M1_ConsultarNombreUsuarioContrasena_listar.
+        /// </summary>
+        internal static string listarUsuarios {
+            get {
+                return ResourceManager.GetString("listarUsuarios", resourceCulture);
             }
         }
         

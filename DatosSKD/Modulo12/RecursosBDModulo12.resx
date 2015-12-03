@@ -202,6 +202,9 @@
   <data name="BuscarNombreCompetencia" xml:space="preserve">
     <value>M12_BuscarNombreCompetencia</value>
   </data>
+  <data name="BuscarNombreCompetenciaAgregar" xml:space="preserve">
+    <value>M12_BuscarNombreCompetenciaAgregar</value>
+  </data>
   <data name="Codigo_Competencia_Existente" xml:space="preserve">
     <value>SKD_00_006</value>
   </data>

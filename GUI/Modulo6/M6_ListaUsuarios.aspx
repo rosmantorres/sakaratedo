@@ -70,28 +70,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Rómulo Jose, Rodríguez Rojas</td>
-                    <td>19.513.356</td>
-                    <td>Eltercera</td>
-                    <td>Atleta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                         <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+               
+                      
+                <%foreach(DominioSKD.Cuenta cuenta in lasCuentas) %>
+                <%{ %>
+                 <tr style="background: rgb(224, 235, 235);">
+                    <td><%=cuenta.PersonaUsuario._Nombre+' '+cuenta.PersonaUsuario._Apellido %></td>
+                    <td><%=cuenta.PersonaUsuario._DocumentoID %> </td>
+                     <td><%=cuenta.Nombre_usuario %></td>
+                    <td><%foreach(DominioSKD.Rol rol in cuenta.Roles)%>
+                        <%{ %>
+                               <%=rol.Nombre +" ;"%>
+
+                        <%}%>
                     </td>
-                </tr>
-                <tr>
-                    <td>Rómulo Jose, Rodríguez Rojas</td>
-                    <td>19.513.356</td>
-                    <td>Eltercera</td>
-                    <td>Atleta</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                         <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-success glyphicon glyphicon-refresh" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     <td>
+                         <a class="btn btn-default glyphicon glyphicon-user" href="<%=Page.ResolveUrl("~/GUI/Modulo2/M2_GestionarRol.aspx?user="+cripto.EncriptarCadenaDeCaracteres( cuenta.PersonaUsuario._Id.ToString(),DES)) %>"></a>
                     </td>
+                    
                 </tr>
+                <%} %>
+
+           
+       
             </tbody>
         </table>
     </div>

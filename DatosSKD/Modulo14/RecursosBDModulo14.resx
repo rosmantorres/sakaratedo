@@ -289,13 +289,281 @@
   <data name="AtributoTipo" xml:space="preserve">
     <value>tipo</value>
   </data>
-  <data name="ParametroIdSolicitud" xml:space="preserve">
-    <value>@pla_sol_id</value>
-  </data>
   <data name="ProcedureEliminarSolicitud" xml:space="preserve">
     <value>M14_Eliminar_Solicitud</value>
   </data>
   <data name="ProcedureConsultarPlanillasASolicitar" xml:space="preserve">
     <value>M14_ConsultarPlanillasASolicitar</value>
+  </data>
+  <data name="ParametroFechaReincorporacion" xml:space="preserve">
+    <value>@sol_pla_fecha_reincorporacion</value>
+  </data>
+  <data name="ParametroFechaRetiro" xml:space="preserve">
+    <value>@sol_pla_fecha_retiro</value>
+  </data>
+  <data name="ParametroMotivo" xml:space="preserve">
+    <value>@sol_pla_motivo</value>
+  </data>
+  <data name="ParametroPlanillaID" xml:space="preserve">
+    <value>@PLANILLA_pla_id</value>
+  </data>
+  <data name="ProcedimientoAgregarSolicitud" xml:space="preserve">
+    <value>M14_ProcedureAgregarSolicitud</value>
+    <comment>procedimiento para agregar una solicitud</comment>
+  </data>
+  <data name="AtributoEventoID" xml:space="preserve">
+    <value>eve_id</value>
+  </data>
+  <data name="ParametroIdInscripcion" xml:space="preserve">
+    <value>@INSCRIPCION_ins_id</value>
+  </data>
+  <data name="ProcedimientoConsultarCompeteniaSolicitud" xml:space="preserve">
+    <value>M14_ConsultaCompetenciaSolicitud</value>
+  </data>
+  <data name="ProcedureConsultarEventoSolicitud" xml:space="preserve">
+    <value>M14_ConsultaEventoSolicitud</value>
+  </data>
+  <data name="AtributoActivaMatricula" xml:space="preserve">
+    <value>mat_activa</value>
+  </data>
+  <data name="AtributoApellidoPersona" xml:space="preserve">
+    <value>per_apellido</value>
+  </data>
+  <data name="AtributoCintaFinCategoria" xml:space="preserve">
+    <value>cintafin</value>
+  </data>
+  <data name="AtributoCintaIniCategoria" xml:space="preserve">
+    <value>cintaini</value>
+  </data>
+  <data name="AtributoCostoCompetencia" xml:space="preserve">
+    <value>comp_costo</value>
+  </data>
+  <data name="AtributoCostoEvento" xml:space="preserve">
+    <value>eve_costo</value>
+  </data>
+  <data name="AtributoDescripcionEvento" xml:space="preserve">
+    <value>eve_descripcion</value>
+  </data>
+  <data name="AtributoDireccionOrganizacion" xml:space="preserve">
+    <value>org_direccion</value>
+  </data>
+  <data name="AtributoDireccionPersona" xml:space="preserve">
+    <value>per_direccion</value>
+  </data>
+  <data name="AtributoDojoPersona" xml:space="preserve">
+    <value>DOJO_doj_id</value>
+  </data>
+  <data name="AtributoEdadFinCategoria" xml:space="preserve">
+    <value>cat_edad_fin</value>
+  </data>
+  <data name="AtributoEdadIniCategoria" xml:space="preserve">
+    <value>cat_edad_ini</value>
+  </data>
+  <data name="AtributoEmailDojo" xml:space="preserve">
+    <value>doj_email</value>
+  </data>
+  <data name="AtributoEmailOrganizacion" xml:space="preserve">
+    <value>org_email</value>
+  </data>
+  <data name="AtributoEstaturaPersona" xml:space="preserve">
+    <value>per_estatura</value>
+  </data>
+  <data name="AtributoFechaFinCompetencia" xml:space="preserve">
+    <value>comp_fecha_fin</value>
+  </data>
+  <data name="AtributoFechaFinHora" xml:space="preserve">
+    <value>hor_fecha_fin</value>
+  </data>
+  <data name="AtributoFechaIniCompetencia" xml:space="preserve">
+    <value>comp_fecha_ini</value>
+  </data>
+  <data name="AtributoFechaIniHora" xml:space="preserve">
+    <value>hor_fecha_inicio</value>
+  </data>
+  <data name="AtributoFechaMatricula" xml:space="preserve">
+    <value>mat_fecha_creacion</value>
+  </data>
+  <data name="AtributoFechaNacPersona" xml:space="preserve">
+    <value>per_fecha_nacimiento</value>
+  </data>
+  <data name="AtributoHoraFinHora" xml:space="preserve">
+    <value>hor_hora_fin</value>
+  </data>
+  <data name="AtributoHoraIniHora" xml:space="preserve">
+    <value>hor_hora_inicio</value>
+  </data>
+  <data name="AtributoIdentificadorMatricula" xml:space="preserve">
+    <value>mat_identificador</value>
+  </data>
+  <data name="AtributoIdEvento" xml:space="preserve">
+    <value>eve_id</value>
+  </data>
+  <data name="AtributoImagenPersona" xml:space="preserve">
+    <value>per_imagen</value>
+  </data>
+  <data name="AtributoLogoDojo" xml:space="preserve">
+    <value>doj__logo</value>
+  </data>
+  <data name="AtributoNacionalidadPersona" xml:space="preserve">
+    <value>per_nacionalidad</value>
+  </data>
+  <data name="AtributoNombreCompetencia" xml:space="preserve">
+    <value>comp_nombre</value>
+  </data>
+  <data name="AtributoNombreDojo" xml:space="preserve">
+    <value>doj_nombre</value>
+  </data>
+  <data name="AtributoNombreEvento" xml:space="preserve">
+    <value>eve_nombre</value>
+  </data>
+  <data name="AtributoNombreOrganizacion" xml:space="preserve">
+    <value>org_nombre</value>
+  </data>
+  <data name="AtributoNombrePersona" xml:space="preserve">
+    <value>per_nombre</value>
+  </data>
+  <data name="AtributoNumDocPersona" xml:space="preserve">
+    <value>per_num_doc_id</value>
+  </data>
+  <data name="AtributoOrgDojo" xml:space="preserve">
+    <value>ORGANIZACION_org_id</value>
+  </data>
+  <data name="AtributoPagoMatricula" xml:space="preserve">
+    <value>mat_fecha_ultimo_pago</value>
+  </data>
+  <data name="AtributoPesoPersona" xml:space="preserve">
+    <value>per_peso</value>
+  </data>
+  <data name="AtributoPrecioMatricula" xml:space="preserve">
+    <value>mat_precio</value>
+  </data>
+  <data name="AtributoRifDojo" xml:space="preserve">
+    <value>doj_rif</value>
+  </data>
+  <data name="AtributoSexoCategoria" xml:space="preserve">
+    <value>cat_sexo</value>
+  </data>
+  <data name="AtributoSexoCompetencia" xml:space="preserve">
+    <value>cat_sexo</value>
+  </data>
+  <data name="AtributoSexoPersona" xml:space="preserve">
+    <value>per_sexo</value>
+  </data>
+  <data name="AtributoTelefonoDojo" xml:space="preserve">
+    <value>doj_telefono</value>
+  </data>
+  <data name="AtributoTelefonoOrganizacion" xml:space="preserve">
+    <value>org_telefono</value>
+  </data>
+  <data name="AtributoTipoCompetencia" xml:space="preserve">
+    <value>comp_tipo</value>
+  </data>
+  <data name="AtributoTipoDocPersona" xml:space="preserve">
+    <value>per_tipo_doc_id</value>
+  </data>
+  <data name="AtributoUsuarioPersona" xml:space="preserve">
+    <value>per_nombre_usuario</value>
+  </data>
+  <data name="ParametroDojo" xml:space="preserve">
+    <value>@DOJO_doj_id</value>
+  </data>
+  <data name="ParametroDojoId" xml:space="preserve">
+    <value>@doj_id</value>
+  </data>
+  <data name="ParametroOrgId" xml:space="preserve">
+    <value>@org_id</value>
+  </data>
+  <data name="ParametroPersona" xml:space="preserve">
+    <value>@per_id</value>
+  </data>
+  <data name="ProcedureConsultarOrganizacion" xml:space="preserve">
+    <value>M14_ConsultarOrganizacionDojo</value>
+  </data>
+  <data name="ProcedureConsultarPersonaEvento" xml:space="preserve">
+    <value>M14_ConsultarPersonaEvento</value>
+  </data>
+  <data name="ProcedureConsultarPersonas" xml:space="preserve">
+    <value>M14_ConsultarPersonas</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudId" xml:space="preserve">
+    <value>M14_ConsultarSolicitudId</value>
+  </data>
+  <data name="ProcedureDojoPersonas" xml:space="preserve">
+    <value>M14_ConsultarDojoPersonas</value>
+  </data>
+  <data name="ProcedureMatriculaPersona" xml:space="preserve">
+    <value>M14_ConsultarMatriculaPersona</value>
+  </data>
+  <data name="ProcedurePersonaCompetencia" xml:space="preserve">
+    <value>M14_ConsultarPersonaCompetencia</value>
+  </data>
+  <data name="ParametroInsId" xml:space="preserve">
+    <value>@ins_id</value>
+  </data>
+  <data name="AtributoInscripcionID" xml:space="preserve">
+    <value>ins_id</value>
+  </data>
+  <data name="ParametroPersonaID" xml:space="preserve">
+    <value>@per_id</value>
+  </data>
+  <data name="ProcedimientoAgregarSolicitudIdP" xml:space="preserve">
+    <value>M14_AgregarSolicitudIDPersona</value>
+  </data>
+  <data name="ProcedureModificarSolicitud" xml:space="preserve">
+    <value>M14_ProcedureModificarSolicitud</value>
+  </data>
+  <data name="ClaseBDDatos" xml:space="preserve">
+    <value>BDDatos</value>
+  </data>
+  <data name="CodigoDisposedObject" xml:space="preserve">
+    <value>M14_04</value>
+  </data>
+  <data name="CodigoException" xml:space="preserve">
+    <value>M14_03</value>
+  </data>
+  <data name="CodigoFormatExceptio" xml:space="preserve">
+    <value>M14_05</value>
+  </data>
+  <data name="CodigoIoException" xml:space="preserve">
+    <value>M14_01</value>
+  </data>
+  <data name="CodigoNullReferencesExcep" xml:space="preserve">
+    <value>M14_02</value>
+  </data>
+  <data name="MensajeDisposedException" xml:space="preserve">
+    <value>El objeto que se esta utilizando no existe o se ha desechado</value>
+  </data>
+  <data name="MsjDeEntrada" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
+  <data name="MsjException" xml:space="preserve">
+    <value>Se ha establecido una excepcion</value>
+  </data>
+  <data name="MsjExceptionIO" xml:space="preserve">
+    <value>La ruta de acceso a los datos es inválida o no existe</value>
+  </data>
+  <data name="MsjFormatException" xml:space="preserve">
+    <value>Formato invalido</value>
+  </data>
+  <data name="MsjNullException" xml:space="preserve">
+    <value>Una referencia a objeto no se ha establecido</value>
+  </data>
+  <data name="ParametroIDSolici" xml:space="preserve">
+    <value>@sol_pla_id</value>
+  </data>
+  <data name="ProcedureConsultarSolicitudID1" xml:space="preserve">
+    <value>M14_ProcedureConsultarSolicitudId</value>
+  </data>
+  <data name="ClaseBDDis" xml:space="preserve">
+    <value>BDDiseño</value>
+  </data>
+  <data name="ClaseBDPlanilla" xml:space="preserve">
+    <value>BDPlanilla</value>
+  </data>
+  <data name="ClaseBDSolicitud" xml:space="preserve">
+    <value>BDSolicitud</value>
+  </data>
+  <data name="ParametroIdSolicitud" xml:space="preserve">
+    <value>@pla_sol_id</value>
   </data>
 </root>

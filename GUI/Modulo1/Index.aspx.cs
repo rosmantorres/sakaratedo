@@ -106,6 +106,14 @@ namespace templateApp.GUI.Modulo1
             }
         }
 
+        /// <summary>
+        /// Metodo que Vuelve visible y no visible los mensajes en el login
+        /// </summary>
+        /// <param name="success">mensaje de exito: Verde</param>
+        /// <param name="info">mensaje de informacion: Azul</param>
+        /// <param name="warning">Mensaje de alerta: amarillo</param>
+        /// <param name="error">Mensaje de error: rojo</param>
+        /// <param name="mensaje">Mensaje a mostrar por pantalla</param>
         public void mensajeVisible(bool success,bool info,bool warning,bool error,string mensaje)
         {
             successLog.Visible = success;
@@ -137,8 +145,8 @@ namespace templateApp.GUI.Modulo1
                 string value= cripto.EncriptarCadenaDeCaracteres
                  (RecursosInterfazModulo1.parametroURLCorreoEnviado,RecursosLogicaModulo2.claveDES);
 
-                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + "?"
-                    + RecursosInterfazModulo1.tipoInfo + "=" +
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index + RecursosInterfazModulo1.signoPregunta
+                    + RecursosInterfazModulo1.tipoInfo + RecursosInterfazModulo1.signoIgual +
                     value);
             }
             catch (Exception e)
@@ -152,6 +160,9 @@ namespace templateApp.GUI.Modulo1
                     
            
         }
+        /// <summary>
+        /// Metodo que valida si la clave y nombre de usuario introducidos son validos y procede a inicias sesión
+        /// </summary>
         public void consultarUsuario()
         {
             try

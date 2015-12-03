@@ -27,7 +27,7 @@ namespace LogicaNegociosSKD.Modulo2
                 StringBuilder sBuilder = new StringBuilder();
                 for (int i = 0; i < md5Byte.Length; i++)
                 {
-                    sBuilder.Append(md5Byte[i].ToString("x2"));
+                    sBuilder.Append(md5Byte[i].ToString(RecursosLogicaModulo2.equis2));
                 }
 
                 return sBuilder.ToString();
@@ -39,6 +39,11 @@ namespace LogicaNegociosSKD.Modulo2
             }
         }
 
+        /// <summary>
+        /// Metodo que crea una objeto triple filtrado del DES (data encryption standard
+        /// </summary>
+        /// <param name="clave">Clave simetrica</param>
+        /// <returns>objeto TripleDes</returns>
         public TripleDES CrearDES(string clave)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -47,7 +52,12 @@ namespace LogicaNegociosSKD.Modulo2
             des.IV = new byte[des.BlockSize / 8];
             return des;
         }
-
+        /// <summary>
+        /// Metodo que encripta una cadena de caracteres mediante una clave simetrica
+        /// </summary>
+        /// <param name="textoEncriptado">cadena de string que se va a encriptar</param>
+        /// <param name="contrasegnia">clave simetrica para encriptar los datos</param>
+        /// <returns>cadena de caracter encriptada</returns>
         public string EncriptarCadenaDeCaracteres(string textoPlano, string contrasegnia)
         {
             try
@@ -77,7 +87,12 @@ namespace LogicaNegociosSKD.Modulo2
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Metodo que desencripta una cadena de caracteres mediante una clave simetrica
+        /// </summary>
+        /// <param name="textoEncriptado">cadena de string que se va a descriptar</param>
+        /// <param name="contrasegnia">clave simetrica para desencriptar los datos</param>
+        /// <returns>cadea desencriptada</returns>
         public string DesencriptarCadenaDeCaracteres(string textoEncriptado, string contrasegnia)
         {
             try
@@ -90,7 +105,7 @@ namespace LogicaNegociosSKD.Modulo2
                         textoEncriptado = idSplit[0];
                         for (int i = 1; idSplit.Count() > i; i++)
                         {
-                            textoEncriptado = textoEncriptado + '+' + idSplit[i];
+                            textoEncriptado = textoEncriptado + RecursosLogicaModulo2.signoMas + idSplit[i];
                         }
                     }
                     // Primero debemos convertir el texto plano en `textoPlano`

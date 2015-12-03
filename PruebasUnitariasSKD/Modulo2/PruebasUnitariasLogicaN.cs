@@ -171,10 +171,39 @@ namespace PruebasUnitariasSKD.Modulo2
         public void PruebaValidarcuentaAConsultar()
         {
             Cuenta _respuesta;
-            _respuesta = logicaRol.cuentaAConsultar(1);
+            _respuesta = logicaRol.cuentaAConsultar(35);
             Assert.AreEqual(_respuesta.Nombre_usuario, RecursosPU_Mod2.usuario);
         }
+        // Prueba unitaria  del metodo filtrarRoles()
+        [Test]
+        public void PruebaValidafiltrarRoles()
+        {
+            List<Rol> _respuesta;
+            List<Rol> _respuesta2;
+            List<Rol> _respuesta3;
+          List<Rol> respuesta = new List<Rol>();
 
+
+            _respuesta = logicaRol.cargarRoles();
+            _respuesta2 = logicaRol.consultarRolesUsuario("1");
+            _respuesta3 = logicaRol.filtrarRoles(_respuesta2, _respuesta);
+            Assert.AreNotEqual(_respuesta3,respuesta);
+        }
+        // Prueba unitaria  del metodo filtrarRoles() EXCEPCION
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
+        public void PruebaValidafiltrarRolesEXC()
+        {
+            List<Rol> _respuesta;
+            List<Rol> _respuesta2;
+            List<Rol> _respuesta3;
+            List<Rol> respuesta = new List<Rol>();
+
+
+            _respuesta = logicaRol.cargarRoles();
+            _respuesta2 = logicaRol.consultarRolesUsuario("1");
+            _respuesta3 = logicaRol.filtrarRoles(null, _respuesta);
+        }
 
 
     }

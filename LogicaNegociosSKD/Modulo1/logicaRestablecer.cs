@@ -39,7 +39,7 @@ namespace LogicaNegociosSKD.Modulo1
         /// <returns>True:Cumple con los parametros;False:No cumple.</returns>
         public bool ValidarCaracteres(String cadena)
         {
-            String comparar = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .";
+            String comparar = RecursosLogicaModulo1.abc;
             for (int i = 0; i < cadena.Length; i++)
             {
                 Boolean resultado = comparar.Contains(cadena[i]);
