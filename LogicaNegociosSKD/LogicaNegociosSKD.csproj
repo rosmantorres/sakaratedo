@@ -56,6 +56,7 @@
       <DependentUpon>RecursosLogicaModulo12.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo13\LogicaAtletaCinta.cs" />
+    <Compile Include="Modulo13\LogicaInfo_Producto.cs" />
     <Compile Include="Modulo13\LogicaInventario.cs" />
     <Compile Include="Modulo13\LogicaMorosos.cs" />
     <Compile Include="Modulo13\RecursosLogicaModulo13.Designer.cs">

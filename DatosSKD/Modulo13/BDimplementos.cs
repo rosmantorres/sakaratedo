@@ -35,8 +35,66 @@ namespace DatosSKD.Modulo13
         }
         #endregion
 
-    
 
-       
+
+
+        #region Listar Inventario
+        public static void  D_Info_producto(String dojo)
+        {        
+          
+            BDConexion conn;
+            List<Parametro> parametros;
+            Parametro param = new Parametro();
+            List<Persona> persona = new List<Persona>();
+
+            try
+            {
+
+                conn = new BDConexion();
+                parametros = new List<Parametro>();
+
+                param = new Parametro("@dojo", SqlDbType.VarChar, dojo, false);
+                parametros.Add(param);
+
+                DataTable dt = conn.EjecutarStoredProcedureTuplas("M13_Consultar_top5", parametros);
+                
+                foreach (DataRow row in dt.Rows)
+                {
+                    Implemento implemento = new Implemento();
+                    //implemento.Apellido = row[RecursosBDModulo13.apellido].ToString();
+                    //personas.Nombre = row[RecursosBDModulo13.nombre].ToString();
+                    //personas.Estatura = double.Parse(row[RecursosBDModulo13.estatura].ToString());
+                    //personas.Peso = double.Parse(row[RecursosBDModulo13.peso].ToString());
+                    //personas.FechaNacimiento = DateTime.Parse(row[RecursosBDModulo13.Edad].ToString());
+
+                    //persona.Add(personas);
+
+
+                }
+
+               // return aux;
+
+            }
+
+
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo, RecursoGeneralBD.Mensaje, ex);
+            }
+
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+
+        }
+        
     }
+        #endregion
 }
+

@@ -72,10 +72,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo12.resx</DependentUpon>
     </Compile>
+
     <Compile Include="Modulo13\BDAsistenciaEvento.cs" />
+
+    <Compile Include="Modulo13\BDAtletasCinta.cs" />
+
     <Compile Include="Modulo13\BDimplementos.cs" />
     <Compile Include="Modulo13\BDMoroso.cs" />
-    <Compile Include="Modulo13\BDAtletasCinta.cs" />
     <Compile Include="Modulo13\RecursosBDModulo13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,7 +179,6 @@
     <EmbeddedResource Include="Modulo13\RecursosBDModulo13.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo13.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo14\RecursosBDModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>

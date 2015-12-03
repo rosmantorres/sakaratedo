@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Info_Producto.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Info_Producto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M13_Inventario.aspx.cs" Inherits="templateApp.GUI.Modulo13.M13_Info_Producto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
 </asp:Content>
@@ -12,40 +12,60 @@
     &nbsp;&nbsp;&nbsp;&nbsp
          <a id="btn-exportarComp" class="btn btn-primary" type="submit" href="Pdf/Morosos.pdf?eliminacionSuccess=1" onclick="return checkform();">Exportar a PDF</a>
          &nbsp;&nbsp
- <form id="form1" runat="server">
-     <asp:DropDownList ID="DropDownList1" runat="server">
 
-         <asp:ListItem Text="Seleccionar Continente" Value="-1"></asp:ListItem>
-         <asp:ListItem Text="Asia" Value="1"></asp:ListItem>
-         <asp:ListItem Text="Africa" Value="2"></asp:ListItem>
-         <asp:ListItem Text="Europa" Value="3"></asp:ListItem>
-         <asp:ListItem Text="North America" Value="4"></asp:ListItem>
-         <asp:ListItem Text="South America" Value="5"></asp:ListItem>
-    
+    <div class="box-body table-responsive">
+    <table id="example" class="table table-bordered table-striped dataTable">
+       <thead>
+              <tr>
+                    
+                   <th>Nombre</th>
+                   <th>Tipo</th>
+                   <th>Marca</th>
+                   <th>Color</th>
+                   <th>Estatus</th>
+                   <th>Precio</th>
+                   <th>Stock Min</th>
+                   <th>Total</th>
+                   <th>Dojo</th>
+              </tr>
+        </thead>
+     <tbody>
 
-     </asp:DropDownList>  
-    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-      
-        </form>  
+          <% 
+              
+              System.Data.SqlClient.SqlDataReader resultado;              
+              resultado = LogicaNegociosSKD.Modulo13.LogicaInventario.L_Inventario();
 
+          
+                  while (resultado.Read())
+                  {                     
+                      
+                      Response.Write("<tr>");                     
+					
+                     // Response.Write("<td> <img src="+((resultado[0])) + "</td>");
+                      Response.Write("<td>" + (resultado[1]) + "</td>");
+                      Response.Write("<td>" + (resultado[2]) + "</td>");
+                      Response.Write("<td>" + ((resultado[3])) +"</td>");
+                      Response.Write("<td>" + (resultado[4]) + "</td>");
+                      Response.Write("<td>" + (resultado[5]) + "</td>"); 
+                      Response.Write("<td>" + ((resultado[6])) + "</td>");
+                      Response.Write("<td>" + (resultado[7]) + "</td>");
+                      Response.Write("<td>" + (resultado[8]) + "</td>");
+                      Response.Write("<td>" + (resultado[9]) + "</td>");
 
-     <div class="box-body table-responsive">
-         
-			<asp:Table ID="example" runat="server" CssClass="table table-bordered table-striped dataTable">
-                <asp:TableHeaderRow><asp:TableHeaderCell>Foto</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Nombre</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Tipo</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Color</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Estatus</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Precio</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Stock Min</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Total</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Dojo</asp:TableHeaderCell>
-                
-                </asp:TableHeaderRow>
-			</asp:Table>
-               
-        </div>
+                      Response.Write("</tr>");
+                  }
+
+                resultado.Close();              
+                            
+             %>
+
+                                         
+      </tbody>
+
+        </table>
+    </div>
+
 
      <script type="text/javascript">
          $(document).ready(function () {
