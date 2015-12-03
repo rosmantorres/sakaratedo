@@ -67,6 +67,14 @@ namespace DominioSKD
             this.idInscripcion = idInscripcion;
             this.idPersona = idPersona;
         }
+
+        public SolicitudPlanilla(DateTime fechaRetiro, DateTime fechaReincorporacion, string motivo, Planilla planilla)
+        {
+            this.fechaRetiro = fechaRetiro;
+            this.fechaReincorporacion = fechaReincorporacion;
+            this.motivo = motivo;
+            this.planilla = planilla;
+        }
         #endregion
 
         #region gets y sets
