@@ -62,7 +62,7 @@ namespace templateApp.GUI.Modulo15
 
             ((SKD)Page.Master).IdModulo = "15";
           //  this.btnmodificarImplemento.Click+= new EventHandler(this.evento_modificar);
-            int idImplemento =Convert.ToInt16(Request.QueryString["idImplemento"]);
+            int idImplemento =Convert.ToInt32(Request.QueryString["idImplemento"]);
             if (idImplemento != 0) {
                 cargarDatosModificar(idImplemento);
             

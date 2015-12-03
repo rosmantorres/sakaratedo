@@ -311,20 +311,26 @@ namespace templateApp.GUI.Modulo15
 
                         ErrorInputInterfaz ex = new ExcepcionesSKD.Modulo15.ErrorInputInterfaz(ex2.Codigo, "Error en Interfaz con valores de input", new Exception());
                         Logger.EscribirError("M15_ConsultarImplemento", ex);
-                        Response.Redirect("~/GUI/Modulo15/M15_ModificarImplemento.aspx?modificar=fallo&excepcion=ErrorInputInterfaz");
+                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
+                        alert2.Attributes["role"] = "alert";
+                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
 
                     }
                     catch (ExceptionSKD ex2)
                     {
                         ErrorInputInterfaz ex = new ExcepcionesSKD.Modulo15.ErrorInputInterfaz(ex2.Codigo, "Error en Interfaz con valores de input", new Exception());
                         Logger.EscribirError("M15_ConsultarImplemento", ex);
-                        Response.Redirect("~/GUI/Modulo15/M15_ModificarImplemento.aspx?modificar=fallo&excepcion=ErrorInputInterfaz");
+                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
+                        alert2.Attributes["role"] = "alert";
+                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
 
 
                     }
                     catch (Exception ex2)
                     {
-                        Response.Redirect("~/GUI/Modulo15/M15_ModificarImplemento.aspx?modificar=fallo&excepcion=ErrorInputInterfaz");
+                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
+                        alert2.Attributes["role"] = "alert";
+                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
 
 
                     }
