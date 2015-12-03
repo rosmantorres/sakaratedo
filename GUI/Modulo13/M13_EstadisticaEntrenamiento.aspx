@@ -16,13 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
 	<script type="text/javascript">
 
-	    $(function () {
-	        var availableTags = [ <%= SuggestionList %>];
-
-	    $("#<%= TextBox1.ClientID %>").autocomplete({
-	        source: availableTags
-	    });
-	});
+	 
 
 	</script>
     
