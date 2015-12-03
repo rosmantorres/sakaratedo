@@ -102,7 +102,7 @@ namespace DominioSKD
         #region Constructores
         public RestriccionCompetencia()
         {
-            idRestriccionComp = 0;
+            idRestriccionComp = -1;
             descripcion = String.Empty;
             edadMinima = 0;
             edadMaxima = 0;
@@ -116,7 +116,22 @@ namespace DominioSKD
             listaCintas = null;
         }
 
-        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, int inputRangoMinimo, int inputRangoMaximo, DateTime inputFechaEdadMax, String inputSexo, String inputModalidad)
+        public RestriccionCompetencia(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo, int inputRangoMaximo, String inputSexo, String inputModalidad)
+        {
+            descripcion = inputDescripcion;
+            edadMinima = inputEdadMinima;
+            edadMaxima = inputEdadMaxima;
+            rangoMinimo = inputRangoMinimo;
+            rangoMaximo = inputRangoMaximo;
+            fechaEdadMin = new DateTime();
+            fechaEdadMax = new DateTime();
+            sexo = inputSexo;
+            modalidad = inputModalidad;
+            listaCompetencias = null;
+            listaCintas = null;
+        }
+
+        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, DateTime inputFechaEdadMin, DateTime inputFechaEdadMax, int inputRangoMinimo, int inputRangoMaximo, String inputSexo, String inputModalidad)
 
         {
             idRestriccionComp = inputId;

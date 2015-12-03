@@ -120,7 +120,7 @@ namespace DatosSKD.Modulo8
                 foreach (Resultado elResultado in resultados)
                 {
                     if (elResultado.etiqueta == RecursosBDRestriccionCompetencia.ParamSalidaNumRestriccion)
-                        if (int.Parse(elResultado.valor) == 1)
+                        if (int.Parse(elResultado.valor) != 0 )
                             retorno = true;
                         else
                             retorno = false;
@@ -301,25 +301,51 @@ namespace DatosSKD.Modulo8
         #endregion
 
         #region EliminarRestriccion
-        public static bool EliminarRestriccionCompetencia(RestriccionCompetencia laRestriccion)
+        public static bool EliminarRestriccionCompetencia(RestriccionCompetencia laRestriccionCompetencia)
         {
             try
             {
+                if (ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia))
+                {
                 List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
 
-                Parametro elParametro = new Parametro(RecursosBDRestriccionEvento.ParamIdRestriccionEvento, SqlDbType.Int,
-                    laRestriccion.IdRestriccionComp.ToString(), false);
-                //parametro recibe: el alias de la accion (en este caso es la descripcion de mi restriccion de cinta que apunta a un atributo que se llama @DescripcionRestriccionCinta), SqlDbType es el tipo de dato que tiene ese atributo en la base de datos (en este caso es varchar), el elemento que se desea poner en ese lugar (aqui se usa la clase dominio), el false lo dejas asi
+                Parametro elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
+                      laRestriccionCompetencia.Descripcion, false);
                 parametros.Add(elParametro);
-                //agregas eso que acabas de hacer a la lista de parametros.
-                //repites hasta que tengas todos los parametros de tu stored procedure asociado
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
+                     laRestriccionCompetencia.EdadMinima.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
+                    laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
+                     laRestriccionCompetencia.RangoMinimo.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
+                    laRestriccionCompetencia.RangoMaximo.ToString(), false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
+                    laRestriccionCompetencia.Sexo, false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDRestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
+                    laRestriccionCompetencia.Modalidad, false);
+                parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
                 laConexion.EjecutarStoredProcedure(RecursosBDRestriccionCompetencia.EliminarRestriccionCompetencia
                                              , parametros);
 
               }
-
+                else
+                    throw new ExcepcionesSKD.Modulo8.RestriccionExistenteException(RecursosBDRestriccionCompetencia.Codigo_Restriccion_Competencia_No_Existente,
+                                RecursosBDRestriccionCompetencia.Mensaje_Restriccion_Competencia_No_Existente, new Exception());
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);

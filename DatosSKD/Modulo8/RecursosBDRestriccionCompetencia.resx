@@ -201,6 +201,9 @@
   <data name="Codigo_Restriccion_Competencia_Existente" xml:space="preserve">
     <value>SKD_08_001</value>
   </data>
+  <data name="Codigo_Restriccion_Competencia_No_Existente" xml:space="preserve">
+    <value>SKD_08_002</value>
+  </data>
   <data name="ConsultarCompetenciasAsociadasALaRestriccion" xml:space="preserve">
     <value>M8_ConsultarTodasLasCompetenciasAsociadas</value>
   </data>
@@ -235,7 +238,10 @@
     <value>Error de parseo</value>
   </data>
   <data name="Mensaje_Restriccion_Competencia_Existente" xml:space="preserve">
-    <value>Ya exite una restriccion con las especificacion introducidas. Por favor anexar su competencia a dicha restriccion</value>
+    <value>Ya existe una restriccion con las especificacion introducidas. Por favor anexar su competencia a dicha restriccion</value>
+  </data>
+  <data name="Mensaje_Restriccion_Competencia_No_Existente" xml:space="preserve">
+    <value>No existe una restriccion con las especificacion introducidas.</value>
   </data>
   <data name="ModificarRestriccionCompetencia" xml:space="preserve">
     <value>M8_ModificarRestriccionCompetencia</value>

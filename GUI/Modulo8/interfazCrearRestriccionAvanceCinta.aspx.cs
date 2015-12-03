@@ -15,7 +15,7 @@ namespace templateApp.GUI.Modulo8
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ((SKD)Page.Master).IdModulo = "8";
+            ((SKD)Page.Master).IdModulo = "8.3";
             if (!IsPostBack)
             {
                

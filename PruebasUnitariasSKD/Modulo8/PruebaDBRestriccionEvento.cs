@@ -150,7 +150,7 @@ namespace PruebasUnitariasSKD.Modulo8
         public void PruebaEventosQuePuedeAsistirAtleta()
         {
             DatosSKD.Modulo8.BDRestriccionEvento bdRestriccionEvento = new DatosSKD.Modulo8.BDRestriccionEvento();
-            List<EventoSimple> listaEventos = bdRestriccionEvento.EventosQuePuedeAsistirAtleta(1);
+            List<EventoSimple> listaEventos = bdRestriccionEvento.EventosQuePuedeAsistirAtleta(2);
             Assert.Greater(listaEventos.Count, 0);
         }
 
