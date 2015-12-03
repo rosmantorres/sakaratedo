@@ -18,7 +18,7 @@ namespace templateApp.GUI.Modulo14
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = RecursoInterfazModulo14.NumeroModulo;
+            ((SKD)Page.Master).IdModulo = "14.1";
             try
             {
                 List<DominioSKD.SolicitudPlanilla> listaSolicitud = LlenarTabla();
