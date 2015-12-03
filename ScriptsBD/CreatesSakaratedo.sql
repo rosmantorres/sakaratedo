@@ -1825,6 +1825,10 @@ UPDATE NO ACTION
 GO
 
 
+
+
+
+-----------------------------------PROCEDURE----------------------
 ---------------------------------------------------------STORED PROCEDURES M12--------------------------------------------------------------------
 
 --PROCEDURE AGREGAR COMPETENCIA--
@@ -1887,6 +1891,7 @@ as
 
  
 --PROCEDURE CONSULTAR ID COMPETENCIA--
+
 CREATE PROCEDURE M12_BuscarIDCompetencia
 	@idCompetencia   [int],
 	@numCompetencia  [int] OUTPUT
@@ -1904,17 +1909,53 @@ as
 --PROCEDURE CONSULTAR NOMBRE COMPETENCIA--
 CREATE PROCEDURE M12_BuscarNombreCompetencia
 	@nombreCompetencia   [varchar](100),
+	@idCompetencia       [int],
+	@numCompetencia      [int] OUTPUT
+as
+ begin
+	declare @aux as int;
+	set @aux = 0;
+
+	select @aux = comp_id 
+	from COMPETENCIA 
+	where comp_nombre = @nombreCompetencia
+	group by comp_id;
+
+	if (@aux = @idCompetencia or @aux = 0)
+		set @numCompetencia = 0;
+	else
+		select @numCompetencia = count(*)
+		from COMPETENCIA 
+		where comp_nombre = @nombreCompetencia
+ end;
+ go
+
+ --PROCEDURE CONSULTAR NOMBRE COMPETENCIA PARA AGREGAR--
+CREATE PROCEDURE M12_BuscarNombreCompetenciaAgregar
+	@nombreCompetencia   [varchar](100),
 	@numCompetencia      [int] OUTPUT
 as
  begin
 
-	select @numCompetencia = count(*) 
+	select @numCompetencia = count(*)
 	from COMPETENCIA 
 	where comp_nombre = @nombreCompetencia
 
  end;
  go
 
+ 
+
+--PROCEDURE CONSULTA LISTA DE CINTAS--
+CREATE procedure M12_ConsultarCintas
+as
+	begin
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
+		from CINTA as cin		
+	end;
+	go
+
+	
  
 
 --PROCEDURE CONSULTA LISTA DE COMPETENCIAS--
@@ -1927,9 +1968,9 @@ as
 		where comp.UBICACION_comp_id = ubi.ubi_id
 		
 	end;
-
 	go
 
+	
 	
 	--PROCEDURE CONSULTA COMPETENCIA POR ID --
 CREATE procedure M12_ConsultarCompetenciasXId
@@ -1956,9 +1997,20 @@ DECLARE
 			from COMPETENCIA comp, UBICACION ubi, CATEGORIA cat
 			where comp.UBICACION_comp_id = ubi.ubi_id and cat.cat_id = comp.CATEGORIA_comp_id and comp.comp_id = @idCompetencia
 	end;
-
 	go
 
+	
+
+--PROCEDURE CONSULTA LISTA DE ORGANIZACIONES--
+CREATE procedure M12_ConsultarOrganizaciones
+as
+	begin
+		select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
+		from ORGANIZACION as org		
+	end;
+	go
+
+	
 	--PROCEDURE MODIFICAR COMPETENCIA--
 CREATE PROCEDURE M12_ModificarCompetencia
 	@idCompetencia       [int],
@@ -2011,7 +2063,8 @@ as
 			comp_fecha_fin    = @fecha_fin,
 			comp_costo        = @costoCompetencia,
 			CATEGORIA_comp_id = (select cat_id from CATEGORIA where @edadIni = cat_edad_ini and @edadFin = cat_edad_fin and @cintaIni = cat_cinta_ini and @cintaFin = cat_cinta_fin and @sexo = cat_sexo), 
-			UBICACION_comp_id = (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion)
+			UBICACION_comp_id = (select ubi_id from UBICACION where @latitudDireccion = ubi_latitud and @longitudDireccion = ubi_longitud and @nombreCiudad = ubi_ciudad and @nombreEstado = ubi_estado and @nombreDireccion = ubi_direccion),
+			ORGANIZACION_comp_id = null
 		WHERE
 			comp_id = @idCompetencia;
 	else
@@ -2030,31 +2083,7 @@ as
 		WHERE
 			comp_id = @idCompetencia;
  end;
-
  go
-
-
-
---PROCEDURE CONSULTA LISTA DE ORGANIZACIONES--
-CREATE procedure M12_ConsultarOrganizaciones
-as
-	begin
-		select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
-		from ORGANIZACION as org		
-	end;
-go
-
-
---PROCEDURE CONSULTA LISTA DE CINTAS--
-CREATE procedure M12_ConsultarCintas
-as
-	begin
-		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
-		from CINTA as cin		
-	end;
-go
-
-
   ----------------------------------STORED PROCEDURES M1-------------------------------------
 
 -------*NUEVO*-------PROCEDURE CONSULTA PERSONA POR ID ----------------------

@@ -53,8 +53,8 @@
     <Compile Include="InformacionPersonalInvalidaException.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="Modulo12\CompetenciaExistenteException.cs" />
     <Compile Include="Modulo12\CompetenciaInexistenteException.cs" />
-    <Compile Include="Modulo12\CompetenciaRepetidaException.cs" />
     <Compile Include="Modulo12\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo14\BDDatosException.cs" />
     <Compile Include="Modulo14\BDDiseñoException.cs" />
