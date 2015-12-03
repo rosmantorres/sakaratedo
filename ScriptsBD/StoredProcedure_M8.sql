@@ -63,7 +63,7 @@ as
  begin
  	select res.res_eve_id as res_eve_id, res.res_eve_desc as res_eve_desc,
  	res.res_eve_edad_min as edad_min, res.res_eve_edad_max as edad_max,
- 	res.res_eve_sexo as sexo, res.EVENTO_eve_id as idEvto, ev.eve_nombre as eve_nombre
+ 	res.res_eve_sexo as sexo, res.EVENTO_eve_id as idEvento, ev.eve_nombre as eve_nombre
 	from RESTRICCION_EVENTO as res, Evento as ev
 	where res.EVENTO_eve_id = ev.eve_id
  end;
