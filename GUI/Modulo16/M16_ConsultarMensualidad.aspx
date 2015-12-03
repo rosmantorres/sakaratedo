@@ -118,7 +118,6 @@
 
                                      var aa = JSON.parse(data.d);
 
-                                     alert("Peticion ajax exitosa:" + aa);
 
 
                                  }

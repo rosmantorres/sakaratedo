@@ -184,7 +184,7 @@
 
                  // Carga el modal con la informacion del evento de acuerdo al id
                  $('#modal-info1').on('show.bs.modal', function (e) {
-                     alert(e.relatedTarget.id);
+                   
                      $.ajax({
                          cache: false,
                          type: 'POST',
