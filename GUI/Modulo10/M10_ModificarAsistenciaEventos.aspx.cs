@@ -40,12 +40,12 @@ namespace templateApp.GUI.Modulo10
 
                     foreach (Persona persona in listaA)
                     {
-                        listaAsistentes.Items.Add(persona.ID + " " + persona.Nombre);
+                        listaAsistentes.Items.Add(persona.Nombre);
                     }
                     
                     foreach (Persona persona in listaI)
                     {
-                        listaNoAsistieron.Items.Add(persona.ID + " " + persona.Nombre);
+                        listaNoAsistieron.Items.Add(persona.Nombre);
                     }
                 }
                 else if (Session["M10_tipo"].Equals("competencia"))
@@ -85,12 +85,68 @@ namespace templateApp.GUI.Modulo10
 
         protected void bModificar_Click(object sender, EventArgs e)
         {
+            List<Persona> listaA2 = new List<Persona>();
+            List<Persona> listaI2 = new List<Persona>();
+            listas(listaA2, listaI2);
+            foreach (Persona persona in listaA2)
+            {
+                string asistio = "S";
+                LogicaAsistencia.ModificarAsistenciaEvento(persona.IdInscripcion, Convert.ToInt32(Session["M10_IdEvento"]), asistio);
+            }
+
+            foreach (Persona persona in listaI2)
+            {
+                string asistio = "N";
+                LogicaAsistencia.ModificarAsistenciaEvento(persona.IdInscripcion, Convert.ToInt32(Session["M10_IdEvento"]), asistio);
+
+            }
             Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=2");
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("M10_ListarAsistenciaEventos.aspx");
+        }
+
+        private void listas(List<Persona> listaA2, List<Persona> listaI2)
+        {
+            foreach (Persona persona in listaA)
+            {
+                foreach (var listBoxItem in listaAsistentes.Items)
+                {
+                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    {
+                        listaA2.Add(persona);
+                    }
+                }
+
+                foreach (var listBoxItem in listaNoAsistieron.Items)
+                {
+                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    {
+                        listaI2.Add(persona);
+                    }
+                }
+            }
+
+            foreach (Persona persona in listaI)
+            {
+                foreach (var listBoxItem in listaAsistentes.Items)
+                {
+                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    {
+                        listaA2.Add(persona);
+                    }
+                }
+
+                foreach (var listBoxItem in listaNoAsistieron.Items)
+                {
+                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    {
+                        listaI2.Add(persona);
+                    }
+                }
+            }
         }
     }
 }

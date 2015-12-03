@@ -47,5 +47,10 @@ namespace LogicaNegociosSKD.Modulo10
             List<Persona> listaAtletas = BDAsistencia.listaNoAsistentes(idEvento);
             return listaAtletas;
         }
+
+        public static void ModificarAsistenciaEvento(int ins, int eve, string asistio)
+        {
+             BDAsistencia.ModificarAsistenciaE(ins, eve, asistio);
+        }
     }
 }

@@ -176,4 +176,16 @@
     <value>M10_InasistenteAlEvento</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ParametroAsistencia" xml:space="preserve">
+    <value>@_asi_asistio</value>
+    <comment>parametro de asistencia</comment>
+  </data>
+  <data name="ParametroIdInscripcion" xml:space="preserve">
+    <value>@_idInscripcion</value>
+    <comment>Id de Inscripcion a modificar su asistencia</comment>
+  </data>
+  <data name="ProcedimientoModificarAsistenciaE" xml:space="preserve">
+    <value>M10_ModicarAsistenciaE</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

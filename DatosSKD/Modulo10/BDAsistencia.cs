@@ -70,7 +70,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los eventos con asistencia pasada
         /// </summary>
-        /// <returns>lista de eventos</returns>
+        /// <returns>lista de competencias</returns>
         public static List<Competencia> ListarCompetenciasAsistidas()
         {
             BDConexion laConexion;
@@ -120,8 +120,8 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas asistidos a un evento especifico
         /// </summary>
-        /// <returns>lista de eventos</returns>
-        public static List<Persona> listaAsistentes(String idEvento)
+        /// <returns>lista de atletas</returns>
+        public static List<Persona> listaAsistentes(string idEvento)
         {
             BDConexion laConexion;
             List<Persona> personas = new List<Persona>();
@@ -170,8 +170,8 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas no asistidos a un evento especifico
         /// </summary>
-        /// <returns>lista de eventos</returns>
-        public static List<Persona> listaNoAsistentes(String idEvento)
+        /// <returns>lista de atletas</returns>
+        public static List<Persona> listaNoAsistentes(string idEvento)
         {
             BDConexion laConexion;
             List<Persona> personas = new List<Persona>();
@@ -215,6 +215,43 @@ namespace DatosSKD.Modulo10
             return personas;
 
 
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos una asistencia de un atleta 
+        /// </summary>
+        /// <returns>true si se pudo modificar</returns>
+        public static void ModificarAsistenciaE(int ins, int eve, string asistio)
+        {
+            try
+            {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistio, false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, eve.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, ins.ToString(), false);
+                    parametros.Add(parametro);
+                    
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoModificarAsistenciaE, parametros);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
