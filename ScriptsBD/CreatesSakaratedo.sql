@@ -1913,24 +1913,24 @@ as
  
 --PROCEDURE CONSULTAR NOMBRE COMPETENCIA--
 CREATE PROCEDURE M12_BuscarNombreCompetencia
-<<<<<<< HEAD
+
   @nombreCompetencia   [varchar](100),
   @numCompetencia      [int] OUTPUT
-=======
+
 	@nombreCompetencia   [varchar](100),
 	@idCompetencia       [int],
 	@numCompetencia      [int] OUTPUT
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
 as
  begin
 	declare @aux as int;
 	set @aux = 0;
 
-<<<<<<< HEAD
+
   select @numCompetencia = count(*) 
   from COMPETENCIA 
   where comp_nombre = @nombreCompetencia
-=======
+
 	select @aux = comp_id 
 	from COMPETENCIA 
 	where comp_nombre = @nombreCompetencia
@@ -1955,7 +1955,7 @@ as
 	select @numCompetencia = count(*)
 	from COMPETENCIA 
 	where comp_nombre = @nombreCompetencia
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
 
  end;
  go
@@ -1977,7 +1977,7 @@ as
 --PROCEDURE CONSULTA LISTA DE COMPETENCIAS--
 CREATE procedure M12_ConsultarCompetencias
 as
-<<<<<<< HEAD
+
   begin
     select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones,
          org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado
@@ -1990,7 +1990,7 @@ as
 
   
   --PROCEDURE CONSULTA COMPETENCIA POR ID --
-=======
+
 	begin
 		select comp.comp_id as idCompetencia, comp.comp_nombre as nombreCompetencia, comp.comp_tipo as tipoCompetencia, comp.comp_status as statusCompetencia, comp.comp_org_todas as todasOrganizaciones,
 			   org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion, ubi.ubi_id as idUbicacion, ubi.ubi_ciudad as nombreCiudad, ubi.ubi_estado as nombreEstado
@@ -2003,12 +2003,12 @@ as
 	
 	
 	--PROCEDURE CONSULTA COMPETENCIA POR ID --
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
 CREATE procedure M12_ConsultarCompetenciasXId
   @idCompetencia [int]
 as
 DECLARE 
-<<<<<<< HEAD
+
   @organizacionesTodas [bit]
   begin
   
@@ -2033,7 +2033,7 @@ DECLARE
   go
 
   --PROCEDURE MODIFICAR COMPETENCIA--
-=======
+
 	@organizacionesTodas [bit]
 	begin
 	
@@ -2069,7 +2069,7 @@ as
 
 	
 	--PROCEDURE MODIFICAR COMPETENCIA--
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
 CREATE PROCEDURE M12_ModificarCompetencia
   @idCompetencia       [int],
   @nombreCompetencia   [varchar](100),
@@ -2093,7 +2093,7 @@ CREATE PROCEDURE M12_ModificarCompetencia
 as
  begin
 
-<<<<<<< HEAD
+
   declare @numCategoria as int;
   declare @numUbicacion as int;
 
@@ -2140,7 +2140,7 @@ as
       ORGANIZACION_comp_id = (select org_id from ORGANIZACION where org_nombre = @nombreOrganizacion)
     WHERE
       comp_id = @idCompetencia;
-=======
+
 	declare @numCategoria as int;
 	declare @numUbicacion as int;
 
@@ -2188,10 +2188,10 @@ as
 			ORGANIZACION_comp_id = (select org_id from ORGANIZACION where org_nombre = @nombreOrganizacion)
 		WHERE
 			comp_id = @idCompetencia;
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
  end;
  go
-<<<<<<< HEAD
+
 
 
 
@@ -2208,22 +2208,22 @@ go
 --PROCEDURE CONSULTA LISTA DE CINTAS--
 CREATE procedure M12_ConsultarCintas
 as
-<<<<<<< HEAD
+
   begin
     select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
     from CINTA as cin   
   end;
-=======
+
 	begin
 		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
 		from CINTA as cin		
 	end;
->>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+
 go
 
 
-=======
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
+
   ----------------------------------STORED PROCEDURES M1-------------------------------------
 
 --------------------PROCEDURE CONSULTA PERSONA POR ID ----------------------
@@ -2256,14 +2256,14 @@ as
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
   @nombre_usuario [varchar](25)
 as
-<<<<<<< HEAD
+
   begin
     select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena
     from PERSONA pers
     where pers.per_nombre_usuario = @nombre_usuario
   end;
   go
-=======
+
 	begin
 		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena,pers.per_imagen as imagen,
 		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
@@ -2271,7 +2271,7 @@ as
 		where pers.per_nombre_usuario = @nombre_usuario
 	end;
 	go
->>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
+
 
 
 
@@ -2303,7 +2303,7 @@ as
 CREATE procedure M1_ValidarCorreo
 @correo_usuario [varchar](25)
 as
-<<<<<<< HEAD
+
   begin
     select  PERSONA_per_id  as correo_usuario
     from EMAIL
@@ -2311,14 +2311,14 @@ as
   end;
   go
 
-=======
+
 	begin
 		select  PERSONA_per_id  as correo_usuario
 		from EMAIL
 		where ema_email= @correo_usuario and ema_principal=1
 	end;
 go
->>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
+
 
 -----------------------------------STORED PROCEDURES M2--------------------------------------------------------
 
@@ -2569,8 +2569,7 @@ as
     INSERT INTO TIPO_PLANILLA(tip_nombre) 
   VALUES(@tip_nombre); 
 
-<<<<<<< HEAD
-=======
+
 -------------------------------------------------Stored Procedure M14--------------------------
 CREATE PROCEDURE M14_AgregarDiseño
 		 
@@ -2963,32 +2962,32 @@ as
     INSERT INTO TIPO_PLANILLA(tip_nombre) 
 	VALUES(@tip_nombre); 
 
->>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+
  end;
 GO
 
 ------***----------Obtener Datos----------------------------------
 CREATE PROCEDURE M14_ProcedureDatosPlanilla
-<<<<<<< HEAD
+
   @pla_nombre [varchar] (100),
   @pla_status [bit],
   @TIPO_PLANILLA_tip_id [int]
-=======
+
 	@pla_nombre [varchar] (100),
 	@pla_status [bit],
 	@TIPO_PLANILLA_tip_id [int]
->>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
+
 
 as
  begin
 
     INSERT INTO PLANILLA(pla_nombre,pla_status,TIPO_PLANILLA_tip_id) 
-<<<<<<< HEAD
+
   VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
 
  end;
  GO
-=======
+
 	VALUES(@pla_nombre,@pla_status,@TIPO_PLANILLA_tip_id);  
 
  end;
@@ -3271,9 +3270,7 @@ AS
 		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
 		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
  END
-<<<<<<< HEAD
->>>>>>> 5bd2abb0082af1b93601fe7a3a8459dfc9fc10c9
-=======
+
 
 
 GO
@@ -3522,9 +3519,7 @@ as
     
   end;
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
-<<<<<<< HEAD
->>>>>>> 51d6c0785d0a3e8403ffbc0ea13cf2575a1d2c15
-=======
+
 
 
 --------------------------------------------------------------P R O C E D U R E S   M 7--------------------------------------------------------------------- 
@@ -4455,6 +4450,20 @@ BEGIN
 		END
 	SET @exito = 1;
 END
+GO
+
+/* Consulta la informacion del evento dado el ID del evento en especifico */
+CREATE PROCEDURE M16_CONSULTAR_MATRICULA_ID
+		@iditem INTEGER
+AS
+BEGIN
+	--Selecciono la informacion del evento
+	SELECT M.mat_identificador AS idIdentificadorMatricla, 
+	        M.mat_fecha_creacion AS fechaInicio,
+		    M.mat_fecha_ultimo_pago AS fechaTope
+	 		
+	FROM  	MATRICULA M WHERE mat_id = 1;
+END
 
 /*===============================================Stored Procedures Modulo 16 =======================*/
->>>>>>> a6b44305456a5315b33d6daef1bd18a480208aa1
+
