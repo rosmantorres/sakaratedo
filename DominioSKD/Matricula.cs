@@ -71,6 +71,7 @@ namespace DominioSKD
         public int ID
         {
             get { return this._id; }
+            set { costo = value; }
         }
 
         public String Identificador

@@ -36,7 +36,7 @@ namespace DatosSKD.Modulo16
                 {
                     Matricula laMatricula = new Matricula();
 
-                    laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
+                    laMatricula.ID= int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
                     laMatricula.Identificador = (row[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                     laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
                     laMatricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());
