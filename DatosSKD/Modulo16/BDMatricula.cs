@@ -21,21 +21,22 @@ namespace DatosSKD.Modulo16
         {
             BDConexion laConexion;
             List<Matricula> laListaDeMatriculas = new List<Matricula>();
+            List<Parametro> parametros;
             
 
             try
             {
                 laConexion = new BDConexion();
-               
+                parametros = new List<Parametro>();
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo16.StoreProcedureConsultarMatriculas, null);
+                               RecursosBDModulo16.StoreProcedureConsultarMatriculas, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
                     Matricula laMatricula = new Matricula();
 
-                    laMatricula.Identificador = (row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
+                    laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
                     laMatricula.Identificador = (row[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                     laMatricula.FechaCreacion = DateTime.Parse(row[RecursosBDModulo16.aliasFechainicio].ToString());
                     laMatricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo16.aliasFechatope].ToString());

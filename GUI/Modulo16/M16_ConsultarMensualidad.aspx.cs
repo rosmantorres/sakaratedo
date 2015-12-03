@@ -59,7 +59,7 @@ namespace templateApp.GUI.Modulo16
 
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TR;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD;
-                        this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.Id.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                       // this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.Id.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.Identificador.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.FechaCreacion.ToString() + M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.ABRIR_TD + m.UltimaFechaPago.ToString() + M16_Recursointerfaz.CERRAR_TD;
@@ -86,7 +86,7 @@ namespace templateApp.GUI.Modulo16
         #region Llamada para Agregar Matricula al Carrito
 
         [System.Web.Services.WebMethod]
-        public static string agregarMatriculaAcarrito(int idMatricula, int cantidad, int precio)
+        public static string agregarMatriculaAcarrito(int idMatricula, int precio)
         {
 
             Logicacarrito logica = new Logicacarrito();

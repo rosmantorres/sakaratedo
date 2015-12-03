@@ -493,6 +493,15 @@ namespace DatosSKD.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @idMatricula.
+        /// </summary>
+        internal static string PARAMETRO_IDMATRICULA2 {
+            get {
+                return ResourceManager.GetString("PARAMETRO_IDMATRICULA2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to impImagen.
         /// </summary>
         internal static string PARAMETRO_IMAGEN {

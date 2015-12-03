@@ -355,7 +355,7 @@
   </data>
   <data name="PARAMETRO_TIPO_PAGO" xml:space="preserve">
     <value>tipoPago</value>
-    </data>
+  </data>
   <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
     <value>Ingresando al metodo</value>
     <comment>Mensaje de informacion que se escribira en el logger al entrar a un metodo</comment>
@@ -387,5 +387,8 @@
   </data>
   <data name="MENSAJE_EXCEPCION_SOBRECARGA" xml:space="preserve">
     <value>Error al parsear un atributo sobrecargado</value>
+  </data>
+  <data name="PARAMETRO_IDMATRICULA2" xml:space="preserve">
+    <value>@idMatricula</value>
   </data>
 </root>

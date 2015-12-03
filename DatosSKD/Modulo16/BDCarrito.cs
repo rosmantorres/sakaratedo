@@ -972,7 +972,7 @@ namespace DatosSKD.Modulo16
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
                         SqlDbType.Int, idPersona.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO,
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDMATRICULA2,
                         SqlDbType.Int, idMatricula.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
