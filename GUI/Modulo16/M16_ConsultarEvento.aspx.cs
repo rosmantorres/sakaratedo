@@ -33,7 +33,38 @@ namespace templateApp.GUI.Modulo16
                 if (detalleString != null)
                 {
                     llenarModalInfo(int.Parse(detalleString));
-                }           
+                }
+
+                //Nos indica si hubo alguna accion de agregar, registrar pago o eliminar
+                String accion = Request.QueryString["accion"];
+                switch (accion)
+                {
+                    //Si se viene de un agregar se procedera a mostrar la alerta correspondiente
+                    case "1":
+                        //Obtenemos el ID del implemento
+                        String exito = Request.QueryString["id"];
+
+                        //Si el Agregar fue exitoso o no se procedera dar la alerta correspondiente
+                        if (exito.Equals("1"))
+                        {
+                            //Limpiamos y mostramos la informacion
+                            alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                                "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago se ha" +
+                                " realizado exitosamente</div>";
+                        }
+                        else
+                        {
+                            //Si el agregar fue fallido mostramos la alerta
+                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                                "aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El pago no se ha" +
+                                " realizado exitosamente</div>";
+                        }
+                        break;
+                }
 
         #region Llenar Data Table Con Evento
 
@@ -431,6 +462,15 @@ namespace templateApp.GUI.Modulo16
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                if (agregar)
+                {
+                    //Si se pudo registrar el pago
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=1");
+                }
+                else
+                    //Si no se pudo registrar el pago
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
 
                 return json;
             }
