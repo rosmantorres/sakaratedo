@@ -16,33 +16,39 @@ namespace templateApp.GUI.Modulo10
         Evento evento = new Evento();
         Competencia competencia = new Competencia();
         List<Persona> listaA = new List<Persona>();
-        String tipo;
+        List<Persona> listaI = new List<Persona>();
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "10";
-            bIzquierdo.Attributes.Add("onClick", "return false;");
-            bDerecho.Attributes.Add("onClick", "return false;");
             LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
             {
                 String idEvento = Request.QueryString["modificar"];
-                tipo = Request.QueryString["tipo"];
+                String tipo = Request.QueryString["tipo"];
 
-                if (tipo.Equals("evento"))
+                Session["M10_IdEvento"] = idEvento;
+                Session["M10_tipo"] = tipo;
+
+                if (Session["M10_tipo"].Equals("evento"))
                 {
-                    evento = logicaEvento.ConsultarEvento(idEvento);
-                    calendar.VisibleDate = new DateTime(evento.Horario.FechaInicio.Year,
-                                                 evento.Horario.FechaInicio.Month, evento.Horario.FechaInicio.Day);
+                    evento = logicaEvento.ConsultarEvento(Session["M10_IdEvento"].ToString());
+                    fechaEvento.Text = evento.Horario.FechaInicio.ToShortDateString();
                     nombreEvento.Text = evento.Nombre;
-                    listaA = LogicaAsistencia.listaAsistentes(idEvento);
+
+                    listaA = LogicaAsistencia.listaAsistentes(Session["M10_IdEvento"].ToString());
+                    listaI = LogicaAsistencia.listaNoAsistentes(Session["M10_IdEvento"].ToString());
 
                     foreach (Persona persona in listaA)
                     {
                         listaAsistentes.Items.Add(persona.ID + " " + persona.Nombre);
                     }
-
+                    
+                    foreach (Persona persona in listaI)
+                    {
+                        listaNoAsistieron.Items.Add(persona.ID + " " + persona.Nombre);
+                    }
                 }
-                else if (tipo.Equals("competencia"))
+                else if (Session["M10_tipo"].Equals("competencia"))
                 {
 
                 }
@@ -85,25 +91,6 @@ namespace templateApp.GUI.Modulo10
         protected void bCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("M10_ListarAsistenciaEventos.aspx");
-        }
-
-        protected void calendar_DayRender(object sender, DayRenderEventArgs e)
-        {
-            if (tipo.Equals("evento"))
-            {
-                if (e.Day.IsSelected)
-                    e.Cell.BackColor = Color.Red;
-                else if (e.Day.Date == evento.Horario.FechaInicio)
-                    e.Cell.BackColor = Color.Blue;
-            }
-            else if (tipo.Equals("competencia"))
-            {
-                if (e.Day.IsSelected)
-                    e.Cell.BackColor = Color.Red;
-                else if (e.Day.Date == competencia.FechaInicio)
-                    e.Cell.BackColor = Color.Blue;
-            }
-
         }
     }
 }
