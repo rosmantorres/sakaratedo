@@ -151,11 +151,29 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @_asi_asistio.
+        /// </summary>
+        internal static string ParametroAsistencia {
+            get {
+                return ResourceManager.GetString("ParametroAsistencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_idEvento.
         /// </summary>
         internal static string ParametroIdEvento {
             get {
                 return ResourceManager.GetString("ParametroIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idInscripcion.
+        /// </summary>
+        internal static string ParametroIdInscripcion {
+            get {
+                return ResourceManager.GetString("ParametroIdInscripcion", resourceCulture);
             }
         }
         
@@ -192,6 +210,15 @@ namespace DatosSKD.Modulo10 {
         internal static string ProcedimientoAtletasInasitentes {
             get {
                 return ResourceManager.GetString("ProcedimientoAtletasInasitentes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ModicarAsistenciaE.
+        /// </summary>
+        internal static string ProcedimientoModificarAsistenciaE {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarAsistenciaE", resourceCulture);
             }
         }
     }
