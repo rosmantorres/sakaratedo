@@ -17,7 +17,7 @@ namespace templateApp.GUI.Modulo14
         private int idIns; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "14";
+            ((SKD)Page.Master).IdModulo = "14.1";
             if (!IsPostBack)
             {
                 int idSolicitud = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idSol]);
