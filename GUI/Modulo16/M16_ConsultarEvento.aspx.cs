@@ -23,7 +23,10 @@ namespace templateApp.GUI.Modulo16
 
             try
             {
-            
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name); 
+
                 M16_ConsultarEvento.usuario = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                 String detalleString = Request.QueryString["impDetalle"];
 
@@ -54,7 +57,10 @@ namespace templateApp.GUI.Modulo16
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TD;
                         this.laTabla.Text += M16_Recursointerfaz.CERRAR_TR;
                     }
-                }  
+                }
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
             catch(System.Web.HttpException ex)
             {
@@ -164,9 +170,17 @@ namespace templateApp.GUI.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 Evento elEvento = new Evento();
                 Logicaevento logica = new Logicaevento();
                 elEvento = logica.detalleEventoXId(Id_evento);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
             catch (System.Web.HttpException ex)
             {
@@ -265,12 +279,20 @@ namespace templateApp.GUI.Modulo16
         [System.Web.Services.WebMethod]
         public static string prueba(string id)
         {
-            try{        
+            try{
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
     
                 Evento elEvento = new Evento();
                 Logicaevento logica = new Logicaevento();
                 elEvento = logica.detalleEventoXId(int.Parse(id));
                 string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(elEvento);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return json;
 
             }
@@ -394,6 +416,10 @@ namespace templateApp.GUI.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 Logicacarrito logica = new Logicacarrito();
 
                 bool agregar = false;
@@ -401,6 +427,10 @@ namespace templateApp.GUI.Modulo16
                 agregar = logica.agregarEventoaCarrito(usuario, idEvento, cantidad, precio);
 
                 string json = new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(agregar);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return json;
             }
