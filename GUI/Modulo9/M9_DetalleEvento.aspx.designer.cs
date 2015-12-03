@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo9 {
     
     
-    public partial class M9_AgregarEventos {
+    public partial class M9_DetalleEvento {
         
         /// <summary>
         /// alert control.
@@ -22,13 +22,13 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// agregarEvento control.
+        /// detallerEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregarEvento;
+        protected global::System.Web.UI.HtmlControls.HtmlForm detallerEvento;
         
         /// <summary>
         /// nombreEvento control.
@@ -37,34 +37,16 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreEvento;
+        protected global::System.Web.UI.WebControls.Label nombreEvento;
         
         /// <summary>
-        /// divComboTipoEvento control.
+        /// tipoEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboTipoEvento;
-        
-        /// <summary>
-        /// comboTipoEvento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboTipoEvento;
-        
-        /// <summary>
-        /// otroEvento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox otroEvento;
+        protected global::System.Web.UI.WebControls.Label tipoEvento;
         
         /// <summary>
         /// costoEvento control.
@@ -73,7 +55,7 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox costoEvento;
+        protected global::System.Web.UI.WebControls.Label costoEvento;
         
         /// <summary>
         /// fechaInicio control.
@@ -82,7 +64,7 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaInicio;
+        protected global::System.Web.UI.WebControls.Label fechaInicio;
         
         /// <summary>
         /// fechaFin control.
@@ -91,7 +73,7 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaFin;
+        protected global::System.Web.UI.WebControls.Label fechaFin;
         
         /// <summary>
         /// horaInicio control.
@@ -100,7 +82,7 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox horaInicio;
+        protected global::System.Web.UI.WebControls.Label horaInicio;
         
         /// <summary>
         /// horaFin control.
@@ -109,7 +91,7 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox horaFin;
+        protected global::System.Web.UI.WebControls.Label horaFin;
         
         /// <summary>
         /// descripcionEvento control.
@@ -118,33 +100,15 @@ namespace templateApp.GUI.Modulo9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descripcionEvento;
+        protected global::System.Web.UI.WebControls.Label descripcionEvento;
         
         /// <summary>
-        /// inputEstadoActivo control.
+        /// statusEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton inputEstadoActivo;
-        
-        /// <summary>
-        /// inputEstadoInactivo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton inputEstadoInactivo;
-        
-        /// <summary>
-        /// btn_agregarEvento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregarEvento;
+        protected global::System.Web.UI.WebControls.Label statusEvento;
     }
 }

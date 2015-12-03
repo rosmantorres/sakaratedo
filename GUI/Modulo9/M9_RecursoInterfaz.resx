@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MensajeFinInfoLogger" xml:space="preserve">
-    <value>Salida del Método</value>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="MensajeInicioInfoLogger" xml:space="preserve">
-    <value>Entrada en el Método</value>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M9_DetalleEvento.aspx?EventDetalle=</value>
+  </data>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEvento.aspx?EventMod=</value>
+  </data>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
 </root>

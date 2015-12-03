@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo9 {
     
     
-    public partial class M9_AgregarEventos {
+    public partial class M9_ModificarEvento {
         
         /// <summary>
         /// alert control.
@@ -22,13 +22,13 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// agregarEvento control.
+        /// modificarEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregarEvento;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificarEvento;
         
         /// <summary>
         /// nombreEvento control.

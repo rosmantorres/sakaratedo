@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -48,13 +48,13 @@
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
+      <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -78,10 +78,6 @@
     <Content Include="App_Data\BaseDeDatosSKD.mdf" />
     <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
       <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
@@ -171,9 +167,7 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
-    <Content Include="CKEditor.NET.dll" />
     <Content Include="dist\css\inicio.css" />
-    <Content Include="dist\img\AvatarSKD.jpg" />
     <Content Include="dist\img\Dojo1.jpg" />
     <Content Include="dist\img\Dojo2.jpg" />
     <Content Include="dist\img\fondo_inicio.jpg" />
@@ -199,6 +193,7 @@
     <Content Include="GUI\Modulo11\M11_ModificarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
+    <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
     <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_ModificarCompetencias.aspx" />
@@ -525,9 +520,7 @@
     <Content Include="GUI\Modulo16\M16_VerCarrito.aspx" />
     <Content Include="GUI\Modulo1\css\styles.css" />
     <Content Include="GUI\Modulo1\Index.aspx" />
-    <Content Include="GUI\Modulo1\js\Login.js" />
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
-    <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
@@ -564,11 +557,10 @@
     <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
-    <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
+    <Content Include="GUI\Modulo9\M9_ModificarEvento.aspx" />
+    <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
-    <Content Include="GUI\Modulo9\M9_ModificarEventos.aspx" />
-    <Content Include="itextsharp.dll" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
     <Content Include="plugins\ckeditor\LICENSE.md" />
     <Content Include="plugins\ckeditor\plugins\scayt\LICENSE.md" />
@@ -608,12 +600,6 @@
     <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="GUI\Modulo14\ckeditor\skins\moono\readme.md" />
     <Content Include="plugins\jquery_validate\demo\captcha\fonts\Anorexia.ttf" />
-    <Content Include="plugins\jquery_validate\demo\captcha\images\image.php" />
-    <Content Include="plugins\jquery_validate\demo\captcha\image_req.php" />
-    <Content Include="plugins\jquery_validate\demo\captcha\index.php" />
-    <Content Include="plugins\jquery_validate\demo\captcha\newsession.php" />
-    <Content Include="plugins\jquery_validate\demo\captcha\process.php" />
-    <Content Include="plugins\jquery_validate\demo\captcha\rand.php" />
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
     <None Include="Web.Debug.config">
@@ -1765,9 +1751,7 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -2345,12 +2329,19 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.designer.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.designer.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ListarEventos.aspx.cs">
       <DependentUpon>M9_ListarEventos.aspx</DependentUpon>
@@ -2366,12 +2357,10 @@
     <Compile Include="GUI\Modulo9\M9_AgregarEventos.aspx.designer.cs">
       <DependentUpon>M9_AgregarEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.cs">
-      <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.designer.cs">
-      <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M9_RecursoInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2406,6 +2395,10 @@
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

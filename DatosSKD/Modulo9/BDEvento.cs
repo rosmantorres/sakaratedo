@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using DominioSKD;
+using ExcepcionesSKD;
 
 namespace DatosSKD.Modulo9
 {
+    /// <summary>
+    /// Clase encargada de Manejar Todas las Consultas a Base de Datos
+    /// </summary>
 
     public class BDEvento
     {
+        #region Constructores
+        public BDEvento() {
 
+        }
+
+        #endregion
+
+        #region Metodos
         /// <summary>
         /// Metodo que permite agregar un Evento a la BD
         /// </summary>
@@ -20,9 +31,12 @@ namespace DatosSKD.Modulo9
         /// <returns>Retorna true o false</returns>
         public bool CrearEvento(Evento evento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
                 //parametros para insertar un evento
+               
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
                 parametros.Add(parametro);
@@ -34,11 +48,11 @@ namespace DatosSKD.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, evento.Ubicacion.Id_ubicacion.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int,"1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo9.ParametroIdCategoria, SqlDbType.Int, evento.Categoria.Id_categoria.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdCategoria, SqlDbType.Int, "1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
                 parametros.Add(parametro);
@@ -56,10 +70,12 @@ namespace DatosSKD.Modulo9
 
                 if (resultados != null)
                 {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
                 else
                 {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
 
                 }
@@ -67,9 +83,281 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Metodo que permite agregar un Evento a la BD con un tipo de evento Nuevo
+        /// </summary>
+        /// <param name="evento"></param>
+        /// <returns></returns>
+        public bool CrearEventoConTipo(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                //parametros para insertar un evento
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroDescripcionEvento, SqlDbType.VarChar, evento.Descripcion, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, "1", false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroNombreTipoEvento, SqlDbType.VarChar, evento.TipoEvento.Nombre.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametros.Add(parametro);
+
+                BDConexion con = new BDConexion();
+                List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo9.ProcedimientoAgregarEventoConTipo, parametros);
+
+                //si la creacion es correcta retorna true
+
+                if (resultados != null)
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo que modifica un evento en BD
+        /// </summary>
+        /// <param name="evento">Evento a modificar</param>
+        /// <returns>Verdadero o Falso</returns>
+        public bool ModificarEvento(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+
+                
+                //parametros para insertar un evento
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdEvento, SqlDbType.Int, evento.Id_evento.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroDescripcionEvento, SqlDbType.VarChar, evento.Descripcion, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, "1", false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametros.Add(parametro);
+
+                BDConexion con = new BDConexion();
+                List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo9.ProcedimientoModificarEvento, parametros);
+
+                //si la creacion es correcta retorna true
+
+                if (resultados != null)
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo que modifica un evento al agregar un nuevo tipo de evento
+        /// </summary>
+        /// <param name="evento">el evento a modificar</param>
+        /// <returns>Verdadero o Falso</returns>
+
+        public bool ModificarEventoConTipo(Evento evento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+
+
+                //parametros para insertar un evento
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdEvento, SqlDbType.Int, evento.Id_evento.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroDescripcionEvento, SqlDbType.VarChar, evento.Descripcion, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroCostoEvento, SqlDbType.Float, evento.Costo.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroEstadoEvento, SqlDbType.VarChar, evento.Estado.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroIdUbicacion, SqlDbType.Int, "1", false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroNombreTipoEvento, SqlDbType.VarChar, evento.TipoEvento.Nombre.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaInicio, SqlDbType.Date, evento.Horario.FechaInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo9.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametros.Add(parametro);
+
+                BDConexion con = new BDConexion();
+                List<Resultado> resultados = con.EjecutarStoredProcedure(RecursosBDModulo9.ProcedimientoModificarEventoConTipo, parametros);
+
+                //si la creacion es correcta retorna true
+
+                if (resultados != null)
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
         }
 
         /// <summary>
@@ -77,17 +365,19 @@ namespace DatosSKD.Modulo9
         /// </summary>
         /// <returns>lista de eventos</returns>
 
-
-        public List<Evento> ListarEventos()
+        public List<Evento> ListarEventos(int idPersona)
         {
             BDConexion laConexion;
             List<Evento> listaEventos = new List<Evento>();
             List<Parametro> parametros;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo9.ParametroIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarEventos, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
@@ -114,24 +404,98 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return listaEventos;
+
+        }
+
+
+        /// <summary>
+        /// Metodo que trae de BD todos los tipos de eventos con sus ID
+        /// </summary>
+        /// <returns>Lista de TipoEvento</returns>
+
+
+        public List<TipoEvento> ListarTiposEventos()
+        {
+            BDConexion laConexion;
+            List<TipoEvento> listaTipos = new List<TipoEvento>();
+            List<Parametro> parametros;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo9.ProcedimientoConsultarTiposEventos, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    TipoEvento tipo = new TipoEvento();
+
+                    tipo.Id = int.Parse(row[RecursosBDModulo9.AliasIDTipoEvento].ToString());
+                    //Console.Out.WriteLine(evento.Id_evento);
+                    tipo.Nombre = row[RecursosBDModulo9.AliasTipoEvento].ToString();
+                    listaTipos.Add(tipo);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
+            return listaTipos;
 
         }
 
@@ -141,10 +505,14 @@ namespace DatosSKD.Modulo9
         /// <param name="idEvento">Id del evento</param>
         /// <returns>Retorna un evento</returns>
 
+
+
         public Evento ConsultarEvento(String idEvento)
         {
             BDConexion laConexion;
             Evento evento;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             try
             {
                 Console.Out.WriteLine(idEvento);
@@ -171,6 +539,7 @@ namespace DatosSKD.Modulo9
                     horario.HoraInicio = int.Parse(row[RecursosBDModulo9.AliasHoraInicio].ToString());
                     horario.HoraFin = int.Parse(row[RecursosBDModulo9.AliasHoraFin].ToString());
                     TipoEvento tipoEvento = new TipoEvento();
+                    tipoEvento.Id = int.Parse(row[RecursosBDModulo9.AliasIDTipoEvento].ToString());
                     tipoEvento.Nombre = row[RecursosBDModulo9.AliasTipoEvento].ToString();
                     evento.Horario = horario;
                     evento.TipoEvento = tipoEvento;
@@ -180,22 +549,32 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return evento;
 
 
@@ -211,6 +590,7 @@ namespace DatosSKD.Modulo9
             BDConexion laConexion;
             List<Horario> listaHorarios = new List<Horario>();
             List<Parametro> parametros;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
@@ -231,22 +611,32 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
 
             return listaHorarios;
 
@@ -269,6 +659,7 @@ namespace DatosSKD.Modulo9
             parametros.Add(parametro);
             parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, fechaFin, false);
             parametros.Add(parametro);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
@@ -298,22 +689,32 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
 
             return listaEventos;
 
@@ -329,6 +730,7 @@ namespace DatosSKD.Modulo9
             BDConexion laConexion;
             List<Horario> listaHorarios = new List<Horario>();
             List<Parametro> parametros;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
@@ -349,22 +751,32 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
 
             return listaHorarios;
 
@@ -386,6 +798,8 @@ namespace DatosSKD.Modulo9
             parametros.Add(parametro);
             parametro = new Parametro(RecursosBDModulo9.ParametroFechaFin, SqlDbType.Date, fechaFin, false);
             parametros.Add(parametro);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
 
             try
             {
@@ -415,26 +829,38 @@ namespace DatosSKD.Modulo9
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
                      RecursosBDModulo9.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
 
             return listaEventos;
 
         }
+
+        #endregion
     }
 }
 
