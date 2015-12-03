@@ -253,10 +253,9 @@
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
                                 <option value="3">Transferencia</option>
-                                
-                                  </select>
+                                </select>
                 
-                                         </div>
+                  </div>
             </div>
         </div>
         <h4 class="modal-title">Tarjeta Credito/Debito</h4>
@@ -324,7 +323,7 @@
 		    <div class="box-footer">
 			<%--<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>--%>
                <%--  <asp:Button id="Boton1" style="align-content:flex-end" OnClick="registrarPago" runat="server" Disabled="disabled" class="btn btn-primary" Text="Registrar Pago" type ="submit" /> --%>
-                <asp:Button ID="Boton1" runat="server" Text="Button" OnClick ="registrarPago" />
+                <asp:Button ID="Boton1" runat="server" Text="Procesar Pago" OnClick ="registrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
