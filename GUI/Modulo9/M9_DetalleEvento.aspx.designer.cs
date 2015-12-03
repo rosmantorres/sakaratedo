@@ -22,13 +22,13 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// agregarEvento control.
+        /// detallerEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregarEvento;
+        protected global::System.Web.UI.HtmlControls.HtmlForm detallerEvento;
         
         /// <summary>
         /// nombreEvento control.

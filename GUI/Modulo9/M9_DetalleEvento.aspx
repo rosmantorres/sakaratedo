@@ -19,7 +19,7 @@
 		    </li>	
 		
 		    <li class="active">
-			    <a href="#">Agregar Evento</a> 
+			    <a href="#">Detalle del Evento</a> 
 		    </li>
 	    </ol>
     </div>
@@ -42,7 +42,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form runat="server" role="form" name="agregarEvento" id="agregarEvento" method="post">
+<form runat="server" role="form" name="detallerEvento" id="detallerEvento" method="post">
     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
         <div class="panel-group ">
             <div class="panel panel-primary">

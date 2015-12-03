@@ -19,7 +19,7 @@
 		    </li>	
 		
 		    <li class="active">
-			    <a href="#">Agregar Evento</a> 
+			    <a href="#">Modificar Evento</a> 
 		    </li>
 	    </ol>
     </div>
@@ -28,7 +28,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gesti&oacute;n de Eventos</asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Agregar Evento</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Modificar Evento</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
         <div id="alert" runat="server">
@@ -38,11 +38,11 @@
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
-   <h1 class="box-title">Nuevo Evento</h1>
+   <h1 class="box-title">Evento</h1>
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form runat="server" role="form" name="agregarEvento" id="agregarEvento" method="post">
+<form runat="server" role="form" name="modificarEvento" id="modificarEvento" method="post">
     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
         <div class="panel-group ">
             <div class="panel panel-primary">

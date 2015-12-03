@@ -149,7 +149,9 @@ namespace templateApp.GUI.Modulo9
                 }
                 else
                 {
-                    //error
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>El nombre no puede estar vacio</div>";
                 }
                 if (!descripcionEvento.Text.Equals(""))
                 {
@@ -157,7 +159,9 @@ namespace templateApp.GUI.Modulo9
                 }
                 else
                 {
-                    //error
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>La Descripcion no puede estar vacia</div>";
                 }
 
 
@@ -169,7 +173,9 @@ namespace templateApp.GUI.Modulo9
                 }
                 else
                 {
-                    //error
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Agregar un costo</div>";
                 }
                 String inicio = horaInicio.Text.ToString();
                 String fin = horaFin.Text.ToString();
@@ -187,7 +193,9 @@ namespace templateApp.GUI.Modulo9
 
                 if (index.Equals(0))
                 {
-                    //error seleccione un tipo de evento
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Seleccione un tipo de evento</div>";
                 }
                 else if (index.Equals(size))
                 {
@@ -274,7 +282,7 @@ namespace templateApp.GUI.Modulo9
 
                 alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                 alert.Attributes["role"] = "alert";
-                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un Error en el sistema</div>";
+                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un Error en el sistema general</div>";
 
             }
 

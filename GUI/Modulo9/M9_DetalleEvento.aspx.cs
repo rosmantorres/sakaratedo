@@ -58,7 +58,7 @@ namespace templateApp.GUI.Modulo9
                 {
                     alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error SDK</div>";
 
                 }
                 catch (NullReferenceException ex)
@@ -66,7 +66,7 @@ namespace templateApp.GUI.Modulo9
 
                     alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>ERROR en referencia</div>";
 
                 }
                 catch (Exception ex)
@@ -74,7 +74,7 @@ namespace templateApp.GUI.Modulo9
 
                     alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Message + "</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Ha ocurrido un error en el sistema</div>";
 
                 }
             }
