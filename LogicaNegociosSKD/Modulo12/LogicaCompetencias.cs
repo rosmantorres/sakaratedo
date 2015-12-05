@@ -14,7 +14,7 @@ namespace LogicaNegociosSKD.Modulo12
         #region Atributos
 
         private List<DominioSKD.Competencia> laListaDeCompetencias;
-        BDCompetencia bdCompetencia;
+       
 
         #endregion
 
@@ -29,20 +29,17 @@ namespace LogicaNegociosSKD.Modulo12
         #region Metodos Logica
         public LogicaCompetencias()
         {
-            bdCompetencia = new BDCompetencia();
         }
 
         public List<DominioSKD.Competencia> obtenerListaDeCompetencias()
         {
-      
-
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try 
             {
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return bdCompetencia.ListarCompetencias();
+                return BDCompetencia.ListarCompetencias();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -73,7 +70,7 @@ namespace LogicaNegociosSKD.Modulo12
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return bdCompetencia.M12ListarOrganizaciones();
+                return BDCompetencia.M12ListarOrganizaciones();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -102,7 +99,7 @@ namespace LogicaNegociosSKD.Modulo12
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return bdCompetencia.M12ListarCintas();
+                return BDCompetencia.M12ListarCintas();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -132,7 +129,7 @@ namespace LogicaNegociosSKD.Modulo12
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return bdCompetencia.DetallarCompetencia(elIdCompetencia);
+                return BDCompetencia.DetallarCompetencia(elIdCompetencia);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -168,7 +165,7 @@ namespace LogicaNegociosSKD.Modulo12
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return bdCompetencia.AgregarCompetencia(laCompetencia);
+                return BDCompetencia.AgregarCompetencia(laCompetencia);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -195,50 +192,6 @@ namespace LogicaNegociosSKD.Modulo12
                 throw ex;
             }
         }
-
-        public bool modificarCompetencia(DominioSKD.Competencia laCompetencia)
-        {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
-            {
-
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                return bdCompetencia.ModificarCompetencia(laCompetencia);
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo12.CompetenciaInexistenteException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-        }
-
-
         #endregion
  
     }

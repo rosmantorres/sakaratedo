@@ -21,6 +21,7 @@ namespace DominioSKD
         private String orgNombre_dojo;
         private int organizacion_dojo;
         private Ubicacion ubicacion;
+        private string estilo_dojo;
         #endregion
 
         #region propiedades
@@ -31,13 +32,7 @@ namespace DominioSKD
 
             set { registro_dojo = value; }
         }
-
-        public int Dojo_Id
-        {
-            get { return id_dojo; }
-            set { id_dojo = value; }
-        }
-      
+        
         public int Id_dojo
         {
             get { return id_dojo; }
@@ -50,6 +45,11 @@ namespace DominioSKD
             set { orgNombre_dojo = value; }
         }
 
+        public String Estilo_dojo
+        {
+            get { return estilo_dojo; }
+            set { estilo_dojo = value; }
+        }
         public int Telefono_dojo
         {
             get { return telefono_dojo; }

@@ -89,7 +89,8 @@
               <div class="box">
         <div class="box-header">
                       <h3 class="box-title">Competencias</h3>
-        </div><!-- /.box-header -->
+        </div>
+                  <!-- /.box-header -->
 
     <div class="box-body table-responsive">
         <table id="tablacompetencias" class="table table-bordered table-striped dataTable">

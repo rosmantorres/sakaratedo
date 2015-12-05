@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExcepcionesSKD;
+
 
 namespace DominioSKD
 {
@@ -41,8 +41,6 @@ namespace DominioSKD
         /// </exception>
         private void CheckDigits(String value)
         {
-            if (!value.All(char.IsDigit))
-                    throw new InformacionPersonalInvalidaException("La información de Telefono solo deben ser digitos.");
         }
 
         /// <summary>
@@ -55,8 +53,7 @@ namespace DominioSKD
         /// </exception>
         private void CheckLength(String value, int length)
         {
-            if (value.Length != length)
-                throw new InformacionPersonalInvalidaException("La información de Telefono no tiene el tamaño de un número telefónico.");
+            
         }
         #endregion
 

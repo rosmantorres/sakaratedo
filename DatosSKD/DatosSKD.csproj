@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="Modulo10\BDAsistencia.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,21 +78,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo13.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo14\BDDatos.cs" />
-    <Compile Include="Modulo14\BDDiseño.cs" />
-    <Compile Include="Modulo14\BDPlanilla.cs" />
-    <Compile Include="Modulo14\BDSolicitud.cs" />
     <Compile Include="Modulo14\RecursosBDModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\ConexionBaseDatos.cs" />
     <Compile Include="Modulo15\RecursosBDModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo16\BDCarrito.cs" />
+    <Compile Include="Modulo16\BDCompra.cs" />
+    <Compile Include="Modulo16\BDEvento.cs" />
+    <Compile Include="Modulo16\BDInventario.cs" />
+    <Compile Include="Modulo16\BDMatricula.cs" />
     <Compile Include="Modulo16\RecursosBDModulo16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +105,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\BDRol.cs" />
     <Compile Include="Modulo2\BDRoles.cs" />
     <Compile Include="Modulo2\RecursosBDModulo2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -116,6 +118,7 @@
       <DependentUpon>RecursosBDModulo3.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\BDDojo.cs" />
+    <Compile Include="Modulo4\BDHistorial_Matricula.cs" />
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,7 +129,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo5.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo6\BDListarUsuarios.cs" />
     <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,25 +139,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo8\BDRestriccionCinta.cs" />
-    <Compile Include="Modulo8\BDRestriccionCompetencia.cs" />
-    <Compile Include="Modulo8\BDRestriccionEvento.cs" />
-    <Compile Include="Modulo8\RecursoBDRestriccionCinta.Designer.cs">
+    <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursoBDRestriccionCinta.resx</DependentUpon>
+      <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo8\RecursosBDRestriccionEvento.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDRestriccionEvento.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo8\RecursosBDRestriccionCompetencia.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDRestriccionCompetencia.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\BDEvento.cs" />
     <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,6 +190,7 @@
     <EmbeddedResource Include="Modulo1\RecursosBDModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosBDModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -227,17 +216,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo8\RecursoBDRestriccionCinta.resx">
+    <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursoBDRestriccionCinta.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo8\RecursosBDRestriccionEvento.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDRestriccionEvento.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo8\RecursosBDRestriccionCompetencia.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDRestriccionCompetencia.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\RecursosBDModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -277,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliminarItem.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

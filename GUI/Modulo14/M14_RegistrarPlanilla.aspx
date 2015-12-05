@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M14_RegistrarPlanilla.aspx.cs" Inherits="templateApp.GUI.Modulo14.M14_RegistrarPlanilla" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/Modulo14/M14_AgregarEliminarDatos.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 
@@ -12,12 +13,9 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Planillas</a> 
+			    <a href="M14_ConsultarPlanillas.aspx">Gestión de planillas</a>
 		    </li>
 
-            <li>
-			    <a href="#">Gestión de Planillas</a> 
-		    </li>
 		
 		    <li class="active">
 			    Registrar Planilla
@@ -31,18 +29,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Registrar Planilla</asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-     <div id="alert" runat="server">
-    </div>
-    <div class="row">
-   <div class="col-xs-12">
-     <div class="box">
-      <!-- general form elements -->
+   <!-- general form elements -->
   <div class="box-header with-border">
    <h3 class="box-title">Nueva Planilla</h3>
   </div>
   <!-- /.box-header -->
   <!-- form start -->
-  <form role="form" name="agregar_planilla" id="agregar_planilla" method="post" action="M14_RegistrarPlanilla.aspx?success=1"  runat="server">
+  <form role="form" name="agregar_planilla" id="agregar_planilla" method="post" action="M14_RegistrarPlanilla.aspx?success=1">
    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
       <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
          <div id="alertlocal" runat="server">
@@ -51,69 +44,64 @@
           <div class="col-sm-3 col-md-3 col-lg-3">
             <label>Seleccione el tipo de planilla:</label>  
           </div>
-          <div class="col-sm-8 col-md-8 col-lg-84">
-             <div class="dropdown" runat="server" id="divComboTipoPlanilla" >
-                 <asp:DropDownList ID="comboTipoPlanilla" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboTipoPlanilla_SelectedIndexChanged">
-                 </asp:DropDownList>
-              </div>
-           </div>
+          <div class="col-sm-8 col-md-8 col-lg-8">
+             <div class="btn-group">
+            <button id="id_tipos" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            Selecionar...<span class="caret"></span>
+            </button>
+            <ol id="dp1" class="dropdown-menu" role="menu"  onclick="cargartipo();">
+               <li value="1"><a href="#">Retiro</a></li>
+               <li value="2"><a href="#">Asistencia</a></li>
+            </ol>
+         </div>
      </div>
 
-    <div class="form-group  col-sm-10 col-md-10 col-lg-10">
+  <!--  <div class="form-group  col-sm-10 col-md-10 col-lg-10">
        <div  id="id_otro" runat="server">
         <br/>
           <h3>Nombre del tipo de Planilla</h3>
            <input id="id_nombretipo" type="text" placeholder="Nombre Tipo Planilla" class="form-control" name="NombreTipoPlanilla" runat="server" />
         </div>
-     </div>
-     <div class="form-group  col-sm-10 col-md-10 col-lg-10">
+     </div>-->
+     <div class="form-group  col-sm-12 col-md-12 col-lg-12"">
       <br/>
       <h3>Nombre de Planilla</h3>
-      <input id="id_nombrePlanilla" type="text" placeholder="Nombre Planilla" class="form-control" name="NombrePlanilla" runat="server" />
+      <input id="Text1" type="text" placeholder="NombrePlanilla" class="form-control" name="NombrePlanilla" runat="server" />
      </div>
     
     <div class="form-group">
       <div id="div-dat" class="col-sm-12 col-md-12 col-lg-12">
          <h3>Datos Disponibles</h3>
-
-          <asp:ListBox ID="ListBox1" runat="server" Width="860px" Height="130px">
-             <asp:ListItem Text="DOJO" Value="DOJO" Selected="True" />
-             <asp:ListItem Text="PERSONA" Value="PERSONA" />
-             <asp:ListItem Text="EVENTO" Value="EVENTO" />
-             <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
-             <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
-            <asp:ListItem Text="MATRICULA" Value="MATRICULA"  />
-
-          </asp:ListBox>
+          <select multiple="multiple" name="dat_primary" size="4" class="form-control select select-primary select-block mbl">
+            <option value="Dojo">Dojo</option>
+            <option value="Atleta">Atleta</option>
+            <option value="Competencia">Competencia</option>
+            <option value="Asistencia">Asistencia</option>
+            <option value="Instructor">Instructor</option>
+            <option value="Representante">Representante</option>
+          </select>
           <br/>
-         <div class="text-center padding-small col-sm-10 col-md-10 col-lg-10">
-            <asp:LinkButton class="btn btn-default"  type="submit" runat="server" Text="<span class='glyphicon glyphicon-chevron-down'></span>" AutoPostBack="true" OnClick="AgregarDato_Click"></asp:LinkButton>
-            <asp:LinkButton  class="btn btn-default"  type="submit" runat="server"  Text="<span class='glyphicon glyphicon-chevron-up'></span>" AutoPostBack="true" OnClick="QuitarDato_Click" ></asp:LinkButton>
+         <div class="text-center padding-small">
+            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-down" onclick="agregarDat()"></button>
+            <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-chevron-up" onclick="eliminarDat()"></button>
          </div>
-          <br />
-         <h3>Datos Seleccionados</h3>
-          <asp:ListBox ID="ListBox2" runat="server" Width="860px" Height="130px"></asp:ListBox>
-        <br />
+         <h3>Organizaciones Seleccionadas</h3>
+         <select multiple="multiple" name="dat_secondary" size="4" class="form-control select select-primary select-block mbl"></select>
+         <br />
          <br />
       </div>
    </div>
 
- </div>
-        
+ </div>  </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="btnaceptar" class="btn btn-primary"  type="submit" runat="server" Text = "Agregar" OnClick="btnaceptar_Click"  ></asp:Button>
-         &nbsp;&nbsp
+        <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M14_ConsultarPlanillas.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+          &nbsp;&nbsp
          <a class="btn btn-default" href="M14_ConsultarPlanillas.aspx">Cancelar</a>
       </div>
-    
-  
-  </form>
-         </div>
-   </div>
+   </form>
 
- </div>
 <!-- /.box -->
 </asp:Content>

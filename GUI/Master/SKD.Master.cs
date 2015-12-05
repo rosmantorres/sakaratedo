@@ -8,17 +8,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
 using templateApp.GUI.Modulo1;
-using DominioSKD;
-using LogicaNegociosSKD.Modulo2;
 
 namespace templateApp
 {
     public partial class SKD : System.Web.UI.MasterPage
     {
         private string idModulo;
-        public Cuenta userLogin = new Cuenta();
-        public string DES=RecursosLogicaModulo2.claveDES;
-        public AlgoritmoDeEncriptacion cripto=new AlgoritmoDeEncriptacion();
         private Dictionary<string, string> opcionesDelMenu = new Dictionary<string, string>();
         private Dictionary<string, string[,]> subOpcionesDelMenu = new Dictionary<string, string[,]>(); //Se guardaran las sub opciones del menú
         private string[] rolesUsuario = new string[10];//los roles que el usuario tiene registrado
@@ -46,61 +41,42 @@ namespace templateApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if(Session[RecursosInterfazMaster.sessionUsuarioID]!=null)
             {
-                if (Session[RecursosInterfazMaster.sessionUsuarioID].ToString() != null)
-                {
-                    XmlDocument doc = new XmlDocument();
-                    doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
-                    idModulo = IdModulo;
-                    foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-                        foreach (XmlNode subNode in node.ChildNodes)
-                            if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) &&
-                                subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(IdModulo))
-                            {
-                                OpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] =
-                                    node.Attributes[RecursosInterfazMaster.tagLink].InnerText;
-                                break;
-                            }
-                    asignarUsuario();
-                    DropDownMenu();
-                }
-                else
-                    Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
-
+            XmlDocument doc = new XmlDocument();
+            doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
+            idModulo = IdModulo;
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+                foreach (XmlNode subNode in node.ChildNodes)
+                    if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) && 
+                        subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(IdModulo))
+                    {
+                        OpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] =
+                            node.Attributes[RecursosInterfazMaster.tagLink].InnerText;
+                        break;
+                    }
+            asignarUsuario();
+            DropDownMenu();
             }
-            catch (NullReferenceException ex)
-            {
+            else
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
 
-            }
-            catch (Exception ex)
-            {
-
-            }
         }
-        
 
         /// <summary>
         /// Se realizan la asignacion de los datos de usuario a la plantilla (nombre,apellido, roles etc)
         /// </summary>
         protected void asignarUsuario()
         {
-            
-            string Stringhttp = RecursosInterfazMaster.AliasHttp;
-            char[] http = Stringhttp.ToCharArray();
-            string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString();
+            //aqui debo pedir el nombre,apellido y foto del usuario
 
-            if (imagen == "")
-            {
-                imagen = "../../dist/img/AvatarSKD.jpg";
-            }
-                imageUsuario.Src = imagen;
-                imageTag.Src = imagen;
+            imageUsuario.Src = imageUsuario.Src + "www.one2onephotography.ca/image/portrait/men/men-images-1.jpg";
+            imageTag.Src = imageTag.Src+"www.one2onephotography.ca/image/portrait/men/men-images-1.jpg";
 
-            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
+            userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
 
             //aqui va el nombre y apellido
-            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionNombreCompleto] ;
+            userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre] ;
             string[] roles = Session[RecursosInterfazMaster.sessionRoles].ToString().Split(char.Parse(RecursosInterfazMaster.splitRoles));
             int cont = 0;
             foreach (string perfil in roles)
@@ -108,15 +84,11 @@ namespace templateApp
                 rolesUsuario[cont] = perfil;
                 cont++;
             }
-            if (Request.QueryString[RecursosInterfazMaster.sessionRol] == RecursosInterfazMaster.sessionLogout)
+            if (Request.QueryString[RecursosInterfazMaster.sessionRol] ==RecursosInterfazMaster.sessionLogout)
                 logout();
+            if (Request.QueryString[RecursosInterfazMaster.sessionRol] != null)
+                Session[RecursosInterfazMaster.sessionRol] = Request.QueryString[RecursosInterfazMaster.sessionRol];
 
-                string rol = cripto.DesencriptarCadenaDeCaracteres
-                    (Request.QueryString[RecursosInterfazMaster.sessionRol], RecursosLogicaModulo2.claveDES);
-
-
-                if (rol != null)
-                    Session[RecursosInterfazMaster.sessionRol] = rol;
 
         }
 
@@ -183,7 +155,6 @@ namespace templateApp
             Session.Remove(RecursosInterfazMaster.sessionRoles);
             Session.Remove(RecursosInterfazMaster.sessionUsuarioID);
             Session.Remove(RecursosInterfazMaster.sessionUsuarioNombre);
-            Session.Remove(RecursosInterfazMaster.sessionImagen);
             Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
         }
     }

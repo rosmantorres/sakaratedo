@@ -40,7 +40,10 @@
     <Reference Include="itextsharp">
       <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+=======
+>>>>>>> a4d415c65f409e2f670daf68b25e386836b9f30d
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
@@ -54,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo10\M10_PruebasBDAsistencia.cs" />
+    <Compile Include="Modulo10\M10_PruebasLogica.cs" />
     <Compile Include="Modulo10\RecursosPU_Mod10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,55 +69,50 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo12\PruebaLogicaCompetencias.cs" />
-    <Compile Include="Modulo12\PruebasBDCompetencias.cs" />
+    <Compile Include="Modulo12\RecursosPU_Mod12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosPU_Mod12.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo13\RecursosPU_Mod13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod13.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo14\PruebaBDDiseno.cs" />
-    <Compile Include="Modulo14\PruebaBDPlanilla.cs" />
-    <Compile Include="Modulo14\PruebaLogicaDiseno.cs" />
-    <Compile Include="Modulo14\PruebaLogicaPlanilla.cs" />
     <Compile Include="Modulo14\RecursosPU_Mod14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\PruebaDatos.cs" />
-    <Compile Include="Modulo15\PruebaInterfaz.cs" />
-    <Compile Include="Modulo15\PruebaLogica.cs" />
     <Compile Include="Modulo15\RecursosPU_Mod15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo16\PruebaBDCarrito.cs" />
+    <Compile Include="Modulo16\Pruebacarrito.cs" />
+    <Compile Include="Modulo16\Pruebalogicacarrito.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
-    <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
-    <Compile Include="Modulo1\PruebasUnitariasLogicaN.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod1.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo2\PruebasUnitariasDatos.cs" />
-    <Compile Include="Modulo2\PruebasUnitariasLogicaN.cs" />
     <Compile Include="Modulo2\RecursosPU_Mod2.Designer.cs">
-      <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod3.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo4\PruebaLogicaDojo.cs" />
     <Compile Include="Modulo4\RecursosPU_Mod4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,15 +133,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod7.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo8\PruebaBDRestriccionCompetencia.cs" />
-    <Compile Include="Modulo8\PruebaDBRestriccionEvento.cs" />
     <Compile Include="Modulo8\RecursosPU_Mod8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod8.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo9\M9_PruebasBdEvento.cs" />
-    <Compile Include="Modulo9\M9_PruebasLogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosPU_Mod9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,10 +158,6 @@
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Interfaz.csproj">
-      <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
-      <Name>Interfaz</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
       <Name>LogicaNegociosSKD</Name>
@@ -179,6 +171,10 @@
     <EmbeddedResource Include="Modulo11\RecursosPU_Mod11.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo12\RecursosPU_Mod12.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosPU_Mod12.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo13\RecursosPU_Mod13.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -234,13 +230,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
     <None Include="App.config" />
     <None Include="packages.config" />
     <Fakes Include="Fakes\nunit.framework.fakes" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\PruebasUnitariasSKD.dll.VisualState.xml" />
@@ -248,6 +244,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\App_Data\" />
+=======
+>>>>>>> a4d415c65f409e2f670daf68b25e386836b9f30d
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

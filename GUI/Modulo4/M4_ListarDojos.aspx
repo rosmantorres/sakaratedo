@@ -2,9 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script src="M4_js/M4_JSGoogleMaps.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
-
+     
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
@@ -35,7 +34,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Dojos
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    
+      <form runat="server" role="form" name="eliminar_Dojo" id="eliminar_Dojo" method="post" action="M4_ListarDojos.aspx?success=2">
+
         <div id="alert" runat="server">
     </div>
 
@@ -46,156 +46,26 @@
               <div class="box">
         <div class="box-header">
                       <h3 class="box-title">Dojos</h3>
-             &nbsp;&nbsp;&nbsp;&nbsp
-                     <a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo">
-                        </a>
                     
         </div><!-- /.box-header -->
-
+                 
     <div class="box-body table-responsive">
-        <table id="tabladojos" class="table table-bordered table-striped dataTable">
+         <table id="tablaDojo" class="table table-bordered table-striped dataTable" >
             <thead>
-				<tr>
-                      <th style="text-align:center">Foto</th>
-                    <th style="text-align:center">Rif</th>
-					<th style="text-align:center">Nombre</th>
-					<th style="text-align:center">Teléfono</th>
-                    <th style="text-align:center">Email</th>
-					<th style="text-align:center">Pais</th>
-                    <th style="text-align:center">Estado</th>
-                    <th style="text-align:center">Ciudad</th>
-                    <th style="text-align:center">Status</th>
-					<th style="text-align:center">Acciones</th>
-				</tr>
+				
+                    
+                    <asp:Literal runat="server" ID="sta"></asp:Literal>                      
+				
 			</thead>
 			<tbody>
-				<tr>
-                     <td><img src="Imagenes\Aikido.png" alt="" style="width:50px; height:auto;"></td>
-					<td class="id">J-17280493-1</td>
-					<td>Aikido</td>
-					<td>55-4567899</td>
-                    <td>Aikido@Dojo.com</td>
-					<td>Brasil</td>
-                    <td>Río de Janeiro</td>
-                    <td>Río de Janeiro</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\hokuto.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280434-1</td>
-					<td>hokuto</td>
-					<td>0212-4567811</td>
-                    <td>hokuto@Dojo.com</td>
-					<td>Venezuela</td>
-                    <td>Distrito Capital</td>
-                    <td>Caracas</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\Dai-Fu.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280422-1</td>
-					<td>Dai-Fu</td>
-					<td>0212-4533899</td>
-                      <td>Dai-Fu@Dojo.com</td>
-					<td>Colombia</td>
-                    <td>Distrito Capital</td>
-                    <td>Bogotá</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                     
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\Kaizen.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280433-1</td>
-					<td>Kaizen</td>
-					<td>0212-4567800</td>
-                    <td>Kaizen@Dojo.com</td>
-					<td>Chile</td>
-                    <td>Estado 4</td>
-                    <td>Santiago de Chile</td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\rendoki.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280456-1</td>
-					<td>rendoki</td>
-					<td>0212-4567867</td>
-                    <td>rendoki@Dojo.com</td>
-					<td>España</td>
-                    <td>Madrid</td>
-                    <td>Madrid </td>
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td><img src="Imagenes\bushido.jpg" alt="" style="width:60px; height:auto;"></td>
-					<td class="id">J-17280234-1</td>
-					<td>bushido</td>
-					<td>0212-2345678</td>
-                    <td>bushido@Dojo.com</td>
-					<td>Estados Unidos</td>
-                    <td>NY</td>
-                    <td>Edison</td> 
-                    <td><a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" >
-                            <input type="checkbox"  data-toggle="toggle" data-on="Activo" data-off="Inactivo" disabled>
-                        </a></td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-primary glyphicon glyphicon-map-marker" data-toggle="modal" data-target="#modal-maps" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M4_ModificaDojo.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>           
 			    </tbody>
             </table>
            </div>
        </div>
     </div>
 </div>
-
-
-
-
-        <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+     <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -211,68 +81,67 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+         <a id="btneliminarmatricula" type="button" class="btn btn-primary"  href="M4_ListarDojos.aspx?dojoEliminar=0" >Eliminar</a>
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div><!-- /.modal-delete-content -->
         </div><!-- /.modal-delete-dialog -->
       </div><!-- /.modal-delete -->
 
-<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Información De Dojo</h2>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<h3>Dojo</h3>
-                                 <img src="Imagenes/Aikido.png" width="150" height="150" alt="">
-								
-                                        <h4><b>Rif</b></h4>
-                                        <p>J-17280493-1</p>
-										<h4><b>Nombre</b><h4>
-                                         <p>Aikido</p>
-										<h4><b>Teléfono</b></h4>
-                                         <p>55-4567899</p>
-                                        <h4><b>País</b></h4>
-                                         <p>Brasil</p>
-                                        <h4><b>Estado</b></h4>
-                                         <p>Río de Janeiro</p>
-                                        <h4><b>Ciudad</b></h4>
-                                         <p>Río de Janeiro</p>
-                                        <h4><b>Reglamento Interno:</b></h4>
-                                         <p>1. Regla 1</p>
-                                         <p>2. Regla 2</p>
-                                         <p>3. Regla 3</p>
-                                         <p>4. Regla 4</p>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tablaDojo').DataTable();
 
-    <div id="modal-maps" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Ubicación Del Dojo</h2>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="maps">
-							  <div id="googleMap" style="width:500px;height:250px;"></div><br/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        var table = $('#tablaDojo').DataTable();
+        var dojo;
+        var tr;
 
-    <script src="M4_js/M4_TablaDojos_Accion.js"></script>
-      
+        var idEliminar;
 
+        // imprimir mensaje de confirmación de eliminar
+        $('a.eliminar_clase').click(function (e) {
+            idEliminar = $(this).attr("data-id");
+            //   alert(idEliminar);
+            $('#btneliminarmatricula').attr("href", "M4_ListarDojos.aspx?dojoEliminar=" + idEliminar);
+
+        });
+        $('#tablaDojo tbody').on('click', 'a.eliminar_clase', function (e) {
+            idEliminar = $(this).attr("data-id");
+            //   alert(idEliminar);
+            $('#btneliminarmatricula').attr("href", "M4_ListarDojos.aspx?dojoEliminar=" + idEliminar);
+
+        });
+
+        $('#tablaDojo tbody').on('click', 'a', function () {
+            if ($(this).parent().hasClass('selected')) {
+                dojo = $(this).parent().prev().prev().prev().prev().prev().text();
+                tr = $(this).parents('tr');//se guarda la fila seleccionada
+                $(this).parent().removeClass('selected');
+
+            }
+            else {
+                dojo = $(this).parent().prev().prev().prev().prev().prev().text();
+                tr = $(this).parents('tr');//se guarda la fila seleccionada
+                table.$('tr.selected').removeClass('selected');
+                $(this).parent().addClass('selected');
+            }
+        });
+
+
+
+        $('#modal-delete').on('show.bs.modal', function (event) {
+            var modal = $(this)
+            modal.find('.modal-title').text('Eliminar Dojo:  ' + dojo)
+            modal.find('#dojo').text(dojo)
+        })
+        $('#btn-eliminar').on('click', function () {
+            table.row(tr).remove().draw();//se elimina la fila de la tabla
+            $('#modal-delete').modal('hide');//se esconde el modal
+        });
+
+
+    });
+
+        </script>
 </asp:Content>
