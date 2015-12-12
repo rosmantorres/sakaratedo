@@ -383,9 +383,9 @@ namespace DatosSKD.Modulo10
             {
                 laConexion = new BDConexion();
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, idEvento, false);
                 parametros.Add(parametro);
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoAtletasInasitentes, parametros);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoInasistentesCompetencia, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -419,6 +419,44 @@ namespace DatosSKD.Modulo10
             return personas;
 
 
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos una asistencia de un atleta 
+        /// </summary>
+        /// <returns>true si se pudo modificar</returns>
+        public static void ModificarAsistenciaC(int ins, int com, string asistio)
+        {
+            try
+            {
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, ins.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistio, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, com.ToString(), false);
+                parametros.Add(parametro);
+
+
+                BDConexion conexion = new BDConexion();
+                conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoModificarAsistenciaC, parametros);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

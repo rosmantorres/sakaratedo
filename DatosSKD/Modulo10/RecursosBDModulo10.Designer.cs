@@ -268,6 +268,24 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_InasistentesAcompetencia.
+        /// </summary>
+        internal static string ProcedimientoInasistentesCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoInasistentesCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ModicarAsistenciaC.
+        /// </summary>
+        internal static string ProcedimientoModificarAsistenciaC {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarAsistenciaC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_ModicarAsistenciaE.
         /// </summary>
         internal static string ProcedimientoModificarAsistenciaE {

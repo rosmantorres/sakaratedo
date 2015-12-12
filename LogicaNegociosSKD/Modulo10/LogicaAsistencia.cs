@@ -50,7 +50,12 @@ namespace LogicaNegociosSKD.Modulo10
 
         public static void ModificarAsistenciaEvento(int ins, int eve, string asistio)
         {
-             BDAsistencia.ModificarAsistenciaE(ins, eve, asistio);
+            BDAsistencia.ModificarAsistenciaE(ins, eve, asistio);
+        }
+
+        public static void ModificarAsistenciaCompetencia(int ins, int com, string asistio)
+        {
+            BDAsistencia.ModificarAsistenciaC(ins, com, asistio);
         }
 
         public static Competencia consultarCompetenciasXID(String idCompetencia)
@@ -67,6 +72,12 @@ namespace LogicaNegociosSKD.Modulo10
         public static List<Persona> listaAsistentesCompetencia(String idEvento)
         {
             List<Persona> listaAtletas = BDAsistencia.listaAsistentesCompetencia(idEvento);
+            return listaAtletas;
+        }
+
+        public static List<Persona> listaNoAsistentesCompetencia(String idEvento)
+        {
+            List<Persona> listaAtletas = BDAsistencia.listaNoAsistentesCompetencia(idEvento);
             return listaAtletas;
         }
     }
