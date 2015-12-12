@@ -20,10 +20,10 @@ namespace PruebasUnitariasSKD.Modulo10
     {
         #region Atributos
         List<Evento> laLista;
-        Evento elEvento;
+        private Evento elEvento;
         private string idDeEvento;
         List<Competencia> laListaC;
-        Competencia laCompetencia;
+        private Competencia laCompetencia;
         List<Persona> ListaP;
         Persona laPersona;
 
@@ -37,11 +37,11 @@ namespace PruebasUnitariasSKD.Modulo10
         public void init()
         {
             laLista = new List<Evento>();
-            elEvento = new Evento();
-            laPersona = new Persona();
+            Evento elEvento = new Evento();
+            Persona laPersona = new Persona();
+            Competencia laCompetencia = new Competencia();
             ListaP = new List<Persona>();
             laListaC = new List<Competencia>();
-            laCompetencia = new Competencia();
             idDeEvento = "1";
       
         }
