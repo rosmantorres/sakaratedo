@@ -214,4 +214,10 @@
     <value>M10_AsistentesCompetencia</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ProcedimientoInasistentesCompetencia" xml:space="preserve">
+    <value>M10_InasistentesAcompetencia</value>
+  </data>
+  <data name="ProcedimientoModificarAsistenciaC" xml:space="preserve">
+    <value>M10_ModicarAsistenciaC</value>
+  </data>
 </root>
