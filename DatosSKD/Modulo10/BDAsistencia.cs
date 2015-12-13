@@ -459,5 +459,54 @@ namespace DatosSKD.Modulo10
             }
         }
 
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas inscritos a un evento especifico
+        /// </summary>
+        /// <returns>lista de atletas</returns>
+        public static List<Persona> listaAtletasInscritosEvento(string idEvento)
+        {
+            BDConexion laConexion;
+            List<Persona> personas = new List<Persona>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoAtletasInscritosEvento, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Persona persona = new Persona();
+
+                    persona.ID = int.Parse(row[RecursosBDModulo10.aliasIdPersona].ToString());
+                    persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString();
+                    persona.IdInscripcion = int.Parse(row[RecursosBDModulo10.aliasIdInscripcion].ToString());
+                    personas.Add(persona);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return personas;
+
+
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DatosSKD.Modulo10;
+using DatosSKD.Modulo9;
 using DominioSKD;
 using System;
 using System.Collections.Generic;
@@ -78,6 +79,49 @@ namespace LogicaNegociosSKD.Modulo10
         public static List<Persona> listaNoAsistentesCompetencia(String idEvento)
         {
             List<Persona> listaAtletas = BDAsistencia.listaNoAsistentesCompetencia(idEvento);
+            return listaAtletas;
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todas las fechas donde hay eventos
+        /// </summary>
+        /// <returns>Lista de Competencias</returns>
+        public static List<Horario> ListarHorariosEventos()
+        {
+            BDEvento baseE = new BDEvento();
+            List<Horario> listaHorario = baseE.ListarHorarios();
+            return listaHorario;
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todos los eventos por fecha
+        /// </summary>
+        /// <returns>Lista de Competencias</returns>
+        public static List<Evento> EventosPorFecha(String fechaInicio, String fechaFin)
+        {
+            BDEvento baseE = new BDEvento();
+            List<Evento> lista = new List<Evento>();
+            Evento evento = new Evento();
+            evento.Id_evento = 0;
+            evento.Nombre = RecursosLogicaModulo10.NombreEvento0;
+            lista.Add(evento);
+            List<Evento> listaEvento = baseE.EventosPorFecha(fechaInicio, fechaFin);
+            foreach (Evento evento2 in listaEvento)
+            {
+                lista.Add(evento2);
+            }
+            return lista;
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD una lista de atletas inscritos a un evento
+        /// </summary>
+        /// <param name="idEvento">Id del evento</param>
+        /// <returns>Objeto de tipo evento</returns>
+
+        public static List<Persona> inscritosAlEvento(String idEvento)
+        {
+            List<Persona> listaAtletas = BDAsistencia.listaAtletasInscritosEvento(idEvento);
             return listaAtletas;
         }
     }

@@ -259,6 +259,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_AtletasInscritosEvento.
+        /// </summary>
+        internal static string ProcedimientoAtletasInscritosEvento {
+            get {
+                return ResourceManager.GetString("ProcedimientoAtletasInscritosEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_ConsultarCompetenciaXid.
         /// </summary>
         internal static string ProcedimientoConsultarCompetenciaXID {
