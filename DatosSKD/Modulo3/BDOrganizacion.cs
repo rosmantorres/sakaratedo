@@ -15,7 +15,7 @@ namespace DatosSKD.Modulo3
 {
     public class BDOrganizacion
     {
-        //Agregar logger y acomodar la cosa con el estilo
+        //Agregar logger 
         public static bool AgregarOrganizacion(Organizacion laOrganizacion)
         {
             try
@@ -50,7 +50,7 @@ namespace DatosSKD.Modulo3
             return true;
         }
 
-        //Agregar logger y acomodar la cosa con el estilo
+        //Agregar logger 
         public static bool ModificarOrganizacion(Organizacion laOrganizacion)
         {
             try
@@ -112,9 +112,7 @@ namespace DatosSKD.Modulo3
             return true;
         }
         
-        
-
-        // completar
+    
         public static List<Organizacion> ListarOrganizaciones()
         {
 
@@ -128,8 +126,7 @@ namespace DatosSKD.Modulo3
                 parametros = new List<Parametro>();
 
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo3.ConsultarOrganizacion, parametros);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo3.ConsultarOrganizacion, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -158,8 +155,52 @@ namespace DatosSKD.Modulo3
             return laListaOrganizaciones;
         }
 
+        public static List<Organizacion> ComboOrganizaciones()
+        {
 
-        // completar nesecita encontrar primero la org
+            BDConexion laConexion;
+            List<Organizacion> laListaOrganizaciones = new List<Organizacion>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo3.ConsultarComboORG, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    laListaOrganizaciones.Add(new Organizacion(Int32.Parse(row[RecursosBDModulo3.AliasIdOrg].ToString()), row[RecursosBDModulo3.AliasNombreOrg].ToString()));
+                    
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+           
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return laListaOrganizaciones;
+        }
+  
         public static Organizacion ConsultarOrganizacionXId(int idOrganizacion)
         {
            BDConexion laConexion;

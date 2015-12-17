@@ -25,7 +25,7 @@
 		    </li>
 
 		    <li>
-			    <a href="../Modulo3/M3_ListarOrganizacion.aspx">Listar Organizaciones</a> 
+			    <a href="../Modulo3/M3_ConsultarOrganizacion.aspx">Listar Organizaciones</a> 
 		    </li>
 		    
             <li class="active">
@@ -146,7 +146,7 @@
                         
                     <asp:Button id="btnagregarOrganizacion" class="btn btn-primary" type="submit" runat="server" onclick="alertModificarOrganizacion();" Text="Agregar"></asp:Button>
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M3_ListarOrganizacion.aspx">Cancelar</a>
+                    <a class="btn btn-default" href="M3_ConsultarOrganizacion.aspx">Cancelar</a>
                   </div>
                    
                 </form>

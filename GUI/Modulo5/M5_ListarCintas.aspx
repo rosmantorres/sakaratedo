@@ -30,124 +30,36 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> 
     Listado de Cintas por Organización 
 </asp:Content> 
+
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server"> 
  
- 
-       <div class="form-group col-sm-10 col-md-10 col-lg-10 text-center"> 
-                                     <h3>Seleccione una Organización</h3> 
-
-                                     <select name="org_primary" class="form-control select select-primary select-block mbl" id="hola" runat="server"> 
-                                     <option>Org A</option> 
-                                     <option>Org B</option> 
-                                     <option>Org C</option>       
-                                     </select>
-                        <br /> 
-                                     <br /> 
-                        </div> <!-- Lista de Organizaciones --> 
- 
-     
-     <div id="alert" runat="server"> 
-    </div> 
- 
-    <div class="row"> 
-            <div class="col-xs-12"> 
-              <div class="box"> 
-                <div class="box-header"> 
-                  <h3 class="box-title">Hover Data Table</h3> 
-                </div><!-- /.box-header --> 
- 
- 
-    <div class="box-body table-responsive"> 
- 
-       <table id="example" class="table table-bordered table-striped dataTable"> 
-        <thead> 
+                                      <h3>Seleccione una Organización</h3> 
+<form role="form" name="consulta_org" id="consulta_org" method="post" runat="server">
+    
+<div class="form-group col-sm-10 col-md-10 col-lg-10">  
+<table id="ListaCintas" class="table-bordered table-striped dataTable">
+<thead>        
 <tr> 
-<th>ID</th> 
-<th >Color</th> 
-<th>Rango</th> 
-<th >Clasificacion</th> 
-                    <th >Significado</th> 
-                    <th >Orden</th> 
-<th style="text-align:right;">Acciones</th> 
+    <th>ID</th> 
+    <th >Color</th> 
+    <th>Rango</th> 
+    <th >Clasificacion</th> 
+    <th >Significado</th> 
+    <th >Orden</th> 
+    <th >Organizaci&oacuten</th> 
+    <th style="text-align:right;">Acciones</th> 
 </tr> 
 </thead> 
+<asp:Literal runat="server" ID="tabla"></asp:Literal>
+
 <tbody> 
-<tr> 
-<td class="id">1</td> 
-<td>Blanco</td> 
-<td>10mo</td> 
-<td>Kyu</td> 
-                    <td>Principiante</td> 
-<td>1</td> 
-                    <td> 
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a> 
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a> 
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a> 
-                     </td> 
-                </tr> 
-                <tr> 
-                    <td class="id">2</td> 
-<td>Amarillo</td> 
-<td>9no</td> 
-<td>Kyu</td> 
-                    <td>Posee plena disciplina.</td> 
-<td>2</td> 
-                    <td> 
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a> 
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a> 
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a> 
-                     </td> 
-</tr><tr> 
-                    <td class="id">3</td> 
-<td>Naranja</td> 
-<td>8vo</td> 
-<td>Kyu</td> 
-                    <td>Experto en las tecnicas eseniales</td> 
-<td>3</td> 
-                    <td> 
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a> 
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a> 
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a> 
-                     </td> 
-                </tr> 
-                <tr> 
-                    <td class="id">4</td> 
-<td>Negro</td> 
-<td>1er</td> 
-<td>Dan</td> 
-                    <td>Domina las tecnicas y posee disciplina</td> 
-<td>10</td> 
-                    <td> 
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a> 
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a> 
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a> 
-                     </td> 
-                </tr> 
-                <tr> 
-                <td class="id">5</td> 
-<td>Negro</td> 
-<td>2do</td> 
-<td>Dan</td> 
-                    <td>Decidido a superar metas para covertirse en maestro</td> 
-<td>12</td> 
-                    <td> 
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a> 
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx"></a> 
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a> 
-                    </td> 
-                </tr> 
-                 
- 
- 
- 
- 
-</tbody> 
-    </table> 
-        </div> 
-       </div> 
-                </div> 
-        </div> 
- 
+
+
+</tbody>
+</table>
+</div>
+
+</form>
  
         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true"> 
         <div class="modal-dialog"> 
@@ -187,7 +99,7 @@
 Shito Ryu 
     </p> 
 <h3>Direccion</h3> 
-<p> 
+<p>  
 El Paraiso 
 </p> 
 <h3>Persona Contacto</h3> 
@@ -206,6 +118,8 @@ kyoshinatera@gmail.com
 </div> 
 </div> 
  
+ 
+    
  
     <script type="text/javascript">
         $(document).ready(function () {
@@ -249,5 +163,6 @@ kyoshinatera@gmail.com
         });
 
         </script> 
+ 
  
 </asp:Content> 

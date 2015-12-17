@@ -31,6 +31,8 @@ namespace DatosSKD.Modulo5
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo5.ParamOrdenCinta, SqlDbType.Int, laCinta.Orden.ToString(), false);
                 parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDModulo5.ParamIdOrgCinta, SqlDbType.Int, laCinta.Organizacion.Id_organizacion.ToString(), false);
+                parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
                 parametros.Add(elParametro);
 
@@ -66,6 +68,8 @@ namespace DatosSKD.Modulo5
                 elParametro = new Parametro(RecursosBDModulo5.ParamSignificadoCinta, SqlDbType.VarChar, laCinta.Significado, false);
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo5.ParamOrdenCinta, SqlDbType.Int, laCinta.Orden.ToString(), false);
+                parametros.Add(elParametro);
+                elParametro = new Parametro(RecursosBDModulo5.ParamIdOrgCinta, SqlDbType.Int, laCinta.Organizacion.Id_organizacion.ToString(), false);
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
                 parametros.Add(elParametro);
@@ -123,7 +127,7 @@ namespace DatosSKD.Modulo5
 
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo5.ParamIdOrg, parametros);
+                               RecursosBDModulo5.ConsultarTodasLasCintas, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -166,12 +170,11 @@ namespace DatosSKD.Modulo5
                 parametros = new List<Parametro>();
                 Organizacion laOrganizacion = new Organizacion();
 
-                elParametro = new Parametro(RecursosBDModulo5.ParamIdOrg, SqlDbType.Int, idOrganizacion.ToString(),
-                                            false);
+                elParametro = new Parametro(RecursosBDModulo5.ParamIdOrg, SqlDbType.Int, idOrganizacion.ToString(), false);
                 parametros.Add(elParametro);
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo5.ConsultarCintasXOrganizacionId, parametros);
+                               RecursosBDModulo5.ConsultarTodasLasCintas, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {

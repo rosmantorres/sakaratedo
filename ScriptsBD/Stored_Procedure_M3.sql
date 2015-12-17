@@ -106,3 +106,13 @@ go
 
 --COMO PROBAR EL PROCEDIMIENTO
 --execute M3_ModificarOrganizacion "6","Prueba Karate-do","Av 24, calle 8 edificio Morales, Altamira, Caracas","2123117754","seitokaratedo@gmail.com","Distrito Federal","Cobra-do";
+
+
+CREATE procedure M3_ConsultarComboOrganizacion
+as
+	begin
+		select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
+		from ORGANIZACION org 
+		
+	end;
+go

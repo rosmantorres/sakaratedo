@@ -19,7 +19,7 @@ namespace DominioSKD
 
         private Organizacion organizacion;
 
-
+        private Boolean status;
 
         public int Id_cinta
         {
@@ -67,8 +67,13 @@ namespace DominioSKD
         {
             get { return organizacion; }
             set { organizacion = value; }
-        }  
+        }
 
+        public bool Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
         public Cinta()
         {
@@ -80,6 +85,7 @@ namespace DominioSKD
             significado = "";
             id_restriccion = 0;
             organizacion = null;
+            status = true;
         }
 
         
@@ -112,7 +118,7 @@ namespace DominioSKD
         }
 
         //De M5
-        public Cinta(int elId,String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, Organizacion organizacion)
+        public Cinta(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, Organizacion organizacion, Boolean status)
         {
             id_cinta = elId;
             color_nombre = elColor;
@@ -121,10 +127,11 @@ namespace DominioSKD
             orden = elOrden;
             significado = elSignificado;
             organizacion = null;
+            status = true;
 
         }
 
-        public Cinta(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, Organizacion organizacion)
+        public Cinta(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, Organizacion organizacion,Boolean status)
         {
             color_nombre = elColor;
             rango = elRango;
@@ -132,9 +139,17 @@ namespace DominioSKD
             orden = elOrden;
             significado = elSignificado;
             organizacion = null;
+            status = true;
 
         }
 
+
+        public Cinta(int elId, String elColor)
+        {
+            this.id_cinta = elId;
+            this.color_nombre = elColor;
+
+        }
 
     }
 }

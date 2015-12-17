@@ -100,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\PruebaBDCinta.cs" />
     <Compile Include="Modulo5\RecursosPU_Mod5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosSKD;
 using DatosSKD.Modulo5;
 using ExcepcionesSKD;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Modulo5
 {
@@ -59,9 +60,12 @@ namespace LogicaNegociosSKD.Modulo5
         public List<DominioSKD.Cinta> obtenerListaDeCintaXOrganizacion(int idOrganizacion)
         {
             try
-            {
+            {   
+                List<Cinta> listaCintas = new List<Cinta>();
 
-                return BDCinta.ListarCintasXOrganizacion(idOrganizacion);
+                listaCintas = BDCinta.ListarCintasXOrganizacion(idOrganizacion);
+
+                return listaCintas;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

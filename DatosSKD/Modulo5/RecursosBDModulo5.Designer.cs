@@ -160,6 +160,15 @@ namespace DatosSKD.Modulo5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarCintas.
+        /// </summary>
+        internal static string ConsultarTodasLasCintas {
+            get {
+                return ResourceManager.GetString("ConsultarTodasLasCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M5_EliminarCinta.
         /// </summary>
         internal static string EliminarCinta {
@@ -219,6 +228,15 @@ namespace DatosSKD.Modulo5 {
         internal static string ParamIdOrg {
             get {
                 return ResourceManager.GetString("ParamIdOrg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idOrganizacion.
+        /// </summary>
+        internal static string ParamIdOrgCinta {
+            get {
+                return ResourceManager.GetString("ParamIdOrgCinta", resourceCulture);
             }
         }
         

@@ -75,6 +75,10 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
+    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
+      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -520,11 +524,9 @@
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
-    <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
-    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
-    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
-    <Content Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
@@ -1766,6 +1768,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosInterfazModulo2.resx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
+      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
+      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1773,33 +1782,12 @@
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx.cs">
-      <DependentUpon>M3_ModificarOrganizacion2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx.designer.cs">
-      <DependentUpon>M3_ModificarOrganizacion2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx.cs">
-      <DependentUpon>M3_EliminarOrganizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx.designer.cs">
-      <DependentUpon>M3_EliminarOrganizacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
-      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
-      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
@@ -1842,6 +1830,11 @@
     </Compile>
     <Compile Include="GUI\Modulo5\M5_CrearCintas.aspx.designer.cs">
       <DependentUpon>M5_CrearCintas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo5\RecursoInterfazMod5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoInterfazMod5.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx.cs">
       <DependentUpon>M6_CrearUsuarioPre.aspx</DependentUpon>
@@ -2059,6 +2052,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo5\RecursoInterfazMod5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoInterfazMod5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="DominioSKD\DominioSKD.csproj">
@@ -2074,9 +2072,7 @@
       <Name>LogicaNegociosSKD</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

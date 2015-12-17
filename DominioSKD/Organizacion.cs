@@ -62,8 +62,8 @@ namespace DominioSKD
 
         public Organizacion(int elId, String elNombre)
         {
-            id_organizacion = elId;
-            nombre = elNombre;
+            this.id_organizacion = elId;
+            this.nombre = elNombre;
         }
 
         public Organizacion(String elNombre)
@@ -104,6 +104,7 @@ namespace DominioSKD
             estilo = elEstilo;
         }
 
-
+        
+    
     }
 }

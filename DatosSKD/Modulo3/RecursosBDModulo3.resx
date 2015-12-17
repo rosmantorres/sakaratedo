@@ -142,6 +142,9 @@
   <data name="AliasTelefonoOrg" xml:space="preserve">
     <value>telefonoOrganiacion</value>
   </data>
+  <data name="ConsultarComboORG" xml:space="preserve">
+    <value>M3_ConsultarComboOrganizacion</value>
+  </data>
   <data name="ConsultarOrganizacion" xml:space="preserve">
     <value>M3_ConsultarOrganizacion</value>
     <comment>funcion para consultar todas las organizaciones</comment>

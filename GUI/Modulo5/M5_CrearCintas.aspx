@@ -40,96 +40,49 @@
         <div class="box-header with-border">
                   <h3 class="box-title">Nueva Cinta</h3>
                 </div><!-- /.box-header -->
-        <div class="text-center">
-    <h3>Seleccione una Organización</h3>
-              <select name="org_primary" class="form-control select select-primary select-block mbl">
-        <option>Org A</option>
-        <option>Org B</option>
-        <option>Org C</option>      
-    </select>
-           
-
-    <br />
-    <br />
-    </div>   
-                         <!-- Lista de Organizaciones -->
-
-    <form class="form-horizontal" role="form">
-       
         
-    
-  <div class="form-group">
-    <label for="color" class="col-lg-2 control-label">*Color</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="cinta" placeholder="Color de cinta">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="ran" class="col-lg-2 control-label">*Rango</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="ran" placeholder="Rango de Cinta">
-    </div>
-  </div>
-   
-    <div class="form-group">
-    <label for="cat" class="col-lg-2 control-label">*Clasificacion</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="cate" placeholder="Dan o Kyu">
-    </div>
-  </div>
-
-         <div class="form-group">
-    <label for="significado" class="col-lg-2 control-label">*Significado</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="signi" placeholder="Significado de la cinta">
-    </div>
-  </div>
-
-
-                 <div class="form-group">
-    <label for="orden" class="col-lg-2 control-label">*Orden</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="ord" placeholder="Orden de la cinta">
-    </div>
-  </div>
-
-
-
- 
-        <div class="col-lg-2 control-label">
-     <p><b>* Campos obligatorios</b></p> 
-         </div>     
-        <br />                             
-
-
-        <div class="box-footer text-center">
-                    &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-modificarCintas" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="alertModificarCinta();">Agregar</button>
-                    &nbsp;&nbsp
-                    <a class="btn btn-default" href="M3_ListarCintas.aspx">Cancelar</a>
-                  </div>
-
- </form>
-  </div>  
-
- 
-
+     
+                                      <h3>Seleccione una Organización</h3> 
+<form role="form" name="consulta_org" id="consulta_org" method="post" runat="server">
+           
+     <div class="col-sm-8 col-md-8 col-lg-84">
+             <div class="dropdown" runat="server" id="divComboTipoListOrg"  >
+                 <asp:DropDownList ID="ListOrg" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList> <%-- OnSelectedIndexChanged="comboTipoPlanilla_SelectedIndexChanged"--%>
+              </div>
+      </div>
   
+    <br />
+    <br />
+       
+                         <!-- Lista de Organizaciones -->
+ 
+ <div class="container">   
+  <div class="row" >
+   <!--  <label for="color" class="col-lg-2 control-label">*Color</label>-->
+    <div class="col-xs-5">
+        <div id="id_otro" runat="server" class="form-group" > 
+             <input style="margin-top:5%" type="text" class="form-control" id="cinta" placeholder="Color de cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="ran" placeholder="Rango de Cinta" runat="server" >
+             <input style="margin-top:5%" type="text" class="form-control" id="cate" placeholder="Clasificación de la Cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="signi" placeholder="Significado de la cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="ord" placeholder="Orden de la cinta" runat="server">
+        </div>
+    </div>
+  </div>
+
+  <br />                             
 
 
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-
-            $('#aceptar').on('click', function () {
-
-                $('#alerta1').alert();
-
-            });
-
-        });
-
-    </script>
+  <div class="box-footer text-center">
+       &nbsp;&nbsp;&nbsp;&nbsp
+       <asp:Button id="btnCrearCintas" style="align-content:center" class="btn btn-primary" type="submit" OnClick="btnCrearCinta" runat="server" text= "Agregar"></asp:Button>
+       &nbsp;&nbsp
+       <a class="btn btn-default" href="M5_ListarCintas.aspx">Cancelar</a>
+  </div>
+</div>
+ </form>
+            
+  </div>  
 
 </asp:Content>
