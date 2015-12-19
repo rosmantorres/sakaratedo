@@ -63,13 +63,8 @@
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
     <div class="dropdown" runat="server" id="div1">
-        <asp:DropDownList ID="comboEventos"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
-              <asp:ListItem>Allahabad</asp:ListItem>
-              <asp:ListItem>Kanpur</asp:ListItem>
-              <asp:ListItem>Rewa</asp:ListItem>
-              <asp:ListItem>Bhopal</asp:ListItem>
-              <asp:ListItem>Indore</asp:ListItem>
-              <asp:ListItem>Jabalpur</asp:ListItem>
+        <asp:DropDownList ID="comboEventos"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboEventos_SelectedIndexChanged">
+            <asp:ListItem>Seleccionar Evento:</asp:ListItem>
         </asp:DropDownList>
     </div>
       </div>
