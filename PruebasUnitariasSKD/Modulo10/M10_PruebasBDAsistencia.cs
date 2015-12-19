@@ -22,14 +22,20 @@ namespace PruebasUnitariasSKD.Modulo10
         List<Evento> laLista;
         private Evento elEvento;
         private string idDeEvento;
+        private int idEvento;
         List<Competencia> laListaC;
         private Competencia laCompetencia;
         List<Persona> ListaP;
+        private int idPersona;
         Persona laPersona;
-
+        private int idInscripcion;
+        private Inscripcion inscripcion;
+        private Asistencia asistio;
+        private string asiste;
+        Competencia competencia;
+        private string idCompetencia;
 
         #endregion
-
 
         #region SetUp&TearDown
 
@@ -43,7 +49,10 @@ namespace PruebasUnitariasSKD.Modulo10
             ListaP = new List<Persona>();
             laListaC = new List<Competencia>();
             idDeEvento = "1";
-      
+            Inscripcion inscripcion = new Inscripcion();
+            idInscripcion = 10;
+            asiste = "Si";
+
         }
 
 
@@ -62,11 +71,10 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void PruebaListarEventosA()
         {
+
             laLista = BDAsistencia.ListarEventosAsistidos();
             Assert.IsNotNull(laLista);
-    
-        }
-
+    }
         [Test]
         public void PruebaListarAsistente()
         {
@@ -93,6 +101,49 @@ namespace PruebasUnitariasSKD.Modulo10
             Assert.IsNotNull(laListaC);
 
         }
+
+
+        [Test]
+        public void PruebaModificarAsitenteE()
+        {
+
+          
+        }
+
+
+
+        [Test]
+        public void PruebaConsultarCompetenciaXID(string idCompetencia)
+        {
+
+
+        }
+
+
+
+        [Test]
+        public void PruebaListarAsistenteCompetencia(string idEvento)
+        {
+
+
+        }
+
+
+        [Test]
+        public void PruebaListarNoAsistenteC(string idEvento)
+        {
+
+
+        }
+
+        [Test]
+        public void PruebaModificarAsistenciaC()
+        {
+
+
+        }
+
+
 
 
         #endregion

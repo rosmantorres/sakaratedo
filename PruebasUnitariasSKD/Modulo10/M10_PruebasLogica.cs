@@ -63,6 +63,40 @@ namespace PruebasUnitariasSKD.Modulo10
             Assert.IsNotNull(logica);
         }
 
+
+        [Test]
+        public void pruebaListarAsistentes()
+        {
+           
+        }
+
+
+        [Test]
+        public void pruebaListarNoAsistentes()
+        {
+          
+        }
+
+
+        [Test]
+        public void pruebaModificarAsistentesE()
+        {
+            
+        }
+
+        [Test]
+        public void pruebaConsultarCompetencia()
+        {
+
+        }
+
+
+        [Test]
+        public void pruebaListarEventosXID()
+        {
+
+        }
+
 #endregion
     }
 }
