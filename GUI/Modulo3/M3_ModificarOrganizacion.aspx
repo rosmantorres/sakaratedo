@@ -50,88 +50,60 @@
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" name="modificar_organizacion" id="modificar_organizacion" method="post" action="M3_ListarOrganizacion.aspx?success=1">
-                  <div class="box-body col-sm-12 col-md-12 col-lg-12 ">                   
-                      <br/>
-                      <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
-                      <p><b>* Nombre de la Organización:</b></p>
-                      <input type="text" name="nombreOrg" id="nombreOrg" placeholder="Nombre" class="form-control" value="Karate">
-                    </div>
-                      <br/>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>* Email:</b></p>
-                      <input type="email" name="emailOrg" id="emailOrg" placeholder="Email" class="form-control" value="Aikido@Org.com">
-                    </div>     
-                      <br/>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>* Número Telefónico:</b></p>
-                      <input type="text" name="numeroOrg" id="numeroOrg" placeholder="Número" class="form-control" value="55-4567899">
-                    </div>
-                      <br/>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <p><b>Direccion:</b></p>
-                      <input type="text" name="direccionOrg" id="direccionOrg" placeholder="Direccion" class="form-control" value="Direccion">
-                    </div>
-                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+       
+                                      
+<form role="form" name="consulta_org" id="consulta_org" method="post" runat="server">
+           
+ 
+ <div class="container">   
+  <div class="row" >
+   <!--  <label for="color" class="col-lg-2 control-label">*Color</label>-->
+    <div class="col-xs-5">
+        <div id="id_otro" runat="server" class="form-group" > 
+             <input style="margin-top:5%" type="text" class="form-control" id="nombre" placeholder="Nombre de la Organización" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="email" placeholder="Email" runat="server" >
+             <input style="margin-top:5%" type="text" class="form-control" id="telefono" placeholder="Número Telefónico" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="direccion" placeholder="Direccion" runat="server">
+        </div>
+    </div>
 
-                               <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
-                      <div class="col-sm-3 col-md-3 col-lg-3">
-                         <label>Estado:</label>  
-                      </div>
-                      <div class="col-sm-8 col-md-8 col-lg-8" >
-                         <div class="btn-group">
-                            <button id="estado" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Seleccionar:<span class="caret"></span>
-                            </button>
-                            <ol id="dp4" class="dropdown-menu" role="menu"  onclick="cargartecnica();">
-                               <li value="1"><a href="#">Distrito Federal</a></li>
-                               <li value="2"><a href="#">Falcon</a></li>
-                               <li value="1"><a href="#">Carabobo</a></li>
-                               <li value="2"><a href="#">Zulia</a></li>
-                               <li value="1"><a href="#">Guarico</a></li>
-                               
-                            </ol>
-                         </div>
-                         </div>
-                     
-                      </div>
+      <div class="col-sm-8 col-md-8 col-lg-84">
+      <div class="dropdown" runat="server" id="divComboEstado"  >
+                 <asp:DropDownList ID="ListEstados" style="margin-top:1%" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 <asp:listitem value ="-1">Seleccionar Estado</asp:listitem>
+                 <asp:listitem value ="Distrito Federal">Distrito Federal</asp:listitem>
+                 <asp:listitem value ="Falcon">Falcon</asp:listitem>
+                 </asp:DropDownList> 
+       </div>
+    </div>
 
-                     
-                      </div>
-                      <br/>
-                      <br/>
-                  <div class="form-group col-sm-12 col-md-12 col-lg-12"><!--COMBO 1-->
-                      <div class="col-sm-3 col-md-3 col-lg-3">
-                         <label>Técnica:</label>  
-                      </div>
-                      <div class="col-sm-8 col-md-8 col-lg-8" >
-                         <div class="btn-group">
-                            <button id="tecnica" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Seleccionar<span class="caret"></span>
-                            </button>
-                            <ol id="dp4" class="dropdown-menu" role="menu"  onclick="cargartecnica();">
-                               <li value="1"><a href="#">Cobra-do</a></li>
-                               <li value="2"><a href="#">Sistema libre de Karate</a></li>
-                               <li value="1"><a href="#">Shotokan</a></li>
-                               
-                            </ol>
-                         </div>
-                         </div>
-                     
-                      </div>
-                  </div>       
-                      
-                  <!-- /.box-body -->
+    <div class="col-sm-8 col-md-8 col-lg-84">
+       <div class="dropdown" runat="server" id="div1"  >
+                 <asp:DropDownList ID="ListTecnica" style="margin-top:3%" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 <asp:listitem value ="-1">Seleccionar Tecnica</asp:listitem>
+                 <asp:listitem value ="Cobra-do">Cobra-do</asp:listitem>
+                 <asp:listitem value ="Sistema libre de Karate">Sistema libre de Karate</asp:listitem>
+                 <asp:listitem value ="Shotokan">Shotokan</asp:listitem>
+                 </asp:DropDownList> 
+        </div>
+     </div>
+  
+  </div>
 
-                  <div class="box-footer">
-                    &nbsp;&nbsp;&nbsp;&nbsp
-                    <button id="btn-agregarOrganizacion" style="align-content:flex-end" class="btn btn-primary" type="submit" onclick="alertModificarOrganizacion();">Modificar</button>
-                    &nbsp;&nbsp
-                    <a class="btn btn-default" href="M3_ListarOrganizacion.aspx">Cancelar</a>
-                  </div>
+  <br />                             
 
-                </form>
-              </div>
+    
+  <div class="box-footer text-center">
+       &nbsp;&nbsp;&nbsp;&nbsp
+       <asp:Button id="btnmofificarOrganizacion" style="align-content:center" class="btn btn-primary" type="submit" OnClick="btnModificarOrganizaciones" runat="server" text= "Modificar"></asp:Button>
+       &nbsp;&nbsp
+       <a class="btn btn-default" href="M3_ConsultarOrganizacion.aspx">Cancelar</a>
+  </div>
+</div> <!-- /.container-->
+ </form>
+            
+  </div>  
+
     
     <!-- /.box -->
 </asp:Content>

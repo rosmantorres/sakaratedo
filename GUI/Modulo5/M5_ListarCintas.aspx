@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ListarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ListarCintas" %> 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> 
 </asp:Content> 
-<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server"> 
+<asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server"> 
 <%--Breadcrumbs--%> 
     <div> 
     <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);"> 
@@ -24,17 +24,26 @@
     </div> 
 <%--Fin_Breadcrumbs--%> 
 </asp:Content> 
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server"> 
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server"> 
     Gestión de Cintas 
 </asp:Content> 
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server"> 
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server"> 
     Listado de Cintas por Organización 
 </asp:Content> 
 
-<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server"> 
- 
-                                      <h3>Seleccione una Organización</h3> 
-<form role="form" name="consulta_org" id="consulta_org" method="post" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server"> 
+
+<div id="alert" runat="server"></div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+
+            <div class="box-header">
+                 <h3 class="box-title">Lista de Cintas</h3>
+            </div><!-- /.box-header -->
+
+<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server">
     
 <div class="form-group col-sm-10 col-md-10 col-lg-10">  
 <table id="ListaCintas" class="table-bordered table-striped dataTable">
@@ -50,9 +59,9 @@
     <th style="text-align:right;">Acciones</th> 
 </tr> 
 </thead> 
-<asp:Literal runat="server" ID="tabla"></asp:Literal>
 
 <tbody> 
+<asp:Literal runat="server" ID="tabla"></asp:Literal>
 
 
 </tbody>
@@ -165,4 +174,4 @@ kyoshinatera@gmail.com
         </script> 
  
  
-</asp:Content> 
+</asp:Content>  
