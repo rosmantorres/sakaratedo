@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo5 {
+namespace templateApp.GUI.Modulo3 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace templateApp.GUI.Modulo5 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursoInterfazMod5 {
+    internal class M3_RecursoInterfaz {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursoInterfazMod5() {
+        internal M3_RecursoInterfaz() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace templateApp.GUI.Modulo5 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo5.RecursoInterfazMod5", typeof(RecursoInterfazMod5).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo3.M3_RecursoInterfaz", typeof(M3_RecursoInterfaz).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -82,9 +82,9 @@ namespace templateApp.GUI.Modulo5 {
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
         /// </summary>
-        internal static string BotonActivarCinta {
+        internal static string BotonActivarOrg {
             get {
-                return ResourceManager.GetString("BotonActivarCinta", resourceCulture);
+                return ResourceManager.GetString("BotonActivarOrg", resourceCulture);
             }
         }
         
@@ -110,9 +110,9 @@ namespace templateApp.GUI.Modulo5 {
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
         /// </summary>
-        internal static string BotonDesactivarCinta {
+        internal static string BotonDesactivarOrg {
             get {
-                return ResourceManager.GetString("BotonDesactivarCinta", resourceCulture);
+                return ResourceManager.GetString("BotonDesactivarOrg", resourceCulture);
             }
         }
         
@@ -135,7 +135,7 @@ namespace templateApp.GUI.Modulo5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M5_ModificarCintas.aspx?idCinta=.
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M3_ModificarOrganizacion.aspx?idOrg=.
         /// </summary>
         internal static string BotonModificar {
             get {
@@ -171,20 +171,20 @@ namespace templateApp.GUI.Modulo5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to idCinta.
-        /// </summary>
-        internal static string idCinta {
-            get {
-                return ResourceManager.GetString("idCinta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &amp;idDis=.
         /// </summary>
         internal static string IdDis {
             get {
                 return ResourceManager.GetString("IdDis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idOrg.
+        /// </summary>
+        internal static string idOrg {
+            get {
+                return ResourceManager.GetString("idOrg", resourceCulture);
             }
         }
         

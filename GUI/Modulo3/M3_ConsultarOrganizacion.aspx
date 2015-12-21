@@ -41,146 +41,38 @@
 
     
     
-     <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
         <div class="box-header">
-                      <h3 class="box-title">Organizaciones</h3>
+                      <h3 class="box-title">Lista de Organizaciones</h3>
                     
         </div><!-- /.box-header -->
-
-    <div class="box-body table-responsive">
-        <table id="tabladojos" class="table table-bordered table-striped dataTable">
+<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
+ <div class="box-body table-responsive"> 
+        <table id="tablaOrg" class="table table-bordered table-striped dataTable">
             <thead>
 				<tr>
-                      <th style="text-align:center">Nombre</th>
-                    <th style="text-align:center">Email</th>
-					<th style="text-align:center">Teléfono</th>
-                    <th style="text-align:center">Estilo</th>
-                    <th style="text-align:center">Direccion</th>
-                    <th style="text-align:center">Estado</th>
-                    <th style="text-align:center">Acciones</th>
-                    
+                    <th>ID</th> 
+                    <th>Nombre</th>
+                    <th>Email</th>
+					<th>Teléfono</th>
+                    <th>Estilo</th>
+                    <th>Direccion</th>
+                    <th>Estado</th>
+                    <th style="text-align:right;">Acciones</th>                    
 				</tr>
 			</thead>
 			<tbody>
-                <asp:Literal runat="server" ID="tabla"></asp:Literal>
-				<tr>
-                     
-					<td class="id">Sakara IB</td>
-                    <td>Aikido@Dojo.com</td>
-                    <td>412-5464858</td>
-					<td>Karate</td>
-					<td>Direccion</td>
-					<td>Estado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-               <tr>
-                     
-					<td class="id">Sakara IB</td>
-                    <td>Aikido@Dojo.com</td>
-                    <td>412-5464858</td>
-					<td>Karate</td>
-					<td>Direccion</td>
-					<td>Estado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                     
-					<td class="id">Sakara IB</td>
-                    <td>Aikido@Dojo.com</td>
-                    <td>412-5464858</td>
-					<td>Karate</td>
-					<td>Direccion</td>
-					<td>Estado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                     
-					<td class="id">Sakara IB</td>
-                    <td>Aikido@Dojo.com</td>
-                    <td>412-5464858</td>
-					<td>Karate</td>
-					<td>Direccion</td>
-					<td>Estado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                     
-					<td class="id">Sakara IB</td>
-                    <td>Aikido@Dojo.com</td>
-                    <td>412-5464858</td>
-					<td>Karate</td>
-					<td>Direccion</td>
-					<td>Estado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-                <tr>
-                     
-					<td class="id">Sakara IB</td>
-                    <td>Aikido@Dojo.com</td>
-                    <td>412-5464858</td>
-					<td>Karate</td>
-					<td>Direccion</td>
-					<td>Estado</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                    </td>
-                </tr>
-			    </tbody>
+                <asp:Literal runat="server" ID="tabla"></asp:Literal>           
+			</tbody>
             </table>
            </div>
+</form>
        </div>
     </div>
 </div>
 
-
-
-
-        <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n de Organización</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>Seguro que desea eliminar la Organización:</p>
-                    <p id="dojo"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-           </div>
-          </div><!-- /.modal-delete-content -->
-        </div><!-- /.modal-delete-dialog -->
-      </div><!-- /.modal-delete -->
 
 <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -221,9 +113,40 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><!-- /.modal-dialog -->
+
+    
+    <script type="text/javascript">
+          $(document).ready(function () {
+
+            var table = $('#example').DataTable({
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+            });
+            var req;
+            var tr;
+          
+            $('#example tbody').on('click', 'a', function () {
+                if ($(this).parent().hasClass('selected')) {
+                    req = $(this).parent().prev().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada 
+                    $(this).parent().removeClass('selected');
+
+                }
+                else {
+                    req = $(this).parent().prev().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada 
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).parent().addClass('selected');
+                }
+            });
+           
 
 
+        }); 
+
+        </script>
       
 
 </asp:Content>

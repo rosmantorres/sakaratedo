@@ -133,12 +133,9 @@
   <data name="BotonCerrar1" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonDesactivarCintas" xml:space="preserve">
+  <data name="BotonDesactivarCinta" xml:space="preserve">
     <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
                             &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
-  </data>
-  <data name="BotonEliminarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
@@ -148,15 +145,6 @@
   </data>
   <data name="BotonModificar" xml:space="preserve">
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M5_ModificarCintas.aspx?idCinta=</value>
-  </data>
-  <data name="BotonModificarRegistro" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx?idPlan=</value>
-  </data>
-  <data name="BotonModificarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx</value>
-  </data>
-  <data name="BotonSolicitarPlanilla" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
   </data>
   <data name="CerrarSolicitud" xml:space="preserve">
     <value>"&gt;Solicitar&lt;/a&gt;</value>

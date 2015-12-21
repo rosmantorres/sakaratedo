@@ -7,31 +7,64 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+
 namespace templateApp.GUI.Modulo3
 {
     public partial class M3_ConsultarOrganizacion : System.Web.UI.Page
     {
+        private LogicaOrganizacion logicaOrganizacion = new LogicaOrganizacion();
+        List<Organizacion> listOrganizacion;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "3";
-         /*   LogicaOrganizacion logicaOrganizacion = new LogicaOrganizacion();
-            List<Organizacion> listOrganizacion = logicaOrganizacion.ListarOrganizacion();
+            
+              if (!IsPostBack)
+            {
+                List<DominioSKD.Organizacion> listaOrganizacion = LlenarTabla();
+                LlenarInformacion(listaOrganizacion);
+            }
+            
+        }
+
+         //Dado el id de org me traigo la lista de cintas
+        public List<DominioSKD.Organizacion> LlenarTabla()
+        {
+
+            return logicaOrganizacion.ListarOrganizacionCompleta();
+            
+        }
+
+        public void LlenarInformacion(List<DominioSKD.Organizacion> lista)
+        {
+            this.listOrganizacion = lista;
             foreach (Organizacion item in listOrganizacion)
             {
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtr;
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtd + item.Nombre + M3_RecursoInterfaz.Cerrartd;
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtd + item.Email + M3_RecursoInterfaz.Cerrartd;
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtd + item.Telefono + M3_RecursoInterfaz.Cerrartd;
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtd + item.Estilo +  M3_RecursoInterfaz.Cerrartd;
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtd + item.Direccion + M3_RecursoInterfaz.Cerrartd;
-                 this.tabla.Text += M3_RecursoInterfaz.Abrirtd + item.Estado + M3_RecursoInterfaz.Cerrartd;
-                this.tabla.Text += M3_RecursoInterfaz.Abrirtd;
+
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTR;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Id_organizacion.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Nombre.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Email.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Telefono.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Estilo.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Direccion.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Estado.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD;
                  this.tabla.Text += M3_RecursoInterfaz.BotonInfo + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
                  this.tabla.Text += M3_RecursoInterfaz.BotonModificar + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
-                 this.tabla.Text += M3_RecursoInterfaz.BotonEliminar + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
-                 this.tabla.Text += M3_RecursoInterfaz.Cerrartd;
-                 this.tabla.Text += M3_RecursoInterfaz.Cerrartr;
-            }*/
+             //    this.tabla.Text += M3_RecursoInterfaz.BotonEliminar + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
+                 if (item.Status)
+                     this.tabla.Text += M3_RecursoInterfaz.BotonActivarOrg + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
+                 else
+                     this.tabla.Text += M3_RecursoInterfaz.BotonDesactivarOrg+ item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
+                 this.tabla.Text += M3_RecursoInterfaz.CerrarTD;
+                 this.tabla.Text += M3_RecursoInterfaz.CerrarTR;
+            }
         }
-    }
+
+
+
+        }
+    
 }

@@ -55,7 +55,7 @@ namespace templateApp.GUI.Modulo3
             //try
             try
             {
-                lO.agregarOrganizacion(laOrganizacion);
+                lO.modificarOrganizacion(laOrganizacion);
             }
             catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {

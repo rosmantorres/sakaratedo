@@ -1789,6 +1789,11 @@
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo3\M3_RecursoInterfaz1.Designer.cs">
+      <DependentUpon>M3_RecursoInterfaz.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2052,7 +2057,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M3_RecursoInterfaz1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo5\RecursoInterfazMod5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoInterfazMod5.Designer.cs</LastGenOutput>
