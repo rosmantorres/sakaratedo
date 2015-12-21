@@ -226,4 +226,40 @@
     <value>M10_AtletasInscritosEvento</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ParametroFechaHorario" xml:space="preserve">
+    <value>@_fechaHorario</value>
+    <comment>fecha del horario</comment>
+  </data>
+  <data name="ParametroNombreEvento" xml:space="preserve">
+    <value>@_eveNombre</value>
+    <comment>nombre del evento a asignar</comment>
+  </data>
+  <data name="aliasApellidoPersona" xml:space="preserve">
+    <value>apellidoPersona</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna apellido persona</comment>
+  </data>
+  <data name="aliasNombrePlanilla" xml:space="preserve">
+    <value>nombrePlanilla</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre planilla</comment>
+  </data>
+  <data name="ProcedimientoInasistentesPlanilla" xml:space="preserve">
+    <value>M10_InasistentesPlanilla</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="aliasFechaInscripcion" xml:space="preserve">
+    <value>fechaInscripcion</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha de inscripcion</comment>
+  </data>
+  <data name="aliasIdPlanilla" xml:space="preserve">
+    <value>idPlanilla</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id planilla</comment>
+  </data>
+  <data name="aliasIdSolicitudPlanilla" xml:space="preserve">
+    <value>idSolPla</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id solicitud planilla</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>nombrePlanilla</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id nombre planilla</comment>
+  </data>
 </root>

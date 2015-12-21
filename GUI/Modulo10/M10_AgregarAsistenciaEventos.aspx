@@ -111,132 +111,47 @@
    </div>
     <!--FIN LISTAS ATLETAS INSCRITOS Y ASISTENTES-->
 
-
+    <!--TABLA ATLETAS AUSENTES POR PLANILLA-->
     <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>No Asistieron:</h3>
-       <table id="example" class="table table-bordered table-striped dataTable">
+        <h3>No Asistieron por Planilla:</h3>
+        <table id="tablaplanilla" class="table table-bordered table-striped dataTable">
         <thead>
-				<tr>
-					
-					<th >Nombre</th>
-					<th>Nota</th>
-					<th style="text-align:right;">Acciones</th>
+				<tr> 
+                    <th style="text-align:center">Nombre</th>
+					<th style="text-align:center">Nota</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					
-					<td>Atleta 1</td>
-					<td>Planilla 1</td>
-				
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    
-					<td>Atleta 2</td>
-					<td>Planilla 2</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                     </td>
-				</tr><tr>
-                    
-					<td>Atleta 3</td>
-					<td>Planilla 3</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    
-					<td>Atleta 4</td>
-					<td>Planilla 4</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                
-					<td>Atleta 5</td>
-					<td>Planilla 5</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                    </td>
-                </tr>
-               
-
-			</tbody>
-    </table>
+                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
+		    </tbody>
+            </table>
             </div>
         </div>
 
-        		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada de Inasistencias</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<p>
-									Nombre, Apellido, Sexo, cinta... etc
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('#tablaplanilla').DataTable();
 
-            <script type="text/javascript">
-                $(document).ready(function () {
+                            var table = $('#tablaplanilla').DataTable();
+                            var comp;
+                            var tr;
 
-                    var table = $('#example').DataTable({
-                        "language": {
-                            "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                        }
-                    });
-                    var req;
-                    var tr;
+                            $('#tablaplanilla tbody').on('click', 'a', function () {
+                                if ($(this).parent().hasClass('selected')) {
+                                    comp = $(this).parent().prev().prev().prev().prev().text();
+                                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                                    $(this).parent().removeClass('selected');
 
-                    $('#example tbody').on('click', 'a', function () {
-                        if ($(this).parent().hasClass('selected')) {
-                            req = $(this).parent().prev().prev().prev().prev().text();
-                            tr = $(this).parents('tr');//se guarda la fila seleccionada
-                            $(this).parent().removeClass('selected');
-
-                        }
-                        else {
-                            req = $(this).parent().prev().prev().prev().prev().text();
-                            tr = $(this).parents('tr');//se guarda la fila seleccionada
-                            table.$('tr.selected').removeClass('selected');
-                            $(this).parent().addClass('selected');
-                        }
-                    });
-
-                });
-
-
-                $(document).ready(function () {
-                    $('#datePicker')
-                        .datepicker({
-                            format: 'mm/dd/yyyy'
-                        })
-                        .on('changeDate', function (e) {
-                            // Revalidate the date field
+                                }
+                                else {
+                                    comp = $(this).parent().prev().prev().prev().prev().text();
+                                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                                    table.$('tr.selected').removeClass('selected');
+                                    $(this).parent().addClass('selected');
+                                }
+                            });
                         });
-                });
-
-
-
         </script>
 
 </div>

@@ -505,8 +505,68 @@ namespace DatosSKD.Modulo10
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
-
-
         }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas inasistentes por planilla en un evento
+        /// </summary>
+        /// <returns>lista de atletas</returns>
+        public static List<Inscripcion> listaInasistentesPlanilla(string idEvento)
+        {
+            BDConexion laConexion;
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoInasistentesPlanilla, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Inscripcion inscripcion = new Inscripcion();
+                    inscripcion.Id_Inscripcion = int.Parse(row[RecursosBDModulo10.aliasIdInscripcion].ToString());
+                    inscripcion.Fecha = DateTime.Parse(row[RecursosBDModulo10.aliasFechaInscripcion].ToString());
+
+                    Persona persona = new Persona();
+                    persona.ID = int.Parse(row[RecursosBDModulo10.aliasIdPersona].ToString());
+                    persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString();
+                    persona.Apellido = row[RecursosBDModulo10.aliasApellidoPersona].ToString();
+                    inscripcion.Persona = persona;
+
+                    SolicitudPlanilla solicitud = new SolicitudPlanilla();
+                    solicitud.ID = int.Parse(row[RecursosBDModulo10.aliasIdSolicitudPlanilla].ToString());
+                    Planilla planilla = new Planilla();
+                    planilla.ID = int.Parse(row[RecursosBDModulo10.aliasIdPlanilla].ToString());
+                    planilla.Nombre = row[RecursosBDModulo10.aliasNombrePlanilla].ToString();
+                    solicitud.Planilla = planilla;
+                    inscripcion.Solicitud = solicitud;
+
+                    inscripciones.Add(inscripcion);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return inscripciones;
+        }
+        
     }
 }

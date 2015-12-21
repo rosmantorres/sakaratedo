@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo10
@@ -21,14 +22,6 @@ namespace templateApp.GUI.Modulo10
             ((SKD)Page.Master).IdModulo = "10";
             if (!IsPostBack)
             {
-                listaInscritos.Items.Add("atleta1");
-                listaInscritos.Items.Add("atleta2");
-                listaInscritos.Items.Add("atleta3");
-                listaInscritos.Items.Add("atleta4");
-                listaAsistentes.Items.Add("atleta5");
-                listaAsistentes.Items.Add("atleta6");
-                listaAsistentes.Items.Add("atleta7");
-                listaAsistentes.Items.Add("atleta8");
 
             }
         }
@@ -74,6 +67,7 @@ namespace templateApp.GUI.Modulo10
             e.Day.IsSelectable = false;
             if (e.Day.IsSelected)
                 e.Cell.BackColor = Color.Red;
+
             #region Horarios de Eventos
             foreach (Horario horario in horariosEventos)
             {
@@ -82,7 +76,9 @@ namespace templateApp.GUI.Modulo10
                 else if (e.Day.Date == horario.FechaInicio)
                 {
                     e.Cell.BackColor = Color.Blue;
-                    if (e.Day.Date >= DateTime.Now)
+                    DateTime date1 = e.Day.Date.Date;
+                    DateTime date2 = DateTime.Now.Date;
+                    if (date1 >= date2)
                     {
                         e.Day.IsSelectable = true;
                     }
@@ -93,26 +89,54 @@ namespace templateApp.GUI.Modulo10
 
         protected void calendar_SelectionChanged(object sender, EventArgs e)
         {
+            cambioDeEvento();
+            comboEventos.SelectedItem.Value = "0";
             List<Evento> listaE = LogicaAsistencia.EventosPorFecha(((Calendar)sender).SelectedDate.ToString(), ((Calendar)sender).SelectedDate.ToString());
-            Dictionary<int, string> listaNombre = new Dictionary<int, string>();
+            Dictionary<int, string> listaEventos = new Dictionary<int, string>();
             foreach (Evento evento in listaE)
             {
-                listaNombre.Add(evento.Id_evento, evento.Nombre);
+                listaEventos.Add(evento.Id_evento, evento.Nombre);
             }
-            comboEventos.DataSource = listaNombre;
-            comboEventos.DataValueField = "Key";
+            comboEventos.DataSource = listaEventos;
             comboEventos.DataTextField = "Value";
+            comboEventos.DataValueField = "Key";
             comboEventos.DataBind();
         }
 
         protected void comboEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            atletasIE = LogicaAsistencia.inscritosAlEvento(((DropDownList)sender).DataValueField);
+            cambioDeEvento();
+
+            atletasIE = LogicaAsistencia.inscritosAlEvento(((DropDownList)sender).SelectedItem.Value);
 
             foreach (Persona persona in atletasIE)
             {
                 listaInscritos.Items.Add(persona.Nombre);
             }
+
+            #region Carga de tabla de Atletas inasistentes a dicho evento
+            try
+            {
+                List<Inscripcion> inscripciones = LogicaAsistencia.listaAtletasInasistentesPlanilla(((DropDownList)sender).SelectedItem.Value);
+                foreach (Inscripcion inscripcion in inscripciones)
+                {
+                    this.dataTable.Text += M10_RecursosInterfaz.AbrirTR;
+                    this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M10_RecursosInterfaz.CerrarTD;
+                    this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + inscripcion.Solicitud.Planilla.Nombre + M10_RecursosInterfaz.CerrarTD;
+                    this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            #endregion
+        }
+
+        private void cambioDeEvento()
+        {
+            listaInscritos.Items.Clear();
+            listaAsistentes.Items.Clear();
         }
     }
 }
