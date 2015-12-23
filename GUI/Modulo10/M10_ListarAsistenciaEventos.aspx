@@ -69,34 +69,6 @@
     </div>
 </div>
 
-    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información de Competencia</h4>
-					</div>
-					<div class="modal-body">
-                        <div class="row">
-                            <h4 style="text-align:match-parent">&nbsp;&nbsp;&nbsp; Nombre de Competencia:</h4>
-                            <ul>
-                                <li>Competencia 1</li>
-                            </ul>
-                            <h4>&nbsp;&nbsp;&nbsp; Tipo de Competencia:</h4>
-                            <ul>
-                                <li>Kata</li>
-                            </ul>
-                            <h4>&nbsp;&nbsp;&nbsp; Organizaciones Involucradas:</h4>
-                            <ul>
-                                <li>Organización 1, Organización 2</li>
-                            </ul>
-                        </div>
-                        <h4>&nbsp;&nbsp;&nbsp; Ubicación de Competencia</h4>                     
-                        <div id="googleMap" style="width:500px;height:250px;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#tablaasistencia').DataTable();
@@ -119,88 +91,8 @@
                         $(this).parent().addClass('selected');
                     }
                 });
-
-
-
-                $('#modal-delete').on('show.bs.modal', function (event) {
-                    var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar Competencia:  ' + comp)
-                    modal.find('#comp').text(comp)
-                })
-                $('#btn-eliminar').on('click', function () {
-                    table.row(tr).remove().draw();//se elimina la fila de la tabla
-                    $('#modal-delete').modal('hide');//se esconde el modal
-                });
-
-
             });
 
         </script>
-
-      <%--
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-              </div>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                </div>
-                </div>
-            <div class="modal-footer">  
-           </div>
- 
-
-    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información de la Organización</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<h3>Organización</h3>
-									<ul>
-										<li>Fecha del Evento </li>
-										<li>Informacion del Evento</li>
-										<li>Asitencia</li>
-									</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-             <script type="text/javascript">
-                 $(document).ready(function () {
-                     $('#tablaasistenciae').DataTable();
-
-                     var table = $('#tablaasistenciae').DataTable();
-                     var comp;
-                     var tr;
-
-
-
-                     $('#tablaasistenciae tbody').on('click', 'a', function () {
-                         if ($(this).parent().hasClass('selected')) {
-                             comp = $(this).parent().prev().prev().prev().prev().text();
-                             tr = $(this).parents('tr');//se guarda la fila seleccionada
-                             $(this).parent().removeClass('selected');
-
-                         }
-                         else {
-                             comp = $(this).parent().prev().prev().prev().prev().text();
-                             tr = $(this).parents('tr');//se guarda la fila seleccionada
-                             table.$('tr.selected').removeClass('selected');
-                             $(this).parent().addClass('selected');
-                         }
-                     });
-
-                 });
-
-        </script>--%>
-    
 </asp:Content>
 

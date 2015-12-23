@@ -124,5 +124,11 @@ namespace LogicaNegociosSKD.Modulo10
             List<Persona> listaAtletas = BDAsistencia.listaAtletasInscritosEvento(idEvento);
             return listaAtletas;
         }
+
+        public static List<Inscripcion> listaAtletasInasistentesPlanilla(String idEvento)
+        {
+            List<Inscripcion> listaInscritos = BDAsistencia.listaInasistentesPlanilla(idEvento);
+            return listaInscritos;
+        }
     }
 }
