@@ -16,6 +16,8 @@ namespace DominioSKD
         private String estado;
         private String estilo;
 
+        private Boolean status;
+
         public int Id_organizacion
         {
             get { return id_organizacion; }
@@ -58,7 +60,11 @@ namespace DominioSKD
             set { estilo = value; }
         }
 
-
+        public bool Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
         public Organizacion(int elId, String elNombre)
         {
@@ -80,6 +86,7 @@ namespace DominioSKD
             email = "";
             estado = "";
             estilo = "";
+            status = false;
         }
 
         public Organizacion(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)

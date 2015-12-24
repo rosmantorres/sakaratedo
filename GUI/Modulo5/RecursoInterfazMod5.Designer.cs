@@ -110,18 +110,9 @@ namespace templateApp.GUI.Modulo5 {
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
         /// </summary>
-        internal static string BotonDesactivarCintas {
+        internal static string BotonDesactivarCinta {
             get {
-                return ResourceManager.GetString("BotonDesactivarCintas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
-        /// </summary>
-        internal static string BotonEliminarSolicitud {
-            get {
-                return ResourceManager.GetString("BotonEliminarSolicitud", resourceCulture);
+                return ResourceManager.GetString("BotonDesactivarCinta", resourceCulture);
             }
         }
         
@@ -149,33 +140,6 @@ namespace templateApp.GUI.Modulo5 {
         internal static string BotonModificar {
             get {
                 return ResourceManager.GetString("BotonModificar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;M14_ModificarPlanillaCreada.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonModificarRegistro {
-            get {
-                return ResourceManager.GetString("BotonModificarRegistro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx.
-        /// </summary>
-        internal static string BotonModificarSolicitud {
-            get {
-                return ResourceManager.GetString("BotonModificarSolicitud", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary&quot; href=&quot;M14_SolicitudPlanilla.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonSolicitarPlanilla {
-            get {
-                return ResourceManager.GetString("BotonSolicitarPlanilla", resourceCulture);
             }
         }
         

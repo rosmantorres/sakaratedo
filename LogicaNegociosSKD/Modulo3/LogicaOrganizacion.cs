@@ -32,8 +32,10 @@ namespace LogicaNegociosSKD.Modulo3
             
             try
             {
-               return BDOrganizacion.ListarOrganizaciones();
-			 } 
+               return BDOrganizacion.ComboOrganizaciones();
+		
+            }
+              
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
               {
                   throw ex;
@@ -46,7 +48,31 @@ namespace LogicaNegociosSKD.Modulo3
               }
              
 
+        }
+
+        public List<Organizacion> ListarOrganizacionCompleta()
+        {
+
+            try
+            {
+                return BDOrganizacion.ListarOrganizaciones();
+
+            }
+
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+
+
         } 
+
 
 
         public DominioSKD.Organizacion consultarOrganizacionXId(int idOrganizacion)
@@ -133,7 +159,6 @@ namespace LogicaNegociosSKD.Modulo3
 
                 throw ex;
             }
-            
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -141,6 +166,16 @@ namespace LogicaNegociosSKD.Modulo3
                 throw ex;
             }
         }
-    
+   
+
     }
 }
+
+
+
+
+
+
+
+
+

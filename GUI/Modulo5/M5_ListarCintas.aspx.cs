@@ -48,9 +48,9 @@ namespace templateApp.GUI.Modulo5
             
         }
 
-        public void LlenarInformacion(List<DominioSKD.Cinta> lista)
+        public void LlenarInformacion(List<DominioSKD.Cinta> lista1)
         {
-            this.lista = lista;
+            this.lista = lista1;
             foreach (DominioSKD.Cinta cinta in lista)
             {
 
@@ -70,8 +70,7 @@ namespace templateApp.GUI.Modulo5
                 if (cinta.Status)
                     this.tabla.Text += RecursoInterfazMod5.BotonActivarCinta + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
                 else
-                    this.tabla.Text += RecursoInterfazMod5.BotonDesactivarCintas + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
-               
+                    this.tabla.Text += RecursoInterfazMod5.BotonDesactivarCinta + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;           
                 this.tabla.Text += RecursoInterfazMod5.CerrarTD;
                 this.tabla.Text += RecursoInterfazMod5.CerrarTR;
             }

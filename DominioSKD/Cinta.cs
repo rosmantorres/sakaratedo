@@ -85,7 +85,7 @@ namespace DominioSKD
             significado = "";
             id_restriccion = 0;
             organizacion = null;
-            status = true;
+            status = false;
         }
 
         
@@ -127,7 +127,7 @@ namespace DominioSKD
             orden = elOrden;
             significado = elSignificado;
             organizacion = null;
-            status = true;
+            status = false;
 
         }
 
@@ -139,7 +139,7 @@ namespace DominioSKD
             orden = elOrden;
             significado = elSignificado;
             organizacion = null;
-            status = true;
+            status = false;
 
         }
 

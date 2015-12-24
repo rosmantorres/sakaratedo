@@ -117,28 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Abrirtd" xml:space="preserve">
+  <data name="AbrirTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
   </data>
-  <data name="Abrirtr" xml:space="preserve">
+  <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
+  </data>
+  <data name="BotonActivarOrg" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
   </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-info" href="M3_Eliminar.aspx?compEliminar=</value>
+  <data name="BotonCerrar1" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonDesactivarOrg" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M3_DetallesOrganizacion.aspx?idOrganizacion=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
+  </data>
+  <data name="BotonInfoSolicitud" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx?idorganizacion=</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M3_ModificarOrganizacion.aspx?idOrg=</value>
   </data>
-  <data name="Cerrartd" xml:space="preserve">
+  <data name="CerrarSolicitud" xml:space="preserve">
+    <value>"&gt;Solicitar&lt;/a&gt;</value>
+  </data>
+  <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
-  <data name="Cerrartr" xml:space="preserve">
+  <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="IdDis" xml:space="preserve">
+    <value>&amp;idDis=</value>
+  </data>
+  <data name="idOrg" xml:space="preserve">
+    <value>idOrg</value>
+  </data>
+  <data name="IdPlanilla" xml:space="preserve">
+    <value>&amp;idPlanilla=</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>&amp;nombre=</value>
+  </data>
+  <data name="Tipo" xml:space="preserve">
+    <value>&amp;tipo=</value>
   </data>
 </root>
