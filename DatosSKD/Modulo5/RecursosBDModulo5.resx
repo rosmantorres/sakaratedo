@@ -144,6 +144,31 @@
   <data name="AliasSignificadoCinta" xml:space="preserve">
     <value>significadoCinta</value>
   </data>
+  <data name="BuscarIDOrganiacion" xml:space="preserve">
+    <value>M5_BuscarIDOrganiacion</value>
+    <comment>Procedimiento para buscar el id de organizacion</comment>
+  </data>
+  <data name="BuscarNombreCinta" xml:space="preserve">
+    <value>M5_BuscarCintaNombre</value>
+  </data>
+  <data name="BuscarOrdenCinta" xml:space="preserve">
+    <value>M5_BuscarOrdenCinta</value>
+    <comment>Procedure para buscar orden repetidos de cintas</comment>
+  </data>
+  <data name="Codigo_Cinta_Repetida" xml:space="preserve">
+    <value>SKD_004</value>
+  </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>SKD_001</value>
+    <comment>Codigo de error en el parseo</comment>
+  </data>
+  <data name="Codigo_Orden_Cinta_Repetida" xml:space="preserve">
+    <value>SKD_003</value>
+  </data>
+  <data name="Codigo_Organizacion_Inexistente" xml:space="preserve">
+    <value>SKD_002</value>
+    <comment>Codigo de error en la seleccion de organizacion</comment>
+  </data>
   <data name="ConsultarCintasXId" xml:space="preserve">
     <value>M5_ConsultarCintasXId</value>
   </data>
@@ -155,6 +180,19 @@
   </data>
   <data name="EliminarCinta" xml:space="preserve">
     <value>M5_EliminarCinta</value>
+  </data>
+  <data name="Mensaje_Cinta_Repetida" xml:space="preserve">
+    <value>La Cinta Para La Organizacion Seleccionada Esta Repetida</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
+  </data>
+  <data name="Mensaje_Orden_Cinta_Repetida" xml:space="preserve">
+    <value>Orden de Cinta Repetido</value>
+  </data>
+  <data name="Mensaje_Organizacion_Inexistente" xml:space="preserve">
+    <value>La Organizacion No Exixte</value>
   </data>
   <data name="ModificarCinta" xml:space="preserve">
     <value>M5_ModificarCinta</value>
@@ -185,6 +223,12 @@
   </data>
   <data name="ParamRangoCinta" xml:space="preserve">
     <value>@rangoCinta</value>
+  </data>
+  <data name="ParamSalidaNumCinta" xml:space="preserve">
+    <value>@numCinta</value>
+  </data>
+  <data name="ParamSalidaNumOrganizacion" xml:space="preserve">
+    <value>@numOrganizacion</value>
   </data>
   <data name="ParamSignificadoCinta" xml:space="preserve">
     <value>@significadoCinta</value>

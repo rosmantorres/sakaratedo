@@ -1,0 +1,474 @@
+2015-12-24 16:27:30,063 ERROR BDCinta - *******************************************************
+2015-12-24 16:27:30,089 ERROR BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-24 16:27:30,167 ERROR BDCinta - Origen: DatosSKD
+2015-12-24 16:27:30,168 ERROR BDCinta - Metodo: Boolean AgregarCinta(DominioSKD.Cinta)
+2015-12-24 16:27:30,168 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 52
+2015-12-24 16:27:30,168 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-24 16:31:57,377 ERROR BDCinta - *******************************************************
+2015-12-24 16:31:57,398 ERROR BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-24 16:31:57,402 ERROR BDCinta - Origen: DatosSKD
+2015-12-24 16:31:57,402 ERROR BDCinta - Metodo: Boolean AgregarCinta(DominioSKD.Cinta)
+2015-12-24 16:31:57,402 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 52
+2015-12-24 16:31:57,402 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 11:40:29,027 WARN  BDCinta - *******************************************************
+2015-12-26 11:40:29,077 WARN  BDCinta - Clase: BDCinta
+2015-12-26 11:40:29,077 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 11:40:29,077 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 11:40:29,187 ERROR BDCinta - *******************************************************
+2015-12-26 11:40:29,187 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 11:40:29,192 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:40:29,194 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:40:29,194 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:40:29,194 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 11:40:29,262 ERROR BDCinta - *******************************************************
+2015-12-26 11:40:29,264 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 11:40:29,264 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:40:29,264 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:40:29,264 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 11:40:29,264 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:49:45,139 WARN  BDCinta - *******************************************************
+2015-12-26 11:49:45,166 WARN  BDCinta - Clase: BDCinta
+2015-12-26 11:49:45,166 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 11:49:45,166 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 11:49:45,256 ERROR BDCinta - *******************************************************
+2015-12-26 11:49:45,256 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 11:49:45,261 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:49:45,261 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:49:45,261 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:49:45,261 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 11:49:45,479 ERROR BDCinta - *******************************************************
+2015-12-26 11:49:45,479 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 11:49:45,481 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:49:45,481 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:49:45,481 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 11:49:45,481 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:55:28,564 WARN  BDCinta - *******************************************************
+2015-12-26 11:55:28,594 WARN  BDCinta - Clase: BDCinta
+2015-12-26 11:55:28,594 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 11:55:28,594 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 11:55:28,686 ERROR BDCinta - *******************************************************
+2015-12-26 11:55:28,686 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 11:55:28,691 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:55:28,691 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:55:28,691 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:55:28,691 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 11:55:28,816 ERROR BDCinta - *******************************************************
+2015-12-26 11:55:28,816 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 11:55:28,819 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:55:28,819 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:55:28,819 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 11:55:28,819 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:57:58,236 WARN  BDCinta - *******************************************************
+2015-12-26 11:57:58,263 WARN  BDCinta - Clase: BDCinta
+2015-12-26 11:57:58,263 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 11:57:58,263 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 11:57:58,353 ERROR BDCinta - *******************************************************
+2015-12-26 11:57:58,353 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 11:57:58,358 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:57:58,361 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:57:58,361 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 11:57:58,361 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 11:57:58,506 ERROR BDCinta - *******************************************************
+2015-12-26 11:57:58,506 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 11:57:58,506 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 11:57:58,506 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 11:57:58,506 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 11:57:58,508 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:02:03,732 WARN  BDCinta - *******************************************************
+2015-12-26 12:02:03,759 WARN  BDCinta - Clase: BDCinta
+2015-12-26 12:02:03,759 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 12:02:03,759 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 12:02:03,859 ERROR BDCinta - *******************************************************
+2015-12-26 12:02:03,859 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 12:02:03,864 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:02:03,864 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:02:03,867 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:02:03,867 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 12:02:03,982 ERROR BDCinta - *******************************************************
+2015-12-26 12:02:03,982 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 12:02:03,984 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:02:03,984 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:02:03,984 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 12:02:03,984 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:05:22,173 WARN  BDCinta - *******************************************************
+2015-12-26 12:05:22,201 WARN  BDCinta - Clase: BDCinta
+2015-12-26 12:05:22,201 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 12:05:22,201 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 12:05:22,293 ERROR BDCinta - *******************************************************
+2015-12-26 12:05:22,293 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 12:05:22,298 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:05:22,298 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:05:22,298 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:05:22,298 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 12:05:22,436 ERROR BDCinta - *******************************************************
+2015-12-26 12:05:22,436 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 12:05:22,438 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:05:22,438 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:05:22,438 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 12:05:22,438 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:12:49,270 WARN  BDCinta - *******************************************************
+2015-12-26 12:12:49,297 WARN  BDCinta - Clase: BDCinta
+2015-12-26 12:12:49,297 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 12:12:49,300 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 12:12:49,387 ERROR BDCinta - *******************************************************
+2015-12-26 12:12:49,387 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 12:12:49,392 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:12:49,392 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:12:49,392 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:12:49,392 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 12:12:49,632 ERROR BDCinta - *******************************************************
+2015-12-26 12:12:49,632 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 12:12:49,635 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:12:49,635 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:12:49,635 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 12:12:49,635 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:16:06,301 WARN  BDCinta - *******************************************************
+2015-12-26 12:16:06,328 WARN  BDCinta - Clase: BDCinta
+2015-12-26 12:16:06,328 WARN  BDCinta - Mensaje: La Organizacion No Exixte
+2015-12-26 12:16:06,328 WARN  BDCinta - Metodo: BuscarOrdenCinta
+2015-12-26 12:16:06,423 ERROR BDCinta - *******************************************************
+2015-12-26 12:16:06,423 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 12:16:06,498 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:16:06,501 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:16:06,501 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:16:06,501 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 12:16:06,603 ERROR BDCinta - *******************************************************
+2015-12-26 12:16:06,603 ERROR BDCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 12:16:06,606 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:16:06,606 ERROR BDCinta - Metodo: Boolean BuscarOrdenCinta(DominioSKD.Cinta)
+2015-12-26 12:16:06,606 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 444
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 12:16:06,606 ERROR BDCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.BuscarOrdenCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 419
+2015-12-26 12:27:59,870 ERROR BDCinta - *******************************************************
+2015-12-26 12:27:59,897 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 12:27:59,902 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:27:59,902 ERROR BDCinta - Metodo: Boolean AgregarCinta(DominioSKD.Cinta)
+2015-12-26 12:27:59,902 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 51
+2015-12-26 12:27:59,902 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 12:30:48,030 ERROR BDCinta - *******************************************************
+2015-12-26 12:30:48,060 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 12:30:48,065 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:30:48,065 ERROR BDCinta - Metodo: Boolean AgregarCinta(DominioSKD.Cinta)
+2015-12-26 12:30:48,065 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 51
+2015-12-26 12:30:48,068 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 12:57:35,737 ERROR BDCinta - *******************************************************
+2015-12-26 12:57:35,782 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 12:57:35,786 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:57:35,786 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 12:57:35,787 ERROR BDCinta - StackTrace:    at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 210
+   at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 486
+2015-12-26 12:57:35,787 ERROR BDCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 12:57:35,934 ERROR BDCinta - *******************************************************
+2015-12-26 12:57:35,934 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 12:57:35,934 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 12:57:35,934 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 12:57:35,935 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 515
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 12:57:35,936 ERROR BDCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:06:21,271 ERROR BDCinta - *******************************************************
+2015-12-26 13:06:21,291 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:06:21,295 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:06:21,295 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:06:21,295 ERROR BDCinta - StackTrace:    at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 210
+   at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 486
+2015-12-26 13:06:21,296 ERROR BDCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:06:21,377 ERROR BDCinta - *******************************************************
+2015-12-26 13:06:21,377 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:06:21,377 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:06:21,377 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:06:21,397 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 515
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 13:06:21,397 ERROR BDCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:06:21,506 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:06:21,506 ERROR LogicaCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:06:21,506 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:06:21,506 ERROR LogicaCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:06:21,518 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 84
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.agregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 121
+2015-12-26 13:06:21,521 ERROR LogicaCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:13:57,065 ERROR BDCinta - *******************************************************
+2015-12-26 13:13:57,092 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:13:57,097 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:13:57,098 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:13:57,098 ERROR BDCinta - StackTrace:    at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 210
+   at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 486
+2015-12-26 13:13:57,100 ERROR BDCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:13:57,225 ERROR BDCinta - *******************************************************
+2015-12-26 13:13:57,225 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:13:57,225 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:13:57,225 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:13:57,227 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 515
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 13:13:57,227 ERROR BDCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:13:57,303 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:13:57,304 ERROR LogicaCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:13:57,304 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:13:57,304 ERROR LogicaCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:13:57,308 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 84
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.agregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 121
+2015-12-26 13:13:57,309 ERROR LogicaCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2015-12-26 13:17:13,488 ERROR BDCinta - *******************************************************
+2015-12-26 13:17:13,530 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:17:13,534 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:17:13,535 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:17:13,535 ERROR BDCinta - StackTrace:    at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 198
+   at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 486
+2015-12-26 13:17:13,538 ERROR BDCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M5_BuscarOrdenCinta' expects parameter '@ordenCinta', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+ClientConnectionId:48adab5a-f9b1-4290-a4c1-6c4ff6a22fea
+2015-12-26 13:17:13,675 ERROR BDCinta - *******************************************************
+2015-12-26 13:17:13,676 ERROR BDCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:17:13,676 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:17:13,676 ERROR BDCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:17:13,678 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.BuscarNombreCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 515
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 26
+2015-12-26 13:17:13,678 ERROR BDCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M5_BuscarOrdenCinta' expects parameter '@ordenCinta', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+ClientConnectionId:48adab5a-f9b1-4290-a4c1-6c4ff6a22fea
+2015-12-26 13:17:13,825 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:17:13,825 ERROR LogicaCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2015-12-26 13:17:13,825 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:17:13,825 ERROR LogicaCinta - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2015-12-26 13:17:13,828 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 84
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.agregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 121
+2015-12-26 13:17:13,828 ERROR LogicaCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M5_BuscarOrdenCinta' expects parameter '@ordenCinta', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+ClientConnectionId:48adab5a-f9b1-4290-a4c1-6c4ff6a22fea
+2015-12-26 13:21:15,992 ERROR BDCinta - *******************************************************
+2015-12-26 13:21:16,014 ERROR BDCinta - Mensaje: La Cinta Para La Organizacion Seleccionada Esta Repetida
+2015-12-26 13:21:16,017 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:21:16,018 ERROR BDCinta - Metodo: Boolean AgregarCinta(DominioSKD.Cinta)
+2015-12-26 13:21:16,018 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 58
+2015-12-26 13:21:16,018 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 13:21:16,103 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:21:16,104 ERROR LogicaCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 13:21:16,106 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:21:16,108 ERROR LogicaCinta - Metodo: Boolean AgregarCinta(DominioSKD.Cinta)
+2015-12-26 13:21:16,108 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 90
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.agregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 121
+2015-12-26 13:21:16,108 ERROR LogicaCinta - InnerException: ExcepcionesSKD.Modulo5.CintaRepetidaException: La Cinta Para La Organizacion Seleccionada Esta Repetida ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.AgregarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 58
+2015-12-26 13:28:07,797 ERROR BDCinta - *******************************************************
+2015-12-26 13:28:07,827 ERROR BDCinta - Mensaje: La Cinta Para La Organizacion Seleccionada Esta Repetida
+2015-12-26 13:28:07,832 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:28:07,832 ERROR BDCinta - Metodo: Boolean ModificarCinta(DominioSKD.Cinta)
+2015-12-26 13:28:07,833 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 137
+2015-12-26 13:28:07,833 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 13:28:07,931 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:28:07,931 ERROR LogicaCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 13:28:07,938 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:28:07,938 ERROR LogicaCinta - Metodo: Boolean ModificarCinta(DominioSKD.Cinta)
+2015-12-26 13:28:07,938 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 169
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.modificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 148
+2015-12-26 13:28:07,940 ERROR LogicaCinta - InnerException: ExcepcionesSKD.Modulo5.CintaRepetidaException: La Cinta Para La Organizacion Seleccionada Esta Repetida ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 137
+2015-12-26 13:28:47,963 ERROR BDCinta - *******************************************************
+2015-12-26 13:28:47,963 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 13:28:47,963 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:28:47,963 ERROR BDCinta - Metodo: Boolean ModificarCinta(DominioSKD.Cinta)
+2015-12-26 13:28:47,964 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 131
+2015-12-26 13:28:47,964 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 13:28:48,177 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:28:48,177 ERROR LogicaCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 13:28:48,177 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:28:48,177 ERROR LogicaCinta - Metodo: Boolean ModificarCinta(DominioSKD.Cinta)
+2015-12-26 13:28:48,177 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 169
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.modificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 148
+2015-12-26 13:28:48,178 ERROR LogicaCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 131
+2015-12-26 13:28:59,477 ERROR BDCinta - *******************************************************
+2015-12-26 13:28:59,477 ERROR BDCinta - Mensaje: Orden de Cinta Repetido
+2015-12-26 13:28:59,478 ERROR BDCinta - Origen: DatosSKD
+2015-12-26 13:28:59,478 ERROR BDCinta - Metodo: Boolean ModificarCinta(DominioSKD.Cinta)
+2015-12-26 13:28:59,478 ERROR BDCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 131
+2015-12-26 13:28:59,478 ERROR BDCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2015-12-26 13:28:59,608 ERROR LogicaCinta - *******************************************************
+2015-12-26 13:28:59,608 ERROR LogicaCinta - Mensaje: No se pudo completar la operacion
+2015-12-26 13:28:59,608 ERROR LogicaCinta - Origen: DatosSKD
+2015-12-26 13:28:59,608 ERROR LogicaCinta - Metodo: Boolean ModificarCinta(DominioSKD.Cinta)
+2015-12-26 13:28:59,609 ERROR LogicaCinta - StackTrace:    at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 169
+   at LogicaNegociosSKD.Modulo5.LogicaCinta.modificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Modulo5\LogicaCinta.cs:line 148
+2015-12-26 13:28:59,609 ERROR LogicaCinta - InnerException: ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException: Orden de Cinta Repetido ---> System.Exception: Exception of type 'System.Exception' was thrown.
+   --- End of inner exception stack trace ---
+   at DatosSKD.Modulo5.BDCinta.ModificarCinta(Cinta laCinta) in c:\Users\Katherina Molina\Documents\GitHub\sakaratedo\DatosSKD\Modulo5\BDCinta.cs:line 131

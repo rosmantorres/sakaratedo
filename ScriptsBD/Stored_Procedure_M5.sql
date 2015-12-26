@@ -99,8 +99,6 @@ as
 		where @id_cinta = cin.cin_id
 	end;
 	
-
-
 --PROCEDURE MODIFICAR CINTA--
 CREATE PROCEDURE M5_ModificarCinta
 	@idcinta				[int],
@@ -133,11 +131,11 @@ as
 			cin_orden		  = @ordenCinta	
 			WHERE
 			cin_id = @idCinta;	
-	 else
+	else
 		delete ORGANIZACION_CINTA from ORGANIZACION_CINTA orgcin 
 					where orgcin.ORGANIZACION_org_id = @idOrg and orgcin.CINTA_cin_id = @idcinta;
 		
-		UPDATE CINTA
+	UPDATE CINTA
 		SET 
 			cin_color_nombre  = @colorCinta,
 			cin_rango         = @rangoCinta, 
@@ -146,9 +144,51 @@ as
 			cin_orden		  = @ordenCinta	
 			WHERE
 			cin_id = @idcinta;	
-		
-		
+	
 		INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id) VALUES(@idOrganizacion,@idcinta);
 	
 	
+ end;
+ 
+ --PROCEDURE CONSULTAR ID ORGANIACION--
+CREATE PROCEDURE M5_BuscarIDOrganiacion
+	@idOrganizacion   [int],
+	@numOrganizacion  [int] OUTPUT
+as
+ begin
+
+	select @numOrganizacion = count(*) 
+	from ORGANIZACION 
+	where org_id = @idOrganizacion
+
+ end;
+ 
+ --PROCEDURE CONSULTAR OrdenCinta--
+CREATE PROCEDURE M5_BuscarOrdenCinta
+	@ordenCinta			[int],
+	@idOrganizacion		[int],
+	@numCinta			[int] OUTPUT
+as
+ begin
+
+	select @numCinta = count(*) 
+	from CINTA cin, ORGANIZACION_CINTA orgcin, ORGANIZACION org
+		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	and
+		org.org_id = @idOrganizacion and cin.cin_orden = @ordenCinta
+
+ end;
+ 
+--PROCEDURE CONSULTAR NOMBRE CINTA--
+CREATE PROCEDURE M5_BuscarCintaNombre
+	@colorCinta [varchar](100),
+	@idOrganizacion		[int],
+	@numCinta			[int] OUTPUT
+as
+ begin
+
+	select @numCinta = count(*) 
+	from CINTA cin, ORGANIZACION_CINTA orgcin, ORGANIZACION org
+		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	and
+		org.org_id = @idOrganizacion and cin.cin_color_nombre = @colorCinta
+
  end;

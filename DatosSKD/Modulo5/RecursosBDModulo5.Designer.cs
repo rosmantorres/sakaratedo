@@ -142,6 +142,69 @@ namespace DatosSKD.Modulo5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_BuscarIDOrganiacion.
+        /// </summary>
+        internal static string BuscarIDOrganiacion {
+            get {
+                return ResourceManager.GetString("BuscarIDOrganiacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_BuscarCintaNombre.
+        /// </summary>
+        internal static string BuscarNombreCinta {
+            get {
+                return ResourceManager.GetString("BuscarNombreCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_BuscarOrdenCinta.
+        /// </summary>
+        internal static string BuscarOrdenCinta {
+            get {
+                return ResourceManager.GetString("BuscarOrdenCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_004.
+        /// </summary>
+        internal static string Codigo_Cinta_Repetida {
+            get {
+                return ResourceManager.GetString("Codigo_Cinta_Repetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_003.
+        /// </summary>
+        internal static string Codigo_Orden_Cinta_Repetida {
+            get {
+                return ResourceManager.GetString("Codigo_Orden_Cinta_Repetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_002.
+        /// </summary>
+        internal static string Codigo_Organizacion_Inexistente {
+            get {
+                return ResourceManager.GetString("Codigo_Organizacion_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M5_ConsultarCintasXId.
         /// </summary>
         internal static string ConsultarCintasXId {
@@ -174,6 +237,42 @@ namespace DatosSKD.Modulo5 {
         internal static string EliminarCinta {
             get {
                 return ResourceManager.GetString("EliminarCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La Cinta Para La Organizacion Seleccionada Esta Repetida.
+        /// </summary>
+        internal static string Mensaje_Cinta_Repetida {
+            get {
+                return ResourceManager.GetString("Mensaje_Cinta_Repetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orden de Cinta Repetido.
+        /// </summary>
+        internal static string Mensaje_Orden_Cinta_Repetida {
+            get {
+                return ResourceManager.GetString("Mensaje_Orden_Cinta_Repetida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La Organizacion No Exixte.
+        /// </summary>
+        internal static string Mensaje_Organizacion_Inexistente {
+            get {
+                return ResourceManager.GetString("Mensaje_Organizacion_Inexistente", resourceCulture);
             }
         }
         
@@ -264,6 +363,24 @@ namespace DatosSKD.Modulo5 {
         internal static string ParamRangoCinta {
             get {
                 return ResourceManager.GetString("ParamRangoCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numCinta.
+        /// </summary>
+        internal static string ParamSalidaNumCinta {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numOrganizacion.
+        /// </summary>
+        internal static string ParamSalidaNumOrganizacion {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumOrganizacion", resourceCulture);
             }
         }
         

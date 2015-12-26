@@ -44,13 +44,13 @@ namespace LogicaNegociosSKD.Modulo5
               }
               catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
               {
-                 // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                   throw ex;
               }
               catch (ExcepcionesSKD.ExceptionSKD ex)
               {
-                 // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                   throw ex;
               }
@@ -73,13 +73,13 @@ namespace LogicaNegociosSKD.Modulo5
             }
             catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
-                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
@@ -99,13 +99,13 @@ namespace LogicaNegociosSKD.Modulo5
             }
             catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
-                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
@@ -114,29 +114,27 @@ namespace LogicaNegociosSKD.Modulo5
 
         public bool agregarCinta(DominioSKD.Cinta laCinta)
         {
-           // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            try
+             try
             {
 
-              //  Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+                
                 return BDCinta.AgregarCinta(laCinta);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-              //  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
              catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-               // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
@@ -144,29 +142,26 @@ namespace LogicaNegociosSKD.Modulo5
 
         public bool modificarCinta(DominioSKD.Cinta laCinta)
         {
-            // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-
-                //  Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return BDCinta.ModificarCinta(laCinta);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
@@ -174,17 +169,14 @@ namespace LogicaNegociosSKD.Modulo5
 
         public bool eliminarCinta(int idCinta)
         {
-            // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-
-                //  Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return BDCinta.EliminarCinta(idCinta);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
@@ -196,7 +188,7 @@ namespace LogicaNegociosSKD.Modulo5
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }

@@ -66,11 +66,11 @@ namespace templateApp.GUI.Modulo5
                 this.tabla.Text += RecursoInterfazMod5.BotonInfo + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
                 this.tabla.Text += RecursoInterfazMod5.BotonModificar + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
             //    this.tabla.Text += RecursoInterfazMod5.BotonDesactivarCintas + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
-
                 if (cinta.Status)
-                    this.tabla.Text += RecursoInterfazMod5.BotonActivarCinta + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
+                    this.tabla.Text += RecursoInterfazMod5.BotonActivarCin + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
                 else
-                    this.tabla.Text += RecursoInterfazMod5.BotonDesactivarCinta + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;           
+                    this.tabla.Text += RecursoInterfazMod5.BotonDesactivarCin + cinta.Id_cinta + RecursoInterfazMod5.BotonCerrar;
+                         
                 this.tabla.Text += RecursoInterfazMod5.CerrarTD;
                 this.tabla.Text += RecursoInterfazMod5.CerrarTR;
             }

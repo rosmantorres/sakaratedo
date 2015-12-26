@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ListarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ListarCintas" %> 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> 
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="M4_js/M4_JSGoogleMaps.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 </asp:Content> 
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server"> 
 <%--Breadcrumbs--%> 

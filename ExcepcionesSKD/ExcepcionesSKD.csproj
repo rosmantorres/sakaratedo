@@ -50,9 +50,12 @@
     </Compile>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
-
+    <Compile Include="Modulo3\OrganizacionSoloTengaUnEstiloException.cs" />
+    <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo5\CintaRepetidaException.cs" />
+    <Compile Include="Modulo5\OrganizacionInexistenteException.cs" />
+    <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
-
     <Compile Include="InformacionPersonalInvalidaException.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
@@ -67,7 +70,6 @@
     <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
-
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,12 +79,6 @@
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo16\" />
-    <Folder Include="Modulo3\" />
-
-    <Folder Include="Modulo4\" />
-
-    <Folder Include="Modulo5\" />
-
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />

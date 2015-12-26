@@ -82,9 +82,9 @@ namespace templateApp.GUI.Modulo5 {
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
         /// </summary>
-        internal static string BotonActivarCinta {
+        internal static string BotonActivarCin {
             get {
-                return ResourceManager.GetString("BotonActivarCinta", resourceCulture);
+                return ResourceManager.GetString("BotonActivarCin", resourceCulture);
             }
         }
         
@@ -110,9 +110,9 @@ namespace templateApp.GUI.Modulo5 {
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
         /// </summary>
-        internal static string BotonDesactivarCinta {
+        internal static string BotonDesactivarCin {
             get {
-                return ResourceManager.GetString("BotonDesactivarCinta", resourceCulture);
+                return ResourceManager.GetString("BotonDesactivarCin", resourceCulture);
             }
         }
         

@@ -123,19 +123,11 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
-  <data name="BotonActivarCinta" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
-  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonCerrar1" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonDesactivarCinta" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
@@ -169,5 +161,13 @@
   </data>
   <data name="Tipo" xml:space="preserve">
     <value>&amp;tipo=</value>
+  </data>
+  <data name="BotonActivarCin" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
+  </data>
+  <data name="BotonDesactivarCin" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
   </data>
 </root>
