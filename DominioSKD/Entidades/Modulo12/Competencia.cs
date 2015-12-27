@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Competencia
+    public class Competencia : Entidad
     {
         #region atributos
         private int id_competencia;
@@ -99,12 +99,25 @@ namespace DominioSKD
         #endregion
 
         #region constructores
-        public Competencia()
+        public Competencia() : base()
         {
+            id_competencia = 0;
+            nombre = "";
+            tipoCompetencia = "";
+            organizacionTodas = false;
+            status = "";
+            costo = 0;
+            categoria = null;
+            ubicacion = null;
+            fechaInicio = DateTime.Now;
+            fechaFin = DateTime.Now;
+            organizacion = null;
+            listaOrganizaciones = null;
+            
 
         }
 
-        public Competencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
+        public Competencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus) :base()
         {
             id_competencia    = elId;
             nombre            = elNombre;
@@ -115,13 +128,17 @@ namespace DominioSKD
 
         }
 
-        public Competencia(String elNombre, String elTipo, bool orgTodas, String elStatus)
+        public Competencia(int id,int elId, String elNombre, String elTipo, bool orgTodas, String elStatus): base(id)
         {
+            id_competencia = elId;
             nombre = elNombre;
             tipoCompetencia = elTipo;
             organizacionTodas = orgTodas;
             status = elStatus;
+
+
         }
+
         #endregion
 
 

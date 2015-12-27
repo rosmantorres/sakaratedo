@@ -42,15 +42,17 @@
     <Compile Include="Asistencia.cs" />
     <Compile Include="Atleta.cs" />
     <Compile Include="Carrito.cs" />
-    <Compile Include="Categoria.cs" />
+    <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
+    <Compile Include="Entidad.cs" />
+    <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
     <Compile Include="PersonaM1.cs" />
     <Compile Include="RestriccionCinta.cs" />
-    <Compile Include="Competencia.cs" />
+    <Compile Include="Entidades\Modulo12\Competencia.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Diseño.cs" />
@@ -75,13 +77,30 @@
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />
-    <Compile Include="Ubicacion.cs" />
+    <Compile Include="Entidades\Modulo12\Ubicacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entidades\Modulo10\" />
+    <Folder Include="Entidades\Modulo11\" />
+    <Folder Include="Entidades\Modulo13\" />
+    <Folder Include="Entidades\Modulo14\" />
+    <Folder Include="Entidades\Modulo15\" />
+    <Folder Include="Entidades\Modulo16\" />
+    <Folder Include="Entidades\Modulo1\" />
+    <Folder Include="Entidades\Modulo2\" />
+    <Folder Include="Entidades\Modulo3\" />
+    <Folder Include="Entidades\Modulo4\" />
+    <Folder Include="Entidades\Modulo5\" />
+    <Folder Include="Entidades\Modulo6\" />
+    <Folder Include="Entidades\Modulo7\" />
+    <Folder Include="Entidades\Modulo8\" />
+    <Folder Include="Entidades\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
