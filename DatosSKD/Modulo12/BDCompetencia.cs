@@ -15,7 +15,6 @@ namespace DatosSKD.Modulo12
 {
     public class BDCompetencia
     {
-
         public List<Competencia> ListarCompetencias()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
