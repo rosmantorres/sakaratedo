@@ -23,6 +23,7 @@ namespace PruebasUnitariasSKD.Modulo10
         private Evento elEvento;
         private int idEvento;
         private string idDeEvento;
+        List<Inscripcion> ListaInsc;
 
         List<Competencia> laListaC;
         private Competencia laCompetencia;
@@ -34,7 +35,7 @@ namespace PruebasUnitariasSKD.Modulo10
         private Asistencia asistio;
         private string asiste;
         private string idCompetencia;
-        Parametro parametro;
+        private int Competenciaid;
         BDAsistencia baseDeDatosA;
 
         #endregion
@@ -70,13 +71,14 @@ namespace PruebasUnitariasSKD.Modulo10
             idDeEvento = "3";
             idCompetencia = "8";
             baseDeDatosA = new BDAsistencia();
+            Competenciaid = 8;
 
             laCompetencia.Id_competencia = 8;
             laCompetencia.Nombre = "Ryu Kobudo";
             laCompetencia.TipoCompetencia = "1";
             laCompetencia.OrganizacionTodas = true;
             laCompetencia.Status = "Por Iniciar";
-            
+
 
         }
 
@@ -130,9 +132,14 @@ namespace PruebasUnitariasSKD.Modulo10
 
 
         [Test]
-        public void PruebaModificarAsitenteE(int idInscripcion, int idEvento, string asiste)
+        public void PruebaModificarAsitenteE()
         {
-
+            DatosSKD.Modulo10.BDAsistencia baseDeDatosA = new DatosSKD.Modulo10.BDAsistencia();
+            asistio.Asistio = "No";
+            elEvento.Id_evento = 3;
+            inscripcion.Id_Inscripcion = 32;            
+          //  Assert.IsTrue(baseDeDatosA.ModificarAsistenciaE(idInscripcion, idEvento, asiste));
+         
         }
 
 
@@ -141,7 +148,7 @@ namespace PruebasUnitariasSKD.Modulo10
         public void PruebaConsultarCompetenciaXID()
         {
             laCompetencia = BDAsistencia.consultarCompetenciasXID(idCompetencia);
-       
+
         }
 
 
@@ -166,13 +173,30 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void PruebaModificarAsistenciaC()
         {
-
+            DatosSKD.Modulo10.BDAsistencia baseDeDatosA = new DatosSKD.Modulo10.BDAsistencia();
+     //       Assert.IsTrue(BDAsistencia.ModificarAsistenciaC(idInscripcion, Competenciaid, asiste)true);
+            asistio.Asistio = "No";
+            elEvento.Id_evento = 3;
+            inscripcion.Id_Inscripcion = 32;  
 
         }
 
 
+        [Test]
+        public void PruebaListaIporPlanilla()
+        {
+            ListaInsc = BDAsistencia.listaInasistentesPlanilla(idDeEvento);
+            Assert.IsNotNull(ListaInsc);
+        }
 
 
-        #endregion
+        public void PruebaListaAtletaIEvento()
+        {
+            ListaP = BDAsistencia.listaAtletasInscritosEvento(idDeEvento);
+            Assert.IsNotNull(ListaP);
+        }
     }
 }
+
+        #endregion
+ 
