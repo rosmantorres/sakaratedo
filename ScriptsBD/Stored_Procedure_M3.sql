@@ -116,3 +116,29 @@ as
 		
 	end;
 go
+--PROCEDURE CONSULTAR NOMBRE ORGANIZACION--
+CREATE PROCEDURE M3_BuscarNombreOrganizacion
+	@nombreOrganizacion  [varchar](100),
+	@numOrganizacion  [int] OUTPUT
+as
+ begin
+
+	select @numOrganizacion = count(*) 
+	from ORGANIZACION 
+	where org_nombre = @nombreOrganizacion
+
+ end;
+ 
+--PROCEDURE CONSULTAR NOMBRE ESTILO--
+CREATE PROCEDURE M3_BuscarEstilo
+	@nombreEstilo  [varchar](100),
+	@numEstilo  [int] OUTPUT
+as
+ begin
+
+	select @numEstilo = count(*) 
+	from ESTILO 
+	where est_nombre = @nombreEstilo
+
+ end;
+ 

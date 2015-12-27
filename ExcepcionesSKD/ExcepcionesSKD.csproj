@@ -50,7 +50,8 @@
     </Compile>
     <Compile Include="ExceptionSKD.cs" />
     <Compile Include="ExceptionSKDConexionBD.cs" />
-    <Compile Include="Modulo3\OrganizacionSoloTengaUnEstiloException.cs" />
+    <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
+    <Compile Include="Modulo3\EstiloInexistenteException.cs" />
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
     <Compile Include="Modulo5\OrganizacionInexistenteException.cs" />

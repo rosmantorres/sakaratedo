@@ -133,6 +133,51 @@ namespace DatosSKD.Modulo3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M3_BuscarEstilo.
+        /// </summary>
+        internal static string BuscarEstilo {
+            get {
+                return ResourceManager.GetString("BuscarEstilo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M3_BuscarNombreOrganizacion.
+        /// </summary>
+        internal static string BuscarNombreOrganizacion {
+            get {
+                return ResourceManager.GetString("BuscarNombreOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_003.
+        /// </summary>
+        internal static string Codigo_Estilo_Inexistente {
+            get {
+                return ResourceManager.GetString("Codigo_Estilo_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_002.
+        /// </summary>
+        internal static string Codigo_Organizacion_Existente {
+            get {
+                return ResourceManager.GetString("Codigo_Organizacion_Existente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M3_ConsultarComboOrganizacion.
         /// </summary>
         internal static string ConsultarComboORG {
@@ -165,6 +210,33 @@ namespace DatosSKD.Modulo3 {
         internal static string EliminarOrganizacion {
             get {
                 return ResourceManager.GetString("EliminarOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La Tecnica seleccionada no existe.
+        /// </summary>
+        internal static string Mensaje_Estilo_Inexistente {
+            get {
+                return ResourceManager.GetString("Mensaje_Estilo_Inexistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La Organizacion ya existe.
+        /// </summary>
+        internal static string Mensaje_Organizacion_Existente {
+            get {
+                return ResourceManager.GetString("Mensaje_Organizacion_Existente", resourceCulture);
             }
         }
         
@@ -237,6 +309,24 @@ namespace DatosSKD.Modulo3 {
         internal static string ParamNombreOrg {
             get {
                 return ResourceManager.GetString("ParamNombreOrg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numEstilo.
+        /// </summary>
+        internal static string ParamSalidaNumEstilo {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumEstilo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numOrganizacion.
+        /// </summary>
+        internal static string ParamSalidaNumOrganizacion {
+            get {
+                return ResourceManager.GetString("ParamSalidaNumOrganizacion", resourceCulture);
             }
         }
         

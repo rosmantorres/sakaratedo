@@ -142,6 +142,24 @@
   <data name="AliasTelefonoOrg" xml:space="preserve">
     <value>telefonoOrganiacion</value>
   </data>
+  <data name="BuscarEstilo" xml:space="preserve">
+    <value>M3_BuscarEstilo</value>
+  </data>
+  <data name="BuscarNombreOrganizacion" xml:space="preserve">
+    <value>M3_BuscarNombreOrganizacion</value>
+    <comment>Buscar organizacion por nombre</comment>
+  </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>SKD_001</value>
+    <comment>Codigo de error en el parseo</comment>
+  </data>
+  <data name="Codigo_Estilo_Inexistente" xml:space="preserve">
+    <value>SKD_003</value>
+  </data>
+  <data name="Codigo_Organizacion_Existente" xml:space="preserve">
+    <value>SKD_002</value>
+    <comment>Codigo error de organiacion repetida</comment>
+  </data>
   <data name="ConsultarComboORG" xml:space="preserve">
     <value>M3_ConsultarComboOrganizacion</value>
   </data>
@@ -155,6 +173,16 @@
   <data name="EliminarOrganizacion" xml:space="preserve">
     <value>M3_EliminarOrganizacion</value>
     <comment>funcion para eliminar una organizacion dado su id</comment>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
+  </data>
+  <data name="Mensaje_Estilo_Inexistente" xml:space="preserve">
+    <value>La Tecnica seleccionada no existe</value>
+  </data>
+  <data name="Mensaje_Organizacion_Existente" xml:space="preserve">
+    <value>La Organizacion ya existe</value>
   </data>
   <data name="ModificarOrganizacion" xml:space="preserve">
     <value>M3_ModificarOrganizacion</value>
@@ -180,6 +208,12 @@
   </data>
   <data name="ParamNombreOrg" xml:space="preserve">
     <value>@nombreOrganizacion</value>
+  </data>
+  <data name="ParamSalidaNumEstilo" xml:space="preserve">
+    <value>@numEstilo</value>
+  </data>
+  <data name="ParamSalidaNumOrganizacion" xml:space="preserve">
+    <value>@numOrganizacion</value>
   </data>
   <data name="ParamTelOrg" xml:space="preserve">
     <value>@telefOrganizacion</value>

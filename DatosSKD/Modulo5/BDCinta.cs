@@ -191,7 +191,25 @@ namespace DatosSKD.Modulo5
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                    RecursosBDModulo5.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
 
             return true;
         }
@@ -229,10 +247,29 @@ namespace DatosSKD.Modulo5
                 }
 
             }
-            catch (SqlException ex)
+            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {
-                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                    RecursosBDModulo5.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
 
@@ -276,11 +313,29 @@ namespace DatosSKD.Modulo5
                 }
 
             }
-            catch (SqlException ex)
+            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                    RecursosBDModulo5.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
             return laListaCintas;
@@ -324,15 +379,29 @@ namespace DatosSKD.Modulo5
 
 
             }
-            catch (SqlException ex)
+            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (Exception e)
+            catch (FormatException ex)
             {
-                throw e;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                    RecursosBDModulo5.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
 
@@ -374,29 +443,30 @@ namespace DatosSKD.Modulo5
                         }
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
-                     RecursosBDModulo5.Mensaje_Error_Formato, ex);
+
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                    RecursosBDModulo5.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-
             return retorno;
 
 
@@ -448,7 +518,7 @@ namespace DatosSKD.Modulo5
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
                      RecursosBDModulo5.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -513,7 +583,7 @@ namespace DatosSKD.Modulo5
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
+                throw new ExcepcionesSKD.Modulo5.FormatoIncorrectoException(RecursosBDModulo5.Codigo_Error_Formato,
                      RecursosBDModulo5.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

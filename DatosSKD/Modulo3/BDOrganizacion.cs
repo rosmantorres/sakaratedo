@@ -15,11 +15,13 @@ namespace DatosSKD.Modulo3
 {
     public class BDOrganizacion
     {
-        //Agregar logger 
+         
         public static bool AgregarOrganizacion(Organizacion laOrganizacion)
         {
             try
             {
+               if (!BuscarNombreOrganizacion(laOrganizacion)) {
+                    if (BuscarEstilo(laOrganizacion)) {
                 List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
 
                 Parametro elParametro = new Parametro(RecursosBDModulo3.ParamNombreOrg, SqlDbType.VarChar, laOrganizacion.Nombre,false);
@@ -38,23 +40,55 @@ namespace DatosSKD.Modulo3
                 BDConexion laConexion = new BDConexion();// abres la conexion
                 laConexion.EjecutarStoredProcedure(RecursosBDModulo3.AgregarOrganizacion
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                    }// Fin if    
+                    else
+                    {
+                        throw new ExcepcionesSKD.Modulo3.EstiloInexistenteException(RecursosBDModulo3.Codigo_Estilo_Inexistente,
+                                       RecursosBDModulo3.Mensaje_Estilo_Inexistente, new Exception());
+                    }
 
+                }// Fin if    
+                else
+                {
+                    throw new ExcepcionesSKD.Modulo3.OrganizacionExistenteException(RecursosBDModulo3.Codigo_Organizacion_Existente,
+                                   RecursosBDModulo3.Mensaje_Organizacion_Existente, new Exception());
+                }
             }
              catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-                
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                    RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }    
 
             return true;
         }
 
-        //Agregar logger 
+       
         public static bool ModificarOrganizacion(Organizacion laOrganizacion)
         {
             try
             {
+                if (!BuscarNombreOrganizacion(laOrganizacion)) {
+                     if (BuscarEstilo(laOrganizacion)) {
                 List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
 
                 Parametro elParametro = new Parametro(RecursosBDModulo3.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
@@ -75,19 +109,48 @@ namespace DatosSKD.Modulo3
                 BDConexion laConexion = new BDConexion();// abres la conexion
                 laConexion.EjecutarStoredProcedure(RecursosBDModulo3.ModificarOrganizacion
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
-
+                     }// Fin if    
+                     else
+                     {
+                         throw new ExcepcionesSKD.Modulo3.EstiloInexistenteException(RecursosBDModulo3.Codigo_Estilo_Inexistente,
+                                        RecursosBDModulo3.Mensaje_Estilo_Inexistente, new Exception());
+                     }
+                }// Fin if    
+                else
+                {
+                    throw new ExcepcionesSKD.Modulo3.OrganizacionExistenteException(RecursosBDModulo3.Codigo_Organizacion_Existente,
+                                   RecursosBDModulo3.Mensaje_Organizacion_Existente, new Exception());
+                }
             }
             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                    RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }    
 
             return true;
         }
 
-        //Agregar logger 
+         
         public static bool EliminarOrganizacion(int laOrganizacion)
         {
             try
@@ -107,6 +170,25 @@ namespace DatosSKD.Modulo3
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                    RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }    
 
 
             return true;
@@ -151,6 +233,25 @@ namespace DatosSKD.Modulo3
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                    RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }    
 
             return laListaOrganizaciones;
         }
@@ -185,6 +286,13 @@ namespace DatosSKD.Modulo3
                     RecursoGeneralBD.Mensaje, ex);
             }
            
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                    RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -196,8 +304,7 @@ namespace DatosSKD.Modulo3
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-
+            }    
             return laListaOrganizaciones;
         }
   
@@ -238,16 +345,154 @@ namespace DatosSKD.Modulo3
 
 
             }
-            catch (Exception e)
+            catch (FormatException ex)
             {
-                throw e;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                    RecursosBDModulo3.Mensaje_Error_Formato, ex);
             }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }    
 
            
         }
-       
-        
-        
+
+        public static bool BuscarNombreOrganizacion(Organizacion laOrganizacion)
+        {
+
+            bool retorno = false;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDModulo3.ParamNombreOrg, SqlDbType.VarChar
+                                                      , laOrganizacion.Nombre, false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo3.ParamSalidaNumOrganizacion, SqlDbType.Int, true);
+                parametros.Add(elParametro);
+
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDModulo3.BuscarNombreOrganizacion
+                                             , parametros);
+
+                foreach (Resultado elResultado in resultados)
+                {
+                    if (elResultado.etiqueta == RecursosBDModulo3.ParamSalidaNumOrganizacion)
+                        if (int.Parse(elResultado.valor) == 1) // Significa q el nombre en esa organizacion esta repetido si esta repetido
+                            retorno = true;
+                        else
+                        {
+                            retorno = false;
+                        }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                     RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return retorno;
+
+
+        }
+
+        public static bool BuscarEstilo(Organizacion laOrganizacion)
+        {
+
+            bool retorno = false;
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosBDModulo3.ParamEstiloOrg, SqlDbType.VarChar
+                                                      , laOrganizacion.Estilo, false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(RecursosBDModulo3.ParamSalidaNumEstilo, SqlDbType.Int, true);
+                parametros.Add(elParametro);
+
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosBDModulo3.BuscarEstilo
+                                             , parametros);
+
+                foreach (Resultado elResultado in resultados)
+                {
+                    if (elResultado.etiqueta == RecursosBDModulo3.ParamSalidaNumEstilo)
+                        if (int.Parse(elResultado.valor) == 1)
+                            retorno = true;
+                        else
+                        {
+                            Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo3.Mensaje_Estilo_Inexistente, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                            throw new ExcepcionesSKD.Modulo3.EstiloInexistenteException(RecursosBDModulo3.Codigo_Estilo_Inexistente,
+                                RecursosBDModulo3.Mensaje_Estilo_Inexistente, new Exception());
+                        }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo3.FormatoIncorrectoException(RecursosBDModulo3.Codigo_Error_Formato,
+                     RecursosBDModulo3.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return retorno;
+
+
+        }
+
         }
 
 
