@@ -60,7 +60,43 @@ namespace templateApp.GUI.Modulo5
             string nombre = "";
             Cinta laCinta = new Cinta();
             Organizacion laOrganizacion = new Organizacion();
-
+/*
+            if (cinta.Value == "")
+            {
+                this.alertlocal.Attributes["class"] = "alert alert-danger";
+                this.alertlocal.Attributes["role"] = "alert";
+                this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has llenado el campo nombre de la cinta.</div>";
+                this.alertlocal.Visible = true;
+            }
+            else if (ran.Value == "")
+            {
+                this.alertlocal.Attributes["class"] = "alert alert-danger";
+                this.alertlocal.Attributes["role"] = "alert";
+                this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has llenado el campo rango de la cinta.</div>";
+                this.alertlocal.Visible = true;
+            }
+            else if (cate.Value == "")
+            {
+                this.alertlocal.Attributes["class"] = "alert alert-danger";
+                this.alertlocal.Attributes["role"] = "alert";
+                this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has llenado el campo categoria de la cinta.</div>";
+                this.alertlocal.Visible = true;
+            }
+            else if (signi.Value == "")
+            {
+                this.alertlocal.Attributes["class"] = "alert alert-danger";
+                this.alertlocal.Attributes["role"] = "alert";
+                this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has llenado el campo significado de la cinta.</div>";
+                this.alertlocal.Visible = true;
+            }
+            else if (ord.Value == "")
+            {
+                this.alertlocal.Attributes["class"] = "alert alert-danger";
+                this.alertlocal.Attributes["role"] = "alert";
+                this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No has llenado el campo orden de la cinta.</div>";
+                this.alertlocal.Visible = true;
+            }
+            */
             if (this.ListOrg.SelectedValue != "-1" && this.ListOrg.SelectedValue != "-2")
             {           
                 organizacion = this.ListOrg.SelectedValue;
@@ -84,6 +120,13 @@ namespace templateApp.GUI.Modulo5
             //try
            try{
                lO.agregarCinta(laCinta);
+               if (cinta.Value != "" && ran.Value != "" && cate.Value != "" && cate.Value != "" && signi.Value != "" && ord.Value != "")
+               {
+                   this.alertlocal.Attributes["class"] = "alert alert-success";
+                   this.alertlocal.Attributes["role"] = "alert";
+                   this.alertlocal.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Se ha creado la cinta con exito.</div>";
+                   this.alertlocal.Visible = true;
+               }
            }
            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
            {

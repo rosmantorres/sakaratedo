@@ -76,5 +76,10 @@ namespace templateApp.GUI.Modulo5
             }
         }
 
+        protected void CambioDeStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

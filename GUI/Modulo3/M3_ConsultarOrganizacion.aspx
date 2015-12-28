@@ -115,19 +115,42 @@
 			</div>
 		</div><!-- /.modal-dialog -->
 
+ <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" >Activaci&oacute;n/Desactivaci&oacute;n de Organizaci&oacute;n Seleccionada</h4>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                    <p>¿Está seguro que desea cambiar el status de la organización?</p>
+                    <p id="comp"></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">  
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>  <!-- onserverclick="CambioDeStatus_Click" --> 
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+           </div>
+          </div>
+        </div>
+      </div>
+    
     
     <script type="text/javascript">
           $(document).ready(function () {
 
-            var table = $('#example').DataTable({
-                "language": {
+              var table = $('#tablaOrg').DataTable({
+              /*  "language": {
                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }
+                }*/
             });
             var req;
             var tr;
           
-            $('#example tbody').on('click', 'a', function () {
+            $('#tablaOrg tbody').on('click', 'a', function () {
                 if ($(this).parent().hasClass('selected')) {
                     req = $(this).parent().prev().prev().prev().prev().text();
                     tr = $(this).parents('tr');//se guarda la fila seleccionada 
@@ -145,8 +168,9 @@
 
 
         }); 
-
+          $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');
         </script>
-      
+      <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+ 
 
 </asp:Content>

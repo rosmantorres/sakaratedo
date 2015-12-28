@@ -40,13 +40,13 @@ namespace templateApp.GUI.Modulo5 {
         protected global::System.Web.UI.WebControls.DropDownList ListOrg;
         
         /// <summary>
-        /// id_otro control.
+        /// alertlocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_otro;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
         
         /// <summary>
         /// cinta control.

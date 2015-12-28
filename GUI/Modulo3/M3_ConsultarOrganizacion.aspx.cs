@@ -63,7 +63,10 @@ namespace templateApp.GUI.Modulo3
             }
         }
 
+        protected void CambioDeStatus_Click(object sender, EventArgs e)
+        {
 
+        }
 
         }
     
