@@ -72,6 +72,7 @@ namespace templateApp
             catch (NullReferenceException ex)
             {
 
+                Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
             }
             catch (Exception ex)
             {
