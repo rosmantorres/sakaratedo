@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,7 +88,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\ConexionBaseDatos.cs" />
     <Compile Include="Modulo15\RecursosBDModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,7 +116,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo3.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo4\BDDojo.cs" />
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +132,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo6.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo7\BDCinta.cs" />
+    <Compile Include="Modulo7\BDCompetencia.cs" />
+    <Compile Include="Modulo7\BDDojo.cs" />
+    <Compile Include="Modulo7\BDEvento.cs" />
+    <Compile Include="Modulo7\BDHorario.cs" />
+    <Compile Include="Modulo7\BDMatricula.cs" />
+    <Compile Include="Modulo7\BDOrganizacion.cs" />
+    <Compile Include="Modulo7\BDPersona.cs" />
+    <Compile Include="Modulo7\BDTipoEvento.cs" />
+    <Compile Include="Modulo7\BDUbicacion.cs" />
     <Compile Include="Modulo7\RecursosBDModulo7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +160,11 @@
     </Compile>
     <Compile Include="Parametro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DAO\RecursoGeneralDAO.Designer.cs">
+      <DependentUpon>RecursoGeneralDAO.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="RecursoGeneralBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +237,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoGeneralDAO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecursoGeneralBD.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoGeneralBD.Designer.cs</LastGenOutput>
@@ -256,6 +275,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
+    <Folder Include="DAO\Modulo10\" />
+    <Folder Include="DAO\Modulo11\" />
+    <Folder Include="DAO\Modulo12\" />
+    <Folder Include="DAO\Modulo13\" />
+    <Folder Include="DAO\Modulo14\" />
+    <Folder Include="DAO\Modulo15\" />
+    <Folder Include="DAO\Modulo16\" />
+    <Folder Include="DAO\Modulo1\" />
+    <Folder Include="DAO\Modulo2\" />
+    <Folder Include="DAO\Modulo3\" />
+    <Folder Include="DAO\Modulo4\" />
+    <Folder Include="DAO\Modulo5\" />
+    <Folder Include="DAO\Modulo6\" />
+    <Folder Include="DAO\Modulo7\" />
+    <Folder Include="DAO\Modulo8\" />
+    <Folder Include="DAO\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

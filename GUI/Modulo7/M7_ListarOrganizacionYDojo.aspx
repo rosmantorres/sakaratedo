@@ -1,64 +1,114 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M7_ListarOrganizacionYDojo.aspx.cs" Inherits="templateApp.GUI.Modulo7.M7_ListarOrganizacionYDojo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
-	<%--Breadcrumbs--%>
+<asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
+    <%--Breadcrumbs--%>
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
+
 		    <li class="active">
-			   Consultar Organización y Dojo
+			    Consultar Organizacion y Dojo
 		    </li>
 	    </ol>
     </div>
 	<%--Fin_Breadcrumbs--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Organización y Dojo
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Consulta de Atleta
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Organización y dojo al que pertenece actualmente
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Consulta Perfil
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-
-
-<div id="alert" runat="server">
-    </div>
-
- <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                </div><!-- /.box-header -->
-
-    <div class="box-body table-responsive">
-						<div class="container-fluid" id="info">
-							<h3>Atleta</h3>
-								<div>
-								   <ul>
-                                        <li>Nombre: Enmanuel</li>
-                                        <li>Apellido: García </li>
-                                        <li>Fecha Nacimiento: 27/02/1995 </li>
-									</ul>
-								</div>
-								<h3>Dojo</h3>
-								<p>
-									Dojo Hombuji
-								</p>
-								<h3>Organización a la que pertenece el Dojo</h3>
-								<p>
-									Organización El Parque Karate Do
-								</p>
-								<h3>Fecha de inicio en el Dojo</h3>
-								<p>
-									10/01/2010
-								</p>
-                                <h3>Cinta actual</h3>
-								<p>
-									   Cinta Verde
-								</p>
-						</div>
-        		</div>
-			</div>
-		</div>
-
-    </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <!-- general form elements -->
+   <div class="box box-primary">
+      <div class="box-header with-border">
+         <h3 class="box-title">Datos del Atleta</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form runat="server" role="form" name="detalle_Persona" id="detalle_Persona" method="post">
+         <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+            <div class="panel-group col-sm-12 col-md-12 col-lg-12">
+               <div class="panel panel-primary">
+                  <div class="panel-heading">
+                     <h4>Información</h4>
+                  </div>
+                  <div class="panel-body">
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <br />
+                        <h4>Nombre :</h4>
+                        <asp:Label runat="server" name="nombrePersona" id="nombrePersona" Font-Size="Large"></asp:Label>
+                     </div>
+                     <br/>
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Apellido :</h4>
+                        <asp:Label runat="server" name="ApellidoPersona" id="apellidoPersona" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Fecha de Nacimiento :</h4>
+                        <asp:Label runat="server" name="fechaNacimiento" id="fechaNacimiento" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Direccion :</h4>
+                        <asp:Label runat="server" name="direccion" id="direccion" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Dojo al que pertenece :</h4>
+                        <asp:Label runat="server" name="nombreDojo" id="nombreDojo" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Teléfono del Dojo :</h4>
+                        <asp:Label runat="server" name="telefonoDojo" id="telefonoDojo" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Email del Dojo :</h4>
+                        <asp:Label runat="server" name="emailDojo" id="emailDojo" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Ubicación del Dojo :</h4>
+                        <asp:Label runat="server" name="ubicacionDojo" id="ubicacionDojo" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Organización :</h4>
+                        <asp:Label runat="server" name="nombreOrganizacion" id="nombreOrganizacion" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Email Organización :</h4>
+                        <asp:Label runat="server" name="emailOrganizacion" id="emailOrganizacion" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Ubicación Organización :</h4>
+                        <asp:Label runat="server" name="ubicacionOrganizacion" id="ubicacionOrganizacion" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <h4>Cinta Actual :</h4>
+                        <asp:Label runat="server" name="cintaActual" id="cintaActual" Font-Size="Large"></asp:Label>
+                        <br />
+                     </div>
+                      <div class="panel-group col-sm-10 col-md-10 col-lg-10">
+            </div>
+            <br />
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- /.box-body -->
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <div class="box-footer">
+         </div>
+      </form>
+   </div>
+   <!-- /.box -->
+</asp:Content>

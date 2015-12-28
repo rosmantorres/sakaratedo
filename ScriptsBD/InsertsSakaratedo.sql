@@ -66,12 +66,6 @@ go
 INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.6338776', '-71.8170448', 'Maracaibo', 'Zulia', null)
 go
 
-INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.499607', '-66.788419', 'Caracas', 'Miranda', 'Quinta transversal chacaito, casa Karate Do') 
-go
-
-INSERT INTO [dbo].[UBICACION] ([ubi_latitud], [ubi_longitud], [ubi_ciudad], [ubi_estado], [ubi_direccion]) VALUES ('10.499607', '-66.788419', 'Caracas', 'Miranda', 'Altamira, dojo OldSensei') 
-go
-
 -- INSERTS ESTILO --
 
 INSERT INTO ESTILO(est_nombre,est_descripcion) VALUES('Cobra-do','Fusión entre Karate-Do y Kung Fu. Fundado por el Maestro Jesús López. Caracas-Venezuela.');
@@ -131,14 +125,6 @@ go
 INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
 VALUES (N'Shoosei Kai', 3, 0, N'Por Iniciar', N'2015-10-11 00:00:00', N'2015-10-11 00:00:00', 2, 3, 2,1800)
 go
-
-INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
-VALUES (N'Shoosei Kai', 1, 0, N'Finalizada', N'2014-05-10 00:00:00', N'2014-05-14 00:00:00', 2, 3, 2,1800)
-go 
-
-INSERT INTO [dbo].[COMPETENCIA] ( [comp_nombre], [comp_tipo], [comp_org_todas], [comp_status], [comp_fecha_ini], [comp_fecha_fin], [UBICACION_comp_id], [CATEGORIA_comp_id], [ORGANIZACION_comp_id], [comp_costo]) 
-VALUES (N'Gashumi Io', 1, 0, N'Inscrita', N'2015-05-10 00:00:00', N'2015-05-14 00:00:00', 2, 3, 2,3000)
-go 
 
 
 --INSERTS RESTRICCION COMPETENCIA--
@@ -317,27 +303,14 @@ INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio
 go
 INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-15',3,6) -- Clases -- 
 go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-03-10','2015-03-10',15,18)
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-04-15','2016-04-15',1,3)  
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-07-22','2016-07-22',18,20)  
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-08-03','2016-08-03',13,18) 
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-17',10,18) 
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-15','2016-10-15',2,4)  
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-16','2016-10-16',4,6) 
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2015-10-17','2016-10-17',3,5)  
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-01-15','2016-01-18',5,1) 
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-02-15','2016-02-15',1,3)  
-go
-INSERT INTO [dbo].[HORARIO] ([hor_fecha_inicio],[hor_fecha_fin],[hor_hora_inicio],[hor_hora_fin]) VALUES ('2016-01-11','2016-01-12',2,4) 
+
+
+-- INSERTS IMPLEMENTO --
+
+
+
+
+
 
 
 
@@ -388,6 +361,7 @@ INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_esta
 go
 INSERT INTO [dbo].[EVENTO] ([eve_nombre],[eve_costo],[eve_descripcion],[eve_estado],[DOJO_doj_id],[CATEGORIA_cat_id],[HORARIO_hor_id],[TIPO_EVENTO_tip_id],[UBICACION_ubi_id]) VALUES ('Pse de Cinta',1300,'Pase de cinta de los atletas',1,1,null,15,1,6)
 go
+
 
 
 
@@ -4069,9 +4043,8 @@ INSERT INTO dbo.PERSONA (
     per_estatura,
 	per_nombre_usuario,
 	per_clave,
-	per_imagen,
+	per_imagen
 	DOJO_doj_id
-
 ) 
 VALUES (
     'CEDULA-N',
@@ -4089,9 +4062,9 @@ VALUES (
     1.72,
     'carloadmin',
     '12345',
+
 	'https://media.licdn.com/media/p/1/005/040/3e7/00ea99f.jpg',
 	    (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
-
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4171,7 +4144,6 @@ VALUES (
     'rosmanadmin',
     '12345',
         (SELECT doj_id FROM dbo.DOJO WHERE doj_rif = 'J-13224369-3')
-
 );
 
 INSERT INTO dbo.TELEFONO (
@@ -4895,7 +4867,7 @@ INSERT INTO	HISTORIAL_CINTAS	VALUES	(	28	,	NULL	,	'2015-05-20'	,	1	);
 INSERT INTO	HISTORIAL_CINTAS	VALUES	(	29	,	NULL	,	'2015-04-10'	,	1	);
 INSERT INTO	HISTORIAL_CINTAS	VALUES	(	30	,	NULL	,	'2015-03-15'	,	1	);
 INSERT INTO	HISTORIAL_CINTAS	VALUES	(	31	,	NULL	,	'2015-01-27'	,	1	);
-INSERT INTO	HISTORIAL_CINTAS	VALUES	(	6	,	NULL	,	'2015-08-21'	,	2	);
+
 
 
 
@@ -4966,22 +4938,7 @@ INSERT INTO	INSCRIPCION	VALUES	(	26	,	'2015-02-18'	,	NULL	,	1	);
 INSERT INTO	INSCRIPCION	VALUES	(	24	,	'2015-08-22'	,	NULL	,	1	);
 INSERT INTO	INSCRIPCION	VALUES	(	22	,	'2015-09-11'	,	NULL	,	1	);
 INSERT INTO	INSCRIPCION	VALUES	(	17	,	'2015-05-20'	,	NULL	,	1	);
-INSERT INTO INSCRIPCION VALUES (6,'2015-02-10',NULL,5); 
-INSERT INTO INSCRIPCION VALUES (6,'2015-04-05',NULL,6); 
-INSERT INTO INSCRIPCION VALUES (6,'2015-05-01',NULL,7); 
-INSERT INTO INSCRIPCION VALUES (6,'2015-07-15',NULL,8); 
-INSERT INTO INSCRIPCION VALUES (6,'2015-07-22',NULL,9); 
-INSERT INTO INSCRIPCION VALUES (6,'2014-02-13',8,NULL); 
-INSERT INTO INSCRIPCION VALUES (6,'2015-09-17',NULL,10); 
-INSERT INTO INSCRIPCION VALUES (6,'2015-09-17',NULL,11);
-INSERT INTO INSCRIPCION VALUES (6,'2015-09-17',NULL,12);
-INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',NULL,13);
-INSERT INTO INSCRIPCION VALUES (6,'2015-10-09',NULL,14);
-INSERT INTO INSCRIPCION VALUES (6,'2015-05-07',NULL,15);
-INSERT INTO INSCRIPCION VALUES (6,'2015-06-17',9,NULL);
-INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',4,4);
-INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',2,10);
-INSERT INTO INSCRIPCION VALUES (6,'2015-07-10',6,7);
+
 
 
 -- INSERTS SOLICITUD PLANILLA--
@@ -5150,22 +5107,6 @@ INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',7);
 
 INSERT INTO COMPRA_CARRITO VALUES (NULL,NULL,'CARRITO',8);
 
-INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-09-17','PAGADO',6);
-
-INSERT INTO COMPRA_CARRITO VALUES ('Deposito','2015-07-10','PAGADO',6); 
-
-INSERT INTO COMPRA_CARRITO VALUES ('Transferencia','2015-10-09','PAGADO',6); 
-
-INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2016-05-07','PAGADO',6);
-
-INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-04-10','PAGADO',6);
-
-INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-03-11','CARRITO',6);
-
-INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-03-18','PAGADO',6);
- 
-INSERT INTO COMPRA_CARRITO VALUES ('Tarjeta','2015-03-10','CARRITO',6);
-
 /*-------------------------------------------------------------------------*/
 
 /*------------------------------DETALLE_COMPRA-----------------------------*/
@@ -5221,4 +5162,3 @@ update EMAIL set ema_email='rafa91_1@hotmail.com' where (PERSONA_per_id=31 or PE
 
 
 
-    

@@ -28,7 +28,7 @@ namespace DominioSKD
 
         public Horario()
         {
-           
+
         }
 
         #endregion

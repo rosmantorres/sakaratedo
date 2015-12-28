@@ -117,6 +117,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod6.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo7\M7_PruebaLogicaEventosPagos.cs" />
+    <Compile Include="Modulo7\M7_PruebaLogicaCintas.cs" />
+    <Compile Include="Modulo7\M7_PruebaLogicaEventosInscritos.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDCinta.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDCompetencia.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDDojo.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDEvento.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDHorario.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDOrganizacion.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDMatricula.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDPersona.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDTipoEvento.cs" />
+    <Compile Include="Modulo7\M7_PruebasBDUbicacion.cs" />
+    <Compile Include="Modulo7\M7_PruebasLogicaEventosAsistidos.cs" />
+    <Compile Include="Modulo7\M7_PruebasLogicaEventosPagos.cs" />
+    <Compile Include="Modulo7\M7_PruebasLogicaHorarioPractica.cs" />
+    <Compile Include="Modulo7\M7_PruebasLogicaMatriculasPagas.cs" />
+    <Compile Include="Modulo7\M7_PruebasLogicaOrganizacionYDojo.cs" />
     <Compile Include="Modulo7\RecursosPU_Mod7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,8 +145,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod8.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo9\M9_PruebasBdEvento.cs" />
-    <Compile Include="Modulo9\M9_PruebasLogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosPU_Mod9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,6 +239,10 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
