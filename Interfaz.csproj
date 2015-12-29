@@ -209,6 +209,18 @@
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
+    <Content Include="GUI\Modulo15\Imagen\aula virtual error.png" />
+    <Content Include="GUI\Modulo15\Imagen\calendario.png" />
+    <Content Include="GUI\Modulo15\Imagen\captahuella.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\computacion.png" />
+    <Content Include="GUI\Modulo15\Imagen\franco_de_vita.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\imagen1.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\logo.png" />
+    <Content Include="GUI\Modulo15\Imagen\logo2.png" />
+    <Content Include="GUI\Modulo15\Imagen\logooo.png" />
+    <Content Include="GUI\Modulo15\Imagen\primera1.png" />
+    <Content Include="GUI\Modulo15\Imagen\r1.png" />
+    <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -221,6 +233,7 @@
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
+    <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
@@ -1667,6 +1680,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.cs">
+      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.designer.cs">
+      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2120,9 +2146,7 @@
       <Name>LogicaNegociosSKD</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\Modulo15\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
