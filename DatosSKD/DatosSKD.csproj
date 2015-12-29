@@ -58,6 +58,7 @@
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
+    <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -291,6 +292,22 @@
     <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />
     <Folder Include="DAO\Modulo9\" />
+    <Folder Include="InterfazDAO\Modulo10\" />
+    <Folder Include="InterfazDAO\Modulo11\" />
+    <Folder Include="InterfazDAO\Modulo12\" />
+    <Folder Include="InterfazDAO\Modulo13\" />
+    <Folder Include="InterfazDAO\Modulo14\" />
+    <Folder Include="InterfazDAO\Modulo15\" />
+    <Folder Include="InterfazDAO\Modulo16\" />
+    <Folder Include="InterfazDAO\Modulo1\" />
+    <Folder Include="InterfazDAO\Modulo2\" />
+    <Folder Include="InterfazDAO\Modulo3\" />
+    <Folder Include="InterfazDAO\Modulo4\" />
+    <Folder Include="InterfazDAO\Modulo5\" />
+    <Folder Include="InterfazDAO\Modulo6\" />
+    <Folder Include="InterfazDAO\Modulo7\" />
+    <Folder Include="InterfazDAO\Modulo8\" />
+    <Folder Include="InterfazDAO\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
