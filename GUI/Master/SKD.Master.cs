@@ -73,18 +73,24 @@ namespace templateApp
             get { return Session[RecursosInterfazMaster.sessionUsuarioNombre].ToString(); }
             set { Session[RecursosInterfazMaster.sessionUsuarioNombre] = value; }
         }
-        
-        
+
+        public void cargarMenus()
+        {
+            //presentador.validarPermiso();
+            //presentador.ValidarSesion();
+            presentador.CargarMenuSuperior();
+            presentador.CargarMenuLateral();
+        }
+        public SKD()
+        {
+            presentador = new PresentadorMasterPage(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                     presentador = new PresentadorMasterPage(this);
-                  //  presentador.validarPermiso();
-                    //presentador.ValidarSesion();
-                    presentador.CargarMenuSuperior();
-                    //presentador.CargarMenuLateral();
-
+                    cargarMenus();
                     asignarUsuario();
             }
             catch (NullReferenceException ex)
