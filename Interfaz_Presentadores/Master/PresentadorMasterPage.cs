@@ -89,7 +89,7 @@ namespace Interfaz_Presentadores.Master
                     if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) &&
                         subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(_iMaster.IdModulo))
                     {
-                        respuesta = respuesta + subMenuIni + node.Attributes[RecursosInterfazMaster.tagLink].InnerText + "'>";
+                        respuesta = respuesta + subMenuIni + System.Web.VirtualPathUtility.ToAbsolute(node.Attributes[RecursosInterfazMaster.tagLink].InnerText) + "'>";
                         respuesta = respuesta + node.Attributes[RecursosInterfazMaster.tagName].InnerText + subMenuFin;
 
                         break;
