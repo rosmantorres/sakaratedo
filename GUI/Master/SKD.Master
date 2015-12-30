@@ -178,7 +178,7 @@
           <div class="anuncio">Elige una opción del menu superior <br /> para poder tener acceso a todo <br /> lo que SA-Karatedo te ofrece</div>
 
            <%-- <li class="header">MAIN NAVIGATION</li>--%>           
-            <div runat="server" id="menuLateral"></div>
+            <li runat="server" id="menuLateral"></li>
           </ul>
         </section>
         <!-- /.sidebar -->
