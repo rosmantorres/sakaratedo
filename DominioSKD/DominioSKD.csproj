@@ -42,6 +42,8 @@
     <Compile Include="Asistencia.cs" />
     <Compile Include="Atleta.cs" />
     <Compile Include="Carrito.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Competencia.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Entidades\Modulo12\Ubicacion.cs" />
+    <Compile Include="Ubicacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
