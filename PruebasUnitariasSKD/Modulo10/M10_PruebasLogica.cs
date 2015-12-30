@@ -23,6 +23,9 @@ namespace PruebasUnitariasSKD.Modulo10
         Competencia laCompetencia;
         private LogicaAsistencia logica;
         Persona laPersona;
+        private string idEvento;
+        List<Persona> listaPersona;
+        List<Inscripcion> listaInscripcion;
 
         [SetUp]
 
@@ -34,7 +37,10 @@ namespace PruebasUnitariasSKD.Modulo10
             laCompetencia = new Competencia();
             logica = new LogicaAsistencia();
             laPersona = new Persona();
+            listaPersona = new List<Persona>(); 
             idPersona = "1";
+            idEvento = "3";
+            listaInscripcion = new List<Inscripcion>();
         }
 
         [TearDown]
@@ -43,13 +49,14 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             logica = null;
             laListaC = null;
-
+            listaPersona = null;
+            listaInscripcion = null;
         }
 
 
 #region Pruebas
         [Test]
-        public void pruebaListarEvento()
+        public void pruebaListarEventoAsistido()
         {
             LogicaAsistencia.ListarEventosAsistidos();
             Assert.IsNotNull(logica);
@@ -57,24 +64,26 @@ namespace PruebasUnitariasSKD.Modulo10
 
 
         [Test]
-        public void pruebaListarCompetencias()
+        public void pruebaListarAsistenciaComp()
         {
-            LogicaAsistencia.listaAsistentes(idPersona);
-            Assert.IsNotNull(logica);
+            listaPersona =LogicaAsistencia.listaAsistentesCompetencia(idEvento);
+            Assert.IsNotNull(listaPersona);
         }
 
 
         [Test]
         public void pruebaListarAsistentes()
         {
-           
+            listaPersona =  LogicaAsistencia.listaAsistentes(idEvento);
+            Assert.AreEqual(16, listaPersona.ToArray().Length);
         }
 
 
         [Test]
         public void pruebaListarNoAsistentes()
         {
-          
+            listaPersona = LogicaAsistencia.listaNoAsistentes(idEvento);
+            Assert.AreEqual(0, listaPersona.ToArray().Length);
         }
 
 
@@ -85,17 +94,60 @@ namespace PruebasUnitariasSKD.Modulo10
         }
 
         [Test]
-        public void pruebaConsultarCompetencia()
+        public void pruebaModificarAsistentesC()
         {
 
         }
 
 
         [Test]
-        public void pruebaListarEventosXID()
+        public void pruebaConsultarCompetencia()
         {
-
+            laCompetencia = LogicaAsistencia.consultarCompetenciasXID("8");
+            Assert.AreEqual(8, laCompetencia.Id_competencia);
         }
+
+
+        [Test]
+        public void pruebaListarInscritosAlEventoCount()
+        {
+             listaInscripcion = LogicaAsistencia.listaAtletasInasistentesPlanilla(idEvento);
+            Assert.AreEqual(57, listaInscripcion.ToString().Length);
+        }
+
+
+
+        [Test]
+        public void pruebaListarInscritosEventos()
+        {
+            listaPersona = LogicaAsistencia.inscritosAlEvento(idEvento);
+            Assert.AreEqual(53, listaPersona.ToString().Length);
+        }
+
+
+        [Test]
+        public void pruebaListarAsistentesCompetencia()
+        {
+            listaPersona = LogicaAsistencia.listaNoAsistentesCompetencia(idEvento);
+            Assert.AreEqual(53, listaPersona.ToString().Length);
+        }
+
+
+
+        [Test]
+        public void pruebaListarHorarioEventos()
+        {
+        
+        }
+
+
+        [Test]
+        public void pruebaListarEventoXfecha()
+        {
+            
+        }
+
+
 
 #endregion
     }
