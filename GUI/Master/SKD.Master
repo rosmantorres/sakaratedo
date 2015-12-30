@@ -76,34 +76,17 @@
           <!-- Sidebar toggle button-->
    
           <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-               <%-- <li class="header">MAIN NAVIGATION</li>--%>           
-
-            <% foreach (KeyValuePair<string, string[,]> opcion in SubOpcionesDelMenu) %>
-						<% { %>
-                            <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%=opcion.Key%><span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <%for (int i = 0; i < opcion.Value.GetLength(1); i++) %>
-                                <%{
-                                      if (opcion.Value[1, i] != null)
-                                      { %>
-							             <li><a href="<%=Page.ResolveUrl(opcion.Value[1, i]) %>"><%= opcion.Value[0, i]%></a></li>
-                                <%}
-                                  } %>
-                                 </ul>
-					         </li>
-						<% } %> 
- <li class="dropdown">
-                            
-                     <a href= "<%=Page.ResolveUrl("~/GUI/Modulo16/M16_VerCarrito.aspx") %>" class="logo" style="background-color:#080B0C; width:auto;">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>SKD</b></span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img  src="../../dist/img/carrito3.png" style="max-width:25px; height:25px; margin-top:10px;margin-left:0px" class="pull-left" /> </span>
-        </a>
+            <ul class="nav navbar-nav"  runat="server">
+              <li class="header" id="menuSuperior" runat="server"></li>
+                <li class="dropdown">     
+                  <a href= "<%=Page.ResolveUrl("~/GUI/Modulo16/M16_VerCarrito.aspx") %>" class="logo" style="background-color:#080B0C; width:auto;">
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                      <span class="logo-mini"><b>SKD</b></span>
+                      <!-- logo for regular state and mobile devices -->
+                      <span class="logo-lg" style="font-size:15px;font-family:Helvetica"><img  src="../../dist/img/carrito3.png" style="max-width:25px; height:25px; margin-top:10px;margin-left:0px" class="pull-left" /> </span>
+                   </a>
                            
-					    </li>
+			     </li>
 
               
               <!-- Notifications: style can be found in dropdown.less -->
@@ -146,7 +129,7 @@
                      <li class="user-body">
                           <p>Roles</p>
                           <hr />
-                            <ul class="nav nav-pills">
+                            <ul class="nav nav-pills" id="rolesList">
                               <li role="presentation" class="active"><a href="#"><%=Session["rol"] %></a></li>
                                         <% foreach (string opcion in RolesUsuario) %>
 						                    <% { %>
@@ -191,15 +174,11 @@
           <li><a href="/GUI/Master/Inicio.aspx" class="fa fa-home"></></a></li> 
 
           </ul>
-          <ul class="sidebar-menu">
+          <ul class="sidebar-menu" id="menuLateralList">
           <div class="anuncio">Elige una opción del menu superior <br /> para poder tener acceso a todo <br /> lo que SA-Karatedo te ofrece</div>
 
            <%-- <li class="header">MAIN NAVIGATION</li>--%>           
-
-            <% foreach (KeyValuePair<string, string> opcion in OpcionesDelMenu) %>
-						<% { %>
-							<li><a href="<%= Page.ResolveUrl(opcion.Value) %>"><%= opcion.Key%></a></li>
-						<% } %>  
+            <div runat="server" id="menuLateral"></div>
           </ul>
         </section>
         <!-- /.sidebar -->

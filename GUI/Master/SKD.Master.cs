@@ -10,64 +10,82 @@ using templateApp.GUI.Master;
 using templateApp.GUI.Modulo1;
 using DominioSKD;
 using LogicaNegociosSKD.Modulo2;
+using Interfaz_Contratos;
+using Interfaz_Presentadores.Master;
 
 namespace templateApp
 {
-    public partial class SKD : System.Web.UI.MasterPage
+    public partial class SKD : System.Web.UI.MasterPage, IContratoMasterPage
     {
         private string idModulo;
-        public Cuenta userLogin = new Cuenta();
-        public string DES=RecursosLogicaModulo2.claveDES;
+        private Cuenta userLogin = new Cuenta();
+        private string des=RecursosLogicaModulo2.claveDES;
         public AlgoritmoDeEncriptacion cripto=new AlgoritmoDeEncriptacion();
-        private Dictionary<string, string> opcionesDelMenu = new Dictionary<string, string>();
-        private Dictionary<string, string[,]> subOpcionesDelMenu = new Dictionary<string, string[,]>(); //Se guardaran las sub opciones del menú
         private string[] rolesUsuario = new string[10];//los roles que el usuario tiene registrado
+        private PresentadorMasterPage presentador { get; set;}
 
-        public string IdModulo
+
+        String IContratoMasterPage.MenuSuperiorList {
+            get { return menuSuperior.InnerHtml; }
+            set { menuSuperior.InnerHtml = value; } 
+        }
+        String IContratoMasterPage.MenuLateralList
+        {
+            get { return menuLateral.InnerHtml; }
+            set { menuLateral.InnerHtml = value; }
+        }
+        public String RolEnUso {
+            get { return Session[RecursosInterfazMaster.sessionRol].ToString(); }
+            set { Session[RecursosInterfazMaster.sessionRol] = value; }
+        }     
+        public String IdModulo
         {
             get { return idModulo; }
             set { idModulo = value; }
         }
-        public Dictionary<string, string> OpcionesDelMenu
+        public String DES
         {
-            get { return opcionesDelMenu; }
-            set { opcionesDelMenu = value; }
+            get { return des; }
+            set { des = value; }
         }
-        public Dictionary<string, string[,]> SubOpcionesDelMenu
+        public String RolesList
         {
-            get { return subOpcionesDelMenu; }
-            set { subOpcionesDelMenu = value; }
+            get { return Session[RecursosInterfazMaster.sessionRoles].ToString(); }
+            set { Session[RecursosInterfazMaster.sessionRoles] = value; }
         }
-        public string[] RolesUsuario
+        public String[] RolesUsuario
         {
             get { return rolesUsuario; }
             set { rolesUsuario = value; }
         }
-
+        public String SessionImagen
+        {
+            get { return Session[RecursosInterfazMaster.sessionImagen].ToString(); }
+            set { Session[RecursosInterfazMaster.sessionImagen] = value; }
+        }
+        public String SessionUsuarioNombre 
+        {
+            get { return Session[RecursosInterfazMaster.sessionUsuarioNombre].ToString(); }
+            set { Session[RecursosInterfazMaster.sessionUsuarioNombre] = value; }
+        }
+        public String SessionNombreCompleto
+        {
+            get { return Session[RecursosInterfazMaster.sessionUsuarioNombre].ToString(); }
+            set { Session[RecursosInterfazMaster.sessionUsuarioNombre] = value; }
+        }
+        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                if (Session[RecursosInterfazMaster.sessionUsuarioID].ToString() != null)
-                {
-                    XmlDocument doc = new XmlDocument();
-                    doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
-                    idModulo = IdModulo;
-                    foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-                        foreach (XmlNode subNode in node.ChildNodes)
-                            if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) &&
-                                subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(IdModulo))
-                            {
-                                OpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] =
-                                    node.Attributes[RecursosInterfazMaster.tagLink].InnerText;
-                                break;
-                            }
-                    asignarUsuario();
-                    DropDownMenu();
-                }
-                else
-                    Response.Redirect(RecursosInterfazModulo1.direccionM1_Index);
+                    presentador = new PresentadorMasterPage(this);
+                  //  presentador.validarPermiso();
+                    //presentador.ValidarSesion();
+                    presentador.CargarMenuSuperior();
+                    //presentador.CargarMenuLateral();
 
+                    asignarUsuario();
             }
             catch (NullReferenceException ex)
             {
@@ -79,7 +97,15 @@ namespace templateApp
 
             }
         }
-        
+        public void imagenSet(String imagen)
+        {
+            if (imagen == "")
+            {
+                imagen = "../../dist/img/AvatarSKD.jpg";
+            }
+            imageUsuario.Src = imagen;
+            imageTag.Src = imagen;
+        }
 
         /// <summary>
         /// Se realizan la asignacion de los datos de usuario a la plantilla (nombre,apellido, roles etc)
@@ -87,20 +113,11 @@ namespace templateApp
         protected void asignarUsuario()
         {
             
-            string Stringhttp = RecursosInterfazMaster.AliasHttp;
-            char[] http = Stringhttp.ToCharArray();
             string imagen = Session[RecursosInterfazMaster.sessionImagen].ToString();
-
-            if (imagen == "")
-            {
-                imagen = "../../dist/img/AvatarSKD.jpg";
-            }
-                imageUsuario.Src = imagen;
-                imageTag.Src = imagen;
+            imagenSet(imagen);
+          
 
             userName.InnerText = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
-
-            //aqui va el nombre y apellido
             userTag.InnerText = (string)Session[RecursosInterfazMaster.sessionNombreCompleto] ;
             string[] roles = Session[RecursosInterfazMaster.sessionRoles].ToString().Split(char.Parse(RecursosInterfazMaster.splitRoles));
             int cont = 0;
@@ -117,64 +134,27 @@ namespace templateApp
 
 
                 if (rol != null)
-                    Session[RecursosInterfazMaster.sessionRol] = rol;
-
-        }
-
-        /// <summary>
-        /// Metodo para validar si el rol esta contenido en los permisos de las opciones
-        /// </summary>
-        /// <param name="permisos">permisos de opciones</param>
-        /// <param name="rolUsuario">rol de usuario</param>
-        /// <returns>true:si tiene permiso;false:si no tiene permiso</returns>
-        protected Boolean validaRol(string[] permisos, string rolUsuario)
-        {
-            foreach (string rol in permisos)
-            {
-                if (rol == rolUsuario)
-                    return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// El metodo guarda en la variable DropDownM de tipo Dictionary las Subopciones de la Opcion en el menú
-        /// </summary>
-        protected void DropDownMenu()
-        {
-            string rol = (string)(Session[RecursosInterfazMaster.sessionRol]);
-            XmlDocument doc = new XmlDocument();
-            string[] permisos;//se guardaran los permisos asociados a cada opcion del menuSuperior.xml
-            string[] opciones = new string[2];
-            int i = 0; //iteracion de posicionOpciones
-            doc.Load(Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuSuperior));
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
-            {
-                i = 0;
-                permisos = node.Attributes[RecursosInterfazMaster.sessionRol].InnerText.Split(char.Parse(RecursosInterfazMaster.splitRoles));
-
-                if (validaRol(permisos, rol))
                 {
-                    string[,] posicionOpcinones = new string[2, node.ChildNodes.Count];
-                    foreach (XmlNode subNode in node.ChildNodes)
-                    {
-
-                        permisos = subNode.Attributes[RecursosInterfazMaster.sessionRol].
-                            InnerText.Split(char.Parse(RecursosInterfazMaster.splitRoles));
-                        if ((subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText != null) && (validaRol(permisos, rol)))
-                        {
-
-                            posicionOpcinones[0, i] = (string)subNode.Attributes[RecursosInterfazMaster.tagName].InnerText.ToString();
-                            posicionOpcinones[1, i] = subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText.ToString();
-                            i++;
-                        }
-                    }
-
-                    SubOpcionesDelMenu[node.Attributes[RecursosInterfazMaster.tagName].InnerText] = posicionOpcinones;
-
+                    Session[RecursosInterfazMaster.sessionRol] = rol;
+                    RolEnUso = rol;
                 }
-            }
+
         }
+
+
+        private Cuenta objetoCuenta()
+        {
+            Cuenta usuario = new Cuenta();
+            PersonaM1 persona = new PersonaM1();
+            persona._Nombre = Session[RecursosInterfazMaster.sessionNombreCompleto].ToString().Split(' ')[0];
+            persona._Apellido = Session[RecursosInterfazMaster.sessionNombreCompleto].ToString().Split(' ')[1];
+            usuario.Nombre_usuario = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
+            usuario.Imagen = Session[RecursosInterfazMaster.sessionImagen].ToString();
+            usuario.PersonaUsuario = persona;
+
+            return usuario;
+        }
+        
         /// <summary>
         /// Metodo para el boto Sing Out de la tabla de usuario
         /// </summary>
