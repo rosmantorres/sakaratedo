@@ -88,7 +88,7 @@ namespace Interfaz_Presentadores.Master {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a menuSuperior.xml.
+        ///   Busca una cadena traducida similar a ~/GUI/Master/menuSuperior.xml.
         /// </summary>
         internal static string direccionMaster_MenuSuperior {
             get {
