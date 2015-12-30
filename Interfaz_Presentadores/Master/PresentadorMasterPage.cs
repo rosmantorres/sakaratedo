@@ -54,7 +54,7 @@ namespace Interfaz_Presentadores.Master
                         if ((subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText != null) && (validaRol(permisos, _iMaster.RolEnUso)))
                         {
 
-                            respuesta += subMenuIni;// +System.Web.VirtualPathUtility.ToAbsolute(subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText.ToString());
+                            respuesta += subMenuIni+System.Web.VirtualPathUtility.ToAbsolute(subNode.Attributes[RecursosInterfazMaster.tagLink].InnerText.ToString());
                             respuesta += "'>" + subNode.Attributes[RecursosInterfazMaster.tagName].InnerText.ToString();
                             respuesta += subMenuFin;
                         }
@@ -81,19 +81,21 @@ namespace Interfaz_Presentadores.Master
         public void CargarMenuLateral()
         {
             XmlDocument doc = new XmlDocument();
-            String respuesta = "";
             doc.Load(HttpContext.Current.Server.MapPath(RecursosInterfazMaster.direccionMaster_MenuLateral));
             foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                String respuesta = "";
                 foreach (XmlNode subNode in node.ChildNodes)
                     if (!(subNode.Attributes[RecursosInterfazMaster.tagId] == null) &&
                         subNode.Attributes[RecursosInterfazMaster.tagId].InnerText.Equals(_iMaster.IdModulo))
                     {
-                        respuesta=respuesta+subMenuIni+node.Attributes[RecursosInterfazMaster.tagLink].InnerText+"'>";
-                        respuesta=respuesta+node.Attributes[RecursosInterfazMaster.tagName].InnerText+subMenuFin;
-                            
+                        respuesta = respuesta + subMenuIni + node.Attributes[RecursosInterfazMaster.tagLink].InnerText + "'>";
+                        respuesta = respuesta + node.Attributes[RecursosInterfazMaster.tagName].InnerText + subMenuFin;
+
                         break;
                     }
-            _iMaster.MenuLateralList = respuesta;
+                _iMaster.MenuLateralList += respuesta;
+            }
         }
 
         public void ValidarSesion()
