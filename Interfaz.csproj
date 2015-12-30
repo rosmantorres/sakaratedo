@@ -209,18 +209,6 @@
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
-    <Content Include="GUI\Modulo15\Imagen\aula virtual error.png" />
-    <Content Include="GUI\Modulo15\Imagen\calendario.png" />
-    <Content Include="GUI\Modulo15\Imagen\captahuella.jpg" />
-    <Content Include="GUI\Modulo15\Imagen\computacion.png" />
-    <Content Include="GUI\Modulo15\Imagen\franco_de_vita.jpg" />
-    <Content Include="GUI\Modulo15\Imagen\imagen1.jpg" />
-    <Content Include="GUI\Modulo15\Imagen\logo.png" />
-    <Content Include="GUI\Modulo15\Imagen\logo2.png" />
-    <Content Include="GUI\Modulo15\Imagen\logooo.png" />
-    <Content Include="GUI\Modulo15\Imagen\primera1.png" />
-    <Content Include="GUI\Modulo15\Imagen\r1.png" />
-    <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -1680,19 +1668,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.cs">
-      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.designer.cs">
-      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2141,12 +2116,22 @@
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
     </ProjectReference>
+    <ProjectReference Include="Interfaz_Contratos\Interfaz_Contratos.csproj">
+      <Project>{688be1ea-7c38-424e-a86a-14ba0fa85f20}</Project>
+      <Name>Interfaz_Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="Interfaz_Presentadores\Interfaz_Presentadores.csproj">
+      <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>
+      <Name>Interfaz_Presentadores</Name>
+    </ProjectReference>
     <ProjectReference Include="LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
       <Name>LogicaNegociosSKD</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
