@@ -127,7 +127,7 @@
     <value>~/GUI/Master/menuLateral.xml</value>
   </data>
   <data name="direccionMaster_MenuSuperior" xml:space="preserve">
-    <value>menuSuperior.xml</value>
+    <value>~/GUI/Master/menuSuperior.xml</value>
   </data>
   <data name="rolAtleta" xml:space="preserve">
     <value>Atleta</value>
