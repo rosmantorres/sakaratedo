@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+<<<<<<< HEAD
     <Compile Include="DAO\Modulo8\DAORestriccionCompetencia.cs" />
     <Compile Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,6 +67,17 @@
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
+=======
+    <Compile Include="DAO\Modulo12\DaoCompetencia.cs" />
+    <Compile Include="DAO\Modulo12\RecursosDAOModulo12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
+    <Compile Include="InterfazDAO\IDao.cs" />
+    <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
+>>>>>>> 166ccc48917c7e7522ada9828a6ac5c33f22c622
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,9 +193,15 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAORestriccionCompetencia.Designer.cs</LastGenOutput>
+=======
+    <EmbeddedResource Include="DAO\Modulo12\RecursosDAOModulo12.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo12.Designer.cs</LastGenOutput>
+>>>>>>> 166ccc48917c7e7522ada9828a6ac5c33f22c622
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -289,7 +307,6 @@
     <Folder Include="BaseDeDatos\" />
     <Folder Include="DAO\Modulo10\" />
     <Folder Include="DAO\Modulo11\" />
-    <Folder Include="DAO\Modulo12\" />
     <Folder Include="DAO\Modulo13\" />
     <Folder Include="DAO\Modulo14\" />
     <Folder Include="DAO\Modulo15\" />
@@ -304,7 +321,6 @@
     <Folder Include="DAO\Modulo9\" />
     <Folder Include="InterfazDAO\Modulo10\" />
     <Folder Include="InterfazDAO\Modulo11\" />
-    <Folder Include="InterfazDAO\Modulo12\" />
     <Folder Include="InterfazDAO\Modulo13\" />
     <Folder Include="InterfazDAO\Modulo14\" />
     <Folder Include="InterfazDAO\Modulo15\" />
