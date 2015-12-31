@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD;
 
 namespace DominioSKD.Fabrica
 {
@@ -208,6 +209,35 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 16
+
+      /*  public Entidad ObtenerCarrito()
+        {
+            return new Carrito();
+        }
+        public Entidad ObtenerMatricula()
+        {
+            return new Matricula();
+        }
+        public Entidad ObtenerEvento()
+        {
+            return new Evento();
+        }
+        public Entidad ObtenerCompra()
+        {
+            return new Compra();
+        }
+
+        public static Entidad ObtenerPersona()
+        {
+            return new Persona();
+        }
+
+        public Entidad ObtenerImplemento()
+        {
+            return new Implemento();
+        }
+        */
+
         #endregion
     }
 }
