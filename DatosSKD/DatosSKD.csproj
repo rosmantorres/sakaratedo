@@ -57,8 +57,15 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\Modulo8\DAORestriccionCompetencia.cs" />
+    <Compile Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAORestriccionCompetencia.resx</DependentUpon>
+    </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
+    <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,6 +181,10 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAORestriccionCompetencia.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo10.Designer.cs</LastGenOutput>
@@ -290,7 +301,6 @@
     <Folder Include="DAO\Modulo5\" />
     <Folder Include="DAO\Modulo6\" />
     <Folder Include="DAO\Modulo7\" />
-    <Folder Include="DAO\Modulo8\" />
     <Folder Include="DAO\Modulo9\" />
     <Folder Include="InterfazDAO\Modulo10\" />
     <Folder Include="InterfazDAO\Modulo11\" />
@@ -306,7 +316,6 @@
     <Folder Include="InterfazDAO\Modulo5\" />
     <Folder Include="InterfazDAO\Modulo6\" />
     <Folder Include="InterfazDAO\Modulo7\" />
-    <Folder Include="InterfazDAO\Modulo8\" />
     <Folder Include="InterfazDAO\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
