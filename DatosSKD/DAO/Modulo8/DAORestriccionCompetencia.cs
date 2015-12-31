@@ -10,6 +10,8 @@ namespace DatosSKD.DAO.Modulo8
     public class DAORestriccionCompetencia : DAOGeneral, InterfazDAO.Modulo8.IDaoRestriccionCompetencia
     {
         #region Metodos IDao
+       
+        #region Agregar
         /// <summary>
         /// Metodo para agregar una restriccion de competencia a la base de datos.
         /// </summary>
@@ -82,9 +84,37 @@ namespace DatosSKD.DAO.Modulo8
             }
         #endregion
 
-        #region Existe Restriccion
-           
-        /// <summary>
+        #region Modificar
+            public Boolean Modificar (DominioSKD.Entidad parametro)
+            {
+                throw new NotImplementedException();
+            }
+            #endregion
+
+        #region ConsultarXId
+
+            public DominioSKD.Entidad ConsultarXId(DominioSKD.Entidad parametro)
+            {
+                throw new NotImplementedException();
+            }    
+
+            #endregion
+
+        #region ConsultarTodos
+
+            public List<DominioSKD.Entidad> ConsultarTodos()
+            {
+                throw new NotImplementedException();
+            }     
+
+            #endregion
+
+
+        #endregion
+
+       #region Existe Restriccion
+
+            /// <summary>
         /// Metodo que permite corroborar dado un objeto tipo RestriccionCompetencia
         /// si existe una restriccion de competencia con los mismos parametros en la
         /// base de datos

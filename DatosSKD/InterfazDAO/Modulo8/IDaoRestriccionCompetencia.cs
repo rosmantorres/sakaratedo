@@ -17,7 +17,7 @@ namespace DatosSKD.InterfazDAO.Modulo8
        /// <param name="laRestriccionCompetencia">Tipo: RestriccionCompetencia,
        /// objeto con la informacion de una restriccion para competencias</param>
        /// <returns></returns>
-        bool ExisteRestriccionCompetenciasSimilar(DominioSKD.Entidad laRestriccionCompetencia);
+        Boolean ExisteRestriccionCompetenciaSimilar(DominioSKD.Entidad parametro);
         #endregion
 
     }
