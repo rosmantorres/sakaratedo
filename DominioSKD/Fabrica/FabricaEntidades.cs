@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD;
 
 namespace DominioSKD.Fabrica
 {
@@ -131,47 +132,68 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 12
-        public static Entidad ObtenerCategoria()
+
+        public Entidad ObtenerCinta()
+        {
+            return new Cinta();
+        }
+
+        public Entidad ObtenerOrganizacion(int elId, String elNombre)
+        {
+            return new Organizacion(elId, elNombre);
+        }
+
+        public Entidad ObtenerOrganizacion(String elNombre)
+        {
+            return new Organizacion(elNombre);
+        }
+
+        public Entidad ObtenerOrganizacion()
+        {
+            return new Organizacion();
+        }
+
+        public Entidad ObtenerCategoria()
         {
             return new Categoria();
         }
 
-        public static Entidad ObtenerUbicacion()
+        public   Entidad ObtenerUbicacion()
         {
             return new Ubicacion();
         }
 
-        public static Entidad ObtenerCompetencia()
+        public   Entidad ObtenerCompetencia()
         {
             return new Competencia();
         }
 
-        public static Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public   Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
             return new Categoria(laEdadIni, laEdadFin,laCintaIni, laCintaFinal, elSexo);
         }
 
-        public static Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public   Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
             return new Categoria(elId, laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
-        public static Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
+        public   Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
         {
             return new Ubicacion(elId, laCiudad, elEstado);
         }
 
-        public static Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public   Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
             return new Ubicacion(laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
-        public static Entidad ObtenerUbicacion(int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public   Entidad ObtenerUbicacion(int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
             return new Ubicacion(elId, laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
-        public static Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
+        public   Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
         {
             return new Competencia(elId, elNombre, elTipo, orgTodas, elStatus);
         }
@@ -187,6 +209,35 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 16
+
+      /*  public Entidad ObtenerCarrito()
+        {
+            return new Carrito();
+        }
+        public Entidad ObtenerMatricula()
+        {
+            return new Matricula();
+        }
+        public Entidad ObtenerEvento()
+        {
+            return new Evento();
+        }
+        public Entidad ObtenerCompra()
+        {
+            return new Compra();
+        }
+
+        public static Entidad ObtenerPersona()
+        {
+            return new Persona();
+        }
+
+        public Entidad ObtenerImplemento()
+        {
+            return new Implemento();
+        }
+        */
+
         #endregion
     }
 }
