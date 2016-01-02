@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo16\DaoCarrito.cs" />
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
@@ -292,7 +293,6 @@
     <Folder Include="DAO\Modulo13\" />
     <Folder Include="DAO\Modulo14\" />
     <Folder Include="DAO\Modulo15\" />
-    <Folder Include="DAO\Modulo16\" />
     <Folder Include="DAO\Modulo1\" />
     <Folder Include="DAO\Modulo2\" />
     <Folder Include="DAO\Modulo3\" />
