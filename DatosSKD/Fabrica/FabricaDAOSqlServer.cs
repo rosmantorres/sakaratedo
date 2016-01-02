@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using DatosSKD.DAO.Modulo16;
+using DatosSKD.DAO.Modulo16;
 
 namespace DatosSKD.Fabrica
 {
@@ -60,11 +60,11 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del evento
         /// </summary>
         /// <returns>el DaoEvento</returns>
-     /*  public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
+       public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
         {
             return new DatosSKD.DAO.Modulo16.DaoEvento();
         }
-        */
+        
         /// <summary>
         /// Metodo de la fabrica que instancia el DAO del carrito
         /// </summary>

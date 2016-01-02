@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosEventos.cs" />
     <Compile Include="Comandos\Modulo16\ComandoeliminarItem.cs" />
     <Compile Include="Comandos\Modulo16\RecursosLogicaModulo16.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -2115,6 +2115,14 @@
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
     </ProjectReference>
+    <ProjectReference Include="Interfaz_Contratos\Interfaz_Contratos.csproj">
+      <Project>{688be1ea-7c38-424e-a86a-14ba0fa85f20}</Project>
+      <Name>Interfaz_Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="Interfaz_Presentadores\Interfaz_Presentadores.csproj">
+      <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>
+      <Name>Interfaz_Presentadores</Name>
+    </ProjectReference>
     <ProjectReference Include="LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
       <Name>LogicaNegociosSKD</Name>
