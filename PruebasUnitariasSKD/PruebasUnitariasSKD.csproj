@@ -77,6 +77,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo16\PruebaDaoCarrito.cs" />
+    <Compile Include="Modulo16\PruebaComandoCarrito.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
