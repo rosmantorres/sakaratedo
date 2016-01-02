@@ -31,6 +31,15 @@ namespace templateApp {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuSuperior;
         
         /// <summary>
+        /// Control CarritoLogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CarritoLogo;
+        
+        /// <summary>
         /// Control imageUsuario.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,22 @@ namespace templateApp {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaDeRol;
         
         /// <summary>
-        /// Control Div1.
+        /// Control rolesList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rolesList;
+        
+        /// <summary>
+        /// Control LogOut.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogOut;
         
         /// <summary>
         /// Control menuLateral.
