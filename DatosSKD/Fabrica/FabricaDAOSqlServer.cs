@@ -60,11 +60,11 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del evento
         /// </summary>
         /// <returns>el DaoEvento</returns>
-      /*  public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
+     /*  public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
         {
             return new DatosSKD.DAO.Modulo16.DaoEvento();
         }
-
+        */
         /// <summary>
         /// Metodo de la fabrica que instancia el DAO del carrito
         /// </summary>
@@ -72,7 +72,7 @@ namespace DatosSKD.Fabrica
         public static InterfazDAO.Modulo16.IdaoCarrito ObtenerdaoCarrito()
         {
             return new DatosSKD.DAO.Modulo16.DaoCarrito();
-        }*/
+        }
 
         #endregion
 
