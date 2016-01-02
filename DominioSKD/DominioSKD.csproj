@@ -42,11 +42,14 @@
     <Compile Include="Asistencia.cs" />
     <Compile Include="Atleta.cs" />
     <Compile Include="Carrito.cs" />
+    <Compile Include="Categoria.cs" />
+    <Compile Include="Competencia.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
@@ -78,6 +81,7 @@
     <Compile Include="Telefono.cs" />
     <Compile Include="TipoEvento.cs" />
     <Compile Include="Entidades\Modulo12\Ubicacion.cs" />
+    <Compile Include="Ubicacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
@@ -99,7 +103,6 @@
     <Folder Include="Entidades\Modulo5\" />
     <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
-    <Folder Include="Entidades\Modulo8\" />
     <Folder Include="Entidades\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
