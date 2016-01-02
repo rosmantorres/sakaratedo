@@ -10,13 +10,15 @@ using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
+using DominioSKD.Entidades.Modulo9;
+
 
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarAsistenciaAEventos : System.Web.UI.Page
     {
         #region Atributos
-        private List<DominioSKD.Evento> laListaEventos;
+        private List<Evento> laListaEventos;
         private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
 

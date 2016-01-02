@@ -9,6 +9,8 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo15;
 using templateApp.GUI;
 using templateApp.GUI.Modulo15;
+using DominioSKD.Entidades.Modulo15;
+
 
 namespace PruebasUnitariasSKD.Modulo15
 {

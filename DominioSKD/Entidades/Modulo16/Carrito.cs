@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
+using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo9;
 
 namespace DominioSKD.Entidades.Modulo16
 {

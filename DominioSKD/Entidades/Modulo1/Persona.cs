@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo1 
 {
 
     /// <summary>
@@ -21,7 +21,7 @@ namespace DominioSKD
     /// <summary>
     /// Clase que representa la información personal de una persona.
     /// </summary>
-    public class Persona
+    public class Persona : Entidad
     {
 
         #region Atributos
@@ -44,7 +44,7 @@ namespace DominioSKD
         /// Nacionalidad de la persona
         /// </summary>
         private String _nacionalidad;
-        
+
         /// <summary>
         /// Peso de la persona
         /// </summary>
@@ -69,7 +69,7 @@ namespace DominioSKD
         /// <summary>
         /// Lista de Correos para contactar a la persona
         /// </summary>
-        private List<Correo> _correos = null;
+        //     private List<Correo> _correos = null;
 
         /// <summary>
         /// Lista de telefonos para contactar a la persona 
@@ -137,7 +137,7 @@ namespace DominioSKD
         public Persona()
         {
             this._id = -1;
-        
+
         }
 
         public int ID
@@ -207,7 +207,7 @@ namespace DominioSKD
             get { return _idInscripcion; }
             set { _idInscripcion = value; }
         }
-    
+
 
         /// <summary>
         /// Agrega un teléfono a la lista, si no existe la
@@ -228,12 +228,12 @@ namespace DominioSKD
         /// </summary>
         /// <param name="main">Objeto Correo</param>
         /// <param name="primario"> True si es el correo principal</param>
-        public void agregarEmail(Correo mail)
-        {
-            if (this._correos == null)
-                this._correos = new List<Correo>();
-            this._correos.Add(mail);
-         }
+        //  public void agregarEmail(Correo mail)
+        //  {
+        //   if (this._correos == null)
+        //  this._correos = new List<Correo>();
+        //  this._correos.Add(mail);
+        // }
 
         public List<Telefono> Telefonos
         {
@@ -247,38 +247,39 @@ namespace DominioSKD
             }
         }
 
-        public List<Correo> Correos
-        {
-            get
-            {
-                return this._correos;
-            }
-            set
-            {
-                this._correos = value;
-            }
-        }
+        //    public List<Correo> Correos
+        //  {
+        //    get
+        //  {
+        //    return this._correos;
+        //}
+        //set
+        // {
+        //   this._correos = value;
+        //}
+        //}
 
-        public Correo Correo
-        {
-            get
-            {
-                foreach (Correo ret in this._correos)
-                {
-                    if (ret.Primario)
-                        return ret;
-                }
-                return null;
-            }
-        }
+        /*   public Correo Correo
+           {
+               get
+               {
+                   foreach (Correo ret in this._correos)
+                   {
+                       if (ret.Primario)
+                           return ret;
+                   }
+                   return null;
+               }
+           }*/
 
         /// <summary>
         /// Cálculo de edad de la persona. (Años)
         /// </summary>
-        public float Edad {
+        public float Edad
+        {
             get
             {
-                if (this.FechaNacimiento==null)
+                if (this.FechaNacimiento == null)
                     return 0;
 
                 TimeSpan tiempo = DateTime.Now - this.FechaNacimiento;
@@ -324,10 +325,10 @@ namespace DominioSKD
                 _dojoPersona = value;
             }
             get
-            { 
-                return this._dojoPersona; 
+            {
+                return this._dojoPersona;
             }
-            
+
         }
         #endregion
     }

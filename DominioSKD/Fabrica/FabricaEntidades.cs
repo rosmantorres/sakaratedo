@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
-
+using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo9;
+using DominioSKD.Entidades.Modulo16;
+using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo1;
 namespace DominioSKD.Fabrica
 {
     public class FabricaEntidades
@@ -209,7 +213,7 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 16
-        /*
+       
         public Entidad ObtenerCarrito()
         {
             return new Carrito();
@@ -222,10 +226,7 @@ namespace DominioSKD.Fabrica
         {
             return new Evento();
         }
-        public Entidad ObtenerCompra()
-        {
-            return new Compra();
-        }
+        
 
         public static Entidad ObtenerPersona()
         {
@@ -236,7 +237,7 @@ namespace DominioSKD.Fabrica
         {
             return new Implemento();
         }
-        */
+       
 
         #endregion
     }

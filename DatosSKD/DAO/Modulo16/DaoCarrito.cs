@@ -11,6 +11,10 @@ using DominioSKD.Entidades.Modulo16;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using System.Data;
+using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo9;
+using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo1;
 
 namespace DatosSKD.DAO.Modulo16
 {
@@ -30,6 +34,49 @@ namespace DatosSKD.DAO.Modulo16
         #endregion
 
         #region Metodos
+
+        /// <summary>
+        /// Metodo que modifica por id en la Base de Datos
+        /// </summary>
+        /// <param name="persona">La persona a la que se le agregara el item al carrito</param>
+        /// <param name="objeto">El item que se agregara como tal</param>
+        /// <param name="tipoObjeto">El tipo de objeto al que nos estamos refiriendo como tal</param>
+        /// <param name="cantidad">La cantidad del item que estamos agregando</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool Agregar(Entidad persona)
+        {
+
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo que modifica por id en la Base de Datos
+        /// </summary>
+        /// <param name="persona">La persona a la que se le agregara el item al carrito</param>
+        /// <param name="objeto">El item que se agregara como tal</param>
+        /// <param name="tipoObjeto">El tipo de objeto al que nos estamos refiriendo como tal</param>
+        /// <param name="cantidad">La cantidad del item que estamos agregando</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool Modificar(Entidad persona)
+        {
+             
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo que consulta por id en la Base de Datos
+        /// </summary>
+        /// <param name="persona">La persona a la que se le agregara el item al carrito</param>
+        /// <param name="objeto">El item que se agregara como tal</param>
+        /// <param name="tipoObjeto">El tipo de objeto al que nos estamos refiriendo como tal</param>
+        /// <param name="cantidad">La cantidad del item que estamos agregando</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public DominioSKD.Entidad ConsultarXId(Entidad persona)
+        {
+           Carrito P = new Carrito();
+           return P;
+        }
+
         #region AgregarItem
         /// <summary>
         /// Metodo que agrega un item al carrito de una persona en Base de Datos

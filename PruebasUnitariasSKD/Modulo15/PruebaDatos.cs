@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo15;
+using DominioSKD.Entidades.Modulo15;
+
 
 namespace PruebasUnitariasSKD.Modulo15
 {
