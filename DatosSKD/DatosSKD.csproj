@@ -67,6 +67,7 @@
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -307,7 +308,6 @@
     <Folder Include="InterfazDAO\Modulo13\" />
     <Folder Include="InterfazDAO\Modulo14\" />
     <Folder Include="InterfazDAO\Modulo15\" />
-    <Folder Include="InterfazDAO\Modulo16\" />
     <Folder Include="InterfazDAO\Modulo1\" />
     <Folder Include="InterfazDAO\Modulo2\" />
     <Folder Include="InterfazDAO\Modulo3\" />
