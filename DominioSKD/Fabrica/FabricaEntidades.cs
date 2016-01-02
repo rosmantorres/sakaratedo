@@ -209,8 +209,8 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 16
-
-      /*  public Entidad ObtenerCarrito()
+        /*
+        public Entidad ObtenerCarrito()
         {
             return new Carrito();
         }
