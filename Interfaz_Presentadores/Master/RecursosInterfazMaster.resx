@@ -120,6 +120,9 @@
   <data name="AliasHttp" xml:space="preserve">
     <value>https://</value>
   </data>
+  <data name="direccionM1_Index" xml:space="preserve">
+    <value>~/GUI/Modulo1/Index.aspx</value>
+  </data>
   <data name="direccionMaster_Inicio" xml:space="preserve">
     <value>~/GUI/Master/Inicio.aspx</value>
   </data>
@@ -128,6 +131,12 @@
   </data>
   <data name="direccionMaster_MenuSuperior" xml:space="preserve">
     <value>~/GUI/Master/menuSuperior.xml</value>
+  </data>
+  <data name="imageDefault" xml:space="preserve">
+    <value>~/dist/img/AvatarSKD.jpg</value>
+  </data>
+  <data name="LogOutText" xml:space="preserve">
+    <value>Cerrar Sesión</value>
   </data>
   <data name="rolAtleta" xml:space="preserve">
     <value>Atleta</value>
@@ -152,7 +161,6 @@
   </data>
   <data name="sessionLogout" xml:space="preserve">
     <value>logout</value>
-    <comment>tag para cerrar sesion</comment>
   </data>
   <data name="sessionNombreCompleto" xml:space="preserve">
     <value>nombreDePila</value>
@@ -163,15 +171,12 @@
   </data>
   <data name="sessionRoles" xml:space="preserve">
     <value>roles</value>
-    <comment>Roles que puede tener un usuario</comment>
   </data>
   <data name="sessionUsuarioID" xml:space="preserve">
     <value>usuarioID</value>
-    <comment>contiene el ID del usuario para poder hacer todas las consultas en la Base de Datos</comment>
   </data>
   <data name="sessionUsuarioNombre" xml:space="preserve">
     <value>Nombre</value>
-    <comment>Nombre de usuario</comment>
   </data>
   <data name="splitRoles" xml:space="preserve">
     <value>-</value>
@@ -188,5 +193,8 @@
   <data name="tagName" xml:space="preserve">
     <value>nombre</value>
     <comment>Nombre de las etiquetas para los archivos XML  de menuSuperior.xml y menuLateral.xml</comment>
+  </data>
+  <data name="tagRol" xml:space="preserve">
+    <value>rol=</value>
   </data>
 </root>

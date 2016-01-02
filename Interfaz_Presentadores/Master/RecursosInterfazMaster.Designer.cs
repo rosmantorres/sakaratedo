@@ -70,6 +70,15 @@ namespace Interfaz_Presentadores.Master {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ~/GUI/Modulo1/Index.aspx.
+        /// </summary>
+        internal static string direccionM1_Index {
+            get {
+                return ResourceManager.GetString("direccionM1_Index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ~/GUI/Master/Inicio.aspx.
         /// </summary>
         internal static string direccionMaster_Inicio {
@@ -93,6 +102,24 @@ namespace Interfaz_Presentadores.Master {
         internal static string direccionMaster_MenuSuperior {
             get {
                 return ResourceManager.GetString("direccionMaster_MenuSuperior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ~/dist/img/AvatarSKD.jpg.
+        /// </summary>
+        internal static string imageDefault {
+            get {
+                return ResourceManager.GetString("imageDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cerrar Sesión.
+        /// </summary>
+        internal static string LogOutText {
+            get {
+                return ResourceManager.GetString("LogOutText", resourceCulture);
             }
         }
         
@@ -246,6 +273,15 @@ namespace Interfaz_Presentadores.Master {
         internal static string tagName {
             get {
                 return ResourceManager.GetString("tagName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a rol=.
+        /// </summary>
+        internal static string tagRol {
+            get {
+                return ResourceManager.GetString("tagRol", resourceCulture);
             }
         }
     }
