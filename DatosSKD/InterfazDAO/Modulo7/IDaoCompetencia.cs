@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace DatosSKD.InterfazDAO.Modulo7
 {
     public interface IDaoCompetencia : IDao<Entidad, bool, Entidad>
-    {
+    {       
     }
 }
