@@ -9,6 +9,8 @@ using DatosSKD;
 using DatosSKD.Modulo7;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
+using DatosSKD.DAO.Modulo7;
+using DatosSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo7
 {
@@ -172,6 +174,21 @@ namespace PruebasUnitariasSKD.Modulo7
         {
             BDCinta baseDeDatosCinta = new BDCinta();
             Assert.NotNull(baseDeDatosCinta.fechaCinta(idPersona, 3).ToString("MM/dd/yyyy"));
+        }
+
+        /// <summary>
+        /// Ejemplo prueba unitaria con patrom DAO
+        /// </summary>
+        [Test]
+        public void PruebaDetallarCintaXIdDAO()
+        {
+            FabricaDAOSqlServer fabricaSQql = new FabricaDAOSqlServer();
+            //DaoCinta basedeDatosCinta = fabricaSQql.nuevoDAOCinta();
+            DaoCinta baseDeDatosCinta = new DaoCinta();//esto se sustituye con la fabrica
+            Cinta idCinta = new Cinta();//esto se sustituye con fabrica de entidad
+            idCinta.Id = 1;
+            Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
+            Assert.AreEqual("Blanco", cinta.Color_nombre);
         }
 
         #endregion

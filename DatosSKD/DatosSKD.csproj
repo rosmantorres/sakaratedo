@@ -64,7 +64,6 @@
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
     <Compile Include="DAO\Modulo7\DaoCinta.cs" />
-    <Compile Include="DAO\Modulo7\Interface1.cs" />
     <Compile Include="DAO\Modulo7\RecursosDAOModulo7.Designer.cs">
       <DependentUpon>RecursosDAOModulo7.resx</DependentUpon>
       <AutoGen>True</AutoGen>
