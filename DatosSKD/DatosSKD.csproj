@@ -63,9 +63,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo7\DaoCinta.cs" />
+    <Compile Include="DAO\Modulo7\Interface1.cs" />
+    <Compile Include="DAO\Modulo7\RecursosDAOModulo7.Designer.cs">
+      <DependentUpon>RecursosDAOModulo7.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoCinta.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoDojo.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoHorario.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoMatricula.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoOrganizacion.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoPersona.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoTipoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoUbicacion.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +202,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAOModulo12.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo7\RecursosDAOModulo7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo10.Designer.cs</LastGenOutput>
@@ -299,7 +320,6 @@
     <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo5\" />
     <Folder Include="DAO\Modulo6\" />
-    <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />
     <Folder Include="DAO\Modulo9\" />
     <Folder Include="InterfazDAO\Modulo10\" />
@@ -314,7 +334,6 @@
     <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo5\" />
     <Folder Include="InterfazDAO\Modulo6\" />
-    <Folder Include="InterfazDAO\Modulo7\" />
     <Folder Include="InterfazDAO\Modulo8\" />
     <Folder Include="InterfazDAO\Modulo9\" />
   </ItemGroup>
