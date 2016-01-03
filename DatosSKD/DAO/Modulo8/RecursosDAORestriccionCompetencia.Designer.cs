@@ -826,6 +826,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @idRelacion.
+        /// </summary>
+        internal static string ParamIdCompetenciaRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("ParamIdCompetenciaRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @per_id.
         /// </summary>
         internal static string ParamIdPersona {
@@ -957,6 +966,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string RestornarIdRestriccionCompetencia {
             get {
                 return ResourceManager.GetString("RestornarIdRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_RetornarIdCompetenciaRestriccionCompetencia.
+        /// </summary>
+        internal static string RetornarIdCompetenciaRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("RetornarIdCompetenciaRestriccionCompetencia", resourceCulture);
             }
         }
         

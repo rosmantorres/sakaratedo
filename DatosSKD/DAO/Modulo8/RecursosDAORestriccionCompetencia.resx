@@ -372,6 +372,9 @@
   <data name="ParamIdCompetencia1" xml:space="preserve">
     <value>@com_id</value>
   </data>
+  <data name="ParamIdCompetenciaRestriccionCompetencia" xml:space="preserve">
+    <value>@idRelacion</value>
+  </data>
   <data name="ParamIdPersona" xml:space="preserve">
     <value>@per_id</value>
   </data>
@@ -416,6 +419,9 @@
   </data>
   <data name="RestornarIdRestriccionCompetencia" xml:space="preserve">
     <value>M8_RetornarIdRestriccionCompetencia</value>
+  </data>
+  <data name="RetornarIdCompetenciaRestriccionCompetencia" xml:space="preserve">
+    <value>M8_RetornarIdCompetenciaRestriccionCompetencia</value>
   </data>
   <data name="TipoCompetenciaKata" xml:space="preserve">
     <value>Kata</value>
