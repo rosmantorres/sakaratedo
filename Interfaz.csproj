@@ -219,7 +219,6 @@
     <Content Include="GUI\Modulo1\js\Login.js" />
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
-    <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
@@ -1709,13 +1708,6 @@
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo1\M1_Prueba.aspx.cs">
-      <DependentUpon>M1_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
-      <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo1\RecursosInterfazModulo1.Designer.cs">
       <AutoGen>True</AutoGen>
