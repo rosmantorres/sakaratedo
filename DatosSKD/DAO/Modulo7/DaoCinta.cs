@@ -39,7 +39,6 @@ namespace DatosSKD.DAO.Modulo7
             FabricaEntidades fabrica = new FabricaEntidades();
             Cinta cinta = (Cinta)fabrica.ObtenerCinta();          
             Cinta idCinta = (Cinta)parametro;
-            //Cinta cinta;
 
             try
             {
