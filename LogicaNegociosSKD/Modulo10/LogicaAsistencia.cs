@@ -130,5 +130,15 @@ namespace LogicaNegociosSKD.Modulo10
             List<Inscripcion> listaInscritos = BDAsistencia.listaInasistentesPlanilla(idEvento);
             return listaInscritos;
         }
+
+        public static bool agregarAsistenciaEvento(List<Asistencia> asistencia)
+        {
+            return BDAsistencia.agregarAsistenciaEvento(asistencia);
+        }
+
+        public static bool agregarAsistenciaCompetencia(Asistencia asistencia)
+        {
+            return BDAsistencia.agregarAsistenciaCompetencia(asistencia);
+        }
     }
 }

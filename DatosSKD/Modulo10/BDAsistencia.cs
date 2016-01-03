@@ -567,6 +567,107 @@ namespace DatosSKD.Modulo10
             }
             return inscripciones;
         }
+
+        /// <summary>
+        /// Metodo que permite agregar la asistencia a un evento 
+        /// </summary>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarAsistenciaEvento(List<Asistencia> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (Asistencia asistencia in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, asistencia.Evento.Id_evento.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, asistencia.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistencia.Asistio, false);
+                    parametros.Add(parametro);
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoAgregarAsistenciaEvento, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que permite agregar la asistencia a un evento 
+        /// </summary>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarAsistenciaCompetencia(Asistencia asistencia)
+        {
+            try
+            {
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, asistencia.Competencia.Id_competencia.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, asistencia.Inscripcion.Id_Inscripcion.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistencia.Asistio, false);
+                parametros.Add(parametro);
+
+                BDConexion conexion = new BDConexion();
+                List<Resultado> resultados = conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoAgregarAsistenciaCompetencia, parametros);
+
+                if (resultados != null)
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         
     }
 }

@@ -258,8 +258,12 @@
     <value>idSolPla</value>
     <comment>Alias colocado en el Stored Procedure referente a la columna id solicitud planilla</comment>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value>nombrePlanilla</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna id nombre planilla</comment>
+  <data name="ProcedimientoAgregarAsistenciaCompetencia" xml:space="preserve">
+    <value>M10_AgregarAsistenciaCompetencia</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoAgregarAsistenciaEvento" xml:space="preserve">
+    <value>M10_AgregarAsistenciaEvento</value>
+    <comment>Nombre del SP a ejecutar</comment>
   </data>
 </root>

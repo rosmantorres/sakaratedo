@@ -15,15 +15,10 @@ namespace templateApp.GUI.Modulo10
     {
         List<Horario> horariosEventos = new List<Horario>();
         List<Persona> atletasIE = new List<Persona>();
-        List<Persona> atletasAE = new List<Persona>();
         protected void Page_Load(object sender, EventArgs e)
         {
             horariosEventos = LogicaAsistencia.ListarHorariosEventos();
             ((SKD)Page.Master).IdModulo = "10";
-            if (!IsPostBack)
-            {
-
-            }
         }
 
         protected void bDerecho_Click(object sender, EventArgs e)
@@ -54,7 +49,45 @@ namespace templateApp.GUI.Modulo10
 
         protected void bAgregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=1");
+            #region Agregar Evento
+            List<Asistencia> listaA = new List<Asistencia>();
+            List<Persona> atletasIE = LogicaAsistencia.inscritosAlEvento(Session["M10_IdEvento"].ToString());
+            foreach (Persona persona in atletasIE)
+            {
+                foreach (var listBoxItem in listaAsistentes.Items)
+                {
+                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    {
+                        Asistencia asistencia = new Asistencia();
+                        asistencia.Asistio = "S";
+                        asistencia.Evento.Id_evento = Convert.ToInt32(Session["M10_IdEvento"]);
+                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                        listaA.Add(asistencia);
+                    }
+                }
+
+                foreach (var listBoxItem in listaInscritos.Items)
+                {
+                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    {
+                        Asistencia asistencia = new Asistencia();
+                        asistencia.Asistio = "N";
+                        asistencia.Evento.Id_evento = Convert.ToInt32(Session["M10_IdEvento"]);
+                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                        listaA.Add(asistencia);
+                    }
+                }
+            }
+
+            if(LogicaAsistencia.agregarAsistenciaEvento(listaA))
+            {
+                Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=1");
+            }
+            else
+                Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=3");
+            #endregion
+
+
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)
@@ -90,7 +123,7 @@ namespace templateApp.GUI.Modulo10
         protected void calendar_SelectionChanged(object sender, EventArgs e)
         {
             cambioDeEvento();
-            comboEventos.SelectedItem.Value = "0";
+
             List<Evento> listaE = LogicaAsistencia.EventosPorFecha(((Calendar)sender).SelectedDate.ToString(), ((Calendar)sender).SelectedDate.ToString());
             Dictionary<int, string> listaEventos = new Dictionary<int, string>();
             foreach (Evento evento in listaE)
@@ -106,9 +139,8 @@ namespace templateApp.GUI.Modulo10
         protected void comboEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
             cambioDeEvento();
-
             atletasIE = LogicaAsistencia.inscritosAlEvento(((DropDownList)sender).SelectedItem.Value);
-
+            Session["M10_IdEvento"] = ((DropDownList)sender).SelectedItem.Value;
             foreach (Persona persona in atletasIE)
             {
                 listaInscritos.Items.Add(persona.Nombre);
@@ -137,6 +169,7 @@ namespace templateApp.GUI.Modulo10
         {
             listaInscritos.Items.Clear();
             listaAsistentes.Items.Clear();
+            dataTable.Text = " ";
         }
     }
 }

@@ -33,6 +33,13 @@ namespace templateApp.GUI.Modulo10
                     alert.Attributes["role"] = "alert";
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Asistencia modificada exitosamente</div>";
                 }
+
+                if (success.Equals("3"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al agregar la asistencia al evento </div>";
+                }
             }
 
             #region Carga de tabla de Eventos y Competencias

@@ -295,6 +295,24 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_AgregarAsistenciaCompetencia.
+        /// </summary>
+        internal static string ProcedimientoAgregarAsistenciaCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarAsistenciaCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_AgregarAsistenciaEvento.
+        /// </summary>
+        internal static string ProcedimientoAgregarAsistenciaEvento {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarAsistenciaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_AsistentesAlEvento.
         /// </summary>
         internal static string ProcedimientoAtletasAsistentes {
@@ -381,15 +399,6 @@ namespace DatosSKD.Modulo10 {
         internal static string SeparadorFecha {
             get {
                 return ResourceManager.GetString("SeparadorFecha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to nombrePlanilla.
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }
