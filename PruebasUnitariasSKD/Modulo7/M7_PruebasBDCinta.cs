@@ -191,6 +191,18 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.AreEqual("Blanco", cinta.Color_nombre);
         }
 
+        [Test]
+        public void PruebaListarCintasObtenidasDAO()
+        {
+            FabricaDAOSqlServer fabricaSQql = new FabricaDAOSqlServer();
+            DaoCinta baseDeDatosCinta = new DaoCinta();//esto se sustituye con la fabrica
+            Persona idPersona = new Persona();//esto se sustituye con fabrica de entidad
+            idPersona.ID = 6;
+            List<Entidad> listaCinta = baseDeDatosCinta.ListarCintasObtenidas(idPersona);
+            Assert.GreaterOrEqual(listaCinta.Count, 0);
+
+        }
+
         #endregion
     }
 }

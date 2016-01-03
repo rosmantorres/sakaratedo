@@ -129,17 +129,17 @@ namespace DatosSKD.DAO.Modulo7
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
 
-            //List<Cinta> listaDeCintas = new List<Cinta>();
+            FabricaEntidades fabrica = new FabricaEntidades();            
             List<Entidad> listaDeCintas = new List<Entidad>();
             Persona idPersona = (Persona)persona;
 
             try
             {
-                if (idPersona > 0)
+                if (idPersona.ID > 0)
                 {
                     laConexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ToString(), false);
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametroQuery);
 
                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
@@ -147,7 +147,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Cinta cinta = new Cinta();
+                        Cinta cinta = (Cinta)fabrica.ObtenerCinta();
                         cinta.Id_cinta = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
                         cinta.Color_nombre = row[RecursosDAOModulo7.AliasCintaNombre].ToString();
                         cinta.Rango = row[RecursosDAOModulo7.AliasCintaRango].ToString();
