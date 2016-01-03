@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Cinta
+    public class Cinta : Entidad
     {
 
         private int id_cinta;
@@ -58,7 +58,7 @@ namespace DominioSKD
             get { return id_restriccion; }
             set { id_restriccion = value; }
         }
-        public Cinta()
+        public Cinta() : base()
         {
             id_cinta = 0;
             color_nombre = "";
