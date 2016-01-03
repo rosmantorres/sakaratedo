@@ -49,6 +49,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo1\PresentadorM1Inicio.cs" />
+    <Compile Include="Modulo1\RecursosInterfazPresentadorM1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosInterfazPresentadorM1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
@@ -78,7 +84,6 @@
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
-    <Folder Include="Modulo1\" />
     <Folder Include="Modulo2\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
@@ -92,6 +97,10 @@
     <EmbeddedResource Include="Master\RecursosInterfazMaster.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo1\RecursosInterfazPresentadorM1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
