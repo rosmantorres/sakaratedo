@@ -184,11 +184,11 @@ namespace DatosSKD.DAO.Modulo8
         /// <returns></returns>
         public List<Cinta> ConsultarCintaTodas()
         {
-
-           /* BDConexion laConexion;
+            BDConexion laConexion;
             List<Cinta> ListaCinta = new List<Cinta>();
             List<Parametro> parametros;
 
+           /*
             try
             {
                 laConexion = new BDConexion();
