@@ -64,6 +64,15 @@
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
     <Compile Include="DAO\Modulo7\DaoCinta.cs" />
+    <Compile Include="DAO\Modulo7\DaoCompetencia.cs" />
+    <Compile Include="DAO\Modulo7\DaoDojo.cs" />
+    <Compile Include="DAO\Modulo7\DaoEvento.cs" />
+    <Compile Include="DAO\Modulo7\DaoHorario.cs" />
+    <Compile Include="DAO\Modulo7\DaoMatricula.cs" />
+    <Compile Include="DAO\Modulo7\DaoOrganizacion.cs" />
+    <Compile Include="DAO\Modulo7\DaoPersona.cs" />
+    <Compile Include="DAO\Modulo7\DaoTipoEvento.cs" />
+    <Compile Include="DAO\Modulo7\DaoUbicacion.cs" />
     <Compile Include="DAO\Modulo7\RecursosDAOModulo7.Designer.cs">
       <DependentUpon>RecursosDAOModulo7.resx</DependentUpon>
       <AutoGen>True</AutoGen>

@@ -132,6 +132,16 @@
     <Compile Include="Modulo7\M7_PruebasLogicaHorarioPractica.cs" />
     <Compile Include="Modulo7\M7_PruebasLogicaMatriculasPagas.cs" />
     <Compile Include="Modulo7\M7_PruebasLogicaOrganizacionYDojo.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCinta.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCompetencia.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAODojo.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOEvento.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOHorario.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOMatricula.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOOrganizacion.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOPersona.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOTipoEvento.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOUbicacion.cs" />
     <Compile Include="Modulo7\RecursosPU_Mod7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
