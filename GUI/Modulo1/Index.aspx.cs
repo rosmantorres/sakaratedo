@@ -15,10 +15,9 @@ namespace templateApp.GUI.Modulo1
 {
     public partial class Index : System.Web.UI.Page , IContratoM1Inicio
     {
-        public Boolean valueInfo = false;
+        
         private PresentadorM1Inicio presentador;
-        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
-
+        
         String IContratoM1Inicio.UserNameEtq
         {
             get { return userIni.Value; }
