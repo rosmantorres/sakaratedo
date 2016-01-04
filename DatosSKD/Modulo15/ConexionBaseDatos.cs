@@ -227,16 +227,16 @@ namespace DatosSKD.Modulo15
                {
                    Implemento implemento = new Implemento();
                    implemento.Dojo_Implemento = new Dojo();
-                   implemento.Id_Implemento =    Convert .ToInt32(row[RecursosBDModulo15.tabla_idImplemento]);
+                   implemento.Id_Implemento =    Convert .ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento =row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                   implemento.Cantida_implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento   =row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento  =row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                    implemento.Color_Implemento  =row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                   implemento.Dojo_Implemento.Dojo_Id =Convert.ToInt32(row[RecursosBDModulo15.tabla_dojoImplemento]);
-                   implemento.Stock_Minimo_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_stockImplemento]);
+                   implemento.Dojo_Implemento.Dojo_Id =Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                   implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                    implemento.Precio_Implemento =Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
 
@@ -264,6 +264,7 @@ namespace DatosSKD.Modulo15
 
        }
        #endregion
+
 
        #region listarInventarioDatos2
        public static List<Implemento> listarInventarioDatos2(Dojo dojo)
@@ -295,16 +296,16 @@ namespace DatosSKD.Modulo15
                {
                    Implemento implemento = new Implemento();
                    implemento.Dojo_Implemento = new Dojo();
-                   implemento.Id_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_idImplemento]);
+                   implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                   implemento.Cantida_implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                    implemento.Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                   implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt32(row[RecursosBDModulo15.tabla_dojoImplemento]);
-                   implemento.Stock_Minimo_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_stockImplemento]);
+                   implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                   implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                    implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
 
@@ -356,16 +357,16 @@ namespace DatosSKD.Modulo15
                 row= dt.Rows[0];
                
 
-                   implemento.Id_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_idImplemento]);
+                   implemento.Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                   implemento.Cantida_implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                    implemento.Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                   implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt32(row[RecursosBDModulo15.tabla_dojoImplemento]);
-                   implemento.Stock_Minimo_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_stockImplemento]);
+                   implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                   implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                    implemento.Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
                    implemento.Descripcion_Implemento =row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
@@ -387,6 +388,7 @@ namespace DatosSKD.Modulo15
 
        }
        #endregion
+
 
        #region eliminarInventarioDatos
        public  static void eliminarInventarioDatos(int idInventario,Dojo dojo)
@@ -658,16 +660,16 @@ namespace DatosSKD.Modulo15
                foreach (DataRow row in dt.Rows)
                {
                    Implemento implemento = new Implemento();
-                 //  implemento.Dojo_Implemento = new Dojo();
+                   implemento.Dojo_Implemento = new Dojo();
                    implemento.Id_Implemento =    Convert .ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                    implemento.Nombre_Implemento =row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                //   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+                   implemento.Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                    implemento.Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                    implemento.Tipo_Implemento   =row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                    implemento.Marca_Implemento  =row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                    implemento.Color_Implemento  =row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                    implemento.Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-              //     implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                   implemento.Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                    implemento.Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                    implemento.Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                    implemento.Precio_Implemento =Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);

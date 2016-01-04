@@ -13,7 +13,6 @@ using templateApp.GUI.Master;
 using System.Web.SessionState;
 
 
-
 namespace templateApp.GUI.Modulo15
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -158,52 +157,39 @@ namespace templateApp.GUI.Modulo15
            
             ((SKD)Page.Master).IdModulo = "15";
             //variables agregar
-            try
-            {
-                String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
-                Boolean permitido = false;
-                List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
-                foreach (String rol in rolesPermitidos)
-                {
-                    if (rol == rolUsuario)
-                        permitido = true;
-                }
-                if (permitido)
-                {
-                    //Aqui va su codigo
-           
+         
             InterfazImplemento implementoInterfaz=null;
             implementoInterfaz = new InterfazImplemento();
 
 
-            int id_implemento;
-            String nombre_implemento;
-            String tipo_implemento;
-            String marca_implemento;
-            String color_implemento;
-            String talla_implemento;
-            int cantidad;
-            int stock_minimo;
-            String estatus_implemento;
-            String descripcion_implemento;
-            double precio_implemento;
 
-            // imagen////////////
+            int id_implemento = Convert.ToInt16(Request.Form["id_implemento"]);
+            String nombre_implemento = Request.Form["nombre_implemento"];
+            String tipo_implemento = Request.Form["tipo_implemento"];
+            String marca_implemento=Request.Form["marca_implemento"];
+            String color_implemento=Request.Form["color_implemento"];
+            String talla_implemento=Request.Form["talla_implemento"];
+            int id_dojo =1;
+            int cantidad=Convert.ToInt16(Request.Form["cantidad_implemento"]);
+            int stock_minimo=Convert.ToInt16(Request.Form["stock_implemento"]);
+            String estatus_implemento=Request.Form["estatus_implemento"];
+            String descripcion_implemento = Request.Form["descripcion_implemento"];
+            double precio_implemento = Convert.ToDouble(Request.Form["precio_implemento"]);
+
             HttpPostedFile archivo = Request.Files["imagen_implemento"];
             string TargetLocation ;
             string imagen_implemento =null;
-           /////////////
- 
-            //////////// variables de  get 
+            
+        
             String eliminar = Request.QueryString["eliminar"];
-            String consultar = Request.QueryString["consultar"];     
+            String consultar = Request.QueryString["consultar"];
+         
+            
             String agregar = Request.Form["agregar"];
             String modificar = Request.Form["modificar"];
-            ////////////////////////////////
 
 
-            ////////////////////usuario y rol para manejar
+            //usuario y rol para manejar
             String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
             Dojo dojo = implementoInterfaz.usuarioImplementoInterfaz(usuario);
@@ -215,59 +201,29 @@ namespace templateApp.GUI.Modulo15
 
 
             if (agregar != null){
-                if (agregar.Equals("agregar")) {
 
+                if (agregar.Equals("agregar")) {
+                    
+                    archivo = Request.Files["imagen_implemento"];
+                    TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+                    imagen_implemento = archivo.FileName;
+                    archivo.SaveAs(TargetLocation + imagen_implemento);
+                    //pasar dado el usuario a que dojo pertenece
+
+
+                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                     try
                     {
-
-                        #region datosAgregar
-                        id_implemento = Convert.ToInt16(Request.Form["id_implemento"]);
-                        nombre_implemento = Request.Form["nombre_implemento"];
-                        tipo_implemento = Request.Form["tipo_implemento"];
-                        marca_implemento = Request.Form["marca_implemento"];
-                        color_implemento = Request.Form["color_implemento"];
-                        talla_implemento = Request.Form["talla_implemento"];
-                        cantidad = Convert.ToInt32(Request.Form["cantidad_implemento"]);
-                        stock_minimo = Convert.ToInt32(Request.Form["stock_implemento"]);
-                        estatus_implemento = Request.Form["estatus_implemento"];
-                        descripcion_implemento = Request.Form["descripcion_implemento"];
-                        precio_implemento = Convert.ToDouble(Request.Form["precio_implemento"]);
-                        #endregion
-
-
-                        archivo = Request.Files["imagen_implemento"];
-                        TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
-                        imagen_implemento = archivo.FileName;
-                        archivo.SaveAs(TargetLocation + imagen_implemento);
-
-
-                        Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                         agregarImplementoInterfaz(implemento);
-
-
-                    }
-                    catch (ErrorInputInterfaz ex2)
-                    {
-
-                        ErrorInputInterfaz ex = new ExcepcionesSKD.Modulo15.ErrorInputInterfaz(ex2.Codigo, "Error en Interfaz con valores de input", new Exception());
-                        Logger.EscribirError("M15_ConsultarImplemento", ex);
-                        Response.Redirect("~/GUI/Modulo15/M15_AgregarImplemento.aspx?agregar=fallo&excepcion=ErrorInputInterfaz");
+                        
 
                     }
-                    catch (ExceptionSKD ex2)
-                    {
-                        ErrorInputInterfaz ex = new ExcepcionesSKD.Modulo15.ErrorInputInterfaz(ex2.Codigo, "Error en Interfaz con valores de input", new Exception());
-                        Logger.EscribirError("M15_ConsultarImplemento", ex);
-                        Response.Redirect("~/GUI/Modulo15/M15_AgregarImplemento.aspx?agregar=fallo&excepcion=ErrorInputInterfaz");
+                    catch (ExceptionSKD ex) {
 
-                    
-                    }
-                    catch (Exception ex2)
-                    {
-                        Response.Redirect("~/GUI/Modulo15/M15_AgregarImplemento.aspx?agregar=fallo&excepcion=ErrorInputInterfaz");
-                    
+                        Response.Redirect("~/GUI/Modulo15/M15_AgregarImplemento.aspx?agregar=fallo");
 
                     }
+
                     
                 }
             
@@ -279,76 +235,43 @@ namespace templateApp.GUI.Modulo15
 
                 if (modificar.Equals("modificar"))
                 {
-                    try
-                    {
+                   
+                    #region datos_modificar
+                    id_implemento = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$id_implemento"]);
+                    nombre_implemento = Request.Form["ctl00$contenidoCentral$nombre_implemento"];
+                    tipo_implemento = Request.Form["ctl00$contenidoCentral$tipo_implemento"];
+                    marca_implemento = Request.Form["ctl00$contenidoCentral$marca_implemento"];
+                    color_implemento = Request.Form["ctl00$contenidoCentral$color_implemento"];
+                    talla_implemento = Request.Form["ctl00$contenidoCentral$talla_implemento"];
+                    cantidad = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$cantidad_implemento"]);
+                    stock_minimo = Convert.ToInt16(Request.Form["ctl00$contenidoCentral$stock_implemento"]);
+                    estatus_implemento = Request.Form["ctl00$contenidoCentral$estatus_implemento"];
+                    precio_implemento = Convert.ToDouble(Request.Form["ctl00$contenidoCentral$precio_implemento"]);
+                    descripcion_implemento = Request.Form["ctl00$contenidoCentral$descripcion_implemento"];
+                    archivo = Request.Files["ctl00$contenidoCentral$imagen_implemento"];
+                    TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+                    imagen_implemento = archivo.FileName;
+                    archivo.SaveAs(TargetLocation + imagen_implemento);
 
-                        #region datos_modificar
-                        id_implemento = Convert.ToInt32(Request.Form["ctl00$contenidoCentral$id_implemento"]);
-                        nombre_implemento = Request.Form["ctl00$contenidoCentral$nombre_implemento"];
-                        tipo_implemento = Request.Form["ctl00$contenidoCentral$tipo_implemento"];
-                        marca_implemento = Request.Form["ctl00$contenidoCentral$marca_implemento"];
-                        color_implemento = Request.Form["ctl00$contenidoCentral$color_implemento"];
-                        talla_implemento = Request.Form["ctl00$contenidoCentral$talla_implemento"];
-                        cantidad = Convert.ToInt32(Request.Form["ctl00$contenidoCentral$cantidad_implemento"]);
-                        stock_minimo = Convert.ToInt32(Request.Form["ctl00$contenidoCentral$stock_implemento"]);
-                        estatus_implemento = Request.Form["ctl00$contenidoCentral$estatus_implemento"];
-                        precio_implemento = Convert.ToDouble(Request.Form["ctl00$contenidoCentral$precio_implemento"]);
-                        descripcion_implemento = Request.Form["ctl00$contenidoCentral$descripcion_implemento"];
-                        archivo = Request.Files["ctl00$contenidoCentral$imagen_implemento"];
-                        TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
-                        imagen_implemento = archivo.FileName;
-                        archivo.SaveAs(TargetLocation + imagen_implemento);
+                    id_dojo = 1;
+                    #endregion 
 
-                        #endregion
+                    //con el usuario usar para para obtener el dojo 
+                  //  Dojo dojo=new Dojo(id_dojo);
+                    Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
+                    try {
 
-
-                        Implemento implemento = new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad, stock_minimo, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
                         modificarImplementoInterfaz(implemento);
+                    
+                    }
+                    catch(ExceptionSKD ex){
+
+                        Response.Redirect("~/GUI/Modulo15/M15_ModificarImplemento.aspx?modificar=fallo");
 
                     }
-                    catch (ErrorInputInterfaz ex2)
-                    {
-
-                        ErrorInputInterfaz ex = new ExcepcionesSKD.Modulo15.ErrorInputInterfaz(ex2.Codigo, "Error en Interfaz con valores de input", new Exception());
-                        Logger.EscribirError("M15_ConsultarImplemento", ex);
-                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
-                        alert2.Attributes["role"] = "alert";
-                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
-
-                    }
-                    catch (ExceptionSKD ex2)
-                    {
-                        ErrorInputInterfaz ex = new ExcepcionesSKD.Modulo15.ErrorInputInterfaz(ex2.Codigo, "Error en Interfaz con valores de input", new Exception());
-                        Logger.EscribirError("M15_ConsultarImplemento", ex);
-                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
-                        alert2.Attributes["role"] = "alert";
-                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
-
-
-                    }
-                    catch (Exception ex2)
-                    {
-                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
-                        alert2.Attributes["role"] = "alert";
-                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Modificar el Implemento</div>";
-
-
-                    }
-
-
+                    
 
                 }
-                else {
-                    if (modificar.Equals("fallo")) {
-
-                        alert2.Attributes["class"] = "alert alert-error alert-dismissible";
-                        alert2.Attributes["role"] = "alert";
-                        alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Consultar el Implemento a Modificar</div>";
-
-                    }
-                
-                }
-
 
             }
 
@@ -388,19 +311,7 @@ namespace templateApp.GUI.Modulo15
 
             }
 
-
-                }
-                else
-                {
-                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
-                }
-
-            }
-            catch (NullReferenceException ex)
-            {
-
-
-            }
+          
 
         }
     }

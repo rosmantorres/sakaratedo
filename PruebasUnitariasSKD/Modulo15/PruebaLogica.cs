@@ -35,46 +35,46 @@ namespace PruebasUnitariasSKD.Modulo15
         dojo = null;
     }
 
-    #region M15_PruebaAgregarInventarioLogica
+    #region PruebaAgregarInventarioLogica
     [Test]
     [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-    public void M15_PruebaAgregarInventarioLogica()
+    public void PruebaAgregarInventarioLogica()
     {
         logica.agregarInventarioLogica(null);
     }
     #endregion
 
-    #region M15_PruebaListarInventarioLogica
+    #region PruebaListarInventarioLogica
     [Test]
     [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-    public void M15_PruebaListarInventarioLogica()
+    public void PruebaListarInventarioLogica()
     {
         logica.listarInventarioLogica(null);
     }
     #endregion
 
-    #region M15_PruebaListarInventarioLogica2
+    #region PruebaListarInventarioLogica2
     [Test]
     [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-    public void M15_PruebaListarInventarioLogica2()
+    public void PruebaListarInventarioLogica2()
     {
         logica.listarInventarioLogica2(null);
     }
     #endregion
 
-    #region M15_PruebaUsuarioImplementoLogica
+    #region PruebaUsuarioImplementoLogica
     [Test]
     [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-    public void M15_PruebaUsuarioImplementoLogica()
+    public void PruebaUsuarioImplementoLogica()
     {
         logica.usuarioImplementoLogica(null);
     }
     #endregion
 
-    #region M15_PruebamodificarInventarioLogica
+    #region PruebamodificarInventarioLogica
     [Test]
     [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-    public void M15_PruebamodificarInventarioLogica()
+    public void PruebamodificarInventarioLogica()
     {
         logica.modificarInventarioLogica(null);
     }

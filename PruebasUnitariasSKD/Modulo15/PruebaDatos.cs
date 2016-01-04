@@ -65,10 +65,10 @@ namespace PruebasUnitariasSKD.Modulo15
             dojo = null;
         }
 
-        #region M15_PruebaAgregarInventarioNulo
+        #region PruebaAgregarInventarioNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaAgregarInventarioNulo()
+        public void PruebaAgregarInventarioNulo()
         {
             implemento = null;
             ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -76,11 +76,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-
-        #region M15_PruebaAgregarInventarioAtributoNulo
+        #region PruebaAgregarInventarioAtributoNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaAgregarInventarioAtributoNulo()
+        public void PruebaAgregarInventarioAtributoNulo()
         {
             implemento.Nombre_Implemento = null;
             ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -88,10 +87,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaAgregarInventarioAtributoStockNegativo
+        #region PruebaAgregarInventarioAtributoStockNegativo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaAgregarInventarioAtributoStockNegativo()
+        public void PruebaAgregarInventarioAtributoStockNegativo()
         {
                 implemento.Stock_Minimo_Implemento=-1;
                 ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -99,10 +98,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaAgregarInventarioAtributoCantidadNegativo
+        #region PruebaAgregarInventarioAtributoCantidadNegativo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaAgregarInventarioAtributoCantidadNegativo()
+        public void PruebaAgregarInventarioAtributoCantidadNegativo()
         {
                 implemento.Cantida_implemento = -1;
                 ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -110,11 +109,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-
-        #region M15_PruebaAgregarInventarioAtributoPrecioNegativo
+        #region PruebaAgregarInventarioAtributoPrecioNegativo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaAgregarInventarioAtributoPrecioNegativo()
+        public void PruebaAgregarInventarioAtributoPrecioNegativo()
         {
             implemento.Cantida_implemento = -1;
             ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -122,9 +120,9 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaAgregarInventarioDatos
+        #region PruebaAgregarInventarioDatos
         [Test]
-        public void M15_PruebaAgregarInventarioDatos()
+        public void PruebaAgregarInventarioDatos()
         {
 
             ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -144,10 +142,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaModificarInventarioNulo
+        #region PruebaModificarInventarioNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaModificarInventarioNulo()
+        public void PruebaModificarInventarioNulo()
         {
             implemento = null;
             ConexionBaseDatos.modificarInventarioDatos(implemento);
@@ -155,10 +153,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaModificarInventarioAtributoNulo
+        #region PruebaModificarInventarioAtributoNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaModificarInventarioAtributoNulo()
+        public void PruebaModificarInventarioAtributoNulo()
         {
             implemento.Nombre_Implemento = null;
             ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -166,10 +164,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaModificarInventarioAtributoStockNegativo
+        #region PruebaModificarInventarioAtributoStockNegativo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaModificarInventarioAtributoStockNegativo()
+        public void PruebaModificarInventarioAtributoStockNegativo()
         {
             implemento.Stock_Minimo_Implemento = -1;
             ConexionBaseDatos.modificarInventarioDatos(implemento);
@@ -177,10 +175,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaModificarInventarioAtributoCantidadNegativo
+        #region PruebaModificarInventarioAtributoCantidadNegativo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaModificarInventarioAtributoCantidadNegativo()
+        public void PruebaModificarInventarioAtributoCantidadNegativo()
         {
             implemento.Cantida_implemento = -1;
             ConexionBaseDatos.modificarInventarioDatos(implemento);
@@ -188,10 +186,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaModificarInventarioAtributoPrecioNegativo
+        #region PruebaModificarInventarioAtributoPrecioNegativo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaModificarInventarioAtributoPrecioNegativo()
+        public void PruebaModificarInventarioAtributoPrecioNegativo()
         {
             implemento.Cantida_implemento = -1;
             ConexionBaseDatos.modificarInventarioDatos(implemento);
@@ -199,9 +197,9 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaModificarInventarioDatos
+        #region PruebaModificarInventarioDatos
         [Test]
-        public void M15_PruebaModificarInventarioDatos()
+        public void PruebaModificarInventarioDatos()
         {
 
             ConexionBaseDatos.agregarInventarioDatos(implemento);
@@ -214,9 +212,9 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaimplementoInventarioDatos
+        #region PruebaimplementoInventarioDatos
         [Test]
-        public void M15_PruebaimplementoInventarioDatos()
+        public void PruebaimplementoInventarioDatos()
         {
             ConexionBaseDatos.agregarInventarioDatos(implemento);
             implemento = ConexionBaseDatos.implementoInventarioDatosUltimo();
@@ -225,9 +223,9 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaEliminarInventarioDatos
+        #region PruebaEliminarInventarioDatos
         [Test]
-        public void M15_PruebaEliminarInventarioDatos()
+        public void PruebaEliminarInventarioDatos()
         {
             ConexionBaseDatos.agregarInventarioDatos(implemento);
             implemento = ConexionBaseDatos.implementoInventarioDatosUltimo();
@@ -238,10 +236,10 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaEliminarInventarioDojoNulo
+        #region PruebaEliminarInventarioDojoNulo
         [Test]
         [ExpectedException(typeof(ImplementoSinIDException))]
-        public void M15_PruebaEliminarInventarioDojoNulo()
+        public void PruebaEliminarInventarioDojoNulo()
         {
             ConexionBaseDatos.agregarInventarioDatos(implemento);
             implemento = ConexionBaseDatos.implementoInventarioDatosUltimo();
@@ -250,9 +248,9 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaListarInventarioDatos
+        #region PruebaListarInventarioDatos
         [Test]
-        public void M15_PruebaListarInventarioDatos()
+        public void PruebaListarInventarioDatos()
         {
             implementos = ConexionBaseDatos.listarInventarioDatos(dojo);
             int n = implementos.Count;
@@ -260,20 +258,20 @@ namespace PruebasUnitariasSKD.Modulo15
 
         }
         #endregion
-        
-        #region M15_PruebaListarInventarioDatosDojoNulo
+
+        #region PruebaListarInventarioDatosDojoNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaListarInventarioDatosDojoNulo()
+        public void PruebaListarInventarioDatosDojoNulo()
         {
             implementos = ConexionBaseDatos.listarInventarioDatos(null);
 
         }
         #endregion
 
-        #region M15_PruebaListarInventarioDatos2
+        #region PruebaListarInventarioDatos2
         [Test]
-        public void M15_PruebaListarInventarioDatos2()
+        public void PruebaListarInventarioDatos2()
         {
             implementos = ConexionBaseDatos.listarInventarioDatos2(dojo);
             int n = implementos.Count;
@@ -282,19 +280,19 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_PruebaListarInventarioDatos2DojoNulo
+        #region PruebaListarInventarioDatos2DojoNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaListarInventarioDatos2DojoNulo()
+        public void PruebaListarInventarioDatos2DojoNulo()
         {
             implementos = ConexionBaseDatos.listarInventarioDatos2(null);
 
         }
         #endregion
 
-        #region M15_PruebaUsuarioImplementoDatos
+        #region PruebaUsuarioImplementoDatos
         [Test]
-        public void M15_PruebaUsuarioImplementoDatos()
+        public void PruebaUsuarioImplementoDatos()
         {
             int n = ConexionBaseDatos.usuarioImplementoDatos(usuario);
             Assert.AreEqual(n, ConexionBaseDatos.usuarioImplementoDatos(usuario));
@@ -302,14 +300,14 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-       #region M15_PruebaUsuarioImplementoDatosNulo
+        #region PruebaUsuarioImplementoDatosNulo
         [Test]
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-        public void M15_PruebaUsuarioImplementoDatosNulo()
+        public void PruebaUsuarioImplementoDatosNulo()
         {
             ConexionBaseDatos.usuarioImplementoDatos(null);
 
         }
         #endregion
-     }
+    }
 }

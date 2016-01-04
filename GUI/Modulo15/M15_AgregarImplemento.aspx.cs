@@ -55,32 +55,17 @@ namespace templateApp.GUI.Modulo15
 
         protected void Page_Load(object sender, EventArgs e)
         {
-              try
-            {
-                String rolUsuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
-                Boolean permitido = false;
-                List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
-                foreach (String rol in rolesPermitidos)
-                {
-                    if (rol == rolUsuario)
-                        permitido = true;
-                }
-                if (permitido)
-                {
-                    //Aqui va su codigo
-           
+
            
             ((SKD)Page.Master).IdModulo = "15";
             String success = Request.QueryString["success"];
             String agregar =Request.QueryString["agregar"];
-            String excepcion =Request.QueryString["excepcion"];
             String valor="";
             Boolean estado = false;
 
             if (agregar!= null) {
 
-                if ((agregar.Equals("fallo"))&&(excepcion.Equals("ErrorInputInterfaz"))) {
+                if (agregar.Equals("fallo")) {
                     alert2.Attributes["class"] = "alert alert-error alert-dismissible";
                     alert2.Attributes["role"] = "alert";
                     alert2.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se pudo Agregar el Implemento</div>";  
@@ -116,18 +101,6 @@ namespace templateApp.GUI.Modulo15
             }
 
 
-                }
-                else
-                {
-                    Response.Redirect(templateApp.GUI.Master.RecursosInterfazMaster.direccionMaster_Inicio);
-                }
-
-            }
-              catch (NullReferenceException ex)
-              {
-
-
-              }
         }
     }
 }
