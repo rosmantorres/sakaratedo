@@ -1,0 +1,53 @@
+﻿using DatosSKD.InterfazDAO.Modulo7;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DominioSKD;
+
+namespace DatosSKD.DAO.Modulo7
+{
+    public class DaoMatricula : DAOGeneral, IDaoMatricula
+    {
+        public bool Agregar(Entidad parametro)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Entidad> ConsultarTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Entidad ConsultarXId(Entidad parametro)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EstadoMatricula(Entidad persona)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Entidad> ListarMatriculasPagas(Entidad persona)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int MatriculaID(Entidad persona)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Modificar(Entidad parametro)
+        {
+            throw new NotImplementedException();
+        }
+
+        public float MontoPagoMatricula(Entidad persona, Entidad matricula)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

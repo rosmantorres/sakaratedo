@@ -199,8 +199,7 @@ namespace PruebasUnitariasSKD.Modulo7
             Persona idPersona = new Persona();//esto se sustituye con fabrica de entidad
             idPersona.ID = 6;
             List<Entidad> listaCinta = baseDeDatosCinta.ListarCintasObtenidas(idPersona);
-            Assert.GreaterOrEqual(listaCinta.Count, 0);
-
+            Assert.GreaterOrEqual(listaCinta.Count, 1);
         }
 
         #endregion
