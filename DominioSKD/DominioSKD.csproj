@@ -49,6 +49,7 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo8\RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
