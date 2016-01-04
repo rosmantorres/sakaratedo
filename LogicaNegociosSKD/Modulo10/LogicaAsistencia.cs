@@ -49,14 +49,14 @@ namespace LogicaNegociosSKD.Modulo10
             return listaAtletas;
         }
 
-        public static void ModificarAsistenciaEvento(int ins, int eve, string asistio)
+        public static bool ModificarAsistenciaEvento(List<Asistencia> asistencias)
         {
-            BDAsistencia.ModificarAsistenciaE(ins, eve, asistio);
+            return BDAsistencia.ModificarAsistenciaE(asistencias);
         }
 
-        public static void ModificarAsistenciaCompetencia(int ins, int com, string asistio)
+        public static bool ModificarAsistenciaCompetencia(List<Asistencia> asistencias)
         {
-            BDAsistencia.ModificarAsistenciaC(ins, com, asistio);
+            return BDAsistencia.ModificarAsistenciaC(asistencias);
         }
 
         public static Competencia consultarCompetenciasXID(String idCompetencia)
@@ -69,7 +69,7 @@ namespace LogicaNegociosSKD.Modulo10
         /// Metodo que retorna de la BD un evento dado el ID
         /// </summary>
         /// <param name="idEvento">Id del evento</param>
-        /// <returns>Objeto de tipo evento</returns>
+        /// <returns>Lista de personas</returns>
         public static List<Persona> listaAsistentesCompetencia(String idEvento)
         {
             List<Persona> listaAtletas = BDAsistencia.listaAsistentesCompetencia(idEvento);
@@ -85,7 +85,7 @@ namespace LogicaNegociosSKD.Modulo10
         /// <summary>
         /// Metodo que retorna de la BD todas las fechas donde hay eventos
         /// </summary>
-        /// <returns>Lista de Competencias</returns>
+        /// <returns>Lista de horarios</returns>
         public static List<Horario> ListarHorariosEventos()
         {
             BDEvento baseE = new BDEvento();
@@ -94,9 +94,18 @@ namespace LogicaNegociosSKD.Modulo10
         }
 
         /// <summary>
+        /// Metodo que retorna de la BD todas las fechas donde hay competencias
+        /// </summary>
+        /// <returns>Lista de horarios</returns>
+        public static List<Horario> ListarHorariosCompetencias()
+        {
+            return BDAsistencia.ListarHorariosCompetencias();
+        }
+
+        /// <summary>
         /// Metodo que retorna de la BD todos los eventos por fecha
         /// </summary>
-        /// <returns>Lista de Competencias</returns>
+        /// <returns>Lista de eventos</returns>
         public static List<Evento> EventosPorFecha(String fechaInicio, String fechaFin)
         {
             BDEvento baseE = new BDEvento();
@@ -114,6 +123,15 @@ namespace LogicaNegociosSKD.Modulo10
         }
 
         /// <summary>
+        /// Metodo que retorna de la BD todas las competencias por una fecha
+        /// </summary>
+        /// <returns>Lista de Competencias</returns>
+        public static List<Competencia> competenciasPorFecha(string fechaInicio)
+        {
+            return BDAsistencia.competenciasPorFecha(fechaInicio);
+        }
+
+        /// <summary>
         /// Metodo que retorna de la BD una lista de atletas inscritos a un evento
         /// </summary>
         /// <param name="idEvento">Id del evento</param>
@@ -125,9 +143,27 @@ namespace LogicaNegociosSKD.Modulo10
             return listaAtletas;
         }
 
+        /// <summary>
+        /// Metodo que retorna de la BD una lista de atletas inscritos a una competencia
+        /// </summary>
+        /// <param name="idCompetencia">Id de la competencia</param>
+        /// <returns>Objeto de tipo competencia</returns>
+
+        public static List<Persona> inscritosCompetencias(String idCompetencia)
+        {
+            List<Persona> listaAtletas = BDAsistencia.listaAtletasInscritosCompetencia(idCompetencia);
+            return listaAtletas;
+        }
+
         public static List<Inscripcion> listaAtletasInasistentesPlanilla(String idEvento)
         {
             List<Inscripcion> listaInscritos = BDAsistencia.listaInasistentesPlanilla(idEvento);
+            return listaInscritos;
+        }
+
+        public static List<Inscripcion> listaAtletasInasistentesPlanillaCompetencia(String idCompetencia)
+        {
+            List<Inscripcion> listaInscritos = BDAsistencia.listaInasistentesPlanillaCompetencia(idCompetencia);
             return listaInscritos;
         }
 
@@ -136,7 +172,7 @@ namespace LogicaNegociosSKD.Modulo10
             return BDAsistencia.agregarAsistenciaEvento(asistencia);
         }
 
-        public static bool agregarAsistenciaCompetencia(Asistencia asistencia)
+        public static bool agregarAsistenciaCompetencia(List<Asistencia> asistencia)
         {
             return BDAsistencia.agregarAsistenciaCompetencia(asistencia);
         }

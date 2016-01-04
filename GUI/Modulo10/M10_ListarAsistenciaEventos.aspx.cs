@@ -24,7 +24,7 @@ namespace templateApp.GUI.Modulo10
                 {
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Asistencia agregada exitosamente</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Asistencia a eventos agregada exitosamente</div>";
                 }
 
                 if (success.Equals("2"))
@@ -39,6 +39,20 @@ namespace templateApp.GUI.Modulo10
                     alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                     alert.Attributes["role"] = "alert";
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al agregar la asistencia al evento </div>";
+                }
+
+                if (success.Equals("4"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Asistencia a competencia agregada exitosamente</div>";
+                }
+
+                if (success.Equals("5"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al agregar la asistencia de la competencia </div>";
                 }
             }
 

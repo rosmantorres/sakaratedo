@@ -340,6 +340,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_AtletasInscritosCompetencia.
+        /// </summary>
+        internal static string ProcedimientoAtletasInscritosCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoAtletasInscritosCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_AtletasInscritosEvento.
         /// </summary>
         internal static string ProcedimientoAtletasInscritosEvento {
@@ -358,6 +367,15 @@ namespace DatosSKD.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_FechasCompetencias.
+        /// </summary>
+        internal static string ProcedimientoFechasCompetencias {
+            get {
+                return ResourceManager.GetString("ProcedimientoFechasCompetencias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_InasistentesAcompetencia.
         /// </summary>
         internal static string ProcedimientoInasistentesCompetencia {
@@ -372,6 +390,24 @@ namespace DatosSKD.Modulo10 {
         internal static string ProcedimientoInasistentesPlanilla {
             get {
                 return ResourceManager.GetString("ProcedimientoInasistentesPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_InasistentesPlanillaCompetencia.
+        /// </summary>
+        internal static string ProcedimientoInasistentesPlanillaCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoInasistentesPlanillaCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListaCompetenciaXFecha.
+        /// </summary>
+        internal static string ProcedimientoListaCompetenciaXFecha {
+            get {
+                return ResourceManager.GetString("ProcedimientoListaCompetenciaXFecha", resourceCulture);
             }
         }
         

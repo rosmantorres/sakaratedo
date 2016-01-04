@@ -222,20 +222,36 @@ namespace DatosSKD.Modulo10
         /// Metodo que permite modificar de base de datos una asistencia de un atleta 
         /// </summary>
         /// <returns>true si se pudo modificar</returns>
-        public static void ModificarAsistenciaE(int ins, int eve, string asistio)
+        public static bool ModificarAsistenciaE(List<Asistencia> lista)
         {
+            int cont = 0;
             try
             {
+                foreach (Asistencia asistencia in lista)
+                {
                     List<Parametro> parametros = new List<Parametro>();
-                    Parametro parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistio, false);
+                    Parametro parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistencia.Asistio, false);
                     parametros.Add(parametro);
-                    parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, eve.ToString(), false);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdEvento, SqlDbType.Int, asistencia.Evento.Id_evento.ToString(), false);
                     parametros.Add(parametro);
-                    parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, ins.ToString(), false);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, asistencia.Inscripcion.Id_Inscripcion.ToString(), false);
                     parametros.Add(parametro);
-                    
+
                     BDConexion conexion = new BDConexion();
                     conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoModificarAsistenciaE, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
             }
             catch (SqlException ex)
             {
@@ -314,7 +330,7 @@ namespace DatosSKD.Modulo10
 
         }
 
-        public static String ModificarFechas(string fecha) 
+        private static String ModificarFechas(string fecha) 
         { 
             if (int.Parse(fecha) < 10) 
                 fecha = RecursosBDModulo10.Concatenar0 + fecha.ToString(); 
@@ -425,21 +441,37 @@ namespace DatosSKD.Modulo10
         /// Metodo que permite modificar de base de datos una asistencia de un atleta 
         /// </summary>
         /// <returns>true si se pudo modificar</returns>
-        public static void ModificarAsistenciaC(int ins, int com, string asistio)
+        public static bool ModificarAsistenciaC(List<Asistencia> lista)
         {
+            int cont = 0;
             try
             {
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, ins.ToString(), false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistio, false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, com.ToString(), false);
-                parametros.Add(parametro);
+                foreach (Asistencia asistencia in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, asistencia.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistencia.Asistio, false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, asistencia.Competencia.Id_competencia.ToString(), false);
+                    parametros.Add(parametro);
+
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoModificarAsistenciaC, parametros);
+                    cont++;
+                }
 
 
-                BDConexion conexion = new BDConexion();
-                conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoModificarAsistenciaC, parametros);
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
             }
             catch (SqlException ex)
             {
@@ -625,22 +657,26 @@ namespace DatosSKD.Modulo10
         /// Metodo que permite agregar la asistencia a un evento 
         /// </summary>
         /// <returns>true si se pudo agregar</returns>
-        public static bool agregarAsistenciaCompetencia(Asistencia asistencia)
+        public static bool agregarAsistenciaCompetencia(List<Asistencia> lista)
         {
+            int cont = 0;
             try
             {
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, asistencia.Competencia.Id_competencia.ToString(), false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, asistencia.Inscripcion.Id_Inscripcion.ToString(), false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistencia.Asistio, false);
-                parametros.Add(parametro);
+                foreach (Asistencia asistencia in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, asistencia.Competencia.Id_competencia.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroIdInscripcion, SqlDbType.Int, asistencia.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo10.ParametroAsistencia, SqlDbType.Char, asistencia.Asistio, false);
+                    parametros.Add(parametro);
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoAgregarAsistenciaCompetencia, parametros);
+                    cont++;
+                }
 
-                BDConexion conexion = new BDConexion();
-                List<Resultado> resultados = conexion.EjecutarStoredProcedure(RecursosBDModulo10.ProcedimientoAgregarAsistenciaCompetencia, parametros);
-
-                if (resultados != null)
+                if (lista.Count.Equals(cont))
                 {
                     //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
@@ -650,6 +686,7 @@ namespace DatosSKD.Modulo10
                     //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
+
             }
             catch (SqlException ex)
             {
@@ -668,6 +705,236 @@ namespace DatosSKD.Modulo10
                 throw ex;
             }
         }
-        
+
+        /// <summary>
+        /// Metodo que retorna todas las fechas donde hay competencias disponibles
+        /// </summary>
+        /// <returns>lista de horario</returns>
+
+        public static List<Horario> ListarHorariosCompetencias()
+        {
+            BDConexion laConexion;
+            List<Horario> listaHorarios = new List<Horario>();
+            List<Parametro> parametros;
+            
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoFechasCompetencias, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Horario horario = new Horario();
+                    horario.FechaInicio = DateTime.Parse(row[RecursosBDModulo10.aliasFechaCompetencia].ToString());
+                    listaHorarios.Add(horario);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);*/
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;*/
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);*/
+            }
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
+            return listaHorarios;
+
+        }
+
+        /// <summary>
+        /// Metodo que dado una fecha retorna todas las competencias que existen
+        /// </summary>
+        /// <param name="fechaInicio">fecha inicio</param>
+        /// <param name="fechaFin">fecha fin</param>
+        /// <returns>lista de competencias</returns>
+
+        public static List<Competencia> competenciasPorFecha(String fechaInicio)
+        {
+            BDConexion laConexion;
+            List<Competencia> listaEventos = new List<Competencia>();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosBDModulo10.ParametroFechaHorario, SqlDbType.DateTime, fechaInicio, false);
+            parametros.Add(parametro);
+
+            try
+            {
+                laConexion = new BDConexion();
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoListaCompetenciaXFecha, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Competencia competencia = new Competencia();
+
+                    competencia.Id_competencia = int.Parse(row[RecursosBDModulo10.aliasIdCompetencia].ToString());
+                    competencia.Nombre = row[RecursosBDModulo10.aliasNombreCompetencia].ToString();
+                    competencia.FechaInicio = DateTime.Parse(row[RecursosBDModulo10.aliasFechaCompetencia].ToString());
+                    listaEventos.Add(competencia);
+                }
+            }
+            catch (SqlException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                     RecursosBDModulo9.MensajeErrorFormato, ex);*/
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);*/
+                throw ex;
+            }
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaEventos;
+
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas inscritos a una competencia especifica
+        /// </summary>
+        /// <returns>lista de atletas</returns>
+        public static List<Persona> listaAtletasInscritosCompetencia(string idCompetencia)
+        {
+            BDConexion laConexion;
+            List<Persona> personas = new List<Persona>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoAtletasInscritosCompetencia, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Persona persona = new Persona();
+
+                    persona.ID = int.Parse(row[RecursosBDModulo10.aliasIdPersona].ToString());
+                    persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString();
+                    persona.IdInscripcion = int.Parse(row[RecursosBDModulo10.aliasIdInscripcion].ToString());
+                    personas.Add(persona);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return personas;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas inasistentes por planilla en un evento
+        /// </summary>
+        /// <returns>lista de atletas</returns>
+        public static List<Inscripcion> listaInasistentesPlanillaCompetencia(string idCompetencia)
+        {
+            BDConexion laConexion;
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoInasistentesPlanillaCompetencia, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Inscripcion inscripcion = new Inscripcion();
+                    inscripcion.Id_Inscripcion = int.Parse(row[RecursosBDModulo10.aliasIdInscripcion].ToString());
+                    inscripcion.Fecha = DateTime.Parse(row[RecursosBDModulo10.aliasFechaInscripcion].ToString());
+
+                    Persona persona = new Persona();
+                    persona.ID = int.Parse(row[RecursosBDModulo10.aliasIdPersona].ToString());
+                    persona.Nombre = row[RecursosBDModulo10.aliasNombrePersona].ToString();
+                    persona.Apellido = row[RecursosBDModulo10.aliasApellidoPersona].ToString();
+                    inscripcion.Persona = persona;
+
+                    SolicitudPlanilla solicitud = new SolicitudPlanilla();
+                    solicitud.ID = int.Parse(row[RecursosBDModulo10.aliasIdSolicitudPlanilla].ToString());
+                    Planilla planilla = new Planilla();
+                    planilla.ID = int.Parse(row[RecursosBDModulo10.aliasIdPlanilla].ToString());
+                    planilla.Nombre = row[RecursosBDModulo10.aliasNombrePlanilla].ToString();
+                    solicitud.Planilla = planilla;
+                    inscripcion.Solicitud = solicitud;
+
+                    inscripciones.Add(inscripcion);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return inscripciones;
+        }
     }
 }

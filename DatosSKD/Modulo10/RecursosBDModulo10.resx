@@ -266,4 +266,20 @@
     <value>M10_AgregarAsistenciaEvento</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ProcedimientoFechasCompetencias" xml:space="preserve">
+    <value>M10_FechasCompetencias</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoListaCompetenciaXFecha" xml:space="preserve">
+    <value>M10_ListaCompetenciaXFecha</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoAtletasInscritosCompetencia" xml:space="preserve">
+    <value>M10_AtletasInscritosCompetencia</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoInasistentesPlanillaCompetencia" xml:space="preserve">
+    <value>M10_InasistentesPlanillaCompetencia</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>
