@@ -46,6 +46,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\itextsharp.dll</HintPath>
@@ -75,6 +76,11 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
+
+    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
+    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
+      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -204,312 +210,6 @@
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
-    <Content Include="GUI\Modulo14\img\Carnet_titulo.jpg" />
-    <Content Include="GUI\Modulo14\ckeditor\adapters\jquery.js" />
-    <Content Include="GUI\Modulo14\ckeditor\build-config.js" />
-    <Content Include="GUI\Modulo14\ckeditor\ckeditor.js" />
-    <Content Include="GUI\Modulo14\ckeditor\config.js" />
-    <Content Include="GUI\Modulo14\ckeditor\contents.css" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\af.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ar.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\bg.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\bn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\bs.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\cs.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\cy.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\da.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\de.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\el.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\en-au.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\en-ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\en-gb.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\en.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\eo.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\es.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\et.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\eu.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\fa.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\fi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\fo.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\fr-ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\fr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\gl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\gu.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\he.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\hi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\hr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\hu.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\id.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\is.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\it.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ja.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ka.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\km.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ko.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ku.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\lt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\lv.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\mk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\mn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ms.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\nb.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\nl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\no.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\pl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\pt-br.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\pt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ro.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ru.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\si.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\sk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\sl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\sq.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\sr-latn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\sr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\sv.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\th.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\tr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\tt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\ug.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\uk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\vi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\zh-cn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\lang\zh.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\about\dialogs\about.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\clipboard\dialogs\paste.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\dialog\dialogDefinition.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\icons.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\icons_hidpi.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\image\dialogs\image.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\image\images\noimage.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\link\dialogs\anchor.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\link\dialogs\link.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\link\images\anchor.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\link\images\hidpi\anchor.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\magicline\images\hidpi\icon.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\magicline\images\icon-rtl.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\magicline\images\icon.png" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\pastefromword\filter\default.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\scayt\dialogs\options.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\scayt\dialogs\toolbar.css" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\table\dialogs\table.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\wsc\dialogs\ciframe.html" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\wsc\dialogs\wsc.css" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\wsc\dialogs\wsc.js" />
-    <Content Include="GUI\Modulo14\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\css\samples.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\img\github-top.png" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\img\header-bg.png" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\img\header-separator.png" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\img\logo.png" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\img\navigation-tip.png" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\index.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\js\sample.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\js\sf.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\ajax.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\api.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\appendto.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\assets\inlineall\logo.png" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\assets\sample.jpg" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\assets\uilanguages\languages.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\datafiltering.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\dialog\assets\my_dialog.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\dialog\dialog.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\divreplace.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\enterkey\enterkey.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\htmlwriter\outputforflash.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\htmlwriter\outputhtml.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\index.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\inlineall.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\inlinebycode.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\inlinetextarea.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\jquery.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\magicline\magicline.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\readonly.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\replacebyclass.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\replacebycode.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\sample.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\sample.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\tabindex.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\toolbar\toolbar.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\uicolor.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\uilanguages.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\wysiwygarea\fullpage.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\old\xhtmlstyle.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\index.html" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
-    <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\dialog.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\dialog_ie.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\dialog_ie7.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\dialog_ie8.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\dialog_iequirks.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\editor.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\editor_gecko.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\editor_ie.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\editor_ie7.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\editor_ie8.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\editor_iequirks.css" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\icons.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\icons_hidpi.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\arrow.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\close.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\hidpi\close.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\hidpi\lock-open.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\hidpi\lock.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\hidpi\refresh.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\lock-open.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\lock.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\refresh.png" />
-    <Content Include="GUI\Modulo14\ckeditor\skins\moono\images\spinner.gif" />
-    <Content Include="GUI\Modulo14\ckeditor\styles.js" />
-    <Content Include="GUI\Modulo14\M14_AgregarEliminarDatos.js" />
-    <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
-    <Content Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx" />
-    <Content Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx" />
-    <Content Include="GUI\Modulo14\M14_DisenoPlanilla.aspx" />
-    <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
-    <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
-    <Content Include="GUI\Modulo14\M14_MostrarPlanilla.aspx" />
-    <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
-    <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
-    <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
-    <Content Include="GUI\Modulo14\img\perfil.jpg" />
-    <Content Include="GUI\Modulo15\M15_AgregarImplemento.aspx" />
-    <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
-    <Content Include="GUI\Modulo15\M15_ModificarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -522,7 +222,6 @@
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
     <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
-    <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
@@ -539,13 +238,41 @@
     <Content Include="GUI\Modulo6\M6_NuevoAdmin.aspx" />
     <Content Include="GUI\Modulo6\M6_procesarSolicitud.aspx" />
     <Content Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx" />
+    <Content Include="GUI\Modulo7\css\daterange.css" />
+    <Content Include="GUI\Modulo7\css\images\animated-overlay.gif" />
+    <Content Include="GUI\Modulo7\css\images\calendar.gif" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="GUI\Modulo7\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
+    <Content Include="GUI\Modulo7\css\jquery-ui.css" />
+    <Content Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleCompetencia.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx" />
+    <Content Include="GUI\Modulo7\js\daterange.js" />
+    <Content Include="GUI\Modulo7\js\jquery-ui.js" />
+    <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
+    <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleEventoPago.aspx" />
+    <Content Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarCintas.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarEventosInscritos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarHorariodePractica.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx" />
-    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx" />
+    <Content Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionEvento.aspx" />
     <Content Include="GUI\Modulo8\interfazCrearRestriccionHorario.aspx" />
@@ -1936,102 +1663,10 @@
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
-      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.designer.cs">
-      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx.cs">
-      <DependentUpon>M14_ConsultarPlanillasDojo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasDojo.aspx.designer.cs">
-      <DependentUpon>M14_ConsultarPlanillasDojo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.cs">
-      <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.designer.cs">
-      <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.cs">
-      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.designer.cs">
-      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.cs">
-      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.designer.cs">
-      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.cs">
-      <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
-      <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.cs">
-      <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.designer.cs">
-      <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.cs">
-      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.designer.cs">
-      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.cs">
-      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.designer.cs">
-      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.cs">
-      <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.designer.cs">
-      <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo14\RecursoInterfazModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo15\InterfazImplemento.cs" />
-    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.cs">
-      <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_AgregarImplemento.aspx.designer.cs">
-      <DependentUpon>M15_AgregarImplemento.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.cs">
-      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ConsultarImplemento.aspx.designer.cs">
-      <DependentUpon>M15_ConsultarImplemento.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.cs">
-      <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.designer.cs">
-      <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>
@@ -2218,6 +1853,69 @@
     <Compile Include="GUI\Modulo6\M6_SolicitudInscripcionPre.aspx.designer.cs">
       <DependentUpon>M6_SolicitudInscripcionPre.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx.cs">
+      <DependentUpon>M7_DetallarHorarioPractica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx.designer.cs">
+      <DependentUpon>M7_DetallarHorarioPractica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx.cs">
+      <DependentUpon>M7_DetalleCompetenciaPaga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx.designer.cs">
+      <DependentUpon>M7_DetalleCompetenciaPaga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetencia.aspx.cs">
+      <DependentUpon>M7_DetalleCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetencia.aspx.designer.cs">
+      <DependentUpon>M7_DetalleCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx.cs">
+      <DependentUpon>M7_DetalleCompetenciaInscrita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx.designer.cs">
+      <DependentUpon>M7_DetalleCompetenciaInscrita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx.cs">
+      <DependentUpon>M7_DetalleEventoInscrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx.designer.cs">
+      <DependentUpon>M7_DetalleEventoInscrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.cs">
+      <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleCinta.aspx.designer.cs">
+      <DependentUpon>M7_DetalleCinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx.cs">
+      <DependentUpon>M7_DetalleMatriculaPaga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx.designer.cs">
+      <DependentUpon>M7_DetalleMatriculaPaga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoPago.aspx.cs">
+      <DependentUpon>M7_DetalleEventoPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoPago.aspx.designer.cs">
+      <DependentUpon>M7_DetalleEventoPago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx.cs">
+      <DependentUpon>M7_DetalleEventoAsistido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_DetalleEventoAsistido.aspx.designer.cs">
+      <DependentUpon>M7_DetalleEventoAsistido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarAsistenciaAEventos.aspx.cs">
       <DependentUpon>M7_ListarAsistenciaAEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2253,6 +1951,13 @@
     <Compile Include="GUI\Modulo7\M7_ListarOrganizacionYDojo.aspx.designer.cs">
       <DependentUpon>M7_ListarOrganizacionYDojo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.cs">
+      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
+      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.cs">
       <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2260,12 +1965,10 @@
     <Compile Include="GUI\Modulo7\M7_ListarPagosAEventos.aspx.designer.cs">
       <DependentUpon>M7_ListarPagosAEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.cs">
-      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo7\M7_ListarPagosDeMatricula.aspx.designer.cs">
-      <DependentUpon>M7_ListarPagosDeMatricula.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo7\M7_Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M7_Recursos.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo8\interfazCrearRestriccionAvanceCinta.aspx.cs">
       <DependentUpon>interfazCrearRestriccionAvanceCinta.aspx</DependentUpon>
@@ -2395,6 +2098,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M7_Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
@@ -2415,7 +2122,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+
     <Folder Include="App_Data\" />
+
+	
+    <Folder Include="GUI\Modulo15\" />
+
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

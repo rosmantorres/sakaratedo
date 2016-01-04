@@ -1824,11 +1824,14 @@ DELETE
 UPDATE NO ACTION
 GO
 
+<<<<<<< HEAD
+=======
 
 
 
 
 -----------------------------------PROCEDURE----------------------
+>>>>>>> master
 ---------------------------------------------------------STORED PROCEDURES M12--------------------------------------------------------------------
 
 --PROCEDURE AGREGAR COMPETENCIA--
@@ -2084,6 +2087,32 @@ as
 			comp_id = @idCompetencia;
  end;
  go
+<<<<<<< HEAD
+
+
+
+--PROCEDURE CONSULTA LISTA DE ORGANIZACIONES--
+CREATE procedure M12_ConsultarOrganizaciones
+as
+	begin
+		select org.org_id as idOrganizacion, org.org_nombre as nombreOrganizacion
+		from ORGANIZACION as org		
+	end;
+go
+
+
+--PROCEDURE CONSULTA LISTA DE CINTAS--
+CREATE procedure M12_ConsultarCintas
+as
+	begin
+		select cin.cin_id as idCinta, cin.cin_color_nombre nombreCinta, cin_orden as ordenCinta
+		from CINTA as cin		
+	end;
+go
+
+
+ ----------------------------------STORED PROCEDURES M1-------------------------------------
+=======
   ----------------------------------STORED PROCEDURES M1-------------------------------------
 
 --------------------PROCEDURE CONSULTA PERSONA POR ID ----------------------
@@ -2110,20 +2139,18 @@ as
 	end;
 	go
 
+>>>>>>> master
 
-
-------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR USERNAME--------*Nuevo*----
+------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA ------------
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
 	@nombre_usuario [varchar](25)
 as
 	begin
-		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena,pers.per_imagen as imagen,
-		(pers.per_nombre+' '+pers.per_apellido) as nombreDePila
+		select pers.per_id as id_usuario, pers.per_nombre_usuario as nombre_usuario, pers.per_clave as contrasena
 		from PERSONA pers
 		where pers.per_nombre_usuario = @nombre_usuario
 	end;
 	go
-
 
 
 ------------------PROCEDURE CONSULTA ROLES DE USUARIO POR NOMBRE------------------
@@ -2159,7 +2186,8 @@ as
 		from EMAIL
 		where ema_email= @correo_usuario and ema_principal=1
 	end;
-go
+	go
+
 
 -----------------------------------STORED PROCEDURES M2--------------------------------------------------------
 
@@ -2202,6 +2230,9 @@ as
 	end;
 	go
 
+<<<<<<< HEAD
+-------------------------------------------------Stored Procedure M14--------------------------
+=======
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR ID--------*NUEVO*----
 
@@ -2218,6 +2249,7 @@ as
 	go
 
 -------------------------------------------M14---------------------------------------------------
+>>>>>>> master
 CREATE PROCEDURE M14_AgregarDiseño
 		 
 		@dis_contenido   [varchar](8000),
@@ -2903,7 +2935,9 @@ AS
 		Select horario.hor_fecha_inicio as fechaInicio, horario.hor_fecha_fin as fechaFin, horario.hor_hora_inicio as horaInicio, horario.hor_hora_fin as horaFin
 		from EVENTO evento, HORARIO horario , TIPO_EVENTO tipo
 		where evento.eve_estado = 'True' and evento.HORARIO_hor_id = horario.hor_id and tipo.tip_nombre = 'Pase de Cinta' and tipo.tip_id = evento.TIPO_EVENTO_tip_id
+
  END
+
 
 
 GO
@@ -3152,6 +3186,7 @@ as
     
   end;
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
+
 
 
 --------------------------------------------------------------P R O C E D U R E S   M 7--------------------------------------------------------------------- 
@@ -4084,3 +4119,4 @@ BEGIN
 END
 
 /*===============================================Stored Procedures Modulo 16 =======================*/
+

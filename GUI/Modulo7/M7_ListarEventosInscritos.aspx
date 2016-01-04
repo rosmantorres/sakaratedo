@@ -26,8 +26,13 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <div id="alert" runat="server">
-    </div>
+    <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="css/daterange.css" rel="stylesheet" />
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/daterange.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+
+    <div id="alert" runat="server"></div>
 
     <div class="row">
             <div class="col-xs-12">
@@ -36,62 +41,30 @@
                   <h3 class="box-title">Eventos Inscritos</h3>
                 </div><!-- /.box-header -->
 
+
     <div class="box-body table-responsive">
+
+        <div class="center-block" id="baseFechaControl">
+            <div class="dateControlBlock">
+                 Desde fecha: <input type="text" name="fechaInicio" id="fechaInicio" class="datepicker" size="8"/> Hasta fecha:   
+                 <input type="text" name="fechaFin" id="fechaFin" class="datepicker" size="8"/>
+            </div>
+        </div>
+
 
        <table id="tablainscritos" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>ID</th>
 					<th>Evento</th>
-                    <th>Tipo</th>
-					<th>Fecha</th>
+                    <th>Tipo</th>	
+                    <th>Fecha</th>				
                     <th>Locación</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-					<td>Noveno encuentro de cintas negras 5to KYU</td>
-					<td>Seminario</td>
-					<td>26/01/2016</td>
-                    <td>Estado Barinas</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Campeonato Nacional 2016</td>
-					<td>Competencia</td>
-					<td>15/06/2016</td>
-                    <td>Estado Carabobo</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>IV Jornada de excelencia de Karate Do</td>
-					<td>Conferencia</td>
-					<td>03/12/2015</td>
-                    <td>Estado Distrito Capital</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Entrenamiento Especial de Bujutsu</td>
-					<td>Entrenamiento Especial</td>
-					<td>15/12/2015</td>
-                    <td>Estado Distrito Capital</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>
-                
-
-			</tbody>
+			        <asp:Literal runat="server" ID="laTabla"></asp:Literal>    
+           </tbody>
     </table>
         </div>
        </div>
@@ -162,11 +135,11 @@
 								</p>
 								<h3>Fecha de inicio</h3>
 								<p>
-									5/06/2016
+									06/05/2016
 								</p>
 								<h3>Fecha de finalización</h3>
 								<p>
-									25/06/2016
+									06/25/2016
 								</p>
                                 <h3>Locación</h3>
 								<div>
@@ -206,11 +179,11 @@
 								</p>
 								<h3>Fecha de inicio</h3>
 								<p>
-									03/12/2015
+									12/03/2015
 								</p>
 								<h3>Fecha de finalización</h3>
 								<p>
-									25/06/2016
+									01/15/2016
 								</p>
                                 <h3>Locación</h3>
 								<div>
@@ -250,7 +223,7 @@
 								</p>
 								<h3>Fecha de inicio</h3>
 								<p>
-									15/12/2015
+									12/15/2015
 								</p>
                                 <h3>Horario</h3>
 								<p>
@@ -276,15 +249,54 @@
 		</div>
 
         <script type="text/javascript">
+            $.datepicker.setDefaults($.datepicker.regional["es"]);
             $(document).ready(function () {
 
                 var table = $('#tablainscritos').DataTable({
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
                 });
                 var req;
                 var tr;
+                $dateControls = $("#baseFechaControl").children("div").clone();
+                $("#feedbackTable_filter").prepend($dateControls);
+
+                // Implementacion de jQuery UI Datepicker widget sobre los controles de fechas
+                $("#fechaInicio").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaFin").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+                $("#fechaFin").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "+50Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaInicio").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
+
+                // Crea el evento listeners que va a filtrar la tabla siempre que el usuario escriba el usuario escriba
+                // en el datepicker 
+                $("#fechaInicio").keyup(function () { table.draw(); });
+                $("#fechaInicio").change(function () { table.draw(); });
+                $("#fechaFin").keyup(function () { table.draw(); });
+                $("#fechaFin").change(function () { table.draw(); });
 
                 $('#tablainscritos tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
@@ -313,7 +325,27 @@
                     $('#modal-delete').modal('hide');//se esconde el modal
                 });
 
+                $('#modal-info1').on('show.bs.modal', function (e) {
 
+                    $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        url: 'http://localhost:23072/GUI/Modulo7/M7_ListarEventosInscritos.aspx/prueba',
+                        data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                        dataType: 'json',
+                        contentType: "application/json; charset=utf-8",
+
+                        success: function (data) {
+                            console.log(data);
+
+                            var aa = JSON.parse(data.d);
+
+                            $("#beta").val(aa.nombre);
+                            $("#beta4").val(aa.id);
+
+                        }
+                    });
+                })
             });
 
         </script>
