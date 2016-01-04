@@ -75,14 +75,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
-    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
-    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
-      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -2422,7 +2414,9 @@
       <Name>LogicaNegociosSKD</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
