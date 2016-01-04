@@ -50,10 +50,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Modulo1\PresentadorM1Inicio.cs" />
+    <Compile Include="Modulo1\PresentadorM1Restablecer.cs" />
     <Compile Include="Modulo1\RecursosInterfazPresentadorM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosInterfazPresentadorM1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo2\PresentadorM2.cs" />
+    <Compile Include="Modulo2\RecursosInterfazModulo2.Designer.cs">
+      <DependentUpon>RecursosInterfazModulo2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
@@ -84,7 +91,6 @@
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
-    <Folder Include="Modulo2\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo5\" />
@@ -101,6 +107,10 @@
     <EmbeddedResource Include="Modulo1\RecursosInterfazPresentadorM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo2\RecursosInterfazModulo2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
