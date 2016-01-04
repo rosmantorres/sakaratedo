@@ -381,4 +381,13 @@
   <data name="StoreProcedureConsultarMatriculas" xml:space="preserve">
     <value>M16_consultarMatriculas</value>
   </data>
+  <data name="CONSULTAR_IMPLEMENTOS_POR_DOJOS" xml:space="preserve">
+    <value>M16_CONSULTAR_INVENTARIO_TOTAL_DOJOS</value>
+  </data>
+  <data name="PARAMETRO_CANTIDAD_IMPLEMENTO" xml:space="preserve">
+    <value>impCantidadTotal</value>
+  </data>
+  <data name="PARAMETRO_DOJO_NOMBRE" xml:space="preserve">
+    <value>djNombre</value>
+  </data>
 </root>

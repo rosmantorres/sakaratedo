@@ -39,7 +39,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 string tablaEventosHTML = "";
 
-                //Recorro La lista de los implementos en el carrito para anexarlas al GRIDVIEW
+                //Recorro La lista de los eventos en el carrito para anexarlas al GRIDVIEW
                 foreach (Evento c in laLista)
                 {
                     tablaEventosHTML += M16_Recursointerfaz.ABRIR_TR + '"' + c.Id_evento.ToString() + '"' + ">";

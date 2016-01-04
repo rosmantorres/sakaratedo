@@ -7,11 +7,10 @@ using DominioSKD;
 
 namespace DatosSKD.InterfazDAO.Modulo16
 {
-    public interface IdaoEvento : IDao<Entidad, bool, Entidad>
+    public interface IdaoImplemento : IDao<Entidad, bool, Entidad>
     {
         new List<Entidad> ConsultarTodos();
-        List<Entidad> ListarEvento();
-        Entidad DetallarEvento(int Id_evento);
-
+        List<Entidad> ListarImplemento();
+        Entidad DetallarImplemento(int Id_implemento);
     }
 }

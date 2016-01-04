@@ -137,6 +137,14 @@ namespace LogicaNegociosSKD.Fabrica
                     return new ComandoeliminarItem();
                 }
         */
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
+        /// </summary>
+        /// <returns>El ComandoConsultarTodosProductos</returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarTodosProductos()
+        {
+            return new ComandoConsultarTodosProductos();
+        }
         #endregion
 
 

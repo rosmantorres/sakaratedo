@@ -46,6 +46,7 @@
       <DependentUpon>M16_Recursointerfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo16\PresentadorListarEvento.cs" />
+    <Compile Include="Modulo16\PresentadorListarProducto.cs" />
     <Compile Include="PresentadorMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />

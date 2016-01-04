@@ -68,17 +68,15 @@ namespace DatosSKD.DAO.Modulo16
             return new List<Entidad>();
         }
 
-        public Entidad DetallarEvento(int Id_evento)
-        {
-            return new Persona();
-        }
-
         /// <summary>
         /// Metodo que devueve un tipoevento dado su id
         /// </summary>
         /// <param name="Id_evento">Indica el objeto a detallar</param>
         /// <returns>Retorna un evento en especifico con todos sus detalles</returns>
-
+        public Entidad DetallarEvento(int Id_evento)
+        {
+            return new Persona();
+        }
 
         #endregion
     }

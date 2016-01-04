@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="DAO\Modulo16\DaoCarrito.cs" />
     <Compile Include="DAO\Modulo16\DaoEvento.cs" />
+    <Compile Include="DAO\Modulo16\DaoImplemento.cs" />
     <Compile Include="DAO\Modulo16\RecursosBDModulo16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +76,7 @@
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo16\IdaoImplemento.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

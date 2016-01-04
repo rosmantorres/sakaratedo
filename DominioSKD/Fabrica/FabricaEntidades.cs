@@ -237,6 +237,11 @@ namespace DominioSKD.Fabrica
         {
             return new Implemento();
         }
+
+        public Entidad ObtenerDojos()
+        {
+            return new Dojo();
+        }
        
 
         #endregion
