@@ -131,12 +131,12 @@ namespace LogicaNegociosSKD.Fabrica
                 {
                     return new ComandoModificarCarrito(persona, objeto, tipoObjeto, cantidad);
                 }
-
-                public static Comando<bool> CrearComandoeliminarItem()
+        */
+        public static Comando<bool> CrearComandoeliminarItem()
                 {
                     return new ComandoeliminarItem();
                 }
-        */
+        
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
         /// </summary>
