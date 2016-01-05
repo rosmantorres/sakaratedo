@@ -25,9 +25,14 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 6
+
         #endregion
 
         #region Modulo 7
+        public Entidad ObtenerMatricula()
+        {
+            return new Matricula();
+        }
         #endregion
 
         #region Modulo 8
