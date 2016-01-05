@@ -195,4 +195,8 @@
     <value>Warning</value>
     <comment>Tipo de mensaje Alerta</comment>
   </data>
+  <data name="LogInfoRestablecer" xml:space="preserve">
+    <value>La contraseña debe poseer de &lt;strong&gt;8-30 caracteres&lt;/strong&gt; e incluir al menos &lt;strong&gt;una letra mayúscula &lt;/strong&gt; ,
+                         &lt;strong&gt; una letra minúscula&lt;/strong&gt; y &lt;strong&gt;un número.&lt;/strong&gt;</value>
+  </data>
 </root>

@@ -23,29 +23,31 @@ namespace Interfaz_Presentadores.Modulo1
             _iMaster=iMaster;
         }
 
+        public void MensajeAlert(Boolean Warning, String WarningText, Boolean Info, String InfoText)
+        {
+            _iMaster.WarningCaracterEtq = Warning;
+            _iMaster.WarningCaracterEtqText = WarningText;
+            _iMaster.InfoRestablecerEtq = Info;
+            _iMaster.InfoRestablecerEtqText = InfoText;
+        }
+
         public void Inicio()
         {
             try
             {
 
                 if (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM1.tipoErrMalicioso] != null
-        && HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM1.tipoErrMalicioso].ToString() == "input_malicioso")
+                 && HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM1.tipoErrMalicioso].ToString() == "input_malicioso")
                 {
-                    _iMaster.WarningCaracterEtq = true;
-                    _iMaster.WarningCaracterEtqText = RecursosInterfazPresentadorM1.logCadenaMaliciosa;
-                    _iMaster.InfoRestablecerEtq = false;
-
+                    MensajeAlert(true, RecursosInterfazPresentadorM1.logCadenaMaliciosa, false, "");
                 }
                 else
                 {
-                    _iMaster.InfoRestablecerEtq = true;
-                    _iMaster.WarningCaracterEtq = false;
-                    _iMaster.WarningCaracterEtqText = "";
+                    MensajeAlert(false, "", true,RecursosInterfazPresentadorM1.LogInfoRestablecer);
                 }
                 DateTime fechaActual = DateTime.Now;
                 string fechaString = HttpContext.Current.Request.QueryString[RecursosLogicaModulo1.variableFecha].ToString();
-                fechaString = cripto.DesencriptarCadenaDeCaracteres(fechaString,
-                    RecursosLogicaModulo2.claveDES);
+                fechaString = cripto.DesencriptarCadenaDeCaracteres(fechaString,RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
                 if ((fecha.Date.Year != fechaActual.Date.Year) ||
                     (fecha.Date.Month != fechaActual.Date.Month) ||
@@ -98,15 +100,11 @@ namespace Interfaz_Presentadores.Modulo1
                 }
                 else if (!Restablecer.ValidarCaracteres(pass1))
                 {
-                    _iMaster.WarningCaracterEtq= true;
-                    _iMaster.WarningCaracterEtqText = RecursosInterfazPresentadorM1.logCaracterInvalidos;
-                    _iMaster.InfoRestablecerEtq = false;
+                    MensajeAlert(true, RecursosInterfazPresentadorM1.logCaracterInvalidos, false, "");
                 }
                 else
                 {
-                    _iMaster.InfoRestablecerEtq= true;
-                    _iMaster.WarningCaracterEtq = false;
-                    _iMaster.WarningCaracterEtqText = "";
+                    MensajeAlert(false, "", true, RecursosInterfazPresentadorM1.LogInfoRestablecer);
 
                 }
 

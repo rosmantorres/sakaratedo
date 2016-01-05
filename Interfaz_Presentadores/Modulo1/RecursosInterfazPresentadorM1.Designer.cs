@@ -115,6 +115,16 @@ namespace Interfaz_Presentadores.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña debe poseer de &lt;strong&gt;8-30 caracteres&lt;/strong&gt; e incluir al menos &lt;strong&gt;una letra mayúscula &lt;/strong&gt; ,
+        ///                         &lt;strong&gt; una letra minúscula&lt;/strong&gt; y &lt;strong&gt;un número.&lt;/strong&gt;.
+        /// </summary>
+        internal static string LogInfoRestablecer {
+            get {
+                return ResourceManager.GetString("LogInfoRestablecer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a .
         /// </summary>
         internal static string logRestablecerRequerimientos {
