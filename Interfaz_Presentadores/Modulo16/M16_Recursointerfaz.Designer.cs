@@ -205,7 +205,7 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon glyphicon-print&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-success glyphicon glyphicon glyphicon-print&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
         /// </summary>
         internal static string BOTON_IMPRIMIR_FACTURA {
             get {

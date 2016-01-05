@@ -68,6 +68,11 @@ namespace DatosSKD.DAO.Modulo16
             return new List<Entidad>();
         }
 
+        public Entidad ConsultarXId(Entidad entidad)
+        {
+            return new Evento();
+        }
+        
         /// <summary>
         /// Metodo que devueve un tipoevento dado su id
         /// </summary>

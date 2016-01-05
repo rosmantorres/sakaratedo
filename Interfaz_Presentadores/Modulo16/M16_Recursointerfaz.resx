@@ -169,7 +169,7 @@
     <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" onclick="prueba3(this);" id="</value>
   </data>
   <data name="BOTON_IMPRIMIR_FACTURA" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon glyphicon-print" data-toggle="modal" data-target="#modal-info"  onclick="prueba3(this);" id="</value>
+    <value>&lt;a class="btn btn-success glyphicon glyphicon glyphicon-print" data-toggle="modal" data-target="#modal-info"  onclick="prueba3(this);" id="</value>
   </data>
   <data name="BOTON_INFO" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compDetalle=</value>

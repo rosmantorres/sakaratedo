@@ -7,12 +7,10 @@ using DominioSKD;
 
 namespace DatosSKD.InterfazDAO.Modulo16
 {
-    public interface IdaoImplemento : IDao<Entidad, bool, Entidad>
+    public interface IdaoCompra : IDao<Entidad, bool, Entidad>
     {
-        new List<Entidad> ConsultarTodos();
-        List<Entidad> ListarImplemento();
-        Entidad DetallarImplemento(int Id_implemento);
-
         new Entidad ConsultarXId(Entidad entidad);
+        List<Entidad> ListarFactura();
+        Entidad DetallarFactura(int Id_factura);
     }
 }

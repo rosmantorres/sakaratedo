@@ -145,6 +145,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarTodosProductos();
         }
+
+        public static Comando<Entidad> CrearComandoConsultarTodasFacturas()
+        {
+            return new ComandoConsultarTodasFacturas();
+        }
         #endregion
 
 

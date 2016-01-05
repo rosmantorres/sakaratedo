@@ -242,6 +242,11 @@ namespace DominioSKD.Fabrica
         {
             return new Dojo();
         }
+
+        public Entidad ObtenerFactura()
+        {
+            return new Compra();
+        }
        
 
         #endregion

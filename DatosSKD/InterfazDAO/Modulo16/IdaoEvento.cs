@@ -12,6 +12,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
         new List<Entidad> ConsultarTodos();
         List<Entidad> ListarEvento();
         Entidad DetallarEvento(int Id_evento);
+        new Entidad ConsultarXId(Entidad entidad);
 
     }
 }
