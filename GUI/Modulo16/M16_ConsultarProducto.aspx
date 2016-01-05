@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarProducto.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script  type="text/javascript" src="M16_JS/M16_ConsultarProducto.js" ></script>
 </asp:Content>
 
 
