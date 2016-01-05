@@ -14,7 +14,7 @@ using DominioSKD.Entidades.Modulo1;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
-    class ComandoeliminarItem : Comando<bool>
+    public class ComandoeliminarItem : Comando<bool>
     {
 
         #region Atributos
