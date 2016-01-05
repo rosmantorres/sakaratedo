@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo2 {
+namespace Interfaz_Presentadores.Modulo2 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace templateApp.GUI.Modulo2 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosInterfazModulo2 {
+    internal class RecursosInterfazPresentadorM2 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosInterfazModulo2() {
+        internal RecursosInterfazPresentadorM2() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace templateApp.GUI.Modulo2 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo2.RecursosInterfazModulo2", typeof(RecursosInterfazModulo2).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo2.RecursosInterfazPresentadorM2", typeof(RecursosInterfazPresentadorM2).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
