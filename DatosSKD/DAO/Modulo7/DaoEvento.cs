@@ -10,6 +10,7 @@ using ExcepcionesSKD.Modulo7;
 using System.Data;
 using System.Data.SqlClient;
 using DominioSKD.Fabrica;
+using DatosSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -40,7 +41,8 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             Persona idPersona = (Persona)persona;
             List<Entidad> listaDeCompetenciasAsistidas = new List<Entidad>();
-            DatosSKD.Modulo7.BDUbicacion baseDeDatosUbicacion = new DatosSKD.Modulo7.BDUbicacion();//esto se debe cambiar por fabrica
+            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
+            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
 
             try
             {
@@ -54,7 +56,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Competencia competencia = new Competencia();
+                        Competencia competencia = new Competencia();// se sustituye por fabrica
                         competencia.Id_competencia = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();
                         if (int.Parse(row[RecursosDAOModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
@@ -65,7 +67,11 @@ namespace DatosSKD.DAO.Modulo7
                             competencia.TipoCompetencia = RecursosDAOModulo7.AliasCompetenciaKataKumite;
                         competencia.FechaInicio = DateTime.Parse(row[RecursosDAOModulo7.AliasCompetenciaFechaInicio].ToString());
                         competencia.Costo = int.Parse(row[RecursosDAOModulo7.AliasCompetenciaCosto].ToString());
-                        competencia.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosDAOModulo7.AliasCompetenciaUbicacionId].ToString()));
+
+                        Ubicacion idUbicacion = new Ubicacion();//se debe sustituir por fabrica
+                        idUbicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasCompetenciaUbicacionId].ToString());
+                        competencia.Ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+
                         listaDeCompetenciasAsistidas.Add(competencia);
                     }
                 }
@@ -130,9 +136,11 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             List<Entidad> listaDeEventoAsistidos = new List<Entidad>();
             Persona idPersona = (Persona)persona;
-            DatosSKD.Modulo7.BDUbicacion baseDeDatosUbicacion = new DatosSKD.Modulo7.BDUbicacion(); //esto se debe cambiar con fabrica
-            DatosSKD.Modulo7.BDHorario baseDeDatosHorario = new DatosSKD.Modulo7.BDHorario();// esto se debe cambiar con fabrica
-            DatosSKD.Modulo7.BDTipoEvento baseDeDatosTipoEvento = new DatosSKD.Modulo7.BDTipoEvento();//esto se debe cambiar con fabrica
+            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
+
+            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
 
             try
             {
@@ -147,14 +155,24 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Evento evento = new Evento();
+                        Evento evento = new Evento();//se debe usar fabrica aqui
                         evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
                         evento.Costo = float.Parse(row[RecursosDAOModulo7.AliasEventoCosto].ToString());
-                        evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString()));
-                        evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosDAOModulo7.AliasEventoHorarioId].ToString()));
-                        evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosDAOModulo7.AliasEventoUbicacionId].ToString()));
+
+                        TipoEvento idTipoEvento = new TipoEvento();//se debe usar fabrica aqui
+                        idTipoEvento.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString());
+                        evento.TipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+
+                        Horario idHorario = new Horario();//se debe usar fabrica aqui
+                        idHorario.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoHorarioId].ToString());
+                        evento.Horario = (Horario)baseDeDatosHorario.ConsultarXId(idHorario);
+
+                        Ubicacion idUbicacion = new Ubicacion();//se debe usar fabrica aqui
+                        idUbicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoUbicacionId].ToString());
+                        evento.Ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+
                         listaDeEventoAsistidos.Add(evento);
                     }
                 }
