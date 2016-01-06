@@ -9,7 +9,7 @@ using DominioSKD;
 
 namespace DatosSKD.DAO.Modulo8
 {
-    public class DAORestriccionCinta : DAOGeneral, InterfazDAO.Modulo8.IDaoRestriccionCinta
+    public class DAORestriccionCinta 
     {
         #region Metodos IDao
 
