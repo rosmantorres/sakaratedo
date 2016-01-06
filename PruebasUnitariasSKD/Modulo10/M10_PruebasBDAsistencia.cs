@@ -25,6 +25,7 @@ namespace PruebasUnitariasSKD.Modulo10
         private string idDeEvento;
         List<Inscripcion> ListaInsc;
         List<Asistencia> ListaAsistencia;
+        List<Horario> listaHorario;
 
         List<Competencia> laListaC;
         private Competencia laCompetencia;
@@ -38,6 +39,8 @@ namespace PruebasUnitariasSKD.Modulo10
         private int Competenciaid;
         BDAsistencia baseDeDatosA;
         private string asiste;
+        private string fechaInicio;
+        
 
         #endregion
 
@@ -80,6 +83,8 @@ namespace PruebasUnitariasSKD.Modulo10
             laCompetencia.TipoCompetencia = "1";
             laCompetencia.OrganizacionTodas = true;
             laCompetencia.Status = "Por Iniciar";
+
+          
 
        
 
@@ -139,12 +144,15 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void PruebaModificarAsitenteE()
         {
-            asistio = new Asistencia();
-            asistio.Asistio = "No";
-            asistio.Evento.Id_evento = 4;
-            asistio.Inscripcion.Id_Inscripcion = 32;
-            Assert.IsTrue(BDAsistencia.ModificarAsistenciaE(ListaAsistencia));
-       
+
+            bool a;
+            ListaAsistencia = new List<Asistencia>();
+            asistio.Asistio = "N";
+            asistio.Evento.Id_evento = 3;
+            asistio.Inscripcion.Id_Inscripcion = 33;
+            ListaAsistencia.Add(asistio);
+            a = BDAsistencia.ModificarAsistenciaE(ListaAsistencia);
+            Assert.IsTrue(a);
          
         }
 
@@ -179,11 +187,14 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void PruebaModificarAsistenciaC()
         {
-            DatosSKD.Modulo10.BDAsistencia baseDeDatosA = new DatosSKD.Modulo10.BDAsistencia();
-     //       Assert.IsTrue(BDAsistencia.ModificarAsistenciaC(idInscripcion, Competenciaid, asiste)true);
-            asistio.Asistio = "No";
-            elEvento.Id_evento = 3;
-            inscripcion.Id_Inscripcion = 32;  
+            bool a;
+            ListaAsistencia = new List<Asistencia>();
+            asistio.Asistio = "N";
+            asistio.Competencia.Id_competencia = 6;
+            asistio.Inscripcion.Id_Inscripcion = 9;
+            ListaAsistencia.Add(asistio);
+            a = BDAsistencia.ModificarAsistenciaC(ListaAsistencia);
+            Assert.IsTrue(a);
 
         }
 
@@ -208,37 +219,48 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void PruebaAgregarAsistenciaEvento()
         {
-            
-            asistio = new Asistencia();
-            asistio.Asistio = "Si";
+
+            bool a;
+            ListaAsistencia = new List<Asistencia>();
+            asistio.Asistio = "S";
             asistio.Evento.Id_evento = 3;
-            asistio.Inscripcion.Id_Inscripcion = 32;
-            Assert.IsTrue(BDAsistencia.agregarAsistenciaEvento(ListaAsistencia));
-       
-          
+            asistio.Inscripcion.Id_Inscripcion = 50;
+            ListaAsistencia.Add(asistio);
+            a = BDAsistencia.agregarAsistenciaEvento(ListaAsistencia);
+            Assert.IsTrue(a);
+
+      
         }
 
 
         [Test]
         public void PruebaAgregarAsistenciaCompetencia()
         {
-            asistio.Asistio = "Si";
+            bool a;
+            ListaAsistencia = new List<Asistencia>();
+            asistio.Asistio = "N";
             asistio.Competencia.Id_competencia = 3;
-            asistio.Inscripcion.Id_Inscripcion = 35;
-            Assert.IsTrue(BDAsistencia.agregarAsistenciaCompetencia(ListaAsistencia));
-       
+            asistio.Inscripcion.Id_Inscripcion = 52;
+            ListaAsistencia.Add(asistio);
+            a = BDAsistencia.agregarAsistenciaCompetencia(ListaAsistencia);
+            Assert.IsTrue(a);
+
 
         }
 
         [Test]
         public void PruebaListarHorarioCompetencia()
         {
+            listaHorario = BDAsistencia.ListarHorariosCompetencias();
+            Assert.AreEqual(7, listaHorario.ToArray().Length);
 
         }
 
         [Test]
         public void PruebaCompetenciaPorFecha()
         {
+            laListaC = BDAsistencia.competenciasPorFecha("15/10/2015");
+            Assert.AreEqual(laListaC, BDAsistencia.competenciasPorFecha("15/10/2015"));
 
         }
 
