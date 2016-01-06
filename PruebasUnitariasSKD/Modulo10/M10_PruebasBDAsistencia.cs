@@ -24,6 +24,7 @@ namespace PruebasUnitariasSKD.Modulo10
         private int idEvento;
         private string idDeEvento;
         List<Inscripcion> ListaInsc;
+        List<Asistencia> ListaAsistencia;
 
         List<Competencia> laListaC;
         private Competencia laCompetencia;
@@ -33,10 +34,10 @@ namespace PruebasUnitariasSKD.Modulo10
         private int idInscripcion;
         private Inscripcion inscripcion;
         private Asistencia asistio;
-        private string asiste;
         private string idCompetencia;
         private int Competenciaid;
         BDAsistencia baseDeDatosA;
+        private string asiste;
 
         #endregion
 
@@ -61,6 +62,7 @@ namespace PruebasUnitariasSKD.Modulo10
             Persona laPersona = new Persona();
             laPersona.ID = 10;
             Competencia laCompetencia = new Competencia();
+            asistio = new Asistencia();
 
             ListaP = new List<Persona>();
             laListaC = new List<Competencia>();
@@ -79,6 +81,7 @@ namespace PruebasUnitariasSKD.Modulo10
             laCompetencia.OrganizacionTodas = true;
             laCompetencia.Status = "Por Iniciar";
 
+       
 
         }
 
@@ -90,6 +93,8 @@ namespace PruebasUnitariasSKD.Modulo10
             laLista = null;
             laListaC = null;
             baseDeDatosA = null;
+            ListaAsistencia = null;
+            laPersona = null;
         }
 
         #endregion
@@ -134,11 +139,12 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void PruebaModificarAsitenteE()
         {
-            DatosSKD.Modulo10.BDAsistencia baseDeDatosA = new DatosSKD.Modulo10.BDAsistencia();
+            asistio = new Asistencia();
             asistio.Asistio = "No";
-            elEvento.Id_evento = 3;
-            inscripcion.Id_Inscripcion = 32;            
-          //  Assert.IsTrue(baseDeDatosA.ModificarAsistenciaE(idInscripcion, idEvento, asiste));
+            asistio.Evento.Id_evento = 4;
+            asistio.Inscripcion.Id_Inscripcion = 32;
+            Assert.IsTrue(BDAsistencia.ModificarAsistenciaE(ListaAsistencia));
+       
          
         }
 
@@ -148,7 +154,7 @@ namespace PruebasUnitariasSKD.Modulo10
         public void PruebaConsultarCompetenciaXID()
         {
             laCompetencia = BDAsistencia.consultarCompetenciasXID(idCompetencia);
-
+    
         }
 
 
@@ -190,12 +196,70 @@ namespace PruebasUnitariasSKD.Modulo10
         }
 
 
+        [Test]
         public void PruebaListaAtletaIEvento()
         {
             ListaP = BDAsistencia.listaAtletasInscritosEvento(idDeEvento);
             Assert.IsNotNull(ListaP);
+    
         }
+
+
+        [Test]
+        public void PruebaAgregarAsistenciaEvento()
+        {
+            
+            asistio = new Asistencia();
+            asistio.Asistio = "Si";
+            asistio.Evento.Id_evento = 3;
+            asistio.Inscripcion.Id_Inscripcion = 32;
+            Assert.IsTrue(BDAsistencia.agregarAsistenciaEvento(ListaAsistencia));
+       
+          
+        }
+
+
+        [Test]
+        public void PruebaAgregarAsistenciaCompetencia()
+        {
+            asistio.Asistio = "Si";
+            asistio.Competencia.Id_competencia = 3;
+            asistio.Inscripcion.Id_Inscripcion = 35;
+            Assert.IsTrue(BDAsistencia.agregarAsistenciaCompetencia(ListaAsistencia));
+       
+
+        }
+
+        [Test]
+        public void PruebaListarHorarioCompetencia()
+        {
+
+        }
+
+        [Test]
+        public void PruebaCompetenciaPorFecha()
+        {
+
+        }
+
+        [Test]
+        public void PruebaListarAtletasInscritosCompetencia()
+        {
+            ListaP = BDAsistencia.listaAtletasInscritosCompetencia(idCompetencia);
+            Assert.IsNotNull(ListaP);
+        }
+
+        [Test]
+        public void PruebaInasistentesPlanillaCompetencia()
+        {
+            ListaInsc = BDAsistencia.listaInasistentesPlanillaCompetencia(idCompetencia);
+            Assert.IsNotNull(ListaInsc);
+        }
+
     }
+
+
+
 }
 
         #endregion
