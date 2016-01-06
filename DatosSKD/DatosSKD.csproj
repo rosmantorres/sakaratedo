@@ -57,15 +57,20 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
-
+    <Compile Include="DAO\Modulo8\DAORestriccionCinta.cs" />
     <Compile Include="DAO\Modulo8\DAORestriccionCompetencia.cs" />
+    <Compile Include="DAO\Modulo8\RecursosDAORestriccionCinta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAORestriccionCinta.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAORestriccionCompetencia.resx</DependentUpon>
     </Compile>
+    <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCinta.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
-
     <Compile Include="DAO\Modulo12\DaoCompetencia.cs" />
     <Compile Include="DAO\Modulo12\RecursosDAOModulo12.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -75,7 +80,6 @@
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
-
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,16 +195,17 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
-
+    <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCinta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAORestriccionCinta.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAORestriccionCompetencia.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="DAO\Modulo12\RecursosDAOModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAOModulo12.Designer.cs</LastGenOutput>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>

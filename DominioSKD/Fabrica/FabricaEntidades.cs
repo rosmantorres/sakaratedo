@@ -119,6 +119,75 @@ namespace DominioSKD.Fabrica
 
         #endregion
 
+        #region Fabricas Restriccion Cinta
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta sin parametros de entrada
+        /// </summary>
+        /// <returns> Objeto Tipo Entidad </returns>
+
+        public Entidad ObtenerRestriccionCinta()
+        {
+            return new Entidades.Modulo8.RestriccionCinta();
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametro de entrada identificador de la restriccion
+        /// </summary>
+        /// <param name="inputId"> Parametro referente al id unico de la restriccion</param>
+        /// <returns>Objeto tipo Entidad</returns>
+
+        public Entidad ObtenerRestriccionCinta(int inputId)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputId);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples sin id unico.
+        /// </summary>
+        /// <param name="inputDescripcion"> String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <returns> Objeto tipo Entidad</returns>
+
+        public Entidad ObtenerRestriccionCinta(String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public Entidad ObtenerRestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="id">Integer, identificador unico del objeto</param>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+
+        public Entidad ObtenerRestriccionCinta(int id, int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(id, inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente);
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 9
