@@ -47,7 +47,7 @@ namespace DatosSKD.DAO.Modulo7
                     parametros.Add(parametroQuery);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(
-                                    RecursosDAOModulo7.ConsultarCintaXId, parametros);
+                                    RecursosDAOModulo7.ConsultarMatriculaXId, parametros);
 
                     foreach (DataRow row in dt.Rows)
                     {
@@ -190,11 +190,12 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     laConexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametroQuery);
 
                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarMatriculasPagas, parametros);
+
 
                     foreach (DataRow row in dt.Rows)
                     {
