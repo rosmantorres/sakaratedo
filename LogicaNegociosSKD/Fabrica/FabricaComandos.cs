@@ -150,6 +150,29 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarTodasFacturas();
         }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
+        /// </summary>
+        /// <returns>El ComandoAgregarItem vacio</returns>
+        public static Comando<bool> CrearComandoAgregarItem()
+        {
+            return new ComandoAgregarItem();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el ComandoAgregarItem con sus datos llenos
+        /// </summary>
+        /// <param name="persona">La persona a la que se le agregara al carrito</param>
+        /// <param name="objeto">el item que se agregara al carrito de la persona</param>
+        /// <param name="tipoObjeto">Indica a que tipo de item nos estamos refiriendo para Agregar</param>
+        /// <param name="cantidad">la cantidad que se esta agregando del objeto</param>
+        /// <returns>El ComandoAgregarItem con sus datos llenos</returns>
+        public static Comando<bool> CrearComandoAgregarItem(Entidad persona, Entidad objeto, int tipoObjeto
+            , int cantidad)
+        {
+            return new ComandoAgregarItem(persona, objeto, tipoObjeto, cantidad);
+        }
         #endregion
 
 

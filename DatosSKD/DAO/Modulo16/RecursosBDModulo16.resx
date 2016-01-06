@@ -390,4 +390,16 @@
   <data name="PARAMETRO_DOJO_NOMBRE" xml:space="preserve">
     <value>djNombre</value>
   </data>
+  <data name="CODIGO_EXCEPCION_ITEM_INVALIDO" xml:space="preserve">
+    <value>S_16_11</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_PERSONA_INVALIDA" xml:space="preserve">
+    <value>S_16_10</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_ITEM_INVALIDO" xml:space="preserve">
+    <value>Error al encontrarse un item vacio o invalido</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_PERSONA_INVALIDA" xml:space="preserve">
+    <value>Error al encontrarse una persona vacia o invalida</value>
+  </data>
 </root>
