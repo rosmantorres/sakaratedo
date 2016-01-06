@@ -213,11 +213,28 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 16
-       
-        public Entidad ObtenerCarrito()
+        /// <summary>
+        /// Metodo de la fabrica que instancia un carrito vacio
+        /// </summary>
+        /// <returns>La entidad carrito vacia</returns>
+        public static Entidad ObtenerCarrito()
         {
-            return new Carrito();
+            return new Entidades.Modulo16.Carrito();
         }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el carrito con todas sus listas llenas
+        /// </summary>
+        /// <param name="implementos">Lista con todos los implementos del carrito</param>
+        /// <param name="eventos">Lista con todos los eventos del carrito</param>
+        /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
+        /// <returns>La entidad carrito con todos sus datos llenos</returns>
+        public static Entidad ObtenerCarrito
+            (List<Entidad> implementos, List<Entidad> eventos, List<Entidad> matriculas)
+        {
+            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
+        }
+
         public Entidad ObtenerMatricula()
         {
             return new Matricula();
