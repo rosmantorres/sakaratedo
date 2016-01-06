@@ -365,93 +365,99 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>El exito o fallo del proceso</returns>
         public bool RegistrarPago(Entidad persona, String tipoPago)
         {
-            //Procedo a intentar registrar el pago en Base de Datos
-            try
+            //Nos aseguramos que realmente sea una persona valida
+            if (persona is Persona)
             {
-                //Escribo en el logger la entrada a este metodo
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
-                int respuesta = 0;
-                bool exito = false;
-                List<Resultado> result;
-
-                //Creo la lista de los parametros para el stored procedure y los anexo
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro();
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
-                    SqlDbType.Int, persona.Id.ToString(), false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PAGO,
-                    SqlDbType.VarChar, tipoPago, false);
-                parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
-                    SqlDbType.Int, respuesta.ToString(), true);
-                parametros.Add(parametro);
-
-                //Ejecuto el Stored Procedure
-                result = EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_REGISTRAR_PAGO, parametros);
-
-                //Recorro cada una de las respuestas en la lista
-                foreach (Resultado aux in result)
+                //Procedo a intentar registrar el pago en Base de Datos
+                try
                 {
-                    //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
-                    if (aux.valor == "1")
-                        exito = true;
+                    //Escribo en el logger la entrada a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
+                    int respuesta = 0;
+                    bool exito = false;
+                    List<Resultado> result;
+
+                    //Creo la lista de los parametros para el stored procedure y los anexo
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro();
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                        SqlDbType.Int, persona.Id.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PAGO,
+                        SqlDbType.VarChar, tipoPago, false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
+                        SqlDbType.Int, respuesta.ToString(), true);
+                    parametros.Add(parametro);
+
+                    //Ejecuto el Stored Procedure
+                    result = EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_REGISTRAR_PAGO, parametros);
+
+                    //Recorro cada una de las respuestas en la lista
+                    foreach (Resultado aux in result)
+                    {
+                        //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
+                        if (aux.valor == "1")
+                            exito = true;
+                    }
+
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                       RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Retorno la Respuesta
+                    return exito;
                 }
-
-                //Escribo en el logger la salida a este metodo
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                //Retorno la Respuesta
-                return exito;
+                catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ArgumentNullException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+                }
+                catch (FormatException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+                }
+                catch (OverflowException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+                }
+                catch (ParametroInvalidoException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ExceptionSKDConexionBD e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ExceptionSKD e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (Exception e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                }
             }
-            catch (LoggerException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ArgumentNullException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
-            }
-            catch (FormatException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
-            }
-            catch (OverflowException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
-            }
-            catch (ParametroInvalidoException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ExceptionSKDConexionBD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ExceptionSKD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (Exception e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
-            }
+            else
+                throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
         }
         #endregion
 
