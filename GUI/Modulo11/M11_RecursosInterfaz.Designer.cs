@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatosSKD.Modulo11 {
+namespace templateApp.GUI.Modulo11 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace DatosSKD.Modulo11 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosBDModulo11 {
+    internal class M11_RecursosInterfaz {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosBDModulo11() {
+        internal M11_RecursosInterfaz() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo11 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.Modulo11.RecursosBDModulo11", typeof(RecursosBDModulo11).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo11.M11_RecursosInterfaz", typeof(M11_RecursosInterfaz).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,83 +61,101 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fechaInicioCompetencia.
+        ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
-        internal static string aliasFechaCompetencia {
+        internal static string AbrirTD {
             get {
-                return ResourceManager.GetString("aliasFechaCompetencia", resourceCulture);
+                return ResourceManager.GetString("AbrirTD", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fechaInicioEvento.
+        ///   Looks up a localized string similar to &lt;tr&gt;.
         /// </summary>
-        internal static string aliasFechaEvento {
+        internal static string AbrirTR {
             get {
-                return ResourceManager.GetString("aliasFechaEvento", resourceCulture);
+                return ResourceManager.GetString("AbrirTR", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to idCompetencia.
+        ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
-        internal static string aliasIdCompetencia {
+        internal static string BotonCerrar {
             get {
-                return ResourceManager.GetString("aliasIdCompetencia", resourceCulture);
+                return ResourceManager.GetString("BotonCerrar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to idEvento.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;#.
         /// </summary>
-        internal static string aliasIdEvento {
+        internal static string BotonInfoCompetencia {
             get {
-                return ResourceManager.GetString("aliasIdEvento", resourceCulture);
+                return ResourceManager.GetString("BotonInfoCompetencia", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nombreCompetencia.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;#.
         /// </summary>
-        internal static string aliasNombreCompetencia {
+        internal static string BotonInfoEvento {
             get {
-                return ResourceManager.GetString("aliasNombreCompetencia", resourceCulture);
+                return ResourceManager.GetString("BotonInfoEvento", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nombreEvento.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M11_ModificarResultadoCompetencia.aspx?tipo=Competencia&amp;modificar=.
         /// </summary>
-        internal static string aliasNombreEvento {
+        internal static string BotonModificarCompetencia {
             get {
-                return ResourceManager.GetString("aliasNombreEvento", resourceCulture);
+                return ResourceManager.GetString("BotonModificarCompetencia", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tipoEvento.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M11_ModificarResultadoCompetencia.aspx?tipo=Evento&amp;modificar=.
         /// </summary>
-        internal static string aliasTipoEvento {
+        internal static string BotonModificarEvento {
             get {
-                return ResourceManager.GetString("aliasTipoEvento", resourceCulture);
+                return ResourceManager.GetString("BotonModificarEvento", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M11_ConsultarResultadoPasadoC.
+        ///   Looks up a localized string similar to &lt;/td&gt;.
         /// </summary>
-        internal static string ProcedimientoConsultarResultadoPasadoC {
+        internal static string CerrarTD {
             get {
-                return ResourceManager.GetString("ProcedimientoConsultarResultadoPasadoC", resourceCulture);
+                return ResourceManager.GetString("CerrarTD", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M11_ConsultarResultadoPasadoE.
+        ///   Looks up a localized string similar to &lt;/tr&gt;.
         /// </summary>
-        internal static string ProcedimientoConsultarResultadoPasadoE {
+        internal static string CerrarTR {
             get {
-                return ResourceManager.GetString("ProcedimientoConsultarResultadoPasadoE", resourceCulture);
+                return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Competencia.
+        /// </summary>
+        internal static string Competencia {
+            get {
+                return ResourceManager.GetString("Competencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evento.
+        /// </summary>
+        internal static string Evento {
+            get {
+                return ResourceManager.GetString("Evento", resourceCulture);
             }
         }
     }
