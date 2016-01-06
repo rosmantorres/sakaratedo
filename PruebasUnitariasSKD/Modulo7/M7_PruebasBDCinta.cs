@@ -176,32 +176,6 @@ namespace PruebasUnitariasSKD.Modulo7
             Assert.NotNull(baseDeDatosCinta.fechaCinta(idPersona, 3).ToString("MM/dd/yyyy"));
         }
 
-        /// <summary>
-        /// Ejemplo prueba unitaria con patrom DAO
-        /// </summary>
-        [Test]
-        public void PruebaDetallarCintaXIdDAO()
-        {
-            FabricaDAOSqlServer fabricaSQql = new FabricaDAOSqlServer();
-            //DaoCinta basedeDatosCinta = fabricaSQql.nuevoDAOCinta();
-            DaoCinta baseDeDatosCinta = new DaoCinta();//esto se sustituye con la fabrica
-            Cinta idCinta = new Cinta();//esto se sustituye con fabrica de entidad
-            idCinta.Id = 1;
-            Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
-            Assert.AreEqual("Blanco", cinta.Color_nombre);
-        }
-
-        [Test]
-        public void PruebaListarCintasObtenidasDAO()
-        {
-            FabricaDAOSqlServer fabricaSQql = new FabricaDAOSqlServer();
-            DaoCinta baseDeDatosCinta = new DaoCinta();//esto se sustituye con la fabrica
-            Persona idPersona = new Persona();//esto se sustituye con fabrica de entidad
-            idPersona.ID = 6;
-            List<Entidad> listaCinta = baseDeDatosCinta.ListarCintasObtenidas(idPersona);
-            Assert.GreaterOrEqual(listaCinta.Count, 1);
-        }
-
         #endregion
     }
 }
