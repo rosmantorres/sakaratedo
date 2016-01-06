@@ -8,6 +8,7 @@ using DatosSKD.Fabrica;
 using DatosSKD.DAO.Modulo7;
 using DominioSKD.Fabrica;
 using DominioSKD;
+using ExcepcionesSKD.Modulo7;
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
     /// <summary>
@@ -55,10 +56,35 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             Matricula matricula = (Matricula)baseDeDatosMatricula.ConsultarXId(idMatricula);
             Assert.AreEqual("CCA1-CAF-CAFE", matricula.Identificador);
         }
-           
-       
+
 
         /// <summary>
+        /// Método para probar que una matriculada detallado no sea nulo
+        /// </summary>
+        [Test]
+        public void PruebaDetallarMatriculaXIdNoNulo()
+        {
+            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+            idMatricula.Id = 1;
+             Matricula matricula = (Matricula)baseDeDatosMatricula.ConsultarXId(idMatricula);
+            Assert.NotNull(matricula);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de detallar matricula pagada
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void DetallarMatriculaPagaNumeroEnteroException()
+        {
+            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+            idMatricula.Id = -1;
+            Matricula matricula = (Matricula)baseDeDatosMatricula.ConsultarXId(idMatricula);
+        }
+       
+        
         /// Método de prueba para ListarMatriculasObtenidas en DAO
         /// </summary>
         [Test]
@@ -70,8 +96,29 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             Assert.GreaterOrEqual(listaMatricula.Count, 0);
         }
 
-      
-      
+        /// <summary>
+        /// Método para probar que la lista obtenida de matriculas sea distinto de  nulo nulo
+        /// </summary>
+        [Test]
+        public void PruebaListarMatriculasPagasNulas()
+        {
+            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+            List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
+            Assert.NotNull(listaMatricula);
+        }
+
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar matriculas pagas
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarMatriculasPagasEnteroException()
+        {
+            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+            idPersona.ID = -1;
+            List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
+        }
         #endregion
     }
 }
