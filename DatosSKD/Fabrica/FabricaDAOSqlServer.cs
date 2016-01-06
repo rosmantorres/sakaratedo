@@ -28,7 +28,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 7
-
+        /*
         /// <summary>
         /// Método que instancia el DAO de cinta de M7
         /// </summary>
@@ -118,7 +118,7 @@ namespace DatosSKD.Fabrica
         {
             return new DAO.Modulo7.DaoUbicacion();
         }
-
+        */
         #endregion
 
         #region Modulo 8
