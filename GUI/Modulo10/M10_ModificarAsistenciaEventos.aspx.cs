@@ -32,7 +32,7 @@ namespace templateApp.GUI.Modulo10
                 Session["M10_IdEvento"] = idEvento;
                 Session["M10_tipo"] = tipo;
 
-                if (Session["M10_tipo"].Equals("evento"))
+                if (Session["M10_tipo"].Equals(M10_RecursosInterfaz.Evento))
                 {
                     evento = logicaEvento.ConsultarEvento(Session["M10_IdEvento"].ToString());
                     fechaEvento.Text = evento.Horario.FechaInicio.ToShortDateString();
@@ -51,7 +51,7 @@ namespace templateApp.GUI.Modulo10
                         listaNoAsistieron.Items.Add(persona.Nombre);
                     }
                 }
-                else if (Session["M10_tipo"].Equals("competencia"))
+                else if (Session["M10_tipo"].Equals(M10_RecursosInterfaz.Competencia))
                 {
                     competencia = LogicaAsistencia.consultarCompetenciasXID(Session["M10_IdEvento"].ToString());
                     fechaEvento.Text = competencia.FechaInicio.ToShortDateString();
@@ -102,42 +102,15 @@ namespace templateApp.GUI.Modulo10
 
         protected void bModificar_Click(object sender, EventArgs e)
         {
-            #region modificarEvento
-            List<Persona> listaA = LogicaAsistencia.listaAsistentes(Session["M10_IdEvento"].ToString());
-            List<Persona> listaI = LogicaAsistencia.listaNoAsistentes(Session["M10_IdEvento"].ToString());
-            List<Asistencia> listaA2 = new List<Asistencia>();
-            foreach (Persona persona in listaA)
+            if (Session["M10_tipo"].ToString().Equals(M10_RecursosInterfaz.Evento))
             {
-                foreach (var listBoxItem in listaAsistentes.Items)
+                #region modificarEvento
+                List<Persona> listaA = LogicaAsistencia.listaAsistentes(Session["M10_IdEvento"].ToString());
+                List<Persona> listaI = LogicaAsistencia.listaNoAsistentes(Session["M10_IdEvento"].ToString());
+                List<Asistencia> listaA2 = new List<Asistencia>();
+                foreach (Persona persona in listaA)
                 {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
-                    {
-                        Asistencia asistencia = new Asistencia();
-                        asistencia.Asistio = "S";
-                        asistencia.Evento.Id_evento = Convert.ToInt32(Session["M10_IdEvento"]);
-                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
-                        listaA2.Add(asistencia);
-                    }
-                }
-
-                foreach (var listBoxItem in listaNoAsistieron.Items)
-                {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
-                    {
-                        Asistencia asistencia = new Asistencia();
-                        asistencia.Asistio = "N";
-                        asistencia.Evento.Id_evento = Convert.ToInt32(Session["M10_IdEvento"]);
-                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
-                        listaA2.Add(asistencia);
-                    }
-                }
-            }
-
-            foreach (Persona persona in listaI)
-            {
-                foreach (var listBoxItem in listaAsistentes.Items)
-                {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    foreach (var listBoxItem in listaAsistentes.Items)
                     {
                         if (persona.Nombre.Equals(listBoxItem.ToString()))
                         {
@@ -148,11 +121,8 @@ namespace templateApp.GUI.Modulo10
                             listaA2.Add(asistencia);
                         }
                     }
-                }
 
-                foreach (var listBoxItem in listaNoAsistieron.Items)
-                {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    foreach (var listBoxItem in listaNoAsistieron.Items)
                     {
                         if (persona.Nombre.Equals(listBoxItem.ToString()))
                         {
@@ -164,84 +134,118 @@ namespace templateApp.GUI.Modulo10
                         }
                     }
                 }
-            }
 
-            if (LogicaAsistencia.ModificarAsistenciaEvento(listaA2))
-            {
-                Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=2");
-            }
-            else
-                Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=3");
-
-            #endregion
-
-            #region modificarCompetencia
-            listaAC = LogicaAsistencia.listaAsistentesCompetencia(Session["M10_IdEvento"].ToString());
-            listaIC = LogicaAsistencia.listaNoAsistentesCompetencia(Session["M10_IdEvento"].ToString());
-            List<Asistencia> listaAC2 = new List<Asistencia>();
-
-            foreach (Persona persona in listaAC)
-            {
-                foreach (var listBoxItem in listaAsistentes.Items)
+                foreach (Persona persona in listaI)
                 {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    foreach (var listBoxItem in listaAsistentes.Items)
                     {
-                        Asistencia asistencia = new Asistencia();
-                        asistencia.Asistio = "S";
-                        asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
-                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
-                        listaAC2.Add(asistencia);
+                        if (persona.Nombre.Equals(listBoxItem.ToString()))
+                        {
+                            if (persona.Nombre.Equals(listBoxItem.ToString()))
+                            {
+                                Asistencia asistencia = new Asistencia();
+                                asistencia.Asistio = "S";
+                                asistencia.Evento.Id_evento = Convert.ToInt32(Session["M10_IdEvento"]);
+                                asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                                listaA2.Add(asistencia);
+                            }
+                        }
+                    }
+
+                    foreach (var listBoxItem in listaNoAsistieron.Items)
+                    {
+                        if (persona.Nombre.Equals(listBoxItem.ToString()))
+                        {
+                            if (persona.Nombre.Equals(listBoxItem.ToString()))
+                            {
+                                Asistencia asistencia = new Asistencia();
+                                asistencia.Asistio = "N";
+                                asistencia.Evento.Id_evento = Convert.ToInt32(Session["M10_IdEvento"]);
+                                asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                                listaA2.Add(asistencia);
+                            }
+                        }
                     }
                 }
 
-                foreach (var listBoxItem in listaNoAsistieron.Items)
+                if (LogicaAsistencia.ModificarAsistenciaEvento(listaA2))
                 {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
-                    {
-                        Asistencia asistencia = new Asistencia();
-                        asistencia.Asistio = "N";
-                        asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
-                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
-                        listaAC2.Add(asistencia);
-                    }
+                    Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=2");
                 }
-            }
+                else
+                    Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=3");
 
-            foreach (Persona persona in listaIC)
+                #endregion
+            }
+            else if (Session["M10_tipo"].ToString().Equals(M10_RecursosInterfaz.Competencia))
             {
-                foreach (var listBoxItem in listaAsistentes.Items)
+                #region modificarCompetencia
+                listaAC = LogicaAsistencia.listaAsistentesCompetencia(Session["M10_IdEvento"].ToString());
+                listaIC = LogicaAsistencia.listaNoAsistentesCompetencia(Session["M10_IdEvento"].ToString());
+                List<Asistencia> listaAC2 = new List<Asistencia>();
+
+                foreach (Persona persona in listaAC)
                 {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    foreach (var listBoxItem in listaAsistentes.Items)
                     {
-                        Asistencia asistencia = new Asistencia();
-                        asistencia.Asistio = "S";
-                        asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
-                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
-                        listaAC2.Add(asistencia);
+                        if (persona.Nombre.Equals(listBoxItem.ToString()))
+                        {
+                            Asistencia asistencia = new Asistencia();
+                            asistencia.Asistio = "S";
+                            asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
+                            asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                            listaAC2.Add(asistencia);
+                        }
+                    }
+
+                    foreach (var listBoxItem in listaNoAsistieron.Items)
+                    {
+                        if (persona.Nombre.Equals(listBoxItem.ToString()))
+                        {
+                            Asistencia asistencia = new Asistencia();
+                            asistencia.Asistio = "N";
+                            asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
+                            asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                            listaAC2.Add(asistencia);
+                        }
                     }
                 }
 
-                foreach (var listBoxItem in listaNoAsistieron.Items)
+                foreach (Persona persona in listaIC)
                 {
-                    if (persona.Nombre.Equals(listBoxItem.ToString()))
+                    foreach (var listBoxItem in listaAsistentes.Items)
                     {
-                        Asistencia asistencia = new Asistencia();
-                        asistencia.Asistio = "N";
-                        asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
-                        asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
-                        listaAC2.Add(asistencia);
+                        if (persona.Nombre.Equals(listBoxItem.ToString()))
+                        {
+                            Asistencia asistencia = new Asistencia();
+                            asistencia.Asistio = "S";
+                            asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
+                            asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                            listaAC2.Add(asistencia);
+                        }
+                    }
+
+                    foreach (var listBoxItem in listaNoAsistieron.Items)
+                    {
+                        if (persona.Nombre.Equals(listBoxItem.ToString()))
+                        {
+                            Asistencia asistencia = new Asistencia();
+                            asistencia.Asistio = "N";
+                            asistencia.Competencia.Id_competencia = Convert.ToInt32(Session["M10_IdEvento"]);
+                            asistencia.Inscripcion.Id_Inscripcion = persona.IdInscripcion;
+                            listaAC2.Add(asistencia);
+                        }
                     }
                 }
-            }
 
-            if (LogicaAsistencia.ModificarAsistenciaCompetencia(listaAC2))
-            {
-                Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=2");
+                if (LogicaAsistencia.ModificarAsistenciaCompetencia(listaAC2))
+                {
+                    Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=2");
+                }
+                else
+                    Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=3");
+                #endregion
             }
-            else
-                Response.Redirect("M10_ListarAsistenciaEventos.aspx?success=3");
-            #endregion
-
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)

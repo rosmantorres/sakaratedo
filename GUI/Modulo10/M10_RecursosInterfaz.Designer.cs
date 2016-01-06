@@ -88,16 +88,25 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M10_DetalleAsistenciaEventos.aspx?compDetalle=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M10_DetalleAsistenciaEvento.aspx?tipo=Competencia&amp;compDetalle=.
         /// </summary>
-        internal static string BotonInfo {
+        internal static string BotonInfoCompetencia {
             get {
-                return ResourceManager.GetString("BotonInfo", resourceCulture);
+                return ResourceManager.GetString("BotonInfoCompetencia", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?tipo=competencia&amp;modificar=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M10_DetalleAsistenciaEvento.aspx?tipo=Evento&amp;compDetalle=.
+        /// </summary>
+        internal static string BotonInfoEvento {
+            get {
+                return ResourceManager.GetString("BotonInfoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?tipo=Competencia&amp;modificar=.
         /// </summary>
         internal static string BotonModificarCompetencia {
             get {
@@ -106,7 +115,7 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?tipo=evento&amp;modificar=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M10_ModificarAsistenciaEventos.aspx?tipo=Evento&amp;modificar=.
         /// </summary>
         internal static string BotonModificarEvento {
             get {
