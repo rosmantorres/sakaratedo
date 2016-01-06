@@ -29,6 +29,6 @@ namespace DatosSKD.InterfazDAO.Modulo7
 
         List<Entidad> ListarCompetenciasPaga(Entidad persona);
 
-        List<Entidad> ListarHorarioPracticaa(Entidad persona);       
+        List<Entidad> ListarHorarioPractica(Entidad persona);       
     }
 }

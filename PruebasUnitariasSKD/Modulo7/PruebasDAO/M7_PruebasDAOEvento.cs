@@ -23,6 +23,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         Persona idPersona;
         FabricaEntidades fabricaEntidades;
         FabricaDAOSqlServer fabricaSql;
+        DaoEvento baseDeDatosEvento;
         #endregion
 
         #region SetUp & TearDown
@@ -31,6 +32,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             fabricaEntidades = new FabricaEntidades();
+            baseDeDatosEvento = fabricaSql.ObtenerDaoEventoM7();
             idPersona = new Persona();
             idPersona.ID = 6;
         }
@@ -41,6 +43,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             idPersona = null;
             fabricaEntidades = null;
             fabricaSql = null;
+            baseDeDatosEvento = null;
         }
         #endregion
         /// <summary>
@@ -49,20 +52,17 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarEventoXId()
         {
-
-            DaoEvento baseDeDatosEvento = new DaoEvento();//esto se sustituye con la fabrica
             Evento idEvento = (Evento)fabricaEntidades.ObtenerEvento();
             idEvento.Id = 5;
             Evento evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
             Assert.AreEqual("La vida en el Dojo", evento.Nombre);
         }
         /// <summary>
-        /// Método para probar que una matriculada detallado no sea nulo
+        /// Método para probar que una matriculada detallado no sea nulo en DAO
         /// </summary>
         [Test]
         public void PruebaDetallarEventoXIdNoNulo()
         {
-            DaoEvento baseDeDatosEvento = new DaoEvento();//esto se sustituye con la fabrica
             Evento idEvento = (Evento)fabricaEntidades.ObtenerEvento();
             idEvento.Id = 5;
             Evento evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
@@ -70,85 +70,140 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         }
 
         /// <summary>
-        /// Método para probar la exception de número entero invalido de prueba detalle evento
+        /// Método para probar la exception de número entero invalido de prueba detalle evento en DAO
         /// </summary>
 
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetalleEventoNumeroEnteroException()
         {
-            DaoEvento baseDeDatosEvento = new DaoEvento();//esto se sustituye con la fabrica
             Evento idEvento = (Evento)fabricaEntidades.ObtenerEvento();;
             idEvento.Id = -1;
             Evento evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
         }
 
         /// <summary>
-        /// Método para probar que la lista obtenida tiene cero o mas eventos pagos
+        /// Método para probar que la lista obtenida tiene cero o mas eventos pagos en DAO
         /// </summary>
         [Test]
         public void PruebaListarEventosPagos()
         {
-            DaoEvento baseDeDatosEvento = new DaoEvento();//esto se sustituye con la fabrica
             List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
             Assert.GreaterOrEqual(listaEvento.Count, 0);
         }
         /// <summary>
-        /// Método para probar que la lista obtenida no sea nula
+        /// Método para probar que la lista obtenida no sea nula en DAO
         /// </summary>
         [Test]
         public void PruebaListarEventosPagosNoNulo()
         {
-            DaoEvento baseDeDatosEvento = new DaoEvento();//esto se sustituye con la fabrica
             List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
             Assert.NotNull(listaEvento);
         }
 
         /// <summary>
-        /// Método para probar la exception de número entero invalido de listar eventos pagos
+        /// Método para probar la exception de número entero invalido de listar eventos pagos en DAO
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarEventoPagoNumeroEnteroException()
         {
-            DaoEvento baseDeDatosEvento = new DaoEvento();//esto se sustituye con la fabrica
             idPersona.ID = -1;
             List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
            
         }
         /// <summary>
-        /// Método para probar que la lista obtenida tiene cero o mas competencias pagadas por atleta
+        /// Método para probar que la lista obtenida tiene cero o mas competencias pagadas por atleta en DAO
         /// </summary>
         [Test]
         public void PruebaListarCompetenciasPagas()
         {
-            DaoEvento baseDeDatosCompetencia = new DaoEvento();// se sustituye con la fabrica
-            List<Entidad> listaCompetencia = baseDeDatosCompetencia.ListarCompetenciasPaga(idPersona);
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPaga(idPersona);
             Assert.GreaterOrEqual(listaCompetencia.Count, 0);
         }
 
         /// <summary>
-        /// Método para probar que la lista obtenida no sea nula
+        /// Método para probar que la lista obtenida no sea nula en DAO
         /// </summary>
         [Test]
         public void PruebaListarCompetenciasPagasNoNula()
         {
-            DaoEvento baseDeDatosCompetencia = new DaoEvento();// se sustituye con la fabrica
-            List<Entidad> listaCompetencia = baseDeDatosCompetencia.ListarCompetenciasPaga(idPersona);
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPaga(idPersona);
             Assert.NotNull(listaCompetencia);
         }
 
         /// <summary>
-        /// Método para probar la exception de número entero invalido de listar competencias pagadas
+        /// Método para probar la exception de número entero invalido de listar competencias pagadas en DAO
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarCompetenciaPagaNumeroEnteroException()
         {
-            DaoEvento baseDeDatosCompetencia = new DaoEvento();// se sustituye con la fabrica
             idPersona.ID = -1;
-            List<Entidad> listaCompetencia = baseDeDatosCompetencia.ListarCompetenciasPaga(idPersona);
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPaga(idPersona);
         }
-         
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas eventos en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosAsistidos()
+        {
+            List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
+            Assert.GreaterOrEqual(listaEvento.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosAsistidosNoNulo()
+        {
+            List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
+            Assert.NotNull(listaEvento);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos asistidos en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarEventoAsistidoNumeroEnteroException()
+        {
+            idPersona.ID = -1;
+            List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas competencias en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciasAsistidas()
+        {
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
+            Assert.GreaterOrEqual(listaCompetencia.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciasAsistidasNoNula()
+        {
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
+            Assert.NotNull(listaCompetencia);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos asistidos en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarCompetenciaAsistidaNumeroEnteroException()
+        {
+            idPersona.ID = -1;
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
+        }
+
     }
 }
