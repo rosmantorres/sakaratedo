@@ -24,6 +24,15 @@ namespace DatosSKD.DAO.Modulo7
         {
             throw new NotImplementedException();
         }
+        public bool Modificar(Entidad parametro)
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// Método para consultar el detalle de una matricula 
+        /// </summary>
+        /// <param name="parametro">Objeto de tipo Entidad que posee el id a consultar</param>
+        /// <returns>Retorna objeto de tipo Entidad con la informacion de la matricula</returns>
 
         public Entidad ConsultarXId(Entidad parametro)
         {
@@ -98,6 +107,12 @@ namespace DatosSKD.DAO.Modulo7
                  RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return matricula;
         }
+     
+        /// <summary>
+        /// Método para consultar el estado de una matricula
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <returns>Retorna objeto de tipo Entidad con el estado de la matricula</returns>
 
         public bool EstadoMatricula(Entidad persona)
         {
@@ -170,6 +185,12 @@ namespace DatosSKD.DAO.Modulo7
 
             return estadoMatricula;
         }
+
+        /// <summary>
+        /// Método para consultar la lista de matriculas pagas
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <returns>Retorna objeto de tipo Entidad con la lista de matriculas que han sido canceladas</returns>
 
         public List<Entidad> ListarMatriculasPagas(Entidad persona)
         {
@@ -252,6 +273,11 @@ namespace DatosSKD.DAO.Modulo7
             return listaDeMatriculas;
         }
 
+        /// <summary>
+        /// Método para consultar el detalle de una cinta 
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <returns>Retorna objeto de tipo Entidad con el id de la matricula</returns>
         public int MatriculaID(Entidad persona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -324,11 +350,13 @@ namespace DatosSKD.DAO.Modulo7
             return idMatricula;
         }
 
-        public bool Modificar(Entidad parametro)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Método para consultar el monto del pago de una matricula
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        ///  /// <param name="matricula">Objeto de tipo Entidad que posee el id de la matricula</param>
+        /// <returns>Retorna objeto de tipo Entidad con el monto de la matricula</returns>
+   
         public float MontoPagoMatricula(Entidad persona, Entidad matricula)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

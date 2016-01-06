@@ -55,7 +55,12 @@ namespace DatosSKD.DAO.Modulo7
             throw new NotImplementedException();
         }
 
-
+        /// <summary>
+        /// Método para consultar el detalle de un evento
+        /// </summary>
+        /// <param name="parametro">Objeto de tipo Entidad que posee el id a consultar</param>
+        /// <returns>Retorna objeto de tipo Entidad con la informacion detallada del evento</returns>
+     
         public Entidad ConsultarXId(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -133,6 +138,13 @@ namespace DatosSKD.DAO.Modulo7
             return evento;
         }
 
+        /// <summary>
+        /// Método para consultar la fecha de inscripcion de una competencia
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <param name="competencia">Objeto de tipo Entidad que posee el id de la competencia</param>
+        /// <returns>Retorna objeto de tipo Entidad con la fecha de inscripcion de la competencia</returns>
+   
         public DateTime FechaInscripcionCompetencia(Entidad persona, Entidad competencia)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -207,6 +219,13 @@ namespace DatosSKD.DAO.Modulo7
             return fechaInscripcionCompetencia;
         }
 
+        /// <summary>
+        /// Método para consultar la fecha de inscripcion de un evento
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <param name="evento">Objeto de tipo Entidad que posee el id del evento</param>
+        /// <returns>Retorna objeto de tipo Entidad con la fecha de inscripcion del evento</returns>
+        
         public DateTime FechaInscripcionEvento(Entidad persona, Entidad evento)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -281,6 +300,13 @@ namespace DatosSKD.DAO.Modulo7
             return fechaInscripcion;
         }
 
+        /// <summary>
+        /// Método para consultar la fecha de pago de un evento
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <param name="evento">Objeto de tipo Entidad que posee el id del evento</param>
+        /// <returns>Retorna objeto de tipo Entidad con la fecha en la que se realizo el pago del evento</returns>
+        
         public DateTime FechaPagoEvento(Entidad persona, Entidad evento)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -355,6 +381,12 @@ namespace DatosSKD.DAO.Modulo7
             return fechaPago;
         }
 
+        /// <summary>
+        /// Método para consultar la lista de competencias pagos
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <returns>Retorna objeto de tipo Entidad con la lista de competencias que han sido canceladas</returns>
+        
         public List<Entidad> ListarCompetenciasPaga(Entidad persona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -442,6 +474,12 @@ namespace DatosSKD.DAO.Modulo7
             return listaDeCompetenciasPagas;
         }
 
+        /// <summary>
+        /// Método para consultar la lista de eventos pagos
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <returns>Retorna objeto de tipo Entidad con la lista de eventos que han sido pagos</returns>
+        /// 
         public List<Entidad> ListarEventosPagos(Entidad persona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -522,6 +560,13 @@ namespace DatosSKD.DAO.Modulo7
             return listaDeEventos;
         }
 
+        /// <summary>
+        /// Método para consultar el monto cancelado de un evento
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
+        /// <param name="evento">Objeto de tipo Entidad que posee el id del evento</param>
+        /// <returns>Retorna objeto de tipo Entidad con el monto pago del evento</returns>
+        
        public float MontoPagoEvento(Entidad persona, Entidad evento)
         {
         Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
