@@ -27,7 +27,79 @@ namespace DatosSKD.DAO.Modulo7
 
         public Entidad ConsultarXId(Entidad parametro)
         {
-            throw new NotImplementedException();
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+              RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            BDConexion conexion;
+            List<Parametro> parametros;
+            Parametro parametroQuery = new Parametro();
+            FabricaEntidades fabricaEntidades = new FabricaEntidades();
+            Evento idEvento = (Evento)parametro;
+            Evento evento = (Evento)fabricaEntidades.ObtenerEvento();
+
+            try
+            {
+                if (idEvento.Id > 0)
+                {
+                    conexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id.ToString(), false);
+                    parametros.Add(parametroQuery);
+
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
+                                    RecursosDAOModulo7.ConsultarEventoXId, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+
+                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
+                        evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
+                        evento.Costo = float.Parse(row[RecursosDAOModulo7.AliasEventoCosto].ToString());
+                       // evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString()));
+                        //evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosDAOModulo7.AliasEventoHorarioId].ToString()));
+                        //evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosDAOModulo7.AliasEventoUbicacionId].ToString()));
+                    }
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (NumeroEnteroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
+                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                 RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return evento;
         }
 
         public DateTime FechaInscripcionCompetencia(Entidad persona, Entidad competencia)
