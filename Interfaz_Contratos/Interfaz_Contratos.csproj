@@ -44,6 +44,7 @@
     <Compile Include="Modulo16\IContratoListarEvento.cs" />
     <Compile Include="Modulo16\IContratoListarFactura.cs" />
     <Compile Include="Modulo16\IContratoListarProducto.cs" />
+    <Compile Include="Modulo16\IcontratoVerCarrito.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
