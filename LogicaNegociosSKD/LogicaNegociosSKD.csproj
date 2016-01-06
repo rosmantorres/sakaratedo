@@ -40,6 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasNoAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarListaCompetenciaRestriccionCompetencia.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -234,7 +239,6 @@
     <Folder Include="Comandos\Modulo5\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
-    <Folder Include="Comandos\Modulo8\" />
     <Folder Include="Comandos\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
