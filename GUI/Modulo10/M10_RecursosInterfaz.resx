@@ -126,8 +126,11 @@
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEventos.aspx?compDetalle=</value>
+  <data name="BotonInfoCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEvento.aspx?tipo=Competencia&amp;compDetalle=</value>
+  </data>
+  <data name="BotonInfoEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEvento.aspx?tipo=Evento&amp;compDetalle=</value>
   </data>
   <data name="BotonModificarCompetencia" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=Competencia&amp;modificar=</value>

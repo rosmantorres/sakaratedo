@@ -71,7 +71,7 @@ namespace templateApp.GUI.Modulo10
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + M10_RecursosInterfaz.Evento + " " + evento.TipoEvento.Nombre.ToString() + M10_RecursosInterfaz.CerrarTD;
 
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
-                        this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonInfoEvento + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
                         this.dataTable.Text += M10_RecursosInterfaz.BotonModificarEvento + evento.Id_evento + M10_RecursosInterfaz.BotonCerrar;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
@@ -87,7 +87,7 @@ namespace templateApp.GUI.Modulo10
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD + M10_RecursosInterfaz.Competencia + M10_RecursosInterfaz.CerrarTD;
 
                         this.dataTable.Text += M10_RecursosInterfaz.AbrirTD;
-                        this.dataTable.Text += M10_RecursosInterfaz.BotonInfo + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
+                        this.dataTable.Text += M10_RecursosInterfaz.BotonInfoCompetencia + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
                         this.dataTable.Text += M10_RecursosInterfaz.BotonModificarCompetencia + competencia.Id_competencia + M10_RecursosInterfaz.BotonCerrar;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M10_RecursosInterfaz.CerrarTR;
