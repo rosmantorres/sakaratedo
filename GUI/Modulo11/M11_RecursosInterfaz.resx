@@ -117,40 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="aliasFechaCompetencia" xml:space="preserve">
-    <value>fechaInicioCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio competencia</comment>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="aliasFechaEvento" xml:space="preserve">
-    <value>fechaInicioEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio evento</comment>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="aliasIdCompetencia" xml:space="preserve">
-    <value>idCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna id competencia</comment>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="aliasIdEvento" xml:space="preserve">
-    <value>idEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna id evento</comment>
+  <data name="BotonInfoCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="#</value>
   </data>
-  <data name="aliasNombreCompetencia" xml:space="preserve">
-    <value>nombreCompetencia</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna nombre competencia</comment>
+  <data name="BotonInfoEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="#</value>
   </data>
-  <data name="aliasNombreEvento" xml:space="preserve">
-    <value>nombreEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna nombre evento</comment>
+  <data name="BotonModificarCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx?tipo=Competencia&amp;modificar=</value>
   </data>
-  <data name="aliasTipoEvento" xml:space="preserve">
-    <value>tipoEvento</value>
-    <comment>Alias colocado en el Stored Procedure referente a la columna tipo evento</comment>
+  <data name="BotonModificarEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx?tipo=Evento&amp;modificar=</value>
   </data>
-  <data name="ProcedimientoConsultarResultadoPasadoC" xml:space="preserve">
-    <value>M11_ConsultarResultadoPasadoC</value>
-    <comment>Nombre del SP a ejecutar</comment>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="ProcedimientoConsultarResultadoPasadoE" xml:space="preserve">
-    <value>M11_ConsultarResultadoPasadoE</value>
-    <comment>Nombre del SP a ejecutar</comment>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="Competencia" xml:space="preserve">
+    <value>Competencia</value>
+  </data>
+  <data name="Evento" xml:space="preserve">
+    <value>Evento</value>
   </data>
 </root>
