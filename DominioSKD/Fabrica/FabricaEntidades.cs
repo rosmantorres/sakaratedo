@@ -29,11 +29,18 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 7
+        //SE agragan momentaneamente los siguientes obtener en m7
         public Entidad ObtenerMatricula()
         {
             return new Matricula();
         }
         #endregion
+
+         public Entidad ObtenerEvento()
+        {
+            return new Evento();
+        }
+    
 
         #region Modulo 8
 
