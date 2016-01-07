@@ -74,6 +74,15 @@ namespace templateApp.GUI.Modulo14
                     labelCompetencia.Visible = false;
 
                 }
+                if (datosRequeridos[4] == true)
+                {
+                    divMotivo.Visible = true;
+
+                }
+                else
+                {
+                    divMotivo.Visible = false;
+                }
 
             }
 
@@ -147,7 +156,7 @@ namespace templateApp.GUI.Modulo14
             }
 
 
-            Response.Redirect("../Modulo14/M14_SolicitarPlanilla.aspx?success=true");
+            Response.Redirect("../Modulo14/M14_ConsultarPlanillasSolicitadas.aspx?success=true");
         }
     }
 }
