@@ -616,41 +616,57 @@ namespace DatosSKD.DAO.Modulo16
         /// </summary>
         /// <param name="tipoObjeto">Especifica si se borrara una matricula, un inventario o evento</param>
         /// <param name="objetoBorrar">El objeto en especifico a borrar</param>
-        /// <param name="idUsuario">El usuario al que se alterara su carrito</param>
+        /// <param name="persona">La persona al que se alterara su carrito</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-        public bool eliminarItem(int tipoObjeto, int objetoBorrar, Entidad parametro)
-        {
-            Persona laPersona;
-
+        public bool eliminarItem(int tipoObjeto, int objetoBorrar, Entidad persona)
+        {       
             try
             {
-                laPersona = (Persona)FabricaEntidades.ObtenerPersona();
                 //Escribo en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                     RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
+                int respuesta = 0;
+                bool exito = false;
+                List<Resultado> result;
 
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro elParametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO, SqlDbType.Int,
-                    laPersona.ID.ToString(), false);
-                parametros.Add(elParametro);
-                elParametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int,
-                    objetoBorrar.ToString(), false);
-                parametros.Add(elParametro);
-                elParametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM, SqlDbType.Int,
-                    tipoObjeto.ToString(), false);
-                parametros.Add(elParametro);
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
+                    SqlDbType.Int, persona.Id.ToString(), false);
+                parametros.Add(parametro);
 
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
+                            SqlDbType.Int, objetoBorrar.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
+                                SqlDbType.Int, tipoObjeto.ToString(), false);
+                        parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
+                SqlDbType.Int, respuesta.ToString(), true);
+                parametros.Add(parametro);
 
-                //Procedo a intentar eliminar el item en BD ejecutando el stored procedure
-                BDConexion conexion = new BDConexion();
-                conexion.EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM, parametros);
+                //Ejecuto la operacion a Base de Datos
+                result = EjecutarStoredProcedure
+                (RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM, parametros);
 
-                //Escribo en el logger la salida a este metodo
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                //Recorro cada una de las respuestas en la lista
+                foreach (Resultado aux in result)
+                {
+                    //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
+                    if (aux.valor == "1")
+                        exito = true;
+                }
 
-                return true;
+                 //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                       RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Retorno la respuesta
+                    return exito;
+               
             }
             catch (LoggerException e)
             {
@@ -696,7 +712,12 @@ namespace DatosSKD.DAO.Modulo16
                 throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
                     RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
-        }
+      }
+            
+
+
+
+       
         #endregion
 
         #region RegistrarPago
