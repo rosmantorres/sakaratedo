@@ -274,7 +274,7 @@ namespace DatosSKD.DAO.Modulo7
         }
 
         /// <summary>
-        /// Método para consultar el detalle de una cinta 
+        /// Método para consultar el id de una mat ricula
         /// </summary>
         /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
         /// <returns>Retorna objeto de tipo Entidad con el id de la matricula</returns>

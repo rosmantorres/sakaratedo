@@ -559,11 +559,10 @@ namespace DatosSKD.DAO.Modulo7
         }
 
         /// <summary>
-        /// Método para consultar la lista de competencias pagos
+        /// Método para consultar la lista de competencias pagas
         /// </summary>
         /// <param name="persona">Objeto de tipo Entidad que posee el id de la persona</param>
-        /// <returns>Retorna fecha de competencia que ha sido cancelada el evento</returns>
-        
+        /// <returns>Retorna lista con objetos de tipo Entidad con la lista de competencias que han sido canceladas</returns>
         public List<Entidad> ListarCompetenciasPaga(Entidad persona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
