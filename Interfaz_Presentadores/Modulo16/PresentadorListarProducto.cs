@@ -44,7 +44,6 @@ namespace Interfaz_Presentadores.Modulo16
                 foreach (Implemento c in laLista)
                 {
                     tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TR + '"' + c.Id_Implemento.ToString() + '"' + ">";
-                    tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TR + '"' + c.Dojo_Implemento.Nombre_dojo.ToString() + '"' + ">";
                     tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + c.Nombre_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
                     tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + c.Tipo_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
                     tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + c.Marca_Implemento.ToString() + M16_Recursointerfaz.CERRAR_TD;
