@@ -119,7 +119,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroPersona = new Parametro();
             Parametro parametroMatricula = new Parametro();
@@ -130,13 +130,13 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametroPersona);
                    
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarEstadoMatricula, parametros);
 
                     foreach (DataRow row in dt.Rows)
@@ -197,7 +197,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
 
@@ -209,12 +209,12 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametroQuery);
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarMatriculasPagas, parametros);
 
 
@@ -283,7 +283,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                  RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroPersona = new Parametro();
             Parametro parametroMatricula = new Parametro();
@@ -294,13 +294,13 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametroPersona);
 
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarIdMatricula, parametros);
 
                     foreach (DataRow row in dt.Rows)
@@ -361,7 +361,7 @@ namespace DatosSKD.DAO.Modulo7
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                  RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroPersona = new Parametro();
             Parametro parametroMatricula = new Parametro();
@@ -373,14 +373,14 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0 && idMatricula.Id > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametroMatricula = new Parametro(RecursosDAOModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroMatricula);
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarMontoMatricula, parametros);
 
                     foreach (DataRow row in dt.Rows)
