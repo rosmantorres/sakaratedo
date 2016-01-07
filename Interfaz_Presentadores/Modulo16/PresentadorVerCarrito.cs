@@ -46,7 +46,7 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Obtenemos los implementos del carrito de una persona para añadir sus datos al codigo HTML
             string tablaImplementosHTML = "";
-            foreach(Implemento aux in elCarrito.ListaImplemento)
+            foreach(KeyValuePair<Entidad, int> aux in elCarrito.ListaImplemento)
             {
 
             }
@@ -54,7 +54,7 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Obtenemos los eventos del carrito de una persona para añadir sus datos al codigo HTML
             string tablaEventosHTML = "";
-            foreach(Evento aux in elCarrito.Listaevento)
+            foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listaevento)
             {
 
             }
@@ -62,7 +62,7 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Obtenemos las matriculas del carrito de una persona para añadir sus datos al codigo HTML
             string tablaMatriculasHTML = "";
-            foreach(Matricula aux in elCarrito.Listamatricula)
+            foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listamatricula)
             {
 
             }
