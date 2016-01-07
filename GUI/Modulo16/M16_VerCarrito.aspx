@@ -32,255 +32,93 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
             El Pago se ha registrado Exitosamente.
         </div>
-<!--MODAL PARA EL DETALLE-->
+<!--TABLAS-->
      <!-- general form elements -->
-    <form role="form" class="form-horizontal" method="POST">
+     <form id="form1" runat="server">
               
-              <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Subtotal 23.300 Bs.</h3>
-                </div><!-- /.box-header -->
-        <table id="example" class="table table-bordered table-striped dataTable">
+              <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Inventario</h3>
+        </div><!-- /.box-header -->
+
+    <div class="box-body table-responsive">
+        <table id="tablainventario" class="table table-bordered table-striped dataTable">
         <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio (Bs.)</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
- 
-        <tfoot>
-            <tr>
-                <th>Foto</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio (Bs.)</th>
-                <th>Acciones</th>
-            </tr>
-        </tfoot>
-<!--INFORMACION DEL MODAL PARA EL DETALLE-->
-        <tbody>
-           
-            <tr>
-                <td><img src="Imagenes/GuanteRojo.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Guantes rojos</td>
-                <td>
-                     
-                                 <div class="dropdown" runat="server" id="div3">
-                                     </div>
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList3" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                    </td>
-                                 <%-- <asp:DropDownList ID="DropDownList3"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-
-                 
-                
-                <td>5000</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/Karategi.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Karategi</td>
-                <td>
-                     
-                                 <div class="dropdown" runat="server" id="div4">
-                                 <%-- <asp:DropDownList ID="DropDownList4"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                 </div> 
-                                  <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList4" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-
-                </td>
-                <td>14000</td>
-                 <td>
-                     <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/Suspensorio.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Suspensorio</td>
-                <td>
-                    
-                                 <div class="dropdown" runat="server" id="div5">
-                                     </div>
-                    <%-- 
-                                 <asp:DropDownList ID="DropDownList5"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                    
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList5" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                  
-                        
-
-                </td>
-                <td>350</td>
-                <td> 
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-             <tr>
-                <td><img src="Imagenes/ProtectorBucal.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Proteccion bucal</td>
-                <td>
-                     <div class="dropdown" runat="server" id="div6">
-                         </div>
-                                <%--  
-                                    <asp:DropDownList ID="DropDownList6"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                       <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList6" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                                 
-                </td>
-                <td>3200</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/CintaBlanca.jpg" alt="" style="width:50px; height:auto;"></td>
-                
-                <td>Cinta Blanca</td>
-                <td>
-                     <div class="dropdown" runat="server" id="div7">
-                         </div>
-                              <%--    <asp:DropDownList ID="DropDownList7"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                    
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                  <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList7" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-
-                </td>
-                <td>400</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"> </a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
-
-         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminar Producto</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>Seguro que desea eliminar el Producto:</p>
-                    <p id="req"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-                    <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<tr>
+					
+					<th style="text-align:left">Producto</th>
+                    <th style="text-align:left">Cantidad</th>
+					<th style="text-align:left">Precio Unitario</th>                   
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla1"></asp:Literal>
+		    </tbody>
+            </table>
            </div>
-          </div><!-- /.modal-delete-content -->
-        </div><!-- /.modal-delete-dialog -->
-      </div><!-- /.modal-delete -->
+       </div>
+    </div>
+</div>
 
-    		<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+         <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Matricula</h3>
+        </div><!-- /.box-header -->
+
+        <div class="box-body table-responsive">
+        <table id="tablamatricula" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					<th style="text-align:left">Identificador de Matricula</th>
+					<th style="text-align:left">Fecha de Creacion</th>           
+                    <th style="text-align:left">Ultima Fecha de Pago</th>
+                    
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla2"></asp:Literal>
+		    </tbody>
+            </table>
+           </div>
+       </div>
+    </div>
+</div>
+
+                <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Evento</h3>
+        </div><!-- /.box-header -->
+
+    <div class="box-body table-responsive">
+        <table id="tablaevento" class="table table-bordered table-striped dataTable">
+        <thead>
+				<tr>
+					<th style="text-align:left">Nombre del evento</th>
+					<th style="text-align:left">Costo</th>           
+                 
+					<th style="text-align:left">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="laTabla3"></asp:Literal>
+		    </tbody>
+            </table>
+           </div>
+       </div>
+    </div>
+</div>
+
+   <!-- M  O  D  A  L  E  S-->
+       <!--MODAL PARA EL DETALLE IMPLEMENTO-->
+    	<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -290,29 +128,66 @@
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
 							<div class="row">
-                                <img src="Imagenes/GuanteRojo.jpg" alt="">
-								<h3>Nombre</h3>
-								<p>
-									Guantes Rojos
-								</p>
-								<h3>Cantidad disponible</h3>
-								<p>
-									7
-								</p>
-								<h3>Detalles</h3>
-								<p>
-									Guantes de color rojos diseñados para proteger las manos al momento de impactar
-                                    golpes contra el contrincante o cuando se está practicando, con un diseño
-                                    particular de color rojo a gusto del atleta.
-								</p>
-								
+                                <h3>Imagen</h3>
+									<img src="" id="beta" />
+                                   
+                                <h3>Nombre</h3>
+                                    <label id="aux1" ></label>
+                                    
+								<h3>Tipo Implemento</h3>
+                                    <label id="aux2" ></label>
+                                    
+                                <h3>Marca</h3>
+                                    <label id="aux3" ></label>
+                                   
+                                <h3>Color</h3>
+                                    <label id="aux4" ></label>
+                                    
+                                <h3>Talla</h3>
+                                    <label id="aux5" ></label>
+                                    
+                                <h3>Status</h3>
+                                    <label id="aux6" ></label>
+                                    
+                                <h3>Precio</h3>
+                                    <label id="aux7" ></label>
+                                    
+                                <h3>Descripcion</h3>
+                                    <label id="aux8" ></label>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
+
+        <!--MODAL PARA EL DETALLE EVENTO-->
+    	<div id="modal-info2" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada del Evento</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info2">
+							<div class="row">
+                                <h3>Id</h3>
+                                    <label id="aux9" ></label>
+                                <h3>Nombre</h3>
+									 <label id="aux10" ></label>
+                                <h3>Descripcion</h3>
+									 <label id="aux11" ></label>
+                                <h3>Costo</h3>
+									 <label id="aux12" ></label>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   
 
 
 
@@ -321,6 +196,8 @@
          &nbsp;&nbsp;&nbsp;&nbsp
          <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-info"">Pagar</button>
           &nbsp;&nbsp
+         
+         
          
     </div>
 
@@ -335,7 +212,7 @@
 						<div class="container-fluid" id="info">
 
 
-                            <!--INFORMACION DEL MODAL PARA EL PAGO-->
+  <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
           <div id="alert_nombre" runat="server">
          </div>
@@ -355,11 +232,9 @@
         <div id="alertlocal" runat="server">
         </div>
 
+        <%-- <h4 class="modal-title" id ="preciofinal"></h4> --%>
 
-        <h4 class="modal-title">Total: 26.096 Bs</h4>
-
-    
-         <div class="form-group">
+        <div class="form-group">
         <!-- El form iba aqui -->
         
               
@@ -368,13 +243,7 @@
             <div class="col-sm-10 col-md-10 col-lg-10">
                  <div class="dropdown" runat="server" id="div1">
                      </div>
-             <%--     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"   onchange="example()"  runat="server" >
-                     <asp:ListItem Enabled="true" Text="Seleccione" Value="-1"></asp:ListItem>
-                     <asp:ListItem Text="Tarjeta" Value="1"></asp:ListItem>
-                     <asp:ListItem Text="Deposito" Value="2"></asp:ListItem>
-                     <asp:ListItem Text="Transferencia" Value="3"></asp:ListItem>
-               </asp:DropDownList>
-              --%>
+            
                  <div class="btn-group">
             
                                 <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
@@ -382,10 +251,9 @@
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
                                 <option value="3">Transferencia</option>
-                                
-                                  </select>
+                                </select>
                 
-                                         </div>
+                  </div>
             </div>
         </div>
         <h4 class="modal-title">Tarjeta Credito/Debito</h4>
@@ -451,14 +319,16 @@
 
          <div class="form-group">
 		    <div class="box-footer">
-				<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>
+			<%--<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>--%>
+               <%--  <asp:Button id="Boton1" style="align-content:flex-end" OnClick="registrarPago" runat="server" Disabled="disabled" class="btn btn-primary" Text="Registrar Pago" type ="submit" /> --%>
+                <asp:Button ID="Boton1" runat="server" Text="Procesar Pago" OnClick ="registrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
 
 
-    </form>
-        </div>
+     </form>
+      
 
 
 <!--VALIDACION PARA EL MODAL DE PAGO-->
@@ -467,6 +337,8 @@
 
         function example() {
             if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
+
+
 
                 $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
                 $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
@@ -488,6 +360,10 @@
                 $('#<%=Text8.ClientID %>').val('');
                 $('#<%=Text9.ClientID %>').val('');
                 $('#<%=Text10.ClientID %>').val('');
+
+
+                //  $().hide() para esconder campo.
+                //     .show() para mostrar campo.
             }
             else
                 if ($('#<%=DropDownList1.ClientID %>').val() == 1) {
@@ -575,9 +451,62 @@
 
 
     <script type="text/javascript">
+
+        //Funcion que eliminara el producto dependiendo de cual sea
+        function prueba3(evento) {
+            debugger
+
+            //Si el evento no es indefinido se realizaran las acciones pertinentes
+            if (e != undefined) {
+                var numero = 0;
+
+                //Obtenemos a que tipo de objeto nos estamos refiriendo y le asignamos su numero
+                var arrayDatos = e.id.split("_");
+                if (arrayDatos[1] == "I")
+                    numero = 1;
+                else if (arrayDatos[1] == "M")
+                    numero = 2;
+                else
+                    numero = 3;
+
+                var producto = {
+                    tipo: numero,
+                    id: arrayDatos[0]
+
+                }
+
+                var datos = JSON.stringify(producto);
+
+                $.ajax({
+                    cache: false,
+                    type: 'POST',
+                    url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/eliminarItem',
+                    data: datos,
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
+
+                    success: function (data) {
+                        debugger
+
+                        console.log("Exito:" + data);
+
+                        var aa = JSON.parse(data.d);
+
+
+
+
+                    }
+
+                });
+
+            }
+        }
+
+
         $(document).ready(function () {
 
-            var table = $('#example').DataTable({
+            var table1 = $('#tablainventario').DataTable({
+                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                 "language": {
                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                 }
@@ -585,33 +514,141 @@
             var req;
             var tr;
 
-                $('#example tbody').on('click', 'a', function () {
-                    if ($(this).parent().hasClass('selected')) {
-                        req = $(this).parent().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        $(this).parent().removeClass('selected');
-                    }
-                    else {
-                        req = $(this).parent().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        table.$('tr.selected').removeClass('selected');
-                        $(this).parent().addClass('selected');
+            $('#tablainventario tbody').on('click', 'a', function () {
+                if ($(this).parent().hasClass('selected')) {
+                    req = $(this).parent().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    $(this).parent().removeClass('selected');
+                }
+                else {
+                    req = $(this).parent().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).parent().addClass('selected');
+                }
+            });
+
+
+            var table2 = $('#tablamatricula').DataTable({
+                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+            });
+
+            $('tablamatricula tbody').on('click', 'a', function () {
+                if ($(this).parent().hasClass('selected')) {
+                    req = $(this).parent().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    $(this).parent().removeClass('selected');
+                }
+                else {
+                    req = $(this).parent().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).parent().addClass('selected');
+                }
+            });
+
+
+            var table3 = $('#tablaevento').DataTable({
+                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
+                "language": {
+                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                }
+            });
+
+            $('tablaevento tbody').on('click', 'a', function () {
+                if ($(this).parent().hasClass('selected')) {
+                    req = $(this).parent().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    $(this).parent().removeClass('selected');
+                }
+                else {
+                    req = $(this).parent().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).parent().addClass('selected');
+                }
+            });
+
+
+
+            $('#modal-delete').on('show.bs.modal', function (event) {
+                var modal = $(this)
+                modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
+                modal.find('#req').text(req)
+            })
+            $('#btn-eliminar').on('click', function () {
+                table.row(tr).remove().draw();//se elimina la fila de la tabla
+                $('#modal-delete').modal('hide');//se esconde el modal
+                $('#prueba').show();//Muestra el mensaje de borrado exitosamente
+            });
+
+
+            // Carga el modal con la informacion del IMPLEMENTO de acuerdo al id
+            $('#modal-info1').on('show.bs.modal', function (e) {
+
+
+
+                $.ajax({
+                    cache: false,
+                    type: 'POST',
+                    url: 'http://localhost:23072/GUI/Modulo16/M16_VerCarrito.aspx/pruebaImplemento',
+                    data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
+
+                    success: function (data) {
+                        console.log(data);
+
+                        var aa = JSON.parse(data.d);
+
+                        console.log(aa);
+
+                        $("#beta").attr("src", aa.Imagen_implemento);
+                        $("#aux1").html(aa.Nombre_implemento);
+                        $("#aux2").html(aa.Tipo_Implemento);
+                        $("#aux3").html(aa.Marca_Implemento);
+                        $("#aux4").html(aa.Color_Implemento);
+                        $("#aux5").html(aa.Talla_Implemento);
+                        $("#aux6").html(aa.Estatus_Implemento);
+                        $("#aux7").html(aa.Precio_Implemento);
+                        $("#aux8").html(aa.Descripcion_Implemento);
+
                     }
                 });
+            })
 
-                $('#modal-delete').on('show.bs.modal', function (event) {
-                    var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
-                    modal.find('#req').text(req)
-                })
-                $('#btn-eliminar').on('click', function () {
-                    table.row(tr).remove().draw();//se elimina la fila de la tabla
-                    $('#modal-delete').modal('hide');//se esconde el modal
-                    $('#prueba').show();//Muestra el mensaje de borrado exitosamente
+
+            // Carga el modal con la informacion del EVENTO de acuerdo al id
+            $('#modal-info2').on('show.bs.modal', function (e) {
+
+                $.ajax({
+                    cache: false,
+                    type: 'POST',
+                    url: 'http://localhost:23072/GUI/Modulo16/M16_VerCarrito.aspx/pruebaEvento',
+                    data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
+
+                    success: function (data) {
+                        console.log(data);
+
+                        var aa = JSON.parse(data.d);
+                        console.log(aa);
+
+                        $("#aux9").html(aa.Id_evento);
+                        $("#aux10").html(aa.Nombre);
+                        $("#aux11").html(aa.Descripcion);
+                        $("#aux12").html(aa.Costo);
+
+                    }
                 });
+            })
 
 
-           });
+        });
 
         </script>
 
