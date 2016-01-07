@@ -223,6 +223,15 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @_aprobado.
+        /// </summary>
+        internal static string ParametroAprobadoResultadoAscenso {
+            get {
+                return ResourceManager.GetString("ParametroAprobadoResultadoAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_idCategoria.
         /// </summary>
         internal static string ParametroIdCategoria {
@@ -255,6 +264,24 @@ namespace DatosSKD.Modulo11 {
         internal static string ParametroIdEvento {
             get {
                 return ResourceManager.GetString("ParametroIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idInscripcion.
+        /// </summary>
+        internal static string ParametroIdInscripcion {
+            get {
+                return ResourceManager.GetString("ParametroIdInscripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idResAscenso.
+        /// </summary>
+        internal static string ParametroIdResultadoAscenso {
+            get {
+                return ResourceManager.GetString("ParametroIdResultadoAscenso", resourceCulture);
             }
         }
         
@@ -300,6 +327,24 @@ namespace DatosSKD.Modulo11 {
         internal static string ProcedimientoEspecialidadesEnUnaCompetencia {
             get {
                 return ResourceManager.GetString("ProcedimientoEspecialidadesEnUnaCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ModificarAscenso.
+        /// </summary>
+        internal static string ProcedimientoModificarExamenAscenso {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarExamenAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_PersonasParticipanCompetencia.
+        /// </summary>
+        internal static string ProcedimientoPersonasCompitenCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoPersonasCompitenCompetencia", resourceCulture);
             }
         }
         
