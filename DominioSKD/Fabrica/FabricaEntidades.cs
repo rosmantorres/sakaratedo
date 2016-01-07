@@ -235,31 +235,61 @@ namespace DominioSKD.Fabrica
             return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia la Matricula
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad matricula con todos sus datos llenos</returns>
         public Entidad ObtenerMatricula()
         {
             return new Matricula();
         }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el Evento
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad evento con todos sus datos llenos</returns>
         public Entidad ObtenerEvento()
         {
             return new Evento();
         }
-        
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia la persona
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad persona con todos sus datos llenos</returns>
         public static Entidad ObtenerPersona()
         {
             return new Persona();
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia el implemento
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad implemento con todos sus datos llenos</returns>
         public Entidad ObtenerImplemento()
         {
             return new Implemento();
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia el Dojo
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad dojo con todos sus datos llenos</returns>
         public Entidad ObtenerDojos()
         {
             return new Dojo();
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos</returns>
         public Entidad ObtenerFactura()
         {
             return new Compra();

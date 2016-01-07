@@ -286,6 +286,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_MATRICULAS_MOROSAS.
+        /// </summary>
+        internal static string CONSULTAR_MATRICULAS_MOROSAS {
+            get {
+                return ResourceManager.GetString("CONSULTAR_MATRICULAS_MOROSAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_DETALLAREVENTO.
         /// </summary>
         internal static string DETALLAR_EVENTO {
@@ -457,6 +466,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AnioDeudor.
+        /// </summary>
+        internal static string PARAMETRO_ANIO_DEUDOR_MATRICULA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_ANIO_DEUDOR_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @cantidad.
         /// </summary>
         internal static string PARAMETRO_CANTIDAD {
@@ -547,11 +565,29 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FechaPago.
+        /// </summary>
+        internal static string PARAMETRO_FECHA_PAGO_MATRICULA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_FECHA_PAGO_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idCompra.
         /// </summary>
         internal static string PARAMETRO_ID_COMPRA {
             get {
                 return ResourceManager.GetString("PARAMETRO_ID_COMPRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mat_id.
+        /// </summary>
+        internal static string PARAMETRO_ID_MATRICULA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_ID_MATRICULA", resourceCulture);
             }
         }
         
@@ -570,6 +606,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string PARAMETRO_ID_USUARIO {
             get {
                 return ResourceManager.GetString("PARAMETRO_ID_USUARIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mat_identificador.
+        /// </summary>
+        internal static string PARAMETRO_IDENTIFICADOR_MAT {
+            get {
+                return ResourceManager.GetString("PARAMETRO_IDENTIFICADOR_MAT", resourceCulture);
             }
         }
         
@@ -655,6 +700,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MesDeudor.
+        /// </summary>
+        internal static string PARAMETRO_MES_DEUDOR_MATRICULA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_MES_DEUDOR_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to impNombre.
         /// </summary>
         internal static string PARAMETRO_NOMBRE {
@@ -678,6 +732,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string PARAMETRO_PRECIO {
             get {
                 return ResourceManager.GetString("PARAMETRO_PRECIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mat_precio.
+        /// </summary>
+        internal static string PARAMETRO_PRECIO_MATRICULA {
+            get {
+                return ResourceManager.GetString("PARAMETRO_PRECIO_MATRICULA", resourceCulture);
             }
         }
         

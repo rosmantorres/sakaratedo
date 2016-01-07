@@ -22,10 +22,10 @@ namespace DatosSKD.DAO.Modulo16
     {
         #region Metodos
         /// <summary>
-        /// Metodo que retorma una lista de eventos existentes
+        /// Metodo que retorma una lista de facturas existentes
         /// </summary>
-        /// <param name=NONE>Este metodo no posee paso de parametros</param>
-        /// <returns>Todo lo que tiene actualmente el inventario de eventos</returns>
+        /// <param name=Entidad>Se pasa el id del usuario logueado</param>
+        /// <returns>Todas las facturas asociadas al id de la persona logueada</returns>
         public Entidad ConsultarXId(Entidad entidad)
         {
             FabricaEntidades laFabrica = new FabricaEntidades();
@@ -72,15 +72,20 @@ namespace DatosSKD.DAO.Modulo16
         }
 
         /// <summary>
-        /// Metodo que devueve un tipoimplemento dado su id
+        /// Metodo que devueve una lista de facturas
         /// </summary>
-        /// <param name="Id_evento">Indica el objeto a detallar</param>
-        /// <returns>Retorna un implemento en especifico con todos sus detalles</returns>
+        /// <param name="NONE">Este metodo no posee paso de parametros</param>
+        /// <returns>Retorna una lista de facturas sin filtro</returns>
         public List<Entidad> ListarFactura()
         {
             return new List<Entidad>();
         }
 
+        /// <summary>
+        /// Metodo que devueve una lista de facturas
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee paso de parametros</param>
+        /// <returns>Retorna una lista de facturas</returns>
         public List<Entidad> ConsultarTodos()
         {
             return new List<Entidad>();

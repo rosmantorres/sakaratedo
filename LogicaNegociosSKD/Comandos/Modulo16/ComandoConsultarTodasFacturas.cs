@@ -12,7 +12,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
     /// Comando para consultar la lista de todas las facturas
-    /// </summar
+    /// </summary>
     public class ComandoConsultarTodasFacturas : Comando<Entidad>
     {
         /// <summary>

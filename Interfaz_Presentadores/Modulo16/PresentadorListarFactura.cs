@@ -43,7 +43,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                  string tablaFacturasHTML = "";
 
-                 //Recorro La lista de los eventos en el carrito para anexarlas al GRIDVIEW
+                 //Recorro La lista de las facturas para anexarlas al GRIDVIEW
                  foreach (Compra c in com.ListaCompras)
                  {
                      tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TR + '"' + c.Com_id.ToString() + '"' + ">";
