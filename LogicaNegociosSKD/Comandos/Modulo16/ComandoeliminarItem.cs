@@ -24,7 +24,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         private int tipoObjeto;
         private int objetoaBorrar;
         private Entidad usuario;
-       
+
         #endregion
 
 
@@ -48,7 +48,57 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             this.tipoObjeto = tipoObjeto;
             this.objetoaBorrar = objetoaBorrar;
             this.usuario = usuario;
-                    
+
+        }
+        #endregion
+
+        #region Propiedades
+
+        /// <summary>
+        /// Propiedad del atributo TipoObjeto
+        /// </summary>
+        public int TipoObjeto
+        {
+            get
+            {
+                return this.tipoObjeto;
+            }
+
+            set
+            {
+                this.tipoObjeto = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del atributo objetoborrar
+        /// </summary>
+        public int ObjetoaBorrar
+        {
+            get
+            {
+                return this.objetoaBorrar;
+            }
+
+            set
+            {
+                this.objetoaBorrar = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del atributo usuario
+        /// </summary>
+        public Entidad Usuario
+        {
+            get
+            {
+                return this.usuario;
+            }
+            set
+            {
+                this.usuario = value;
+            }
         }
         #endregion
 
@@ -63,7 +113,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
             try
             {
-               //Se escribe en el logger la entrada a este metodo
+                //Se escribe en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -76,7 +126,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Se procede a ejecutar eliminarItem y se retorna el Resultado
 
-              
+
                 Respuesta = daoCarrito.eliminarItem(tipoObjeto, objetoaBorrar, usuario);
 
                 //Escribo en el logger la salida a este metodo

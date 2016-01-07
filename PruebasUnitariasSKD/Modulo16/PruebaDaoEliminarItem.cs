@@ -12,7 +12,7 @@ using DatosSKD.DAO.Modulo16;
 using DatosSKD;
 using DatosSKD.DAO;
 using DatosSKD.Fabrica;
-
+using DatosSKD.InterfazDAO.Modulo16;
 
 namespace PruebasUnitariasSKD.Modulo16
 {
@@ -26,13 +26,9 @@ namespace PruebasUnitariasSKD.Modulo16
         #region Atributos
         //Atributos pertinentes a usar
         private DaoCarrito pruebaDao;
-        private DaoCarrito pruebaDaoeliminarImplemento1;
-        private DaoCarrito pruebaDaoeliminarEvento1;
-        private DaoCarrito pruebaDaoeliminarMatricula1;
-        private List<Entidad> eventos;
+        private IdaoCarrito daoCarrito;
         private Entidad persona;
         private Entidad implemento;
-        private List<Entidad> listaEventos;
         private Matricula matricula;
 
         #endregion
@@ -67,23 +63,62 @@ namespace PruebasUnitariasSKD.Modulo16
             //Obtengo el comando
             this.pruebaDao = (DaoCarrito)FabricaDAOSqlServer.ObtenerdaoCarrito();
 
-            //Diferentes valores para Eliminar un Implemento
-            this.pruebaDaoeliminarImplemento1 = (DaoCarrito)FabricaDAOSqlServer.ObtenerdaoCarrito();
-            //   this.pruebaDaoeliminarImplemento1 = this.pruebaDaoeliminarImplemento1.eliminarItem(1,1,);
+        
+        }
 
-
-
-
-
+        /// <summary>
+        /// prueba para eliminar matricula
+        /// </summary>
+        [Test]
+        public void pruebaEliminarMatricula()
+        {
+            daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
+            Assert.IsTrue(daoCarrito.eliminarItem(1,1,persona));
 
         }
 
 
 
+        /// <summary>
+        /// prueba para eliminar evento
+        /// </summary>
+        [Test]
+        public void pruebaEliminarEvento()
+        {
+            daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
+            Assert.IsTrue(daoCarrito.eliminarItem(3, 3, persona));
+
+        }
 
 
 
+        /// <summary>
+        /// prueba para eliminar implemento
+        /// </summary>
+        [Test]
+        public void pruebaEliminarImplemento()
+        {
+            daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
+            Assert.IsTrue(daoCarrito.eliminarItem(1, 2, persona));
+
+        }
 
 
+
+        /// <summary>
+        /// Elimina todos los atributos utilizados al probar
+        /// </summary>
+        [TearDown]
+        public void Limpiar()
+        {
+             
+            this.persona = null;
+            this.implemento = null;
+            this.matricula = null;
+            this.pruebaDao = null;
+            this.daoCarrito = null;
+
+
+        }
     }
 }

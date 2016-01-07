@@ -29,17 +29,23 @@ namespace PruebasUnitariasSKD.Modulo16
         private ComandoeliminarItem pruebaComandoImplemento1;
         private ComandoeliminarItem pruebaComandoEvento1;
         private ComandoeliminarItem pruebaComandoMatricula1;
-
         private Comando<bool> eliminarEventos;
         private Entidad persona;
-        private Entidad persona2;
-        private Entidad persona3;
         private Implemento implemento;
-        private Implemento implemento2;
         private bool seelimina;
         private Matricula matricula;
-        private Matricula matricula2;
-        private List<Entidad> listaEventos;
+        private int objetoaBorrari ;
+         private   int tipoObjetoi ;
+         private  Entidad usuarioi;
+         private int objetoaBorrarm;
+         private int tipoObjetom;
+         private Entidad usuariom;
+         private int objetoaBorrare;
+         private int tipoObjetoe;
+         private Entidad usuarioe;
+
+
+
         #endregion
 
 
@@ -67,31 +73,45 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
 
+
+             this.objetoaBorrari=1 ;
+             this.tipoObjetoi=1 ;
+             this.usuarioi=persona;
+
+            this.objetoaBorrarm=1;
+         this.tipoObjetom=1;
+         this.usuariom=persona;
+
+
+        this.objetoaBorrare=1;
+         this.tipoObjetoe=1;
+         this.usuarioe=persona;
+
             //Obtengo el comando
             this.pruebaComando = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
 
             //Diferentes valores para Eliminar un Implemento
             this.pruebaComandoImplemento1 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
-            this.pruebaComandoImplemento1.Persona = this.persona;
-            this.pruebaComandoImplemento1.Objeto = this.implemento;
-            this.pruebaComandoImplemento1.TipoObjeto = 1;
-            this.pruebaComandoImplemento1.Cantidad = 10;
+            this.pruebaComandoImplemento1.ObjetoaBorrar = this.objetoaBorrari;
+            this.pruebaComandoImplemento1.TipoObjeto = this.tipoObjetoi;
+            this.pruebaComandoImplemento1.Usuario =this.persona;
+           
 
             //Diferentes valores para Eliminar un Evento
             this.pruebaComandoEvento1 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
-            this.pruebaComandoEvento1.Persona = this.persona2;
-            this.pruebaComandoEvento1.Objeto = this.listaEventos[0];
-            this.pruebaComandoEvento1.TipoObjeto = 2;
-            this.pruebaComandoEvento1.Cantidad = 10;
+            this.pruebaComandoEvento1.ObjetoaBorrar = this.objetoaBorrare;
+            this.pruebaComandoEvento1.TipoObjeto = this.tipoObjetoe;
+            this.pruebaComandoEvento1.Usuario = this.persona;
+            
 
             //Diferentes valores para Eliminar una Matricula
             this.pruebaComandoMatricula1 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
-            this.pruebaComandoMatricula1.Persona = this.persona3;
-            this.pruebaComandoMatricula1.Objeto = this.matricula;
-            this.pruebaComandoMatricula1.TipoObjeto = 3;
-            this.pruebaComandoMatricula1.Cantidad = 10;
+            this.pruebaComandoMatricula1.ObjetoaBorrar = this.objetoaBorrarm;
+            this.pruebaComandoMatricula1.TipoObjeto = this.tipoObjetom;
+            this.pruebaComandoMatricula1.Usuario = this.persona;
+             
 
-
+            
         }
 
 
@@ -151,7 +171,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.persona = null;
             this.implemento = null;
             this.matricula = null;
-            this.eliminarEventos = null;
+            
 
         }
 
