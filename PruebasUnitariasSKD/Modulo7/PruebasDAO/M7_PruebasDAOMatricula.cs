@@ -18,9 +18,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOMatricula
     {
         #region Atributos
-        Persona idPersona;
-        FabricaEntidades fabricaEntidades;
-        FabricaDAOSqlServer fabricaSql;
+        private Persona idPersona;
+        private FabricaEntidades fabricaEntidades;
+        private FabricaDAOSqlServer fabricaSql;
         #endregion
 
         #region SetUp & TearDown

@@ -20,10 +20,10 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOEvento
     {
         #region Atributos
-        Persona idPersona;
-        FabricaEntidades fabricaEntidades;
-        FabricaDAOSqlServer fabricaSql;
-        DaoEvento baseDeDatosEvento;
+        private Persona idPersona;
+        private FabricaEntidades fabricaEntidades;
+        private FabricaDAOSqlServer fabricaSql;
+        private DaoEvento baseDeDatosEvento;
         #endregion
 
         #region SetUp & TearDown

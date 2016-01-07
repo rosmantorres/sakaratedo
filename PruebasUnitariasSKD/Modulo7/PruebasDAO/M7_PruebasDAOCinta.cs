@@ -19,10 +19,10 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOCinta
     {
         #region Atributos
-        Persona idPersona;
-        FabricaEntidades fabricaEntidades;
-        FabricaDAOSqlServer fabricaSql;
-        DaoCinta baseDeDatosCinta;
+        private Persona idPersona;
+        private FabricaEntidades fabricaEntidades;
+        private FabricaDAOSqlServer fabricaSql;
+        private DaoCinta baseDeDatosCinta;
         #endregion
 
         #region SetUp & TearDown
