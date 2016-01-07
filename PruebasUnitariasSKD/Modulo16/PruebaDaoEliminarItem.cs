@@ -48,11 +48,7 @@ namespace PruebasUnitariasSKD.Modulo16
             //Dos implementos distintos
             this.implemento = new Implemento();
             this.implemento.Id = 1;
-
-
-            //Eventos
-            //  this.eventos = FabricaDAOSqlServer.CrearComandoConsultarTodosEventos();
-            // this.listaEventos = this.eventos.Ejecutar();
+ 
 
             //Dos matriculas distintas
             this.matricula = new Matricula();
