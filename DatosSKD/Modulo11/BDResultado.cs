@@ -319,5 +319,114 @@ namespace DatosSKD.Modulo11
             }
             return categorias;
         }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="idEspecialidad">id del evento</param>
+        /// <param name="idCompetencia">id de la categoria</param>
+        /// <param name="idCategoria">id de la categoria</param>
+        /// <returns>lista de atletas</returns>
+        public static List<Persona> listaAtletasParticipanCompetencia(string idEspecialidad, string idCompetencia, string idCategoria)
+        {
+            BDConexion laConexion;
+            List<Persona> personas = new List<Persona>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, idEspecialidad, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, idCategoria, false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoPersonasCompitenCompetencia, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Persona persona = new Persona();
+
+                    persona.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona].ToString());
+                    persona.Nombre = row[RecursosBDModulo11.aliasNombrePersona].ToString();
+                    persona.IdInscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion].ToString());
+                    personas.Add(persona);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return personas;
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos un resultado de un atleta en un examen de ascenso
+        /// </summary>
+        /// <param name="lista">lista de asistencia</param>
+        /// <returns>true si se pudo modificar</returns>
+        public static bool ModificarResultadoAscenso(List<ResultadoAscenso> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (ResultadoAscenso ascenso in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo11.ParametroAprobadoResultadoAscenso, SqlDbType.Char, ascenso.Aprobado, false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdInscripcion, SqlDbType.Int, ascenso.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdEvento, SqlDbType.Int, ascenso.Inscripcion.Evento.Id_evento.ToString(), false);
+                    parametros.Add(parametro);
+
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoModificarExamenAscenso, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
