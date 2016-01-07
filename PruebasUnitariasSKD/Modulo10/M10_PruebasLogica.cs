@@ -53,6 +53,7 @@ namespace PruebasUnitariasSKD.Modulo10
             listaInscripcion = new List<Inscripcion>();
             listaHorario = new List<Horario>();
             idCompetencia = "7";
+            asistio = new Asistencia();
         }
 
         [TearDown]
@@ -109,7 +110,7 @@ namespace PruebasUnitariasSKD.Modulo10
             ListaAsistencia = new List<Asistencia>();
             asistio.Asistio = "N";
             asistio.Evento.Id_evento = 3;
-            asistio.Inscripcion.Id_Inscripcion = 33;
+            asistio.Inscripcion.Id_Inscripcion = 20;
             ListaAsistencia.Add(asistio);
             a = LogicaAsistencia.ModificarAsistenciaEvento(ListaAsistencia);
             Assert.IsTrue(a);
@@ -123,7 +124,7 @@ namespace PruebasUnitariasSKD.Modulo10
             ListaAsistencia = new List<Asistencia>();
             asistio.Asistio = "N";
             asistio.Competencia.Id_competencia = 3;
-            asistio.Inscripcion.Id_Inscripcion = 33;
+            asistio.Inscripcion.Id_Inscripcion = 38;
             ListaAsistencia.Add(asistio);
             a =   LogicaAsistencia.ModificarAsistenciaCompetencia(ListaAsistencia);
             Assert.IsTrue(a);
@@ -226,9 +227,9 @@ namespace PruebasUnitariasSKD.Modulo10
             ListaAsistencia = new List<Asistencia>();
             asistio.Asistio = "S";
             asistio.Evento.Id_evento = 3;
-            asistio.Inscripcion.Id_Inscripcion = 53;
+            asistio.Inscripcion.Id_Inscripcion = 50;
             ListaAsistencia.Add(asistio);
-            e = BDAsistencia.agregarAsistenciaCompetencia(ListaAsistencia);
+            e =  LogicaAsistencia.agregarAsistenciaEvento(ListaAsistencia);
             Assert.IsTrue(e);
         }
 
