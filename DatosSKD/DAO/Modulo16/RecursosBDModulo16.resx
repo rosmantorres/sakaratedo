@@ -422,6 +422,7 @@
   </data>
   <data name="PARAMETRO_PRECIO_MATRICULA" xml:space="preserve">
     <value>mat_precio</value>
+  </data>
   <data name="PARAMETRO_CANTIDAD2" xml:space="preserve">
     <value>cantidad</value>
     <comment>Parametro que se recibe cuando se consulta los querys de seleccionar</comment>
