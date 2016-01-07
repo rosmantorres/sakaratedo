@@ -174,7 +174,7 @@ namespace DatosSKD.Modulo11
         /// <param name="idEvento">id del evento</param>
         /// <param name="idCategoria">id de la categoria</param>
         /// <returns>lista de atletas</returns>
-        public static List<Persona> listaAtletasEnCategoriaYAscenso(string idEvento, string idCategoria)
+        public static List<Persona> listaAtletasEnCategoriaYAscenso(Evento evento)
         {
             BDConexion laConexion;
             List<Persona> personas = new List<Persona>();
@@ -182,9 +182,9 @@ namespace DatosSKD.Modulo11
             {
                 laConexion = new BDConexion();
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEvento, SqlDbType.Int, evento.Id_evento.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, idCategoria, false);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, evento.Categoria.Id_categoria.ToString(), false);
                 parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoPersonasEnCategoriaAscenso, parametros);
 
@@ -271,7 +271,7 @@ namespace DatosSKD.Modulo11
         /// <param name="idCompetencia">id de la competencia</param>
         /// <param name="idEspecialidad">id de la especialidad</param>
         /// <returns>lista de categorias</returns>
-        public static List<Categoria> listaCategoriasCompetencia(string idCompetencia, string idEspecialidad)
+        public static List<Categoria> listaCategoriasCompetencia(Competencia competencia)
         {
             BDConexion laConexion;
             List<Categoria> categorias = new List<Categoria>();
@@ -279,9 +279,9 @@ namespace DatosSKD.Modulo11
             {
                 laConexion = new BDConexion();
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, competencia.Id_competencia.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, idEspecialidad, false);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, competencia.TipoCompetencia, false);
                 parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoCategoriasCompetenciaEspecialidad, parametros);
 
@@ -327,7 +327,7 @@ namespace DatosSKD.Modulo11
         /// <param name="idCompetencia">id de la categoria</param>
         /// <param name="idCategoria">id de la categoria</param>
         /// <returns>lista de atletas</returns>
-        public static List<Persona> listaAtletasParticipanCompetencia(string idEspecialidad, string idCompetencia, string idCategoria)
+        public static List<Persona> listaAtletasParticipanCompetencia(Competencia competencia)
         {
             BDConexion laConexion;
             List<Persona> personas = new List<Persona>();
@@ -335,11 +335,11 @@ namespace DatosSKD.Modulo11
             {
                 laConexion = new BDConexion();
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, idEspecialidad, false);
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, competencia.TipoCompetencia, false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, competencia.Id_competencia.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, idCategoria, false);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, competencia.Categoria.Id_categoria.ToString(), false);
                 parametros.Add(parametro);
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoPersonasCompitenCompetencia, parametros);
 
@@ -506,7 +506,7 @@ namespace DatosSKD.Modulo11
                     parametros.Add(parametro);
                     parametro = new Parametro(RecursosBDModulo11.ParametroResultadoInscripcion1, SqlDbType.Int, kumite.Inscripcion1.Id_Inscripcion.ToString(), false);
                     parametros.Add(parametro);
-                    parametro = new Parametro(RecursosBDModulo11.ParametroIdInscripcion, SqlDbType.Int, kumite.Inscripcion2.Id_Inscripcion.ToString(), false);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoInscripcion2, SqlDbType.Int, kumite.Inscripcion2.Id_Inscripcion.ToString(), false);
                     parametros.Add(parametro);
                     parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, kumite.Inscripcion1.Competencia.Id_competencia.ToString(), false);
                     parametros.Add(parametro);

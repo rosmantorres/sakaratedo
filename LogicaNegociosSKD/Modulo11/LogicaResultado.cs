@@ -29,5 +29,16 @@ namespace LogicaNegociosSKD.Modulo11
             List<Competencia> listaCompetencias = BDResultado.ListarCompetenciasAsistidas();
             return listaCompetencias;
         }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todas las categorias de un evento
+        /// </summary>
+        /// <param name="idEvento">id del evento</param>
+        /// <returns>Lista de categorias</returns>
+        public static List<Categoria> listaCategoriasEvento(string idEvento)
+        {
+            List<Categoria> listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
+            return listaCategoria;
+        }
     }
 }
