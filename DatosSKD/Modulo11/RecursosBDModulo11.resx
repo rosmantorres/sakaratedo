@@ -221,9 +221,33 @@
     <value>@_idInscripcion</value>
     <comment>id de la inscripcion a consultar</comment>
   </data>
-  <data name="ParametroIdResultadoAscenso" xml:space="preserve">
-    <value>@_idResAscenso</value>
-    <comment>id del resultado ascenso a consultar</comment>
+  <data name="ParametroResultadoAtleta1" xml:space="preserve">
+    <value>@_atleta1</value>
+    <comment>resultado del atleta 1 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoAtleta2" xml:space="preserve">
+    <value>@_atleta2</value>
+    <comment>resultado del atleta 2 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoInscripcion1" xml:space="preserve">
+    <value>@_idInscripcion1</value>
+    <comment>id de la inscripcion1 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoInscripcion2" xml:space="preserve">
+    <value>@_idInscripcion2</value>
+    <comment>id de la inscripcion2 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoJurado1" xml:space="preserve">
+    <value>@_jurado1</value>
+    <comment>resultado del jurado 1 en la especialidad kata</comment>
+  </data>
+  <data name="ParametroResultadoJurado2" xml:space="preserve">
+    <value>@_jurado2</value>
+    <comment>resultado del jurado 2 en la especialidad kata</comment>
+  </data>
+  <data name="ParametroResultadoJurado3" xml:space="preserve">
+    <value>@_jurado3</value>
+    <comment>resultado del jurado 3 en la especialidad kata</comment>
   </data>
   <data name="ProcedimientoCategoriasCompetenciaEspecialidad" xml:space="preserve">
     <value>M11_CategoriasCompetenciaEspecialidad</value>
@@ -239,6 +263,14 @@
   </data>
   <data name="ProcedimientoModificarExamenAscenso" xml:space="preserve">
     <value>M11_ModificarAscenso</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoModificarKata" xml:space="preserve">
+    <value>M11_ModificarKata</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoModificarKumite" xml:space="preserve">
+    <value>M11_ModificarKumite</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
   <data name="ProcedimientoPersonasCompitenCompetencia" xml:space="preserve">
