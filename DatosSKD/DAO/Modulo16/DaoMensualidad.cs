@@ -58,6 +58,7 @@ namespace DatosSKD.DAO.Modulo16
 
                 }
 
+                lista.ListaMatriculas = laLista;
 
                 return lista;
 
