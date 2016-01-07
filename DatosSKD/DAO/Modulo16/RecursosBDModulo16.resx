@@ -402,4 +402,8 @@
   <data name="MENSAJE_EXCEPCION_PERSONA_INVALIDA" xml:space="preserve">
     <value>Error al encontrarse una persona vacia o invalida</value>
   </data>
+  <data name="PARAMETRO_CANTIDAD2" xml:space="preserve">
+    <value>cantidad</value>
+    <comment>Parametro que se recibe cuando se consulta los querys de seleccionar</comment>
+  </data>
 </root>

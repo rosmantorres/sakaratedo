@@ -265,12 +265,12 @@ namespace DatosSKD.DAO.Modulo16
         #endregion
 
         #region VerCarrito
-      /*  /// <summary>
+        /*  /// <summary>
         /// Metodo que obtiene todos los items de implementos en el carrito del usuario de la Base de Datos
         /// </summary>
         /// <param name="persona">La persona a la cual se desea ver su carrito</param>
         /// <returns>Lista de Implementos encontrados en el carrito de la persona</returns>
-        public List<Entidad> getImplemento(Entidad persona)
+        public Dictionary<Entidad, int> getImplemento(Entidad persona)
         {
             if (persona is Persona)
             {
@@ -281,7 +281,7 @@ namespace DatosSKD.DAO.Modulo16
                         RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                     //Creo la lista que sera la respuesta de la consulta
-                    List<Entidad> laLista = new List<Entidad>();
+                    Dictionary<Entidad, int> laLista = new Dictionary<Entidad, int>();
 
                     //Creo la lista de los parametros para el stored procedure y los anexo
                     List<Parametro> parametros = new List<Parametro>();
@@ -323,7 +323,9 @@ namespace DatosSKD.DAO.Modulo16
                                 row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
 
                             //Agrego a la lista
-                            laLista.Add(elImplemento);
+                            laLista.Add(elImplemento, 
+                                int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
+                           // laLista.Add(elImplemento);
                         }
                     }
 
@@ -379,7 +381,7 @@ namespace DatosSKD.DAO.Modulo16
                         RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
                 }
             }
-            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
+            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);        
         }
 
         /// <summary>
@@ -387,7 +389,7 @@ namespace DatosSKD.DAO.Modulo16
         /// </summary>
         /// <param name="persona">La persona a la cual se desea ver su carrito</param>
         /// <returns>Lista de Eventos encontrados en el carrito de la persona</returns>
-        public List<Entidad> getEvento(Entidad persona)
+        public Dictionary<Entidad, int> getEvento(Entidad persona)
         {
             if (persona is Persona)
             {
@@ -397,8 +399,8 @@ namespace DatosSKD.DAO.Modulo16
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                         RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                    //Creo la lista que sera la respuesta
-                    List<Entidad> laLista = new List<Entidad>();
+                    //Creo la lista que sera la consulta
+                    Dictionary<Entidad, int> laLista = new Dictionary<Entidad, int>();
 
                     //Creo la lista de los parametros para el stored procedure y los anexo
                     List<Parametro> parametros = new List<Parametro>();
@@ -434,7 +436,7 @@ namespace DatosSKD.DAO.Modulo16
                             elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
 
                             //Agrego a la lista
-                            laLista.Add(elEvento);
+                            laLista.Add(elEvento, int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
                         }
                     }
 
@@ -491,7 +493,7 @@ namespace DatosSKD.DAO.Modulo16
                 }
 
             }
-            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
+            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);       
         }
 
         /// <summary>
@@ -499,18 +501,18 @@ namespace DatosSKD.DAO.Modulo16
         /// </summary>
         /// <param name="persona">La persona a la cual se desea ver su carrito</param>
         /// <returns>Lista de Matriculas encontradas en el carrito de la persona</returns>
-        public List<Entidad> getMatricula(Entidad persona)
+        public Dictionary<Entidad, int> getMatricula(Entidad persona)
         {
             if (persona is Persona)
             {
                 try
                 {
-                    //Escribo en el logger la entrada de este metodo
-                    List<Entidad> laLista = new List<Entidad>();
-
                     //Escribo en el logger la entrada a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                         RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Creo la lista que sera la consulta
+                    Dictionary<Entidad, int> laLista = new Dictionary<Entidad, int>();
 
                     //Creo la lista de los parametros para el stored procedure y los anexo
                     List<Parametro> parametros = new List<Parametro>();
@@ -545,9 +547,9 @@ namespace DatosSKD.DAO.Modulo16
                             laMatricula.Identificador = (row2[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                             laMatricula.FechaCreacion = DateTime.Parse(row2[RecursosBDModulo16.aliasFechainicio].ToString());
                             laMatricula.UltimaFechaPago = DateTime.Parse(row2[RecursosBDModulo16.aliasFechatope].ToString());
-
+                            
                             //Agrego a la lista
-                            laLista.Add(laMatricula);
+                            laLista.Add(laMatricula,int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
                         }
 
                     }
@@ -604,7 +606,7 @@ namespace DatosSKD.DAO.Modulo16
                         RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
                 }
             }
-            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
+            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);            
         }*/
         #endregion
 
@@ -1028,17 +1030,17 @@ namespace DatosSKD.DAO.Modulo16
         #endregion      
     
         /*ELIMINAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-        public List<Entidad> getImplemento(Entidad persona)
+        public Dictionary<Entidad, int> getImplemento(Entidad persona)
         {
             throw new NotImplementedException();
         }
 
-        public List<Entidad> getEvento(Entidad persona)
+        public Dictionary<Entidad, int> getEvento(Entidad persona)
         {
             throw new NotImplementedException();
         }
 
-        public List<Entidad> getMatricula(Entidad persona)
+        public Dictionary<Entidad, int> getMatricula(Entidad persona)
         {
             throw new NotImplementedException();
         }
