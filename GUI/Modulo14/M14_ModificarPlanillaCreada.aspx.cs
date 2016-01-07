@@ -33,6 +33,14 @@ namespace templateApp.GUI.Modulo14
                     {
                         this.ListBox2.Items.Add(new ListItem(item, item));
                         ListBox1.Items.Remove(item);
+                        if (item == "EVENTO")
+                        {
+                            ListBox1.Items.Remove("COMPETENCIA");
+                        }
+                        if (item == "COMPETENCIA")
+                        {
+                            ListBox1.Items.Remove("EVENTO");
+                        }
                     }
 
                 }
@@ -259,6 +267,15 @@ namespace templateApp.GUI.Modulo14
                 string opcionDato = ListBox1.SelectedItem.Text;
                 ListBox2.Items.Add(new ListItem(opcionDato, ListBox1.SelectedValue));
                 ListBox1.Items.Remove(opcionDato);
+                if (opcionDato == "EVENTO")
+                {
+                    ListBox1.Items.Remove("COMPETENCIA");
+                }
+                if (opcionDato == "COMPETENCIA")
+                {
+                    ListBox1.Items.Remove("EVENTO");
+                }
+               
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -293,6 +310,15 @@ namespace templateApp.GUI.Modulo14
                 string opcionDato2 = ListBox2.SelectedItem.Text;
                 ListBox1.Items.Add(new ListItem(opcionDato2, ListBox2.SelectedValue));
                 ListBox2.Items.Remove(opcionDato2);
+                if (opcionDato2 == "EVENTO")
+                {
+                    ListBox1.Items.Add("COMPETENCIA");
+                }
+                if (opcionDato2 == "COMPETENCIA")
+                {
+                    ListBox1.Items.Add("EVENTO");
+                }
+             
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

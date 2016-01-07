@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo14 {
     
     
-    public partial class SolicitudPlanilla {
+    public partial class M14_ModificarPlanillaCreada {
         
         /// <summary>
         /// Control alert.
@@ -22,13 +22,13 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// Control solicitud_planilla.
+        /// Control modificar_planilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm solicitud_planilla;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_planilla;
         
         /// <summary>
         /// Control alertlocal.
@@ -49,120 +49,75 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText id_planilla;
         
         /// <summary>
-        /// Control fechaRetiro.
+        /// Control divComboTipoPlanilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaRetiro;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboTipoPlanilla;
         
         /// <summary>
-        /// Control idFechaI.
+        /// Control comboTipoPlanilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText idFechaI;
+        protected global::System.Web.UI.WebControls.DropDownList comboTipoPlanilla;
         
         /// <summary>
-        /// Control fechaReincorporacion.
+        /// Control id_otro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaReincorporacion;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_otro;
         
         /// <summary>
-        /// Control idFechaF.
+        /// Control id_nombretipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText idFechaF;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText id_nombretipo;
         
         /// <summary>
-        /// Control labelCompetencia.
+        /// Control id_nombrePlanilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labelCompetencia;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText id_nombrePlanilla;
         
         /// <summary>
-        /// Control labelEvento.
+        /// Control ListBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl labelEvento;
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// Control divComboEvento.
+        /// Control ListBox2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboEvento;
+        protected global::System.Web.UI.WebControls.ListBox ListBox2;
         
         /// <summary>
-        /// Control comboEvento.
+        /// Control btneditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboEvento;
-        
-        /// <summary>
-        /// Control divComboCompetencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComboCompetencia;
-        
-        /// <summary>
-        /// Control comboCompetencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboCompetencia;
-        
-        /// <summary>
-        /// Control divMotivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMotivo;
-        
-        /// <summary>
-        /// Control id_motivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea id_motivo;
-        
-        /// <summary>
-        /// Control btnaceptar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaceptar;
+        protected global::System.Web.UI.WebControls.Button btneditar;
     }
 }
