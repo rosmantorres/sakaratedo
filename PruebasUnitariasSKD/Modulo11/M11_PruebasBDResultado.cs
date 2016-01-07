@@ -26,6 +26,8 @@ namespace PruebasUnitariasSKD.Modulo11
         List<Competencia> listaCompetencia;
         List<Categoria> listaCategoria;
         private string idEvento;
+        List<ResultadoAscenso> listaResAscenso;
+        private ResultadoAscenso resultadoA;
 
         #endregion
 
@@ -37,6 +39,9 @@ namespace PruebasUnitariasSKD.Modulo11
             listaCompetencia = new List<Competencia>();
             listaCategoria = new List<Categoria>();
             idEvento = "3";
+            listaResAscenso = new List<ResultadoAscenso>();
+            resultadoA = new ResultadoAscenso();
+        
 
         }
 
@@ -48,6 +53,8 @@ namespace PruebasUnitariasSKD.Modulo11
             listaEvento = null;
             listaCompetencia = null;
             listaCategoria = null;
+            listaResAscenso = null;
+ 
         }
 
         #endregion
@@ -105,6 +112,25 @@ namespace PruebasUnitariasSKD.Modulo11
 
             listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
             Assert.AreEqual(3, listaCategoria.ToArray().Length);
+
+        }
+
+
+        [Test]
+
+        public void PruebaModificarAscenso()
+        {
+
+            bool a;
+            listaResAscenso = new List<ResultadoAscenso>();
+            resultadoA.Inscripcion.ResAscenso = listaResAscenso;
+            resultadoA.Aprobado = "N";
+            resultadoA.Inscripcion.Evento.Id_evento = 3;
+            resultadoA.Inscripcion.Id_Inscripcion = 32;
+            listaResAscenso.Add(resultadoA);
+            a = BDResultado.ModificarResultadoAscenso(listaResAscenso);
+            Assert.IsTrue(a);
+          
 
         }
 
