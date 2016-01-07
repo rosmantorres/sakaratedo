@@ -24,6 +24,8 @@ namespace PruebasUnitariasSKD.Modulo11
 
         List<Evento> listaEvento;
         List<Competencia> listaCompetencia;
+        List<Categoria> listaCategoria;
+        private string idEvento;
 
         #endregion
 
@@ -31,7 +33,10 @@ namespace PruebasUnitariasSKD.Modulo11
         [SetUp]
         public void init()
         {
-
+            listaEvento = new List<Evento>();
+            listaCompetencia = new List<Competencia>();
+            listaCategoria = new List<Categoria>();
+            idEvento = "3";
 
         }
 
@@ -42,6 +47,7 @@ namespace PruebasUnitariasSKD.Modulo11
         {
             listaEvento = null;
             listaCompetencia = null;
+            listaCategoria = null;
         }
 
         #endregion
@@ -88,6 +94,17 @@ namespace PruebasUnitariasSKD.Modulo11
 
             listaCompetencia = BDResultado.ListarCompetenciasAsistidas();
             Assert.AreEqual(3, listaCompetencia.ToArray().Length);
+
+        }
+
+
+        [Test]
+
+        public void PruebalistaCategoriasEvento()
+        {
+
+            listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
+            Assert.AreEqual(3, listaCategoria.ToArray().Length);
 
         }
 
