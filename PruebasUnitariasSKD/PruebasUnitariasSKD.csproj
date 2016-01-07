@@ -81,7 +81,6 @@
     <Compile Include="Modulo16\PruebaComandoConsultarEventos.cs" />
     <Compile Include="Modulo16\PruebaComandoConsultarImplementos.cs" />
     <Compile Include="Modulo16\PruebaComandoConsultarMatriculas.cs" />
-    <Compile Include="Modulo16\PruebaComandoEliminarItem.cs" />
     <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs" />
     <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs" />
     <Compile Include="Modulo16\PruebaDaoCarrito.cs" />

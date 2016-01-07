@@ -213,6 +213,7 @@
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
     <Content Include="GUI\Modulo16\M16_JS\M16_ConsultarEvento.js" />
+    <Content Include="GUI\Modulo16\M16_JS\M16_ConsultarMensualidad.js" />
     <Content Include="GUI\Modulo16\M16_JS\M16_ConsultarProducto.js" />
     <Content Include="GUI\Modulo16\M16_JS\M16_ListarFacturas.js" />
     <Content Include="GUI\Modulo16\M16_ListarFacturas.aspx" />

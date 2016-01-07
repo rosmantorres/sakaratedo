@@ -402,4 +402,25 @@
   <data name="MENSAJE_EXCEPCION_PERSONA_INVALIDA" xml:space="preserve">
     <value>Error al encontrarse una persona vacia o invalida</value>
   </data>
+  <data name="CONSULTAR_MATRICULAS_MOROSAS" xml:space="preserve">
+    <value>M16_MATRICULAS_MOROSAS</value>
+  </data>
+  <data name="PARAMETRO_ANIO_DEUDOR_MATRICULA" xml:space="preserve">
+    <value>AnioDeudor</value>
+  </data>
+  <data name="PARAMETRO_FECHA_PAGO_MATRICULA" xml:space="preserve">
+    <value>FechaPago</value>
+  </data>
+  <data name="PARAMETRO_IDENTIFICADOR_MAT" xml:space="preserve">
+    <value>mat_identificador</value>
+  </data>
+  <data name="PARAMETRO_ID_MATRICULA" xml:space="preserve">
+    <value>mat_id</value>
+  </data>
+  <data name="PARAMETRO_MES_DEUDOR_MATRICULA" xml:space="preserve">
+    <value>MesDeudor</value>
+  </data>
+  <data name="PARAMETRO_PRECIO_MATRICULA" xml:space="preserve">
+    <value>mat_precio</value>
+  </data>
 </root>

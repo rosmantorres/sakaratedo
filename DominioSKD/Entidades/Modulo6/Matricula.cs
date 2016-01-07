@@ -46,6 +46,14 @@ namespace DominioSKD.Entidades.Modulo6
         /// </summary>
         private float costo;
 
+        /// Identificador del mes
+        /// </summary>
+        private int _mes;
+
+        /// Identificador del anio
+        /// </summary>
+        private int _anio;
+
 
         #endregion
 
@@ -115,6 +123,30 @@ namespace DominioSKD.Entidades.Modulo6
         {
             get { return _status; }
             set { _status = value; }
+        }
+
+        public int Mes
+        {
+            set
+            {
+                this._mes = value;
+            }
+            get
+            {
+                return this._mes;
+            }
+        }
+
+        public int Anio
+        {
+            set
+            {
+                this._anio = value;
+            }
+            get
+            {
+                return this._anio;
+            }
         }
         #endregion
 

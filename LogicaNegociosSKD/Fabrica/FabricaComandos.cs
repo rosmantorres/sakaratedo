@@ -146,6 +146,10 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarTodosProductos();
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasFacturas
+        /// </summary>
+        /// <returns>El ComandoConsultarTodasFacturas</returns>
         public static Comando<Entidad> CrearComandoConsultarTodasFacturas()
         {
             return new ComandoConsultarTodasFacturas();
@@ -234,6 +238,15 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<Entidad> CrearComandoVerCarrito(Entidad persona)
         {
             return new ComandoVerCarrito(persona);
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasMensualidades
+        /// </summary>
+        /// <returns>El ComandoConsultarTodasMensualidades</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodasMensualidades()
+        {
+            return new ComandoConsultarTodasMensualidades();
         }
         #endregion
 

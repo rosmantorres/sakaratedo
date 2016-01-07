@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo6;
 
 namespace DominioSKD.Entidades.Modulo16
 {
-   public class ListaCompra : Entidad
-   {
+    public class ListaMatricula : Entidad
+    {
        #region Atributos
-       private List<Compra> listaCompra;
+        private List<Matricula> listaMatricula;
        #endregion 
 
        #region Propiedades
 
        /// <summary>
-       /// Propiedad del atributo listaCompra
+       /// Propiedad del atributo listaMatricula
        /// </summary>
-       public List<Compra> ListaCompras
+       public List<Matricula> ListaMatriculas
        {
            get
            {
-               return this.listaCompra;
+               return this.listaMatricula;
            }
            set
            {
-               this.listaCompra = value;
+               this.listaMatricula = value;
            }
        }
 
@@ -33,10 +34,10 @@ namespace DominioSKD.Entidades.Modulo16
 
        #region Constructores
 
-       public ListaCompra()
+       public ListaMatricula()
        {
 
        }
        #endregion
-   }
+    }
 }
