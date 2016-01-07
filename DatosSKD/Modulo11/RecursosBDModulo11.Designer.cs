@@ -277,11 +277,65 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @_idResAscenso.
+        ///   Looks up a localized string similar to @_atleta1.
         /// </summary>
-        internal static string ParametroIdResultadoAscenso {
+        internal static string ParametroResultadoAtleta1 {
             get {
-                return ResourceManager.GetString("ParametroIdResultadoAscenso", resourceCulture);
+                return ResourceManager.GetString("ParametroResultadoAtleta1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_atleta2.
+        /// </summary>
+        internal static string ParametroResultadoAtleta2 {
+            get {
+                return ResourceManager.GetString("ParametroResultadoAtleta2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idInscripcion1.
+        /// </summary>
+        internal static string ParametroResultadoInscripcion1 {
+            get {
+                return ResourceManager.GetString("ParametroResultadoInscripcion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_idInscripcion2.
+        /// </summary>
+        internal static string ParametroResultadoInscripcion2 {
+            get {
+                return ResourceManager.GetString("ParametroResultadoInscripcion2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_jurado1.
+        /// </summary>
+        internal static string ParametroResultadoJurado1 {
+            get {
+                return ResourceManager.GetString("ParametroResultadoJurado1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_jurado2.
+        /// </summary>
+        internal static string ParametroResultadoJurado2 {
+            get {
+                return ResourceManager.GetString("ParametroResultadoJurado2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_jurado3.
+        /// </summary>
+        internal static string ParametroResultadoJurado3 {
+            get {
+                return ResourceManager.GetString("ParametroResultadoJurado3", resourceCulture);
             }
         }
         
@@ -336,6 +390,24 @@ namespace DatosSKD.Modulo11 {
         internal static string ProcedimientoModificarExamenAscenso {
             get {
                 return ResourceManager.GetString("ProcedimientoModificarExamenAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ModificarKata.
+        /// </summary>
+        internal static string ProcedimientoModificarKata {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ModificarKumite.
+        /// </summary>
+        internal static string ProcedimientoModificarKumite {
+            get {
+                return ResourceManager.GetString("ProcedimientoModificarKumite", resourceCulture);
             }
         }
         

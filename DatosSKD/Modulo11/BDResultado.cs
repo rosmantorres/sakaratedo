@@ -378,7 +378,7 @@ namespace DatosSKD.Modulo11
         /// <summary>
         /// Metodo que permite modificar de base de datos un resultado de un atleta en un examen de ascenso
         /// </summary>
-        /// <param name="lista">lista de asistencia</param>
+        /// <param name="lista">lista de resultado ascenso</param>
         /// <returns>true si se pudo modificar</returns>
         public static bool ModificarResultadoAscenso(List<ResultadoAscenso> lista)
         {
@@ -397,6 +397,122 @@ namespace DatosSKD.Modulo11
 
                     BDConexion conexion = new BDConexion();
                     conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoModificarExamenAscenso, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos un resultado de un atleta en una competencia de especialidad kata
+        /// </summary>
+        /// <param name="lista">lista de resultado kata</param>
+        /// <returns>true si se pudo modificar</returns>
+        public static bool ModificarResultadoKata(List<ResultadoKata> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (ResultadoKata kata in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo11.ParametroResultadoJurado1, SqlDbType.Int, kata.Jurado1.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoJurado2, SqlDbType.Int, kata.Jurado2.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoJurado3, SqlDbType.Int, kata.Jurado3.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdInscripcion, SqlDbType.Int, kata.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, kata.Inscripcion.Competencia.Id_competencia.ToString(), false);
+                    parametros.Add(parametro);
+
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoModificarKata, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos un resultado de un atleta en una competencia de especialidad kumite
+        /// </summary>
+        /// <param name="lista">lista de resultado kumite</param>
+        /// <returns>true si se pudo modificar</returns>
+        public static bool ModificarResultadoKumite(List<ResultadoKumite> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (ResultadoKumite kumite in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo11.ParametroResultadoAtleta1, SqlDbType.Int, kumite.Puntaje1.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoAtleta2, SqlDbType.Int, kumite.Puntaje2.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoInscripcion1, SqlDbType.Int, kumite.Inscripcion1.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdInscripcion, SqlDbType.Int, kumite.Inscripcion2.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, kumite.Inscripcion1.Competencia.Id_competencia.ToString(), false);
+                    parametros.Add(parametro);
+
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoModificarKumite, parametros);
                     cont++;
                 }
 
