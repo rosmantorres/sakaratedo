@@ -15,10 +15,48 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
     /// </summary>
    public class ComandoConsultarTodasMensualidades : Comando<Entidad>
     {
+        #region Atributos
+        /// <summary>
+        /// Atributos del ComandoConsultarTodasMensualidades
+        private PersonaM1 p;
+        #endregion
+
+        #region Propiedades
+        /// <summary>
+        /// Propiedad del Atributo p
+
+        public PersonaM1 P
+        {
+            get {return this.p;}
+            set {this.p = value;}
+        }
+        
+        #endregion
+
+        #region Constructores
+        /// <summary>
+        /// Constructor vacio del ComandoConsultarTodasMensualidades
+        /// </summary>
+        public ComandoConsultarTodasMensualidades()
+        {
+
+        }
+
+        /// <summary>
+        /// Constructor del ComandoConsultarTodasMensualidades
+        /// </summary>
+        /// <param name="p">La persona que se encuentra logueada</param>
+        public ComandoConsultarTodasMensualidades(PersonaM1 p)
+        {
+            this.p = p;
+        }
+
+        #endregion
+
         /// <summary>
         /// Metodo que ejecuta el comando
         /// </summary>
-        /// <param name="parametro">id de persona</param>
+        /// <param name="p">id de persona</param>
         /// <returns>lista de Mensualidades</returns>
 
        public override Entidad Ejecutar()
