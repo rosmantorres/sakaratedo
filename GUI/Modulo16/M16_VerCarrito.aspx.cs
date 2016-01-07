@@ -24,7 +24,10 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public Literal tablaImplemento
         {
-            get { throw new NotImplementedException(); }
+            get {
+
+                return this.laTabla1;
+            }
         }
 
         /// <summary>
@@ -32,7 +35,11 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public Literal tablaEvento
         {
-            get { throw new NotImplementedException(); }
+            get {
+
+                return this.laTabla2;
+            
+            }
         }
 
         /// <summary>
@@ -40,7 +47,11 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public Literal tablaMatricula
         {
-            get { throw new NotImplementedException(); }
+            get {
+
+                return this.laTabla3;
+
+            }
         }
         #endregion
 

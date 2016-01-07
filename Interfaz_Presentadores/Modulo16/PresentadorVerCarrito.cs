@@ -48,7 +48,28 @@ namespace Interfaz_Presentadores.Modulo16
             string tablaImplementosHTML = "";
             foreach(KeyValuePair<Entidad, int> aux in elCarrito.ListaImplemento)
             {
+                //Casteamos la entidad como un implemento y anexamos los valores que se desean
+                Implemento item = aux.Key as Implemento;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TR + '"' + item.Id_Implemento.ToString() + '"' + ">";
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + item.Nombre_Implemento 
+                    + M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + aux.Value.ToString() 
+                    + M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + item.Precio_Implemento.ToString() 
+                    + M16_Recursointerfaz.CERRAR_TD;
 
+                //Botones ARREGLAR!!!
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD;
+
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + item.Id_Implemento.ToString() 
+                    + M16_Recursointerfaz.BOTON_CERRAR;
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO_2 
+                    + item.Id_Implemento.ToString() + "_" + item.Precio_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO 
+                    + item.Id_Implemento + M16_Recursointerfaz.BOTON_CERRAR;
+
+                tablaImplementosHTML += M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.CERRAR_TR;
             }
             laVista.tablaImplemento.Text = tablaImplementosHTML;
 
@@ -56,7 +77,28 @@ namespace Interfaz_Presentadores.Modulo16
             string tablaEventosHTML = "";
             foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listaevento)
             {
+                //Casteamos la entidad como un implemento y anexamos los valores que se desean
+                Evento item = aux.Key as Evento;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TR + '"' + item.Id_evento.ToString() + '"' + ">";
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + item.Nombre
+                    + M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + aux.Value.ToString()
+                    + M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + item.Costo.ToString()
+                    + M16_Recursointerfaz.CERRAR_TD;
 
+                //Botones ARREGLAR!!!
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD;
+
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + item.Id_evento.ToString()
+                    + M16_Recursointerfaz.BOTON_CERRAR;
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO_2
+                    + item.Id_evento.ToString() + "_" + item.Costo + M16_Recursointerfaz.BOTON_CERRAR;
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO
+                    + item.Id_evento + M16_Recursointerfaz.BOTON_CERRAR;
+
+                tablaImplementosHTML += M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.CERRAR_TR;
             }
             laVista.tablaEvento.Text = tablaEventosHTML;
 
@@ -64,7 +106,28 @@ namespace Interfaz_Presentadores.Modulo16
             string tablaMatriculasHTML = "";
             foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listamatricula)
             {
+                //Casteamos la entidad como un implemento y anexamos los valores que se desean
+                Matricula item = aux.Key as Matricula;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TR + '"' + item.Id.ToString() + '"' + ">";
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + item.Identificador
+                    + M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + aux.Value.ToString()
+                    + M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD + item.Costo.ToString()
+                    + M16_Recursointerfaz.CERRAR_TD;
 
+                //Botones ARREGLAR!!!
+                tablaImplementosHTML += M16_Recursointerfaz.ABRIR_TD;
+
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_INFO_PRODUCTO + item.Id.ToString()
+                    + M16_Recursointerfaz.BOTON_CERRAR;
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_AGREGAR_IMPLEMENTO_CARRITO_2
+                    + item.Id.ToString() + "_" + item.Costo + M16_Recursointerfaz.BOTON_CERRAR;
+                tablaImplementosHTML += M16_Recursointerfaz.BOTON_ELIMINAR_ACCION_IMPLEMENTO
+                    + item.Id + M16_Recursointerfaz.BOTON_CERRAR;
+
+                tablaImplementosHTML += M16_Recursointerfaz.CERRAR_TD;
+                tablaImplementosHTML += M16_Recursointerfaz.CERRAR_TR;
             }
             laVista.tablaMatricula.Text = tablaMatriculasHTML;
         }
