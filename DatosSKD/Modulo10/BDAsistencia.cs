@@ -121,6 +121,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas asistidos a un evento especifico
         /// </summary>
+        /// <param name="idEvento">id del evento</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaAsistentes(string idEvento)
         {
@@ -171,6 +172,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas no asistidos a un evento especifico
         /// </summary>
+        /// <param name="idEvento">id del evento</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaNoAsistentes(string idEvento)
         {
@@ -221,6 +223,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite modificar de base de datos una asistencia de un atleta 
         /// </summary>
+        /// <param name="lista">lista de asistencia</param>
         /// <returns>true si se pudo modificar</returns>
         public static bool ModificarAsistenciaE(List<Asistencia> lista)
         {
@@ -275,6 +278,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos una competencia por id
         /// </summary>
+        /// <param name="idCompetencia">id de la competencia</param>
         /// <returns>Una Competencia</returns>
         public static Competencia consultarCompetenciasXID(string idCompetencia)
         {
@@ -340,6 +344,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas asistidos a un evento especifico
         /// </summary>
+        /// <param name="idEvento">id del evento</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaAsistentesCompetencia(string idEvento)
         {
@@ -390,6 +395,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas no asistidos a un evento especifico
         /// </summary>
+        /// <param name="idEvento">id del evento</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaNoAsistentesCompetencia(string idEvento)
         {
@@ -440,6 +446,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite modificar de base de datos una asistencia de un atleta 
         /// </summary>
+        /// <param name="lista">lista de asistencia</param>
         /// <returns>true si se pudo modificar</returns>
         public static bool ModificarAsistenciaC(List<Asistencia> lista)
         {
@@ -494,6 +501,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas inscritos a un evento especifico
         /// </summary>
+        /// <param name="idEvento">id del evento</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaAtletasInscritosEvento(string idEvento)
         {
@@ -542,6 +550,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas inasistentes por planilla en un evento
         /// </summary>
+        /// <param name="idEvento">id del evento</param>
         /// <returns>lista de atletas</returns>
         public static List<Inscripcion> listaInasistentesPlanilla(string idEvento)
         {
@@ -603,6 +612,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite agregar la asistencia a un evento 
         /// </summary>
+        /// <param name="lista">lista de asistencia</param>
         /// <returns>true si se pudo agregar</returns>
         public static bool agregarAsistenciaEvento(List<Asistencia> lista)
         {
@@ -656,6 +666,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite agregar la asistencia a un evento 
         /// </summary>
+        /// <param name="lista">lista de asistencia</param>
         /// <returns>true si se pudo agregar</returns>
         public static bool agregarAsistenciaCompetencia(List<Asistencia> lista)
         {
@@ -769,7 +780,6 @@ namespace DatosSKD.Modulo10
         /// Metodo que dado una fecha retorna todas las competencias que existen
         /// </summary>
         /// <param name="fechaInicio">fecha inicio</param>
-        /// <param name="fechaFin">fecha fin</param>
         /// <returns>lista de competencias</returns>
 
         public static List<Competencia> competenciasPorFecha(String fechaInicio)
@@ -831,6 +841,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas inscritos a una competencia especifica
         /// </summary>
+        /// <param name="idCompetencia">id de la Competencia</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaAtletasInscritosCompetencia(string idCompetencia)
         {
@@ -879,6 +890,7 @@ namespace DatosSKD.Modulo10
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas inasistentes por planilla en un evento
         /// </summary>
+        /// <param name="idCompetencia">id de la competencia</param>
         /// <returns>lista de atletas</returns>
         public static List<Inscripcion> listaInasistentesPlanillaCompetencia(string idCompetencia)
         {

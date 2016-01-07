@@ -26,8 +26,8 @@ namespace templateApp.GUI.Modulo10
             LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
             {
-                String idEvento = Request.QueryString["modificar"];
-                String tipo = Request.QueryString["tipo"];
+                String idEvento = Request.QueryString[M10_RecursosInterfaz.Modificar];
+                String tipo = Request.QueryString[M10_RecursosInterfaz.Tipo];
 
                 Session["M10_IdEvento"] = idEvento;
                 Session["M10_tipo"] = tipo;

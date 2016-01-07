@@ -158,5 +158,23 @@ namespace templateApp.GUI.Modulo11 {
                 return ResourceManager.GetString("Evento", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to modificar.
+        /// </summary>
+        internal static string Modificar {
+            get {
+                return ResourceManager.GetString("Modificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tipo.
+        /// </summary>
+        internal static string Tipo {
+            get {
+                return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
     }
 }
