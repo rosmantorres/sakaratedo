@@ -28,6 +28,10 @@ namespace PruebasUnitariasSKD.Modulo11
         private string idEvento;
         List<ResultadoAscenso> listaResAscenso;
         private ResultadoAscenso resultadoA;
+        List<ResultadoKata> listaResKata;
+        private ResultadoKata resultadoKata;
+        List<ResultadoKumite> listaResKumite;
+        private ResultadoKumite resultadoKumite;
 
         #endregion
 
@@ -41,6 +45,11 @@ namespace PruebasUnitariasSKD.Modulo11
             idEvento = "3";
             listaResAscenso = new List<ResultadoAscenso>();
             resultadoA = new ResultadoAscenso();
+            listaResKata = new List<ResultadoKata>();
+            resultadoKata = new ResultadoKata();
+            listaResKumite = new List<ResultadoKumite>();
+            resultadoKumite = new ResultadoKumite();
+            
         
 
         }
@@ -54,6 +63,8 @@ namespace PruebasUnitariasSKD.Modulo11
             listaCompetencia = null;
             listaCategoria = null;
             listaResAscenso = null;
+            listaResKata = null;
+            listaResKumite = null;
  
         }
 
@@ -134,6 +145,45 @@ namespace PruebasUnitariasSKD.Modulo11
 
         }
 
+
+
+        [Test]
+
+        public void PruebaModificarKata()
+        {
+
+            bool a;
+            listaResKata = new List<ResultadoKata>();
+            resultadoKata.Inscripcion.Id_Inscripcion = 1;
+            resultadoKata.Inscripcion.Competencia.Id_competencia = 5;
+            resultadoKata.Jurado1 = 1;
+            resultadoKata.Jurado2 = 1;
+            resultadoKata.Jurado3 = 1;
+            listaResKata.Add(resultadoKata);
+            a = BDResultado.ModificarResultadoKata(listaResKata);
+            Assert.IsTrue(a);
+
+        }
+
+
+        [Test]
+
+        public void PruebaModificarKumite()
+        {
+
+            bool a;
+            listaResKumite = new List<ResultadoKumite>();
+            resultadoKumite.Inscripcion1.Id_Inscripcion = 9;
+            resultadoKumite.Puntaje1 = 5;
+            resultadoKumite.Inscripcion2.Id_Inscripcion = 11;
+            resultadoKumite.Puntaje2 = 9;
+            resultadoKumite.Inscripcion1.Competencia.Id_competencia = 6;
+            listaResKumite.Add(resultadoKumite);
+            a = BDResultado.ModificarResultadoKumite(listaResKumite);
+            Assert.IsTrue(a);
+
+
+        }
         #endregion
     }
 }
