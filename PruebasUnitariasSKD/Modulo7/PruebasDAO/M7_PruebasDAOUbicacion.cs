@@ -20,9 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private Ubicacion idUbicacion;
-        FabricaEntidades fabricaEntidades;
-        FabricaDAOSqlServer fabricaSql;
-        DaoUbicacion baseDeDatosUbicacion;
+        private FabricaEntidades fabricaEntidades;
+        private FabricaDAOSqlServer fabricaSql;
+        private DaoUbicacion baseDeDatosUbicacion;
         #endregion
 
         #region SetUp & TearDown

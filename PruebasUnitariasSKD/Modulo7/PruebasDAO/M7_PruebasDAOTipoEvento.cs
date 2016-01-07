@@ -20,9 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private TipoEvento idTipoEvento;
-        FabricaEntidades fabricaEntidades;
-        FabricaDAOSqlServer fabricaSql;
-        DaoTipoEvento baseDeDatosTipoEvento;
+        private FabricaEntidades fabricaEntidades;
+        private FabricaDAOSqlServer fabricaSql;
+        private DaoTipoEvento baseDeDatosTipoEvento;
         #endregion
 
         #region SetUp & TearDown

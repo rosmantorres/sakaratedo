@@ -20,9 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private Horario idHorario;
-        FabricaEntidades fabricaEntidades;
-        FabricaDAOSqlServer fabricaSql;
-        DaoHorario baseDeDatosHorario;
+        private FabricaEntidades fabricaEntidades;
+        private FabricaDAOSqlServer fabricaSql;
+        private DaoHorario baseDeDatosHorario;
         #endregion
 
         #region SetUp & TearDown

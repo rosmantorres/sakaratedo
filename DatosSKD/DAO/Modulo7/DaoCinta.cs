@@ -126,7 +126,7 @@ namespace DatosSKD.DAO.Modulo7
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroPersona = new Parametro();
             Parametro parametroCinta = new Parametro();
@@ -138,14 +138,14 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0 && idCinta.Id > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametroCinta = new Parametro(RecursosDAOModulo7.ParamIdCinta, SqlDbType.Int, idCinta.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroCinta);
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarFechaCinta, parametros);
 
                     foreach (DataRow row in dt.Rows)
@@ -205,7 +205,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
 
@@ -217,12 +217,12 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametroQuery);
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarCintas, parametros);
 
                     foreach (DataRow row in dt.Rows)
@@ -301,9 +301,9 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+            BDConexion conexion;
             List<Parametro> parametros;
-            Parametro elParametro = new Parametro();
+            Parametro parametro = new Parametro();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             Persona idPersona = (Persona)persona;
             Cinta cinta = (Cinta)fabricaEntidades.ObtenerCinta();
@@ -312,12 +312,12 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idPersona.ID > 0)
                 {
-                    laConexion = new BDConexion();
+                    conexion = new BDConexion();
                     parametros = new List<Parametro>();          
-                    elParametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametros.Add(elParametro);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametros.Add(parametro);
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarUltimaCinta, parametros);
 
                     foreach (DataRow row in dt.Rows)
