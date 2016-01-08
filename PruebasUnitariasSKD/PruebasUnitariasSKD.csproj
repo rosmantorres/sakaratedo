@@ -81,6 +81,9 @@
     <Compile Include="Modulo16\PruebaComandoConsultarEventos.cs" />
     <Compile Include="Modulo16\PruebaComandoConsultarImplementos.cs" />
     <Compile Include="Modulo16\PruebaComandoConsultarMatriculas.cs" />
+    <Compile Include="Modulo16\PruebaComandoDetallarEvento.cs" />
+    <Compile Include="Modulo16\PruebaComandoDetallarImplemento.cs" />
+    <Compile Include="Modulo16\PruebaComandoDetallarMatricula.cs" />
     <Compile Include="Modulo16\PruebaComandoEliminarItem.cs" />
     <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs" />
     <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs" />
@@ -89,6 +92,9 @@
     <Compile Include="Modulo16\PruebaDaoConsultarEventos.cs" />
     <Compile Include="Modulo16\PruebaDaoConsultarImplementos.cs" />
     <Compile Include="Modulo16\PruebaDaoConsultarMatriculas.cs" />
+    <Compile Include="Modulo16\PruebaDaoDetallarEvento.cs" />
+    <Compile Include="Modulo16\PruebaDaoDetallarImplemento.cs" />
+    <Compile Include="Modulo16\PruebaDaoDetallarMatricula.cs" />
     <Compile Include="Modulo16\PruebaDaoEliminarItem.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
