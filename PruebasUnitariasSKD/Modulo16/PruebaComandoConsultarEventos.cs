@@ -24,17 +24,54 @@ namespace PruebasUnitariasSKD.Modulo16
     class PruebaComandoConsultarEventos
     {
 
+        #region Atributos
+        //Atributos pertinentes a usar
         private ComandoConsultarTodosEventos pruebaComandoConsultarEventos;
-     
-      
+ 
+        
+        #endregion
+
+         
+
+
+        /// <summary>
+        /// Inicializa  los atributos que utilizaremos para probar
+        /// </summary>
+        [SetUp]
+        public void Iniciar()
+        {
+             
+            //Se inicializa la prueba para consultar un evento existente en particular
+            this.pruebaComandoConsultarEventos = (ComandoConsultarTodosEventos)FabricaComandos.CrearComandoConsultarTodosEventos();
+          
+         }
+
+
+        /// <summary>
+        /// Prueba unitaria para asegurar que el comando no sea vacio
+        /// </summary>
+        [Test]
+        public void PruebaVacio()
+        {
+            Assert.IsNotNull(this.pruebaComandoConsultarEventos);
+        }
 
 
 
 
 
 
+        /// <summary>
+        /// Elimina todos los atributos utilizados al probar
+        /// </summary>
+        [TearDown]
+        public void Limpiar()
+        {
+            this.pruebaComandoConsultarEventos = null;
+        
+ 
 
-
+        }
 
 
 
