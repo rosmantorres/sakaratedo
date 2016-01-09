@@ -70,6 +70,15 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aprobado.
+        /// </summary>
+        internal static string aliasAprobado {
+            get {
+                return ResourceManager.GetString("aliasAprobado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to cintaFinal.
         /// </summary>
         internal static string aliasCintaFinal {
@@ -174,6 +183,15 @@ namespace DatosSKD.Modulo11 {
         internal static string aliasIdPersona {
             get {
                 return ResourceManager.GetString("aliasIdPersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idResultado.
+        /// </summary>
+        internal static string aliasIdResultado {
+            get {
+                return ResourceManager.GetString("aliasIdResultado", resourceCulture);
             }
         }
         

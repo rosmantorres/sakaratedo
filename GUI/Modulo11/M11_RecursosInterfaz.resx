@@ -150,10 +150,34 @@
   <data name="Evento" xml:space="preserve">
     <value>Evento</value>
   </data>
+  <data name="InputTextAbrir" xml:space="preserve">
+    <value>&lt;input list="puntaje" name="puntaje" runat="server" class="form-control" style="width:20%" value="</value>
+  </data>
+  <data name="InputTextCerrar" xml:space="preserve">
+    <value>"&gt;&lt;datalist id="puntaje" onselect="dropdown_SelectedIndexChanged"&gt;&lt;option value="Aprobado"&gt;&lt;option value="No Aprobado"&gt;&lt;/datalist&gt;</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
   <data name="Modificar" xml:space="preserve">
     <value>modificar</value>
   </data>
+  <data name="parametroSplit1" xml:space="preserve">
+    <value>&lt;tr&gt;&lt;td&gt;</value>
+  </data>
+  <data name="parametroSplit2" xml:space="preserve">
+    <value>&lt;/td&gt;&lt;td&gt;&lt;input list="puntaje" name="puntaje" runat="server" class="form-control" style="width:20%" value="</value>
+  </data>
+  <data name="parametroSplit3" xml:space="preserve">
+    <value>"&gt;&lt;datalist id="puntaje" onselect="dropdown_SelectedIndexChanged"&gt;&lt;option value="Aprobado"&gt;&lt;option value="No Aprobado"&gt;&lt;/datalist&gt;&lt;/td&gt;&lt;/tr&gt;</value>
+  </data>
+  <data name="SeleccionarCategoria" xml:space="preserve">
+    <value>Seleccionar Categoria:</value>
+  </data>
   <data name="Tipo" xml:space="preserve">
     <value>tipo</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
   </data>
 </root>

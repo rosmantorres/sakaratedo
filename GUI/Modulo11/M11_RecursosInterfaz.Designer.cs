@@ -160,6 +160,33 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;input list=&quot;puntaje&quot; name=&quot;puntaje&quot; runat=&quot;server&quot; class=&quot;form-control&quot; style=&quot;width:20%&quot; value=&quot;.
+        /// </summary>
+        internal static string InputTextAbrir {
+            get {
+                return ResourceManager.GetString("InputTextAbrir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;&lt;datalist id=&quot;puntaje&quot; onselect=&quot;dropdown_SelectedIndexChanged&quot;&gt;&lt;option value=&quot;Aprobado&quot;&gt;&lt;option value=&quot;No Aprobado&quot;&gt;&lt;/datalist&gt;.
+        /// </summary>
+        internal static string InputTextCerrar {
+            get {
+                return ResourceManager.GetString("InputTextCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Key.
+        /// </summary>
+        internal static string Key {
+            get {
+                return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to modificar.
         /// </summary>
         internal static string Modificar {
@@ -169,11 +196,56 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;tr&gt;&lt;td&gt;.
+        /// </summary>
+        internal static string parametroSplit1 {
+            get {
+                return ResourceManager.GetString("parametroSplit1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/td&gt;&lt;td&gt;&lt;input list=&quot;puntaje&quot; name=&quot;puntaje&quot; runat=&quot;server&quot; class=&quot;form-control&quot; style=&quot;width:20%&quot; value=&quot;.
+        /// </summary>
+        internal static string parametroSplit2 {
+            get {
+                return ResourceManager.GetString("parametroSplit2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;&lt;datalist id=&quot;puntaje&quot; onselect=&quot;dropdown_SelectedIndexChanged&quot;&gt;&lt;option value=&quot;Aprobado&quot;&gt;&lt;option value=&quot;No Aprobado&quot;&gt;&lt;/datalist&gt;&lt;/td&gt;&lt;/tr&gt;.
+        /// </summary>
+        internal static string parametroSplit3 {
+            get {
+                return ResourceManager.GetString("parametroSplit3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccionar Categoria:.
+        /// </summary>
+        internal static string SeleccionarCategoria {
+            get {
+                return ResourceManager.GetString("SeleccionarCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to tipo.
         /// </summary>
         internal static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        internal static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
             }
         }
     }

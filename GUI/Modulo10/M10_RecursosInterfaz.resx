@@ -150,10 +150,16 @@
   <data name="Evento" xml:space="preserve">
     <value>Evento</value>
   </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
   <data name="Modificar" xml:space="preserve">
     <value>modificar</value>
   </data>
   <data name="Tipo" xml:space="preserve">
     <value>tipo</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
   </data>
 </root>

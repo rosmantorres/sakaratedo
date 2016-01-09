@@ -281,4 +281,12 @@
     <value>M11_PersonasEnCategoriaYAscenso</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="aliasAprobado" xml:space="preserve">
+    <value>Aprobado</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna aprobado</comment>
+  </data>
+  <data name="aliasIdResultado" xml:space="preserve">
+    <value>idResultado</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id Resultado</comment>
+  </data>
 </root>

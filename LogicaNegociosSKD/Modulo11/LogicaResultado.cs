@@ -37,8 +37,16 @@ namespace LogicaNegociosSKD.Modulo11
         /// <returns>Lista de categorias</returns>
         public static List<Categoria> listaCategoriasEvento(string idEvento)
         {
+            List<Categoria> lista = new List<Categoria>();
+            Categoria categoria = new Categoria();
+            categoria.Id_categoria = 0;
+            lista.Add(categoria);
             List<Categoria> listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
-            return listaCategoria;
+            foreach (Categoria cate in listaCategoria)
+            {
+                lista.Add(cate);
+            }
+            return lista;
         }
 
         /// <summary>
@@ -46,10 +54,10 @@ namespace LogicaNegociosSKD.Modulo11
         /// </summary>
         /// <param name="evento">id del evento</param>
         /// <returns>Lista de categorias</returns>
-        public static List<Persona> listaAtletasEnCategoriaYAscenso(Evento evento)
+        public static List<Inscripcion> listaAtletasEnCategoriaYAscenso(Evento evento)
         {
-            List<Persona> listaPersona = BDResultado.listaAtletasEnCategoriaYAscenso(evento);
-            return listaPersona;
+            List<Inscripcion> listaInscripcion = BDResultado.listaAtletasEnCategoriaYAscenso(evento);
+            return listaInscripcion;
         }
 
         /// <summary>

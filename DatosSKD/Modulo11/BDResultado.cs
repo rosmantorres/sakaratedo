@@ -174,10 +174,10 @@ namespace DatosSKD.Modulo11
         /// <param name="idEvento">id del evento</param>
         /// <param name="idCategoria">id de la categoria</param>
         /// <returns>lista de atletas</returns>
-        public static List<Persona> listaAtletasEnCategoriaYAscenso(Evento evento)
+        public static List<Inscripcion> listaAtletasEnCategoriaYAscenso(Evento evento)
         {
             BDConexion laConexion;
-            List<Persona> personas = new List<Persona>();
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
             {
                 laConexion = new BDConexion();
@@ -190,12 +190,20 @@ namespace DatosSKD.Modulo11
 
                 foreach (DataRow row in dt.Rows)
                 {
+                    Inscripcion inscripcion = new Inscripcion();
+                    inscripcion.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion].ToString());
                     Persona persona = new Persona();
-
                     persona.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona].ToString());
                     persona.Nombre = row[RecursosBDModulo11.aliasNombrePersona].ToString();
-                    persona.IdInscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion].ToString());
-                    personas.Add(persona);
+                    persona.Apellido = row[RecursosBDModulo11.aliasApellidoPersona].ToString();
+                    inscripcion.Persona = persona;
+                    ResultadoAscenso resultado = new ResultadoAscenso();
+                    resultado.Id_ResAscenso = int.Parse(row[RecursosBDModulo11.aliasIdResultado].ToString());
+                    resultado.Aprobado = row[RecursosBDModulo11.aliasAprobado].ToString();
+                    List<ResultadoAscenso> lista = new List<ResultadoAscenso>();
+                    lista.Add(resultado);
+                    inscripcion.ResAscenso = lista;
+                    inscripciones.Add(inscripcion);
                 }
             }
             catch (SqlException ex)
@@ -217,7 +225,7 @@ namespace DatosSKD.Modulo11
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            return personas;
+            return inscripciones;
         }
 
         /// <summary>

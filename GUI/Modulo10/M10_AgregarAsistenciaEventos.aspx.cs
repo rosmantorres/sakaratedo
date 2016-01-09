@@ -193,8 +193,8 @@ namespace templateApp.GUI.Modulo10
                 listaEventos.Add(competencia.Id_competencia, competencia.Nombre);
             }
             comboEventos.DataSource = listaEventos;
-            comboEventos.DataTextField = "Value";
-            comboEventos.DataValueField = "Key";
+            comboEventos.DataTextField = M10_RecursosInterfaz.Value;
+            comboEventos.DataValueField = M10_RecursosInterfaz.Key;
             comboEventos.DataBind();
         }
 
@@ -302,11 +302,11 @@ namespace templateApp.GUI.Modulo10
             List<valores> listaEventos = new List<valores>();
             foreach (Evento evento in listaE)
             {
-                listaEventos.Add(new valores(evento.Id_evento, evento.Nombre, "Evento"));
+                listaEventos.Add(new valores(evento.Id_evento, evento.Nombre, M10_RecursosInterfaz.Evento));
             }
             foreach (Competencia competencia in listaC)
             {
-                listaEventos.Add(new valores(competencia.Id_competencia,competencia.Nombre,"Competencia" ));
+                listaEventos.Add(new valores(competencia.Id_competencia, competencia.Nombre, M10_RecursosInterfaz.Competencia));
             }
             return listaEventos;
         }
