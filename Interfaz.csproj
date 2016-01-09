@@ -1714,6 +1714,11 @@
     <Compile Include="GUI\Modulo16\M16_VerCarrito.aspx.designer.cs">
       <DependentUpon>M16_VerCarrito.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo16\M16_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M16_RecursoInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2104,6 +2109,10 @@
     <EmbeddedResource Include="GUI\Modulo14\RecursoInterfazModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoInterfazModulo14.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo16\M16_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M16_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo1\RecursosInterfazModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -44,21 +44,23 @@
         </div><!-- /.box-header -->
 
     <div class="box-body table-responsive">
-        <table id="tablainventario" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					
-					<th style="text-align:left">Producto</th>
-                    <th style="text-align:left">Cantidad</th>
-					<th style="text-align:left">Precio Unitario</th>                   
-					<th style="text-align:left">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-                <asp:Literal runat="server" ID="laTabla1"></asp:Literal>
-		    </tbody>
-            </table>
-           </div>
+       <asp:Table ID="TablaImplemento" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
        </div>
     </div>
 </div>
@@ -71,21 +73,23 @@
         </div><!-- /.box-header -->
 
         <div class="box-body table-responsive">
-        <table id="tablamatricula" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					<th style="text-align:left">Identificador de Matricula</th>
-					<th style="text-align:left">Fecha de Creacion</th>           
-                    <th style="text-align:left">Ultima Fecha de Pago</th>
-                    
-					<th style="text-align:left">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-                <asp:Literal runat="server" ID="laTabla2"></asp:Literal>
-		    </tbody>
-            </table>
-           </div>
+       <asp:Table ID="TablaMatricula" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
        </div>
     </div>
 </div>
@@ -98,20 +102,23 @@
         </div><!-- /.box-header -->
 
     <div class="box-body table-responsive">
-        <table id="tablaevento" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					<th style="text-align:left">Nombre del evento</th>
-					<th style="text-align:left">Costo</th>           
-                 
-					<th style="text-align:left">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-                <asp:Literal runat="server" ID="laTabla3"></asp:Literal>
-		    </tbody>
-            </table>
-           </div>
+       <asp:Table ID="TablaEvento" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
        </div>
     </div>
 </div>
@@ -187,20 +194,15 @@
 				</div>
 			</div>
 		</div>
-   
 
-
-
-<!--MODAL DE PAGO-->
+    <!--BOTON DE PAGAR-->
     <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
          <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-info"">Pagar</button>
-          &nbsp;&nbsp
-         
-         
-         
+          &nbsp;&nbsp        
     </div>
 
+   <!--MODAL DE PAGO-->
    <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -210,7 +212,6 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
-
 
   <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
@@ -233,14 +234,10 @@
         </div>
 
         <%-- <h4 class="modal-title" id ="preciofinal"></h4> --%>
-
-        <div class="form-group">
-        <!-- El form iba aqui -->
-        
-              
         <br />
-        
-            <div class="col-sm-10 col-md-10 col-lg-10">
+        <div class="form-group">
+            <!-- El form iba aqui -->             
+             <div class="col-sm-10 col-md-10 col-lg-10">
                  <div class="dropdown" runat="server" id="div1">
                      </div>
             
@@ -256,7 +253,8 @@
                   </div>
             </div>
         </div>
-        <h4 class="modal-title">Tarjeta Credito/Debito</h4>
+        <br />
+     <%--  <h4 class="modal-title">Tarjeta Credito/Debito</h4>
         <div class="form-group">
 	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
 		        <input id="Text1" Disabled="disabled" type="text" placeholder="Numero de la Tarjeta" class="form-control" name="Text1" runat="server"/>
@@ -315,23 +313,51 @@
 			<div id="div_respuess" class="col-sm-5 col-md-5 col-lg-5">
 				<input id="Text10" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text10"  runat="server"/>
 			</div>
-		</div>
-
+		</div>--%>
          <div class="form-group">
 		    <div class="box-footer">
 			<%--<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>--%>
                <%--  <asp:Button id="Boton1" style="align-content:flex-end" OnClick="registrarPago" runat="server" Disabled="disabled" class="btn btn-primary" Text="Registrar Pago" type ="submit" /> --%>
-                <asp:Button ID="Boton1" runat="server" Text="Procesar Pago" OnClick ="registrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
+        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+       </div>
 
-
-     </form>
-      
-
+     </form>      
 
 <!--VALIDACION PARA EL MODAL DE PAGO-->
+    <script type="text/javascript">
+        debugger;
+
+        //Funcion que activa el boton si el valor seleccionado es diferente de -1, sino, lo desactiva
+        function example() {
+            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
+
+                $('#<%=BotonPagar.ClientID %>').attr("disabled", true);
+            }
+            else
+                $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
+        }
+
+        $(document).ready(function () {
+
+            // Carga el modal con la informacion del IMPLEMENTO de acuerdo al id
+            $('#modal-info1').on('show.bs.modal', function (e) {
+            });
+
+            // Carga el modal con la informacion del EVENTO de acuerdo al id
+            $('#modal-info2').on('show.bs.modal', function (e) {
+            });           
+        });
+    </script>
+
+    <%-- 
     <script src="js/Validacion.js"></script>
     <script>
 
@@ -443,11 +469,7 @@
         }
 
     </script>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+						
 
 
     <script type="text/javascript">
@@ -650,6 +672,6 @@
 
         });
 
-        </script>
+        </script>--%>
 
 </asp:Content>
