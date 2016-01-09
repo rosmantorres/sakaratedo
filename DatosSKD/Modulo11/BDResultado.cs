@@ -221,9 +221,10 @@ namespace DatosSKD.Modulo11
         }
 
         /// <summary>
-        /// Metodo que permite obtener de base de datos todos los atletas que participaran a un ascenso por id de evento y categoria
+        /// Metodo que permite obtener de base de datos todas las especialidades inscritas en una competencia especifica
         /// </summary>
-        /// <returns>lista de atletas</returns>
+        /// <param name="idCompetencia">id de la competencia</param>
+        /// <returns>lista de especialidades</returns>
         public static List<string> listaEspecialidadesCompetencia(string idCompetencia)
         {
             BDConexion laConexion;
@@ -268,8 +269,7 @@ namespace DatosSKD.Modulo11
         /// <summary>
         /// Metodo que permite obtener de base de datos todas las categorias que participan en una competencia 
         /// </summary>
-        /// <param name="idCompetencia">id de la competencia</param>
-        /// <param name="idEspecialidad">id de la especialidad</param>
+        /// <param name="competencia">id de la competencia</param>
         /// <returns>lista de categorias</returns>
         public static List<Categoria> listaCategoriasCompetencia(Competencia competencia)
         {
@@ -323,9 +323,7 @@ namespace DatosSKD.Modulo11
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
         /// </summary>
-        /// <param name="idEspecialidad">id del evento</param>
-        /// <param name="idCompetencia">id de la categoria</param>
-        /// <param name="idCategoria">id de la categoria</param>
+        /// <param name="competencia">id de la categoria</param>
         /// <returns>lista de atletas</returns>
         public static List<Persona> listaAtletasParticipanCompetencia(Competencia competencia)
         {

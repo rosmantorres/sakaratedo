@@ -40,5 +40,79 @@ namespace LogicaNegociosSKD.Modulo11
             List<Categoria> listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
             return listaCategoria;
         }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todos los atletas que compiten en una categoria especifica en un evento de ascenso
+        /// </summary>
+        /// <param name="evento">id del evento</param>
+        /// <returns>Lista de categorias</returns>
+        public static List<Persona> listaAtletasEnCategoriaYAscenso(Evento evento)
+        {
+            List<Persona> listaPersona = BDResultado.listaAtletasEnCategoriaYAscenso(evento);
+            return listaPersona;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todas las categorias que participan en una competencia 
+        /// </summary>
+        /// <param name="idCompetencia">id de la competencia</param>
+        /// <returns>Lista de categorias</returns>
+        public static List<string> listaEspecialidadesCompetencia(string idCompetencia)
+        {
+            List<string> lista = BDResultado.listaEspecialidadesCompetencia(idCompetencia);
+            return lista;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todas las categorias que participan en una competencia 
+        /// </summary>
+        /// <param name="competencia">id de la competencia</param>
+        /// <returns>Lista de categorias</returns>
+        public static List<Categoria> listaCategoriasCompetencia(Competencia competencia)
+        {
+            List<Categoria> listaCategoria = BDResultado.listaCategoriasCompetencia(competencia);
+            return listaCategoria;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de atletas</returns>
+        public static List<Persona> listaAtletasParticipanCompetencia(Competencia competencia)
+        {
+            List<Persona> listaPersona = BDResultado.listaAtletasParticipanCompetencia(competencia);
+            return listaPersona;
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos un resultado de un atleta en un examen de ascenso
+        /// </summary>
+        /// <param name="lista">lista de resultado ascenso</param>
+        /// <returns>true si se pudo modificar</returns>
+        public static bool ModificarResultadoAscenso(List<ResultadoAscenso> lista)
+        {
+            return BDResultado.ModificarResultadoAscenso(lista);
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos un resultado de un atleta en una competencia de especialidad kata
+        /// </summary>
+        /// <param name="lista">lista de resultado kata</param>
+        /// <returns>true si se pudo modificar</returns>
+        public static bool ModificarResultadoKata(List<ResultadoKata> lista)
+        {
+            return BDResultado.ModificarResultadoKata(lista);
+        }
+
+        /// <summary>
+        /// Metodo que permite modificar de base de datos un resultado de un atleta en una competencia de especialidad kumite
+        /// </summary>
+        /// <param name="lista">lista de resultado kumite</param>
+        /// <returns>true si se pudo modificar</returns>
+        public static bool ModificarResultadoKumite(List<ResultadoKumite> lista)
+        {
+            return BDResultado.ModificarResultadoKumite(lista);
+        }
     }
 }
