@@ -257,7 +257,7 @@ namespace DatosSKD.Modulo14
                     while (leer.Read())
                     {
                         matricula.Add(leer[RecursosBDModulo14.AtributoIdentificadorMatricula].ToString());
-                        matricula.Add(leer[RecursosBDModulo14.AtributoFechaCreacion].ToString());
+                        matricula.Add(leer[RecursosBDModulo14.AtributoFechaMatricula].ToString());
                         matricula.Add(leer[RecursosBDModulo14.AtributoPagoMatricula].ToString());
                         matricula.Add(leer[RecursosBDModulo14.AtributoActivaMatricula].ToString());
                         matricula.Add(leer[RecursosBDModulo14.AtributoPrecioMatricula].ToString());
