@@ -23,6 +23,7 @@ namespace PruebasUnitariasSKD.Modulo11
         #region Atributos
 
         List<Evento> listaEvento;
+        private Evento evento;
         List<Competencia> listaCompetencia;
         List<Categoria> listaCategoria;
         private string idEvento;
@@ -32,6 +33,8 @@ namespace PruebasUnitariasSKD.Modulo11
         private ResultadoKata resultadoKata;
         List<ResultadoKumite> listaResKumite;
         private ResultadoKumite resultadoKumite;
+        List<Persona> listaPersona;
+        private Persona persona;
 
         #endregion
 
@@ -49,7 +52,14 @@ namespace PruebasUnitariasSKD.Modulo11
             resultadoKata = new ResultadoKata();
             listaResKumite = new List<ResultadoKumite>();
             resultadoKumite = new ResultadoKumite();
-            
+            listaPersona = new List<Persona>();
+            persona = new Persona();
+            Evento evento = new Evento();
+     
+          
+            persona.ID = 1;
+            persona.IdInscripcion = 54;
+            persona.Nombre = "Miguel Alejandro";
         
 
         }
@@ -65,6 +75,8 @@ namespace PruebasUnitariasSKD.Modulo11
             listaResAscenso = null;
             listaResKata = null;
             listaResKumite = null;
+            listaPersona = null;
+    
  
         }
 
@@ -118,13 +130,60 @@ namespace PruebasUnitariasSKD.Modulo11
 
         [Test]
 
+        public void PruebalistaCategoriasEventoContar()
+        {
+          
+            listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
+            Assert.AreEqual(3, listaCategoria.ToArray().Length);
+
+
+        }
+
+        [Test]
+
         public void PruebalistaCategoriasEvento()
         {
 
             listaCategoria = BDResultado.listaCategoriasEvento(idEvento);
-            Assert.AreEqual(3, listaCategoria.ToArray().Length);
+            Assert.NotNull(listaCategoria);
 
         }
+
+
+        [Test]
+
+        public void PruebaListarAtletaEnCatyAsc()
+        {
+
+         
+   
+        }
+
+        [Test]
+
+        public void PruebaListarEspecialidadesCompetencia() //idCompetencia
+        {
+
+
+        }
+
+
+        [Test]
+
+        public void PruebaListaCategoriasComp()
+        {
+
+
+        }
+
+        [Test]
+
+        public void PruebaListarAtletasParticipanComp()
+        {
+
+
+        }
+
 
 
         [Test]
