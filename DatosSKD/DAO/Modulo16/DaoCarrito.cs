@@ -300,8 +300,8 @@ namespace DatosSKD.DAO.Modulo16
                     foreach (DataRow row in dt.Rows)
                     {
                         //Me creo el Implemento
-                       // Implemento elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
-                        Implemento elImplemento = new Implemento();                        
+                        FabricaEntidades fabrica = new FabricaEntidades();
+                        Implemento elImplemento = (Implemento)fabrica.ObtenerImplemento();                                                
 
                         //Preparo para obtener los datos de ese Inventario
                         parametros = new List<Parametro>();
@@ -558,8 +558,8 @@ namespace DatosSKD.DAO.Modulo16
                         foreach (DataRow row2 in dt2.Rows)
                         {
                             //Me creo la matricula
-                            //Matricula laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();
-                            Matricula laMatricula = new Matricula();
+                            FabricaEntidades fabrica = new FabricaEntidades();
+                            Matricula laMatricula = (Matricula)fabrica.ObtenerMatricula();                            
                             laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
                             laMatricula.Identificador = (row2[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                             laMatricula.FechaCreacion = DateTime.Parse(row2[RecursosBDModulo16.aliasFechainicio].ToString());
