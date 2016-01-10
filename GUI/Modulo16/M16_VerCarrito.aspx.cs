@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Interfaz_Presentadores.Modulo16;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo16
 {
@@ -58,10 +59,10 @@ namespace templateApp.GUI.Modulo16
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "16";
+            ((SKD)Page.Master).IdModulo = "16";            
 
-            //Obtengo el Carrito de la Persona
-            //this.elPresentador.LlenarTabla();
+            //Obtengo el Carrito de la Persona pasandole el ID del session
+            this.elPresentador.LlenarTabla(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             //Verificamos si estamos ingresando a la pagina web sin ser redireccionamiento a ella misma
            // if (!IsPostBack)

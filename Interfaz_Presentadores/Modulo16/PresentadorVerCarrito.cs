@@ -13,6 +13,8 @@ using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo9;
 using DominioSKD.Entidades.Modulo6;
 using System.Web.UI.WebControls;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo1;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -38,9 +40,13 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// Metodo del presentador que obtiene el carrito de una persona
         /// </summary>
-        /// <param name="persona">La Persona a la que se desea ver su carrito</param>
-        public void LlenarTabla(Entidad persona)
+        /// <param name="persona">el ID de la persona a la que se desea ver su carrito</param>
+        public void LlenarTabla(String idpersona)
         {
+            //Creo la persona y le pongo su ID
+            Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+            persona.Id = int.Parse(idpersona);
+
             //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
             Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
             Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();

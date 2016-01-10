@@ -318,10 +318,16 @@ namespace DatosSKD
         }
         #endregion
 
-
-
-
-
+        #region LimpiarSQLConnection
+        /// <summary>
+        /// Metodo que deja en vacio la conexion
+        /// </summary>
+        public void LimpiarSQLConnection()
+        {
+            //Igualamos a vacio
+            this.conexion = null;
+        }
+        #endregion
 
     }
 }
