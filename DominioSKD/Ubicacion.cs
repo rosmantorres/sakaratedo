@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Ubicacion
+    public class Ubicacion : Entidad
     {
         #region atributos
         private int id_ubicacion;
@@ -55,7 +55,7 @@ namespace DominioSKD
         }
         #endregion
 
-        public Ubicacion()
+        public Ubicacion() : base()
         {
             id_ubicacion = 0;
             latitud      = "";
@@ -65,7 +65,7 @@ namespace DominioSKD
             direccion    = "";
         }
 
-        public Ubicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public Ubicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir) : base()
         {
             latitud   = laLat;
             longitud  = laLon;
@@ -74,7 +74,17 @@ namespace DominioSKD
             direccion = LaDir;
         }
 
-        public Ubicacion(int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public Ubicacion(int elId, String laLat, String laLon, String laCiudad, String elEstado, String LaDir) :base()
+        {
+            id_ubicacion = elId;
+            latitud = laLat;
+            longitud = laLon;
+            ciudad = laCiudad;
+            estado = elEstado;
+            direccion = LaDir;
+        }
+
+        public Ubicacion(int id, int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir) : base(id)
         {
             id_ubicacion = elId;
             latitud      = laLat;
@@ -84,7 +94,7 @@ namespace DominioSKD
             direccion    = LaDir;
         }
 
-        public Ubicacion(int elId, String laCiudad, String elEstado)
+        public Ubicacion(int elId, String laCiudad, String elEstado) : base()
         {
             id_ubicacion = elId;
             ciudad = laCiudad;

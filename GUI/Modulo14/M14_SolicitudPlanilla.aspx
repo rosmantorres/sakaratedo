@@ -89,7 +89,7 @@
            </div>
        </div>
          <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                  <div class="col-sm-8 col-md-8 col-lg-8">
+                  <div class="col-sm-8 col-md-8 col-lg-8" id="divMotivo" runat="server">
                       <h3>Motivo:</h3>
                       <br />  
                        <textarea id="id_motivo" cols="120" rows="10"  class="form-control" runat="server"></textarea>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Organizacion
+    public class Organizacion : Entidad
     {
         private int id_organizacion;
         private String nombre;
@@ -60,7 +60,7 @@ namespace DominioSKD
 
        
 
-        public Organizacion(int elId, String elNombre)
+        public Organizacion(int elId, String elNombre) : base()
         {
             id_organizacion = elId;
             nombre = elNombre;
@@ -71,7 +71,7 @@ namespace DominioSKD
             nombre = elNombre;
         }
 
-        public Organizacion()
+        public Organizacion() : base()
         {
             id_organizacion = 0;
             nombre = "";

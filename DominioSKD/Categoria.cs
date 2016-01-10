@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Categoria
+    public class Categoria : Entidad
     {
         #region atributos
         private int id_categoria;
@@ -57,7 +57,7 @@ namespace DominioSKD
         #endregion
 
         #region constructores
-        public Categoria()
+        public Categoria() : base()
         {
             id_categoria  = 0;
             edad_inicial  = -1;
@@ -67,7 +67,7 @@ namespace DominioSKD
             sexo = "";
         }
 
-        public Categoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public Categoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base()
         {
             edad_inicial  = laEdadIni;
             edad_final    = laEdadFin;
@@ -76,7 +76,7 @@ namespace DominioSKD
             sexo          = elSexo;
         }
 
-        public Categoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public Categoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base ()
         {
             id_categoria  = elId;
             edad_inicial  = laEdadIni;
@@ -84,6 +84,16 @@ namespace DominioSKD
             cinta_inicial = laCintaIni;
             cinta_final   = laCintaFinal;
             sexo          = elSexo;
+        }
+
+        public Categoria(int id, int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base(id)
+        {
+            id_categoria = elId;
+            edad_inicial = laEdadIni;
+            edad_final = laEdadFin;
+            cinta_inicial = laCintaIni;
+            cinta_final = laCintaFinal;
+            sexo = elSexo;
         }
         #endregion
 

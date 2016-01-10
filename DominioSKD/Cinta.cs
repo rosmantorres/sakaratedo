@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Cinta
+    public class Cinta : Entidad
     {
 
         private int id_cinta;
@@ -16,13 +16,13 @@ namespace DominioSKD
         private int orden;
         private String significado;
         private int id_restriccion;
-        
+
         public int Id_cinta
         {
             get { return id_cinta; }
             set { id_cinta = value; }
         }
-        
+
         public String Color_nombre
         {
             get { return color_nombre; }
@@ -56,13 +56,13 @@ namespace DominioSKD
         public int Id_restriccion
         {
             get { return id_restriccion; }
-            set {id_restriccion = value; }
+            set { id_restriccion = value; }
         }
-        public Cinta()
+        public Cinta() : base()
         {
             id_cinta = 0;
             color_nombre = "";
-            rango="";
+            rango = "";
             clasificacion = "";
             orden = 0;
             significado = "";

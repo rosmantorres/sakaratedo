@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comando.cs" />
+    <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,7 +70,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\LogicaListaImplemento.cs" />
     <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,6 +115,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo6.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo7\LogicaCintas.cs" />
+    <Compile Include="Modulo7\LogicaEventosPagos.cs" />
+    <Compile Include="Modulo7\LogicaEventosAsistidos.cs" />
+    <Compile Include="Modulo7\LogicaEventosInscritos.cs" />
+    <Compile Include="Modulo7\LogicaHorarioPractica.cs" />
+    <Compile Include="Modulo7\LogicaMatriculasPagas.cs" />
+    <Compile Include="Modulo7\LogicaOrganizacionYDojo.cs" />
     <Compile Include="Modulo7\RecursosLogicaModulo7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,7 +132,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo9\LogicaEvento.cs" />
     <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,6 +218,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Comandos\Modulo10\" />
+    <Folder Include="Comandos\Modulo11\" />
+    <Folder Include="Comandos\Modulo12\" />
+    <Folder Include="Comandos\Modulo13\" />
+    <Folder Include="Comandos\Modulo14\" />
+    <Folder Include="Comandos\Modulo15\" />
+    <Folder Include="Comandos\Modulo16\" />
+    <Folder Include="Comandos\Modulo1\" />
+    <Folder Include="Comandos\Modulo2\" />
+    <Folder Include="Comandos\Modulo3\" />
+    <Folder Include="Comandos\Modulo4\" />
+    <Folder Include="Comandos\Modulo5\" />
+    <Folder Include="Comandos\Modulo6\" />
+    <Folder Include="Comandos\Modulo7\" />
+    <Folder Include="Comandos\Modulo8\" />
+    <Folder Include="Comandos\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -62,6 +62,15 @@ namespace templateApp.GUI.Modulo14
                      labelCompetencia.Visible = false;
                      
                  }
+                 if (datosRequeridos[4] == true)
+                 {
+                     divMotivo.Visible = true;
+                    
+                 }
+                 else
+                 {
+                     divMotivo.Visible = false;
+                 }
              }
                  catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                  {
@@ -147,25 +156,28 @@ namespace templateApp.GUI.Modulo14
             planilla.ID = Int32.Parse(this.id_planilla.Value);
             LogicaSolicitud lS = new LogicaSolicitud();
             
-            if (comboEvento.Visible==true){
-                SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
-                                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
-                lS.RegistrarSolicitudPlanilla(laSolicitud);
-            }
-            if (comboCompetencia.Visible == true)
-            {
-                SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
-                                             this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
-                lS.RegistrarSolicitudPlanilla(laSolicitud);
-            }
-            if (comboEvento.Visible == false && comboCompetencia.Visible == false)
-            {
-                SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
-                                             this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
-                lS.RegistrarSolicitudIDPersona(laSolicitud);
-            }
-          
             
+                        if (comboEvento.Visible == true)
+                        {
+                            SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                                         this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
+                            lS.RegistrarSolicitudPlanilla(laSolicitud);
+                        }
+                        if (comboCompetencia.Visible == true)
+                        {
+                            SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                                         this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
+                            lS.RegistrarSolicitudPlanilla(laSolicitud);
+                        }
+                        if (comboEvento.Visible == false && comboCompetencia.Visible == false)
+                        {
+                            SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                                         this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+                            lS.RegistrarSolicitudIDPersona(laSolicitud);
+                        }
+                  
+
+     
             Response.Redirect("../Modulo14/M14_SolicitarPlanilla.aspx?success=true");
         }
     }

@@ -26,6 +26,12 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+      <link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+    <link href="css/daterange.css" rel="stylesheet" />
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/daterange.js"></script>
+    <script src="js/jquery.ui.datepicker-es.js"></script>
+
      <div id="alert" runat="server">
     </div>
 
@@ -39,54 +45,25 @@
 
     <div class="box-body table-responsive">
 
+          <div class="center-block" id="baseFechaControl">
+            <div class="dateControlBlock">
+                 Desde fecha: <input type="text" name="fechaInicio" id="fechaInicio" class="datepicker" size="8"/> Hasta fecha:   
+                 <input type="text" name="fechaFin" id="fechaFin" class="datepicker" size="8"/>
+            </div>
+        </div>
+
        <table id="tablapagoseventos" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr>
-                    <th>Factura</th>
-					<th>Evento</th>
-                    <th>Fecha</th>
-                    <th>Pago</th>
+                    <th>Evento</th>
+					<th>Tipo</th>
+                    <th>Fecha de Pago</th>
+                     <th>Monto(Bs)</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="id">001</td>
-				    <td>Entrenamiento</td>
-					<td>23/10/2015</td>
-					<td>8.000 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">002</td>
-					<td>Competencia</td>
-					<td>27/10/2015</td>
-					<td>3.280 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info2" href="#"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">003</td>
-					<td>Seminario de patadas</td>
-                    <td>02/11/2015</td>
-                    <td>2.000 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info3" href="#"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">004</td>
-					<td>Entrenamiento especial</td>
-					<td>11/11/2015</td>
-					<td>4.285 Bsf</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info4" href="#"></a>
-                     </td>
-                </tr>
-                
-
+				<asp:Literal runat="server" ID="laTabla"></asp:Literal>        
 			</tbody>
     </table>
         </div>
@@ -259,15 +236,56 @@
 		</div>
 
         <script type="text/javascript">
+            $.datepicker.setDefaults($.datepicker.regional["es"]);
             $(document).ready(function () {
 
                 var table = $('#tablapagoseventos').DataTable({
+                    "dom": '<"pull-left"f>rt<"pull-right"lp>i',
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     }
                 });
                 var req;
                 var tr;
+
+                $dateControls = $("#baseFechaControl").children("div").clone();
+                $("#feedbackTable_filter").prepend($dateControls);
+
+                // Implementacion de jQuery UI Datepicker widget sobre los controles de fechas
+                $("#fechaInicio").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaFin").datepicker("option", "minDate", selectedDate);
+                    }
+                });
+                $("#fechaFin").datepicker({
+                    minDate: "-50Y",
+                    maxDate: "Y",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: 'button',
+                    buttonImage: 'css/images/calendar.gif',
+                    buttonText: 'Mostrar Fecha',
+                    onClose: function (selectedDate) {
+                        $("#fechaInicio").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
+
+                // Crea el evento listeners que va a filtrar la tabla siempre que el usuario escriba el usuario escriba
+                // en el datepicker 
+                $("#fechaInicio").keyup(function () { table.draw(); });
+                $("#fechaInicio").change(function () { table.draw(); });
+                $("#fechaFin").keyup(function () { table.draw(); });
+                $("#fechaFin").change(function () { table.draw(); });
+
 
                 $('#tablapagoseventos tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
