@@ -121,6 +121,31 @@ namespace templateApp.GUI.Modulo16
                             "Disponibles </div>";
                     }
                     break;
+
+                case "3":
+                    //Obtenemos el exito o fallo del proceso
+                    String exito3 = Request.QueryString["exito"];
+
+                    if (exito3.Equals("1"))
+                    {
+                        //Si el RegistrarPago fue exitoso mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                            "El producto se ha agregado exitosamente</div>";
+                    }
+                    else
+                    {
+                        //Si el RegistarPago fue fallido mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                            " Su producto no ha podido ser agregado, si ha querido agregar implementos" + 
+                            " la cantidad deseada no existe en el inventario actualmente</div>";
+                    }
+                    break;
             }
                 
         }
