@@ -40,15 +40,6 @@ namespace templateApp.GUI.Modulo16 {
         protected global::System.Web.UI.WebControls.Table TablaImplemento;
         
         /// <summary>
-        /// TablaMatricula control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table TablaMatricula;
-        
-        /// <summary>
         /// TablaEvento control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace templateApp.GUI.Modulo16 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table TablaEvento;
+        
+        /// <summary>
+        /// TablaMatricula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table TablaMatricula;
         
         /// <summary>
         /// alert_nombre control.

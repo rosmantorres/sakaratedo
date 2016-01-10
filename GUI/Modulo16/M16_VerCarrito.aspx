@@ -63,17 +63,17 @@
         </div>
        </div>
     </div>
-</div>
+</div>       
 
-         <div class="row">
+                <div class="row">
             <div class="col-xs-12">
               <div class="box">
         <div class="box-header">
-                      <h3 class="box-title">Matricula</h3>
+                      <h3 class="box-title">Evento</h3>
         </div><!-- /.box-header -->
 
-        <div class="box-body table-responsive">
-       <asp:Table ID="TablaMatricula" runat="server" CssClass="table table-bordered table-striped dataTable">
+    <div class="box-body table-responsive">
+       <asp:Table ID="TablaEvento" runat="server" CssClass="table table-bordered table-striped dataTable">
            <asp:TableHeaderRow>
                <asp:TableHeaderCell>
                    Producto
@@ -94,15 +94,15 @@
     </div>
 </div>
 
-                <div class="row">
+          <div class="row">
             <div class="col-xs-12">
               <div class="box">
         <div class="box-header">
-                      <h3 class="box-title">Evento</h3>
+                      <h3 class="box-title">Matricula</h3>
         </div><!-- /.box-header -->
 
-    <div class="box-body table-responsive">
-       <asp:Table ID="TablaEvento" runat="server" CssClass="table table-bordered table-striped dataTable">
+        <div class="box-body table-responsive">
+       <asp:Table ID="TablaMatricula" runat="server" CssClass="table table-bordered table-striped dataTable">
            <asp:TableHeaderRow>
                <asp:TableHeaderCell>
                    Producto

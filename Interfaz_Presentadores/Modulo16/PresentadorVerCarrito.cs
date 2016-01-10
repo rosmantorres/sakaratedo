@@ -98,7 +98,7 @@ namespace Interfaz_Presentadores.Modulo16
                 //Boton informacion
                 boton = new Button();
                 boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
-                boton.ID = "Informacion-" + item.Id_Implemento.ToString();
+                boton.ID = "Informacion1-" + item.Id_Implemento.ToString();
 
                 //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
                 boton.Attributes.Add("data-toggle", "modal");
@@ -132,14 +132,14 @@ namespace Interfaz_Presentadores.Modulo16
                 //Agrego la Celda a la fila
                 fila.Cells.Add(celda);
 
-                //Nueva celda que tendra el costo del implemento
+                //Nueva celda que tendra el costo del evento
                 celda = new TableCell();
                 celda.Text = item.Costo.ToString();
 
                 //Agrego la celda a la fila
                 fila.Cells.Add(celda);
 
-                //Nueva celda que tendra el textbox para poner la cantidad del implemento
+                //Nueva celda que tendra el textbox para poner la cantidad del evento
                 celda = new TableCell();
                 TextBox texto = new TextBox();
                 texto.Text = aux.Value.ToString();
@@ -159,7 +159,7 @@ namespace Interfaz_Presentadores.Modulo16
                 //Boton informacion
                 boton = new Button();
                 boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
-                boton.ID = "Informacion-" + item.Id_evento.ToString();
+                boton.ID = "Informacion2-" + item.Id_evento.ToString();
 
                 //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
                 boton.Attributes.Add("data-toggle", "modal");
@@ -177,7 +177,7 @@ namespace Interfaz_Presentadores.Modulo16
                 this.laVista.tablaEvento.Rows.Add(fila);
             }
 
-            //Obtenemos cada implemento para ponerlos en la tabla            
+            //Obtenemos cada matricula para ponerlas en la tabla            
             foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listamatricula)
             {
                 //Casteamos la entidad como una matricula
@@ -186,41 +186,34 @@ namespace Interfaz_Presentadores.Modulo16
                 //Creamos la nueva fila que ira en la tabla
                 TableRow fila = new TableRow();
 
-                //Nueva celda que tendra el nombre del evento
+                //Nueva celda que tendra el nombre de la matricula
                 TableCell celda = new TableCell();
                 celda.Text = item.Identificador;
 
                 //Agrego la Celda a la fila
                 fila.Cells.Add(celda);
 
-                //Nueva celda que tendra el costo del implemento
+                //Nueva celda que tendra el costo de la matricula
                 celda = new TableCell();
                 celda.Text = item.Costo.ToString();
 
                 //Agrego la celda a la fila
                 fila.Cells.Add(celda);
 
-                //Nueva celda que tendra el textbox para poner la cantidad del implemento
-                celda = new TableCell();
-                TextBox texto = new TextBox();
-                texto.Text = aux.Value.ToString();
-                celda.Controls.Add(texto);
+                //Agrego celda para poner la cantidad de la matricula
+                celda = new TableCell();               
+                celda.Text = aux.Value.ToString();                
 
                 //Agrego la celda a la fila
                 fila.Cells.Add(celda);
 
-                //Celda que tendra los botones de Modificar y Eliminar
+                //Celda que tendra el boton de Eliminar
                 celda = new TableCell();
                 Button boton = new Button();
-                boton.Click += Modificar_Carrito;
-                boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
-                boton.ID = "Evento-" + item.Id.ToString();
-                celda.Controls.Add(boton);                
-
-                //Se modifica para que el boton no haga postback
-                boton.OnClientClick = "return false;";
-                boton.UseSubmitBehavior = false;
-                celda.Controls.Add(boton);
+                boton.Click += Eliminar_Item;
+                boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
+                boton.ID = "Matricula-" + item.Id.ToString();
+                celda.Controls.Add(boton);               
 
                 //Agrego la celda a la fila
                 fila.Cells.Add(celda);
@@ -228,6 +221,11 @@ namespace Interfaz_Presentadores.Modulo16
                 //Agrego la fila a la tabla
                 this.laVista.tablaMatricula.Rows.Add(fila);
             }
+        }
+
+        void Eliminar_Item(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
         #endregion
 
