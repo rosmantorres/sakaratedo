@@ -61,9 +61,6 @@
                                   <div class="modal-footer">
                                    <button type="button"  id="restab" runat="server"  class="btn btn-lg btn-primary btn-block"  data-dismiss="modal"  
                                     onserverclick="EnvioCorreo" attr="disabled">Restablecer</button>
-                                      
-                                     <!--  <asp:Button runat="server"  Text="Save Image" CssClass="Greengradiant btn- large" OnClick="EnvioCorreo" UseSubmitBehavior="false" data-dismiss="modal" />
--->
                                   </div>
                            </div>
                         </div>

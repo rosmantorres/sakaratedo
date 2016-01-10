@@ -130,6 +130,15 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.WebControls.DropDownList comboCompetencia;
         
         /// <summary>
+        /// Control divMotivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMotivo;
+        
+        /// <summary>
         /// Control id_motivo.
         /// </summary>
         /// <remarks>

@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\CKEditor\bin\Debug\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -49,7 +49,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\itextsharp.dll</HintPath>
+      <HintPath>..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -209,6 +209,17 @@
     <Content Include="GUI\Modulo13\M13_ListarMorosos.aspx" />
     <Content Include="GUI\Modulo13\M13_ProgramaKyu.aspx" />
     <Content Include="GUI\Modulo13\templateApp.csproj" />
+    <Content Include="GUI\Modulo14\img\Carnet_titulo.jpg" />
+    <Content Include="GUI\Modulo14\img\perfil.jpg" />
+    <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
+    <Content Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx" />
+    <Content Include="GUI\Modulo14\M14_DisenoPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
+    <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
+    <Content Include="GUI\Modulo14\M14_MostrarPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -224,8 +235,8 @@
     <Content Include="GUI\Modulo1\js\Login.js" />
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
-    <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
+    <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
@@ -1667,6 +1678,69 @@
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
+      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.designer.cs">
+      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.cs">
+      <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.designer.cs">
+      <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.cs">
+      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.cs">
+      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.designer.cs">
+      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.cs">
+      <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
+      <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.cs">
+      <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.cs">
+      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.cs">
+      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.cs">
+      <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo14\RecursoInterfazModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1725,13 +1799,6 @@
     </Compile>
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo1\M1_Prueba.aspx.cs">
-      <DependentUpon>M1_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
-      <DependentUpon>M1_Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo1\RecursosInterfazModulo1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2150,7 +2217,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\Modulo15\" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -47,6 +47,10 @@
     <Compile Include="Modulo16\IContratoListarMensualidad.cs" />
     <Compile Include="Modulo16\IContratoListarProducto.cs" />
     <Compile Include="Modulo16\IcontratoVerCarrito.cs" />
+    <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo1\IContratoM1Inicio.cs" />
+    <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
+    <Compile Include="Modulo2\IContratoM2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +68,7 @@
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo1\" />
     <Folder Include="Modulo2\" />
+    <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo5\" />

@@ -36,7 +36,7 @@ namespace templateApp.GUI.Modulo15
             }
             catch (Exception ex)
             {
-                throw ex;
+                Response.Redirect("~/GUI/Modulo15/M15_ConsultarImplemento.aspx?modificar=fallo");
             }
 
 
@@ -62,7 +62,7 @@ namespace templateApp.GUI.Modulo15
 
             ((SKD)Page.Master).IdModulo = "15";
           //  this.btnmodificarImplemento.Click+= new EventHandler(this.evento_modificar);
-            int idImplemento =Convert.ToInt16(Request.QueryString["idImplemento"]);
+            int idImplemento =Convert.ToInt32(Request.QueryString["idImplemento"]);
             if (idImplemento != 0) {
                 cargarDatosModificar(idImplemento);
             
