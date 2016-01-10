@@ -59,13 +59,11 @@ namespace templateApp.GUI.Modulo16
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Carga la Barra lateral del modulo indicado
             ((SKD)Page.Master).IdModulo = "16";            
 
             //Obtengo el Carrito de la Persona pasandole el ID del session
             this.elPresentador.LlenarTabla(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-
-            //Verificamos si estamos ingresando a la pagina web sin ser redireccionamiento a ella misma
-           // if (!IsPostBack)
 
             //Nos indica si hubo alguna accion de agregar, modificar o eliminar
             String accion = Request.QueryString["accion"];
@@ -98,7 +96,7 @@ namespace templateApp.GUI.Modulo16
                     }
                     break;
 
-                //Si se viene de un Registrar Pago obtenemos esta alerta
+                //Si se viene de un RegistrarPago obtenemos esta alerta
                 case "2":
                     //Obtenemos el exito o fallo del proceso
                     String exito2 = Request.QueryString["exito"];
@@ -162,14 +160,14 @@ namespace templateApp.GUI.Modulo16
                 }
 
                 //Obtengo el exito o fallo del proceso
-                /*bool respuesta = this.elPresentador.RegistrarPago(persona, pago);
-                bool respuesta = this.elPresentador.RegistrarPago(null, pago);
+                bool respuesta = this.elPresentador.RegistrarPago(
+                    Session[RecursosInterfazMaster.sessionUsuarioID].ToString(), pago);                
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
                     HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=1");
                 else
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");*/
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
             }
             catch (OpcionPagoNoValidoException ex)
             {

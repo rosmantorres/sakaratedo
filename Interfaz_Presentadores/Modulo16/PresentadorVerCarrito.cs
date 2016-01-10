@@ -15,6 +15,8 @@ using DominioSKD.Entidades.Modulo6;
 using System.Web.UI.WebControls;
 using DominioSKD.Fabrica;
 using DominioSKD.Entidades.Modulo1;
+using System.Web;
+using Interfaz_Presentadores.Master;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -37,6 +39,8 @@ namespace Interfaz_Presentadores.Modulo16
         #endregion
 
         #region Metodos
+
+        #region VerCarrito
         /// <summary>
         /// Metodo del presentador que obtiene el carrito de una persona
         /// </summary>
@@ -225,7 +229,9 @@ namespace Interfaz_Presentadores.Modulo16
                 this.laVista.tablaMatricula.Rows.Add(fila);
             }
         }
+        #endregion
 
+        #region ModificarCarrito
         /// <summary>
         /// Metodo del presentador que modifica la cantidad de un item determinado en el carrito de una persona
         /// </summary>
@@ -234,8 +240,8 @@ namespace Interfaz_Presentadores.Modulo16
         void Modificar_Carrito(object sender, EventArgs e)
         {
             //Persona que eventualmente la buscaremos por el session
-        //    Entidad persona = FabricaEntidades.ObtenerPersona();
-          //  persona.Id = 11;
+            Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+            persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
             Button aux = (Button)sender;
@@ -243,6 +249,10 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Cantidad Deseada nueva por el usuario
             int cantidad = 0;
+
+            //Respuesta a obtener del comando, tipo de objeto
+            bool respuesta = false;
+            int TipoObjeto = 0;            
 
             //Si se trata de un implemento, me voy a la tabla correspondiente
             if (datos[0] == "Implemento")
@@ -269,23 +279,86 @@ namespace Interfaz_Presentadores.Modulo16
                 }
 
                 //Decimos que se trata de un implemento
-                int TipoObjeto = 1;
+                TipoObjeto = 1;
 
-                //Creo el implemento y le pasamos el ID que vino del boton
-               /* Implemento objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
+                //Pasamos el ID que vino del boton
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
                 objeto.Id = int.Parse(datos[1]);
 
                 //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
                 Comando<bool> ModificarCarrito = FabricaComandos.CrearComandoModificarCarrito(persona, objeto, TipoObjeto, cantidad);
-                bool respuesta = ModificarCarrito.Ejecutar();
+                respuesta = ModificarCarrito.Ejecutar();
+            }
+            //Si es un Evento, me voy a la tabla correspondiente
+            else if (datos[0] == "Evento")
+            {
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                foreach (TableRow aux2 in this.laVista.tablaEvento.Rows)
+                {
+                    //Si la fila no es de tipo Header puedo comenzar a buscar
+                    if ((aux2 is TableHeaderRow) != true)
+                    {
+                        //En la celda 3 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
 
-                //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
-                if (respuesta)
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
-                else
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0"); */
-            }  
-        }        
+                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
+                        //Obtenemos el numero del textbox que el usuario desea
+                        if (aux3.ID == aux.ID)
+                        {
+                            //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el usuario desea
+                            TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
+                            cantidad = int.Parse(eltexto.Text);
+                            break;
+                        }
+                    }
+                }
+
+                //Decimos que se trata de un evento
+                TipoObjeto = 2;
+
+                //Pasamos el ID que vino del boton
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Evento objeto = (Evento)fabrica.ObtenerEvento();
+                objeto.Id_evento = int.Parse(datos[1]);
+
+                //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
+                Comando<bool> ModificarCarrito = FabricaComandos.CrearComandoModificarCarrito
+                    (persona, objeto, TipoObjeto, cantidad);
+                respuesta = ModificarCarrito.Ejecutar();
+            }            
+
+            //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
+            if (respuesta)
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
+            else
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0");
+        }
         #endregion
+
+        #region RegistrarPago
+        /// <summary>
+        /// Metodo del presentador que registra el pago de los productos que hay en el carrito de una persona
+        /// </summary>
+        /// <param name="idpersona">La persona que desea comprar los productos</param>
+        /// <param name="pago">El tipo de pago con el cual realizo la transaccion</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        public bool RegistrarPago(string idpersona, string pago)
+        {
+            //Instancio la fabrica, obtengo la entidad persona y asigno su ID
+            FabricaEntidades fabrica = new FabricaEntidades();
+            Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+            persona.Id = int.Parse(idpersona);
+
+            //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
+            Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pago);
+            bool respuesta = registrarPago.Ejecutar();
+
+            //Retorno la respuesta
+            return respuesta;
+        }
+        #endregion
+        #endregion
+
     }
 }
