@@ -21,7 +21,7 @@ namespace DatosSKD.DAO.Modulo16
     public class DaoEvento : DAOGeneral, IdaoEvento
     {
 
-        #region Metodos
+        #region Metodos para ConsultarTodos (Listar Eventos)
         /// <summary>
         /// Metodo que retorma una lista de eventos existentes
         /// </summary>
@@ -62,17 +62,58 @@ namespace DatosSKD.DAO.Modulo16
             #endregion
         }
 
+        #endregion
 
-        public List<Entidad> ListarEvento()
+        #region Metodo para ConsultarXId (Detallar Evento)
+        /// <summary>
+        /// Metodo que retorma una entidad de tipo evento
+        /// </summary>
+        /// <param name=Entidad>Se pasa el id del evento a buscar</param>
+        /// <returns>Todas los atributos de la clase evento para el detallar</returns>
+        public Entidad ConsultarXId(Entidad evento)
         {
-            return new List<Entidad>();
+            FabricaEntidades laFabrica = new FabricaEntidades();
+            List<Evento> laLista = new List<Evento>();
+            DataTable resultado = new DataTable();
+            List<Parametro> parametros = new List<Parametro>();
+            Evento elEvento = new Evento();
+            Evento lista = new Evento();
+
+            Evento eve = (Evento)evento;
+
+
+            try
+            {
+                parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, eve.Id.ToString(), false);
+                parametros.Add(parametro);
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_EVENTO, parametros);
+
+                foreach (DataRow row in resultado.Rows)
+                {
+                    elEvento = (Evento)laFabrica.ObtenerEvento();
+                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                    elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                    elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+                    elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+
+                }
+
+                return elEvento;
+
+            }
+            #region catches
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            #endregion
         }
 
-        public Entidad ConsultarXId(Entidad entidad)
-        {
-            return new Evento();
-        }
-        
+        #endregion 
+
+        #region Metodo para DetallarEvento
+
         /// <summary>
         /// Metodo que devueve un tipoevento dado su id
         /// </summary>
@@ -84,5 +125,19 @@ namespace DatosSKD.DAO.Modulo16
         }
 
         #endregion
+
+        #region Metodo para ListarEvento
+
+        /// <summary>
+        /// Metodo para el listar de evento sin parametro
+        /// </summary>
+        /// <returns>Retorna una lista de eventos</returns>
+        public List<Entidad> ListarEvento()
+        {
+            return new List<Entidad>();
+        }
+
+        #endregion
+
     }
 }

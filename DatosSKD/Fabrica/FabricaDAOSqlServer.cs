@@ -191,6 +191,15 @@ namespace DatosSKD.Fabrica
         {
             return new DatosSKD.DAO.Modulo16.DaoMensualidad();
         }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del detalleEvento
+        /// </summary>
+        /// <returns>el DaoEvento</returns>
+        public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoDetalleEvento()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoEvento();
+        }
         #endregion
 
 

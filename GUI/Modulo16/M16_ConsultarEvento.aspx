@@ -1,15 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarEvento.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script  type="text/javascript" src="M16_JS/M16_ConsultarEvento.js" ></script>
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+    <script type="text/javascript">
+
+    </script>
+
+<!--BREADCRUMB-->
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
-		
 		    <li>
 			    <a href="../Modulo16/M16_VerCarrito.aspx">Ver Carrito</a> 
 		    </li>
@@ -35,34 +38,43 @@
             El Evento se ha Agregado Exitosamente al Carrito.
         </div>
 
+     <form runat="server" >
+
     <div class="box-body table-responsive">
 
-         <!--MODAL PARA EL DETALLE-->
+<!--TABLA DEL LISTAR DE EVENTO-->
      <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Eventos Actuales</h3>
                 </div><!-- /.box-header -->
               </div>
-       <table id="tablaevento" class="table table-bordered table-striped dataTable">
-        <thead>
-            <tr>
-                    
-                    <th style="text-align:left">Nombre</th>
-					<th style="text-align:left">Descripcion</th>
-                    <th style="text-align:left">Costo (Bs.)</th>
-                    <th style="text-align:left">Cantidad</th>
-					<th style="text-align:left">Acciones</th> 
-            </tr>
-        </thead>
- 
-        <tbody>
-            <asp:Literal runat="server" ID="tlTablaEventos"></asp:Literal>
-        </tbody>
-    </table>    
-   </div>
-                  <!--MODAL PARA EL DETALLE -->
-<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        
+       <asp:Table ID="tablitaEventos" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Nombre
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Descripcion
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Costo
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad a Escoger
+               </asp:TableHeaderCell>              
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+      </asp:Table>
+    
+        </div>
+        
+
+     <!--MODAL PARA EL DETALLE -->
+<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -71,21 +83,17 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
-							<div class="row">
-								<h3>Id</h3>
-                                    <label id="aux1" ></label>
-                                <h3>Nombre</h3>
-									 <label id="aux2" ></label>
-                                <h3>Descripcion</h3>
-									 <label id="aux3" ></label>
-                                <h3>Costo</h3>
-									 <label id="aux4" ></label>
+							<div class="row" id="prueba" >
+                                <asp:Literal runat="server" ID="detalleEventoLiteral" ></asp:Literal>
 
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>        
+		</div>    
+    
+     
+    </form>
 
 </asp:Content>

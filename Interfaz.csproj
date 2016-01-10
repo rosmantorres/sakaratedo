@@ -212,10 +212,6 @@
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
-    <Content Include="GUI\Modulo16\M16_JS\M16_ConsultarEvento.js" />
-    <Content Include="GUI\Modulo16\M16_JS\M16_ConsultarMensualidad.js" />
-    <Content Include="GUI\Modulo16\M16_JS\M16_ConsultarProducto.js" />
-    <Content Include="GUI\Modulo16\M16_JS\M16_ListarFacturas.js" />
     <Content Include="GUI\Modulo16\M16_ListarFacturas.aspx" />
     <Content Include="GUI\Modulo16\M16_Prueba.aspx" />
     <Content Include="GUI\Modulo16\M16_VerCarrito.aspx" />
@@ -313,7 +309,6 @@
     <Content Include="plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="GUI\Master\SKD.Master" />
     <Content Include="GUI\Modulo14\ckeditor\CHANGES.md" />
     <Content Include="GUI\Modulo14\ckeditor\LICENSE.md" />
     <Content Include="GUI\Modulo14\ckeditor\plugins\scayt\LICENSE.md" />
@@ -330,6 +325,7 @@
     <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="GUI\Modulo14\ckeditor\skins\moono\readme.md" />
+    <Content Include="GUI\Master\SKD.Master" />
     <Content Include="plugins\jquery_validate\demo\captcha\fonts\Anorexia.ttf" />
     <Content Include="plugins\jquery_validate\demo\captcha\images\image.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\image_req.php" />

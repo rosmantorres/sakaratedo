@@ -175,7 +175,8 @@
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="M12_ListarCompetencias.aspx?compDetalle=</value>
   </data>
   <data name="BOTON_INFO_EVENTO" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info1"  id="</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" </value>
+    <comment>data-toggle="modal" data-target="#modal-info1"</comment>
   </data>
   <data name="BOTON_INFO_EVENTO_CARRITO" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"   data-toggle="modal" data-target="#modal-info2"  id="</value>
@@ -217,5 +218,8 @@
   </data>
   <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
     <value>Saliendo del metodo</value>
+  </data>
+  <data name="strIdEvento" xml:space="preserve">
+    <value>idEvento</value>
   </data>
 </root>

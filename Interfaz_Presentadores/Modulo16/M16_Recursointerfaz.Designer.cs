@@ -223,7 +223,7 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;   data-toggle=&quot;modal&quot; data-target=&quot;#modal-info1&quot;  id=&quot;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; .
         /// </summary>
         internal static string BOTON_INFO_EVENTO {
             get {
@@ -346,6 +346,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string MENSAJE_SALIDA_LOGGER {
             get {
                 return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idEvento.
+        /// </summary>
+        internal static string strIdEvento {
+            get {
+                return ResourceManager.GetString("strIdEvento", resourceCulture);
             }
         }
     }

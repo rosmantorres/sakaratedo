@@ -55,6 +55,10 @@
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatosSKD\DatosSKD.csproj">
+      <Project>{27cf82c4-c713-4057-81e0-8e4de0978481}</Project>
+      <Name>DatosSKD</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DominioSKD\DominioSKD.csproj">
       <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
       <Name>DominioSKD</Name>
