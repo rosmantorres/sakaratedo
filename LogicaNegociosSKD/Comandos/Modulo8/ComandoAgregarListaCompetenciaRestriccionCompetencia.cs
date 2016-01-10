@@ -4,13 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoAgregarListaCompetenciaRestriccionCompetencia : Comando<DominioSKD.Entidad>
+    public class ComandoAgregarListaCompetenciaRestriccionCompetencia : Comando<Boolean>
     {
 
-        public override Boolean Ejecutar(DominioSKD.Entidad RestriccionCompetencia, List<DominioSKD.Entidad> listaCompetencias)
+        private List<Entidad> listaCompetencias;
+
+        public List<Entidad> ListaCompetencias
+        {
+            get { return listaCompetencias; }
+            set { listaCompetencias = value; }
+        }
+        
+        private Entidad RestriccionCompetencia;
+
+        public Entidad LaRestriccionCompetencia
+        {
+            get { return RestriccionCompetencia; }
+            set { RestriccionCompetencia = value; }
+        }
+
+        public override Boolean Ejecutar()
         {
             Boolean resultado = false;
 
@@ -21,7 +38,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             try
             {
 
-                resultado = daoRestriccionCompetencia.AgregarListaCompetenciaRestriccionCompetencia(RestriccionCompetencia, listaCompetencias);
+                resultado = daoRestriccionCompetencia.AgregarListaCompetenciaRestriccionCompetencia(this.RestriccionCompetencia, this.listaCompetencias);
 
             }
             catch (Exception ex)

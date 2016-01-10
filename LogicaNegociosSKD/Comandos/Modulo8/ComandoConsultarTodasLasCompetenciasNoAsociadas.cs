@@ -4,13 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    class ComandoConsultarTodasLasCompetenciasNoAsociadas : Comando<DominioSKD.Entidad>
+    public class ComandoConsultarTodasLasCompetenciasNoAsociadas : Comando<List<DominioSKD.Entidad>>
     {
+        private Entidad RestriccionCompetencia;
 
-        public override List<DominioSKD.Entidad> Ejecutar(DominioSKD.Entidad RestriccionCompetencia)
+        public Entidad LaRestriccionCompetencia
+        {
+            get { return RestriccionCompetencia; }
+            set { RestriccionCompetencia = value; }
+        }
+        public override List<DominioSKD.Entidad> Ejecutar()
         {
             List<DominioSKD.Entidad> resultado;
 
@@ -21,7 +28,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             try
             {
 
-                resultado = daoRestriccionCompetencia.ConsultarTodasLasCompetenciasNoAsociadas(RestriccionCompetencia);
+                resultado = daoRestriccionCompetencia.ConsultarTodasLasCompetenciasNoAsociadas(this.RestriccionCompetencia);
 
             }
             catch (Exception ex)

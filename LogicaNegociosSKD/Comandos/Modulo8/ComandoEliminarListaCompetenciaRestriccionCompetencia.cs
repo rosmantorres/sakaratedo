@@ -4,13 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
+using DominioSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoEliminarListaCompetenciaRestriccionCompetencia : Comando<DominioSKD.Entidad>
+    public class ComandoEliminarListaCompetenciaRestriccionCompetencia : Comando<Boolean>
     {
+        private Entidad RestriccionCompetencia;
 
-        public override Boolean Ejecutar(DominioSKD.Entidad RestriccionCompetencia, List<DominioSKD.Entidad> listaCompetencias)
+        public Entidad LaRestriccionCompetencia
+        {
+            get { return RestriccionCompetencia; }
+            set { RestriccionCompetencia = value; }
+        }
+        private List<Entidad> listaCompetencias;
+
+        public List<Entidad> ListaCompetencias
+        {
+            get { return listaCompetencias; }
+            set { listaCompetencias = value; }
+        }
+
+        public override Boolean Ejecutar()
         {
             Boolean resultado = false;
 
@@ -21,7 +36,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             try
             {
 
-                resultado = daoRestriccionCompetencia.EliminarListaCompetenciaRestriccionCompetencia(RestriccionCompetencia, listaCompetencias);
+                resultado = daoRestriccionCompetencia.EliminarListaCompetenciaRestriccionCompetencia(this.RestriccionCompetencia, this.listaCompetencias);
 
             }
             catch (Exception ex)
