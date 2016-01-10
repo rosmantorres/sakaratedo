@@ -210,10 +210,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosPU_Mod15.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPU_Mod15.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\RecursosPU_Mod16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod16.Designer.cs</LastGenOutput>

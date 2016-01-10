@@ -239,6 +239,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo10\" />
     <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo12\" />

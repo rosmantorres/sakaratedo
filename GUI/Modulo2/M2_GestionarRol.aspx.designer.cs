@@ -22,6 +22,24 @@ namespace templateApp.GUI.Modulo2 {
         protected global::System.Web.UI.HtmlControls.HtmlImage imageTag;
         
         /// <summary>
+        /// Control NombreApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NombreApellido;
+        
+        /// <summary>
+        /// Control NombreUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NombreUsuario;
+        
+        /// <summary>
         /// Control userName.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace templateApp.GUI.Modulo2 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden RolSelect;
+        
+        /// <summary>
+        /// Control TBodyRoles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TBodyRoles;
         
         /// <summary>
         /// Control Button1.

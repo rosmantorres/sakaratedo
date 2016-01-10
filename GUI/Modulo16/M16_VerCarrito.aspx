@@ -44,51 +44,26 @@
         </div><!-- /.box-header -->
 
     <div class="box-body table-responsive">
-        <table id="tablainventario" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					
-					<th style="text-align:left">Producto</th>
-                    <th style="text-align:left">Cantidad</th>
-					<th style="text-align:left">Precio Unitario</th>                   
-					<th style="text-align:left">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-                <asp:Literal runat="server" ID="laTabla1"></asp:Literal>
-		    </tbody>
-            </table>
-           </div>
+       <asp:Table ID="TablaImplemento" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
        </div>
     </div>
-</div>
-
-         <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-        <div class="box-header">
-                      <h3 class="box-title">Matricula</h3>
-        </div><!-- /.box-header -->
-
-        <div class="box-body table-responsive">
-        <table id="tablamatricula" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					<th style="text-align:left">Identificador de Matricula</th>
-					<th style="text-align:left">Fecha de Creacion</th>           
-                    <th style="text-align:left">Ultima Fecha de Pago</th>
-                    
-					<th style="text-align:left">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-                <asp:Literal runat="server" ID="laTabla2"></asp:Literal>
-		    </tbody>
-            </table>
-           </div>
-       </div>
-    </div>
-</div>
+</div>       
 
                 <div class="row">
             <div class="col-xs-12">
@@ -98,20 +73,52 @@
         </div><!-- /.box-header -->
 
     <div class="box-body table-responsive">
-        <table id="tablaevento" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					<th style="text-align:left">Nombre del evento</th>
-					<th style="text-align:left">Costo</th>           
-                 
-					<th style="text-align:left">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-                <asp:Literal runat="server" ID="laTabla3"></asp:Literal>
-		    </tbody>
-            </table>
-           </div>
+       <asp:Table ID="TablaEvento" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
+       </div>
+    </div>
+</div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Matricula</h3>
+        </div><!-- /.box-header -->
+
+        <div class="box-body table-responsive">
+       <asp:Table ID="TablaMatricula" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
        </div>
     </div>
 </div>
@@ -187,20 +194,15 @@
 				</div>
 			</div>
 		</div>
-   
 
-
-
-<!--MODAL DE PAGO-->
+    <!--BOTON DE PAGAR-->
     <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
          <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-info"">Pagar</button>
-          &nbsp;&nbsp
-         
-         
-         
+          &nbsp;&nbsp        
     </div>
 
+   <!--MODAL DE PAGO-->
    <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -210,7 +212,6 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info">
-
 
   <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
@@ -233,14 +234,10 @@
         </div>
 
         <%-- <h4 class="modal-title" id ="preciofinal"></h4> --%>
-
-        <div class="form-group">
-        <!-- El form iba aqui -->
-        
-              
         <br />
-        
-            <div class="col-sm-10 col-md-10 col-lg-10">
+        <div class="form-group">
+            <!-- El form iba aqui -->             
+             <div class="col-sm-10 col-md-10 col-lg-10">
                  <div class="dropdown" runat="server" id="div1">
                      </div>
             
@@ -256,7 +253,8 @@
                   </div>
             </div>
         </div>
-        <h4 class="modal-title">Tarjeta Credito/Debito</h4>
+        <br />
+     <%--  <h4 class="modal-title">Tarjeta Credito/Debito</h4>
         <div class="form-group">
 	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
 		        <input id="Text1" Disabled="disabled" type="text" placeholder="Numero de la Tarjeta" class="form-control" name="Text1" runat="server"/>
@@ -315,341 +313,45 @@
 			<div id="div_respuess" class="col-sm-5 col-md-5 col-lg-5">
 				<input id="Text10" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text10"  runat="server"/>
 			</div>
-		</div>
-
+		</div>--%>
          <div class="form-group">
-		    <div class="box-footer">
-			<%--<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>--%>
-               <%--  <asp:Button id="Boton1" style="align-content:flex-end" OnClick="registrarPago" runat="server" Disabled="disabled" class="btn btn-primary" Text="Registrar Pago" type ="submit" /> --%>
-                <asp:Button ID="Boton1" runat="server" Text="Procesar Pago" OnClick ="registrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+		    <div class="box-footer">			
+                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
-
-
-     </form>
-      
-
-
-<!--VALIDACION PARA EL MODAL DE PAGO-->
-    <script src="js/Validacion.js"></script>
-    <script>
-
-        function example() {
-            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
-
-
-
-                $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text1.ClientID %>').val('');
-                $('#<%=Text2.ClientID %>').val('');
-                $('#<%=Text3.ClientID %>').val('');
-                $('#<%=Text4.ClientID %>').val('');
-                $('#<%=Text5.ClientID %>').val('');
-                $('#<%=Text6.ClientID %>').val('');
-                $('#<%=Text7.ClientID %>').val('');
-                $('#<%=Text8.ClientID %>').val('');
-                $('#<%=Text9.ClientID %>').val('');
-                $('#<%=Text10.ClientID %>').val('');
-
-
-                //  $().hide() para esconder campo.
-                //     .show() para mostrar campo.
-            }
-            else
-                if ($('#<%=DropDownList1.ClientID %>').val() == 1) {
-                    $('#<%=Text1.ClientID %>').attr("disabled", false);
-                    $('#<%=Text2.ClientID %>').attr("disabled", false);
-                    $('#<%=Text3.ClientID %>').attr("disabled", false);
-                    $('#<%=Text4.ClientID %>').attr("disabled", false);
-
-                    //Deshabilitamos los campos y limpiamos
-                    $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text5.ClientID %>').val('');
-                    $('#<%=Text6.ClientID %>').val('');
-                    $('#<%=Text7.ClientID %>').val('');
-                    $('#<%=Text8.ClientID %>').val('');
-                    $('#<%=Text9.ClientID %>').val('');
-                    $('#<%=Text10.ClientID %>').val('');
-
-                    $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                }
-
-                else
-                    if ($('#<%=DropDownList1.ClientID %>').val() == 2) {
-
-                        //Deshabilitamos los campos y limpiamos
-                        $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text1.ClientID %>').val('');
-                        $('#<%=Text2.ClientID %>').val('');
-                        $('#<%=Text3.ClientID %>').val('');
-                        $('#<%=Text4.ClientID %>').val('');
-
-                        $('#<%=Text5.ClientID %>').attr("disabled", false);
-                        $('#<%=Text6.ClientID %>').attr("disabled", false);
-                        $('#<%=Text7.ClientID %>').attr("disabled", false);
-
-                        //Deshabilitamos los campos y limpiamos
-                        $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text8.ClientID %>').val('');
-                        $('#<%=Text9.ClientID %>').val('');
-                        $('#<%=Text10.ClientID %>').val('');
-
-                        $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                    }
-                    else
-                        if ($('#<%=DropDownList1.ClientID %>').val() == 3) {
-
-                            //Deshabilitamos los campos y limpiamos
-                            $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text1.ClientID %>').val('');
-                            $('#<%=Text2.ClientID %>').val('');
-                            $('#<%=Text3.ClientID %>').val('');
-                            $('#<%=Text4.ClientID %>').val('');
-                            $('#<%=Text5.ClientID %>').val('');
-                            $('#<%=Text6.ClientID %>').val('');
-                            $('#<%=Text7.ClientID %>').val('');
-
-                            $('#<%=Text8.ClientID %>').attr("disabled", false);
-                            $('#<%=Text9.ClientID %>').attr("disabled", false);
-                            $('#<%=Text10.ClientID %>').attr("disabled", false);
-                            $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                        }
-        }
-
-    </script>
-						</div>
+        </div>
 					</div>
 				</div>
 			</div>
 		</div>
+       </div>
 
+     </form>      
 
+<!--VALIDACION PARA EL MODAL DE PAGO-->
     <script type="text/javascript">
+        debugger;
 
-        //Funcion que eliminara el producto dependiendo de cual sea
-        function prueba3(evento) {
-            debugger
+        //Funcion que activa el boton si el valor seleccionado es diferente de -1, sino, lo desactiva
+        function example() {
+            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
 
-            //Si el evento no es indefinido se realizaran las acciones pertinentes
-            if (e != undefined) {
-                var numero = 0;
-
-                //Obtenemos a que tipo de objeto nos estamos refiriendo y le asignamos su numero
-                var arrayDatos = e.id.split("_");
-                if (arrayDatos[1] == "I")
-                    numero = 1;
-                else if (arrayDatos[1] == "M")
-                    numero = 2;
-                else
-                    numero = 3;
-
-                var producto = {
-                    tipo: numero,
-                    id: arrayDatos[0]
-
-                }
-
-                var datos = JSON.stringify(producto);
-
-                $.ajax({
-                    cache: false,
-                    type: 'POST',
-                    url: 'http://localhost:23072/GUI/Modulo16/M16_ConsultarProducto.aspx/eliminarItem',
-                    data: datos,
-                    dataType: 'json',
-                    contentType: "application/json; charset=utf-8",
-
-                    success: function (data) {
-                        debugger
-
-                        console.log("Exito:" + data);
-
-                        var aa = JSON.parse(data.d);
-
-
-
-
-                    }
-
-                });
-
+                $('#<%=BotonPagar.ClientID %>').attr("disabled", true);
             }
+            else
+                $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
         }
-
 
         $(document).ready(function () {
 
-            var table1 = $('#tablainventario').DataTable({
-                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
-                "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }
-            });
-            var req;
-            var tr;
-
-            $('#tablainventario tbody').on('click', 'a', function () {
-                if ($(this).parent().hasClass('selected')) {
-                    req = $(this).parent().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    $(this).parent().removeClass('selected');
-                }
-                else {
-                    req = $(this).parent().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    table.$('tr.selected').removeClass('selected');
-                    $(this).parent().addClass('selected');
-                }
-            });
-
-
-            var table2 = $('#tablamatricula').DataTable({
-                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
-                "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }
-            });
-
-            $('tablamatricula tbody').on('click', 'a', function () {
-                if ($(this).parent().hasClass('selected')) {
-                    req = $(this).parent().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    $(this).parent().removeClass('selected');
-                }
-                else {
-                    req = $(this).parent().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    table.$('tr.selected').removeClass('selected');
-                    $(this).parent().addClass('selected');
-                }
-            });
-
-
-            var table3 = $('#tablaevento').DataTable({
-                "dom": '<"pull-left"f>rt<"pull-right"lp>i',
-                "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }
-            });
-
-            $('tablaevento tbody').on('click', 'a', function () {
-                if ($(this).parent().hasClass('selected')) {
-                    req = $(this).parent().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    $(this).parent().removeClass('selected');
-                }
-                else {
-                    req = $(this).parent().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    table.$('tr.selected').removeClass('selected');
-                    $(this).parent().addClass('selected');
-                }
-            });
-
-
-
-            $('#modal-delete').on('show.bs.modal', function (event) {
-                var modal = $(this)
-                modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
-                modal.find('#req').text(req)
-            })
-            $('#btn-eliminar').on('click', function () {
-                table.row(tr).remove().draw();//se elimina la fila de la tabla
-                $('#modal-delete').modal('hide');//se esconde el modal
-                $('#prueba').show();//Muestra el mensaje de borrado exitosamente
-            });
-
-
             // Carga el modal con la informacion del IMPLEMENTO de acuerdo al id
             $('#modal-info1').on('show.bs.modal', function (e) {
-
-
-
-                $.ajax({
-                    cache: false,
-                    type: 'POST',
-                    url: 'http://localhost:23072/GUI/Modulo16/M16_VerCarrito.aspx/pruebaImplemento',
-                    data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
-                    dataType: 'json',
-                    contentType: "application/json; charset=utf-8",
-
-                    success: function (data) {
-                        console.log(data);
-
-                        var aa = JSON.parse(data.d);
-
-                        console.log(aa);
-
-                        $("#beta").attr("src", aa.Imagen_implemento);
-                        $("#aux1").html(aa.Nombre_implemento);
-                        $("#aux2").html(aa.Tipo_Implemento);
-                        $("#aux3").html(aa.Marca_Implemento);
-                        $("#aux4").html(aa.Color_Implemento);
-                        $("#aux5").html(aa.Talla_Implemento);
-                        $("#aux6").html(aa.Estatus_Implemento);
-                        $("#aux7").html(aa.Precio_Implemento);
-                        $("#aux8").html(aa.Descripcion_Implemento);
-
-                    }
-                });
-            })
-
+            });
 
             // Carga el modal con la informacion del EVENTO de acuerdo al id
             $('#modal-info2').on('show.bs.modal', function (e) {
-
-                $.ajax({
-                    cache: false,
-                    type: 'POST',
-                    url: 'http://localhost:23072/GUI/Modulo16/M16_VerCarrito.aspx/pruebaEvento',
-                    data: "{'id':" + "'" + e.relatedTarget.id + "'" + "}",
-                    dataType: 'json',
-                    contentType: "application/json; charset=utf-8",
-
-                    success: function (data) {
-                        console.log(data);
-
-                        var aa = JSON.parse(data.d);
-                        console.log(aa);
-
-                        $("#aux9").html(aa.Id_evento);
-                        $("#aux10").html(aa.Nombre);
-                        $("#aux11").html(aa.Descripcion);
-                        $("#aux12").html(aa.Costo);
-
-                    }
-                });
-            })
-
-
+            });           
         });
-
-        </script>
-
+    </script>
 </asp:Content>

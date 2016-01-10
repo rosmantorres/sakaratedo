@@ -31,31 +31,31 @@ namespace templateApp.GUI.Modulo16 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// laTabla1 control.
+        /// TablaImplemento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal laTabla1;
+        protected global::System.Web.UI.WebControls.Table TablaImplemento;
         
         /// <summary>
-        /// laTabla2 control.
+        /// TablaEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal laTabla2;
+        protected global::System.Web.UI.WebControls.Table TablaEvento;
         
         /// <summary>
-        /// laTabla3 control.
+        /// TablaMatricula control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal laTabla3;
+        protected global::System.Web.UI.WebControls.Table TablaMatricula;
         
         /// <summary>
         /// alert_nombre control.
@@ -148,102 +148,12 @@ namespace templateApp.GUI.Modulo16 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList1;
         
         /// <summary>
-        /// Text1 control.
+        /// BotonPagar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
-        
-        /// <summary>
-        /// Text2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text2;
-        
-        /// <summary>
-        /// Text3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text3;
-        
-        /// <summary>
-        /// Text4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Text4;
-        
-        /// <summary>
-        /// Text5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text5;
-        
-        /// <summary>
-        /// Text6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text6;
-        
-        /// <summary>
-        /// Text7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text7;
-        
-        /// <summary>
-        /// Text8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text8;
-        
-        /// <summary>
-        /// Text9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text9;
-        
-        /// <summary>
-        /// Text10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text10;
-        
-        /// <summary>
-        /// Boton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Boton1;
+        protected global::System.Web.UI.WebControls.Button BotonPagar;
     }
 }

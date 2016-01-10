@@ -265,7 +265,7 @@ namespace DatosSKD.DAO.Modulo16
         #endregion
 
         #region VerCarrito
-        /*  /// <summary>
+        /// <summary>
         /// Metodo que obtiene todos los items de implementos en el carrito del usuario de la Base de Datos
         /// </summary>
         /// <param name="persona">La persona a la cual se desea ver su carrito</param>
@@ -293,11 +293,15 @@ namespace DatosSKD.DAO.Modulo16
                     DataTable dt = EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_SELECCIONAR_ID_INVENTARIO, parametros);
 
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
                     //Obtengo todos los ids que estan en carrito de los Inventario
                     foreach (DataRow row in dt.Rows)
                     {
                         //Me creo el Implemento
-                        Implemento elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
+                       // Implemento elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
+                        Implemento elImplemento = new Implemento();                        
 
                         //Preparo para obtener los datos de ese Inventario
                         parametros = new List<Parametro>();
@@ -328,6 +332,9 @@ namespace DatosSKD.DAO.Modulo16
                            // laLista.Add(elImplemento);
                         }
                     }
+
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
 
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -412,6 +419,9 @@ namespace DatosSKD.DAO.Modulo16
                     DataTable dt = EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_SELECCIONAR_ID_EVENTO, parametros);
 
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
                     //Obtengo todos los ids que estan en carrito de los eventos
                     foreach (DataRow row in dt.Rows)
                     {
@@ -439,6 +449,9 @@ namespace DatosSKD.DAO.Modulo16
                             laLista.Add(elEvento, int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
                         }
                     }
+
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
 
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -524,6 +537,9 @@ namespace DatosSKD.DAO.Modulo16
                     DataTable dt = EjecutarStoredProcedureTuplas
                         (RecursosBDModulo16.PROCEDIMIENTO_SELECCIONAR_ID_MATRICULA, parametros);
 
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
                     //Obtengo todos los ids que estan en carrito de los eventos
                     foreach (DataRow row in dt.Rows)
                     {
@@ -542,7 +558,8 @@ namespace DatosSKD.DAO.Modulo16
                         foreach (DataRow row2 in dt2.Rows)
                         {
                             //Me creo la matricula
-                            Matricula laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();
+                            //Matricula laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();
+                            Matricula laMatricula = new Matricula();
                             laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
                             laMatricula.Identificador = (row2[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                             laMatricula.FechaCreacion = DateTime.Parse(row2[RecursosBDModulo16.aliasFechainicio].ToString());
@@ -607,7 +624,7 @@ namespace DatosSKD.DAO.Modulo16
                 }
             }
             else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);            
-        }*/
+        }
         #endregion
 
         #region EliminarItem
@@ -712,12 +729,7 @@ namespace DatosSKD.DAO.Modulo16
                 throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
                     RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
-      }
-            
-
-
-
-       
+      }     
         #endregion
 
         #region RegistrarPago
@@ -1048,22 +1060,6 @@ namespace DatosSKD.DAO.Modulo16
             }*/
         }
             #endregion
-        #endregion      
-    
-        /*ELIMINAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-        public Dictionary<Entidad, int> getImplemento(Entidad persona)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Dictionary<Entidad, int> getEvento(Entidad persona)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Dictionary<Entidad, int> getMatricula(Entidad persona)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion        
     }
 }

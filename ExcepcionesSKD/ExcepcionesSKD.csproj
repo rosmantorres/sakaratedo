@@ -61,6 +61,9 @@
     <Compile Include="Modulo14\BDPLanillaException.cs" />
     <Compile Include="Modulo14\BDSolicitudException.cs" />
     <Compile Include="Modulo14\ErrorImprimirPDFException.cs" />
+    <Compile Include="Modulo14\ExceptionDatoPlanilla.cs" />
+    <Compile Include="Modulo14\ExceptionRegistroPlanilla.cs" />
+    <Compile Include="Modulo14\ExceptionTipoPlanilla.cs" />
     <Compile Include="Modulo14\PlanillaRepetidaException.cs" />
     <Compile Include="Modulo14\TipoPlanilllaRepetidaException.cs" />
     <Compile Include="Modulo14\URLImagenException.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Modulo16\ItemInvalidoException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
     <Compile Include="Modulo16\OpcionItemErroneoException.cs" />
+    <Compile Include="Modulo16\OpcionPagoNoValidoException.cs" />
     <Compile Include="Modulo16\ParametroIncorrectoException.cs" />
     <Compile Include="Modulo16\ParseoEnSobrecargaException.cs" />
     <Compile Include="Modulo16\ParseoFormatoInvalidoException.cs" />
