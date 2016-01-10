@@ -645,7 +645,7 @@ namespace DatosSKD.DAO.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
-                int respuesta = 0;
+              
                 bool exito = false;
                 List<Resultado> result;
 
@@ -654,17 +654,13 @@ namespace DatosSKD.DAO.Modulo16
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
                     SqlDbType.Int, persona.Id.ToString(), false);
                 parametros.Add(parametro);
-
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
-                            SqlDbType.Int, objetoBorrar.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM,
+                               SqlDbType.Int, objetoBorrar.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
-                                SqlDbType.Int, tipoObjeto.ToString(), false);
-                        parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
-                SqlDbType.Int, respuesta.ToString(), true);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM,
+                            SqlDbType.Int, tipoObjeto.ToString(), false);
                 parametros.Add(parametro);
-
+               
                 //Ejecuto la operacion a Base de Datos
                 result = EjecutarStoredProcedure
                 (RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM, parametros);
