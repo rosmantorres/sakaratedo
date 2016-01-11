@@ -161,7 +161,7 @@ namespace Interfaz_Presentadores.Modulo16
         }
         #endregion
 
-        #region Metodos para el detalle del evento
+        #region Metodos para el detalle del Producto
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
         /// </summary>

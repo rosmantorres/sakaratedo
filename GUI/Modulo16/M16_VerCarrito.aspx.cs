@@ -45,6 +45,31 @@ namespace templateApp.GUI.Modulo16
         {
             get { return this.TablaMatricula; }
         }
+
+        /// <summary>
+        /// Propiedad de la LiteralDetallesEventos
+        /// </summary>
+        public Literal LiteralDetallesEventos
+        {
+            get { return this.detalleEventoLiteral; }
+        }
+
+        /// <summary>
+        /// Propiedad de la LiteralDetallesEventos
+        /// </summary>
+        public Literal LiteralDetallesMensualidades
+        {
+            get { return this.detalleEventoLiteral; }
+        }
+
+        /// <summary>
+        /// Propiedad de la LiteralDetallesEventos
+        /// </summary>
+        public Literal LiteralDetallesProductos
+        {
+            get { return this.detalleProductoLiteral; }
+        }
+
         #endregion
 
         #region Constructores
@@ -56,6 +81,7 @@ namespace templateApp.GUI.Modulo16
             this.elPresentador = new PresentadorVerCarrito(this);
         }
         #endregion
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -286,6 +312,30 @@ namespace templateApp.GUI.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
             }
+        }
+
+        /// <summary>
+        /// Metodo que ejecuta el script en el cliente, desde el servidor
+        /// </summary>
+        public void ejecutarScriptImplemento()
+        {
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
+        }
+
+        /// <summary>
+        /// Metodo que ejecuta el script en el cliente, desde el servidor
+        /// </summary>
+        public void ejecutarScriptEvento()
+        {
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info2').modal('toggle');</script>   ", false);
+        }
+
+        /// <summary>
+        /// Metodo que ejecuta el script en el cliente, desde el servidor
+        /// </summary>
+        public void ejecutarScriptMensualidad()
+        {
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info3').modal('toggle');</script>   ", false);
         }
     }
 }

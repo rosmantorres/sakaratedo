@@ -125,7 +125,7 @@
 
    <!-- M  O  D  A  L  E  S-->
        <!--MODAL PARA EL DETALLE IMPLEMENTO-->
-    	<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    	<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -134,42 +134,18 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
-							<div class="row">
-                                <h3>Imagen</h3>
-									<img src="" id="beta" />
-                                   
-                                <h3>Nombre</h3>
-                                    <label id="aux1" ></label>
-                                    
-								<h3>Tipo Implemento</h3>
-                                    <label id="aux2" ></label>
-                                    
-                                <h3>Marca</h3>
-                                    <label id="aux3" ></label>
-                                   
-                                <h3>Color</h3>
-                                    <label id="aux4" ></label>
-                                    
-                                <h3>Talla</h3>
-                                    <label id="aux5" ></label>
-                                    
-                                <h3>Status</h3>
-                                    <label id="aux6" ></label>
-                                    
-                                <h3>Precio</h3>
-                                    <label id="aux7" ></label>
-                                    
-                                <h3>Descripcion</h3>
-                                    <label id="aux8" ></label>
+							<div class="row" id="" >
+                                <asp:Literal runat="server" ID="detalleProductoLiteral" ></asp:Literal>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>   
 
         <!--MODAL PARA EL DETALLE EVENTO-->
-    	<div id="modal-info2" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    	<div id="modal-info2" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -178,22 +154,35 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info2">
-							<div class="row">
-                                <h3>Id</h3>
-                                    <label id="aux9" ></label>
-                                <h3>Nombre</h3>
-									 <label id="aux10" ></label>
-                                <h3>Descripcion</h3>
-									 <label id="aux11" ></label>
-                                <h3>Costo</h3>
-									 <label id="aux12" ></label>
+							<div class="row" id="" >
+                                <asp:Literal runat="server" ID="detalleEventoLiteral" ></asp:Literal>
 
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
+
+         <!--MODAL PARA EL DETALLE DE MATRICULA-->
+         <div id="modal-info3" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada de la Mensualidad</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info3">
+							<div class="row" id="" >
+                                <asp:Literal runat="server" ID="detalleMensualidadLiteral" ></asp:Literal>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
 
     <!--BOTON DE PAGAR-->
     <div class="box-footer">
@@ -343,15 +332,5 @@
                 $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
         }
 
-        $(document).ready(function () {
-
-            // Carga el modal con la informacion del IMPLEMENTO de acuerdo al id
-            $('#modal-info1').on('show.bs.modal', function (e) {
-            });
-
-            // Carga el modal con la informacion del EVENTO de acuerdo al id
-            $('#modal-info2').on('show.bs.modal', function (e) {
-            });           
-        });
     </script>
 </asp:Content>
