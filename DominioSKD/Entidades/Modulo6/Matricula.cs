@@ -54,6 +54,9 @@ namespace DominioSKD.Entidades.Modulo6
         /// </summary>
         private int _anio;
 
+        /// Identificador del dojo
+        /// </summary>
+        private Dojo dojo;
 
         #endregion
 
@@ -147,6 +150,14 @@ namespace DominioSKD.Entidades.Modulo6
             {
                 return this._anio;
             }
+        }
+
+        public Dojo Dojo_Matricula
+        {
+            get { return this.dojo; }
+
+            set { dojo = value; }
+
         }
         #endregion
 

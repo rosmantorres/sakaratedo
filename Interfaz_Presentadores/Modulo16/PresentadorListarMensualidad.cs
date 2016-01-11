@@ -12,12 +12,21 @@ using LogicaNegociosSKD;
 using LogicaNegociosSKD.Comandos.Modulo16;
 using System.Web;
 using System.Web.UI.WebControls;
+using System.Web.UI;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
+using Interfaz_Presentadores.Master;
+using DominioSKD.Entidades.Modulo1;
 
 namespace Interfaz_Presentadores.Modulo16
 {
    public class PresentadorListarMensualidad
     {
+        #region Atributos
         private IContratoListarMensualidad vista;
+        #endregion
+
+        #region Constructores
         /// <summary>
         /// Constructor del presentador
         /// </summary>
@@ -25,10 +34,13 @@ namespace Interfaz_Presentadores.Modulo16
         public PresentadorListarMensualidad(IContratoListarMensualidad laVista)
         {
             vista = laVista;
+            
         }
+        #endregion
 
+        #region Metodo para el consultar de la lista de Mensualidades
         /// <summary>
-        /// metodo para consultar las facturas
+        /// metodo para consultar la lista de las Mensualidades
         /// </summary>
         public void consultarMensualidades(int persona)
         {
@@ -43,31 +55,80 @@ namespace Interfaz_Presentadores.Modulo16
 
                 ListaMatricula com = (ListaMatricula)comandoListarMensualidades.Ejecutar();
 
-                string tablaMatriculasHTML = "";
-
-                //Recorro La lista de las Mensualidades para anexarlas al GRIDVIEW
-                foreach (Matricula c in com.ListaMatriculas)
+                //Obtenemos cada factura para ponerla en la tabla
+                foreach (Entidad aux in com.ListaMatriculas)
                 {
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TR + '"' + c.Id.ToString() + '"' + ">";
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD + c.Id.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD + c.Identificador.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD + c.Costo.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD + c.UltimaFechaPago.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD + c.Mes.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD + c.Anio.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                    //Casteamos la entidad como una matricula
+                    Matricula item = (Matricula)aux;
 
-                    tablaMatriculasHTML += M16_Recursointerfaz.ABRIR_TD;
-                    tablaMatriculasHTML += M16_Recursointerfaz.BOTON_IMPRIMIR_FACTURA + c.Id + M16_Recursointerfaz.BOTON_CERRAR;
-                    tablaMatriculasHTML += M16_Recursointerfaz.BOTON_INFO_EVENTO + c.Id + M16_Recursointerfaz.BOTON_CERRAR;
-                    tablaMatriculasHTML += M16_Recursointerfaz.CERRAR_TD;
+                    //Creamos la nueva fila que ira en la tabla
+                    TableRow fila = new TableRow();
 
-                    tablaMatriculasHTML += M16_Recursointerfaz.CERRAR_TR;
+                    //Nueva celda que tendra el id de la matricula 
+                    TableCell celda = new TableCell();
+                    celda.Text = item.Id.ToString();
 
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el identificador de la matricula
+                    celda = new TableCell();
+                    celda.Text = item.Identificador.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el costo de la matricula
+                    celda = new TableCell();
+                    celda.Text = item.Costo.ToString(); 
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra la ultima fecha de pago de la mensualidad 
+                    celda = new TableCell();
+                    celda.Text = item.UltimaFechaPago.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra mes de la mensualidad 
+                    celda = new TableCell();
+                    celda.Text = item.Mes.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el anio de la mensualidad
+                    celda = new TableCell();
+                    celda.Text = item.Anio.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Celda que tendra los botones de Detallar y Agregar a Carrito
+                    celda = new TableCell();
+                    Button boton = new Button();
+                    boton.ID = "Matricula-" + item.Id.ToString();
+                    boton.Command += DetalleMatricula_Mat;
+                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CommandName = item.Id.ToString();                 
+                    celda.Controls.Add(boton);
+
+                    //Boton de Agregar a Carrito
+                    //boton = new Button();
+                    //boton.ID = "Agregar-" + item.Id.ToString();
+                    //boton.Click += AgregarCarrito;
+                    //boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
+                    //celda.Controls.Add(boton);                   
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Agrego la fila a la tabla
+                    vista.tablaMensualidades.Rows.Add(fila);
 
                 }
-
-                vista.tablaMensualidades.Text = tablaMatriculasHTML;
-
 
             }
             catch (Exception ex)
@@ -75,5 +136,170 @@ namespace Interfaz_Presentadores.Modulo16
                 throw ex;
             }
         }
+        #endregion
+
+        #region Metodos para el detalle del evento
+        /// <summary>
+        /// Metodo del presentador que pinta el detalle en el modal
+        /// </summary>
+        /// <param name="evento">La Mensualidad que se ha de mostrar en detalle</param>
+        public void DetalleMatricula_Mat(object sender, CommandEventArgs e)
+        {
+
+            string id = e.CommandName;
+            Matricula matricula = new Matricula();
+            matricula.Id = int.Parse(id);
+
+            Matricula resultados = DetalleMatricula(matricula);
+
+            // Variables para imprimir en el modal
+            vista.LiteralDetallesMensualidades.Text = "</br>" + "<h3>Id Matricula</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
+                                                              "<h3>Identificador</h3>" + "<label id='aux2' >" + resultados.Identificador + "</label>" +
+                                                              "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>" +
+                                                              "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux3' >" + resultados.UltimaFechaPago + "</label>" +
+                                                              "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux3' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>" ;
+
+                                                              
+            vista.ejecutarScript();    
+        }
+
+        /// <summary>
+        /// Metodo del presentador que detalla la Mensualidad dado el id especifico
+        /// </summary>
+        /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
+        public Matricula DetalleMatricula(Entidad matricula)
+        {
+            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
+            Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
+            return laMatricula;
+        }
+
+        #endregion
+
+        #region Metodo para Agregar la Mensualidad Morosa al Carrito
+        /// <summary>
+        /// Metodo del presentador que agrega una mensualidad al carrito del usuario
+        /// </summary>
+        /// <param name="sender">El objeto que ejecuta la accion</param>
+        /// <param name="e">El arreglo de Mensualidades</param>
+      /*  public void AgregarCarrito(object sender, EventArgs ec)
+        {
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Persona que eventualmente la buscaremos por el session
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+
+                //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
+                Button aux = (Button)sender;
+                String[] datos = aux.ID.Split('-');
+
+                //Creo la fabrica y el evento asignandole su ID
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Evento evento = (Evento)fabrica.ObtenerEvento();
+                evento.Id_evento = int.Parse(datos[1]);
+
+                //Respuesta de la accion de agregar y la cantidad que se desea de ese item
+                bool respuesta = false;
+                int cantidad = 0;
+
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                foreach (TableRow aux2 in this.vista.tablaEventos.Rows)
+                {
+                    //Si la fila no es de tipo Header puedo comenzar a buscar
+                    if ((aux2 is TableHeaderRow) != true)
+                    {
+                        //En la celda 4 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[4].Controls[1] as Button;
+
+                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
+                        //Obtenemos el numero del textbox que el usuario desea
+                        if (aux3.ID == aux.ID)
+                        {
+                            //En la celda 3 siempre estara el combobox, lo obtengo y agarro la cantidad que el usuario desea
+                            DropDownList lacantidad = aux2.Cells[3].Controls[0] as DropDownList;
+                            cantidad = int.Parse(lacantidad.SelectedValue);
+                            break;
+                        }
+                    }
+                }
+
+                //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, evento, 2, cantidad);
+                respuesta = comando.Ejecutar();
+
+                 //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                
+                //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
+                if (respuesta)
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=3&exito=1",false);
+                else
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=3&exito=0",false);
+                
+            }            
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               
+            }
+            catch (ItemInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               
+            }
+            catch (PersonaNoValidaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (OpcionItemErroneoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+              
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+           
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+              
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+            
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
+            }
+        } */
+        #endregion
+
     }
 }

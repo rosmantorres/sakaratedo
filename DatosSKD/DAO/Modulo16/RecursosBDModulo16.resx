@@ -427,4 +427,7 @@
     <value>cantidad</value>
     <comment>Parametro que se recibe cuando se consulta los querys de seleccionar</comment>
   </data>
+  <data name="DETALLAR_MATRICULA" xml:space="preserve">
+    <value>M16_DETALLAR_MATRICULA</value>
+  </data>
 </root>

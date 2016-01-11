@@ -9,6 +9,19 @@ namespace Interfaz_Contratos.Modulo16
 {
     public interface IContratoListarMensualidad
     {
-        Literal tablaMensualidades { get; }
+        /// <summary>
+        /// Tabla donde se mostrara todas las mensualidades morosas
+        /// </summary>
+        Table tablaMensualidades { get; }
+
+        /// <summary>
+        /// Literal que permite imprimir los valores en el modal
+        /// </summary>
+        Literal LiteralDetallesMensualidades { get; }
+
+        /// <summary>
+        /// //Metodo para ejecutar scripts en el cliente, desde el servidor.
+        /// </summary>
+        void ejecutarScript();
     }
 }

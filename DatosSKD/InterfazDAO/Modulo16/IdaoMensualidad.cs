@@ -12,6 +12,6 @@ namespace DatosSKD.InterfazDAO.Modulo16
     {
         new Entidad ConsultarXId(Entidad entidad);
         List<Entidad> ListarMensualidad();
-        Entidad DetallarMensualidad(int Id_mensualidad);
+        Entidad DetallarMensualidad(Entidad entidad);
     }
 }

@@ -313,6 +313,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_DETALLAR_MATRICULA.
+        /// </summary>
+        internal static string DETALLAR_MATRICULA {
+            get {
+                return ResourceManager.GetString("DETALLAR_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error uno de los parametros no existe en el procedimiento ejecutado.
         /// </summary>
         internal static string Mensaje__ExcepcionParametro {

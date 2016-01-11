@@ -262,6 +262,15 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoDetallarEvento(evento);
         }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando CrearComandoDetallarEvento
+        /// </summary>
+        /// <returns>El CrearComandoDetallarEvento</returns>
+        public static Comando<Entidad> CrearComandoDetallarMatricula(Entidad matricula)
+        {
+            return new ComandoDetallarMatricula(matricula);
+        }
         #endregion
 
 

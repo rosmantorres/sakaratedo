@@ -12,32 +12,78 @@ namespace templateApp.GUI.Modulo16
 {
     public partial class M16_ConsultarMensualidad : System.Web.UI.Page, Interfaz_Contratos.Modulo16.IContratoListarMensualidad
     {
+        #region Atributos
         private PresentadorListarMensualidad presentador;
+        #endregion
 
+        #region Constructores
         public void IniciarPresentador()
         {
             presentador = new PresentadorListarMensualidad(this);
         }
+        #endregion
+
+        #region Propiedades de la Interfaz
+
+        /// <summary>
+        /// Propiedad de la tablaMensualidades
+        /// </summary>
+        public Table tablaMensualidades
+        {
+            get { return this.tablitaMensualidades; }
+        }
+
+        /// <summary>
+        /// Propiedad de la tablaDetalleMensualidades
+        /// </summary>
+        public Literal tablaDetalleMensualidades
+        {
+            get { return this.detalleMensualidadLiteral; }
+        }
+
+        /// <summary>
+        /// Propiedad de la TablaListaMensualidades
+        /// </summary>
+        public Table TablaListaMensualidades
+        {
+            get { return this.tablitaMensualidades; }
+        }
+
+        /// <summary>
+        /// Propiedad de la LiteralDetallesMensualidades
+        /// </summary>
+        public Literal LiteralDetallesMensualidades
+        {
+            get { return this.detalleMensualidadLiteral; }
+        }
+
+        #endregion
+
+        #region Metodos
+
+        /// <summary>
+        /// Metodo para iniciar las llamadas 
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            this.IniciarPresentador();
+            presentador.consultarMensualidades(6);
+
             /* this.Master.ID = "16";
-            this.Master.presentador.CargarMenuLateral();
-            presentador.ObtenerVariablesURL();*/
-            if (!IsPostBack)
-            {
-                this.IniciarPresentador();
-                presentador.consultarMensualidades(6);
-            }
-
+             this.Master.presentador.CargarMenuLateral();
+             presentador.ObtenerVariablesURL();*/
         }
-        public Literal tablaMensualidades
+
+       
+        /// <summary>
+        /// Metodo que ejecuta el script en el cliente, desde el servidor
+        /// </summary>
+        public void ejecutarScript()
         {
-
-            get
-            {
-                return this.tlTablaMensualidades;
-            }
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
         }
+        #endregion
 
     }
 }
