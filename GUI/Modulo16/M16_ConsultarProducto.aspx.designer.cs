@@ -22,12 +22,21 @@ namespace templateApp.GUI.Modulo16 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// Control tlTablaProductos.
+        /// Control tablitaProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal tlTablaProductos;
+        protected global::System.Web.UI.WebControls.Table tablitaProductos;
+        
+        /// <summary>
+        /// Control detalleProductoLiteral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal detalleProductoLiteral;
     }
 }

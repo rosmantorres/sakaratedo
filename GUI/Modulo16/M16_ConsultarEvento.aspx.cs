@@ -76,14 +76,6 @@ namespace templateApp.GUI.Modulo16
         }
 
         /// <summary>
-        /// Metodo que permite obtener 
-        /// </summary>
-       // public string obtenerDatosRequest(string nombre)
-       // {
-       //     return Request.QueryString[nombre];
-       // }
-
-        /// <summary>
         /// Metodo que ejecuta el script en el cliente, desde el servidor
         /// </summary>
         public void ejecutarScript()

@@ -1,22 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ConsultarProducto.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ConsultarProducto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script  type="text/javascript" src="M16_JS/M16_ConsultarProducto.js" ></script>
 </asp:Content>
 
-
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+    <script type="text/javascript">
+
+    </script>
+
+<!--BREADCRUMB-->
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
-		
 		    <li>
 			    <a href="../Modulo16/M16_VerCarrito.aspx">Ver Carrito</a> 
 		    </li>
 
             <li>
-			    <a href="#">Consultar Productos</a> 
+			    <a href="#">Consultar Producto</a> 
 		    </li>
 		</ol>
     </div>
@@ -33,39 +35,56 @@
 
     <div class="alert alert-success alert-dismissable" style="display:none" id="agregarEventoaCarrito">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
-            El Producto se ha Agregado Exitosamente al Carrito.
+            El Producto se ha Agregado Exitosamente.
         </div>
+
+     <form runat="server" >
 
     <div class="box-body table-responsive">
 
-         <!--MODAL PARA EL DETALLE-->
+<!--TABLA DEL LISTAR DE PRODUCTO-->
      <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Productos Actuales</h3>
                 </div><!-- /.box-header -->
               </div>
-       <table id="tablaproducto" class="table table-bordered table-striped dataTable">
-        <thead>
-            <tr>
-                    <th style="text-align:left">Nombre</th>
-					<th style="text-align:left">Tipo</th>
-                    <th style="text-align:left">Marca</th>
-					<th style="text-align:left">Precio</th>
-                    <th style="text-align:center">Cantidad Existente</th>
-                    <th style="text-align:left">Nombre del Dojo</th>
-                    <th style="text-align:left">Cantidad a Escoger </th>
-					<th style="text-align:left">Acciones</th>
-            </tr>
-        </thead>
- 
-        <tbody>
-            <asp:Literal runat="server" ID="tlTablaProductos"></asp:Literal>
-        </tbody>
-    </table>    
-   </div>
-                  <!--MODAL PARA EL DETALLE -->
-<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        
+       <asp:Table ID="tablitaProductos" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               
+               <asp:TableHeaderCell>
+                   Nombre
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Tipo
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Marca
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio (BsF.)
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad en Existencia
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Nombre del Dojo perteneciente
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad a Escoger
+               </asp:TableHeaderCell>              
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+      </asp:Table>
+    
+        </div>
+        
+
+     <!--MODAL PARA EL DETALLE -->
+<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -74,38 +93,18 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
-							<div class="row">
-								<h3>Imagen</h3>
-									<img src="" id="beta" />
-                                   
-                                <h3>Nombre</h3>
-                                    <label id="aux1" ></label>
-                                    
-								<h3>Tipo Implemento</h3>
-                                    <label id="aux2" ></label>
-                                    
-                                <h3>Marca</h3>
-                                    <label id="aux3" ></label>
-                                   
-                                <h3>Color</h3>
-                                    <label id="aux4" ></label>
-                                    
-                                <h3>Talla</h3>
-                                    <label id="aux5" ></label>
-                                    
-                                <h3>Status</h3>
-                                    <label id="aux6" ></label>
-                                    
-                                <h3>Precio</h3>
-                                    <label id="aux7" ></label>
-                                    
-                                <h3>Descripcion</h3>
-                                    <label id="aux8" ></label>
+							<div class="row" id="prueba" >
+                                <asp:Literal runat="server" ID="detalleProductoLiteral" ></asp:Literal>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>        
+		</div>    
+    
+     
+    </form>
 
 </asp:Content>
+

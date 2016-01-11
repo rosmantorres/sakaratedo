@@ -61,21 +61,21 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Nueva celda que tendra el nombre del evento
                     TableCell celda = new TableCell();
-                    celda.Text = item.Nombre;
+                    celda.Text = item.Nombre.ToString();
 
                     //Agrego la Celda a la fila
                     fila.Cells.Add(celda);
 
                     //Nueva celda que tendra la descripcion del evento
                     celda = new TableCell();
-                    celda.Text = item.Descripcion;;
+                    celda.Text = item.Descripcion.ToString();
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
 
                     //Nueva celda que tendra el costo del evento
                     celda = new TableCell();
-                    celda.Text = item.Costo.ToString(); ;
+                    celda.Text = item.Costo.ToString();
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
@@ -155,7 +155,9 @@ namespace Interfaz_Presentadores.Modulo16
             Evento resultados = DetalleEvento(evento);
 
             // Variables para imprimir en el modal
-            vista.LiteralDetallesEventos.Text = "</br>"+"<h3>Nombre</h3>" + "<label id='aux1' >" +resultados.Nombre + "</label>" + "<h3>Descripcion</h3>" + "<label id='aux2' >" +resultados.Descripcion + "</label>"+"<h3>Costo</h3>" + "<label id='aux3' >" +resultados.Costo + "</label>"  ;
+            vista.LiteralDetallesEventos.Text = "</br>"+"<h3>Nombre</h3>" + "<label id='aux1' >" +resultados.Nombre + "</label>" + 
+                                                        "<h3>Descripcion</h3>" + "<label id='aux2' >" +resultados.Descripcion + "</label>"+
+                                                        "<h3>Costo</h3>" + "<label id='aux3' >" +resultados.Costo + "</label>";
             vista.ejecutarScript();    
         }
 

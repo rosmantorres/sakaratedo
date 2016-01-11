@@ -156,8 +156,8 @@ namespace Interfaz_Presentadores.Modulo16
             vista.LiteralDetallesMensualidades.Text = "</br>" + "<h3>Id Matricula</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
                                                               "<h3>Identificador</h3>" + "<label id='aux2' >" + resultados.Identificador + "</label>" +
                                                               "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>" +
-                                                              "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux3' >" + resultados.UltimaFechaPago + "</label>" +
-                                                              "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux3' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>" ;
+                                                              "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux4' >" + resultados.UltimaFechaPago + "</label>" +
+                                                              "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux4' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>" ;
 
                                                               
             vista.ejecutarScript();    
