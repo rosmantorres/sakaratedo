@@ -249,6 +249,12 @@ namespace DatosSKD.DAO.Modulo7
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             Evento idEvento = (Evento)parametro;
             Evento evento = (Evento)fabricaEntidades.ObtenerEvento();
+            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
+
+            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+
 
             try
             {
@@ -269,9 +275,19 @@ namespace DatosSKD.DAO.Modulo7
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
                         evento.Costo = float.Parse(row[RecursosDAOModulo7.AliasEventoCosto].ToString());
-                       // evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString()));
-                        //evento.Horario = baseDeDatosHorario.DetallarHorario(int.Parse(row[RecursosDAOModulo7.AliasEventoHorarioId].ToString()));
-                        //evento.Ubicacion = baseDeDatosUbicacion.DetallarUbicacion(int.Parse(row[RecursosDAOModulo7.AliasEventoUbicacionId].ToString()));
+
+                        TipoEvento idTipoEvento = new TipoEvento();//se debe usar fabrica aqui cuando este lista
+                        idTipoEvento.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString());
+                        evento.TipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+
+                        Horario idHorario = new Horario();//se debe usar fabrica aqui cuando este lista
+                        idHorario.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoHorarioId].ToString());
+                        evento.Horario = (Horario)baseDeDatosHorario.ConsultarXId(idHorario);
+
+                        Ubicacion idUbicacion = new Ubicacion();//se debe usar fabrica aqui cuando este lista
+                        idUbicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoUbicacionId].ToString());
+                        evento.Ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+                      
                     }
                 }
                 else
@@ -668,6 +684,8 @@ namespace DatosSKD.DAO.Modulo7
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             List<Entidad> listaDeEventos = new List<Entidad>();
             Persona idPersona = (Persona)persona;
+            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
+            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
 
             try
             {
@@ -685,10 +703,14 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Evento evento  = (Evento)fabricaEntidades.ObtenerEvento();
-                    
                         evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
-                       // evento.TipoEvento = baseDeDatosTipoEvento.DetallarTipoEvento(int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString()));
+
+                        TipoEvento idTipoEvento = new TipoEvento();//se debe usar fabrica aqui cuando est
+                        idTipoEvento.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString());
+                        evento.TipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+
+                     
                         listaDeEventos.Add(evento);
                     }
                 }
