@@ -23,7 +23,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// </summary>
         private int tipoObjeto;
         private int objetoaBorrar;
-        private Entidad usuario;
+        private int usuario;
 
         #endregion
 
@@ -43,7 +43,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// <param name="tipoObjeto">tipo de objeto que se eliminará</param>
         /// <param name="ObjetoaBorrar">El item que se elimina al carrito de la persona</param>
         /// <param name="Usuario">Indica a que Usuario esta asociado el item</param>
-        public ComandoeliminarItem(int tipoObjeto, int objetoaBorrar, Entidad usuario)
+        public ComandoeliminarItem(int tipoObjeto, int objetoaBorrar, int usuario)
         {
             this.tipoObjeto = tipoObjeto;
             this.objetoaBorrar = objetoaBorrar;
@@ -89,7 +89,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// <summary>
         /// Propiedad del atributo usuario
         /// </summary>
-        public Entidad Usuario
+        public int Usuario
         {
             get
             {

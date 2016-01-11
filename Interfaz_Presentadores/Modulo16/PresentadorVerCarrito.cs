@@ -380,7 +380,104 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="e">El evento que es ejecutado</param>
         void Eliminar_Item(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //Persona que eventualmente la buscaremos por el session
+            Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+            persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+
+            //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
+            Button aux = (Button)sender;
+            String[] datos = aux.ID.Split('-');
+
+            //Cantidad Deseada nueva por el usuario
+          //  int cantidad = 0;
+
+            //Respuesta a obtener del comando, tipo de objeto
+            bool respuesta = false;
+            int TipoObjeto = 0;
+
+            //Si se trata de un implemento, me voy a la tabla correspondiente
+            if (datos[0] == "Implemento")
+            {
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                foreach (TableRow aux2 in this.laVista.tablaImplemento.Rows)
+                {
+                    //Si la fila no es de tipo Header puedo comenzar a buscar
+                    if ((aux2 is TableHeaderRow) != true)
+                    {
+                        //En la celda 3 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
+/*
+                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
+                        //Obtenemos el numero del textbox que el usuario desea
+                        if (aux3.ID == aux.ID)
+                        {
+                            //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el usuario desea
+                            TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
+                            cantidad = int.Parse(eltexto.Text);
+                            break;
+                        }*/
+                    }
+                }
+
+                //Decimos que se trata de un implemento
+                TipoObjeto = 1;
+
+                //Pasamos el ID que vino del boton
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                objeto.Id = int.Parse(datos[1]);
+
+                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto,objeto.Id,persona.Id);
+              
+                respuesta = EliminarCarrito.Ejecutar();
+            }
+            //Si es un Evento, me voy a la tabla correspondiente
+            else if (datos[0] == "Evento")
+            {
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                foreach (TableRow aux2 in this.laVista.tablaEvento.Rows)
+                {
+                    //Si la fila no es de tipo Header puedo comenzar a buscar
+                    if ((aux2 is TableHeaderRow) != true)
+                    {
+                        //En la celda 3 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
+                        /*
+                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
+                        //Obtenemos el numero del textbox que el usuario desea
+                        if (aux3.ID == aux.ID)
+                        {
+                            //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el usuario desea
+                            TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
+                            cantidad = int.Parse(eltexto.Text);
+                            break;
+                        }*/
+                    }
+                }
+
+                //Decimos que se trata de un evento
+                TipoObjeto = 2;
+
+                //Pasamos el ID que vino del boton
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Evento objeto = (Evento)fabrica.ObtenerEvento();
+                objeto.Id_evento = int.Parse(datos[1]);
+
+                //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto.Id, persona.Id);
+
+                respuesta = EliminarCarrito.Ejecutar();
+            }
+
+            //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
+            if (respuesta)
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
+            else
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0");
+
+
+             
         }
         #endregion
         #endregion

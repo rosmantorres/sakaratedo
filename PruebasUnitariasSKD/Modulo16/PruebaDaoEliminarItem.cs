@@ -27,7 +27,7 @@ namespace PruebasUnitariasSKD.Modulo16
         //Atributos pertinentes a usar
         private DaoCarrito pruebaDao;
         private IdaoCarrito daoCarrito;
-        private Entidad persona;
+        private int persona;
         private Entidad implemento;
         private Matricula matricula;
 
@@ -41,8 +41,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //La persona
-            this.persona = new Persona();
-            this.persona.Id = 11;
+            this.persona = 1;
 
 
             //Dos implementos distintos
@@ -108,7 +107,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Limpiar()
         {
              
-            this.persona = null;
+            this.persona = 0;
             this.implemento = null;
             this.matricula = null;
             this.pruebaDao = null;

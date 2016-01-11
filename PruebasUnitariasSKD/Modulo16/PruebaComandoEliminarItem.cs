@@ -30,19 +30,19 @@ namespace PruebasUnitariasSKD.Modulo16
         private ComandoeliminarItem pruebaComandoEvento1;
         private ComandoeliminarItem pruebaComandoMatricula1;
         private Comando<bool> eliminarEventos;
-        private Entidad persona;
+        private int persona;
         private Implemento implemento;
         private bool seelimina;
         private Matricula matricula;
         private int objetoaBorrari ;
          private   int tipoObjetoi ;
-         private  Entidad usuarioi;
+         private  int usuarioi;
          private int objetoaBorrarm;
          private int tipoObjetom;
-         private Entidad usuariom;
+         private int usuariom;
          private int objetoaBorrare;
          private int tipoObjetoe;
-         private Entidad usuarioe;
+         private int usuarioe;
 
 
 
@@ -56,8 +56,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //Persona
-            this.persona = new Persona();
-            this.persona.Id = 11;
+            this.persona = 11;
 
             //Implemento
             this.implemento = new Implemento();
@@ -168,7 +167,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaComandoEvento1 = null;
             this.pruebaComandoMatricula1 = null;
             this.eliminarEventos = null;
-            this.persona = null;
+            this.persona = 0;
             this.implemento = null;
             this.matricula = null;
             

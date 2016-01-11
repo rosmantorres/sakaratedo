@@ -635,7 +635,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <param name="objetoBorrar">El objeto en especifico a borrar</param>
         /// <param name="persona">La persona al que se alterara su carrito</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-        public bool eliminarItem(int tipoObjeto, int objetoBorrar, Entidad persona)
+        public bool eliminarItem(int tipoObjeto, int objetoBorrar, int persona)
         {       
             try
             {
@@ -652,7 +652,7 @@ namespace DatosSKD.DAO.Modulo16
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
-                    SqlDbType.Int, persona.Id.ToString(), false);
+                    SqlDbType.Int, persona.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM,
                                SqlDbType.Int, objetoBorrar.ToString(), false);
