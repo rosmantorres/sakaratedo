@@ -151,9 +151,9 @@ namespace templateApp.GUI.Modulo16
                 //Si se sucita algun error obtendremos la alerta correspondiente
                 case "4":
                     //Obtenemos el exito o fallo del proceso
-                    String exito4 = Request.QueryString["mensaje"];
+                    String error = Request.QueryString["mensaje"];
 
-                    switch (exito4)
+                    switch (error)
                     {
                         case "1":
                             //Si el RegistarPago fue fallido mostramos esta alerta

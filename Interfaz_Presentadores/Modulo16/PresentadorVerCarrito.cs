@@ -89,6 +89,8 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Celda que tendra los botones de Detallar, Modificar y Eliminar
                 celda = new TableCell();
+
+                //Boton Modificar
                 Button boton = new Button();
                 boton.Click += Modificar_Carrito;
                 boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
@@ -107,6 +109,13 @@ namespace Interfaz_Presentadores.Modulo16
                 //Se modifica para que el boton no haga postback
                 boton.OnClientClick = "return false;";
                 boton.UseSubmitBehavior = false;
+                celda.Controls.Add(boton);
+
+                //Boton Eliminar
+                boton = new Button();
+                boton.Click += Eliminar_Item;
+                boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
+                boton.ID = "EImplemento-" + item.Id_Implemento.ToString();
                 celda.Controls.Add(boton);
 
                 //Agrego la celda a la fila
@@ -150,6 +159,8 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Celda que tendra los botones de Detallar, Modificar y Eliminar
                 celda = new TableCell();
+
+                //Boton Modificar
                 Button boton = new Button();
                 boton.Click += Modificar_Carrito;
                 boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
@@ -168,6 +179,13 @@ namespace Interfaz_Presentadores.Modulo16
                 //Se modifica para que el boton no haga postback
                 boton.OnClientClick = "return false;";
                 boton.UseSubmitBehavior = false;
+                celda.Controls.Add(boton);
+
+                //Boton Eliminar
+                boton = new Button();
+                boton.Click += Eliminar_Item;
+                boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
+                boton.ID = "EEvento-" + item.Id_evento.ToString();
                 celda.Controls.Add(boton);
 
                 //Agrego la celda a la fila
@@ -209,11 +227,13 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Celda que tendra el boton de Eliminar
                 celda = new TableCell();
+
+                //Boton Eliminar               
                 Button boton = new Button();
                 boton.Click += Eliminar_Item;
                 boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                boton.ID = "Matricula-" + item.Id.ToString();
-                celda.Controls.Add(boton);               
+                boton.ID = "EMatricula-" + item.Id.ToString();
+                celda.Controls.Add(boton);
 
                 //Agrego la celda a la fila
                 fila.Cells.Add(celda);
@@ -222,12 +242,7 @@ namespace Interfaz_Presentadores.Modulo16
                 this.laVista.tablaMatricula.Rows.Add(fila);
             }
         }
-
-        void Eliminar_Item(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
+        #endregion        
 
         #region ModificarCarrito
         /// <summary>
@@ -354,6 +369,18 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Retorno la respuesta
             return respuesta;
+        }
+        #endregion
+
+        #region EliminarItem
+        /// <summary>
+        /// Metodo del presentador que elimina un item del carrito del usuario
+        /// </summary>
+        /// <param name="sender">El objeto que dispara la accion</param>
+        /// <param name="e">El evento que es ejecutado</param>
+        void Eliminar_Item(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
         #endregion
         #endregion
