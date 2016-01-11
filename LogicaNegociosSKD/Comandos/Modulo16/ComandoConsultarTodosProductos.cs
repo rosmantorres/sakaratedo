@@ -49,8 +49,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         {
             try
             {
-                FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
-                IdaoImplemento daoImplementos = laFabrica.ObtenerDaoProductos();
+                IdaoImplemento daoImplementos = FabricaDAOSqlServer.ObtenerDaoProductos();
 
                 return daoImplementos.ConsultarTodos();
             }

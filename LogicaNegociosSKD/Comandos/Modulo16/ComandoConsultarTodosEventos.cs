@@ -49,9 +49,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         {
             try
             {
-                FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
-                IdaoEvento daoEventos = laFabrica.ObtenerDaoEventos();
-
+                IdaoEvento daoEventos = FabricaDAOSqlServer.ObtenerDaoEventos();
                 return daoEventos.ConsultarTodos();
             }
             #region catches

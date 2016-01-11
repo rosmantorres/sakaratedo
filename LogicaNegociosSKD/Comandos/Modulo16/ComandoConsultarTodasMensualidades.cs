@@ -63,8 +63,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
        {
            try
            {
-               FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
-               IdaoMensualidad daoMensualidades = laFabrica.ObtenerDaoMensualidades();
+               IdaoMensualidad daoMensualidades = FabricaDAOSqlServer.ObtenerDaoMensualidades();
                PersonaM1 p = (PersonaM1)this.LaEntidad;
 
                return daoMensualidades.ConsultarXId(p);
