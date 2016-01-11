@@ -147,6 +147,8 @@ namespace templateApp.GUI.Modulo16
                             " la cantidad deseada no existe en el inventario actualmente</div>";
                     }
                     break;
+
+                              
                 
                 //Si se sucita algun error obtendremos la alerta correspondiente
                 case "4":
@@ -164,6 +166,34 @@ namespace templateApp.GUI.Modulo16
                                 " Su producto no ha podido ser agregado, si ha querido agregar implementos" +
                                 " la cantidad deseada no existe en el inventario actualmente</div>";
                             break;
+                    }
+                    break;
+
+
+
+                //Si venimos de un EliminarItem obtenemos esta alerta
+                case "5":
+                    //Obtenemos el exito o fallo del proceso
+                    String exito4 = Request.QueryString["exito"];
+
+                    if (exito4.Equals("1"))
+                    {
+                        //Si el EliminarItem fue exitoso mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                            "El producto se ha eliminado exitosamente</div>";
+                    }
+                    else
+                    {
+                        //Si el EliminarItem fue fallido mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                            " El producto no ha podido ser eliminado, por favor intente nuevamente" +
+                            " Revise la conexion</div>";
                     }
                     break;
             }
