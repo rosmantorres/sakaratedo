@@ -146,9 +146,7 @@ namespace templateApp.GUI.Modulo16
                             " Su producto no ha podido ser agregado, si ha querido agregar implementos" + 
                             " la cantidad deseada no existe en el inventario actualmente</div>";
                     }
-                    break;
-
-                              
+                    break;                              
                 
                 //Si se sucita algun error obtendremos la alerta correspondiente
                 case "4":

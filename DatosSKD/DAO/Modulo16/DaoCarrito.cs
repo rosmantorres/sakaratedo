@@ -198,6 +198,9 @@ namespace DatosSKD.DAO.Modulo16
                             throw new OpcionItemErroneoException(RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO);
                     }
 
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
                     //Recorro cada una de las respuestas en la lista
                     foreach (Resultado aux in result)
                     {
@@ -328,13 +331,12 @@ namespace DatosSKD.DAO.Modulo16
 
                             //Agrego a la lista
                             laLista.Add(elImplemento, 
-                                int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
-                           // laLista.Add(elImplemento);
+                                int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));                           
                         }
-                    }
 
-                    //Limpio la conexion
-                    LimpiarSQLConnection();
+                        //Limpio la conexion
+                        LimpiarSQLConnection();
+                    }                    
 
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -448,10 +450,10 @@ namespace DatosSKD.DAO.Modulo16
                             //Agrego a la lista
                             laLista.Add(elEvento, int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
                         }
-                    }
 
-                    //Limpio la conexion
-                    LimpiarSQLConnection();
+                        //Limpio la conexion
+                        LimpiarSQLConnection();
+                    }                    
 
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -569,6 +571,8 @@ namespace DatosSKD.DAO.Modulo16
                             laLista.Add(laMatricula,int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
                         }
 
+                        //Limpio la conexion
+                        LimpiarSQLConnection();
                     }
 
                     //Escribo en el logger la salida a este metodo
@@ -673,6 +677,9 @@ namespace DatosSKD.DAO.Modulo16
                         exito = true;
                 }
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                  //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                        RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -775,6 +782,9 @@ namespace DatosSKD.DAO.Modulo16
                         if (aux.valor == "1")
                             exito = true;
                     }
+
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
 
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -921,6 +931,9 @@ namespace DatosSKD.DAO.Modulo16
                             //Sino es ninguna de las opciones posibles lanzamos un error
                             throw new OpcionItemErroneoException(RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO);
                     }
+
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
 
                     //Recorro cada una de las respuestas en la lista
                     foreach (Resultado aux in result)

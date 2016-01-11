@@ -116,11 +116,11 @@ namespace Interfaz_Presentadores.Modulo16
                     celda.Controls.Add(boton);
 
                     //Boton de Agregar a Carrito
-                    //boton = new Button();
-                    //boton.ID = "Agregar-" + item.Id.ToString();
-                    //boton.Click += AgregarCarrito;
-                    //boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
-                    //celda.Controls.Add(boton);                   
+                    boton = new Button();
+                    boton.ID = "Agregar-" + item.Id.ToString();
+                    boton.Click += AgregarCarrito;
+                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
+                    celda.Controls.Add(boton);                         
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
@@ -182,7 +182,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// </summary>
         /// <param name="sender">El objeto que ejecuta la accion</param>
         /// <param name="e">El arreglo de Mensualidades</param>
-      /*  public void AgregarCarrito(object sender, EventArgs ec)
+        public void AgregarCarrito(object sender, EventArgs ec)
         {
             try
             {
@@ -201,36 +201,15 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Creo la fabrica y el evento asignandole su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Evento evento = (Evento)fabrica.ObtenerEvento();
-                evento.Id_evento = int.Parse(datos[1]);
+                Matricula matricula = (Matricula)fabrica.ObtenerMatricula();
+                matricula.Id = int.Parse(datos[1]);
 
-                //Respuesta de la accion de agregar y la cantidad que se desea de ese item
-                bool respuesta = false;
-                int cantidad = 0;
+                //Respuesta de la accion de agregar
+                bool respuesta = false;                
 
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
-                foreach (TableRow aux2 in this.vista.tablaEventos.Rows)
-                {
-                    //Si la fila no es de tipo Header puedo comenzar a buscar
-                    if ((aux2 is TableHeaderRow) != true)
-                    {
-                        //En la celda 4 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[4].Controls[1] as Button;
-
-                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
-                        //Obtenemos el numero del textbox que el usuario desea
-                        if (aux3.ID == aux.ID)
-                        {
-                            //En la celda 3 siempre estara el combobox, lo obtengo y agarro la cantidad que el usuario desea
-                            DropDownList lacantidad = aux2.Cells[3].Controls[0] as DropDownList;
-                            cantidad = int.Parse(lacantidad.SelectedValue);
-                            break;
-                        }
-                    }
-                }
-
-                //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente
-                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, evento, 2, cantidad);
+                /*Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente,
+                la cantidad siempre sera 1*/
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, matricula, 3, 1);
                 respuesta = comando.Ejecutar();
 
                  //Escribo en el logger la salida a este metodo
@@ -298,7 +277,7 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
             }
-        } */
+        }
         #endregion
 
     }

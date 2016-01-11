@@ -17,6 +17,8 @@ using DominioSKD.Fabrica;
 using DominioSKD.Entidades.Modulo1;
 using System.Web;
 using Interfaz_Presentadores.Master;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -47,199 +49,248 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="persona">el ID de la persona a la que se desea ver su carrito</param>
         public void LlenarTabla(String idpersona)
         {
-            //Creo la persona y le pongo su ID
-            Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
-            persona.Id = int.Parse(idpersona);
-
-            //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
-            Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
-            Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();
-
-            //Obtenemos cada implemento para ponerlos en la tabla
-            foreach (KeyValuePair<Entidad, int> aux in elCarrito.ListaImplemento)
+            try
             {
-                //Casteamos la entidad como un implemento
-                Implemento item = aux.Key as Implemento;
+                //Creo la persona y le pongo su ID
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                persona.Id = int.Parse(idpersona);
 
-                //Creamos la nueva fila que ira en la tabla
-                TableRow fila = new TableRow();
+                //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
+                Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
+                Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();
 
-                //Nueva celda que tendra el nombre del implemento
-                TableCell celda = new TableCell();
-                celda.Text = item.Nombre_Implemento;
+                //Obtenemos cada implemento para ponerlos en la tabla
+                foreach (KeyValuePair<Entidad, int> aux in elCarrito.ListaImplemento)
+                {
+                    //Casteamos la entidad como un implemento
+                    Implemento item = aux.Key as Implemento;
 
-                //Agrego la Celda a la fila
-                fila.Cells.Add(celda);
+                    //Creamos la nueva fila que ira en la tabla
+                    TableRow fila = new TableRow();
 
-                //Nueva celda que tendra el costo del implemento
-                celda = new TableCell();
-                celda.Text = item.Precio_Implemento.ToString();
+                    //Nueva celda que tendra el nombre del implemento
+                    TableCell celda = new TableCell();
+                    celda.Text = item.Nombre_Implemento;
 
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
 
-                //Nueva celda que tendra el textbox para poner la cantidad del implemento
-                celda = new TableCell();
-                TextBox texto = new TextBox();
-                texto.Text = aux.Value.ToString();
-                celda.Controls.Add(texto);
+                    //Nueva celda que tendra el costo del implemento
+                    celda = new TableCell();
+                    celda.Text = item.Precio_Implemento.ToString();
 
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
 
-                //Celda que tendra los botones de Detallar, Modificar y Eliminar
-                celda = new TableCell();
+                    //Nueva celda que tendra el textbox para poner la cantidad del implemento
+                    celda = new TableCell();
+                    TextBox texto = new TextBox();
+                    texto.Text = aux.Value.ToString();
+                    celda.Controls.Add(texto);
 
-                //Boton Modificar
-                Button boton = new Button();
-                boton.Click += Modificar_Carrito;
-                boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
-                boton.ID = "Implemento-" + item.Id_Implemento.ToString();
-                celda.Controls.Add(boton);
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
 
-                //Boton informacion
-                boton = new Button();
-                boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
-                boton.ID = "Informacion1-" + item.Id_Implemento.ToString();
+                    //Celda que tendra los botones de Detallar, Modificar y Eliminar
+                    celda = new TableCell();
 
-                //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
-                boton.Attributes.Add("data-toggle", "modal");
-                boton.Attributes.Add("data-target", "#modal-info1");
+                    //Boton Modificar
+                    Button boton = new Button();
+                    boton.Click += Modificar_Carrito;
+                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
+                    boton.ID = "Implemento-" + item.Id_Implemento.ToString();
+                    celda.Controls.Add(boton);
 
-                //Se modifica para que el boton no haga postback
-                boton.OnClientClick = "return false;";
-                boton.UseSubmitBehavior = false;
-                celda.Controls.Add(boton);
+                    //Boton informacion
+                    boton = new Button();
+                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.ID = "Informacion1-" + item.Id_Implemento.ToString();
 
-                //Boton Eliminar
-                boton = new Button();
-                boton.Click += Eliminar_Item;
-                boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                boton.ID = "EImplemento-" + item.Id_Implemento.ToString();
-                celda.Controls.Add(boton);
+                    //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
+                    boton.Attributes.Add("data-toggle", "modal");
+                    boton.Attributes.Add("data-target", "#modal-info1");
 
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
+                    //Se modifica para que el boton no haga postback
+                    boton.OnClientClick = "return false;";
+                    boton.UseSubmitBehavior = false;
+                    celda.Controls.Add(boton);
 
-                //Agrego la fila a la tabla
-                this.laVista.tablaImplemento.Rows.Add(fila);
+                    //Boton Eliminar
+                    boton = new Button();
+                    boton.Click += Eliminar_Item;
+                    boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
+                    boton.ID = "EImplemento-" + item.Id_Implemento.ToString();
+                    celda.Controls.Add(boton);
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Agrego la fila a la tabla
+                    this.laVista.tablaImplemento.Rows.Add(fila);
+                }
+
+                //Obtenemos cada evento para ponerlos en la tabla
+                foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listaevento)
+                {
+                    //Casteamos la entidad como un evento
+                    Evento item = aux.Key as Evento;
+
+                    //Creamos la nueva fila que ira en la tabla
+                    TableRow fila = new TableRow();
+
+                    //Nueva celda que tendra el nombre del evento
+                    TableCell celda = new TableCell();
+                    celda.Text = item.Nombre;
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el costo del evento
+                    celda = new TableCell();
+                    celda.Text = item.Costo.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el textbox para poner la cantidad del evento
+                    celda = new TableCell();
+                    TextBox texto = new TextBox();
+                    texto.Text = aux.Value.ToString();
+                    celda.Controls.Add(texto);
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Celda que tendra los botones de Detallar, Modificar y Eliminar
+                    celda = new TableCell();
+
+                    //Boton Modificar
+                    Button boton = new Button();
+                    boton.Click += Modificar_Carrito;
+                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
+                    boton.ID = "Evento-" + item.Id_evento.ToString();
+                    celda.Controls.Add(boton);
+
+                    //Boton informacion
+                    boton = new Button();
+                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.ID = "Informacion2-" + item.Id_evento.ToString();
+
+                    //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
+                    boton.Attributes.Add("data-toggle", "modal");
+                    boton.Attributes.Add("data-target", "#modal-info2");
+
+                    //Se modifica para que el boton no haga postback
+                    boton.OnClientClick = "return false;";
+                    boton.UseSubmitBehavior = false;
+                    celda.Controls.Add(boton);
+
+                    //Boton Eliminar
+                    boton = new Button();
+                    boton.Click += Eliminar_Item;
+                    boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
+                    boton.ID = "EEvento-" + item.Id_evento.ToString();
+                    celda.Controls.Add(boton);
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Agrego la fila a la tabla
+                    this.laVista.tablaEvento.Rows.Add(fila);
+                }
+
+                //Obtenemos cada matricula para ponerlas en la tabla            
+                foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listamatricula)
+                {
+                    //Casteamos la entidad como una matricula
+                    Matricula item = aux.Key as Matricula;
+
+                    //Creamos la nueva fila que ira en la tabla
+                    TableRow fila = new TableRow();
+
+                    //Nueva celda que tendra el nombre de la matricula
+                    TableCell celda = new TableCell();
+                    celda.Text = item.Identificador;
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el costo de la matricula
+                    celda = new TableCell();
+                    celda.Text = item.Costo.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Agrego celda para poner la cantidad de la matricula
+                    celda = new TableCell();               
+                    celda.Text = aux.Value.ToString();                
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Celda que tendra el boton de Eliminar
+                    celda = new TableCell();
+
+                    //Boton Eliminar               
+                    Button boton = new Button();
+                    boton.Click += Eliminar_Item;
+                    boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
+                    boton.ID = "EMatricula-" + item.Id.ToString();
+                    celda.Controls.Add(boton);
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Agrego la fila a la tabla
+                    this.laVista.tablaMatricula.Rows.Add(fila);
+                }            
             }
-
-            //Obtenemos cada evento para ponerlos en la tabla
-            foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listaevento)
+            catch (PersonaNoValidaException e)
             {
-                //Casteamos la entidad como un evento
-                Evento item = aux.Key as Evento;
-
-                //Creamos la nueva fila que ira en la tabla
-                TableRow fila = new TableRow();
-
-                //Nueva celda que tendra el nombre del evento
-                TableCell celda = new TableCell();
-                celda.Text = item.Nombre;
-
-                //Agrego la Celda a la fila
-                fila.Cells.Add(celda);
-
-                //Nueva celda que tendra el costo del evento
-                celda = new TableCell();
-                celda.Text = item.Costo.ToString();
-
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
-
-                //Nueva celda que tendra el textbox para poner la cantidad del evento
-                celda = new TableCell();
-                TextBox texto = new TextBox();
-                texto.Text = aux.Value.ToString();
-                celda.Controls.Add(texto);
-
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
-
-                //Celda que tendra los botones de Detallar, Modificar y Eliminar
-                celda = new TableCell();
-
-                //Boton Modificar
-                Button boton = new Button();
-                boton.Click += Modificar_Carrito;
-                boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
-                boton.ID = "Evento-" + item.Id_evento.ToString();
-                celda.Controls.Add(boton);
-
-                //Boton informacion
-                boton = new Button();
-                boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
-                boton.ID = "Informacion2-" + item.Id_evento.ToString();
-
-                //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
-                boton.Attributes.Add("data-toggle", "modal");
-                boton.Attributes.Add("data-target", "#modal-info2");
-
-                //Se modifica para que el boton no haga postback
-                boton.OnClientClick = "return false;";
-                boton.UseSubmitBehavior = false;
-                celda.Controls.Add(boton);
-
-                //Boton Eliminar
-                boton = new Button();
-                boton.Click += Eliminar_Item;
-                boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                boton.ID = "EEvento-" + item.Id_evento.ToString();
-                celda.Controls.Add(boton);
-
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
-
-                //Agrego la fila a la tabla
-                this.laVista.tablaEvento.Rows.Add(fila);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
             }
-
-            //Obtenemos cada matricula para ponerlas en la tabla            
-            foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listamatricula)
+            catch (LoggerException e)
             {
-                //Casteamos la entidad como una matricula
-                Matricula item = aux.Key as Matricula;
-
-                //Creamos la nueva fila que ira en la tabla
-                TableRow fila = new TableRow();
-
-                //Nueva celda que tendra el nombre de la matricula
-                TableCell celda = new TableCell();
-                celda.Text = item.Identificador;
-
-                //Agrego la Celda a la fila
-                fila.Cells.Add(celda);
-
-                //Nueva celda que tendra el costo de la matricula
-                celda = new TableCell();
-                celda.Text = item.Costo.ToString();
-
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
-
-                //Agrego celda para poner la cantidad de la matricula
-                celda = new TableCell();               
-                celda.Text = aux.Value.ToString();                
-
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
-
-                //Celda que tendra el boton de Eliminar
-                celda = new TableCell();
-
-                //Boton Eliminar               
-                Button boton = new Button();
-                boton.Click += Eliminar_Item;
-                boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                boton.ID = "EMatricula-" + item.Id.ToString();
-                celda.Controls.Add(boton);
-
-                //Agrego la celda a la fila
-                fila.Cells.Add(celda);
-
-                //Agrego la fila a la tabla
-                this.laVista.tablaMatricula.Rows.Add(fila);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&exito=1", false);
+                
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                
             }
         }
         #endregion        
