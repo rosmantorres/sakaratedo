@@ -61,10 +61,10 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Nueva celda que tendra el id del Producto
                     TableCell celda = new TableCell();
-                    //celda.Text = item.Id_Implemento.ToString();
+                    celda.Text = item.Id_Implemento.ToString();
 
                     //Agrego la Celda a la fila
-                   // fila.Cells.Add(celda);
+                    fila.Cells.Add(celda);
 
                     //Nueva celda que tendra el nombre del producto
                     celda = new TableCell();
@@ -97,13 +97,6 @@ namespace Interfaz_Presentadores.Modulo16
                     //Nueva celda que tendra la cantidad total del producto en inventario
                     celda = new TableCell();
                     celda.Text = item.Cantida_implemento.ToString();
-
-                    //Agrego la celda a la fila
-                    fila.Cells.Add(celda);
-
-                    //Nueva celda que tendra el nombre del dojo donde se encuentra disponible
-                    celda = new TableCell();
-                    celda.Text = item.Dojo_Implemento.Nombre_dojo.ToString();
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);

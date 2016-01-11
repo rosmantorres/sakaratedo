@@ -277,11 +277,11 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M16_CONSULTAR_INVENTARIO_TOTAL_DOJOS.
+        ///   Looks up a localized string similar to M16_CONSULTAR_INVENTARIO_TOTAL.
         /// </summary>
-        internal static string CONSULTAR_IMPLEMENTOS_POR_DOJOS {
+        internal static string CONSULTAR_INVENTARIO_TOTAL {
             get {
-                return ResourceManager.GetString("CONSULTAR_IMPLEMENTOS_POR_DOJOS", resourceCulture);
+                return ResourceManager.GetString("CONSULTAR_INVENTARIO_TOTAL", resourceCulture);
             }
         }
         

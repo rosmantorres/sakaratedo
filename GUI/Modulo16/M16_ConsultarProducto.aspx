@@ -38,10 +38,10 @@
             El Producto se ha Agregado Exitosamente.
         </div>
 
-     <form runat="server" >
-
+    <form runat="server" >
+    
     <div class="box-body table-responsive">
-
+        
 <!--TABLA DEL LISTAR DE PRODUCTO-->
      <!-- general form elements -->
               <div class="box box-primary">
@@ -49,10 +49,12 @@
                   <h3 class="box-title">Productos Actuales</h3>
                 </div><!-- /.box-header -->
               </div>
-        
+       
        <asp:Table ID="tablitaProductos" runat="server" CssClass="table table-bordered table-striped dataTable">
            <asp:TableHeaderRow>
-               
+               <asp:TableHeaderCell>
+                   Id
+               </asp:TableHeaderCell>
                <asp:TableHeaderCell>
                    Nombre
                </asp:TableHeaderCell>
@@ -66,10 +68,7 @@
                    Precio (BsF.)
                </asp:TableHeaderCell>
                <asp:TableHeaderCell>
-                   Cantidad en Existencia
-               </asp:TableHeaderCell>
-               <asp:TableHeaderCell>
-                   Nombre del Dojo perteneciente
+                   Cantidad Total en Existencia
                </asp:TableHeaderCell>
                <asp:TableHeaderCell>
                    Cantidad a Escoger
@@ -82,7 +81,7 @@
     
         </div>
         
-
+    
      <!--MODAL PARA EL DETALLE -->
 <div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">

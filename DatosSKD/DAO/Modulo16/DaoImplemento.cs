@@ -34,25 +34,21 @@ namespace DatosSKD.DAO.Modulo16
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
             Implemento elImplemento;
-            Dojo elDojo;
 
             try
             {
-                    resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_IMPLEMENTOS_POR_DOJOS,
+                    resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_INVENTARIO_TOTAL,
                         parametros);
 
                     foreach (DataRow row in resultado.Rows)
                     {
                         elImplemento = (Implemento)laFabrica.ObtenerImplemento();
-                        elDojo = (Dojo)laFabrica.ObtenerDojos();
                         elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
                         elImplemento.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                         elImplemento.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
                         elImplemento.Marca_Implemento = row[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
                         elImplemento.Precio_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                         elImplemento.Cantida_implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD_IMPLEMENTO].ToString());
-                        elDojo.Nombre_dojo = row[RecursosBDModulo16.PARAMETRO_DOJO_NOMBRE].ToString();
-                        elImplemento.Dojo_Implemento = elDojo;
                         laLista.Add(elImplemento);
                        
                     }
