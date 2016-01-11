@@ -113,7 +113,7 @@ namespace templateApp.GUI.Modulo16
                     else
                     {
                         //Si el RegistarPago fue fallido mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                         alert.Attributes["role"] = "alert";
                         alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
                             " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
@@ -122,6 +122,7 @@ namespace templateApp.GUI.Modulo16
                     }
                     break;
 
+                //Si venimos de un AgregarItem obtenemos esta alerta
                 case "3":
                     //Obtenemos el exito o fallo del proceso
                     String exito3 = Request.QueryString["exito"];
@@ -138,12 +139,61 @@ namespace templateApp.GUI.Modulo16
                     else
                     {
                         //Si el RegistarPago fue fallido mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                         alert.Attributes["role"] = "alert";
                         alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
                             " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
                             " Su producto no ha podido ser agregado, si ha querido agregar implementos" + 
                             " la cantidad deseada no existe en el inventario actualmente</div>";
+                    }
+                    break;
+
+                              
+                
+                //Si se sucita algun error obtendremos la alerta correspondiente
+                case "4":
+                    //Obtenemos el exito o fallo del proceso
+                    String error = Request.QueryString["mensaje"];
+
+                    switch (error)
+                    {
+                        case "1":
+                            //Si el RegistarPago fue fallido mostramos esta alerta
+                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                            alert.Attributes["role"] = "alert";
+                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                                " Su producto no ha podido ser agregado, si ha querido agregar implementos" +
+                                " la cantidad deseada no existe en el inventario actualmente</div>";
+                            break;
+                    }
+                    break;
+
+
+
+                //Si venimos de un EliminarItem obtenemos esta alerta
+                case "5":
+                    //Obtenemos el exito o fallo del proceso
+                    String exito4 = Request.QueryString["exito"];
+
+                    if (exito4.Equals("1"))
+                    {
+                        //Si el EliminarItem fue exitoso mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                            "El producto se ha eliminado exitosamente</div>";
+                    }
+                    else
+                    {
+                        //Si el EliminarItem fue fallido mostramos esta alerta
+                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                        alert.Attributes["role"] = "alert";
+                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
+                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+                            " El producto no ha podido ser eliminado, por favor intente nuevamente" +
+                            " Revise la conexion</div>";
                     }
                     break;
             }
@@ -154,8 +204,8 @@ namespace templateApp.GUI.Modulo16
         /// Metodo que ejecuta el evento de Registrar el Pago de un Carrito en la base de Datos
         /// </summary>
         /// <param name="sender">El objeto que ejecuta el evento</param>
-        /// <param name="e">El tipo de evento que se esta ejecutando</param>        
-        protected void RegistrarPago(object sender, EventArgs e)
+        /// <param name="ev">El tipo de evento que se esta ejecutando</param>        
+        protected void RegistrarPago(object sender, EventArgs ev)
         {
             try
             {
@@ -194,54 +244,49 @@ namespace templateApp.GUI.Modulo16
                 else
                     HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=2&exito=0");
             }
-            catch (OpcionPagoNoValidoException ex)
+            catch (LoggerException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=1");
             }
-            catch (LoggerException ex)
+            catch (ParseoVacioException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (ParseoVacioException ex)
+            catch (PersonaNoValidaException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (PersonaNoValidaException ex)
+            catch (ParseoFormatoInvalidoException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (ParseoFormatoInvalidoException ex)
+            catch (ParseoEnSobrecargaException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (ParseoEnSobrecargaException ex)
+            catch (ParametroInvalidoException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (ParametroInvalidoException ex)
+            catch (ExceptionSKDConexionBD e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (ExceptionSKDConexionBD ex)
+            catch (ExceptionSKD e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            catch (ExceptionSKD ex)
+            catch (Exception e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
             }
         }
     }

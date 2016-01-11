@@ -635,7 +635,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <param name="objetoBorrar">El objeto en especifico a borrar</param>
         /// <param name="persona">La persona al que se alterara su carrito</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-        public bool eliminarItem(int tipoObjeto, int objetoBorrar, Entidad persona)
+        public bool eliminarItem(int tipoObjeto, int objetoBorrar, int persona)
         {       
             try
             {
@@ -645,26 +645,22 @@ namespace DatosSKD.DAO.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
-                int respuesta = 0;
+              
                 bool exito = false;
                 List<Resultado> result;
 
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_PERSONA,
-                    SqlDbType.Int, persona.Id.ToString(), false);
+                    SqlDbType.Int, persona.ToString(), false);
                 parametros.Add(parametro);
-
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
-                            SqlDbType.Int, objetoBorrar.ToString(), false);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM,
+                               SqlDbType.Int, objetoBorrar.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
-                                SqlDbType.Int, tipoObjeto.ToString(), false);
-                        parametros.Add(parametro);
-                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
-                SqlDbType.Int, respuesta.ToString(), true);
+                parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM,
+                            SqlDbType.Int, tipoObjeto.ToString(), false);
                 parametros.Add(parametro);
-
+               
                 //Ejecuto la operacion a Base de Datos
                 result = EjecutarStoredProcedure
                 (RecursosBDModulo16.PROCEDIMIENTO_ELIMINAR_ITEM, parametros);
