@@ -12,31 +12,69 @@ namespace templateApp.GUI.Modulo16
 {
     public partial class M16_ListarFacturas : System.Web.UI.Page, Interfaz_Contratos.Modulo16.IContratoListarFactura
     {
+        #region Atributos
         private PresentadorListarFactura presentador;
+        #endregion
 
+        #region Constructores
         public void IniciarPresentador()
         {
             presentador = new PresentadorListarFactura(this);
         }
+        #endregion
+
+        #region Propiedades de la Interfaz
+
+        /// <summary>
+        /// Propiedad de la tablaFacturas
+        /// </summary>
+        public Table tablaFacturas
+        {
+            get { return this.tablitaFacturas; }
+        }
+
+        /// <summary>
+        /// Propiedad de la TablaListaMensualidades
+        /// </summary>
+        public Table TablaListaFacturas
+        {
+            get { return this.tablitaFacturas; }
+        }
+
+        /// <summary>
+        /// Propiedad de la LiteralDetallesFacturas
+        /// </summary>
+        public Literal LiteralDetallesFacturas
+        {
+            get { return this.detalleFacturaLiteral; }
+        }
+
+        #endregion
+
+        #region Metodos
+
+        /// <summary>
+        /// Metodo para iniciar las llamadas 
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            this.IniciarPresentador();
+            presentador.consultarFacturas(1);
+
             /* this.Master.ID = "16";
              this.Master.presentador.CargarMenuLateral();
              presentador.ObtenerVariablesURL();*/
-            if (!IsPostBack)
-            {
-                this.IniciarPresentador();
-                presentador.consultarFacturas(1);
-            }
         }
 
-        public Literal tablaFacturas
+
+        /// <summary>
+        /// Metodo que ejecuta el script en el cliente, desde el servidor
+        /// </summary>
+        public void ejecutarScript()
         {
-
-            get
-            {
-                return this.tlTablaFacturas;
-            }
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
         }
+        #endregion
     }
 }

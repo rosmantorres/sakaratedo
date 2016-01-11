@@ -1,15 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M16_ListarFacturas.aspx.cs" Inherits="templateApp.GUI.Modulo16.M16_ListarFacturas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script  type="text/javascript" src="M16_JS/M16_ListarFacturas.js" ></script>
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
+    <script type="text/javascript">
+
+    </script>
+
+<!--BREADCRUMB-->
     <div>
 	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
 		    <li>
 			    <a href="../Master/Inicio.aspx">Inicio</a>
 		    </li>
-		
 		    <li>
 			    <a href="../Modulo16/M16_VerCarrito.aspx">Ver Carrito</a> 
 		    </li>
@@ -35,33 +38,43 @@
             La Factura se ha Agregado Exitosamente.
         </div>
 
+     <form runat="server" >
+
     <div class="box-body table-responsive">
 
-         <!--MODAL PARA EL DETALLE-->
+<!--TABLA DEL LISTAR DE MENSUALIDADES MOROSAS-->
      <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Facturas Actuales</h3>
                 </div><!-- /.box-header -->
               </div>
-       <table id="tablafactura" class="table table-bordered table-striped dataTable">
-        <thead>
-            <tr>
-                    <th style="text-align:left">Id Factura</th>
-                    <th style="text-align:left">Tipo de Pago</th>
-                    <th style="text-align:left">Fecha de la Compra</th>
-					<th style="text-align:left">Estado de la Compra</th>
-					<th style="text-align:left">Acciones</th>
-            </tr>
-        </thead>
- 
-        <tbody>
-            <asp:Literal runat="server" ID="tlTablaFacturas"></asp:Literal>
-        </tbody>
-    </table>    
+        
+       <asp:Table ID="tablitaFacturas" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Id Factura
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Tipo de Pago
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Fecha de la Compra
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Estado de la Compra
+               </asp:TableHeaderCell>             
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+      </asp:Table>
+    
    </div>
-                  <!--MODAL PARA EL DETALLE -->
-<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+       
+
+     <!--MODAL PARA EL DETALLE -->
+<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -70,22 +83,17 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
-							<div class="row">
-								<h3>Id</h3>
-                                    <label id="aux1" ></label>
-                                <h3>Nombre</h3>
-									 <label id="aux2" ></label>
-                                <h3>Descripcion</h3>
-									 <label id="aux3" ></label>
-                                <h3>Costo</h3>
-									 <label id="aux4" ></label>
+							<div class="row" id="prueba" >
+                                <asp:Literal runat="server" ID="detalleFacturaLiteral" ></asp:Literal>
 
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>        
+		</div>    
+    
+     
+    </form>
 
 </asp:Content>
-

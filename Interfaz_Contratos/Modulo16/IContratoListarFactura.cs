@@ -10,6 +10,19 @@ namespace Interfaz_Contratos.Modulo16
 {
     public interface IContratoListarFactura
     {
-        Literal tablaFacturas { get; }
+        /// <summary>
+        /// Tabla donde se mostrara todas las facturas
+        /// </summary>
+        Table tablaFacturas { get; }
+
+        /// <summary>
+        /// Literal que permite imprimir los valores en el modal
+        /// </summary>
+        Literal LiteralDetallesFacturas { get; }
+
+        /// <summary>
+        /// //Metodo para ejecutar scripts en el cliente, desde el servidor.
+        /// </summary>
+        void ejecutarScript();
     }
 }

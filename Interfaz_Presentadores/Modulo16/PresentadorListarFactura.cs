@@ -11,65 +11,122 @@ using LogicaNegociosSKD;
 using LogicaNegociosSKD.Comandos.Modulo16;
 using System.Web;
 using System.Web.UI.WebControls;
+using System.Web.UI;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
+using Interfaz_Presentadores.Master;
+using DominioSKD.Entidades.Modulo1;
+
 namespace Interfaz_Presentadores.Modulo16
 {
     public class PresentadorListarFactura
     {
+       #region Atributos
         private IContratoListarFactura vista;
+        #endregion
+
+        #region Constructores
         /// <summary>
         /// Constructor del presentador
         /// </summary>
         /// <param name="laVista">instancia de la vista</param>
-         public PresentadorListarFactura(IContratoListarFactura laVista)
+        public PresentadorListarFactura(IContratoListarFactura laVista)
         {
             vista = laVista;
+            
         }
+        #endregion
 
-         /// <summary>
-         /// metodo para consultar las facturas
-         /// </summary>
-         public void consultarFacturas(int persona)
-         {
-             try
-             {
-                 Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
+        #region Metodo para el consultar de la lista de Facturas
+        /// <summary>
+        /// metodo para consultar la lista de las Facturas
+        /// </summary>
+        public void consultarFacturas(int persona)
+        {
+            try
+            {
+                Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
-                 PersonaM1 param = new PersonaM1();
-                 param._Id = persona;
+                PersonaM1 param = new PersonaM1();
+                param._Id = persona;
 
-                 comandoListarFacturas.LaEntidad = param;
+                comandoListarFacturas.LaEntidad = param;
 
-                 ListaCompra com = (ListaCompra)comandoListarFacturas.Ejecutar();
+                ListaCompra com = (ListaCompra)comandoListarFacturas.Ejecutar();
 
-                 string tablaFacturasHTML = "";
+                //Obtenemos cada factura para ponerla en la tabla
+                foreach (Entidad aux in com.ListaCompras)
+                {
+                    //Casteamos la entidad como una Compra
+                    Compra item = (Compra)aux;
 
-                 //Recorro La lista de las facturas para anexarlas al GRIDVIEW
-                 foreach (Compra c in com.ListaCompras)
-                 {
-                     tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TR + '"' + c.Com_id.ToString() + '"' + ">";
-                     tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TD + c.Com_id.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                     tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TD + c.Com_tipo_pago.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                     tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TD + c.Com_fecha_compra.ToString() + M16_Recursointerfaz.CERRAR_TD;
-                     tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TD + c.Com_estado.ToString() + M16_Recursointerfaz.CERRAR_TD;
+                    //Creamos la nueva fila que ira en la tabla
+                    TableRow fila = new TableRow();
 
-                     tablaFacturasHTML += M16_Recursointerfaz.ABRIR_TD;
-                     tablaFacturasHTML += M16_Recursointerfaz.BOTON_IMPRIMIR_FACTURA + c.Com_id + M16_Recursointerfaz.BOTON_CERRAR;
-                     tablaFacturasHTML += M16_Recursointerfaz.BOTON_INFO_EVENTO + c.Com_id + M16_Recursointerfaz.BOTON_CERRAR;
-                     tablaFacturasHTML += M16_Recursointerfaz.CERRAR_TD;
+                    //Nueva celda que tendra el id de la factura 
+                    TableCell celda = new TableCell();
+                    celda.Text = item.Com_id.ToString();
 
-                     tablaFacturasHTML += M16_Recursointerfaz.CERRAR_TR;
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
 
+                    //Nueva celda que tendra el tipo pago
+                    celda = new TableCell();
+                    celda.Text = item.Com_tipo_pago.ToString();
 
-                 }
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
 
-                 vista.tablaFacturas.Text = tablaFacturasHTML;
+                    //Nueva celda que tendra la fecha de la compra
+                    celda = new TableCell();
+                    celda.Text = item.Com_fecha_compra.ToString();
 
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
 
-             }
-             catch (Exception ex)
-             {
-                 throw ex;
-             }
-         }
+                    //Nueva celda que tendra el estado de la compra
+                    celda = new TableCell();
+                    celda.Text = item.Com_estado.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Celda que tendra los botones de Detallar e Imprimir
+                    celda = new TableCell();
+                    Button boton = new Button();
+                    boton.ID = "Matricula-" + item.Id.ToString();
+                    boton.Command += DetalleFactura_Fact;
+                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CommandName = item.Id.ToString();                 
+                    celda.Controls.Add(boton);
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Agrego la fila a la tabla
+                    vista.tablaFacturas.Rows.Add(fila);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Metodos para el detalle de la Factura
+
+        /// <summary>
+        /// Metodo del presentador que pinta el detalle en el modal
+        /// </summary>
+        /// <param name="evento">La Mensualidad que se ha de mostrar en detalle</param>
+        public void DetalleFactura_Fact(object sender, CommandEventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }
