@@ -103,7 +103,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = "Producto-" + item.Id_Implemento.ToString();
+                    boton.ID = "elProducto-" + item.Id_Implemento.ToString();
                     boton.Command += DetalleProducto_Prod;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id_Implemento.ToString();
@@ -174,11 +174,9 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.ID = "Evento-" + item.Id_evento.ToString();
                     celda.Controls.Add(boton);
 
-
-                    //ESTA PARTE ES LA QUE ESTA MALAAAAA
                     //Boton informacion
                     boton = new Button();
-                   // boton.ID = "Evento-" + item.Id_evento.ToString();
+                    boton.ID = "elEvento-" + item.Id_evento.ToString();
                     boton.Command += DetalleEvento_Event;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id_evento.ToString();
@@ -249,7 +247,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = "Matricula-" + item.Id.ToString();
+                    boton.ID = "laMatricula-" + item.Id.ToString();
                     boton.Command += DetalleMatricula_Mat;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id.ToString();
