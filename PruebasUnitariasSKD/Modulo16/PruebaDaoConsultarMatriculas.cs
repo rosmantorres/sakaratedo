@@ -18,7 +18,7 @@ namespace PruebasUnitariasSKD.Modulo16
 {
     class PruebaDaoConsultarMatriculas
     {
-        /*
+        
 
         #region Atributos
         //Atributos pertinentes a usar
@@ -66,6 +66,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaDao = null;
             this.daoMatricula = null;
         }
-         */ 
+          
     }
 }

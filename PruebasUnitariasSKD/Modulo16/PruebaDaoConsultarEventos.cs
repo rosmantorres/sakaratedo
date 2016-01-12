@@ -20,7 +20,7 @@ namespace PruebasUnitariasSKD.Modulo16
 {
     class PruebaDaoConsultarEventos
     {
-        /*
+          
 
         #region Atributos
         //Atributos pertinentes a usar
@@ -69,7 +69,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoEvento = null;
         }
 
-  */
+  
     }
        
 }

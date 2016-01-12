@@ -18,7 +18,7 @@ namespace PruebasUnitariasSKD.Modulo16
 {
     class PruebaDaoConsultarImplementos
     {
-/*
+ 
         #region Atributos
         //Atributos pertinentes a usar
         private DaoImplemento pruebaDao;
@@ -65,7 +65,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaDao = null;
             this.daoImplemento = null;
         }
- */ 
+  
  
     }
 }
