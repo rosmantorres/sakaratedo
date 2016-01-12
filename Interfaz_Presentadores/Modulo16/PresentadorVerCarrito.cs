@@ -509,6 +509,33 @@ namespace Interfaz_Presentadores.Modulo16
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
+            //Si se trata de una matricula, me voy a la tabla correspondiente
+            else if (datos[0] == "EMatricula-")
+            {
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                foreach (TableRow aux2 in this.laVista.tablaMatricula.Rows)
+                {
+                    //Si la fila no es de tipo Header puedo comenzar a buscar
+                    if ((aux2 is TableHeaderRow) != true)
+                    {
+                        //En la celda 3 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
+                    }
+                }
+
+                //Decimos que se trata de un implemento
+                TipoObjeto = 1;
+
+                //Pasamos el ID que vino del boton
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Entidad objeto = (Implemento)fabrica.ObtenerMatricula();
+                objeto.Id = int.Parse(datos[1]);
+
+                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto.Id, persona.Id);
+                respuesta = EliminarCarrito.Ejecutar();
+            }
+
             //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
             if (respuesta)
                 HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
