@@ -174,9 +174,11 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.ID = "Evento-" + item.Id_evento.ToString();
                     celda.Controls.Add(boton);
 
+
+                    //ESTA PARTE ES LA QUE ESTA MALAAAAA
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = "Evento-" + item.Id_evento.ToString();
+                   // boton.ID = "Evento-" + item.Id_evento.ToString();
                     boton.Command += DetalleEvento_Event;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id_evento.ToString();
@@ -315,7 +317,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// </summary>
         /// <param name="sender">El boton que manda la accion</param>
         /// <param name="e">El evento</param>
-        void Modificar_Carrito(object sender, EventArgs e)
+        public void Modificar_Carrito(object sender, EventArgs e)
         {
             //Persona que eventualmente la buscaremos por el session
             Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
@@ -443,7 +445,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// </summary>
         /// <param name="sender">El objeto que dispara la accion</param>
         /// <param name="e">El evento que es ejecutado</param>
-        void Eliminar_Item(object sender, EventArgs e)
+        public void Eliminar_Item(object sender, EventArgs e)
         {
             //Persona que eventualmente la buscaremos por el session
             Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
@@ -459,8 +461,6 @@ namespace Interfaz_Presentadores.Modulo16
             //Si se trata de un implemento, me voy a la tabla correspondiente
             if (datos[0] == "EImplemento")
             {
-                 
-
                 //Decimos que se trata de un implemento
                 TipoObjeto = 1;
 
@@ -474,17 +474,15 @@ namespace Interfaz_Presentadores.Modulo16
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
-            else if (datos[0] == "EEvento-")
+            else if (datos[0] == "EEvento")
             {
-                
-
                 //Decimos que se trata de un evento
-                TipoObjeto = 2;
+                TipoObjeto = 3;
 
                 //Pasamos el ID que vino del boton
                 FabricaEntidades fabrica = new FabricaEntidades();
                 Evento objeto = (Evento)fabrica.ObtenerEvento();
-                objeto.Id_evento = int.Parse(datos[1]);
+                objeto.Id = int.Parse(datos[1]);
 
                 //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
                 Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto.Id, persona.Id);
@@ -492,16 +490,14 @@ namespace Interfaz_Presentadores.Modulo16
             }
 
             //Si se trata de una matricula, me voy a la tabla correspondiente
-            else if (datos[0] == "EMatricula-")
+            else if (datos[0] == "EMatricula")
             {
-                 
-
                 //Decimos que se trata de un implemento
-                TipoObjeto = 1;
+                TipoObjeto = 2;
 
                 //Pasamos el ID que vino del boton
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad objeto = (Implemento)fabrica.ObtenerMatricula();
+                Entidad objeto = (Matricula)fabrica.ObtenerMatricula();
                 objeto.Id = int.Parse(datos[1]);
 
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
@@ -511,9 +507,9 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
             if (respuesta)
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=5&exito=1");
             else
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0");
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=5&exito=0");
 
 
              
