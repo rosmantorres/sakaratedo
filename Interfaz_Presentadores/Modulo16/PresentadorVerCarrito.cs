@@ -457,7 +457,7 @@ namespace Interfaz_Presentadores.Modulo16
             int TipoObjeto = 0;
 
             //Si se trata de un implemento, me voy a la tabla correspondiente
-            if (datos[0] == "Implemento")
+            if (datos[0] == "EImplemento")
             {
                 //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
                 foreach (TableRow aux2 in this.laVista.tablaImplemento.Rows)
@@ -483,7 +483,7 @@ namespace Interfaz_Presentadores.Modulo16
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
-            else if (datos[0] == "Evento")
+            else if (datos[0] == "EEvento-")
             {
                 //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
                 foreach (TableRow aux2 in this.laVista.tablaEvento.Rows)
