@@ -196,6 +196,7 @@
     <Content Include="GUI\Modulo11\M11_AgregarKata.aspx" />
     <Content Include="GUI\Modulo11\M11_AgregarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
+    <Content Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarAscenso.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarKata.aspx" />
@@ -1838,6 +1839,13 @@
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.cs">
+      <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.designer.cs">
+      <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
