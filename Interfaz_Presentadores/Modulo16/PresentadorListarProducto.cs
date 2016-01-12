@@ -139,11 +139,11 @@ namespace Interfaz_Presentadores.Modulo16
                     celda.Controls.Add(boton);
 
                     //Boton de Agregar a Carrito
-                    //boton = new Button();
-                    //boton.ID = "Agregar-" + item.Id_Implemento.ToString();
-                    //boton.Click += AgregarCarrito;
-                    //boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
-                    //celda.Controls.Add(boton);                   
+                    boton = new Button();
+                    boton.ID = "Agregar-" + item.Id_Implemento.ToString();
+                    boton.Click += AgregarCarrito;
+                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
+                    celda.Controls.Add(boton);                   
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
@@ -208,7 +208,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// </summary>
         /// <param name="sender">El objeto que ejecuta la accion</param>
         /// <param name="e">El arreglo de Eventos</param>
-       /* public void AgregarCarrito(object sender, EventArgs ec)
+       public void AgregarCarrito(object sender, EventArgs ec)
         {
             try
             {
@@ -227,28 +227,29 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Creo la fabrica y el evento asignandole su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Evento evento = (Evento)fabrica.ObtenerEvento();
-                evento.Id_evento = int.Parse(datos[1]);
+                Implemento implemento = (Implemento)fabrica.ObtenerImplemento();
+                implemento.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar y la cantidad que se desea de ese item
                 bool respuesta = false;
                 int cantidad = 0;
 
                 //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
-                foreach (TableRow aux2 in this.vista.tablaEventos.Rows)
+                foreach (TableRow aux2 in this.vista.tablaProductos.Rows)
                 {
                     //Si la fila no es de tipo Header puedo comenzar a buscar
                     if ((aux2 is TableHeaderRow) != true)
                     {
-                        //En la celda 4 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[4].Controls[1] as Button;
+                        //En la celda 7 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[7].Controls[1] as Button;
 
                         //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
                         //Obtenemos el numero del textbox que el usuario desea
                         if (aux3.ID == aux.ID)
                         {
-                            //En la celda 3 siempre estara el combobox, lo obtengo y agarro la cantidad que el usuario desea
-                            DropDownList lacantidad = aux2.Cells[3].Controls[0] as DropDownList;
+                            /*En la celda 6 siempre estara el combobox,
+                            lo obtengo y agarro la cantidad que el usuario desea*/
+                            DropDownList lacantidad = aux2.Cells[6].Controls[0] as DropDownList;
                             cantidad = int.Parse(lacantidad.SelectedValue);
                             break;
                         }
@@ -256,75 +257,75 @@ namespace Interfaz_Presentadores.Modulo16
                 }
 
                 //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente
-                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, evento, 2, cantidad);
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, implemento, 1, cantidad);
                 respuesta = comando.Ejecutar();
 
-                 //Escribo en el logger la salida a este metodo
+                //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                
+
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=3&exito=1",false);
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=3&exito=1", false);
                 else
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=3&exito=0",false);
-                
-            }            
+                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=3&exito=0", false);
+
+            }
             catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-               
+
             }
             catch (ItemInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-               
+
             }
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                
+
             }
             catch (OpcionItemErroneoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                
+
             }
             catch (ParseoVacioException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                
+
             }
             catch (ParseoFormatoInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-              
+
             }
             catch (ParseoEnSobrecargaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-           
+
             }
             catch (ParametroInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-               
+
             }
             catch (ExceptionSKDConexionBD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-              
+
             }
             catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-            
+
             }
             catch (Exception e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
             }
-        } */
+        }
         #endregion
 
     }
