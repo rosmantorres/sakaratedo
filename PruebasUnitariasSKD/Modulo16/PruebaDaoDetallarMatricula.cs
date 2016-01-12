@@ -18,5 +18,53 @@ namespace PruebasUnitariasSKD.Modulo16
 {
     class PruebaDaoDetallarMatricula
     {
+
+        #region Atributos
+        //Atributos pertinentes a usar
+        private DaoMensualidad pruebaDao;
+        private IdaoMensualidad daoMatricula;
+        #endregion
+
+
+        /// <summary>
+        /// Prepara todos los atributos que utilizaremos para probar
+        /// </summary>
+        [SetUp]
+        public void Iniciar()
+        {
+
+            //Obtengo el comando
+            this.pruebaDao = (DaoMensualidad)FabricaDAOSqlServer.ObtenerDaoMensualidades();
+
+
+        }
+
+
+
+        /// <summary>
+        /// prueba para consultar matriculas
+        /// </summary>
+        [Test]
+        public void pruebaConsultarImplementos()
+        {
+            daoMatricula = FabricaDAOSqlServer.ObtenerDaoMensualidades();
+        //    Assert.IsNotNull(daoMatricula.DetallarMensualidad(1));
+
+        }
+
+
+
+
+
+        /// <summary>
+        /// Elimina todos los atributos utilizados al probar
+        /// </summary>
+        [TearDown]
+        public void Limpiar()
+        {
+            this.pruebaDao = null;
+            this.daoMatricula = null;
+        }
+          
     }
 }

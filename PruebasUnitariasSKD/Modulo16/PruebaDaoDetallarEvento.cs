@@ -19,5 +19,64 @@ namespace PruebasUnitariasSKD.Modulo16
 {
     class PruebaDaoDetallarEvento
     {
+
+        #region Atributos
+        //Atributos pertinentes a usar
+        private DaoEvento pruebaDao;
+        private IdaoEvento daoEvento;
+        #endregion
+
+
+        /// <summary>
+        /// Prepara todos los atributos que utilizaremos para probar
+        /// </summary>
+        [SetUp]
+        public void Iniciar()
+        {
+
+            //Obtengo el comando
+            this.pruebaDao = (DaoEvento)FabricaDAOSqlServer.ObtenerDaoEventos();
+
+
+        }
+
+
+
+        /// <summary>
+        /// prueba para consultar eventos
+        /// </summary>
+        [Test]
+        public void pruebaConsultarEventos()
+        {
+            daoEvento = FabricaDAOSqlServer.ObtenerDaoEventos();
+            Assert.IsNotNull(daoEvento.DetallarEvento(1));
+
+        }
+
+
+
+
+
+        /// <summary>
+        /// Elimina todos los atributos utilizados al probar
+        /// </summary>
+        [TearDown]
+        public void Limpiar()
+        {
+            this.pruebaDao = null;
+            this.daoEvento = null;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

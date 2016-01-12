@@ -18,5 +18,53 @@ namespace PruebasUnitariasSKD.Modulo16
 {
     class PruebaDaoDetallarImplemento
     {
+
+        #region Atributos
+        //Atributos pertinentes a usar
+        private DaoImplemento pruebaDao;
+        private IdaoImplemento daoImplemento;
+        #endregion
+
+
+        /// <summary>
+        /// Prepara todos los atributos que utilizaremos para probar
+        /// </summary>
+        [SetUp]
+        public void Iniciar()
+        {
+
+            //Obtengo el comando
+            this.pruebaDao = (DaoImplemento)FabricaDAOSqlServer.ObtenerDaoProductos();
+
+
+        }
+
+
+
+        /// <summary>
+        /// prueba para consultar implementos
+        /// </summary>
+        [Test]
+        public void pruebaConsultarImplementos()
+        {
+            daoImplemento = FabricaDAOSqlServer.ObtenerDaoProductos();
+            Assert.IsNotNull(daoImplemento.DetallarImplemento(1));
+
+        }
+
+
+
+
+
+        /// <summary>
+        /// Elimina todos los atributos utilizados al probar
+        /// </summary>
+        [TearDown]
+        public void Limpiar()
+        {
+            this.pruebaDao = null;
+            this.daoImplemento = null;
+        }
+  
     }
 }

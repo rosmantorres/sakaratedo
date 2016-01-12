@@ -17,7 +17,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
     /// <summary>
     /// Comando que ejecuta la accion de detallar un producto en especifico
     /// </summary>
-    class ComandoDetallarProducto : Comando<Entidad>
+  public  class ComandoDetallarProducto : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
