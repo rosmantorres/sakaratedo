@@ -452,10 +452,6 @@ namespace Interfaz_Presentadores.Modulo16
             //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
             Button aux = (Button)sender;
             String[] datos = aux.ID.Split('-');
-
-            //Cantidad Deseada nueva por el usuario
-          //  int cantidad = 0;
-
             //Respuesta a obtener del comando, tipo de objeto
             bool respuesta = false;
             int TipoObjeto = 0;
@@ -471,16 +467,6 @@ namespace Interfaz_Presentadores.Modulo16
                     {
                         //En la celda 3 siempre estaran los botones, casteo el boton
                         Button aux3 = aux2.Cells[3].Controls[0] as Button;
-/*
-                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
-                        //Obtenemos el numero del textbox que el usuario desea
-                        if (aux3.ID == aux.ID)
-                        {
-                            //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el usuario desea
-                            TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
-                            cantidad = int.Parse(eltexto.Text);
-                            break;
-                        }*/
                     }
                 }
 
@@ -494,7 +480,6 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
                 Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto,objeto.Id,persona.Id);
-              
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
@@ -508,16 +493,6 @@ namespace Interfaz_Presentadores.Modulo16
                     {
                         //En la celda 3 siempre estaran los botones, casteo el boton
                         Button aux3 = aux2.Cells[3].Controls[0] as Button;
-                        /*
-                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
-                        //Obtenemos el numero del textbox que el usuario desea
-                        if (aux3.ID == aux.ID)
-                        {
-                            //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el usuario desea
-                            TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
-                            cantidad = int.Parse(eltexto.Text);
-                            break;
-                        }*/
                     }
                 }
 
@@ -531,7 +506,6 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
                 Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto.Id, persona.Id);
-
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
