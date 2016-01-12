@@ -180,4 +180,16 @@
   <data name="Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="selectAprobado" xml:space="preserve">
+    <value>&lt;select id="combo" class="form-control" style="width:25%"&gt;
+      &lt;option selected value="Aprobado"&gt;Aprobado&lt;/option&gt;
+      &lt;option value="No Aprobado"&gt;No Aprobado&lt;/option&gt;
+    &lt;/select&gt;</value>
+  </data>
+  <data name="selectNoAprobado" xml:space="preserve">
+    <value>&lt;select id="combo" class="form-control" style="width:25%"&gt;
+      &lt;option value="Aprobado"&gt;Aprobado&lt;/option&gt;
+      &lt;option selected value="No Aprobado"&gt;No Aprobado&lt;/option&gt;
+    &lt;/select&gt;</value>
+  </data>
 </root>

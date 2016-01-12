@@ -108,7 +108,6 @@
                         comp = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
                         $(this).parent().removeClass('selected');
-
                     }
                     else {
                         comp = $(this).parent().prev().prev().prev().prev().text();
@@ -118,14 +117,50 @@
                     }
                 });
             });
+
+            
+            function hola() {
+                var arreglo = [];
+                $('tbody').each(function () {
+                    var i = 0;
+                    $(this).find('select#combo').each(function () {
+                        
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado: opcion
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('.sorting_1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
+                    });
+                });
+                var myJson = JSON.stringify(arreglo);
+                console.log(myJson);
+                document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+                //return myJson;
+            }
+
+ 
+            //$('#combo:eq(2)').css("color", "red");
+          
+               
+            
+
+                
         </script>
+        <asp:HiddenField ID="rvalue" runat="server" />
 
 </div>
+
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-          <asp:LinkButton ID="bModificar" runat="server" CssClass="btn btn-primary" OnClick="bModificar_Click">Modificar</asp:LinkButton>
+          <!--<input type="submit" value="Submit" onclick="hola();">-->
+          <asp:LinkButton ID="bModificar" runat="server" CssClass="btn btn-primary" OnClick="bModificar_Click" OnClientClick="hola();">Modificar</asp:LinkButton>
           &nbsp;&nbsp
          <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>

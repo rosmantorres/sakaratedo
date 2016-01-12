@@ -232,6 +232,30 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo&quot; class=&quot;form-control&quot; style=&quot;width:25%&quot;&gt;
+        ///      &lt;option selected value=&quot;Aprobado&quot;&gt;Aprobado&lt;/option&gt;
+        ///      &lt;option value=&quot;No Aprobado&quot;&gt;No Aprobado&lt;/option&gt;
+        ///    &lt;/select&gt;.
+        /// </summary>
+        internal static string selectAprobado {
+            get {
+                return ResourceManager.GetString("selectAprobado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo&quot; class=&quot;form-control&quot; style=&quot;width:25%&quot;&gt;
+        ///      &lt;option value=&quot;Aprobado&quot;&gt;Aprobado&lt;/option&gt;
+        ///      &lt;option selected value=&quot;No Aprobado&quot;&gt;No Aprobado&lt;/option&gt;
+        ///    &lt;/select&gt;.
+        /// </summary>
+        internal static string selectNoAprobado {
+            get {
+                return ResourceManager.GetString("selectNoAprobado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to tipo.
         /// </summary>
         internal static string Tipo {

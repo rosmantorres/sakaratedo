@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,6 +14,17 @@ namespace templateApp.GUI.Modulo11
     public partial class M11_ModificarResultadoCompetencia : System.Web.UI.Page
     {
         Evento evento = new Evento();
+        struct valores
+        {
+            public string nombre;
+            public string resultado;
+
+            public valores(string x, string y)
+            {
+                nombre = x;
+                resultado = y;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "11";
@@ -57,9 +69,13 @@ namespace templateApp.GUI.Modulo11
         {
             if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Evento))
             {
-                string texto = dataTable.Text;
-                string[] split = texto.Split(new string[] { M11_RecursosInterfaz.parametroSplit1, M11_RecursosInterfaz.parametroSplit2, M11_RecursosInterfaz.parametroSplit3 },
-                                 StringSplitOptions.RemoveEmptyEntries);
+                //string texto = dataTable.Text;
+                //string[] split = texto.Split(new string[] { M11_RecursosInterfaz.parametroSplit1, M11_RecursosInterfaz.parametroSplit2, M11_RecursosInterfaz.parametroSplit3 },
+                //                 StringSplitOptions.RemoveEmptyEntries);
+                //string valor = rvalue.Value;
+                JavaScriptSerializer json_serializer = new JavaScriptSerializer();
+                valores routes_list =
+                       (valores)json_serializer.DeserializeObject(rvalue.Value);
             }
             else if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
             {
@@ -109,7 +125,15 @@ namespace templateApp.GUI.Modulo11
                         this.dataTable.Text += M11_RecursosInterfaz.AbrirTR;
                         this.dataTable.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M11_RecursosInterfaz.AbrirTD;
-                        this.dataTable.Text += M11_RecursosInterfaz.InputTextAbrir + aprobado + M11_RecursosInterfaz.InputTextCerrar;
+                        if (aprobado.Equals("Aprobado"))
+                        {
+                            this.dataTable.Text += M11_RecursosInterfaz.selectAprobado;
+                        }
+                        else if (aprobado.Equals("No Aprobado"))
+                        {
+                            this.dataTable.Text += M11_RecursosInterfaz.selectNoAprobado;
+                        }
+                        //this.dataTable.Text += M11_RecursosInterfaz.InputTextAbrir + aprobado + M11_RecursosInterfaz.InputTextCerrar;
                         this.dataTable.Text += M11_RecursosInterfaz.CerrarTD;
                         this.dataTable.Text += M11_RecursosInterfaz.CerrarTR;
                     }
