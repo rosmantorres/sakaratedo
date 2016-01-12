@@ -40,6 +40,9 @@ namespace DatosSKD.DAO.Modulo16
                     resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_INVENTARIO_TOTAL,
                         parametros);
 
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
                     foreach (DataRow row in resultado.Rows)
                     {
                         elImplemento = (Implemento)laFabrica.ObtenerImplemento();
@@ -52,8 +55,9 @@ namespace DatosSKD.DAO.Modulo16
                         laLista.Add(elImplemento);
                        
                     }
-
-                return laLista;
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+                    return laLista;
 
             }
             #region catches
@@ -91,6 +95,9 @@ namespace DatosSKD.DAO.Modulo16
                 parametros.Add(parametro);
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_IMPLEMENTO, parametros);
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                 foreach (DataRow row in resultado.Rows)
                 {
                     elImplemento = (Implemento)laFabrica.ObtenerImplemento();
@@ -105,6 +112,9 @@ namespace DatosSKD.DAO.Modulo16
                     elImplemento.Descripcion_Implemento = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
               
                 }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
 
                 return elImplemento;
 

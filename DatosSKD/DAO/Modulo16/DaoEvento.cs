@@ -40,6 +40,9 @@ namespace DatosSKD.DAO.Modulo16
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_EVENTOS,
                     parametros);
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                 foreach (DataRow row in resultado.Rows)
                 {
                     elEvento = (Evento)laFabrica.ObtenerEvento();
@@ -51,6 +54,8 @@ namespace DatosSKD.DAO.Modulo16
 
                 }
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
                 return laLista;
 
             }
@@ -89,6 +94,9 @@ namespace DatosSKD.DAO.Modulo16
                 parametros.Add(parametro);
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_EVENTO, parametros);
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                 foreach (DataRow row in resultado.Rows)
                 {
                     elEvento = (Evento)laFabrica.ObtenerEvento();
@@ -98,6 +106,9 @@ namespace DatosSKD.DAO.Modulo16
                     elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
 
                 }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
 
                 return elEvento;
 

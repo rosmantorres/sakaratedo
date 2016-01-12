@@ -45,6 +45,9 @@ namespace DatosSKD.DAO.Modulo16
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_MATRICULAS_MOROSAS,
                     parametros);
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                 foreach (DataRow row in resultado.Rows)
                 {
                     laMatricula = (Matricula)laFabrica.ObtenerMatricula();
@@ -59,6 +62,9 @@ namespace DatosSKD.DAO.Modulo16
                 }
 
                 lista.ListaMatriculas = laLista;
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
 
                 return lista;
 
@@ -99,6 +105,9 @@ namespace DatosSKD.DAO.Modulo16
                 parametros.Add(parametro);
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_MATRICULA, parametros);
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                 foreach (DataRow row in resultado.Rows)
                 {
                     laMatricula = (Matricula)laFabrica.ObtenerMatricula();
@@ -109,12 +118,13 @@ namespace DatosSKD.DAO.Modulo16
                     laMatricula.UltimaFechaPago = DateTime.Parse(row[RecursosBDModulo16.PARAMETRO_FECHA_PAGO_MATRICULA].ToString());
                     elDojo.Nombre_dojo = row[RecursosBDModulo16.PARAMETRO_DOJO_NOMBRE].ToString();
                     laMatricula.Dojo_Matricula = elDojo;
-                    //laLista.Add(laMatricula);
 
                 }
 
-                return laMatricula;
+                //Limpio la conexion
+                LimpiarSQLConnection();
 
+                return laMatricula;
             }
             #region catches
             catch (Exception ex)

@@ -45,6 +45,9 @@ namespace DatosSKD.DAO.Modulo16
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_COMPRAS,
                     parametros);
 
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
                 foreach (DataRow row in resultado.Rows)
                 {
                     laCompra = (Compra)laFabrica.ObtenerFactura();
@@ -57,6 +60,9 @@ namespace DatosSKD.DAO.Modulo16
                 }
 
                 lista.ListaCompras = laLista;
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
 
                 return lista;
 
