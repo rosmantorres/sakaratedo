@@ -459,16 +459,7 @@ namespace Interfaz_Presentadores.Modulo16
             //Si se trata de un implemento, me voy a la tabla correspondiente
             if (datos[0] == "EImplemento")
             {
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
-                foreach (TableRow aux2 in this.laVista.tablaImplemento.Rows)
-                {
-                    //Si la fila no es de tipo Header puedo comenzar a buscar
-                    if ((aux2 is TableHeaderRow) != true)
-                    {
-                        //En la celda 3 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
-                    }
-                }
+                 
 
                 //Decimos que se trata de un implemento
                 TipoObjeto = 1;
@@ -485,16 +476,7 @@ namespace Interfaz_Presentadores.Modulo16
             //Si es un Evento, me voy a la tabla correspondiente
             else if (datos[0] == "EEvento-")
             {
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
-                foreach (TableRow aux2 in this.laVista.tablaEvento.Rows)
-                {
-                    //Si la fila no es de tipo Header puedo comenzar a buscar
-                    if ((aux2 is TableHeaderRow) != true)
-                    {
-                        //En la celda 3 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
-                    }
-                }
+                
 
                 //Decimos que se trata de un evento
                 TipoObjeto = 2;
@@ -512,16 +494,7 @@ namespace Interfaz_Presentadores.Modulo16
             //Si se trata de una matricula, me voy a la tabla correspondiente
             else if (datos[0] == "EMatricula-")
             {
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
-                foreach (TableRow aux2 in this.laVista.tablaMatricula.Rows)
-                {
-                    //Si la fila no es de tipo Header puedo comenzar a buscar
-                    if ((aux2 is TableHeaderRow) != true)
-                    {
-                        //En la celda 3 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[3].Controls[0] as Button;
-                    }
-                }
+                 
 
                 //Decimos que se trata de un implemento
                 TipoObjeto = 1;
