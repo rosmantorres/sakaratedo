@@ -207,6 +207,95 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 14
+        public Entidad ObtenerPlanilla()
+        {
+            return new Planilla();
+        }
+        public Entidad ObtenerPlanilla(string nombre, Boolean status, string tipoPlanilla)
+        {
+            return new Planilla(nombre, status, tipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(int id, string nombre, Boolean status, string tipoPlanilla)
+        {
+            return new Planilla(id, nombre, status, tipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(string nombre, bool status, string tipoPlanilla, List<String> datos)
+        {
+            return new Planilla(nombre, status, tipoPlanilla, datos);
+        }
+        public Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        {
+            return new Planilla(nombre, status, idTipoPlanilla, datos);
+        }
+        public Entidad ObtenerPlanilla(int id, string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        {
+            return new Planilla(id, nombre, status, idTipoPlanilla, datos);
+        }
+        public Entidad ObtenerPlanilla(int idTipoPlanilla, string tipoPlanilla)
+        {
+            return new Planilla(idTipoPlanilla, tipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla)
+        {
+            return new Planilla(nombre, status, idTipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(List<String> datos)
+        {
+            return new Planilla(datos);
+        }
+
+        public Entidad ObtenerSolicitudP()
+        {
+            return new SolicitudP();
+        }
+        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id)
+        {
+            return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id);
+        }
+        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, Planilla planilla, int id)
+        {
+            return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, planilla, id);
+        }
+        public Entidad ObtenerSolicitudP(int id, String nombreEvento)
+        {
+            return new SolicitudP(id, nombreEvento);
+        }
+        public Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, Planilla planilla, int idInscripcion)
+        {
+            return new SolicitudP(id, fechaRetiro, fechaReincorporacion, motivo, planilla, idInscripcion);
+        }
+        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id, int idInscripcion)
+        {
+            return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id, idInscripcion);
+        }
+        public Entidad ObtenerSolicitudPlanilla()
+        {
+            return new SolicitudPlanilla();
+        }
+        public Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
+            string motivo, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(fechaCreacion, fechaRetiro, fechaReincorporacion,
+             motivo, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
+            string motivo, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(id, fechaCreacion, fechaRetiro, fechaReincorporacion,
+             motivo, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(fechaCreacion, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(id, fechaCreacion, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(DateTime fechaRetiro, DateTime fechaReincorporacion, string motivo, Planilla planilla)
+        {
+            return new SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
+        }
         #endregion
 
         #region Modulo 15

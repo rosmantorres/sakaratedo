@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo14
 {
-  public class SolicitudP : Entidad
+    public class SolicitudP : Entidad
     {
         #region atributos
 

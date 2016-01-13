@@ -54,6 +54,10 @@
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
     <Compile Include="Entidades\Modulo1\Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
+    <Compile Include="Entidades\Modulo14\Diseño.cs" />
+    <Compile Include="Entidades\Modulo14\Planilla.cs" />
+    <Compile Include="Entidades\Modulo14\SolicitudP.cs" />
+    <Compile Include="Entidades\Modulo14\SolicitudPlanilla.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
     <Compile Include="Entidades\Modulo9\Evento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
@@ -96,6 +100,9 @@
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
     <Folder Include="Entidades\Modulo14\" />
+    <Folder Include="Entidades\Modulo15\" />
+    <Folder Include="Entidades\Modulo16\" />
+    <Folder Include="Entidades\Modulo1\" />
     <Folder Include="Entidades\Modulo2\" />
     <Folder Include="Entidades\Modulo3\" />
     <Folder Include="Entidades\Modulo4\" />
