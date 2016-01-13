@@ -13,7 +13,7 @@ namespace templateApp.GUI.Modulo3
 {
     public partial class M3_ConsultarOrganizacion : System.Web.UI.Page
     {
-        private LogicaOrganizacion logicaOrganizacion = new LogicaOrganizacion();
+       // private LogicaOrganizacion logicaOrganizacion = new LogicaOrganizacion();
         List<Organizacion> listOrganizacion;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,20 +22,20 @@ namespace templateApp.GUI.Modulo3
             
               if (!IsPostBack)
             {
-                List<DominioSKD.Organizacion> listaOrganizacion = LlenarTabla();
-                LlenarInformacion(listaOrganizacion);
+              //  List<DominioSKD.Organizacion> listaOrganizacion = LlenarTabla();
+              //  LlenarInformacion(listaOrganizacion);
             }
             
         }
 
          //Dado el id de org me traigo la lista de cintas
-        public List<DominioSKD.Organizacion> LlenarTabla()
+    /*    public List<DominioSKD.Organizacion> LlenarTabla()
         {
 
             return logicaOrganizacion.ListarOrganizacionCompleta();
             
         }
-
+*/
         public void LlenarInformacion(List<DominioSKD.Organizacion> lista)
         {
             this.listOrganizacion = lista;

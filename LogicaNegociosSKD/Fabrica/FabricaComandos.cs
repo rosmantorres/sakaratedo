@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LogicaNegociosSKD.Comandos.Modulo3;
+using LogicaNegociosSKD.Comandos.Modulo5;
 
 namespace LogicaNegociosSKD.Fabrica
 {

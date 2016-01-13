@@ -59,7 +59,7 @@
    <!--  <label for="color" class="col-lg-2 control-label">*Color</label>  -->
     <div class="col-xs-5">
         <div id="id_otro" runat="server" class="form-group" > 
-             <input style="margin-top:5%" type="text" class="form-control" id="cinta" placeholder="Color de cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="color" placeholder="Color de cinta" runat="server">
              <input style="margin-top:5%" type="text" class="form-control" id="ran" placeholder="Rango de Cinta" runat="server" >
              <input style="margin-top:5%" type="text" class="form-control" id="cate" placeholder="Clasificación de la Cinta" runat="server">
              <input style="margin-top:5%" type="text" class="form-control" id="signi" placeholder="Significado de la cinta" runat="server">

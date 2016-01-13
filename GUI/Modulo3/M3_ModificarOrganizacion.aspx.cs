@@ -23,7 +23,7 @@ namespace templateApp.GUI.Modulo3
         {
             string estado = "";
             string tecnica = "";
-            LogicaOrganizacion lO = new LogicaNegociosSKD.Modulo3.LogicaOrganizacion();
+          //  LogicaOrganizacion lO = new LogicaNegociosSKD.Modulo3.LogicaOrganizacion();
             Organizacion laOrganizacion = new Organizacion();
 
             if (this.ListEstados.SelectedValue != "-1")
@@ -55,7 +55,7 @@ namespace templateApp.GUI.Modulo3
             //try
             try
             {
-                lO.modificarOrganizacion(laOrganizacion);
+               // lO.modificarOrganizacion(laOrganizacion);
             }
             catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {

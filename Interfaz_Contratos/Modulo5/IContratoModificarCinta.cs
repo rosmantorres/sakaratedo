@@ -8,5 +8,15 @@ namespace Interfaz_Contratos.Modulo5
 {
     public interface IContratoModificarCinta
     {
+        void agregarOrganizacionCombo(string id, string nombre);
+        int obtenerIdOrganizacion();
+        string obtenerNombreOrganizacion();
+        string obtenerColorCinta();
+        string obtenerRango();
+        string obtenerCategoria();
+        string obtenerSignificado();
+        string obtenerOrden();
+        string obtenerIdCInta();
+
     }
 }

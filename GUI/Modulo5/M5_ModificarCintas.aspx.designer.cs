@@ -49,13 +49,13 @@ namespace templateApp.GUI.Modulo5 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_otro;
         
         /// <summary>
-        /// cinta control.
+        /// color control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cinta;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText color;
         
         /// <summary>
         /// ran control.

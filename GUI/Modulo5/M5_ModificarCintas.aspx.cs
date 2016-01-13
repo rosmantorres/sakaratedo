@@ -7,86 +7,87 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD.Modulo5;
 using LogicaNegociosSKD.Modulo3;
+using Interfaz_Presentadores.Modulo5;
+using Interfaz_Contratos.Modulo5;
 
 namespace templateApp.GUI.Modulo5
 {
-    public partial class M5_ModificarCintas : System.Web.UI.Page
+    public partial class M5_ModificarCintas : System.Web.UI.Page, IContratoModificarCinta
     {
+        private PresentadorModificarCinta presentador;
+        private Dictionary<string, string> options = new Dictionary<string, string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            String idCinta = Request.QueryString["idCinta"];
+         //  String idCinta = Request.QueryString["idCinta"];
 
 
             ((SKD)Page.Master).IdModulo = "5";
 
             if (!IsPostBack)
             {
-                llenarComboORG();
+                this.presentador = new PresentadorModificarCinta(this);
+                this.presentador.llenarCombo();
+                this.ListOrg.DataSource = options;
+                this.ListOrg.DataTextField = "value";
+                this.ListOrg.DataValueField = "key";
+                this.ListOrg.DataBind();
             }
         }
 
 
-        protected void llenarComboORG()
+        #region Contrato
+        public void agregarOrganizacionCombo(string id, string nombre)
         {
-
-            LogicaNegociosSKD.Modulo3.LogicaOrganizacion lO = new LogicaNegociosSKD.Modulo3.LogicaOrganizacion();
-            List<Organizacion> listOrganizacion = new List<Organizacion>();
-            listOrganizacion = lO.ListarOrganizacion();
-            Dictionary<string, string> options = new Dictionary<string, string>();
-
-            options.Add("-1", "Selecciona una opcion");
-            try
-            {
-                foreach (Organizacion item in listOrganizacion)
-                {
-                    options.Add(item.Id_organizacion.ToString(), item.Nombre);
-                }
-                options.Add("-2", "OTRO");
-            }
-            catch (Exception e)
-            {
-
-            }
-
-            ListOrg.DataSource = options;
-            ListOrg.DataTextField = "value";
-            ListOrg.DataValueField = "key";
-            ListOrg.DataBind();
+            this.options.Add(id, nombre);
         }
+
+        public int obtenerIdOrganizacion()
+        {
+            return Int32.Parse(this.ListOrg.SelectedValue);
+        }
+
+        public string obtenerNombreOrganizacion()
+        {
+            return this.ListOrg.Text;
+        }
+
+        public string obtenerColorCinta()
+        {
+            return this.color.Value;
+        }
+
+        public string obtenerRango()
+        {
+            return this.ran.Value;
+        }
+
+        public string obtenerCategoria()
+        {
+            return this.cate.Value;
+        }
+
+        public string obtenerSignificado()
+        {
+            return this.signi.Value;
+        }
+
+        public string obtenerOrden()
+        {
+            return this.ord.Value;
+        }
+        public string obtenerIdCInta()
+        {
+            return this.Request.QueryString["idCinta"];
+        }
+        #endregion
+
+
 
         protected void btnModificarCinta(object sender, EventArgs e)
         {
 
-            LogicaCinta lO = new LogicaNegociosSKD.Modulo5.LogicaCinta();
-            string organizacion = "";
-            string nombre = "";
-            Cinta laCinta = new Cinta();
-            Organizacion laOrganizacion = new Organizacion();
-
-            if (this.ListOrg.SelectedValue != "-1" && this.ListOrg.SelectedValue != "-2")
-            {
-                organizacion = this.ListOrg.SelectedValue;
-                nombre = this.ListOrg.Text;
-            }
-
-            String idCinta = Request.QueryString["idCinta"];
-            string color = cinta.Value;
-            string rango = ran.Value;
-            string categoria = cate.Value;
-            string significado = signi.Value;
-            string orden = ord.Value;
-
-            laCinta.Id_cinta = Int32.Parse(idCinta);
-            laCinta.Color_nombre = color;
-            laCinta.Rango = rango;
-            laCinta.Clasificacion = categoria;
-            laCinta.Significado = significado;
-            laCinta.Orden = Int32.Parse(orden);
-            laOrganizacion.Id_organizacion = Int32.Parse(organizacion);
-            laOrganizacion.Nombre = nombre;
-            laCinta.Organizacion = laOrganizacion;
-            //try
-            lO.modificarCinta(laCinta);
+            this.presentador.ModificarValoresCinta();
 
         }
 

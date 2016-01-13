@@ -17,8 +17,8 @@ namespace templateApp.GUI.Modulo5
 {
     public partial class M5_ListarCintas : System.Web.UI.Page, IContratoListarCintas
     {
-        private LogicaNegociosSKD.Modulo5.LogicaCinta logica = new LogicaNegociosSKD.Modulo5.LogicaCinta();
-        List<DominioSKD.Cinta> lista;
+      //  private LogicaNegociosSKD.Modulo5.LogicaCinta logica = new LogicaNegociosSKD.Modulo5.LogicaCinta();
+//        List<DominioSKD.Cinta> lista;
 
         private PresentadorLlenarCintas presentador;
 
