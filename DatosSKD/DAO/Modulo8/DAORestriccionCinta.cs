@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo8;
 
 namespace DatosSKD.DAO.Modulo8
 {
-    public class DAORestriccionCinta 
+    public class DAORestriccionCinta : DAOGeneral, InterfazDAO.Modulo8.IDaoRestriccionCinta
     {
         #region Metodos IDao
 
@@ -19,7 +20,7 @@ namespace DatosSKD.DAO.Modulo8
         /// </summary>
         /// <param name="parametro"></param>
         /// <returns></returns>
-        public Boolean AgregarRestriccionCinta(DominioSKD.Entidad parametro)
+        public Boolean Agregar(DominioSKD.Entidad parametro)
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
                 (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
@@ -80,14 +81,14 @@ namespace DatosSKD.DAO.Modulo8
         /// </summary>
         /// <param name="parametro"></param>
         /// <returns></returns>
-        public Boolean ModificarRestriccionCinta(DominioSKD.Entidad parametro)
+        public Boolean Modificar(DominioSKD.Entidad parametro)
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
                 (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
             try
             {
                 List<Parametro> parametros = new List<Parametro>();
-                
+
                 Parametro elParametro = new Parametro(RecursosDAORestriccionCinta.ParamIdRestriccion, SqlDbType.Int,
                         laRestriccionCinta.IdRestriccionCinta.ToString(), false);
                 parametros.Add(elParametro);
@@ -131,101 +132,23 @@ namespace DatosSKD.DAO.Modulo8
         }
         #endregion
 
-        #region Consultar Restriccion por cinta
-        /// <summary>
-        /// Metodo para Consultar una restriccion de cinta existente en la base de datos.
-        /// </summary>
-        /// <param name="parametro"></param>
-        /// <returns></returns>
-        public Boolean ConsultarRestriccionCinta(DominioSKD.Entidad parametro)
+        #region ConsultarXId
+
+        public DominioSKD.Entidad ConsultarXId(DominioSKD.Entidad parametro)
         {
-            DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
-               (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
-            try
-            {
-                List<Parametro> parametros = new List<Parametro>();
-
-                Parametro elParametro = new Parametro(RecursosDAORestriccionCinta.ParamCinta, SqlDbType.Int,
-                        laRestriccionCinta.Id.ToString(), false);
-                parametros.Add(elParametro);
-
-                BDConexion laConexion = new BDConexion();
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionCinta.ConsultarRestriccionCinta, parametros);
-
-            }
-            catch (SqlException ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (FormatException ex)
-            {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-
-            return true;
+            throw new NotImplementedException();
         }
 
         #endregion
 
-        #region Consultar todas las restricciones de cinta existentes
-        /// <summary>
-        /// Metodo para Consultar todas las restricciones de cinta existente en la base de datos.
-        /// </summary>
-        /// <returns></returns>
-        public List<Cinta> ConsultarCintaTodas()
-        {
-            BDConexion laConexion;
-            List<Cinta> ListaCinta = new List<Cinta>();
-            List<Parametro> parametros;
+        #region ConsultarTodos
 
-           /*
-            try
+            public List<DominioSKD.Entidad> ConsultarTodos()
             {
-                laConexion = new BDConexion();
-                parametros = new List<Parametro>();
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDAORestriccionCinta.ConsultarCinta, parametros);
+                throw new NotImplementedException();
+            }     
 
-                foreach (DataRow row in dt.Rows)
-                {
-                    ListaCinta.Add(new Cinta(Int32.Parse(row[RecursosDAORestriccionCinta.AliasId_cinta].ToString()), row[RecursoBDRestriccionCinta.AliasColorCinta].ToString()));
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (FormatException ex)
-            {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }*/
-
-
-            return ListaCinta;
-
-        }
-
-        #endregion
+            #endregion
 
         #endregion
     }
