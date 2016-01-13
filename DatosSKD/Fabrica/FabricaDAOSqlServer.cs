@@ -36,6 +36,11 @@ namespace DatosSKD.Fabrica
             return new DatosSKD.DAO.Modulo8.DAORestriccionCompetencia();
         }
 
+        public DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCinta ObtenerDAORestriccionCinta()
+        {
+            return new DatosSKD.DAO.Modulo8.DAORestriccionCinta();
+        }
+
         #endregion
 
         #region Modulo 9
