@@ -56,6 +56,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
+    <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoEventosSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarPlanillaID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarPlanillaIDTipo.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarSolicitudID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoNuevoTipoPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerDatosBD.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerDatosPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerPlanillaID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerSolicitudID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerTipoPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarPlanillaTipo.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarSolicitudIDPersona.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarSolicitudPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\RecursosComandoModulo14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo14.resx</DependentUpon>
     </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
@@ -174,6 +194,9 @@
     <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Comandos\Modulo14\RecursosComandoModulo14.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -246,7 +269,6 @@
     <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo12\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo14\" />
     <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DominioSKD;
+using LogicaNegociosSKD.Comandos.Modulo14;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,6 +52,70 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 14
+        public Comando<List<Entidad>> ObtenerComandoCompetenciasSolicitud()
+        {
+            return new ComandoCompetenciasSolicitud();
+        }
+        public Comando<List<Boolean>> ObtenerComandoDatosRequeridosSolicitud()
+        {
+            return new ComandoDatosRequeridosSolicitud();
+        }
+        public Comando<List<Entidad>> ObtenerComandoEventosSolicitud()
+        {
+            return new ComandoEventosSolicitud();
+        }
+        public Comando<Entidad> ObtenerComandoModificarPlanillaID()
+        {
+            return new ComandoModificarPlanillaID();
+        }
+        public Comando<Entidad> ObtenerComandoModificarPlanillaIDTipo()
+        {
+            return new ComandoModificarPlanillaIDTipo();
+        }
+        public Comando<Entidad> ObtenerComandoModificarSolicitudID()
+        {
+            return new ComandoModificarSolicitudID();
+        }
+        public Comando<Boolean> ObtenerComandoNuevoTipoPlanilla()
+        {
+            return new ComandoNuevoTipoPlanilla();
+        }
+        public Comando<List<String>> ObtenerComandoObtenerDatosBD()
+        {
+            return new ComandoObtenerDatosBD();
+        }
+        public Comando<List<String>> ObtenerComandoObtenerDatosPlanilla()
+        {
+            return new ComandoObtenerDatosPlanilla();
+        }
+        public Comando<Entidad> ObtenerComandoObtenerPlanillaID()
+        {
+            return new ComandoObtenerPlanillaID();
+        }
+        public Comando<Entidad> ObtenerComandoObtenerSolicitudID()
+        {
+            return new ComandoObtenerSolicitudID();
+        }
+        public Comando<List<Entidad>> ObtenerComandoObtenerTipoPlanilla()
+        {
+            return new ComandoObtenerTipoPlanilla();
+        }
+        public Comando<bool> ObtenerComandoRegistrarPlanilla()
+        {
+            return new ComandoRegistrarPlanilla();
+        }
+        public Comando<bool> ObtenerComandoRegistrarPlanillaTipo()
+        {
+            return new ComandoRegistrarPlanillaTipo();
+        }
+        public Comando<Boolean> ObtenerComandoRegistrarSolicitudIDPersona()
+        {
+            return new ComandoRegistrarSolicitudIDPersona();
+        }
+        public Comando<Boolean> ObtenerComandoRegistrarSolicitudPlanilla()
+        {
+            return new ComandoRegistrarSolicitudPlanilla();
+        }
         #endregion
 
         #region Modulo 15
