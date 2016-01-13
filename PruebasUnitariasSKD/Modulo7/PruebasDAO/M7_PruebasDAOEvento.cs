@@ -205,5 +205,67 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
         }
 
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas eventos en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosInscritos()
+        {
+            List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosInscritos(idPersona);
+            Assert.GreaterOrEqual(listaEvento.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarEventosInscritosNoNulo()
+        {
+            List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosInscritos(idPersona);
+            Assert.NotNull(listaEvento);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar eventos inscritos en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarEventosInscritosNumeroEnteroException()
+        {
+            idPersona.ID = -1;
+            List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosInscritos(idPersona);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas competencias en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciasInscritas()
+        {
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
+            Assert.GreaterOrEqual(listaCompetencia.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarCompetenciasInscritasNoNula()
+        {
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
+            Assert.NotNull(listaCompetencia);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar competencia inscrita en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarCompetenciaInscritaNumeroEnteroException()
+        {
+            idPersona.ID = -1;
+            List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
+        }
+
     }
 }
