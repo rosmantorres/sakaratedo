@@ -75,7 +75,6 @@
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
-    <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCompra.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoEvento.cs" />
@@ -84,8 +83,6 @@
     <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
     <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
     <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
-    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
-    <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoPlanilla.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoSolicitud.cs" />
