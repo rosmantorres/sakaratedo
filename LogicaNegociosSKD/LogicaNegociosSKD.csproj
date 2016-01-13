@@ -56,6 +56,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoEventosSolicitud.cs" />
@@ -194,6 +195,7 @@
     <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo14\RecursosComandoModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
@@ -279,6 +281,7 @@
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
     <Folder Include="Comandos\Modulo9\" />
+    <Folder Include="Comandos\Modulo16\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
