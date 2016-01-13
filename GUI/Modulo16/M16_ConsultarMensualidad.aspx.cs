@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Interfaz_Contratos.Modulo16;
 using Interfaz_Presentadores.Modulo16;
+using templateApp.GUI.Master;
 
 
 namespace templateApp.GUI.Modulo16
@@ -68,8 +69,8 @@ namespace templateApp.GUI.Modulo16
         {
 
             this.IniciarPresentador();
-            presentador.consultarMensualidades(6);
-
+            presentador.consultarMensualidades(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+            // id 6 para probar la mensualidad 
             /* this.Master.ID = "16";
              this.Master.presentador.CargarMenuLateral();
              presentador.ObtenerVariablesURL();*/

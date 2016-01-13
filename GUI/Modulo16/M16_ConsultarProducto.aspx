@@ -71,6 +71,9 @@
                    Cantidad Total en Existencia
                </asp:TableHeaderCell>
                <asp:TableHeaderCell>
+                   Dojo al que Pertenece
+               </asp:TableHeaderCell> 
+               <asp:TableHeaderCell>
                    Cantidad a Escoger
                </asp:TableHeaderCell>              
                <asp:TableHeaderCell>

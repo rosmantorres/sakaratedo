@@ -13,20 +13,24 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
     /// <summary>
     /// Comando para consultar la lista de todos los productos
     /// </summary>
-    public class ComandoConsultarTodosProductos : Comando<List<Entidad>>
+    public class ComandoConsultarTodosProductos : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
         /// Atributos del ComandoConsultarTodosProductos
-        /// </summary>
-        /// <param name="NONE">No posee paso de parametros</param>
+        private PersonaM1 p;
+
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad 
-        /// </summary>
-        /// <Prop name="NONE">No posee propiedades</param>
+        /// Propiedad del Atributo p
+
+        public PersonaM1 P
+        {
+            get { return this.p; }
+            set { this.p = value; }
+        }
         #endregion
 
         #region Constructores
@@ -38,6 +42,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
         }
 
+        /// <summary>
+        /// Constructor del ComandoConsultarTodosProductos
+        /// </summary>
+        /// <param name="p">La persona que se encuentra logueada</param>
+        public ComandoConsultarTodosProductos(PersonaM1 p)
+        {
+            this.p = p;
+        }
         #endregion
 
         /// <summary>
@@ -45,13 +57,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// </summary>
         /// <param name="NONE">Este procedimiento no posee paso de parametros</param>
         /// <returns>lista de Productos</returns>
-        public override List<Entidad> Ejecutar()
+        public override Entidad Ejecutar()
         {
             try
             {
                 IdaoImplemento daoImplementos = FabricaDAOSqlServer.ObtenerDaoProductos();
-
-                return daoImplementos.ConsultarTodos();
+                PersonaM1 p = (PersonaM1)this.LaEntidad;
+                return daoImplementos.ConsultarXId(p);
             }
             #region catches
             catch (Exception ex)

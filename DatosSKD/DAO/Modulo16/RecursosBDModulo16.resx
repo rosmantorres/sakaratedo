@@ -381,8 +381,8 @@
   <data name="StoreProcedureConsultarMatriculas" xml:space="preserve">
     <value>M16_consultarMatriculas</value>
   </data>
-  <data name="CONSULTAR_INVENTARIO_TOTAL" xml:space="preserve">
-    <value>M16_CONSULTAR_INVENTARIO_TOTAL</value>
+  <data name="CONSULTAR_INVENTARIO_TOTAL_DOJOS" xml:space="preserve">
+    <value>M16_CONSULTAR_INVENTARIO_TOTAL_DOJOS</value>
   </data>
   <data name="PARAMETRO_CANTIDAD_IMPLEMENTO" xml:space="preserve">
     <value>impCantidadTotal</value>

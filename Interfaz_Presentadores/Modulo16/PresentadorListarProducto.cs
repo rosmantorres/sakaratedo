@@ -42,16 +42,21 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// metodo para consultar la lista de los productos
         /// </summary>
-        public void consultarProductos()
+        public void consultarProductos(int persona)
         {
             try
             {
-                Comando<List<Entidad>> comandoListarProductos = FabricaComandos.CrearComandoConsultarTodosProductos();
+                Comando<Entidad> comandoListarProductos = FabricaComandos.CrearComandoConsultarTodosProductos();
 
-                List<Entidad> laLista = comandoListarProductos.Ejecutar();
+                PersonaM1 param = new PersonaM1();
+                param._Id = persona;
+
+                comandoListarProductos.LaEntidad = param;
+
+                ListaImplemento com = (ListaImplemento)comandoListarProductos.Ejecutar();
 
                 //Obtenemos cada producto para ponerlos en la tabla
-                foreach (Entidad aux in laLista)
+                foreach (Entidad aux in com.ListaImplementos)
                 {
                     //Casteamos la entidad como un implemento
                     Implemento item = (Implemento)aux;
@@ -97,6 +102,13 @@ namespace Interfaz_Presentadores.Modulo16
                     //Nueva celda que tendra la cantidad total del producto en inventario
                     celda = new TableCell();
                     celda.Text = item.Cantida_implemento.ToString();
+
+                    //Agrego la celda a la fila
+                    fila.Cells.Add(celda);
+
+                    //Nueva celda que tendra el nombre del dojo al que pertenece
+                    celda = new TableCell();
+                    celda.Text = item.Dojo_Implemento.Nombre_dojo.ToString();
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);

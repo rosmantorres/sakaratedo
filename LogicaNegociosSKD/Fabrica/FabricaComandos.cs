@@ -146,7 +146,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
         /// </summary>
         /// <returns>El ComandoConsultarTodosProductos</returns>
-        public static Comando<List<Entidad>> CrearComandoConsultarTodosProductos()
+        public static Comando<Entidad> CrearComandoConsultarTodosProductos()
         {
             return new ComandoConsultarTodosProductos();
         }

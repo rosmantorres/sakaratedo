@@ -82,7 +82,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamada
-                return daoimplemento.ConsultarXId(pro);
+                return daoimplemento.DetallarImplemento(pro);
             }
             // Robusteciendo
             catch (PersonaNoValidaException e)

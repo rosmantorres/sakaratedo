@@ -20,25 +20,32 @@ namespace DatosSKD.DAO.Modulo16
 {
     public class DaoImplemento : DAOGeneral, IdaoImplemento
     {
-    
-        #region Metodos para ConsultarTodos (Listar Productos)
+
+        #region Metodos para ConsultarXId (Listar Productos por id )
         /// <summary>
         /// Metodo que retorma una lista de productos existentes
         /// </summary>
         /// <param name=NONE>Este metodo no posee paso de parametros</param>
         /// <returns>Todo lo que tiene actualmente el inventario de implementos</returns>
-        public List<Entidad> ConsultarTodos()
+       
+        public Entidad ConsultarXId(Entidad implemento)
         {
             FabricaEntidades laFabrica = new FabricaEntidades();
-            List<Entidad> laLista = new List<Entidad>();
+            List<Implemento> laLista = new List<Implemento>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
             Implemento elImplemento;
+            ListaImplemento lista = new ListaImplemento();
+            Dojo elDojo = new Dojo();
+
+            PersonaM1 p = (PersonaM1)implemento;
 
             try
             {
-                    resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_INVENTARIO_TOTAL,
-                        parametros);
+                parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
+                parametros.Add(parametro);
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_INVENTARIO_TOTAL_DOJOS, parametros);
 
                     //Limpio la conexion
                     LimpiarSQLConnection();
@@ -46,19 +53,24 @@ namespace DatosSKD.DAO.Modulo16
                     foreach (DataRow row in resultado.Rows)
                     {
                         elImplemento = (Implemento)laFabrica.ObtenerImplemento();
+                        elDojo = (Dojo)laFabrica.ObtenerDojos();
                         elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
                         elImplemento.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                         elImplemento.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
                         elImplemento.Marca_Implemento = row[RecursosBDModulo16.PARAMETRO_MARCA].ToString();
                         elImplemento.Precio_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                         elImplemento.Cantida_implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD_IMPLEMENTO].ToString());
+                        elDojo.Nombre_dojo = row[RecursosBDModulo16.PARAMETRO_DOJO_NOMBRE].ToString();
+                        elImplemento.Dojo_Implemento = elDojo;
                         laLista.Add(elImplemento);
                        
                     }
+                    lista.ListaImplementos = laLista;
+
                     //Limpio la conexion
                     LimpiarSQLConnection();
-                    return laLista;
 
+                    return lista;
             }
             #region catches
             catch (Exception ex)
@@ -70,13 +82,14 @@ namespace DatosSKD.DAO.Modulo16
         }
 #endregion
 
-        #region Metodo para ConsultarXId (Detallar Implemento)
-        /// <summary>
+            #region Metodo para DetallarImplemento (Detallar Implemento)
+            /// <summary>
         /// Metodo que retorma una entidad de tipo implemento
         /// </summary>
         /// <param name=Entidad>Se pasa el id del implemento a buscar</param>
         /// <returns>Todas los atributos de la clase implemento para el detallar</returns>
-        public Entidad ConsultarXId(Entidad implemento)
+        
+        public Entidad DetallarImplemento(Entidad implemento)
         {
             FabricaEntidades laFabrica = new FabricaEntidades();
             List<Implemento> laLista = new List<Implemento>();
@@ -142,15 +155,16 @@ namespace DatosSKD.DAO.Modulo16
 
         #endregion
 
-        #region Metodo para DetallarImplemento
+        #region Metodo para ConsultarTodos sin parametros
         /// <summary>
         /// Metodo que devueve un tipoimplemento dado su id
         /// </summary>
-        /// <param name="Id_evento">Indica el objeto a detallar</param>
-        /// <returns>Retorna un implemento en especifico con todos sus detalles</returns>
-        public Entidad DetallarImplemento(int Id_implemento)
-        {
-            return new Persona();
+        /// <param name="NONE">El metodo no posee paso de parametros</param>
+        /// <returns>Retorna una lista de implementos</returns>
+      //  public Entidad DetallarImplemento(Entidad implemento)
+         public List<Entidad> ConsultarTodos()
+       {
+           return new List<Entidad>();
         }
 
         #endregion

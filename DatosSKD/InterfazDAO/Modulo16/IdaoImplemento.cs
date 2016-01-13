@@ -11,7 +11,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
     {
         new List<Entidad> ConsultarTodos();
         List<Entidad> ListarImplemento();
-        Entidad DetallarImplemento(int Id_implemento);
+        Entidad DetallarImplemento(Entidad entidad);
 
         new Entidad ConsultarXId(Entidad entidad);
     }
