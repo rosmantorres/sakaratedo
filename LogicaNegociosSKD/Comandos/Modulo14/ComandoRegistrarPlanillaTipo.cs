@@ -35,7 +35,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.nombreTipo);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
-                registrar.LaEntidad = (Entidad)registrar.LaEntidad;
+                registrar.LaEntidad = (Entidad)laPlanilla;
                 registrar.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
