@@ -17,12 +17,48 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 3
+		public EjecutarAgregarOrganizacion ObtenerEjecutarAgregarOrganizacion(Entidad nuevaEntidad)
+        {
+            return new EjecutarAgregarOrganizacion(nuevaEntidad);
+        }
+        public EjecutarModificarOrganizacion ObtenerEjecutarModificarOrganizacion(Entidad nuevaEntidad)
+        {
+            return new EjecutarModificarOrganizacion(nuevaEntidad);
+        }
+        public EjecutarConsultarXIdOrganizacion ObtenerEjecutarConsultarXIdOrganizacion(Entidad nuevaEntidad)
+        {
+            return new EjecutarConsultarXIdOrganizacion(nuevaEntidad);
+        }
+        public EjecutarConsultarTodosOrganizacion ObtenerEjecutarConsultarTodosOrganizacion()
+        {
+            return new EjecutarConsultarTodosOrganizacion();
+        }
+        public EjecutarComboOrganizaciones ObtenerEjecutarComboOrganizaciones()
+        {
+            return new EjecutarComboOrganizaciones();
+        }
         #endregion
 
         #region Modulo 4
         #endregion
 
         #region Modulo 5
+		 public EjecutarAgregarCinta ObtenerEjecutarAgregarCinta(Entidad nuevaEntidad)
+        {
+            return new EjecutarAgregarCinta(nuevaEntidad);
+        }
+        public EjecutarModificarCinta ObtenerEjecutarModificarCinta(Entidad nuevaEntidad)
+        {
+            return new EjecutarModificarCinta(nuevaEntidad);
+        }
+        public EjecutarConsultarXIdCinta ObtenerEjecutarConsultarXIdCinta(Entidad nuevaEntidad)
+        {
+            return new EjecutarConsultarXIdCinta(nuevaEntidad);
+        }
+        public EjecutarConsultarTodosCinta ObtenerEjecutarConsultarTodosCinta()
+        {
+            return new EjecutarConsultarTodosCinta();
+        }
         #endregion
 
         #region Modulo 6
