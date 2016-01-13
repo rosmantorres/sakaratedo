@@ -59,7 +59,7 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public Literal LiteralDetallesMensualidades
         {
-            get { return this.detalleEventoLiteral; }
+            get { return this.detalleMensualidadLiteral; }
         }
 
         /// <summary>
