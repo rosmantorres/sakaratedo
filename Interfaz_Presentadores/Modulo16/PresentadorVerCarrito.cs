@@ -101,21 +101,17 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.ID = "Implemento-" + item.Id_Implemento.ToString();
                     celda.Controls.Add(boton);
 
+                    //Se modifica para que el boton no haga postback
+                    boton.OnClientClick = "return false;";
+                    boton.UseSubmitBehavior = false;
+                    celda.Controls.Add(boton);
+
                     //Boton informacion
                     boton = new Button();
                     boton.ID = "elProducto-" + item.Id_Implemento.ToString();
                     boton.Command += DetalleProducto_Prod;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id_Implemento.ToString();
-                    celda.Controls.Add(boton);
-
-                    //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
-                    //boton.Attributes.Add("data-toggle", "modal");
-                    //boton.Attributes.Add("data-target", "#modal-info1");
-
-                    //Se modifica para que el boton no haga postback
-                    boton.OnClientClick = "return false;";
-                    boton.UseSubmitBehavior = false;
                     celda.Controls.Add(boton);
 
                     //Boton Eliminar
@@ -174,21 +170,17 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.ID = "Evento-" + item.Id_evento.ToString();
                     celda.Controls.Add(boton);
 
+                    //Se modifica para que el boton no haga postback
+                    boton.OnClientClick = "return false;";
+                    boton.UseSubmitBehavior = false;
+                    celda.Controls.Add(boton);
+
                     //Boton informacion
                     boton = new Button();
                     boton.ID = "elEvento-" + item.Id_evento.ToString();
                     boton.Command += DetalleEvento_Event;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id_evento.ToString();
-                    celda.Controls.Add(boton);
-
-                    //Aqui agregamos atributos para que pueda hacer la llamada de cargar los modales
-                    //boton.Attributes.Add("data-toggle", "modal");
-                    //boton.Attributes.Add("data-target", "#modal-info2");
-
-                    //Se modifica para que el boton no haga postback
-                    boton.OnClientClick = "return false;";
-                    boton.UseSubmitBehavior = false;
                     celda.Controls.Add(boton);
 
                     //Boton Eliminar
