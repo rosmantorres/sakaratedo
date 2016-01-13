@@ -63,9 +63,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
+    <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
+    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo14\IDaoPlanilla.cs" />
+    <Compile Include="InterfazDAO\Modulo14\IDaoSolicitud.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +190,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAOModulo12.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx" />
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo10.Designer.cs</LastGenOutput>
@@ -290,7 +296,6 @@
     <Folder Include="DAO\Modulo10\" />
     <Folder Include="DAO\Modulo11\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo14\" />
     <Folder Include="DAO\Modulo15\" />
     <Folder Include="DAO\Modulo16\" />
     <Folder Include="DAO\Modulo1\" />
@@ -305,7 +310,6 @@
     <Folder Include="InterfazDAO\Modulo10\" />
     <Folder Include="InterfazDAO\Modulo11\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo14\" />
     <Folder Include="InterfazDAO\Modulo15\" />
     <Folder Include="InterfazDAO\Modulo16\" />
     <Folder Include="InterfazDAO\Modulo1\" />
