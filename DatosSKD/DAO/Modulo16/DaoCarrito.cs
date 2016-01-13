@@ -566,6 +566,7 @@ namespace DatosSKD.DAO.Modulo16
                             laMatricula.Identificador = (row2[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());
                             laMatricula.FechaCreacion = DateTime.Parse(row2[RecursosBDModulo16.aliasFechainicio].ToString());
                             laMatricula.UltimaFechaPago = DateTime.Parse(row2[RecursosBDModulo16.aliasFechatope].ToString());
+                            laMatricula.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
                             
                             //Agrego a la lista
                             laLista.Add(laMatricula,int.Parse(row[RecursosBDModulo16.PARAMETRO_CANTIDAD2].ToString()));
