@@ -198,9 +198,6 @@
     <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarAscenso.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarKata.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarEliminarOrganizaciones.js" />
@@ -1853,27 +1850,6 @@
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.cs">
-      <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.designer.cs">
-      <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.cs">
-      <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.designer.cs">
-      <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.cs">
-      <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.designer.cs">
-      <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
