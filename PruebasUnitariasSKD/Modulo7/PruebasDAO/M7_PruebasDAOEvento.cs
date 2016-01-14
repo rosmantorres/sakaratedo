@@ -33,7 +33,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             fabricaSql = new FabricaDAOSqlServer();
             fabricaEntidades = new FabricaEntidades();
             baseDeDatosEvento = fabricaSql.ObtenerDaoEventoM7();
-            idPersona = new Persona();
+            idPersona = new Persona();//cambiar por fabrica
             idPersona.ID = 6;
         }
 
@@ -267,5 +267,76 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
         }
 
+        /// <summary>
+        /// Método para probar que devuelve la fecha de inscripción de un evento en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaInscripcion()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 5;
+            DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
+            Assert.AreEqual("02/10/2015", fechaInscripcion.ToString("MM/dd/yyyy"));
+        }
+
+        /// <summary>
+        /// Método para probar que no devuelva nula la fecha de inscripción de un evento en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaInscripcionNoNula()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 5;
+            DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
+            Assert.NotNull(fechaInscripcion);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de fecha inscripción de un evento en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void FechaInscripcionNumeroEnteroException()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = -1;
+            DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
+        }
+
+        /// <summary>
+        /// Método para probar que devuelve la fecha de inscripción de una competencia en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaInscripcionCompetencia()
+        {
+            Competencia competencia = new Competencia();//cambiar por fabrica
+            competencia.Id_competencia = 8;
+            DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
+            Assert.AreEqual("02/13/2014", fechaInscripcion.ToString("MM/dd/yyyy"));
+        }
+
+        /// <summary>
+        /// Método para probar que no devuelva nula la fecha de inscripción de una competencia en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaInscripcionCompetenciaNoNula()
+        {
+            Competencia competencia = new Competencia();//cambiar por fabrica
+            competencia.Id_competencia = 8;
+            DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
+            Assert.NotNull(fechaInscripcion);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de fecha inscripción de una competencia en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void FechaInscripcionCompetenciaNumeroEnteroException()
+        {
+            Competencia competencia = new Competencia();//cambiar por fabrica
+            competencia.Id_competencia = -1;
+            DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
+        }
     }
 }

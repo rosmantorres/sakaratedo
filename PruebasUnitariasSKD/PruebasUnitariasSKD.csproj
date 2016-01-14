@@ -132,6 +132,7 @@
     <Compile Include="Modulo7\M7_PruebasLogicaHorarioPractica.cs" />
     <Compile Include="Modulo7\M7_PruebasLogicaMatriculasPagas.cs" />
     <Compile Include="Modulo7\M7_PruebasLogicaOrganizacionYDojo.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosAsistidos.cs" />
     <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCinta.cs" />
     <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCompetencia.cs" />
     <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAODojo.cs" />

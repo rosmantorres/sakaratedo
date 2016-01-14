@@ -40,6 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo7\RecursosComandoModulo7.Designer.cs">
+      <DependentUpon>RecursosComandoModulo7.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -154,6 +160,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo7\RecursosComandoModulo7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
@@ -233,7 +243,6 @@
     <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo5\" />
     <Folder Include="Comandos\Modulo6\" />
-    <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
     <Folder Include="Comandos\Modulo9\" />
   </ItemGroup>
