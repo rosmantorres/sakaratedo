@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatosSKD.DAO.Modulo14;
 //using DatosSKD.DAO.Modulo16;
+
 
 namespace DatosSKD.Fabrica
 {
@@ -140,6 +142,15 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 14
+        public DAOGeneral ObtenerDAOPlanilla()
+        {
+            return new DaoPlanilla();
+        }
+
+        public DAOGeneral ObtenerDAOSolicitud()
+        {
+            return new DaoSolicitud();
+        }
         #endregion
 
         #region Modulo 15
