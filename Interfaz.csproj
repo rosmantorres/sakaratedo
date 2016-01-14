@@ -1807,18 +1807,21 @@
     </Compile>
     <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
       <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
