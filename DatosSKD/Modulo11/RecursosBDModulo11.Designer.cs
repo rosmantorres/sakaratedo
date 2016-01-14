@@ -538,6 +538,24 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_PersonasEnCategoriaYAscensoSinResultados.
+        /// </summary>
+        internal static string ProcedimientoInscritosAscensos {
+            get {
+                return ResourceManager.GetString("ProcedimientoInscritosAscensos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_PersonasParticipanCompetenciaSinResultado.
+        /// </summary>
+        internal static string ProcedimientoInscritosCompetencia {
+            get {
+                return ResourceManager.GetString("ProcedimientoInscritosCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_ModificarAscenso.
         /// </summary>
         internal static string ProcedimientoModificarExamenAscenso {

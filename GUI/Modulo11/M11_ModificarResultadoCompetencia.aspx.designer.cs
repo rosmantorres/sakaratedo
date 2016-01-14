@@ -22,13 +22,13 @@ namespace templateApp.GUI.Modulo11 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// agregar_resultado control.
+        /// modificar_resultado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_resultado;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_resultado;
         
         /// <summary>
         /// fechaEvento control.

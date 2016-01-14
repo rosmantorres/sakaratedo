@@ -214,33 +214,6 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;tr&gt;&lt;td&gt;.
-        /// </summary>
-        internal static string parametroSplit1 {
-            get {
-                return ResourceManager.GetString("parametroSplit1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;/td&gt;&lt;td&gt;&lt;input list=&quot;puntaje&quot; name=&quot;puntaje&quot; runat=&quot;server&quot; class=&quot;form-control&quot; style=&quot;width:20%&quot; value=&quot;.
-        /// </summary>
-        internal static string parametroSplit2 {
-            get {
-                return ResourceManager.GetString("parametroSplit2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;&gt;&lt;datalist id=&quot;puntaje&quot; onselect=&quot;dropdown_SelectedIndexChanged&quot;&gt;&lt;option value=&quot;Aprobado&quot;&gt;&lt;option value=&quot;No Aprobado&quot;&gt;&lt;/datalist&gt;&lt;/td&gt;&lt;/tr&gt;.
-        /// </summary>
-        internal static string parametroSplit3 {
-            get {
-                return ResourceManager.GetString("parametroSplit3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
         ///            &lt;option selected value=&quot;1&quot;&gt;1&lt;/option&gt;
         ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
@@ -841,6 +814,19 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo&quot; class=&quot;form-control&quot; style=&quot;width:25%&quot;&gt;
+        ///                            &lt;option selected value=&quot;Seleccionar&quot;&gt;Seleccionar:&lt;/option&gt;
+        ///                            &lt;option value=&quot;Aprobado&quot;&gt;Aprobado&lt;/option&gt;
+        ///                            &lt;option value=&quot;No Aprobado&quot;&gt;No Aprobado&lt;/option&gt;
+        ///                        &lt;/select&gt;.
+        /// </summary>
+        internal static string Seleccionar {
+            get {
+                return ResourceManager.GetString("Seleccionar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seleccionar Categoria:.
         /// </summary>
         internal static string SeleccionarCategoria {
@@ -855,6 +841,15 @@ namespace templateApp.GUI.Modulo11 {
         internal static string SeleccionarEspecialidad {
             get {
                 return ResourceManager.GetString("SeleccionarEspecialidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccionar Evento:.
+        /// </summary>
+        internal static string SeleccionarEvento {
+            get {
+                return ResourceManager.GetString("SeleccionarEvento", resourceCulture);
             }
         }
         

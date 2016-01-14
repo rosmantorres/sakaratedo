@@ -349,4 +349,12 @@
     <value>resultadoAtleta2</value>
     <comment>Alias colocado en el Stored Procedure referente a la columna resultado atleta</comment>
   </data>
+  <data name="ProcedimientoInscritosAscensos" xml:space="preserve">
+    <value>M11_PersonasEnCategoriaYAscensoSinResultados</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoInscritosCompetencia" xml:space="preserve">
+    <value>M11_PersonasParticipanCompetenciaSinResultado</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

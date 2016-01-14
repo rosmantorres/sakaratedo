@@ -156,15 +156,6 @@
   <data name="Modificar" xml:space="preserve">
     <value>modificar</value>
   </data>
-  <data name="parametroSplit1" xml:space="preserve">
-    <value>&lt;tr&gt;&lt;td&gt;</value>
-  </data>
-  <data name="parametroSplit2" xml:space="preserve">
-    <value>&lt;/td&gt;&lt;td&gt;&lt;input list="puntaje" name="puntaje" runat="server" class="form-control" style="width:20%" value="</value>
-  </data>
-  <data name="parametroSplit3" xml:space="preserve">
-    <value>"&gt;&lt;datalist id="puntaje" onselect="dropdown_SelectedIndexChanged"&gt;&lt;option value="Aprobado"&gt;&lt;option value="No Aprobado"&gt;&lt;/datalist&gt;&lt;/td&gt;&lt;/tr&gt;</value>
-  </data>
   <data name="SeleccionarCategoria" xml:space="preserve">
     <value>Seleccionar Categoria:</value>
   </data>
@@ -626,5 +617,15 @@
   </data>
   <data name="AbrirTDNombre2" xml:space="preserve">
     <value>&lt;td class="nombre2"&gt;</value>
+  </data>
+  <data name="SeleccionarEvento" xml:space="preserve">
+    <value>Seleccionar Evento:</value>
+  </data>
+  <data name="Seleccionar" xml:space="preserve">
+    <value>&lt;select id="combo" class="form-control" style="width:25%"&gt;
+                            &lt;option selected value="Seleccionar"&gt;Seleccionar:&lt;/option&gt;
+                            &lt;option value="Aprobado"&gt;Aprobado&lt;/option&gt;
+                            &lt;option value="No Aprobado"&gt;No Aprobado&lt;/option&gt;
+                        &lt;/select&gt;</value>
   </data>
 </root>

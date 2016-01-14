@@ -41,7 +41,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form runat="server" role="form" name="agregar_resultado" id="agregar_resultado" method="post">
+<form runat="server" role="form" name="modificar_resultado" id="modificar_resultado" method="post">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
     <!--Texboxes FECHA y NOMBRE-->

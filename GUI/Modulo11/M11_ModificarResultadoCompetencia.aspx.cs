@@ -36,8 +36,8 @@ namespace templateApp.GUI.Modulo11
             {
                 String idEvento = Request.QueryString[M11_RecursosInterfaz.Modificar];
                 String tipo = Request.QueryString[M11_RecursosInterfaz.Tipo];
-                Session["M11_IdEvento"] = "7";
-                Session["M11_tipo"] = "Competencia";
+                Session["M11_IdEvento"] = idEvento;
+                Session["M11_tipo"] = tipo;
 
                 if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Evento))
                 {

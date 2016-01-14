@@ -1,4 +1,5 @@
 ﻿using DatosSKD.Modulo11;
+using DatosSKD.Modulo9;
 using DominioSKD;
 using System;
 using System.Collections.Generic;
@@ -162,6 +163,59 @@ namespace LogicaNegociosSKD.Modulo11
         public static bool ModificarResultadoKumite(List<ResultadoKumite> lista)
         {
             return BDResultado.ModificarResultadoKumite(lista);
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todas las fechas donde hay eventos
+        /// </summary>
+        /// <returns>Lista de horarios</returns>
+        public static List<Horario> ListarHorariosEventosAscensos()
+        {
+            BDEvento baseE = new BDEvento();
+            List<Horario> listaHorario = baseE.ListarHorariosAscensos();
+            return listaHorario;
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todos los eventos de tipo ascenso por fecha
+        /// </summary>
+        /// <returns>Lista de eventos</returns>
+        public static List<Evento> EventosPorFechaAscenso(String fechaInicio, String fechaFin)
+        {
+            BDEvento baseE = new BDEvento();
+            List<Evento> lista = new List<Evento>();
+            Evento evento = new Evento();
+            evento.Id_evento = 0;
+            evento.Nombre = RecursosLogicaModulo11.NombreEvento0;
+            lista.Add(evento);
+            List<Evento> listaEvento = baseE.AcsensosPorFecha(fechaInicio, fechaFin);
+            foreach (Evento evento2 in listaEvento)
+            {
+                lista.Add(evento2);
+            }
+            return lista;
+        }
+
+        /// <summary>
+        /// Metodo que retorna de la BD todos los atletas que compiten en una categoria especifica en un evento de ascenso
+        /// </summary>
+        /// <param name="evento">id del evento</param>
+        /// <returns>Lista de inscripciones</returns>
+        public static List<Inscripcion> listaInscritosExamenAscenso(Evento evento)
+        {
+            List<Inscripcion> listaInscripcion = BDResultado.listaInscritosExamenAscenso(evento);
+            return listaInscripcion;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="evento">id del evento</param>
+        /// <returns>Lista de inscripciones</returns>
+        public static List<Inscripcion> listaInscritosCompetencia(Competencia competencia)
+        {
+            List<Inscripcion> listaInscripcion = BDResultado.listaInscritosCompetencia(competencia);
+            return listaInscripcion;
         }
     }
 }
