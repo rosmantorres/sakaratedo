@@ -34,6 +34,10 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarListaEventosAsistidos();
         }
+        public Comando<Tuple<List<Entidad>, List<DateTime>>> ObtenerComandoConsultarListaCinta()
+        {
+            return new ComandoConsultarListaCinta();
+        }
         #endregion
 
         #region Modulo 8

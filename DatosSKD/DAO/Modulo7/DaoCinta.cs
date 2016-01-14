@@ -136,12 +136,12 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0 && idCinta.Id > 0)
+                if (idPersona.ID > 0 && idCinta.Id_cinta > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroCinta = new Parametro(RecursosDAOModulo7.ParamIdCinta, SqlDbType.Int, idCinta.Id.ToString(), false);
+                    parametroCinta = new Parametro(RecursosDAOModulo7.ParamIdCinta, SqlDbType.Int, idCinta.Id_cinta.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroCinta);
 

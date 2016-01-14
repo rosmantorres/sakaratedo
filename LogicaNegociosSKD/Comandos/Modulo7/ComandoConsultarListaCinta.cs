@@ -11,39 +11,33 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
-    public class ComandoConsultarListaEventosAsistidos : Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>>
+    public class ComandoConsultarListaCinta : Comando<Tuple<List<Entidad>, List<DateTime>>>
     {
         /// <summary>
         /// Implementación del metodo abstracto Ejecutar de la clase comando
         /// </summary>
-        /// <returns>Retorta tupla con listas de evento, competencia y listas de sus fechas de inscripción</returns>
-        public override Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> Ejecutar()
+        /// <returns>Retorta tupla con listas de cinta y lista de sus fechas de obtención</returns>
+        public override Tuple<List<Entidad>, List<DateTime>> Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();          
-            List<Entidad> eventos = new List<Entidad>();
-            List<Entidad> competencias = new List<Entidad>();
+            DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
+            List<Entidad> cintas = new List<Entidad>();
             Persona idPersona = (Persona)LaEntidad;
-            Tuple<List<Entidad> ,List<Entidad>, List<DateTime>, List<DateTime>> tupla;
-            List<DateTime> listaFechaEventos = new List<DateTime>();
-            List<DateTime> listaFechaCompetencias = new List<DateTime>();           
+            Tuple<List<Entidad>, List<DateTime>> tupla;
+            List<DateTime> listaFechaCintas = new List<DateTime>();
+
             try
             {
                 if (idPersona.ID > 0)
-                {              
-                    eventos = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
-                    competencias = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
+                {
+                    cintas = baseDeDatosCinta.ListarCintasObtenidas(idPersona);
 
-                    foreach (Evento evento in eventos)
+                    foreach (Cinta cinta in cintas)
                     {
-                        listaFechaEventos.Add(baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento));
-                    }
-                    foreach (Competencia competencia in competencias)
-                    {
-                        listaFechaCompetencias.Add(baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia));
+                        listaFechaCintas.Add(baseDeDatosCinta.FechaCinta(idPersona, cinta));
                     }
 
-                    tupla = Tuple.Create(eventos, competencias, listaFechaEventos, listaFechaCompetencias);
+                    tupla = Tuple.Create(cintas, listaFechaCintas);
                 }
                 else
                 {
@@ -75,6 +69,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
 
                 throw ex;
             }
+
             return tupla;
         }
     }

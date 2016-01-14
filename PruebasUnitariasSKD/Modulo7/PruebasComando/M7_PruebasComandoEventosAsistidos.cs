@@ -57,11 +57,11 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar la excepcion de número entero invalido obtener lista eventos asistidos
+        /// Método para probar la excepcion de número entero invalido en obtener lista eventos asistidos
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
-        public void DetalleCompetenciaNumeroEnteroException()
+        public void ListaEventosNumeroEnteroException()
         {
             idPersona.ID = -1;
             Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> tupla = eventosAsistidos.Ejecutar();
