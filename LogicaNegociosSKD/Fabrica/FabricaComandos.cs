@@ -38,6 +38,10 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarListaCinta();
         }
+        public Comando<Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad>> ObtenerComandoConsultarPerfil()
+        {
+            return new ComandoConsultarPerfil();
+        }
         #endregion
 
         #region Modulo 8
