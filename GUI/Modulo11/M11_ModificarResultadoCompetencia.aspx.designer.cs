@@ -22,13 +22,13 @@ namespace templateApp.GUI.Modulo11 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// agregar_asistencia control.
+        /// agregar_resultado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_asistencia;
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_resultado;
         
         /// <summary>
         /// fechaEvento control.
@@ -103,6 +103,24 @@ namespace templateApp.GUI.Modulo11 {
         protected global::System.Web.UI.WebControls.Literal dataTable;
         
         /// <summary>
+        /// dataTable2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal dataTable2;
+        
+        /// <summary>
+        /// dataTable3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal dataTable3;
+        
+        /// <summary>
         /// rvalue control.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace templateApp.GUI.Modulo11 {
         protected global::System.Web.UI.WebControls.HiddenField rvalue;
         
         /// <summary>
+        /// rvalue2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField rvalue2;
+        
+        /// <summary>
         /// bModificar control.
         /// </summary>
         /// <remarks>
@@ -119,6 +146,33 @@ namespace templateApp.GUI.Modulo11 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton bModificar;
+        
+        /// <summary>
+        /// bModificarKata control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton bModificarKata;
+        
+        /// <summary>
+        /// bModificarKumite control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton bModificarKumite;
+        
+        /// <summary>
+        /// bModificarAmbas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton bModificarAmbas;
         
         /// <summary>
         /// bCancelar control.

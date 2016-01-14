@@ -237,6 +237,8 @@ namespace DatosSKD.Modulo11
         {
             BDConexion laConexion;
             List<string> especialidades = new List<string>();
+            string especialidad2 = "0";
+            especialidades.Add(especialidad2);
             try
             {
                 laConexion = new BDConexion();
@@ -332,11 +334,11 @@ namespace DatosSKD.Modulo11
         /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
         /// </summary>
         /// <param name="competencia">id de la categoria</param>
-        /// <returns>lista de atletas</returns>
-        public static List<Persona> listaAtletasParticipanCompetencia(Competencia competencia)
+        /// <returns>lista de inscripciones</returns>
+        public static List<Inscripcion> listaAtletasParticipanCompetenciaKata(Competencia competencia)
         {
             BDConexion laConexion;
-            List<Persona> personas = new List<Persona>();
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
             try
             {
                 laConexion = new BDConexion();
@@ -351,12 +353,23 @@ namespace DatosSKD.Modulo11
 
                 foreach (DataRow row in dt.Rows)
                 {
+                    Inscripcion inscripcion = new Inscripcion();
+                    inscripcion.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion].ToString());
                     Persona persona = new Persona();
-
                     persona.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona].ToString());
                     persona.Nombre = row[RecursosBDModulo11.aliasNombrePersona].ToString();
-                    persona.IdInscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion].ToString());
-                    personas.Add(persona);
+                    persona.Apellido = row[RecursosBDModulo11.aliasApellidoPersona].ToString();
+                    inscripcion.Persona = persona;
+
+                    ResultadoKata resultadoKata = new ResultadoKata();
+                    resultadoKata.Id_ResKata = int.Parse(row[RecursosBDModulo11.aliasIdResultadoKata].ToString());
+                    resultadoKata.Jurado1 = int.Parse(row[RecursosBDModulo11.aliasJurado1].ToString());
+                    resultadoKata.Jurado2 = int.Parse(row[RecursosBDModulo11.aliasJurado2].ToString());
+                    resultadoKata.Jurado3 = int.Parse(row[RecursosBDModulo11.aliasJurado3].ToString());
+                    List<ResultadoKata> resultadosKata = new List<ResultadoKata>();
+                    resultadosKata.Add(resultadoKata);
+                    inscripcion.ResKata = resultadosKata;
+                    inscripciones.Add(inscripcion);
                 }
             }
             catch (SqlException ex)
@@ -378,7 +391,207 @@ namespace DatosSKD.Modulo11
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            return personas;
+            return inscripciones;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de inscripciones</returns>
+        public static List<Inscripcion> listaAtletasParticipanCompetenciaKataAmbas(Competencia competencia)
+        {
+            BDConexion laConexion;
+            List<Inscripcion> inscripciones = new List<Inscripcion>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, competencia.TipoCompetencia, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, competencia.Id_competencia.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, competencia.Categoria.Id_categoria.ToString(), false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoPersonasCompitenCompetencia, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    Inscripcion inscripcion = new Inscripcion();
+                    inscripcion.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion].ToString());
+                    Persona persona = new Persona();
+                    persona.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona].ToString());
+                    persona.Nombre = row[RecursosBDModulo11.aliasNombrePersona].ToString();
+                    persona.Apellido = row[RecursosBDModulo11.aliasApellidoPersona].ToString();
+                    inscripcion.Persona = persona;
+
+                    ResultadoKata resultadoKata = new ResultadoKata();
+                    resultadoKata.Id_ResKata = int.Parse(row[RecursosBDModulo11.aliasIdResultadoKata].ToString());
+                    resultadoKata.Jurado1 = int.Parse(row[RecursosBDModulo11.aliasJurado1].ToString());
+                    resultadoKata.Jurado2 = int.Parse(row[RecursosBDModulo11.aliasJurado2].ToString());
+                    resultadoKata.Jurado3 = int.Parse(row[RecursosBDModulo11.aliasJurado3].ToString());
+                    List<ResultadoKata> resultadosKata = new List<ResultadoKata>();
+                    resultadosKata.Add(resultadoKata);
+                    inscripcion.ResKata = resultadosKata;
+                    inscripciones.Add(inscripcion);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return inscripciones;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de inscripciones</returns>
+        public static List<ResultadoKumite> listaAtletasParticipanCompetenciaKumite(Competencia competencia)
+        {
+            BDConexion laConexion;
+            List<ResultadoKumite> resultados = new List<ResultadoKumite>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, competencia.TipoCompetencia, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, competencia.Id_competencia.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, competencia.Categoria.Id_categoria.ToString(), false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoPersonasCompitenCompetencia, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    ResultadoKumite resultado = new ResultadoKumite();
+                    Persona persona1 = new Persona();
+                    persona1.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona1].ToString());
+                    persona1.Nombre = row[RecursosBDModulo11.aliasNombrePersona1].ToString();
+                    persona1.Apellido = row[RecursosBDModulo11.aliasApellidoPersona1].ToString();
+                    Inscripcion inscripcion1 = new Inscripcion();
+                    inscripcion1.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion1].ToString());
+                    inscripcion1.Persona = persona1;
+                    Persona persona2 = new Persona();
+                    persona2.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona2].ToString());
+                    persona2.Nombre = row[RecursosBDModulo11.aliasNombrePersona2].ToString();
+                    persona2.Apellido = row[RecursosBDModulo11.aliasApellidoPersona2].ToString();
+                    Inscripcion inscripcion2 = new Inscripcion();
+                    inscripcion2.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion2].ToString());
+                    inscripcion2.Persona = persona2;
+                    resultado.Inscripcion1 = inscripcion1;
+                    resultado.Inscripcion2 = inscripcion2;
+                    resultado.Id_ResKumite = int.Parse(row[RecursosBDModulo11.aliasIdResultadoKumite].ToString());
+                    resultado.Puntaje1 = int.Parse(row[RecursosBDModulo11.aliasResultadoAtleta1].ToString());
+                    resultado.Puntaje2 = int.Parse(row[RecursosBDModulo11.aliasResultadoAtleta2].ToString());
+                    resultados.Add(resultado);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return resultados;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de inscripciones</returns>
+        public static List<ResultadoKumite> listaAtletasParticipanCompetenciaKumiteAmbas(Competencia competencia)
+        {
+            BDConexion laConexion;
+            List<ResultadoKumite> resultados = new List<ResultadoKumite>();
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo11.ParametroIdEspecialidad, SqlDbType.Int, competencia.TipoCompetencia, false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCompetencia, SqlDbType.Int, competencia.Id_competencia.ToString(), false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursosBDModulo11.ParametroIdCategoria, SqlDbType.Int, competencia.Categoria.Id_categoria.ToString(), false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo11.ProcedimientoPersonasCompitenCompetencia, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    ResultadoKumite resultado = new ResultadoKumite();
+                    Persona persona1 = new Persona();
+                    persona1.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona1].ToString());
+                    persona1.Nombre = row[RecursosBDModulo11.aliasNombrePersona1].ToString();
+                    persona1.Apellido = row[RecursosBDModulo11.aliasApellidoPersona1].ToString();
+                    Inscripcion inscripcion1 = new Inscripcion();
+                    inscripcion1.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion1].ToString());
+                    inscripcion1.Persona = persona1;
+                    Persona persona2 = new Persona();
+                    persona2.ID = int.Parse(row[RecursosBDModulo11.aliasIdPersona2].ToString());
+                    persona2.Nombre = row[RecursosBDModulo11.aliasNombrePersona2].ToString();
+                    persona2.Apellido = row[RecursosBDModulo11.aliasApellidoPersona2].ToString();
+                    Inscripcion inscripcion2 = new Inscripcion();
+                    inscripcion2.Id_Inscripcion = int.Parse(row[RecursosBDModulo11.aliasIdInscripcion2].ToString());
+                    inscripcion2.Persona = persona2;
+                    resultado.Inscripcion1 = inscripcion1;
+                    resultado.Inscripcion2 = inscripcion2;
+                    resultado.Id_ResKumite = int.Parse(row[RecursosBDModulo11.aliasIdResultadoKumite].ToString());
+                    resultado.Puntaje1 = int.Parse(row[RecursosBDModulo11.aliasResultadoAtleta1].ToString());
+                    resultado.Puntaje2 = int.Parse(row[RecursosBDModulo11.aliasResultadoAtleta2].ToString());
+                    resultados.Add(resultado);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return resultados;
         }
 
         /// <summary>

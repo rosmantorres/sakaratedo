@@ -150,12 +150,6 @@
   <data name="Evento" xml:space="preserve">
     <value>Evento</value>
   </data>
-  <data name="InputTextAbrir" xml:space="preserve">
-    <value>&lt;input list="puntaje" name="puntaje" runat="server" class="form-control" style="width:20%" value="</value>
-  </data>
-  <data name="InputTextCerrar" xml:space="preserve">
-    <value>"&gt;&lt;datalist id="puntaje" onselect="dropdown_SelectedIndexChanged"&gt;&lt;option value="Aprobado"&gt;&lt;option value="No Aprobado"&gt;&lt;/datalist&gt;</value>
-  </data>
   <data name="Key" xml:space="preserve">
     <value>Key</value>
   </data>
@@ -191,5 +185,446 @@
       &lt;option value="Aprobado"&gt;Aprobado&lt;/option&gt;
       &lt;option selected value="No Aprobado"&gt;No Aprobado&lt;/option&gt;
     &lt;/select&gt;</value>
+  </data>
+  <data name="Aprobado" xml:space="preserve">
+    <value>Aprobado</value>
+  </data>
+  <data name="NoAprobado" xml:space="preserve">
+    <value>No Aprobado</value>
+  </data>
+  <data name="r1Combo1" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option selected value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo10" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option selected value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo2" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option selected value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo3" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option selected value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo4" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option selected value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo5" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option selected value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo6" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option selected value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo7" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option selected value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo8" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option selected value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r1Combo9" xml:space="preserve">
+    <value>&lt;select id="combo1" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option selected value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo1" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option selected value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo10" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option selected value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo2" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option selected value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo3" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option selected value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo4" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option selected value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo5" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option selected value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo6" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option selected value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo7" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option selected value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo8" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option selected value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r2Combo9" xml:space="preserve">
+    <value>&lt;select id="combo2" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option selected value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo1" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option selected value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo10" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option selected value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo2" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option selected value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo3" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option selected value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo4" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option selected value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo5" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option selected value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo6" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option selected value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo7" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option selected value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo8" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option selected value="8"&gt;8&lt;/option&gt;
+            &lt;option value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="r3Combo9" xml:space="preserve">
+    <value>&lt;select id="combo3" class="form-control" style="width:30%"&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+            &lt;option value="4"&gt;4&lt;/option&gt;
+            &lt;option value="5"&gt;5&lt;/option&gt;
+            &lt;option value="6"&gt;6&lt;/option&gt;
+            &lt;option value="7"&gt;7&lt;/option&gt;
+            &lt;option value="8"&gt;8&lt;/option&gt;
+            &lt;option selected value="9"&gt;9&lt;/option&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;/select&gt;</value>
+  </data>
+  <data name="SeleccionarEspecialidad" xml:space="preserve">
+    <value>Seleccionar Especialidad:</value>
+  </data>
+  <data name="valorNo" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="valorSi" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="AbrirTDNombre1" xml:space="preserve">
+    <value>&lt;td class="nombre1"&gt;</value>
+  </data>
+  <data name="AbrirTDNombre2" xml:space="preserve">
+    <value>&lt;td class="nombre2"&gt;</value>
   </data>
 </root>

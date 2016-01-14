@@ -70,6 +70,24 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to apellidoPersona1.
+        /// </summary>
+        internal static string aliasApellidoPersona1 {
+            get {
+                return ResourceManager.GetString("aliasApellidoPersona1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to apellidoPersona2.
+        /// </summary>
+        internal static string aliasApellidoPersona2 {
+            get {
+                return ResourceManager.GetString("aliasApellidoPersona2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aprobado.
         /// </summary>
         internal static string aliasAprobado {
@@ -178,6 +196,24 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idInscripcion1.
+        /// </summary>
+        internal static string aliasIdInscripcion1 {
+            get {
+                return ResourceManager.GetString("aliasIdInscripcion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idInscripcion2.
+        /// </summary>
+        internal static string aliasIdInscripcion2 {
+            get {
+                return ResourceManager.GetString("aliasIdInscripcion2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idPersona.
         /// </summary>
         internal static string aliasIdPersona {
@@ -187,11 +223,74 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idPersona1.
+        /// </summary>
+        internal static string aliasIdPersona1 {
+            get {
+                return ResourceManager.GetString("aliasIdPersona1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idPersona2.
+        /// </summary>
+        internal static string aliasIdPersona2 {
+            get {
+                return ResourceManager.GetString("aliasIdPersona2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idResultado.
         /// </summary>
         internal static string aliasIdResultado {
             get {
                 return ResourceManager.GetString("aliasIdResultado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idResKata.
+        /// </summary>
+        internal static string aliasIdResultadoKata {
+            get {
+                return ResourceManager.GetString("aliasIdResultadoKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idResultadoKumite.
+        /// </summary>
+        internal static string aliasIdResultadoKumite {
+            get {
+                return ResourceManager.GetString("aliasIdResultadoKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resJurado1.
+        /// </summary>
+        internal static string aliasJurado1 {
+            get {
+                return ResourceManager.GetString("aliasJurado1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resJurado2.
+        /// </summary>
+        internal static string aliasJurado2 {
+            get {
+                return ResourceManager.GetString("aliasJurado2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resJurado3.
+        /// </summary>
+        internal static string aliasJurado3 {
+            get {
+                return ResourceManager.GetString("aliasJurado3", resourceCulture);
             }
         }
         
@@ -219,6 +318,42 @@ namespace DatosSKD.Modulo11 {
         internal static string aliasNombrePersona {
             get {
                 return ResourceManager.GetString("aliasNombrePersona", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombrePersona1.
+        /// </summary>
+        internal static string aliasNombrePersona1 {
+            get {
+                return ResourceManager.GetString("aliasNombrePersona1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombrePersona2.
+        /// </summary>
+        internal static string aliasNombrePersona2 {
+            get {
+                return ResourceManager.GetString("aliasNombrePersona2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resultadoAtleta1.
+        /// </summary>
+        internal static string aliasResultadoAtleta1 {
+            get {
+                return ResourceManager.GetString("aliasResultadoAtleta1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resultadoAtleta2.
+        /// </summary>
+        internal static string aliasResultadoAtleta2 {
+            get {
+                return ResourceManager.GetString("aliasResultadoAtleta2", resourceCulture);
             }
         }
         

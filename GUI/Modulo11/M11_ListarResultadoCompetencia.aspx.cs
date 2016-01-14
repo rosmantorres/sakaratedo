@@ -17,7 +17,7 @@ namespace templateApp.GUI.Modulo11
         {
             ((SKD)Page.Master).IdModulo = "11";
 
-            String success = Request.QueryString["eliminacionSuccess"];
+            String success = Request.QueryString["success"];
 
             if (success != null)
             {
@@ -32,7 +32,7 @@ namespace templateApp.GUI.Modulo11
                 {
                     alert.Attributes["class"] = "alert alert-success alert-dismissible";
                     alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Resultado modificado exitosamente</div>";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Resultados del Examen de Ascenso modificado exitosamente</div>";
                 }
 
                 if (success.Equals("3"))
@@ -40,6 +40,55 @@ namespace templateApp.GUI.Modulo11
                     alert.Attributes["class"] = "alert alert-danger alert-dismissible";
                     alert.Attributes["role"] = "alert";
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al agregar el Resultado Competencia</div>";
+                }
+
+                if (success.Equals("4"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al modificar los resultados del Examen de Ascenso</div>";
+                }
+
+                if (success.Equals("5"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Resultados de la Competencia Especialidad Kata modificado exitosamente</div>";
+                }
+
+                if (success.Equals("6"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al modificar los resultados de la Competencia Especialidad Kata</div>";
+                }
+
+                if (success.Equals("7"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Resultados de la Competencia Especialidad Kumite modificado exitosamente</div>";
+                }
+
+                if (success.Equals("8"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al modificar los resultados de la Competencia Especialidad Kumite</div>";
+                }
+
+                if (success.Equals("9"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Resultados de la Competencia Especialidad Kata y Kumite modificado exitosamente</div>";
+                }
+
+                if (success.Equals("10"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al modificar los resultados de la Competencia Especialidad Kata y Kumite</div>";
                 }
             }
             #region Carga de tabla de Eventos y Competencias

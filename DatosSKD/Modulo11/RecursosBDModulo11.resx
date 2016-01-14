@@ -289,4 +289,64 @@
     <value>idResultado</value>
     <comment>Alias colocado en el Stored Procedure referente a la columna id Resultado</comment>
   </data>
+  <data name="aliasIdResultadoKata" xml:space="preserve">
+    <value>idResKata</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id resultado kata</comment>
+  </data>
+  <data name="aliasJurado1" xml:space="preserve">
+    <value>resJurado1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna puntaje jurado 1</comment>
+  </data>
+  <data name="aliasJurado2" xml:space="preserve">
+    <value>resJurado2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna puntaje jurado 2</comment>
+  </data>
+  <data name="aliasJurado3" xml:space="preserve">
+    <value>resJurado3</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna puntaje jurado 3</comment>
+  </data>
+  <data name="aliasApellidoPersona1" xml:space="preserve">
+    <value>apellidoPersona1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna apellido persona</comment>
+  </data>
+  <data name="aliasApellidoPersona2" xml:space="preserve">
+    <value>apellidoPersona2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna apellido persona</comment>
+  </data>
+  <data name="aliasIdInscripcion1" xml:space="preserve">
+    <value>idInscripcion1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id inscripcion </comment>
+  </data>
+  <data name="aliasIdInscripcion2" xml:space="preserve">
+    <value>idInscripcion2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id inscripcion</comment>
+  </data>
+  <data name="aliasIdPersona1" xml:space="preserve">
+    <value>idPersona1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id persona</comment>
+  </data>
+  <data name="aliasIdPersona2" xml:space="preserve">
+    <value>idPersona2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id persona</comment>
+  </data>
+  <data name="aliasIdResultadoKumite" xml:space="preserve">
+    <value>idResultadoKumite</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id resultado kumite</comment>
+  </data>
+  <data name="aliasNombrePersona1" xml:space="preserve">
+    <value>nombrePersona1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre persona</comment>
+  </data>
+  <data name="aliasNombrePersona2" xml:space="preserve">
+    <value>nombrePersona2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre persona</comment>
+  </data>
+  <data name="aliasResultadoAtleta1" xml:space="preserve">
+    <value>resultadoAtleta1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna resultado atleta</comment>
+  </data>
+  <data name="aliasResultadoAtleta2" xml:space="preserve">
+    <value>resultadoAtleta2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna resultado atleta</comment>
+  </data>
 </root>

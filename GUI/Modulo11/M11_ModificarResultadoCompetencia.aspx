@@ -41,7 +41,7 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form runat="server" role="form" name="agregar_asistencia" id="agregar_asistencia" method="post">
+<form runat="server" role="form" name="agregar_resultado" id="agregar_resultado" method="post">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
     <!--Texboxes FECHA y NOMBRE-->
@@ -77,15 +77,15 @@
       </div>
     </div>
 
-        <!--TABLA ATLETAS Y RESULTADOS EN LA COMPETENCIA-->
+        <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
         <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>Atletas que compitieron:</h3>
-        <table id="tablaCompetidores" class="table table-bordered table-striped dataTable">
+        <h3>Atletas que compitieron Examen de Ascenso:</h3>
+        <table id="tablaCompetidores" class="table table-bordered table-striped dataTable todasLasTablas">
         <thead>
 				<tr> 
 					<th style="text-align:center">Nombre del Atleta</th>
-                    <th style="text-align:center">Puntaje</th>
+                    <th style="text-align:center">Puntuacion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -95,15 +95,56 @@
             </div>
         </div>
 
+            <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kata:</h3>
+        <table id="tablaCompetidores2" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta</th>
+                    <th style="text-align:center">Jurado 1</th>
+                    <th style="text-align:center">Jurado 2</th>
+                    <th style="text-align:center">Jurado 3</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable2"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
+
+                <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kumite:</h3>
+        <table id="tablaCompetidores3" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+                    <th style="text-align:center">Referencia</th>
+					<th style="text-align:center">Nombre del Atleta 1</th>
+                    <th style="text-align:center">Puntuacion</th>
+                    <th style="text-align:center">Nombre del Atleta 2</th>
+                    <th style="text-align:center">Puntuacion</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable3"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
+
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#tablaCompetidores').DataTable();
+                $('.todasLasTablas').DataTable();
 
-                var table = $('#tablaCompetidores').DataTable();
+                var table = $('.todasLasTablas').DataTable();
                 var comp;
                 var tr;
 
-                $('#tablaCompetidores tbody').on('click', 'a', function () {
+                $('.todasLasTablas tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         comp = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -119,9 +160,9 @@
             });
 
             
-            function hola() {
+            function resultadosEvento() {
                 var arreglo = [];
-                $('tbody').each(function () {
+                $('#tablaCompetidores tbody').each(function () {
                     var i = 0;
                     $(this).find('select#combo').each(function () {
                         
@@ -138,29 +179,97 @@
                     });
                 });
                 var myJson = JSON.stringify(arreglo);
-                console.log(myJson);
                 document.getElementById('<%= rvalue.ClientID %>').value = myJson;
-                //return myJson;
             }
 
- 
-            //$('#combo:eq(2)').css("color", "red");
-          
-               
-            
+            function resultadosKata() {
+                var arreglo = [];
+                $('#tablaCompetidores2 tbody').each(function () {
+                    var i = 0;
+                    var j = 0;
+                    var x = 0;
+                    $(this).find('select#combo1').each(function () {
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado1: opcion,
+                            resultado2: "",
+                            resultado3: ""
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('select#combo2').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[j].resultado2 = opcion;
+                        j++;
+                    });
+                    $(this).find('select#combo3').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[x].resultado3 = opcion;
+                        x++;
+                    });
+                    $(this).find('.sorting_1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
+                    });
+                });
+                var myJson = JSON.stringify(arreglo);
+                console.log(myJson);
+                document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+            }
 
-                
+            function resultadosKumite() {
+                var arreglo = [];
+                $('#tablaCompetidores3 tbody').each(function () {
+                    var i = 0;
+                    var j = 0;
+                    var x = 0;
+                    $(this).find('select#combo1').each(function () {
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado1: opcion,
+                            resultado2: "",
+                            resultado3: ""
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('select#combo2').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[j].resultado3 = opcion;
+                        j++;
+                    });
+                    $(this).find('.nombre1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
+                    });
+                    $(this).find('.nombre2').each(function () {
+                        arreglo[x].resultado2 = $(this).text();
+                        x++;
+                    });
+                });
+                var myJson = JSON.stringify(arreglo);
+                console.log(myJson);
+                document.getElementById('<%= rvalue2.ClientID %>').value = myJson;
+            }
+
+            function resultadosAmbos() {
+                resultadosKata();
+                resultadosKumite();
+            }
         </script>
         <asp:HiddenField ID="rvalue" runat="server" />
-
+        <asp:HiddenField ID="rvalue2" runat="server" />
 </div>
 
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-          <!--<input type="submit" value="Submit" onclick="hola();">-->
-          <asp:LinkButton ID="bModificar" runat="server" CssClass="btn btn-primary" OnClick="bModificar_Click" OnClientClick="hola();">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificar" runat="server" CssClass="btn btn-primary" OnClick="bModificar_Click" OnClientClick="resultadosEvento();">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificarKata" runat="server" CssClass="btn btn-primary" OnClick="bModificarKata_Click" OnClientClick="resultadosKata();" Visible="false">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificarKumite" runat="server" CssClass="btn btn-primary" OnClick="bModificarKumite_Click" OnClientClick="resultadosKumite();" Visible="false">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificarAmbas" runat="server" CssClass="btn btn-primary" OnClick="bModificarAmbas_Click" OnClientClick="resultadosAmbos();" Visible="false">Modificar</asp:LinkButton>
           &nbsp;&nbsp
          <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>

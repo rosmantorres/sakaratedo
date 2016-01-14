@@ -78,19 +78,60 @@ namespace LogicaNegociosSKD.Modulo11
         /// <returns>Lista de categorias</returns>
         public static List<Categoria> listaCategoriasCompetencia(Competencia competencia)
         {
+            List<Categoria> lista = new List<Categoria>();
+            Categoria categoria = new Categoria();
+            categoria.Id_categoria = 0;
+            lista.Add(categoria);
             List<Categoria> listaCategoria = BDResultado.listaCategoriasCompetencia(competencia);
-            return listaCategoria;
+            foreach (Categoria cate in listaCategoria)
+            {
+                lista.Add(cate);
+            }
+            return lista;
         }
 
         /// <summary>
         /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
         /// </summary>
         /// <param name="competencia">id de la categoria</param>
-        /// <returns>lista de atletas</returns>
-        public static List<Persona> listaAtletasParticipanCompetencia(Competencia competencia)
+        /// <returns>lista de Inscripciones</returns>
+        public static List<Inscripcion> listaAtletasParticipanCompetenciaKata(Competencia competencia)
         {
-            List<Persona> listaPersona = BDResultado.listaAtletasParticipanCompetencia(competencia);
-            return listaPersona;
+            List<Inscripcion> listaInscripcion = BDResultado.listaAtletasParticipanCompetenciaKata(competencia);
+            return listaInscripcion;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de Inscripciones</returns>
+        public static List<Inscripcion> listaAtletasParticipanCompetenciaKataAmbas(Competencia competencia)
+        {
+            List<Inscripcion> listaInscripcion = BDResultado.listaAtletasParticipanCompetenciaKataAmbas(competencia);
+            return listaInscripcion;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de Resultado Kumite</returns>
+        public static List<ResultadoKumite> listaAtletasParticipanCompetenciaKumite(Competencia competencia)
+        {
+            List<ResultadoKumite> listaKumite = BDResultado.listaAtletasParticipanCompetenciaKumite(competencia);
+            return listaKumite;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos todos los atletas que participaran a una competencia por id de especialidad, competencia y categoria
+        /// </summary>
+        /// <param name="competencia">id de la categoria</param>
+        /// <returns>lista de Resultado Kumite</returns>
+        public static List<ResultadoKumite> listaAtletasParticipanCompetenciaKumiteAmbas(Competencia competencia)
+        {
+            List<ResultadoKumite> listaKumite = BDResultado.listaAtletasParticipanCompetenciaKumiteAmbas(competencia);
+            return listaKumite;
         }
 
         /// <summary>

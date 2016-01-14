@@ -70,11 +70,38 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;td class=&quot;nombre1&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTDNombre1 {
+            get {
+                return ResourceManager.GetString("AbrirTDNombre1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;td class=&quot;nombre2&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTDNombre2 {
+            get {
+                return ResourceManager.GetString("AbrirTDNombre2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;tr&gt;.
         /// </summary>
         internal static string AbrirTR {
             get {
                 return ResourceManager.GetString("AbrirTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aprobado.
+        /// </summary>
+        internal static string Aprobado {
+            get {
+                return ResourceManager.GetString("Aprobado", resourceCulture);
             }
         }
         
@@ -160,24 +187,6 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;input list=&quot;puntaje&quot; name=&quot;puntaje&quot; runat=&quot;server&quot; class=&quot;form-control&quot; style=&quot;width:20%&quot; value=&quot;.
-        /// </summary>
-        internal static string InputTextAbrir {
-            get {
-                return ResourceManager.GetString("InputTextAbrir", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &quot;&gt;&lt;datalist id=&quot;puntaje&quot; onselect=&quot;dropdown_SelectedIndexChanged&quot;&gt;&lt;option value=&quot;Aprobado&quot;&gt;&lt;option value=&quot;No Aprobado&quot;&gt;&lt;/datalist&gt;.
-        /// </summary>
-        internal static string InputTextCerrar {
-            get {
-                return ResourceManager.GetString("InputTextCerrar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
@@ -192,6 +201,15 @@ namespace templateApp.GUI.Modulo11 {
         internal static string Modificar {
             get {
                 return ResourceManager.GetString("Modificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Aprobado.
+        /// </summary>
+        internal static string NoAprobado {
+            get {
+                return ResourceManager.GetString("NoAprobado", resourceCulture);
             }
         }
         
@@ -223,11 +241,620 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option selected value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo1 {
+            get {
+                return ResourceManager.GetString("r1Combo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option selected value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo10 {
+            get {
+                return ResourceManager.GetString("r1Combo10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option selected value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo2 {
+            get {
+                return ResourceManager.GetString("r1Combo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option selected value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo3 {
+            get {
+                return ResourceManager.GetString("r1Combo3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option selected value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo4 {
+            get {
+                return ResourceManager.GetString("r1Combo4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option selected value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo5 {
+            get {
+                return ResourceManager.GetString("r1Combo5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option selected value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo6 {
+            get {
+                return ResourceManager.GetString("r1Combo6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option selected value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo7 {
+            get {
+                return ResourceManager.GetString("r1Combo7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option selected value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo8 {
+            get {
+                return ResourceManager.GetString("r1Combo8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option selected value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r1Combo9 {
+            get {
+                return ResourceManager.GetString("r1Combo9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option selected value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo1 {
+            get {
+                return ResourceManager.GetString("r2Combo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option selected value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo10 {
+            get {
+                return ResourceManager.GetString("r2Combo10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option selected value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo2 {
+            get {
+                return ResourceManager.GetString("r2Combo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option selected value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo3 {
+            get {
+                return ResourceManager.GetString("r2Combo3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option selected value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo4 {
+            get {
+                return ResourceManager.GetString("r2Combo4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option selected value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo5 {
+            get {
+                return ResourceManager.GetString("r2Combo5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option selected value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo6 {
+            get {
+                return ResourceManager.GetString("r2Combo6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option selected value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo7 {
+            get {
+                return ResourceManager.GetString("r2Combo7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option selected value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo8 {
+            get {
+                return ResourceManager.GetString("r2Combo8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option selected value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r2Combo9 {
+            get {
+                return ResourceManager.GetString("r2Combo9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option selected value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo1 {
+            get {
+                return ResourceManager.GetString("r3Combo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option selected value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo10 {
+            get {
+                return ResourceManager.GetString("r3Combo10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option selected value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo2 {
+            get {
+                return ResourceManager.GetString("r3Combo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option selected value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo3 {
+            get {
+                return ResourceManager.GetString("r3Combo3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option selected value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo4 {
+            get {
+                return ResourceManager.GetString("r3Combo4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option selected value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo5 {
+            get {
+                return ResourceManager.GetString("r3Combo5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option selected value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo6 {
+            get {
+                return ResourceManager.GetString("r3Combo6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option selected value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo7 {
+            get {
+                return ResourceManager.GetString("r3Combo7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option selected value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo8 {
+            get {
+                return ResourceManager.GetString("r3Combo8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:30%&quot;&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+        ///            &lt;option selected value=&quot;9&quot;&gt;9&lt;/option&gt;
+        ///            &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+        ///        &lt;/select&gt;.
+        /// </summary>
+        internal static string r3Combo9 {
+            get {
+                return ResourceManager.GetString("r3Combo9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seleccionar Categoria:.
         /// </summary>
         internal static string SeleccionarCategoria {
             get {
                 return ResourceManager.GetString("SeleccionarCategoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccionar Especialidad:.
+        /// </summary>
+        internal static string SeleccionarEspecialidad {
+            get {
+                return ResourceManager.GetString("SeleccionarEspecialidad", resourceCulture);
             }
         }
         
@@ -261,6 +888,24 @@ namespace templateApp.GUI.Modulo11 {
         internal static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to N.
+        /// </summary>
+        internal static string valorNo {
+            get {
+                return ResourceManager.GetString("valorNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S.
+        /// </summary>
+        internal static string valorSi {
+            get {
+                return ResourceManager.GetString("valorSi", resourceCulture);
             }
         }
         
