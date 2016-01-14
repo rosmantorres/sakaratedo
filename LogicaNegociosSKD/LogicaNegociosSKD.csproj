@@ -40,9 +40,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarEvento.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarListaCinta.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosAsistidos.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarPerfil.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCinta.cs" />
     <Compile Include="Comandos\Modulo7\RecursosComandoModulo7.Designer.cs">
       <DependentUpon>RecursosComandoModulo7.resx</DependentUpon>
       <AutoGen>True</AutoGen>

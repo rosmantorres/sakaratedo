@@ -42,6 +42,18 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarPerfil();
         }
+        public Comando<Entidad> ObtenerComandoConsultarDetallarCinta()
+        {
+            return new ComandoConsultarDetallarCinta();
+        }
+        public Comando<Entidad> ObtenerComandoConsultarDetallarEvento()
+        {
+            return new ComandoConsultarDetallarEvento();
+        }
+        public Comando<Entidad> ObtenerComandoConsultarDetallarCompetencia()
+        {
+            return new ComandoConsultarDetallarCompetencia();
+        }
         #endregion
 
         #region Modulo 8
