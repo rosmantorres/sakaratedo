@@ -10,10 +10,12 @@ using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo7;
+using Interfaz_Presentadores.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_ListarCintas : System.Web.UI.Page
+    public partial class M7_ListarCintas : System.Web.UI.Page, Interfaz_Contratos.Modulo7.IContratoListarCintasObtenidas
     {
         #region Atributos
         private List<Cinta> laLista = new List<Cinta>();
@@ -53,8 +55,25 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            if (laLista != null)
+
+                            /*#region Contrato
+                            string Interfaz_Contratos.Modulo7.IContratoListarCintasObtenidas.laTabla
+                            {
+                                get
+                            {
+                                    return laTabla.Text;
+                                }
+                                set
+                            {
+                                    laTabla.Text = value;
+                                }
+                            }
+                            #endregion*/
+
+
+
+                            //laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                            /*if (laLista != null)
                             {
                                 foreach (Cinta cinta in laLista)
                                 {
@@ -74,7 +93,7 @@ namespace templateApp.GUI.Modulo7
                             {
                                 throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
                                 M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }
+                            }*/
 
                         }
                         catch (ListaNulaException)
@@ -100,8 +119,8 @@ namespace templateApp.GUI.Modulo7
                     Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 }
 
-            }
-            catch (NullReferenceException ex)
+                        }
+                  catch (NullReferenceException ex)
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
