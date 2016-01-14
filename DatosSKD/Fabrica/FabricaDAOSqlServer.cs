@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.DAO.Modulo14;
+using DatosSKD.DAO.Modulo12;
+using DatosSKD.InterfazDAO.Modulo12;
 //using DatosSKD.DAO.Modulo16;
+using DatosSKD.DAO.Modulo3;
+using DatosSKD.DAO.Modulo5;
 
 
 namespace DatosSKD.Fabrica
@@ -18,12 +22,20 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 3
+		public DaoOrganizacion ObtenerDaoOrganizacion()
+        {
+            return new DaoOrganizacion();
+        }
         #endregion
 
         #region Modulo 4
         #endregion
 
         #region Modulo 5
+		public DaoCinta ObtenerDaoCinta()
+        {
+            return new DaoCinta();
+        } 
         #endregion
 
         #region Modulo 6
@@ -136,6 +148,12 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 12
+
+        public IDaoCompetencia ObtenerDAOCompetencia()
+        {
+            return new DaoCompetencia();
+        }
+
         #endregion
 
         #region Modulo 13

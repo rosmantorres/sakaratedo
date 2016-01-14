@@ -61,6 +61,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandoModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Comandos\Modulo3\EjecutarAgregarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarComboOrganizaciones.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarConsultarXIdOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarModificarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarAgregarCinta.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarConsultarTodosCinta.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
+    <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -179,6 +189,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
@@ -254,9 +265,7 @@
     <Folder Include="Comandos\Modulo16\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
-    <Folder Include="Comandos\Modulo3\" />
     <Folder Include="Comandos\Modulo4\" />
-    <Folder Include="Comandos\Modulo5\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />

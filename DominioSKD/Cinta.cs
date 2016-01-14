@@ -17,6 +17,12 @@ namespace DominioSKD
         private String significado;
         private int id_restriccion;
 
+
+        private Organizacion organizacion;
+
+        private Boolean status;
+
+
         public int Id_cinta
         {
             get { return id_cinta; }
@@ -58,6 +64,18 @@ namespace DominioSKD
             get { return id_restriccion; }
             set { id_restriccion = value; }
         }
+        public Organizacion Organizacion
+        {
+            get { return organizacion; }
+            set { organizacion = value; }
+        }
+
+        public bool Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
         public Cinta() : base()
         {
             id_cinta = 0;
@@ -67,8 +85,13 @@ namespace DominioSKD
             orden = 0;
             significado = "";
             id_restriccion = 0;
+            organizacion = null;
+            status = false;
         }
+
         
+        
+
         public Cinta(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             id_cinta = elId;
@@ -81,7 +104,10 @@ namespace DominioSKD
 
         }
 
+
+
         public Cinta( String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+
         {
             color_nombre = elColor;
             rango = elRango;
@@ -92,6 +118,43 @@ namespace DominioSKD
 
         }
 
+        //De M5
+        public Cinta(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, Organizacion organizacion, Boolean status)
+        {
+            id_cinta = elId;
+            color_nombre = elColor;
+            rango = elRango;
+            clasificacion = laClasificacion;
+            orden = elOrden;
+            significado = elSignificado;
+            organizacion = null;
+            status = false;
+
+        }
+
+        public Cinta(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, Organizacion organizacion,Boolean status)
+        {
+            color_nombre = elColor;
+            rango = elRango;
+            clasificacion = laClasificacion;
+            orden = elOrden;
+            significado = elSignificado;
+            organizacion = null;
+            status = false;
+
+        }
+
+
+        public Cinta(int elId, String elColor)
+        {
+            this.id_cinta = elId;
+            this.color_nombre = elColor;
+
+        }
 
     }
+
 }
+
+
+
