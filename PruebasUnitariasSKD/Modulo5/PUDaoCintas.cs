@@ -20,7 +20,7 @@ namespace PruebasUnitariasSKD.Modulo5
     class PUDaoCintas
     {
         
-      //  private Comando<bool> miComando;
+      
         private FabricaDAOSqlServer fabricaDAO;
         private Entidad miEntidad;
         private Entidad miEntidadCinta;
@@ -35,18 +35,9 @@ namespace PruebasUnitariasSKD.Modulo5
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
             miEntidadCinta = miFabrica.ObtenerCinta_M5(1, "Blanco","1er Kyu","Nivel inferior",	1, "Principiante"	, org, true);
             miEntidadCintaModificar = miFabrica.ObtenerCinta_M5(1, "Amarillo", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
-           // this.miComando = new EjecutarAgregarCinta(miEntidad);
-       
+                 
         }
 
-     /*   [Test]
-        public void ejecutarElComandoAgregar()
-        {
-
-            bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
-        
-        }*/
 
         [Test]
         public void PruebaValidarOrganizacion()

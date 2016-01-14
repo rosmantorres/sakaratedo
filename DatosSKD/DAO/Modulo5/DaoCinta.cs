@@ -379,7 +379,7 @@ namespace DatosSKD.DAO.Modulo5
                         }
                 }
             }
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);

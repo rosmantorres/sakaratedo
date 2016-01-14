@@ -18,8 +18,95 @@ namespace PruebasUnitariasSKD.Modulo3
     [TestFixture]
     class PUDaoOrganizacion
     {
-        private Comando<bool> miComando;
+
         private FabricaDAOSqlServer fabricaDAO;
         private Entidad miEntidad;
+        private Entidad miEntidadModificar;
+
+        [SetUp]
+        public void init()
+        {
+            FabricaEntidades miFabrica = new FabricaEntidades();
+            miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            miEntidadModificar = miFabrica.ObtenerOrganizacion_M3(1, "Seito", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");       
+        }
+
+        [Test]
+        public void PruebaValidarNombreOrganizacion()
+        {
+            bool resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.ValidarNombreOrganizacion(miEntidad);
+            Assert.IsTrue(resultado);
+
+        }
+
+        [Test]
+        public void PruebaValidarEstilo()
+        {
+            bool resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.ValidarEstilo(miEntidad);
+            Assert.IsTrue(resultado);
+
+        }
+
+        [Test]
+        public void PruebaComboOrganizaciones()
+        {
+            List<Entidad> resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.ComboOrganizaciones();
+            Assert.IsEmpty(resultado);
+
+        }
+
+        [Test]
+        public void PruebaAgregarOrganizacion()
+        {
+            bool resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.Agregar(miEntidad);
+            Assert.IsTrue(resultado);
+
+        }
+
+        [Test]
+        public void PruebaModificarOrganizacion()
+        {
+            bool resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.Modificar(miEntidadModificar);
+            Assert.IsTrue(resultado);
+
+        }
+
+        [Test]
+        public void PruebaConsultarTodos()
+        {
+            List<Entidad> resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.ConsultarTodos();
+            Assert.IsEmpty(resultado);
+
+        }
+
+        [Test]
+        public void PruebaConsultarXId()
+        {
+            Entidad resultado;
+            this.fabricaDAO = new FabricaDAOSqlServer();
+            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.ConsultarXId(miEntidad);
+            Assert.IsNull(resultado);
+
+        }
+
     }
 }

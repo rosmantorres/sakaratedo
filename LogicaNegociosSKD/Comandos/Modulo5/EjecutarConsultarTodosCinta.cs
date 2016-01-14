@@ -24,6 +24,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
             if(_miLista != null)
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+           
                 return _miLista;
             }
             else
@@ -31,8 +33,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
                 return null; 
                 
             }
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-           
+            
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
