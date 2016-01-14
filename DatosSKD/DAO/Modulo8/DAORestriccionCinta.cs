@@ -14,7 +14,7 @@ namespace DatosSKD.DAO.Modulo8
     {
         #region Metodos IDao
 
-        #region Agregar Restriccion Cinta
+        #region Agregar 
         /// <summary>
         /// Metodo para agregar una restriccion de cinta a la base de datos.
         /// </summary>

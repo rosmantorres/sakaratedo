@@ -41,6 +41,10 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasRestCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasAsociadas.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasNoAsociadas.cs" />
