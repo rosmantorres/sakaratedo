@@ -15,10 +15,26 @@ using Interfaz_Presentadores.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_ListarCintas : System.Web.UI.Page, Interfaz_Contratos.Modulo7.IContratoListarCintasObtenidas
+    public partial class M7_ListarCintas : System.Web.UI.Page, IContratoListarCintasObtenidas
     {
         #region Atributos
         private List<Cinta> laLista = new List<Cinta>();
+
+        #region Contrato
+        string IContratoListarCintasObtenidas.laTabla
+        {
+            get
+            {
+                return laTabla.Text;
+            }
+
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
+        #endregion
+
         #endregion
 
         #region Page_Load
@@ -56,20 +72,7 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
 
-                            /*#region Contrato
-                            string Interfaz_Contratos.Modulo7.IContratoListarCintasObtenidas.laTabla
-                            {
-                                get
-                            {
-                                    return laTabla.Text;
-                                }
-                                set
-                            {
-                                    laTabla.Text = value;
-                                }
-                            }
-                            #endregion*/
-
+ 
 
 
                             //laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
