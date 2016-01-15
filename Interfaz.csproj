@@ -232,11 +232,9 @@
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
     <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
-    <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
-    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
-    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
-    <Content Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
@@ -1807,19 +1805,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosInterfazModulo2.resx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
+      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
+      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx.cs">
-      <DependentUpon>M3_ModificarOrganizacion2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx.designer.cs">
-      <DependentUpon>M3_ModificarOrganizacion2.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
@@ -1828,20 +1826,7 @@
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx.cs">
-      <DependentUpon>M3_EliminarOrganizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx.designer.cs">
-      <DependentUpon>M3_EliminarOrganizacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
-      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
-      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="GUI\Modulo3\M3_RecursoInterfaz1.Designer.cs" />
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1884,6 +1869,7 @@
     <Compile Include="GUI\Modulo5\M5_CrearCintas.aspx.designer.cs">
       <DependentUpon>M5_CrearCintas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo5\RecursoInterfazMod5.Designer.cs" />
     <Compile Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx.cs">
       <DependentUpon>M6_CrearUsuarioPre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2164,6 +2150,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo5\RecursoInterfazMod5.resx" />
     <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M7_Recursos.Designer.cs</LastGenOutput>

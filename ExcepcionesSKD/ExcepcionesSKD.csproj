@@ -74,6 +74,13 @@
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
+    <Compile Include="Modulo3\EstiloInexistenteException.cs" />
+    <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
+    <Compile Include="Modulo5\CintaRepetidaException.cs" />
+    <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />
+    <Compile Include="Modulo5\OrganizacionInexistenteException.cs" />
     <Compile Include="Modulo7\ListaNulaException.cs" />
     <Compile Include="Modulo7\NumeroEnteroInvalidoException.cs" />
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
@@ -87,8 +94,6 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo16\" />
-    <Folder Include="Modulo3\" />
-    <Folder Include="Modulo5\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
