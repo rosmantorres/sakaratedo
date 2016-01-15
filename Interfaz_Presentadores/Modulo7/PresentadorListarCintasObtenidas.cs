@@ -75,10 +75,8 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.BotonInfoCintas + cinta.Id_cinta + M7_RecursosPresentador.BotonCerrar;
                         vista.laTabla += M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.CerrarTR;
-
                     }
                 }
-
             }
             catch (Exception ex)
             {
