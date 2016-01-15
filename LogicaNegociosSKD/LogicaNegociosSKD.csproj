@@ -40,6 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoAgregarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarCintas.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarOrganizaciones.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarTodosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarXIdCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoModificarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\RecursosComandoModulo12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo12.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoEventosSolicitud.cs" />
@@ -175,6 +186,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo12\RecursosComandoModulo12.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo12.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo14\RecursosComandoModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
@@ -248,7 +263,6 @@
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo10\" />
     <Folder Include="Comandos\Modulo11\" />
-    <Folder Include="Comandos\Modulo12\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo16\" />
