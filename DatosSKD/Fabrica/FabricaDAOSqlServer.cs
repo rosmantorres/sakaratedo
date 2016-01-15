@@ -169,6 +169,16 @@ namespace DatosSKD.Fabrica
         {
             return new DaoSolicitud();
         }
+
+        public DAOGeneral ObtenerDAODiseno()
+        {
+            return new DaoDiseno();
+        }
+
+        public DAOGeneral ObtenerDAODatos()
+        {
+            return new DaoDatos();
+        }
         #endregion
 
         #region Modulo 15

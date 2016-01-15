@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -8,26 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace LogicaNegociosSKD.Comandos.Modulo14
 {
-   public class ComandoRegistrarPlanilla : Comando<bool>
+    public class ComandoListarPlanillasSolicitadas : Comando<List<Entidad>>
     {
-       public override bool Ejecutar()
+        private int idPersona;
+
+        public int IDPersona
+        {
+            get { return idPersona; }
+            set { idPersona = value; }
+        }
+        public override List<Entidad> Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
-            bool resultPlanilla = true;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
-                resultPlanilla = BaseDeDatoPlanilla.Agregar(laPlanilla);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
-                foreach (String nombreDato in laPlanilla.Dato)
-                {
-
-                    Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
-
-                }
+                DaoSolicitud daoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+                return daoSolicitud.ConsultarSolicitudes(this.idPersona);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -35,7 +35,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
@@ -45,10 +45,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-            return resultPlanilla;
         }
 
     }
-
-   
 }

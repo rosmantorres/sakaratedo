@@ -336,6 +336,21 @@ namespace DominioSKD.Fabrica
         {
             return new SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
         }
+
+        public Entidad obtenerDiseño()
+        {
+            return new Diseño();
+        }
+
+        public Entidad obtenerDiseño(int id, string contenido)
+        {
+            return new Diseño(id,contenido);
+        }
+
+        public Entidad obtenerDiseño(string contenido)
+        {
+            return new Diseño(contenido);
+        }
         #endregion
 
         #region Modulo 15

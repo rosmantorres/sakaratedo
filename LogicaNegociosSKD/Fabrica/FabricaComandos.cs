@@ -152,6 +152,36 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoRegistrarSolicitudPlanilla();
         }
+
+        public Comando<List<Entidad>> ObtenerComandoListarPlanillasSolicitadas()
+        {
+            return new ComandoListarPlanillasSolicitadas();
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultarPlanillasASolicitar()
+        {
+            return new ComandoConsultarPlanillasASolicitar();
+        }
+
+        public Comando<Boolean> ObtenerComandoEliminarSolicitud()
+        {
+            return new ComandoEliminarSolicitud();
+        }
+
+        public Comando<Boolean> ObtenerComandoAgregarDiseno()
+        {
+            return new ComandoAgregarDiseno();
+        }
+
+        public Comando<Entidad> ObtenerComandoConsultarDiseñoPuro()
+        {
+            return new ComandoConsultarDiseñoPuro();
+        }
+
+        public Comando<Boolean> ObtenerComandoModificarDiseno()
+        {
+            return new ComandoModificarDiseno();
+        }
         #endregion
 
         #region Modulo 15
