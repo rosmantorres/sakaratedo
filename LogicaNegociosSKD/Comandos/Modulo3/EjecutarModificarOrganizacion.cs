@@ -18,6 +18,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo3
             this.LaEntidad = nuevaEntidad;
         }
 
+        /// <summary>
+        /// Método Ejecutar el Modificar una Organizacion en especifico
+        /// </summary>
+        /// <param name="nuevaEntidad">Id de la Organizacion a consultar</param>
+        /// <returns>true si modifica, false si no</returns>
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

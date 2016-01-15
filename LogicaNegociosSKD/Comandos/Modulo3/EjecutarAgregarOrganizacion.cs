@@ -19,7 +19,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo3
             this.LaEntidad = nuevaEntidad;
         }
 
-
+        /// <summary>
+        /// Método Ejecutar el Agregar una Organizacion en la Base de Datos
+        /// </summary>
+        /// <returns>True si lo agrega, False si no</returns>
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

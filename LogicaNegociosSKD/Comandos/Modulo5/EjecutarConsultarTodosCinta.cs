@@ -14,6 +14,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
     public class EjecutarConsultarTodosCinta : Comando<List<Entidad>>
     {
 
+        /// <summary>
+        /// Método Ejecutar el consultar la lista de cintas 
+        /// </summary>
+        /// <returns>Lista de cintas</returns>
         public override List<Entidad> Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

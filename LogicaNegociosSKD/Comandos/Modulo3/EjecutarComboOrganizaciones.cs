@@ -12,7 +12,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo3
 {
     public class EjecutarComboOrganizaciones : Comando<List<Entidad>>
     {
-
+        /// <summary>
+        /// Método Ejecutar el consultar la lista de organizaciones (solo id y nombre)
+        /// </summary>
+        /// <returns>Lista de Organizaciones</returns>
         public override List<Entidad> Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

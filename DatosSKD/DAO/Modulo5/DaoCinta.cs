@@ -19,6 +19,11 @@ namespace DatosSKD.DAO.Modulo5
     public class DaoCinta : DAOGeneral, IDaoCinta
     {
         #region IDAO
+        /// <summary>
+        /// Método Agrega una Cinta en la Base de Datos
+        /// </summary>
+        /// <param name="parametro">Cinta</param>
+        /// <returns>True si lo agrega, False si no</returns>
         public bool Agregar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -106,7 +111,11 @@ namespace DatosSKD.DAO.Modulo5
            
             return true;
         }
-
+        /// <summary>
+        /// Método Modificar una Cinta especifica en la Base de Datos 
+        /// </summary>
+        /// <param name="parametro">Cinta</param>
+        /// <returns>True si lo agrega, False si no</returns>
         public bool Modificar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -146,8 +155,9 @@ namespace DatosSKD.DAO.Modulo5
                 parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.ModificarCinta
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+               // Conectar();
+                string query = RecursosDaoModulo5.ModificarCinta;
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
 
                   }
                      else
@@ -196,12 +206,16 @@ namespace DatosSKD.DAO.Modulo5
            
             return true;
         }
-
+        /// <summary>
+        /// Método Consultar los Detalles de una Cinta en especifico
+        /// </summary>
+        /// <param name="parametro">Id de la Cinta a consultar</param>
+        /// <returns>LaCinta</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+           // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
             FabricaEntidades laFabrica = new FabricaEntidades();
@@ -212,7 +226,7 @@ namespace DatosSKD.DAO.Modulo5
             laCinta.Id_cinta = parametro.Id;
             try
             {
-                laConexion = new BDConexion();
+               // laConexion = new BDConexion();
                 parametros = new List<Parametro>();
           //      Cinta laCinta = new Cinta();
 
@@ -220,7 +234,7 @@ namespace DatosSKD.DAO.Modulo5
                                             false);
                 parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarCintasXId, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -269,12 +283,15 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return laCinta;
         }
-
+        /// <summary>
+        /// Método Consulta la Lista de Todas las Cintas en la Base de Datos
+        /// </summary>
+        /// <returns>Lista de Cintas</returns>
         public List<Entidad> ConsultarTodos()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+           // BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             FabricaEntidades laFabrica = new FabricaEntidades();
@@ -283,11 +300,11 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-                laConexion = new BDConexion();
+              //  laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarTodasLasCintas, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -339,20 +356,25 @@ namespace DatosSKD.DAO.Modulo5
         #endregion
 
         #region IDaoCinta
-        //BuscarIDOrganizacion
+        /// <summary>
+        /// Método que busca si existe la Organizacion
+        /// </summary>
+        /// <param name="parametro">id de la Organizacion a consultar</param>
+        /// <returns>True si Existe, False si no</returns>
         public bool ValidarOrganizacion(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
  
             bool retorno = false;
-            BDConexion laConexion;
+          //  BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
-                laConexion = new BDConexion();
+               // laConexion = new BDConexion();
+                
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamIdOrgCinta, SqlDbType.Int
@@ -362,8 +384,8 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamSalidaNumOrganizacion, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
-                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.BuscarIDOrganiacion
-                                             , parametros);
+                string query = RecursosDaoModulo5.BuscarIDOrganiacion;
+                List<Resultado> resultados = EjecutarStoredProcedure(query, parametros);
 
                 foreach (Resultado elResultado in resultados)
                 {
@@ -409,20 +431,24 @@ namespace DatosSKD.DAO.Modulo5
 
 
         }
-        //BuscarOrdenCinta
+        /// <summary>
+        /// Método que busca el Orden de la Cinta si ya existe en una Organizacion
+        /// </summary>
+        /// <param name="parametro">Cinta a consultar</param>
+        /// <returns>True si Existe, False si no</returns>
         public bool ValidarOrdenCinta(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            BDConexion laConexion;
+            //BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-                laConexion = new BDConexion();
+              //  laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamOrdenCinta, SqlDbType.Int
@@ -436,7 +462,7 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamSalidaNumCinta, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
-                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.BuscarOrdenCinta
+                List<Resultado> resultados = EjecutarStoredProcedure(RecursosDaoModulo5.BuscarOrdenCinta
                                              , parametros);
 
                 foreach (Resultado elResultado in resultados)
@@ -478,20 +504,24 @@ namespace DatosSKD.DAO.Modulo5
 
 
         }
-        //BuscarNombreCinta
+        /// <summary>
+        /// Método que busca si existe la Cinta en una Organizacion
+        /// </summary>
+        /// <param name="parametro">Cinta a consultar</param>
+        /// <returns>True si Existe, False si no</returns>
         public bool ValidarNombreCinta(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            BDConexion laConexion;
+            //BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-                laConexion = new BDConexion();
+              //  laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamColorCinta, SqlDbType.VarChar
@@ -505,7 +535,7 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamSalidaNumCinta, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
-                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.BuscarNombreCinta
+                List<Resultado> resultados = EjecutarStoredProcedure(RecursosDaoModulo5.BuscarNombreCinta
                                              , parametros);
 
                 foreach (Resultado elResultado in resultados)
@@ -547,12 +577,16 @@ namespace DatosSKD.DAO.Modulo5
 
 
         }
-
+        /// <summary>
+        /// Método que Consulta la lista de Cinstas Dada una Organizacion
+        /// </summary>
+        /// <param name="parametro">id de la Organizacion a consultar</param>
+        /// <returns>Lista de Entidades que son una Lista de De Cintas</returns>
         public List<Entidad> ListarCintasXOrganizacion(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            BDConexion laConexion;
+            //BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -565,14 +599,14 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-                laConexion = new BDConexion();
+                //laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 // Organizacion laOrganizacion = new Organizacion();
 
                 elParametro = new Parametro(RecursosDaoModulo5.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
                 parametros.Add(elParametro);
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarCintasXOrganizacionId, parametros);
 
                 foreach (DataRow row in dt.Rows)

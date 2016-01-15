@@ -19,7 +19,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             this.LaEntidad = nuevaEntidad;
         }
 
-
+        /// <summary>
+        /// Método Ejecutar el Agregar una Cinta en la Base de Datos
+        /// </summary>
+        /// <returns>True si lo agrega, False si no</returns>
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

@@ -18,6 +18,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             this.LaEntidad = nuevaEntidad;
         }
 
+        /// <summary>
+        /// Método Ejecutar el Consultar los Detalles de una Cinta en especifico
+        /// </summary>
+        /// <param name="nuevaEntidad">Id de la Cinta a consultar</param>
+        /// <returns>LaCinta</returns>
         public override Entidad Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
