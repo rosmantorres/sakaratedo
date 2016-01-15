@@ -26,7 +26,7 @@ namespace templateApp.GUI.Modulo5
 
             if (!IsPostBack)
             {
-                // la vista herda de la interfaz contrato esa ok para implementar esos metodos, sip
+                // la vista herda de la interfaz contrato 
                 //el presentador al final recive un tipo de dato IContratoCrearCinta
                 // la vista ES UN IContratoCrearCinta 
                 this.presentador = new PresentadorCrearCintas(this);

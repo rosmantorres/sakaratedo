@@ -43,6 +43,9 @@
     <Compile Include="Modulo1\IContratoM1Inicio.cs" />
     <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
     <Compile Include="Modulo2\IContratoM2.cs" />
+    <Compile Include="Modulo3\IContratoAgregarOrganizacion.cs" />
+    <Compile Include="Modulo3\IContratoConsultarOrganizacion.cs" />
+    <Compile Include="Modulo3\IContratoModificarOrganizacion.cs" />
     <Compile Include="Modulo5\IContratoCrearCinta.cs" />
     <Compile Include="Modulo5\IContratoListarCintas.cs" />
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
@@ -62,7 +65,6 @@
     <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
-    <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
