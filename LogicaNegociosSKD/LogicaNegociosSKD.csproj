@@ -222,6 +222,7 @@
     <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo12\RecursosComandoModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo12.Designer.cs</LastGenOutput>
