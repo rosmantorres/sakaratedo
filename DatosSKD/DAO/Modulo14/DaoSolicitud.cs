@@ -573,6 +573,299 @@ namespace DatosSKD.DAO.Modulo14
             return competencias;
         }
 
+        /// <summary>
+        /// Método que consulta las planillas que una persona puede solicitar
+        /// </summary>
+        /// <returns>Retorna una lista planillas habilitadas para solicitar</returns>
+        public List<Entidad> ConsultarPlanillasASolicitarBD()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            List<Entidad> lista = new List<Entidad>();
+            Planilla planilla = (Planilla)fabricaEntidad.ObtenerPlanilla();
+
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureConsultarPlanillasASolicitar, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
+                    {
+                        planilla = new Planilla();
+                        Diseño diseño = new Diseño();
+                        planilla.Diseño = diseño;
+                        planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
+                        planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
+                        planilla.Diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
+                        planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoTipo].ToString();
+                        lista.Add(planilla);
+                        diseño = null;
+                        planilla = null;
+
+                    }
+
+                    return lista;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+        }
+
+        /// <summary>
+        /// Elimina una solicitud que se haya procesado
+        /// </summary>
+        /// <param name="idSolicitud">Es el id de la solicitud que se desea eliminar</param>
+        /// <returns>Verdadero si se realizó con éxito la operación 
+        /// de lo contrario devuelve falso</returns>
+        public Boolean EliminarSolicitudBD(int idSolicitud)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            try
+            {
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureEliminarSolicitud, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+                sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroIdSolicitud,
+                    SqlDbType.Int));
+
+                sqlcom.Parameters[RecursosDAOModulo14.ParametroIdSolicitud].Value = idSolicitud;
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+        }
+
+        /// <summary>
+        /// Método que consulta las solicitudes de planilla que ha hecho una persona
+        /// </summary>
+        /// <param name="idPersona">id de la persona vinculada
+        /// a las solicitudes</param>
+        /// <returns>Devuelve una lista de solicitudes</returns>
+        public List<Entidad> ConsultarSolicitudes(int idPersona)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            List<Entidad> lista = new List<Entidad>();
+            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            SolicitudPlanilla solicitud = (SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureConsultarSolicitudPlanilla, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+                sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroPersonaPerId, idPersona));
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
+                    {
+                        solicitud = new SolicitudPlanilla();
+                        DominioSKD.Planilla planilla = new Planilla();
+                        solicitud.Planilla = planilla;
+                        solicitud.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdSolicitud]);
+                        solicitud.IdInscripcion = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoInscripcion]);
+                        solicitud.FechaCreacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaCreacion]);
+                        solicitud.FechaRetiro = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaRetiro]);
+                        solicitud.FechaReincorporacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaReincorporacion]);
+                        solicitud.Motivo = leer[RecursosDAOModulo14.AtributoMotivo].ToString();
+                        solicitud.Planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanillaDatos]);
+                        solicitud.Planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
+                        solicitud.Planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoTipo].ToString();
+                        if (leer[RecursosDAOModulo14.AtributoEventoNombre].ToString() != "")
+                            solicitud.Evento = leer[RecursosDAOModulo14.AtributoEventoNombre].ToString();
+                        else
+                            solicitud.Evento = leer[RecursosDAOModulo14.AtributoCompetenciaNombre].ToString();
+                        lista.Add(solicitud);
+                        planilla = null;
+                        solicitud = null;
+
+                    }
+
+                    return lista;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDSolicitudException excep = new BDSolicitudException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDSolicitud, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+        }
        
 
 

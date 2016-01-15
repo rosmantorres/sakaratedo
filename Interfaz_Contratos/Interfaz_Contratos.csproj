@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
+    <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />
+    <Compile Include="Modulo14\IContratoM14RegistrarPlanilla.cs" />
+    <Compile Include="Modulo14\IContratoM14SolicitarPlanilla.cs" />
+    <Compile Include="Modulo14\IContratoM14SolicitudPlanilla.cs" />
     <Compile Include="Modulo1\IContratoM1Inicio.cs" />
     <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
     <Compile Include="Modulo2\IContratoM2.cs" />
@@ -59,7 +65,6 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
