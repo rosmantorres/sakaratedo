@@ -308,6 +308,10 @@ namespace DominioSKD.Fabrica
         {
             return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id, idInscripcion);
         }
+        public Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, int idInscripcion)
+        {
+            return new SolicitudP(id, fechaRetiro, fechaReincorporacion, motivo, idInscripcion);
+        }
         public Entidad ObtenerSolicitudPlanilla()
         {
             return new SolicitudPlanilla();
