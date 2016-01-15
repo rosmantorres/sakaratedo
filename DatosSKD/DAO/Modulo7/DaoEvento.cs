@@ -141,7 +141,7 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametro);
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarCompetenciasInscritas, parametros);
 
@@ -331,7 +331,7 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
                     parametros.Add(parametro);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarEventosInscritos, parametros);
