@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo7\M7_RecursosPresentador.Designer.cs">
+      <DependentUpon>M7_RecursosPresentador.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Modulo7\PresentadorListarCintasObtenidas.cs" />
     <Compile Include="PresentadorMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,12 @@
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modulo7\M7_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M7_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
