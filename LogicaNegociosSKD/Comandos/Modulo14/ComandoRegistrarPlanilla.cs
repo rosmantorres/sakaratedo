@@ -26,7 +26,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 {
 
                     Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
-
+                    BaseDeDatoPlanilla.LimpiarSQLConnection();
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
