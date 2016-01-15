@@ -50,6 +50,10 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarDetallarEvento();
         }
+        public Comando<Entidad> ObtenerComandoConsultarDetallarMatricula()
+        {
+            return new ComandoConsultarDetallarMatricula();
+        }
         public Comando<Entidad> ObtenerComandoConsultarDetallarCompetencia()
         {
             return new ComandoConsultarDetallarCompetencia();
