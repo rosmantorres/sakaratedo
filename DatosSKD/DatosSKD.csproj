@@ -74,7 +74,6 @@
       <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
-    <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCompra.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoEvento.cs" />
@@ -85,14 +84,10 @@
     <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
     <Compile Include="DAO\Modulo14\DaoDatos.cs" />
     <Compile Include="DAO\Modulo14\DaoDiseno.cs" />
-    <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
-    <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
-    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
     <Compile Include="DAO\Modulo3\DaoOrganizacion.cs" />
     <Compile Include="DAO\Modulo3\RecursosDaoModulo3.Designer.cs" />
     <Compile Include="DAO\Modulo5\DaoCinta.cs" />
     <Compile Include="DAO\Modulo5\RecursosDaoModulo5.Designer.cs" />
-    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoDatos.cs" />

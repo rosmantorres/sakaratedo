@@ -199,7 +199,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarTodosEventos();
         }
         
-                /// <summary>
+              /*  /// <summary>
                 /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
                 /// </summary>
                 /// <returns>El ComandoAgregarItem vacio</returns>
@@ -263,7 +263,7 @@ namespace LogicaNegociosSKD.Fabrica
                     , int cantidad)
                 {
                     return new ComandoModificarCarrito(persona, objeto, tipoObjeto, cantidad);
-                }
+                } */
         
         public static Comando<bool> CrearComandoeliminarItem()
                 {
