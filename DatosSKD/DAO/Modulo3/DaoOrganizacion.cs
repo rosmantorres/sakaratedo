@@ -189,7 +189,7 @@ namespace DatosSKD.DAO.Modulo3
                 parametros = new List<Parametro>();
               //  Organizacion laOrganizacion = new Organizacion();
 
-                elParametro = new Parametro(RecursosDaoModulo3.AliasIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(),
+                elParametro = new Parametro(RecursosDaoModulo3.ParamIdEliminarOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(),
                                             false);
                 parametros.Add(elParametro);
 

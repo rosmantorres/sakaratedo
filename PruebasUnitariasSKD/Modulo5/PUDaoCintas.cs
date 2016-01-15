@@ -25,7 +25,8 @@ namespace PruebasUnitariasSKD.Modulo5
         private Entidad miEntidad;
         private Entidad miEntidadCinta;
         private Entidad miEntidadCintaModificar;
-       
+        private Entidad miEntidadCintaAgregar;
+
         [SetUp]
         public void init()
         {
@@ -34,8 +35,9 @@ namespace PruebasUnitariasSKD.Modulo5
             miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do");
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
             miEntidadCinta = miFabrica.ObtenerCinta_M5(1, "Blanco","1er Kyu","Nivel inferior",	1, "Principiante"	, org, true);
-            miEntidadCintaModificar = miFabrica.ObtenerCinta_M5(1, "Amarillo", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
-                 
+            miEntidadCintaModificar = miFabrica.ObtenerCinta_M5(1, "Naranja", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
+            miEntidadCintaAgregar = miFabrica.ObtenerCinta_M5(15, "Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
+           
         }
 
 
@@ -89,7 +91,7 @@ namespace PruebasUnitariasSKD.Modulo5
             bool resultado;
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
-            resultado = miDaoCinta.Agregar(miEntidadCinta);
+            resultado = miDaoCinta.Agregar(miEntidadCintaAgregar);
             Assert.IsTrue(resultado);
 
         }
@@ -112,7 +114,7 @@ namespace PruebasUnitariasSKD.Modulo5
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
             resultado = miDaoCinta.ConsultarTodos();
-            Assert.IsEmpty(resultado);
+            Assert.IsNotEmpty(resultado);
 
         }
 
@@ -123,7 +125,7 @@ namespace PruebasUnitariasSKD.Modulo5
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
             resultado = miDaoCinta.ConsultarXId(miEntidadCinta);
-            Assert.IsNull(resultado);
+            Assert.IsNotNull(resultado);
 
         }
 

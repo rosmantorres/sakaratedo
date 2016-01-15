@@ -89,6 +89,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo3\PUComandoOrganizacion.cs" />
     <Compile Include="Modulo3\PUDaoOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>

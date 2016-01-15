@@ -20,7 +20,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
         public override bool Ejecutar()
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             { 
@@ -28,7 +28,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             IDaoCinta miDaoCinta = fabrica.ObtenerDaoCinta(); 
             miDaoCinta.Modificar(this.LaEntidad);
 
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
             return false;
             
@@ -40,7 +40,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

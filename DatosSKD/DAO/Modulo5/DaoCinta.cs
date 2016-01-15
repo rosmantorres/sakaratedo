@@ -300,7 +300,7 @@ namespace DatosSKD.DAO.Modulo5
                     laCinta.Clasificacion = row[RecursosDaoModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosDaoModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
+                    laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
                                                                         , row[RecursosDaoModulo5.AliasNombreOrg].ToString());
                     laListaCintas.Add(laCinta);
 

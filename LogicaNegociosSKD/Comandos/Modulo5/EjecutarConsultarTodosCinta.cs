@@ -7,6 +7,7 @@ using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo5;
 using DominioSKD;
 using ExcepcionesSKD;
+using System.Resources;
 
 namespace LogicaNegociosSKD.Comandos.Modulo5
 {
@@ -15,7 +16,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
         public override List<Entidad> Ejecutar()
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try { 
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
@@ -24,15 +25,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
             if(_miLista != null)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
                 return _miLista;
             }
             else
             {
+               Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+           
                 return null; 
                 
             }
+
+           
             
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -41,7 +46,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

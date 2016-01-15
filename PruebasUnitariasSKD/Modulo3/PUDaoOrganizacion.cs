@@ -22,13 +22,16 @@ namespace PruebasUnitariasSKD.Modulo3
         private FabricaDAOSqlServer fabricaDAO;
         private Entidad miEntidad;
         private Entidad miEntidadModificar;
+        private Entidad miEntidadAgregar;
 
         [SetUp]
         public void init()
         {
             FabricaEntidades miFabrica = new FabricaEntidades();
             miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadModificar = miFabrica.ObtenerOrganizacion_M3(1, "Seito", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");       
+            miEntidadModificar = miFabrica.ObtenerOrganizacion_M3(1, "Seito", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            miEntidadAgregar = miFabrica.ObtenerOrganizacion_M3(19, "Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");       
+            
         }
 
         [Test]
@@ -60,7 +63,7 @@ namespace PruebasUnitariasSKD.Modulo3
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ComboOrganizaciones();
-            Assert.IsEmpty(resultado);
+            Assert.IsNotEmpty(resultado);
 
         }
 
@@ -70,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo3
             bool resultado;
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
-            resultado = miDaoOrganizacion.Agregar(miEntidad);
+            resultado = miDaoOrganizacion.Agregar(miEntidadAgregar);
             Assert.IsTrue(resultado);
 
         }
@@ -93,7 +96,7 @@ namespace PruebasUnitariasSKD.Modulo3
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ConsultarTodos();
-            Assert.IsEmpty(resultado);
+            Assert.IsNotEmpty(resultado);
 
         }
 
@@ -104,7 +107,7 @@ namespace PruebasUnitariasSKD.Modulo3
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ConsultarXId(miEntidad);
-            Assert.IsNull(resultado);
+            Assert.IsNotNull(resultado);
 
         }
 

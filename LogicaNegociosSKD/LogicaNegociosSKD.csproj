@@ -66,11 +66,20 @@
     <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarXIdOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarModificarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\RecursosComandosModulo3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo3.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo5\EjecutarAgregarCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarTodosCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
-    <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+    <Compile Include="Comandos\Modulo5\RecursosComandosModulo5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo5.resx</DependentUpon>
+    </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -189,7 +198,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
+    <EmbeddedResource Include="Comandos\Modulo3\RecursosComandosModulo3.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo3.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo5\RecursosComandosModulo5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
