@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,23 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo14
 {
-   public class ComandoRegistrarPlanilla : Comando<bool>
+    class ComandoModificarDiseno : Comando<Boolean>
     {
-       public override bool Ejecutar()
+        private Entidad diseño;
+        public Entidad Diseño
+        {
+            get { return diseño; }
+            set { diseño = value; }
+        }
+
+        public override Boolean Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
-            bool resultPlanilla = true;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
-                resultPlanilla = BaseDeDatoPlanilla.Agregar(laPlanilla);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
-                foreach (String nombreDato in laPlanilla.Dato)
-                {
-
-                    Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
-
-                }
+                ((Diseño)Diseño).Base64Encode();
+                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                return dao.Modificar(this.diseño);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -35,7 +35,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
@@ -45,10 +50,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-            return resultPlanilla;
         }
-
     }
-
-   
 }

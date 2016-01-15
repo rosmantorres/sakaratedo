@@ -22,7 +22,7 @@ namespace DatosSKD.DAO.Modulo14 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class RecursosDAOModulo14 {
+    internal class RecursosDAOModulo14 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace DatosSKD.DAO.Modulo14 {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.DAO.Modulo14.RecursosDAOModulo14", typeof(RecursosDAOModulo14).Assembly);
@@ -51,7 +51,7 @@ namespace DatosSKD.DAO.Modulo14 {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to PERSONA_per_id.
         /// </summary>
-        public static string AtriburoPersonaId {
+        internal static string AtriburoPersonaId {
             get {
                 return ResourceManager.GetString("AtriburoPersonaId", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to mat_activa.
         /// </summary>
-        public static string AtributoActivaMatricula {
+        internal static string AtributoActivaMatricula {
             get {
                 return ResourceManager.GetString("AtributoActivaMatricula", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_apellido.
         /// </summary>
-        public static string AtributoApellidoPersona {
+        internal static string AtributoApellidoPersona {
             get {
                 return ResourceManager.GetString("AtributoApellidoPersona", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to cintafin.
         /// </summary>
-        public static string AtributoCintaFinCategoria {
+        internal static string AtributoCintaFinCategoria {
             get {
                 return ResourceManager.GetString("AtributoCintaFinCategoria", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to cintaini.
         /// </summary>
-        public static string AtributoCintaIniCategoria {
+        internal static string AtributoCintaIniCategoria {
             get {
                 return ResourceManager.GetString("AtributoCintaIniCategoria", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to comp_nombre.
         /// </summary>
-        public static string AtributoCompetenciaNombre {
+        internal static string AtributoCompetenciaNombre {
             get {
                 return ResourceManager.GetString("AtributoCompetenciaNombre", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to dis_contenido.
         /// </summary>
-        public static string AtributocontenidoDiseño {
+        internal static string AtributocontenidoDiseño {
             get {
                 return ResourceManager.GetString("AtributocontenidoDiseño", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to comp_costo.
         /// </summary>
-        public static string AtributoCostoCompetencia {
+        internal static string AtributoCostoCompetencia {
             get {
                 return ResourceManager.GetString("AtributoCostoCompetencia", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to eve_costo.
         /// </summary>
-        public static string AtributoCostoEvento {
+        internal static string AtributoCostoEvento {
             get {
                 return ResourceManager.GetString("AtributoCostoEvento", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to eve_descripcion.
         /// </summary>
-        public static string AtributoDescripcionEvento {
+        internal static string AtributoDescripcionEvento {
             get {
                 return ResourceManager.GetString("AtributoDescripcionEvento", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to org_direccion.
         /// </summary>
-        public static string AtributoDireccionOrganizacion {
+        internal static string AtributoDireccionOrganizacion {
             get {
                 return ResourceManager.GetString("AtributoDireccionOrganizacion", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_direccion.
         /// </summary>
-        public static string AtributoDireccionPersona {
+        internal static string AtributoDireccionPersona {
             get {
                 return ResourceManager.GetString("AtributoDireccionPersona", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to DOJO_doj_id.
         /// </summary>
-        public static string AtributoDojoPersona {
+        internal static string AtributoDojoPersona {
             get {
                 return ResourceManager.GetString("AtributoDojoPersona", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to cat_edad_fin.
         /// </summary>
-        public static string AtributoEdadFinCategoria {
+        internal static string AtributoEdadFinCategoria {
             get {
                 return ResourceManager.GetString("AtributoEdadFinCategoria", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to cat_edad_ini.
         /// </summary>
-        public static string AtributoEdadIniCategoria {
+        internal static string AtributoEdadIniCategoria {
             get {
                 return ResourceManager.GetString("AtributoEdadIniCategoria", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to doj_email.
         /// </summary>
-        public static string AtributoEmailDojo {
+        internal static string AtributoEmailDojo {
             get {
                 return ResourceManager.GetString("AtributoEmailDojo", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to org_email.
         /// </summary>
-        public static string AtributoEmailOrganizacion {
+        internal static string AtributoEmailOrganizacion {
             get {
                 return ResourceManager.GetString("AtributoEmailOrganizacion", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_estatura.
         /// </summary>
-        public static string AtributoEstaturaPersona {
+        internal static string AtributoEstaturaPersona {
             get {
                 return ResourceManager.GetString("AtributoEstaturaPersona", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to eve_id.
         /// </summary>
-        public static string AtributoEventoID {
+        internal static string AtributoEventoID {
             get {
                 return ResourceManager.GetString("AtributoEventoID", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to eve_nombre.
         /// </summary>
-        public static string AtributoEventoNombre {
+        internal static string AtributoEventoNombre {
             get {
                 return ResourceManager.GetString("AtributoEventoNombre", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to sol_pla_fecha_creacion.
         /// </summary>
-        public static string AtributoFechaCreacion {
+        internal static string AtributoFechaCreacion {
             get {
                 return ResourceManager.GetString("AtributoFechaCreacion", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to comp_fecha_fin.
         /// </summary>
-        public static string AtributoFechaFinCompetencia {
+        internal static string AtributoFechaFinCompetencia {
             get {
                 return ResourceManager.GetString("AtributoFechaFinCompetencia", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to hor_fecha_fin.
         /// </summary>
-        public static string AtributoFechaFinHora {
+        internal static string AtributoFechaFinHora {
             get {
                 return ResourceManager.GetString("AtributoFechaFinHora", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to comp_fecha_ini.
         /// </summary>
-        public static string AtributoFechaIniCompetencia {
+        internal static string AtributoFechaIniCompetencia {
             get {
                 return ResourceManager.GetString("AtributoFechaIniCompetencia", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to hor_fecha_inicio.
         /// </summary>
-        public static string AtributoFechaIniHora {
+        internal static string AtributoFechaIniHora {
             get {
                 return ResourceManager.GetString("AtributoFechaIniHora", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to mat_fecha_creacion.
         /// </summary>
-        public static string AtributoFechaMatricula {
+        internal static string AtributoFechaMatricula {
             get {
                 return ResourceManager.GetString("AtributoFechaMatricula", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_fecha_nacimiento.
         /// </summary>
-        public static string AtributoFechaNacPersona {
+        internal static string AtributoFechaNacPersona {
             get {
                 return ResourceManager.GetString("AtributoFechaNacPersona", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to sol_pla_fecha_reincorporacion.
         /// </summary>
-        public static string AtributoFechaReincorporacion {
+        internal static string AtributoFechaReincorporacion {
             get {
                 return ResourceManager.GetString("AtributoFechaReincorporacion", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to sol_pla_fecha_retiro.
         /// </summary>
-        public static string AtributoFechaRetiro {
+        internal static string AtributoFechaRetiro {
             get {
                 return ResourceManager.GetString("AtributoFechaRetiro", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to hor_hora_fin.
         /// </summary>
-        public static string AtributoHoraFinHora {
+        internal static string AtributoHoraFinHora {
             get {
                 return ResourceManager.GetString("AtributoHoraFinHora", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to hor_hora_inicio.
         /// </summary>
-        public static string AtributoHoraIniHora {
+        internal static string AtributoHoraIniHora {
             get {
                 return ResourceManager.GetString("AtributoHoraIniHora", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to dat_id.
         /// </summary>
-        public static string AtributoIdDato {
+        internal static string AtributoIdDato {
             get {
                 return ResourceManager.GetString("AtributoIdDato", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to dis_id.
         /// </summary>
-        public static string AtributoIdDiseño {
+        internal static string AtributoIdDiseño {
             get {
                 return ResourceManager.GetString("AtributoIdDiseño", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to mat_identificador.
         /// </summary>
-        public static string AtributoIdentificadorMatricula {
+        internal static string AtributoIdentificadorMatricula {
             get {
                 return ResourceManager.GetString("AtributoIdentificadorMatricula", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to eve_id.
         /// </summary>
-        public static string AtributoIdEvento {
+        internal static string AtributoIdEvento {
             get {
                 return ResourceManager.GetString("AtributoIdEvento", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to pla_id.
         /// </summary>
-        public static string AtributoIdPlanilla {
+        internal static string AtributoIdPlanilla {
             get {
                 return ResourceManager.GetString("AtributoIdPlanilla", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to PLANILLA_pla_id.
         /// </summary>
-        public static string AtributoIdPlanillaDatos {
+        internal static string AtributoIdPlanillaDatos {
             get {
                 return ResourceManager.GetString("AtributoIdPlanillaDatos", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to sol_pla_id.
         /// </summary>
-        public static string AtributoIdSolicitud {
+        internal static string AtributoIdSolicitud {
             get {
                 return ResourceManager.GetString("AtributoIdSolicitud", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to tip_id.
         /// </summary>
-        public static string AtributoIdTipoPlanilla {
+        internal static string AtributoIdTipoPlanilla {
             get {
                 return ResourceManager.GetString("AtributoIdTipoPlanilla", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_imagen.
         /// </summary>
-        public static string AtributoImagenPersona {
+        internal static string AtributoImagenPersona {
             get {
                 return ResourceManager.GetString("AtributoImagenPersona", resourceCulture);
             }
@@ -423,7 +423,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to INSCRIPCION_ins_id.
         /// </summary>
-        public static string AtributoInscripcion {
+        internal static string AtributoInscripcion {
             get {
                 return ResourceManager.GetString("AtributoInscripcion", resourceCulture);
             }
@@ -432,7 +432,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to ins_id.
         /// </summary>
-        public static string AtributoInscripcionID {
+        internal static string AtributoInscripcionID {
             get {
                 return ResourceManager.GetString("AtributoInscripcionID", resourceCulture);
             }
@@ -441,7 +441,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to doj__logo.
         /// </summary>
-        public static string AtributoLogoDojo {
+        internal static string AtributoLogoDojo {
             get {
                 return ResourceManager.GetString("AtributoLogoDojo", resourceCulture);
             }
@@ -450,7 +450,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to sol_pla_motivo.
         /// </summary>
-        public static string AtributoMotivo {
+        internal static string AtributoMotivo {
             get {
                 return ResourceManager.GetString("AtributoMotivo", resourceCulture);
             }
@@ -459,7 +459,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_nacionalidad.
         /// </summary>
-        public static string AtributoNacionalidadPersona {
+        internal static string AtributoNacionalidadPersona {
             get {
                 return ResourceManager.GetString("AtributoNacionalidadPersona", resourceCulture);
             }
@@ -468,7 +468,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to dat_nombre.
         /// </summary>
-        public static string AtributoNombre_Dato {
+        internal static string AtributoNombre_Dato {
             get {
                 return ResourceManager.GetString("AtributoNombre_Dato", resourceCulture);
             }
@@ -477,7 +477,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to comp_nombre.
         /// </summary>
-        public static string AtributoNombreCompetencia {
+        internal static string AtributoNombreCompetencia {
             get {
                 return ResourceManager.GetString("AtributoNombreCompetencia", resourceCulture);
             }
@@ -486,7 +486,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to doj_nombre.
         /// </summary>
-        public static string AtributoNombreDojo {
+        internal static string AtributoNombreDojo {
             get {
                 return ResourceManager.GetString("AtributoNombreDojo", resourceCulture);
             }
@@ -495,7 +495,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to eve_nombre.
         /// </summary>
-        public static string AtributoNombreEvento {
+        internal static string AtributoNombreEvento {
             get {
                 return ResourceManager.GetString("AtributoNombreEvento", resourceCulture);
             }
@@ -504,7 +504,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to org_nombre.
         /// </summary>
-        public static string AtributoNombreOrganizacion {
+        internal static string AtributoNombreOrganizacion {
             get {
                 return ResourceManager.GetString("AtributoNombreOrganizacion", resourceCulture);
             }
@@ -513,7 +513,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_nombre.
         /// </summary>
-        public static string AtributoNombrePersona {
+        internal static string AtributoNombrePersona {
             get {
                 return ResourceManager.GetString("AtributoNombrePersona", resourceCulture);
             }
@@ -522,7 +522,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to pla_nombre.
         /// </summary>
-        public static string AtributoNombrePlanilla {
+        internal static string AtributoNombrePlanilla {
             get {
                 return ResourceManager.GetString("AtributoNombrePlanilla", resourceCulture);
             }
@@ -531,7 +531,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to tip_nombre.
         /// </summary>
-        public static string AtributoNombreTipoPlanilla {
+        internal static string AtributoNombreTipoPlanilla {
             get {
                 return ResourceManager.GetString("AtributoNombreTipoPlanilla", resourceCulture);
             }
@@ -540,7 +540,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_num_doc_id.
         /// </summary>
-        public static string AtributoNumDocPersona {
+        internal static string AtributoNumDocPersona {
             get {
                 return ResourceManager.GetString("AtributoNumDocPersona", resourceCulture);
             }
@@ -549,7 +549,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to ORGANIZACION_org_id.
         /// </summary>
-        public static string AtributoOrgDojo {
+        internal static string AtributoOrgDojo {
             get {
                 return ResourceManager.GetString("AtributoOrgDojo", resourceCulture);
             }
@@ -558,7 +558,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to mat_fecha_ultimo_pago.
         /// </summary>
-        public static string AtributoPagoMatricula {
+        internal static string AtributoPagoMatricula {
             get {
                 return ResourceManager.GetString("AtributoPagoMatricula", resourceCulture);
             }
@@ -567,7 +567,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_peso.
         /// </summary>
-        public static string AtributoPesoPersona {
+        internal static string AtributoPesoPersona {
             get {
                 return ResourceManager.GetString("AtributoPesoPersona", resourceCulture);
             }
@@ -576,7 +576,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to mat_precio.
         /// </summary>
-        public static string AtributoPrecioMatricula {
+        internal static string AtributoPrecioMatricula {
             get {
                 return ResourceManager.GetString("AtributoPrecioMatricula", resourceCulture);
             }
@@ -585,7 +585,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to doj_rif.
         /// </summary>
-        public static string AtributoRifDojo {
+        internal static string AtributoRifDojo {
             get {
                 return ResourceManager.GetString("AtributoRifDojo", resourceCulture);
             }
@@ -594,7 +594,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to cat_sexo.
         /// </summary>
-        public static string AtributoSexoCategoria {
+        internal static string AtributoSexoCategoria {
             get {
                 return ResourceManager.GetString("AtributoSexoCategoria", resourceCulture);
             }
@@ -603,7 +603,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to cat_sexo.
         /// </summary>
-        public static string AtributoSexoCompetencia {
+        internal static string AtributoSexoCompetencia {
             get {
                 return ResourceManager.GetString("AtributoSexoCompetencia", resourceCulture);
             }
@@ -612,7 +612,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_sexo.
         /// </summary>
-        public static string AtributoSexoPersona {
+        internal static string AtributoSexoPersona {
             get {
                 return ResourceManager.GetString("AtributoSexoPersona", resourceCulture);
             }
@@ -621,7 +621,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to pla_status.
         /// </summary>
-        public static string AtributoStatusPlanilla {
+        internal static string AtributoStatusPlanilla {
             get {
                 return ResourceManager.GetString("AtributoStatusPlanilla", resourceCulture);
             }
@@ -630,7 +630,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to doj_telefono.
         /// </summary>
-        public static string AtributoTelefonoDojo {
+        internal static string AtributoTelefonoDojo {
             get {
                 return ResourceManager.GetString("AtributoTelefonoDojo", resourceCulture);
             }
@@ -639,7 +639,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to org_telefono.
         /// </summary>
-        public static string AtributoTelefonoOrganizacion {
+        internal static string AtributoTelefonoOrganizacion {
             get {
                 return ResourceManager.GetString("AtributoTelefonoOrganizacion", resourceCulture);
             }
@@ -648,7 +648,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to tipo.
         /// </summary>
-        public static string AtributoTipo {
+        internal static string AtributoTipo {
             get {
                 return ResourceManager.GetString("AtributoTipo", resourceCulture);
             }
@@ -657,7 +657,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to comp_tipo.
         /// </summary>
-        public static string AtributoTipoCompetencia {
+        internal static string AtributoTipoCompetencia {
             get {
                 return ResourceManager.GetString("AtributoTipoCompetencia", resourceCulture);
             }
@@ -666,7 +666,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_tipo_doc_id.
         /// </summary>
-        public static string AtributoTipoDocPersona {
+        internal static string AtributoTipoDocPersona {
             get {
                 return ResourceManager.GetString("AtributoTipoDocPersona", resourceCulture);
             }
@@ -675,7 +675,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to per_nombre_usuario.
         /// </summary>
-        public static string AtributoUsuarioPersona {
+        internal static string AtributoUsuarioPersona {
             get {
                 return ResourceManager.GetString("AtributoUsuarioPersona", resourceCulture);
             }
@@ -684,7 +684,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to BDDatos.
         /// </summary>
-        public static string ClaseBDDatos {
+        internal static string ClaseBDDatos {
             get {
                 return ResourceManager.GetString("ClaseBDDatos", resourceCulture);
             }
@@ -693,7 +693,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to BDDiseño.
         /// </summary>
-        public static string ClaseBDDis {
+        internal static string ClaseBDDis {
             get {
                 return ResourceManager.GetString("ClaseBDDis", resourceCulture);
             }
@@ -702,7 +702,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to BDPlanilla.
         /// </summary>
-        public static string ClaseBDPlanilla {
+        internal static string ClaseBDPlanilla {
             get {
                 return ResourceManager.GetString("ClaseBDPlanilla", resourceCulture);
             }
@@ -711,7 +711,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to BDSolicitud.
         /// </summary>
-        public static string ClaseBDSolicitud {
+        internal static string ClaseBDSolicitud {
             get {
                 return ResourceManager.GetString("ClaseBDSolicitud", resourceCulture);
             }
@@ -720,7 +720,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_04.
         /// </summary>
-        public static string CodigoDisposedObject {
+        internal static string CodigoDisposedObject {
             get {
                 return ResourceManager.GetString("CodigoDisposedObject", resourceCulture);
             }
@@ -729,7 +729,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_03.
         /// </summary>
-        public static string CodigoException {
+        internal static string CodigoException {
             get {
                 return ResourceManager.GetString("CodigoException", resourceCulture);
             }
@@ -738,7 +738,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_05.
         /// </summary>
-        public static string CodigoFormatExceptio {
+        internal static string CodigoFormatExceptio {
             get {
                 return ResourceManager.GetString("CodigoFormatExceptio", resourceCulture);
             }
@@ -747,7 +747,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_01.
         /// </summary>
-        public static string CodigoIoException {
+        internal static string CodigoIoException {
             get {
                 return ResourceManager.GetString("CodigoIoException", resourceCulture);
             }
@@ -756,7 +756,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_02.
         /// </summary>
-        public static string CodigoNullReferencesExcep {
+        internal static string CodigoNullReferencesExcep {
             get {
                 return ResourceManager.GetString("CodigoNullReferencesExcep", resourceCulture);
             }
@@ -765,7 +765,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to El objeto que se esta utilizando no existe o se ha desechado.
         /// </summary>
-        public static string MensajeDisposedException {
+        internal static string MensajeDisposedException {
             get {
                 return ResourceManager.GetString("MensajeDisposedException", resourceCulture);
             }
@@ -774,7 +774,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to Entrada en el Método.
         /// </summary>
-        public static string MsjDeEntrada {
+        internal static string MsjDeEntrada {
             get {
                 return ResourceManager.GetString("MsjDeEntrada", resourceCulture);
             }
@@ -783,7 +783,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to Se ha establecido una excepcion.
         /// </summary>
-        public static string MsjException {
+        internal static string MsjException {
             get {
                 return ResourceManager.GetString("MsjException", resourceCulture);
             }
@@ -792,7 +792,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to La ruta de acceso a los datos es inválida o no existe.
         /// </summary>
-        public static string MsjExceptionIO {
+        internal static string MsjExceptionIO {
             get {
                 return ResourceManager.GetString("MsjExceptionIO", resourceCulture);
             }
@@ -801,7 +801,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to Formato invalido.
         /// </summary>
-        public static string MsjFormatException {
+        internal static string MsjFormatException {
             get {
                 return ResourceManager.GetString("MsjFormatException", resourceCulture);
             }
@@ -810,7 +810,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to Una referencia a objeto no se ha establecido.
         /// </summary>
-        public static string MsjNullException {
+        internal static string MsjNullException {
             get {
                 return ResourceManager.GetString("MsjNullException", resourceCulture);
             }
@@ -819,7 +819,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @dis_contenido.
         /// </summary>
-        public static string ParametroContenido {
+        internal static string ParametroContenido {
             get {
                 return ResourceManager.GetString("ParametroContenido", resourceCulture);
             }
@@ -828,7 +828,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @PLANILLA_pla_id.
         /// </summary>
-        public static string ParametroDiseñoPlanilla {
+        internal static string ParametroDiseñoPlanilla {
             get {
                 return ResourceManager.GetString("ParametroDiseñoPlanilla", resourceCulture);
             }
@@ -837,7 +837,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @DOJO_doj_id.
         /// </summary>
-        public static string ParametroDojo {
+        internal static string ParametroDojo {
             get {
                 return ResourceManager.GetString("ParametroDojo", resourceCulture);
             }
@@ -846,7 +846,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @doj_id.
         /// </summary>
-        public static string ParametroDojoId {
+        internal static string ParametroDojoId {
             get {
                 return ResourceManager.GetString("ParametroDojoId", resourceCulture);
             }
@@ -855,7 +855,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @sol_pla_fecha_reincorporacion.
         /// </summary>
-        public static string ParametroFechaReincorporacion {
+        internal static string ParametroFechaReincorporacion {
             get {
                 return ResourceManager.GetString("ParametroFechaReincorporacion", resourceCulture);
             }
@@ -864,7 +864,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @sol_pla_fecha_retiro.
         /// </summary>
-        public static string ParametroFechaRetiro {
+        internal static string ParametroFechaRetiro {
             get {
                 return ResourceManager.GetString("ParametroFechaRetiro", resourceCulture);
             }
@@ -873,7 +873,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @dis_id.
         /// </summary>
-        public static string ParametroID {
+        internal static string ParametroID {
             get {
                 return ResourceManager.GetString("ParametroID", resourceCulture);
             }
@@ -882,7 +882,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @DATO_dat_id.
         /// </summary>
-        public static string ParametroIdDatos {
+        internal static string ParametroIdDatos {
             get {
                 return ResourceManager.GetString("ParametroIdDatos", resourceCulture);
             }
@@ -891,7 +891,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @INSCRIPCION_ins_id.
         /// </summary>
-        public static string ParametroIdInscripcion {
+        internal static string ParametroIdInscripcion {
             get {
                 return ResourceManager.GetString("ParametroIdInscripcion", resourceCulture);
             }
@@ -900,7 +900,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @pla_id.
         /// </summary>
-        public static string ParametroIdPlanilla {
+        internal static string ParametroIdPlanilla {
             get {
                 return ResourceManager.GetString("ParametroIdPlanilla", resourceCulture);
             }
@@ -909,7 +909,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @sol_pla_id.
         /// </summary>
-        public static string ParametroIDSolici {
+        internal static string ParametroIDSolici {
             get {
                 return ResourceManager.GetString("ParametroIDSolici", resourceCulture);
             }
@@ -918,7 +918,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @pla_sol_id.
         /// </summary>
-        public static string ParametroIdSolicitud {
+        internal static string ParametroIdSolicitud {
             get {
                 return ResourceManager.GetString("ParametroIdSolicitud", resourceCulture);
             }
@@ -927,7 +927,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @tip_id.
         /// </summary>
-        public static string ParametroIdTipoPlanilla {
+        internal static string ParametroIdTipoPlanilla {
             get {
                 return ResourceManager.GetString("ParametroIdTipoPlanilla", resourceCulture);
             }
@@ -936,7 +936,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @ins_id.
         /// </summary>
-        public static string ParametroInsId {
+        internal static string ParametroInsId {
             get {
                 return ResourceManager.GetString("ParametroInsId", resourceCulture);
             }
@@ -945,7 +945,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @sol_pla_motivo.
         /// </summary>
-        public static string ParametroMotivo {
+        internal static string ParametroMotivo {
             get {
                 return ResourceManager.GetString("ParametroMotivo", resourceCulture);
             }
@@ -954,7 +954,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @dat_nombre.
         /// </summary>
-        public static string ParametroNombreDato {
+        internal static string ParametroNombreDato {
             get {
                 return ResourceManager.GetString("ParametroNombreDato", resourceCulture);
             }
@@ -963,7 +963,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @pla_nombre.
         /// </summary>
-        public static string ParametroNombrePlanilla {
+        internal static string ParametroNombrePlanilla {
             get {
                 return ResourceManager.GetString("ParametroNombrePlanilla", resourceCulture);
             }
@@ -972,7 +972,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @org_id.
         /// </summary>
-        public static string ParametroOrgId {
+        internal static string ParametroOrgId {
             get {
                 return ResourceManager.GetString("ParametroOrgId", resourceCulture);
             }
@@ -981,7 +981,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @per_id.
         /// </summary>
-        public static string ParametroPersona {
+        internal static string ParametroPersona {
             get {
                 return ResourceManager.GetString("ParametroPersona", resourceCulture);
             }
@@ -990,7 +990,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @per_id.
         /// </summary>
-        public static string ParametroPersonaID {
+        internal static string ParametroPersonaID {
             get {
                 return ResourceManager.GetString("ParametroPersonaID", resourceCulture);
             }
@@ -999,7 +999,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @PERSONA_per_id.
         /// </summary>
-        public static string ParametroPersonaPerId {
+        internal static string ParametroPersonaPerId {
             get {
                 return ResourceManager.GetString("ParametroPersonaPerId", resourceCulture);
             }
@@ -1008,7 +1008,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @PLANILLA_pla_id.
         /// </summary>
-        public static string ParametroPlanilla {
+        internal static string ParametroPlanilla {
             get {
                 return ResourceManager.GetString("ParametroPlanilla", resourceCulture);
             }
@@ -1017,7 +1017,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @PLANILLA_pla_id.
         /// </summary>
-        public static string ParametroPlanillaID {
+        internal static string ParametroPlanillaID {
             get {
                 return ResourceManager.GetString("ParametroPlanillaID", resourceCulture);
             }
@@ -1026,7 +1026,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @pla_status.
         /// </summary>
-        public static string ParametroSatusPlanilla {
+        internal static string ParametroSatusPlanilla {
             get {
                 return ResourceManager.GetString("ParametroSatusPlanilla", resourceCulture);
             }
@@ -1035,7 +1035,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @tip_nombre.
         /// </summary>
-        public static string ParametroTipoPlanilla {
+        internal static string ParametroTipoPlanilla {
             get {
                 return ResourceManager.GetString("ParametroTipoPlanilla", resourceCulture);
             }
@@ -1044,7 +1044,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to @TIPO_PLANILLA_tip_id.
         /// </summary>
-        public static string ParametroTipoPlanillaFK {
+        internal static string ParametroTipoPlanillaFK {
             get {
                 return ResourceManager.GetString("ParametroTipoPlanillaFK", resourceCulture);
             }
@@ -1053,7 +1053,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureAgregarSolicitud.
         /// </summary>
-        public static string ProcedimientoAgregarSolicitud {
+        internal static string ProcedimientoAgregarSolicitud {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarSolicitud", resourceCulture);
             }
@@ -1062,7 +1062,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_AgregarSolicitudIDPersona.
         /// </summary>
-        public static string ProcedimientoAgregarSolicitudIdP {
+        internal static string ProcedimientoAgregarSolicitudIdP {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarSolicitudIdP", resourceCulture);
             }
@@ -1071,7 +1071,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureAgregarTipoPlanilla.
         /// </summary>
-        public static string ProcedimientoAgregarTipoPlanilla {
+        internal static string ProcedimientoAgregarTipoPlanilla {
             get {
                 return ResourceManager.GetString("ProcedimientoAgregarTipoPlanilla", resourceCulture);
             }
@@ -1080,7 +1080,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultaCompetenciaSolicitud.
         /// </summary>
-        public static string ProcedimientoConsultarCompeteniaSolicitud {
+        internal static string ProcedimientoConsultarCompeteniaSolicitud {
             get {
                 return ResourceManager.GetString("ProcedimientoConsultarCompeteniaSolicitud", resourceCulture);
             }
@@ -1089,7 +1089,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_Procedure_IdTipoPlanilla.
         /// </summary>
-        public static string ProcedimientoObtenerIdTipoPlanilla {
+        internal static string ProcedimientoObtenerIdTipoPlanilla {
             get {
                 return ResourceManager.GetString("ProcedimientoObtenerIdTipoPlanilla", resourceCulture);
             }
@@ -1098,7 +1098,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureAgregarDatoPlanilla.
         /// </summary>
-        public static string ProcedureAgregarDatoPlanilla {
+        internal static string ProcedureAgregarDatoPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureAgregarDatoPlanilla", resourceCulture);
             }
@@ -1107,7 +1107,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureAgregarDatoPlanillaID.
         /// </summary>
-        public static string ProcedureAgregarDatoPlanillaID {
+        internal static string ProcedureAgregarDatoPlanillaID {
             get {
                 return ResourceManager.GetString("ProcedureAgregarDatoPlanillaID", resourceCulture);
             }
@@ -1116,7 +1116,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureAgregarPlanilla.
         /// </summary>
-        public static string ProcedureAgregarPlanilla {
+        internal static string ProcedureAgregarPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureAgregarPlanilla", resourceCulture);
             }
@@ -1125,7 +1125,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_CambioDeStatusPlanilla.
         /// </summary>
-        public static string ProcedureCambiarStatusPlanilla {
+        internal static string ProcedureCambiarStatusPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureCambiarStatusPlanilla", resourceCulture);
             }
@@ -1134,7 +1134,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureConsultarDatosPlanillaID.
         /// </summary>
-        public static string ProcedureConsultarDatosPlanillaId {
+        internal static string ProcedureConsultarDatosPlanillaId {
             get {
                 return ResourceManager.GetString("ProcedureConsultarDatosPlanillaId", resourceCulture);
             }
@@ -1143,7 +1143,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarDiseño.
         /// </summary>
-        public static string ProcedureConsultarDiseño {
+        internal static string ProcedureConsultarDiseño {
             get {
                 return ResourceManager.GetString("ProcedureConsultarDiseño", resourceCulture);
             }
@@ -1152,7 +1152,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultaEventoSolicitud.
         /// </summary>
-        public static string ProcedureConsultarEventoSolicitud {
+        internal static string ProcedureConsultarEventoSolicitud {
             get {
                 return ResourceManager.GetString("ProcedureConsultarEventoSolicitud", resourceCulture);
             }
@@ -1161,7 +1161,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_Procedure_ListarDatos.
         /// </summary>
-        public static string ProcedureConsultarListaDatos {
+        internal static string ProcedureConsultarListaDatos {
             get {
                 return ResourceManager.GetString("ProcedureConsultarListaDatos", resourceCulture);
             }
@@ -1170,7 +1170,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarOrganizacionDojo.
         /// </summary>
-        public static string ProcedureConsultarOrganizacion {
+        internal static string ProcedureConsultarOrganizacion {
             get {
                 return ResourceManager.GetString("ProcedureConsultarOrganizacion", resourceCulture);
             }
@@ -1179,7 +1179,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarPersonaEvento.
         /// </summary>
-        public static string ProcedureConsultarPersonaEvento {
+        internal static string ProcedureConsultarPersonaEvento {
             get {
                 return ResourceManager.GetString("ProcedureConsultarPersonaEvento", resourceCulture);
             }
@@ -1188,7 +1188,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarPersonas.
         /// </summary>
-        public static string ProcedureConsultarPersonas {
+        internal static string ProcedureConsultarPersonas {
             get {
                 return ResourceManager.GetString("ProcedureConsultarPersonas", resourceCulture);
             }
@@ -1197,7 +1197,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarPlanillasASolicitar.
         /// </summary>
-        public static string ProcedureConsultarPlanillasASolicitar {
+        internal static string ProcedureConsultarPlanillasASolicitar {
             get {
                 return ResourceManager.GetString("ProcedureConsultarPlanillasASolicitar", resourceCulture);
             }
@@ -1206,7 +1206,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarPlanillasCreadas.
         /// </summary>
-        public static string ProcedureConsultarPlanillasCreadas {
+        internal static string ProcedureConsultarPlanillasCreadas {
             get {
                 return ResourceManager.GetString("ProcedureConsultarPlanillasCreadas", resourceCulture);
             }
@@ -1215,7 +1215,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarSolicitudId.
         /// </summary>
-        public static string ProcedureConsultarSolicitudId {
+        internal static string ProcedureConsultarSolicitudId {
             get {
                 return ResourceManager.GetString("ProcedureConsultarSolicitudId", resourceCulture);
             }
@@ -1224,7 +1224,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureConsultarSolicitudId.
         /// </summary>
-        public static string ProcedureConsultarSolicitudID1 {
+        internal static string ProcedureConsultarSolicitudID1 {
             get {
                 return ResourceManager.GetString("ProcedureConsultarSolicitudID1", resourceCulture);
             }
@@ -1233,7 +1233,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarSolicitudPlanilla.
         /// </summary>
-        public static string ProcedureConsultarSolicitudPlanilla {
+        internal static string ProcedureConsultarSolicitudPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureConsultarSolicitudPlanilla", resourceCulture);
             }
@@ -1242,7 +1242,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureConsultarPlanillaID.
         /// </summary>
-        public static string ProcedureConsultatPlanillaID {
+        internal static string ProcedureConsultatPlanillaID {
             get {
                 return ResourceManager.GetString("ProcedureConsultatPlanillaID", resourceCulture);
             }
@@ -1251,7 +1251,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarDojoPersonas.
         /// </summary>
-        public static string ProcedureDojoPersonas {
+        internal static string ProcedureDojoPersonas {
             get {
                 return ResourceManager.GetString("ProcedureDojoPersonas", resourceCulture);
             }
@@ -1260,7 +1260,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureEliminarDatosPlanilla.
         /// </summary>
-        public static string ProcedureEliminarDatosPlanilla {
+        internal static string ProcedureEliminarDatosPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureEliminarDatosPlanilla", resourceCulture);
             }
@@ -1269,7 +1269,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_Eliminar_Solicitud.
         /// </summary>
-        public static string ProcedureEliminarSolicitud {
+        internal static string ProcedureEliminarSolicitud {
             get {
                 return ResourceManager.GetString("ProcedureEliminarSolicitud", resourceCulture);
             }
@@ -1278,7 +1278,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_AgregarDiseño.
         /// </summary>
-        public static string ProcedureGuardarDiseño {
+        internal static string ProcedureGuardarDiseño {
             get {
                 return ResourceManager.GetString("ProcedureGuardarDiseño", resourceCulture);
             }
@@ -1287,7 +1287,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_Procedure_ListarTipoPlanilla.
         /// </summary>
-        public static string ProcedureListaTipoPlanilla {
+        internal static string ProcedureListaTipoPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureListaTipoPlanilla", resourceCulture);
             }
@@ -1296,7 +1296,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarMatriculaPersona.
         /// </summary>
-        public static string ProcedureMatriculaPersona {
+        internal static string ProcedureMatriculaPersona {
             get {
                 return ResourceManager.GetString("ProcedureMatriculaPersona", resourceCulture);
             }
@@ -1305,7 +1305,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ModificarDiseño.
         /// </summary>
-        public static string ProcedureModificarDiseño {
+        internal static string ProcedureModificarDiseño {
             get {
                 return ResourceManager.GetString("ProcedureModificarDiseño", resourceCulture);
             }
@@ -1314,7 +1314,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureModificarPlanilla.
         /// </summary>
-        public static string ProcedureModificarPlanilla {
+        internal static string ProcedureModificarPlanilla {
             get {
                 return ResourceManager.GetString("ProcedureModificarPlanilla", resourceCulture);
             }
@@ -1323,7 +1323,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ProcedureModificarSolicitud.
         /// </summary>
-        public static string ProcedureModificarSolicitud {
+        internal static string ProcedureModificarSolicitud {
             get {
                 return ResourceManager.GetString("ProcedureModificarSolicitud", resourceCulture);
             }
@@ -1332,7 +1332,7 @@ namespace DatosSKD.DAO.Modulo14 {
         /// <summary>
         ///   Looks up a localized string similar to M14_ConsultarPersonaCompetencia.
         /// </summary>
-        public static string ProcedurePersonaCompetencia {
+        internal static string ProcedurePersonaCompetencia {
             get {
                 return ResourceManager.GetString("ProcedurePersonaCompetencia", resourceCulture);
             }

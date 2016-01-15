@@ -459,7 +459,7 @@ namespace DatosSKD.DAO.Modulo14
             try
             {
              //   laConexion = new BDConexion();
-                this.Conectar();
+                //this.Conectar();
                 parametros = new List<Parametro>();
 
                 parametro = new Parametro(RecursosDAOModulo14.ParametroNombrePlanilla,

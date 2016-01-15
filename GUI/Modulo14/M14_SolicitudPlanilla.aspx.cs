@@ -8,6 +8,7 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo14;
 using templateApp.GUI.Master;
+using Interfaz_Contratos.Modulo14;
 
 namespace templateApp.GUI.Modulo14
 {
