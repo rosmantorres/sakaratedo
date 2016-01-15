@@ -15,5 +15,11 @@ namespace DatosSKD.InterfazDAO.Modulo14
          List<Entidad> ObtenerEventosSolicitud(int idPersona);
 
          List<Entidad> ObtenerCompetenciaSolicitud(int idPersona);
+
+         List<Entidad> ConsultarPlanillasASolicitarBD();
+
+         Boolean EliminarSolicitudBD(int idSolicitud);
+
+         List<Entidad> ConsultarSolicitudes(int idPersona);
     }
 }

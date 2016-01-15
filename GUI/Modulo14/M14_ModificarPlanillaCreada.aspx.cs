@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo14;
 
 namespace templateApp.GUI.Modulo14
 {

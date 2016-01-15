@@ -49,6 +49,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo14\PresentadorM14ModificadorPlanillaCreada.cs" />
+    <Compile Include="Modulo14\PresentadorM14ModificarPlanillaSolicitada.cs" />
+    <Compile Include="Modulo14\PresentadorM14RegistrarPlanilla.cs" />
+    <Compile Include="Modulo14\PresentadorM14SolicitarPlanilla.cs" />
+    <Compile Include="Modulo14\PresentadorM14SolicitudPlanilla.cs" />
+    <Compile Include="Modulo14\RecursosPresentadorModulo14.Designer.cs" />
     <Compile Include="Modulo1\PresentadorM1Inicio.cs" />
     <Compile Include="Modulo1\PresentadorM1Restablecer.cs" />
     <Compile Include="Modulo1\RecursosInterfazPresentadorM1.Designer.cs">
@@ -92,7 +98,6 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
@@ -107,6 +112,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo14\RecursosPresentadorModulo14.resx" />
     <EmbeddedResource Include="Modulo1\RecursosInterfazPresentadorM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>
