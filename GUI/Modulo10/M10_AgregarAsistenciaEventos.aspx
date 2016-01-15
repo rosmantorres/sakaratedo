@@ -114,7 +114,7 @@
     <!--TABLA ATLETAS AUSENTES POR PLANILLA-->
     <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>No Asistieron por Planilla:</h3>
+        <h3>Inasistencia Justificada:</h3>
         <table id="tablaplanilla" class="table table-bordered table-striped dataTable">
         <thead>
 				<tr> 

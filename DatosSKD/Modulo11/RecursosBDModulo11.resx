@@ -357,4 +357,16 @@
     <value>M11_PersonasParticipanCompetenciaSinResultado</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ProcedimientoAgregarAscenso" xml:space="preserve">
+    <value>M11_AgregarResultadoAscenso</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoAgregarKata" xml:space="preserve">
+    <value>M11_AgregarResultadoKata</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoAgregarKumite" xml:space="preserve">
+    <value>M11_AgregarResultadoKumite</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

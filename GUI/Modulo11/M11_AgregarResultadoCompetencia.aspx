@@ -109,11 +109,53 @@
             </div>
         </div>
 
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KATA-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kata:</h3>
+        <table id="tablaCompetidores2" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta</th>
+                    <th style="text-align:center">Jurado 1</th>
+                    <th style="text-align:center">Jurado 2</th>
+                    <th style="text-align:center">Jurado 3</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable2"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
+
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KUMITE-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kumite:</h3>
+        <table id="tablaCompetidores3" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta 1</th>
+                    <th style="text-align:center">Puntuacion</th>
+                    <th style="text-align:center">Nombre del Atleta 2</th>
+                    <th style="text-align:center">Puntuacion</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable3"></asp:Literal>
+		    </tbody>
+            </table>
+                   &nbsp;&nbsp;&nbsp;
+                  <asp:LinkButton ID="bSiguiente" runat="server" CssClass="btn btn-primary" OnClick="bSiguiente_Click" OnClientClick="resultadosKumite();" Visible="false">Siguiente</asp:LinkButton>
+            </div>
+        </div>
+
     <!--LISTA POSICIONES-->
      <div class="form-group">
       <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
-         <h3>Posiciones:</h3>
-         <asp:ListBox Runat="server" ID="listaGanadores" CssClass="form-control select select-primary select-block mbl" Height="150px">
+         <h3 id="lPosicion" runat="server" visible="false">Posiciones:</h3>
+         <asp:ListBox Runat="server" ID="listaGanadores" CssClass="form-control select select-primary select-block mbl" Height="150px" Visible="false">
          </asp:ListBox>
       </div>
    </div>
@@ -162,14 +204,92 @@
                 var myJson = JSON.stringify(arreglo);
                 document.getElementById('<%= rvalue.ClientID %>').value = myJson;
             }
+
+           function resultadosKata() {
+               var arreglo = [];
+               $('#tablaCompetidores2 tbody').each(function () {
+                   var i = 0;
+                   var j = 0;
+                   var x = 0;
+                   $(this).find('select#combo1').each(function () {
+                       var opcion = $(this).val();
+                       var obj = {
+                           nombre: "",
+                           resultado1: opcion,
+                           resultado2: "",
+                           resultado3: ""
+                       };
+                       arreglo.push(obj);
+                   });
+                   $(this).find('select#combo2').each(function () {
+                       var opcion = $(this).val();
+                       arreglo[j].resultado2 = opcion;
+                       j++;
+                   });
+                   $(this).find('select#combo3').each(function () {
+                       var opcion = $(this).val();
+                       arreglo[x].resultado3 = opcion;
+                       x++;
+                   });
+                   $(this).find('.sorting_1').each(function () {
+                       arreglo[i].nombre = $(this).text();
+                       i++;
+                   });
+               });
+               var myJson = JSON.stringify(arreglo);
+               document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+           }
+
+           function resultadosKumite() {
+               var arreglo = [];
+               $('#tablaCompetidores3 tbody').each(function () {
+                   var i = 0;
+                   var j = 0;
+                   var x = 0;
+                   $(this).find('select#combo1').each(function () {
+                       var opcion = $(this).val();
+                       var obj = {
+                           nombre: "",
+                           resultado1: opcion,
+                           resultado2: "",
+                           resultado3: ""
+                       };
+                       arreglo.push(obj);
+                   });
+                   $(this).find('select#combo2').each(function () {
+                       var opcion = $(this).val();
+                       arreglo[j].resultado3 = opcion;
+                       j++;
+                   });
+                   $(this).find('.nombre1').each(function () {
+                       arreglo[i].nombre = $(this).text();
+                       i++;
+                   });
+                   $(this).find('.nombre2').each(function () {
+                       arreglo[x].resultado2 = $(this).text();
+                       x++;
+                   });
+               });
+               var myJson = JSON.stringify(arreglo);
+               document.getElementById('<%= rvalue2.ClientID %>').value = myJson;
+            }
+
+            function resultadosAmbos() {
+                resultadosKata();
+                resultadosKumite();
+            }
         </script>
             <asp:HiddenField ID="rvalue" runat="server" />
+            <asp:HiddenField ID="rvalue2" runat="server" />
 </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
          <asp:LinkButton ID="bAgregar" runat="server" CssClass="btn btn-primary" OnClick="bAgregar_Click" OnClientClick="resultadosEvento();">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarKata" runat="server" CssClass="btn btn-primary" OnClick="bAgregarKata_Click" OnClientClick="resultadosKata();" Visible="false">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarKumite" runat="server" CssClass="btn btn-primary" OnClick="bAgregarKumite_Click" OnClientClick="resultadosKumite();" Visible="false">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarAmbos" runat="server" CssClass="btn btn-primary" OnClick="bAgregarAmbos_Click" OnClientClick="resultadosAmbos();" Visible="false">Agregar</asp:LinkButton>
          &nbsp;&nbsp
          <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>

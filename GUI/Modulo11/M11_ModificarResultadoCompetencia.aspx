@@ -95,7 +95,7 @@
             </div>
         </div>
 
-            <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
+            <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KATA-->
         <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
         <h3>Atletas que compitieron en Especialidad Kata:</h3>
@@ -115,7 +115,7 @@
             </div>
         </div>
 
-                <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KUMITE-->
         <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
         <h3>Atletas que compitieron en Especialidad Kumite:</h3>
@@ -214,7 +214,6 @@
                     });
                 });
                 var myJson = JSON.stringify(arreglo);
-                console.log(myJson);
                 document.getElementById('<%= rvalue.ClientID %>').value = myJson;
             }
 
@@ -249,7 +248,6 @@
                     });
                 });
                 var myJson = JSON.stringify(arreglo);
-                console.log(myJson);
                 document.getElementById('<%= rvalue2.ClientID %>').value = myJson;
             }
 

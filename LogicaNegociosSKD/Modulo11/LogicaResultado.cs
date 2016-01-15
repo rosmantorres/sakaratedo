@@ -217,5 +217,35 @@ namespace LogicaNegociosSKD.Modulo11
             List<Inscripcion> listaInscripcion = BDResultado.listaInscritosCompetencia(competencia);
             return listaInscripcion;
         }
+
+        /// <summary>
+        /// Metodo que permite agregar en la base de datos una lista de resultados de examen de ascenso
+        /// </summary>
+        /// <param name="lista">lista de Resultados Ascensos</param>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarResultadoAscenso(List<ResultadoAscenso> lista)
+        {
+            return BDResultado.agregarResultadoAscenso(lista);
+        }
+
+        /// <summary>
+        /// Metodo que permite agregar en la base de datos un resultado de un atleta en una competencia de especialidad kata
+        /// </summary>
+        /// <param name="lista">lista de resultado kata</param>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarResultadoKata(List<ResultadoKata> lista)
+        {
+            return BDResultado.agregarResultadoKata(lista);
+        }
+
+        /// <summary>
+        /// Metodo que permite agregar en la base de datos un resultado de un atleta en una competencia de especialidad kumite
+        /// </summary>
+        /// <param name="lista">lista de resultado kumite</param>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarResultadoKumite(List<ResultadoKumite> lista)
+        {
+            return BDResultado.agregarResultadoKumite(lista);
+        }
     }
 }

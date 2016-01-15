@@ -836,6 +836,57 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo1&quot; class=&quot;form-control&quot; style=&quot;width:45%&quot;&gt;                                                                                    &lt;option selected value=&quot;Seleccionar&quot;&gt;Seleccionar:&lt;/option&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;op [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SeleccionarCombo1 {
+            get {
+                return ResourceManager.GetString("SeleccionarCombo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo2&quot; class=&quot;form-control&quot; style=&quot;width:45%&quot;&gt;                                                                                    &lt;option selected value=&quot;Seleccionar&quot;&gt;Seleccionar:&lt;/option&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;op [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SeleccionarCombo2 {
+            get {
+                return ResourceManager.GetString("SeleccionarCombo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;select id=&quot;combo3&quot; class=&quot;form-control&quot; style=&quot;width:45%&quot;&gt;                                                                                    &lt;option selected value=&quot;Seleccionar&quot;&gt;Seleccionar:&lt;/option&gt;
+        ///            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        ///            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        ///            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        ///            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        ///            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+        ///            &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+        ///            &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+        ///            &lt;op [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SeleccionarCombo3 {
+            get {
+                return ResourceManager.GetString("SeleccionarCombo3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seleccionar Especialidad:.
         /// </summary>
         internal static string SeleccionarEspecialidad {

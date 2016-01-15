@@ -493,6 +493,33 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_AgregarResultadoAscenso.
+        /// </summary>
+        internal static string ProcedimientoAgregarAscenso {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_AgregarResultadoKata.
+        /// </summary>
+        internal static string ProcedimientoAgregarKata {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_AgregarResultadoKumite.
+        /// </summary>
+        internal static string ProcedimientoAgregarKumite {
+            get {
+                return ResourceManager.GetString("ProcedimientoAgregarKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_CategoriasCompetenciaEspecialidad.
         /// </summary>
         internal static string ProcedimientoCategoriasCompetenciaEspecialidad {

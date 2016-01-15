@@ -871,5 +871,168 @@ namespace DatosSKD.Modulo11
             }
             return inscripciones;
         }
+
+        /// <summary>
+        /// Metodo que permite agregar los resultados de un Evento Examen de Ascenso 
+        /// </summary>
+        /// <param name="lista">lista de Resultados Ascensos</param>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarResultadoAscenso(List<ResultadoAscenso> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (ResultadoAscenso resultado in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo11.ParametroAprobadoResultadoAscenso, SqlDbType.Char, resultado.Aprobado, false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdInscripcion, SqlDbType.Int, resultado.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoAgregarAscenso, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que permite agregar en la base de datos un resultado de un atleta en una competencia de especialidad kata
+        /// </summary>
+        /// <param name="lista">lista de resultado kata</param>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarResultadoKata(List<ResultadoKata> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (ResultadoKata kata in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo11.ParametroResultadoJurado1, SqlDbType.Int, kata.Jurado1.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoJurado2, SqlDbType.Int, kata.Jurado2.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoJurado3, SqlDbType.Int, kata.Jurado3.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroIdInscripcion, SqlDbType.Int, kata.Inscripcion.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoAgregarKata, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Metodo que permite agregar en la base de datos un resultado de un atleta en una competencia de especialidad kumite
+        /// </summary>
+        /// <param name="lista">lista de resultado kumite</param>
+        /// <returns>true si se pudo agregar</returns>
+        public static bool agregarResultadoKumite(List<ResultadoKumite> lista)
+        {
+            int cont = 0;
+            try
+            {
+                foreach (ResultadoKumite kumite in lista)
+                {
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo11.ParametroResultadoAtleta1, SqlDbType.Int, kumite.Puntaje1.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoAtleta2, SqlDbType.Int, kumite.Puntaje2.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoInscripcion1, SqlDbType.Int, kumite.Inscripcion1.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo11.ParametroResultadoInscripcion2, SqlDbType.Int, kumite.Inscripcion2.Id_Inscripcion.ToString(), false);
+                    parametros.Add(parametro);
+                    BDConexion conexion = new BDConexion();
+                    conexion.EjecutarStoredProcedure(RecursosBDModulo11.ProcedimientoAgregarKumite, parametros);
+                    cont++;
+                }
+
+                if (lista.Count.Equals(cont))
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
