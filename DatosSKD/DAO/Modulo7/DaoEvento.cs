@@ -698,7 +698,7 @@ namespace DatosSKD.DAO.Modulo7
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.ToString(), false);
+                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id_evento.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroEvento);
 

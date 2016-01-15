@@ -137,6 +137,8 @@
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCompetencia.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarMatricula.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarEvento.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoMatriculasPagas.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosPagos.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosAsistidos.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoListarCintas.cs" />
     <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCinta.cs" />

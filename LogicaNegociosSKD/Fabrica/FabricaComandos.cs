@@ -34,6 +34,17 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarListaEventosAsistidos();
         }
+
+        public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>>> ObtenerComandoConsultarListaEventosPagos()
+        {
+            return new ComandoConsultarListaEventosPagos();
+        }
+
+        public Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>> ObtenerComandoConsultarListaMatriculasPagas()
+        {
+            return new ComandoConsultarListaMatriculasPagas();
+        }
+
         public Comando<Tuple<List<Entidad>, List<DateTime>>> ObtenerComandoConsultarListaCinta()
         {
             return new ComandoConsultarListaCinta();
