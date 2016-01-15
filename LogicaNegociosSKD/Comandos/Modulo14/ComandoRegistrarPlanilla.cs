@@ -21,7 +21,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             {
                 DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 resultPlanilla = BaseDeDatoPlanilla.Agregar(laPlanilla);
-
+                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 foreach (String nombreDato in laPlanilla.Dato)
                 {
 

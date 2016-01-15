@@ -20,12 +20,56 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 3
+		public Entidad ObtenerOrganizacion_M3()
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion();
+        }
+        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre);
+        }
+        public Entidad ObtenerOrganizacion_M3(String elNombre)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre);
+        }
+        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
+        }
+        public Entidad ObtenerOrganizacion_M3(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
+        }
         #endregion
 
         #region Modulo 4
         #endregion
 
         #region Modulo 5
+		public Entidad ObtenerCinta_M5()
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta();
+        }
+        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
+        }
+        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
+        }
+        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
+        }
+        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
+        }
+        public Entidad ObtenerCinta_M5(int elId, String elColor)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor);
+        }
         #endregion
 
         #region Modulo 6
@@ -295,6 +339,21 @@ namespace DominioSKD.Fabrica
         public Entidad ObtenerSolicitudPlanilla(DateTime fechaRetiro, DateTime fechaReincorporacion, string motivo, Planilla planilla)
         {
             return new SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
+        }
+
+        public Entidad obtenerDiseño()
+        {
+            return new Diseño();
+        }
+
+        public Entidad obtenerDiseño(int id, string contenido)
+        {
+            return new Diseño(id,contenido);
+        }
+
+        public Entidad obtenerDiseño(string contenido)
+        {
+            return new Diseño(contenido);
         }
         #endregion
 

@@ -8,19 +8,28 @@ using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo14;
 using DominioSKD;
 using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo14;
+using Interfaz_Presentadores.Modulo14;
 namespace templateApp.GUI.Modulo14
 {
-    public partial class M14_RegistrarPlanilla : System.Web.UI.Page
+    public partial class M14_RegistrarPlanilla : System.Web.UI.Page, IContratoM14RegistrarPlanilla
     {
+        private PresentadorM14RegistrarPlanilla presentador;
+
+        public M14_RegistrarPlanilla()
+        {
+            presentador = new PresentadorM14RegistrarPlanilla(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "14";
             if (!IsPostBack)
             {
+                ((SKD)Page.Master).IdModulo = "14";
+
                 try
                 {
                     id_otro.Visible = false;
-                    llenarComboTipoPlanilla();
+                    presentador.LlenarComboTipoPlanilla();
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
@@ -53,17 +62,106 @@ namespace templateApp.GUI.Modulo14
             }
         }
 
+        #region contratos
+
+        public DropDownList tipoPlanillaCombo
+        {
+            get
+            {
+                return this.comboTipoPlanilla;
+            }
+            set
+            {
+                this.comboTipoPlanilla = value;
+            }
+        }
+        public String tipoNombre
+        {
+            get
+            {
+                return this.id_nombretipo.Value;
+            }
+        }
+        public String planillaNombre
+        {
+            get
+            {
+                return this.id_nombrePlanilla.Value;
+            }
+        }
+        public ListBox datosPlanilla1
+        {
+            get
+            {
+                return this.ListBox1;
+            }
+            set
+            {
+                this.ListBox1 = value;
+            }
+        }
+        public ListBox datosPlanilla2
+        {
+            get
+            {
+                return this.ListBox2;
+            }
+            set
+            {
+                this.ListBox2 = value;
+            }
+        }
+        public String alertLocalRol
+        {
+            set
+            {
+                this.alertlocal.InnerText = value;
+            }
+        }
+        public String alertLocalClase
+        {
+            set
+            {
+                this.alert.InnerText = value;
+            }
+        }
+        public String alertLocal
+        {
+            set
+            {
+                this.alertlocal.InnerHtml = value;
+            }
+        }
+        public bool alerta
+        {
+            set
+            {
+                this.alert.Visible = value;
+            }
+        }
+        public bool id_otroTipo
+        {
+            set
+            {
+                this.id_otro.Visible = value;
+            }
+        }
+
+
+
+        #endregion
         public void Alerta(string msj)
         {
-            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+            presentador.Alerta(msj);
+           /* alert.Attributes["class"] = "alert alert-danger alert-dismissible";
             alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";*/
         }
     
         protected void llenarComboTipoPlanilla()
         {
-
-            LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
+            presentador.LlenarComboTipoPlanilla();
+          /*  LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
             List<Planilla> listPlanilla = new List<Planilla>();
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("-1", "Selecciona una opcion");
@@ -112,26 +210,28 @@ namespace templateApp.GUI.Modulo14
         comboTipoPlanilla.DataValueField = "key";
         comboTipoPlanilla.DataBind();
 
-        
+        */
         }
 
 
         protected void comboTipoPlanilla_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboTipoPlanilla.SelectedValue == "-2")
+            presentador.NombreTipoPlanillaVisible();
+            /* if (comboTipoPlanilla.SelectedValue == "-2")
             {
                 id_otro.Visible = true;
             }
             else
             {
                 id_otro.Visible = false;
-            }
+            }*/
             
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            List<String> listDatos = new List<String>();
+            presentador.AgregarPlanilla();
+            /*List<String> listDatos = new List<String>();
             Planilla laPlanilla = null;
             ListItemCollection listItem = this.ListBox2.Items;
             String TipoPlanilla = "";
@@ -229,12 +329,13 @@ namespace templateApp.GUI.Modulo14
             catch (Exception ex)
             {
                 Alerta(ex.Message);
-            }
+            }*/
         }
 
         protected void AgregarDato_Click(object sender, EventArgs e)
         {
-            try
+            presentador.AgregarDato();
+            /*try
             {
                
                 string opcionDato = ListBox1.SelectedItem.Text;
@@ -276,13 +377,14 @@ namespace templateApp.GUI.Modulo14
             catch (Exception ex)
             {
                 Alerta(ex.Message);
-            }
+            }*/
 
         }
 
         protected void QuitarDato_Click(object sender, EventArgs e)
         {
-            try
+            presentador.QuitarDato();
+           /* try
             {
                 string opcionDato2 = ListBox2.SelectedItem.Text;
                 ListBox1.Items.Add(new ListItem(opcionDato2, ListBox2.SelectedValue));
@@ -323,7 +425,7 @@ namespace templateApp.GUI.Modulo14
             catch (Exception ex)
             {
                 Alerta(ex.Message);
-            }
+            }*/
         }
 
     }

@@ -59,6 +59,8 @@
     <Compile Include="Entidades\Modulo14\Planilla.cs" />
     <Compile Include="Entidades\Modulo14\SolicitudP.cs" />
     <Compile Include="Entidades\Modulo14\SolicitudPlanilla.cs" />
+    <Compile Include="Entidades\Modulo3\Organizacion.cs" />
+    <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
     <Compile Include="Entidades\Modulo9\Evento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
@@ -101,9 +103,9 @@
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
     <Folder Include="Entidades\Modulo2\" />
-    <Folder Include="Entidades\Modulo3\" />
     <Folder Include="Entidades\Modulo4\" />
     <Folder Include="Entidades\Modulo5\" />
+    <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
