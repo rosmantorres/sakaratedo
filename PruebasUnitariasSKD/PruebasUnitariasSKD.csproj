@@ -69,14 +69,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\PruebaDatos.cs" />
-    <Compile Include="Modulo15\PruebaInterfaz.cs" />
-    <Compile Include="Modulo15\PruebaLogica.cs" />
-    <Compile Include="Modulo15\RecursosPU_Mod15.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,6 +89,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo3\PUDaoOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\PUDaoCintas.cs" />
     <Compile Include="Modulo5\RecursosPU_Mod5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,10 +184,6 @@
     <EmbeddedResource Include="Modulo14\RecursosPU_Mod14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod14.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosPU_Mod15.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPU_Mod15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\RecursosPU_Mod16.resx">
       <Generator>ResXFileCodeGenerator</Generator>

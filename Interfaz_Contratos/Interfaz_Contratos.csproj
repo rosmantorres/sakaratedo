@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IContratoMasterPage.cs" />
+    <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo14\IContratoM14DisenoPlanilla.cs" />
+    <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
+    <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />
+    <Compile Include="Modulo14\IContratoM14MostrarPlanilla.cs" />
+    <Compile Include="Modulo14\IContratoM14RegistrarPlanilla.cs" />
+    <Compile Include="Modulo14\IContratoM14SolicitarPlanilla.cs" />
+    <Compile Include="Modulo14\IContratoM14SolicitudPlanilla.cs" />
+    <Compile Include="Modulo1\IContratoM1Inicio.cs" />
+    <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
+    <Compile Include="Modulo2\IContratoM2.cs" />
+    <Compile Include="Modulo5\IContratoCrearCinta.cs" />
+    <Compile Include="Modulo5\IContratoListarCintas.cs" />
+    <Compile Include="Modulo5\IContratoModificarCinta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,14 +70,10 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo14\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
-    <Folder Include="Modulo1\" />
-    <Folder Include="Modulo2\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
-    <Folder Include="Modulo5\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 
+
 namespace DatosSKD.InterfazDAO.Modulo15
 {
     interface IDaoImplemento : IDao<Entidad, bool, Entidad>
