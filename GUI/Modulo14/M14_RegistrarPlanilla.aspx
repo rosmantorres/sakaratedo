@@ -12,11 +12,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Planillas</a> 
-		    </li>
-
-            <li>
-			    <a href="#">Gestión de Planillas</a> 
+			    <a href="M14_ConsultarPlanillas.aspx">Gestion de Planillas</a> 
 		    </li>
 		
 		    <li class="active">

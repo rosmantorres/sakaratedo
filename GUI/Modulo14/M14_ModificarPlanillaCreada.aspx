@@ -12,11 +12,7 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Planillas</a> 
-		    </li>
-
-            <li>
-			    <a href="#">Gestión de Planillas</a> 
+			    <a href="M14_ConsultarPlanillas.aspx">Gestion de Planillas</a> 
 		    </li>
 		
 		    <li class="active">
@@ -79,9 +75,11 @@
 
           <asp:ListBox ID="ListBox1" runat="server" Width="860px" Height="130px">
              <asp:ListItem Text="DOJO" Value="DOJO" Selected="True" />
-             <asp:ListItem Text="ATLETA" Value="ATLETA" />
-             <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA" />
-             <asp:ListItem Text="EVENTO" Value="EVENTO"  />
+             <asp:ListItem Text="PERSONA" Value="PERSONA" />
+             <asp:ListItem Text="EVENTO" Value="EVENTO" />
+             <asp:ListItem Text="COMPETENCIA" Value="COMPETENCIA"  />   
+             <asp:ListItem Text="ORGANIZACION" Value="ORGANIZACION"  />
+            <asp:ListItem Text="MATRICULA" Value="MATRICULA"  />
 
           </asp:ListBox>
           <br/>
