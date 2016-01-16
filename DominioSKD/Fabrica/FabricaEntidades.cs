@@ -206,6 +206,15 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 15
+           public Entidad ObtenerImplemento(int id_implemento, String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String imagen_implemento, int cantidad_implemento, int stock_minimo_implemento, String estatus_implemento, double precio_implemento, String descripcion_implemento, Dojo dojo)
+        {
+            return new Implemento( id_implemento,  nombre_implemento,  tipo_implemento,  marca_implemento,  color_implemento,  talla_implemento,  imagen_implemento,  cantidad_implemento,  stock_minimo_implemento,  estatus_implemento,  precio_implemento,  descripcion_implemento,  dojo);
+        }
+
+           public Entidad ObtenerImplemento()
+           {
+               return new Implemento();
+           }
         #endregion
 
         #region Modulo 16

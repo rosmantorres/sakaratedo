@@ -49,6 +49,7 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo15\Implemento.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
@@ -94,7 +95,6 @@
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
     <Folder Include="Entidades\Modulo14\" />
-    <Folder Include="Entidades\Modulo15\" />
     <Folder Include="Entidades\Modulo16\" />
     <Folder Include="Entidades\Modulo1\" />
     <Folder Include="Entidades\Modulo2\" />

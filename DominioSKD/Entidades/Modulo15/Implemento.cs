@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo15
 {
     public class Implemento:Entidad
     {
+
 
         #region atributos
         private int id_implemento;
@@ -159,7 +160,7 @@ namespace DominioSKD
 
         #region Constructores de Implementos
         #region Constructor
-        public Implemento(int id_implemento, String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String imagen_implemento, int cantidad_implemento, int stock_minimo_implemento, String estatus_implemento, double precio_implemento, String descripcion_implemento, Dojo dojo):base()
+        public Implemento(int id_implemento, String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String imagen_implemento, int cantidad_implemento, int stock_minimo_implemento, String estatus_implemento, double precio_implemento, String descripcion_implemento, Dojo dojo): base()
         {
             this.id_implemento = id_implemento;
             this.nombre_implemento = nombre_implemento;
@@ -183,7 +184,6 @@ namespace DominioSKD
         #endregion
 
         #endregion
-
 
     }
 }
