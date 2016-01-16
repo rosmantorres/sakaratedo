@@ -10,15 +10,36 @@ using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using Interfaz_Contratos.Modulo7;
+using Interfaz_Presentadores.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_ListarPagosAEventos : System.Web.UI.Page
+    public partial class M7_ListarPagosAEventos : System.Web.UI.Page, IContratoListarEventosPagos
     {
         #region Atributos
-        private List<DominioSKD.Evento> laLista;
+        private List<DominioSKD.Evento> laListaEventos;
         private List<DominioSKD.Competencia> laListaCompetencias;
+        private List<Evento> laLista = new List<Evento>();///xq
+        private PresentadorListarEventosPagos presentador;
+
+        string IContratoListarEventosPagos.laTabla
+        {
+            get
+            {
+                return laTabla.Text;
+            }
+
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
         #endregion
+         public M7_ListarPagosAEventos()
+        {
+            presentador = new PresentadorListarEventosPagos(this);
+        }
         #region Page Load
         /// <summary>
         /// Método que se ejecuta al cargar la página
@@ -28,8 +49,7 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-            DateTime fechaPago;
-            float monto;
+          
             String detalleString = Request.QueryString["eventDetalle"];
 
             #region Llenar Data Table con Eventos
@@ -52,7 +72,9 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            laLista = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+
+                              presentador.ConsultarListaEventosPagos();
+                           /* laLista = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                             laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                             if (laLista != null && laListaCompetencias != null)
                             {
@@ -89,7 +111,7 @@ namespace templateApp.GUI.Modulo7
                                 throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
                                 M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
                             }
-
+                            */
                         }
                         catch (ListaNulaException)
                         {

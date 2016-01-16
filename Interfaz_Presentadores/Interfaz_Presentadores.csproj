@@ -45,6 +45,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Modulo7\PresentadorListarCintasObtenidas.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosPagos.cs" />
     <Compile Include="Modulo7\PresentadorListarEventosAsistidos.cs" />
     <Compile Include="PresentadorMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

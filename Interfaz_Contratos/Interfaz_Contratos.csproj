@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="IContratoMasterPage.cs" />
     <Compile Include="Modulo7\IContratoListarCintasObtenidas.cs" />
+    <Compile Include="Modulo7\IContratoListarMatriculasPagas.cs" />
+    <Compile Include="Modulo7\IContratoListarEventosPagos.cs" />
     <Compile Include="Modulo7\IContratoListarEventosAsistidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
