@@ -123,6 +123,15 @@
   <data name="CategoriaComp" xml:space="preserve">
     <value>$CATEGORIA_comp</value>
   </data>
+  <data name="CategoriaSexo" xml:space="preserve">
+    <value>Categoria: Sexo:</value>
+  </data>
+  <data name="CintaFinal" xml:space="preserve">
+    <value>Cinta Final:</value>
+  </data>
+  <data name="CintaInicial" xml:space="preserve">
+    <value>Cinta Inicial:</value>
+  </data>
   <data name="CompCosto" xml:space="preserve">
     <value>$comp_costo</value>
   </data>
@@ -150,6 +159,12 @@
   <data name="DojTelefono" xml:space="preserve">
     <value>$doj_telefono</value>
   </data>
+  <data name="EdadFinal" xml:space="preserve">
+    <value>Edad Final:</value>
+  </data>
+  <data name="EdadInicial" xml:space="preserve">
+    <value>Edad Inicial:</value>
+  </data>
   <data name="EveCosto" xml:space="preserve">
     <value>$eve_costo</value>
   </data>
@@ -162,17 +177,29 @@
   <data name="FechaCreacionPlanilla" xml:space="preserve">
     <value>$fecha_creacionDelaPlanilla</value>
   </data>
+  <data name="FechaFin" xml:space="preserve">
+    <value>Fecha Fin:</value>
+  </data>
   <data name="FechaReincor" xml:space="preserve">
     <value>$fecha_reincorporacion</value>
   </data>
   <data name="FechaRetiro" xml:space="preserve">
     <value>$fecha_retiro</value>
   </data>
+  <data name="HoraFinal" xml:space="preserve">
+    <value>Hora Final:</value>
+  </data>
+  <data name="HoraInicio" xml:space="preserve">
+    <value>Hora Inicio:</value>
+  </data>
+  <data name="HorarioDeEventoFI" xml:space="preserve">
+    <value>Horario de Evento: Fecha Inicio:</value>
+  </data>
   <data name="HorarioHor" xml:space="preserve">
     <value>$HORARIO_hor</value>
   </data>
   <data name="ImageSRC" xml:space="preserve">
-    <value>&lt;img src=</value>
+    <value>&lt;img src='</value>
   </data>
   <data name="Linea" xml:space="preserve">
     <value>&lt;br/&gt;</value>
@@ -193,7 +220,7 @@
     <value>$mat_precio</value>
   </data>
   <data name="MedidasImagen" xml:space="preserve">
-    <value>Height='80' Width='90'/&gt;</value>
+    <value>'Height='80' Width='90'/&gt;</value>
   </data>
   <data name="Motivo" xml:space="preserve">
     <value>$motivo</value>
