@@ -340,6 +340,56 @@ namespace PruebasUnitariasSKD.Modulo7
             List<Evento> listaEvento = baseDeDatosEvento.ListarHorarioPractica(-1);
         }
 
+
+        /// <summary>
+        /// Método para probar que devuelve la fecha de pago de un evento 
+        /// </summary>
+        [Test]
+        public void PruebaFechaPagoEvento()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            DateTime fechaPago = baseDeDatosEvento.fechaPagoEvento(idPersona, 14);
+            Assert.AreEqual("03/10/2015", fechaPago.ToString("MM/dd/yyyy"));
+        }
+
+        /// <summary>
+        /// Método para probar que no devuelva nula la fecha del pago de un evento
+        /// </summary>
+        [Test]
+        public void PruebaFechaPagoEventoNoNula()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            DateTime fechaPago = baseDeDatosEvento.fechaPagoEvento(idPersona, 5);
+            Assert.NotNull(fechaPago);
+        }
+
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de prueba fecha Pago evento
+        /// </summary>
+
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void FechaPagoEventoNumeroEnteroException()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            DateTime fechaPago = baseDeDatosEvento.fechaPagoEvento(idPersona, -2);
+        }
+
+        /// <summary>
+        /// Método para probar que devuelve el monto pago de un evento 
+        /// </summary>
+        [Test]
+        public void PruebaMontoPagoEvento()
+        {
+            BDEvento baseDeDatosEvento = new BDEvento();
+            float  montoPago = baseDeDatosEvento.montoPagoEvento(idPersona, 14);
+            Assert.AreEqual(1200, montoPago);
+        }
+
+
+
+
         #endregion
 
 
