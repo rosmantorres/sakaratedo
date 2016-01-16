@@ -22,6 +22,7 @@ namespace PruebasUnitariasSKD.Modulo16
     {
         #region Atributos
         //Atributos pertinentes a usar
+        private Comando<bool> ComandoEliminar;
         private Comando<bool> PruebaComandoVacio;
         private Comando<bool> PruebaComandoVacio2;
         private ComandoAgregarItem pruebaComandoVacio3;
@@ -128,7 +129,6 @@ namespace PruebasUnitariasSKD.Modulo16
 
             this.pruebaComandoMatricula4 = FabricaComandos.CrearComandoAgregarItem
                 (this.persona3, this.implemento, 1, 20);
-
         }
 
         /// <summary>
@@ -161,6 +161,14 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.pruebaComandoImplemento4.Ejecutar());
+
+            //Comando que nos permitiria limpiar las pruebas pertinentes
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 11);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 2, 11);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 11);
+            this.ComandoEliminar.Ejecutar();
         }
 
         /// <summary>
@@ -181,6 +189,14 @@ namespace PruebasUnitariasSKD.Modulo16
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.pruebaComandoEvento4.Ejecutar());
 
+            //Comando que nos permitiria limpiar las pruebas pertinentes
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 12);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 2, 12);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 12);
+            this.ComandoEliminar.Ejecutar();
+
         }
 
         /// <summary>
@@ -200,6 +216,14 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.pruebaComandoMatricula4.Ejecutar());
+
+            //Comando que nos permitiria limpiar las pruebas pertinentes
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 13);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 2, 13);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 13);
+            this.ComandoEliminar.Ejecutar();
         }
 
         /// <summary>
@@ -208,6 +232,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            this.ComandoEliminar = null;
             this.PruebaComandoVacio = null;
             this.PruebaComandoVacio2 = null;
             this.pruebaComandoVacio3 = null;
