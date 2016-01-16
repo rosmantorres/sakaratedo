@@ -9,7 +9,6 @@ namespace DominioSKD.Entidades.Modulo12
     public class Competencia : Entidad
     {
         #region atributos
-        private int id_competencia;
         private String nombre;
         private String tipoCompetencia;
         private bool organizacionTodas;
@@ -25,11 +24,7 @@ namespace DominioSKD.Entidades.Modulo12
 
         #endregion
         #region propiedades
-        public int Id_competencia
-        {
-            get { return id_competencia; }
-            set { id_competencia = value; }
-        }
+
 
         public String Nombre
         {
@@ -101,7 +96,6 @@ namespace DominioSKD.Entidades.Modulo12
         #region constructores
         public Competencia() : base()
         {
-            id_competencia = 0;
             nombre = "";
             tipoCompetencia = "";
             organizacionTodas = false;
@@ -117,9 +111,8 @@ namespace DominioSKD.Entidades.Modulo12
 
         }
 
-        public Competencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus) :base()
+        public Competencia(String elNombre, String elTipo, bool orgTodas, String elStatus) :base()
         {
-            id_competencia    = elId;
             nombre            = elNombre;
             tipoCompetencia   = elTipo;
             organizacionTodas = orgTodas;
@@ -128,9 +121,8 @@ namespace DominioSKD.Entidades.Modulo12
 
         }
 
-        public Competencia(int id,int elId, String elNombre, String elTipo, bool orgTodas, String elStatus): base(id)
+        public Competencia(int id, String elNombre, String elTipo, bool orgTodas, String elStatus): base(id)
         {
-            id_competencia = elId;
             nombre = elNombre;
             tipoCompetencia = elTipo;
             organizacionTodas = orgTodas;

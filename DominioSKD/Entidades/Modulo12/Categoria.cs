@@ -9,7 +9,6 @@ namespace DominioSKD.Entidades.Modulo12
     public class Categoria : Entidad
     {
         #region atributos
-        private int id_categoria;
         private int edad_inicial;
         private int edad_final;
         private String cinta_inicial;
@@ -18,11 +17,7 @@ namespace DominioSKD.Entidades.Modulo12
         #endregion
 
         #region propiedades
-        public int Id_categoria
-        {
-            get { return id_categoria; }
-            set { id_categoria = value; }
-        }
+
 
         public int Edad_inicial
         {
@@ -59,7 +54,6 @@ namespace DominioSKD.Entidades.Modulo12
         #region constructores
         public Categoria() : base()
         {
-            id_categoria  = 0;
             edad_inicial  = -1;
             edad_final    = -1;
             cinta_inicial = "";
@@ -67,7 +61,7 @@ namespace DominioSKD.Entidades.Modulo12
             sexo = "";
         }
 
-        public Categoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base()
+        public Categoria( int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base ()
         {
             edad_inicial  = laEdadIni;
             edad_final    = laEdadFin;
@@ -76,19 +70,8 @@ namespace DominioSKD.Entidades.Modulo12
             sexo          = elSexo;
         }
 
-        public Categoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base ()
+        public Categoria(int id, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base(id)
         {
-            id_categoria  = elId;
-            edad_inicial  = laEdadIni;
-            edad_final    = laEdadFin;
-            cinta_inicial = laCintaIni;
-            cinta_final   = laCintaFinal;
-            sexo          = elSexo;
-        }
-
-        public Categoria(int id, int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo) : base(id)
-        {
-            id_categoria = elId;
             edad_inicial = laEdadIni;
             edad_final = laEdadFin;
             cinta_inicial = laCintaIni;
