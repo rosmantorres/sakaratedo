@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -49,7 +49,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\itextsharp.dll</HintPath>
+      <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -212,6 +212,17 @@
     <Content Include="GUI\Modulo15\M15_AgregarImplemento.aspx" />
     <Content Include="GUI\Modulo15\M15_ConsultarImplemento.aspx" />
     <Content Include="GUI\Modulo15\M15_ModificarImplemento.aspx" />
+    <Content Include="GUI\Modulo14\img\Carnet_titulo.jpg" />
+    <Content Include="GUI\Modulo14\img\perfil.jpg" />
+    <Content Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx" />
+    <Content Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx" />
+    <Content Include="GUI\Modulo14\M14_DisenoPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
+    <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
+    <Content Include="GUI\Modulo14\M14_MostrarPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
+    <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -222,13 +233,11 @@
     <Content Include="GUI\Modulo1\js\Login.js" />
     <Content Include="GUI\Modulo1\js\RestablecerContraseña.js" />
     <Content Include="GUI\Modulo1\js\ValidarCorreo.js" />
-    <Content Include="GUI\Modulo1\M1_Prueba.aspx" />
     <Content Include="GUI\Modulo1\RestablecerContrasena.aspx" />
-    <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
-    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx" />
-    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
-    <Content Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo2\M2_GestionarRol.aspx" />
     <Content Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
+    <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
@@ -1665,6 +1674,69 @@
     <Compile Include="GUI\Modulo13\M13_ProgramaKyu.aspx.designer.cs">
       <DependentUpon>M13_ProgramaKyu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.cs">
+      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillas.aspx.designer.cs">
+      <DependentUpon>M14_ConsultarPlanillas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.cs">
+      <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ConsultarPlanillasSolicitadas.aspx.designer.cs">
+      <DependentUpon>M14_ConsultarPlanillasSolicitadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.cs">
+      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_DisenoPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_DisenoPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.cs">
+      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx.designer.cs">
+      <DependentUpon>M14_ModificarPlanillaCreada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.cs">
+      <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
+      <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.cs">
+      <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.cs">
+      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_RegistrarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.cs">
+      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_SolicitarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.cs">
+      <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_SolicitudPlanilla.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo14\RecursoInterfazModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1734,13 +1806,6 @@
     <Compile Include="GUI\Modulo1\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo1\M1_Prueba.aspx.cs">
-      <DependentUpon>M1_Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo1\M1_Prueba.aspx.designer.cs">
-      <DependentUpon>M1_Prueba.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo1\RecursosInterfazModulo1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1765,19 +1830,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosInterfazModulo2.resx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
+      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
+      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ConsultarOrganizacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx.cs">
-      <DependentUpon>M3_ModificarOrganizacion2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion2.aspx.designer.cs">
-      <DependentUpon>M3_ModificarOrganizacion2.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
@@ -1786,20 +1851,7 @@
     <Compile Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx.designer.cs">
       <DependentUpon>M3_ModificarOrganizacion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx.cs">
-      <DependentUpon>M3_EliminarOrganizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_EliminarOrganizacion.aspx.designer.cs">
-      <DependentUpon>M3_EliminarOrganizacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.cs">
-      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo3\M3_AgregarOrganizacion.aspx.designer.cs">
-      <DependentUpon>M3_AgregarOrganizacion.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="GUI\Modulo3\M3_RecursoInterfaz1.Designer.cs" />
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1842,6 +1894,7 @@
     <Compile Include="GUI\Modulo5\M5_CrearCintas.aspx.designer.cs">
       <DependentUpon>M5_CrearCintas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo5\RecursoInterfazMod5.Designer.cs" />
     <Compile Include="GUI\Modulo6\M6_CrearUsuarioPre.aspx.cs">
       <DependentUpon>M6_CrearUsuarioPre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2122,6 +2175,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo5\RecursoInterfazMod5.resx" />
     <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M7_Recursos.Designer.cs</LastGenOutput>
@@ -2140,12 +2195,23 @@
       <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
       <Name>ExcepcionesSKD</Name>
     </ProjectReference>
+    <ProjectReference Include="Interfaz_Contratos\Interfaz_Contratos.csproj">
+      <Project>{688be1ea-7c38-424e-a86a-14ba0fa85f20}</Project>
+      <Name>Interfaz_Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="Interfaz_Presentadores\Interfaz_Presentadores.csproj">
+      <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>
+      <Name>Interfaz_Presentadores</Name>
+    </ProjectReference>
     <ProjectReference Include="LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
       <Name>LogicaNegociosSKD</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -2159,7 +2225,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>23072</DevelopmentServerPort>
+          <DevelopmentServerPort>43086</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:23072/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
