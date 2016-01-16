@@ -16,12 +16,56 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 3
+		public Entidad ObtenerOrganizacion_M3()
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion();
+        }
+        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre);
+        }
+        public Entidad ObtenerOrganizacion_M3(String elNombre)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre);
+        }
+        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
+        }
+        public Entidad ObtenerOrganizacion_M3(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        {
+            return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
+        }
         #endregion
 
         #region Modulo 4
         #endregion
 
         #region Modulo 5
+		public Entidad ObtenerCinta_M5()
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta();
+        }
+        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
+        }
+        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
+        }
+        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
+        }
+        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
+        }
+        public Entidad ObtenerCinta_M5(int elId, String elColor)
+        {
+            return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor);
+        }
         #endregion
 
         #region Modulo 6
@@ -203,6 +247,128 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 14
+        public Entidad ObtenerPlanilla()
+        {
+            return new Planilla();
+        }
+        public Entidad ObtenerPlanilla(string nombre, Boolean status, string tipoPlanilla)
+        {
+            return new Planilla(nombre, status, tipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(int id, string nombre, Boolean status, string tipoPlanilla)
+        {
+            return new Planilla(id, nombre, status, tipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(string nombre, bool status, string tipoPlanilla, List<String> datos)
+        {
+            return new Planilla(nombre, status, tipoPlanilla, datos);
+        }
+        public Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        {
+            return new Planilla(nombre, status, idTipoPlanilla, datos);
+        }
+        public Entidad ObtenerPlanilla(int id, string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        {
+            return new Planilla(id, nombre, status, idTipoPlanilla, datos);
+        }
+        public Entidad ObtenerPlanilla(int idTipoPlanilla, string tipoPlanilla)
+        {
+            return new Planilla(idTipoPlanilla, tipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla)
+        {
+            return new Planilla(nombre, status, idTipoPlanilla);
+        }
+        public Entidad ObtenerPlanilla(List<String> datos)
+        {
+            return new Planilla(datos);
+        }
+
+        public Entidad ObtenerSolicitudP()
+        {
+            return new SolicitudP();
+        }
+        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id)
+        {
+            return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id);
+        }
+        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, Planilla planilla, int id)
+        {
+            return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, planilla, id);
+        }
+        public Entidad ObtenerSolicitudP(int id, String nombreEvento)
+        {
+            return new SolicitudP(id, nombreEvento);
+        }
+        public Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, Planilla planilla, int idInscripcion)
+        {
+            return new SolicitudP(id, fechaRetiro, fechaReincorporacion, motivo, planilla, idInscripcion);
+        }
+        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id, int idInscripcion)
+        {
+            return new SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id, idInscripcion);
+        }
+        public Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, int idInscripcion)
+        {
+            return new SolicitudP(id, fechaRetiro, fechaReincorporacion, motivo, idInscripcion);
+        }
+        public Entidad ObtenerSolicitudPlanilla()
+        {
+            return new SolicitudPlanilla();
+        }
+        public Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
+            string motivo, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(fechaCreacion, fechaRetiro, fechaReincorporacion,
+             motivo, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
+            string motivo, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(id, fechaCreacion, fechaRetiro, fechaReincorporacion,
+             motivo, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(fechaCreacion, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, Planilla planilla, int idInscripcion, int idPersona)
+        {
+            return new SolicitudPlanilla(id, fechaCreacion, planilla, idInscripcion, idPersona);
+        }
+        public Entidad ObtenerSolicitudPlanilla(DateTime fechaRetiro, DateTime fechaReincorporacion, string motivo, Planilla planilla)
+        {
+            return new SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
+        }
+
+        public Entidad obtenerDiseño()
+        {
+            return new Diseño();
+        }
+
+        public Entidad obtenerDiseño(int id, string contenido)
+        {
+            return new Diseño(id,contenido);
+        }
+
+        public Entidad obtenerDiseño(string contenido)
+        {
+            return new Diseño(contenido);
+        }
+        // Entidades de otros modulos que necesitamos
+        public Entidad ObtenerPersona()
+        {
+            return new Persona();
+        }
+        public Entidad ObtenerDojo()
+        {
+            return new Dojo();
+        }
+        public Entidad ObtenerMatricula()
+        {
+            return new Matricula();
+        }
+        //Hasta aca
         #endregion
 
         #region Modulo 15

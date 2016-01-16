@@ -10,11 +10,7 @@
 		    <li>
 			    <a href="../Master/Inicio.aspx">Home</a>
 		    </li>
-		
-		    <li>
-			    <a href="M14_ConsultarPlanillas.aspx">Gestión de planillas</a>
-		    </li>
-		
+				
 		    <li class="active">
 			    Solicitar Planillas
 		    </li>

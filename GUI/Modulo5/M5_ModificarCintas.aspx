@@ -32,39 +32,54 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-   <form class="form-horizontal" role="form">
-        <div class="form-group">
-    <label for="color" class="col-lg-2 control-label">Organización</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="org" placeholder="Shito Ryu">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="color" class="col-lg-2 control-label">Color</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="cinta" placeholder="Blanco">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="ran" class="col-lg-2 control-label">Rango</label>
-    <div class="col-xs-5">
-      <input type="email" class="form-control" id="ran" placeholder="10mo">
-    </div>
-  </div>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+                  <h3 class="box-title">Modificar Cinta</h3>
+                </div><!-- /.box-header -->
    
-    <div class="form-group">
-    <label for="cat" class="col-lg-2 control-label">Categoria</label>
+          
+     
+                                      <h3>Seleccione una Organización</h3> 
+<form role="form" name="consulta_org" id="consulta_org" method="post" runat="server">
+           
+     <div class="col-sm-8 col-md-8 col-lg-84">
+             <div class="dropdown" runat="server" id="divComboTipoListOrg"  >
+                 <asp:DropDownList ID="ListOrg" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList> <%-- OnSelectedIndexChanged="comboTipoPlanilla_SelectedIndexChanged"--%>
+              </div>
+      </div>
+  
+    <br />
+    <br />
+       
+                         <!-- Lista de Organizaciones -->
+ 
+ <div class="container">   
+  <div class="row" >
+   <!--  <label for="color" class="col-lg-2 control-label">*Color</label>  -->
     <div class="col-xs-5">
-      <input type="email" class="form-control" id="cate" placeholder="Kyu">
+        <div id="id_otro" runat="server" class="form-group" > 
+             <input style="margin-top:5%" type="text" class="form-control" id="color" placeholder="Color de cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="ran" placeholder="Rango de Cinta" runat="server" >
+             <input style="margin-top:5%" type="text" class="form-control" id="cate" placeholder="Clasificación de la Cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="signi" placeholder="Significado de la cinta" runat="server">
+             <input style="margin-top:5%" type="text" class="form-control" id="ord" placeholder="Orden de la cinta" runat="server">
+        </div>
     </div>
   </div>
 
-    <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-danger">Modificar</button>
-    </div>
-  </div>
+  <br />                             
 
+
+  <div class="box-footer text-center">
+       &nbsp;&nbsp;&nbsp;&nbsp
+       <asp:Button id="btnModificarCintas" style="align-content:center" class="btn btn-primary" type="submit" OnClick="btnModificarCinta" runat="server" text= "Modificar"></asp:Button>
+       &nbsp;&nbsp
+       <a class="btn btn-default" href="M5_ListarCintas.aspx">Cancelar</a>
+  </div>
+</div>
  </form>
+            
+  </div>  
+
 </asp:Content>
