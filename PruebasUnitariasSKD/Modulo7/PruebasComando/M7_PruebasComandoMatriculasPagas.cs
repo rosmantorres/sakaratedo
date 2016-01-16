@@ -47,7 +47,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         #region Test
 
         /// <summary>
-        /// Método para probar que la tupla obtenida no es nula en eventos asistidos
+        /// Método para probar que la tupla obtenida no es nula en matriculas pagas
         /// </summary>
         [Test]
         public void PruebaObtenerTuplaMatriculasPagas()
@@ -57,7 +57,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar la excepcion de número entero invalido en obtener lista eventos asistidos
+        /// Método para probar la excepcion de número entero invalido en obtener lista de matriculas pagas
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
@@ -68,7 +68,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar que la lista obtenida de eventos puede tener uno o mas eventos
+        /// Método para probar que la lista obtenida de matriculas puede tener una o mas matriculas
         /// </summary>
         [Test]
         public void PruebaObtenerListaMatriculasPagas()
@@ -80,7 +80,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 
 
         /// <summary>
-        /// Método para probar que la lista obtenida de fechas sobre eventos puede tener uno o mas fechas
+        /// Método para probar que la lista obtenida de los estados de las matriculas pueden tener uno o mas estados
         /// </summary>
         [Test]
         public void PruebaObtenerEstadoMatriculasPagas()
@@ -91,7 +91,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar que la lista obtenida de fechas sobre competencias puede tener uno o mas competencias
+        /// Método para probar que la lista obtenida de los montos pagados de las matriculas, puede tener una o mas matriculas
         /// </summary>
         [Test]
         public void PruebaObtenerListaMontoMatriculasPagas()

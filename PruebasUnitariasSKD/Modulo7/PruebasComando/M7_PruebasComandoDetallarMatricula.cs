@@ -46,7 +46,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 
         #region Test
         /// <summary>
-        /// Método para probar que el evento obtenido no esta vacio
+        /// Método para probar que la matricula obtenida no esta vacia
         /// </summary>
         [Test]
         public void PruebaMatricula()
@@ -56,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar que el evento obtenido no es nulo
+        /// Método para probar que la matricula obtenida no es nula
         /// </summary>
         [Test]
         public void PruebaMatriculaNoNula()
@@ -66,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar la excepcion de número entero invalido en detallar evento
+        /// Método para probar la excepcion de número entero invalido en detallar matricula
         /// </summary>
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]

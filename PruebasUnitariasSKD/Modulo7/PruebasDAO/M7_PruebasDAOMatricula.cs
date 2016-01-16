@@ -12,7 +12,7 @@ using ExcepcionesSKD.Modulo7;
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
     /// <summary>
-    /// Clase que contiene las pruebas unitarias para DaoCinta
+    /// Clase que contiene las pruebas unitarias para DaoMatricula
     /// </summary>
     [TestFixture]
     public class M7_PruebasDAOMatricula
@@ -44,7 +44,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 
         #region Test
         /// <summary>
-        /// Método de prueba para ConSultarXId en DAO
+        /// Método de prueba para ConSultarXId las matriculas en DAO
         /// </summary>
         [Test]
         public void PruebaDetallarMatriculaXId()
@@ -59,7 +59,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 
 
         /// <summary>
-        /// Método para probar que una matriculada detallado no sea nulo
+        /// Método para probar que una matricula detallada no sea nulo
         /// </summary>
         [Test]
         public void PruebaDetallarMatriculaXIdNoNulo()

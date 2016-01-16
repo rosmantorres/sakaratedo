@@ -14,7 +14,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
 
     /// <summary>
-    /// Clase que contiene las pruebas unitarias para DaoCinta
+    /// Clase que contiene las pruebas unitarias para DaoEvento
     /// </summary>
     [TestFixture]
     public class M7_PruebasDAOEvento
@@ -58,7 +58,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             Assert.AreEqual("La vida en el Dojo", evento.Nombre);
         }
         /// <summary>
-        /// Método para probar que una matriculada detallado no sea nulo en DAO
+        /// Método para probar que un evento detallado no sea nulo en DAO
         /// </summary>
         [Test]
         public void PruebaDetallarEventoXIdNoNulo()
