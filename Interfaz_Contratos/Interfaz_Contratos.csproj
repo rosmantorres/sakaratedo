@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />
+    <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
+    <Compile Include="Modulo12\IContratoListarCompetencias.cs" />
+    <Compile Include="Modulo12\IContratoModificarCompetencias.cs" />
     <Compile Include="Modulo14\IContratoM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />
@@ -68,7 +72,6 @@
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
