@@ -113,6 +113,15 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             Assert.GreaterOrEqual(listaFechaCompetencia.Count, 1);
         }
 
+      [Test]
+      public void PruebaObtenerListaMontoEventoPago()
+      {
+
+          Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>> tupla = eventosPagos.Ejecutar();
+          List<float> listaMontoPago = tupla.Item4;
+          Assert.GreaterOrEqual(listaMontoPago.Count, 1);
+      }
+
     
       
         #endregion
