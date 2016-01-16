@@ -189,13 +189,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo10\M10_AgregarEliminarAsistencia.js" />
     <Content Include="GUI\Modulo10\M10_DetalleAsistenciaEvento.aspx" />
     <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarAscenso.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarKata.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
@@ -1809,27 +1805,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>M10_RecursosInterfaz.resx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
-      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.designer.cs">
-      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.cs">
-      <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.designer.cs">
-      <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.cs">
-      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.designer.cs">
-      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>

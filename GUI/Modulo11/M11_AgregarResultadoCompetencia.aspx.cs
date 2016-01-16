@@ -243,8 +243,63 @@ namespace templateApp.GUI.Modulo11
                 }
                 else if (Session["M11_especialidad"].ToString().Equals("3"))
                 {
-                    //bModificar.Visible = false;
-                    //bModificarAmbas.Visible = true;
+                    bAgregar.Visible = false;
+                    bAgregarAmbos.Visible = true;
+                    bSiguienteAmbos.Visible = true;
+                    #region Carga de tabla de Atletas que compiten en una competencia de tipo kata
+                    try
+                    {
+                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        foreach (Inscripcion inscripcion in inscripciones)
+                        {
+                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTR;
+                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo1;
+                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo2;
+                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo3;
+                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTR;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    #endregion
+                    #region Carga de tabla de Atletas que compiten en una competencia de tipo kumite
+                    try
+                    {
+                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
+                        {
+                            int rango = buscarNumeroPermitido(inscripciones) / 2;
+                            Session["M11_Rango"] = rango;
+                            List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, rango);
+                            foreach (ResultadoKumite resultado in listaKumite)
+                            {
+                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
+                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo1;
+                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo2;
+                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    #endregion
                 }
             }
         }
@@ -263,7 +318,6 @@ namespace templateApp.GUI.Modulo11
                 try
                 {
                     List<Inscripcion> inscripciones = LogicaResultado.listaInscritosExamenAscenso(evento);
-                    JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                     List<valorEvento> valores = JsonConvert.DeserializeObject<List<valorEvento>>(rvalue.Value);
                     List<ResultadoAscenso> listaResultado = new List<ResultadoAscenso>();
 
@@ -319,7 +373,6 @@ namespace templateApp.GUI.Modulo11
                     try
                     {
                         List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                        JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                         List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue.Value);
                         List<ResultadoKata> listaResultado = new List<ResultadoKata>();
 
@@ -373,7 +426,6 @@ namespace templateApp.GUI.Modulo11
                         try
                         {
                             List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                            JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
                             List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
 
@@ -414,7 +466,58 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregarAmbos_Click(object sender, EventArgs e)
         {
+            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            {
+                if (Session["M11_especialidad"].ToString().Equals("3"))
+                {
+                    if (Convert.ToInt32(Session["M11_Rango"].ToString()) < 1)
+                    {
+                        #region Agregar Competencia tipo Kata y kumite
+                        Competencia competencia = new Competencia();
+                        competencia.Id_competencia = Convert.ToInt32(Session["M11_IdEvento"].ToString());
+                        competencia.TipoCompetencia = Session["M11_especialidad"].ToString();
+                        Categoria categoria = new Categoria();
+                        categoria.Id_categoria = Convert.ToInt32(Session["M11_categoria"].ToString());
+                        competencia.Categoria = categoria;
+                        try
+                        {
+                            List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                            List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
+                            List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
 
+                            foreach (valorKataKumite valor in valores)
+                            {
+                                ResultadoKumite resultadok = new ResultadoKumite();
+                                foreach (Inscripcion inscripcion in inscripciones)
+                                {
+                                    if ((valor.nombre.Equals(inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido)))
+                                    {
+                                        resultadok.Puntaje1 = Convert.ToInt32(valor.resultado1);
+                                        resultadok.Inscripcion1 = inscripcion;
+                                    }
+                                    if ((valor.resultado2.Equals(inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido)))
+                                    {
+                                        resultadok.Puntaje2 = Convert.ToInt32(valor.resultado3);
+                                        resultadok.Inscripcion2 = inscripcion;
+                                    }
+                                }
+                                listaKumite.Add(resultadok);
+                            }
+                            if (LogicaResultado.agregarResultadoKumite(listaKumite))
+                            {
+                                Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=15");
+                            }
+                            else
+                                Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=16");
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
+                        #endregion
+                    }
+                }
+            }
         }
 
         protected void bSiguiente_Click(object sender, EventArgs e)
@@ -432,6 +535,33 @@ namespace templateApp.GUI.Modulo11
                 if (Session["M11_especialidad"].ToString().Equals("2"))
                 {
                     #region Carga de tabla de Atletas compitiendo
+                    try
+                    {
+                        if (Convert.ToInt32(Session["M11_Rango"].ToString()) >= 1)
+                        {
+                            List<Inscripcion> listaInscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                            List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
+                            List<Inscripcion> inscripciones = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores);
+                            List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
+                            pintarTabla(listaKumite);
+                        }
+                        else if (Convert.ToInt32(Session["M11_Rango"].ToString()) < 1)
+                        {
+                            bSiguiente.Visible = false;
+                            List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
+                            ListaFinal(valores);
+                            primeroSegundo(valores);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    #endregion
+                }
+                else if (Session["M11_especialidad"].ToString().Equals("3"))
+                {
+                    #region Carga de tabla de Atletas compitiendo ambos
                     try
                     {
                         if (Convert.ToInt32(Session["M11_Rango"].ToString()) >= 1)
@@ -458,11 +588,69 @@ namespace templateApp.GUI.Modulo11
                     }
                     #endregion
                 }
-                else if (Session["M11_especialidad"].ToString().Equals("3"))
-                {
+            }
+        }
 
+        protected void bSiguienteAmbos_Click(object sender, EventArgs e)
+        {
+            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            {
+                Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
+                Competencia competencia = new Competencia();
+                competencia.Id_competencia = Convert.ToInt32(Session["M11_IdEvento"].ToString());
+                competencia.TipoCompetencia = Session["M11_especialidad"].ToString();
+                Categoria categoria = new Categoria();
+                categoria.Id_categoria = Convert.ToInt32(Session["M11_categoria"].ToString());
+                competencia.Categoria = categoria;
+
+                if (Session["M11_especialidad"].ToString().Equals("3"))
+                {
+                    #region Carga de tabla de Atletas compitiendo ambos
+                    try
+                    {
+                        if (Convert.ToInt32(Session["M11_Rango"].ToString()) >= 1)
+                        {
+                            List<Inscripcion> listaInscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                            List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
+                            List<Inscripcion> inscripciones = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores);
+                            List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
+                            pintarTabla(listaKumite);
+                        }
+
+                        #region Agregar Competencia tipo kata
+                            List<Inscripcion> inscripciones2 = LogicaResultado.listaInscritosCompetencia(competencia);
+                            List<valorKataKumite> valores2 = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue.Value);
+                            List<ResultadoKata> listaResultado = new List<ResultadoKata>();
+
+                            foreach (Inscripcion inscripcion in inscripciones2)
+                            {
+                                foreach (valorKataKumite valor in valores2)
+                                {
+                                    if (((inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido).Equals(valor.nombre)))
+                                    {
+                                        ResultadoKata resultado = new ResultadoKata();
+                                        resultado.Inscripcion = inscripcion;
+                                        resultado.Inscripcion.Competencia.Id_competencia = Convert.ToInt32(Session["M11_IdEvento"].ToString());
+                                        resultado.Jurado1 = Convert.ToInt32(valor.resultado1);
+                                        resultado.Jurado2 = Convert.ToInt32(valor.resultado2);
+                                        resultado.Jurado3 = Convert.ToInt32(valor.resultado3);
+                                        listaResultado.Add(resultado);
+                                    }
+                                }
+                            }
+                            LogicaResultado.agregarResultadoKata(listaResultado);
+                        #endregion
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    #endregion
                 }
             }
+            bSiguienteAmbos.Visible = false;
+            bSiguiente.Visible = true;
+            this.dataTable2.Text = " ";
         }
 
         private List<Horario> horarioEventos(List<Horario> eventos, List<Horario> competencias)
@@ -814,5 +1002,7 @@ namespace templateApp.GUI.Modulo11
                 this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
             }
         }
+
+
     }
 }

@@ -118,6 +118,20 @@ namespace templateApp.GUI.Modulo11
                     alert.Attributes["role"] = "alert";
                     alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al agregar el Resultado de la Competencia Kumite</div>";
                 }
+
+                if (success.Equals("15"))
+                {
+                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Resultado de las Competencias Kata y Kumite agregado exitosamente</div>";
+                }
+
+                if (success.Equals("16"))
+                {
+                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+                    alert.Attributes["role"] = "alert";
+                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Error al agregar el Resultado de las Competencias Kata y Kumite</div>";
+                }
             }
             #region Carga de tabla de Eventos y Competencias
             if (!IsPostBack)

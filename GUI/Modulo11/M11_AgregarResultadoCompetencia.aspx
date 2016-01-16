@@ -148,6 +148,7 @@
             </table>
                    &nbsp;&nbsp;&nbsp;
                   <asp:LinkButton ID="bSiguiente" runat="server" CssClass="btn btn-primary" OnClick="bSiguiente_Click" OnClientClick="resultadosKumite();" Visible="false">Siguiente</asp:LinkButton>
+                  <asp:LinkButton ID="bSiguienteAmbos" runat="server" CssClass="btn btn-primary" OnClick="bSiguienteAmbos_Click" OnClientClick="resultadosAmbos();" Visible="false">Siguiente</asp:LinkButton>
             </div>
         </div>
 
@@ -289,7 +290,7 @@
          <asp:LinkButton ID="bAgregar" runat="server" CssClass="btn btn-primary" OnClick="bAgregar_Click" OnClientClick="resultadosEvento();">Agregar</asp:LinkButton>
         <asp:LinkButton ID="bAgregarKata" runat="server" CssClass="btn btn-primary" OnClick="bAgregarKata_Click" OnClientClick="resultadosKata();" Visible="false">Agregar</asp:LinkButton>
         <asp:LinkButton ID="bAgregarKumite" runat="server" CssClass="btn btn-primary" OnClick="bAgregarKumite_Click" OnClientClick="resultadosKumite();" Visible="false">Agregar</asp:LinkButton>
-        <asp:LinkButton ID="bAgregarAmbos" runat="server" CssClass="btn btn-primary" OnClick="bAgregarAmbos_Click" OnClientClick="resultadosAmbos();" Visible="false">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarAmbos" runat="server" CssClass="btn btn-primary" OnClick="bAgregarAmbos_Click" OnClientClick="resultadosKumite();" Visible="false">Agregar</asp:LinkButton>
          &nbsp;&nbsp
          <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>
