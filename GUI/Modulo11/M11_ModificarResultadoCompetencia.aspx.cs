@@ -76,7 +76,6 @@ namespace templateApp.GUI.Modulo11
                 try
                 {
                     List<Inscripcion> inscripciones = LogicaResultado.listaAtletasEnCategoriaYAscenso(evento);
-                    JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                     List<valorEvento> valores = JsonConvert.DeserializeObject<List<valorEvento>>(rvalue.Value);
                     List<ResultadoAscenso> listaResultado = new List<ResultadoAscenso>();
 
@@ -314,7 +313,6 @@ namespace templateApp.GUI.Modulo11
                     try
                     {
                         List<Inscripcion> inscripciones = LogicaResultado.listaAtletasParticipanCompetenciaKata(competencia);
-                        JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                         List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue.Value);
                         List<ResultadoKata> listaResultado = new List<ResultadoKata>();
 
@@ -366,7 +364,6 @@ namespace templateApp.GUI.Modulo11
                     try
                     {
                         List<ResultadoKumite> listaKumite = LogicaResultado.listaAtletasParticipanCompetenciaKumite(competencia);
-                        JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                         List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
                         List<ResultadoKumite> listaResultado = new List<ResultadoKumite>();
 
@@ -421,7 +418,6 @@ namespace templateApp.GUI.Modulo11
                     try
                     {
                         List<Inscripcion> inscripciones = LogicaResultado.listaAtletasParticipanCompetenciaKataAmbas(competencia);
-                        JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                         List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue.Value);
                         List<ResultadoKata> listaResultado = new List<ResultadoKata>();
 
