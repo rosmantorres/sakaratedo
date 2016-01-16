@@ -43,6 +43,9 @@
          <div id="alertlocal" runat="server">
           <!-- Alertas-->
           </div>
+          <div id="alert" runat="server">
+          <!-- Alertas-->
+          </div>
            <input id="id_solicitud" type="text" placeholder="" class="form-control" name="idSolicitud" runat="server" />  
          </div>
     
