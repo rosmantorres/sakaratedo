@@ -86,10 +86,9 @@ namespace templateApp.GUI.Modulo16
         {
             //Carga la Barra lateral del modulo indicado
             ((SKD)Page.Master).IdModulo = "16";
-
-            String prueba = Request.QueryString["mensaje"];
-            //Obtengo el Carrito de la Persona pasandole el ID del session
-            //if (Request.QueryString["mensaje"] != null || Request.QueryString["mensaje"] != "")
+           
+            //Obtengo el Carrito de la Persona pasandole el ID del session sino hubo ningun error previo
+            if (Request.QueryString["mensaje"] == null)
                 this.elPresentador.LlenarTabla(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             //Nos indica si hubo alguna accion de agregar, modificar o eliminar
