@@ -44,7 +44,7 @@ namespace DatosSKD.DAO.Modulo14
 
                     SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureConsultarDiseño, conect);
                     sqlcom.CommandType = CommandType.StoredProcedure;
-                    sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroDiseñoPlanilla, planilla));
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroDiseñoPlanilla, planilla.Id));
 
                     SqlDataReader leer;
                     conect.Open();

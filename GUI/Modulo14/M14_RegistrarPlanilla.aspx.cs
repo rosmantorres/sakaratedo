@@ -231,6 +231,8 @@ namespace templateApp.GUI.Modulo14
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             presentador.AgregarPlanilla();
+            Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
+                            
             /*List<String> listDatos = new List<String>();
             Planilla laPlanilla = null;
             ListItemCollection listItem = this.ListBox2.Items;

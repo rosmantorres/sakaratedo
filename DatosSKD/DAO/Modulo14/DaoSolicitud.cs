@@ -229,7 +229,7 @@ namespace DatosSKD.DAO.Modulo14
                 //    Planilla planilla = null;
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIDSolici,
-                SqlDbType.VarChar, idSolicitud.ToString(), false);
+                SqlDbType.VarChar, ((SolicitudP)idSolicitud).ID.ToString(), false);
                 parametros.Add(parametro);
 
                 DataTable resultadoConsulta = this.EjecutarStoredProcedureTuplas(RecursosDAOModulo14.ProcedureConsultarSolicitudID1, parametros);

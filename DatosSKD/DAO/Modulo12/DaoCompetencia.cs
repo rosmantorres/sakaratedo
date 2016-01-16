@@ -164,7 +164,7 @@ namespace DatosSKD.DAO.Modulo12
                     {
                         List<Parametro> parametros = new List<Parametro>();
                         Parametro elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int,
-                            laCompetencia.Id_competencia.ToString(), false);
+                            laCompetencia.Id.ToString(), false);
                         parametros.Add(elParametro);
                         elParametro = new Parametro(RecursosDAOModulo12.ParamNombreCompetencia, SqlDbType.VarChar,
                             laCompetencia.Nombre, false);
@@ -292,7 +292,7 @@ namespace DatosSKD.DAO.Modulo12
 
                 laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)laFabrica.ObtenerCompetencia();
                 //PREGUNTAR POR EL ID
-                laCompetencia.Id_competencia = parametro.Id;
+                laCompetencia.Id = parametro.Id;
                 string diaFecha;
                 string mesFecha;
                 string anoFecha;
@@ -307,7 +307,7 @@ namespace DatosSKD.DAO.Modulo12
                         parametros = new List<Parametro>();
 
 
-                        elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int, laCompetencia.Id_competencia.ToString(),
+                        elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int, laCompetencia.Id.ToString(),
                                                     false);
                         parametros.Add(elParametro);
 
@@ -316,7 +316,7 @@ namespace DatosSKD.DAO.Modulo12
 
                         foreach (DataRow row in dt.Rows)
                         {
-                            laCompetencia.Id_competencia = int.Parse(row[RecursosDAOModulo12.AliasIdCompetencia].ToString());
+                            laCompetencia.Id = int.Parse(row[RecursosDAOModulo12.AliasIdCompetencia].ToString());
                             laCompetencia.Nombre = row[RecursosDAOModulo12.AliasNombreCompetencia].ToString();
                             laCompetencia.TipoCompetencia = row[RecursosDAOModulo12.AliasTipoCompetencia].ToString();
 
@@ -483,7 +483,7 @@ namespace DatosSKD.DAO.Modulo12
                     {
                         laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)laFabrica.ObtenerCompetencia();
 
-                        laCompetencia.Id_competencia = int.Parse(row[RecursosDAOModulo12.AliasIdCompetencia].ToString());
+                        laCompetencia.Id = int.Parse(row[RecursosDAOModulo12.AliasIdCompetencia].ToString());
                         laCompetencia.Nombre = row[RecursosDAOModulo12.AliasNombreCompetencia].ToString();
                         laCompetencia.TipoCompetencia = row[RecursosDAOModulo12.AliasTipoCompetencia].ToString();
 
@@ -580,7 +580,7 @@ namespace DatosSKD.DAO.Modulo12
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int,
-                        laCompetencia.Id_competencia.ToString(), false);
+                        laCompetencia.Id.ToString(), false);
                     parametros.Add(elParametro);
 
                     List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDAOModulo12.BuscarNombreCompetencia
@@ -639,7 +639,7 @@ namespace DatosSKD.DAO.Modulo12
                     parametros = new List<Parametro>();
 
                     Parametro elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int
-                                                          , laCompetencia.Id_competencia.ToString(), false);
+                                                          , laCompetencia.Id.ToString(), false);
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAOModulo12.ParamSalidaNumCompetencia, SqlDbType.Int, true);

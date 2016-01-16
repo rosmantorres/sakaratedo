@@ -26,13 +26,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             FabricaComandos fabricaComandos = new FabricaComandos();
             Planilla laPlanilla = (Planilla)this.LaEntidad;
             ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)fabricaComandos.ObtenerComandoModificarPlanillaID();
-            
+
             try
             {
                 DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.tipoPlanilla);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
-                modificar.LaEntidad = (Entidad)modificar.LaEntidad;
+                modificar.LaEntidad = (Entidad)laPlanilla;
                 modificar.Ejecutar();
                 
             }
