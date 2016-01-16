@@ -267,6 +267,43 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
         }
 
+
+        /// <summary>
+        /// Método para probar que devuelve la fecha del pago de un evento en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaPagoEvento()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 14;
+            DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
+            Assert.AreEqual("03/10/2015", fechaPago.ToString("MM/dd/yyyy"));
+        }
+
+        /// <summary>
+        /// Método para probar que no devuelva nula la fecha de pago de un evento en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaPagoEventoNoNula()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 5;
+            DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
+            Assert.NotNull(fechaPago);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de fecha de pago de un evento en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void FechaPagoEventoNumeroEnteroException()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = -1;
+            DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
+        }
+
         /// <summary>
         /// Método para probar que devuelve la fecha de inscripción de un evento en DAO
         /// </summary>
@@ -360,14 +397,17 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         }
 
         /// <summary>
-        /// Método para probar la exception de número entero invalido de listar horario de practica en DAO
+        /// Método para probar que devuelve el monto pago de un evento  en DAO
         /// </summary>
         [Test]
-        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
-        public void ListarCompetenciaInscritaNumeroEnteroException()
+        public void PruebaMontoPagoEvento()
         {
-            idPersona.ID = -1;
-            List<Entidad> listaHorario = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 14;
+            float montoPago = baseDeDatosEvento.MontoPagoEvento(idPersona, evento);
+            Assert.AreEqual(1200, montoPago);
         }
+
+       
     }
 }

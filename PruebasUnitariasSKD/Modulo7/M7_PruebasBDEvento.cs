@@ -230,7 +230,7 @@ namespace PruebasUnitariasSKD.Modulo7
 
 
         /// <summary>
-        /// Método para probar la exception de número entero invalido de prueba ultima cinta
+        /// Método para probar la exception de número entero invalido de fecha inscripcion evento
         /// </summary>
 
         [Test]
