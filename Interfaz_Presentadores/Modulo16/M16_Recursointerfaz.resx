@@ -197,6 +197,18 @@
   <data name="CERRAR_TR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
   </data>
+  <data name="CODIGO_EXCEPCION_ARGUMENTO_NULO" xml:space="preserve">
+    <value>S_16_06</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_FORMATO_INVALIDO" xml:space="preserve">
+    <value>S_16_07</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_GENERICO" xml:space="preserve">
+    <value>S_16_01</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_SOBRECARGA" xml:space="preserve">
+    <value>S_16_08</value>
+  </data>
   <data name="CODIGO_HTTP_EXCEPTION" xml:space="preserve">
     <value>S_16_09</value>
   </data>
@@ -209,6 +221,18 @@
   </data>
   <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
     <value>Ingresando al metodo</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_ARGUMENTO_NULO" xml:space="preserve">
+    <value>Error en parsear un atributo nulo</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_FORMATO_INVALIDO" xml:space="preserve">
+    <value>Error en parsear un atributo invalido</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_GENERICO" xml:space="preserve">
+    <value>Ha ocurrido un error inesperado en la capa de datos</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_SOBRECARGA" xml:space="preserve">
+    <value>Error al parsear un atributo sobrecargado</value>
   </data>
   <data name="MENSAJE_HTTP_EXCEPTION" xml:space="preserve">
     <value>Se produjo un error al interacturar con un componente HTTP</value>

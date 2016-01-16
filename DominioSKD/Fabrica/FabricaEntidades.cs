@@ -400,7 +400,7 @@ namespace DominioSKD.Fabrica
         /// <returns>La entidad evento con todos sus datos llenos</returns>
         public Entidad ObtenerEvento()
         {
-            return new Evento();
+            return new Entidades.Modulo9.Evento();
         }
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace DominioSKD.Fabrica
         /// <returns>La entidad persona con todos sus datos llenos</returns>
         public static Entidad ObtenerPersona()
         {
-            return new Persona();
+            return new Entidades.Modulo1.Persona();
         }
 
         /// <summary>

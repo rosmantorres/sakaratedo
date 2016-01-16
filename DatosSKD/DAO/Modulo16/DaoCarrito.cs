@@ -865,7 +865,7 @@ namespace DatosSKD.DAO.Modulo16
                 {
                     //Escribo en el logger la entrada a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                      RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                     //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
                     int respuesta = 0;
@@ -930,10 +930,10 @@ namespace DatosSKD.DAO.Modulo16
                                 (RecursosBDModulo16.PROCEDIMIENTO_MODIFICAR_CANTIDAD_EVENTO, parametros);
                             break;
 
-                        default:
-                            //MEJORAR ESTA EXCEPTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        default:                            
                             //Sino es ninguna de las opciones posibles lanzamos un error
-                            throw new OpcionItemErroneoException(RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO);
+                            throw new OpcionItemErroneoException(RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_ERRONEO
+                                ,RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO,new OpcionItemErroneoException());
                     }
 
                     //Limpio la conexion
