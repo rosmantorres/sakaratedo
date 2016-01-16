@@ -51,13 +51,22 @@ namespace Interfaz_Presentadores.Modulo7
                         Matricula matricula = (Matricula)e1.Current;
                         Boolean estadoMatricula = e2.Current;
                         float montoPago = e3.Current;
+                        String estadoFinal;
+
+                        if (estadoMatricula == true)
+                        {
+                            estadoFinal = "Activa";
+                        }
+                        else
+                        {
+                            estadoFinal = "No Activa";
+                        }
 
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.Identificador.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + estadoMatricula.ToString() + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + estadoFinal.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + montoPago.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + montoPago.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoPagosDeMatricula + matricula.Id + M7_RecursosPresentador.BotonCerrar;

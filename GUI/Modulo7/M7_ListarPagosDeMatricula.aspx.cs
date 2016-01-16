@@ -10,14 +10,37 @@ using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo7;
+using Interfaz_Presentadores.Modulo7;
+
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_ListarPagosDeMatricula : System.Web.UI.Page
+    public partial class M7_ListarPagosDeMatricula : System.Web.UI.Page, IContratoListarMatriculasPagas
     {
         #region Atributos
         private List<Matricula> laLista = new List<Matricula>();
+        private PresentadorListarMatriculasPagas presentador;
+
+        string IContratoListarMatriculasPagas.laTabla
+        {
+            get
+            {
+                return laTabla.Text;
+            }
+
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
         #endregion
+
+        public M7_ListarPagosDeMatricula()
+        {
+            presentador = new PresentadorListarMatriculasPagas(this);
+        }
+    
         #region Page Load
         /// <summary>
         /// Método que se ejecuta al cargar la página
@@ -27,9 +50,7 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-            float monto;
-            int id;
-            Boolean estado;
+     
             String detalleString = Request.QueryString["eventDetalle"];
 
             #region Llenar Data Table con Matriculas
@@ -52,7 +73,8 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            laLista = logMatricula.obtenerListaDeMatriculas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                            presentador.ConsultarListaMatriculasPagas();
+                            /*laLista = logMatricula.obtenerListaDeMatriculas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
                             if (laLista != null)
                             {
                                 foreach (Matricula matricula in laLista)
@@ -81,11 +103,12 @@ namespace templateApp.GUI.Modulo7
                                     this.laTabla.Text += M7_Recursos.CerrarTR;
                                 }
                             }
+                          
                             else
                             {
                                 throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
                                 M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }
+                            }*/
                         }
                         catch (ListaNulaException)
                         {
