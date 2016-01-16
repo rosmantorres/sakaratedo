@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Comandos\Modulo14\ComandoAgregarDiseno.cs" />
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarDiseño.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseñoPuro.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillasASolicitar.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Comandos\Modulo14\ComandoObtenerPlanillaID.cs" />
     <Compile Include="Comandos\Modulo14\ComandoObtenerSolicitudID.cs" />
     <Compile Include="Comandos\Modulo14\ComandoObtenerTipoPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoReemplazarElementos.cs" />
     <Compile Include="Comandos\Modulo14\ComandoRegistrarPlanilla.cs" />
     <Compile Include="Comandos\Modulo14\ComandoRegistrarPlanillaTipo.cs" />
     <Compile Include="Comandos\Modulo14\ComandoRegistrarSolicitudIDPersona.cs" />

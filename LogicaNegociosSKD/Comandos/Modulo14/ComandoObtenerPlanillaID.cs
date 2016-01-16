@@ -34,6 +34,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 
                 planilla.ID = this.idPlanilla;
                 Entidad entidad = BaseDeDatoPlanilla.ConsultarXId(planilla);
+                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
                
             }
