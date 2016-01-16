@@ -43,6 +43,20 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         #endregion
 
         #region Test
+
+        /// <summary>
+        /// Método de prueba para Consultar el monto de las las matriculas en DAO
+        /// </summary>
+        [Test]
+        public void PruebaMontoPagoMatricula()
+        {
+
+            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+            idMatricula.Id = 25;
+            float matricula = (float)baseDeDatosMatricula.MontoPagoMatricula(idPersona, idMatricula);
+            Assert.AreEqual(1200, matricula );
+        }
         /// <summary>
         /// Método de prueba para ConSultarXId las matriculas en DAO
         /// </summary>
