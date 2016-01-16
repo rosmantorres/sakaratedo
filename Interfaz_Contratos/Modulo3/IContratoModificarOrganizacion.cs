@@ -8,5 +8,12 @@ namespace Interfaz_Contratos.Modulo3
 {
     public interface IContratoModificarOrganizacion
     {
+        int obtenerIdOrg();
+        string obtenerNombreOrg();
+        string obtenerEmail();
+        string obtenerTelefono();
+        string obtenerDireccion();
+        string obtenerEstado();
+        string obtenerTecnica();
     }
 }
