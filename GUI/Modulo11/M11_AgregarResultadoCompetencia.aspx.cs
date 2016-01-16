@@ -210,6 +210,7 @@ namespace templateApp.GUI.Modulo11
                 {
                     bAgregar.Visible = false;
                     bAgregarKumite.Visible = true;
+                    bAgregarKumite.Enabled = false;
                     bSiguiente.Visible = true;
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kumite
                     try
@@ -245,6 +246,7 @@ namespace templateApp.GUI.Modulo11
                 {
                     bAgregar.Visible = false;
                     bAgregarAmbos.Visible = true;
+                    bAgregarAmbos.Enabled = false;
                     bSiguienteAmbos.Visible = true;
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kata
                     try
@@ -522,6 +524,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bSiguiente_Click(object sender, EventArgs e)
         {
+            alert.Visible = false;
             if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
@@ -541,16 +544,46 @@ namespace templateApp.GUI.Modulo11
                         {
                             List<Inscripcion> listaInscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
-                            List<Inscripcion> inscripciones = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores);
-                            List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
-                            pintarTabla(listaKumite);
+                            List<Inscripcion> inscripciones = new List<Inscripcion>();
+                            List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
+
+                            bool bleh = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores, inscripciones, listaKumite);
+                            if (bleh.Equals(false))
+                            {
+                                listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
+                                pintarTabla(listaKumite);
+                            }
+                            else if (bleh.Equals(true))
+                            {
+                                Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) * 2;
+                                ListaEmpate(listaKumite);
+                                alert.Visible = true;
+                                alert.Attributes["class"] = "alert alert-warning alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los EMPATES en las Competencias de tipo Kumite no estan permitidos.</div>";
+                            }
                         }
                         else if (Convert.ToInt32(Session["M11_Rango"].ToString()) < 1)
                         {
-                            bSiguiente.Visible = false;
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
-                            ListaFinal(valores);
-                            primeroSegundo(valores);
+                            if (!verificandoEmpate(valores))
+                            {
+                                ListaFinal(valores);
+                                primeroSegundo(valores);
+                                bSiguiente.Visible = false;
+                                bAgregarKumite.Enabled = true;
+                            }
+                            else if (verificandoEmpate(valores))
+                            {
+                                ListaFinal(valores);
+                                bSiguiente.Visible = true;
+                                bAgregarKumite.Enabled = false;
+                                Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) + 1;
+                                alert.Visible = true;
+                                alert.Attributes["class"] = "alert alert-warning alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los EMPATES en las Competencias de tipo Kumite no estan permitidos.</div>";
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -567,19 +600,47 @@ namespace templateApp.GUI.Modulo11
                         if (Convert.ToInt32(Session["M11_Rango"].ToString()) >= 1)
                         {
                             List<Inscripcion> listaInscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                            JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
-                            List<Inscripcion> inscripciones = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores);
-                            List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
-                            pintarTabla(listaKumite);
+                            List<Inscripcion> inscripciones = new List<Inscripcion>();
+                            List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
+
+                            bool bleh = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores, inscripciones, listaKumite);
+                            if (bleh.Equals(false))
+                            {
+                                listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
+                                pintarTabla(listaKumite);
+                            }
+                            else if (bleh.Equals(true))
+                            {
+                                Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) * 2;
+                                ListaEmpate(listaKumite);
+                                alert.Visible = true;
+                                alert.Attributes["class"] = "alert alert-warning alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los EMPATES en las Competencias de tipo Kumite no estan permitidos.</div>";
+                            }
                         }
                         else if (Convert.ToInt32(Session["M11_Rango"].ToString()) < 1)
                         {
-                            bSiguiente.Visible = false;
-                            JavaScriptSerializer json_serializer = new JavaScriptSerializer();
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
-                            ListaFinal(valores);
-                            primeroSegundo(valores);
+                            if (!verificandoEmpate(valores))
+                            {
+                                ListaFinal(valores);
+                                primeroSegundo(valores);
+                                bSiguiente.Visible = false;
+                                bAgregarAmbos.Enabled = true;
+                            }
+                            else if (verificandoEmpate(valores))
+                            {
+                                ListaFinal(valores);
+                                bSiguiente.Visible = true;
+                                bAgregarAmbos.Enabled = false;
+                                Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) + 1;
+                                alert.Visible = true;
+                                alert.Attributes["class"] = "alert alert-warning alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los EMPATES en las Competencias de tipo Kumite no estan permitidos.</div>";
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -612,9 +673,23 @@ namespace templateApp.GUI.Modulo11
                         {
                             List<Inscripcion> listaInscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
-                            List<Inscripcion> inscripciones = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores);
-                            List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
-                            pintarTabla(listaKumite);
+                            List<Inscripcion> inscripciones = new List<Inscripcion>();
+                            List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
+
+                            bool bleh = listaAtletasCompitiendo_AgregandoAnteriores(listaInscripciones, valores, inscripciones, listaKumite);
+                            if (bleh.Equals(false))
+                            {
+                                listaKumite = crearRandomPeleas(inscripciones, Convert.ToInt32(Session["M11_Rango"].ToString()));
+                                pintarTabla(listaKumite);
+                            }
+                            else if (bleh.Equals(true))
+                            {
+                                Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) * 2;
+                                ListaEmpate(listaKumite);
+                                alert.Attributes["class"] = "alert alert-warning alert-dismissible";
+                                alert.Attributes["role"] = "alert";
+                                alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Los EMPATES en las Competencias de tipo Kumite no estan permitidos.</div>";
+                            }
                         }
 
                         #region Agregar Competencia tipo kata
@@ -811,10 +886,9 @@ namespace templateApp.GUI.Modulo11
             return listaKumite;
         }
 
-        private List<Inscripcion> listaAtletasCompitiendo_AgregandoAnteriores(List<Inscripcion> inscripciones, List<valorKataKumite> valores)
+        private bool listaAtletasCompitiendo_AgregandoAnteriores(List<Inscripcion> inscripciones, List<valorKataKumite> valores, List<Inscripcion> lista, List<ResultadoKumite> listaKumite)
         {
-            List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
-            List<Inscripcion> lista = new List<Inscripcion>();
+            bool empate = false;
             try
             {
                 foreach (valorKataKumite valor in valores)
@@ -835,15 +909,18 @@ namespace templateApp.GUI.Modulo11
                     }
                     listaKumite.Add(resultadok);
                 }
-                lista = inscripcionesEnCurso(listaKumite);
-                LogicaResultado.agregarResultadoKumite(listaKumite);
+                empate = inscripcionesEnCurso(listaKumite, lista);
+                if (empate.Equals(false))
+                {
+                    LogicaResultado.agregarResultadoKumite(listaKumite);
+                }
                 dataTable3.Text = "";
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return lista;
+            return empate;
         }
 
         private void pintarTabla(List<ResultadoKumite> listaKumite)
@@ -863,9 +940,9 @@ namespace templateApp.GUI.Modulo11
             }
         }
 
-        private List<Inscripcion> inscripcionesEnCurso(List<ResultadoKumite> listaKumite)
+        private bool inscripcionesEnCurso(List<ResultadoKumite> listaKumite, List<Inscripcion> lista)
         {
-            List<Inscripcion> lista = new List<Inscripcion>();
+            bool aprobado = false;
             foreach (ResultadoKumite resultado in listaKumite)
             {
                 Inscripcion enCurso = new Inscripcion();
@@ -877,9 +954,19 @@ namespace templateApp.GUI.Modulo11
                 {
                     enCurso = resultado.Inscripcion2;
                 }
+                if (resultado.Puntaje1 == resultado.Puntaje2)
+                {
+                    aprobado = true;
+                    break;
+                }
+                else if (resultado.Puntaje2 == resultado.Puntaje1)
+                {
+                    aprobado = true;
+                    break;
+                }
                 lista.Add(enCurso);
             }
-            return lista;
+            return aprobado;
         }
 
         private void primeroSegundo(List<valorKataKumite> valores)
@@ -1003,6 +1090,39 @@ namespace templateApp.GUI.Modulo11
             }
         }
 
+        private void ListaEmpate(List<ResultadoKumite> valores)
+        {
+            this.dataTable3.Text = " ";
+            foreach (ResultadoKumite resultado in valores)
+            {
+                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
+                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                this.dataTable3.Text += resultadosComboTablas(resultado.Puntaje1, 1);
+                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                this.dataTable3.Text += resultadosComboTablas(resultado.Puntaje2, 2);
+                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+            }
+        }
 
+        private bool verificandoEmpate(List<valorKataKumite> lista)
+        {
+            bool aprobado = false;
+            foreach (valorKataKumite resultado in lista)
+            {
+                if ((Convert.ToInt32(resultado.resultado1) > Convert.ToInt32(resultado.resultado3)) || (Convert.ToInt32(resultado.resultado3) > Convert.ToInt32(resultado.resultado1)))
+                {
+                    aprobado = false;
+                }
+                else if ((Convert.ToInt32(resultado.resultado1) == Convert.ToInt32(resultado.resultado3)) || (Convert.ToInt32(resultado.resultado3) == Convert.ToInt32(resultado.resultado1)))
+                {
+                    aprobado = true;
+                }
+            }
+            return aprobado;
+        }
     }
 }
