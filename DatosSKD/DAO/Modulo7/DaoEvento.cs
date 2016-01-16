@@ -403,7 +403,92 @@ namespace DatosSKD.DAO.Modulo7
 
         public List<Entidad> ListarHorarioPractica(Entidad persona)
         {
-            throw new NotImplementedException();
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+             RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            BDConexion conexion;
+            List<Parametro> parametros;
+            Parametro parametro = new Parametro();
+            List<Entidad> listaDeHorarioPractica = new List<Entidad>();
+            Persona idPersona = (Persona)persona;
+            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
+
+            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+
+            try
+            {
+                if (idPersona.ID > 0)
+                {
+                    conexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametros.Add(parametro);
+
+                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarHorarioPractica, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Evento evento = new Evento();//se debe usar fabrica aqui
+                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
+                        evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
+                       
+                        TipoEvento idTipoEvento = new TipoEvento();//se debe usar fabrica aqui
+                        idTipoEvento.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString());
+                        evento.TipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+
+                        Horario idHorario = new Horario();//se debe usar fabrica aqui
+                        idHorario.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoHorarioId].ToString());
+                        evento.Horario = (Horario)baseDeDatosHorario.ConsultarXId(idHorario);
+
+                        Ubicacion idUbicacion = new Ubicacion();//se debe usar fabrica aqui
+                        idUbicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoUbicacionId].ToString());
+                        evento.Ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+
+                        listaDeHorarioPractica.Add(evento);
+                    }
+                }
+                else
+                {
+                    throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (NumeroEnteroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
+                                RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaDeHorarioPractica;
         }
 
         public bool Modificar(Entidad parametro)

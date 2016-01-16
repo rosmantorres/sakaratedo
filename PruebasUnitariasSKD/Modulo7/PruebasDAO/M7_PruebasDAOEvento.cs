@@ -338,5 +338,36 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             competencia.Id_competencia = -1;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
         }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas horarios de practica en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarHorarioPractica()
+        {
+            List<Entidad> listaHorario = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Assert.GreaterOrEqual(listaHorario.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarHorarioPracticaNoNula()
+        {
+            List<Entidad> listaHorario = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Assert.NotNull(listaHorario);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de listar horario de practica en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void ListarCompetenciaInscritaNumeroEnteroException()
+        {
+            idPersona.ID = -1;
+            List<Entidad> listaHorario = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+        }
     }
 }
