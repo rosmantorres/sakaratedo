@@ -330,6 +330,72 @@ namespace DatosSKD.Modulo10
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return competencia;
+        }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos una competencia por id
+        /// </summary>
+        /// <param name="idCompetencia">id de la competencia</param>
+        /// <returns>Una Competencia</returns>
+        public static Competencia consultarCompetenciasXIDDetalle(string idCompetencia)
+        {
+            BDConexion laConexion;
+            Competencia competencia = new Competencia();
+            string diaFecha;
+            string mesFecha;
+            string anoFecha;
+            string fechaInicio;
+
+            try
+            {
+                laConexion = new BDConexion();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                parametros.Add(parametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo10.ProcedimientoConsultarCompetenciaDetalle, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    competencia.Id_competencia = int.Parse(row[RecursosBDModulo10.aliasIdCompetencia].ToString());
+                    competencia.Nombre = row[RecursosBDModulo10.aliasNombreCompetencia].ToString();
+                    diaFecha = Convert.ToDateTime(row[RecursosBDModulo10.aliasFechaCompetencia]).Day.ToString();
+                    diaFecha = ModificarFechas(diaFecha);
+                    mesFecha = Convert.ToDateTime(row[RecursosBDModulo10.aliasFechaCompetencia]).Month.ToString();
+                    mesFecha = ModificarFechas(mesFecha);
+                    anoFecha = Convert.ToDateTime(row[RecursosBDModulo10.aliasFechaCompetencia]).Year.ToString();
+                    fechaInicio = mesFecha + RecursosBDModulo10.SeparadorFecha + diaFecha + RecursosBDModulo10.SeparadorFecha + anoFecha;
+                    competencia.FechaInicio = DateTime.ParseExact(fechaInicio, RecursosBDModulo10.FormatoFecha, CultureInfo.InvariantCulture);
+                    competencia.TipoCompetencia = row[RecursosBDModulo10.aliasEspecialidadCompetencia].ToString();
+                    Categoria categoria = new Categoria();
+                    categoria.Id_categoria = int.Parse(row[RecursosBDModulo10.aliasIdCategoria].ToString());
+                    categoria.Cinta_inicial = row[RecursosBDModulo10.aliasCintaInicial].ToString();
+                    categoria.Cinta_final = row[RecursosBDModulo10.aliasCintaFinal].ToString();
+                    categoria.Edad_inicial = int.Parse(row[RecursosBDModulo10.aliasEdadInicial].ToString());
+                    categoria.Edad_final = int.Parse(row[RecursosBDModulo10.aliasEdadFinal].ToString());
+                    categoria.Sexo = row[RecursosBDModulo10.aliasSexoCategoria].ToString();
+                    competencia.Categoria = categoria;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return competencia;
 
 
         }

@@ -369,4 +369,40 @@
     <value>M11_AgregarResultadoKumite</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="aliasCostoEvento" xml:space="preserve">
+    <value>costoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna costo evento</comment>
+  </data>
+  <data name="aliasDescripcionEvento" xml:space="preserve">
+    <value>descripcionEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna descripcion evento</comment>
+  </data>
+  <data name="aliasEstadoEvento" xml:space="preserve">
+    <value>estadoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna estado evento</comment>
+  </data>
+  <data name="aliasFechaFin" xml:space="preserve">
+    <value>fechaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha fin evento</comment>
+  </data>
+  <data name="aliasFechaInicio" xml:space="preserve">
+    <value>fechaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio evento</comment>
+  </data>
+  <data name="aliasHoraFin" xml:space="preserve">
+    <value>horaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna hora fin evento</comment>
+  </data>
+  <data name="aliasHoraInicio" xml:space="preserve">
+    <value>horaInicio</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna hora inicio evento</comment>
+  </data>
+  <data name="aliasIdTipo" xml:space="preserve">
+    <value>idTipo</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id tipo evento</comment>
+  </data>
+  <data name="ProcedimientoConsultarEventoDetalle" xml:space="preserve">
+    <value>M11_ConsultarEventoXIDDETALLE</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

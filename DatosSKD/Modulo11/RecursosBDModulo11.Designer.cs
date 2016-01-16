@@ -115,6 +115,24 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to costoEvento.
+        /// </summary>
+        internal static string aliasCostoEvento {
+            get {
+                return ResourceManager.GetString("aliasCostoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descripcionEvento.
+        /// </summary>
+        internal static string aliasDescripcionEvento {
+            get {
+                return ResourceManager.GetString("aliasDescripcionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to edadFinal.
         /// </summary>
         internal static string aliasEdadFinal {
@@ -142,6 +160,15 @@ namespace DatosSKD.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to estadoEvento.
+        /// </summary>
+        internal static string aliasEstadoEvento {
+            get {
+                return ResourceManager.GetString("aliasEstadoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fechaInicioCompetencia.
         /// </summary>
         internal static string aliasFechaCompetencia {
@@ -156,6 +183,42 @@ namespace DatosSKD.Modulo11 {
         internal static string aliasFechaEvento {
             get {
                 return ResourceManager.GetString("aliasFechaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaFin.
+        /// </summary>
+        internal static string aliasFechaFin {
+            get {
+                return ResourceManager.GetString("aliasFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaFin.
+        /// </summary>
+        internal static string aliasFechaInicio {
+            get {
+                return ResourceManager.GetString("aliasFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horaFin.
+        /// </summary>
+        internal static string aliasHoraFin {
+            get {
+                return ResourceManager.GetString("aliasHoraFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horaInicio.
+        /// </summary>
+        internal static string aliasHoraInicio {
+            get {
+                return ResourceManager.GetString("aliasHoraInicio", resourceCulture);
             }
         }
         
@@ -264,6 +327,15 @@ namespace DatosSKD.Modulo11 {
         internal static string aliasIdResultadoKumite {
             get {
                 return ResourceManager.GetString("aliasIdResultadoKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idTipo.
+        /// </summary>
+        internal static string aliasIdTipo {
+            get {
+                return ResourceManager.GetString("aliasIdTipo", resourceCulture);
             }
         }
         
@@ -534,6 +606,15 @@ namespace DatosSKD.Modulo11 {
         internal static string ProcedimientoCategoriasResultadoAscensos {
             get {
                 return ResourceManager.GetString("ProcedimientoCategoriasResultadoAscensos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ConsultarEventoXIDDETALLE.
+        /// </summary>
+        internal static string ProcedimientoConsultarEventoDetalle {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarEventoDetalle", resourceCulture);
             }
         }
         

@@ -49,8 +49,8 @@
 				<tr>
                     <th style="text-align:center">Referencia</th>
 					<th style="text-align:center">Nombre del Evento</th>
-                    <th style="text-align:center">Tipo</th>
-					<th style="text-align:center">Fecha</th>
+                    <th style="text-align:center">Fecha</th>
+					<th style="text-align:center">Tipo</th>
 					<th style="text-align:center">Acciones</th>
 				</tr>
 			</thead>

@@ -127,10 +127,10 @@
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInfoCompetencia" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="#</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M11_DetalleResultadoCompetencia.aspx?tipo=Competencia&amp;mostrar=</value>
   </data>
   <data name="BotonInfoEvento" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="#</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M11_DetalleResultadoCompetencia.aspx?tipo=Evento&amp;mostrar=</value>
   </data>
   <data name="BotonModificarCompetencia" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarResultadoCompetencia.aspx?tipo=Competencia&amp;modificar=</value>
@@ -669,5 +669,8 @@
             &lt;option value="9"&gt;9&lt;/option&gt;
             &lt;option value="10"&gt;10&lt;/option&gt;
         &lt;/select&gt;</value>
+  </data>
+  <data name="Mostrar" xml:space="preserve">
+    <value>mostrar</value>
   </data>
 </root>

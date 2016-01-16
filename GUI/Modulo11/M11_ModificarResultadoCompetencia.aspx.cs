@@ -58,7 +58,6 @@ namespace templateApp.GUI.Modulo11
                     nombreEvento.Text = competencia.Nombre;
                     llenarComboEspecialidad(LogicaResultado.listaEspecialidadesCompetencia(Session["M11_IdEvento"].ToString()));
                 }
-
             }
         }
 

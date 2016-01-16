@@ -282,4 +282,36 @@
     <value>M10_InasistentesPlanillaCompetencia</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="aliasCintaFinal" xml:space="preserve">
+    <value>cintaFinal</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna cinta final categoria</comment>
+  </data>
+  <data name="aliasCintaInicial" xml:space="preserve">
+    <value>cintaInicial</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna cinta inicial categoria</comment>
+  </data>
+  <data name="aliasEdadFinal" xml:space="preserve">
+    <value>edadFinal</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna edad final categoria</comment>
+  </data>
+  <data name="aliasEdadInicial" xml:space="preserve">
+    <value>edadInicial</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna edad inicial categoria</comment>
+  </data>
+  <data name="aliasEspecialidadCompetencia" xml:space="preserve">
+    <value>especialidadCompetencia</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna especialidadCompetencia</comment>
+  </data>
+  <data name="aliasIdCategoria" xml:space="preserve">
+    <value>idCategoria</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna del id de la categoria</comment>
+  </data>
+  <data name="aliasSexoCategoria" xml:space="preserve">
+    <value>sexoCategoria</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna sexo categoria</comment>
+  </data>
+  <data name="ProcedimientoConsultarCompetenciaDetalle" xml:space="preserve">
+    <value>M11_ConsultarCompetenciaXidDetalle</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

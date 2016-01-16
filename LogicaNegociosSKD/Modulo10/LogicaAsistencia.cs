@@ -176,5 +176,16 @@ namespace LogicaNegociosSKD.Modulo10
         {
             return BDAsistencia.agregarAsistenciaCompetencia(asistencia);
         }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos una competencia por id
+        /// </summary>
+        /// <param name="idCompetencia">id de la competencia</param>
+        /// <returns>Una Competencia</returns>
+        public static Competencia consultarCompetenciasXIDDetalle(string idCompetencia)
+        {
+            Competencia competencia = BDAsistencia.consultarCompetenciasXIDDetalle(idCompetencia);
+            return competencia;
+        }
     }
 }

@@ -115,7 +115,7 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;#.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M11_DetalleResultadoCompetencia.aspx?tipo=Competencia&amp;mostrar=.
         /// </summary>
         internal static string BotonInfoCompetencia {
             get {
@@ -124,7 +124,7 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;#.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M11_DetalleResultadoCompetencia.aspx?tipo=Evento&amp;mostrar=.
         /// </summary>
         internal static string BotonInfoEvento {
             get {
@@ -201,6 +201,15 @@ namespace templateApp.GUI.Modulo11 {
         internal static string Modificar {
             get {
                 return ResourceManager.GetString("Modificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mostrar.
+        /// </summary>
+        internal static string Mostrar {
+            get {
+                return ResourceManager.GetString("Mostrar", resourceCulture);
             }
         }
         

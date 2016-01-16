@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo11 {
     
     
-    public partial class M11DetalleResultadoCompetencia {
+    public partial class M11_DetalleResultadoCompetencia {
         
         /// <summary>
         /// alert control.
@@ -58,40 +58,22 @@ namespace templateApp.GUI.Modulo11 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lEspecialidad;
         
         /// <summary>
-        /// div1 control.
+        /// especialidadEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1;
+        protected global::System.Web.UI.WebControls.TextBox especialidadEvento;
         
         /// <summary>
-        /// comboEspecialidad control.
+        /// categoriaEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboEspecialidad;
-        
-        /// <summary>
-        /// div2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div2;
-        
-        /// <summary>
-        /// comboCategoria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboCategoria;
+        protected global::System.Web.UI.WebControls.TextBox categoriaEvento;
         
         /// <summary>
         /// dataTable control.
@@ -103,13 +85,22 @@ namespace templateApp.GUI.Modulo11 {
         protected global::System.Web.UI.WebControls.Literal dataTable;
         
         /// <summary>
-        /// rvalue control.
+        /// dataTable2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField rvalue;
+        protected global::System.Web.UI.WebControls.Literal dataTable2;
+        
+        /// <summary>
+        /// dataTable3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal dataTable3;
         
         /// <summary>
         /// bCancelar control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_DetalleResultadoCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11DetalleResultadoCompetencia" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M11_DetalleResultadoCompetencia.aspx.cs" Inherits="templateApp.GUI.Modulo11.M11_DetalleResultadoCompetencia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -37,7 +37,7 @@
 <!-- general form elements -->
 <div class="box box-primary">
 <div class="box-header with-border">
-   <h3 class="box-title">Detalle de Resultado Competencia</h3>
+   <h3 class="box-title">Detalle Resultados de Competencia</h3>
 </div>
 <!-- /.box-header -->
 <!-- form start -->
@@ -51,41 +51,21 @@
        <asp:TextBox ID="fechaEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
        <h3>Nombre del Evento:</h3>
        <asp:TextBox ID="nombreEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+       <h3 id="lEspecialidad" runat="server" visible="false">Especialidad del Evento:</h3>
+       <asp:TextBox ID="especialidadEvento" runat="server" CssClass="form-control" Enabled="false" Visible="false"></asp:TextBox>
+       <h3>Categoria del Evento:</h3>
+       <asp:TextBox ID="categoriaEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
    </div>
-    
-   <!--COMBO ESPECIALIDAD-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3 id="lEspecialidad" runat="server" visible="false">Especialidad:</h3>
-      <div class="col-sm-8 col-md-8 col-lg-8" >
-    <div class="dropdown" runat="server" id="div1">
-        <asp:DropDownList ID="comboEspecialidad" Enabled="false"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboEspecialidad_SelectedIndexChanged" Visible="false">
-            <asp:ListItem> Especialidad:</asp:ListItem>
-        </asp:DropDownList>
-    </div>
-      </div>
-    </div>
 
-    <!--COMBO CATEGORIA-->
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Categoria:</h3>
-      <div class="col-sm-8 col-md-8 col-lg-8" >
-    <div class="dropdown" runat="server" id="div2">
-        <asp:DropDownList ID="comboCategoria" Enabled="false" CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboCategoria_SelectedIndexChanged">
-            <asp:ListItem> Categoria:</asp:ListItem>
-        </asp:DropDownList>
-    </div>
-      </div>
-    </div>
-
-        <!--TABLA ATLETAS Y RESULTADOS EN LA COMPETENCIA-->
+        <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
         <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>Atletas que compitieron:</h3>
-        <table id="tablaCompetidores" class="table table-bordered table-striped dataTable">
+        <h3>Atletas que compitieron Examen de Ascenso:</h3>
+        <table id="tablaCompetidores" class="table table-bordered table-striped dataTable todasLasTablas">
         <thead>
 				<tr> 
 					<th style="text-align:center">Nombre del Atleta</th>
-                    <th style="text-align:center">Puntaje</th>
+                    <th style="text-align:center">Puntuacion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -95,15 +75,56 @@
             </div>
         </div>
 
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KATA-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kata:</h3>
+        <table id="tablaCompetidores2" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta</th>
+                    <th style="text-align:center">Jurado 1</th>
+                    <th style="text-align:center">Jurado 2</th>
+                    <th style="text-align:center">Jurado 3</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable2"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
+
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KUMITE-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kumite:</h3>
+        <table id="tablaCompetidores3" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+                    <th style="text-align:center">Referencia</th>
+					<th style="text-align:center">Nombre del Atleta 1</th>
+                    <th style="text-align:center">Puntuacion</th>
+                    <th style="text-align:center">Nombre del Atleta 2</th>
+                    <th style="text-align:center">Puntuacion</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable3"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
+
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#tablaCompetidores').DataTable();
+                $('.todasLasTablas').DataTable();
 
-                var table = $('#tablaCompetidores').DataTable();
+                var table = $('.todasLasTablas').DataTable();
                 var comp;
                 var tr;
 
-                $('#tablaCompetidores tbody').on('click', 'a', function () {
+                $('.todasLasTablas tbody').on('click', 'a', function () {
                     if ($(this).parent().hasClass('selected')) {
                         comp = $(this).parent().prev().prev().prev().prev().text();
                         tr = $(this).parents('tr');//se guarda la fila seleccionada
@@ -117,40 +138,7 @@
                     }
                 });
             });
-
-
-            function hola() {
-                var arreglo = [];
-                $('tbody').each(function () {
-                    var i = 0;
-                    $(this).find('select#combo').each(function () {
-
-                        var opcion = $(this).val();
-                        var obj = {
-                            nombre: "",
-                            resultado: opcion
-                        };
-                        arreglo.push(obj);
-                    });
-                    $(this).find('.sorting_1').each(function () {
-                        arreglo[i].nombre = $(this).text();
-                        i++;
-                    });
-                });
-                var myJson = JSON.stringify(arreglo);
-                console.log(myJson);
-                document.getElementById('<%= rvalue.ClientID %>').value = myJson;
-                //return myJson;
-            }
-
-
-
-
-
-
-
         </script>
-        <asp:HiddenField ID="rvalue" runat="server" />
 
 </div>
 

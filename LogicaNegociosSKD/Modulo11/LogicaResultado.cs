@@ -247,5 +247,17 @@ namespace LogicaNegociosSKD.Modulo11
         {
             return BDResultado.agregarResultadoKumite(lista);
         }
+
+         /// <summary>
+        /// Metodo que permite Consultar un evento por id
+        /// </summary>
+        /// <param name="idEvento">Id del evento</param>
+        /// <returns>Retorna un evento</returns>
+        public static Evento ConsultarEventoDetalle(String idEvento)
+        {
+            Evento evento = new Evento();
+            evento = BDResultado.ConsultarEventoDetalle(idEvento);
+            return evento;
+        }
     }
 }
