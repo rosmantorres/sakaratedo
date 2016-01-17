@@ -13,13 +13,13 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_DisenoPlanilla {
         
         /// <summary>
-        /// Control alert.
+        /// Control alerta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alerta;
         
         /// <summary>
         /// Control diseno_planilla.
@@ -31,31 +31,31 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlForm diseno_planilla;
         
         /// <summary>
-        /// Control tipoPlanilla.
+        /// Control tipoPlanilla1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tipoPlanilla;
+        protected global::System.Web.UI.WebControls.Label tipoPlanilla1;
         
         /// <summary>
-        /// Control Planilla.
+        /// Control Planilla1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Planilla;
+        protected global::System.Web.UI.WebControls.Label Planilla1;
         
         /// <summary>
-        /// Control CKEditor1.
+        /// Control CKEditor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::CKEditor.NET.CKEditorControl CKEditor1;
+        protected global::CKEditor.NET.CKEditorControl CKEditor;
         
         /// <summary>
         /// Control ScriptManager.
@@ -76,31 +76,31 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control comboDatos.
+        /// Control comboDatos1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboDatos;
+        protected global::System.Web.UI.WebControls.DropDownList comboDatos1;
         
         /// <summary>
-        /// Control campos.
+        /// Control campos1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label campos;
+        protected global::System.Web.UI.WebControls.Label campos1;
         
         /// <summary>
-        /// Control camposStatic.
+        /// Control camposStatic1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label camposStatic;
+        protected global::System.Web.UI.WebControls.Label camposStatic1;
         
         /// <summary>
         /// Control btnguardar.
