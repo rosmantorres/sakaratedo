@@ -191,10 +191,12 @@ namespace DatosSKD.DAO.Modulo16
                                 (RecursosBDModulo16.PROCEDIMIENTO_AGREGAR_MATRICULA_CARRITO, parametros);
                             break;
 
-                        default:
-                            //MEJORAR ESTA EXCEPTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        default:                            
                             //Sino es ninguna de las opciones posibles lanzamos un error
-                            throw new OpcionItemErroneoException(RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO);
+                            throw new OpcionItemErroneoException
+                                (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_ERRONEO, 
+                                RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO,
+                                new OpcionItemErroneoException());
                     }
 
                     //Limpio la conexion
@@ -260,9 +262,8 @@ namespace DatosSKD.DAO.Modulo16
                         RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
                 }
             }
-            else
-                //Arreglar tambien aqui
-                throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
+            else throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
         }
         #endregion
 
@@ -389,7 +390,8 @@ namespace DatosSKD.DAO.Modulo16
                         RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
                 }
             }
-            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);        
+            else throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());   
         }
 
         /// <summary>
@@ -507,7 +509,8 @@ namespace DatosSKD.DAO.Modulo16
                 }
 
             }
-            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);       
+            else throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
         }
 
         /// <summary>
@@ -627,7 +630,8 @@ namespace DatosSKD.DAO.Modulo16
                         RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
                 }
             }
-            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);            
+            else throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
         }
         #endregion
 
@@ -842,7 +846,8 @@ namespace DatosSKD.DAO.Modulo16
                 }
             }
             else
-                throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
+                throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
         }
         #endregion
 
@@ -931,8 +936,10 @@ namespace DatosSKD.DAO.Modulo16
 
                         default:                            
                             //Sino es ninguna de las opciones posibles lanzamos un error
-                            throw new OpcionItemErroneoException(RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_ERRONEO
-                                ,RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO,new OpcionItemErroneoException());
+                            throw new OpcionItemErroneoException
+                                (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_ERRONEO,
+                                RecursosBDModulo16.MENSAJE_EXCEPTION_ITEM_ERRONEO,
+                                new OpcionItemErroneoException());
                     }
 
                     //Limpio la conexion
@@ -999,7 +1006,8 @@ namespace DatosSKD.DAO.Modulo16
                 }
             }
             else
-                throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);
+                throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
         }
         #endregion
 
