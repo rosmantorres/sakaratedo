@@ -243,6 +243,39 @@
   <data name="EVENTO_INFORMACION" xml:space="preserve">
     <value>elEvento-</value>
   </data>
+  <data name="EXCEPTIONSKD_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=2</value>
+  </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=3</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=6</value>
+  </data>
+  <data name="EXCEPTION_ITEM_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=10</value>
+  </data>
+  <data name="EXCEPTION_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=1</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=8</value>
+  </data>
+  <data name="EXCEPTION_OPCION_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=11</value>
+  </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=4</value>
+  </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=9</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=5</value>
+  </data>
   <data name="IMPLEMENTO" xml:space="preserve">
     <value>Implemento</value>
   </data>
@@ -287,6 +320,12 @@
   </data>
   <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
     <value>Saliendo del metodo</value>
+  </data>
+  <data name="MODIFICAR_LINK_EXITO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=1&amp;exito=1</value>
+  </data>
+  <data name="MODIFICAR_LINK_FALLO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=1&amp;exito=0</value>
   </data>
   <data name="NO_POSTBACK" xml:space="preserve">
     <value>return false;</value>

@@ -255,52 +255,52 @@ namespace Interfaz_Presentadores.Modulo16
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=9", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK, false);
             }
             catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=8", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
                 
             }
             catch (ArgumentNullException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
             }
             catch (FormatException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK, false);
                 
             }
             catch (OverflowException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK, false);
                 
             }
             catch (ParametroInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=4", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK, false);
             }
             catch (ExceptionSKDConexionBD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=3", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK, false);
                 
             }
             catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=2", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK, false);
                 
             }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=1", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK, false);
             }
         }
         #endregion        
@@ -409,81 +409,81 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=1");
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_EXITO);
                 else
-                    HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=1&exito=0");
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_FALLO);
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK, false);
 
             }
             catch (OverflowException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK, false);
 
             }
             catch (OpcionItemErroneoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=11", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_OPCION_LINK, false);
             }
             catch (ItemInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=10", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_ITEM_INVALIDO_LINK, false);
             }
             catch (PersonaNoValidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=9", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK, false);
             }
             catch (LoggerException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=8", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
             }
             catch (ParseoVacioException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
             }
             catch (ParseoFormatoInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK, false);
             }
             catch (ParseoEnSobrecargaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK, false);
             }
             catch (ParametroInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=4", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK, false);
             }
             catch (ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=3", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK, false);
             }
             catch (ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=2", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK, false);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=1", false);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK, false);
             }
         }
         #endregion

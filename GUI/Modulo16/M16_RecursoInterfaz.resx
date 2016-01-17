@@ -183,6 +183,12 @@
   <data name="REGISTRAR_PAGO_EXITO" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha procesado el pago exitosamente, ¡Que disfrute sus productos!&lt;/div&gt;</value>
   </data>
+  <data name="REGISTRAR_PAGO_EXITOSO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=2&amp;exito=1</value>
+  </data>
+  <data name="REGISTRAR_PAGO_FALLIDO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=2&amp;exito=0</value>
+  </data>
   <data name="REGISTRAR_PAGO_FALLO" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Su compra no ha podido ser procesada, no existe esa cantidad de implementos disponibles&lt;/div&gt;</value>
   </data>
