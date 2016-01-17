@@ -12,10 +12,13 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para detallar perfil de atleta
+    /// </summary>
     public class ComandoConsultarPerfil : Comando<Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad>>
     {
         /// <summary>
-        /// Implementación del metodo abstracto Ejecutar de la clase comando
+        /// Implementacion de método ejecutar para comando consultar perfil de atleta
         /// </summary>
         /// <returns>Retorta tupla con persona, dojo, ubicacion dojo, organizacion, ubicacion organziacion y ultima cinta </returns>
         public override Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> Ejecutar()

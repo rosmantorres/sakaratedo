@@ -11,10 +11,13 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para listar eventos asistidos de atleta
+    /// </summary>
     public class ComandoConsultarListaEventosAsistidos : Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>>
     {
         /// <summary>
-        /// Implementación del metodo abstracto Ejecutar de la clase comando
+        /// Implementacion de método ejecutar para comando listar eventos asistidos de atleta
         /// </summary>
         /// <returns>Retorta tupla con listas de evento, competencia y listas de sus fechas de inscripción</returns>
         public override Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> Ejecutar()

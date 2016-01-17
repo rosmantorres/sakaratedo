@@ -11,8 +11,15 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para detallar evento de atleta
+    /// </summary>
     public class ComandoConsultarDetallarEvento : Comando<Entidad>
     {
+        /// <summary>
+        /// Implementacion de método ejecutar para comando detallar evento de atleta
+        /// </summary>
+        /// <returns>Retorna entidad de evento</returns>
         public override Entidad Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
