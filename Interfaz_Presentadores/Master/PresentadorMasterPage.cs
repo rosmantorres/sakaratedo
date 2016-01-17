@@ -6,6 +6,7 @@ using System.Web;
 using System.Xml;
 using Interfaz_Contratos.Master;
 using LogicaNegociosSKD.Modulo2;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Master
 {
@@ -42,7 +43,9 @@ namespace Interfaz_Presentadores.Master
         {
             _iMaster = Imaster;
         }
-        
+        /// <summary>
+        /// Se carga el menu superior con respecto al rol que el usuario posee
+        /// </summary>
         public void CargarMenuSuperior()
         {
             XmlDocument doc = new XmlDocument();
@@ -85,7 +88,12 @@ namespace Interfaz_Presentadores.Master
             }
       
         }
-
+        /// <summary>
+        /// Se valida si el usuario tiene los permisos para entrar a una zona del sistema
+        /// </summary>
+        /// <param name="permisos">Permisos permitidos en la zona del sistema</param>
+        /// <param name="rolUsuario">rol del usuario</param>
+        /// <returns></returns>
         private Boolean validaPermiso(string[] permisos, string rolUsuario)
         {
             foreach (string rol in permisos)
@@ -95,7 +103,9 @@ namespace Interfaz_Presentadores.Master
             }
             return false;
         }
-
+        /// <summary>
+        /// Se carga el menu lateral con respecto a la opcion del menú seleccionada 
+        /// </summary>
         public void CargarMenuLateral()
         {
             XmlDocument doc = new XmlDocument();
@@ -115,7 +125,9 @@ namespace Interfaz_Presentadores.Master
                 _iMaster.MenuLateralEtq += respuesta;
             }
         }
-
+        /// <summary>
+        /// Se cargan los roles correspondientes a la cuenta que inició sesión y se cargan en la tarjeta de usuario
+        /// </summary>
         public void CargarRoles()
         {
             String Respuesta="";
@@ -130,7 +142,10 @@ namespace Interfaz_Presentadores.Master
                 }
             _iMaster.RolesEtq = Respuesta;
         }
-   
+        /// <summary>
+        /// Se asigna la imagen referente al usuario en el menu superior y en la tarjeta de usuario
+        /// </summary>
+        /// <param name="imagen">Enlace hacia la imagen a cargar(Online) o comillas dobles ("") para utilizar imagen por defecto</param>
         public void imagenSet(String imagen)
         {
             if (imagen == "")
@@ -141,6 +156,9 @@ namespace Interfaz_Presentadores.Master
             _iMaster.ImagenTagEtq = imagen;
         }
 
+        /// <summary>
+        /// Se asigna la referencia al boton Cerrar sesión en el menu de usuario
+        /// </summary>
         public void LogOut()
         {
             String Respuesta = "";
@@ -156,6 +174,7 @@ namespace Interfaz_Presentadores.Master
         public void asignarUsuario()
         {
             LogOut();
+            objetoCuenta();
             string imagen = HttpContext.Current.Session[RecursosInterfazMaster.sessionImagen].ToString();
             String RolEnUso = HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString();
             String RolesUsuario = HttpContext.Current.Session[RecursosInterfazMaster.sessionRoles].ToString();
@@ -196,6 +215,22 @@ namespace Interfaz_Presentadores.Master
                 HttpContext.Current.Session.Remove(RecursosInterfazMaster.sessionImagen);
                 HttpContext.Current.Response.Redirect(RecursosInterfazMaster.direccionM1_Index);
             }
+        }
+
+        /// <summary>
+        /// Se carga el objeto cuenta que contiene los datos del usuario en la sesión 
+        /// </summary>
+        private void objetoCuenta()
+        {
+            Cuenta usuario = _iMaster.UserLogin;
+            PersonaM1 persona = new PersonaM1();
+            persona._Nombre = HttpContext.Current.Session[RecursosInterfazMaster.sessionNombreCompleto].ToString().Split(' ')[0];
+            persona._Apellido = HttpContext.Current.Session[RecursosInterfazMaster.sessionNombreCompleto].ToString().Split(' ')[1];
+            usuario.Nombre_usuario = (String)HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioNombre];
+            usuario.Imagen = HttpContext.Current.Session[RecursosInterfazMaster.sessionImagen].ToString();
+            usuario.PersonaUsuario = persona;
+            _iMaster.UserLogin = usuario;
+
         }
     }
 }
