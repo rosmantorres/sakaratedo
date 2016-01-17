@@ -30,9 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -137,6 +153,8 @@
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCompetencia.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarMatricula.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarEvento.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosInscritos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoHorarioPractica.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoMatriculasPagas.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosPagos.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosAsistidos.cs" />

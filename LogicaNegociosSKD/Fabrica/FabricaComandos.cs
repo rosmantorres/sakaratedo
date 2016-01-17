@@ -30,6 +30,15 @@ namespace LogicaNegociosSKD.Fabrica
 
         #region Modulo 7
 
+        public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosInscritos()
+        {
+            return new ComandoConsultarListaEventosInscritos();
+        }
+        public Comando<Tuple<List<Entidad>>> ObtenerComandoConsultarListaHorarioPractica()
+        {
+            return new ComandoConsultarListaHorarioPractica();
+        }
+
         public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosAsistidos()
         {
             return new ComandoConsultarListaEventosAsistidos();

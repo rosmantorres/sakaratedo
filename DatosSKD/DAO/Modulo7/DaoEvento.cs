@@ -412,11 +412,15 @@ namespace DatosSKD.DAO.Modulo7
             return listaDeEventoInscritos;
         }
 
-        
+        /// <summary>
+        /// Método para listar los horarios de practica del atleta
+        /// </summary>
+        /// <param name="persona"></param>
+        /// <returns>Retorna lista de objetos de tipo Entidad con la información de los horarios de practica</returns>
         public List<Entidad> ListarHorarioPractica(Entidad persona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-             RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             BDConexion conexion;
             List<Parametro> parametros;

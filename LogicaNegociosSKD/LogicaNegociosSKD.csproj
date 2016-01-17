@@ -44,9 +44,11 @@
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarMatricula.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarEvento.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarListaCinta.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosInscritos.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosPagos.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarListaMatriculasPagas.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaHorarioPractica.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarPerfil.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCinta.cs" />
     <Compile Include="Comandos\Modulo7\RecursosComandoModulo7.Designer.cs">
