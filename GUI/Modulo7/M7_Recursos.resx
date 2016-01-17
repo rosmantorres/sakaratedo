@@ -225,4 +225,16 @@
   <data name="Mensaje_Numero_Parametro_invalido" xml:space="preserve">
     <value>El número del parametro es invalido, debe ser un entero positivo</value>
   </data>
+  <data name="RolAtleta" xml:space="preserve">
+    <value>Atleta</value>
+  </data>
+  <data name="RolAtletaMenor" xml:space="preserve">
+    <value>Atleta(Menor)</value>
+  </data>
+  <data name="RolRepresentante" xml:space="preserve">
+    <value>Representante</value>
+  </data>
+  <data name="RolSistema" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
 </root>

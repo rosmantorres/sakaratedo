@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Contratos.Modulo7
 {
+    /// <summary>
+    /// Contrato para listar eventos asistidos
+    /// </summary>
     public interface IContratoListarEventosAsistidos
     {
         string laTabla { get; set; }

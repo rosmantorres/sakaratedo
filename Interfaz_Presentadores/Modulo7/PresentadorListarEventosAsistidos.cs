@@ -1,5 +1,7 @@
 ﻿using DominioSKD;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Fabrica;
@@ -11,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Presentadores.Modulo7
 {
+    /// <summary>
+    /// Presentador para listar eventos asistidos
+    /// </summary>
     public class PresentadorListarEventosAsistidos
     {
         private IContratoListarEventosAsistidos vista;
@@ -23,7 +28,10 @@ namespace Interfaz_Presentadores.Modulo7
             vista = laVista;
         }
 
-        public void ConsultarCintasObtenidas()
+        /// <summary>
+        /// Método para consultar los eventos asistidos del atleta
+        /// </summary>
+        public void ConsultarEventosAsistidos(Persona idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -32,9 +40,6 @@ namespace Interfaz_Presentadores.Modulo7
                 Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> comandoListaEventosAsistidos = 
                     fabricaComandos.ObtenerComandoConsultarListaEventosAsistidos();
 
-                Persona idPersona = new Persona();//cambiar por fabrica
-                //idPersona.ID = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                idPersona.ID = 6; //falta modificar esto
                 comandoListaEventosAsistidos.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> tupla = comandoListaEventosAsistidos.Ejecutar();
 
@@ -57,7 +62,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
-                        vista.laTabla += M7_RecursosPresentador.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_RecursosPresentador.BotonCerrar;
+                        vista.laTabla += M7_RecursosPresentador.BotonInfoAsistenciaAEventos + evento.Id + M7_RecursosPresentador.BotonCerrar;
                         vista.laTabla += M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.CerrarTR;
                     }
@@ -77,14 +82,23 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
-                        vista.laTabla += M7_RecursosPresentador.BotonInfoAsistenciaACompetencias + competencia.Id_competencia + M7_RecursosPresentador.BotonCerrar;
+                        vista.laTabla += M7_RecursosPresentador.BotonInfoAsistenciaACompetencias + competencia.Id + M7_RecursosPresentador.BotonCerrar;
                         vista.laTabla += M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.CerrarTR;
-
                     }
                 }
             }
-            catch (Exception ex)
+            catch (NumeroEnteroInvalidoException)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+    M7_RecursosPresentador.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
+            catch (FormatException)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+    M7_RecursosPresentador.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
+            catch (Exception)
             {
 
             }

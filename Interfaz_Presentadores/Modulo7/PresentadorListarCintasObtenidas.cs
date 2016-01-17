@@ -1,5 +1,7 @@
 ﻿using DominioSKD;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Fabrica;
@@ -11,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Presentadores.Modulo7
 {
+    /// <summary>
+    /// Presentador para listar cintas obtenidas
+    /// </summary>
     public class PresentadorListarCintasObtenidas
     {
         private IContratoListarCintasObtenidas vista;
@@ -23,40 +28,21 @@ namespace Interfaz_Presentadores.Modulo7
             vista = laVista;
         }
 
-        public void ConsultarCintasObtenidas()
+        /// <summary>
+        /// Método para consultar las cintas obtenidas
+        /// </summary>
+        public void ConsultarCintasObtenidas(Persona idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>, List<DateTime>>> comandoListaCintasObtenidas = fabricaComandos.ObtenerComandoConsultarListaCinta();
-                Persona idPersona = new Persona();//cambiar por fabrica
-
-                //idPersona.ID = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                idPersona.ID = 6; //falta modificar esto
                 comandoListaCintasObtenidas.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<DateTime>> tupla = comandoListaCintasObtenidas.Ejecutar();
 
                 List<Entidad> listaCinta = tupla.Item1;
                 List<DateTime> listaFecha = tupla.Item2;
-
-                /*var numbersAndWords = listaCinta.Zip(listaFecha, (n, w) => new { cinta = n, fecha = w });
-
-                foreach (var nw in numbersAndWords)
-                {
-                    Cinta cinta = (Cinta)nw.cinta;
-                    DateTime fechaInscripcion = nw.fecha;
-       
-                    vista.laTabla += M7_RecursosPresentador.AbrirTR;
-                    vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Color_nombre.ToString() + M7_RecursosPresentador.CerrarTD;
-                    vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Rango.ToString() + M7_RecursosPresentador.CerrarTD;
-                    vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
-                    vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Clasificacion.ToString() + M7_RecursosPresentador.CerrarTD;
-                    vista.laTabla += M7_RecursosPresentador.AbrirTD;
-                    vista.laTabla += M7_RecursosPresentador.BotonInfoCintas + cinta.Id_cinta + M7_RecursosPresentador.BotonCerrar;
-                    vista.laTabla += M7_RecursosPresentador.CerrarTD;
-                    vista.laTabla += M7_RecursosPresentador.CerrarTR;
-                }*/
 
                 using (var e1 = listaCinta.GetEnumerator())
                 using (var e2 = listaFecha.GetEnumerator())
@@ -72,13 +58,23 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Clasificacion.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
-                        vista.laTabla += M7_RecursosPresentador.BotonInfoCintas + cinta.Id_cinta + M7_RecursosPresentador.BotonCerrar;
+                        vista.laTabla += M7_RecursosPresentador.BotonInfoCintas + cinta.Id + M7_RecursosPresentador.BotonCerrar;
                         vista.laTabla += M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.CerrarTR;
                     }
                 }
             }
-            catch (Exception ex)
+            catch (NumeroEnteroInvalidoException)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+    M7_RecursosPresentador.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
+            catch (FormatException)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+    M7_RecursosPresentador.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            }
+            catch (Exception)
             {
 
             }

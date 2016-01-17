@@ -12,16 +12,24 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
+    /// <summary>
+    /// Clase que maneja la interfaz de lista de cintas 
+    /// </summary>
     public partial class M7_ListarCintas : System.Web.UI.Page, IContratoListarCintasObtenidas
     {
         #region Atributos
-        private List<Cinta> laLista = new List<Cinta>();
         private PresentadorListarCintasObtenidas presentador;
+        private FabricaEntidades fabricaEntidades;
+        private Persona idPersona;
 
         #region Contrato
+        /// <summary>
+        /// Implementacion del contrato
+        /// </summary>
         string IContratoListarCintasObtenidas.laTabla
         {
             get
@@ -38,6 +46,9 @@ namespace templateApp.GUI.Modulo7
 
         #endregion
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public M7_ListarCintas()
         {
             presentador = new PresentadorListarCintasObtenidas(this);
@@ -64,7 +75,7 @@ namespace templateApp.GUI.Modulo7
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -76,7 +87,10 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            presentador.ConsultarCintasObtenidas();
+                            fabricaEntidades = new FabricaEntidades();
+                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                            presentador.ConsultarCintasObtenidas(idPersona);
                         }
                         catch (ListaNulaException)
                         {

@@ -12,18 +12,23 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
+    /// <summary>
+    /// Clase que maneja la interfaz de asistencia a eventos
+    /// </summary>
     public partial class M7_ListarAsistenciaAEventos : System.Web.UI.Page, IContratoListarEventosAsistidos
     {
         #region Atributos
-        private List<DominioSKD.Evento> laListaEventos;
-        private List<DominioSKD.Competencia> laListaCompetencias;
-
-        private List<Cinta> laLista = new List<Cinta>();
         private PresentadorListarEventosAsistidos presentador;
+        private FabricaEntidades fabricaEntidades;
+        private Persona idPersona;
 
+        /// <summary>
+        /// Implementacion del contrato
+        /// </summary>
         string IContratoListarEventosAsistidos.laTabla
         {
             get
@@ -38,6 +43,9 @@ namespace templateApp.GUI.Modulo7
         }
         #endregion
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public M7_ListarAsistenciaAEventos()
         {
             presentador = new PresentadorListarEventosAsistidos(this);
@@ -52,18 +60,15 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-
             String detalleString = Request.QueryString["impDetalle"];
 
             #region Llenar Data Table con Eventos
-            LogicaEventosAsistidos logEvento = new LogicaEventosAsistidos();
-
             try
             {
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -75,46 +80,10 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            presentador.ConsultarCintasObtenidas();
-                            
-                            //laListaEventos = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            //laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            /*if (laListaEventos != null && laListaCompetencias != null)
-                            {
-                                foreach (Evento evento in laListaEventos)
-                                {
-                                    fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-
-                                foreach (Competencia competencia in laListaCompetencias)
-                                {
-                                    fechaInscripcion = logEvento.obtenerFechaInscripcion(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), competencia.Id_competencia);
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoAsistenciaACompetencias + competencia.Id_competencia + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-                            }
-                            else
-                            {
-                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
-                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }*/
-
+                            fabricaEntidades = new FabricaEntidades();
+                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                            presentador.ConsultarEventosAsistidos(idPersona);
                         }
                         catch (ListaNulaException)
                         {

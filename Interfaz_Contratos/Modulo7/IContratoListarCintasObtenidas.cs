@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Contratos.Modulo7
 {
+    /// <summary>
+    /// Contrato para listar cintas obtenidas
+    /// </summary>
     public interface IContratoListarCintasObtenidas
     {
         string laTabla { get; set; }

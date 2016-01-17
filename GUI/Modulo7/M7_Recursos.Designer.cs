@@ -383,5 +383,41 @@ namespace templateApp.GUI.Modulo7 {
                 return ResourceManager.GetString("MensajeObjetoNuloLogger", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atleta.
+        /// </summary>
+        internal static string RolAtleta {
+            get {
+                return ResourceManager.GetString("RolAtleta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atleta(Menor).
+        /// </summary>
+        internal static string RolAtletaMenor {
+            get {
+                return ResourceManager.GetString("RolAtletaMenor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Representante.
+        /// </summary>
+        internal static string RolRepresentante {
+            get {
+                return ResourceManager.GetString("RolRepresentante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistema.
+        /// </summary>
+        internal static string RolSistema {
+            get {
+                return ResourceManager.GetString("RolSistema", resourceCulture);
+            }
+        }
     }
 }
