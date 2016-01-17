@@ -141,8 +141,17 @@
   <data name="EXCEPTIONSKD_CONEXIONBD_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error en la Base de Datos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
   </data>
+  <data name="EXCEPTIONSKD_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=2</value>
+  </data>
   <data name="EXCEPTIONSKD_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un conflicto en su operacion, trate de ejecutarla mas tarde y si el problema persiste comuniquese con nosotros&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=3</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=6</value>
   </data>
   <data name="EXCEPTION_FORMATO_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos que no tienen formatos numericos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
@@ -153,17 +162,35 @@
   <data name="EXCEPTION_ITEM_INVALIDO_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar procesar un item no acorde al indicado, intente su operacion de nuevo mas tarde&lt;/div&gt;</value>
   </data>
+  <data name="EXCEPTION_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=1</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=8</value>
+  </data>
   <data name="EXCEPTION_LOGGER_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error interno al mantener el seguimiento de las operaciones, si su operacion no fue ejecutada, intente realizarla mas tarde&lt;/div&gt;</value>
   </data>
   <data name="EXCEPTION_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error inesperado en el sistema, trate de ejecutar su operacion mas tarde y si el problema persiste comuniquese con nosotros&lt;/div&gt;</value>
   </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=4</value>
+  </data>
   <data name="EXCEPTION_PARAMETRO_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al enviar informacion a la Base de Datos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
   </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=9</value>
+  </data>
   <data name="EXCEPTION_PERSONA_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar obtener sus datos de usuario, se recomienda volver a ingresar al sistema&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=5</value>
   </data>
   <data name="EXCEPTION_SOBRECARGA_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos con mucha informacion, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>

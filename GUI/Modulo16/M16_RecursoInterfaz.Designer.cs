@@ -124,6 +124,24 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=3.
+        /// </summary>
+        internal static string EXCEPTION_CONEXIONBD_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_CONEXIONBD_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=6.
+        /// </summary>
+        internal static string EXCEPTION_FORMATO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_FORMATO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos que no tienen formatos numericos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_FORMATO_MENSAJE {
@@ -151,6 +169,24 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=1.
+        /// </summary>
+        internal static string EXCEPTION_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=8.
+        /// </summary>
+        internal static string EXCEPTION_LOGGER_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LOGGER_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error interno al mantener el seguimiento de las operaciones, si su operacion no fue ejecutada, intente realizarla mas tarde&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_LOGGER_MENSAJE {
@@ -169,6 +205,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=4.
+        /// </summary>
+        internal static string EXCEPTION_PARAMETRO_INVALIDO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARAMETRO_INVALIDO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al enviar informacion a la Base de Datos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_PARAMETRO_MENSAJE {
@@ -178,11 +223,38 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=7.
+        /// </summary>
+        internal static string EXCEPTION_PARSEO_VACIO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARSEO_VACIO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=9.
+        /// </summary>
+        internal static string EXCEPTION_PERSONA_INVALIDA_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PERSONA_INVALIDA_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar obtener sus datos de usuario, se recomienda volver a ingresar al sistema&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_PERSONA_MENSAJE {
             get {
                 return ResourceManager.GetString("EXCEPTION_PERSONA_MENSAJE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=5.
+        /// </summary>
+        internal static string EXCEPTION_SOBRECARGA_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_SOBRECARGA_LINK", resourceCulture);
             }
         }
         
@@ -210,6 +282,15 @@ namespace templateApp.GUI.Modulo16 {
         internal static string EXCEPTIONSKD_CONEXIONBD_MENSAJE {
             get {
                 return ResourceManager.GetString("EXCEPTIONSKD_CONEXIONBD_MENSAJE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=2.
+        /// </summary>
+        internal static string EXCEPTIONSKD_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTIONSKD_LINK", resourceCulture);
             }
         }
         
