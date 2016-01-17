@@ -24,6 +24,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         #endregion
 
         #region SetUp & TearDown
+        /// <summary>
+        /// Método que se ejecuta antes de cada prueba
+        /// </summary>
         [SetUp]
         public void Init()
         {
@@ -33,6 +36,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             idPersona.Id = 6;
         }
 
+        /// <summary>
+        /// Método que se ejecuta luego de cada prueba
+        /// </summary>
         [TearDown]
         public void Clean()
         {
