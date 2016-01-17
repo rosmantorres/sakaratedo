@@ -310,7 +310,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaFechaInscripcionCompetencia()
         {
             Competencia competencia = new Competencia();//cambiar por fabrica
-            competencia.Id_competencia = 8;
+            competencia.Id = 8;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
             Assert.AreEqual("02/13/2014", fechaInscripcion.ToString("MM/dd/yyyy"));
         }
@@ -322,7 +322,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaFechaInscripcionCompetenciaNoNula()
         {
             Competencia competencia = new Competencia();//cambiar por fabrica
-            competencia.Id_competencia = 8;
+            competencia.Id = 8;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
             Assert.NotNull(fechaInscripcion);
         }

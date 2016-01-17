@@ -57,7 +57,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Competencia competencia = new Competencia();// se sustituye por fabrica
-                        competencia.Id_competencia = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
+                        competencia.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();
                         if (int.Parse(row[RecursosDAOModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
                             competencia.TipoCompetencia = RecursosDAOModulo7.AliasCompetenciaKata;
@@ -148,7 +148,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Competencia competencia = new Competencia();// se sustituye por fabrica
-                        competencia.Id_competencia = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
+                        competencia.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();
                         if (int.Parse(row[RecursosDAOModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
                             competencia.TipoCompetencia = RecursosDAOModulo7.AliasCompetenciaKata;
@@ -531,12 +531,12 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0 && idCompetencia.Id_competencia > 0)
+                if (idPersona.ID > 0 && idCompetencia.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroCompetencia = new Parametro(RecursosDAOModulo7.ParamIdCompetenciaPaga, SqlDbType.Int, idCompetencia.Id_competencia.ToString(), false);
+                    parametroCompetencia = new Parametro(RecursosDAOModulo7.ParamIdCompetenciaPaga, SqlDbType.Int, idCompetencia.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroCompetencia);
 
@@ -788,7 +788,7 @@ namespace DatosSKD.DAO.Modulo7
                     {
                         Competencia competencia = (Competencia)fabricaEntidades.ObtenerCompetencia();
 
-                        competencia.Id_competencia = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
+                        competencia.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();
                         if (int.Parse(row[RecursosDAOModulo7.AliasCompetenciaTipo].ToString()).Equals(1))
                             competencia.TipoCompetencia = RecursosDAOModulo7.AliasCompetenciaKata;
