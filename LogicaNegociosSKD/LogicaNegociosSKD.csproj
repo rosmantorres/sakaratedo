@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+<<<<<<< HEAD
     <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasRestCinta.cs" />
@@ -50,6 +51,58 @@
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasAsociadas.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasNoAsociadas.cs" />
     <Compile Include="Comandos\Modulo8\ComandoEliminarListaCompetenciaRestriccionCompetencia.cs" />
+=======
+    <Compile Include="Comandos\Modulo12\ComandoAgregarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarCintas.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarOrganizaciones.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarTodosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoConsultarXIdCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\ComandoModificarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo12\RecursosComandoModulo12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo12.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Comandos\Modulo14\ComandoAgregarDiseno.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarDiseño.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarDiseñoPuro.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillasASolicitar.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoEliminarSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoEventosSolicitud.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoListarPlanillasSolicitadas.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarDiseno.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarPlanillaID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarPlanillaIDTipo.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoModificarSolicitudID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoNuevoTipoPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerDatosBD.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerDatosPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerPlanillaID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerSolicitudID.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoObtenerTipoPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoReemplazarElementos.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarPlanillaTipo.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarSolicitudIDPersona.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoRegistrarSolicitudPlanilla.cs" />
+    <Compile Include="Comandos\Modulo14\RecursosComandoModulo14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo14.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Comandos\Modulo3\EjecutarAgregarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarComboOrganizaciones.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarConsultarXIdOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarModificarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarAgregarCinta.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarConsultarTodosCinta.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
+    <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+>>>>>>> 363696cc24bcfc1685c2ac79783ce77197177000
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -164,6 +217,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo12\RecursosComandoModulo12.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo12.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo14\RecursosComandoModulo14.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
@@ -230,18 +292,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo10\" />
     <Folder Include="Comandos\Modulo11\" />
-    <Folder Include="Comandos\Modulo12\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo14\" />
     <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo16\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
-    <Folder Include="Comandos\Modulo3\" />
     <Folder Include="Comandos\Modulo4\" />
-    <Folder Include="Comandos\Modulo5\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo9\" />

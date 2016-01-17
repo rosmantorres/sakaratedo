@@ -92,6 +92,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo3\PUDaoOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\PUDaoCintas.cs" />
     <Compile Include="Modulo5\RecursosPU_Mod5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

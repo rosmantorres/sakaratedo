@@ -114,6 +114,7 @@ namespace LogicaNegociosSKD.Modulo14
                 datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.FechaReincor));
                 datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.EveNombre));
                 datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.CompNombre));
+                datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosLogicaModulo14.Motivo));
 
                 return datosRequeridos;
             }

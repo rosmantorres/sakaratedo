@@ -31,6 +31,15 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
         
         /// <summary>
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// Control id_solicitud.
         /// </summary>
         /// <remarks>
@@ -128,6 +137,15 @@ namespace templateApp.GUI.Modulo14 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList comboCompetencia;
+        
+        /// <summary>
+        /// Control divMotivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMotivo;
         
         /// <summary>
         /// Control id_motivo.
