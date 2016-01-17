@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace DominioSKD.Entidades.Modulo1 
+namespace DominioSKD 
 {
     public class Persona : Entidad
     {
@@ -70,7 +70,7 @@ namespace DominioSKD.Entidades.Modulo1
         /// <summary>
         /// Sexo de la persona
         /// </summary>
-        public Sexo Sexo;
+       // public Sexo Sexo;
 
         /// <summary>
         /// Documento de identidad de la persona

@@ -10,7 +10,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
     /// <summary>
     /// Interface con la firma de metodos para el DAO de compra
     /// </summary>
-    public interface IdaoCompra : IDao<Entidad, bool, Entidad>
+    public interface IdaoCompra : IDao<Entidad, Entidad, Entidad>
     {
         /// <summary>
         /// Metodo que obtiene todas las facturas de el usuario logueado
@@ -32,5 +32,15 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <param name="Id_Factura">El id de la factura que desea detallar</param>
         /// <returns>El objeto con todos sus atributos en especifico</returns>
         Entidad DetallarFactura(int Id_factura);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Agregar(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Modificar(Entidad entidad);
     }
 }

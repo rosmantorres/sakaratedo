@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Interfaz_Contratos.Modulo16;
-using DominioSKD.Entidades.Modulo9;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Fabrica;
 using DominioSKD;
@@ -16,9 +15,8 @@ using System.Web.UI;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
-using DominioSKD.Entidades.Modulo1;
-using ExcepcionesSKD;
-using ExcepcionesSKD.Modulo16;
+using DominioSKD;
+
 
 namespace Interfaz_Presentadores.Modulo16
 {

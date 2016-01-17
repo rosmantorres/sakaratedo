@@ -2,7 +2,7 @@
 using DominioSKD;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
-using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 using System;
 

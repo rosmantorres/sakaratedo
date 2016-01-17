@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
-using DominioSKD.Entidades.Modulo1;
-
 
 
 namespace DatosSKD.Modulo7

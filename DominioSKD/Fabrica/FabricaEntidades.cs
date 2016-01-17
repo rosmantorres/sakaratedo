@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
-using DominioSKD.Entidades.Modulo9;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
+
 namespace DominioSKD.Fabrica
 {
     public class FabricaEntidades
@@ -360,10 +359,10 @@ namespace DominioSKD.Fabrica
             return new Diseño(contenido);
         }
         // Entidades de otros modulos que necesitamos
-        public Entidad ObtenerPersona()
-        {
-            return new Persona();
-        }
+        //public Entidad ObtenerPersona()
+        //{
+          //  return new Persona();
+        //}
         public Entidad ObtenerDojo()
         {
             return new Dojo();
@@ -402,23 +401,13 @@ namespace DominioSKD.Fabrica
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia la Matricula
-        /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad matricula con todos sus datos llenos</returns>
-        public Entidad ObtenerMatricula()
-        {
-            return new Matricula();
-        }
-
-        /// <summary>
         /// Metodo de la fabrica que instancia el Evento
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad evento con todos sus datos llenos</returns>
         public Entidad ObtenerEvento()
         {
-            return new Entidades.Modulo9.Evento();
+            return new Evento();
         }
 
         /// <summary>
@@ -428,7 +417,7 @@ namespace DominioSKD.Fabrica
         /// <returns>La entidad persona con todos sus datos llenos</returns>
         public static Entidad ObtenerPersona()
         {
-            return new Entidades.Modulo1.Persona();
+            return new Persona();
         }
 
         /// <summary>
@@ -460,7 +449,6 @@ namespace DominioSKD.Fabrica
         {
             return new Compra();
         }
-       
 
         #endregion
     }

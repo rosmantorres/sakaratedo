@@ -11,7 +11,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
     /// <summary>
     /// Interface con la firma de metodos para el DAO de matricula
     /// </summary>
-    public interface IdaoMensualidad : IDao<Entidad, bool, Entidad>
+    public interface IdaoMensualidad : IDao<Entidad, Entidad, Entidad>
     {
         /// <summary>
         /// Metodo que obtiene todas las mensualidades morosas de la persona logueada
@@ -33,5 +33,15 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <param name="entidad">la matricula al que se desee saber el detalle</param>
         /// <returns>Lista con todos los atributos de la matricula en especifico</returns>
         Entidad DetallarMensualidad(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Agregar(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Modificar(Entidad entidad);
     }
 }

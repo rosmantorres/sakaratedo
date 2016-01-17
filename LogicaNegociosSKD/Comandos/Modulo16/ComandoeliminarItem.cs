@@ -8,7 +8,7 @@ using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
 using DatosSKD.DAO.Modulo16;
-using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 
 

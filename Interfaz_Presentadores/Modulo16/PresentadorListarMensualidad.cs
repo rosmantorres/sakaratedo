@@ -16,7 +16,7 @@ using System.Web.UI;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
-using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo16
 {

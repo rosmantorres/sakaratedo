@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
-using DominioSKD.Entidades.Modulo9;
+using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using DominioSKD.Fabrica;
-using ExcepcionesSKD.Modulo16;
-using ExcepcionesSKD;
+
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {

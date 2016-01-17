@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\SANDRA\Programas\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\itextsharp.dll</HintPath>
+      <HintPath>..\..\SANDRA\Programas\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,7 +45,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>    
+  <ItemGroup>
     <Compile Include="Modulo16\IContratoEliminarItem.cs" />
     <Compile Include="Modulo16\IContratoListarEvento.cs" />
     <Compile Include="Modulo16\IContratoListarFactura.cs" />
@@ -83,9 +83,6 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
-    <Folder Include="Modulo1\" />
-    <Folder Include="Modulo2\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />

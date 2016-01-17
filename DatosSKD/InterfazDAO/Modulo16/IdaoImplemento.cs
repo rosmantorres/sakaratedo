@@ -10,7 +10,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
     /// <summary>
     /// Interface con la firma de metodos para el DAO de implemento
     /// </summary>
-    public interface IdaoImplemento : IDao<Entidad, bool, Entidad>
+    public interface IdaoImplemento : IDao<Entidad, Entidad, Entidad>
     {
         /// <summary>
         /// Metodo que obtiene todos los implementos
@@ -39,5 +39,15 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <param name="entidad">el id del usuario que esta logueado</param>
         /// <returns>Lista con todos los implementos de acuerdo al dojo que pertenece el usuario logueado</returns>
         new Entidad ConsultarXId(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Agregar(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Modificar(Entidad entidad);
     }
 }
