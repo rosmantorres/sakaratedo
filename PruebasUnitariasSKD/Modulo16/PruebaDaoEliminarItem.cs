@@ -47,7 +47,9 @@ namespace PruebasUnitariasSKD.Modulo16
             //Dos implementos distintos
             this.implemento = new Implemento();
             this.implemento.Id = 1;
- 
+
+
+
 
             //Dos matriculas distintas
             this.matricula = new Matricula();
@@ -58,7 +60,7 @@ namespace PruebasUnitariasSKD.Modulo16
             //Obtengo el comando
             this.pruebaDao = (DaoCarrito)FabricaDAOSqlServer.ObtenerdaoCarrito();
 
-        
+
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void pruebaEliminarMatricula()
         {
             daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
-            Assert.IsTrue(daoCarrito.eliminarItem(1,1,persona));
+            Assert.IsTrue(daoCarrito.eliminarItem(1, this.matricula, this.persona));
 
         }
 
@@ -106,7 +108,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
-             
+
             this.persona = 0;
             this.implemento = null;
             this.matricula = null;

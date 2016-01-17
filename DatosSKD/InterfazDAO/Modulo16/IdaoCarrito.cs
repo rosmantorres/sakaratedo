@@ -62,6 +62,13 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <returns>Lista cont todas las matriculas de la persona</returns>
         Dictionary<Entidad, int> getMatricula(Entidad persona);
 
-        bool eliminarItem(int tipoObjeto, Entidad objetoBorrar, Entidad parametro);                   
+        /// <summary>
+        /// Metodo para eliminar item de la base de datos, ya sea Matricula, Implemento o Evento
+        /// </summary>
+        /// <param name="tipoObjeto">El tipo de objeto a que me refiero(matricula, evento o implemento)</param>
+        /// <param name="objetoBorrar">El objeto que voy a eliminar</param>
+        /// <param name="parametro">La persona a la cual esta asociada el carrito</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        bool eliminarItem(int tipoObjeto, Entidad objetoBorrar, Entidad persona);                  
     }
 }
