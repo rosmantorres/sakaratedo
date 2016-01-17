@@ -11,12 +11,14 @@ namespace Interfaz_Contratos.Modulo14
 {
     public interface IContratoM14DisenoPlanilla
     {
-        Label tipoPlanilla { set; }
-        Label planilla { set; }
-        CKEditorControl ckEditor { get; set; }
+        Label tipoPlanilla { get; set; }
+        Label planilla { get; set; }
+        CKEditorControl CKEditor1 { get; set; }
         DropDownList comboDatos { get; set; }
-        TextBox campos { get; set; }
-        TextBox camposStatic { get; set; }
-        String alert { set; }
+        Label campos { get; set; }
+        Label camposStatic { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alert { set; }
     }
 }
