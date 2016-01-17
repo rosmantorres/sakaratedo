@@ -8,7 +8,6 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD;
@@ -22,97 +21,72 @@ namespace PruebasUnitariasSKD.Modulo16
     [TestFixture]
     class PruebaComandoEliminarItem
     {
-
         #region Atributos
         //Atributos pertinentes a usar
-        private ComandoeliminarItem pruebaComando;
-        private ComandoeliminarItem pruebaComandoImplemento1;
-        private ComandoeliminarItem pruebaComandoEvento1;
-        private ComandoeliminarItem pruebaComandoMatricula1;
-        private Comando<bool> eliminarEventos;
-        private int persona;
+        private Comando<bool> ComandoEliminar;
+        private Comando<bool> PruebaComandoVacio;
+        private Comando<bool> PruebaComandoVacio2;
+        private ComandoeliminarItem pruebaComandoVacio3;
+        private ComandoeliminarItem pruebaComandoVacio4;
+        private Comando<bool> pruebaComandoImplemento1;
+        private Comando<bool> pruebaComandoEvento1;
+        private Comando<bool> pruebaComandoMatricula1;
+        private Comando<List<Entidad>> eventos;
+        private Entidad persona;
+        private Entidad persona2;
+        private Entidad persona3;
         private Implemento implemento;
-        private bool seelimina;
+        private List<Entidad> listaEventos;
         private Matricula matricula;
-        private int objetoaBorrari ;
-         private   int tipoObjetoi ;
-         private  int usuarioi;
-         private int objetoaBorrarm;
-         private int tipoObjetom;
-         private int usuariom;
-         private int objetoaBorrare;
-         private int tipoObjetoe;
-         private int usuarioe;
-
-
 
         #endregion
 
-
         /// <summary>
-        /// Inicializa  los atributos que utilizaremos para probar
+        /// Prepara todos los atributos que utilizaremos para probar
         /// </summary>
         [SetUp]
         public void Iniciar()
         {
-            //Persona
-            this.persona = 11;
+            //La persona
+            this.persona = new Persona();
+            this.persona.Id = 11;
+            this.persona2 = new Persona();
+            this.persona2.Id = 12;
+            this.persona3 = new Persona();
+            this.persona3.Id = 13;
 
-            //Implemento
+            //Dos implementos distintos
             this.implemento = new Implemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
 
-            //Eliminar Eventos
-            this.eliminarEventos = FabricaComandos.CrearComandoeliminarItem();
-            this.seelimina = this.eliminarEventos.Ejecutar();
 
-            //Matricula
+            //Eventos
+            this.eventos = FabricaComandos.CrearComandoConsultarTodosEventos();
+            this.listaEventos = this.eventos.Ejecutar();
+
+            //Dos matriculas distintas
             this.matricula = new Matricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
 
 
-             this.objetoaBorrari=1 ;
-             this.tipoObjetoi=1 ;
-             this.usuarioi=persona;
-
-            this.objetoaBorrarm=1;
-         this.tipoObjetom=1;
-         this.usuariom=persona;
+            //Iniciamos los atributos para la prueba de vacio
+            this.PruebaComandoVacio = FabricaComandos.CrearComandoeliminarItem();
+            this.PruebaComandoVacio2 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            this.pruebaComandoVacio3 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
+            this.pruebaComandoVacio4 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
 
 
-        this.objetoaBorrare=1;
-         this.tipoObjetoe=1;
-         this.usuarioe=persona;
+            //valor  para Eliminar un Implemento
+            this.pruebaComandoImplemento1 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            //valor para Eliminar un Evento
+            this.pruebaComandoEvento1 = FabricaComandos.CrearComandoeliminarItem(2, this.listaEventos[0], this.persona2);
+            //valor  para Eliminar una Matricula
+            this.pruebaComandoMatricula1 = FabricaComandos.CrearComandoeliminarItem(3, this.matricula, this.persona3);
 
-            //Obtengo el comando
-            this.pruebaComando = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
 
-            //Diferentes valores para Eliminar un Implemento
-            this.pruebaComandoImplemento1 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
-            this.pruebaComandoImplemento1.ObjetoaBorrar = this.objetoaBorrari;
-            this.pruebaComandoImplemento1.TipoObjeto = this.tipoObjetoi;
-            this.pruebaComandoImplemento1.Usuario =this.persona;
-           
-
-            //Diferentes valores para Eliminar un Evento
-            this.pruebaComandoEvento1 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
-            this.pruebaComandoEvento1.ObjetoaBorrar = this.objetoaBorrare;
-            this.pruebaComandoEvento1.TipoObjeto = this.tipoObjetoe;
-            this.pruebaComandoEvento1.Usuario = this.persona;
-            
-
-            //Diferentes valores para Eliminar una Matricula
-            this.pruebaComandoMatricula1 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
-            this.pruebaComandoMatricula1.ObjetoaBorrar = this.objetoaBorrarm;
-            this.pruebaComandoMatricula1.TipoObjeto = this.tipoObjetom;
-            this.pruebaComandoMatricula1.Usuario = this.persona;
-             
-
-            
         }
-
 
         /// <summary>
         /// Prueba unitaria para asegurar que el comando no sea vacio
@@ -120,65 +94,65 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void PruebaVacio()
         {
-            Assert.IsNotNull(this.pruebaComando);
+            Assert.IsNotNull(this.PruebaComandoVacio);
+            Assert.IsNotNull(this.PruebaComandoVacio2);
+            Assert.IsNotNull(this.pruebaComandoVacio3);
+            Assert.IsNotNull(this.pruebaComandoVacio4);
+            Assert.IsNotNull(this.pruebaComandoVacio4);
         }
 
         /// <summary>
-        /// Prueba unitaria que trabaja sobre el Ejecutar del ComandoeliminarItem, la cual se encarga de eliminar un implemento en especifico
+        /// Prueba unitaria que trabaja sobre el Ejecutar del ComandoeliminarItem para eliminar implemento 
         /// </summary>
         [Test]
         public void pruebaEliminarImplemento()
         {
-            //Se prueba que se elimina un implemento al carrito de una persona
+            //Elimino un implemento al carrito de una persona con id 11
             Assert.IsTrue(this.pruebaComandoImplemento1.Ejecutar());
         }
 
         /// <summary>
-        /// Prueba unitaria que trabaja sobre el Ejecutar del ComandoEliminarItem para eliminar un evento en especifico
+        /// Prueba unitaria que trabaja sobre el Ejecutar del ComandoeliminarItem para eliminar evento 
         /// </summary>
         [Test]
-        public void pruebaEliminarEvento()
+        public void pruebaAgregarEvento()
         {
-            //Se prueba que se elimina un Evento existente en el carrito de una persona
+            //Elimino un Evento al carrito de una persona con id 12
             Assert.IsTrue(this.pruebaComandoEvento1.Ejecutar());
         }
 
-
         /// <summary>
-        /// Prueba unitaria que trabaja sobre el Ejecutar del comando EliminarItem para eliminar una matricula en especifico
+        /// Prueba unitaria que trabaja sobre el Ejecutar del comando AgregarItem para agregar matricula
         /// </summary>
         [Test]
         public void PruebaEliminarMatricula()
         {
-            //Se prueba que se elimina una matricula existente en el carrito  de una persona
+            //Elimino una matricula al carrito de una persona con id 13
             Assert.IsTrue(this.pruebaComandoMatricula1.Ejecutar());
         }
 
-
-
         /// <summary>
-        /// Elimina todos los atributos utilizados al probar
+        /// Elimina todos los atributos utilizados al probar eliminaritem
         /// </summary>
         [TearDown]
         public void Limpiar()
         {
-            this.pruebaComando = null;
+            this.ComandoEliminar = null;
+            this.PruebaComandoVacio = null;
+            this.PruebaComandoVacio2 = null;
+            this.pruebaComandoVacio3 = null;
+            this.pruebaComandoVacio4 = null;
             this.pruebaComandoImplemento1 = null;
             this.pruebaComandoEvento1 = null;
             this.pruebaComandoMatricula1 = null;
-            this.eliminarEventos = null;
-            this.persona = 0;
+            this.eventos = null;
+            this.persona = null;
+            this.persona2 = null;
+            this.persona3 = null;
             this.implemento = null;
+            this.listaEventos = null;
             this.matricula = null;
-            
-
         }
-
-
-
-
-
-
 
     }
 }
