@@ -7,20 +7,6 @@ using System.Threading.Tasks;
 
 namespace DominioSKD.Entidades.Modulo1 
 {
-
-    /// <summary>
-    /// Enumeración para el sexo de una persona
-    /// </summary>
-    public enum Sexo { Femenino, Masculino }
-
-    /// <summary>
-    /// Enumeración para el tipo de sangre de una persona
-    /// </summary>
-    public enum Sangre { AP, AN, BP, BN, OP, ON, ABP, ABN }
-
-    /// <summary>
-    /// Clase que representa la información personal de una persona.
-    /// </summary>
     public class Persona : Entidad
     {
 
@@ -145,6 +131,20 @@ namespace DominioSKD.Entidades.Modulo1
             get { return this._id; }
             set { this._id = value; }
         }
+
+        /// <summary>
+        /// Enumeración para el sexo de una persona
+        /// </summary>
+        public enum Sexo { Femenino, Masculino }
+
+        /// <summary>
+        /// Enumeración para el tipo de sangre de una persona
+        /// </summary>
+        public enum Sangre { AP, AN, BP, BN, OP, ON, ABP, ABN }
+
+        /// <summary>
+        /// Clase que representa la información personal de una persona.
+        /// </summary>
         #endregion
 
         #region Métodos
