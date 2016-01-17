@@ -28,7 +28,6 @@ namespace Interfaz_Presentadores.Modulo7
             vista = laVista;
         }
 
-
         /// <summary>
         /// Método para cargar los datos de la persona
         /// </summary>

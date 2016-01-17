@@ -251,41 +251,6 @@ namespace templateApp.GUI.Modulo7
                         idPersona = new Persona();//cambiar por fabrica
                         idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                         presentador.cargarDatos(idPersona);
-                        /*
-                        persona = laLogica.obtenerDetallePersona(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                        dojo = laLogica.obtenerDetalleDojo(persona.DojoPersona);
-                        organizacion = laLogica.obtenerDetalleOrganizacion(dojo.Organizacion_dojo);
-                        cinta = laLogicaCinta.obtenerUltimaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                        if (persona != null && dojo != null && organizacion != null && cinta != null)
-                        {
-                            this.nombrePersona.Text = persona.Nombre;
-                            this.apellidoPersona.Text = persona.Apellido;
-                            this.fechaNacimiento.Text = persona.FechaNacimiento.ToShortDateString();
-                            this.direccion.Text = persona.Direccion;
-                            this.nombreDojo.Text = dojo.Nombre_dojo;
-                            this.telefonoDojo.Text = dojo.Telefono_dojo.ToString();
-                            this.emailDojo.Text = dojo.Email_dojo;
-                            this.ubicacionDojo.Text = dojo.Ubicacion.Direccion;
-                            this.nombreOrganizacion.Text = organizacion.Nombre;
-                            this.emailOrganizacion.Text = organizacion.Email;
-                            this.ubicacionOrganizacion.Text = organizacion.Direccion;
-                            this.cintaActual.Text = cinta.Color_nombre;
-                        }
-                        else
-                        {
-                            throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
-                            M7_Recursos.MensajeObjetoNuloLogger, new Exception());
-                        }*/
-                    }
-                    catch (ObjetoNuloException)
-                    {
-                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                    }
-                    catch (NumeroEnteroInvalidoException)
-                    {
-                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     }
                     catch (Exception ex)
                     {
