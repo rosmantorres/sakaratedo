@@ -228,6 +228,12 @@
     <value>&lt;select   id='</value>
     <comment>Combo box que muestra 10 valores del 1 al 10</comment>
   </data>
+  <data name="ELIMINAR_LINK_EXITO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=5&amp;exito=1</value>
+  </data>
+  <data name="ELIMINAR_LINK_FALLO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=5&amp;exito=0</value>
+  </data>
   <data name="EVENTO" xml:space="preserve">
     <value>Evento</value>
   </data>
