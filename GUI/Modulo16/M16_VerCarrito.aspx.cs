@@ -88,11 +88,11 @@ namespace templateApp.GUI.Modulo16
             ((SKD)Page.Master).IdModulo = "16";
            
             //Obtengo el Carrito de la Persona pasandole el ID del session sino hubo ningun error previo
-            if (Request.QueryString["mensaje"] == null)
+            if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null)
                 this.elPresentador.LlenarTabla(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             //Nos indica si hubo alguna accion de agregar, modificar o eliminar
-            String accion = Request.QueryString["accion"];
+            String accion = Request.QueryString[M16_RecursoInterfaz.VARIABLE_ACCION];
 
             //Revisamos si es alguno de los casos a continuacion
             switch (accion)
@@ -100,195 +100,148 @@ namespace templateApp.GUI.Modulo16
                 //Si se viene de un modificar obtenemos esta alerta
                 case "1":
                     //Obtenemos el exito o fallo del proceso
-                    String exito = Request.QueryString["exito"];
+                    String exito = Request.QueryString[M16_RecursoInterfaz.VARIABLE_EXITO];
 
-                    if (exito.Equals("1"))
+                    if (exito.Equals(M16_RecursoInterfaz.VALOR_EXITO))
                     {
                         //Si el modificar fue exitoso mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            "Cantidad modificada exitosamente</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_SUCESS;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.MODIFICAR_EXITO;
                     }
                     else
                     {
                         //Si el modificar fue fallido mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            "No existe tal cantidad en el inventario</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.MODIFICAR_FALLO;
                     }
                     break;
 
                 //Si se viene de un RegistrarPago obtenemos esta alerta
                 case "2":
                     //Obtenemos el exito o fallo del proceso
-                    String exito2 = Request.QueryString["exito"];
+                    String exito2 = Request.QueryString[M16_RecursoInterfaz.VARIABLE_EXITO];
 
-                    if (exito2.Equals("1"))
+                    if (exito2.Equals(M16_RecursoInterfaz.VALOR_EXITO))
                     {
                         //Si el RegistrarPago fue exitoso mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            "Se ha procesado el pago exitosamente, ¡Que disfrute sus productos!</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_SUCESS;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.REGISTRAR_PAGO_EXITO;
                     }
                     else
                     {
                         //Si el RegistarPago fue fallido mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            "Su compra no ha podido ser procesada, no existe esa cantidad de implementos" +
-                            "Disponibles </div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.REGISTRAR_PAGO_FALLO;
                     }
                     break;
 
                 //Si venimos de un AgregarItem obtenemos esta alerta
                 case "3":
                     //Obtenemos el exito o fallo del proceso
-                    String exito3 = Request.QueryString["exito"];
+                    String exito3 = Request.QueryString[M16_RecursoInterfaz.VARIABLE_EXITO];
 
-                    if (exito3.Equals("1"))
+                    if (exito3.Equals(M16_RecursoInterfaz.VALOR_EXITO))
                     {
                         //Si el RegistrarPago fue exitoso mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            "El producto se ha agregado exitosamente</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_SUCESS; ;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.AGREGAR_ITEM_EXITO;
                     }
                     else
                     {
                         //Si el RegistarPago fue fallido mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            " Su producto no ha podido ser agregado, si ha querido agregar implementos" + 
-                            " la cantidad deseada no existe en el inventario actualmente</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.AGREGAR_ITEM_FALLO;
                     }
                     break;                              
                 
                 //Si se sucita algun error obtendremos la alerta correspondiente
                 case "4":
-                    //Obtenemos el exito o fallo del proceso
-                    String error = Request.QueryString["mensaje"];
+                    //Obtenemos el tipo de error sucitado
+                    String error = Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE];
 
                     switch (error)
                     {
                         case "1":
                             //Si ocurrio algun error no contemplado de ninguna manera se mostrara este mensaje
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error inesperado en el sistema, trate de ejecutar su operacion" +
-                                " mas tarde y si el problema persiste comuniquese con nosotros</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_MENSAJE;
                             break;
 
                         case "2":
                             //Si ocurrio algun error inesperado que fue manejado se mostrara este mensaje
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un conflicto en su operacion, trate de ejecutarla" +
-                                " mas tarde y si el problema persiste comuniquese con nosotros</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTIONSKD_MENSAJE;
                             break;
 
                         case "3":
                             //Si hubo un error al ejecutar una operacion en la Base de Datos se mostrara esta alerta
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error en la Base de Datos, intente ejecutar la accion que desea" +
-                                " mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTIONSKD_CONEXIONBD_MENSAJE;
                             break;
 
                         case "4":
                             //Si hubo un error en un parametro hacia un stored procedure se mostrara esta alerta
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al enviar informacion a la Base de Datos, intente" +
-                                " ejecutar la accion que desea mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_PARAMETRO_MENSAJE;
                             break;
 
                         case "5":
                             //Si hubo un error al parsear un atributo con sobrecarga de informacion
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al manipular datos con mucha informacion, intente" +
-                                " ejecutar la accion que desea mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_SOBRECARGA_MENSAJE;
                             break;
 
                         case "6":
                             //Si hubo un error al parsear un atributo con un formato no valido (no es int)
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al manipular datos que no tienen formatos numericos," +
-                                " intente ejecutar la accion que desea mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_FORMATO_MENSAJE;
                             break;
 
                         case "7":
                             //Si hubo un error al parsear un atributo que es vacio (NULL)
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al manipular datos que son inexistentes o no contienen" +
-                                " informacion, intente ejecutar la accion que desea mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_VACIO_MENSAJE;
                             break;
 
                         case "8":
                             //Si hubo un error con el logger
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error interno al mantener el seguimiento de las operaciones," +
-                                " si su operacion no fue ejecutada, intente realizarla mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_LOGGER_MENSAJE;
                             break;                        
 
                         case "9":
                             //Si hubo error al pasar una persona no valida
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al intentar obtener sus datos de usuario," +
-                                " Se recomienda volver a ingresar al sistema</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_PERSONA_MENSAJE;
                             break;
 
                         case "10":
                             //Si hubo error al pasar un item que no es el que se indica
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al intentar procesar un item no valido para esta ventana," +
-                                " intente su operacion de nuevo mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_ITEM_INVALIDO_MENSAJE;
                             break;
 
                         case "11":
                             //Si hubo error al indicar un tipo de item que no existe
-                            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                                " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                                " Se ha producido un error al intentar procesar un item no existente," +
-                                " intente su operacion mas tarde</div>";
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_ITEM_INEXISTENTE_MENSAJE;
                             break;
                     }
                     break;
@@ -296,26 +249,21 @@ namespace templateApp.GUI.Modulo16
                 //Si venimos de un EliminarItem obtenemos esta alerta
                 case "5":
                     //Obtenemos el exito o fallo del proceso
-                    String exito4 = Request.QueryString["exito"];
+                    String exito4 = Request.QueryString[M16_RecursoInterfaz.VARIABLE_EXITO];
 
-                    if (exito4.Equals("1"))
+                    if (exito4.Equals(M16_RecursoInterfaz.VALOR_EXITO))
                     {
                         //Si el EliminarItem fue exitoso mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            "El producto se ha eliminado exitosamente</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_SUCESS;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.ELIMINAR_EXITO;
                     }
                     else
                     {
                         //Si el EliminarItem fue fallido mostramos esta alerta
-                        alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\"" +
-                            " aria-la" + "bel=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
-                            " El producto no ha podido ser eliminado, por favor intente nuevamente" +
-                            " Revise la conexion</div>";
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                        alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                        alert.InnerHtml = M16_RecursoInterfaz.ELIMINAR_FALLO;
                     }
                     break;
             }
@@ -342,15 +290,15 @@ namespace templateApp.GUI.Modulo16
                 switch (pago)
                 {
                     case "1":
-                        pagofinal = "Tarjeta";
+                        pagofinal = M16_RecursoInterfaz.TIPO_PAGO_TARJETA;
                         break;
 
                     case "2":
-                        pagofinal = "Deposito";
+                        pagofinal = M16_RecursoInterfaz.TIPO_PAGO_DEPOSITO;
                         break;
 
                     case "3":
-                        pagofinal = "Transferencia";
+                        pagofinal = M16_RecursoInterfaz.TIPO_PAGO_TRANSFERENCIA;
                         break;                    
                 }
 

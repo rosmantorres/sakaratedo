@@ -97,28 +97,28 @@ namespace Interfaz_Presentadores.Modulo16
                     //Boton Modificar
                     Button boton = new Button();
                     boton.Click += Modificar_Carrito;
-                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
-                    boton.ID = "Implemento-" + item.Id_Implemento.ToString();
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_COMPRA;
+                    boton.ID = M16_Recursointerfaz.IMPLEMENTO_ID + item.Id_Implemento.ToString();
                     celda.Controls.Add(boton);
 
                     //Se modifica para que el boton no haga postback
-                    boton.OnClientClick = "return false;";
+                    boton.OnClientClick = M16_Recursointerfaz.NO_POSTBACK;
                     boton.UseSubmitBehavior = false;
                     celda.Controls.Add(boton);
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = "elProducto-" + item.Id_Implemento.ToString();
+                    boton.ID = M16_Recursointerfaz.PRODUCTO_INFORMACION + item.Id_Implemento.ToString();
                     boton.Command += DetalleProducto_Prod;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_INFORMACION;
                     boton.CommandName = item.Id_Implemento.ToString();
                     celda.Controls.Add(boton);
 
                     //Boton Eliminar
                     boton = new Button();
                     boton.Click += Eliminar_Item;
-                    boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                    boton.ID = "EImplemento-" + item.Id_Implemento.ToString();
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_ELIMINAR;
+                    boton.ID = M16_Recursointerfaz.IMPLEMENTO_ELIMINAR + item.Id_Implemento.ToString();
                     celda.Controls.Add(boton);
 
                     //Agrego la celda a la fila
@@ -166,28 +166,28 @@ namespace Interfaz_Presentadores.Modulo16
                     //Boton Modificar
                     Button boton = new Button();
                     boton.Click += Modificar_Carrito;
-                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
-                    boton.ID = "Evento-" + item.Id_evento.ToString();
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_COMPRA;
+                    boton.ID = M16_Recursointerfaz.EVENTO_ID + item.Id_evento.ToString();
                     celda.Controls.Add(boton);
 
                     //Se modifica para que el boton no haga postback
-                    boton.OnClientClick = "return false;";
+                    boton.OnClientClick = M16_Recursointerfaz.NO_POSTBACK;
                     boton.UseSubmitBehavior = false;
                     celda.Controls.Add(boton);
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = "elEvento-" + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.EVENTO_INFORMACION + item.Id_evento.ToString();
                     boton.Command += DetalleEvento_Event;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_INFORMACION;
                     boton.CommandName = item.Id_evento.ToString();
                     celda.Controls.Add(boton);
 
                     //Boton Eliminar
                     boton = new Button();
                     boton.Click += Eliminar_Item;
-                    boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                    boton.ID = "EEvento-" + item.Id_evento.ToString();
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_ELIMINAR;
+                    boton.ID = M16_Recursointerfaz.EVENTO_ELIMINAR + item.Id_evento.ToString();
                     celda.Controls.Add(boton);
 
                     //Agrego la celda a la fila
@@ -233,15 +233,15 @@ namespace Interfaz_Presentadores.Modulo16
                     //Boton Eliminar               
                     Button boton = new Button();
                     boton.Click += Eliminar_Item;
-                    boton.CssClass = "btn btn-danger glyphicon glyphicon-remove-sign";
-                    boton.ID = "EMatricula-" + item.Id.ToString();
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_ELIMINAR;
+                    boton.ID = M16_Recursointerfaz.MATRICULA_ELIMINAR + item.Id.ToString();
                     celda.Controls.Add(boton);
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = "laMatricula-" + item.Id.ToString();
+                    boton.ID = M16_Recursointerfaz.MATRICULA_INFORMACION + item.Id.ToString();
                     boton.Command += DetalleMatricula_Mat;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_INFORMACION;
                     boton.CommandName = item.Id.ToString();
                     celda.Controls.Add(boton);
 
@@ -331,7 +331,7 @@ namespace Interfaz_Presentadores.Modulo16
                 int TipoObjeto = 0;
 
                 //Si se trata de un implemento, me voy a la tabla correspondiente
-                if (datos[0] == "Implemento")
+                if (datos[0] == M16_Recursointerfaz.IMPLEMENTO)
                 {
                     //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
                     foreach (TableRow aux2 in this.laVista.tablaImplemento.Rows)
@@ -369,7 +369,7 @@ namespace Interfaz_Presentadores.Modulo16
                     respuesta = ModificarCarrito.Ejecutar();
                 }
                 //Si es un Evento, me voy a la tabla correspondiente
-                else if (datos[0] == "Evento")
+                else if (datos[0] == M16_Recursointerfaz.EVENTO)
                 {
                     //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
                     foreach (TableRow aux2 in this.laVista.tablaEvento.Rows)
@@ -598,7 +598,7 @@ namespace Interfaz_Presentadores.Modulo16
             int TipoObjeto = 0;
 
             //Si se trata de un implemento, me voy a la tabla correspondiente
-            if (datos[0] == "EImplemento")
+            if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
             {
                 //Decimos que se trata de un implemento
                 TipoObjeto = 1;
@@ -613,7 +613,7 @@ namespace Interfaz_Presentadores.Modulo16
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
-            else if (datos[0] == "EEvento")
+            else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
             {
                 //Decimos que se trata de un evento
                 TipoObjeto = 3;
@@ -629,7 +629,7 @@ namespace Interfaz_Presentadores.Modulo16
             }
 
             //Si se trata de una matricula, me voy a la tabla correspondiente
-            else if (datos[0] == "EMatricula")
+            else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
             {
                 //Decimos que se trata de un implemento
                 TipoObjeto = 2;

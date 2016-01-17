@@ -160,6 +160,33 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to btn btn-success glyphicon glyphicon-shopping-cart.
+        /// </summary>
+        internal static string BOTON_CLASE_COMPRA {
+            get {
+                return ResourceManager.GetString("BOTON_CLASE_COMPRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btn btn-danger glyphicon glyphicon-remove-sign.
+        /// </summary>
+        internal static string BOTON_CLASE_ELIMINAR {
+            get {
+                return ResourceManager.GetString("BOTON_CLASE_ELIMINAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btn btn-primary glyphicon glyphicon-info-sign.
+        /// </summary>
+        internal static string BOTON_CLASE_INFORMACION {
+            get {
+                return ResourceManager.GetString("BOTON_CLASE_INFORMACION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M12_ListarCompetencias.aspx?compEliminar=.
         /// </summary>
         internal static string BOTON_ELIMINAR {
@@ -350,6 +377,114 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Evento.
+        /// </summary>
+        internal static string EVENTO {
+            get {
+                return ResourceManager.GetString("EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EEvento-.
+        /// </summary>
+        internal static string EVENTO_ELIMINAR {
+            get {
+                return ResourceManager.GetString("EVENTO_ELIMINAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EEvento.
+        /// </summary>
+        internal static string EVENTO_ELIMINAR2 {
+            get {
+                return ResourceManager.GetString("EVENTO_ELIMINAR2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evento-.
+        /// </summary>
+        internal static string EVENTO_ID {
+            get {
+                return ResourceManager.GetString("EVENTO_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to elEvento-.
+        /// </summary>
+        internal static string EVENTO_INFORMACION {
+            get {
+                return ResourceManager.GetString("EVENTO_INFORMACION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Implemento.
+        /// </summary>
+        internal static string IMPLEMENTO {
+            get {
+                return ResourceManager.GetString("IMPLEMENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EImplemento-.
+        /// </summary>
+        internal static string IMPLEMENTO_ELIMINAR {
+            get {
+                return ResourceManager.GetString("IMPLEMENTO_ELIMINAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EImplemento.
+        /// </summary>
+        internal static string IMPLEMENTO_ELIMINAR2 {
+            get {
+                return ResourceManager.GetString("IMPLEMENTO_ELIMINAR2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Implemento-.
+        /// </summary>
+        internal static string IMPLEMENTO_ID {
+            get {
+                return ResourceManager.GetString("IMPLEMENTO_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EMatricula-.
+        /// </summary>
+        internal static string MATRICULA_ELIMINAR {
+            get {
+                return ResourceManager.GetString("MATRICULA_ELIMINAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EMatricula.
+        /// </summary>
+        internal static string MATRICULA_ELIMINAR2 {
+            get {
+                return ResourceManager.GetString("MATRICULA_ELIMINAR2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to laMatricula-.
+        /// </summary>
+        internal static string MATRICULA_INFORMACION {
+            get {
+                return ResourceManager.GetString("MATRICULA_INFORMACION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingresando al metodo.
         /// </summary>
         internal static string MENSAJE_ENTRADA_LOGGER {
@@ -418,6 +553,24 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string MENSAJE_SALIDA_LOGGER {
             get {
                 return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to return false;.
+        /// </summary>
+        internal static string NO_POSTBACK {
+            get {
+                return ResourceManager.GetString("NO_POSTBACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to elProducto-.
+        /// </summary>
+        internal static string PRODUCTO_INFORMACION {
+            get {
+                return ResourceManager.GetString("PRODUCTO_INFORMACION", resourceCulture);
             }
         }
         
