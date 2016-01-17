@@ -13,8 +13,6 @@ using DominioSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo9;
-using DominioSKD.Entidades.Modulo1;
 
 namespace PruebasUnitariasSKD.Modulo16
 {
