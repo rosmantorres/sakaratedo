@@ -15,6 +15,17 @@ namespace Interfaz_Contratos.Modulo14
        String nombrePlanilla { get; set; }
        ListBox datosPlanilla1 { get; set; }
        ListBox datosPlanilla2 { get; set; }
+       String alertLocalRol { set; }
+       String alertLocalClase { set; }
+       String alertLocal { set; }
+       bool alerta { set; }
+       bool id_otroTipo { set; }
+       int IDPlanillaModificar { get;}
+       bool IDPlanillaModificarVisible { set; }
+
+
+
+
 
     }
 }

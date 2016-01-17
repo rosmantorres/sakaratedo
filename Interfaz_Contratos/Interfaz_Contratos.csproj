@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -47,8 +53,14 @@
     <Compile Include="Modulo16\IContratoListarProducto.cs" />
     <Compile Include="Modulo16\IcontratoVerCarrito.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />
+    <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
+    <Compile Include="Modulo12\IContratoListarCompetencias.cs" />
+    <Compile Include="Modulo12\IContratoModificarCompetencias.cs" />
+    <Compile Include="Modulo14\IContratoM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />
+    <Compile Include="Modulo14\IContratoM14MostrarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14RegistrarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14SolicitarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14SolicitudPlanilla.cs" />
@@ -69,7 +81,6 @@
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo1\" />

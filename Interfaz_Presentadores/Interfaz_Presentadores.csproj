@@ -33,9 +33,16 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,12 +66,23 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo12\PresentadorAgregarCompetencia.cs" />
+    <Compile Include="Modulo12\PresentadorDetalleCompetencia.cs" />
+    <Compile Include="Modulo12\PresentadorListarCompetencias.cs" />
+    <Compile Include="Modulo12\PresentadorModificarCompetencias.cs" />
+    <Compile Include="Modulo14\PresentadorM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14ModificadorPlanillaCreada.cs" />
-    <Compile Include="Modulo14\PresentadorM14ModificarPlanillaSolicitada.cs" />
+    <Compile Include="Modulo14\PresentadorM14ModificarPlanillaSolicitada.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Modulo14\PresentadorM14RegistrarPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14SolicitarPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14SolicitudPlanilla.cs" />
-    <Compile Include="Modulo14\RecursosPresentadorModulo14.Designer.cs" />
+    <Compile Include="Modulo14\RecursosPresentadorModulo141.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosPresentadorModulo14.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo1\PresentadorM1Inicio.cs" />
     <Compile Include="Modulo1\PresentadorM1Restablecer.cs" />
     <Compile Include="Modulo1\RecursosInterfazPresentadorM1.Designer.cs">
@@ -110,7 +128,6 @@
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo1\" />
@@ -132,7 +149,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo14\RecursosPresentadorModulo14.resx" />
+    <EmbeddedResource Include="Modulo14\RecursosPresentadorModulo14.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosPresentadorModulo141.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo1\RecursosInterfazPresentadorM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>

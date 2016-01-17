@@ -10,7 +10,7 @@ namespace DominioSKD.Entidades.Modulo6
     /// <summary>
     /// Clase que representa una matricula de un Atleta con en un Dojo
     /// </summary>
-    public class Matricula : Entidad
+    public class Matricula:Entidad
     {
 
         #region Atributos

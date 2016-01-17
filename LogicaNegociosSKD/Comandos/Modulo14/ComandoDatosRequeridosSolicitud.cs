@@ -1,4 +1,6 @@
-﻿using DominioSKD.Entidades.Modulo14;
+﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.Fabrica;
+using DominioSKD;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -19,19 +21,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
           public override List<Boolean> Ejecutar()
           {
+              List<Boolean> datosRequeridos = new List<Boolean>();
 
-              return new List<Boolean>();
-        /*      try
+              try
               {
-                  Diseño resultDiseño = diseño.ConsultarDiseño(idPlanilla);
+                  FabricaDAOSqlServer fabricaDao = new FabricaDAOSqlServer();
+                  DaoDiseno diseno = (DaoDiseno)fabricaDao.ObtenerDAODiseno();
+                  Entidad resultDiseño = diseno.ConsultarXId(this.LaEntidad);
 
-                  List<Boolean> datosRequeridos = new List<Boolean>();
 
-                  datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
-                  datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosComandoModulo14.FechaReincor));
-                  datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosComandoModulo14.EveNombre));
-                  datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosComandoModulo14.CompNombre));
-                  datosRequeridos.Add(resultDiseño.Contenido.Contains(RecursosComandoModulo14.Motivo));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
 
                
               }
@@ -51,7 +54,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                   Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                   throw ex;
               }
-              return datosRequeridos;*/ 
+              return datosRequeridos; 
           }
     }
 }
