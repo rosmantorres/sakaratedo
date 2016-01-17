@@ -14,6 +14,9 @@ using DominioSKD.Entidades.Modulo1;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
+    /// <summary>
+    /// Comando que ejecuta la accion de eliminar un item del carrito en específico
+    /// </summary>
     public class ComandoeliminarItem : Comando<bool>
     {
 
@@ -25,31 +28,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         private Entidad objetoaBorrar;
         private Entidad usuario;
 
-        #endregion
-
-
-        #region Constructores
-        /// <summary>
-        /// Constructor vacio del comando
-        /// </summary>
-        public ComandoeliminarItem()
-        {
-
-        }
-
-        /// <summary>
-        /// Constructor del comando con todos los datos requeridos para eliminar
-        /// </summary>
-        /// <param name="tipoObjeto">tipo de objeto que se eliminará</param>
-        /// <param name="ObjetoaBorrar">El item que se elimina al carrito de la persona</param>
-        /// <param name="Usuario">Indica a que Usuario esta asociado el item</param>
-        public ComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
-        {
-            this.tipoObjeto = tipoObjeto;
-            this.objetoaBorrar = objetoaBorrar;
-            this.usuario = usuario;
-
-        }
         #endregion
 
         #region Propiedades
@@ -102,6 +80,31 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         }
         #endregion
 
+        #region Constructores
+        /// <summary>
+        /// Constructor vacio del comando
+        /// </summary>
+        public ComandoeliminarItem()
+        {
+
+        }
+
+        /// <summary>
+        /// Constructor del comando con todos los datos requeridos para eliminar
+        /// </summary>
+        /// <param name="tipoObjeto">tipo de objeto que se eliminará</param>
+        /// <param name="ObjetoaBorrar">El item que se elimina al carrito de la persona</param>
+        /// <param name="Usuario">Indica a que Usuario esta asociado el item</param>
+        public ComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
+        {
+            this.tipoObjeto = tipoObjeto;
+            this.objetoaBorrar = objetoaBorrar;
+            this.usuario = usuario;
+
+        }
+        #endregion
+         
+        #region Metodo Ejecutar
         /// <summary>
         /// Comando que ejecuta la logica para eliminar un item del carrito
         /// </summary>
@@ -185,6 +188,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         }
 
 
-
+        #endregion
     }
 }
