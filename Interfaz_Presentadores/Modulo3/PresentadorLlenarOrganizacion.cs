@@ -20,6 +20,9 @@ namespace Interfaz_Presentadores.Modulo3
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método para ejecutar el comando ConsultarTodasCinta y obtener la lista de organizaciones
+        /// </summary>
         public void LlenarInformacion()
         {
 
@@ -32,6 +35,9 @@ namespace Interfaz_Presentadores.Modulo3
                 this.llenarVista(_miLista);
         }
 
+        /// <summary>
+        /// Método para llenar la vista (tabla) con la lista de organizaciones
+        /// </summary>
         private void llenarVista(List<Entidad> lista)
         {
             foreach (Entidad entidad in lista)

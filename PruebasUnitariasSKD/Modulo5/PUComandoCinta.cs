@@ -17,9 +17,13 @@ using LogicaNegociosSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo5
 {
+    /// <summary>
+    /// Clase que contiene las pruebas unitarias para Comandos Cinta
+    /// </summary>
     [TestFixture]
     class PUComandoCinta
     {
+        #region Atributos
         private Comando<bool> miComando;
         private Entidad miEntidad;
         private Entidad miEntidadCinta;
@@ -28,12 +32,17 @@ namespace PruebasUnitariasSKD.Modulo5
         private Entidad miEntidadCintaAgregar;
         private Comando<List<Entidad>> miComandoLista;
         private Comando<Entidad> miComandoEntidad;
-        
+        private FabricaEntidades miFabrica;
+        #endregion
 
+        #region SetUp & TearDown
+        /// <summary>
+        /// Método que se ejecuta antes de cada prueba
+        /// </summary>
         [SetUp]
         public void init()
         {
-            FabricaEntidades miFabrica = new FabricaEntidades();
+            miFabrica = new FabricaEntidades();
             fabricaComandos = new FabricaComandos();
             miEntidad = miFabrica.ObtenerOrganizacion_M3(3, "Shotokan Org");
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
@@ -43,6 +52,30 @@ namespace PruebasUnitariasSKD.Modulo5
             
         }
 
+        /// <summary>
+        /// Método que se ejecuta luego de cada prueba
+        /// </summary>
+        [TearDown]
+        public void Clean()
+        {
+            miComando = null;
+            fabricaComandos = null;
+            miEntidad = null;
+            miEntidadCinta = null;
+            miEntidadCintaModificar = null;
+            miEntidadCintaAgregar = null;
+            miFabrica = null;
+            miComandoLista = null;
+            miComandoEntidad = null;
+
+        }
+        #endregion
+
+        
+        #region Test
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Agregar una Cinta
+        /// </summary>
         [Test]
         public void ejecutarElComandoAgregar()
         {
@@ -52,7 +85,9 @@ namespace PruebasUnitariasSKD.Modulo5
         
         }
 
-
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Modificar una Cinta
+        /// </summary>
         [Test]
         public void ejecutarElComandoModificar()
         {
@@ -61,7 +96,9 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsFalse(resultado);
 
         }
-
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Consultar todas las Cintas
+        /// </summary>
         [Test]
         public void ejecutarElComandoConsultarTodosCinta()
         {
@@ -71,7 +108,9 @@ namespace PruebasUnitariasSKD.Modulo5
 
         }
 
-
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Consultar cinta por ID
+        /// </summary>
         [Test]
         public void ejecutarElComandoConsultarXIdCinta()
         {
@@ -80,5 +119,7 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsNotNull(resultado);
 
         }
+
+        #endregion
     }
 }

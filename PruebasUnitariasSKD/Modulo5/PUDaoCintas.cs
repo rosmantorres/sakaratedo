@@ -13,25 +13,35 @@ using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo5;
 using DatosSKD.DAO.Modulo5;
+using ExcepcionesSKD.Modulo5;
 
 namespace PruebasUnitariasSKD.Modulo5
 {
+	/// <summary>
+    /// Clase que contiene las pruebas unitarias para DaoCinta
+    /// </summary>
     [TestFixture]
     class PUDaoCintas
     {
-        
-      
+
+        #region Atributos
         private FabricaDAOSqlServer fabricaDAO;
         private Entidad miEntidad;
         private Entidad miEntidadCinta;
         private Entidad miEntidadCintaModificar;
         private Entidad miEntidadCintaAgregar;
+        private FabricaEntidades miFabrica;
+        #endregion
 
+        #region SetUp & TearDown
+        /// <summary>
+        /// Método que se ejecuta antes de cada prueba
+        /// </summary>
         [SetUp]
         public void init()
         {
            
-            FabricaEntidades miFabrica = new FabricaEntidades();
+            miFabrica = new FabricaEntidades();
             miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do");
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
             miEntidadCinta = miFabrica.ObtenerCinta_M5(1, "Blanco","1er Kyu","Nivel inferior",	1, "Principiante"	, org, true);
@@ -40,8 +50,28 @@ namespace PruebasUnitariasSKD.Modulo5
            
         }
 
+        /// <summary>
+        /// Método que se ejecuta luego de cada prueba
+        /// </summary>
+        [TearDown]
+        public void Clean()
+        {
+            fabricaDAO = null;
+            miEntidad = null;
+            miEntidadCinta = null;
+            miEntidadCintaModificar = null;
+            miEntidadCintaAgregar = null;
+            miFabrica = null;
 
+        }
+        #endregion
+
+        #region Test
+        /// <summary>
+        /// Método para probar la exception de Organizacion inexistente para Agregar y Modificar en DAO
+        /// </summary>
         [Test]
+        //[ExpectedException(typeof(OrganizacionInexistenteException))]
         public void PruebaValidarOrganizacion()
         {
             bool resultado;
@@ -51,8 +81,11 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsTrue(resultado);
            
         }
-
+        /// <summary>
+        /// Método para probar la exception de Orden de Cinta existente para Agregar y Modificar en DAO
+        /// </summary>
         [Test]
+        //[ExpectedException(typeof(OrdenCintaRepetidoException))]
         public void PruebaValidarOrdenCinta()
         {
             bool resultado;
@@ -62,8 +95,11 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsFalse(resultado);
 
         }
-
+        /// <summary>
+        /// Método para probar la exception de Nombre de Cinta existente para Agregar y Modificar en DAO
+        /// </summary>
         [Test]
+        //[ExpectedException(typeof(CintaRepetidaException))]
         public void PruebaValidarNombreCinta()
         {
             bool resultado;
@@ -73,7 +109,9 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsFalse(resultado);
 
         }
-
+        /// <summary>
+        /// Método de prueba para ListarCintasXOrganizacion en DAO
+        /// </summary>
         [Test]
         public void PruebaListarCintasXOrganizacion()
         {
@@ -84,7 +122,9 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsEmpty(resultado);
 
         }
-
+        /// <summary>
+        /// Método de prueba para Agregar una Cinta en DAO
+        /// </summary>
         [Test]
         public void PruebaAgregarCinta()
         {
@@ -95,7 +135,9 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsTrue(resultado);
 
         }
-
+        /// <summary>
+        /// Método de prueba para modificar una Cinta en DAO
+        /// </summary>
         [Test]
         public void PruebaModificarCinta()
         {
@@ -106,7 +148,9 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsTrue(resultado);
 
         }
-
+        /// <summary>
+        /// Método de prueba para Listar todas las Cintas en DAO
+        /// </summary>
         [Test]
         public void PruebaConsultarTodos()
         {
@@ -117,7 +161,9 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsNotEmpty(resultado);
 
         }
-
+        /// <summary>
+        /// Método de prueba para consultar detalles de una cinta en DAO
+        /// </summary>
         [Test]
         public void PruebaConsultarXId()
         {
@@ -128,8 +174,8 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsNotNull(resultado);
 
         }
-
-
+        #endregion
+        
     }
 
 }

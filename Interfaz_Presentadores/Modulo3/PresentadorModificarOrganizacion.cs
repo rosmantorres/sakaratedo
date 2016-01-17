@@ -20,6 +20,10 @@ namespace Interfaz_Presentadores.Modulo3
             this.vista = vista;
         }
 
+
+        /// <summary>
+        /// Método para obtener los valores de la vista y ejecutar el comando para modificar la organizacion
+        /// </summary>
         public void modificarValoresOrganizacion()
         {
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();

@@ -22,7 +22,9 @@ namespace Interfaz_Presentadores.Modulo5
             this.vista = vista;
         }
 
-
+        /// <summary>
+        /// Método para ejecutar el comando ConsultarTodasCinta y obtener la lista de cintas
+        /// </summary>
         public void LlenarInformacion()
         {
 
@@ -30,11 +32,14 @@ namespace Interfaz_Presentadores.Modulo5
             Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarConsultarTodosCinta();
             List<Entidad> _miLista = _comando.Ejecutar();
       
-            // en caso de q sea null... pero cuando trengas la excepcion tienes q quitarlo
+            
             if (_miLista != null)
                 this.llenarVista(_miLista);
        }
 
+        /// <summary>
+        /// Método para llenar la vista (tabla) con la lista de cintas
+        /// </summary>
         private void llenarVista(List<Entidad> lista)
         {
             foreach (Entidad entidad in lista)

@@ -20,6 +20,9 @@ namespace Interfaz_Presentadores.Modulo5
             this.vista = vista;
         }
 
+         /// <summary>
+         /// Método para ejecutar el comando ComboOrganizaciones
+         /// </summary>
         public void llenarCombo()
         {
             FabricaComandos _fabrica = new FabricaComandos();
@@ -28,6 +31,9 @@ namespace Interfaz_Presentadores.Modulo5
 
         }
 
+        /// <summary>
+        /// Método para asiganar la informacion en el Combo con las organizaciones 
+        /// </summary>
         private void asignarInformacionCombo(List<Entidad> listaOrganizaciones)
         { 
 
@@ -43,6 +49,9 @@ namespace Interfaz_Presentadores.Modulo5
 
         }
 
+        /// <summary>
+        /// Método para obtener los valores de la vista y ejecutar el comando para agregar la cinta
+        /// </summary>
         public void agregarValoresCinta()
         {
             DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
