@@ -47,7 +47,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         #region Test
 
         /// <summary>
-        /// Método para probar que la tupla obtenida no es nula en eventos asistidos
+        /// Método para probar que la tupla obtenida no es nula en eventos pagos
         /// </summary>
         [Test]
         public void PruebaObtenerTuplaEventosPagos()
@@ -57,7 +57,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar la excepcion de número entero invalido en obtener lista eventos asistidos
+        /// Método para probar la excepcion de número entero invalido en obtener lista eventos pagos
         /// </summary>
      [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
@@ -90,7 +90,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar que la lista obtenida de fechas sobre eventos puede tener uno o mas fechas
+        /// Método para probar que la lista obtenida de fechas sobre eventos pagos puede tener uno o mas fechas
         /// </summary>
         [Test]
         public void PruebaObtenerListaFechaEventosPagos()
@@ -102,7 +102,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         }
 
         /// <summary>
-        /// Método para probar que la lista obtenida de fechas sobre competencias puede tener uno o mas competencias
+        /// Método para probar que la lista obtenida de fechas sobre competencias pagas puede tener uno o mas competencias
         /// </summary>
       [Test]
         public void PruebaObtenerListaFechaCompetenciasPagas()
@@ -113,6 +113,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             Assert.GreaterOrEqual(listaFechaCompetencia.Count, 1);
         }
 
+      /// <summary>
+      /// Método para probar que la lista obtenida de monto sobre evento pagos puede tener uno o mas eventos
+      /// </summary>
       [Test]
       public void PruebaObtenerListaMontoEventoPago()
       {

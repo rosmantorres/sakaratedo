@@ -14,7 +14,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
 
     /// <summary>
-    /// Clase que contiene las pruebas unitarias para DaoCinta
+    /// Clase que contiene las pruebas unitarias para DaoEvento
     /// </summary>
     [TestFixture]
     public class M7_PruebasDAOEvento
@@ -58,7 +58,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             Assert.AreEqual("La vida en el Dojo", evento.Nombre);
         }
         /// <summary>
-        /// Método para probar que una matriculada detallado no sea nulo en DAO
+        /// Método para probar que un evento detallado no sea nulo en DAO
         /// </summary>
         [Test]
         public void PruebaDetallarEventoXIdNoNulo()
@@ -267,6 +267,43 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
         }
 
+
+        /// <summary>
+        /// Método para probar que devuelve la fecha del pago de un evento en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaPagoEvento()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 14;
+            DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
+            Assert.AreEqual("03/10/2015", fechaPago.ToString("MM/dd/yyyy"));
+        }
+
+        /// <summary>
+        /// Método para probar que no devuelva nula la fecha de pago de un evento en DAO
+        /// </summary>
+        [Test]
+        public void PruebaFechaPagoEventoNoNula()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 5;
+            DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
+            Assert.NotNull(fechaPago);
+        }
+
+        /// <summary>
+        /// Método para probar la exception de número entero invalido de fecha de pago de un evento en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NumeroEnteroInvalidoException))]
+        public void FechaPagoEventoNumeroEnteroException()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = -1;
+            DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
+        }
+
         /// <summary>
         /// Método para probar que devuelve la fecha de inscripción de un evento en DAO
         /// </summary>
@@ -338,5 +375,39 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             competencia.Id_competencia = -1;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
         }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida tiene cero o mas horarios de practica en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarHorarioPractica()
+        {
+            List<Entidad> listaHorario = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Assert.GreaterOrEqual(listaHorario.Count, 0);
+        }
+
+        /// <summary>
+        /// Método para probar que la lista obtenida no sea nula en DAO
+        /// </summary>
+        [Test]
+        public void PruebaListarHorarioPracticaNoNula()
+        {
+            List<Entidad> listaHorario = baseDeDatosEvento.ListarHorarioPractica(idPersona);
+            Assert.NotNull(listaHorario);
+        }
+
+        /// <summary>
+        /// Método para probar que devuelve el monto pago de un evento  en DAO
+        /// </summary>
+        [Test]
+        public void PruebaMontoPagoEvento()
+        {
+            Evento evento = new Evento();//cambiar por fabrica
+            evento.Id_evento = 14;
+            float montoPago = baseDeDatosEvento.MontoPagoEvento(idPersona, evento);
+            Assert.AreEqual(1200, montoPago);
+        }
+
+       
     }
 }

@@ -16,7 +16,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <summary>
         /// Implementación del metodo abstracto Ejecutar de la clase comando
         /// </summary>
-        /// <returns>Retorta tupla con listas de evento, competencia y listas de sus fechas de inscripción</returns>
+        /// <returns>Retorna tupla con listas de evento, competencia y listas de sus montos y fechas de pago</returns>
         public override Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>> Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();

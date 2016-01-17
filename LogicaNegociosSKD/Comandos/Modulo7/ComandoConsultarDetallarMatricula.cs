@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
     public class ComandoConsultarDetallarMatricula : Comando<Entidad>
+    /// <summary>
+    /// Implementación del metodo abstracto Ejecutar de la clase comando
+    /// </summary>
+    /// <returns>Retorna objeto de tipo Entidad con la informacion de la matricula</returns>
     {
         public override Entidad Ejecutar()
         {
