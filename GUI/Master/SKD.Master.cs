@@ -22,7 +22,11 @@ namespace templateApp
         private string[] rolesUsuario = new string[10];//los roles que el usuario tiene registrado
         private PresentadorMasterPage presentador { get; set;}
 
-
+        Cuenta IContratoMasterPage.UserLogin
+        {
+            get { return userLogin; }
+            set { userLogin = value; }
+        }
         String IContratoMasterPage.MenuSuperiorEtq {
             get { return menuSuperior.InnerHtml; }
             set { menuSuperior.InnerHtml = value; } 
@@ -76,6 +80,10 @@ namespace templateApp
              get { return LogOut.InnerHtml; }
              set { LogOut.InnerHtml = value; }
          }
+
+
+
+
         public void cargarMenus()
         {
 
@@ -95,8 +103,11 @@ namespace templateApp
         {
             try
             {
+                if (!IsPostBack)
+                {
                     presentador = new PresentadorMasterPage(this);
                     cargarMenus();
+                }
             }
             catch (NullReferenceException ex)
             {
@@ -109,19 +120,5 @@ namespace templateApp
             }
         }
       
-
-        private Cuenta objetoCuenta()
-        {
-            Cuenta usuario = new Cuenta();
-            PersonaM1 persona = new PersonaM1();
-            persona._Nombre = Session[RecursosInterfazMaster.sessionNombreCompleto].ToString().Split(' ')[0];
-            persona._Apellido = Session[RecursosInterfazMaster.sessionNombreCompleto].ToString().Split(' ')[1];
-            usuario.Nombre_usuario = (string)Session[RecursosInterfazMaster.sessionUsuarioNombre];
-            usuario.Imagen = Session[RecursosInterfazMaster.sessionImagen].ToString();
-            usuario.PersonaUsuario = persona;
-
-            return usuario;
-        }
-        
     }
 }
