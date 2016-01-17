@@ -640,7 +640,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <param name="objetoBorrar">El objeto en especifico a borrar</param>
         /// <param name="persona">La persona al que se alterara su carrito</param>
         /// <returns>Si la operacion fue exitosa o fallida</returns>
-        public bool eliminarItem(int tipoObjeto, int objetoBorrar, int persona)
+        public bool eliminarItem(int tipoObjeto, Entidad objetoBorrar, Entidad persona)
         {       
             try
             {

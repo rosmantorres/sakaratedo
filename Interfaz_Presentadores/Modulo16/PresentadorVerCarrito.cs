@@ -606,10 +606,10 @@ namespace Interfaz_Presentadores.Modulo16
                 //Pasamos el ID que vino del boton
                 FabricaEntidades fabrica = new FabricaEntidades();
                 Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
-                objeto.Id = int.Parse(datos[1]);
+               // objeto.Id = int.Parse(datos[1]);
 
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto,objeto.Id,persona.Id);
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto,objeto,persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
@@ -624,7 +624,7 @@ namespace Interfaz_Presentadores.Modulo16
                 objeto.Id = int.Parse(datos[1]);
 
                 //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto.Id, persona.Id);
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
@@ -640,7 +640,7 @@ namespace Interfaz_Presentadores.Modulo16
                 objeto.Id = int.Parse(datos[1]);
 
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto.Id, persona.Id);
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
