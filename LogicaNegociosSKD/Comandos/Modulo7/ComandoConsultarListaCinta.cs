@@ -11,12 +11,15 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para listar cintas de atleta
+    /// </summary>
     public class ComandoConsultarListaCinta : Comando<Tuple<List<Entidad>, List<DateTime>>>
     {
         /// <summary>
-        /// Implementación del metodo abstracto Ejecutar de la clase comando
+        /// Implementacion de método ejecutar para comando listar cintas de atleta
         /// </summary>
-        /// <returns>Retorta tupla con listas de cinta y lista de sus fechas de obtención</returns>
+        /// <returns>Retorna tupla con listas de cinta y lista de sus fechas de obtención</returns>
         public override Tuple<List<Entidad>, List<DateTime>> Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
