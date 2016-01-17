@@ -7,7 +7,7 @@ using DatosSKD;
 using DatosSKD.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
-using DominioSKD.Entidades.Modulo9;
+using DominioSKD;
 
 
 namespace LogicaNegociosSKD.Modulo7

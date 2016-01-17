@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\SANDRA\Programas\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\SANDRA\Programas\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -39,7 +45,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>    
+  <ItemGroup>
     <Compile Include="Modulo16\IContratoEliminarItem.cs" />
     <Compile Include="Modulo16\IContratoListarEvento.cs" />
     <Compile Include="Modulo16\IContratoListarFactura.cs" />
@@ -47,8 +53,14 @@
     <Compile Include="Modulo16\IContratoListarProducto.cs" />
     <Compile Include="Modulo16\IcontratoVerCarrito.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />
+    <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
+    <Compile Include="Modulo12\IContratoListarCompetencias.cs" />
+    <Compile Include="Modulo12\IContratoModificarCompetencias.cs" />
+    <Compile Include="Modulo14\IContratoM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />
+    <Compile Include="Modulo14\IContratoM14MostrarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14RegistrarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14SolicitarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14SolicitudPlanilla.cs" />
@@ -69,12 +81,8 @@
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
-    <Folder Include="Modulo1\" />
-    <Folder Include="Modulo2\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />

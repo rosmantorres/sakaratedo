@@ -26,14 +26,13 @@ namespace DatosSKD.DAO.Modulo14
         /// </summary>
         /// <param name="idPersona">id de la Persona a consultar</param>
         /// <returns>La clase Persona con sus datos</returns>
-        public DominioSKD.Persona ConsultarPersona(int idPersona)
+        public Persona ConsultarPersona(int idPersona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            //DominioSKD.Persona persona = (DominioSKD.Persona)fabricaEntidad.obtenerPersona();
-            DominioSKD.Persona persona = new DominioSKD.Persona();
+            Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
             try
             {
 
@@ -50,7 +49,7 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        DominioSKD.DocumentoIdentidad doc = new DominioSKD.DocumentoIdentidad();
+                        DocumentoIdentidad doc = new DocumentoIdentidad();
                         persona.DocumentoID = doc;
                         persona.Nombre = leer[RecursosDAOModulo14.AtributoNombrePersona].ToString();
                         persona.Apellido = leer[RecursosDAOModulo14.AtributoApellidoPersona].ToString();
@@ -131,14 +130,13 @@ namespace DatosSKD.DAO.Modulo14
         /// </summary>
         /// <param name="">Id del Dojo a consultar</param>
         /// <returns>La clase Dojo</returns>
-        public DominioSKD.Dojo ConsultarDojo(int idDojo)
+        public Dojo ConsultarDojo(int idDojo)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            //DominioSKD.Dojo dojo = (DominioSKD.Dojo)fabricaEntidad.obtenerDojo();
-            DominioSKD.Dojo dojo = new DominioSKD.Dojo();
+            Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
             try
             {
 
@@ -339,8 +337,7 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            DominioSKD.Organizacion organizacion = 
-                (DominioSKD.Organizacion)fabricaEntidad.ObtenerOrganizacion();
+            Organizacion organizacion = (Organizacion)fabricaEntidad.ObtenerOrganizacion();
             try
             {
 
@@ -430,14 +427,14 @@ namespace DatosSKD.DAO.Modulo14
         /// </summary>
         /// <param name="idIns">Id de inscripcion relacionado con el evento</param>
         /// <returns>La clase evento</returns>
-        public DominioSKD.Evento ConsultarEvento(int idIns)
+        public Evento ConsultarEvento(int idIns)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-           // DominioSKD.Evento evento = (DominioSKD.Evento)fabricaEntidad.obtenerEvento();
-            DominioSKD.Evento evento =  new DominioSKD.Evento();
+            //Evento evento = (DominioSKD.Evento)fabricaEntidad.ObtenerEvento();
+            Evento evento =  new Evento();
             try
             {
 
@@ -453,9 +450,9 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        DominioSKD.Categoria cat = new DominioSKD.Categoria();
-                        DominioSKD.Horario hor = new DominioSKD.Horario();
-                        DominioSKD.TipoEvento tip = new DominioSKD.TipoEvento();
+                        Categoria cat = new Categoria();
+                        Horario hor = new Horario();
+                        TipoEvento tip = new TipoEvento();
                         evento.Categoria = cat;
                         evento.Horario = hor;
                         evento.TipoEvento = tip;
@@ -549,7 +546,7 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            DominioSKD.Competencia competencia = (DominioSKD.Competencia)fabricaEntidad.ObtenerCompetencia();
+            Competencia competencia = (Competencia)fabricaEntidad.ObtenerCompetencia();
             try
             {
 
@@ -566,7 +563,7 @@ namespace DatosSKD.DAO.Modulo14
                     while (leer.Read())
                     {
                         FabricaEntidades fabricaEntidad1 = new FabricaEntidades();
-                        DominioSKD.Categoria cat = (DominioSKD.Categoria)fabricaEntidad1.ObtenerCategoria();
+                        Categoria cat = (Categoria)fabricaEntidad1.ObtenerCategoria();
                         competencia.Categoria = cat;
                         competencia.Nombre = leer[RecursosDAOModulo14.AtributoCompetenciaNombre].ToString();
                         competencia.FechaFin = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaFinCompetencia]);

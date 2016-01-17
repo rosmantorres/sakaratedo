@@ -12,8 +12,7 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo14;
 using System.Globalization;
 using System.IO;
-using DominioSKD.Entidades.Modulo9;
-using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
  
 namespace DatosSKD.Modulo14

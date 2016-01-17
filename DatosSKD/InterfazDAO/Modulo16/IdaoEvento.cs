@@ -10,7 +10,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
     /// <summary>
     /// Interface con la firma de metodos para el DAO de evento
     /// </summary>
-    public interface IdaoEvento : IDao<Entidad, bool, Entidad>
+    public interface IdaoEvento : IDao<Entidad, Entidad, Entidad>
     {
         /// <summary>
         /// Metodo que obtiene todos los eventos
@@ -39,6 +39,16 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <param name="entidad">el evento al que se desee saber el detalle</param>
         /// <returns>Lista con todos los atributos del evento en especifico</returns>
         new Entidad ConsultarXId(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Agregar(Entidad entidad);
+
+        /// <summary>
+        /// Metodo para el agregar
+        /// </summary>
+        new Entidad Modificar(Entidad entidad);
 
     }
 }

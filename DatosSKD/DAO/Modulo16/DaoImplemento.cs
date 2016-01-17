@@ -9,9 +9,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using DatosSKD.DAO;
 using DominioSKD.Fabrica;
-using DominioSKD.Entidades.Modulo1;
-using DominioSKD.Entidades.Modulo15;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.DAO.Modulo16;
@@ -287,6 +286,28 @@ namespace DatosSKD.DAO.Modulo16
         }
 
         #endregion
+
+         #region Metodo de Agregar
+         /// <summary>
+         /// Metodo que que no implementamos
+         /// </summary>
+         public Entidad Agregar(Entidad entidad)
+         {
+             throw new NotImplementedException();
+         }
+
+         #endregion
+
+         #region Metodo de Modificar
+         /// <summary>
+         /// Metodo que que no implementamos
+         /// </summary>
+         public Entidad Modificar(Entidad entidad)
+         {
+             throw new NotImplementedException();
+         }
+
+         #endregion
 
     }
 }

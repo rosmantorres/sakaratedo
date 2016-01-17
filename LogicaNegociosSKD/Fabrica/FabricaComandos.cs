@@ -183,6 +183,16 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoModificarDiseno();
         }
+
+        public Comando<string> ObtenerComandoReemplazarElementos()
+        {
+            return new ComandoReemplazarElementos();
+        }
+
+        public Comando<Entidad> ObtenerComandoComandoConsultarDiseño()
+        {
+            return new ComandoConsultarDiseño();
+        }
         #endregion
 
         #region Modulo 15

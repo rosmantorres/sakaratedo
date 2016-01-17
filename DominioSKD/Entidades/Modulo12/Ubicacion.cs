@@ -9,7 +9,7 @@ namespace DominioSKD.Entidades.Modulo12
     public class Ubicacion : Entidad
     {
         #region atributos
-        private int id_ubicacion;
+
         private String latitud;
         private String longitud;
         private String ciudad;
@@ -18,11 +18,6 @@ namespace DominioSKD.Entidades.Modulo12
         #endregion 
 
         #region propiedades
-        public int Id_ubicacion
-        {
-            get { return id_ubicacion; }
-            set { id_ubicacion = value; }
-        }
 
         public String Latitud
         {
@@ -57,7 +52,6 @@ namespace DominioSKD.Entidades.Modulo12
 
         public Ubicacion() : base()
         {
-            id_ubicacion = 0;
             latitud      = "";
             longitud     = "";
             ciudad       = "";
@@ -74,19 +68,8 @@ namespace DominioSKD.Entidades.Modulo12
             direccion = LaDir;
         }
 
-        public Ubicacion(int elId, String laLat, String laLon, String laCiudad, String elEstado, String LaDir) :base()
+        public Ubicacion(int id, String laLat, String laLon, String laCiudad, String elEstado, String LaDir) : base(id)
         {
-            id_ubicacion = elId;
-            latitud = laLat;
-            longitud = laLon;
-            ciudad = laCiudad;
-            estado = elEstado;
-            direccion = LaDir;
-        }
-
-        public Ubicacion(int id, int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir) : base(id)
-        {
-            id_ubicacion = elId;
             latitud      = laLat;
             longitud     = laLon;
             ciudad       = laCiudad;
@@ -94,9 +77,8 @@ namespace DominioSKD.Entidades.Modulo12
             direccion    = LaDir;
         }
 
-        public Ubicacion(int elId, String laCiudad, String elEstado) : base()
+        public Ubicacion(int elId, String laCiudad, String elEstado) : base(elId)
         {
-            id_ubicacion = elId;
             ciudad = laCiudad;
             estado = elEstado;
         }

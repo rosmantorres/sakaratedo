@@ -12,9 +12,8 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using System.Data;
 using DominioSKD.Entidades.Modulo15;
-using DominioSKD.Entidades.Modulo9;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 namespace DatosSKD.DAO.Modulo16
 {
