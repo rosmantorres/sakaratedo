@@ -44,6 +44,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo7\PresentadorDetallarEventoPago.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarMatricula.cs" />
     <Compile Include="Modulo7\PresentadorDetallarCinta.cs" />
     <Compile Include="Modulo7\PresentadorDetallarEvento.cs" />
     <Compile Include="Modulo7\PresentadorDetallarCompetencia.cs" />
