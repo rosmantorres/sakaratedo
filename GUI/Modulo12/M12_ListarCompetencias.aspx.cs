@@ -7,16 +7,57 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo12;
+using Interfaz_Contratos.Modulo12;
+using Interfaz_Presentadores.Modulo12;
 
 namespace templateApp.GUI.Modulo12
 {
-    public partial class M12_ListarCompetencias : System.Web.UI.Page
+    public partial class M12_ListarCompetencias : System.Web.UI.Page, IContratoListarCompetencias
     {
         private List<Competencia> laLista = new List<Competencia>();
+        private PresentadorListarCompetencias presentador;
+
+        public M12_ListarCompetencias()
+        {
+            presentador = new PresentadorListarCompetencias(this);
+        }
+
+        #region Contrato
+
+        string IContratoListarCompetencias.laTabla
+        {
+            get
+            {
+                return laTabla.Text;
+            }
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[M12_RecursoInterfaz.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[M12_RecursoInterfaz.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
+
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = M12_RecursoInterfaz.idModulo;
+
 
             String success = Request.QueryString[M12_RecursoInterfaz.strSuccess];
             String detalleString = Request.QueryString[M12_RecursoInterfaz.strCompDetalle];
@@ -95,5 +136,6 @@ namespace templateApp.GUI.Modulo12
             laCompetencia = logica.detalleCompetenciaXId(elIdCompetencia);
 
         }
+
     }
 }
