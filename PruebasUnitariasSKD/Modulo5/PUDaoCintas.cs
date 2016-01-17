@@ -36,7 +36,7 @@ namespace PruebasUnitariasSKD.Modulo5
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
             miEntidadCinta = miFabrica.ObtenerCinta_M5(1, "Blanco","1er Kyu","Nivel inferior",	1, "Principiante"	, org, true);
             miEntidadCintaModificar = miFabrica.ObtenerCinta_M5(1, "Naranja", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
-            miEntidadCintaAgregar = miFabrica.ObtenerCinta_M5(15, "Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
+            miEntidadCintaAgregar = miFabrica.ObtenerCinta_M5("Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
            
         }
 
@@ -59,7 +59,7 @@ namespace PruebasUnitariasSKD.Modulo5
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrdenCinta(miEntidadCinta);
-            Assert.IsTrue(resultado);
+            Assert.IsFalse(resultado);
 
         }
 
@@ -70,7 +70,7 @@ namespace PruebasUnitariasSKD.Modulo5
             this.fabricaDAO = new FabricaDAOSqlServer();
             IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarNombreCinta(miEntidadCinta);
-            Assert.IsTrue(resultado);
+            Assert.IsFalse(resultado);
 
         }
 

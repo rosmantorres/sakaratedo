@@ -155,9 +155,8 @@ namespace DatosSKD.DAO.Modulo5
                 parametros.Add(elParametro);
 
                 BDConexion laConexion = new BDConexion();// abres la conexion
-               // Conectar();
-                string query = RecursosDaoModulo5.ModificarCinta;
-                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(query, parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.ModificarCinta
+                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
 
                   }
                      else
@@ -215,7 +214,7 @@ namespace DatosSKD.DAO.Modulo5
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-           // BDConexion laConexion;
+            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
             FabricaEntidades laFabrica = new FabricaEntidades();
@@ -226,7 +225,7 @@ namespace DatosSKD.DAO.Modulo5
             laCinta.Id_cinta = parametro.Id;
             try
             {
-               // laConexion = new BDConexion();
+                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
           //      Cinta laCinta = new Cinta();
 
@@ -234,7 +233,7 @@ namespace DatosSKD.DAO.Modulo5
                                             false);
                 parametros.Add(elParametro);
 
-                DataTable dt = EjecutarStoredProcedureTuplas(
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarCintasXId, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -291,7 +290,7 @@ namespace DatosSKD.DAO.Modulo5
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-           // BDConexion laConexion;
+            BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             FabricaEntidades laFabrica = new FabricaEntidades();
@@ -300,11 +299,11 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-              //  laConexion = new BDConexion();
+                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
 
-                DataTable dt = EjecutarStoredProcedureTuplas(
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarTodasLasCintas, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -366,15 +365,14 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
  
             bool retorno = false;
-          //  BDConexion laConexion;
+            BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
-               // laConexion = new BDConexion();
-                
+                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamIdOrgCinta, SqlDbType.Int
@@ -384,8 +382,8 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamSalidaNumOrganizacion, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
-                string query = RecursosDaoModulo5.BuscarIDOrganiacion;
-                List<Resultado> resultados = EjecutarStoredProcedure(query, parametros);
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.BuscarIDOrganiacion
+                                             , parametros);
 
                 foreach (Resultado elResultado in resultados)
                 {
@@ -441,14 +439,14 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            //BDConexion laConexion;
+            BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-              //  laConexion = new BDConexion();
+                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamOrdenCinta, SqlDbType.Int
@@ -462,7 +460,7 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamSalidaNumCinta, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
-                List<Resultado> resultados = EjecutarStoredProcedure(RecursosDaoModulo5.BuscarOrdenCinta
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.BuscarOrdenCinta
                                              , parametros);
 
                 foreach (Resultado elResultado in resultados)
@@ -514,14 +512,14 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            //BDConexion laConexion;
+            BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-              //  laConexion = new BDConexion();
+                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamColorCinta, SqlDbType.VarChar
@@ -535,7 +533,7 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamSalidaNumCinta, SqlDbType.Int, true);
                 parametros.Add(elParametro);
 
-                List<Resultado> resultados = EjecutarStoredProcedure(RecursosDaoModulo5.BuscarNombreCinta
+                List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDaoModulo5.BuscarNombreCinta
                                              , parametros);
 
                 foreach (Resultado elResultado in resultados)
@@ -586,7 +584,7 @@ namespace DatosSKD.DAO.Modulo5
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            //BDConexion laConexion;
+            BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -599,14 +597,14 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-                //laConexion = new BDConexion();
+                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 // Organizacion laOrganizacion = new Organizacion();
 
                 elParametro = new Parametro(RecursosDaoModulo5.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
                 parametros.Add(elParametro);
 
-                DataTable dt = EjecutarStoredProcedureTuplas(
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarCintasXOrganizacionId, parametros);
 
                 foreach (DataRow row in dt.Rows)
