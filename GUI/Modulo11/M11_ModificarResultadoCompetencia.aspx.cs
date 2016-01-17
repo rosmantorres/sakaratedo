@@ -41,8 +41,7 @@ namespace templateApp.GUI.Modulo11
 
                 if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Evento))
                 {
-                    LogicaEvento logicaEvento = new LogicaEvento();
-                    evento = logicaEvento.ConsultarEvento(Session["M11_IdEvento"].ToString());
+                    evento = LogicaAsistencia.ConsultarEvento(Session["M11_IdEvento"].ToString());
                     fechaEvento.Text = evento.Horario.FechaInicio.ToShortDateString();
                     nombreEvento.Text = evento.Nombre;
                     lEspecialidad.Visible = false;
