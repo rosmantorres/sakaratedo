@@ -1030,7 +1030,110 @@ namespace DatosSKD.DAO.Modulo8
        }
              
        #endregion
+
+       #region ConsultarCompetencias
+        /// <summary>
+        /// Metodo para consultar todas las Competencias en la base de datos
+        /// </summary>
+        /// <returns>Lista de objetos tipo entidad correspondientes a las competencias 
+        /// registradas en base de datos</returns>
+        public List<DominioSKD.Entidad> ConsultarCompetencias()
+       {
+
+           // Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+           BDConexion laConexion;
+           //List<Competencia> laListaDeCompetencias = new List<Competencia>();
+           List<Entidad> laListaDeCompetencias = new List<Entidad>();
+           DominioSKD.Fabrica.FabricaEntidades laFabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+           DominioSKD.Entidades.Modulo12.Competencia laCompetencia;
+
+           List<Parametro> parametros;
+
+           try
+           {
+               laConexion = new BDConexion();
+               parametros = new List<Parametro>();
+
+               DataTable dt = laConexion.EjecutarStoredProcedureTuplas(DatosSKD.DAO.Modulo12.RecursosDAOModulo12.ConsultarCompetencias, parametros);
+
+               foreach (DataRow row in dt.Rows)
+               {
+                   laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)laFabrica.ObtenerCompetencia();
+
+                   laCompetencia.Id_competencia = int.Parse(row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasIdCompetencia].ToString());
+                   laCompetencia.Nombre = row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasNombreCompetencia].ToString();
+                   laCompetencia.TipoCompetencia = row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasTipoCompetencia].ToString();
+
+                   if (laCompetencia.TipoCompetencia == DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TipoCompetencia1)
+                       laCompetencia.TipoCompetencia = DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TipoCompetenciaKata;
+                   if (laCompetencia.TipoCompetencia == DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TipoCompetencia2)
+                       laCompetencia.TipoCompetencia = DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TipoCompetenciaKumite;
+                   if (laCompetencia.TipoCompetencia == DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TipoCompetencia3)
+                       laCompetencia.TipoCompetencia = DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TipoCompetenciaAmbos;
+
+                   laCompetencia.Status = row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasStatusCompetencia].ToString();
+                   laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasTodasOrganizaciones].ToString());
+
+                   //PREGUNTAR!
+                   if (laCompetencia.OrganizacionTodas == false)
+
+                       laCompetencia.Organizacion = (Organizacion)laFabrica.ObtenerOrganizacion(int.Parse(row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasIdOrganizacion].ToString())
+                                                                       , row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasNombreOrganizacion].ToString());
+                   else
+                   {
+
+                       laCompetencia.Organizacion = (Organizacion)laFabrica.ObtenerOrganizacion(DatosSKD.DAO.Modulo12.RecursosDAOModulo12.TodasLasOrganizaciones);
+                   }
+
+                   //PREGUNTAR!
+                   laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)laFabrica.ObtenerUbicacion(int.Parse(row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasIdUbicacion].ToString()),
+                                                           row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasLatitudDireccion].ToString(),
+                                                           row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasLongitudDireccion].ToString(),
+                                                           row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasNombreCiudad].ToString(),
+                                                           row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasNombreEstado].ToString(),
+                                                           row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasNombreDireccion].ToString());
+
+                   laListaDeCompetencias.Add(laCompetencia);
+
+               }
+
+           }
+           catch (SqlException ex)
+           {
+
+
+               throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                   RecursoGeneralBD.Mensaje, ex);
+           }
+           catch (FormatException ex)
+           {
+
+
+               throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(DatosSKD.DAO.Modulo12.RecursosDAOModulo12.Codigo_Error_Formato,
+                    DatosSKD.DAO.Modulo12.RecursosDAOModulo12.Mensaje_Error_Formato, ex);
+           }
+           catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+           {
+
+               throw ex;
+           }
+           catch (Exception ex)
+           {
+
+
+               throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+           }
+
+
+
+           return laListaDeCompetencias;
+
+       } 
+       #endregion
     
     }
 
 }
+

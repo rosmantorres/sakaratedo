@@ -30,6 +30,31 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 8
+
+        public static Comando<Boolean> CrearComandoAgregarRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia();
+        }
+        public static Comando<Boolean> CrearComandoAgregarListaCompetenciaRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia();
+        }
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCompetencias()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCompetencias();
+        }
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarTodasLasCompetenciasAsociadas()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodasLasCompetenciasAsociadas();
+        }
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarTodasLasCompetenciasNoAsociadas()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodasLasCompetenciasNoAsociadas();
+        }
+        public static Comando<Boolean> CrearComandoEliminarListaCompetenciaRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarListaCompetenciaRestriccionCompetencia();
+        }
         #endregion
 
         #region Modulo 9
