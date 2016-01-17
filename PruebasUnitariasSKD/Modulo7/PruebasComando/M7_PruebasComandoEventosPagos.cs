@@ -30,7 +30,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             eventosPagos = (ComandoConsultarListaEventosPagos)fabricaComandos.ObtenerComandoConsultarListaEventosPagos();
             fabricaEntidades = new FabricaEntidades();
             idPersona = new Persona();//cambiar por fabrica
-            idPersona.ID = 6;
+            idPersona.Id = 6;
             eventosPagos.LaEntidad = idPersona;
         }
 
@@ -63,7 +63,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListaEventosPagosNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>> tupla = eventosPagos.Ejecutar();
         }
 

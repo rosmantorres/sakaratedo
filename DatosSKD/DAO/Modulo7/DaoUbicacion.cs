@@ -54,7 +54,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        ubicacion.Id_ubicacion = int.Parse(row[RecursosDAOModulo7.AliasIdUbicacion].ToString());
+                        ubicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasIdUbicacion].ToString());
                         ubicacion.Ciudad = row[RecursosDAOModulo7.AliasCiudad].ToString();
                         ubicacion.Estado = row[RecursosDAOModulo7.AliasEstado].ToString();
                         ubicacion.Direccion = row[RecursosDAOModulo7.AliasDireccion].ToString();

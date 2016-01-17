@@ -34,7 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             fabricaEntidades = new FabricaEntidades();
             baseDeDatosEvento = fabricaSql.ObtenerDaoEventoM7();
             idPersona = new Persona();//cambiar por fabrica
-            idPersona.ID = 6;
+            idPersona.Id = 6;
         }
 
         [TearDown]
@@ -108,7 +108,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarEventoPagoNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosPagos(idPersona);
            
         }
@@ -139,7 +139,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarCompetenciaPagaNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasPaga(idPersona);
         }
 
@@ -170,7 +170,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarEventoAsistidoNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
         }
 
@@ -201,7 +201,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarCompetenciaAsistidaNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);
         }
 
@@ -232,7 +232,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarEventosInscritosNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaEvento = baseDeDatosEvento.ListarEventosInscritos(idPersona);
         }
 
@@ -263,7 +263,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarCompetenciaInscritaNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaCompetencia = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
         }
 
@@ -275,7 +275,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaFechaPagoEvento()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = 14;
+            evento.Id = 14;
             DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
             Assert.AreEqual("03/10/2015", fechaPago.ToString("MM/dd/yyyy"));
         }
@@ -287,7 +287,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaFechaPagoEventoNoNula()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = 5;
+            evento.Id = 5;
             DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
             Assert.NotNull(fechaPago);
         }
@@ -300,7 +300,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void FechaPagoEventoNumeroEnteroException()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = -1;
+            evento.Id = -1;
             DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
         }
 
@@ -311,7 +311,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaFechaInscripcion()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = 5;
+            evento.Id = 5;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
             Assert.AreEqual("02/10/2015", fechaInscripcion.ToString("MM/dd/yyyy"));
         }
@@ -323,7 +323,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaFechaInscripcionNoNula()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = 5;
+            evento.Id = 5;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
             Assert.NotNull(fechaInscripcion);
         }
@@ -336,7 +336,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void FechaInscripcionNumeroEnteroException()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = -1;
+            evento.Id = -1;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
         }
 
@@ -372,7 +372,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void FechaInscripcionCompetenciaNumeroEnteroException()
         {
             Competencia competencia = new Competencia();//cambiar por fabrica
-            competencia.Id_competencia = -1;
+            competencia.Id = -1;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
         }
 
@@ -403,7 +403,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaMontoPagoEvento()
         {
             Evento evento = new Evento();//cambiar por fabrica
-            evento.Id_evento = 14;
+            evento.Id = 14;
             float montoPago = baseDeDatosEvento.MontoPagoEvento(idPersona, evento);
             Assert.AreEqual(1200, montoPago);
         }

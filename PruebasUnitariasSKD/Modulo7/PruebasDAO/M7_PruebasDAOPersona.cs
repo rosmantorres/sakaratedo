@@ -33,7 +33,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             baseDeDatosPersona = fabricaSql.ObtenerDaoPersonaM7();
             fabricaEntidades = new FabricaEntidades();
             idPersona = new Persona();//se debe sustituir por fabrica
-            idPersona.ID = 6;
+            idPersona.Id = 6;
         }
 
         [TearDown]
@@ -73,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetallarPersonaNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             Persona persona = (Persona)baseDeDatosPersona.ConsultarXId(idPersona);
         }
     }

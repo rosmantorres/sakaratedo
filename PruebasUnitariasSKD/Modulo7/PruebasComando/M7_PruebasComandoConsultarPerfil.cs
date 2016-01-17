@@ -30,7 +30,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             perfil = (ComandoConsultarPerfil)fabricaComandos.ObtenerComandoConsultarPerfil();
             fabricaEntidades = new FabricaEntidades();
             idPersona = new Persona();//cambiar por fabrica
-            idPersona.ID = 6;
+            idPersona.Id = 6;
             perfil.LaEntidad = idPersona;
         }
 
@@ -61,7 +61,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void PerfilNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = perfil.Ejecutar();
         }
 

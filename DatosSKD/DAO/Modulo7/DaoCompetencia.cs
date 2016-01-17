@@ -56,7 +56,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        competencia.Id_competencia = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
+                        competencia.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();
                         competencia.TipoCompetencia = row[RecursosDAOModulo7.AliasCompetenciaTipo].ToString();
                         competencia.FechaInicio = DateTime.Parse(row[RecursosDAOModulo7.AliasCompetenciaFechaInicio].ToString());

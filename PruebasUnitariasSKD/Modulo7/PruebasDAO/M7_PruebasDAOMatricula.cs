@@ -30,7 +30,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             fabricaSql = new FabricaDAOSqlServer();
             fabricaEntidades = new FabricaEntidades();
             idPersona = new Persona();
-            idPersona.ID = 6;
+            idPersona.Id = 6;
         }
 
         [TearDown]
@@ -130,7 +130,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void ListarMatriculasPagasEnteroException()
         {
             DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
         }
         #endregion

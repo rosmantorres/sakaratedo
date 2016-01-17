@@ -30,7 +30,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             cintas = (ComandoConsultarListaCinta)fabricaComandos.ObtenerComandoConsultarListaCinta();
             fabricaEntidades = new FabricaEntidades();
             idPersona = new Persona();//cambiar por fabrica
-            idPersona.ID = 6;
+            idPersona.Id = 6;
             cintas.LaEntidad = idPersona;
         }
 
@@ -62,7 +62,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListaCintasNumeroEnteroException()
         {
-            idPersona.ID = -1;
+            idPersona.Id = -1;
             Tuple<List<Entidad>, List<DateTime>> tupla = cintas.Ejecutar();
         }
 

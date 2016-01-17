@@ -46,11 +46,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametro);
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarCompetenciasAsistidas, parametros);
 
@@ -137,11 +137,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametro);
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarCompetenciasInscritas, parametros);
 
@@ -231,11 +231,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametro);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarEventosAsistidos, parametros);
@@ -243,7 +243,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Evento evento = new Evento();//se debe usar fabrica aqui
-                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Id = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
                         evento.Costo = float.Parse(row[RecursosDAOModulo7.AliasEventoCosto].ToString());
@@ -327,11 +327,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametro);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarEventosInscritos, parametros);
@@ -339,7 +339,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Evento evento = new Evento();//se debe usar fabrica aqui
-                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Id = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
                         evento.Costo = float.Parse(row[RecursosDAOModulo7.AliasEventoCosto].ToString());
@@ -419,11 +419,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametro);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarHorarioPractica, parametros);
@@ -431,7 +431,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Evento evento = new Evento();//se debe usar fabrica aqui
-                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Id = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
                        
@@ -535,7 +535,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
 
-                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Id = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
                         evento.Descripcion = row[RecursosDAOModulo7.AliasDescripcionEvento].ToString();
                         evento.Costo = float.Parse(row[RecursosDAOModulo7.AliasEventoCosto].ToString());
@@ -616,11 +616,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0 && idCompetencia.Id > 0)
+                if (idPersona.Id > 0 && idCompetencia.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametroCompetencia = new Parametro(RecursosDAOModulo7.ParamIdCompetenciaPaga, SqlDbType.Int, idCompetencia.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroCompetencia);
@@ -697,12 +697,12 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0 && idEvento.Id_evento > 0)
+                if (idPersona.Id > 0 && idEvento.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id_evento.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
+                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroEvento);
 
@@ -778,12 +778,12 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0 && idEvento.Id_evento > 0)
+                if (idPersona.Id > 0 && idEvento.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id_evento.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
+                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroEvento);
 
@@ -858,11 +858,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(
@@ -953,11 +953,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(
@@ -967,7 +967,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Evento evento  = (Evento)fabricaEntidades.ObtenerEvento();
-                        evento.Id_evento = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
+                        evento.Id = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
 
                         TipoEvento idTipoEvento = new TipoEvento();//se debe usar fabrica aqui cuando est
@@ -1043,12 +1043,12 @@ namespace DatosSKD.DAO.Modulo7
         
             try
             {
-                if (idPersona.ID > 0 && idEvento.Id_evento > 0)
+                if (idPersona.Id > 0 && idEvento.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id_evento.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
+                    parametroEvento = new Parametro(RecursosDAOModulo7.ParamIdEvento, SqlDbType.Int, idEvento.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroEvento);
 

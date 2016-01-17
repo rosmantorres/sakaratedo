@@ -67,7 +67,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        cinta.Id_cinta = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
+                        cinta.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
                         cinta.Color_nombre = row[RecursosDAOModulo7.AliasCintaNombre].ToString();
                         cinta.Rango = row[RecursosDAOModulo7.AliasCintaRango].ToString();
                         cinta.Clasificacion = row[RecursosDAOModulo7.AliasCintaClasificacion].ToString();
@@ -136,12 +136,12 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0 && idCinta.Id_cinta > 0)
+                if (idPersona.Id > 0 && idCinta.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
-                    parametroCinta = new Parametro(RecursosDAOModulo7.ParamIdCinta, SqlDbType.Int, idCinta.Id_cinta.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
+                    parametroCinta = new Parametro(RecursosDAOModulo7.ParamIdCinta, SqlDbType.Int, idCinta.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroCinta);
 
@@ -215,11 +215,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(
@@ -228,7 +228,7 @@ namespace DatosSKD.DAO.Modulo7
                     foreach (DataRow row in dt.Rows)
                     {
                         Cinta cinta = (Cinta)fabricaEntidades.ObtenerCinta();
-                        cinta.Id_cinta = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
+                        cinta.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
                         cinta.Color_nombre = row[RecursosDAOModulo7.AliasCintaNombre].ToString();
                         cinta.Rango = row[RecursosDAOModulo7.AliasCintaRango].ToString();
                         cinta.Clasificacion = row[RecursosDAOModulo7.AliasCintaClasificacion].ToString();
@@ -310,11 +310,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();          
-                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametro = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametro);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(
@@ -322,7 +322,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        cinta.Id_cinta = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
+                        cinta.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
                         cinta.Color_nombre = row[RecursosDAOModulo7.AliasCintaNombre].ToString();
                         cinta.Rango = row[RecursosDAOModulo7.AliasCintaRango].ToString();
                         cinta.Clasificacion = row[RecursosDAOModulo7.AliasCintaClasificacion].ToString();

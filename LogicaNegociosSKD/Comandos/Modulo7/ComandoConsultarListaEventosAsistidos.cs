@@ -29,7 +29,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             List<DateTime> listaFechaCompetencias = new List<DateTime>();           
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {              
                     eventos = baseDeDatosEvento.ListarEventosAsistidos(idPersona);
                     competencias = baseDeDatosEvento.ListarCompetenciasAsistidas(idPersona);

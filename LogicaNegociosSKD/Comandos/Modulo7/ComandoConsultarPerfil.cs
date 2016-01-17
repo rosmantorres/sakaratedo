@@ -40,7 +40,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
 
             try
             {              
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     persona = (Persona)baseDeDatosPersona.ConsultarXId(idPersona);
        

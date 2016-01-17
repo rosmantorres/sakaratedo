@@ -128,11 +128,11 @@ namespace DatosSKD.DAO.Modulo7
           
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                    
 
@@ -207,11 +207,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(
@@ -292,11 +292,11 @@ namespace DatosSKD.DAO.Modulo7
 
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroPersona);
 
 
@@ -371,11 +371,11 @@ namespace DatosSKD.DAO.Modulo7
         
             try
             {
-                if (idPersona.ID > 0 && idMatricula.Id > 0)
+                if (idPersona.Id > 0 && idMatricula.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.ID.ToString(), false);
+                    parametroPersona = new Parametro(RecursosDAOModulo7.ParamIdPersona, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametroMatricula = new Parametro(RecursosDAOModulo7.ParamIdMatricula, SqlDbType.Int, idMatricula.Id.ToString(), false);
                     parametros.Add(parametroPersona);
                     parametros.Add(parametroMatricula);

@@ -30,7 +30,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             List<float> listaMontoPagoEvento = new List<float>();   
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {              
                     eventos = baseDeDatosEvento.ListarEventosPagos(idPersona);
                     competencias= baseDeDatosEvento.ListarCompetenciasPaga(idPersona);

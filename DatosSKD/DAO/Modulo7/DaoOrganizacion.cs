@@ -55,7 +55,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        organizacion.Id_organizacion = int.Parse(row[RecursosDAOModulo7.AliasOrganizacionId].ToString());
+                        organizacion.Id = int.Parse(row[RecursosDAOModulo7.AliasOrganizacionId].ToString());
                         organizacion.Nombre = row[RecursosDAOModulo7.AliasOrganizacionNombre].ToString();
                         organizacion.Direccion = row[RecursosDAOModulo7.AliasOrganizacionDireccion].ToString();
                         organizacion.Telefono = int.Parse(row[RecursosDAOModulo7.AliasOrganizacionTelefono].ToString());

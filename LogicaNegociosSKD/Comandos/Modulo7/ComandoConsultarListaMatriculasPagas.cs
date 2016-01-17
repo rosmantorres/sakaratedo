@@ -28,7 +28,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             List<float> listaMonto = new List<float>();           
             try
             {
-                if (idPersona.ID > 0)
+                if (idPersona.Id > 0)
                 {
                     matriculas = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
                    
