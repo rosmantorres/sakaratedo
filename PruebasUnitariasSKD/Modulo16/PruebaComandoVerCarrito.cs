@@ -23,6 +23,7 @@ namespace PruebasUnitariasSKD.Modulo16
     public class PruebaComandoVerCarrito
     {
         #region Atributos
+        private Comando<bool> ComandoEliminar;
         private Comando<Entidad> PruebaComandoVacio;
         private Comando<Entidad> PruebaComandoVacio2;
         private Comando<Entidad> PruebaVerSoloImplemento;
@@ -52,13 +53,13 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Las Personas
             this.persona = FabricaEntidades.ObtenerPersona();
-            this.persona.Id = 20;
+            this.persona.Id = 11;
             this.persona2 = FabricaEntidades.ObtenerPersona();
-            this.persona2.Id = 21;
+            this.persona2.Id = 12;
             this.persona3 = FabricaEntidades.ObtenerPersona();
-            this.persona3.Id = 22;
+            this.persona3.Id = 13;
             this.persona4 = FabricaEntidades.ObtenerPersona();
-            this.persona4.Id = 23;
+            this.persona4.Id = 14;
 
             //Implemento
             this.implemento = new Implemento();
@@ -136,7 +137,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento = this.Carrito.ListaImplemento.ElementAt(0).Key as Implemento;
             Assert.AreEqual(this.implemento.Id_Implemento, 1);
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
-            Assert.AreEqual(this.Carrito.ListaImplemento.ElementAt(0).Value, 5);
+            Assert.AreEqual(this.Carrito.ListaImplemento.ElementAt(0).Value, 5);            
         }
 
         /// <summary>
@@ -224,6 +225,28 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            //Elimino de la primera prueba
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 11);
+            this.ComandoEliminar.Ejecutar();
+
+            //Elimino de la segunda prueba
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 12);
+            this.ComandoEliminar.Ejecutar();
+
+            //Elimino de la tercera prueba
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 13);
+            this.ComandoEliminar.Ejecutar();
+
+            //Elimino de la cuarta prueba
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 14);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 14);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 14);
+            this.ComandoEliminar.Ejecutar();
+
+            //Dejo en null
+            this.ComandoEliminar = null;
             this.PruebaComandoVacio = null;
             this.PruebaComandoVacio2 = null;
             this.PruebaVerSoloImplemento = null;

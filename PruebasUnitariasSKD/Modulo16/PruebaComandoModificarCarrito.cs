@@ -23,6 +23,7 @@ namespace PruebasUnitariasSKD.Modulo16
     {
         #region Atributos
         //Atributos pertinentes a usar
+        private Comando<bool> ComandoEliminar;
         private Entidad persona;
         private Entidad persona2;
         private Entidad persona3;
@@ -162,6 +163,24 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            //Elimino de la persona
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 11);
+            this.ComandoEliminar.Ejecutar();
+
+            //Elimino de la persona2
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 12);
+            this.ComandoEliminar.Ejecutar();
+
+            //Elimino de la persona3
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 13);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 13);
+            this.ComandoEliminar.Ejecutar();
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 13);
+            this.ComandoEliminar.Ejecutar();  
+
+            //Dejo en null
+            this.ComandoEliminar = null;
             this.persona = null;
             this.persona2 = null;
             this.persona3 = null;

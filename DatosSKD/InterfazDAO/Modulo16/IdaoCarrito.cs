@@ -62,6 +62,6 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <returns>Lista cont todas las matriculas de la persona</returns>
         Dictionary<Entidad, int> getMatricula(Entidad persona);
 
-        bool eliminarItem(int tipoObjeto, int objetoBorrar, int parametro);                   
+        bool eliminarItem(int tipoObjeto, Entidad objetoBorrar, Entidad parametro);                   
     }
 }
