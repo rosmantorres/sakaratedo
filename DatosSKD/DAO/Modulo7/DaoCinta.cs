@@ -13,6 +13,9 @@ using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
+    /// <summary>
+    /// DAO para consultar cinta de atleta
+    /// </summary>
     public class DaoCinta : DAOGeneral, IDaoCinta
     {
         #region IDaoCinta

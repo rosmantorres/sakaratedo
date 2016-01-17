@@ -13,13 +13,25 @@ using DatosSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
+    /// <summary>
+    /// DAO para consultar dojo de atleta
+    /// </summary>
     public class DaoDojo : DAOGeneral, IDaoDojo
     {
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
@@ -111,6 +123,11 @@ namespace DatosSKD.DAO.Modulo7
             return dojo;
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Modificar(Entidad parametro)
         {
             throw new NotImplementedException();

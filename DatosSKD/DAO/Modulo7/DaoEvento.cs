@@ -14,13 +14,25 @@ using DatosSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
+    /// <summary>
+    /// DAO para consultar evento de atleta
+    /// </summary>
     public class DaoEvento : DAOGeneral, IDaoEvento
     {
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
@@ -400,7 +412,7 @@ namespace DatosSKD.DAO.Modulo7
             return listaDeEventoInscritos;
         }
 
-
+        
         public List<Entidad> ListarHorarioPractica(Entidad persona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -491,6 +503,11 @@ namespace DatosSKD.DAO.Modulo7
             return listaDeHorarioPractica;
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Modificar(Entidad parametro)
         {
             throw new NotImplementedException();

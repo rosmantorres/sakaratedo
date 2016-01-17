@@ -13,13 +13,25 @@ using DatosSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
+    /// <summary>
+    /// DAO para consultar competencia de atleta
+    /// </summary>
     public class DaoCompetencia : DAOGeneral, IDaoCompetencia
     {
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
@@ -110,6 +122,11 @@ namespace DatosSKD.DAO.Modulo7
             return competencia;
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Modificar(Entidad parametro)
         {
             throw new NotImplementedException();

@@ -13,17 +13,35 @@ using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
+    /// <summary>
+    /// DAO para consultar matricula de atleta
+    /// </summary>
     public class DaoMatricula : DAOGeneral, IDaoMatricula
     {
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Modificar(Entidad parametro)
         {
             throw new NotImplementedException();

@@ -12,13 +12,25 @@ using System.Data.SqlClient;
 
 namespace DatosSKD.DAO.Modulo7
 {
+    /// <summary>
+    /// DAO para consultar tipo de evento de atleta
+    /// </summary>
     public class DaoTipoEvento : DAOGeneral, IDaoTipoEvento
     {
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
@@ -99,6 +111,11 @@ namespace DatosSKD.DAO.Modulo7
             return tipoEvento;
         }
 
+        /// <summary>
+        /// No tiene implementacion
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Modificar(Entidad parametro)
         {
             throw new NotImplementedException();
