@@ -44,11 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IContratoMasterPage.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Modulo7\IContratoDetallarMatricula.cs" />
-=======
     <Compile Include="Modulo7\IContratoConsultarPerfil.cs" />
->>>>>>> 59d91f4f69758ead07920343e0db6d535793b655
     <Compile Include="Modulo7\IContratoDetallarCinta.cs" />
     <Compile Include="Modulo7\IContratoDetallarCompetencia.cs" />
     <Compile Include="Modulo7\IContratoDetallarEvento.cs" />
