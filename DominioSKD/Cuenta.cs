@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Cuenta
+    public class Cuenta: Entidad
     {
         #region atributos
         private String nombre_usuario;
@@ -60,33 +60,19 @@ namespace DominioSKD
             personaUsuario = new PersonaM1();
         }
         /// <summary>
-        /// constructor numero 2 de cuenta el cual recibe  parametros
-        /// </summary>
-        /// <param name="elNombreUsuario"> el nombre del usuario</param>
-        /// <param name="laContrasena">la contraseña del usuario</param>
-        /// <param name="laImagen">la imagen del usuario</param>
-        /// <param name="elNombreDePila">nombre de pila</param>
-        /// 
-        public Cuenta(PersonaM1 Usuario, String elNombreUsuario, String laContrasena, String laImagen, string elNombreDePila)
-        {
-            personaUsuario = Usuario;
-            nombre_usuario = elNombreUsuario;
-            contrasena = laContrasena;
-            imagen = laImagen;
-        }
-        /// <summary>
         /// constructor numero 3 de cuenta el cual recibe mas parametros
         /// </summary>
         /// <param name="elNombreUsuario"> el nombre del usuario</param>
         /// <param name="laContrasena">la contraseña del usuario</param>
         /// <param name="listaRoles">lsita de los roles a los cuales pertenece el usuario</param>
         /// <param name="laImagen">la imagen del usuario</param>
-        public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen)
+        public Cuenta(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen,PersonaM1 datosPersonales)
         {
             nombre_usuario = elNombreUsuario;
             contrasena = laContrasena;
             roles = listaRoles;
             imagen = laImagen;
+            personaUsuario = datosPersonales;
         }
 
         #endregion

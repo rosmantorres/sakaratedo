@@ -10,9 +10,33 @@ namespace DominioSKD.Fabrica
     public class FabricaEntidades
     {
         #region Modulo 1
+        public Entidad ObtenerPersona_M1()
+        {
+            return new PersonaM1();
+        }
+        public Entidad ObtenerPersona_M1(int id, String nombre, String apellido)
+        {
+            return new PersonaM1(id,nombre,apellido);
+        }
+        public Entidad ObtenerCuenta_M1()
+        {
+            return new Cuenta();
+        }
+        public Entidad ObtenerCuenta_M1(String elNombreUsuario, String laContrasena, List<Rol> listaRoles, String laImagen,PersonaM1 datosPersonales)
+        {
+            return new Cuenta(elNombreUsuario,laContrasena,listaRoles,laImagen,datosPersonales);
+        }
         #endregion
 
         #region Modulo 2
+        public Entidad ObtenerRol_M2()
+        {
+            return new Rol();
+        }
+        public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
+        {
+            return new Rol(elId, elNombre, laDescripcion, laFecha);
+        }
         #endregion
 
         #region Modulo 3
