@@ -575,7 +575,7 @@ namespace Interfaz_Presentadores.Modulo16
             }            
         }
         #endregion
-
+        //LISTO
         #region EliminarItem
         /// <summary>
         /// Metodo del presentador que elimina un item del carrito del usuario
@@ -648,82 +648,74 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
             if (respuesta)
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=5&exito=1");
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO);
             else
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=5&exito=0");
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO);
                   }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+                throw new ParseoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
-
+                throw new ParseoFormatoInvalidoException(M16_Recursointerfaz.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    M16_Recursointerfaz.MENSAJE_EXCEPCION_FORMATO_INVALIDO, ex);
             }
             catch (OverflowException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
-
-            }
-            catch (OpcionItemErroneoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=11", false);
-            }
-            catch (ItemInvalidoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=10", false);
-            }
-            catch (PersonaNoValidaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=9", false);
+                throw new ParseoEnSobrecargaException(M16_Recursointerfaz.CODIGO_EXCEPCION_SOBRECARGA,
+                    M16_Recursointerfaz.MENSAJE_EXCEPCION_SOBRECARGA, ex);
             }
             catch (LoggerException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=8", false);
+                throw ex;
             }
             catch (ParseoVacioException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+                throw ex;
+            }
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
             }
             catch (ParseoFormatoInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
+                throw ex;
             }
             catch (ParseoEnSobrecargaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
+                throw ex;
             }
             catch (ParametroInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=4", false);
+                throw ex;
             }
             catch (ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=3", false);
+                throw ex;
             }
             catch (ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=2", false);
+                throw ex;
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=1", false);
-            }
+                throw new ExceptionSKDConexionBD(M16_Recursointerfaz.CODIGO_EXCEPCION_GENERICO,
+                    M16_Recursointerfaz.MENSAJE_EXCEPCION_GENERICO, ex);
+            }   
              
         }
         #endregion
