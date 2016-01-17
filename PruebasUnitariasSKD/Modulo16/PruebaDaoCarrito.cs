@@ -77,14 +77,14 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Eventos
             this.listaEventos = FabricaComandos.CrearComandoConsultarTodosEventos().Ejecutar();
-            
+
             //Dos matriculas distintas
             this.matricula = new Matricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
             this.matricula2 = new Matricula();
             this.matricula2.Id = 2;
-            this.matricula2.Costo = 4500;            
+            this.matricula2.Costo = 4500;
         }
 
         /// <summary>
@@ -105,21 +105,17 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Agrego un implemento al carrito vacio de una persona
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 10));
-            
+
             //Agrego el mismo implemento pero con cantidad diferente
-            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 11));
-           
+            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.implemento2, 1, 11));
+
             //Agrego un implemento diferente
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.implemento2, 1, 30));
-            
+
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.listaEventos[0], 2, 20));
 
-            //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 11);
-            this.daoPrueba.eliminarItem(1, 2, 11);
-            this.daoPrueba.eliminarItem(3, 1, 11);
-            
+
         }
 
         /// <summary>
@@ -130,21 +126,18 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Agrego un Evento al carrito vacio de una persona
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 10));
-            
+
             //Agrego el mismo evento pero con cantidad diferente
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 11));
-            
+
             //Agrego un evento diferente
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos[1], 2, 30));
-            
+
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.matricula, 3, 20));
 
-            //Limpio los datos
-            this.daoPrueba.eliminarItem(3, 1, 12);
-            this.daoPrueba.eliminarItem(3, 2, 12);
-            this.daoPrueba.eliminarItem(2, 1, 12);
-            
+
+
         }
 
         /// <summary>
@@ -155,21 +148,75 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Agrego una matricula al carrito vacio de una persona
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 10));
-            
+
             //Agrego la misma matricula pero con cantidad diferente
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 11));
-            
+
             //Agrego una matricula diferente
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona3, this.matricula2, 3, 30));
-          
+
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20));
 
-            //Limpio los datos
-            this.daoPrueba.eliminarItem(2, 1, 13);
-            this.daoPrueba.eliminarItem(2, 2, 13);
-            this.daoPrueba.eliminarItem(1, 1, 13);
-           
+
+
+        }
+        #endregion
+
+        #region EliminarItem
+        /// <summary>
+        /// Prueba unitaria que trabaja sobre el metodo de EliminarItem para eliminar implementos
+        /// </summary>
+        [Test]
+        public void pruebaEliminarImplemento()
+        {
+            //Elimino un implemento al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento, this.persona));
+
+            //Elimino un implemento al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento2, this.persona));
+
+            //Elimino un implemento al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.implemento, this.persona));
+
+
+        }
+
+        /// <summary>
+        /// Prueba unitaria que trabaja sobre el metodo de EliminarItem para eliminar eventos
+        /// </summary>
+        [Test]
+        public void pruebaEliminarEvento()
+        {
+
+            //Elimino un evento al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.implemento, this.persona2));
+
+            //Elimino un evento al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.implemento2, this.persona2));
+
+            //Elimino un evento al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.implemento, this.persona2));
+
+        }
+
+        /// <summary>
+        /// Prueba unitaria que trabaja sobre el metodo de EliminarItem para eliminar matriculas
+        /// </summary>
+        [Test]
+        public void PruebaEliminarMatricula()
+        {
+
+            //Elimino una matricula al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.implemento, this.persona3));
+
+            //Elimino una matricula al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.implemento2, this.persona3));
+
+            //Elimino una matricula al carrito de una persona
+            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento, this.persona3));
+
+
         }
         #endregion
 
@@ -186,14 +233,14 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona, this.implemento, 1, 7));
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 11);            
-            
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
+
             //Agrego y Modifico un carrito en el que solo hay eventos
             this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 10);
             Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona2, this.listaEventos[0], 2, 7));
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(3, 1, 12);            
+            this.daoPrueba.eliminarItem(3, this.implemento, this.persona2);
 
             //Agrego y Modifico un carrito en el que hay Implementos, eventos y matriculas
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
@@ -203,9 +250,9 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona3, this.listaEventos[0], 2, 7));
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 13);
-            this.daoPrueba.eliminarItem(3, 1, 13);
-            this.daoPrueba.eliminarItem(2, 1, 13); 
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona3);
+            this.daoPrueba.eliminarItem(3, this.implemento, this.persona3);
+            this.daoPrueba.eliminarItem(2, this.implemento, this.persona3);
         }
 
         /// <summary>
@@ -221,8 +268,8 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsFalse(this.daoPrueba.ModificarCarrito(this.persona, this.implemento, 1, 8000));
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 11);
-            
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
+
             /*Modifico un carrito en hay implementos, eventos y matriculas, poniendole al implemento una cantidad
             inexistente en el stock */
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
@@ -231,9 +278,9 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsFalse(this.daoPrueba.ModificarCarrito(this.persona3, this.implemento, 1, 8000));
 
             //Limpio los datos            
-            this.daoPrueba.eliminarItem(1, 1, 13);
-            this.daoPrueba.eliminarItem(3, 1, 13);
-            this.daoPrueba.eliminarItem(2, 1, 13);
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona3);
+            this.daoPrueba.eliminarItem(3, this.implemento, this.persona3);
+            this.daoPrueba.eliminarItem(2, this.implemento, this.persona3);
         }
         #endregion
 
@@ -248,7 +295,7 @@ namespace PruebasUnitariasSKD.Modulo16
             /*Agregamos y Registramos el pago en un carrito 
             donde solo hay Implementos y su cantidad se puede satisfacer*/
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
-            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona,"Tarjeta"));
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, "Tarjeta"));
 
             //Agregamos y Registramos el pago en un carrito donde solo hay eventos
             this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 10);
@@ -262,7 +309,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
             this.daoPrueba.agregarItem(this.persona3, this.listaEventos[0], 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
-            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona3,"Tarjeta"));
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona3, "Tarjeta"));
         }
 
 
@@ -287,7 +334,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona5, "Deposito"));
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 15);
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona5);
 
             //Se agrega y se trata de registrar el pago de un carrito donde hay cualquier otro producto
             this.daoPrueba.agregarItem(this.persona6, this.implemento, 1, 10);
@@ -305,9 +352,9 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona6, "Transferencia"));
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 16);
-            this.daoPrueba.eliminarItem(3, 1, 16);
-            this.daoPrueba.eliminarItem(2, 1, 16);
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona6);
+            this.daoPrueba.eliminarItem(3, this.implemento, this.persona6);
+            this.daoPrueba.eliminarItem(2, this.implemento, this.persona6);
         }
         #endregion
 
@@ -336,10 +383,10 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento = this.ImplementosCarrito.ElementAt(0).Key as Implemento;
             Assert.AreEqual(this.implemento.Id_Implemento, 1);
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
-            Assert.AreEqual(this.ImplementosCarrito.ElementAt(0).Value, 5); 
-       
+            Assert.AreEqual(this.ImplementosCarrito.ElementAt(0).Value, 5);
+
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 11);
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
         }
 
         /// <summary>
@@ -369,7 +416,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(3, 1, 12);
+            this.daoPrueba.eliminarItem(3, this.implemento, this.persona2);
         }
 
         /// <summary>
@@ -400,7 +447,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.MatriculasCarrito.ElementAt(0).Value, 1);
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(2, 1, 13);
+            this.daoPrueba.eliminarItem(2, this.implemento, this.persona3);
         }
 
         /// <summary>
@@ -444,9 +491,9 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.MatriculasCarrito.ElementAt(0).Value, 1);
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(1, 1, 14);
-            this.daoPrueba.eliminarItem(3, 1, 14);
-            this.daoPrueba.eliminarItem(2, 1, 14);
+            this.daoPrueba.eliminarItem(1, this.implemento, this.persona4);
+            this.daoPrueba.eliminarItem(3, this.implemento, this.persona4);
+            this.daoPrueba.eliminarItem(2, this.implemento, this.persona4);
         }
         #endregion
 
@@ -473,5 +520,5 @@ namespace PruebasUnitariasSKD.Modulo16
             this.MatriculasCarrito = null;
             this.evento = null;
         }
-    }    
+    }
 }
