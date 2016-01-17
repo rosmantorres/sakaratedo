@@ -44,12 +44,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="Modulo7\PresentadorDetallarEventoPago.cs" />
     <Compile Include="Modulo7\PresentadorDetallarMatricula.cs" />
-=======
     <Compile Include="Modulo7\PresentadorConsultarPerfil.cs" />
->>>>>>> 59d91f4f69758ead07920343e0db6d535793b655
     <Compile Include="Modulo7\PresentadorDetallarCinta.cs" />
     <Compile Include="Modulo7\PresentadorDetallarEvento.cs" />
     <Compile Include="Modulo7\PresentadorDetallarCompetencia.cs" />
