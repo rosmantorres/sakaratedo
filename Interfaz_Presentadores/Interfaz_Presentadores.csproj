@@ -44,6 +44,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo7\PresentadorDetallarCinta.cs" />
     <Compile Include="Modulo7\PresentadorListarCintasObtenidas.cs" />
     <Compile Include="Modulo7\PresentadorListarMatriculasPagas.cs" />
     <Compile Include="Modulo7\PresentadorListarEventosPagos.cs" />

@@ -28,7 +28,7 @@ namespace templateApp.GUI.Modulo7
 
         #region Contrato
         /// <summary>
-        /// Implementacion del contrato
+        /// Implementacion de contrato laTabla
         /// </summary>
         string IContratoListarCintasObtenidas.laTabla
         {

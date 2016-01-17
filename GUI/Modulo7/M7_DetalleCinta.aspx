@@ -42,37 +42,36 @@
                   <div class="panel-body">
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <br />
-                        <h4>Color :</h4>
-                        <asp:Label runat="server" name="colorCinta" id="colorCinta" Font-Size="Large"></asp:Label>
+                         <%--<asp:Label runat="server" name="colorCinta" id="colorCinta" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="colorCinta1" runat="server" name="colorCinta">&nbsp;Color: </h4>
                      </div>
                      <br/>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Rango :</h4>
-                        <asp:Label runat="server" name="rangoCinta" id="rangoCinta" Font-Size="Large"></asp:Label>
+                         <%--<asp:Label runat="server" name="rangoCinta" id="rangoCinta" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="rangoCinta1" runat="server" name="rangoCinta">&nbsp;Rango: </h4>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Clasificación :</h4>
-                        <asp:Label runat="server" name="clasificacionCinta" id="clasificacionCinta" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="clasificacionCinta" id="clasificacionCinta" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="clasificacionCinta1" runat="server" name="clasificacionCinta">&nbsp;Clasificacion: </h4>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Significado :</h4>
-                        <asp:Label runat="server" name="significadoCinta" id="significadoCinta" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="significadoCinta" id="significadoCinta" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="significadoCinta1" runat="server" name="significadoCinta">&nbsp;Significado: </h4>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Orden :</h4>
-                        <asp:Label runat="server" name="ordenCinta" id="ordenCinta" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="ordenCinta" id="ordenCinta" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="ordenCinta1" runat="server" name="ordenCinta">&nbsp;Orden: </h4>
                         <br />
                      </div>
-                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Fecha de Obtención :</h4>
-                        <asp:Label runat="server" name="fechaObtencionCinta" id="fechaObtencionCinta" Font-Size="Large"></asp:Label>
+                      <div class="form-group col-sm-4 col-md-5 col-lg-4">
+                        <%--<asp:Label runat="server" name="fechaObtencionCinta" id="fechaObtencionCinta" Font-Size="Large"></asp:Label>--%>
+                          <h4 id="fechaObtencionCinta1" runat="server" name="fechaObtencionCinta">&nbsp;Fecha de Obtención:</h4>
                         <br />
                      </div>
-                      <div class="panel-group col-sm-10 col-md-10 col-lg-10">
-            </div>
+                      
             <br />
             <div class="form-group col-sm-5 col-md-5 col-lg-5"> <!--BOTON VOLVER-->
             <a class="btn btn-default" href="M7_ListarCintas.aspx">Volver</a>

@@ -53,7 +53,7 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarPerfil();
         }
-        public Comando<Entidad> ObtenerComandoConsultarDetallarCinta()
+        public Comando<Tuple<Entidad, DateTime>> ObtenerComandoConsultarDetallarCinta()
         {
             return new ComandoConsultarDetallarCinta();
         }

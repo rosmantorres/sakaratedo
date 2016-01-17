@@ -27,7 +27,7 @@ namespace templateApp.GUI.Modulo7
         private Persona idPersona;
 
         /// <summary>
-        /// Implementacion del contrato
+        /// Implementacion de contrato laTabla
         /// </summary>
         string IContratoListarEventosAsistidos.laTabla
         {
