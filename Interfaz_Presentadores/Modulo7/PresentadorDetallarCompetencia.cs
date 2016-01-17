@@ -32,7 +32,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// <summary>
         /// Método para cargar los datos de la competencia
         /// </summary>
-        /// <param name="idCliente">id del cliente</param>
+        /// <param name="idCompetencia">id de la competencia</param>
         public void cargarDatos(Competencia idCompetencia)
         {
             try

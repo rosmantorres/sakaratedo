@@ -30,11 +30,12 @@ namespace Interfaz_Presentadores.Modulo7
             vista = laVista;
         }
 
-        
+
         /// <summary>
         /// Método para cargar los datos de la cinta
         /// </summary>
-        /// <param name="idCliente">id del cliente</param>
+        /// <param name="idCinta">id de la cinta</param>
+        /// <param name="idPersona">id de la persona</param>
         public void cargarDatos(Cinta idCinta, Persona idPersona)
         {           
             try

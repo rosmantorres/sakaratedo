@@ -190,23 +190,6 @@ namespace templateApp.GUI.Modulo7
                             idCompetencia = new Competencia();//cambiar por fabrica
                             idCompetencia.Id = int.Parse(detalleStringCompetencia);
                             presentador.cargarDatos(idCompetencia);
-                            /*competencia = laLogica.detalleCompetenciaID(int.Parse(detalleStringCompetencia));
-                            if (competencia != null)
-                            {
-                                this.nombre_evento.Text = competencia.Nombre;
-                                this.costo_evento.Text = competencia.Costo.ToString();
-                                this.tipo_evento.Text = M7_Recursos.AliasTipoEventoCompetencia;
-                                this.fechaInicio_evento.Text = competencia.FechaInicio.ToString("MM/dd/yyyy");
-                                this.fechaFin_evento.Text = competencia.FechaFin.ToString("MM/dd/yyyy");
-                                this.estadoUbicacion_evento.Text = competencia.Ubicacion.Estado.ToString();
-                                this.ciudad_evento.Text = competencia.Ubicacion.Ciudad.ToString();
-                                this.direccion_evento.Text = competencia.Ubicacion.Direccion;
-                            }
-                            else
-                            {
-                                throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
-                                M7_Recursos.MensajeObjetoNuloLogger, new Exception());
-                            }*/
                         }
                         catch (ObjetoNuloException)
                         {
