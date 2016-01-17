@@ -57,7 +57,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         }
         #endregion
 
-        #region Metodo
+        #region Metodo Ejecutar
 
         /// <summary>
         /// Metodo que ejecuta la accion del detalleEvento
@@ -75,7 +75,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //Instancio el DAO de Matricula
                 IdaoMensualidad daomatricula = FabricaDAOSqlServer.ObtenerDaoDetalleMatricula();
 
-                //Obtengo todos los items del evento
+                //Casteamos
                 Matricula mat = (Matricula)this.matricula;
 
                 //Escribo en el logger la salida a este metodo
@@ -85,7 +85,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //retorno la entidad de donde sea llamada
                 return daomatricula.DetallarMensualidad(mat);
             }
-            // Robusteciendo
+            #region catches
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -131,7 +131,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-
+            #endregion
         }
 
         #endregion

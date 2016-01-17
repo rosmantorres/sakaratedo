@@ -15,12 +15,24 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo16;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.DAO.Modulo16;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
 
 namespace DatosSKD.DAO.Modulo16
 {
     public class DaoCompra : DAOGeneral, IdaoCompra
     {
-        #region Metodos
+        #region Constructor
+        /// <summary>
+        /// Constructor vacio del DAO
+        /// </summary>
+        public DaoCompra()
+        {
+
+        }
+        #endregion
+
+        #region Metodos para ConsultarXId
         /// <summary>
         /// Metodo que retorma una lista de facturas existentes
         /// </summary>
@@ -35,48 +47,107 @@ namespace DatosSKD.DAO.Modulo16
             Compra laCompra;
             ListaCompra lista = new ListaCompra();
 
+            // Casteamos
             PersonaM1 p = (PersonaM1)entidad;
 
-            try
+            //Nos aseguramos que realmente sea una persona valida
+            if (entidad is Persona)
             {
-                parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
-                parametros.Add(parametro);
-                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_COMPRAS,
-                    parametros);
-
-                //Limpio la conexion
-                LimpiarSQLConnection();
-
-                foreach (DataRow row in resultado.Rows)
+                try
                 {
-                    laCompra = (Compra)laFabrica.ObtenerFactura();
-                    laCompra.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_COMPRA].ToString());
-                    laCompra.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_TIPO_PAGO].ToString();
-                    laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAMETRO_FECHA].ToString());
-                    laCompra.Com_estado = row[RecursosBDModulo16.PARAMETRO_ESTADO_COMPRA].ToString();
-                    laLista.Add(laCompra);
+                    //Escribo en el logger la entrada a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Creo la lista de los parametros para el stored procedure y los anexo
+                    parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
+                    parametros.Add(parametro);
+
+                    //Ejecuto el Stored Procedure 
+                    resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_COMPRAS, parametros);
+
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
+                    //Obtengo todos los ids que estan en la compra
+                    foreach (DataRow row in resultado.Rows)
+                    {
+                        laCompra = (Compra)laFabrica.ObtenerFactura();
+                        laCompra.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_COMPRA].ToString());
+                        laCompra.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_TIPO_PAGO].ToString();
+                        laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAMETRO_FECHA].ToString());
+                        laCompra.Com_estado = row[RecursosBDModulo16.PARAMETRO_ESTADO_COMPRA].ToString();
+                        laLista.Add(laCompra);
+
+                    }
+                    //Agrego a la lista
+                    lista.ListaCompras = laLista;
+
+                    //Limpio la conexion
+                    LimpiarSQLConnection();
+
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Retorno la lista
+                    return lista;
 
                 }
 
-                lista.ListaCompras = laLista;
-
-                //Limpio la conexion
-                LimpiarSQLConnection();
-
-                return lista;
-
+                #region catches
+                catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ArgumentNullException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+                }
+                catch (FormatException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+                }
+                catch (OverflowException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+                }
+                catch (ParametroInvalidoException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ExceptionSKDConexionBD e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ExceptionSKD e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (Exception e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                }
+                #endregion
             }
-            #region catches
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            #endregion
-
-
+            else throw new PersonaNoValidaException(RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA);  
         }
+        #endregion
 
+        #region Metodo que Lista las facturas
         /// <summary>
         /// Metodo que devueve una lista de facturas
         /// </summary>
@@ -87,6 +158,9 @@ namespace DatosSKD.DAO.Modulo16
             return new List<Entidad>();
         }
 
+        #endregion
+
+        #region Metodo ConsultarTodos
         /// <summary>
         /// Metodo que devueve una lista de facturas
         /// </summary>
@@ -96,6 +170,10 @@ namespace DatosSKD.DAO.Modulo16
         {
             return new List<Entidad>();
         }
+
+        #endregion
+
+        #region Metodo DetallarFactura
         /// <summary>
         /// Metodo que devueve un tipoimplemento dado su id
         /// </summary>

@@ -25,7 +25,7 @@ namespace Interfaz_Presentadores.Modulo16
         private IContratoListarFactura vista;
         #endregion
 
-        #region Constructores
+       #region Constructores
         /// <summary>
         /// Constructor del presentador
         /// </summary>
@@ -37,7 +37,7 @@ namespace Interfaz_Presentadores.Modulo16
         }
         #endregion
 
-        #region Metodo para el consultar de la lista de Facturas
+       #region Metodo para el consultar de la lista de Facturas
         /// <summary>
         /// metodo para consultar la lista de las Facturas
         /// </summary>
@@ -45,13 +45,20 @@ namespace Interfaz_Presentadores.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Instancio el comando para listar la factura
                 Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
+                //Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
                 param._Id = persona;
-
                 comandoListarFacturas.LaEntidad = param;
 
+                // Invocamos el Comando
                 ListaCompra com = (ListaCompra)comandoListarFacturas.Ejecutar();
 
                 //Obtenemos cada factura para ponerla en la tabla
@@ -103,20 +110,63 @@ namespace Interfaz_Presentadores.Modulo16
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
 
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                     //Agrego la fila a la tabla
                     vista.tablaFacturas.Rows.Add(fila);
 
                 }
 
             }
-            catch (Exception ex)
+            #region Catches
+            catch (PersonaNoValidaException e)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
             }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+
+            #endregion
         }
         #endregion
 
-        #region Metodos para el detalle de la Factura
+       #region Metodos para el detalle de la Factura
 
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal

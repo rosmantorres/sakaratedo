@@ -17,6 +17,8 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
 using DominioSKD.Entidades.Modulo1;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -46,8 +48,15 @@ namespace Interfaz_Presentadores.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Instancio el comando para listar el evento
                 Comando<List<Entidad>> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
 
+                //Casteamos
                 List<Entidad> laLista = comandoListarEventos.Ejecutar();
 
                 //Obtenemos cada evento para ponerlos en la tabla
@@ -130,13 +139,56 @@ namespace Interfaz_Presentadores.Modulo16
                     //Agrego la fila a la tabla
                     vista.tablaEventos.Rows.Add(fila);
 
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                        M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 }
 
             }
-            catch (Exception ex)
+            #region Catches
+            catch (PersonaNoValidaException e)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
             }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+
+            }
+
+            #endregion
         }
         #endregion
 
@@ -147,18 +199,77 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public void DetalleEvento_Event(object sender, CommandEventArgs e)
         {
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            string id = e.CommandName;
-            Evento evento = new Evento();
-            evento.Id = int.Parse(id);
+                string id = e.CommandName;
+                Evento evento = new Evento();
+                evento.Id = int.Parse(id);
 
-            Evento resultados = DetalleEvento(evento);
+                //Casteamos
+                Evento resultados = DetalleEvento(evento);
 
-            // Variables para imprimir en el modal
-            vista.LiteralDetallesEventos.Text = "</br>"+"<h3>Nombre</h3>" + "<label id='aux1' >" +resultados.Nombre + "</label>" + 
-                                                        "<h3>Descripcion</h3>" + "<label id='aux2' >" +resultados.Descripcion + "</label>"+
-                                                        "<h3>Costo</h3>" + "<label id='aux3' >" +resultados.Costo + "</label>";
-            vista.ejecutarScript();    
+                // Variables para imprimir en el modal
+                vista.LiteralDetallesEventos.Text = "</br>" + "<h3>Nombre</h3>" + "<label id='aux1' >" + resultados.Nombre + "</label>" +
+                                                            "<h3>Descripcion</h3>" + "<label id='aux2' >" + resultados.Descripcion + "</label>" +
+                                                            "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>";
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Ejecutamos el Script
+                vista.ejecutarScript();
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+
+            #endregion
+            
         }
 
         /// <summary>
@@ -167,9 +278,11 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-            Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
-            Evento elEvento = (Evento)DetalleEvento.Ejecutar();
-            return elEvento;
+            
+                    Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
+                    Evento elEvento = (Evento)DetalleEvento.Ejecutar();
+                    return elEvento;       
+            
         }
 
         #endregion

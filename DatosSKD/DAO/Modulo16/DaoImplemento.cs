@@ -15,18 +15,29 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo16;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.DAO.Modulo16;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
 
 namespace DatosSKD.DAO.Modulo16
 {
     public class DaoImplemento : DAOGeneral, IdaoImplemento
     {
+        #region Constructor
+        /// <summary>
+        /// Constructor vacio del DAO
+        /// </summary>
+        public DaoImplemento()
+        {
+
+        }
+        #endregion
 
         #region Metodos para ConsultarXId (Listar Productos por id )
         /// <summary>
         /// Metodo que retorma una lista de productos existentes
         /// </summary>
-        /// <param name=NONE>Este metodo no posee paso de parametros</param>
-        /// <returns>Todo lo que tiene actualmente el inventario de implementos</returns>
+        /// <param name=Entidad>Se pasa el id de la persona</param>
+        /// <returns>Lista solo los implementos que puede ver ese usuario logueado de acuerdo a su Dojo</returns>
        
         public Entidad ConsultarXId(Entidad implemento)
         {
@@ -38,18 +49,27 @@ namespace DatosSKD.DAO.Modulo16
             ListaImplemento lista = new ListaImplemento();
             Dojo elDojo = new Dojo();
 
+            // Casteamos
             PersonaM1 p = (PersonaM1)implemento;
 
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
                 parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
                 parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_INVENTARIO_TOTAL_DOJOS, parametros);
 
-                    //Limpio la conexion
-                    LimpiarSQLConnection();
+                //Limpio la conexion
+                LimpiarSQLConnection();
 
+                //Obtengo todos los elementos del inventario del dojo donde pertenece el usuario logueado
                     foreach (DataRow row in resultado.Rows)
                     {
                         elImplemento = (Implemento)laFabrica.ObtenerImplemento();
@@ -65,24 +85,69 @@ namespace DatosSKD.DAO.Modulo16
                         laLista.Add(elImplemento);
                        
                     }
+                    //Agrego a la lista
                     lista.ListaImplementos = laLista;
 
                     //Limpio la conexion
                     LimpiarSQLConnection();
 
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Retorno la lista
                     return lista;
             }
             #region catches
-            catch (Exception ex)
+            catch (LoggerException e)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            #endregion
-           
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
+            #endregion     
         }
-#endregion
+        #endregion
 
-            #region Metodo para DetallarImplemento (Detallar Implemento)
+        #region Metodo para DetallarImplemento (Detallar Implemento)
             /// <summary>
         /// Metodo que retorma una entidad de tipo implemento
         /// </summary>
@@ -98,19 +163,28 @@ namespace DatosSKD.DAO.Modulo16
             Implemento elImplemento = new Implemento();
             Implemento lista = new Implemento();
 
+            // Casteamos
             Implemento imp = (Implemento)implemento;
 
 
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
                 parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, imp.Id_Implemento.ToString(), false);
                 parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_IMPLEMENTO, parametros);
 
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                //Obtengo todos los ids de implemento que posee ese dojo
                 foreach (DataRow row in resultado.Rows)
                 {
                     elImplemento = (Implemento)laFabrica.ObtenerImplemento();
@@ -129,13 +203,58 @@ namespace DatosSKD.DAO.Modulo16
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retorno la lista
                 return elImplemento;
 
             }
             #region catches
-            catch (Exception ex)
+            catch (LoggerException e)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
             #endregion
         }

@@ -11,6 +11,8 @@ using DatosSKD.InterfazDAO;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD.Modulo16;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
@@ -56,7 +58,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         }
         #endregion
 
-        #region Metodo
+        #region Metodo Ejecutar
 
         /// <summary>
         /// Metodo que ejecuta la accion del detalleEvento
@@ -74,7 +76,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //Instancio el DAO de Evento
                 IdaoEvento daoevento = FabricaDAOSqlServer.ObtenerDaoDetalleEvento();
 
-                //Obtengo todos los items del evento
+                //Casteamos
                 Evento eve = (Evento)this.evento;
 
                 //Escribo en el logger la salida a este metodo
@@ -84,7 +86,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //retorno la entidad de donde sea llamada
                 return daoevento.ConsultarXId(eve);
             }
-            // Robusteciendo
+
+            #region catches
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -130,6 +133,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+
+            #endregion
 
         }
 

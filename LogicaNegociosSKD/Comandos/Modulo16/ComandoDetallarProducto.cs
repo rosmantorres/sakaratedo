@@ -56,7 +56,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         }
         #endregion
 
-        #region Metodo
+        #region Metodo Ejecutar
 
         /// <summary>
         /// Metodo que ejecuta la accion del detalleProducto
@@ -74,7 +74,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //Instancio el DAO de Implemento
                 IdaoImplemento daoimplemento = FabricaDAOSqlServer.ObtenerDaoDetalleProducto();
 
-                //Obtengo todos los items del producto
+                //Casteamos
                 Implemento pro = (Implemento)this.implemento;
 
                 //Escribo en el logger la salida a este metodo
@@ -84,7 +84,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //retorno la entidad de donde sea llamada
                 return daoimplemento.DetallarImplemento(pro);
             }
-            // Robusteciendo
+            #region catches
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -130,7 +130,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-
+            #endregion
         }
 
         #endregion

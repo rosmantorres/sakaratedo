@@ -15,11 +15,23 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo16;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.DAO.Modulo16;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
 
 namespace DatosSKD.DAO.Modulo16
 {
     public class DaoMensualidad : DAOGeneral, IdaoMensualidad
     {
+        #region Constructor
+        /// <summary>
+        /// Constructor vacio del DAO
+        /// </summary>
+        public DaoMensualidad()
+        {
+
+        }
+        #endregion
+
         #region Metodo de Listar Mensualidades Morosas (ConsultarXId)
         /// <summary>
         /// Metodo que retorma una lista de Matriculas Morosas Existentes
@@ -35,19 +47,28 @@ namespace DatosSKD.DAO.Modulo16
             Matricula laMatricula;
             ListaMatricula lista = new ListaMatricula();
 
+            //Casteamos
             PersonaM1 p = (PersonaM1)entidad;
 
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
                 parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
                 parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_MATRICULAS_MOROSAS,
                     parametros);
 
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                //Obtengo todos las mensualidades que debe el usuario logueado
                 foreach (DataRow row in resultado.Rows)
                 {
                     laMatricula = (Matricula)laFabrica.ObtenerMatricula();
@@ -61,18 +82,65 @@ namespace DatosSKD.DAO.Modulo16
 
                 }
 
+                //Agrego a la lista
                 lista.ListaMatriculas = laLista;
 
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retorno la lista
                 return lista;
 
             }
+
             #region catches
-            catch (Exception ex)
+            catch (LoggerException e)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
             #endregion
         }
@@ -95,19 +163,28 @@ namespace DatosSKD.DAO.Modulo16
             Dojo elDojo = new Dojo();
             Matricula lista = new Matricula();
 
+            //Casteamos
             Matricula mat = (Matricula)matricula;
 
 
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
                 parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.ParamIdMatricula, SqlDbType.Int, mat.Id.ToString(), false);
                 parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_MATRICULA, parametros);
 
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                //Obtengo cada atributo de la mensualidad solicitada
                 foreach (DataRow row in resultado.Rows)
                 {
                     laMatricula = (Matricula)laFabrica.ObtenerMatricula();
@@ -124,14 +201,59 @@ namespace DatosSKD.DAO.Modulo16
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retorno la Matricula
                 return laMatricula;
             }
             #region catches
-            catch (Exception ex)
+            catch (LoggerException e)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
-            #endregion
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
+            #endregion     
         }
 
         #endregion

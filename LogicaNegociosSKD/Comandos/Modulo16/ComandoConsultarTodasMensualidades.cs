@@ -7,6 +7,8 @@ using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
+using ExcepcionesSKD.Modulo16;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
@@ -53,28 +55,95 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
         #endregion
 
+        #region Metodo Ejecutar
         /// <summary>
-        /// Metodo que ejecuta el comando
+        /// Metodo que ejecuta la accion de consultarTodasLasMensualidades
         /// </summary>
-        /// <param name="p">id de persona</param>
-        /// <returns>lista de Mensualidades</returns>
+        /// <returns>el exito o fallo del proceso</returns>
 
        public override Entidad Ejecutar()
        {
            try
            {
+               //Escribo en el logger la entrada a este metodo
+               Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                   System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+               //Instancio el DAO de Matricula
                IdaoMensualidad daoMensualidades = FabricaDAOSqlServer.ObtenerDaoMensualidades();
+
+               // Cateamos
                PersonaM1 p = (PersonaM1)this.LaEntidad;
 
+               //Escribo en el logger la salida a este metodo
+               Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+               //retorno la entidad de donde sea llamado
                return daoMensualidades.ConsultarXId(p);
            }
            #region catches
-           catch (Exception ex)
+
+           catch (LoggerException e)
            {
-               throw ex;
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ItemInvalidoException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (PersonaNoValidaException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (OpcionItemErroneoException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ParseoVacioException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ParseoFormatoInvalidoException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ParseoEnSobrecargaException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ParametroInvalidoException e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ExceptionSKDConexionBD e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (ExceptionSKD e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw e;
+           }
+           catch (Exception e)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+               throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                   RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
            }
 
            #endregion
        }
+        #endregion
     }
 }

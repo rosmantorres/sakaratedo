@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace Interfaz_Contratos.Modulo16
 {
+    /// <summary>
+    /// Interface para el manejo de la vista listarProducto
+    /// </summary>
     public interface IContratoListarProducto
     {
         /// <summary>
