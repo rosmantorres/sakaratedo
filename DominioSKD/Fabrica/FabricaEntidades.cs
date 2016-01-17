@@ -355,6 +355,20 @@ namespace DominioSKD.Fabrica
         {
             return new Diseño(contenido);
         }
+        // Entidades de otros modulos que necesitamos
+        public Entidad ObtenerPersona()
+        {
+            return new Persona();
+        }
+        public Entidad ObtenerDojo()
+        {
+            return new Dojo();
+        }
+        public Entidad ObtenerMatricula()
+        {
+            return new Matricula();
+        }
+        //Hasta aca
         #endregion
 
         #region Modulo 15
