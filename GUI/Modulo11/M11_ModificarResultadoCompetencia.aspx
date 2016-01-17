@@ -41,24 +41,27 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_asistencia" id="agregar_asistencia" method="post" action="#">
+<form runat="server" role="form" name="modificar_resultado" id="modificar_resultado" method="post">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
+    <!--Texboxes FECHA y NOMBRE-->
+   <div class="form-group col-sm-10 col-md-10 col-lg-10">
+       <br />
+       <h3>Fecha del Evento:</h3>
+       <asp:TextBox ID="fechaEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+       <h3>Nombre del Evento:</h3>
+       <asp:TextBox ID="nombreEvento" runat="server" CssClass="form-control" Enabled="false"></asp:TextBox>
+   </div>
     
    <!--COMBO ESPECIALIDAD-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Especialidad:</h3>
+        <h3 id="lEspecialidad" runat="server" visible="false">Especialidad:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Especialidad <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Kata</a></li>
-               <li><a href="#">Kumite</a></li>
-               <li><a href="#">Ascenso</a></li>
-          </ul>
-        </div>
+    <div class="dropdown" runat="server" id="div1">
+        <asp:DropDownList ID="comboEspecialidad"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboEspecialidad_SelectedIndexChanged" Visible="false">
+            <asp:ListItem>Seleccionar Especialidad:</asp:ListItem>
+        </asp:DropDownList>
+    </div>
       </div>
     </div>
 
@@ -66,185 +69,207 @@
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Categoria:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Categoria <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Categoria 1</a></li>
-               <li><a href="#">Categoria 2</a></li>
-              <li><a href="#">Categoria 3</a></li>
-          </ul>
-        </div>
+    <div class="dropdown" runat="server" id="div2">
+        <asp:DropDownList ID="comboCategoria"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboCategoria_SelectedIndexChanged">
+            <asp:ListItem>Seleccionar Categoria:</asp:ListItem>
+        </asp:DropDownList>
+    </div>
       </div>
     </div>
 
-
-    <div class="form-group">
+        <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
+        <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>Atletas que compitieron:</h3>
-       <table id="example" class="table table-bordered table-striped dataTable">
+        <h3>Atletas que compitieron Examen de Ascenso:</h3>
+        <table id="tablaCompetidores" class="table table-bordered table-striped dataTable todasLasTablas">
         <thead>
-				<tr>
-                    <th style="text-align:center">Id</th>
+				<tr> 
 					<th style="text-align:center">Nombre del Atleta</th>
-                    <th style="text-align:center">Puntaje</th>
-					<th style="text-align:center">Acciones</th>
+                    <th style="text-align:center">Puntuacion</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-                    <td class="id">1</td>
-					<td>Nestor Betancourt</td>
-                    <td> 12</td>
-                  
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarAscenso.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                     <td class="id">2</td>
-                    <td>Eduardo Cruz</td>
-                     <td>20</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKata.aspx"></a>
-                     </td>
-				</tr><tr>
-                    <td class="id">3</td>
-                    <td>Israel Rojer</td>
-                     <td>36</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKumite.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">4</td>
-                    <td>Jose Madrigal</td>
-                     <td>5</td>		
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKumite.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    <td class="id">5</td>
-                    <td>Paul Lopez</td>
-                    <td> 26</td>
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_ModificarKata.aspx"></a>
-                    </td>
-                </tr>
-			    </tbody>
-    </table>
+                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
+		    </tbody>
+            </table>
             </div>
         </div>
 
-        		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información del Puntaje</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<p>
-									El Puntaje fue...
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+            <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KATA-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kata:</h3>
+        <table id="tablaCompetidores2" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta</th>
+                    <th style="text-align:center">Jurado 1</th>
+                    <th style="text-align:center">Jurado 2</th>
+                    <th style="text-align:center">Jurado 3</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable2"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KUMITE-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kumite:</h3>
+        <table id="tablaCompetidores3" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+                    <th style="text-align:center">Referencia</th>
+					<th style="text-align:center">Nombre del Atleta 1</th>
+                    <th style="text-align:center">Puntuacion</th>
+                    <th style="text-align:center">Nombre del Atleta 2</th>
+                    <th style="text-align:center">Puntuacion</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable3"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
 
-                    var table = $('#example').DataTable({
-                        "language": {
-                            "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                        }
-                    });
-                    var req;
-                    var tr;
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.todasLasTablas').DataTable();
 
-                    $('#example tbody').on('click', 'a', function () {
-                        if ($(this).parent().hasClass('selected')) {
-                            req = $(this).parent().prev().prev().prev().prev().text();
-                            tr = $(this).parents('tr');//se guarda la fila seleccionada
-                            $(this).parent().removeClass('selected');
+                var table = $('.todasLasTablas').DataTable();
+                var comp;
+                var tr;
 
-                        }
-                        else {
-                            req = $(this).parent().prev().prev().prev().prev().text();
-                            tr = $(this).parents('tr');//se guarda la fila seleccionada
-                            table.$('tr.selected').removeClass('selected');
-                            $(this).parent().addClass('selected');
-                        }
-                    });
-
+                $('.todasLasTablas tbody').on('click', 'a', function () {
+                    if ($(this).parent().hasClass('selected')) {
+                        comp = $(this).parent().prev().prev().prev().prev().text();
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                        $(this).parent().removeClass('selected');
+                    }
+                    else {
+                        comp = $(this).parent().prev().prev().prev().prev().text();
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                        table.$('tr.selected').removeClass('selected');
+                        $(this).parent().addClass('selected');
+                    }
                 });
+            });
 
 
-                $(document).ready(function () {
-                    $('#datePicker')
-                        .datepicker({
-                            format: 'mm/dd/yyyy'
-                        })
-                        .on('changeDate', function (e) {
-                            // Revalidate the date field
-                            $('#eventForm').formValidation('revalidateField', 'date');
-                        });
+            function resultadosEvento() {
+                var arreglo = [];
+                $('#tablaCompetidores tbody').each(function () {
+                    var i = 0;
+                    $(this).find('select#combo').each(function () {
 
-                    $('#eventForm').formValidation({
-                        framework: 'bootstrap',
-                        icon: {
-                            valid: 'glyphicon glyphicon-ok',
-                            invalid: 'glyphicon glyphicon-remove',
-                            validating: 'glyphicon glyphicon-refresh'
-                        },
-                        fields: {
-                            name: {
-                                validators: {
-                                    notEmpty: {
-                                        message: 'The name is required'
-                                    }
-                                }
-                            },
-                            date: {
-                                validators: {
-                                    notEmpty: {
-                                        message: 'The date is required'
-                                    },
-                                    date: {
-                                        format: 'MM/DD/YYYY',
-                                        message: 'The date is not a valid'
-                                    }
-                                }
-                            }
-                        }
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado: opcion
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('.sorting_1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
                     });
                 });
+                var myJson = JSON.stringify(arreglo);
+                document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+            }
 
+            function resultadosKata() {
+                var arreglo = [];
+                $('#tablaCompetidores2 tbody').each(function () {
+                    var i = 0;
+                    var j = 0;
+                    var x = 0;
+                    $(this).find('select#combo1').each(function () {
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado1: opcion,
+                            resultado2: "",
+                            resultado3: ""
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('select#combo2').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[j].resultado2 = opcion;
+                        j++;
+                    });
+                    $(this).find('select#combo3').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[x].resultado3 = opcion;
+                        x++;
+                    });
+                    $(this).find('.sorting_1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
+                    });
+                });
+                var myJson = JSON.stringify(arreglo);
+                document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+            }
 
+            function resultadosKumite() {
+                var arreglo = [];
+                $('#tablaCompetidores3 tbody').each(function () {
+                    var i = 0;
+                    var j = 0;
+                    var x = 0;
+                    $(this).find('select#combo1').each(function () {
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado1: opcion,
+                            resultado2: "",
+                            resultado3: ""
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('select#combo2').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[j].resultado3 = opcion;
+                        j++;
+                    });
+                    $(this).find('.nombre1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
+                    });
+                    $(this).find('.nombre2').each(function () {
+                        arreglo[x].resultado2 = $(this).text();
+                        x++;
+                    });
+                });
+                var myJson = JSON.stringify(arreglo);
+                document.getElementById('<%= rvalue2.ClientID %>').value = myJson;
+            }
 
+            function resultadosAmbos() {
+                resultadosKata();
+                resultadosKumite();
+            }
         </script>
-
+        <asp:HiddenField ID="rvalue" runat="server" />
+        <asp:HiddenField ID="rvalue2" runat="server" />
 </div>
+
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-modificarResul" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx?eliminacionSuccess=2" onclick="">Aceptar</a>
-         &nbsp;&nbsp
-         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx"> Cancelar</a>
+          <asp:LinkButton ID="bModificar" runat="server" CssClass="btn btn-primary" OnClick="bModificar_Click" OnClientClick="resultadosEvento();">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificarKata" runat="server" CssClass="btn btn-primary" OnClick="bModificarKata_Click" OnClientClick="resultadosKata();" Visible="false">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificarKumite" runat="server" CssClass="btn btn-primary" OnClick="bModificarKumite_Click" OnClientClick="resultadosKumite();" Visible="false">Modificar</asp:LinkButton>
+          <asp:LinkButton ID="bModificarAmbas" runat="server" CssClass="btn btn-primary" OnClick="bModificarAmbas_Click" OnClientClick="resultadosAmbos();" Visible="false">Modificar</asp:LinkButton>
+          &nbsp;&nbsp
+         <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>
    </form>
 </div>
