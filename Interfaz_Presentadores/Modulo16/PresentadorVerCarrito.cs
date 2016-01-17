@@ -586,6 +586,10 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="e">El evento que es ejecutado</param>
         public void Eliminar_Item(object sender, EventArgs e)
         {
+            
+            try
+            {
+
             //Persona que eventualmente la buscaremos por el session
             Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
             persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
@@ -649,8 +653,79 @@ namespace Interfaz_Presentadores.Modulo16
                 HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=5&exito=1");
             else
                 HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=5&exito=0");
+                  }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
 
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
 
+            }
+            catch (OpcionItemErroneoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=11", false);
+            }
+            catch (ItemInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=10", false);
+            }
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=9", false);
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=8", false);
+            }
+            catch (ParseoVacioException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=7", false);
+            }
+            catch (ParseoFormatoInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=6", false);
+            }
+            catch (ParseoEnSobrecargaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=5", false);
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=4", false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=3", false);
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=2", false);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect("M16_VerCarrito.aspx?accion=4&mensaje=1", false);
+            }
              
         }
         #endregion
