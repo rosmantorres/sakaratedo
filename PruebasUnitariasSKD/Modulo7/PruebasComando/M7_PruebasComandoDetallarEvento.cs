@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
+    /// <summary>
+    /// Clase que contiene las pruebas unitarias para el comando detallar evento de atleta
+    /// </summary>
     [TestFixture]
     public class M7_PruebasComandoDetallarEvento
     {
@@ -23,6 +26,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         #endregion
 
         #region SetUp & TearDown
+        /// <summary>
+        /// Método que se ejecuta antes de cada prueba
+        /// </summary>
         [SetUp]
         public void Init()
         {
@@ -34,6 +40,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             detalleEvento.LaEntidad = idEvento;
         }
 
+        /// <summary>
+        /// Método que se ejecuta despues de cada prueba
+        /// </summary>
         [TearDown]
         public void Clean()
         {

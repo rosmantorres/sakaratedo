@@ -12,6 +12,9 @@ using ExcepcionesSKD.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
+    /// <summary>
+    /// Clase que contiene las pruebas unitarias para el comando eventos pagos de atleta
+    /// </summary>
     [TestFixture]
     public class M7_PruebasComandoEventosPagos
     {
@@ -23,6 +26,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         #endregion
 
         #region SetUp & TearDown
+        /// <summary>
+        /// Método que se ejecuta antes de cada prueba
+        /// </summary>
         [SetUp]
         public void Init()
         {
@@ -34,6 +40,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             eventosPagos.LaEntidad = idPersona;
         }
 
+        /// <summary>
+        /// Método que se ejecuta luego de cada prueba
+        /// </summary>
         [TearDown]
         public void Clean()
         {
