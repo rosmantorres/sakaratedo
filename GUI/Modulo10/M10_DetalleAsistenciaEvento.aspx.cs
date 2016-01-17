@@ -71,9 +71,6 @@ namespace templateApp.GUI.Modulo10
 
         }
 
-        protected void bCancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("M10_ListarAsistenciaEventos.aspx");
-        }
+     
     }
 }

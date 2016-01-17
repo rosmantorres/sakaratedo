@@ -56,14 +56,5 @@ namespace templateApp.GUI.Modulo10 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox listaAsistentes;
-        
-        /// <summary>
-        /// bCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton bCancelar;
     }
 }

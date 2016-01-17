@@ -673,4 +673,13 @@
   <data name="Mostrar" xml:space="preserve">
     <value>mostrar</value>
   </data>
+  <data name="Kata" xml:space="preserve">
+    <value>Kata </value>
+  </data>
+  <data name="Kata_Kumite" xml:space="preserve">
+    <value>Kata y Kumite</value>
+  </data>
+  <data name="Kumite" xml:space="preserve">
+    <value>Kumite</value>
+  </data>
 </root>

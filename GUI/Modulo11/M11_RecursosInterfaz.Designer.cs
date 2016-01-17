@@ -187,11 +187,38 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kata .
+        /// </summary>
+        internal static string Kata {
+            get {
+                return ResourceManager.GetString("Kata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kata y Kumite.
+        /// </summary>
+        internal static string Kata_Kumite {
+            get {
+                return ResourceManager.GetString("Kata_Kumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
             get {
                 return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kumite.
+        /// </summary>
+        internal static string Kumite {
+            get {
+                return ResourceManager.GetString("Kumite", resourceCulture);
             }
         }
         
