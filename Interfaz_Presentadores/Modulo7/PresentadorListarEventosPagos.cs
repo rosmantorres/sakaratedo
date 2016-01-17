@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Presentadores.Modulo7
 {
+    /// <summary>
+    /// Presentador para detallar eventos pagos
+    /// </summary>
     public class PresentadorListarEventosPagos
     {
         private IContratoListarEventosPagos vista;
@@ -22,7 +25,9 @@ namespace Interfaz_Presentadores.Modulo7
         {
             vista = laVista;
         }
-
+        /// <summary>
+        /// Método para consultar los eventos pagos del atleta
+        /// </summary>
         public void ConsultarListaEventosPagos()
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
@@ -33,7 +38,6 @@ namespace Interfaz_Presentadores.Modulo7
                     fabricaComandos.ObtenerComandoConsultarListaEventosPagos();
 
                 Persona idPersona = new Persona();//cambiar por fabrica
-                //idPersona.ID = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                 idPersona.Id = 6; //falta modificar esto
                 comandoListaEventosPagos.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>> tupla = comandoListaEventosPagos.Ejecutar();

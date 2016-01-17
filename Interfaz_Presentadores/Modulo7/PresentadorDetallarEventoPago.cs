@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Interfaz_Presentadores.Modulo7
 {
     /// <summary>
-    /// Presentador para detallar evento
+    /// Presentador para detallar evento pago
     /// </summary>
     public class PresentadorDetallarEventoPago
     {
@@ -30,7 +30,7 @@ namespace Interfaz_Presentadores.Modulo7
 
 
         /// <summary>
-        /// Método para cargar los datos del evento
+        /// Método para cargar los datos del evento pago
         /// </summary>
         /// <param name="idEvento">id del evento</param>
         public void cargarDatos(Evento idEvento)
@@ -45,7 +45,7 @@ namespace Interfaz_Presentadores.Modulo7
                 vista.ciudad_evento = evento.Ubicacion.Ciudad;
                 vista.costo_evento = evento.Costo.ToString();
                 vista.descripcion_evento = evento.Descripcion;
-               // vista.direccionEvento_evento = evento.Ubicacion.Direccion;
+                vista.direccionEvento_evento = evento.Ubicacion.Direccion;
                 vista.estadoUbicacion_evento = evento.Ubicacion.Estado;
                 if (evento.Estado.Equals(true))
                 {

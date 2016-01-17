@@ -15,6 +15,9 @@ using Interfaz_Presentadores.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
+    /// <summary>
+    /// Clase que maneja la interfaz de listar eventos pagos
+    /// </summary>
     public partial class M7_ListarPagosAEventos : System.Web.UI.Page, IContratoListarEventosPagos
     {
         #region Atributos

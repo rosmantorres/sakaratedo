@@ -30,12 +30,10 @@ namespace Interfaz_Presentadores.Modulo7
             vista = laVista;
         }
 
-
         /// <summary>
         /// Método para cargar los datos de la matricula
         /// </summary>
         /// <param name="idCinta">id de la matricula</param>
-        /// <param name="idPersona">id de la persona</param>
         public void cargarDatos(Matricula idMatricula)
         {           
             try
@@ -43,7 +41,6 @@ namespace Interfaz_Presentadores.Modulo7
                fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
                 comandoDetallarMatricula.LaEntidad = idMatricula;
-               // comandoDetallarMatricula. = idPersona;
                 Matricula matricula = (Matricula)comandoDetallarMatricula.Ejecutar();
                 String estadoFinal;
                 vista.identificadorMatricula = matricula.Identificador;

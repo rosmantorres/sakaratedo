@@ -15,7 +15,9 @@ using Interfaz_Presentadores.Modulo7;
 
 
 namespace templateApp.GUI.Modulo7
-{
+{   /// <summary>
+    /// Clase que maneja la interfaz de listar matriculas pagas
+    /// </summary>
     public partial class M7_ListarPagosDeMatricula : System.Web.UI.Page, IContratoListarMatriculasPagas
     {
         #region Atributos

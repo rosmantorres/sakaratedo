@@ -36,7 +36,7 @@ namespace LogicaNegociosSKD.Modulo7
         }
 
         /// <summary>
-        /// Método que obtiene la lista de eventos asistidos
+        /// Método que obtiene la lista de eventos pagos
         /// </summary>
         /// <returns>Lista de objetos tipo Evento</returns>
         public List<DominioSKD.Evento> obtenerListaDeEventos(int idPersona)
@@ -85,7 +85,7 @@ namespace LogicaNegociosSKD.Modulo7
         }
 
         /// <summary>
-        /// Método que obtiene la lista de competencias asistidas
+        /// Método que obtiene la lista de competencias pagas
         /// </summary>
         /// <returns>Lista de objetos tipo Competencia</returns>
         public List<DominioSKD.Competencia> obtenerListaDeCompetencias(int idPersona)

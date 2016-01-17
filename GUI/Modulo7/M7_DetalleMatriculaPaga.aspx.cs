@@ -102,8 +102,12 @@ namespace templateApp.GUI.Modulo7
 
         
         #endregion
-        // Matricula matricula = new Matricula();
-      //  LogicaMatriculasPagas Logica = new LogicaMatriculasPagas();
+      
+        /// <summary>
+        /// Método que se ejecuta al cargar la página Listar Matriculas pagas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";

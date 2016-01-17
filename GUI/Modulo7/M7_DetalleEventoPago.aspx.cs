@@ -17,6 +17,10 @@ using Interfaz_Contratos.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
+
+    /// <summary>
+    /// Clase que maneja la interfaz de detallar eventos pagos
+    /// </summary>
     public partial class M7_DetalleEventoPago : System.Web.UI.Page, IContratoDetallarEvento
     {
 

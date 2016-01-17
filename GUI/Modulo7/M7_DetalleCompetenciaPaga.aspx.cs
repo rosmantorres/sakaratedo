@@ -160,7 +160,11 @@ namespace templateApp.GUI.Modulo7
             }
         }
         #endregion
-
+        /// <summary>
+        /// Método que se ejecuta al cargar la página Listar Competencias pagas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
