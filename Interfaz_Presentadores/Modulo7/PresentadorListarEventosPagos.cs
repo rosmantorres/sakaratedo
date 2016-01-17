@@ -34,7 +34,7 @@ namespace Interfaz_Presentadores.Modulo7
 
                 Persona idPersona = new Persona();//cambiar por fabrica
                 //idPersona.ID = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                idPersona.ID = 6; //falta modificar esto
+                idPersona.Id = 6; //falta modificar esto
                 comandoListaEventosPagos.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>> tupla = comandoListaEventosPagos.Ejecutar();
 
@@ -60,7 +60,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaPagoEvento.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + montoPago.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
-                        vista.laTabla += M7_RecursosPresentador.BotonInfoPagosAEventos + evento.Id_evento + M7_RecursosPresentador.BotonCerrar;
+                        vista.laTabla += M7_RecursosPresentador.BotonInfoPagosAEventos + evento.Id + M7_RecursosPresentador.BotonCerrar;
                         vista.laTabla += M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.CerrarTR;
                     }
@@ -81,7 +81,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaPago.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.Costo.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
-                        vista.laTabla += M7_RecursosPresentador.BotonInfoPagosACompetencias + competencia.Id_competencia + M7_RecursosPresentador.BotonCerrar;
+                        vista.laTabla += M7_RecursosPresentador.BotonInfoPagosACompetencias + competencia.Id + M7_RecursosPresentador.BotonCerrar;
                         vista.laTabla += M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.CerrarTR;
                     }

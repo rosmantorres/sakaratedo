@@ -34,7 +34,7 @@ namespace Interfaz_Presentadores.Modulo7
 
                 Persona idPersona = new Persona();//cambiar por fabrica
                 //idPersona.ID = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                idPersona.ID = 6; //falta modificar esto
+                idPersona.Id = 6; //falta modificar esto
                 comandoListaMatriculasPagas.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Boolean>, List<float>> tupla = comandoListaMatriculasPagas.Ejecutar();
 
