@@ -270,7 +270,7 @@ namespace LogicaNegociosSKD.Fabrica
                     return new ComandoeliminarItem();
                 }
 
-        public static Comando<bool> CrearComandoeliminarItem(int tipoObjeto, int objetoaBorrar, int usuario)
+        public static Comando<bool> CrearComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
         {
             return new ComandoeliminarItem(tipoObjeto, objetoaBorrar, usuario);
         }
