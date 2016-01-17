@@ -7,19 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo10 {
+namespace templateApp.GUI.Modulo11 {
     
     
-    public partial class M10_ModificarAsistenciaEventos {
+    public partial class M11_DetalleResultadoCompetencia {
         
         /// <summary>
-        /// modificar_asistencia control.
+        /// alert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_asistencia;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
+        /// detalle_competencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm detalle_competencia;
         
         /// <summary>
         /// fechaEvento control.
@@ -40,57 +49,57 @@ namespace templateApp.GUI.Modulo10 {
         protected global::System.Web.UI.WebControls.TextBox nombreEvento;
         
         /// <summary>
-        /// listaNoAsistieron control.
+        /// lEspecialidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listaNoAsistieron;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lEspecialidad;
         
         /// <summary>
-        /// bIzquierdo control.
+        /// especialidadEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton bIzquierdo;
+        protected global::System.Web.UI.WebControls.TextBox especialidadEvento;
         
         /// <summary>
-        /// bDerecho control.
+        /// categoriaEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton bDerecho;
+        protected global::System.Web.UI.WebControls.TextBox categoriaEvento;
         
         /// <summary>
-        /// listaAsistentes control.
+        /// dataTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox listaAsistentes;
+        protected global::System.Web.UI.WebControls.Literal dataTable;
         
         /// <summary>
-        /// bModificar control.
+        /// dataTable2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton bModificar;
+        protected global::System.Web.UI.WebControls.Literal dataTable2;
         
         /// <summary>
-        /// bCancelar control.
+        /// dataTable3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton bCancelar;
+        protected global::System.Web.UI.WebControls.Literal dataTable3;
     }
 }
