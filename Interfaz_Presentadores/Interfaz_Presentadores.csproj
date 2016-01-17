@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
@@ -52,6 +56,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo12\PresentadorAgregarCompetencia.cs" />
+    <Compile Include="Modulo12\PresentadorDetalleCompetencia.cs" />
+    <Compile Include="Modulo12\PresentadorListarCompetencias.cs" />
+    <Compile Include="Modulo12\PresentadorModificarCompetencias.cs" />
+    <Compile Include="Modulo14\PresentadorM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14ModificadorPlanillaCreada.cs" />
     <Compile Include="Modulo14\PresentadorM14ModificarPlanillaSolicitada.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -105,7 +114,6 @@
   <ItemGroup>
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
-    <Folder Include="Modulo12\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
