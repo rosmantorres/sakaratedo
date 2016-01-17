@@ -34,6 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             detalleCinta  = (ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
+            detalleCinta.IdPersona.Id = 6;
             fabricaEntidades = new FabricaEntidades();
             idCinta = new Cinta();//cambiar por fabrica
             idCinta.Id = 2;
@@ -60,7 +61,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaCinta()
         {
-            Cinta cinta = (Cinta)detalleCinta.Ejecutar();
+            Tuple<Entidad, DateTime> tupla = detalleCinta.Ejecutar();
+            Cinta cinta = (Cinta)tupla.Item1;
             Assert.GreaterOrEqual("Amarillo", cinta.Color_nombre);
         }
 
@@ -70,7 +72,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaCintaNoNula()
         {
-            Cinta cinta = (Cinta)detalleCinta.Ejecutar();
+            Tuple<Entidad, DateTime> tupla = detalleCinta.Ejecutar();
+            Cinta cinta = (Cinta)tupla.Item1;
             Assert.IsNotNull(cinta);
         }
 
@@ -82,7 +85,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void DetallarCintaNumeroEnteroException()
         {
             idCinta.Id = -1;
-            Cinta cinta = (Cinta)detalleCinta.Ejecutar();
+            Tuple<Entidad, DateTime> tupla = detalleCinta.Ejecutar();            
         }
         #endregion
     }

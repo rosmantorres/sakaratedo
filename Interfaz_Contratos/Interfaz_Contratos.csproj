@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="IContratoMasterPage.cs" />
     <Compile Include="Modulo7\IContratoDetallarCinta.cs" />
+    <Compile Include="Modulo7\IContratoDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\IContratoDetallarEvento.cs" />
     <Compile Include="Modulo7\IContratoListarCintasObtenidas.cs" />
     <Compile Include="Modulo7\IContratoListarEventosInscritos.cs" />
     <Compile Include="Modulo7\IContratoListarHorarioPractica.cs" />

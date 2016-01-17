@@ -15,6 +15,9 @@ using Interfaz_Contratos.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
+    /// <summary>
+    /// Clase que maneja la interfaz de detallar cinta
+    /// </summary>
     public partial class M7_DetalleCinta : System.Web.UI.Page, IContratoDetallarCinta
     {
         private Cinta idCinta;
@@ -135,7 +138,7 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-            String detalleString = Request.QueryString["cintaDetalle"];
+            String detalleStringCinta = Request.QueryString["cintaDetalle"];
 
             try
             {
@@ -157,7 +160,7 @@ namespace templateApp.GUI.Modulo7
                             idCinta = new Cinta();//cambiar por fabrica
                             idPersona = new Persona();//cambiar por fabrica
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                            idCinta.Id = int.Parse(detalleString);
+                            idCinta.Id = int.Parse(detalleStringCinta);
                             presentador.cargarDatos(idCinta, idPersona);
                         }
                         catch (Exception ex)

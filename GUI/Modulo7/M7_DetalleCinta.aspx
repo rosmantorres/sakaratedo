@@ -68,7 +68,7 @@
                      </div>
                       <div class="form-group col-sm-4 col-md-5 col-lg-4">
                         <%--<asp:Label runat="server" name="fechaObtencionCinta" id="fechaObtencionCinta" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="fechaObtencionCinta1" runat="server" name="fechaObtencionCinta">&nbsp;Fecha de Obtención:</h4>
+                          <h4 id="fechaObtencionCinta1" runat="server" name="fechaObtencionCinta">&nbsp;Fecha de Obtención: </h4>
                         <br />
                      </div>
                       

@@ -1,9 +1,7 @@
 ﻿using DominioSKD;
-using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
-using LogicaNegociosSKD;
 using LogicaNegociosSKD.Comandos.Modulo7;
 using LogicaNegociosSKD.Fabrica;
 using System;
@@ -15,44 +13,43 @@ using System.Threading.Tasks;
 namespace Interfaz_Presentadores.Modulo7
 {
     /// <summary>
-    /// Presentador para detallar cinta
+    /// Presentador para detallar competencia
     /// </summary>
-    public class PresentadorDetallarCinta
+    public class PresentadorDetallarCompetencia
     {
         private FabricaComandos fabricaComandos;
-        private IContratoDetallarCinta vista;
+        private IContratoDetallarCompetencia vista;
         /// <summary>
         /// Constructor del presentador
         /// </summary>
         /// <param name="laVista">instancia de la ventana</param>
-        public PresentadorDetallarCinta(IContratoDetallarCinta laVista)
+        public PresentadorDetallarCompetencia(IContratoDetallarCompetencia laVista)
         {
             vista = laVista;
         }
 
-        
+
         /// <summary>
-        /// Método para cargar los datos de la cinta
+        /// Método para cargar los datos de la competencia
         /// </summary>
         /// <param name="idCliente">id del cliente</param>
-        public void cargarDatos(Cinta idCinta, Persona idPersona)
-        {           
+        public void cargarDatos(Competencia idCompetencia)
+        {
             try
             {
                 fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarCinta comandoDetallarCinta =(ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
-                comandoDetallarCinta.LaEntidad = idCinta;
-                comandoDetallarCinta.IdPersona = idPersona;
-                Tuple<Entidad, DateTime> tupla = comandoDetallarCinta.Ejecutar();
-                Cinta cinta = (Cinta)tupla.Item1;
-                DateTime fechaObtencionCinta = tupla.Item2;
-                
-                vista.clasificacionCinta = cinta.Clasificacion;
-                vista.colorCinta = cinta.Color_nombre;
-                vista.fechaObtencionCinta = fechaObtencionCinta.ToString("MM/dd/yyyy");
-                vista.ordenCinta = cinta.Orden.ToString();
-                vista.rangoCinta = cinta.Rango;
-                vista.significadoCinta = cinta.Significado;
+                ComandoConsultarDetallarCompetencia comandoDetallarCompetencia = (ComandoConsultarDetallarCompetencia)fabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
+                comandoDetallarCompetencia.LaEntidad = idCompetencia;
+                Competencia cinta = (Competencia)comandoDetallarCompetencia.Ejecutar();
+
+                vista.ciudad_evento = cinta.Ubicacion.Ciudad;
+                vista.costo_evento = cinta.Costo.ToString();
+                vista.direccion_evento = cinta.Ubicacion.Direccion;
+                vista.estadoUbicacion_evento = cinta.Ubicacion.Estado;
+                vista.fechaFin_evento = cinta.FechaFin.ToString("MM/dd/yyyy");
+                vista.fechaInicio_evento = cinta.FechaInicio.ToString("MM/dd/yyyy");
+                vista.nombre_evento = cinta.Nombre;
+                vista.tipo_evento = M7_RecursosPresentador.AliasTipoEventoCompetencia;
                 
             }
             catch (NumeroEnteroInvalidoException)
@@ -66,10 +63,10 @@ namespace Interfaz_Presentadores.Modulo7
     M7_RecursosPresentador.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
             catch (NullReferenceException)
-            {               
+            {
             }
             catch (Exception)
-            {               
+            {
             }
         }
     }
