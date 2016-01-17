@@ -29,7 +29,7 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
  
-    <div id="alert" runat="server">
+    <div id="alerta" runat="server">
     </div>
     <div class="row">
    <div class="col-xs-12">
@@ -47,11 +47,11 @@
 
        <div class="col-xs-12 col-lg-12 col-md-12">
          <div class="col-sm-9 col-lg-9 col-md-9">
-             <asp:Label ID="tipoPlanilla" runat="server"></asp:Label>
-             <asp:Label ID="Planilla" runat="server"></asp:Label>
+             <asp:Label ID="tipoPlanilla1" runat="server"></asp:Label>
+             <asp:Label ID="Planilla1" runat="server"></asp:Label>
         </div>
          <div class="col-sm-9 col-lg-9 col-md-9">
-            <CKEditor:CKEditorControl ID="CKEditor1"  Height="620px" runat="server">
+            <CKEditor:CKEditorControl ID="CKEditor"  Height="620px" runat="server">
             </CKEditor:CKEditorControl>
           </div>
               <div class="col-sm-2 col-lg-2 col-md-2">
@@ -63,11 +63,11 @@
                 <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional"
                      runat="server">
                  <ContentTemplate>
-                 <asp:DropDownList ID="comboDatos" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboDatos_SelectedIndexChanged">
+                 <asp:DropDownList ID="comboDatos1" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboDatos_SelectedIndexChanged">
                  </asp:DropDownList>
                  <br />             
-                 <asp:Label id="campos" Text="" runat="server" />
-                 <asp:Label id="camposStatic" Text="" runat="server" />
+                 <asp:Label id="campos1" Text="" runat="server" />
+                 <asp:Label id="camposStatic1" Text="" runat="server" />
                 </ContentTemplate>
             </asp:UpdatePanel>                   
           </div>         

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using DominioSKD;
 
 namespace Interfaz_Contratos.Master
 {
@@ -28,6 +29,8 @@ namespace Interfaz_Contratos.Master
         String LogoutEtq { get; set; }
 
         String[] RolesUsuario { get; set; }
+
+        Cuenta UserLogin { get; set; }
 
     }
 }
