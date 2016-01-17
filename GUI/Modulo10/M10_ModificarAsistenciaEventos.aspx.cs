@@ -23,7 +23,6 @@ namespace templateApp.GUI.Modulo10
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "10";
-            LogicaEvento logicaEvento = new LogicaEvento();
             if (!IsPostBack)
             {
                 String idEvento = Request.QueryString[M10_RecursosInterfaz.Modificar];
@@ -34,7 +33,7 @@ namespace templateApp.GUI.Modulo10
 
                 if (Session["M10_tipo"].Equals(M10_RecursosInterfaz.Evento))
                 {
-                    evento = logicaEvento.ConsultarEvento(Session["M10_IdEvento"].ToString());
+                    evento = LogicaAsistencia.ConsultarEvento(Session["M10_IdEvento"].ToString());
                     fechaEvento.Text = evento.Horario.FechaInicio.ToShortDateString();
                     nombreEvento.Text = evento.Nombre;
 

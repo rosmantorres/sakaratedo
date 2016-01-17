@@ -187,5 +187,44 @@ namespace LogicaNegociosSKD.Modulo10
             Competencia competencia = BDAsistencia.consultarCompetenciasXIDDetalle(idCompetencia);
             return competencia;
         }
+
+        /// <summary>
+        /// Metodo que retorna de la BD un evento dado el ID
+        /// </summary>
+        /// <param name="idEvento">Id del evento</param>
+        /// <returns>Objeto de tipo evento</returns>
+
+        public static Evento ConsultarEvento(String idEvento)
+        {
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Evento evento = new Evento();
+            try
+            {
+                BDEvento baseDeDatosEvento = new BDEvento();
+                evento = baseDeDatosEvento.ConsultarEvento(idEvento);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosLogicaModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return evento;
+        }
     }
 }
