@@ -68,6 +68,7 @@
     <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
     <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
     <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
+    <Compile Include="DAO\Modulo15\DaoImplemento.cs" />
     <Compile Include="DAO\Modulo3\DaoOrganizacion.cs" />
     <Compile Include="DAO\Modulo3\RecursosDaoModulo3.Designer.cs" />
     <Compile Include="DAO\Modulo5\DaoCinta.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="InterfazDAO\Modulo14\IDaoDiseno.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoPlanilla.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoSolicitud.cs" />
+    <Compile Include="InterfazDAO\Modulo15\IDaoImplemento.cs" />
     <Compile Include="InterfazDAO\Modulo3\IDaoOrganizacion.cs" />
     <Compile Include="InterfazDAO\Modulo5\IDaoCinta.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
@@ -310,7 +312,6 @@
     <Folder Include="DAO\Modulo10\" />
     <Folder Include="DAO\Modulo11\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo15\" />
     <Folder Include="DAO\Modulo16\" />
     <Folder Include="DAO\Modulo1\" />
     <Folder Include="DAO\Modulo2\" />
@@ -322,7 +323,6 @@
     <Folder Include="InterfazDAO\Modulo10\" />
     <Folder Include="InterfazDAO\Modulo11\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo15\" />
     <Folder Include="InterfazDAO\Modulo16\" />
     <Folder Include="InterfazDAO\Modulo1\" />
     <Folder Include="InterfazDAO\Modulo2\" />

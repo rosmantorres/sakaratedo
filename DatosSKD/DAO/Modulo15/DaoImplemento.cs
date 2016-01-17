@@ -204,7 +204,7 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region listarInventarioDatos
-        public static List<Implemento> listarInventarioDatos(Dojo dojo)
+        public static List<Implemento> listarInventarioDatos(Entidad parametroDojo)
         {
             BDConexion laConexion;
             List<Implemento> listaDeImplementos = new List<Implemento>();
@@ -212,6 +212,7 @@ namespace DatosSKD.DAO.Modulo15
             Parametro parametro;
             parametros = new List<Parametro>();
 
+            Dojo dojo = (Dojo)parametroDojo;
 
             try
             {
