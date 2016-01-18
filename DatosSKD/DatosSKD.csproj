@@ -81,11 +81,13 @@
     <Compile Include="InterfazDAO\Modulo14\IDaoSolicitud.cs" />
     <Compile Include="InterfazDAO\Modulo3\IDaoOrganizacion.cs" />
     <Compile Include="InterfazDAO\Modulo5\IDaoCinta.cs" />
+    <Compile Include="Modulo10\BDAsistencia.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo10.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo11\BDResultado.cs" />
     <Compile Include="Modulo11\RecursosBDModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

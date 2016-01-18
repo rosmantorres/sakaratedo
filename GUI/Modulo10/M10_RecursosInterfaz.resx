@@ -117,7 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NombreEvento0" xml:space="preserve">
-    <value>Seleccionar Evento:</value>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
+  </data>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonInfoCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEvento.aspx?tipo=Competencia&amp;compDetalle=</value>
+  </data>
+  <data name="BotonInfoEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M10_DetalleAsistenciaEvento.aspx?tipo=Evento&amp;compDetalle=</value>
+  </data>
+  <data name="BotonModificarCompetencia" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=Competencia&amp;modificar=</value>
+  </data>
+  <data name="BotonModificarEvento" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M10_ModificarAsistenciaEventos.aspx?tipo=Evento&amp;modificar=</value>
+  </data>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="Competencia" xml:space="preserve">
+    <value>Competencia</value>
+  </data>
+  <data name="Evento" xml:space="preserve">
+    <value>Evento</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="Modificar" xml:space="preserve">
+    <value>modificar</value>
+  </data>
+  <data name="Tipo" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
   </data>
 </root>
