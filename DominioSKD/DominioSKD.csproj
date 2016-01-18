@@ -56,6 +56,9 @@
     <Compile Include="Entidades\Modulo3\Organizacion.cs" />
     <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
+    <Compile Include="Entidades\Modulo9\Evento.cs" />
+    <Compile Include="Entidades\Modulo9\Horario.cs" />
+    <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
@@ -66,9 +69,9 @@
     <Compile Include="Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
-    <Compile Include="Entidades\Modulo9\Evento.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="HistorialCinta.cs" />
-    <Compile Include="Entidades\Modulo9\Horario.cs" />
+    <Compile Include="Horario.cs" />
     <Compile Include="Implemento.cs" />
     <Compile Include="Inscripcion.cs" />
     <Compile Include="Organizacion.cs" />
@@ -85,7 +88,7 @@
     <Compile Include="SolicitudP.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="Telefono.cs" />
-    <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
+    <Compile Include="TipoEvento.cs" />
     <Compile Include="Entidades\Modulo12\Ubicacion.cs" />
     <Compile Include="Ubicacion.cs" />
   </ItemGroup>

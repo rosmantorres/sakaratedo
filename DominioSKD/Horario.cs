@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD.Entidades.Modulo9
+namespace DominioSKD
 {
-    public class Horario : Entidad
+    public class Horario
     {
         #region Atributos
- 
+        private int id;
         private DateTime fechaInicio;
         private DateTime fechaFin;
         private int horaInicio;
@@ -17,16 +17,16 @@ namespace DominioSKD.Entidades.Modulo9
         #endregion
 
         #region Constructores
-        public Horario( DateTime fechaInicio, DateTime fechaFin, int horaInicio, int horaFin) : base()
+        public Horario(int id, DateTime fechaInicio, DateTime fechaFin, int horaInicio, int horaFin)
         {
-
+            this.id = id;
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
         }
 
-        public Horario() : base()
+        public Horario()
         {
 
         }
@@ -34,10 +34,15 @@ namespace DominioSKD.Entidades.Modulo9
         #endregion
 
         #region Propiedades
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public DateTime FechaInicio
         {
-            get { return fechaInicio; }
+            get { return fechaInicio;}
             set { fechaInicio = value; }
         }
 
@@ -61,6 +66,4 @@ namespace DominioSKD.Entidades.Modulo9
 
         #endregion  
     }
-
 }
-

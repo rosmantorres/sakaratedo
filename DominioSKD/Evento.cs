@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD.Entidades.Modulo9
+namespace DominioSKD
 {
-    public class Evento : Entidad
+    public class Evento
     {
         #region Atributos
 
+        private int id;
         private String nombre;
         private String descripcion;
         private float costo;
@@ -24,9 +25,9 @@ namespace DominioSKD.Entidades.Modulo9
 
         #region Constructores
 
-        public Evento( String nombre, String descripcion, float costo, Boolean estado, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario) : base()
+        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
         {
-            
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.costo = costo;
@@ -37,9 +38,9 @@ namespace DominioSKD.Entidades.Modulo9
             this.estado = estado;
         }
 
-        public Evento( String nombre, String descripcion, float costo, Boolean estado, Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario) : base()
+        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado ,Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
         {
-            
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.persona = persona;
@@ -51,9 +52,9 @@ namespace DominioSKD.Entidades.Modulo9
             this.estado = estado;
         }
 
-        public Evento(String nombre, String descripcion, float costo, Ubicacion ubicacion, TipoEvento tipoEvento, Horario horario) : base()
-        { 
-            
+        public Evento(int id, String nombre, String descripcion, float costo, Ubicacion ubicacion, TipoEvento tipoEvento, Horario horario)
+        {
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.costo = costo;
@@ -67,7 +68,7 @@ namespace DominioSKD.Entidades.Modulo9
         /// <summary>
         /// Constructor vacio de la clase
         /// </summary>
-        public Evento() : base()
+        public Evento()
         {
 
         }
@@ -79,6 +80,11 @@ namespace DominioSKD.Entidades.Modulo9
 
         #region Propiedades
 
+        public int Id_evento
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public String Descripcion
         {
@@ -135,5 +141,8 @@ namespace DominioSKD.Entidades.Modulo9
             set { persona = value; }
         }
         #endregion
+
+
+
     }
 }
