@@ -35,45 +35,33 @@ namespace DatosSKD.DAO.Modulo16
         #region Metodos
 
         /// <summary>
-        /// Metodo que modifica por id en la Base de Datos
+        /// Metodo heredado del DAOgeneral
         /// </summary>
-        /// <param name="persona">La persona a la que se le agregara el item al carrito</param>
-        /// <param name="objeto">El item que se agregara como tal</param>
-        /// <param name="tipoObjeto">El tipo de objeto al que nos estamos refiriendo como tal</param>
-        /// <param name="cantidad">La cantidad del item que estamos agregando</param>
-        /// <returns>El exito o fallo del proceso</returns>
+        /// <param name="persona">La persona a agregar</param>
+        /// <returns>el exito o fallo del proceso</returns>
         public bool Agregar(Entidad persona)
         {
-
-            return true;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Metodo que modifica por id en la Base de Datos
+        /// Metodo heredado del DAOgeneral
         /// </summary>
-        /// <param name="persona">La persona a la que se le agregara el item al carrito</param>
-        /// <param name="objeto">El item que se agregara como tal</param>
-        /// <param name="tipoObjeto">El tipo de objeto al que nos estamos refiriendo como tal</param>
-        /// <param name="cantidad">La cantidad del item que estamos agregando</param>
-        /// <returns>El exito o fallo del proceso</returns>
+        /// <param name="persona">La persona a modificar</param>
+        /// <returns>el Exito o fallo del proceso</returns>
         public bool Modificar(Entidad persona)
         {
-             
-            return true;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Metodo que consulta por id en la Base de Datos
+        /// Metodo heredado del DAOgeneral
         /// </summary>
-        /// <param name="persona">La persona a la que se le agregara el item al carrito</param>
-        /// <param name="objeto">El item que se agregara como tal</param>
-        /// <param name="tipoObjeto">El tipo de objeto al que nos estamos refiriendo como tal</param>
-        /// <param name="cantidad">La cantidad del item que estamos agregando</param>
-        /// <returns>El exito o fallo del proceso</returns>
+        /// <param name="persona">La persona a consultar</param>
+        /// <returns>La entidad deseada</returns>
         public DominioSKD.Entidad ConsultarXId(Entidad persona)
         {
-           Carrito P = new Carrito();
-           return P;
+            throw new NotImplementedException();
         }
 
         #region AgregarItem
