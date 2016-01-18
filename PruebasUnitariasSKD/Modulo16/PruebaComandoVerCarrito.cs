@@ -11,7 +11,6 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo9;
 using DominioSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo16
@@ -52,13 +51,14 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //Las Personas
-            this.persona = FabricaEntidades.ObtenerPersona();
+            FabricaEntidades fab = new FabricaEntidades();
+            this.persona = fab.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = FabricaEntidades.ObtenerPersona();
+            this.persona2 = fab.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = FabricaEntidades.ObtenerPersona();
+            this.persona3 = fab.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = FabricaEntidades.ObtenerPersona();
+            this.persona4 = fab.ObtenerPersona();
             this.persona4.Id = 14;
 
             //Implemento
@@ -225,24 +225,25 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            FabricaComandos fabrcom = new FabricaComandos();
             //Elimino de la primera prueba
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 11);
+            this.ComandoEliminar = fabrcom.CrearComandoeliminarItem(1, this.implemento, this.persona);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la segunda prueba
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 12);
+            this.ComandoEliminar = fabrcom.CrearComandoeliminarItem(3, this.implemento, this.persona2);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la tercera prueba
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 13);
+            this.ComandoEliminar = fabrcom.CrearComandoeliminarItem(2, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la cuarta prueba
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 14);
+            this.ComandoEliminar = fabrcom.CrearComandoeliminarItem(1, this.implemento, this.persona4);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 14);
+            this.ComandoEliminar = fabrcom.CrearComandoeliminarItem(3, this.implemento, this.persona4);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 14);
+            this.ComandoEliminar = fabrcom.CrearComandoeliminarItem(2, this.implemento, this.persona4);
             this.ComandoEliminar.Ejecutar();
 
             //Dejo en null

@@ -10,7 +10,7 @@ using LogicaNegociosSKD.Modulo7;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using templateApp.GUI.Master;
-using DominioSKD.Entidades.Modulo9;
+using DominioSKD;
 
 
 namespace templateApp.GUI.Modulo7

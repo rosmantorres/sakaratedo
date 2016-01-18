@@ -293,9 +293,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+                FabricaEntidades fabenti = new FabricaEntidades();
                 //Persona que eventualmente la buscaremos por el session
-                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                Entidad persona = (Persona)fabenti.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
