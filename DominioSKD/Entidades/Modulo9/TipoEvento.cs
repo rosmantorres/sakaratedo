@@ -6,35 +6,27 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class TipoEvento
+    public class TipoEvento : Entidad
     {
         #region Atributos
-        private int id;
         private String nombre;
         #endregion
 
         #region Constructores
-        public TipoEvento(int id, String nombre)
+        public TipoEvento(String nombre):base()
         {
-            this.id = id;
+           
             this.nombre = nombre;
         }
 
-        public TipoEvento()
+        public TipoEvento():base()
         {
-            id = 0;
-            nombre = "";
+            
+           
         }
         #endregion
 
         #region Propiedades
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
 
         public String Nombre
         {

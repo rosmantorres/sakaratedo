@@ -66,9 +66,9 @@
     <Compile Include="Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
-    <Compile Include="Evento.cs" />
+    <Compile Include="Entidades\Modulo9\Evento.cs" />
     <Compile Include="HistorialCinta.cs" />
-    <Compile Include="Horario.cs" />
+    <Compile Include="Entidades\Modulo9\Horario.cs" />
     <Compile Include="Implemento.cs" />
     <Compile Include="Inscripcion.cs" />
     <Compile Include="Organizacion.cs" />
@@ -85,7 +85,7 @@
     <Compile Include="SolicitudP.cs" />
     <Compile Include="SolicitudPlanilla.cs" />
     <Compile Include="Telefono.cs" />
-    <Compile Include="TipoEvento.cs" />
+    <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Entidades\Modulo12\Ubicacion.cs" />
     <Compile Include="Ubicacion.cs" />
   </ItemGroup>
@@ -106,7 +106,6 @@
     <Folder Include="Entidades\Modulo4\" />
     <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
-    <Folder Include="Entidades\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

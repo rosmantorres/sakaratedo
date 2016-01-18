@@ -167,6 +167,21 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 9
+        public Entidad ObtenerEvento()
+        {
+            return new Evento();
+        }
+
+        public Entidad ObtenerHorario()
+        {
+            return new Horario();
+        }
+
+        public Entidad ObtenerTipoEvento()
+        {
+            return new TipoEvento();
+        }
+
         #endregion
 
         #region Modulo 10
