@@ -70,6 +70,12 @@
     <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
     <Compile Include="DAO\Modulo3\DaoOrganizacion.cs" />
     <Compile Include="DAO\Modulo3\RecursosDaoModulo3.Designer.cs" />
+    <Compile Include="DAO\Modulo4\DaoDojo.cs" />
+    <Compile Include="DAO\Modulo4\RecursosDAOModulo4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo4.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Modulo5\DaoCinta.cs" />
     <Compile Include="DAO\Modulo5\RecursosDaoModulo5.Designer.cs" />
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
@@ -204,6 +210,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx" />
     <EmbeddedResource Include="DAO\Modulo3\RecursosDaoModulo3.resx" />
+    <EmbeddedResource Include="DAO\Modulo4\RecursosDAOModulo4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo5\RecursosDaoModulo5.resx" />
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -314,7 +324,6 @@
     <Folder Include="DAO\Modulo16\" />
     <Folder Include="DAO\Modulo1\" />
     <Folder Include="DAO\Modulo2\" />
-    <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo6\" />
     <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgregarDojo" xml:space="preserve">
+    <value>M4_AgregarDojo</value>
+  </data>
+  <data name="AgregarHistorialMatricula" xml:space="preserve">
+    <value>M4_AgregarHistorialMatricula</value>
+  </data>
+  <data name="AliasEmailDojo" xml:space="preserve">
+    <value>emailDojo</value>
+  </data>
+  <data name="AliasEstiloDojo" xml:space="preserve">
+    <value>estiloDojo</value>
+  </data>
+  <data name="AliasFechaDojo" xml:space="preserve">
+    <value>fechaRegistroDojo</value>
+  </data>
+  <data name="AliasFechaMatricula" xml:space="preserve">
+    <value>fechaMatricula</value>
+  </data>
+  <data name="AliasIdDojo" xml:space="preserve">
+    <value>idDojo</value>
+  </data>
+  <data name="AliasIdDojoPersona" xml:space="preserve">
+    <value>idDojoPersona</value>
+  </data>
+  <data name="AliasIdMatricula" xml:space="preserve">
+    <value>idMatricula</value>
+  </data>
+  <data name="AliasIdOrganizacion" xml:space="preserve">
+    <value>organizacionDojo</value>
+  </data>
+  <data name="AliasIdUbicacion" xml:space="preserve">
+    <value>idUbicacion</value>
+  </data>
+  <data name="AliasLatitudDireccion" xml:space="preserve">
+    <value>latitudDireccion</value>
+  </data>
+  <data name="AliasLogoDojo" xml:space="preserve">
+    <value>logoDojo</value>
+  </data>
+  <data name="AliasLongitudDireccion" xml:space="preserve">
+    <value>longitudDireccion</value>
+  </data>
+  <data name="AliasModalidad" xml:space="preserve">
+    <value>modalMatricula</value>
+  </data>
+  <data name="AliasMonto" xml:space="preserve">
+    <value>montoMatricula</value>
+  </data>
+  <data name="AliasNombreCiudad" xml:space="preserve">
+    <value>nombreCiudad</value>
+  </data>
+  <data name="AliasNombreDireccion" xml:space="preserve">
+    <value>nombreDireccion</value>
+  </data>
+  <data name="AliasNombreDojo" xml:space="preserve">
+    <value>nombreDojo</value>
+  </data>
+  <data name="AliasNombreEstado" xml:space="preserve">
+    <value>nombreEstado</value>
+  </data>
+  <data name="AliasNombreOrganizacion" xml:space="preserve">
+    <value>orgNombreDojo</value>
+  </data>
+  <data name="AliasRifDojo" xml:space="preserve">
+    <value>rifDojo</value>
+  </data>
+  <data name="AliasStatusDojo" xml:space="preserve">
+    <value>statusDojo</value>
+  </data>
+  <data name="AliasTelefonoDojo" xml:space="preserve">
+    <value>telefonoDojo</value>
+  </data>
+  <data name="BuscarIdDojo" xml:space="preserve">
+    <value>M4_BuscarIdDojo</value>
+  </data>
+  <data name="BuscarRifDojo" xml:space="preserve">
+    <value>M4_BuscarRifDojo</value>
+  </data>
+  <data name="Codigo_Dojo_Existente" xml:space="preserve">
+    <value>SKD_00_006</value>
+  </data>
+  <data name="Codigo_Dojo_Inexistente" xml:space="preserve">
+    <value>SKD_00_005</value>
+    <comment>Codigo de error cuando no existe la competencia</comment>
+  </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error en el parseo</comment>
+  </data>
+  <data name="ConsultarDojos" xml:space="preserve">
+    <value>M4_ConsultarDojos</value>
+  </data>
+  <data name="ConsultarDojoXId" xml:space="preserve">
+    <value>M4_ConsultarDojosXId</value>
+  </data>
+  <data name="ConsultarIdPersona" xml:space="preserve">
+    <value>M4_ConsultarIdPersona</value>
+  </data>
+  <data name="ConsultarMatriculas" xml:space="preserve">
+    <value>M4_ConsultarMatriculas</value>
+  </data>
+  <data name="ConsultarMatriculasXDojo" xml:space="preserve">
+    <value>M4_ConsultarMatriculasXDojo</value>
+  </data>
+  <data name="ConsultarMatriculasXId" xml:space="preserve">
+    <value>M4_ConsultarMatriculasXid</value>
+  </data>
+  <data name="EliminarDojo" xml:space="preserve">
+    <value>M4_EliminarDojo</value>
+  </data>
+  <data name="EliminarHMatricula" xml:space="preserve">
+    <value>M4_EliminarHMatricula</value>
+  </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
+  <data name="Mensaje_Dojo_Existente" xml:space="preserve">
+    <value>El rif del Dojo debe ser único, el Dojo ya existe</value>
+  </data>
+  <data name="Mensaje_Dojo_Inexistente" xml:space="preserve">
+    <value>El Dojo no existe</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
+  </data>
+  <data name="ParametroDireccion" xml:space="preserve">
+    <value>Direccion</value>
+  </data>
+  <data name="ParametroEmailDojo" xml:space="preserve">
+    <value>Email_dojo</value>
+  </data>
+  <data name="ParametroFechaRegistro" xml:space="preserve">
+    <value>fecha_reg_dojo</value>
+  </data>
+  <data name="ParametroFechaVigenteHistorial" xml:space="preserve">
+    <value>vigencia_historial</value>
+  </data>
+  <data name="ParametroLatitud" xml:space="preserve">
+    <value>Latitud</value>
+  </data>
+  <data name="ParametroLogoDojo" xml:space="preserve">
+    <value>Logo_dojo</value>
+  </data>
+  <data name="ParametroLongitud" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="ParametroModalidad" xml:space="preserve">
+    <value>modalidad_matricula</value>
+  </data>
+  <data name="ParametroMontoMatricula" xml:space="preserve">
+    <value>monto_matricula</value>
+  </data>
+  <data name="ParametroNombreCiudad" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="ParametroNombreDojo" xml:space="preserve">
+    <value>Nombre_dojo</value>
+  </data>
+  <data name="ParametroNombreEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="ParametroRifDojo" xml:space="preserve">
+    <value>Rif_dojo</value>
+  </data>
+  <data name="ParametroStatusDojo" xml:space="preserve">
+    <value>Status_dojo</value>
+  </data>
+  <data name="ParametroTelefonoDojo" xml:space="preserve">
+    <value>Telefono_dojo</value>
+  </data>
+  <data name="ParamIdDojo" xml:space="preserve">
+    <value>@idDojo</value>
+  </data>
+  <data name="ParamIdMatricula" xml:space="preserve">
+    <value>@idmatricula</value>
+  </data>
+  <data name="ParamIdOrganizacion" xml:space="preserve">
+    <value>@idOrganizacion</value>
+  </data>
+  <data name="ParamIdUsuario" xml:space="preserve">
+    <value>@idPersona</value>
+  </data>
+  <data name="ParamRifDojo" xml:space="preserve">
+    <value>@rifDojo</value>
+  </data>
+  <data name="ParamSalidaNumDojo" xml:space="preserve">
+    <value>@numDojo</value>
+  </data>
+</root>
