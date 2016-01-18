@@ -1,0 +1,64 @@
+2016-01-18 14:50:55,734 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:50:55,742 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:50:55,742 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-18 14:50:55,742 INFO  LogicaCompetencias - Metodo: obtenerListaDeCompetencias
+2016-01-18 14:50:55,752 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:50:55,752 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:50:55,752 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-18 14:50:55,752 INFO  LogicaCompetencias - Metodo: obtenerListaDeCompetencias
+2016-01-18 14:50:55,761 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:50:55,762 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:50:55,762 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-18 14:50:55,762 INFO  BDCompetencia - Metodo: ListarCompetencias
+2016-01-18 14:50:55,804 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:50:55,804 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:50:55,804 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-18 14:50:55,804 INFO  BDCompetencia - Metodo: ListarCompetencias
+2016-01-18 14:51:02,372 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:51:02,372 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:51:02,372 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-18 14:51:02,372 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeOrganizaciones
+2016-01-18 14:51:02,375 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:51:02,375 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:51:02,375 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-18 14:51:02,375 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeOrganizaciones
+2016-01-18 14:51:02,380 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:51:02,380 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:51:02,380 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-18 14:51:02,380 INFO  BDCompetencia - Metodo: M12ListarOrganizaciones
+2016-01-18 14:51:02,407 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:51:02,407 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:51:02,407 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-18 14:51:02,407 INFO  BDCompetencia - Metodo: M12ListarOrganizaciones
+2016-01-18 14:51:02,420 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:51:02,420 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:51:02,420 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-18 14:51:02,420 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-18 14:51:02,422 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:51:02,422 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:51:02,422 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-18 14:51:02,422 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-18 14:51:02,426 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:51:02,426 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:51:02,426 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-18 14:51:02,426 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-18 14:51:02,442 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:51:02,442 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:51:02,442 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-18 14:51:02,442 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-18 14:51:02,453 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:51:02,453 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:51:02,453 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-18 14:51:02,453 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-18 14:51:02,460 INFO  LogicaCompetencias - *******************************************************
+2016-01-18 14:51:02,461 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-18 14:51:02,461 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-18 14:51:02,461 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-18 14:51:02,465 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:51:02,465 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:51:02,465 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-18 14:51:02,465 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-18 14:51:02,487 INFO  BDCompetencia - *******************************************************
+2016-01-18 14:51:02,487 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-18 14:51:02,487 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-18 14:51:02,487 INFO  BDCompetencia - Metodo: M12ListarCintas
