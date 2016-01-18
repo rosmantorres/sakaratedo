@@ -41,7 +41,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// metodo para consultar la lista de los Eventos
         /// </summary>
-        public void consultarEventos()
+        public void consultarEventos(int persona)
         {
             try
             {
@@ -52,13 +52,18 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Instancio el comando para listar el evento
                 FabricaComandos fabrica = new FabricaComandos();
-                Comando<List<Entidad>> comandoListarEventos = fabrica.CrearComandoConsultarTodosEventos();
+                Comando<Entidad> comandoListarEventos = fabrica.CrearComandoConsultarTodosEventos();
 
-                //Casteamos
-                List<Entidad> laLista = comandoListarEventos.Ejecutar();
+                // Casteamos el parametro
+                PersonaM1 param = new PersonaM1();
+                param._Id = persona;
+                comandoListarEventos.LaEntidad = param;
+
+                // Invocamos el comando
+                ListaEvento com = (ListaEvento)comandoListarEventos.Ejecutar();
 
                 //Obtenemos cada evento para ponerlos en la tabla
-                foreach (Entidad aux in laLista)
+                foreach (Entidad aux in com.ListaEventos)
                 {
                     //Casteamos la entidad como un evento
                     Evento item = (Evento)aux;

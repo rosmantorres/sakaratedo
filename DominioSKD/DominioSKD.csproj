@@ -51,6 +51,7 @@
     <Compile Include="Entidades\Modulo15\Implemento.cs" />
     <Compile Include="Entidades\Modulo16\Carrito.cs" />
     <Compile Include="Entidades\Modulo16\ListaCompra.cs" />
+    <Compile Include="Entidades\Modulo16\ListaEvento.cs" />
     <Compile Include="Entidades\Modulo16\ListaImplemento.cs" />
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
     <Compile Include="Persona.cs" />

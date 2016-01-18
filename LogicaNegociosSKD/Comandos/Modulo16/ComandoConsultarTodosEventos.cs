@@ -15,20 +15,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
     /// <summary>
     /// Comando para consultar la lista de todos los eventos
     /// </summary>
-    public class ComandoConsultarTodosEventos : Comando<List<Entidad>>
+    public class ComandoConsultarTodosEventos : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
-        /// Atributos del ComandoConsultarTodosEventos
-        /// </summary>
-        /// <param name="NONE">No posee paso de parametros</param>
+        /// Atributos del ComandoConsultarTodosProductos
+        private PersonaM1 p;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad 
-        /// </summary>
-        /// <Prop name="NONE">No posee propiedades</param>
+        /// Propiedad del Atributo p
+
+        public PersonaM1 P
+        {
+            get { return this.p; }
+            set { this.p = value; }
+        }
         #endregion
 
         #region Constructores
@@ -40,6 +43,15 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
         }
 
+        /// <summary>
+        /// Constructor del ComandoConsultarTodosProductos
+        /// </summary>
+        /// <param name="p">La persona que se encuentra logueada</param>
+        public ComandoConsultarTodosEventos(PersonaM1 p)
+        {
+            this.p = p;
+        }
+
         #endregion
 
         #region Metodo Ejecutar
@@ -48,7 +60,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// </summary>
         /// <param name="NONE">Este metodo no posee paso de parametros</param>
         /// <returns>lista de Eventos</returns>
-        public override List<Entidad> Ejecutar()
+        public override Entidad Ejecutar()
         {
             try
             {
@@ -61,12 +73,15 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
                 IdaoEvento daoEventos = fabrica.ObtenerDaoEventos();
 
+                //Casteamos
+                PersonaM1 p = (PersonaM1)this.LaEntidad;
+
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamado
-                return daoEventos.ConsultarTodos();
+                return daoEventos.ListarEvento(p);
             }
             #region catches
 

@@ -24,7 +24,7 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// </summary>
         /// <param name="NONE">Este metodo no posee paso de parametros</param>
         /// <returns>Lista con todos los eventos</returns>
-        List<Entidad> ListarEvento();
+        Entidad ListarEvento(Entidad entidad);
 
         /// <summary>
         /// Metodo que obtiene el detalle del evento

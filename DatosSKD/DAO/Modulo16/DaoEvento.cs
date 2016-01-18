@@ -30,25 +30,34 @@ namespace DatosSKD.DAO.Modulo16
         }
         #endregion
 
-        #region Metodos para ConsultarTodos (Listar Eventos)
+        #region Metodos para ListarEvento
         /// <summary>
-        /// Metodo que retorma una lista de eventos existentes
+        /// Metodo que retorma una lista de los eventos existentes de acuerdo a las restricciones
         /// </summary>
-        /// <param name=NONE>Este metodo no posee paso de parametros</param>
-        /// <returns>Todo lo que tiene actualmente el inventario de eventos</returns>
-        public List<Entidad> ConsultarTodos()
+        /// <param name=Entidad>Se pasa el id de la persona</param>
+        /// <returns>Lista solo los eventos en los que puede participar el usuario logueado</returns>
+        public Entidad ListarEvento (Entidad evento)
         {
             FabricaEntidades laFabrica = new FabricaEntidades();
-            List<Entidad> laLista = new List<Entidad>();
+            List<Evento> laLista = new List<Evento>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
             Evento elEvento;
+            ListaEvento lista = new ListaEvento();
+
+            // Casteamos
+            PersonaM1 p = (PersonaM1)evento;
 
             try
             {
                 //Escribo en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
+                parametros.Add(parametro);
 
                 //Ejecuto el Stored Procedure 
                 resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_EVENTOS, parametros);
@@ -68,6 +77,9 @@ namespace DatosSKD.DAO.Modulo16
 
                 }
 
+                //Agrego a la lista
+                lista.ListaEventos = laLista;
+
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
@@ -76,7 +88,7 @@ namespace DatosSKD.DAO.Modulo16
                 RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Retorno la lista
-                return laLista;
+                return lista;
 
             }
             #region catches
@@ -251,17 +263,17 @@ namespace DatosSKD.DAO.Modulo16
 
         #endregion
 
-        #region Metodo para ListarEvento
-
+        #region Metodo para ConsultarTodos sin parametros
         /// <summary>
-        /// Metodo para el listar de evento sin parametro
+        /// Metodo que devueve un tipoevento
         /// </summary>
+        /// <param name="NONE">El metodo no posee paso de parametros</param>
         /// <returns>Retorna una lista de eventos</returns>
-        public List<Entidad> ListarEvento()
+
+        public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
         }
-
         #endregion
 
         #region Metodo de Agregar

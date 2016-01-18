@@ -204,7 +204,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
         /// </summary>
         /// <returns>El ComandoConsultarTodosEventos</returns>
-        public Comando<List<Entidad>> CrearComandoConsultarTodosEventos()
+        public Comando <Entidad> CrearComandoConsultarTodosEventos()
         {
             return new ComandoConsultarTodosEventos();
         }
