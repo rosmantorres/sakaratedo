@@ -192,6 +192,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarDiseño();
         }
+
+        public Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
+        {
+            return new ComandoConsultarPlanillas();
+        }
         #endregion
 
         #region Modulo 15

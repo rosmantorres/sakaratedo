@@ -60,11 +60,14 @@
     <Compile Include="Modulo12\PresentadorDetalleCompetencia.cs" />
     <Compile Include="Modulo12\PresentadorListarCompetencias.cs" />
     <Compile Include="Modulo12\PresentadorModificarCompetencias.cs" />
+    <Compile Include="Modulo14\PresentadorM14ConsultarPlanillas.cs" />
+    <Compile Include="Modulo14\PresentadorM14ConsultarPlanillasSolicitadas.cs" />
     <Compile Include="Modulo14\PresentadorM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14ModificadorPlanillaCreada.cs" />
     <Compile Include="Modulo14\PresentadorM14ModificarPlanillaSolicitada.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Modulo14\PresentadorM14MostrarDiseno.cs" />
     <Compile Include="Modulo14\PresentadorM14RegistrarPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14SolicitarPlanilla.cs" />
     <Compile Include="Modulo14\PresentadorM14SolicitudPlanilla.cs" />
