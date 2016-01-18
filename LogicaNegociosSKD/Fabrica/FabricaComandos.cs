@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD.Comandos.Modulo5;
+using LogicaNegociosSKD.Comandos.Modulo12;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -82,6 +83,12 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 12
+
+        public Comando<List<Entidad>> ObtenerComandoConsultarCompetencias()
+        {
+            return new ComandoConsultarTodosCompetencia();
+        }
+
         #endregion
 
         #region Modulo 13

@@ -193,7 +193,7 @@ namespace DominioSKD.Fabrica
 
         public Entidad ObtenerCinta()
         {
-            return new Cinta();
+            return new DominioSKD.Entidades.Modulo5.Cinta();
         }
 
         public Entidad ObtenerOrganizacion(int elId, String elNombre)
@@ -213,47 +213,47 @@ namespace DominioSKD.Fabrica
 
         public Entidad ObtenerCategoria()
         {
-            return new Categoria();
+            return new DominioSKD.Entidades.Modulo12.Categoria();
         }
 
         public   Entidad ObtenerUbicacion()
         {
-            return new Ubicacion();
+            return new DominioSKD.Entidades.Modulo12.Ubicacion();
         }
 
         public   Entidad ObtenerCompetencia()
         {
-            return new Competencia();
+            return new DominioSKD.Entidades.Modulo12.Competencia();
         }
 
         public   Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
-            return new Categoria(laEdadIni, laEdadFin,laCintaIni, laCintaFinal, elSexo);
+            return new DominioSKD.Entidades.Modulo12.Categoria(laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
         public   Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
-            return new Categoria(elId, laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
+            return new DominioSKD.Entidades.Modulo12.Categoria(elId, laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
         public   Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
         {
-            return new Ubicacion(elId, laCiudad, elEstado);
+            return new DominioSKD.Entidades.Modulo12.Ubicacion(elId, laCiudad, elEstado);
         }
 
         public   Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
-            return new Ubicacion(laLat, laLon, laCiudad, elEstado, LaDir);
+            return new DominioSKD.Entidades.Modulo12.Ubicacion(laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
         public   Entidad ObtenerUbicacion(int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
-            return new Ubicacion(elId, laLat, laLon, laCiudad, elEstado, LaDir);
+            return new DominioSKD.Entidades.Modulo12.Ubicacion(elId, laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
         public   Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
         {
-            return new Competencia(elId, elNombre, elTipo, orgTodas, elStatus);
+            return new DominioSKD.Entidades.Modulo12.Competencia(elId, elNombre, elTipo, orgTodas, elStatus);
         }
         #endregion
 
