@@ -170,15 +170,15 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona2
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(3, 1, 12);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(3, this.implemento, this.persona2);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona3
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(2, 1, 13);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(2, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 13);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 13);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(3, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();  
 
             //Dejo en null

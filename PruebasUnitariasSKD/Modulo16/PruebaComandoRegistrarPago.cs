@@ -56,9 +56,9 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento = new Implemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
-
+            FabricaEntidades fabenti = new FabricaEntidades();
             //Iniciamos los atributos para la prueba de vacio
-            this.persona = FabricaEntidades.ObtenerPersona();
+            this.persona = fabenti.ObtenerPersona();
             this.PruebaComandoVacio = FabricaComandos.CrearComandoRegistrarPago();
             this.PruebaComandoVacio2 = FabricaComandos.CrearComandoRegistrarPago(this.persona, "prueba");
             this.pruebaComandoVacio3 = (ComandoRegistrarPago)FabricaComandos.CrearComandoRegistrarPago();
@@ -66,18 +66,18 @@ namespace PruebasUnitariasSKD.Modulo16
                 (this.persona, "prueba");
 
             //Iniciamos los atributos para la prueba de RegistrarPago
-
+            FabricaEntidades fabent = new FabricaEntidades();
             //La persona
             this.persona.Id = 11;
-            this.persona2 = FabricaEntidades.ObtenerPersona();
+            this.persona2 = fabent.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = FabricaEntidades.ObtenerPersona();
+            this.persona3 = fabent.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = FabricaEntidades.ObtenerPersona();
+            this.persona4 = fabent.ObtenerPersona();
             this.persona4.Id = 14;
-            this.persona5 = FabricaEntidades.ObtenerPersona();
+            this.persona5 = fabent.ObtenerPersona();
             this.persona5.Id = 15;
-            this.persona6 = FabricaEntidades.ObtenerPersona();
+            this.persona6 = fabent.ObtenerPersona();
             this.persona6.Id = 16;
 
             //Implemento
@@ -217,16 +217,17 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            FabricaComandos fabcom = new FabricaComandos();
             //Elimino de la persona5
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 15);
+            this.ComandoEliminar = fabcom.CrearComandoeliminarItem(1, this.implemento, this.persona5);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona6
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 16);
+            this.ComandoEliminar = fabcom.CrearComandoeliminarItem(1, this.implemento, this.persona6);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 16);
+            this.ComandoEliminar = fabcom.CrearComandoeliminarItem(3, this.implemento, this.persona6);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 16);
+            this.ComandoEliminar = fabcom.CrearComandoeliminarItem(2, this.implemento, this.persona6);
             this.ComandoEliminar.Ejecutar();
 
             this.persona = null;
