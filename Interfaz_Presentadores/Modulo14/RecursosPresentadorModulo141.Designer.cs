@@ -97,7 +97,7 @@ namespace Interfaz_Presentadores.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        ///   Busca una cadena traducida similar a &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
         /// </summary>
         public static string Alerta_Html {
             get {
@@ -147,6 +147,33 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string Alerta_TipoVacio {
             get {
                 return ResourceManager.GetString("Alerta_TipoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ingresaste ninguna fecha de reincorporacion.
+        /// </summary>
+        public static string AlertaFechaReincorporacionVacio {
+            get {
+                return ResourceManager.GetString("AlertaFechaReincorporacionVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ingresaste ninguna fecha de retiro.
+        /// </summary>
+        public static string AlertaFechaRetiroVacio {
+            get {
+                return ResourceManager.GetString("AlertaFechaRetiroVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ingresaste el motivo.
+        /// </summary>
+        public static string AlertaMotivoVacio {
+            get {
+                return ResourceManager.GetString("AlertaMotivoVacio", resourceCulture);
             }
         }
         

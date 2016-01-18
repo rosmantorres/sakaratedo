@@ -180,14 +180,14 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alertlocal.InnerText = value;
+                this.alertlocal.Attributes["role"] = value;
             }
         }
         public String alertLocalClase
         {
             set
             {
-                this.alert.InnerText = value;
+                this.alertlocal.Attributes["class"] = value;
             }
         }
         public String alertLocal
@@ -201,7 +201,7 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alert.Visible = value;
+                this.alertlocal.Visible = value;
             }
         }
         public int IDUsuario
@@ -403,8 +403,8 @@ namespace templateApp.GUI.Modulo14
                 lS.ModificarSolicitudID(laSolicitud);
             }*/
 
-            presentador.EditarPlanillaSolicitada();
-            Response.Redirect("../Modulo14/M14_ConsultarPlanillasSolicitadas.aspx?success=true");
+            if (presentador.EditarPlanillaSolicitada() == true)
+                Response.Redirect("../Modulo14/M14_ConsultarPlanillasSolicitadas.aspx?success=true");
         }
     }
 }
