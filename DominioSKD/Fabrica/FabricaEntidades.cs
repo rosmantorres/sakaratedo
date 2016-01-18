@@ -415,7 +415,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad persona con todos sus datos llenos</returns>
-        public static Entidad ObtenerPersona()
+        public   Entidad ObtenerPersona()
         {
             return new Persona();
         }
