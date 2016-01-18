@@ -270,6 +270,8 @@ namespace templateApp.GUI.Modulo16
                 
         }
 
+        #region EventHandlers
+        #region RegistrarPago
         /// <summary>
         /// Metodo que ejecuta el evento de Registrar el Pago de un Carrito en la base de Datos
         /// </summary>
@@ -359,6 +361,15 @@ namespace templateApp.GUI.Modulo16
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LINK, false);
             }
         }
+        #endregion
+
+        #region ModificarCarrito
+   /*     protected void Modificar_Carrito(object sender, EventArgs e)
+        {
+
+        }*/
+        #endregion
+        #endregion
 
         /// <summary>
         /// Metodo que ejecuta el script en el cliente, desde el servidor

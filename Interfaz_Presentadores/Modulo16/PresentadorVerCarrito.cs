@@ -96,6 +96,7 @@ namespace Interfaz_Presentadores.Modulo16
                     //Boton Modificar
                     Button boton = new Button();
                     boton.Click += Modificar_Carrito;
+                    //boton.Click += new EventHandler(laVista.Modificar_Carrito);
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_COMPRA;
                     boton.ID = M16_Recursointerfaz.IMPLEMENTO_ID + item.Id_Implemento.ToString();
                     celda.Controls.Add(boton);
@@ -407,9 +408,9 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
-                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_EXITO);
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_EXITO, false);
                 else
-                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_FALLO);
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_FALLO, false);
             }
             catch (ArgumentNullException ex)
             {
@@ -652,7 +653,7 @@ namespace Interfaz_Presentadores.Modulo16
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO);
             else
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO);
-                  }
+            }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);

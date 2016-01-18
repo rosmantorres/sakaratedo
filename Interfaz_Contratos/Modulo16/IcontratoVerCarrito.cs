@@ -56,5 +56,7 @@ namespace Interfaz_Contratos.Modulo16
         /// Metodo para ejecutar scripts en el cliente, desde el servidor.
         /// </summary>
         void ejecutarScriptMensualidad();
+
+        //void Modificar_Carrito(object sender, EventArgs e);
     }
 }
