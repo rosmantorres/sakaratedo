@@ -56,6 +56,9 @@
     <Compile Include="Entidades\Modulo3\Organizacion.cs" />
     <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
+    <Compile Include="Entidades\Modulo9\Evento.cs" />
+    <Compile Include="Entidades\Modulo9\Horario.cs" />
+    <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
@@ -106,7 +109,6 @@
     <Folder Include="Entidades\Modulo4\" />
     <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
-    <Folder Include="Entidades\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
