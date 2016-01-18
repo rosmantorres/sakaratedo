@@ -295,15 +295,15 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Persona que eventualmente la buscaremos por el session
-                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
                 Button aux = (Button)sender;
                 String[] datos = aux.ID.Split('-');
 
-                //Creo la fabrica y el evento asignandole su ID
-                FabricaEntidades fabrica = new FabricaEntidades();
+                //Creo la mensualidad asignandole su ID                
                 Matricula matricula = (Matricula)fabrica.ObtenerMatricula();
                 matricula.Id = int.Parse(datos[1]);
 
