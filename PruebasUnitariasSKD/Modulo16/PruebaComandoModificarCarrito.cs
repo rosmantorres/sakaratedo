@@ -52,6 +52,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+         
             //Las personas
             this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
@@ -163,16 +164,18 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            FabricaComandos fabrica = new FabricaComandos();
+           
             //Elimino de la persona
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 11);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona2
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 12);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(3, 1, 12);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona3
-            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 13);
+            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(2, 1, 13);
             this.ComandoEliminar.Ejecutar();
             this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 13);
             this.ComandoEliminar.Ejecutar();
