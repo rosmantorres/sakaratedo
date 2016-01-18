@@ -49,8 +49,11 @@ namespace Interfaz_Presentadores.Modulo16
         {
             try
             {
+                //Creo la fabrica de las entidades
+                FabricaEntidades fabrica = new FabricaEntidades();
+
                 //Creo la persona y le pongo su ID
-                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
                 //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
@@ -313,8 +316,9 @@ namespace Interfaz_Presentadores.Modulo16
         {
             try
             {
-                //Persona que eventualmente la buscaremos por el session
-                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                //Creamos la fabrica y persona que eventualmente la buscaremos por el session
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -356,8 +360,7 @@ namespace Interfaz_Presentadores.Modulo16
                     //Decimos que se trata de un implemento
                     TipoObjeto = 1;
 
-                    //Pasamos el ID que vino del boton
-                    FabricaEntidades fabrica = new FabricaEntidades();
+                    //Pasamos el ID que vino del boton                    
                     Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
                     objeto.Id = int.Parse(datos[1]);
 
@@ -394,8 +397,7 @@ namespace Interfaz_Presentadores.Modulo16
                     //Decimos que se trata de un evento
                     TipoObjeto = 2;
 
-                    //Pasamos el ID que vino del boton
-                    FabricaEntidades fabrica = new FabricaEntidades();
+                    //Pasamos el ID que vino del boton                    
                     Evento objeto = (Evento)fabrica.ObtenerEvento();
                     objeto.Id_evento = int.Parse(datos[1]);
 
@@ -499,7 +501,7 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 //Instancio la fabrica, obtengo la entidad persona y asigno su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
                 //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
@@ -587,74 +589,71 @@ namespace Interfaz_Presentadores.Modulo16
             
             try
             {
-
-            //Persona que eventualmente la buscaremos por el session
-            Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
-            persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-
-            //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
-            Button aux = (Button)sender;
-            String[] datos = aux.ID.Split('-');
-            //Respuesta a obtener del comando, tipo de objeto
-            bool respuesta = false;
-            int TipoObjeto = 0;
-
-            //Si se trata de un implemento, me voy a la tabla correspondiente
-            if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
-            {
-                //Decimos que se trata de un implemento
-                TipoObjeto = 1;
-
-                //Pasamos el ID que vino del boton
+                //Instancio la fabrica y persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
-               // objeto.Id = int.Parse(datos[1]);
+                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
-                FabricaComandos fabricac = new FabricaComandos();
-                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
+                //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
+                Button aux = (Button)sender;
+                String[] datos = aux.ID.Split('-');
+                //Respuesta a obtener del comando, tipo de objeto
+                bool respuesta = false;
+                int TipoObjeto = 0;
+
+                //Si se trata de un implemento, me voy a la tabla correspondiente
+                if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
+                {
+                    //Decimos que se trata de un implemento
+                    TipoObjeto = 1;
+
+                    //Pasamos el ID que vino del boton                    
+                    Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                   // objeto.Id = int.Parse(datos[1]);
+
+                    FabricaComandos fabricac = new FabricaComandos();
+                    //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
+                //Si es un Evento, me voy a la tabla correspondiente
+                else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
+                {
+                    //Decimos que se trata de un evento
+                    TipoObjeto = 3;
+
+                    //Pasamos el ID que vino del boton                    
+                    Evento objeto = (Evento)fabrica.ObtenerEvento();
+                    objeto.Id = int.Parse(datos[1]);
+
+                    FabricaComandos fabricac = new FabricaComandos();
+                    //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
+
+                //Si se trata de una matricula, me voy a la tabla correspondiente
+                else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
+                {
+                    //Decimos que se trata de un implemento
+                    TipoObjeto = 2;
+
+                    //Pasamos el ID que vino del boton                    
+                    Entidad objeto = (Matricula)fabrica.ObtenerMatricula();
+                    objeto.Id = int.Parse(datos[1]);
+
+                    FabricaComandos fabricac = new FabricaComandos();
+                    //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
+
+                //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
+                if (respuesta)
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO);
+                else
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO);
             }
-            //Si es un Evento, me voy a la tabla correspondiente
-            else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
-            {
-                //Decimos que se trata de un evento
-                TipoObjeto = 3;
-
-                //Pasamos el ID que vino del boton
-                FabricaEntidades fabrica = new FabricaEntidades();
-                Evento objeto = (Evento)fabrica.ObtenerEvento();
-                objeto.Id = int.Parse(datos[1]);
-
-                FabricaComandos fabricac = new FabricaComandos();
-                //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
-
-            //Si se trata de una matricula, me voy a la tabla correspondiente
-            else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
-            {
-                //Decimos que se trata de un implemento
-                TipoObjeto = 2;
-
-                //Pasamos el ID que vino del boton
-                FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad objeto = (Matricula)fabrica.ObtenerMatricula();
-                objeto.Id = int.Parse(datos[1]);
-
-                FabricaComandos fabricac = new FabricaComandos();
-                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
-
-            //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
-            if (respuesta)
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO);
-            else
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO);
-                  }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);

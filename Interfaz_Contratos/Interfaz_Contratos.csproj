@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\SANDRA\Programas\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\..\SANDRA\Programas\itextsharp.dll</HintPath>

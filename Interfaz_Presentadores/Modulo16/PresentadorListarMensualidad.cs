@@ -17,6 +17,7 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
 using DominioSKD;
+using DominioSKD.Fabrica;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -294,16 +295,18 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+                //Instancio la fabrica para crear la persona
+                FabricaEntidades fabrica = new FabricaEntidades();
+
                 //Persona que eventualmente la buscaremos por el session
-                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
+                Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
                 Button aux = (Button)sender;
                 String[] datos = aux.ID.Split('-');
 
-                //Creo la fabrica y el evento asignandole su ID
-                FabricaEntidades fabrica = new FabricaEntidades();
+                //Creo la matricula con la fabrica y el evento asignandole su ID                
                 Matricula matricula = (Matricula)fabrica.ObtenerMatricula();
                 matricula.Id = int.Parse(datos[1]);
 
