@@ -6,30 +6,27 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Horario : Entidad
+    public class Horario
     {
         #region Atributos
+        private int id;
         private DateTime fechaInicio;
         private DateTime fechaFin;
         private int horaInicio;
         private int horaFin;
-
-        /*
-        private String horaInicio;
-        private String horaFin;
-        */
         #endregion
 
         #region Constructores
-        public Horario(DateTime fechaInicio, DateTime fechaFin, int horaInicio, int horaFin) : base()
+        public Horario(int id, DateTime fechaInicio, DateTime fechaFin, int horaInicio, int horaFin)
         {
+            this.id = id;
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
         }
 
-        public Horario() : base()
+        public Horario()
         {
 
         }
@@ -37,6 +34,11 @@ namespace DominioSKD
         #endregion
 
         #region Propiedades
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public DateTime FechaInicio
         {
@@ -61,24 +63,6 @@ namespace DominioSKD
             get { return horaFin; }
             set { horaFin = value; }
         }
-
-        /*
-        En tal caso de Cambiarlo a String
-
-         public int HoraInicio
-        {
-            get { return horaInicio; }
-            set { horaInicio = value; }
-        }
-
-        public int HoraFin
-        {
-            get { return horaFin; }
-            set { horaFin = value; }
-        }
-
-        
-        */
 
         #endregion  
     }

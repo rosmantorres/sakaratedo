@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Evento : Entidad
+    public class Evento
     {
         #region Atributos
+
+        private int id;
         private String nombre;
         private String descripcion;
         private float costo;
@@ -23,8 +25,9 @@ namespace DominioSKD
 
         #region Constructores
 
-        public Evento(String nombre, String descripcion, float costo, Boolean estado, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario) : base()
+        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
         {
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.costo = costo;
@@ -35,9 +38,9 @@ namespace DominioSKD
             this.estado = estado;
         }
 
-        public Evento(String nombre, String descripcion, float costo, Boolean estado ,Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario) : base()
+        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado ,Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
         {
-            
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.persona = persona;
@@ -49,9 +52,9 @@ namespace DominioSKD
             this.estado = estado;
         }
 
-        public Evento(String nombre, String descripcion, float costo, Ubicacion ubicacion, TipoEvento tipoEvento, Horario horario): base()
+        public Evento(int id, String nombre, String descripcion, float costo, Ubicacion ubicacion, TipoEvento tipoEvento, Horario horario)
         {
-            
+            this.id = id;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.costo = costo;
@@ -60,15 +63,28 @@ namespace DominioSKD
             this.horario = horario;
         }
 
-        public Evento() : base()
+
+        #region Constructor Modulo16
+        /// <summary>
+        /// Constructor vacio de la clase
+        /// </summary>
+        public Evento()
         {
 
         }
         #endregion
 
+
+        #endregion
+
+
         #region Propiedades
 
-
+        public int Id_evento
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public String Descripcion
         {
@@ -125,6 +141,8 @@ namespace DominioSKD
             set { persona = value; }
         }
         #endregion
+
+
 
     }
 }
