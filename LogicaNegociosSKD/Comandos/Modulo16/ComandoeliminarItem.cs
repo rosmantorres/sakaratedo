@@ -123,9 +123,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 bool Respuesta = false;
-
+                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
                 //Instancio el DAO de Carrito
-                IdaoCarrito daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
+                IdaoCarrito daoCarrito = fabrica.ObtenerdaoCarrito();
 
                 //Se procede a ejecutar eliminarItem y se retorna el Resultado
 

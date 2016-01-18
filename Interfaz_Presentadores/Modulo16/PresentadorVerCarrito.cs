@@ -610,8 +610,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
                // objeto.Id = int.Parse(datos[1]);
 
+                FabricaComandos fabricac = new FabricaComandos();
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto,objeto,persona);
+                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
@@ -625,8 +626,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Evento objeto = (Evento)fabrica.ObtenerEvento();
                 objeto.Id = int.Parse(datos[1]);
 
+                FabricaComandos fabricac = new FabricaComandos();
                 //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
@@ -641,8 +643,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Entidad objeto = (Matricula)fabrica.ObtenerMatricula();
                 objeto.Id = int.Parse(datos[1]);
 
+                FabricaComandos fabricac = new FabricaComandos();
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
 

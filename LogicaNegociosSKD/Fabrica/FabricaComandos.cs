@@ -281,7 +281,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoCeliminarItem que no recibe parámetros
         /// </summary>
         /// <returns>El ComandoeliminarItem</returns>
-        public static Comando<bool> CrearComandoeliminarItem()
+        public Comando<bool> CrearComandoeliminarItem()
                 {
                     return new ComandoeliminarItem();
                 }
@@ -293,7 +293,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// <param name="objetoaBorrar">el objeto que se va a borrar en el carrito</param>
         /// <param name="usuario">usuario que esta asociado al carrito</param>
         /// <returns>El ComandoeliminarItem</returns>
-        public static Comando<bool> CrearComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
+        public Comando<bool> CrearComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
         {
             return new ComandoeliminarItem(tipoObjeto, objetoaBorrar, usuario);
         }
