@@ -48,8 +48,9 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             //Obtengo el DAO
-            this.daoPrueba = FabricaDAOSqlServer.ObtenerdaoCarrito();
+            this.daoPrueba = fabrica.ObtenerdaoCarrito();
 
             //La persona
             this.persona = new Persona();
