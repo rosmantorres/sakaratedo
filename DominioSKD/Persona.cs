@@ -21,7 +21,7 @@ namespace DominioSKD
     /// <summary>
     /// Clase que representa la información personal de una persona.
     /// </summary>
-    public class Persona
+    public class Persona : Entidad
     {
 
         #region Atributos

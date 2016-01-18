@@ -1,101 +1,408 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aliasApellidoPersona" xml:space="preserve">
+    <value>apellidoPersona</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna apellido de persona</comment>
+  </data>
+  <data name="aliasApellidoPersona1" xml:space="preserve">
+    <value>apellidoPersona1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna apellido persona</comment>
+  </data>
+  <data name="aliasApellidoPersona2" xml:space="preserve">
+    <value>apellidoPersona2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna apellido persona</comment>
+  </data>
+  <data name="aliasAprobado" xml:space="preserve">
+    <value>Aprobado</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna aprobado</comment>
+  </data>
+  <data name="aliasCintaFinal" xml:space="preserve">
+    <value>cintaFinal</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna cinta final categoria</comment>
+  </data>
+  <data name="aliasCintaInicial" xml:space="preserve">
+    <value>cintaInicial</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna cinta inicial categoria</comment>
+  </data>
+  <data name="aliasCostoEvento" xml:space="preserve">
+    <value>costoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna costo evento</comment>
+  </data>
+  <data name="aliasDescripcionEvento" xml:space="preserve">
+    <value>descripcionEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna descripcion evento</comment>
+  </data>
+  <data name="aliasEdadFinal" xml:space="preserve">
+    <value>edadFinal</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna edad final categoria</comment>
+  </data>
+  <data name="aliasEdadInicial" xml:space="preserve">
+    <value>edadInicial</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna edad inicial categoria</comment>
+  </data>
+  <data name="aliasEspecialidadCompetencia" xml:space="preserve">
+    <value>especialidadCompetencia</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna especialidadCompetencia</comment>
+  </data>
+  <data name="aliasEstadoEvento" xml:space="preserve">
+    <value>estadoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna estado evento</comment>
+  </data>
+  <data name="aliasFechaCompetencia" xml:space="preserve">
+    <value>fechaInicioCompetencia</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio competencia</comment>
+  </data>
+  <data name="aliasFechaEvento" xml:space="preserve">
+    <value>fechaInicioEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio evento</comment>
+  </data>
+  <data name="aliasFechaFin" xml:space="preserve">
+    <value>fechaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha fin evento</comment>
+  </data>
+  <data name="aliasFechaInicio" xml:space="preserve">
+    <value>fechaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna fecha inicio evento</comment>
+  </data>
+  <data name="aliasHoraFin" xml:space="preserve">
+    <value>horaFin</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna hora fin evento</comment>
+  </data>
+  <data name="aliasHoraInicio" xml:space="preserve">
+    <value>horaInicio</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna hora inicio evento</comment>
+  </data>
+  <data name="aliasIdCategoria" xml:space="preserve">
+    <value>idCategoria</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna del id de la categoria</comment>
+  </data>
+  <data name="aliasIdCompetencia" xml:space="preserve">
+    <value>idCompetencia</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id competencia</comment>
+  </data>
+  <data name="aliasIdEvento" xml:space="preserve">
+    <value>idEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id evento</comment>
+  </data>
+  <data name="aliasIdInscripcion" xml:space="preserve">
+    <value>idInscripcion</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id inscripcion</comment>
+  </data>
+  <data name="aliasIdInscripcion1" xml:space="preserve">
+    <value>idInscripcion1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id inscripcion </comment>
+  </data>
+  <data name="aliasIdInscripcion2" xml:space="preserve">
+    <value>idInscripcion2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id inscripcion</comment>
+  </data>
+  <data name="aliasIdPersona" xml:space="preserve">
+    <value>idPersona</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id de persona</comment>
+  </data>
+  <data name="aliasIdPersona1" xml:space="preserve">
+    <value>idPersona1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id persona</comment>
+  </data>
+  <data name="aliasIdPersona2" xml:space="preserve">
+    <value>idPersona2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id persona</comment>
+  </data>
+  <data name="aliasIdResultado" xml:space="preserve">
+    <value>idResultado</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id Resultado</comment>
+  </data>
+  <data name="aliasIdResultadoKata" xml:space="preserve">
+    <value>idResKata</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id resultado kata</comment>
+  </data>
+  <data name="aliasIdResultadoKumite" xml:space="preserve">
+    <value>idResultadoKumite</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id resultado kumite</comment>
+  </data>
+  <data name="aliasIdTipo" xml:space="preserve">
+    <value>idTipo</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna id tipo evento</comment>
+  </data>
+  <data name="aliasJurado1" xml:space="preserve">
+    <value>resJurado1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna puntaje jurado 1</comment>
+  </data>
+  <data name="aliasJurado2" xml:space="preserve">
+    <value>resJurado2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna puntaje jurado 2</comment>
+  </data>
+  <data name="aliasJurado3" xml:space="preserve">
+    <value>resJurado3</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna puntaje jurado 3</comment>
+  </data>
+  <data name="aliasNombreCompetencia" xml:space="preserve">
+    <value>nombreCompetencia</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre competencia</comment>
+  </data>
+  <data name="aliasNombreEvento" xml:space="preserve">
+    <value>nombreEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre evento</comment>
+  </data>
+  <data name="aliasNombrePersona" xml:space="preserve">
+    <value>nombrePersona</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre de persona</comment>
+  </data>
+  <data name="aliasNombrePersona1" xml:space="preserve">
+    <value>nombrePersona1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre persona</comment>
+  </data>
+  <data name="aliasNombrePersona2" xml:space="preserve">
+    <value>nombrePersona2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna nombre persona</comment>
+  </data>
+  <data name="aliasResultadoAtleta1" xml:space="preserve">
+    <value>resultadoAtleta1</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna resultado atleta</comment>
+  </data>
+  <data name="aliasResultadoAtleta2" xml:space="preserve">
+    <value>resultadoAtleta2</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna resultado atleta</comment>
+  </data>
+  <data name="aliasSexoCategoria" xml:space="preserve">
+    <value>sexoCategoria</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna sexo categoria</comment>
+  </data>
+  <data name="aliasTipoEvento" xml:space="preserve">
+    <value>tipoEvento</value>
+    <comment>Alias colocado en el Stored Procedure referente a la columna tipo evento</comment>
+  </data>
+  <data name="ParametroAprobadoResultadoAscenso" xml:space="preserve">
+    <value>@_aprobado</value>
+    <comment>parametro que indica el resultado del examen de ascenso</comment>
+  </data>
+  <data name="ParametroIdCategoria" xml:space="preserve">
+    <value>@_idCategoria</value>
+    <comment>id de la categoria a consultar</comment>
+  </data>
+  <data name="ParametroIdCompetencia" xml:space="preserve">
+    <value>@_idCompetencia</value>
+    <comment>id de la competencia a consultar</comment>
+  </data>
+  <data name="ParametroIdEspecialidad" xml:space="preserve">
+    <value>@_idEspecialidad</value>
+    <comment>id de la especialidad a consultar</comment>
+  </data>
+  <data name="ParametroIdEvento" xml:space="preserve">
+    <value>@_idEvento</value>
+    <comment>id del evento a consultar</comment>
+  </data>
+  <data name="ParametroIdInscripcion" xml:space="preserve">
+    <value>@_idInscripcion</value>
+    <comment>id de la inscripcion a consultar</comment>
+  </data>
+  <data name="ParametroResultadoAtleta1" xml:space="preserve">
+    <value>@_atleta1</value>
+    <comment>resultado del atleta 1 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoAtleta2" xml:space="preserve">
+    <value>@_atleta2</value>
+    <comment>resultado del atleta 2 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoInscripcion1" xml:space="preserve">
+    <value>@_idInscripcion1</value>
+    <comment>id de la inscripcion1 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoInscripcion2" xml:space="preserve">
+    <value>@_idInscripcion2</value>
+    <comment>id de la inscripcion2 en la especialidad kumite</comment>
+  </data>
+  <data name="ParametroResultadoJurado1" xml:space="preserve">
+    <value>@_jurado1</value>
+    <comment>resultado del jurado 1 en la especialidad kata</comment>
+  </data>
+  <data name="ParametroResultadoJurado2" xml:space="preserve">
+    <value>@_jurado2</value>
+    <comment>resultado del jurado 2 en la especialidad kata</comment>
+  </data>
+  <data name="ParametroResultadoJurado3" xml:space="preserve">
+    <value>@_jurado3</value>
+    <comment>resultado del jurado 3 en la especialidad kata</comment>
+  </data>
+  <data name="ProcedimientoAgregarAscenso" xml:space="preserve">
+    <value>M11_AgregarResultadoAscenso</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoAgregarKata" xml:space="preserve">
+    <value>M11_AgregarResultadoKata</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoAgregarKumite" xml:space="preserve">
+    <value>M11_AgregarResultadoKumite</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoCategoriasCompetenciaEspecialidad" xml:space="preserve">
+    <value>M11_CategoriasCompetenciaEspecialidad</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoCategoriasResultadoAscensos" xml:space="preserve">
+    <value>M11_CategoriasResultadoAscensos</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarEventoDetalle" xml:space="preserve">
+    <value>M11_ConsultarEventoXIDDETALLE</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarResultadoPasadoC" xml:space="preserve">
+    <value>M11_ConsultarResultadoPasadoC</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarResultadoPasadoE" xml:space="preserve">
+    <value>M11_ConsultarResultadoPasadoE</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoEspecialidadesEnUnaCompetencia" xml:space="preserve">
+    <value>M11_EspecialidadesEnUnaCompetencia</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoInscritosAscensos" xml:space="preserve">
+    <value>M11_PersonasEnCategoriaYAscensoSinResultados</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoInscritosCompetencia" xml:space="preserve">
+    <value>M11_PersonasParticipanCompetenciaSinResultado</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoModificarExamenAscenso" xml:space="preserve">
+    <value>M11_ModificarAscenso</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoModificarKata" xml:space="preserve">
+    <value>M11_ModificarKata</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoModificarKumite" xml:space="preserve">
+    <value>M11_ModificarKumite</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoPersonasCompitenCompetencia" xml:space="preserve">
+    <value>M11_PersonasParticipanCompetencia</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoPersonasEnCategoriaAscenso" xml:space="preserve">
+    <value>M11_PersonasEnCategoriaYAscenso</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

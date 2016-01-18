@@ -45,228 +45,254 @@
 </div>
 <!-- /.box-header -->
 <!-- form start -->
-<form role="form" name="agregar_resultado" id="agregar_resultado" method="post" action="#">
+<form role="form" name="agregar_resultado" id="agregar_resultado" method="post" runat="server">
 <div class="box-body col-sm-12 col-md-12 col-lg-12">
    
     <!--Date picker FECHA-->
-    <div class="form-group col-sm-10 col-md-10 col-lg-10">
-        <br />
-        <h3>Fecha del Evento:</h3>
-        <div class="input-group input-append date" id="datePicker">
-        <input type="text" class="form-control" name="date" />
-        <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
-        </div>
-    </div>
+   <div class="form-group col-sm-10 col-md-10 col-lg-10">
+       <br />
+       <h3>Fecha del Evento:</h3>
+       <asp:Calendar ID="calendar" runat="server" OnDayRender="calendar_DayRender" OnSelectionChanged="calendar_SelectionChanged"></asp:Calendar>
+   </div>
 
     <!--COMBO EVENTO-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Eventos Disponibles:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Evento <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Evento #1</a></li>
-               <li><a href="#">Evento #2</a></li>
-               <li><a href="#">Evento #3</a></li>
-               <li><a href="#">Evento #4</a></li>
-          </ul>
-        </div>
+    <div class="dropdown" runat="server" id="div1">
+        <asp:DropDownList ID="comboEventos"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboEventos_SelectedIndexChanged">
+            <asp:ListItem>Seleccionar Evento:</asp:ListItem>
+        </asp:DropDownList>
+    </div>
       </div>
     </div>
 
-    <!--COMBO ESPECIALIDAD-->
+   <!--COMBO ESPECIALIDAD-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <h3>Especialidad:</h3>
+        <h3 id="lEspecialidad" runat="server" visible="false">Especialidad:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seleccionar Especialidad <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Kata</a></li>
-               <li><a href="#">Kumite</a></li>
-         
-          </ul>
-        </div>
+    <div class="dropdown" runat="server" id="div2">
+        <asp:DropDownList ID="comboEspecialidad"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboEspecialidad_SelectedIndexChanged" Visible="false">
+            <asp:ListItem>Seleccionar Especialidad:</asp:ListItem>
+        </asp:DropDownList>
+    </div>
       </div>
     </div>
 
-        <!--COMBO CATEGORIA-->
+    <!--COMBO CATEGORIA-->
     <div class="form-group col-sm-12 col-md-12 col-lg-12">
         <h3>Categoria:</h3>
       <div class="col-sm-8 col-md-8 col-lg-8" >
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true">
-            Seleccionar Categoria<span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-               <li><a href="#">Categoria #1</a></li>
-               <li><a href="#">Categoria #2</a></li>
-               <li><a href="#">Categoria #3</a></li>
-               <li><a href="#">Categoria #4</a></li>
-          </ul>
-        </div>
+    <div class="dropdown" runat="server" id="div3">
+        <asp:DropDownList ID="comboCategoria"  CssClass="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" OnSelectedIndexChanged="comboCategoria_SelectedIndexChanged">
+            <asp:ListItem>Seleccionar Categoria:</asp:ListItem>
+        </asp:DropDownList>
+    </div>
       </div>
     </div>
 
-    <!--DATATABLE ATLETAS-->
-    <div class="form-group">
+        <!--TABLA ATLETAS Y RESULTADOS DE EXAMENES DE ASCENSO-->
+        <div class="form-group">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <h3>Atletas a Competir:</h3>
-       <table id="example" class="table table-bordered table-striped dataTable">
+        <h3>Atletas que compitieron Examen de Ascenso:</h3>
+        <table id="tablaCompetidores" class="table table-bordered table-striped dataTable todasLasTablas">
         <thead>
-				<tr>
-					
-					<th >Id</th>
-					<th>Atleta</th>
-					<th style="text-align:right;">Acciones</th>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta</th>
+                    <th style="text-align:center">Puntuacion</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					
-					<td>1</td>
-					<td>Jorge Gomez</td>
-				
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarAscenso.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    
-					<td>2</td>
-					<td>Eduardo Cruz</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKata.aspx"></a>
-                     </td>
-				</tr><tr>
-                    
-					<td>3</td>
-					<td>Romulo Betancourt</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKumite.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                    
-					<td>4</td>
-					<td>Guillermo Perez</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKumite.aspx"></a>
-                     </td>
-                </tr>
-                <tr>
-                
-					<td>5</td>
-					<td>Juan Bastidas</td>
-					
-                    <td>
-                        <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="#"></a>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" href="M11_AgregarKata.aspx"></a>
-                    </td>
-                </tr>
-               
-
-			</tbody>
-    </table>
+                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
+		    </tbody>
+            </table>
             </div>
         </div>
 
-        		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Información detallada del Atleta</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<p>
-									Nombre, Apellido, Sexo, cinta... etc
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KATA-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kata:</h3>
+        <table id="tablaCompetidores2" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta</th>
+                    <th style="text-align:center">Jurado 1</th>
+                    <th style="text-align:center">Jurado 2</th>
+                    <th style="text-align:center">Jurado 3</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable2"></asp:Literal>
+		    </tbody>
+            </table>
+            </div>
+        </div>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
-
-                    var table = $('#example').DataTable({
-                        "language": {
-                            "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                        }
-                    });
-                    var req;
-                    var tr;
-
-                    $('#example tbody').on('click', 'a', function () {
-                        if ($(this).parent().hasClass('selected')) {
-                            req = $(this).parent().prev().prev().prev().prev().text();
-                            tr = $(this).parents('tr');//se guarda la fila seleccionada
-                            $(this).parent().removeClass('selected');
-
-                        }
-                        else {
-                            req = $(this).parent().prev().prev().prev().prev().text();
-                            tr = $(this).parents('tr');//se guarda la fila seleccionada
-                            table.$('tr.selected').removeClass('selected');
-                            $(this).parent().addClass('selected');
-                        }
-                    });
-
-                });
-
-
-                $(document).ready(function () {
-                    $('#datePicker')
-                        .datepicker({
-                            format: 'mm/dd/yyyy'
-                        })
-                        .on('changeDate', function (e) {
-                            // Revalidate the date field
-                        });
-                });
-
-
-
-        </script>
+                <!--TABLA ATLETAS Y RESULTADOS DE COMPETENCIAS TIPO KUMITE-->
+        <div class="form-group">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3>Atletas que compitieron en Especialidad Kumite:</h3>
+        <table id="tablaCompetidores3" class="table table-bordered table-striped dataTable todasLasTablas">
+        <thead>
+				<tr> 
+					<th style="text-align:center">Nombre del Atleta 1</th>
+                    <th style="text-align:center">Puntuacion</th>
+                    <th style="text-align:center">Nombre del Atleta 2</th>
+                    <th style="text-align:center">Puntuacion</th>
+				</tr>
+			</thead>
+			<tbody>
+                <asp:Literal runat="server" ID="dataTable3"></asp:Literal>
+		    </tbody>
+            </table>
+                   &nbsp;&nbsp;&nbsp;
+                  <asp:LinkButton ID="bSiguiente" runat="server" CssClass="btn btn-primary" OnClick="bSiguiente_Click" OnClientClick="resultadosKumite();" Visible="false">Siguiente</asp:LinkButton>
+                  <asp:LinkButton ID="bSiguienteAmbos" runat="server" CssClass="btn btn-primary" OnClick="bSiguienteAmbos_Click" OnClientClick="resultadosAmbos();" Visible="false">Siguiente</asp:LinkButton>
+            </div>
+        </div>
 
     <!--LISTA POSICIONES-->
      <div class="form-group">
       <div id="div-org" class="col-sm-12 col-md-12 col-lg-12">
-         <h3>Posiciones:</h3>
-         <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
-            <option value="Organización 1">Atleta #1</option>
-            <option value="Organización 2">Atleta #2</option>
-            <option value="Organización 3">Atleta #3</option>
-            <option value="Organización 1">Atleta #4</option>
-            <option value="Organización 2">Atleta #5</option>
-            <option value="Organización 3">Atleta #6</option>
-         </select>
+         <h3 id="lPosicion" runat="server" visible="false">Posiciones:</h3>
+         <asp:ListBox Runat="server" ID="listaGanadores" CssClass="form-control select select-primary select-block mbl" Height="150px" Visible="false">
+         </asp:ListBox>
       </div>
    </div>
 
+       <script type="text/javascript">
+           $(document).ready(function () {
+               $('.todasLasTablas').DataTable();
+
+               var table = $('.todasLasTablas').DataTable();
+               var comp;
+               var tr;
+
+               $('.todasLasTablas tbody').on('click', 'a', function () {
+                   if ($(this).parent().hasClass('selected')) {
+                       comp = $(this).parent().prev().prev().prev().prev().text();
+                       tr = $(this).parents('tr');//se guarda la fila seleccionada
+                       $(this).parent().removeClass('selected');
+                   }
+                   else {
+                       comp = $(this).parent().prev().prev().prev().prev().text();
+                       tr = $(this).parents('tr');//se guarda la fila seleccionada
+                       table.$('tr.selected').removeClass('selected');
+                       $(this).parent().addClass('selected');
+                   }
+               });
+           });
+
+           function resultadosEvento() {
+               var arreglo = [];
+               $('#tablaCompetidores tbody').each(function () {
+                   var i = 0;
+                   $(this).find('select#combo').each(function () {
+
+                       var opcion = $(this).val();
+                       var obj = {
+                           nombre: "",
+                           resultado: opcion
+                       };
+                       arreglo.push(obj);
+                   });
+                   $(this).find('.sorting_1').each(function () {
+                       arreglo[i].nombre = $(this).text();
+                       i++;
+                   });
+               });
+               var myJson = JSON.stringify(arreglo);
+               document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+            }
+
+            function resultadosKata() {
+                var arreglo = [];
+                $('#tablaCompetidores2 tbody').each(function () {
+                    var i = 0;
+                    var j = 0;
+                    var x = 0;
+                    $(this).find('select#combo1').each(function () {
+                        var opcion = $(this).val();
+                        var obj = {
+                            nombre: "",
+                            resultado1: opcion,
+                            resultado2: "",
+                            resultado3: ""
+                        };
+                        arreglo.push(obj);
+                    });
+                    $(this).find('select#combo2').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[j].resultado2 = opcion;
+                        j++;
+                    });
+                    $(this).find('select#combo3').each(function () {
+                        var opcion = $(this).val();
+                        arreglo[x].resultado3 = opcion;
+                        x++;
+                    });
+                    $(this).find('.sorting_1').each(function () {
+                        arreglo[i].nombre = $(this).text();
+                        i++;
+                    });
+                });
+                var myJson = JSON.stringify(arreglo);
+                document.getElementById('<%= rvalue.ClientID %>').value = myJson;
+           }
+
+           function resultadosKumite() {
+               var arreglo = [];
+               $('#tablaCompetidores3 tbody').each(function () {
+                   var i = 0;
+                   var j = 0;
+                   var x = 0;
+                   $(this).find('select#combo1').each(function () {
+                       var opcion = $(this).val();
+                       var obj = {
+                           nombre: "",
+                           resultado1: opcion,
+                           resultado2: "",
+                           resultado3: ""
+                       };
+                       arreglo.push(obj);
+                   });
+                   $(this).find('select#combo2').each(function () {
+                       var opcion = $(this).val();
+                       arreglo[j].resultado3 = opcion;
+                       j++;
+                   });
+                   $(this).find('.nombre1').each(function () {
+                       arreglo[i].nombre = $(this).text();
+                       i++;
+                   });
+                   $(this).find('.nombre2').each(function () {
+                       arreglo[x].resultado2 = $(this).text();
+                       x++;
+                   });
+               });
+               var myJson = JSON.stringify(arreglo);
+               document.getElementById('<%= rvalue2.ClientID %>').value = myJson;
+           }
+
+           function resultadosAmbos() {
+               resultadosKata();
+               resultadosKumite();
+           }
+        </script>
+            <asp:HiddenField ID="rvalue" runat="server" />
+            <asp:HiddenField ID="rvalue2" runat="server" />
 </div>
       <!-- /.box-body -->
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <a id="btn-agregarComp" class="btn btn-primary" type="submit" href="M11_ListarResultadoCompetencia.aspx?eliminacionSuccess=1" onclick="return checkform();">Agregar</a>
+         <asp:LinkButton ID="bAgregar" runat="server" CssClass="btn btn-primary" OnClick="bAgregar_Click" OnClientClick="resultadosEvento();">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarKata" runat="server" CssClass="btn btn-primary" OnClick="bAgregarKata_Click" OnClientClick="resultadosKata();" Visible="false">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarKumite" runat="server" CssClass="btn btn-primary" OnClick="bAgregarKumite_Click" OnClientClick="resultadosKumite();" Visible="false">Agregar</asp:LinkButton>
+        <asp:LinkButton ID="bAgregarAmbos" runat="server" CssClass="btn btn-primary" OnClick="bAgregarAmbos_Click" OnClientClick="resultadosKumite();" Visible="false">Agregar</asp:LinkButton>
          &nbsp;&nbsp
-         <a class="btn btn-default" href="M11_ListarResultadoCompetencia.aspx"> Cancelar</a>
+         <asp:LinkButton ID="bCancelar" runat="server" CssClass="btn btn-default" OnClick="bCancelar_Click">Cancelar</asp:LinkButton>
       </div>
    </form>
 </div>

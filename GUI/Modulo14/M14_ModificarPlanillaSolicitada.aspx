@@ -11,16 +11,13 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Planillas</a> 
+			    <a href="M14_SolicitarPlanilla.aspx">Solicitar Planillas</a> 
 		    </li>
 
             <li>
-			    <a href="#">Gestión de Planillas</a> 
+			    <a href="M14_ConsultarPlanillasSolicitadas.aspx">Planillas Solicitadas</a> 
 		    </li>
-              <li>
-			    <a href="#">Consultar Planilla</a> 
-		    </li>
-
+              
 		    <li class="active">
 			    Modificar Planilla
 		    </li>
@@ -44,6 +41,9 @@
       <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
       <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
          <div id="alertlocal" runat="server">
+          <!-- Alertas-->
+          </div>
+          <div id="alert" runat="server">
           <!-- Alertas-->
           </div>
            <input id="id_solicitud" type="text" placeholder="" class="form-control" name="idSolicitud" runat="server" />  
@@ -90,8 +90,8 @@
               </div>
            </div>
        </div>
-         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                  <div class="col-sm-8 col-md-8 col-lg-8">
+       <div class="form-group col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-sm-8 col-md-8 col-lg-8" id="divMotivo" runat="server">
                       <h3>Motivo:</h3>
                       <br />  
                        <textarea id="id_motivo" cols="120" rows="10"  class="form-control" runat="server"></textarea>
