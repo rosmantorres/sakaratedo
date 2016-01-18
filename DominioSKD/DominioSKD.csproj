@@ -49,7 +49,16 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo14\Diseño.cs" />
+    <Compile Include="Entidades\Modulo14\Planilla.cs" />
+    <Compile Include="Entidades\Modulo14\SolicitudP.cs" />
+    <Compile Include="Entidades\Modulo14\SolicitudPlanilla.cs" />
+    <Compile Include="Entidades\Modulo3\Organizacion.cs" />
+    <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
+    <Compile Include="Entidades\Modulo9\Evento.cs" />
+    <Compile Include="Entidades\Modulo9\Horario.cs" />
+    <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
@@ -93,17 +102,13 @@
     <Folder Include="Entidades\Modulo10\" />
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo14\" />
     <Folder Include="Entidades\Modulo15\" />
     <Folder Include="Entidades\Modulo16\" />
     <Folder Include="Entidades\Modulo1\" />
     <Folder Include="Entidades\Modulo2\" />
-    <Folder Include="Entidades\Modulo3\" />
     <Folder Include="Entidades\Modulo4\" />
-    <Folder Include="Entidades\Modulo5\" />
     <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
-    <Folder Include="Entidades\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

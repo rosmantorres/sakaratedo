@@ -97,6 +97,7 @@ namespace LogicaNegociosSKD.Modulo1
         /// <param name="usuario">usuario</param>
         /// <param name="contraseña">contraseña</param>
         /// <returns>retorna los valores significativos del usuario a utilizar en el sistema</returns>
+        /// MODIFICAR PARA RETORNAR OBJETO CUENTA!!!!!
         public string[] iniciarSesion(string usuario, string contraseña)
         {
             try
@@ -106,7 +107,7 @@ namespace LogicaNegociosSKD.Modulo1
                 Cuenta user = conexionBD.ObtenerUsuario(usuario);
                 string[] respuesta = new string[6];
                 string hashClave = cripto.hash(contraseña);
-                if (hashClave == user.Contrasena && usuario != "" && contraseña != "")//en la Bd debe estar guardado en hash CAMBIAR ESTO!!!
+                if (hashClave == user.Contrasena && usuario != "" && contraseña != "")
                 {
                     respuesta[0] = user.PersonaUsuario._Id.ToString();
                     respuesta[1] = user.Nombre_usuario;
