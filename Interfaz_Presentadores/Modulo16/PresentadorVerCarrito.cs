@@ -55,7 +55,8 @@ namespace Interfaz_Presentadores.Modulo16
                 persona.Id = int.Parse(idpersona);
 
                 //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
-                Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
+                FabricaComandos fabricaComando = new FabricaComandos();
+                Comando<Entidad> VerCarrito = fabricaComando.CrearComandoVerCarrito(persona);
                 Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();
 
                 //Obtenemos cada implemento para ponerlos en la tabla
@@ -364,7 +365,8 @@ namespace Interfaz_Presentadores.Modulo16
                     objeto.Id = int.Parse(datos[1]);
 
                     //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                    Comando<bool> ModificarCarrito = FabricaComandos.CrearComandoModificarCarrito
+                    FabricaComandos fabricaComando = new FabricaComandos();
+                    Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
                         (persona, objeto, TipoObjeto, cantidad);
                     respuesta = ModificarCarrito.Ejecutar();
                 }
@@ -401,7 +403,8 @@ namespace Interfaz_Presentadores.Modulo16
                     objeto.Id_evento = int.Parse(datos[1]);
 
                     //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                    Comando<bool> ModificarCarrito = FabricaComandos.CrearComandoModificarCarrito
+                    FabricaComandos fabricaComando = new FabricaComandos();
+                    Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
                         (persona, objeto, TipoObjeto, cantidad);
                     respuesta = ModificarCarrito.Ejecutar();
                 }
@@ -504,7 +507,8 @@ namespace Interfaz_Presentadores.Modulo16
                 persona.Id = int.Parse(idpersona);
 
                 //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pago);
+                FabricaComandos fabricaComando = new FabricaComandos();
+                Comando<bool> registrarPago = fabricaComando.CrearComandoRegistrarPago(persona, pago);
                 bool respuesta = registrarPago.Ejecutar();               
 
                 //retorno la respuesta

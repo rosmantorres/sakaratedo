@@ -339,7 +339,8 @@ namespace Interfaz_Presentadores.Modulo16
                 }
 
                 //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente
-                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, evento, 2, cantidad);
+                FabricaComandos fabricaComando = new FabricaComandos();
+                Comando<bool> comando = fabricaComando.CrearComandoAgregarItem(persona, evento, 2, cantidad);
                 respuesta = comando.Ejecutar();
 
                  //Escribo en el logger la salida a este metodo
