@@ -10,33 +10,51 @@
 namespace templateApp.GUI.Modulo10 {
     
     
-    public partial class M10_ListarAsistenciaEventos {
+    public partial class M10_DetalleAsistenciaEvento {
         
         /// <summary>
-        /// Div1 control.
+        /// detalle_asistencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm detalle_asistencia;
         
         /// <summary>
-        /// alert control.
+        /// fechaEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        protected global::System.Web.UI.WebControls.TextBox fechaEvento;
         
         /// <summary>
-        /// dataTable control.
+        /// nombreEvento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal dataTable;
+        protected global::System.Web.UI.WebControls.TextBox nombreEvento;
+        
+        /// <summary>
+        /// listaNoAsistieron control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listaNoAsistieron;
+        
+        /// <summary>
+        /// listaAsistentes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listaAsistentes;
     }
 }

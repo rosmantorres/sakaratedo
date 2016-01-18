@@ -183,17 +183,12 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo10\M10_AgregarEliminarAsistencia.js" />
+    <Content Include="GUI\Modulo10\M10_DetalleAsistenciaEvento.aspx" />
     <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarAscenso.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarKata.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
+    <Content Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarAscenso.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarKata.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarKumite.aspx" />
     <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
@@ -1519,6 +1514,13 @@
     <Compile Include="GUI\Modulo10\M10_AgregarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_AgregarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo10\M10_DetalleAsistenciaEvento.aspx.cs">
+      <DependentUpon>M10_DetalleAsistenciaEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo10\M10_DetalleAsistenciaEvento.aspx.designer.cs">
+      <DependentUpon>M10_DetalleAsistenciaEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx.cs">
       <DependentUpon>M10_ListarAsistenciaEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1533,26 +1535,10 @@
     <Compile Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx.designer.cs">
       <DependentUpon>M10_ModificarAsistenciaEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.cs">
-      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarAscenso.aspx.designer.cs">
-      <DependentUpon>M11_AgregarAscenso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.cs">
-      <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKata.aspx.designer.cs">
-      <DependentUpon>M11_AgregarKata.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.cs">
-      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarKumite.aspx.designer.cs">
-      <DependentUpon>M11_AgregarKumite.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo10\M10_RecursosInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M10_RecursosInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
@@ -1561,6 +1547,13 @@
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.cs">
+      <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.designer.cs">
+      <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1568,33 +1561,17 @@
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.cs">
-      <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarAscenso.aspx.designer.cs">
-      <DependentUpon>M11_ModificarAscenso.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.cs">
-      <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKata.aspx.designer.cs">
-      <DependentUpon>M11_ModificarKata.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.cs">
-      <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarKumite.aspx.designer.cs">
-      <DependentUpon>M11_ModificarKumite.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo11\M11_RecursosInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M11_RecursosInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
@@ -2137,6 +2114,14 @@
     <EmbeddedResource Include="GUI\Master\RecursosInterfazMaster.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo10\M10_RecursosInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M10_RecursosInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo11\M11_RecursosInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M11_RecursosInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
