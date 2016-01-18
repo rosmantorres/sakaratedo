@@ -66,12 +66,13 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Carga la Barra lateral del modulo indicado
+            ((SKD)Page.Master).IdModulo = "16";
 
+            //Obtengo el id de la Persona pasandole el ID del session
             this.IniciarPresentador();
             presentador.consultarProductos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-            /* this.Master.ID = "16";
-             this.Master.presentador.CargarMenuLateral();
-             presentador.ObtenerVariablesURL();*/
+     
         }
 
         /// <summary>

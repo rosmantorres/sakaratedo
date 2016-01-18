@@ -721,7 +721,7 @@ namespace Interfaz_Presentadores.Modulo16
              
         }
         #endregion
-
+        // listo ver robustecimiento
         #region Metodos para el detalle del Implemento
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
@@ -729,25 +729,80 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="producto">El Producto que se ha de mostrar en detalle</param>
         public void DetalleProducto_Prod(object sender, CommandEventArgs e)
         {
+            try {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            string id = e.CommandName;
-            Implemento implemento = new Implemento();
-            implemento.Id_Implemento = int.Parse(id);
+                string id = e.CommandName;
+                Implemento implemento = new Implemento();
+                implemento.Id_Implemento = int.Parse(id);
 
-            Implemento resultados = DetalleImplemento(implemento);
+                // Casteamos
+                Implemento resultados = DetalleImplemento(implemento);
 
-            // Variables para imprimir en el modal
-            laVista.LiteralDetallesProductos.Text = "</br>" + "<h3>Imagen del Producto</h3>" + "<label id='aux1' >" + resultados.Imagen_implemento + "</label>" +
-                                                              "<h3>Nombre</h3>" + "<label id='aux2' >" + resultados.Nombre_Implemento + "</label>" +
-                                                              "<h3>Tipo</h3>" + "<label id='aux3' >" + resultados.Tipo_Implemento + "</label>" +
-                                                              "<h3>Marca</h3>" + "<label id='aux4' >" + resultados.Marca_Implemento + "</label>" +
-                                                              "<h3>Color</h3>" + "<label id='aux5' >" + resultados.Color_Implemento + "</label>" +
-                                                              "<h3>Talla</h3>" + "<label id='aux6' >" + resultados.Talla_Implemento + "</label>" +
-                                                              "<h3>Estatus</h3>" + "<label id='aux7' >" + resultados.Estatus_Implemento + "</label>" +
-                                                              "<h3>Precio</h3>" + "<label id='aux8' >" + resultados.Precio_Implemento + "</label>" +
-                                                              "<h3>Descripcion</h3>" + "<label id='aux9' >" + resultados.Descripcion_Implemento + "</label>";
+                // Variables para imprimir en el modal
+                laVista.LiteralDetallesProductos.Text = "</br>" + "<h3>Imagen del Producto</h3>" + "<label id='aux1' >" + resultados.Imagen_implemento + "</label>" +
+                                                                  "<h3>Nombre</h3>" + "<label id='aux2' >" + resultados.Nombre_Implemento + "</label>" +
+                                                                  "<h3>Tipo</h3>" + "<label id='aux3' >" + resultados.Tipo_Implemento + "</label>" +
+                                                                  "<h3>Marca</h3>" + "<label id='aux4' >" + resultados.Marca_Implemento + "</label>" +
+                                                                  "<h3>Color</h3>" + "<label id='aux5' >" + resultados.Color_Implemento + "</label>" +
+                                                                  "<h3>Talla</h3>" + "<label id='aux6' >" + resultados.Talla_Implemento + "</label>" +
+                                                                  "<h3>Estatus</h3>" + "<label id='aux7' >" + resultados.Estatus_Implemento + "</label>" +
+                                                                  "<h3>Precio</h3>" + "<label id='aux8' >" + resultados.Precio_Implemento + "</label>" +
+                                                                  "<h3>Descripcion</h3>" + "<label id='aux9' >" + resultados.Descripcion_Implemento + "</label>";
+                
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            laVista.ejecutarScriptImplemento();
+                // Ejecutamos el script 
+                laVista.ejecutarScriptImplemento();
+                }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+
+            #endregion
         }
 
         /// <summary>
@@ -756,13 +811,14 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
+            FabricaComandos fabrica = new FabricaComandos();
+            Comando<Entidad> DetalleProducto = fabrica.CrearComandoDetallarProducto(implemento);
             Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
             return elImplemento;
         }
 
         #endregion
-
+        // listo ver robustecimiento
         #region Metodos para el detalle del evento
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
@@ -770,18 +826,75 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public void DetalleEvento_Event(object sender, CommandEventArgs e)
         {
+            try { 
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            string id = e.CommandName;
-            Evento evento = new Evento();
-            evento.Id = int.Parse(id);
+                string id = e.CommandName;
+                Evento evento = new Evento();
+                evento.Id = int.Parse(id);
 
-            Evento resultados = DetalleEvento(evento);
+                //Casteamos
+                Evento resultados = DetalleEvento(evento);
 
-            // Variables para imprimir en el modal
-            laVista.LiteralDetallesEventos.Text = "</br>" + "<h3>Nombre</h3>" + "<label id='aux1' >" + resultados.Nombre + "</label>" +
-                                                        "<h3>Descripcion</h3>" + "<label id='aux2' >" + resultados.Descripcion + "</label>" +
-                                                        "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>";
-            laVista.ejecutarScriptEvento();
+                // Variables para imprimir en el modal
+                laVista.LiteralDetallesEventos.Text = "</br>" + "<h3>Nombre</h3>" + "<label id='aux1' >" + resultados.Nombre + "</label>" +
+                                                            "<h3>Descripcion</h3>" + "<label id='aux2' >" + resultados.Descripcion + "</label>" +
+                                                            "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>";
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Ejecutamos el Script
+                laVista.ejecutarScriptEvento();
+                }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+
+            #endregion
         }
 
         /// <summary>
@@ -790,13 +903,14 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-            Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
+            FabricaComandos fabrica = new FabricaComandos();
+            Comando<Entidad> DetalleEvento = fabrica.CrearComandoDetallarEvento(evento);
             Evento elEvento = (Evento)DetalleEvento.Ejecutar();
             return elEvento;
         }
 
         #endregion
-
+        // listo ver robustecimiento
         #region Metodos para el detalle de la Mensualidad
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
@@ -804,22 +918,76 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">La Mensualidad que se ha de mostrar en detalle</param>
         public void DetalleMatricula_Mat(object sender, CommandEventArgs e)
         {
+            try { 
+                //Escribo en el logger la entrada a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            string id = e.CommandName;
-            Matricula matricula = new Matricula();
-            matricula.Id = int.Parse(id);
+                string id = e.CommandName;
+                Matricula matricula = new Matricula();
+                matricula.Id = int.Parse(id);
 
-            Matricula resultados = DetalleMatricula(matricula);
+                //Casteamos
+                Matricula resultados = DetalleMatricula(matricula);
 
-            // Variables para imprimir en el modal
-            laVista.LiteralDetallesMensualidades.Text = "</br>" + "<h3>Id Matricula</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
-                                                              "<h3>Identificador</h3>" + "<label id='aux2' >" + resultados.Identificador + "</label>" +
-                                                              "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>" +
-                                                              "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux4' >" + resultados.UltimaFechaPago + "</label>" +
-                                                              "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux4' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>";
+                // Variables para imprimir en el modal
+                laVista.LiteralDetallesMensualidades.Text = "</br>" + "<h3>Id Matricula</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
+                                                                  "<h3>Identificador</h3>" + "<label id='aux2' >" + resultados.Identificador + "</label>" +
+                                                                  "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>" +
+                                                                  "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux4' >" + resultados.UltimaFechaPago + "</label>" +
+                                                                  "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux4' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>";
 
+                //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                        M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            laVista.ejecutarScriptMensualidad();
+                // Ejecutamos el Script
+                laVista.ejecutarScriptMensualidad();
+                }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+            }
+
+            #endregion
         }
 
         /// <summary>
@@ -828,7 +996,8 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
         public Matricula DetalleMatricula(Entidad matricula)
         {
-            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
+            FabricaComandos fabrica = new FabricaComandos();
+            Comando<Entidad> DetalleMatricula = fabrica.CrearComandoDetallarMatricula(matricula);
             Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
             return laMatricula;
         }

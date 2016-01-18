@@ -71,7 +71,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Implemento
-                IdaoImplemento daoImplementos = FabricaDAOSqlServer.ObtenerDaoProductos();
+                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+                IdaoImplemento daoImplementos = fabrica.ObtenerDaoProductos();
 
                 //Casteamos
                 PersonaM1 p = (PersonaM1)this.LaEntidad;

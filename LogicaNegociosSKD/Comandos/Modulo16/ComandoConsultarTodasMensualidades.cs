@@ -70,8 +70,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-               //Instancio el DAO de Matricula
-               IdaoMensualidad daoMensualidades = FabricaDAOSqlServer.ObtenerDaoMensualidades();
+               //Instancio el DAO de Mensualidad
+               FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+               IdaoMensualidad daoMensualidades = fabrica.ObtenerDaoMensualidades();
 
                // Cateamos
                PersonaM1 p = (PersonaM1)this.LaEntidad;

@@ -359,10 +359,10 @@ namespace DominioSKD.Fabrica
             return new Diseño(contenido);
         }
         // Entidades de otros modulos que necesitamos
-        //public Entidad ObtenerPersona()
-        //{
-          //  return new Persona();
-        //}
+        public Entidad ObtenerPersona()
+        {
+            return new Persona();
+        }
         public Entidad ObtenerDojo()
         {
             return new Dojo();
@@ -410,15 +410,6 @@ namespace DominioSKD.Fabrica
             return new Evento();
         }
 
-        /// <summary>
-        /// Metodo de la fabrica que instancia la persona
-        /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad persona con todos sus datos llenos</returns>
-        public   Entidad ObtenerPersona()
-        {
-            return new Persona();
-        }
 
         /// <summary>
         /// Metodo de la fabrica que instancia el implemento

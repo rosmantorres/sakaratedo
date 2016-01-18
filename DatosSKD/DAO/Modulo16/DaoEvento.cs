@@ -246,7 +246,6 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna un evento en especifico con todos sus detalles</returns>
         public Entidad DetallarEvento(int Id_evento)
         {
-            //return new Persona();
             throw new NotImplementedException();
         }
 
@@ -260,7 +259,6 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna una lista de eventos</returns>
         public List<Entidad> ListarEvento()
         {
-           // return new List<Entidad>();
             throw new NotImplementedException();
         }
 

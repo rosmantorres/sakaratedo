@@ -268,7 +268,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna una lista de implementos</returns>
         public List<Entidad> ListarImplemento()
         {
-            return new List<Entidad>();
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -282,7 +282,7 @@ namespace DatosSKD.DAO.Modulo16
       //  public Entidad DetallarImplemento(Entidad implemento)
          public List<Entidad> ConsultarTodos()
        {
-           return new List<Entidad>();
+           throw new NotImplementedException();
         }
 
         #endregion

@@ -265,7 +265,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna todas las mensualidades sin filtro</returns>
         public List<Entidad> ListarMensualidad()
         {
-            return new List<Entidad>();
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -278,7 +278,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna todas las mensualidades</returns>
         public List<Entidad> ConsultarTodos()
         {
-            return new List<Entidad>();
+            throw new NotImplementedException();
         }
 
         #endregion

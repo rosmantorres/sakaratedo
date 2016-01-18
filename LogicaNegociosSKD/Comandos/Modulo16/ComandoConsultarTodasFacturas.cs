@@ -71,7 +71,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Compra
-                IdaoCompra daoCompras = FabricaDAOSqlServer.ObtenerDaoFacturas();
+                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+                IdaoCompra daoCompras = fabrica.ObtenerDaoFacturas();
 
                 // Casteamos
                 PersonaM1 p = (PersonaM1)this.LaEntidad;

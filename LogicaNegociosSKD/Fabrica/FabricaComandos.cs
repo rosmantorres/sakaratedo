@@ -204,7 +204,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
         /// </summary>
         /// <returns>El ComandoConsultarTodosEventos</returns>
-        public static Comando<List<Entidad>> CrearComandoConsultarTodosEventos()
+        public Comando<List<Entidad>> CrearComandoConsultarTodosEventos()
         {
             return new ComandoConsultarTodosEventos();
         }
@@ -302,7 +302,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
         /// </summary>
         /// <returns>El ComandoConsultarTodosProductos</returns>
-        public static Comando<Entidad> CrearComandoConsultarTodosProductos()
+        public  Comando<Entidad> CrearComandoConsultarTodosProductos()
         {
             return new ComandoConsultarTodosProductos();
         }
@@ -311,7 +311,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasFacturas
         /// </summary>
         /// <returns>El ComandoConsultarTodasFacturas</returns>
-        public static Comando<Entidad> CrearComandoConsultarTodasFacturas()
+        public Comando<Entidad> CrearComandoConsultarTodasFacturas()
         {
             return new ComandoConsultarTodasFacturas();
         }
@@ -405,7 +405,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasMensualidades
         /// </summary>
         /// <returns>El ComandoConsultarTodasMensualidades</returns>
-        public static Comando<Entidad> CrearComandoConsultarTodasMensualidades()
+        public Comando<Entidad> CrearComandoConsultarTodasMensualidades()
         {
             return new ComandoConsultarTodasMensualidades();
         }
@@ -414,7 +414,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
         /// </summary>
         /// <returns>El CrearComandDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
+        public Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
         {
             return new ComandoDetallarEvento(evento);
         }
@@ -423,7 +423,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando CrearComandoDetallarEvento
         /// </summary>
         /// <returns>El CrearComandoDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarMatricula(Entidad matricula)
+        public Comando<Entidad> CrearComandoDetallarMatricula(Entidad matricula)
         {
             return new ComandoDetallarMatricula(matricula);
         }
@@ -432,7 +432,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando CrearComandoDetallarProducto
         /// </summary>
         /// <returns>El CrearComandDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarProducto(Entidad implemento)
+        public Comando<Entidad> CrearComandoDetallarProducto(Entidad implemento)
         {
             return new ComandoDetallarProducto(implemento);
         }

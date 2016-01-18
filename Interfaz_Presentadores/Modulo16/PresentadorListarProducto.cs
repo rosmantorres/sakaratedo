@@ -16,7 +16,6 @@ using System.Web.UI;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
-using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -51,8 +50,9 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el comando para listar el implemento
-                Comando<Entidad> comandoListarProductos = FabricaComandos.CrearComandoConsultarTodosProductos();
+                //Instancio el comando para listar el evento
+                FabricaComandos fabrica = new FabricaComandos();
+                Comando<Entidad> comandoListarProductos = fabrica.CrearComandoConsultarTodosProductos();
 
                 // Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -310,7 +310,8 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
+            FabricaComandos fabrica = new FabricaComandos();
+            Comando<Entidad> DetalleProducto = fabrica.CrearComandoDetallarProducto(implemento);
             Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
             return elImplemento;
         }

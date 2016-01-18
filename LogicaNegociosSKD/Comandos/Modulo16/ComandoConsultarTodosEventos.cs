@@ -58,7 +58,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Evento
-                IdaoEvento daoEventos = FabricaDAOSqlServer.ObtenerDaoEventos();
+                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+                IdaoEvento daoEventos = fabrica.ObtenerDaoEventos();
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

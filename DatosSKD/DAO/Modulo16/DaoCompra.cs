@@ -154,7 +154,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna una lista de facturas sin filtro</returns>
         public List<Entidad> ListarFactura()
         {
-            return new List<Entidad>();
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -167,7 +167,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna una lista de facturas</returns>
         public List<Entidad> ConsultarTodos()
         {
-            return new List<Entidad>();
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -180,7 +180,7 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna un implemento en especifico con todos sus detalles</returns>
         public Entidad DetallarFactura(int Id_factura)
         {
-            return new Persona();
+            throw new NotImplementedException();
         }
 
         #endregion

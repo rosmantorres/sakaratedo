@@ -15,7 +15,6 @@ using System.Web.UI;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
-using DominioSKD;
 
 
 namespace Interfaz_Presentadores.Modulo16
@@ -52,7 +51,8 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar el evento
-                Comando<List<Entidad>> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
+                FabricaComandos fabrica = new FabricaComandos();
+                Comando<List<Entidad>> comandoListarEventos = fabrica.CrearComandoConsultarTodosEventos();
 
                 //Casteamos
                 List<Entidad> laLista = comandoListarEventos.Ejecutar();
@@ -276,8 +276,8 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-            
-                    Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
+                    FabricaComandos fabrica = new FabricaComandos();
+                    Comando<Entidad> DetalleEvento = fabrica.CrearComandoDetallarEvento(evento);
                     Evento elEvento = (Evento)DetalleEvento.Ejecutar();
                     return elEvento;       
             

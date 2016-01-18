@@ -15,7 +15,6 @@ using System.Web.UI;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
-using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -50,8 +49,9 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el comando para listar la factura
-                Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
+                //Instancio el comando para listar el evento
+                FabricaComandos fabrica = new FabricaComandos();
+                Comando<Entidad> comandoListarFacturas = fabrica.CrearComandoConsultarTodasFacturas();
 
                 //Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
