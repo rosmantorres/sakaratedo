@@ -7,7 +7,7 @@ using NUnit.Framework;
 using DominioSKD;
 using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Modulo7;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo9;
 namespace PruebasUnitariasSKD.Modulo7
 {
     [TestFixture]

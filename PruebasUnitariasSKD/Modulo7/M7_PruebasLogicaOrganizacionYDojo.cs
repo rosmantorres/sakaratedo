@@ -9,7 +9,7 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using LogicaNegociosSKD.Modulo7;
 using DatosSKD.Modulo7;
- 
+using DominioSKD.Entidades.Modulo1;
 
 namespace PruebasUnitariasSKD.Modulo7
 {

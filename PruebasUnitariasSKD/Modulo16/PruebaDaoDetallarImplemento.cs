@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
- 
+using DominioSKD.Entidades.Modulo1;
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Entidades.Modulo15;
 using DatosSKD.DAO.Modulo16;

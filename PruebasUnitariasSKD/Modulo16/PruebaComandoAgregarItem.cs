@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo16
@@ -160,13 +161,13 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.pruebaComandoImplemento4.Ejecutar());
-            FabricaComandos fabcoman = new FabricaComandos();
+
             //Comando que nos permitiria limpiar las pruebas pertinentes
-            this.ComandoEliminar = fabcoman.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 11);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabcoman.CrearComandoeliminarItem(1, this.implemento2, this.persona);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 2, 11);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabcoman.CrearComandoeliminarItem(3, this.implemento, this.persona);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 11);
             this.ComandoEliminar.Ejecutar();
         }
 
@@ -187,13 +188,13 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.pruebaComandoEvento4.Ejecutar());
-            FabricaComandos fabricoman = new FabricaComandos();
+
             //Comando que nos permitiria limpiar las pruebas pertinentes
-            this.ComandoEliminar = fabricoman.CrearComandoeliminarItem(3, this.implemento, this.persona2);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 1, 12);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabricoman.CrearComandoeliminarItem(3, this.implemento2, this.persona2);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, 2, 12);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabricoman.CrearComandoeliminarItem(2, this.implemento, this.persona2);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 12);
             this.ComandoEliminar.Ejecutar();
 
         }
@@ -215,13 +216,13 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.pruebaComandoMatricula4.Ejecutar());
-            FabricaComandos fabricom = new FabricaComandos();
+
             //Comando que nos permitiria limpiar las pruebas pertinentes
-            this.ComandoEliminar = fabricom.CrearComandoeliminarItem(2, this.matricula, this.persona3);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 1, 13);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabricom.CrearComandoeliminarItem(2, this.matricula2, this.persona3);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, 2, 13);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabricom.CrearComandoeliminarItem(1, this.matricula, this.persona3);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, 1, 13);
             this.ComandoEliminar.Ejecutar();
         }
 

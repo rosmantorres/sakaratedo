@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
 using DominioSKD.Entidades.Modulo6;
 using LogicaNegociosSKD.Comandos.Modulo16;
 using LogicaNegociosSKD;
@@ -51,13 +52,13 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            FabricaEntidades fabentidad = new FabricaEntidades();
+         
             //Las personas
-            this.persona = fabentidad.ObtenerPersona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = fabentidad.ObtenerPersona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = fabentidad.ObtenerPersona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
 
             //Implemento

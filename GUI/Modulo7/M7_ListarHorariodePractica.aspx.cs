@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo9;
 
 
 namespace templateApp.GUI.Modulo7

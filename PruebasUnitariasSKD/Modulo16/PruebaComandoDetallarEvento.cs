@@ -8,7 +8,7 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
- 
+using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD;
