@@ -9,6 +9,8 @@ using DatosSKD.InterfazDAO.Modulo12;
 //using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo15;
+using DatosSKD.DAO.Modulo15;
 
 
 namespace DatosSKD.Fabrica
@@ -148,7 +150,6 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 12
-
         public IDaoCompetencia ObtenerDAOCompetencia()
         {
             return new DaoCompetencia();
@@ -182,6 +183,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 15
+        public IDaoImplemento ObtenerDAOImplemento()
+        {
+            return new DaoImplemento();
+        }
         #endregion
 
         #region Modulo 16

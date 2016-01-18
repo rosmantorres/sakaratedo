@@ -80,6 +80,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandoModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoEliminarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoImplementoXId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoModificarImplemento.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarAgregarOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarComboOrganizaciones.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
@@ -284,7 +290,6 @@
     <Folder Include="Comandos\Modulo10\" />
     <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo16\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />

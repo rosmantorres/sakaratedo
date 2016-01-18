@@ -8,26 +8,26 @@ using DominioSKD;
 
 namespace DatosSKD.InterfazDAO.Modulo15
 {
-    interface IDaoImplemento : IDao<Entidad, bool, Entidad>
+   public interface IDaoImplemento : IDao<Entidad, bool, Entidad>
     {
         
-        List<Implemento> listarInventarioDatos(Dojo dojo);
+         List<Entidad> listarInventarioDatos(Entidad parametroDojo);
 
-        List<Implemento> listarInventarioDatos2(Dojo dojo);
+         List<Entidad> listarInventarioDatos2(Entidad parametroDojo);
 
-        Implemento implementoInventarioDatos(int idImplemento);
+         Entidad implementoInventarioDatos(int idImplemento);
 
-        void eliminarInventarioDatos(int idInventario, Dojo dojo);
+         bool eliminarInventarioDatos(int idInventario, Entidad parametroDojo);
 
-        void modificarInventarioDatos(Implemento implemento);
+         bool modificarInventarioDatos(Entidad parametroImplemento);
 
-        List<Implemento> listarInventarioDatos();
+         List<Entidad> listarInventarioDatos();
 
-        Implemento implementoInventarioDatosUltimo();
+         Entidad implementoInventarioDatosUltimo();
 
-        bool implementoInventarioDatosBool(int idImplemento);
+         bool implementoInventarioDatosBool(int idImplemento);
 
-        int usuarioImplementoDatos(String usuario);
+         int usuarioImplementoDatos(String usuario);
 
 
 

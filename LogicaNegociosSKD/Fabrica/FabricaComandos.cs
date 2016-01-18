@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD.Comandos.Modulo5;
+using LogicaNegociosSKD.Comandos.Modulo15;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -195,6 +196,31 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 15
+        public Comando <bool> ObtenerComandoAgregar()
+        {
+            return new ComandoAgregarImplemento();
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultar()
+        {
+            return new ComandoConsultarTodosImplementos();
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultar2()
+        {
+            return new ComandoConsultarTodosImplementos2();
+        }
+
+        public Comando<bool> ObtenerComandoEliminarImplemento()
+        {
+            return new ComandoEliminarImplemento();
+        }
+
+        public Comando<bool> ObtenerComandoModificarImplemento()
+        {
+            return new ComandoModificarImplemento();
+        }
+
         #endregion
 
         #region Modulo 16
