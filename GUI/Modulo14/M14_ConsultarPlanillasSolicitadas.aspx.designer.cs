@@ -13,13 +13,13 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_ConsultarPlanillasSolicitadas {
         
         /// <summary>
-        /// Control alert.
+        /// Control alerta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alerta;
         
         /// <summary>
         /// Control tabla.

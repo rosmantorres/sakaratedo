@@ -51,6 +51,8 @@
     <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
     <Compile Include="Modulo12\IContratoListarCompetencias.cs" />
     <Compile Include="Modulo12\IContratoModificarCompetencias.cs" />
+    <Compile Include="Modulo14\IContratoM14ConsultarPlanillas.cs" />
+    <Compile Include="Modulo14\IContratoM14ConsultarPlanillasSolicitadas.cs" />
     <Compile Include="Modulo14\IContratoM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />

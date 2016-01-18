@@ -55,6 +55,7 @@
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseño.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseñoPuro.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillas.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillasASolicitar.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoEliminarSolicitud.cs" />
