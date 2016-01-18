@@ -174,14 +174,14 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alertlocal.InnerText = value;
+                this.alertlocal.Attributes["role"] = value;
             }
         }
         public String alertLocalClase
         {
             set
             {
-                this.alert.InnerText = value;
+                this.alertlocal.Attributes["class"] = value;
             }
         }
         public String alertLocal
@@ -195,7 +195,7 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alert.Visible = value;
+                this.alertlocal.Visible = value;
             }
         }
 
@@ -407,8 +407,8 @@ namespace templateApp.GUI.Modulo14
                         }
                   */
 
-            presentador.AgregarSolicitud();
-            Response.Redirect("../Modulo14/M14_SolicitarPlanilla.aspx?success=true");
+           if( presentador.AgregarSolicitud() == true)
+                Response.Redirect("../Modulo14/M14_SolicitarPlanilla.aspx?success=true");
         }
     }
 } 
