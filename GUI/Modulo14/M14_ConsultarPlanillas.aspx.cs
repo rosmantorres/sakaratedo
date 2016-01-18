@@ -4,21 +4,65 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.Odbc;
-using System.Data.SqlClient;
+using LogicaNegociosSKD.Modulo14;
 using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo14;
+using Interfaz_Presentadores.Modulo14;
+using DominioSKD;
 
 
 namespace templateApp.GUI.Modulo14
 {
-    public partial class M14ConsultarPlanillas : System.Web.UI.Page
+    public partial class M14ConsultarPlanillas : System.Web.UI.Page, IContratoM14ConsultarPlanillas
     {
         #region atributos
+        private PresentadorM14ConsultarPlanillas presentador;
         private LogicaNegociosSKD.Modulo14.LogicaPlanilla logica = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
-        List<DominioSKD.Planilla> lista;
+        #endregion
+
+        #region Contratos
+        public string alertaClase
+        {
+            set
+            {
+                this.alerta.InnerText = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alerta.InnerText = value;
+            }
+        }
+        public string alert
+        {
+            set
+            {
+                this.alerta.InnerHtml = value;
+            }
+        }
+        public string planillaCreadas
+        {
+            get
+            {
+                return this.tabla.Text;
+            }
+            set
+            {
+                this.tabla.Text = value;
+            }
+        }
+
         #endregion
 
         #region metodos
+
+        public M14ConsultarPlanillas()
+        {
+            presentador = new PresentadorM14ConsultarPlanillas(this);
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -32,8 +76,9 @@ namespace templateApp.GUI.Modulo14
             {
                 if (!IsPostBack)
                 {
-                    List<DominioSKD.Planilla> listaPlanilla = LlenarTabla();
-                    LlenarInformacion(listaPlanilla);
+                    
+                    List<Entidad> listaPlanilla = presentador.LlenarTabla();
+                    presentador.LlenarInformacion(listaPlanilla);
                 }
 
                 string exito = Request.QueryString[RecursoInterfazModulo14.QueryIdPlan];
@@ -42,47 +87,42 @@ namespace templateApp.GUI.Modulo14
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (NullReferenceException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (Exception ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }           
 
         }
 
-        public void Alerta(string msj)
-        {
-            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-            alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
+
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="lista"></param>
-        public void LlenarInformacion(List<DominioSKD.Planilla> lista)
+        /*public void LlenarInformacion(List<DominioSKD.Planilla> lista)
         {
             try
             {
@@ -122,12 +162,12 @@ namespace templateApp.GUI.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-        }
+        }*/
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<DominioSKD.Planilla> LlenarTabla()
+        /*public List<DominioSKD.Planilla> LlenarTabla()
         {
             try
             {
@@ -163,7 +203,7 @@ namespace templateApp.GUI.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-        }
+        }*/
 
         /// <summary>
         /// 

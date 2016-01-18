@@ -7,10 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace Interfaz_Contratos.Modulo14
 {
-    public interface IContratoM14MostrarPlanilla
+    public interface IContratoM14ConsultarPlanillas
     {
-        Label NombrePanilla { set; }
-        Label informacion { get; set; }
+
+        string planillaCreadas { get; set; }
         string alertaClase { set; }
         string alertaRol { set; }
         string alert { set; }
