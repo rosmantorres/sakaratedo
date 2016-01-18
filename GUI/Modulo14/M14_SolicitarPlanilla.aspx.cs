@@ -6,20 +6,69 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo14;
+using Interfaz_Presentadores.Modulo14;
 
 namespace templateApp.GUI.Modulo14
 {
-    public partial class M14_SolicitarPlanilla : System.Web.UI.Page
+    public partial class M14_SolicitarPlanilla : System.Web.UI.Page, IContratoM14SolicitarPlanilla
     {
         private LogicaNegociosSKD.Modulo14.LogicaSolicitud logica = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
         List<DominioSKD.Planilla> lista;
+        private PresentadorM14SolicitarPlanilla presentador;
 
+        public M14_SolicitarPlanilla()
+        {
+            presentador = new PresentadorM14SolicitarPlanilla(this);
+        }
+        #region contratos
+        public String tablaSolicitarP
+        {
+            get
+            {
+                return this.tabla.Text;
+            }
+            set
+            {
+                this.tabla.Text = value;
+            }
+        }
+        public String alertLocalRol
+        {
+            set
+            {
+                this.alertlocal.InnerText = value;
+            }
+        }
+        public String alertLocalClase
+        {
+            set
+            {
+                this.alert.InnerText = value;
+            }
+        }
+        public String alertLocal
+        {
+            set
+            {
+                this.alertlocal.InnerHtml = value;
+            }
+        }
+        public bool alerta
+        {
+            set
+            {
+                this.alert.Visible = value;
+            }
+        }
+
+        #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14.1";
             if (!IsPostBack)
             {
-                try
+                presentador.PageLoadSolicitarPlanilla();
+               /* try
                 {
                     List<DominioSKD.Planilla> listaPlanilla = LlenarTabla();
                     LlenarInformacion(listaPlanilla);
@@ -51,18 +100,19 @@ namespace templateApp.GUI.Modulo14
                 catch (Exception ex)
                 {
                     Alerta(ex.Message);
-                }
+                }*/
             }
         }
 
         public void Alerta(string msj)
         {
-            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+            presentador.Alerta(msj);
+            /*alert.Attributes["class"] = "alert alert-danger alert-dismissible";
             alert.Attributes["role"] = "alert";
             alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
+        */}
 
-        public void LlenarInformacion(List<DominioSKD.Planilla> lista)
+       /* public void LlenarInformacion(List<DominioSKD.Planilla> lista)
         {
             this.lista = lista;
             try
@@ -88,8 +138,8 @@ namespace templateApp.GUI.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-        }
-        public List<DominioSKD.Planilla> LlenarTabla()
+        }*/
+        /*public List<DominioSKD.Planilla> LlenarTabla()
         {
             try
             {
@@ -125,7 +175,7 @@ namespace templateApp.GUI.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-        }
+        }*/
     }
     
        

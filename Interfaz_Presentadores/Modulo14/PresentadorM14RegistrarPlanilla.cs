@@ -126,6 +126,7 @@ namespace Interfaz_Presentadores.Modulo14
                                     ((ComandoRegistrarPlanillaTipo)comandoRegistrarPlanillaTipo).NombreTipo = TipoPlanilla;
                                     respuesta = comandoRegistrarPlanillaTipo.Ejecutar();
                                   //  Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
+                     //               respuesta = true;
                                 }
                                 else
                                 {
@@ -133,6 +134,7 @@ namespace Interfaz_Presentadores.Modulo14
                                     vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                                     vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_NombreTipoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
                                     vista.alerta= true;
+                                    respuesta = false;
                                 }
                             }
                             else
@@ -149,6 +151,7 @@ namespace Interfaz_Presentadores.Modulo14
                             vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                             vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_DatoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                             vista.alerta = true;
+                            respuesta = false;
                         }
                     }
                     else
@@ -157,6 +160,7 @@ namespace Interfaz_Presentadores.Modulo14
                         vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                         vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_PlanillaVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                         vista.alerta = true;
+                        respuesta = false;
                     }
                 }
                 else
@@ -165,6 +169,7 @@ namespace Interfaz_Presentadores.Modulo14
                     vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                     vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_TipoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                     vista.alerta = true;
+                    respuesta = false;
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -279,6 +284,43 @@ namespace Interfaz_Presentadores.Modulo14
                 {
                     vista.datosPlanilla1.Items.Add("EVENTO");
                 }
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
+            }
+        }
+
+        public void PageLoadRegistrarPlanilla()
+        {
+            try
+            {
+                vista.id_otroTipo = false;
+                LlenarComboTipoPlanilla();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
