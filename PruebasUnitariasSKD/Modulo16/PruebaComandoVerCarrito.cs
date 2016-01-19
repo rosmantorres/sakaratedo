@@ -39,7 +39,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Implemento implemento;       
         private Matricula matricula;
         private Carrito Carrito;
-        private Evento evento;
+        private DominioSKD.Entidades.Modulo9.Evento evento;
         FabricaEntidades fabrica;
         FabricaComandos fabricacomandos;
         #endregion
@@ -70,7 +70,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
 
             //Eventos
-            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
@@ -162,7 +162,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.Carrito.Listamatricula.Count == 0);
 
             //Obtenemos el Evento y verificamos sus valores
-            this.evento = this.Carrito.Listaevento.ElementAt(0).Key as Evento;
+            this.evento = this.Carrito.Listaevento.ElementAt(0).Key as DominioSKD.Entidades.Modulo9.Evento;
             Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.Carrito.Listaevento.ElementAt(0).Value, 6);
@@ -212,7 +212,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
             Assert.AreEqual(this.Carrito.ListaImplemento.ElementAt(0).Value, 5);
 
-            this.evento = this.Carrito.Listaevento.ElementAt(0).Key as Evento;
+            this.evento = this.Carrito.Listaevento.ElementAt(0).Key as DominioSKD.Entidades.Modulo9.Evento;
             Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.Carrito.Listaevento.ElementAt(0).Value, 6);

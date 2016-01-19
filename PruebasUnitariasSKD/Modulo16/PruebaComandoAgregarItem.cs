@@ -41,8 +41,8 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> pruebaComandoMatricula2;
         private Comando<bool> pruebaComandoMatricula3;
         private Comando<bool> pruebaComandoMatricula4;
-        private Evento evento;
-        private Evento evento2;
+        private DominioSKD.Entidades.Modulo9.Evento evento;
+        private DominioSKD.Entidades.Modulo9.Evento evento2;
         private Entidad persona;
         private Entidad persona2;
         private Entidad persona3;
@@ -81,11 +81,11 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
-            this.evento2 = (Evento)fabrica.ObtenerEvento();
+            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
             this.evento2.Id = 2;
             this.evento2.Costo = 2000;
 

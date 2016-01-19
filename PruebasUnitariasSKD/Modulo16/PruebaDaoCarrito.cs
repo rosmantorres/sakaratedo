@@ -40,8 +40,8 @@ namespace PruebasUnitariasSKD.Modulo16
         private Dictionary<Entidad, int> ImplementosCarrito;
         private Dictionary<Entidad, int> EventosCarrito;
         private Dictionary<Entidad, int> MatriculasCarrito;
-        private Evento evento;
-        private Evento evento2;
+        private DominioSKD.Entidades.Modulo9.Evento evento;
+        private DominioSKD.Entidades.Modulo9.Evento evento2;
         FabricaDAOSqlServer fabrica;
         FabricaComandos fabricacomandos;
         FabricaEntidades fabricaentidades;
@@ -82,11 +82,11 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            this.evento = (Evento)fabricaentidades.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaentidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
-            this.evento2 = (Evento)fabricaentidades.ObtenerEvento();
+            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabricaentidades.ObtenerEvento();
             this.evento2.Id = 2;
             this.evento2.Costo = 2000;
 
@@ -431,7 +431,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.MatriculasCarrito.Count == 0);
 
             //Obtenemos el Evento y verificamos sus valores
-            this.evento = this.EventosCarrito.ElementAt(0).Key as Evento;
+            this.evento = this.EventosCarrito.ElementAt(0).Key as DominioSKD.Entidades.Modulo9.Evento;
             Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);
@@ -499,7 +499,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
             Assert.AreEqual(this.ImplementosCarrito.ElementAt(0).Value, 5);
 
-            this.evento = this.EventosCarrito.ElementAt(0).Key as Evento;
+            this.evento = this.EventosCarrito.ElementAt(0).Key as DominioSKD.Entidades.Modulo9.Evento;
             Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);

@@ -446,7 +446,8 @@ namespace DatosSKD.DAO.Modulo16
                         {
                             //Me creo el evento
                             FabricaEntidades fabrica = new FabricaEntidades();
-                            Evento elEvento = (Evento)fabrica.ObtenerEvento();
+                            DominioSKD.Entidades.Modulo9.Evento elEvento 
+                                = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
                             elEvento.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                             elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                             elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
@@ -915,7 +916,8 @@ namespace DatosSKD.DAO.Modulo16
 
                         case 2:
                             //Si es un Evento casteamos el objeto y lo tratamos como tal
-                            Evento elEvento = objeto as Evento;
+                            DominioSKD.Entidades.Modulo9.Evento elEvento =
+                                objeto as DominioSKD.Entidades.Modulo9.Evento;
 
                             //Lanzamos una excepcion si no es un Evento o si esta en vacio
                             if (elEvento == null)

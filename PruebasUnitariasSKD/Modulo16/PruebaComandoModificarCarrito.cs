@@ -36,7 +36,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> PruebaSoloImplementos;
         private Comando<bool> PruebaSoloEventos;
         private Comando<bool> PruebaTodosItems;
-        private Evento evento;
+        private DominioSKD.Entidades.Modulo9.Evento evento;
         private Comando<bool> ComandoModificarCarrito;
         private Comando<bool> ComandoModificarCarrito2;
         private Comando<bool> ComandoModificarCarrito3;
@@ -76,7 +76,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula.Costo = 5000;
 
             //Evento
-            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;            
 
