@@ -8,7 +8,7 @@ using DominioSKD;
 using DatosSKD;
 using DatosSKD.Modulo7;
 using ExcepcionesSKD.Modulo7;
-using DominioSKD.Entidades.Modulo9;
+
 
 namespace PruebasUnitariasSKD.Modulo7
 {
