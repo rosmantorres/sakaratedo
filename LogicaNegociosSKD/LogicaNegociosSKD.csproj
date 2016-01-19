@@ -72,6 +72,7 @@
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseño.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseñoPuro.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillas.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillasASolicitar.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoEliminarSolicitud.cs" />
@@ -108,11 +109,13 @@
     <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
     <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
+    <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo10.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo11\LogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosLogicaModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

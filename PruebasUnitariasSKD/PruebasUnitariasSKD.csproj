@@ -43,11 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo10\M10_PruebasBDAsistencia.cs" />
+    <Compile Include="Modulo10\M10_PruebasLogica.cs" />
     <Compile Include="Modulo10\RecursosPU_Mod10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod10.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo11\M11_PruebasBDResultado.cs" />
+    <Compile Include="Modulo11\M11_PruebasLogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosPU_Mod11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -166,7 +166,7 @@ namespace Interfaz_Presentadores.Modulo14
                 vista.divMotivoVisible = false;
             }
         }
-        public void EditarPlanillaSolicitada()
+        public bool EditarPlanillaSolicitada()
         {
            // LogicaSolicitud lS = new LogicaSolicitud();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -178,40 +178,77 @@ namespace Interfaz_Presentadores.Modulo14
            //Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
           // int idIns = vista.IDIns; 
 
-            if (vista.ComboEventoVisible == true)
+              bool resultado = false;
+            if (vista.FechaRetiro != "")
             {
+                if(vista.FechaReincorporacion != ""){
+                    if (vista.Motivo !=""){
+                      if (vista.ComboEventoVisible == true)
+                         {
                // SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
                  //                          this.id_motivo.Value, Int32.Parse(this.comboEvento.SelectedValue));
                // lS.ModificarSolicitudID(laSolicitud);
 
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId),vista.FechaRetiro, vista.FechaReincorporacion,
+                             Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId),vista.FechaRetiro, vista.FechaReincorporacion,
                                        vista.Motivo, Int32.Parse(vista.EventoCombo.SelectedValue));
-                comandoModificarSolicitudID.LaEntidad = laSolicitud;
-                comandoModificarSolicitudID.Ejecutar();    
-            }
-            if (vista.ComboCompetenciaVisible == true)
-            {
+                             comandoModificarSolicitudID.LaEntidad = laSolicitud;
+                             comandoModificarSolicitudID.Ejecutar();
+                             resultado = true;
+                           }
+                       if (vista.ComboCompetenciaVisible == true)
+                        {
                /* SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
                                              this.id_motivo.Value, Int32.Parse(this.comboCompetencia.SelectedValue));*/
                // lS.ModificarSolicitudID(laSolicitud);
            
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                           vista.Motivo, Int32.Parse(vista.CompetenciaCombo.SelectedValue));
-               comandoModificarSolicitudID.LaEntidad =laSolicitud;
-                comandoModificarSolicitudID.Ejecutar();
-            }
-            if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
-            {
+                            comandoModificarSolicitudID.LaEntidad =laSolicitud;
+                            comandoModificarSolicitudID.Ejecutar();
+                            resultado = true;
+                        }
+                       if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
+                         {
              //   SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
              //                                this.id_motivo.Value, idIns);
              //   lS.ModificarSolicitudID(laSolicitud);
             //    vista.IDInscripcion = Int32.Parse(Request.Cookies[RecursosPresentadorModulo14.CookieIdIns].ToString());
                 
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                             vista.Motivo, IDIns);
-               comandoModificarSolicitudID.LaEntidad =laSolicitud;
-                comandoModificarSolicitudID.Ejecutar();
+                            comandoModificarSolicitudID.LaEntidad =laSolicitud;
+                            comandoModificarSolicitudID.Ejecutar();
+                            resultado = true;
+                           }
+                    }
+                    else
+                    {
+                        vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                        vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                        vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaMotivoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                        vista.alerta = true;
+                        resultado = false;
+                    }
+                }
+                else
+                {
+                    vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaReincorporacionVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                    vista.alerta = true;
+                    resultado = false;
+                }
             }
+            else
+            {
+                vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaRetiroVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                vista.alerta = true;
+                resultado = false;
+            }
+
+            return resultado;
 
         }
 

@@ -1015,6 +1015,105 @@ namespace DatosSKD.DAO.Modulo14
             return true;
         }
 
+        /// <summary>
+        /// Método que consulta todas las planillas creadas
+        /// </summary>
+        /// <returns>Lista de planillas creadas</returns>
+        public List<Entidad> ConsultarPlanillasCreadas()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            List<Entidad> lista = new List<Entidad>();
+            FabricaEntidades fabrica = new FabricaEntidades();
+
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureConsultarPlanillasCreadas, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
+                    {
+                        Planilla planilla =(Planilla)fabrica.ObtenerPersona();
+                        planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
+                        planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
+                        planilla.Status = Convert.ToBoolean(leer[RecursosDAOModulo14.AtributoStatusPlanilla]);
+                        planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString();
+                        lista.Add(planilla);
+                        planilla = null;
+
+                    }
+
+                    return lista;
+                }
+                else
+                {
+
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+
+        }
+
         #endregion
 
 
