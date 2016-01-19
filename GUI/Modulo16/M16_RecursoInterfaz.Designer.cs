@@ -124,6 +124,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al ingresar la cantidad deseada, solo pueden ser enteros positivos y distintos de cero&lt;/div&gt;.
+        /// </summary>
+        internal static string EXCEPTION_CANTIDAD_INVALIDA_MENSAJE {
+            get {
+                return ResourceManager.GetString("EXCEPTION_CANTIDAD_INVALIDA_MENSAJE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=3.
         /// </summary>
         internal static string EXCEPTION_CONEXIONBD_LINK {
@@ -201,6 +210,15 @@ namespace templateApp.GUI.Modulo16 {
         internal static string EXCEPTION_MENSAJE {
             get {
                 return ResourceManager.GetString("EXCEPTION_MENSAJE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los tipos de pago disponibles en el sistema son: Tarjeta, Deposito o Transferencia&lt;/div&gt;.
+        /// </summary>
+        internal static string EXCEPTION_PAGOINVALIDO_MENSAJE {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PAGOINVALIDO_MENSAJE", resourceCulture);
             }
         }
         

@@ -74,6 +74,7 @@
     <Compile Include="Modulo16\AtributoIncorrectoException.cs" />
     <Compile Include="Modulo16\BDEventoException.cs" />
     <Compile Include="Modulo16\BDMatriculaException.cs" />
+    <Compile Include="Modulo16\CantidadInvalidaException.cs" />
     <Compile Include="Modulo16\CarritoSinEventoException.cs" />
     <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
     <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
@@ -110,9 +111,6 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo3\" />
-    <Folder Include="Modulo5\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />

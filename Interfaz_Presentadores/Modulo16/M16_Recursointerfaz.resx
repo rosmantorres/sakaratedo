@@ -215,6 +215,9 @@
   <data name="CODIGO_EXCEPCION_ARGUMENTO_NULO" xml:space="preserve">
     <value>S_16_06</value>
   </data>
+  <data name="CODIGO_EXCEPCION_CANTIDAD_INVALIDA" xml:space="preserve">
+    <value>S_16_13</value>
+  </data>
   <data name="CODIGO_EXCEPCION_FORMATO_INVALIDO" xml:space="preserve">
     <value>S_16_07</value>
   </data>
@@ -254,6 +257,9 @@
   </data>
   <data name="EVENTO_INFORMACION" xml:space="preserve">
     <value>elEvento-</value>
+  </data>
+  <data name="EXCEPCION_CANTIDAD_INVALIDA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=13</value>
   </data>
   <data name="EXCEPTIONSKD_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=2</value>
@@ -314,6 +320,9 @@
   </data>
   <data name="MENSAJE_EXCEPCION_ARGUMENTO_NULO" xml:space="preserve">
     <value>Error en parsear un atributo nulo</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_CANTIDAD_INVALIDA" xml:space="preserve">
+    <value>Error en la cantidad introducida, solo pueden ser numeros enteros positivos y distintos de cero</value>
   </data>
   <data name="MENSAJE_EXCEPCION_FORMATO_INVALIDO" xml:space="preserve">
     <value>Error en parsear un atributo invalido</value>

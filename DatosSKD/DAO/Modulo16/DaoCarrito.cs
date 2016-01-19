@@ -109,9 +109,11 @@ namespace DatosSKD.DAO.Modulo16
                             Implemento elImplemento = objeto as Implemento;
 
                             //Lanzamos una excepcion si no es un implemento o si esta en vacio
-                            if (elImplemento == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                            if (elImplemento == null)                                
+                                throw new ItemInvalidoException
+                                    (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
                                     SqlDbType.Int, elImplemento.Precio_Implemento.ToString(), false);
@@ -131,8 +133,10 @@ namespace DatosSKD.DAO.Modulo16
 
                             //Lanzamos una excepcion si no es un implemento o si esta en vacio
                             if (elEvento == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                                throw new ItemInvalidoException
+                                    (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
                                 SqlDbType.Int, elEvento.Id.ToString(), false);
@@ -164,8 +168,10 @@ namespace DatosSKD.DAO.Modulo16
 
                             //Lanzamos una excepcion si no es un implemento o si esta en vacio
                             if (laMatricula == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                                throw new ItemInvalidoException
+                                    (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PRECIO2,
                                     SqlDbType.Int, laMatricula.Costo.ToString(), false);
@@ -206,6 +212,16 @@ namespace DatosSKD.DAO.Modulo16
                     return exito;
                 }
                 catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (OpcionItemErroneoException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ItemInvalidoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
@@ -958,6 +974,11 @@ namespace DatosSKD.DAO.Modulo16
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
                         RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+                }
+                catch (OpcionItemErroneoException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
                 }
                 catch (FormatException e)
                 {

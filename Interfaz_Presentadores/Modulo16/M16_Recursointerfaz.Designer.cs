@@ -341,6 +341,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_13.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_CANTIDAD_INVALIDA {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_CANTIDAD_INVALIDA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_07.
         /// </summary>
         internal static string CODIGO_EXCEPCION_FORMATO_INVALIDO {
@@ -454,6 +463,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string EVENTO_INFORMACION {
             get {
                 return ResourceManager.GetString("EVENTO_INFORMACION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=13.
+        /// </summary>
+        internal static string EXCEPCION_CANTIDAD_INVALIDA_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPCION_CANTIDAD_INVALIDA_LINK", resourceCulture);
             }
         }
         
@@ -634,6 +652,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string MENSAJE_EXCEPCION_ARGUMENTO_NULO {
             get {
                 return ResourceManager.GetString("MENSAJE_EXCEPCION_ARGUMENTO_NULO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error en la cantidad introducida, solo pueden ser numeros enteros positivos y distintos de cero.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_CANTIDAD_INVALIDA {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_CANTIDAD_INVALIDA", resourceCulture);
             }
         }
         

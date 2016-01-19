@@ -17,6 +17,7 @@ using System.Web;
 using Interfaz_Presentadores.Master;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
+using System.Text.RegularExpressions;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -325,8 +326,12 @@ namespace Interfaz_Presentadores.Modulo16
                 Button aux = (Button)sender;
                 String[] datos = aux.ID.Split('-');
 
-                //Cantidad Deseada nueva por el usuario
+                //Expresion regular y variable a contener el numero
+                String expresionRegular = "^[1-9]+[0-9]*$";
+
+                //Cantidad Deseada nueva por el usuario y en string
                 int cantidad = 0;
+                String cantidadNueva = "";
 
                 //Respuesta a obtener del comando, tipo de objeto
                 bool respuesta = false;
@@ -348,27 +353,38 @@ namespace Interfaz_Presentadores.Modulo16
                             // la accionObtenemos el numero del textbox que el usuario desea
                             if (aux3.ID == aux.ID)
                             {
-                                //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el
-                                //usuario desea
-                                TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
-                                cantidad = int.Parse(eltexto.Text);
+                                /*En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el
+                                /usuario desea*/
+                                TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;                                
+                                cantidadNueva = eltexto.Text;
                                 break;
                             }
                         }
                     }
 
-                    //Decimos que se trata de un implemento
-                    TipoObjeto = 1;
+                    //Verifico que sea un numero entero diferente de cero o negativo
+                    if (Regex.IsMatch(cantidadNueva, expresionRegular))
+                    {
+                        //Decimos que se trata de un implemento y convertimos la cantidad deseada
+                        TipoObjeto = 1;
+                        cantidad = int.Parse(cantidadNueva);
 
-                    //Pasamos el ID que vino del boton                    
-                    Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
-                    objeto.Id = int.Parse(datos[1]);
+                        //Pasamos el ID que vino del boton                    
+                        Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                        objeto.Id = int.Parse(datos[1]);
 
-                    //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                    FabricaComandos fabricaComando = new FabricaComandos();
-                    Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
-                        (persona, objeto, TipoObjeto, cantidad);
-                    respuesta = ModificarCarrito.Ejecutar();
+                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
+                        FabricaComandos fabricaComando = new FabricaComandos();
+                        Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
+                            (persona, objeto, TipoObjeto, cantidad);
+                        respuesta = ModificarCarrito.Ejecutar();
+                    }
+                    else
+                        throw new CantidadInvalidaException
+                            (M16_Recursointerfaz.CODIGO_EXCEPCION_CANTIDAD_INVALIDA, 
+                            M16_Recursointerfaz.MENSAJE_EXCEPCION_CANTIDAD_INVALIDA, 
+                            new CantidadInvalidaException());                    
+                    
                 }
                 //Si es un Evento, me voy a la tabla correspondiente
                 else if (datos[0] == M16_Recursointerfaz.EVENTO)
@@ -389,24 +405,34 @@ namespace Interfaz_Presentadores.Modulo16
                                 //En la celda 2 siempre estara el textbox, lo obtengo y agarro la cantidad que el
                                 //usuario desea
                                 TextBox eltexto = aux2.Cells[2].Controls[0] as TextBox;
-                                cantidad = int.Parse(eltexto.Text);
+                                cantidadNueva = eltexto.Text;
                                 break;
                             }
                         }
                     }
 
-                    //Decimos que se trata de un evento
-                    TipoObjeto = 2;
+                    //Verifico que sea un numero entero diferente de cero o negativo
+                    if (Regex.IsMatch(cantidadNueva, expresionRegular))
+                    {
+                        //Decimos que se trata de un evento
+                        TipoObjeto = 2;
+                        cantidad = int.Parse(cantidadNueva);
 
-                    //Pasamos el ID que vino del boton                    
-                    Evento objeto = (Evento)fabrica.ObtenerEvento();
-                    objeto.Id = int.Parse(datos[1]);
+                        //Pasamos el ID que vino del boton                    
+                        Evento objeto = (Evento)fabrica.ObtenerEvento();
+                        objeto.Id = int.Parse(datos[1]);
 
-                    //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                    FabricaComandos fabricaComando = new FabricaComandos();
-                    Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
-                        (persona, objeto, TipoObjeto, cantidad);
-                    respuesta = ModificarCarrito.Ejecutar();
+                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
+                        FabricaComandos fabricaComando = new FabricaComandos();
+                        Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
+                            (persona, objeto, TipoObjeto, cantidad);
+                        respuesta = ModificarCarrito.Ejecutar();
+                    }
+                    else
+                        throw new CantidadInvalidaException
+                            (M16_Recursointerfaz.CODIGO_EXCEPCION_CANTIDAD_INVALIDA,
+                            M16_Recursointerfaz.MENSAJE_EXCEPCION_CANTIDAD_INVALIDA,
+                            new CantidadInvalidaException()); 
                 }
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
@@ -419,6 +445,11 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
+            }
+            catch (CantidadInvalidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CANTIDAD_INVALIDA_LINK, false);
             }
             catch (FormatException ex)
             {

@@ -243,6 +243,20 @@ namespace templateApp.GUI.Modulo16
                             alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                             alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_ITEM_INEXISTENTE_MENSAJE;
                             break;
+
+                        case "12":
+                            //Si hubo error al seleccionar un tipo de pago no admitido para las compras
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_PAGOINVALIDO_MENSAJE;
+                            break;
+
+                        case "13":
+                            //Si hubo error al introducir una cantidad deseada no valida
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CANTIDAD_INVALIDA_MENSAJE;
+                            break;
                     }
                     break;
 
@@ -301,7 +315,13 @@ namespace templateApp.GUI.Modulo16
 
                     case "3":
                         pagofinal = M16_RecursoInterfaz.TIPO_PAGO_TRANSFERENCIA;
-                        break;                    
+                        break;
+                    
+                    default:
+                        throw new OpcionPagoNoValidoException
+                            (M16_RecursoInterfaz.CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO, 
+                            M16_RecursoInterfaz.MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO, 
+                            new OpcionPagoNoValidoException());
                 }
 
                 //Ejecuto la operacion siempre y cuando el tipo de pago sea uno valido
@@ -318,6 +338,11 @@ namespace templateApp.GUI.Modulo16
             catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);               
+                HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LOGGER_LINK, false);
+            }
+            catch(OpcionPagoNoValidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LOGGER_LINK, false);
             }
             catch (ParseoVacioException e)
