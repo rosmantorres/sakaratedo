@@ -419,10 +419,10 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad evento con todos sus datos llenos</returns>
-        public Entidad ObtenerEvento()
-        {
-            return new Evento();
-        }
+       // public Entidad ObtenerEvento()
+       // {
+         //   return new Evento();
+        //}
 
 
         /// <summary>
