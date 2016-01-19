@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo6
 {
 
     /// <summary>
@@ -15,6 +15,7 @@ namespace DominioSKD
 
         #region Atributos
         /// <summary>
+
         /// Identificador en DB
         /// </summary>
         private int _id;
@@ -40,7 +41,23 @@ namespace DominioSKD
         /// </summary>
         private Boolean _status;
 
-       
+        /// <summary>
+        /// Costo de la matricula
+        /// </summary>
+        private float costo;
+
+        /// Identificador del mes
+        /// </summary>
+        private int _mes;
+
+        /// Identificador del anio
+        /// </summary>
+        private int _anio;
+
+        /// Identificador del dojo
+        /// </summary>
+        private Dojo dojo;
+
         #endregion
 
         #region Constructores
@@ -53,19 +70,22 @@ namespace DominioSKD
         {
             this._id = -1;
         }
+
+
         #endregion
 
         #region Métodos
+
+        public float Costo
+        {
+            get { return costo; }
+            set { costo = value; }
+        }
         public int ID
         {
             get { return this._id; }
         }
 
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
         public String Identificador
         {
             set
@@ -107,9 +127,40 @@ namespace DominioSKD
             get { return _status; }
             set { _status = value; }
         }
+
+        public int Mes
+        {
+            set
+            {
+                this._mes = value;
+            }
+            get
+            {
+                return this._mes;
+            }
+        }
+
+        public int Anio
+        {
+            set
+            {
+                this._anio = value;
+            }
+            get
+            {
+                return this._anio;
+            }
+        }
+
+        public Dojo Dojo_Matricula
+        {
+            get { return this.dojo; }
+
+            set { dojo = value; }
+
+        }
         #endregion
 
     }
 
-    
 }

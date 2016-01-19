@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo16;
+using DominioSKD.Entidades.Modulo6;
 
 namespace DominioSKD.Fabrica
 {
@@ -389,34 +392,68 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 16
-
-      /*  public Entidad ObtenerCarrito()
+        /// <summary>
+        /// Metodo de la fabrica que instancia un carrito vacio
+        /// </summary>
+        /// <returns>La entidad carrito vacia</returns>
+        public Entidad ObtenerCarrito()
         {
-            return new Carrito();
-        }
-        public Entidad ObtenerMatricula()
-        {
-            return new Matricula();
-        }
-        public Entidad ObtenerEvento()
-        {
-            return new Evento();
-        }
-        public Entidad ObtenerCompra()
-        {
-            return new Compra();
+            return new Entidades.Modulo16.Carrito();
         }
 
-        public static Entidad ObtenerPersona()
+        /// <summary>
+        /// Metodo de la fabrica que instancia el carrito con todas sus listas llenas
+        /// </summary>
+        /// <param name="implementos">Lista con todos los implementos del carrito</param>
+        /// <param name="eventos">Lista con todos los eventos del carrito</param>
+        /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
+        /// <returns>La entidad carrito con todos sus datos llenos</returns>
+        public Entidad ObtenerCarrito(
+           Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
         {
-            return new Persona();
+            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia el Evento
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad evento con todos sus datos llenos</returns>
+       // public Entidad ObtenerEvento()
+       // {
+         //   return new Evento();
+        //}
+
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el implemento
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad implemento con todos sus datos llenos</returns>
         public Entidad ObtenerImplemento()
         {
             return new Implemento();
         }
-        */
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el Dojo
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad dojo con todos sus datos llenos</returns>
+        public Entidad ObtenerDojos()
+        {
+            return new Dojo();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos</returns>
+        public Entidad ObtenerFactura()
+        {
+            return new Compra();
+        }
 
         #endregion
     }

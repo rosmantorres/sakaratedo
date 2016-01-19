@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Asistencia.cs" />
     <Compile Include="Atleta.cs" />
-    <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Competencia.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
@@ -49,6 +48,14 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo15\Implemento.cs" />
+    <Compile Include="Entidades\Modulo16\Carrito.cs" />
+    <Compile Include="Entidades\Modulo16\ListaCompra.cs" />
+    <Compile Include="Entidades\Modulo16\ListaEvento.cs" />
+    <Compile Include="Entidades\Modulo16\ListaImplemento.cs" />
+    <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Entidades\Modulo6\Matricula.cs" />
     <Compile Include="Entidades\Modulo14\Diseño.cs" />
     <Compile Include="Entidades\Modulo14\Planilla.cs" />
     <Compile Include="Entidades\Modulo14\SolicitudP.cs" />
@@ -56,12 +63,12 @@
     <Compile Include="Entidades\Modulo3\Organizacion.cs" />
     <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="Entidades\Modulo9\Evento.cs" />
     <Compile Include="Entidades\Modulo9\Horario.cs" />
     <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
-    <Compile Include="Matricula.cs" />
     <Compile Include="PersonaM1.cs" />
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo12\Competencia.cs" />
@@ -69,13 +76,10 @@
     <Compile Include="Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
-    <Compile Include="Evento.cs" />
     <Compile Include="HistorialCinta.cs" />
     <Compile Include="Horario.cs" />
-    <Compile Include="Implemento.cs" />
     <Compile Include="Inscripcion.cs" />
     <Compile Include="Organizacion.cs" />
-    <Compile Include="Persona.cs" />
     <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestriccionEvento.cs" />
@@ -102,12 +106,9 @@
     <Folder Include="Entidades\Modulo10\" />
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo15\" />
-    <Folder Include="Entidades\Modulo16\" />
     <Folder Include="Entidades\Modulo1\" />
     <Folder Include="Entidades\Modulo2\" />
     <Folder Include="Entidades\Modulo4\" />
-    <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
