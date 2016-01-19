@@ -41,51 +41,39 @@
      <div id="alert" runat="server">
     </div>
   
-  <select class="combobox" style="width:300px; height:35px">
-  <option value="">Seleccione Evento</option>
-  <option value="1">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
-  <option value="2">Competencia 1/2/2016  12:00 a 14:00</option>
-  <option value="3">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
-  <option value="4">Competencia 1/2/2016  12:00 a 14:00</option>
-  <option value="5">Entrenamiento Especial 1/1/2016  12:00 a 14:00</option>
-  </select>
- 
+<form role="form" name="agregar_restriccion" id="agregar_restriccion" method="post"   runat="server">
+    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+      <div class="form-group  col-sm-12 col-md-12 col-lg-12" >
+          <div class="col-sm-3 col-md-3 col-lg-3">
+            <label>Seleccione la competencia que desee:</label>  
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-84">
+             <div class="dropdown" runat="server" id="divcomboCompetencia" >
+                 <asp:DropDownList ID="comboCompetencia" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList>
+              </div>
+
+               
+          </div>
+      </div>
+    </div>
+
   
  <div class="container">
 	<div class="row" style="margin-top: 5%">
 		<div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
-					
-					<input type="text" placeholder="Edad Mínima" class="form-control" id="edad_menor">
-					
-					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
-						
-                        <option value="">Seleccione Cinta Menor</option>
-					    <option value="1">blanca</option>
-					    <option value="2">amarilla</option>
-					    <option value="3">verde</option>
-					    <option value="4">azul</option>
-					    <option value="5">roja</option>
-					    <option value="6">marrón</option>
-					    <option value="7">Negra 1do Dan</option>
-					    <option value="8">Negra 2do Dan</option>
-					    <option value="9">Negra 3er Dan</option>
-					    <option value="10">Negra 4to Dan</option>
-					    <option value="11">Negra 5to Dan</option>
-					
-                    </select>
-			
-                    <select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="Modalidad">
-						
-                        <option value="">Seleccione Categoría</option>
-						<option value="1">Ligero</option>
-						<option value="2">Medio</option>
-                        <option value="3">Semipesado</option>
-                        <option value="4">Pesado</option>
-						
-                    </select>
 
+					<div class="dropdown" runat="server" id="EdadMin" >
+                         <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" id="EdadMinima" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                        </asp:DropDownList>
+                    </div>	
+                    <div class="dropdown" runat="server" id="divcomboCinta" >
+                         <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" id="cinta_menor" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                        </asp:DropDownList>
+                    </div>
+					
                 </div>
 			</div>
 		</div>
@@ -94,55 +82,42 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-                    <input type="text" placeholder="Edad Máxima" class="form-control" id="rango_mayor">
-					
-					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
-						
-                        <option value="">Seleccione Cinta Mayor</option>
-					    <option value="1">blanca</option>
-					    <option value="2">amarilla</option>
-					    <option value="3">verde</option>
-					    <option value="4">azul</option>
-					    <option value="5">roja</option>
-					    <option value="6">marrón</option>
-					    <option value="7">Negra 1do Dan</option>
-					    <option value="8">Negra 2do Dan</option>
-					    <option value="9">Negra 3er Dan</option>
-					    <option value="10">Negra 4to Dan</option>
-					    <option value="11">Negra 5to Dan</option>
-
-					</select>
-
-                    <select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="Modalidad">
-						
-                        <option value="">Seleccione Modalidad</option>
-					    <option value="1">Kata</option>
-					    <option value="2">Kumite</option>
-
-                    </select>
-				    
-                    <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesEventos.aspx">Cancelar</a>
                     
-                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesEventos.aspx?actionSuccess=1"> Agregar</a>
+                    <div class="dropdown" runat="server" id="modalidad" >
+                         <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" id="Mod" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                        </asp:DropDownList>
+                    </div>
+                    
+                    <div class="dropdown" runat="server" id="EdadMax" >
+                         <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" id="EdadMaxima" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                        </asp:DropDownList>
+                    </div>					
+
+					<div class="dropdown" runat="server" id="divcomboCintaMayor" >
+                         <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" id="cinta_mayor" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                        </asp:DropDownList>
+                    </div>
+
+                    
+				    
+                   <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesCompetencia.aspx">Cancelar</a>
+                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>
 				
                 </div>
 			</div>
 		</div>
         
         
-        <div class="col-md-4">
-           
-            <p>Sexo</p>
-            <label class="radio-inline"><input type="radio" name="optradio">Masculino</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Femenino</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Ambos Sexos</label>
-
+        <div class="dropdown" runat="server" id="sex" >
+             <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" id="sexo" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+             </asp:DropDownList>
         </div>
+        
         
 
 	</div>
 </div>
-
+</form>
        
 <script type="text/javascript">
   $(document).ready(function(){

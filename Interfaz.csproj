@@ -50,13 +50,14 @@
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
-     <!--<HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>-->
+      <!--<HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>-->
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
