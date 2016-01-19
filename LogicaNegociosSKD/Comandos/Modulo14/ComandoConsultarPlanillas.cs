@@ -25,6 +25,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 foreach (DominioSKD.Planilla planilla in listaplanilla)
                 {
                     planilla.Dato = dao.ObtenerDatosPlanillaID1(planilla.ID);
+                    dao.LimpiarSQLConnection();
                 }
                 return listaplanilla;
             }

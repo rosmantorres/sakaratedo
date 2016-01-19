@@ -1026,7 +1026,7 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             List<Entidad> lista = new List<Entidad>();
             FabricaEntidades fabrica = new FabricaEntidades();
-
+            Planilla planilla;
             try
             {
 
@@ -1041,7 +1041,7 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        Planilla planilla =(Planilla)fabrica.ObtenerPersona();
+                        planilla =new Planilla();
                         planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
                         planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
                         planilla.Status = Convert.ToBoolean(leer[RecursosDAOModulo14.AtributoStatusPlanilla]);

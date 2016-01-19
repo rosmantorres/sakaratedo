@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Evento
+    public class Evento:Entidad
     {
         #region Atributos
 

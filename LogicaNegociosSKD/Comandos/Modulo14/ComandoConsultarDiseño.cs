@@ -51,7 +51,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
                 Diseño diseñoPlanilla = (Diseño)fabricaEntidad.obtenerDiseño();
                 //
-                Evento evento = new Evento();
+                DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
                 Competencia competencia = (Competencia)fabricaEntidad.ObtenerCompetencia();
                 Organizacion organizacion = (Organizacion)fabricaEntidad.ObtenerOrganizacion();
                 SolicitudPlanilla solicitud = 
@@ -65,7 +65,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 daoDatos.LimpiarSQLConnection();
                 matricula = daoDatos.ConsultarMatricula(dojo.Id_dojo, idPersona);
                 daoDatos.LimpiarSQLConnection();
-                evento = daoDatos.ConsultarEvento(idIns);
+                //evento = daoDatos.ConsultarEvento(idIns);
                 daoDatos.LimpiarSQLConnection();
                 competencia = (Competencia)daoDatos.ConsultarCompetencia(idIns);
                 daoDatos.LimpiarSQLConnection();
@@ -79,7 +79,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 comand.Info = diseñoPlanilla.Contenido;
                 comand.Persona = persona;
                 comand.Dojo = dojo;
-                //comand.Evento = evento;
+                comand.Evento = evento;
                 comand.Competencia = competencia;
                 comand.Matricula = matricula;
                 comand.Organizacion = organizacion;
