@@ -44,6 +44,8 @@
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Competencia.cs" />
+    <Compile Include="Entidades\Modulo10\Asistencia.cs" />
+    <Compile Include="Entidades\Modulo10\Inscripcion.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />
@@ -99,7 +101,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entidades\Modulo10\" />
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
     <Folder Include="Entidades\Modulo15\" />
