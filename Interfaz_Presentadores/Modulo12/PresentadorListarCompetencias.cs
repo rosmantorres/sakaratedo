@@ -85,7 +85,8 @@ namespace Interfaz_Presentadores.Modulo12
                 {
                     vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
                     vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
-                    vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+                    vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje 
+                        + M12_RecursoInterfazPresentador.alertaHtmlFinal;
                     
                 }
             }

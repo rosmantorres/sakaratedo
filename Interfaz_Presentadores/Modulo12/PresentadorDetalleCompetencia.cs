@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Fabrica;
 using DominioSKD;
 using LogicaNegociosSKD.Comandos.Modulo12;
 using LogicaNegociosSKD;
+using DominioSKD.Fabrica;
 
 namespace Interfaz_Presentadores.Modulo12
 {
@@ -23,14 +24,28 @@ namespace Interfaz_Presentadores.Modulo12
             this.vista = laVista;
         }
 
+        public void ObtenerVariableURL()
+        {
+            String detalleString = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompDetalle];
+            if (detalleString != null)
+                DetallarCompetencia(int.Parse(detalleString));
+        }
+
         public void DetallarCompetencia(int elIdComp)
         {
+            FabricaComandos laFabrica = new FabricaComandos();
+            FabricaEntidades laFabricaEntidades = new FabricaEntidades();
+            Entidad entidad = laFabricaEntidades.ObtenerCompetencia();
+
+            entidad.Id = elIdComp;
+            Comando<Entidad> comandoDetallarCompetencia =
+                laFabrica.ObtenerComandoDetallarCompetencia(entidad);
+
             try
             {
-                FabricaComandos laFabrica = new FabricaComandos();
-                Comando<Entidad> comandoDetallarCompetencia = laFabrica.ObtenerComandoDetallarCompetencia(elIdComp);
 
-                DominioSKD.Entidades.Modulo12.Competencia laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)comandoDetallarCompetencia.Ejecutar();
+                DominioSKD.Entidades.Modulo12.Competencia laCompetencia = 
+                    (DominioSKD.Entidades.Modulo12.Competencia)comandoDetallarCompetencia.Ejecutar();
                 
 
                 vista.nombreComp = laCompetencia.Nombre;
@@ -45,18 +60,21 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.finComp = laCompetencia.FechaFin.ToShortDateString();
                 vista.categIniComp = laCompetencia.Categoria.Cinta_inicial;
                 vista.categFinComp = laCompetencia.Categoria.Cinta_final;
-                vista.categEdadIniComp = laCompetencia.Categoria.Edad_inicial.ToString();
-                vista.cateEdadFinComp = laCompetencia.Categoria.Edad_final.ToString();
+                vista.edadIniComp = laCompetencia.Categoria.Edad_inicial.ToString();
+                vista.edadFinComp = laCompetencia.Categoria.Edad_final.ToString();
                 vista.categSexoComp = laCompetencia.Categoria.Sexo;
                 vista.costoComp = "Bs." + " " + laCompetencia.Costo.ToString();
                 laLatitud = laCompetencia.Ubicacion.Latitud.ToString();
                 laLongitud = laCompetencia.Ubicacion.Longitud.ToString();
+                vista.latitudComp = laLatitud;
+                vista.longitudComp = laLongitud;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
                 vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
-                vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+                vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje 
+                    + M12_RecursoInterfazPresentador.alertaHtmlFinal;
         
             }
         }

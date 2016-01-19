@@ -27,17 +27,28 @@ namespace templateApp.GUI.Modulo12
             presentador = new PresentadorDetalleCompetencia(this);
         }
 
-        #region Contratos
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ((SKD)Page.Master).IdModulo = M12_RecursoInterfaz.idModulo;
 
+            presentador.ObtenerVariableURL();
+
+            //if (!IsPostBack) // verificar si la pagina se muestra por primera vez
+            //{
+                
+            //}
+        }
+
+        #region Contrato
         string IContratoDetalleCompetencia.nombreComp
         {
             get
             {
-                throw new NotImplementedException();
+                return nombreComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                nombreComp.Text = value;
             }
         }
 
@@ -45,11 +56,11 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return tipoComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                tipoComp.Text = value;
             }
         }
 
@@ -57,11 +68,11 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return orgComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                orgComp.Text = value;
             }
         }
 
@@ -69,11 +80,11 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return statusComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                statusComp.Text = value;
             }
         }
 
@@ -81,11 +92,11 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return costoComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                costoComp.Text = value;
             }
         }
 
@@ -93,11 +104,11 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return inicioComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                inicioComp.Text = value;
             }
         }
 
@@ -105,35 +116,35 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return finComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                finComp.Text = value;
             }
         }
 
-        public string latitudComp
+        string IContratoDetalleCompetencia.latitudComp
         {
             get
             {
-                throw new NotImplementedException();
+                return laLatitud;
             }
             set
             {
-                throw new NotImplementedException();
+                laLatitud = value;
             }
         }
 
-        public string longitudComp
+        string IContratoDetalleCompetencia.longitudComp
         {
             get
             {
-                throw new NotImplementedException();
+                return laLongitud;
             }
             set
             {
-                throw new NotImplementedException();
+                laLongitud = value;
             }
         }
 
@@ -141,11 +152,11 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return categIniComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                categIniComp.Text = value;
             }
         }
 
@@ -153,35 +164,35 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return categFinComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                categFinComp.Text = value;
             }
         }
 
-        string IContratoDetalleCompetencia.categEdadIniComp
+        string IContratoDetalleCompetencia.edadIniComp
         {
             get
             {
-                throw new NotImplementedException();
+                return categEdadIniComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                categEdadIniComp.Text = value;
             }
         }
 
-        public string cateEdadFinComp
+        string IContratoDetalleCompetencia.edadFinComp
         {
             get
             {
-                throw new NotImplementedException();
+                return categEdadFinComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                categEdadFinComp.Text = value;
             }
         }
 
@@ -189,41 +200,29 @@ namespace templateApp.GUI.Modulo12
         {
             get
             {
-                throw new NotImplementedException();
+                return categSexoComp.Text;
             }
             set
             {
-                throw new NotImplementedException();
+                categSexoComp.Text = value;
             }
         }
 
         public string alertaClase
         {
-            set { throw new NotImplementedException(); }
+            set { alert.Attributes[M12_RecursoInterfaz.alertClase] = value; }
         }
 
         public string alertaRol
         {
-            set { throw new NotImplementedException(); }
+            set { alert.Attributes[M12_RecursoInterfaz.alertRole] = value; }
         }
 
         public string alerta
         {
-            set { throw new NotImplementedException(); }
+            set { alert.InnerHtml = value; }
         }
-
         #endregion
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ((SKD)Page.Master).IdModulo = M12_RecursoInterfaz.idModulo;
-            String detalleString = HttpContext.Current.Request.QueryString[M12_RecursoInterfaz.strCompDetalle];
-
-            if (!IsPostBack) // verificar si la pagina se muestra por primera vez
-            {
-                presentador.DetallarCompetencia(int.Parse(detalleString));
-            }
-        }
     }
 
 }

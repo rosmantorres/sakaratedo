@@ -89,9 +89,9 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarTodosCompetencia();
         }
 
-        public Comando<Entidad> ObtenerComandoDetallarCompetencia(int elIdCompetencia)
+        public Comando<Entidad> ObtenerComandoDetallarCompetencia(Entidad paramEntidad)
         {
-            return new ComandoConsultarXIdCompetencia();
+            return new ComandoConsultarXIdCompetencia(paramEntidad);
         }
 
         #endregion
