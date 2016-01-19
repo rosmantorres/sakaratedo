@@ -10,12 +10,14 @@ using System.Data.SqlClient;
 using System.Configuration;
 using DatosSKD.Modulo1;
 using DatosSKD.InterfazDAO.Modulo2;
+using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo2
 {
     public class DaoRoles: DAOGeneral, IDaoRoles
     {
 
+        private FabricaEntidades laFabrica;
 
         public Boolean Agregar(Entidad ent)
         {
@@ -32,22 +34,20 @@ namespace DatosSKD.DAO.Modulo2
         /// <returns> lista de roles del sistema con sus respectivos atributos</returns>
         public List<Entidad> ConsultarTodos()
         {
-            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
-                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 List<Entidad> losRoles = new List<Entidad>();
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo2.ConsultarRolesSistema, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Rol elRol = new Rol();
+                    Rol elRol =(Rol) laFabrica.ObtenerRol_M2();
                     elRol.Id_rol = int.Parse(row[RecursosBDModulo2.AliasIdRol].ToString());
                     elRol.Nombre = row[RecursosBDModulo2.AliasNombreRol].ToString();
                     elRol.Descripcion = row[RecursosBDModulo2.AliasDescripcionRol].ToString();
@@ -95,18 +95,18 @@ namespace DatosSKD.DAO.Modulo2
 
             try
             {
-                laConexion = new BDConexion();
-                laConexion2 = new BDConexion();
-                laConexion3 = new BDConexion();
+               // laConexion = new BDConexion();
+               // laConexion2 = new BDConexion();
+               // laConexion3 = new BDConexion();
                 parametros = new List<Parametro>();
                 parametros2 = new List<Parametro>();
-                Cuenta laCuenta = new Cuenta();
+                Cuenta laCuenta = (Cuenta) laFabrica.ObtenerCuenta_M1();
 
                 string idUsuario = "0";
 
                 elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, id_usuario.ToString(), false);
                 parametros.Add(elParametro);
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo2.ConsultarNombreUsuarioContrasena_ID, parametros);
 
 
@@ -119,13 +119,13 @@ namespace DatosSKD.DAO.Modulo2
 
                 }
 
-                DataTable dt1 = laConexion2.EjecutarStoredProcedureTuplas(
+                DataTable dt1 = this.EjecutarStoredProcedureTuplas(
                 RecursosBDModulo2.ConsultarRolesUsuario, parametros);
                 List<Rol> listaRol = new List<Rol>();
                 foreach (DataRow row in dt1.Rows)
                 {
 
-                    Rol elRol = new Rol();
+                    Rol elRol = (Rol) laFabrica.ObtenerRol_M2();
                     elRol.Id_rol = int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
                     elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
                     elRol.Descripcion = row[RecursosBDModulo1.AliasDescripcionRol].ToString();
@@ -137,10 +137,10 @@ namespace DatosSKD.DAO.Modulo2
 
                 elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
                 parametros2.Add(elParametro);
-                DataTable dt2 = laConexion3.EjecutarStoredProcedureTuplas(
+                DataTable dt2 = this.EjecutarStoredProcedureTuplas(
                                 RecursosBDModulo1.consultarPersona, parametros2);
 
-                PersonaM1 laPersona = new PersonaM1();
+                PersonaM1 laPersona = (PersonaM1) laFabrica.ObtenerPersona_M1();
                 foreach (DataRow row in dt2.Rows)
                 {
 
@@ -182,19 +182,17 @@ namespace DatosSKD.DAO.Modulo2
         /// <returns> true si  se pudo Agregar false si no se pudo Agregar el rol</returns>
         public bool AgregarRol(string idUsuario, string idRol)
         {
-            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
-                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 elParametro = new Parametro(RecursosBDModulo2.AliasIdRol, SqlDbType.VarChar, idRol, false);
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
-                laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo2.AgregarRolProcedure, parametros);
+                this.EjecutarStoredProcedureTuplas(RecursosBDModulo2.AgregarRolProcedure, parametros);
                 return true;
 
             }
@@ -223,19 +221,17 @@ namespace DatosSKD.DAO.Modulo2
         /// <returns> true si  se pudo eliminar false si no se pudo eliminar el rol</returns>
         public bool EliminarRol(string idUsuario, string idRol)
         {
-            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
-                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 elParametro = new Parametro(RecursosBDModulo2.AliasIdRol, SqlDbType.VarChar, idRol, false);
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
-                laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo2.EliminarRolProcedure, parametros);
+                this.EjecutarStoredProcedureTuplas(RecursosBDModulo2.EliminarRolProcedure, parametros);
                 return true;
 
             }
@@ -261,21 +257,19 @@ namespace DatosSKD.DAO.Modulo2
         /// <returns> lista de roles del usuario con sus respectivos atributos</returns>
         public List<Rol> consultarRolesUsuario(string idUsuario)
         {
-            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
-                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 List<Rol> losRoles = new List<Rol>();
                 elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo2.ConsultarRolesUsuario, parametros);
+                DataTable dt = this.EjecutarStoredProcedureTuplas(RecursosBDModulo2.ConsultarRolesUsuario, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Rol rol = new Rol();
+                    Rol rol = (Rol)laFabrica.ObtenerRol_M2();
                     rol.Id_rol = int.Parse(row[RecursosBDModulo2.AliasIdRol].ToString());
                     rol.Descripcion = row[RecursosBDModulo2.AliasDescripcionRol].ToString();
                     rol.Nombre = row[RecursosBDModulo2.AliasNombreRol].ToString();
