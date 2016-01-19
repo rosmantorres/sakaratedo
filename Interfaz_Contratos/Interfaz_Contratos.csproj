@@ -47,6 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Master\IContratoMasterPage.cs" />
+    <Compile Include="Modulo10\IContratoAgregarAsistencia.cs" />
+    <Compile Include="Modulo10\IContratoDetalleAsistencia.cs" />
+    <Compile Include="Modulo10\IContratoListarAsistencia.cs" />
+    <Compile Include="Modulo10\IContratoModificarAsistencia.cs" />
+    <Compile Include="Modulo11\IContratoAgregarResultadoCompetencia.cs" />
+    <Compile Include="Modulo11\IContratoDetalleResultadoCompetencia.cs" />
+    <Compile Include="Modulo11\IContratoListarResultadoCompetencia.cs" />
+    <Compile Include="Modulo11\IContratoModificarResultadoCompetencia.cs" />
     <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />
     <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
     <Compile Include="Modulo12\IContratoListarCompetencias.cs" />
@@ -75,8 +83,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulo10\" />
-    <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
