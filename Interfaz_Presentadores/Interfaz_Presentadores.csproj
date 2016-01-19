@@ -66,6 +66,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo12\M12_RecursoInterfazPresentador.Designer.cs">
+      <DependentUpon>M12_RecursoInterfazPresentador.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Modulo12\PresentadorAgregarCompetencia.cs" />
     <Compile Include="Modulo12\PresentadorDetalleCompetencia.cs" />
     <Compile Include="Modulo12\PresentadorListarCompetencias.cs" />
@@ -148,6 +153,10 @@
     <EmbeddedResource Include="Master\RecursosInterfazMaster.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazMaster.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo12\M12_RecursoInterfazPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M12_RecursoInterfazPresentador.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo14\RecursosPresentadorModulo14.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

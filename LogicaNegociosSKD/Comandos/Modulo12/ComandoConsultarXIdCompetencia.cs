@@ -12,6 +12,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo12
 {
     public class ComandoConsultarXIdCompetencia : Comando<Entidad>
     {
+        public ComandoConsultarXIdCompetencia(Entidad entidad)
+        {
+            LaEntidad = entidad;
+        }
+
         public override Entidad Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
