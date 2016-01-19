@@ -255,6 +255,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoRegistrarPago6 = null;
             this.fabrica = null;
             this.fabricacomando = null;
+            this.evento = null;
         }
     }
 }

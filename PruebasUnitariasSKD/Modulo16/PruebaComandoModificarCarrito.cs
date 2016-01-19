@@ -28,8 +28,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Entidad persona2;
         private Entidad persona3;
         private Implemento implemento;
-        private Matricula matricula;
-        private ListaEvento listaEventos;
+        private Matricula matricula;        
         private Comando<bool> PruebaComandoVacio;
         private Comando<bool> PruebaComandoVacio2;
         private ComandoModificarCarrito pruebaComandoVacio3;
@@ -37,7 +36,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> PruebaSoloImplementos;
         private Comando<bool> PruebaSoloEventos;
         private Comando<bool> PruebaTodosItems;
-        private Comando<Entidad> eventos;
+        private Evento evento;
         private Comando<bool> ComandoModificarCarrito;
         private Comando<bool> ComandoModificarCarrito2;
         private Comando<bool> ComandoModificarCarrito3;
@@ -77,8 +76,9 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula.Costo = 5000;
 
             //Evento
-            this.eventos = fabricacomando.CrearComandoConsultarTodosEventos();
-            this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
+            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento.Id = 1;
+            this.evento.Costo = 0;            
 
             //Iniciamos los atributos para la prueba de vacio
             this.PruebaComandoVacio = fabricacomando.CrearComandoModificarCarrito();
@@ -93,13 +93,13 @@ namespace PruebasUnitariasSKD.Modulo16
             this.PruebaSoloImplementos.Ejecutar();
 
             this.PruebaSoloEventos = 
-                fabricacomando.CrearComandoAgregarItem(this.persona2, this.listaEventos.ListaEventos[0], 2, 10);
+                fabricacomando.CrearComandoAgregarItem(this.persona2, this.evento, 2, 10);
             this.PruebaSoloEventos.Ejecutar();
 
             this.PruebaTodosItems = fabricacomando.CrearComandoAgregarItem(this.persona3, this.implemento, 1, 20);
             this.PruebaTodosItems.Ejecutar();
             this.PruebaTodosItems = fabricacomando.CrearComandoAgregarItem
-                (this.persona3, this.listaEventos.ListaEventos[0], 2, 10);
+                (this.persona3, this.evento, 2, 10);
             this.PruebaTodosItems.Ejecutar();
             this.PruebaTodosItems = fabricacomando.CrearComandoAgregarItem(this.persona3, this.matricula, 3, 1);
             this.PruebaTodosItems.Ejecutar();
@@ -107,10 +107,10 @@ namespace PruebasUnitariasSKD.Modulo16
             //ModificarCarrito del primer test
             this.ComandoModificarCarrito = fabricacomando.CrearComandoModificarCarrito(this.persona, this.implemento, 1, 7);
             this.ComandoModificarCarrito2 = fabricacomando.CrearComandoModificarCarrito
-                (this.persona2, this.listaEventos.ListaEventos[0], 2, 7);
+                (this.persona2, this.evento, 2, 7);
             this.ComandoModificarCarrito3 = fabricacomando.CrearComandoModificarCarrito(this.persona3, this.implemento, 1, 7);
             this.ComandoModificarCarrito6 = fabricacomando.CrearComandoModificarCarrito
-                (this.persona3, this.listaEventos.ListaEventos[0], 2, 7);
+                (this.persona3, this.evento, 2, 7);
 
             //ModificarCarrito del segundo test
             this.ComandoModificarCarrito4 = fabricacomando.CrearComandoModificarCarrito(this.persona, this.implemento, 1, 8000);
@@ -197,16 +197,14 @@ namespace PruebasUnitariasSKD.Modulo16
             this.persona2 = null;
             this.persona3 = null;
             this.implemento = null;
-            this.matricula = null;
-            this.listaEventos = null;
+            this.matricula = null;            
             this.PruebaComandoVacio = null;
             this.PruebaComandoVacio2 = null;
             this.pruebaComandoVacio3 = null;
             this.pruebaComandoVacio4 = null;
             this.PruebaSoloImplementos = null;
             this.PruebaSoloEventos = null;
-            this.PruebaTodosItems = null;
-            this.eventos = null;
+            this.PruebaTodosItems = null;     
             this.ComandoModificarCarrito = null;
             this.ComandoModificarCarrito2 = null;
             this.ComandoModificarCarrito3 = null;
@@ -214,6 +212,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoModificarCarrito5 = null;
             fabrica = null;
             fabricacomando = null;
+            this.evento = null;
         }
     }
 }

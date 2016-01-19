@@ -274,6 +274,8 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula2 = null;
             fabrica = null;
             fabricacomandos = null;
+            this.evento = null;
+            this.evento2 = null;
         }
     }
 }
