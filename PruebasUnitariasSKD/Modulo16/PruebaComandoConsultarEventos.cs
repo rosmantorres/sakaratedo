@@ -8,7 +8,6 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD;
@@ -27,7 +26,7 @@ namespace PruebasUnitariasSKD.Modulo16
         #region Atributos
         //Atributos pertinentes a usar
         private ComandoConsultarTodosEventos pruebaComandoConsultarEventos;
- 
+        private FabricaComandos fabrica;
         
         #endregion
 
@@ -40,9 +39,11 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            //La fabrica
+            fabrica = new FabricaComandos();
              
             //Se inicializa la prueba para consultar un evento existente en particular
-            this.pruebaComandoConsultarEventos = (ComandoConsultarTodosEventos)FabricaComandos.CrearComandoConsultarTodosEventos();
+            this.pruebaComandoConsultarEventos = (ComandoConsultarTodosEventos)fabrica.CrearComandoConsultarTodosEventos();
           
          }
 
@@ -67,6 +68,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            this.fabrica = null;
             this.pruebaComandoConsultarEventos = null;
         
  

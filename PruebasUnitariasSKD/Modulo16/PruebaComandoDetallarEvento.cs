@@ -8,7 +8,6 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD;
@@ -22,7 +21,7 @@ namespace PruebasUnitariasSKD.Modulo16
         //Atributos pertinentes a usar
         private ComandoDetallarEvento pruebaComandoDetallarEvento;
         private Entidad elevento;
-
+        private FabricaComandos fabrica;
 
         #endregion
 
@@ -35,9 +34,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            fabrica = new FabricaComandos();
 
             //Se inicializa la prueba para consultar un evento existente en particular
-            this.pruebaComandoDetallarEvento = (ComandoDetallarEvento)FabricaComandos.CrearComandoDetallarEvento(elevento);
+            this.pruebaComandoDetallarEvento = (ComandoDetallarEvento)fabrica.CrearComandoDetallarEvento(elevento);
 
         }
 
@@ -63,7 +63,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Limpiar()
         {
             this.pruebaComandoDetallarEvento = null;
-
+            this.fabrica = null;
 
 
         }

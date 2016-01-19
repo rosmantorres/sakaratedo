@@ -7,6 +7,7 @@ using NUnit.Framework;
 using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
@@ -31,14 +32,14 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> pruebaComandoImplemento1;
         private Comando<bool> pruebaComandoEvento1;
         private Comando<bool> pruebaComandoMatricula1;
-        private Comando<List<Entidad>> eventos;
+        private Comando<Entidad> eventos;
         private Entidad persona;
         private Entidad persona2;
         private Entidad persona3;
         private Implemento implemento;
-        private List<Entidad> listaEventos;
+        private ListaEvento listaEventos;
         private Matricula matricula;
-
+        private FabricaComandos fabricacomandos;
         #endregion
 
         /// <summary>
@@ -62,8 +63,8 @@ namespace PruebasUnitariasSKD.Modulo16
 
 
             //Eventos
-            this.eventos = FabricaComandos.CrearComandoConsultarTodosEventos();
-            this.listaEventos = this.eventos.Ejecutar();
+            this.eventos = fabricacomandos.CrearComandoConsultarTodosEventos();
+            this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
 
             //Dos matriculas distintas
             this.matricula = new Matricula();
@@ -81,7 +82,7 @@ namespace PruebasUnitariasSKD.Modulo16
             //valor  para Eliminar un Implemento
             this.pruebaComandoImplemento1 = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona);
             //valor para Eliminar un Evento
-            this.pruebaComandoEvento1 = fabrica.CrearComandoeliminarItem(2, this.listaEventos[0], this.persona2);
+            this.pruebaComandoEvento1 = fabrica.CrearComandoeliminarItem(2, this.listaEventos.ListaEventos[0], this.persona2);
             //valor  para Eliminar una Matricula
             this.pruebaComandoMatricula1 = fabrica.CrearComandoeliminarItem(3, this.matricula, this.persona3);
 
@@ -152,6 +153,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento = null;
             this.listaEventos = null;
             this.matricula = null;
+            this.fabricacomandos = null;
         }
 
     }

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Interfaz_Contratos.Modulo16;
 using Interfaz_Presentadores.Modulo16;
+using templateApp.GUI.Master;
 
 
 namespace templateApp.GUI.Modulo16

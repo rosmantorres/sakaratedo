@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
-using DominioSKD.Entidades.Modulo1;
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Entidades.Modulo15;
 using DatosSKD.DAO.Modulo16;
@@ -17,13 +16,15 @@ using DatosSKD.InterfazDAO.Modulo16;
 
 namespace PruebasUnitariasSKD.Modulo16
 {
-    class PruebaDaoDetallarEvento
+    [TestFixture]
+    public class PruebaDaoDetallarEvento
     {
 
         #region Atributos
         //Atributos pertinentes a usar
         private DaoEvento pruebaDao;
         private IdaoEvento daoEvento;
+        private FabricaDAOSqlServer fabrica;
         #endregion
 
 
@@ -33,9 +34,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            fabrica = new FabricaDAOSqlServer();
 
             //Obtengo el comando
-            this.pruebaDao = (DaoEvento)FabricaDAOSqlServer.ObtenerDaoEventos();
+            this.pruebaDao = (DaoEvento)fabrica.ObtenerDaoEventos();
 
 
         }
@@ -48,7 +50,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaConsultarEventos()
         {
-            daoEvento = FabricaDAOSqlServer.ObtenerDaoEventos();
+            daoEvento = fabrica.ObtenerDaoEventos();
             Assert.IsNotNull(daoEvento.DetallarEvento(1));
 
         }

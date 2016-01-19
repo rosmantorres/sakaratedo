@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using DominioSKD;
-using DominioSKD.Entidades.Modulo1;
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Entidades.Modulo15;
 using DatosSKD.DAO.Modulo16;
@@ -24,6 +23,7 @@ namespace PruebasUnitariasSKD.Modulo16
         //Atributos pertinentes a usar
         private DaoMensualidad pruebaDao;
         private IdaoMensualidad daoMatricula;
+        private FabricaDAOSqlServer fabrica;
         #endregion
 
 
@@ -33,9 +33,11 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            //La fabrica
+            fabrica = new FabricaDAOSqlServer();
 
             //Obtengo el comando
-            this.pruebaDao = (DaoMensualidad)FabricaDAOSqlServer.ObtenerDaoMensualidades();
+            this.pruebaDao = (DaoMensualidad)fabrica.ObtenerDaoMensualidades();
 
 
         }
@@ -48,7 +50,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaConsultarImplementos()
         {
-            daoMatricula = FabricaDAOSqlServer.ObtenerDaoMensualidades();
+            daoMatricula = fabrica.ObtenerDaoMensualidades();
             Assert.IsNotNull(daoMatricula.ListarMensualidad());
 
         }
@@ -63,6 +65,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [TearDown]
         public void Limpiar()
         {
+            this.fabrica = null;
             this.pruebaDao = null;
             this.daoMatricula = null;
         }

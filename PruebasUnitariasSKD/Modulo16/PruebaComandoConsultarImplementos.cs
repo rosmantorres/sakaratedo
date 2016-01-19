@@ -8,7 +8,6 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD;
@@ -29,7 +28,7 @@ namespace PruebasUnitariasSKD.Modulo16
         #region Atributos
         //Atributos pertinentes a usar
         private ComandoConsultarTodosProductos pruebaComandoConsultarProductos;
- 
+        private FabricaComandos fabrica = new FabricaComandos();
         
         #endregion
 
@@ -44,7 +43,7 @@ namespace PruebasUnitariasSKD.Modulo16
         {
              
             //Se inicializa la prueba para consultar implementos existentes en stock
-            this.pruebaComandoConsultarProductos = (ComandoConsultarTodosProductos)FabricaComandos.CrearComandoConsultarTodosProductos();
+            this.pruebaComandoConsultarProductos = (ComandoConsultarTodosProductos)fabrica.CrearComandoConsultarTodosProductos();
           
          }
 
@@ -70,7 +69,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Limpiar()
         {
             this.pruebaComandoConsultarProductos = null;
-        
+            this.fabrica = null;
  
 
         }

@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
 
 namespace PruebasUnitariasSKD.Modulo16
@@ -33,13 +34,15 @@ namespace PruebasUnitariasSKD.Modulo16
         private Entidad persona6;
         private Implemento implemento;
         private Implemento implemento2;
-        private List<Entidad> listaEventos;
+        private ListaEvento listaEventos;
         private Matricula matricula;
         private Matricula matricula2;
         private Dictionary<Entidad, int> ImplementosCarrito;
         private Dictionary<Entidad, int> EventosCarrito;
         private Dictionary<Entidad, int> MatriculasCarrito;
         private Evento evento;
+        FabricaDAOSqlServer fabrica;
+        FabricaComandos fabricacomandos;
         #endregion
 
         /// <summary>
@@ -48,8 +51,9 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            //Obtengo el DAO
+            //Instancio las fabricas y obtengo el DAO
+            fabrica = new FabricaDAOSqlServer();
+            fabricacomandos = new FabricaComandos();
             this.daoPrueba = fabrica.ObtenerdaoCarrito();
 
             //La persona
@@ -75,7 +79,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            this.listaEventos = FabricaComandos.CrearComandoConsultarTodosEventos().Ejecutar();
+            this.listaEventos = (ListaEvento)fabricacomandos.CrearComandoConsultarTodosEventos().Ejecutar();
 
             //Dos matriculas distintas
             this.matricula = new Matricula();
@@ -112,7 +116,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.implemento2, 1, 30));
 
             //Agrego un item diferente al carrito
-            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.listaEventos[0], 2, 20));
+            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona, this.listaEventos.ListaEventos[0], 2, 20));
 
 
         }
@@ -124,13 +128,13 @@ namespace PruebasUnitariasSKD.Modulo16
         public void pruebaAgregarEvento()
         {
             //Agrego un Evento al carrito vacio de una persona
-            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 10));
+            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos.ListaEventos[0], 2, 10));
 
             //Agrego el mismo evento pero con cantidad diferente
-            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 11));
+            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos.ListaEventos[0], 2, 11));
 
             //Agrego un evento diferente
-            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos[1], 2, 30));
+            Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.listaEventos.ListaEventos[1], 2, 30));
 
             //Agrego un item diferente al carrito
             Assert.IsTrue(this.daoPrueba.agregarItem(this.persona2, this.matricula, 3, 20));
@@ -235,18 +239,18 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
 
             //Agrego y Modifico un carrito en el que solo hay eventos
-            this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 10);
-            Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona2, this.listaEventos[0], 2, 7));
+            this.daoPrueba.agregarItem(this.persona2, this.listaEventos.ListaEventos[0], 2, 10);
+            Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona2, this.listaEventos.ListaEventos[0], 2, 7));
 
             //Limpio los datos
             this.daoPrueba.eliminarItem(3, this.implemento, this.persona2);
 
             //Agrego y Modifico un carrito en el que hay Implementos, eventos y matriculas
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
-            this.daoPrueba.agregarItem(this.persona3, this.listaEventos[0], 2, 10);
+            this.daoPrueba.agregarItem(this.persona3, this.listaEventos.ListaEventos[0], 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
             Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona3, this.implemento, 1, 7));
-            Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona3, this.listaEventos[0], 2, 7));
+            Assert.IsTrue(this.daoPrueba.ModificarCarrito(this.persona3, this.listaEventos.ListaEventos[0], 2, 7));
 
             //Limpio los datos
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona3);
@@ -272,7 +276,7 @@ namespace PruebasUnitariasSKD.Modulo16
             /*Modifico un carrito en hay implementos, eventos y matriculas, poniendole al implemento una cantidad
             inexistente en el stock */
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
-            this.daoPrueba.agregarItem(this.persona3, this.listaEventos[0], 2, 10);
+            this.daoPrueba.agregarItem(this.persona3, this.listaEventos.ListaEventos[0], 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
             Assert.IsFalse(this.daoPrueba.ModificarCarrito(this.persona3, this.implemento, 1, 8000));
 
@@ -297,7 +301,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, "Tarjeta"));
 
             //Agregamos y Registramos el pago en un carrito donde solo hay eventos
-            this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 10);
+            this.daoPrueba.agregarItem(this.persona2, this.listaEventos.ListaEventos[0], 2, 10);
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona2, "Deposito"));
 
             //Agregamos y Registramos el pago en un carrito donde solo hay matriculas
@@ -306,7 +310,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agregamos y Registramos el pago de un carrito donde hay Implementos, eventos y matirculas
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
-            this.daoPrueba.agregarItem(this.persona3, this.listaEventos[0], 2, 10);
+            this.daoPrueba.agregarItem(this.persona3, this.listaEventos.ListaEventos[0], 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona3, "Tarjeta"));
         }
@@ -346,7 +350,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.agregarItem(this.persona6, this.implemento, 1, 10);
             this.daoPrueba.agregarItem(this.persona6, this.implemento, 1, 10);
             this.daoPrueba.agregarItem(this.persona6, this.implemento, 1, 10);
-            this.daoPrueba.agregarItem(this.persona6, this.listaEventos[0], 2, 20);
+            this.daoPrueba.agregarItem(this.persona6, this.listaEventos.ListaEventos[0], 2, 20);
             this.daoPrueba.agregarItem(this.persona6, this.matricula, 3, 1);
             Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona6, "Transferencia"));
 
@@ -396,7 +400,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void PruebaCarritoSoloEventos()
         {
             //Agregamos Eventos en el carrito de la persona
-            this.daoPrueba.agregarItem(this.persona2, this.listaEventos[0], 2, 6);
+            this.daoPrueba.agregarItem(this.persona2, this.listaEventos.ListaEventos[0], 2, 6);
 
             //Ejecutamos los metodos correspondientes para ver los items
             this.ImplementosCarrito = this.daoPrueba.getImplemento(this.persona2);
@@ -458,7 +462,7 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Agregamos todos los items en el carrito de una persona
             this.daoPrueba.agregarItem(this.persona4, this.implemento, 1, 5);
-            this.daoPrueba.agregarItem(this.persona4, this.listaEventos[0], 2, 6);
+            this.daoPrueba.agregarItem(this.persona4, this.listaEventos.ListaEventos[0], 2, 6);
             this.daoPrueba.agregarItem(this.persona4, this.matricula, 3, 1);
 
             //Ejecutamos los metodos correspondientes para ver los items
@@ -518,6 +522,8 @@ namespace PruebasUnitariasSKD.Modulo16
             this.EventosCarrito = null;
             this.MatriculasCarrito = null;
             this.evento = null;
+            this.fabrica = null;
+            this.fabricacomandos = null;
         }
     }
 }

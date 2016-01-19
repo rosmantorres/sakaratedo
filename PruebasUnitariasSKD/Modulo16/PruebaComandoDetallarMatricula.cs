@@ -8,7 +8,6 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD;
@@ -22,6 +21,7 @@ namespace PruebasUnitariasSKD.Modulo16
         //Atributos pertinentes a usar
         private ComandoDetallarMatricula pruebaComandoDetallarMatricula;
         private Entidad lamatricula;
+        private FabricaComandos fabrica;
         #endregion
 
         /// <summary>
@@ -30,9 +30,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-             
+            fabrica = new FabricaComandos(); 
+
             //Se inicializa la prueba para consultar matriculas existentes en stock
-            this.pruebaComandoDetallarMatricula = (ComandoDetallarMatricula)FabricaComandos.CrearComandoDetallarMatricula(lamatricula);
+            this.pruebaComandoDetallarMatricula = (ComandoDetallarMatricula)fabrica.CrearComandoDetallarMatricula(lamatricula);
           
          }
 
@@ -53,6 +54,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Limpiar()
         {
             this.pruebaComandoDetallarMatricula = null;
+            this.fabrica = null;
         }
 
         
