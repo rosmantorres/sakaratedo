@@ -13,7 +13,6 @@ using ExcepcionesSKD.Modulo16;
 using System.Data;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD;
 
 namespace DatosSKD.DAO.Modulo16
 {
@@ -129,7 +128,7 @@ namespace DatosSKD.DAO.Modulo16
 
                         case 2:
                             //Si es un Evento casteamos el objeto y lo tratamos como tal
-                            Evento elEvento = objeto as Evento;
+                            DominioSKD.Entidades.Modulo9.Evento elEvento = objeto as DominioSKD.Entidades.Modulo9.Evento;
 
                             //Lanzamos una excepcion si no es un implemento o si esta en vacio
                             if (elEvento == null)

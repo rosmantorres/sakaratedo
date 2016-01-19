@@ -32,7 +32,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Entidad persona6;
         private Matricula matricula;
         private Implemento implemento;        
-        private Evento evento;
+        private DominioSKD.Entidades.Modulo9.Evento evento;
         private Comando<bool> PruebaComandoVacio;
         private Comando<bool> PruebaComandoVacio2;
         private ComandoRegistrarPago pruebaComandoVacio3;
@@ -90,7 +90,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
 
             //Eventos
-            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
