@@ -58,9 +58,6 @@ namespace Interfaz_Presentadores.Modulo12
         {
                 try
                 {
-                    
-                    //LogicaCompetencias logComp = new LogicaCompetencias();
-                    //laLista = logComp.obtenerListaDeCompetencias();
                     FabricaComandos laFabrica = new FabricaComandos();
 
                     Comando<List<Entidad>> comandoListarCompetencias = 
