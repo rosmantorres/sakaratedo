@@ -11,33 +11,21 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo14
 {
-   public class ComandoObtenerPlanillaID : Comando<Entidad>
+    public class ComandoConsultarPlanillas : Comando<List<Entidad>>
     {
-
-        private int idPlanilla;
-
-        public int IdPlanilla
-        {
-            get { return idPlanilla; }
-            set { idPlanilla = value; }
-        }
-
-        public override Entidad Ejecutar()
+        public override List<Entidad> Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
-            Planilla planilla = (Planilla)fabricaEntidades.ObtenerPlanilla();
             try
             {
-
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
-                
-                planilla.ID = this.idPlanilla;
-                Entidad entidad = BaseDeDatoPlanilla.ConsultarXId(planilla);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
-                planilla.Nombre = ((Planilla)entidad).Nombre;
-                planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
-               
+                DaoPlanilla dao = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                List<Entidad> listaplanilla = new List<Entidad>();
+                listaplanilla = dao.ConsultarPlanillasCreadas();
+                foreach (DominioSKD.Planilla planilla in listaplanilla)
+                {
+                    planilla.Dato = dao.ObtenerDatosPlanillaID1(planilla.ID);
+                }
+                return listaplanilla;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -55,7 +43,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-            return planilla;
         }
     }
 }
