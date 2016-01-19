@@ -36,9 +36,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Entidad persona2;
         private Entidad persona3;
         private Entidad persona4;
-        private Implemento implemento;
-        private ListaEvento listaEventos;
-        private Comando<Entidad> eventos;
+        private Implemento implemento;       
         private Matricula matricula;
         private Carrito Carrito;
         private Evento evento;
@@ -72,8 +70,9 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
 
             //Eventos
-            this.eventos = fabricacomandos.CrearComandoConsultarTodosEventos();
-            this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
+            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento.Id = 1;
+            this.evento.Costo = 0;
 
             //Matricula
             this.matricula = new Matricula();
@@ -93,7 +92,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Carrito Cuando hay solo Eventos
             this.ComandoAgregarItem = fabricacomandos.CrearComandoAgregarItem
-                (this.persona2, this.listaEventos.ListaEventos[0], 2, 6);
+                (this.persona2, this.evento, 2, 6);
             this.ComandoAgregarItem.Ejecutar();
             this.PruebaVerSoloEvento = fabricacomandos.CrearComandoVerCarrito(this.persona2);
 
@@ -106,7 +105,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoAgregarItem = fabricacomandos.CrearComandoAgregarItem(this.persona4, this.implemento, 1, 5);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem = fabricacomandos.CrearComandoAgregarItem
-                (this.persona4, this.listaEventos.ListaEventos[0], 2, 6);
+                (this.persona4, this.evento, 2, 6);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem = fabricacomandos.CrearComandoAgregarItem(this.persona4, this.matricula, 3, 1);
             this.ComandoAgregarItem.Ejecutar();
@@ -142,7 +141,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Obtenemos el implemento y verificamos sus valores
             this.implemento = this.Carrito.ListaImplemento.ElementAt(0).Key as Implemento;
-            Assert.AreEqual(this.implemento.Id_Implemento, 1);
+            Assert.AreEqual(this.implemento.Id, 1);
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
             Assert.AreEqual(this.Carrito.ListaImplemento.ElementAt(0).Value, 5);            
         }
@@ -164,7 +163,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Obtenemos el Evento y verificamos sus valores
             this.evento = this.Carrito.Listaevento.ElementAt(0).Key as Evento;
-            Assert.AreEqual(this.evento.Id_evento, 1);
+            Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.Carrito.Listaevento.ElementAt(0).Value, 6);
         }
@@ -187,8 +186,7 @@ namespace PruebasUnitariasSKD.Modulo16
             //Obtenemos la Matricula y verificamos sus valores
             this.matricula = this.Carrito.Listamatricula.ElementAt(0).Key as Matricula;
             Assert.AreEqual(this.matricula.Id, 1);
-            //Assert.AreEqual(this.matricula.Costo, 5000);
-            //PILAS CON EL COSTO ARREGLAR
+            Assert.AreEqual(this.matricula.Costo, 5000);            
             Assert.AreEqual(this.Carrito.Listamatricula.ElementAt(0).Value, 1);
         }
 
@@ -210,19 +208,18 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Obtenemos los items y verificamos sus valores            
             this.implemento = this.Carrito.ListaImplemento.ElementAt(0).Key as Implemento;
-            Assert.AreEqual(this.implemento.Id_Implemento, 1);
+            Assert.AreEqual(this.implemento.Id, 1);
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
             Assert.AreEqual(this.Carrito.ListaImplemento.ElementAt(0).Value, 5);
 
             this.evento = this.Carrito.Listaevento.ElementAt(0).Key as Evento;
-            Assert.AreEqual(this.evento.Id_evento, 1);
+            Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.Carrito.Listaevento.ElementAt(0).Value, 6);
 
             this.matricula = this.Carrito.Listamatricula.ElementAt(0).Key as Matricula;
             Assert.AreEqual(this.matricula.Id, 1);
-            //Assert.AreEqual(this.matricula.Costo, 5000);
-            //PILAS CON EL COSTO ARREGLAR
+            Assert.AreEqual(this.matricula.Costo, 5000);           
             Assert.AreEqual(this.Carrito.Listamatricula.ElementAt(0).Value, 1);
         }
 
@@ -238,7 +235,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Elimino de la segunda prueba
             this.ComandoEliminar = fabricacomandos.CrearComandoeliminarItem
-                (3, this.listaEventos.ListaEventos[0], this.persona2);
+                (3, this.evento, this.persona2);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la tercera prueba
@@ -249,7 +246,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoEliminar = fabricacomandos.CrearComandoeliminarItem(1, this.implemento, this.persona4);
             this.ComandoEliminar.Ejecutar();
             this.ComandoEliminar = fabricacomandos.CrearComandoeliminarItem
-                (3, this.listaEventos.ListaEventos[0], this.persona4);
+                (3, this.evento, this.persona4);
             this.ComandoEliminar.Ejecutar();
             this.ComandoEliminar = fabricacomandos.CrearComandoeliminarItem(2, this.matricula, this.persona4);
             this.ComandoEliminar.Ejecutar();
@@ -269,9 +266,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.persona2 = null;
             this.persona3 = null;
             this.persona4 = null;
-            this.implemento = null;
-            this.listaEventos = null;
-            this.eventos = null;
+            this.implemento = null;            
             this.matricula = null;
             this.Carrito = null;
             this.evento = null;
