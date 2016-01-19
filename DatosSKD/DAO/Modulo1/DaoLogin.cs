@@ -16,22 +16,23 @@ namespace DatosSKD.DAO.Modulo1
     public class DaoLogin : DAOGeneral, IDaoLogin
     {
 
+        FabricaEntidades laFabrica;
         #region IDAO
         public Boolean Agregar(Entidad e)
         {
-            return false;
+            throw new NotImplementedException();
         }
         public Boolean Modificar(Entidad e)
         {
-            return false;
+            throw new NotImplementedException();
         }
         public Entidad ConsultarXId(Entidad e)
         {
-            return null;
+            throw new NotImplementedException();
         }
         public List<Entidad> ConsultarTodos()
         {
-            return null;
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -52,24 +53,19 @@ namespace DatosSKD.DAO.Modulo1
 
             try
             {
-                laConexion = new BDConexion();
-                laConexion2 = new BDConexion();
-                laConexion3 = new BDConexion();
+                //laConexion = new BDConexion();
+                //laConexion2 = new BDConexion();
+                //laConexion3 = new BDConexion();
                 parametros = new List<Parametro>();
                 parametros2 = new List<Parametro>();
                 string idUsuario = RecursosBDModulo1.idInicial;
-                FabricaEntidades laFabrica = new FabricaEntidades();
                 Cuenta laCuenta =(Cuenta) laFabrica.ObtenerCuenta_M1();
 
 
                 elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario, false);
                 parametros.Add(elParametro);
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                 RecursosBDModulo1.ConsultarNombreUsuarioContrasena, parametros);
-
-
-
-
 
                 foreach (DataRow row in dt.Rows)
                 {
@@ -84,7 +80,7 @@ namespace DatosSKD.DAO.Modulo1
 
                 //Llenar el usuario
 
-                DataTable dt1 = laConexion2.EjecutarStoredProcedureTuplas(
+                DataTable dt1 = this.EjecutarStoredProcedureTuplas(
                 RecursosBDModulo1.ConsultarRolesUsuario, parametros);
                 List<Rol> listaRol = new List<Rol>();
                 foreach (DataRow row in dt1.Rows)
@@ -103,10 +99,10 @@ namespace DatosSKD.DAO.Modulo1
 
                 elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
                 parametros2.Add(elParametro);
-                DataTable dt2 = laConexion3.EjecutarStoredProcedureTuplas(
+                DataTable dt2 = this.EjecutarStoredProcedureTuplas(
                                 RecursosBDModulo1.consultarPersona, parametros2);
 
-                PersonaM1 laPersona = new PersonaM1();
+                PersonaM1 laPersona = (PersonaM1) laFabrica.ObtenerPersona_M1();
                 foreach (DataRow row in dt2.Rows)
                 {
 
@@ -147,20 +143,17 @@ namespace DatosSKD.DAO.Modulo1
         /// <returns>retorna un objeto tipo Cuenta</returns>
         public String ValidarCorreoUsuario(string correo_usuario)
         {
-
-            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
-                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 List<String> elCorreo = new List<String>();
 
                 elParametro = new Parametro(RecursosBDModulo1.aliasCorreoUsuario, SqlDbType.VarChar, correo_usuario, false);
                 parametros.Add(elParametro);
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosBDModulo1.ValidarCorreo, parametros);
 
                 foreach (DataRow row in dt.Rows)

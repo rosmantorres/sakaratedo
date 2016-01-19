@@ -8,27 +8,29 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DatosSKD.InterfazDAO.Modulo1;
+using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo1
 {
     public class DaoRestablecer: DAOGeneral, IDaoRestablecer
     {
+        FabricaEntidades laFabrica;
         #region IDAO
         public Boolean Agregar(Entidad e)
         {
-            return false;
+            throw new NotImplementedException();
         }
         public Boolean Modificar(Entidad e)
         {
-            return false;
+            throw new NotImplementedException();
         }
         public Entidad ConsultarXId(Entidad e)
         {
-            return null;
+            throw new NotImplementedException();
         }
         public List<Entidad> ConsultarTodos()
         {
-            return null;
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -41,21 +43,19 @@ namespace DatosSKD.DAO.Modulo1
         /// <returns></returns>
         public bool RestablecerContrasena(string usuarioId, string contraseña)
         {
-            BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             try
             {
-                laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                Cuenta laCuenta = new Cuenta();
+                Cuenta laCuenta = (Cuenta) laFabrica.ObtenerCuenta_M1();
                 elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, usuarioId, false);
                 parametros.Add(elParametro);
                 elParametro = new Parametro(RecursosBDModulo1.AliasContrasena, SqlDbType.VarChar, contraseña, false);
                 parametros.Add(elParametro);
 
-                laConexion.EjecutarStoredProcedureTuplas(
+                this.EjecutarStoredProcedureTuplas(
                       RecursosBDModulo1.CambiarContraseña, parametros);
                 return true;
             }
