@@ -44,7 +44,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-
     <Compile Include="Modulo7\PresentadorDetallarEventoPago.cs" />
     <Compile Include="Modulo7\PresentadorDetallarMatricula.cs" />
     <Compile Include="Modulo7\PresentadorConsultarPerfil.cs" />
@@ -52,6 +51,8 @@
     <Compile Include="Modulo7\PresentadorDetallarEvento.cs" />
     <Compile Include="Modulo7\PresentadorDetallarCompetencia.cs" />
     <Compile Include="Modulo7\PresentadorListarCintasObtenidas.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosInscritos.cs" />
+    <Compile Include="Modulo7\PresentadorListarHorarioPractica.cs" />
     <Compile Include="Modulo7\PresentadorListarMatriculasPagas.cs" />
     <Compile Include="Modulo7\PresentadorListarEventosPagos.cs" />
     <Compile Include="Modulo7\PresentadorListarEventosAsistidos.cs" />

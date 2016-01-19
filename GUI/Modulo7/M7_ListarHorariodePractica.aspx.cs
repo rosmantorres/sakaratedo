@@ -1,6 +1,9 @@
 ﻿using DominioSKD;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using Interfaz_Contratos.Modulo7;
+using Interfaz_Presentadores.Modulo7;
 using LogicaNegociosSKD.Modulo7;
 using System;
 using System.Collections.Generic;
@@ -12,22 +15,51 @@ using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_ListarHorariodePractica : System.Web.UI.Page
+    /// <summary>
+    /// Clase que maneja la interfaz de horario de pracica
+    /// </summary>
+    public partial class M7_ListarHorariodePractica : System.Web.UI.Page, IContratoListarHorarioPractica
     {
         #region Atributos
-        private List<Evento> laLista = new List<Evento>();
+        private PresentadorListarHorarioPractica presentador;
+        private FabricaEntidades fabricaEntidades;
+        private Persona idPersona;
+
+        /// <summary>
+        /// Implementacion de contrato laTabla
+        /// </summary>
+        string IContratoListarHorarioPractica.laTabla
+        {
+            get
+            {
+                return laTabla.Text;
+            }
+
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
         #endregion
 
         #region Page Load
+        /// <summary>
+        /// Método que se ejecuta al cargar la página horario practica
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaHorarioPractica logEvento = new LogicaHorarioPractica();
-            try
-            {
-                String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+              ((SKD)Page.Master).IdModulo = "7";
+            String detalleString = Request.QueryString["impDetalle"];
+
+           #region Llenar Data Table con Horarios
+               try
+                 {
+                String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -35,39 +67,19 @@ namespace templateApp.GUI.Modulo7
                 }
                 if (permitido)
                 {
-                    ((SKD)Page.Master).IdModulo = "7";
-                    String detalleStringCompetencia = Request.QueryString["horarioDetalle"];
                     if (!IsPostBack)
                     {
                         try
                         {
-                            laLista = logEvento.obtenerListaDePractica(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            if (laLista != null) 
-                            { 
-                            foreach (Evento evento in laLista)
-                            {
-                                this.laTabla.Text += M7_Recursos.AbrirTR;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.HoraInicio.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.HoraFin.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.AbrirTD;
-                                this.laTabla.Text += M7_Recursos.BotonInfoHorariodePractica + evento.Id_evento + M7_Recursos.BotonCerrar;
-                                this.laTabla.Text += M7_Recursos.CerrarTD;
-                                this.laTabla.Text += M7_Recursos.CerrarTR;
-                            }
-                            }
-                            else
-                            {
-                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
-                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }
-
+                            fabricaEntidades = new FabricaEntidades();
+                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                            presentador.ConsultarHorarioPractica(idPersona);
                         }
                         catch (ListaNulaException)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                            M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                         catch (NumeroEnteroInvalidoException)
                         {
@@ -77,9 +89,8 @@ namespace templateApp.GUI.Modulo7
                         catch (Exception ex)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                            ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
-
                     }
                 }
                 else
@@ -92,8 +103,12 @@ namespace templateApp.GUI.Modulo7
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            }            
+            }
         }
-        #endregion
+
     }
+           #endregion
+       
+        #endregion
+
 }

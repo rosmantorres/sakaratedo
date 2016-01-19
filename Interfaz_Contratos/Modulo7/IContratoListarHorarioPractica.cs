@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Contratos.Modulo7
 {
-    class IContratoListarHorarioPractica
+    /// <summary>
+    /// Contrato para listar eventos asistidos
+    /// </summary>
+    public interface IContratoListarHorarioPractica
     {
+        string laTabla { get; set; }
     }
 }
