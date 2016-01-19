@@ -316,7 +316,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Creo el evento asignandole su ID                
                 Evento evento = (Evento)fabrica.ObtenerEvento();
-                evento.Id_evento = int.Parse(datos[1]);
+                evento.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar y la cantidad que se desea de ese item
                 bool respuesta = false;

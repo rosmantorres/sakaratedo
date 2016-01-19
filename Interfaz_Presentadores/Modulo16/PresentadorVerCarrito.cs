@@ -99,7 +99,7 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.Click += Modificar_Carrito;
                     //boton.Click += new EventHandler(laVista.Modificar_Carrito);
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_COMPRA;
-                    boton.ID = M16_Recursointerfaz.IMPLEMENTO_ID + item.Id_Implemento.ToString();
+                    boton.ID = M16_Recursointerfaz.IMPLEMENTO_ID + item.Id.ToString();
                     celda.Controls.Add(boton);
 
                 /*    //Se modifica para que el boton no haga postback
@@ -109,17 +109,17 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = M16_Recursointerfaz.PRODUCTO_INFORMACION + item.Id_Implemento.ToString();
+                    boton.ID = M16_Recursointerfaz.PRODUCTO_INFORMACION + item.Id.ToString();
                     boton.Command += DetalleProducto_Prod;
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_INFORMACION;
-                    boton.CommandName = item.Id_Implemento.ToString();
+                    boton.CommandName = item.Id.ToString();
                     celda.Controls.Add(boton);
 
                     //Boton Eliminar
                     boton = new Button();
                     boton.Click += Eliminar_Item;
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_ELIMINAR;
-                    boton.ID = M16_Recursointerfaz.IMPLEMENTO_ELIMINAR + item.Id_Implemento.ToString();
+                    boton.ID = M16_Recursointerfaz.IMPLEMENTO_ELIMINAR + item.Id.ToString();
                     celda.Controls.Add(boton);
 
                     //Agrego la celda a la fila
@@ -168,7 +168,7 @@ namespace Interfaz_Presentadores.Modulo16
                     Button boton = new Button();
                     boton.Click += Modificar_Carrito;
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_COMPRA;
-                    boton.ID = M16_Recursointerfaz.EVENTO_ID + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.EVENTO_ID + item.Id.ToString();
                     celda.Controls.Add(boton);
 
                   /*  //Se modifica para que el boton no haga postback
@@ -178,17 +178,17 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Boton informacion
                     boton = new Button();
-                    boton.ID = M16_Recursointerfaz.EVENTO_INFORMACION + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.EVENTO_INFORMACION + item.Id.ToString();
                     boton.Command += DetalleEvento_Event;
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_INFORMACION;
-                    boton.CommandName = item.Id_evento.ToString();
+                    boton.CommandName = item.Id.ToString();
                     celda.Controls.Add(boton);
 
                     //Boton Eliminar
                     boton = new Button();
                     boton.Click += Eliminar_Item;
                     boton.CssClass = M16_Recursointerfaz.BOTON_CLASE_ELIMINAR;
-                    boton.ID = M16_Recursointerfaz.EVENTO_ELIMINAR + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.EVENTO_ELIMINAR + item.Id.ToString();
                     celda.Controls.Add(boton);
 
                     //Agrego la celda a la fila
@@ -400,7 +400,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Pasamos el ID que vino del boton                    
                     Evento objeto = (Evento)fabrica.ObtenerEvento();
-                    objeto.Id_evento = int.Parse(datos[1]);
+                    objeto.Id = int.Parse(datos[1]);
 
                     //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
                     FabricaComandos fabricaComando = new FabricaComandos();

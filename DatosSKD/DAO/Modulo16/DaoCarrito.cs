@@ -135,7 +135,7 @@ namespace DatosSKD.DAO.Modulo16
                                 throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
-                                SqlDbType.Int, elEvento.Id_evento.ToString(), false);
+                                SqlDbType.Int, elEvento.Id.ToString(), false);
                             parametros.Add(parametro);
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
                                 SqlDbType.Int, cantidad.ToString(), false);
@@ -301,7 +301,7 @@ namespace DatosSKD.DAO.Modulo16
                         parametros.Add(parametro);
 
                         //Seteamos el id del implemento
-                        elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
+                        elImplemento.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
 
                         //Obtengo la informacion de los implementos                        
                         DataTable dt2 = EjecutarStoredProcedureTuplas
@@ -432,7 +432,7 @@ namespace DatosSKD.DAO.Modulo16
                             //Me creo el evento
                             FabricaEntidades fabrica = new FabricaEntidades();
                             Evento elEvento = (Evento)fabrica.ObtenerEvento();
-                            elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                            elEvento.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                             elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                             elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
 
@@ -648,10 +648,10 @@ namespace DatosSKD.DAO.Modulo16
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
-                    SqlDbType.Int, persona.ToString(), false);
+                    SqlDbType.Int, persona.Id.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM,
-                               SqlDbType.Int, objetoBorrar.ToString(), false);
+                               SqlDbType.Int, objetoBorrar.Id.ToString(), false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosBDModulo16.PARAMETRO_TIPO_ITEM,
                             SqlDbType.Int, tipoObjeto.ToString(), false);
@@ -908,7 +908,7 @@ namespace DatosSKD.DAO.Modulo16
                                 throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
-                                SqlDbType.Int, elEvento.Id_evento.ToString(), false);
+                                SqlDbType.Int, elEvento.Id.ToString(), false);
                             parametros.Add(parametro);
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_CANTIDAD,
                                 SqlDbType.Int, cantidad.ToString(), false);
