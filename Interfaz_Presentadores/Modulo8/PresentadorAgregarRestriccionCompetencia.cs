@@ -53,15 +53,19 @@ namespace Interfaz_Presentadores.Modulo8
             //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
             //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
 
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando = 
+            (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
+
 
             
-            LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-            (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
+            //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
+            //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
             
             DominioSKD.Fabrica.FabricaEntidades fabrica = new  DominioSKD.Fabrica.FabricaEntidades();
             DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
-
-            comando.LaRestriccionCompetencia
+            restComp = meterParametrosVistaEnObjeto(restComp);
+            comando.LaRestriccionCompetencia = restComp;
+            //comando.ListaCompetencias
 
         }
 
