@@ -14,7 +14,7 @@ namespace Interfaz_Contratos.Modulo8
     public interface IContratoAgregarRestriccionCompetencia
     {
         String id { get; set; }
-        String descripcion { set;}
+        String descripcion { get; set; }
         ListBox competenciasRelacionadas { get; set; }
         ListBox competeciasNoRelacionadas { get; set; }
         DropDownList rangoMinimo { get; }

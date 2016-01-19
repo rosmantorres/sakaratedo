@@ -10,7 +10,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
 {
     public class ComandoAgregarListaCompetenciaRestriccionCompetencia : Comando<Boolean>
     {
-
+        private Entidad RestriccionCompetencia;
         private List<Entidad> listaCompetencias;
 
         public List<Entidad> ListaCompetencias
@@ -19,7 +19,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             set { listaCompetencias = value; }
         }
         
-        private Entidad RestriccionCompetencia;
+        
 
         public Entidad LaRestriccionCompetencia
         {

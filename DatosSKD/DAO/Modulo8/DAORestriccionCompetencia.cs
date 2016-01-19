@@ -381,7 +381,8 @@ namespace DatosSKD.DAO.Modulo8
                
                 try
                 {
-                    
+                    laRestriccionCompetencia.Id = traerIdRestriccionCompetencia(parametro1);
+                   
                     List<Parametro> parametros = new List<Parametro>();
 
                     Parametro elParametro;
@@ -392,7 +393,7 @@ namespace DatosSKD.DAO.Modulo8
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamIdCompetencia, SqlDbType.Int,
-                    laCompetencia.Id_competencia.ToString(), false);
+                    laCompetencia.Id.ToString(), false);
 
                     parametros.Add(elParametro);
 
@@ -694,7 +695,7 @@ namespace DatosSKD.DAO.Modulo8
 
                 try
                 {
-
+                    laRestriccionCompetencia.Id = traerIdRestriccionCompetencia(parametro1);
                     List<Parametro> parametros;
 
                     parametros = new List<Parametro>();
@@ -707,7 +708,7 @@ namespace DatosSKD.DAO.Modulo8
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamIdCompetencia, SqlDbType.Int,
-                    laCompetencia.Id_competencia.ToString(), false);
+                    laCompetencia.Id.ToString(), false);
 
                     parametros.Add(elParametro);
 
@@ -787,7 +788,7 @@ namespace DatosSKD.DAO.Modulo8
                 parametros.Add(elParametro);
 
                 elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamIdCompetencia, SqlDbType.Int,
-                laCompetencia.Id_competencia.ToString(), false);
+                laCompetencia.Id.ToString(), false);
                 
                 parametros.Add(elParametro);
 
@@ -870,7 +871,7 @@ namespace DatosSKD.DAO.Modulo8
                 parametros.Add(elParametro);
 
                 elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamIdCompetencia, SqlDbType.Int,
-                laCompetencia.Id_competencia.ToString(), false);
+                laCompetencia.Id.ToString(), false);
                 
                 parametros.Add(elParametro);
 
@@ -1062,7 +1063,7 @@ namespace DatosSKD.DAO.Modulo8
                {
                    laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)laFabrica.ObtenerCompetencia();
 
-                   laCompetencia.Id_competencia = int.Parse(row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasIdCompetencia].ToString());
+                   laCompetencia.Id = int.Parse(row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasIdCompetencia].ToString());
                    laCompetencia.Nombre = row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasNombreCompetencia].ToString();
                    laCompetencia.TipoCompetencia = row[DatosSKD.DAO.Modulo12.RecursosDAOModulo12.AliasTipoCompetencia].ToString();
 

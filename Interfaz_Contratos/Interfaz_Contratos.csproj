@@ -34,18 +34,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
-<<<<<<< HEAD
     <Reference Include="System.Windows.Forms" />
-=======
->>>>>>> 363696cc24bcfc1685c2ac79783ce77197177000
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,11 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="IContratoMasterPage.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionCinta.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionCompetencia.cs" />
-=======
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />
     <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
@@ -76,7 +70,6 @@
     <Compile Include="Modulo5\IContratoCrearCinta.cs" />
     <Compile Include="Modulo5\IContratoListarCintas.cs" />
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
->>>>>>> 363696cc24bcfc1685c2ac79783ce77197177000
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

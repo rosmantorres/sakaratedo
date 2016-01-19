@@ -52,16 +52,13 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
-<<<<<<< HEAD
     <Compile Include="Entidades\Modulo8\RestriccionCinta.cs" />
-=======
     <Compile Include="Entidades\Modulo14\Diseño.cs" />
     <Compile Include="Entidades\Modulo14\Planilla.cs" />
     <Compile Include="Entidades\Modulo14\SolicitudP.cs" />
     <Compile Include="Entidades\Modulo14\SolicitudPlanilla.cs" />
     <Compile Include="Entidades\Modulo3\Organizacion.cs" />
     <Compile Include="Entidades\Modulo5\Cinta.cs" />
->>>>>>> 363696cc24bcfc1685c2ac79783ce77197177000
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
@@ -114,6 +111,7 @@
     <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
     <Folder Include="Entidades\Modulo9\" />
+    <Folder Include="Entidades\Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
