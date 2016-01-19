@@ -31,9 +31,8 @@ namespace PruebasUnitariasSKD.Modulo16
         private Entidad persona5;
         private Entidad persona6;
         private Matricula matricula;
-        private Implemento implemento;
-        private ListaEvento listaEventos;
-        private Comando<Entidad> eventos;
+        private Implemento implemento;        
+        private Evento evento;
         private Comando<bool> PruebaComandoVacio;
         private Comando<bool> PruebaComandoVacio2;
         private ComandoRegistrarPago pruebaComandoVacio3;
@@ -91,8 +90,9 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
 
             //Eventos
-            this.eventos = fabricacomando.CrearComandoConsultarTodosEventos();
-            this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
+            this.evento = (Evento)fabrica.ObtenerEvento();
+            this.evento.Id = 1;
+            this.evento.Costo = 0;
 
             //Matricula
             this.matricula = new Matricula();
@@ -136,7 +136,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoAgregarItem.Ejecutar();
 
             this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem
-                (this.persona6, this.listaEventos.ListaEventos[0], 2, 10);
+                (this.persona6, this.evento, 2, 10);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona6, this.matricula, 3, 10);
             this.ComandoAgregarItem.Ejecutar();
@@ -176,7 +176,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Agregamos un item para la persona2
             this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem
-                (this.persona2, this.listaEventos.ListaEventos[0], 2, 10);
+                (this.persona2, this.evento, 2, 10);
             this.ComandoAgregarItem.Ejecutar();
 
             //Registramos el pago en un carrito donde solo hay eventos
@@ -193,7 +193,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona4, this.implemento, 1, 20);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem
-                (this.persona4, this.listaEventos.ListaEventos[0], 2, 10);
+                (this.persona4, this.evento, 2, 10);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona4, this.matricula, 3, 10);
             this.ComandoAgregarItem.Ejecutar();
@@ -241,9 +241,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.persona5 = null;
             this.persona6 = null;
             this.matricula = null;
-            this.implemento = null;
-            this.listaEventos = null;
-            this.eventos = null;
+            this.implemento = null;           
             this.PruebaComandoVacio = null;
             this.PruebaComandoVacio2 = null;
             this.pruebaComandoVacio3 = null;
