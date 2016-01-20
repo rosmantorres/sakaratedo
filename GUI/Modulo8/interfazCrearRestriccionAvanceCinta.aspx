@@ -65,7 +65,7 @@
 					<input runat="server" type="text" placeholder="Descripcion" class="form-control" id="descripcion" name ="descripcion">
 					<input style="margin-top:5%" runat="server" type="text" placeholder="Tiempo mínimo" class="form-control" id="tiempo_minimo" name ="tiempo_minimo">                    
 					<input style="margin-top:5%" runat="server" type="text" placeholder="Tiempo maximo" class="form-control" id="tiempo_maximo" name ="tiempo_maximo">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Putaje mínimo" class="form-control" id="puntaje_minimo" name="punto_minimo">
+                    <input style="margin-top:5%" runat="server" type="text" placeholder="Puntaje mínimo" class="form-control" id="puntaje_minimo" name="punto_minimo">
                     <input style="margin-top:5%" runat="server" type="text" placeholder="Horas docentes mínimas" class="form-control" id="horas_docentes" name="hora_docente">
 					
                     <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
@@ -75,26 +75,14 @@
             </div>
 		</div>
         
-    
-        <div class="col-md-3">
-	        <div class="form-group">
-		    	<div class="icon-addon addon-lg">
-
-                    <label class="radio-inline"><input type="radio" name="optradio">Semanas</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">Meses</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">Años</label>
-					
-                </div>
-			</div>
-		</div>
 	</div>
 </div>
 </form>
        
 <script type="text/javascript">
-  $(document).ready(function(){
-	$('.combobox').combobox();
-  });
+    $(document).ready(function () {
+        $('.combobox').combobox();
+    });
 </script>
 
 </asp:Content>

@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Threading.Tasks;
-//using System.Web.UI.WebControls;
+using System.Web.UI.WebControls;
 //using DominioSKD.Entidades.Modulo5;
 
 namespace Interfaz_Contratos.Modulo8
 {
     public interface IContratoAgregarRestriccionCinta
     {
-        String id { get; set; }
-        String descripcion { get; set; }
-        String tiempoMinimo { get; set; }
-        String tiempoMaximo { get; set; }
-        String tiempoDocente { get; set; }
-        String puntosMinimos { get; set; }
+        String id_rest_cinta { get; set; }
+        String descripcion_rest_cinta { get; set; }
+        String tiempo_Min { get; set; }
+        String tiempo_Max { get; set; }
+        String horas_docen { get; set; }
+        String puntaje_min { get; set; }
+        DropDownList comboRestCinta { get; }
         //List<Cinta> cintasRelacionadas { get; set; }
     }
 }
