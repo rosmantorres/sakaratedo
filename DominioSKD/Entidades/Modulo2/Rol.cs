@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo2
 {
     public class Rol:Entidad
     {

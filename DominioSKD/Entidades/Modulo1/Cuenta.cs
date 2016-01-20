@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo2;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo1
 {
     public class Cuenta: Entidad
     {
@@ -58,6 +59,7 @@ namespace DominioSKD
             contrasena = "";
             imagen = "";
             personaUsuario = new PersonaM1();
+            roles=new List<Rol>();
         }
         /// <summary>
         /// constructor numero 3 de cuenta el cual recibe mas parametros

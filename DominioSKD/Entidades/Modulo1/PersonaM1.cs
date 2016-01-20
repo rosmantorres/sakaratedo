@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo1
 {
     public class PersonaM1: Entidad
     {
@@ -26,6 +26,9 @@ namespace DominioSKD
 
         private String _documentoID;
 
+        private String _correoElectronico;
+
+        private String _descripcion;
         #endregion
 
         #region Propiedades
@@ -49,6 +52,17 @@ namespace DominioSKD
             get { return _documentoID; }
             set { _documentoID = value; }
         }
+
+        public string _CorreoElectronico
+        {
+            get { return _correoElectronico; }
+            set { _correoElectronico = value; }
+        }
+        public string _Descripcion
+        {
+            get { return _descripcion; }
+            set {_descripcion=value;}
+        }
         #endregion
 
         #region Constructores
@@ -58,6 +72,8 @@ namespace DominioSKD
             _Nombre = "";
             _Apellido = "";
             _DocumentoID = "";
+            _CorreoElectronico = "";
+            _Descripcion = "";
 
         }
         public PersonaM1(int id, string nombre, string apellido)
@@ -65,6 +81,7 @@ namespace DominioSKD
             _Id = id;
             _Nombre = nombre;
             _Apellido = apellido;
+            _correoElectronico = "";
 
         }
         #endregion
