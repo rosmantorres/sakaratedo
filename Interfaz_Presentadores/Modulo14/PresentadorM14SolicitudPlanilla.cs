@@ -88,10 +88,10 @@ namespace Interfaz_Presentadores.Modulo14
             Comando<Boolean> comandoRegistrarSolicitudIDPersona = fabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
             
             bool resultado = false;
-            if (vista.fechaRetiroI != "")
+          /*  if (vista.fechaRetiroI != "")
             {
                 if(vista.FechaReincorporacion != ""){
-                    if (vista.Motivo !=""){
+                    if (vista.Motivo !=""){*/
                         if (vista.ComboEventoVisible == true)
                         {
                             //SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
@@ -138,7 +138,7 @@ namespace Interfaz_Presentadores.Modulo14
                             // lS.RegistrarSolicitudIDPersona(laSolicitud);
                         }
                   
-                    }else{
+                /*    }else{
                         vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
                         vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                         vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaMotivoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
@@ -160,7 +160,7 @@ namespace Interfaz_Presentadores.Modulo14
                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaRetiroVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; 
                    vista.alerta = true;
                    resultado = false;
-            }
+            }*/
 
             return resultado;
      
