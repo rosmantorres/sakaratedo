@@ -549,8 +549,7 @@ namespace Interfaz_Presentadores.Modulo16
                 Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
-                //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                FabricaComandos fabricaComando = new FabricaComandos();
+                //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
                 Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pago);
                 bool respuesta = registrarPago.Ejecutar();               
 
