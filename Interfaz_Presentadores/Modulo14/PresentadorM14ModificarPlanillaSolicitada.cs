@@ -182,10 +182,11 @@ namespace Interfaz_Presentadores.Modulo14
           // int idIns = vista.IDIns; 
 
               bool resultado = false;
-            if (vista.FechaRetiro != "")
+         
+            /*if (vista.FechaRetiro != "")
             {
                 if(vista.FechaReincorporacion != ""){
-                    if (vista.Motivo !=""){
+                    if (vista.Motivo !=""){*/
                       if (vista.ComboEventoVisible == true)
                          {
                // SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
@@ -223,7 +224,7 @@ namespace Interfaz_Presentadores.Modulo14
                             comandoModificarSolicitudID.Ejecutar();
                             resultado = true;
                            }
-                    }
+                   /* }
                     else
                     {
                         vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
@@ -249,7 +250,7 @@ namespace Interfaz_Presentadores.Modulo14
                 vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaRetiroVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
                 vista.alerta = true;
                 resultado = false;
-            }
+            }*/
 
             return resultado;
 
