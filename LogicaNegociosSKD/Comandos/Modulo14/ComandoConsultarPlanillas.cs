@@ -21,9 +21,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 DaoPlanilla dao = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 List<Entidad> listaplanilla = new List<Entidad>();
                 listaplanilla = dao.ConsultarPlanillasCreadas();
+                dao.LimpiarSQLConnection();
                 foreach (DominioSKD.Planilla planilla in listaplanilla)
                 {
                     planilla.Dato = dao.ObtenerDatosPlanillaID1(planilla.ID);
+                    dao.LimpiarSQLConnection();
                 }
                 return listaplanilla;
             }
