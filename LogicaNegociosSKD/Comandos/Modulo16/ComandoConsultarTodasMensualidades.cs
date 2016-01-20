@@ -71,8 +71,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                //Instancio el DAO de Mensualidad
-               FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-               IdaoMensualidad daoMensualidades = fabrica.ObtenerDaoMensualidades();
+               IdaoMensualidad daoMensualidades = FabricaDAOSqlServer.ObtenerDaoMensualidades();
 
                // Cateamos
                PersonaM1 p = (PersonaM1)this.LaEntidad;

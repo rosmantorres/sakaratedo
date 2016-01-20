@@ -33,11 +33,9 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            //La fabrica
-            fabrica = new FabricaDAOSqlServer();
-
+     
             //Obtengo el comando
-            this.pruebaDao = (DaoImplemento)fabrica.ObtenerDaoProductos();
+            this.pruebaDao = (DaoImplemento)FabricaDAOSqlServer.ObtenerDaoProductos();
 
 
         }
@@ -50,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaConsultarImplementos()
         {
-            daoImplemento = fabrica.ObtenerDaoProductos();
+            daoImplemento = FabricaDAOSqlServer.ObtenerDaoProductos();
             Assert.IsNotNull(daoImplemento.ListarImplemento());
 
         }

@@ -34,10 +34,8 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            fabrica = new FabricaDAOSqlServer();
-
             //Obtengo el comando
-            this.pruebaDao = (DaoEvento)fabrica.ObtenerDaoEventos();
+            this.pruebaDao = (DaoEvento)FabricaDAOSqlServer.ObtenerDaoEventos();
 
 
         }
@@ -50,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaConsultarEventos()
         {
-            daoEvento = fabrica.ObtenerDaoEventos();
+            daoEvento = FabricaDAOSqlServer.ObtenerDaoEventos();
             Assert.IsNotNull(daoEvento.DetallarEvento(1));
 
         }

@@ -73,8 +73,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Matricula
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IdaoMensualidad daomatricula = fabrica.ObtenerDaoDetalleMatricula();
+                IdaoMensualidad daomatricula = FabricaDAOSqlServer.ObtenerDaoDetalleMatricula();
 
                 //Casteamos
                 Matricula mat = (Matricula)this.matricula;
