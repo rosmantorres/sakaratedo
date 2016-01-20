@@ -44,7 +44,7 @@ namespace Interfaz_Presentadores.Modulo14
             List<Entidad> listEventos = comboEvento.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (SolicitudP item in listEventos)
+            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listEventos)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -65,7 +65,7 @@ namespace Interfaz_Presentadores.Modulo14
             List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (SolicitudP item in listCompetencias)
+            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listCompetencias)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -81,7 +81,7 @@ namespace Interfaz_Presentadores.Modulo14
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             FabricaComandos fabricaComandos = new FabricaComandos();
             Entidad planilla = fabricaEntidades.ObtenerPlanilla();
-            ((Planilla)planilla).ID = Int32.Parse(vista.planillaId);
+            ((DominioSKD.Entidades.Modulo14.Planilla)planilla).ID = Int32.Parse(vista.planillaId);
             //LogicaSolicitud lS = new LogicaSolicitud();
             Comando<bool> comandoRegistrarSolicitudPlanilla = fabricaComandos.ObtenerComandoRegistrarSolicitudPlanilla();
             Comando<Boolean> comandoRegistrarSolicitudPlanillaID = fabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
@@ -96,8 +96,13 @@ namespace Interfaz_Presentadores.Modulo14
                         {
                             //SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
                             //                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
-                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
-                                                     vista.Motivo, (Planilla)planilla, Int32.Parse(vista.eventoCombo.SelectedValue));
+                            Entidad laSolicitud = 
+                                fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, 
+                                vista.FechaReincorporacion,
+                                                     vista.Motivo,
+                                                     (DominioSKD.Entidades.Modulo14.Planilla
+                                                     )planilla, Int32.Parse(
+                                                     vista.eventoCombo.SelectedValue));
                             // lS.RegistrarSolicitudPlanilla(laSolicitud);
                             comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
                             resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
@@ -107,8 +112,12 @@ namespace Interfaz_Presentadores.Modulo14
                         {
                             // SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
                             //                              this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
-                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
-                                                     vista.Motivo, (Planilla)planilla, Int32.Parse(vista.competenciaCombo.SelectedValue));
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(
+                                vista.fechaRetiroI, vista.FechaReincorporacion,
+                                                     vista.Motivo,
+                                                     (DominioSKD.Entidades.Modulo14.Planilla
+                                                     )planilla, Int32.Parse
+                                                     (vista.competenciaCombo.SelectedValue));
                             comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
                             resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
                             // lS.RegistrarSolicitudPlanilla(laSolicitud);
@@ -118,8 +127,12 @@ namespace Interfaz_Presentadores.Modulo14
                             /* SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
                                                           this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));*/
 
-                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
-                                                     vista.Motivo, (Planilla)planilla, vista.IDUsuario);
+                            Entidad laSolicitud = 
+                                fabricaEntidades.ObtenerSolicitudP(
+                                vista.fechaRetiroI, vista.FechaReincorporacion,
+                                                     vista.Motivo,
+                                                     (DominioSKD.Entidades.Modulo14.Planilla
+                                                     )planilla, vista.IDUsuario);
                             comandoRegistrarSolicitudIDPersona.LaEntidad = laSolicitud;
                             resultado = comandoRegistrarSolicitudIDPersona.Ejecutar();
                             // lS.RegistrarSolicitudIDPersona(laSolicitud);

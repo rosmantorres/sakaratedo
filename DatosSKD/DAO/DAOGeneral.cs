@@ -329,9 +329,5 @@ namespace DatosSKD
             this.conexion = null;
         }
         #endregion
-
-
-
-
     }
 }
