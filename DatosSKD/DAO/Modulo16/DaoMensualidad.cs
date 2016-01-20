@@ -187,7 +187,7 @@ namespace DatosSKD.DAO.Modulo16
                 foreach (DataRow row in resultado.Rows)
                 {
                     laMatricula = (Matricula)laFabrica.ObtenerMatricula();
-                    elDojo = (Dojo)laFabrica.ObtenerDojos();
+                    elDojo = (Dojo)FabricaEntidades.ObtenerDojos();
                     laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_MATRICULA].ToString());
                     laMatricula.Identificador = row[RecursosBDModulo16.PARAMETRO_IDENTIFICADOR_MAT].ToString();
                     laMatricula.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO_MATRICULA].ToString());

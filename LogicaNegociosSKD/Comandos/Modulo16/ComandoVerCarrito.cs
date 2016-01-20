@@ -81,8 +81,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 IdaoCarrito daocarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
                 //Instancio el carrito y Obtengo todos los items del carrito de la persona
-                FabricaEntidades fabrica = new FabricaEntidades();
-                carrito = fabrica.ObtenerCarrito
+                carrito = FabricaEntidades.ObtenerCarrito
                     (daocarrito.getImplemento(this.persona),
                     daocarrito.getEvento(this.persona),
                     daocarrito.getMatricula(this.persona));

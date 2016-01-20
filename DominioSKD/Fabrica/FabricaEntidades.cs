@@ -396,7 +396,7 @@ namespace DominioSKD.Fabrica
         /// Metodo de la fabrica que instancia un carrito vacio
         /// </summary>
         /// <returns>La entidad carrito vacia</returns>
-        public Entidad ObtenerCarrito()
+        public static Entidad ObtenerCarrito()
         {
             return new Entidades.Modulo16.Carrito();
         }
@@ -408,7 +408,7 @@ namespace DominioSKD.Fabrica
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
         /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
         /// <returns>La entidad carrito con todos sus datos llenos</returns>
-        public Entidad ObtenerCarrito(
+        public static Entidad ObtenerCarrito(
            Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
         {
             return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
@@ -430,7 +430,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad implemento con todos sus datos llenos</returns>
-        public Entidad ObtenerImplemento()
+        public static Entidad ObtenerImplemento()
         {
             return new Implemento();
         }
@@ -440,7 +440,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad dojo con todos sus datos llenos</returns>
-        public Entidad ObtenerDojos()
+        public static Entidad ObtenerDojos()
         {
             return new Dojo();
         }
@@ -450,7 +450,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad compra con todos sus datos llenos</returns>
-        public Entidad ObtenerFactura()
+        public static Entidad ObtenerFactura()
         {
             return new Compra();
         }

@@ -306,8 +306,7 @@ namespace DatosSKD.DAO.Modulo16
                     foreach (DataRow row in dt.Rows)
                     {
                         //Me creo el Implemento
-                        FabricaEntidades fabrica = new FabricaEntidades();
-                        Implemento elImplemento = (Implemento)fabrica.ObtenerImplemento();                                                
+                        Implemento elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();                                                
 
                         //Preparo para obtener los datos de ese Inventario
                         parametros = new List<Parametro>();

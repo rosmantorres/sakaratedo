@@ -72,7 +72,7 @@ namespace DatosSKD.DAO.Modulo16
                     //Obtengo todos los ids que estan en la compra
                     foreach (DataRow row in resultado.Rows)
                     {
-                        laCompra = (Compra)laFabrica.ObtenerFactura();
+                        laCompra = (Compra)FabricaEntidades.ObtenerFactura();
                         laCompra.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_COMPRA].ToString());
                         laCompra.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_TIPO_PAGO].ToString();
                         laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAMETRO_FECHA].ToString());
