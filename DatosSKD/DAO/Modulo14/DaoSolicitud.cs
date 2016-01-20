@@ -31,7 +31,7 @@ namespace DatosSKD.DAO.Modulo14
             //BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            SolicitudP solicitud = (SolicitudP)laSolicitud;
+            DominioSKD.Entidades.Modulo14.SolicitudP solicitud = (DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud;
 
             try
             {
@@ -126,7 +126,8 @@ namespace DatosSKD.DAO.Modulo14
             // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            SolicitudP solicitud = (SolicitudP)laSolicitud;
+            DominioSKD.Entidades.Modulo14.SolicitudP solicitud = (
+                DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud;
             try
             {
                 //   laConexion = new BDConexion();
@@ -229,7 +230,8 @@ namespace DatosSKD.DAO.Modulo14
                 //    Planilla planilla = null;
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIDSolici,
-                SqlDbType.VarChar, ((SolicitudP)idSolicitud).ID.ToString(), false);
+                SqlDbType.VarChar, 
+                ((DominioSKD.Entidades.Modulo14.SolicitudP)idSolicitud).ID.ToString(), false);
                 parametros.Add(parametro);
 
                 DataTable resultadoConsulta = this.EjecutarStoredProcedureTuplas(RecursosDAOModulo14.ProcedureConsultarSolicitudID1, parametros);
@@ -320,7 +322,8 @@ namespace DatosSKD.DAO.Modulo14
           //  BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            SolicitudP solicitud = (SolicitudP)laSolicitud;
+            DominioSKD.Entidades.Modulo14.SolicitudP solicitud =
+                (DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud;
             try
             {
                // laConexion = new BDConexion();
@@ -584,7 +587,8 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             List<Entidad> lista = new List<Entidad>();
-            Planilla planilla = (Planilla)fabricaEntidad.ObtenerPlanilla();
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)fabricaEntidad.ObtenerPlanilla();
 
             try
             {
@@ -600,8 +604,9 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        planilla = new Planilla();
-                        Diseño diseño = new Diseño();
+                        planilla = new DominioSKD.Entidades.Modulo14.Planilla();
+                        DominioSKD.Entidades.Modulo14.Diseño diseño =
+                            new DominioSKD.Entidades.Modulo14.Diseño();
                         planilla.Diseño = diseño;
                         planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
                         planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
@@ -767,7 +772,7 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             List<Entidad> lista = new List<Entidad>();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            SolicitudPlanilla solicitud = (SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+            DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud;
 
             try
             {
@@ -784,8 +789,9 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        solicitud = new SolicitudPlanilla();
-                        DominioSKD.Planilla planilla = new Planilla();
+                        solicitud = 
+                            (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+                        DominioSKD.Entidades.Modulo14.Planilla planilla = new DominioSKD.Entidades.Modulo14.Planilla();
                         solicitud.Planilla = planilla;
                         solicitud.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdSolicitud]);
                         solicitud.IdInscripcion = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoInscripcion]);

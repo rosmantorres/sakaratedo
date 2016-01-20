@@ -30,11 +30,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                   Entidad resultDiseño = diseno.ConsultarXId(this.LaEntidad);
 
 
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
 
                
               }
