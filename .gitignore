@@ -189,3 +189,4 @@ Interfaz.v2.ncrunchsolution
 *.sql
 PruebasUnitariasSKD/App.config
 Interfaz.csproj
+Log.xml

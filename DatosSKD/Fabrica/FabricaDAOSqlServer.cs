@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo14;
 using DatosSKD.DAO.Modulo12;
 using DatosSKD.InterfazDAO.Modulo12;
@@ -190,20 +191,73 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del evento
         /// </summary>
         /// <returns>el DaoEvento</returns>
-      /*  public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
+       public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoEvento();
+        }
+        
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del carrito
+        /// </summary>
+        /// <returns>el DaoCarrito</returns>
+        public  InterfazDAO.Modulo16.IdaoCarrito ObtenerdaoCarrito()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoCarrito();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del evento
+        /// </summary>
+        /// <returns>el DaoEvento</returns>
+        public InterfazDAO.Modulo16.IdaoImplemento ObtenerDaoProductos()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoImplemento();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO da la compra
+        /// </summary>
+        /// <returns>el DaoFactura</returns>
+        public InterfazDAO.Modulo16.IdaoCompra ObtenerDaoFacturas()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoCompra();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO da la compra
+        /// </summary>
+        /// <returns>el DaoFactura</returns>
+        public InterfazDAO.Modulo16.IdaoMensualidad ObtenerDaoMensualidades()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoMensualidad();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del detalleEvento
+        /// </summary>
+        /// <returns>el DaoEvento</returns>
+        public InterfazDAO.Modulo16.IdaoEvento ObtenerDaoDetalleEvento()
         {
             return new DatosSKD.DAO.Modulo16.DaoEvento();
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia el DAO del carrito
+        /// Metodo de la fabrica que instancia el DAO del detalleMatricula
         /// </summary>
-        /// <returns>el DaoCarrito</returns>
-        public static InterfazDAO.Modulo16.IdaoCarrito ObtenerdaoCarrito()
+        /// <returns>el DaoCompra</returns>
+        public InterfazDAO.Modulo16.IdaoMensualidad ObtenerDaoDetalleMatricula()
         {
-            return new DatosSKD.DAO.Modulo16.DaoCarrito();
-        }*/
+            return new DatosSKD.DAO.Modulo16.DaoMensualidad();
+        }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del detalleProducto
+        /// </summary>
+        /// <returns>el DaoImplemento</returns>
+        public InterfazDAO.Modulo16.IdaoImplemento ObtenerDaoDetalleProducto()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoImplemento();
+        }
         #endregion
 
 

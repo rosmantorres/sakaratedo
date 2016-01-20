@@ -11,12 +11,14 @@ using templateApp.GUI.Master;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarEventosInscritos : System.Web.UI.Page
     {
          #region Atributos
-        private List<DominioSKD.Evento> laLista;
+        private List<Evento> laLista;
         private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
         #region Page Load

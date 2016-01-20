@@ -11,6 +11,8 @@ using LogicaNegociosSKD.Modulo7;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarOrganizacionYDojo : System.Web.UI.Page
