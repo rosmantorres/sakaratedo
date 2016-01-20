@@ -19,7 +19,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             try
             {
                 FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                return fabrica.ObtenerDAOImplemento().ConsultarXId(this.implemento);
+                return fabrica.ObtenerDAOImplemento().ConsultarXId(this.LaEntidad);
 
               
             }

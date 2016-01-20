@@ -4,28 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Fabrica;
-using DominioSKD;
 using DatosSKD.InterfazDAO.Modulo15;
+using DominioSKD;
+
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
-    public class ComandoConsultarTodosImplementos : Comando<List<Entidad>>
+    public class ComandoUsuarioDojo : Comando<int>
     {
 
-        public override List<Entidad> Ejecutar()
+        private string usuario;
+        public override int Ejecutar()
         {
-            List<Entidad> lista=new List<Entidad>();
+
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            IDaoImplemento daoImplemeto = fabrica.ObtenerDAOImplemento();
             try
             {
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                lista = fabrica.ObtenerDAOImplemento().listarInventarioDatos();
-
+               return daoImplemeto.usuarioImplementoDatos(this.usuario);
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-            return lista;
         }
     }
 }

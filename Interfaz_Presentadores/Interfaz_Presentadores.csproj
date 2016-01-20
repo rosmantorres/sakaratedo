@@ -73,6 +73,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPresentadorModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
+    <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
+    <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
     <Compile Include="Modulo1\PresentadorM1Inicio.cs" />
     <Compile Include="Modulo1\PresentadorM1Restablecer.cs" />
     <Compile Include="Modulo1\RecursosInterfazPresentadorM1.Designer.cs">
@@ -115,7 +118,6 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />

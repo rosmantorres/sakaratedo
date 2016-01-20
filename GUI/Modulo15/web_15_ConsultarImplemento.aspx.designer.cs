@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo15 {
     
     
-    public partial class WebForm1 {
+    public partial class web_15_ConsultarImplemento {
         
         /// <summary>
         /// alert control.
@@ -38,5 +38,14 @@ namespace templateApp.GUI.Modulo15 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre_dojo;
+        
+        /// <summary>
+        /// tabla control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal tabla;
     }
 }

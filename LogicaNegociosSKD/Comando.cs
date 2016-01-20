@@ -10,7 +10,6 @@ namespace LogicaNegociosSKD
     public abstract class Comando<Resultado>
     {
         private Entidad laEntidad;
-
         public Entidad LaEntidad
         {
             get { return laEntidad; }

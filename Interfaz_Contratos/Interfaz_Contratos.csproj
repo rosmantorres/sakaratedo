@@ -59,6 +59,9 @@
     <Compile Include="Modulo14\IContratoM14RegistrarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14SolicitarPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14SolicitudPlanilla.cs" />
+    <Compile Include="Modulo15\IContratoAgregarImplemento.cs" />
+    <Compile Include="Modulo15\IContratoConsultarImplemento.cs" />
+    <Compile Include="Modulo15\IContratoModificarImplemento.cs" />
     <Compile Include="Modulo1\IContratoM1Inicio.cs" />
     <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
     <Compile Include="Modulo2\IContratoM2.cs" />
@@ -77,7 +80,6 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />

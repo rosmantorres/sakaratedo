@@ -20,7 +20,6 @@ namespace DatosSKD.DAO.Modulo15
 
 
         #region IDaoImplemento
-
         #region listarInventarioDatos
            List<Entidad> IDaoImplemento.listarInventarioDatos(Entidad parametroDojo)
         {
@@ -496,7 +495,7 @@ namespace DatosSKD.DAO.Modulo15
                     ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                     ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
-                    ((Implemento)implemento).Descripcion_Implemento = row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
+                  //  ((Implemento)implemento).Descripcion_Implemento = row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
                     listaDeImplementos.Add(implemento);
 
                 }
@@ -546,7 +545,7 @@ namespace DatosSKD.DAO.Modulo15
                 ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                 ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
-                ((Implemento)implemento).Descripcion_Implemento = row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
+                //((Implemento)implemento).Descripcion_Implemento = row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
             }
             catch (Exception e)
             {
@@ -557,7 +556,6 @@ namespace DatosSKD.DAO.Modulo15
             return implemento;
         }
         #endregion
-
 
         #region implementoInventarioDatosBool
           bool IDaoImplemento.implementoInventarioDatosBool(int idImplemento)
@@ -660,11 +658,13 @@ namespace DatosSKD.DAO.Modulo15
         }
 #endregion
 
-        #endregion 
+          #region 
+          #endregion
+        #endregion
 
-        #region IDAO
+          #region IDAO
 
-        #region Agregar
+          #region Agregar
           bool InterfazDAO.IDao<Entidad, bool, Entidad>.Agregar(Entidad parametro)
         {
 

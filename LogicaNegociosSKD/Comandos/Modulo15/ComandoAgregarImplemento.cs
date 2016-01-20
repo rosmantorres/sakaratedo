@@ -12,7 +12,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
    public  class ComandoAgregarImplemento:Comando<Boolean>
     {
 
-       private Entidad implemento;
+       
        public override bool Ejecutar()
        {
 
@@ -20,15 +20,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
            IDaoImplemento daoImplemeto = fabrica.ObtenerDAOImplemento();
            try
            {
-               daoImplemeto.Agregar(this.LaEntidad);
-               return true;
+               return daoImplemeto.Agregar(this.LaEntidad);
+           
            }
            catch (Exception ex)
            {
 
                throw ex;
            }
-           return false;
        }
 
 

@@ -221,6 +221,11 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoModificarImplemento();
         }
 
+        public Comando<Entidad> ObtenerComandoImplementoXId()
+        {
+            return new ComandoImplementoXId();
+        }
+
         #endregion
 
         #region Modulo 16

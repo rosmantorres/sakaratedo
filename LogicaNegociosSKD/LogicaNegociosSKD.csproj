@@ -86,6 +86,7 @@
     <Compile Include="Comandos\Modulo15\ComandoEliminarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoImplementoXId.cs" />
     <Compile Include="Comandos\Modulo15\ComandoModificarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoUsuarioDojo.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarAgregarOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarComboOrganizaciones.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />

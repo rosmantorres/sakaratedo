@@ -18,7 +18,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
            try
            {
                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-               return fabrica.ObtenerDAOImplemento().modificarInventarioDatos(this.implemento);
+               return fabrica.ObtenerDAOImplemento().modificarInventarioDatos(this.LaEntidad);
 
            }
            catch (Exception ex)

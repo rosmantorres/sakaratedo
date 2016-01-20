@@ -223,6 +223,9 @@
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
+    <Content Include="GUI\Modulo15\web_15_AgregarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\web_15_ModificarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -337,6 +340,7 @@
     <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="GUI\Modulo14\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="GUI\Modulo14\ckeditor\skins\moono\readme.md" />
+    <Content Include="plugins\JavaScript1.js" />
     <Content Include="plugins\jquery_validate\demo\captcha\fonts\Anorexia.ttf" />
     <Content Include="plugins\jquery_validate\demo\captcha\images\image.php" />
     <Content Include="plugins\jquery_validate\demo\captcha\image_req.php" />
@@ -1763,6 +1767,27 @@
     </Compile>
     <Compile Include="GUI\Modulo15\M15_ModificarImplemento.aspx.designer.cs">
       <DependentUpon>M15_ModificarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_AgregarImplemento.aspx.cs">
+      <DependentUpon>web_15_AgregarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_AgregarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_AgregarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx.cs">
+      <DependentUpon>web_15_ConsultarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_ConsultarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ModificarImplemento.aspx.cs">
+      <DependentUpon>web_15_ModificarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ModificarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_ModificarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>
