@@ -53,8 +53,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                     (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
                 //
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
-                Competencia competencia = (Competencia)fabricaEntidad.ObtenerCompetencia();
-                Organizacion organizacion = (Organizacion)fabricaEntidad.ObtenerOrganizacion();
+                DominioSKD.Entidades.Modulo12.Competencia competencia = 
+                    (DominioSKD.Entidades.Modulo12.Competencia)fabricaEntidad.ObtenerCompetencia();
+                Organizacion organizacion =
+                    (Organizacion)fabricaEntidad.ObtenerOrganizacion();
                 DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
                     (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
                 List<string> matricula = new List<string>();
@@ -68,7 +70,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 daoDatos.LimpiarSQLConnection();
                 evento = (DominioSKD.Entidades.Modulo9.Evento)daoDatos.ConsultarEvento(idIns);
                 daoDatos.LimpiarSQLConnection();
-                competencia = (Competencia)daoDatos.ConsultarCompetencia(idIns);
+                competencia = (DominioSKD.Entidades.Modulo12.Competencia)daoDatos.ConsultarCompetencia(idIns);
                 daoDatos.LimpiarSQLConnection();
                 organizacion = (Organizacion)daoDatos.ConsultarOrganizacion(dojo.Organizacion_dojo);
                 daoDatos.LimpiarSQLConnection();
