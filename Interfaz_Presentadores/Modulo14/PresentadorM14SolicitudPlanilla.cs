@@ -76,7 +76,7 @@ namespace Interfaz_Presentadores.Modulo14
             vista.competenciaCombo.DataBind();
         }
 
-        public void AgregarSolicitud()
+        public bool AgregarSolicitud()
         {
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             FabricaComandos fabricaComandos = new FabricaComandos();
@@ -87,42 +87,69 @@ namespace Interfaz_Presentadores.Modulo14
             Comando<Boolean> comandoRegistrarSolicitudPlanillaID = fabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
             Comando<Boolean> comandoRegistrarSolicitudIDPersona = fabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
             
-            bool resultado;
+            bool resultado = false;
+            if (vista.fechaRetiroI != "")
+            {
+                if(vista.FechaReincorporacion != ""){
+                    if (vista.Motivo !=""){
+                        if (vista.ComboEventoVisible == true)
+                        {
+                            //SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                            //                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
+                                                     vista.Motivo, (Planilla)planilla, Int32.Parse(vista.eventoCombo.SelectedValue));
+                            // lS.RegistrarSolicitudPlanilla(laSolicitud);
+                            comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
+                            resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
 
-            if (vista.ComboEventoVisible == true)
-            {
-                //SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
-                //                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI,vista.FechaReincorporacion,
-                                         vista.Motivo, (Planilla)planilla, Int32.Parse(vista.eventoCombo.SelectedValue));
-               // lS.RegistrarSolicitudPlanilla(laSolicitud);
-                comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
-                resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
-                
-            }
-            if (vista.ComboCompetenciaVisible == true)
-            {
-               // SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
-               //                              this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
-                                         vista.Motivo, (Planilla)planilla, Int32.Parse(vista.competenciaCombo.SelectedValue));
-                comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
-                resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
-               // lS.RegistrarSolicitudPlanilla(laSolicitud);
-            }
-            if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
-            {
-               /* SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
-                                             this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));*/
-                
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
-                                         vista.Motivo, (Planilla)planilla, vista.IDUsuario);
-                comandoRegistrarSolicitudIDPersona.LaEntidad = laSolicitud;
-                resultado = comandoRegistrarSolicitudIDPersona.Ejecutar();
-               // lS.RegistrarSolicitudIDPersona(laSolicitud);
-            }
+                        }
+                        if (vista.ComboCompetenciaVisible == true)
+                        {
+                            // SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                            //                              this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
+                                                     vista.Motivo, (Planilla)planilla, Int32.Parse(vista.competenciaCombo.SelectedValue));
+                            comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
+                            resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
+                            // lS.RegistrarSolicitudPlanilla(laSolicitud);
+                        }
+                        if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
+                        {
+                            /* SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                                          this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));*/
+
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
+                                                     vista.Motivo, (Planilla)planilla, vista.IDUsuario);
+                            comandoRegistrarSolicitudIDPersona.LaEntidad = laSolicitud;
+                            resultado = comandoRegistrarSolicitudIDPersona.Ejecutar();
+                            // lS.RegistrarSolicitudIDPersona(laSolicitud);
+                        }
                   
+                    }else{
+                        vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                        vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                        vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaMotivoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                        vista.alerta = true;
+                        resultado = false;
+                    }
+                }else{
+                    vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaReincorporacionVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; 
+                    vista.alerta = true;
+                    resultado = false;
+                }
+            }
+            else
+            {
+                                  vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                   vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                   vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaRetiroVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; 
+                   vista.alerta = true;
+                   resultado = false;
+            }
 
+            return resultado;
      
         }
 

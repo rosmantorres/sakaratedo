@@ -10,6 +10,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_ListarHorariodePractica : System.Web.UI.Page

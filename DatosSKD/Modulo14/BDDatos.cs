@@ -12,8 +12,9 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo14;
 using System.Globalization;
 using System.IO;
+using DominioSKD;
 
-
+ 
 namespace DatosSKD.Modulo14
 {
     public class BDDatos
@@ -29,12 +30,12 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="idPersona">id de la Persona a consultar</param>
         /// <returns>La clase Persona con sus datos</returns>
-        public DominioSKD.Persona ConsultarPersona(int idPersona)
+        public  Persona ConsultarPersona(int idPersona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
-            DominioSKD.Persona persona = new DominioSKD.Persona();
+             Persona persona = new  Persona();
             try
             {
 
@@ -427,12 +428,12 @@ namespace DatosSKD.Modulo14
         /// </summary>
         /// <param name="idIns">Id de inscripcion relacionado con el evento</param>
         /// <returns>La clase evento</returns>
-        public DominioSKD.Evento ConsultarEvento(int idIns)
+        public Evento ConsultarEvento(int idIns)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosBDModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = con.Conectar();
-            DominioSKD.Evento evento = new DominioSKD.Evento();
+             Evento evento = new Evento();
             try
             {
 

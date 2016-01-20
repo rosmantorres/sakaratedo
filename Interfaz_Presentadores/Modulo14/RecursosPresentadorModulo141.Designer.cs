@@ -97,7 +97,7 @@ namespace Interfaz_Presentadores.Modulo14 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        ///   Busca una cadena traducida similar a &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
         /// </summary>
         public static string Alerta_Html {
             get {
@@ -147,6 +147,33 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string Alerta_TipoVacio {
             get {
                 return ResourceManager.GetString("Alerta_TipoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ingresaste ninguna fecha de reincorporacion.
+        /// </summary>
+        public static string AlertaFechaReincorporacionVacio {
+            get {
+                return ResourceManager.GetString("AlertaFechaReincorporacionVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ingresaste ninguna fecha de retiro.
+        /// </summary>
+        public static string AlertaFechaRetiroVacio {
+            get {
+                return ResourceManager.GetString("AlertaFechaRetiroVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No ingresaste el motivo.
+        /// </summary>
+        public static string AlertaMotivoVacio {
+            get {
+                return ResourceManager.GetString("AlertaMotivoVacio", resourceCulture);
             }
         }
         
@@ -252,6 +279,24 @@ namespace Interfaz_Presentadores.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a $CATEGORIA_cat&lt;br/&gt;.
+        /// </summary>
+        public static string CategoriaCat {
+            get {
+                return ResourceManager.GetString("CategoriaCat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $CATEGORIA_comp&lt;br/&gt;.
+        /// </summary>
+        public static string CategoriaComp {
+            get {
+                return ResourceManager.GetString("CategoriaComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;Solicitar&lt;/a&gt;.
         /// </summary>
         public static string CerrarSolicitud {
@@ -279,11 +324,56 @@ namespace Interfaz_Presentadores.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a $comp_costo&lt;br/&gt;.
+        /// </summary>
+        public static string CompCosto {
+            get {
+                return ResourceManager.GetString("CompCosto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a COMPETENCIA.
         /// </summary>
         public static string Competencia {
             get {
                 return ResourceManager.GetString("Competencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $comp_fecha_fin&lt;br/&gt;.
+        /// </summary>
+        public static string CompFechaFin {
+            get {
+                return ResourceManager.GetString("CompFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $comp_fecha_ini&lt;br/&gt;.
+        /// </summary>
+        public static string CompFechaIni {
+            get {
+                return ResourceManager.GetString("CompFechaIni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $comp_nombre&lt;br/&gt;.
+        /// </summary>
+        public static string CompNombre {
+            get {
+                return ResourceManager.GetString("CompNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $comp_tipo&lt;br/&gt;.
+        /// </summary>
+        public static string CompTipo {
+            get {
+                return ResourceManager.GetString("CompTipo", resourceCulture);
             }
         }
         
@@ -423,6 +513,33 @@ namespace Interfaz_Presentadores.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a $eve_costo&lt;br/&gt;.
+        /// </summary>
+        public static string EveCosto {
+            get {
+                return ResourceManager.GetString("EveCosto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $eve_descripcion&lt;br/&gt;.
+        /// </summary>
+        public static string EveDescrip {
+            get {
+                return ResourceManager.GetString("EveDescrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $eve_nombre&lt;br/&gt;.
+        /// </summary>
+        public static string EveNombre {
+            get {
+                return ResourceManager.GetString("EveNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a EVENTO.
         /// </summary>
         public static string Evento {
@@ -455,6 +572,15 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string FechaRetiro {
             get {
                 return ResourceManager.GetString("FechaRetiro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $HORARIO_hor&lt;br/&gt;.
+        /// </summary>
+        public static string HorarioHor {
+            get {
+                return ResourceManager.GetString("HorarioHor", resourceCulture);
             }
         }
         
@@ -509,6 +635,51 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string linea {
             get {
                 return ResourceManager.GetString("linea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $mat_activa&lt;br/&gt;.
+        /// </summary>
+        public static string MatActiva {
+            get {
+                return ResourceManager.GetString("MatActiva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $mat_fecha_creacion&lt;br/&gt;.
+        /// </summary>
+        public static string MatFechaCrea {
+            get {
+                return ResourceManager.GetString("MatFechaCrea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $mat_fecha_ultimo_pago&lt;br/&gt;.
+        /// </summary>
+        public static string MatFechaUltPago {
+            get {
+                return ResourceManager.GetString("MatFechaUltPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $mat_identificador&lt;br/&gt;.
+        /// </summary>
+        public static string MatIdenti {
+            get {
+                return ResourceManager.GetString("MatIdenti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $mat_precio&lt;br/&gt;.
+        /// </summary>
+        public static string MatPrecio {
+            get {
+                return ResourceManager.GetString("MatPrecio", resourceCulture);
             }
         }
         
@@ -617,6 +788,42 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string Organizacion {
             get {
                 return ResourceManager.GetString("Organizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $org_direccion&lt;br/&gt;.
+        /// </summary>
+        public static string OrgDireccion {
+            get {
+                return ResourceManager.GetString("OrgDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $org_email&lt;br/&gt;.
+        /// </summary>
+        public static string OrgEmail {
+            get {
+                return ResourceManager.GetString("OrgEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $org_nombre&lt;br/&gt;.
+        /// </summary>
+        public static string OrgNombre {
+            get {
+                return ResourceManager.GetString("OrgNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $org_telefono&lt;br/&gt;.
+        /// </summary>
+        public static string OrgTelefono {
+            get {
+                return ResourceManager.GetString("OrgTelefono", resourceCulture);
             }
         }
         
@@ -779,6 +986,15 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a $TIPO_EVENTO&lt;br/&gt;.
+        /// </summary>
+        public static string TipoEvento {
+            get {
+                return ResourceManager.GetString("TipoEvento", resourceCulture);
             }
         }
     }

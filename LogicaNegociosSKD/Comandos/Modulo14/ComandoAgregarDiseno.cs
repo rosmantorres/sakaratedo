@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo14
 {
-    class ComandoAgregarDiseno : Comando<Boolean>
+    public class ComandoAgregarDiseno : Comando<Boolean>
     {
         private Entidad diseño;
         private Entidad planilla;

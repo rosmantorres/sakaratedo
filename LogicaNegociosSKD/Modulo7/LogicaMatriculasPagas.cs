@@ -7,6 +7,8 @@ using DatosSKD;
 using DatosSKD.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Entidades.Modulo6;
+
 
 namespace LogicaNegociosSKD.Modulo7
 {
@@ -16,11 +18,11 @@ namespace LogicaNegociosSKD.Modulo7
     public class LogicaMatriculasPagas
     {
         #region Atributos
-        private List<DominioSKD.Matricula> laListaDeMatriculas;
+        private List<Matricula> laListaDeMatriculas;
         #endregion
 
         #region Get y Set
-        public List<DominioSKD.Matricula> LaListaDeEventos
+        public List<Matricula> LaListaDeEventos
         {
             get { return laListaDeMatriculas; }
             set { laListaDeMatriculas = value; }
@@ -39,7 +41,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// Método que obtiene la lista de matriculas que han sido pagadas
         /// </summary>
         /// <returns>Lista de objetos tipo Matricula</returns>
-        public List<DominioSKD.Matricula> obtenerListaDeMatriculas(int idPersona)
+        public List<Matricula> obtenerListaDeMatriculas(int idPersona)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -251,7 +253,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// <param name="idEvento">Número entero que representa el ID de la matricula</param>
         /// <returns>un objeto de tipo Matricula</returns>
       
-        public DominioSKD.Matricula detalleMatriculaID(int idMatricula)
+        public Matricula detalleMatriculaID(int idMatricula)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

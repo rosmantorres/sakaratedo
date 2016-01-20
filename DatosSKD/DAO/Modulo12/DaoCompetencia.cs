@@ -510,11 +510,9 @@ namespace DatosSKD.DAO.Modulo12
 
                         //PREGUNTAR!
                         laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)laFabrica.ObtenerUbicacion(int.Parse(row[RecursosDAOModulo12.AliasIdUbicacion].ToString()),
-                                                                row[RecursosDAOModulo12.AliasLatitudDireccion].ToString(),
-                                                                row[RecursosDAOModulo12.AliasLongitudDireccion].ToString(),
                                                                 row[RecursosDAOModulo12.AliasNombreCiudad].ToString(),
-                                                                row[RecursosDAOModulo12.AliasNombreEstado].ToString(),
-                                                                row[RecursosDAOModulo12.AliasNombreDireccion].ToString());
+                                                                row[RecursosDAOModulo12.AliasNombreEstado].ToString());
+                                                                
 
                         laListaDeCompetencias.Add(laCompetencia);
 

@@ -130,7 +130,7 @@
     <value>No seleccionaste ningun dato</value>
   </data>
   <data name="Alerta_Html" xml:space="preserve">
-    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
   </data>
   <data name="Alerta_HtmlFinal" xml:space="preserve">
     <value>&lt;/div&gt;</value>
@@ -358,5 +358,77 @@
   </data>
   <data name="Tipo" xml:space="preserve">
     <value>&amp;tipo=</value>
+  </data>
+  <data name="CategoriaCat" xml:space="preserve">
+    <value>$CATEGORIA_cat&lt;br/&gt;</value>
+  </data>
+  <data name="CategoriaComp" xml:space="preserve">
+    <value>$CATEGORIA_comp&lt;br/&gt;</value>
+  </data>
+  <data name="CompCosto" xml:space="preserve">
+    <value>$comp_costo&lt;br/&gt;</value>
+  </data>
+  <data name="CompFechaFin" xml:space="preserve">
+    <value>$comp_fecha_fin&lt;br/&gt;</value>
+  </data>
+  <data name="CompFechaIni" xml:space="preserve">
+    <value>$comp_fecha_ini&lt;br/&gt;</value>
+  </data>
+  <data name="CompNombre" xml:space="preserve">
+    <value>$comp_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="CompTipo" xml:space="preserve">
+    <value>$comp_tipo&lt;br/&gt;</value>
+  </data>
+  <data name="EveCosto" xml:space="preserve">
+    <value>$eve_costo&lt;br/&gt;</value>
+  </data>
+  <data name="EveDescrip" xml:space="preserve">
+    <value>$eve_descripcion&lt;br/&gt;</value>
+  </data>
+  <data name="EveNombre" xml:space="preserve">
+    <value>$eve_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="HorarioHor" xml:space="preserve">
+    <value>$HORARIO_hor&lt;br/&gt;</value>
+  </data>
+  <data name="MatActiva" xml:space="preserve">
+    <value>$mat_activa&lt;br/&gt;</value>
+  </data>
+  <data name="MatFechaCrea" xml:space="preserve">
+    <value>$mat_fecha_creacion&lt;br/&gt;</value>
+  </data>
+  <data name="MatFechaUltPago" xml:space="preserve">
+    <value>$mat_fecha_ultimo_pago&lt;br/&gt;</value>
+  </data>
+  <data name="MatIdenti" xml:space="preserve">
+    <value>$mat_identificador&lt;br/&gt;</value>
+  </data>
+  <data name="MatPrecio" xml:space="preserve">
+    <value>$mat_precio&lt;br/&gt;</value>
+  </data>
+  <data name="OrgDireccion" xml:space="preserve">
+    <value>$org_direccion&lt;br/&gt;</value>
+  </data>
+  <data name="OrgEmail" xml:space="preserve">
+    <value>$org_email&lt;br/&gt;</value>
+  </data>
+  <data name="OrgNombre" xml:space="preserve">
+    <value>$org_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="OrgTelefono" xml:space="preserve">
+    <value>$org_telefono&lt;br/&gt;</value>
+  </data>
+  <data name="TipoEvento" xml:space="preserve">
+    <value>$TIPO_EVENTO&lt;br/&gt;</value>
+  </data>
+  <data name="AlertaFechaReincorporacionVacio" xml:space="preserve">
+    <value>No ingresaste ninguna fecha de reincorporacion</value>
+  </data>
+  <data name="AlertaFechaRetiroVacio" xml:space="preserve">
+    <value>No ingresaste ninguna fecha de retiro</value>
+  </data>
+  <data name="AlertaMotivoVacio" xml:space="preserve">
+    <value>No ingresaste el motivo</value>
   </data>
 </root>
