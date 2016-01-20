@@ -25,11 +25,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            SolicitudP solicitud = (SolicitudP)fabricaEntidad.ObtenerSolicitudP(); 
+            DominioSKD.Entidades.Modulo14.SolicitudP solicitud =
+                (DominioSKD.Entidades.Modulo14.SolicitudP)fabricaEntidad.ObtenerSolicitudP(); 
             try
             {
                 solicitud.ID = idSolicitud;
-                solicitud = (SolicitudP)BaseDeDatoSolicitud.ConsultarXId(solicitud);
+                solicitud =
+                    (DominioSKD.Entidades.Modulo14.SolicitudP
+                    )BaseDeDatoSolicitud.ConsultarXId(solicitud);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

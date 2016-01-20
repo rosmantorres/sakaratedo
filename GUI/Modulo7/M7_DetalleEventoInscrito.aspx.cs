@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class DetalleEventoInscrito : System.Web.UI.Page

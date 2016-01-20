@@ -427,14 +427,14 @@ namespace DatosSKD.DAO.Modulo14
         /// </summary>
         /// <param name="idIns">Id de inscripcion relacionado con el evento</param>
         /// <returns>La clase evento</returns>
-        public Evento ConsultarEvento(int idIns)
+        public Entidad ConsultarEvento(int idIns)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            //Evento evento = (DominioSKD.Evento)fabricaEntidad.ObtenerEvento();
-            Evento evento =  new Evento();
+            DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            
             try
             {
 
@@ -451,8 +451,8 @@ namespace DatosSKD.DAO.Modulo14
                     while (leer.Read())
                     {
                         Categoria cat = new Categoria();
-                        Horario hor = new Horario();
-                        TipoEvento tip = new TipoEvento();
+                        DominioSKD.Entidades.Modulo9.Horario hor = new DominioSKD.Entidades.Modulo9.Horario();
+                        DominioSKD.Entidades.Modulo9.TipoEvento tip = new DominioSKD.Entidades.Modulo9.TipoEvento();
                         evento.Categoria = cat;
                         evento.Horario = hor;
                         evento.TipoEvento = tip;
@@ -653,7 +653,8 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            SolicitudPlanilla solicitud = (SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+            DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
+                (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
             try
             {
 

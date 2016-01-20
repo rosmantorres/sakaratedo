@@ -36,7 +36,8 @@ namespace Interfaz_Presentadores.Modulo14
             FabricaEntidades entidad = new FabricaEntidades();
             try
             {
-                Planilla plani = (Planilla)entidad.ObtenerPlanilla();
+                DominioSKD.Entidades.Modulo14.Planilla plani =
+                    (DominioSKD.Entidades.Modulo14.Planilla)entidad.ObtenerPlanilla();
                 plani.ID = planilla;
                 ComandoConsultarDiseño command = (ComandoConsultarDiseño)
                     fabrica.ObtenerComandoComandoConsultarDiseño();
@@ -45,7 +46,7 @@ namespace Interfaz_Presentadores.Modulo14
                 command.IdSolici = idSolici;
                 command.Planilla = plani;
                 Entidad diseño = command.Ejecutar();
-                string contenido = ((Diseño)diseño).Contenido;
+                string contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño).Contenido;
                 vista.informacion.Text = contenido;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

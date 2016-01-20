@@ -26,7 +26,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
-            Planilla planilla = (Planilla)fabricaEntidades.ObtenerPlanilla();
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)fabricaEntidades.ObtenerPlanilla();
             try
             {
 
@@ -35,7 +36,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 planilla.ID = this.idPlanilla;
                 Entidad entidad = BaseDeDatoPlanilla.ConsultarXId(planilla);
                 BaseDeDatoPlanilla.LimpiarSQLConnection();
-                planilla.Nombre = ((Planilla)entidad).Nombre;
+                planilla.Nombre = ((DominioSKD.Entidades.Modulo14.Planilla)entidad).Nombre;
                 planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
                
             }

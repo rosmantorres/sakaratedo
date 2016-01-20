@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using DominioSKD;
+using DominioSKD;
 
 namespace DatosSKD.Modulo9
 {
