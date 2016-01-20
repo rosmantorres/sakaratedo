@@ -34,8 +34,10 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Diseño diseño = (Diseño)fabricaEntidad.obtenerDiseño();
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Diseño diseño = 
+                (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
 
             if (planilla != null)
             {
@@ -139,7 +141,8 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Diseño diseño = (Diseño)elDiseño;
+            DominioSKD.Entidades.Modulo14.Diseño diseño = 
+                (DominioSKD.Entidades.Modulo14.Diseño)elDiseño;
 
             if (diseño != null)
             {
@@ -247,8 +250,10 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            Diseño diseño = (Diseño)elDiseño;
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Diseño diseño =
+                (DominioSKD.Entidades.Modulo14.Diseño)elDiseño;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
             try
             {
                 if (diseño != null && planilla != null)

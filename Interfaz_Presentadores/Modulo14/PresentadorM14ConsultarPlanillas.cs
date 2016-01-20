@@ -28,7 +28,7 @@ namespace Interfaz_Presentadores.Modulo14
             try
             {
                 this.lista = lista;
-                foreach (DominioSKD.Planilla plani in lista)
+                foreach (DominioSKD.Entidades.Modulo14.Planilla plani in lista)
                 {
                     vista.planillaCreadas += RecursosPresentadorModulo14.AbrirTR;
                     vista.planillaCreadas += RecursosPresentadorModulo14.AbrirTD + plani.ID.ToString() + RecursosPresentadorModulo14.CerrarTD;

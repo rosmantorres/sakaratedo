@@ -100,7 +100,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                     info = info.Replace(RecursosComandoModulo14.PerNacionalidad, "");
                 }
 
-                SolicitudPlanilla solicitud = (SolicitudPlanilla)laSolicitud;
+                DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
+                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)laSolicitud;
                 if (solicitud != null)
                 {
                     info = info.Replace(RecursosComandoModulo14.FechaCreacionPlanilla, 

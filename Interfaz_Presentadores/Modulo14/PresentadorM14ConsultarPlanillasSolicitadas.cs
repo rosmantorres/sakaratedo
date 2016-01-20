@@ -37,7 +37,7 @@ namespace Interfaz_Presentadores.Modulo14
             try
             {
                 this.lista = lista;
-                foreach (DominioSKD.SolicitudPlanilla solici in lista)
+                foreach (DominioSKD.Entidades.Modulo14.SolicitudPlanilla solici in lista)
                 {
                     vista.tablaplanillas += RecursosPresentadorModulo14.AbrirTR;
                     vista.tablaplanillas += RecursosPresentadorModulo14.AbrirTD + solici.ID + RecursosPresentadorModulo14.CerrarTD;

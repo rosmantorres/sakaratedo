@@ -13,7 +13,7 @@ namespace DatosSKD.InterfazDAO.Modulo14
         DominioSKD.Dojo ConsultarDojo(int idDojo);
         List<string> ConsultarMatricula(int idDojo, int idPersona);
         Entidad ConsultarOrganizacion(int idOrganizacion);
-        DominioSKD.Evento ConsultarEvento(int idIns);
+        Entidad ConsultarEvento(int idIns);
         Entidad ConsultarCompetencia(int idIns);
         Entidad ConsultarSolicitud(int idSolicitud);
     }

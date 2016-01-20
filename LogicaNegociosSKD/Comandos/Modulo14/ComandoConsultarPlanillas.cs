@@ -22,7 +22,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 List<Entidad> listaplanilla = new List<Entidad>();
                 listaplanilla = dao.ConsultarPlanillasCreadas();
                 dao.LimpiarSQLConnection();
-                foreach (DominioSKD.Planilla planilla in listaplanilla)
+                foreach (DominioSKD.Entidades.Modulo14.Planilla planilla in listaplanilla)
                 {
                     planilla.Dato = dao.ObtenerDatosPlanillaID1(planilla.ID);
                     dao.LimpiarSQLConnection();

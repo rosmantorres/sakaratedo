@@ -16,7 +16,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
-            SolicitudP laSolicitud = (SolicitudP)this.LaEntidad;
+            DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud =
+                (DominioSKD.Entidades.Modulo14.SolicitudP)this.LaEntidad;
             bool result = false;
             try
             {

@@ -43,13 +43,13 @@ namespace Interfaz_Presentadores.Modulo14
                listPlanilla = comboTipoPlanilla.Ejecutar();
 
                //mostrar el primer lugar el tipo de planilla actual
-               foreach (Planilla item2 in listPlanilla)
+               foreach (DominioSKD.Entidades.Modulo14.Planilla item2 in listPlanilla)
                {
                    if (tipoPlanilla == item2.TipoPlanilla)
                        options.Add(item2.IDtipoPlanilla.ToString(), item2.TipoPlanilla);
                }
                //mostrar los tipos de planilla menos el actual
-               foreach (Planilla item in listPlanilla)
+               foreach (DominioSKD.Entidades.Modulo14.Planilla item in listPlanilla)
                {
                    if (tipoPlanilla != item.TipoPlanilla)
                        options.Add(item.IDtipoPlanilla.ToString(), item.TipoPlanilla);
@@ -131,7 +131,7 @@ namespace Interfaz_Presentadores.Modulo14
            /*    laPlanilla = new Planilla(Int32.Parse(this.id_planilla.Value), this.id_nombrePlanilla.Value, true,
                                                   Int32.Parse(this.comboTipoPlanilla.SelectedValue),
                                                   listDatos);*/
-               Entidad laPlanilla = new Planilla(Int32.Parse(vista.planillaId), vista.nombrePlanilla, true,
+               Entidad laPlanilla = new DominioSKD.Entidades.Modulo14.Planilla(Int32.Parse(vista.planillaId), vista.nombrePlanilla, true,
                                                   Int32.Parse(vista.tipoPlanillaCombo.SelectedValue),
                                                   listDatos);
 
@@ -333,11 +333,11 @@ namespace Interfaz_Presentadores.Modulo14
                Comando<Entidad> comandoObtenerPlanillaID = fabricaCo.ObtenerComandoObtenerPlanillaID();
                ((ComandoObtenerPlanillaID)comandoObtenerPlanillaID).IdPlanilla = idPlanilla;
                laPlanilla = comandoObtenerPlanillaID.Ejecutar();
-               vista.nombrePlanilla = ((Planilla)laPlanilla).Nombre;
+               vista.nombrePlanilla = ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).Nombre;
 
-               LlenarTipoPlanillaCombo(((Planilla)laPlanilla).TipoPlanilla);
+               LlenarTipoPlanillaCombo(((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).TipoPlanilla);
 
-               foreach (String item in ((Planilla)laPlanilla).Dato)
+               foreach (String item in ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).Dato)
                {
                   vista.datosPlanilla2.Items.Add(new ListItem(item, item));
                   vista.datosPlanilla1.Items.Remove(item);

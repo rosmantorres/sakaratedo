@@ -44,7 +44,7 @@ namespace Interfaz_Presentadores.Modulo14
             List<Entidad> listEventos = comboEvento.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (SolicitudP item in listEventos)
+            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listEventos)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -65,7 +65,7 @@ namespace Interfaz_Presentadores.Modulo14
             List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (SolicitudP item in listCompetencias)
+            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listCompetencias)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -92,10 +92,10 @@ namespace Interfaz_Presentadores.Modulo14
             Comando<Entidad> comandoObtenerSolicitudID = fabricaCo.ObtenerComandoObtenerSolicitudID();
             ((ComandoObtenerSolicitudID)comandoObtenerSolicitudID).IDSolicitud = idSolicitud;
             laSolicitud = comandoObtenerSolicitudID.Ejecutar();
-            vista.FechaRetiro = ((SolicitudP)laSolicitud).FechaRetiro;
-            vista.FechaReincorporacion = ((SolicitudP)laSolicitud).FechaReincorporacion;
-            vista.Motivo = ((SolicitudP)laSolicitud).Motivo;
-            vista.IDInscripcion = ((SolicitudP)laSolicitud).IDInscripcion;
+            vista.FechaRetiro = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).FechaRetiro;
+            vista.FechaReincorporacion = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).FechaReincorporacion;
+            vista.Motivo = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).Motivo;
+            vista.IDInscripcion = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).IDInscripcion;
             IDIns = vista.IDInscripcion;
 
         /*    HttpCookie aCookie = new HttpCookie(RecursosPresentadorModulo14.CookieIdIns);
@@ -108,8 +108,10 @@ namespace Interfaz_Presentadores.Modulo14
             //  List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(laSolicitud.ID);
             Comando<List<Boolean>> comandoDatosRequeridosSolicitud = fabricaCo.ObtenerComandoDatosRequeridosSolicitud();
            
-            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = fabricaEnt.ObtenerPlanilla();
-            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id = ((SolicitudP)laSolicitud).ID;
+            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = 
+                fabricaEnt.ObtenerPlanilla();
+            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id =
+                ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).ID;
             //((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).IdPlanilla = idSolicitud;
 
             List<Boolean> datosRequeridos = comandoDatosRequeridosSolicitud.Ejecutar();
@@ -172,7 +174,8 @@ namespace Interfaz_Presentadores.Modulo14
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             FabricaComandos fabricaComandos = new FabricaComandos();
             Entidad solicitud = fabricaEntidades.ObtenerSolicitudP();
-            ((SolicitudP)solicitud).ID = Int32.Parse(vista.solicitudId);
+            ((DominioSKD.Entidades.Modulo14.SolicitudP)solicitud).ID =
+                Int32.Parse(vista.solicitudId);
            //Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
            Comando<Entidad> comandoModificarSolicitudID = fabricaComandos.ObtenerComandoModificarSolicitudID();
            //Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
