@@ -310,11 +310,10 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Respuesta de la accion de agregar
                 bool respuesta = false;                
-
+                
                 /*Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente,
                 la cantidad siempre sera 1*/
-                FabricaComandos fabricaComando = new FabricaComandos();
-                Comando<bool> comando = fabricaComando.CrearComandoAgregarItem(persona, matricula, 3, 1);
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, matricula, 3, 1);
                 respuesta = comando.Ejecutar();
 
                  //Escribo en el logger la salida a este metodo

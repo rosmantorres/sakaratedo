@@ -43,8 +43,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> ComandoModificarCarrito4;
         private Comando<bool> ComandoModificarCarrito5;
         private Comando<bool> ComandoModificarCarrito6;
-        FabricaEntidades fabrica;
-        FabricaComandos fabricacomando;
+        FabricaEntidades fabrica;        
         #endregion
 
         /// <summary>
@@ -55,8 +54,7 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Las fabricas
             fabrica = new FabricaEntidades();
-            fabricacomando = new FabricaComandos();           
-         
+        
             //Las personas
             this.persona = fabrica.ObtenerPersona();
             this.persona.Id = 11;
@@ -81,40 +79,40 @@ namespace PruebasUnitariasSKD.Modulo16
             this.evento.Costo = 0;            
 
             //Iniciamos los atributos para la prueba de vacio
-            this.PruebaComandoVacio = fabricacomando.CrearComandoModificarCarrito();
-            this.PruebaComandoVacio2 = fabricacomando.CrearComandoModificarCarrito
+            this.PruebaComandoVacio = FabricaComandos.CrearComandoModificarCarrito();
+            this.PruebaComandoVacio2 = FabricaComandos.CrearComandoModificarCarrito
                 (this.persona, this.implemento, 1, 30);
-            this.pruebaComandoVacio3 = (ComandoModificarCarrito)fabricacomando.CrearComandoModificarCarrito();
-            this.pruebaComandoVacio4 = (ComandoModificarCarrito)fabricacomando.CrearComandoModificarCarrito
+            this.pruebaComandoVacio3 = (ComandoModificarCarrito)FabricaComandos.CrearComandoModificarCarrito();
+            this.pruebaComandoVacio4 = (ComandoModificarCarrito)FabricaComandos.CrearComandoModificarCarrito
                 (this.persona, this.implemento, 1, 30);
 
             //Items que agregaremos para despues modificar
-            this.PruebaSoloImplementos = fabricacomando.CrearComandoAgregarItem(this.persona, this.implemento, 1, 20);
+            this.PruebaSoloImplementos = FabricaComandos.CrearComandoAgregarItem(this.persona, this.implemento, 1, 20);
             this.PruebaSoloImplementos.Ejecutar();
 
-            this.PruebaSoloEventos = 
-                fabricacomando.CrearComandoAgregarItem(this.persona2, this.evento, 2, 10);
+            this.PruebaSoloEventos =
+                FabricaComandos.CrearComandoAgregarItem(this.persona2, this.evento, 2, 10);
             this.PruebaSoloEventos.Ejecutar();
 
-            this.PruebaTodosItems = fabricacomando.CrearComandoAgregarItem(this.persona3, this.implemento, 1, 20);
+            this.PruebaTodosItems = FabricaComandos.CrearComandoAgregarItem(this.persona3, this.implemento, 1, 20);
             this.PruebaTodosItems.Ejecutar();
-            this.PruebaTodosItems = fabricacomando.CrearComandoAgregarItem
+            this.PruebaTodosItems = FabricaComandos.CrearComandoAgregarItem
                 (this.persona3, this.evento, 2, 10);
             this.PruebaTodosItems.Ejecutar();
-            this.PruebaTodosItems = fabricacomando.CrearComandoAgregarItem(this.persona3, this.matricula, 3, 1);
+            this.PruebaTodosItems = FabricaComandos.CrearComandoAgregarItem(this.persona3, this.matricula, 3, 1);
             this.PruebaTodosItems.Ejecutar();
 
             //ModificarCarrito del primer test
-            this.ComandoModificarCarrito = fabricacomando.CrearComandoModificarCarrito(this.persona, this.implemento, 1, 7);
-            this.ComandoModificarCarrito2 = fabricacomando.CrearComandoModificarCarrito
+            this.ComandoModificarCarrito = FabricaComandos.CrearComandoModificarCarrito(this.persona, this.implemento, 1, 7);
+            this.ComandoModificarCarrito2 = FabricaComandos.CrearComandoModificarCarrito
                 (this.persona2, this.evento, 2, 7);
-            this.ComandoModificarCarrito3 = fabricacomando.CrearComandoModificarCarrito(this.persona3, this.implemento, 1, 7);
-            this.ComandoModificarCarrito6 = fabricacomando.CrearComandoModificarCarrito
+            this.ComandoModificarCarrito3 = FabricaComandos.CrearComandoModificarCarrito(this.persona3, this.implemento, 1, 7);
+            this.ComandoModificarCarrito6 = FabricaComandos.CrearComandoModificarCarrito
                 (this.persona3, this.evento, 2, 7);
 
             //ModificarCarrito del segundo test
-            this.ComandoModificarCarrito4 = fabricacomando.CrearComandoModificarCarrito(this.persona, this.implemento, 1, 8000);
-            this.ComandoModificarCarrito5 = fabricacomando.CrearComandoModificarCarrito(this.persona3, this.implemento, 1, 8000);
+            this.ComandoModificarCarrito4 = FabricaComandos.CrearComandoModificarCarrito(this.persona, this.implemento, 1, 8000);
+            this.ComandoModificarCarrito5 = FabricaComandos.CrearComandoModificarCarrito(this.persona3, this.implemento, 1, 8000);
 
         }
 
@@ -176,19 +174,19 @@ namespace PruebasUnitariasSKD.Modulo16
             FabricaComandos fabrica = new FabricaComandos();
            
             //Elimino de la persona
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona2
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(3, this.implemento, this.persona2);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, this.implemento, this.persona2);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona3
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(2, this.implemento, this.persona3);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona3);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabrica.CrearComandoeliminarItem(3, this.implemento, this.persona3);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, this.implemento, this.persona3);
             this.ComandoEliminar.Ejecutar();  
 
             //Dejo en null
@@ -210,8 +208,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoModificarCarrito3 = null;
             this.ComandoModificarCarrito4 = null;
             this.ComandoModificarCarrito5 = null;
-            fabrica = null;
-            fabricacomando = null;
+            fabrica = null;    
             this.evento = null;
         }
     }

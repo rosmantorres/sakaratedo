@@ -44,8 +44,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> ComandoRegistrarPago4;
         private Comando<bool> ComandoRegistrarPago5;
         private Comando<bool> ComandoRegistrarPago6;
-        private FabricaEntidades fabrica;
-        private FabricaComandos fabricacomando;
+        private FabricaEntidades fabrica;  
         #endregion
 
         /// <summary>
@@ -55,8 +54,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //Las fabricas
-            fabrica = new FabricaEntidades();
-            fabricacomando = new FabricaComandos();
+            fabrica = new FabricaEntidades();           
 
             //Dos implementos distintos
             this.implemento = new Implemento();
@@ -65,10 +63,10 @@ namespace PruebasUnitariasSKD.Modulo16
             
             //Iniciamos los atributos para la prueba de vacio
             this.persona = fabrica.ObtenerPersona();
-            this.PruebaComandoVacio = fabricacomando.CrearComandoRegistrarPago();
-            this.PruebaComandoVacio2 = fabricacomando.CrearComandoRegistrarPago(this.persona, "prueba");
-            this.pruebaComandoVacio3 = (ComandoRegistrarPago)fabricacomando.CrearComandoRegistrarPago();
-            this.pruebaComandoVacio4 = (ComandoRegistrarPago)fabricacomando.CrearComandoRegistrarPago
+            this.PruebaComandoVacio = FabricaComandos.CrearComandoRegistrarPago();
+            this.PruebaComandoVacio2 = FabricaComandos.CrearComandoRegistrarPago(this.persona, "prueba");
+            this.pruebaComandoVacio3 = (ComandoRegistrarPago)FabricaComandos.CrearComandoRegistrarPago();
+            this.pruebaComandoVacio4 = (ComandoRegistrarPago)FabricaComandos.CrearComandoRegistrarPago
                 (this.persona, "prueba");
             
             //La persona
@@ -99,13 +97,13 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
 
-            this.ComandoRegistrarPago = fabricacomando.CrearComandoRegistrarPago(this.persona, "Tarjeta");
-            this.ComandoRegistrarPago2 = fabricacomando.CrearComandoRegistrarPago(this.persona2, "Deposito");
-            this.ComandoRegistrarPago3 = fabricacomando.CrearComandoRegistrarPago(this.persona3, "Transferencia");
-            this.ComandoRegistrarPago4 = fabricacomando.CrearComandoRegistrarPago(this.persona4, "Tarjeta");
+            this.ComandoRegistrarPago = FabricaComandos.CrearComandoRegistrarPago(this.persona, "Tarjeta");
+            this.ComandoRegistrarPago2 = FabricaComandos.CrearComandoRegistrarPago(this.persona2, "Deposito");
+            this.ComandoRegistrarPago3 = FabricaComandos.CrearComandoRegistrarPago(this.persona3, "Transferencia");
+            this.ComandoRegistrarPago4 = FabricaComandos.CrearComandoRegistrarPago(this.persona4, "Tarjeta");
 
             //Insertamos la cantidad de implementos que no pueden ser satisfechos por el stock
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona5, this.implemento, 1, 10);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona5, this.implemento, 1, 10);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem.Ejecutar();
@@ -120,7 +118,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoAgregarItem.Ejecutar();
 
             //Insertamos una cantidad de inventario que no puede ser satisfecho de igual forma para esta persona
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona6, this.implemento, 1, 10);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona6, this.implemento, 1, 10);
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem.Ejecutar();
@@ -135,14 +133,14 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoAgregarItem.Ejecutar();
             this.ComandoAgregarItem.Ejecutar();
 
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem
                 (this.persona6, this.evento, 2, 10);
             this.ComandoAgregarItem.Ejecutar();
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona6, this.matricula, 3, 10);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona6, this.matricula, 3, 10);
             this.ComandoAgregarItem.Ejecutar();
 
-            this.ComandoRegistrarPago5 = fabricacomando.CrearComandoRegistrarPago(this.persona5, "Tarjeta");
-            this.ComandoRegistrarPago6 = fabricacomando.CrearComandoRegistrarPago(this.persona6, "Deposito");
+            this.ComandoRegistrarPago5 = FabricaComandos.CrearComandoRegistrarPago(this.persona5, "Tarjeta");
+            this.ComandoRegistrarPago6 = FabricaComandos.CrearComandoRegistrarPago(this.persona6, "Deposito");
 
 
         }
@@ -168,14 +166,14 @@ namespace PruebasUnitariasSKD.Modulo16
         public void PruebaRegistrarPagosNormales()
         {
             //Agregamos datos ficticios en carritos
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona, this.implemento, 1, 20);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona, this.implemento, 1, 20);
             this.ComandoAgregarItem.Ejecutar();      
 
             //Registramos el pago en un carrito donde solo hay Implementos y su cantidad se puede satisfacer
             Assert.IsTrue(this.ComandoRegistrarPago.Ejecutar());
 
             //Agregamos un item para la persona2
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem
                 (this.persona2, this.evento, 2, 10);
             this.ComandoAgregarItem.Ejecutar();
 
@@ -183,19 +181,19 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.ComandoRegistrarPago2.Ejecutar());
 
             //Agregamos un item para la persona3
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona3, this.matricula, 3, 10);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona3, this.matricula, 3, 10);
             this.ComandoAgregarItem.Ejecutar();  
 
             //Registramos el pago en un carrito donde solo hay matriculas
             Assert.IsTrue(this.ComandoRegistrarPago3.Ejecutar());
 
             //Agregamos items de prueba para la persona4
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona4, this.implemento, 1, 20);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona4, this.implemento, 1, 20);
             this.ComandoAgregarItem.Ejecutar();
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem
                 (this.persona4, this.evento, 2, 10);
             this.ComandoAgregarItem.Ejecutar();
-            this.ComandoAgregarItem = fabricacomando.CrearComandoAgregarItem(this.persona4, this.matricula, 3, 10);
+            this.ComandoAgregarItem = FabricaComandos.CrearComandoAgregarItem(this.persona4, this.matricula, 3, 10);
             this.ComandoAgregarItem.Ejecutar();
 
             //Registramos el pago de un carrito donde hay Implementos, eventos y matirculas
@@ -223,15 +221,15 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Limpiar()
         {
            //Elimino de la persona5
-            this.ComandoEliminar = fabricacomando.CrearComandoeliminarItem(1, this.implemento, this.persona5);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona5);
             this.ComandoEliminar.Ejecutar();
 
             //Elimino de la persona6
-            this.ComandoEliminar = fabricacomando.CrearComandoeliminarItem(1, this.implemento, this.persona6);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona6);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabricacomando.CrearComandoeliminarItem(3, this.implemento, this.persona6);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(3, this.implemento, this.persona6);
             this.ComandoEliminar.Ejecutar();
-            this.ComandoEliminar = fabricacomando.CrearComandoeliminarItem(2, this.implemento, this.persona6);
+            this.ComandoEliminar = FabricaComandos.CrearComandoeliminarItem(2, this.implemento, this.persona6);
             this.ComandoEliminar.Ejecutar();
 
             this.persona = null;
@@ -253,8 +251,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoRegistrarPago4 = null;
             this.ComandoRegistrarPago5 = null;
             this.ComandoRegistrarPago6 = null;
-            this.fabrica = null;
-            this.fabricacomando = null;
+            this.fabrica = null;          
             this.evento = null;
         }
     }

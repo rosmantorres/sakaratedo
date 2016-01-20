@@ -76,9 +76,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 Entidad carrito;
-                FabricaDAOSqlServer fabricad = new FabricaDAOSqlServer();
+                
                 //Instancio el DAO de Carrito
-                IdaoCarrito daocarrito = fabricad.ObtenerdaoCarrito();
+                IdaoCarrito daocarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
                 //Instancio el carrito y Obtengo todos los items del carrito de la persona
                 FabricaEntidades fabrica = new FabricaEntidades();

@@ -92,9 +92,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 bool Respuesta = false;
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+                
                 //Instancio el DAO del Carrito
-                IdaoCarrito daoCarrito = fabrica.ObtenerdaoCarrito();
+                IdaoCarrito daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
                 //Ejecuto el registrar pago y obtengo el exito o fallo del proceso
                 Respuesta = daoCarrito.RegistrarPago(this.persona, this.tipoPago);

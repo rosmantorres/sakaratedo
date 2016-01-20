@@ -58,7 +58,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
                 FabricaComandos fabricaComando = new FabricaComandos();
-                Comando<Entidad> VerCarrito = fabricaComando.CrearComandoVerCarrito(persona);
+                Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
                 Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();
 
                 //Obtenemos cada implemento para ponerlos en la tabla
@@ -387,9 +387,8 @@ namespace Interfaz_Presentadores.Modulo16
                         Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
                         objeto.Id = int.Parse(datos[1]);
 
-                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                        FabricaComandos fabricaComando = new FabricaComandos();
-                        Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
+                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso                        
+                        Comando<bool> ModificarCarrito = FabricaComandos.CrearComandoModificarCarrito
                             (persona, objeto, TipoObjeto, cantidad);
                         respuesta = ModificarCarrito.Ejecutar();
                     }
@@ -436,9 +435,8 @@ namespace Interfaz_Presentadores.Modulo16
                         Evento objeto = (Evento)fabrica.ObtenerEvento();
                         objeto.Id = int.Parse(datos[1]);
 
-                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
-                        FabricaComandos fabricaComando = new FabricaComandos();
-                        Comando<bool> ModificarCarrito = fabricaComando.CrearComandoModificarCarrito
+                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso                      
+                        Comando<bool> ModificarCarrito = FabricaComandos.CrearComandoModificarCarrito
                             (persona, objeto, TipoObjeto, cantidad);
                         respuesta = ModificarCarrito.Ejecutar();
                     }
@@ -553,7 +551,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
                 FabricaComandos fabricaComando = new FabricaComandos();
-                Comando<bool> registrarPago = fabricaComando.CrearComandoRegistrarPago(persona, pago);
+                Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pago);
                 bool respuesta = registrarPago.Ejecutar();               
 
                 //retorno la respuesta
@@ -658,11 +656,10 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Pasamos el ID que vino del boton
                 Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
-               // objeto.Id = int.Parse(datos[1]);
-
-                FabricaComandos fabricac = new FabricaComandos();
+                objeto.Id = int.Parse(datos[1]);
+                
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
             //Si es un Evento, me voy a la tabla correspondiente
@@ -674,10 +671,9 @@ namespace Interfaz_Presentadores.Modulo16
                 //Pasamos el ID que vino del boton                
                 Evento objeto = (Evento)fabrica.ObtenerEvento();
                 objeto.Id = int.Parse(datos[1]);
-
-                FabricaComandos fabricac = new FabricaComandos();
+                
                 //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
@@ -690,10 +686,9 @@ namespace Interfaz_Presentadores.Modulo16
                 //Pasamos el ID que vino del boton                
                 Entidad objeto = (Matricula)fabrica.ObtenerMatricula();
                 objeto.Id = int.Parse(datos[1]);
-
-                FabricaComandos fabricac = new FabricaComandos();
+                
                 //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = fabricac.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
                 respuesta = EliminarCarrito.Ejecutar();
             }
 
