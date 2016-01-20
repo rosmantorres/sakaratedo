@@ -33,6 +33,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> pruebaComandoEvento1;
         private Comando<bool> pruebaComandoMatricula1;
         private Comando<Entidad> eventos;
+        private DominioSKD.Entidad evento;
         private Entidad persona;
         private Entidad persona2;
         private Entidad persona3;
@@ -108,6 +109,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaEliminarImplemento()
         {
+            // valor  para Agregar un Implemento
+            this.pruebaComandoImplemento1 = fabricacomandos.CrearComandoAgregarItem
+                (this.persona, this.implemento, 1, 10);
+
             //Elimino un implemento al carrito de una persona con id 11
             Assert.IsTrue(this.pruebaComandoImplemento1.Ejecutar());
         }
@@ -118,6 +123,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaAgregarEvento()
         {
+
+            // valor  para Agregar un Evento
+            this.pruebaComandoEvento1 = fabricacomandos.CrearComandoAgregarItem
+                (this.persona2, this.evento, 2, 10);
             //Elimino un Evento al carrito de una persona con id 12
             Assert.IsTrue(this.pruebaComandoEvento1.Ejecutar());
         }
@@ -128,6 +137,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void PruebaEliminarMatricula()
         {
+            // valor  para Agregar una Matricula
+            this.pruebaComandoMatricula1 = fabricacomandos.CrearComandoAgregarItem
+                (this.persona3, this.matricula, 3, 10);
+
             //Elimino una matricula al carrito de una persona con id 13
             Assert.IsTrue(this.pruebaComandoMatricula1.Ejecutar());
         }
@@ -146,6 +159,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaComandoImplemento1 = null;
             this.pruebaComandoEvento1 = null;
             this.pruebaComandoMatricula1 = null;
+            this.evento = null;
             this.eventos = null;
             this.persona = null;
             this.persona2 = null;
