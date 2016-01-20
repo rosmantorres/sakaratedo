@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo2;
+using DominioSKD.Entidades.Modulo1;
 using DominioSKD;
 using System.Data;
 using System.Data.Sql;
@@ -17,7 +19,7 @@ namespace DatosSKD.DAO.Modulo2
     public class DaoRoles: DAOGeneral, IDaoRoles
     {
 
-        private FabricaEntidades laFabrica;
+        private FabricaEntidades laFabrica=new FabricaEntidades();
 
         public Boolean Agregar(Entidad ent)
         {

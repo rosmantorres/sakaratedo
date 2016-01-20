@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DatosSKD.InterfazDAO.Modulo1;
 using DominioSKD.Fabrica;
+using DominioSKD;
 
 namespace DatosSKD.DAO.Modulo1
 {
     public class DaoRestablecer: DAOGeneral, IDaoRestablecer
     {
-        FabricaEntidades laFabrica;
+        FabricaEntidades laFabrica = new FabricaEntidades();
         #region IDAO
         public Boolean Agregar(Entidad e)
         {
