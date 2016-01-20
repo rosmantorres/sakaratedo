@@ -86,6 +86,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 return daomatricula.DetallarMensualidad(mat);
             }
             #region catches
+
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -131,6 +132,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+
             #endregion
         }
 

@@ -33,36 +33,6 @@ namespace DatosSKD.DAO.Modulo16
 
         #region Metodos
 
-        /// <summary>
-        /// Metodo heredado del DAOgeneral
-        /// </summary>
-        /// <param name="persona">La persona a agregar</param>
-        /// <returns>el exito o fallo del proceso</returns>
-        public bool Agregar(Entidad persona)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Metodo heredado del DAOgeneral
-        /// </summary>
-        /// <param name="persona">La persona a modificar</param>
-        /// <returns>el Exito o fallo del proceso</returns>
-        public bool Modificar(Entidad persona)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Metodo heredado del DAOgeneral
-        /// </summary>
-        /// <param name="persona">La persona a consultar</param>
-        /// <returns>La entidad deseada</returns>
-        public DominioSKD.Entidad ConsultarXId(Entidad persona)
-        {
-            throw new NotImplementedException();
-        }
-
         #region AgregarItem
         /// <summary>
         /// Metodo que agrega un item al carrito de una persona en Base de Datos
@@ -1020,75 +990,55 @@ namespace DatosSKD.DAO.Modulo16
         }
         #endregion
 
+        #region  Agregar
+        /// <summary>
+        /// Metodo heredado del DAOgeneral
+        /// </summary>
+        /// <param name="persona">La persona a agregar</param>
+        /// <returns>el exito o fallo del proceso</returns>
+        public bool Agregar(Entidad persona)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region  Modificar
+        /// <summary>
+        /// Metodo heredado del DAOgeneral
+        /// </summary>
+        /// <param name="persona">La persona a modificar</param>
+        /// <returns>el Exito o fallo del proceso</returns>
+        public bool Modificar(Entidad persona)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region ConsultarXId
+        /// <summary>
+        /// Metodo heredado del DAOgeneral
+        /// </summary>
+        /// <param name="persona">La persona a consultar</param>
+        /// <returns>La entidad deseada</returns>
+        public DominioSKD.Entidad ConsultarXId(Entidad persona)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region ConsultarTodos
+        /// <summary>
+        /// Metodo heredado del DAOgeneral
+        /// </summary>
+        /// <param name="NONE">No posee paso de parametros</param>
+        /// <returns>el exito o fallo del proceso</returns>
         public List<Entidad> ConsultarTodos()
         {
-            FabricaEntidades laFabrica = new FabricaEntidades();
-            List<Entidad> laLista = new List<Entidad>();
-            DataTable resultado = new DataTable();
-            List<Parametro> parametros = new List<Parametro>();
-            Evento elEvento;
-
-            //  try
-            //   {
-            resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_EVENTOS,
-                parametros);
-
-            foreach (DataRow row in resultado.Rows)
-            {
-                elEvento = (Evento)laFabrica.ObtenerEvento();
-                elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
-                elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
-                elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
-                elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
-                laLista.Add(elEvento);
-
-            }
-
-            return laLista;
-
-            // }
-            #region catches
-            /*   catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
-            }
-            catch (FormatException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
-            }
-            catch (OverflowException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
-            }
-            catch (ParametroInvalidoException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ExceptionSKDConexionBD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ExceptionSKD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (Exception e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
-            }*/
+            throw new NotImplementedException();
         }
-            #endregion
-        #endregion        
+        #endregion
+
+        #endregion
     }
 }

@@ -87,6 +87,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             }
 
             #region catches
+
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
