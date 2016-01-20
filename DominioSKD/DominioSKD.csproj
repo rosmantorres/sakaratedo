@@ -69,9 +69,7 @@
     <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
-    <Compile Include="Matricula.cs" />
     <Compile Include="Entidades\Modulo1\PersonaM1.cs" />
-    <Compile Include="PersonaM1.cs" />
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo12\Competencia.cs" />
     <Compile Include="Entidades\Modulo1\Cuenta.cs" />
@@ -108,10 +106,6 @@
     <Folder Include="Entidades\Modulo10\" />
     <Folder Include="Entidades\Modulo11\" />
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo15\" />
-    <Folder Include="Entidades\Modulo16\" />
-    <Folder Include="Entidades\Modulo1\" />
-    <Folder Include="Entidades\Modulo2\" />
     <Folder Include="Entidades\Modulo4\" />
     <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>

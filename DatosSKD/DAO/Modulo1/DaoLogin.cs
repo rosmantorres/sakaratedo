@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using DominioSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo1;
 using DatosSKD;
+using DominioSKD.Entidades.Modulo1;
 
 namespace DatosSKD.DAO.Modulo1
 {
