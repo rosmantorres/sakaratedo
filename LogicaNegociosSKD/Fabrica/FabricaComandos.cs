@@ -13,9 +13,45 @@ namespace LogicaNegociosSKD.Fabrica
     public class FabricaComandos
     {
         #region Modulo 1
+        public Comando<String> ObtenerConsultarCorreo()
+        {
+            return new Comandos.Modulo1.ComandoConsultarCorreo();
+        }
+        public Comando<Boolean> ObtenerEnviarCorreo()
+        {
+            return new Comandos.Modulo1.ComandoEnviarCorreo();
+        }
+        public Comando<String[]> ObtenerIniciarSesion()
+        {
+            return new Comandos.Modulo1.ComandoIniciarSesion();
+        }
+        public Comando<Boolean> ObtenerRestablecerContraseña()
+        {
+            return new Comandos.Modulo1.ComandoRestablecerContraseña();
+        }
         #endregion
 
         #region Modulo 2
+        public Comando<Boolean> ObtenerAgregarRol()
+        {
+            return new Comandos.Modulo2.ComandoAgregarRol();
+        }
+        public Comando<Entidad> ObtenerCuentaUsuario()
+        {
+            return new Comandos.Modulo2.ComandoCuentaUsuario();
+        }
+        public Comando<Boolean> ObtenerEliminarRol()
+        {
+            return new Comandos.Modulo2.ComandoEliminarRol();
+        }
+        public Comando<List<Entidad>> ObtenerRolesDeSistema()
+        {
+            return new Comandos.Modulo2.ComandoRolesDeSistema();
+        }
+        public Comando<List<Entidad>> ObtenerRolesUsuario()
+        {
+            return new Comandos.Modulo2.ComandoRolesUsuario();
+        }
         #endregion
 
         #region Modulo 3
