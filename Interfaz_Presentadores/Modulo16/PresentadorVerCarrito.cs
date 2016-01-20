@@ -854,8 +854,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleProducto = fabrica.CrearComandoDetallarProducto(implemento);
+            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
             Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
             return elImplemento;
         }
@@ -946,8 +945,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleEvento = fabrica.CrearComandoDetallarEvento(evento);
+            Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
             Evento elEvento = (Evento)DetalleEvento.Ejecutar();
             return elEvento;
         }
@@ -1039,8 +1037,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
         public Matricula DetalleMatricula(Entidad matricula)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleMatricula = fabrica.CrearComandoDetallarMatricula(matricula);
+            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
             Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
             return laMatricula;
         }

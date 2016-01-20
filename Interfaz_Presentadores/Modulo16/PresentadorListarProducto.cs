@@ -51,8 +51,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar el evento
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarProductos = fabrica.CrearComandoConsultarTodosProductos();
+                Comando<Entidad> comandoListarProductos = FabricaComandos.CrearComandoConsultarTodosProductos();
 
                 // Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -310,8 +309,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleProducto = fabrica.CrearComandoDetallarProducto(implemento);
+            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
             Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
             return elImplemento;
         }

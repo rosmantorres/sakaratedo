@@ -39,11 +39,9 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            //La fabrica
-            fabrica = new FabricaComandos();
-             
+            
             //Se inicializa la prueba para consultar un evento existente en particular
-            this.pruebaComandoConsultarEventos = (ComandoConsultarTodosEventos)fabrica.CrearComandoConsultarTodosEventos();
+            this.pruebaComandoConsultarEventos = (ComandoConsultarTodosEventos)FabricaComandos.CrearComandoConsultarTodosEventos();
           
          }
 

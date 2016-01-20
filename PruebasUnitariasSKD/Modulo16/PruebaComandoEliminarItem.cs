@@ -64,7 +64,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
 
             //Eventos
-            this.eventos = fabricacomandos.CrearComandoConsultarTodosEventos();
+            this.eventos = FabricaComandos.CrearComandoConsultarTodosEventos();
             this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
 
             //Dos matriculas distintas

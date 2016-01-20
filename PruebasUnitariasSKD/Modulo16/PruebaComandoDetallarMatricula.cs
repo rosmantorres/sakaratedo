@@ -30,10 +30,8 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            fabrica = new FabricaComandos(); 
-
             //Se inicializa la prueba para consultar matriculas existentes en stock
-            this.pruebaComandoDetallarMatricula = (ComandoDetallarMatricula)fabrica.CrearComandoDetallarMatricula(lamatricula);
+            this.pruebaComandoDetallarMatricula = (ComandoDetallarMatricula)FabricaComandos.CrearComandoDetallarMatricula(lamatricula);
           
          }
 

@@ -50,8 +50,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar el evento
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarFacturas = fabrica.CrearComandoConsultarTodasFacturas();
+                Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
                 //Casteamos el parametro
                 PersonaM1 param = new PersonaM1();

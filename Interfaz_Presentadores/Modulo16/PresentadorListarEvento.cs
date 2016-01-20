@@ -51,8 +51,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar el evento
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarEventos = fabrica.CrearComandoConsultarTodosEventos();
+                Comando<Entidad> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
 
                 // Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -281,8 +280,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-                    FabricaComandos fabrica = new FabricaComandos();
-                    Comando<Entidad> DetalleEvento = fabrica.CrearComandoDetallarEvento(evento);
+                    Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
                     Evento elEvento = (Evento)DetalleEvento.Ejecutar();
                     return elEvento;       
             

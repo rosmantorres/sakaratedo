@@ -43,7 +43,7 @@ namespace PruebasUnitariasSKD.Modulo16
         {
              
             //Se inicializa la prueba para consultar implementos existentes en stock
-            this.pruebaComandoConsultarProductos = (ComandoConsultarTodosProductos)fabrica.CrearComandoConsultarTodosProductos();
+            this.pruebaComandoConsultarProductos = (ComandoConsultarTodosProductos)FabricaComandos.CrearComandoConsultarTodosProductos();
           
          }
 

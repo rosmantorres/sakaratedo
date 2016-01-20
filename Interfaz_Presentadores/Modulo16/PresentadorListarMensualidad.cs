@@ -51,8 +51,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar la matricula
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarMensualidades = fabrica.CrearComandoConsultarTodasMensualidades();
+                Comando<Entidad> comandoListarMensualidades = FabricaComandos.CrearComandoConsultarTodasMensualidades();
 
                 // casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -272,8 +271,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
         public Matricula DetalleMatricula(Entidad matricula)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleMatricula = fabrica.CrearComandoDetallarMatricula(matricula);
+            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
             Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
             return laMatricula;
         }
