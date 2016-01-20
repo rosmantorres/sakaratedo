@@ -70,6 +70,18 @@ namespace templateApp.GUI.Modulo16
             get { return this.detalleProductoLiteral; }
         }
 
+        public Literal PrecioFinal
+        {
+            get
+            {
+                return this.precioFinal;
+            }
+
+            set
+            {
+                this.precioFinal = value;
+            }
+        }
         #endregion
 
         #region Constructores

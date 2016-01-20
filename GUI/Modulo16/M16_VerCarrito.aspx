@@ -200,8 +200,7 @@
 						<h4 class="modal-title">Registrar Pago</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
-
+						<div class="container-fluid" id="info">                            
   <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
           <div id="alert_nombre" runat="server">
@@ -231,15 +230,19 @@
                      </div>
             
                  <div class="btn-group">
-            
+                     
+                            <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
+                            <h3>Seleccione tipo de pago</h3>
                                 <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
                                 <option value="3">Transferencia</option>
                                 </select>
+                     <br />
                 
                   </div>
+                 <br />
             </div>
         </div>
         <br />
@@ -304,7 +307,8 @@
 			</div>
 		</div>--%>
          <div class="form-group">
-		    <div class="box-footer">			
+		    <div class="box-footer">
+                <br />			
                 <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>

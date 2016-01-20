@@ -26,6 +26,7 @@ namespace Interfaz_Presentadores.Modulo16
         #region Atributos
         //Interfaz a usar de su vista
         IcontratoVerCarrito laVista;
+        private float precioFinal = 0;
         #endregion
 
         #region Constructores
@@ -128,6 +129,9 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Agrego la fila a la tabla
                     this.laVista.tablaImplemento.Rows.Add(fila);
+
+                    //Anexo al precio total
+                    precioFinal += (float)item.Precio_Implemento*aux.Value;
                 }
 
                 //Obtenemos cada evento para ponerlos en la tabla
@@ -197,6 +201,9 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Agrego la fila a la tabla
                     this.laVista.tablaEvento.Rows.Add(fila);
+
+                    //Anexo al precio final
+                    precioFinal += item.Costo * aux.Value;
                 }
 
                 //Obtenemos cada matricula para ponerlas en la tabla            
@@ -252,7 +259,14 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Agrego la fila a la tabla
                     this.laVista.tablaMatricula.Rows.Add(fila);
-                }            
+
+                    //Anexo al precio final
+                    precioFinal += item.Costo * aux.Value;
+                }
+
+                //Colocamos el precio en el modal
+                laVista.PrecioFinal.Text =  "</br>" + "<h3>Precio final: </h3>" + "<label id='labelprecio' >" + precioFinal.ToString() + "</label>";
+
             }
             catch (PersonaNoValidaException e)
             {
