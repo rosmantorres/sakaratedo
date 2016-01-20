@@ -29,6 +29,9 @@ namespace Interfaz_Presentadores.Modulo5
             Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarComboOrganizaciones();
             List<Entidad> _miLista = _comando.Ejecutar();
 
+            if (_miLista != null)
+                this.asignarInformacionCombo(_miLista);
+            
         }
 
         /// <summary>
