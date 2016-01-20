@@ -32,10 +32,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
+
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandoModulo14.MsjLoggerInfo, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 FabricaEntidades fabricaEntidad = new FabricaEntidades();
-                ((Diseño)Diseño).Base64Encode();
+                ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
                 DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                dao.LimpiarSQLConnection();
                 return dao.GuardarDiseñoBD(this.diseño, this.planilla); 
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

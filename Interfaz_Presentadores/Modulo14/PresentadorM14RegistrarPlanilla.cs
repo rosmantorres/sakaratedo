@@ -36,7 +36,7 @@ namespace Interfaz_Presentadores.Modulo14
             try
             {
                 listPlanilla = comboTipoPlanilla.Ejecutar();
-                foreach (Planilla item in listPlanilla)
+                foreach (DominioSKD.Entidades.Modulo14.Planilla item in listPlanilla)
                 {
                     options.Add(item.IDtipoPlanilla.ToString(), item.TipoPlanilla);
                 }
