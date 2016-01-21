@@ -982,6 +982,73 @@ namespace DatosSKD.DAO.Modulo10
             }
             return inscripciones;
         }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos una competencia por id
+        /// </summary>
+        /// <param name="idCompetencia">id de la competencia</param>
+        /// <returns>Una Competencia</returns>
+        public Entidad ConsultarCompetenciaXIdDetalle(string idCompetencia)
+        {
+            Entidad competencia;
+            string diaFecha;
+            string mesFecha;
+            string anoFecha;
+            string fechaInicio;
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            try
+            {
+                Conectar();
+                competencia = fabrica.ObtenerCompetencia();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
+                parametros.Add(parametro);
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoConsultarCompetenciaDetalle, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = int.Parse(row[RecursosDAOModulo10.aliasIdCompetencia].ToString());
+                    ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Nombre = row[RecursosDAOModulo10.aliasNombreCompetencia].ToString();
+                    diaFecha = Convert.ToDateTime(row[RecursosDAOModulo10.aliasFechaCompetencia]).Day.ToString();
+                    diaFecha = ModificarFechas(diaFecha);
+                    mesFecha = Convert.ToDateTime(row[RecursosDAOModulo10.aliasFechaCompetencia]).Month.ToString();
+                    mesFecha = ModificarFechas(mesFecha);
+                    anoFecha = Convert.ToDateTime(row[RecursosDAOModulo10.aliasFechaCompetencia]).Year.ToString();
+                    fechaInicio = mesFecha + RecursosDAOModulo10.SeparadorFecha + diaFecha + RecursosDAOModulo10.SeparadorFecha + anoFecha;
+                    ((DominioSKD.Entidades.Modulo12.Competencia)competencia).FechaInicio = DateTime.ParseExact(fechaInicio, RecursosDAOModulo10.FormatoFecha, CultureInfo.InvariantCulture);
+                    ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = row[RecursosDAOModulo10.aliasEspecialidadCompetencia].ToString();
+                    Entidad categoria = fabrica.ObtenerCategoria();
+                    ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = int.Parse(row[RecursosDAOModulo10.aliasIdCategoria].ToString());
+                    ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Cinta_inicial = row[RecursosDAOModulo10.aliasCintaInicial].ToString();
+                    ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Cinta_final = row[RecursosDAOModulo10.aliasCintaFinal].ToString();
+                    ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Edad_inicial = int.Parse(row[RecursosDAOModulo10.aliasEdadInicial].ToString());
+                    ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Edad_final = int.Parse(row[RecursosDAOModulo10.aliasEdadFinal].ToString());
+                    ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Sexo = row[RecursosDAOModulo10.aliasSexoCategoria].ToString();
+                    ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
+                //     RecursosBDModulo10.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return competencia;
+        }
         #endregion
 
         #region IDAO
@@ -1005,5 +1072,6 @@ namespace DatosSKD.DAO.Modulo10
             throw new NotImplementedException();
         }
         #endregion
+
     }
 }

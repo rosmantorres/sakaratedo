@@ -158,6 +158,16 @@ namespace DatosSKD.Fabrica
         {
             return new DaoResultadoAscenso();
         }
+
+        public static IDaoResultadoKata ObtenerDAOResultadoKata()
+        {
+            return new DaoResultadoKata();
+        }
+
+        public static IDaoResultadoKumite ObtenerDAOResultadoKumite()
+        {
+            return new DaoResultadoKumite();
+        }
         #endregion
 
         #region Modulo 12
