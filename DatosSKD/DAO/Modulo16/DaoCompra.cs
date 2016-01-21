@@ -50,7 +50,7 @@ namespace DatosSKD.DAO.Modulo16
             PersonaM1 p = (PersonaM1)entidad;
 
             //Nos aseguramos que realmente sea una persona valida
-            if (entidad is Persona)
+            if (entidad is PersonaM1)
             {
                 try
                 {
