@@ -262,12 +262,32 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el ComandoRegistraPago con sus datos llenos
         /// </summary>
         /// <param name="persona">La persona a la cual se le adjudicara la transaccion</param>
+        /// <param name="pago">el pago que la persona realiza</param>
+        /// <returns>El ComandoRegistrarPago con sus datos llenos</returns>
+        public static Comando<bool> CrearComandoRegistrarPago(Entidad persona, Entidad pago)
+        {
+            return new ComandoRegistrarPago(persona, pago);
+        }
+
+        /*/// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoRegistrarPago Vacio
+        /// </summary>
+        /// <returns>El ComandoRegistrarPago vacio</returns>
+        public static Comando<bool> CrearComandoRegistrarPago()
+        {
+            return new ComandoRegistrarPago();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el ComandoRegistraPago con sus datos llenos
+        /// </summary>
+        /// <param name="persona">La persona a la cual se le adjudicara la transaccion</param>
         /// <param name="tipoPago">el tipo de pago que la persona realizo</param>
         /// <returns>El ComandoRegistrarPago con sus datos llenos</returns>
         public static Comando<bool> CrearComandoRegistrarPago(Entidad persona, String tipoPago)
         {
             return new ComandoRegistrarPago(persona, tipoPago);
-        }
+        }*/
 
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoModificarCarrito Vacio

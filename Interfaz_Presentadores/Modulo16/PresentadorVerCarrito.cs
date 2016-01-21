@@ -547,7 +547,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="idpersona">La persona que desea comprar los productos</param>
         /// <param name="pago">El tipo de pago con el cual realizo la transaccion</param>
         /// <returns>El exito o fallo del proceso siempre y cuando no exista un error</returns>
-        public bool RegistrarPago(string idpersona, string pago)
+        public bool RegistrarPago(string idpersona, float monto, String pago, List<String> datosPago)
         {             
             try
             {
@@ -556,8 +556,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Entidad persona = (Persona)fabrica.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
+                //Instancio la entidad pago y asigno sus datos
+                Entidad pagoCompra = FabricaEntidades.ObtenerPago(monto, pago, datosPago);
+
                 //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
-                Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pago);
+                Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
                 bool respuesta = registrarPago.Ejecutar();               
 
                 //retorno la respuesta

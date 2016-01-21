@@ -415,6 +415,27 @@ namespace DominioSKD.Fabrica
         }
 
         /// <summary>
+        /// Metodo de la fabrica que instancia el pago vacio
+        /// </summary>
+        /// <returns>La entidad pago vacio</returns>
+        public static Entidad ObtenerPago()
+        {
+            return new Entidades.Modulo16.Pago();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instnacia el carrito con todos sus datos llenos
+        /// </summary>
+        /// <param name="monto">El monto con el que se pagara la transaccion</param>
+        /// <param name="tipoPago">El tipo de pago con el que se realizara la transaccion</param>
+        /// <param name="datoPago">Los datos correspondientes al pago selecccionado</param>
+        /// <returns></returns>
+        public static Entidad ObtenerPago(float monto, String tipoPago, List<String> datoPago)
+        {
+            return new Entidades.Modulo16.Pago(monto, tipoPago, datoPago);
+        }
+
+        /// <summary>
         /// Metodo de la fabrica que instancia el Evento
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
