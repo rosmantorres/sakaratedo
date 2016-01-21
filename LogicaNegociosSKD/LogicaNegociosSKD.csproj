@@ -40,6 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoDojoId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoEliminarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoImplementoXId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoModificarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoUsuarioDojo.cs" />
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
@@ -307,7 +315,6 @@
     <Folder Include="Comandos\Modulo10\" />
     <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
     <Folder Include="Comandos\Modulo4\" />
@@ -315,7 +322,6 @@
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
     <Folder Include="Comandos\Modulo9\" />
-    <Folder Include="Comandos\Modulo16\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

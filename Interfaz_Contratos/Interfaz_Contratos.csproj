@@ -43,11 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo16\IContratoAgregarImplemento.cs" />
+    <Compile Include="Modulo16\IContratoConsultarImplemento.cs" />
     <Compile Include="Modulo16\IContratoEliminarItem.cs" />
     <Compile Include="Modulo16\IContratoListarEvento.cs" />
     <Compile Include="Modulo16\IContratoListarFactura.cs" />
     <Compile Include="Modulo16\IContratoListarMensualidad.cs" />
     <Compile Include="Modulo16\IContratoListarProducto.cs" />
+    <Compile Include="Modulo16\IContratoModificarImplemento.cs" />
     <Compile Include="Modulo16\IcontratoVerCarrito.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />

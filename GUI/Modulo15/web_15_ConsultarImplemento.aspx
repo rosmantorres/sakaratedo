@@ -1,120 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M15_ConsultarImplemento.aspx.cs" Inherits="templateApp.GUI.Modulo15.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="web_15_ConsultarImplemento.aspx.cs" Inherits="templateApp.GUI.Modulo15.web_15_ConsultarImplemento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
-	<%--Breadcrumbs--%>
-    <div>
-	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
-		    <li>
-			    <a href="../Master/Inicio.aspx">Inicio</a>
-		    </li>		
-		    <li class="active">
-			    Consultar Implemento
-		    </li>
-	    </ol>
-    </div>
-	<%--Fin_Breadcrumbs--%>
-
+<asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-Gesti&oacuten de Inventario
+<asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-    Consultar Implemento
+<asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 </asp:Content>
-
-	<%--Ciudades con sus Dojo--%>
-
-<asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-
-    <script runat=server>
-         
-   /*     void Server_Change(object sender , EventArgs e) {
-
-            if (this.estatus_implemento.Items[0].Selected)
-            {
-                this.estatus_implemento.Items[1].Selected = true;
-            }
-            else
-            {
-                if (this.estatus_implemento.Items[1].Selected)
-                {
-                    this.estatus_implemento.Items[0].Selected = true;
-                }
-            }
-           
-        }*/
-        public void imprimirLista()
-        {
-            List<DominioSKD.Implemento> listaImplementos=null;
-            String consultar = Request.QueryString["consultar"];
-
-
-            templateApp.GUI.Modulo15.InterfazImplemento interfazImplemento=new templateApp.GUI.Modulo15.InterfazImplemento();
-            DominioSKD.Dojo dojo= interfazImplemento.usuarioImplementoInterfaz(this.usuario);
-            
-            if (consultar != null) {
-                if (consultar.Equals("Activo"))
-                {
-                    listaImplementos = listaImplementosInterfaz(dojo);
-
-                }
-                else {
-                    if (consultar.Equals("Inactivo")) {
-
-
-                        listaImplementos = listaImplementosInterfaz2(dojo);
-                      //  this.estatus_implemento.Value = "2";
-                         
-                    }
-                }
-            
-            }else{
-
-            listaImplementos = listaImplementosInterfaz(dojo);
-            } 
-            foreach (DominioSKD.Implemento valorActual in listaImplementos)
-            {
-                Response.Write("<tr>");
-                Response.Write("<td>"+valorActual.Id_Implemento+"</td>");
-                Response.Write("<td>" + valorActual.Nombre_Implemento+ "</td>");
-                Response.Write("<td>" + valorActual.Tipo_Implemento + "</td>");
-                Response.Write("<td>" + valorActual.Marca_Implemento + "</td>");
-                Response.Write("<td>" + valorActual.Color_Implemento + "</td>");
-                Response.Write("<td>" + valorActual.Talla_Implemento + "</td>");
-                Response.Write("<td>" + valorActual.Cantida_implemento + "</td>"); 
-                Response.Write("<td>" + valorActual.Stock_Minimo_Implemento + "</td>");
-                if (valorActual.Stock_Minimo_Implemento > valorActual.Cantida_implemento)
-                {
-                    Response.Write("<td><div class='panel panel-default caja'><div class='panel-body alert-error'></div></td>");
-                }
-                else {
-                    if (valorActual.Stock_Minimo_Implemento == valorActual.Cantida_implemento) {
-                        Response.Write("<td><div class='panel panel-default caja'><div class='panel-body alert-warning'></div></td>");
-                    
-                    }else {
-                        if (valorActual.Stock_Minimo_Implemento < valorActual.Cantida_implemento) {
-                            Response.Write("<td><div class='panel panel-default caja'><div class='panel-body alert-success'></div></td>");
-                        }
-                   }
-                
-                } 
-                Response.Write("<td>" + valorActual.Precio_Implemento + "</td>");
-                Response.Write("<td>" + valorActual.Precio_Implemento*valorActual.Cantida_implemento + "</td>");
-                Response.Write("<td>");
-                Response.Write("<a class='btn btn-primary glyphicon glyphicon-info-sign' data-toggle='modal' data-target='#modal-info' href='#'></a>");
-                Response.Write("<a class='btn btn-default glyphicon glyphicon-pencil'  href='M15_ModificarImplemento.aspx?idImplemento="+valorActual.Id_Implemento+"'></a>");
-                Response.Write("<a id='nombre_2' class='eliminar_clase btn btn-danger glyphicon glyphicon-remove-sign' data-id=" + valorActual.Id_Implemento + " data-toggle='modal' data-target='#modal-delete'></a>");
-                Response.Write("</td>");
-                Response.Write("</tr>");
-
-
-            }
-
-        }
-     </script>
-
-
+<asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+    
     <div id="alert" runat="server">
     </div>
     <div id="alert2" runat="server">
@@ -145,10 +39,25 @@ Gesti&oacuten de Inventario
     <div class="box-body table-responsive">
 
                           
-         <table id="example" class="table table-bordered table-striped dataTable" >
-        <thead>
+           <table id="example" class="table table-bordered table-striped dataTable" >
+                <thead>
     			<tr>
-					<th>ID</th>
+				    <td>ID</td>
+					<td>Nombre</td>
+					<td>Tipo</td>
+                    <td>Marca</td>
+					<td>Color</td>
+                    <td>Talla</td>
+                    <td>Cantidad</td>
+                    <td>Stock M&iacutenimo</td>
+                    <td>Estatus</td>                 
+					<td>Precio (Bs)</td>
+                    <td>Monto Total Bs</td>
+                   <th style="text-align:right;">Acciones</th>
+				</tr>
+                    <tr>
+				
+                    <th>ID</th>
 					<th>Nombre</th>
 					<th>Tipo</th>
                     <th>Marca</th>
@@ -163,19 +72,9 @@ Gesti&oacuten de Inventario
 				</tr>
 			</thead>
 
-           	<%--llenado de la tabla--%>
-
-			<tbody>
-
-                   <% 
-        
-                       imprimirLista();  %>
-            
-          
-
-
-			</tbody>
-    </table>
+            <asp:Literal runat="server" ID="tabla"></asp:Literal>
+           </table>
+  
         	<%--fin del llenado de la tabla--%>
 
 
@@ -240,6 +139,9 @@ Gesti&oacuten de Inventario
     </div>
 
       <!-- Declaración de las alertas-->
+    <script type="text/javascript" src="../../plugins/dataTables.tableTools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../plugins/dataTables.tableTools.css" media="screen" />
+
         <script type="text/javascript">
             $(document).ready(function () {
                 $(".caja").height(10);
@@ -249,14 +151,32 @@ Gesti&oacuten de Inventario
                 var table = $('#example').DataTable({  //lenguaje del DataTable
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                      },
-                        
-                   "columnDefs":[{//esconde el ID de la tabla
-                            "targets":[0],
-                            "visible":false
-                   }]
-                    
+                    },
+
+                    "columnDefs": [{//esconde el ID de la tabla
+                        "targets": [0],
+                        "visible": false
+                    }],
+                    dom: 'T<"clear">lfrtip',
+                    tableTools: {
+                        "sSwfPath": "copy_csv_xls_pdf.swf",
+                        "aButtons": [
+                            "copy",
+                            "csv",
+                            "xls",
+                            {
+                                "sExtends": "pdf",
+                                "sPdfOrientation": "landscape"
+                            },
+                            "print"
+                        ]
+                    }
+
                 });
+
+           
+
+                
 
                 var req;
                 var tr;
@@ -265,9 +185,9 @@ Gesti&oacuten de Inventario
 
                 $('a.eliminar_clase').click(function (e) {
                     idEliminar = $(this).attr("data-id");
-                 //   alert(idEliminar);
-                   $('#btneliminar').attr("href", "M15_ConsultarImplemento.aspx?eliminar=true&idImplemento=" + idEliminar);
-                    
+                    //   alert(idEliminar);
+                    $('#btneliminar').attr("href", "M15_ConsultarImplemento.aspx?eliminar=true&idImplemento=" + idEliminar);
+
 
                 });
 
@@ -322,7 +242,7 @@ Gesti&oacuten de Inventario
                 var posicion = location.href;
                 if (posicion.split("=")[1] == "Activo") {
                     $("#estatus_implemento").val(1);
-                    
+
                 }
                 else {
                     if (posicion.split("=")[1] == "Inactivo") {
@@ -331,9 +251,9 @@ Gesti&oacuten de Inventario
                     }
                 }
 
-                $("#estatus_implemento").change(function(){
-                     
-                    var respuesta=$("#estatus_implemento").val();
+                $("#estatus_implemento").change(function () {
+
+                    var respuesta = $("#estatus_implemento").val();
 
                     if (respuesta == 1) {
                         location.href = "M15_ConsultarImplemento.aspx?consultar=Activo";
@@ -347,13 +267,12 @@ Gesti&oacuten de Inventario
                         }
 
                     }
-                    
-                
+
+
                 });
 
                 $("#id").hide();
             });
 
         </script>
-    
 </asp:Content>

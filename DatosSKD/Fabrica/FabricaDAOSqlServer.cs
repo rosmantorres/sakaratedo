@@ -10,6 +10,8 @@ using DatosSKD.InterfazDAO.Modulo12;
 //using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo15;
+using DatosSKD.DAO.Modulo15;
 
 
 namespace DatosSKD.Fabrica
@@ -183,6 +185,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 15
+        public static IDaoImplemento ObtenerDAOImplemento()
+        {
+            return new DaoImplemento();
+        }
         #endregion
 
         #region Modulo 16
@@ -209,9 +215,9 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del evento
         /// </summary>
         /// <returns>el DaoEvento</returns>
-        public InterfazDAO.Modulo16.IdaoImplemento ObtenerDaoProductos()
+        public IDaoImplemento ObtenerDaoProductos()
         {
-            return new DatosSKD.DAO.Modulo16.DaoImplemento();
+            return new DaoImplemento();
         }
 
         /// <summary>
@@ -254,9 +260,9 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del detalleProducto
         /// </summary>
         /// <returns>el DaoImplemento</returns>
-        public InterfazDAO.Modulo16.IdaoImplemento ObtenerDaoDetalleProducto()
+        public IDaoImplemento ObtenerDaoDetalleProducto()
         {
-            return new DatosSKD.DAO.Modulo16.DaoImplemento();
+            return new DaoImplemento();
         }
         #endregion
 

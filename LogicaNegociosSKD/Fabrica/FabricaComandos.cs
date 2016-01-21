@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD.Comandos.Modulo12;
+using LogicaNegociosSKD.Comandos.Modulo15;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -213,6 +214,62 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 15
+
+        #region ComandoAgregarImplemento -- ObtenerComandoAgregar
+        public Comando<bool> ObtenerComandoAgregar()
+        {
+            return new ComandoAgregarImplemento();
+        }
+        #endregion
+
+        #region ComandoConsultarTodosImplementos -- ObtenerComandoConsultar
+        public Comando<List<Entidad>> ObtenerComandoConsultar()
+        {
+            return new ComandoConsultarTodosImplementos();
+        }
+        #endregion
+
+        #region ComandoConsultarTodosImplementos2 -- ObtenerComandoConsultar2
+        public Comando<List<Entidad>> ObtenerComandoConsultar2()
+        {
+            return new ComandoConsultarTodosImplementos2();
+        }
+        #endregion
+
+        #region ComandoEliminarImplemento -- ObtenerComandoEliminarImplemento
+        public Comando<bool> ObtenerComandoEliminarImplemento()
+        {
+            return new ComandoEliminarImplemento();
+        }
+        #endregion
+
+        #region ComandoModificarImplemento -- ObtenerComandoModificarImplemento
+        public Comando<bool> ObtenerComandoModificarImplemento()
+        {
+            return new ComandoModificarImplemento();
+        }
+        #endregion
+
+        #region ComandoImplementoXId -- ObtenerComandoImplementoXId
+        public Comando<Entidad> ObtenerComandoImplementoXId()
+        {
+            return new ComandoImplementoXId();
+        }
+        #endregion
+
+        #region ComandoUsuarioDojo -- ObtenerComandoUsuarioDojo
+        public Comando<int> ObtenerComandoUsuarioDojo()
+        {
+            return new ComandoUsuarioDojo();
+        }
+        #endregion
+
+        #region ComandoDojoId -- ObtenerComandoDojo
+        public Comando<Entidad> ObtenerComandoDojo()
+        {
+            return new ComandoDojoId();
+        }
+        #endregion 
         #endregion
 
         #region Modulo 16

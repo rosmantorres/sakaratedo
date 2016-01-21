@@ -220,6 +220,20 @@
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
+    <Content Include="GUI\Modulo15\Imagen\aula virtual error.png" />
+    <Content Include="GUI\Modulo15\Imagen\calendario.png" />
+    <Content Include="GUI\Modulo15\Imagen\captahuella.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\computacion.png" />
+    <Content Include="GUI\Modulo15\Imagen\franco_de_vita.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\imagen1.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\logo.png" />
+    <Content Include="GUI\Modulo15\Imagen\logo2.png" />
+    <Content Include="GUI\Modulo15\Imagen\logooo.png" />
+    <Content Include="GUI\Modulo15\Imagen\primera1.png" />
+    <Content Include="GUI\Modulo15\Imagen\r1.png" />
+    <Content Include="GUI\Modulo15\web_15_AgregarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\web_15_ModificarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -1721,6 +1735,27 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_AgregarImplemento.aspx.cs">
+      <DependentUpon>web_15_AgregarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_AgregarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_AgregarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx.cs">
+      <DependentUpon>web_15_ConsultarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_ConsultarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ModificarImplemento.aspx.cs">
+      <DependentUpon>web_15_ModificarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ModificarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_ModificarImplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>

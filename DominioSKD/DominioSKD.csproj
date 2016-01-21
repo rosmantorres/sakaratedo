@@ -49,6 +49,7 @@
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
     <Compile Include="Entidades\Modulo15\Implemento.cs" />
+    <Compile Include="Entidades\Modulo15\Usuario.cs" />
     <Compile Include="Entidades\Modulo16\Carrito.cs" />
     <Compile Include="Entidades\Modulo16\ListaCompra.cs" />
     <Compile Include="Entidades\Modulo16\ListaEvento.cs" />

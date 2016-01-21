@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
+    <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
+    <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
     <Compile Include="Modulo16\M16_Recursointerfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,7 +140,6 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo15\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
