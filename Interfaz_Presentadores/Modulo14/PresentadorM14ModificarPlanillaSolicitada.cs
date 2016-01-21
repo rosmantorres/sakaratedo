@@ -44,7 +44,7 @@ namespace Interfaz_Presentadores.Modulo14
             List<Entidad> listEventos = comboEvento.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (SolicitudP item in listEventos)
+            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listEventos)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -65,7 +65,7 @@ namespace Interfaz_Presentadores.Modulo14
             List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (SolicitudP item in listCompetencias)
+            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listCompetencias)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -92,10 +92,10 @@ namespace Interfaz_Presentadores.Modulo14
             Comando<Entidad> comandoObtenerSolicitudID = fabricaCo.ObtenerComandoObtenerSolicitudID();
             ((ComandoObtenerSolicitudID)comandoObtenerSolicitudID).IDSolicitud = idSolicitud;
             laSolicitud = comandoObtenerSolicitudID.Ejecutar();
-            vista.FechaRetiro = ((SolicitudP)laSolicitud).FechaRetiro;
-            vista.FechaReincorporacion = ((SolicitudP)laSolicitud).FechaReincorporacion;
-            vista.Motivo = ((SolicitudP)laSolicitud).Motivo;
-            vista.IDInscripcion = ((SolicitudP)laSolicitud).IDInscripcion;
+            vista.FechaRetiro = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).FechaRetiro;
+            vista.FechaReincorporacion = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).FechaReincorporacion;
+            vista.Motivo = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).Motivo;
+            vista.IDInscripcion = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).IDInscripcion;
             IDIns = vista.IDInscripcion;
 
         /*    HttpCookie aCookie = new HttpCookie(RecursosPresentadorModulo14.CookieIdIns);
@@ -108,8 +108,10 @@ namespace Interfaz_Presentadores.Modulo14
             //  List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(laSolicitud.ID);
             Comando<List<Boolean>> comandoDatosRequeridosSolicitud = fabricaCo.ObtenerComandoDatosRequeridosSolicitud();
            
-            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = fabricaEnt.ObtenerPlanilla();
-            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id = ((SolicitudP)laSolicitud).ID;
+            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = 
+                fabricaEnt.ObtenerPlanilla();
+            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id =
+                ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).ID;
             //((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).IdPlanilla = idSolicitud;
 
             List<Boolean> datosRequeridos = comandoDatosRequeridosSolicitud.Ejecutar();
@@ -166,52 +168,91 @@ namespace Interfaz_Presentadores.Modulo14
                 vista.divMotivoVisible = false;
             }
         }
-        public void EditarPlanillaSolicitada()
+        public bool EditarPlanillaSolicitada()
         {
            // LogicaSolicitud lS = new LogicaSolicitud();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             FabricaComandos fabricaComandos = new FabricaComandos();
             Entidad solicitud = fabricaEntidades.ObtenerSolicitudP();
-            ((SolicitudP)solicitud).ID = Int32.Parse(vista.solicitudId);
+            ((DominioSKD.Entidades.Modulo14.SolicitudP)solicitud).ID =
+                Int32.Parse(vista.solicitudId);
            //Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
            Comando<Entidad> comandoModificarSolicitudID = fabricaComandos.ObtenerComandoModificarSolicitudID();
            //Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
           // int idIns = vista.IDIns; 
 
-            if (vista.ComboEventoVisible == true)
+              bool resultado = false;
+         
+            /*if (vista.FechaRetiro != "")
             {
+                if(vista.FechaReincorporacion != ""){
+                    if (vista.Motivo !=""){*/
+                      if (vista.ComboEventoVisible == true)
+                         {
                // SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
                  //                          this.id_motivo.Value, Int32.Parse(this.comboEvento.SelectedValue));
                // lS.ModificarSolicitudID(laSolicitud);
 
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId),vista.FechaRetiro, vista.FechaReincorporacion,
+                             Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId),vista.FechaRetiro, vista.FechaReincorporacion,
                                        vista.Motivo, Int32.Parse(vista.EventoCombo.SelectedValue));
-                comandoModificarSolicitudID.LaEntidad = laSolicitud;
-                comandoModificarSolicitudID.Ejecutar();    
-            }
-            if (vista.ComboCompetenciaVisible == true)
-            {
+                             comandoModificarSolicitudID.LaEntidad = laSolicitud;
+                             comandoModificarSolicitudID.Ejecutar();
+                             resultado = true;
+                           }
+                       if (vista.ComboCompetenciaVisible == true)
+                        {
                /* SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
                                              this.id_motivo.Value, Int32.Parse(this.comboCompetencia.SelectedValue));*/
                // lS.ModificarSolicitudID(laSolicitud);
            
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                           vista.Motivo, Int32.Parse(vista.CompetenciaCombo.SelectedValue));
-               comandoModificarSolicitudID.LaEntidad =laSolicitud;
-                comandoModificarSolicitudID.Ejecutar();
-            }
-            if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
-            {
+                            comandoModificarSolicitudID.LaEntidad =laSolicitud;
+                            comandoModificarSolicitudID.Ejecutar();
+                            resultado = true;
+                        }
+                       if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
+                         {
              //   SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
              //                                this.id_motivo.Value, idIns);
              //   lS.ModificarSolicitudID(laSolicitud);
             //    vista.IDInscripcion = Int32.Parse(Request.Cookies[RecursosPresentadorModulo14.CookieIdIns].ToString());
                 
-                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                             vista.Motivo, IDIns);
-               comandoModificarSolicitudID.LaEntidad =laSolicitud;
-                comandoModificarSolicitudID.Ejecutar();
+                            comandoModificarSolicitudID.LaEntidad =laSolicitud;
+                            comandoModificarSolicitudID.Ejecutar();
+                            resultado = true;
+                           }
+                   /* }
+                    else
+                    {
+                        vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                        vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                        vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaMotivoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                        vista.alerta = true;
+                        resultado = false;
+                    }
+                }
+                else
+                {
+                    vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaReincorporacionVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                    vista.alerta = true;
+                    resultado = false;
+                }
             }
+            else
+            {
+                vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
+                vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
+                vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaRetiroVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
+                vista.alerta = true;
+                resultado = false;
+            }*/
+
+            return resultado;
 
         }
 

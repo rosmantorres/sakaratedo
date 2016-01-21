@@ -10,16 +10,68 @@ using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using templateApp.GUI.Master;
 using ExcepcionesSKD;
-
+using Interfaz_Contratos.Modulo14;
+using Interfaz_Presentadores.Modulo14;
+using DominioSKD;
 namespace templateApp.GUI.Modulo14
 {
-    public partial class M14_MostrarPlanilla : System.Web.UI.Page
+    public partial class M14_MostrarPlanilla : System.Web.UI.Page, IContratoM14MostrarPlanilla
     {
         private LogicaNegociosSKD.Modulo14.LogicaDiseño logica = new LogicaNegociosSKD.Modulo14.LogicaDiseño();
-        private string contenido;
         private int idSolicitud;
         private int idPlanilla;
         private int idIns;
+        private string contenido;
+        private PresentadorM14MostrarDiseno presentador;
+
+        #region Contratos
+        public string alertaClase
+        {
+            set
+            {
+                this.alerta.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alerta.Attributes["role"] = value;
+            }
+        }
+        public string alert
+        {
+            set
+            {
+                this.alerta.InnerHtml = value;
+            }
+        }
+
+        public Label NombrePanilla 
+        {
+            set
+            {
+                this.NombrePanilla1 = value;
+            }
+        }
+        public Label informacion
+        {
+            get
+            {
+                return this.informacion1;
+            }
+            set
+            {
+                this.informacion1 = value;
+            }
+        }
+
+        #endregion
+
+        public M14_MostrarPlanilla()
+        {
+            presentador = new PresentadorM14MostrarDiseno(this);
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,31 +82,35 @@ namespace templateApp.GUI.Modulo14
                 {
                     idSolicitud = Convert.ToInt32(Request.Cookies["Solicitud"]["id"]);
                     idIns = Convert.ToInt32(Request.Cookies["Solicitud"]["idIns"]);
-                    this.NombrePanilla.Text = Request.Cookies["Solicitud"]["nombre"].ToString();
+                    this.NombrePanilla1.Text = Request.Cookies["Solicitud"]["nombre"].ToString();
                     idPlanilla = Convert.ToInt32(Request.Cookies["Solicitud"]["idPlanilla"]);
                     Request.Cookies["Planilla"].Expires = DateTime.Now;
-                    MostrarInformacion();
+                    Entidad diseño=presentador.MostrarInformacion(idIns,
+                        Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]),
+                        idSolicitud,idPlanilla);
+                    contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño).Contenido;
+                    this.informacion.Text = contenido;
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (NullReferenceException ex)
             {
@@ -62,19 +118,16 @@ namespace templateApp.GUI.Modulo14
             }
             catch (Exception ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
-            MostrarInformacion();
+            Entidad diseño1=presentador.MostrarInformacion(idIns,
+                        Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]),
+                        idSolicitud, idPlanilla);
+            contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño1).Contenido;
+            this.informacion.Text = contenido;
         }
 
-        public void Alerta(string msj)
-        {
-            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-            alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
-
-        public void MostrarInformacion()
+       /* public void MostrarInformacion()
         {
              try
              {
@@ -112,7 +165,7 @@ namespace templateApp.GUI.Modulo14
                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                  //throw ex;
              }
-        }
+        }*/
 
         protected void imprimir_Click(object sender, EventArgs e)
         {
@@ -139,7 +192,7 @@ namespace templateApp.GUI.Modulo14
 
                 Response.ContentType = "application/pdf";
 
-                Response.AddHeader("content-disposition", "attachment; filename=" + this.NombrePanilla.Text + ".pdf");
+                Response.AddHeader("content-disposition", "attachment; filename=" + this.NombrePanilla1.Text + ".pdf");
                 System.Web.HttpContext.Current.Response.Write(pdfDoc);
 
                 Response.Flush();
@@ -148,31 +201,31 @@ namespace templateApp.GUI.Modulo14
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (NullReferenceException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (Exception ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
                 //Response.Write(ex.ToString());
             }
         }

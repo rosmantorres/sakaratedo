@@ -26,7 +26,9 @@ namespace templateApp.GUI.Modulo14
             {
                 ((SKD)Page.Master).IdModulo = "14";
 
-                try
+                presentador.PageLoadRegistrarPlanilla();
+
+             /*   try
                 {
                     id_otro.Visible = false;
                     presentador.LlenarComboTipoPlanilla();
@@ -58,7 +60,7 @@ namespace templateApp.GUI.Modulo14
                 catch (Exception ex)
                 {
                     Alerta(ex.Message);
-                }
+                }*/
             }
         }
 
@@ -115,14 +117,14 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alertlocal.InnerText = value;
+                this.alertlocal.Attributes["role"] = value;
             }
         }
         public String alertLocalClase
         {
             set
             {
-                this.alert.InnerText = value;
+                this.alertlocal.Attributes["class"] = value;
             }
         }
         public String alertLocal
@@ -136,7 +138,7 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alert.Visible = value;
+                this.alertlocal.Visible = value;
             }
         }
         public bool id_otroTipo
@@ -230,8 +232,11 @@ namespace templateApp.GUI.Modulo14
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            presentador.AgregarPlanilla();
-            Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
+            if (presentador.AgregarPlanilla() == true)
+            {
+                Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
+            }
+               
                             
             /*List<String> listDatos = new List<String>();
             Planilla laPlanilla = null;

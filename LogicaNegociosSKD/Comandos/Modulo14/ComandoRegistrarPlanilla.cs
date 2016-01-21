@@ -15,7 +15,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
        public override bool Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
+            DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
             bool resultPlanilla = true;
             try
             {

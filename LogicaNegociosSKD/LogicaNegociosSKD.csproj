@@ -40,6 +40,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosEventos.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosProductos.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarMatricula.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarProducto.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoeliminarItem.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoModificarCarrito.cs" />
+    <Compile Include="Comandos\Modulo16\Comandoregistrarpago.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoVerCarrito.cs" />
+    <Compile Include="Comandos\Modulo16\RecursosLogicaModulo16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo12\ComandoAgregarCompetencia.cs" />
     <Compile Include="Comandos\Modulo12\ComandoConsultarCintas.cs" />
     <Compile Include="Comandos\Modulo12\ComandoConsultarOrganizaciones.cs" />
@@ -55,6 +72,7 @@
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseño.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseñoPuro.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillas.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillasASolicitar.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoEliminarSolicitud.cs" />
@@ -206,6 +224,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo12\RecursosComandoModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo12.Designer.cs</LastGenOutput>
@@ -286,7 +308,6 @@
     <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo15\" />
-    <Folder Include="Comandos\Modulo16\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
     <Folder Include="Comandos\Modulo4\" />
@@ -294,6 +315,7 @@
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
     <Folder Include="Comandos\Modulo9\" />
+    <Folder Include="Comandos\Modulo16\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

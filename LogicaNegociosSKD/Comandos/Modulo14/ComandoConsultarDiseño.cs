@@ -49,15 +49,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             {
                 Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
                 Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
-                Diseño diseñoPlanilla = (Diseño)fabricaEntidad.obtenerDiseño();
+                DominioSKD.Entidades.Modulo14.Diseño diseñoPlanilla =
+                    (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
                 //
-                Evento evento = new Evento();
-                Competencia competencia = (Competencia)fabricaEntidad.ObtenerCompetencia();
-                Organizacion organizacion = (Organizacion)fabricaEntidad.ObtenerOrganizacion();
-                SolicitudPlanilla solicitud = 
-                    (SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+                DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+                DominioSKD.Entidades.Modulo12.Competencia competencia = 
+                    (DominioSKD.Entidades.Modulo12.Competencia)fabricaEntidad.ObtenerCompetencia();
+                Organizacion organizacion =
+                    (Organizacion)fabricaEntidad.ObtenerOrganizacion();
+                DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
+                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
                 List<string> matricula = new List<string>();
-                diseñoPlanilla = (Diseño)daoDiseno.ConsultarXId(planilla);
+                diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarXId(planilla);
                 daoDiseno.LimpiarSQLConnection();
                 persona = daoDatos.ConsultarPersona(idPersona);
                 daoDatos.LimpiarSQLConnection();
@@ -65,13 +68,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 daoDatos.LimpiarSQLConnection();
                 matricula = daoDatos.ConsultarMatricula(dojo.Id_dojo, idPersona);
                 daoDatos.LimpiarSQLConnection();
-                evento = daoDatos.ConsultarEvento(idIns);
+                evento = (DominioSKD.Entidades.Modulo9.Evento)daoDatos.ConsultarEvento(idIns);
                 daoDatos.LimpiarSQLConnection();
-                competencia = (Competencia)daoDatos.ConsultarCompetencia(idIns);
+                competencia = (DominioSKD.Entidades.Modulo12.Competencia)daoDatos.ConsultarCompetencia(idIns);
                 daoDatos.LimpiarSQLConnection();
                 organizacion = (Organizacion)daoDatos.ConsultarOrganizacion(dojo.Organizacion_dojo);
                 daoDatos.LimpiarSQLConnection();
-                solicitud =(SolicitudPlanilla)daoDatos.ConsultarSolicitud(idSolici);
+                solicitud = (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)daoDatos.ConsultarSolicitud(idSolici);
                 daoDatos.LimpiarSQLConnection();
                 Fabrica.FabricaComandos fComandos = new Fabrica.FabricaComandos();
                 ComandoReemplazarElementos comand = 
@@ -79,7 +82,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 comand.Info = diseñoPlanilla.Contenido;
                 comand.Persona = persona;
                 comand.Dojo = dojo;
-                //comand.Evento = evento;
+                comand.Evento = evento;
                 comand.Competencia = competencia;
                 comand.Matricula = matricula;
                 comand.Organizacion = organizacion;

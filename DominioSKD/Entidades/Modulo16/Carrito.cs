@@ -3,30 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Entidades.Modulo6;
+using DominioSKD;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo16
 {
     /// <summary>
     /// Clase Carrito con sus constructores y atributos
     /// </summary>
-    public class Carrito
+    public class Carrito : Entidad
     {
         #region Atributos
         /// <summary>
         /// Atributos de la clase Carrito
         /// </summary>
-
-       // List<Implemento> listaImplemento;
-        List<Evento> listaEvento;
-        //   List<Matricula> listaMatricula;
+        private Dictionary<Entidad, int> listaImplemento;
+        private Dictionary<Entidad, int> listaEvento;
+        private Dictionary<Entidad, int> listaMatricula;
         #endregion
 
         #region Propiedades
-/*
         /// <summary>
         /// Propiedad del atributo listaInventario
         /// </summary>
-        public List<Implemento> ListaImplemento
+        public Dictionary<Entidad, int> ListaImplemento
         {
             get
             {
@@ -36,12 +37,13 @@ namespace DominioSKD
             {
                 this.listaImplemento = value;
             }
-        }*/
+
+        }
 
         /// <summary>
         /// Propiedad del atributo listaEvento
         /// </summary>
-        public List<Evento> Listaevento
+        public Dictionary<Entidad, int> Listaevento
         {
             get
             {
@@ -52,11 +54,11 @@ namespace DominioSKD
                 this.listaEvento = value;
             }
         }
-        /*
+
         /// <summary>
         /// Propiedad del atributo listaMatricula
         /// </summary>
-        public List<Matricula> Listamatricula
+        public Dictionary<Entidad, int> Listamatricula
         {
             get
             {
@@ -67,8 +69,8 @@ namespace DominioSKD
                 this.listaMatricula = value;
             }
         }
-        
-        */
+
+
         #endregion
 
         #region Constructores
@@ -78,41 +80,37 @@ namespace DominioSKD
         public Carrito()
         {
 
+            listaImplemento = null;
+            listaEvento = null;
+            listaMatricula = null;
+
         }
 
         /// <summary>
-        /// Constructor de la case que llena todos los atributos de la clase Carrito
+        /// Constructor con todos los datos requeridos de la clase
         /// </summary>
-        /// <param name="listaInventario">La lista de todos los inventarios que se han agregado al Carrito</param>
-        /// <param name="listaEvento">La lista de todos los eventos que se han agregado al Carrito</param>
-        /// <param name="listaMatricula">La lista de todas las mastriculas que se han agregado al Carrito</param>
-        /*
-        public Carrito(List<Inventario> listaInventario, List<Evento> listaEvento, List<Matricula> listaMatricula)
+        /// <param name="implementos">Lista con todos los implementos del carrito</param>
+        /// <param name="eventos">Lista con todos los eventos del carrito</param>
+        /// <param name="matriculas">Lista con todas las matriculas del carrito</param>
+        public Carrito(Dictionary<Entidad, int> implementos,
+            Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
         {
-            this.listaInventario = listaInventario;
-            this.listaEvento = listaEvento;
-            this.listaMatricula = listaMatricula;
-        }*/
+            this.listaImplemento = implementos;
+            this.listaEvento = eventos;
+            this.listaMatricula = matriculas;
+        }
         #endregion
 
         #region Metodos
-        /// <summary>
-        /// Metodo que elimina un item especifico del carrito del usuario
-        /// </summary>
-        /// <param name="tipoObjeto">Especifica si se trata de un inventario, matricula o evento</param>
-        /// <param name="objetoBorrar">Elimina el objeto en especifico del carrito</param>
-        /// <returns>El exito o fallo del proceso</returns>
-        public bool eliminarItem(int tipoObjeto, int objetoBorrar)
-        {
-            return true;
-        }
-
         /// <summary>
         /// Borra todos los items que existan en el carrito
         /// </summary>
         /// <returns>El exito o fallo del proceso</returns>
         public bool limpiar()
         {
+            this.listaImplemento.Clear();
+            this.listaEvento.Clear();
+            this.listaMatricula.Clear();
             return true;
         }
         #endregion

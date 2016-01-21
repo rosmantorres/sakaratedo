@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -26,15 +27,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
               try
               {
                   FabricaDAOSqlServer fabricaDao = new FabricaDAOSqlServer();
+                  FabricaEntidades entFab = new FabricaEntidades();
                   DaoDiseno diseno = (DaoDiseno)fabricaDao.ObtenerDAODiseno();
-                  Entidad resultDiseño = diseno.ConsultarXId(this.LaEntidad);
+                  DominioSKD.Entidades.Modulo14.Planilla planilla = (DominioSKD.Entidades.Modulo14.Planilla)entFab.ObtenerPlanilla();
+                  planilla.ID = LaEntidad.Id;
+                  Entidad resultDiseño = diseno.ConsultarXId(planilla);
 
 
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
-                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
+                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
 
                
               }
