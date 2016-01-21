@@ -34,13 +34,24 @@ namespace templateApp.GUI.Modulo15
         {
              ((SKD)Page.Master).IdModulo = "15";
             //variables agregar
+             // usuario y roles***********
+             String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
 
+             //***************************
              Agregar.Click += new EventHandler(this.agregarImplemento);     
     
         }
 
         public void agregarImplemento(object sender,EventArgs e) {
+            // usuario y roles***********
+            String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+            String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+
+            //***************************
             FabricaEntidades fabrica = new FabricaEntidades();
+            Entidad usuarioDojo = fabrica.ObtenerUsuario();
+            ((Usuario)usuarioDojo)._Nombre = usuario;
             Entidad implemento = fabrica.ObtenerImplemento();
             ((Implemento)implemento).Dojo_Implemento = (Dojo)fabrica.ObtenerDojo();
             ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
@@ -48,14 +59,18 @@ namespace templateApp.GUI.Modulo15
             ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
             ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
             ((Implemento)implemento).Talla_Implemento= this.talla_implemento.Value;
-            ((Implemento)implemento).Dojo_Implemento.Id_dojo= 1;
+
+            ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = presentador.usuarioDojo(usuarioDojo);
+            ((Implemento)implemento).Dojo_Implemento =(Dojo)presentador.obtenerDojoXId(((Implemento)implemento).Dojo_Implemento);
+
             ((Implemento)implemento).Cantida_implemento= Convert.ToInt16(this.cantidad_implemento.Value);
             ((Implemento)implemento).Stock_Minimo_Implemento= Convert.ToInt16(this.stock_implemento.Value);
             ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
             ((Implemento)implemento).Precio_Implemento= Convert.ToDouble(this.precio_implemento.Value);
             ((Implemento)implemento).Imagen_implemento = "Hola mundo";
             presentador.agregarImplemento(implemento);
-        
+            Response.Redirect("web_15_ConsultarImplemento.aspx");
+
         
         }
 

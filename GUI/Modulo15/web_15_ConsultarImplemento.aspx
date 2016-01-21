@@ -186,7 +186,7 @@
                 $('a.eliminar_clase').click(function (e) {
                     idEliminar = $(this).attr("data-id");
                     //   alert(idEliminar);
-                    $('#btneliminar').attr("href", "M15_ConsultarImplemento.aspx?eliminar=true&idImplemento=" + idEliminar);
+                    $('#btneliminar').attr("href", "web_15_ConsultarImplemento.aspx?consultar=eliminar&idImplemento=" + idEliminar);
 
 
                 });
@@ -256,13 +256,13 @@
                     var respuesta = $("#estatus_implemento").val();
 
                     if (respuesta == 1) {
-                        location.href = "M15_ConsultarImplemento.aspx?consultar=Activo";
+                        location.href = "web_15_ConsultarImplemento.aspx?consultar=Activo";
 
 
                     } else {
                         if (respuesta == 2) {
 
-                            location.href = "M15_ConsultarImplemento.aspx?consultar=Inactivo";
+                            location.href = "web_15_ConsultarImplemento.aspx?consultar=Inactivo";
 
                         }
 

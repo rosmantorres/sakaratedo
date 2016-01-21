@@ -11,15 +11,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoEliminarImplemento:Comando<bool>
     {
-        private Entidad implemento;
-        private Entidad dojo;
-
+        public Entidad dojo;
         public override bool Ejecutar()
         {
 
             try
             {
-                return FabricaDAOSqlServer.ObtenerDAOImplemento().eliminarInventarioDatos(((Implemento)this.implemento).Id_Implemento, this.dojo);
+                 ((Dojo)this.dojo).Dojo_Id=((Implemento)LaEntidad).Stock_Minimo_Implemento;
+                return FabricaDAOSqlServer.ObtenerDAOImplemento().eliminarInventarioDatos(((Implemento)this.LaEntidad).Id_Implemento, this.dojo);
 
             }
             catch (Exception ex)

@@ -418,7 +418,7 @@ namespace DatosSKD.DAO.Modulo15
                     ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                     ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                     ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                    ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                    ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                     ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                     ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -486,7 +486,7 @@ namespace DatosSKD.DAO.Modulo15
                     ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                     ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                     ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                    ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                    ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                     ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                     ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -547,7 +547,7 @@ namespace DatosSKD.DAO.Modulo15
                 ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                 ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                 ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                 ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                 ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -755,7 +755,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     if (((Implemento)parametroImplemento).Dojo_Implemento != null)
                     {
-                        parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, ((Implemento)parametroImplemento).Dojo_Implemento.Dojo_Id.ToString(), false);
+                        parametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, ((Dojo)(((Implemento)parametroImplemento).Dojo_Implemento)).Dojo_Id.ToString(), false);
                         parametros.Add(parametro);
                     }
                     else
@@ -850,7 +850,7 @@ namespace DatosSKD.DAO.Modulo15
                     ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                     ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                     ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                    ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                    ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                     ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                     ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -901,7 +901,7 @@ namespace DatosSKD.DAO.Modulo15
                 ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                 ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                 ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                 ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                 ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -952,7 +952,7 @@ namespace DatosSKD.DAO.Modulo15
                 ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                 ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                 ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                 ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                 ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -1159,7 +1159,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     if (((Implemento)parametro).Dojo_Implemento != null)
                     {
-                        elParametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, ((Implemento)parametro).Dojo_Implemento.Dojo_Id.ToString(), false);
+                        elParametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, ((Dojo)(((Implemento)parametro).Dojo_Implemento)).Dojo_Id.ToString(), false);
                         parametros.Add(elParametro);
                     }
                     else
@@ -1347,7 +1347,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     if (((Implemento)parametro).Dojo_Implemento != null)
                     {
-                        elParametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, ((Implemento)parametro).Dojo_Implemento.Dojo_Id.ToString(), false);
+                        elParametro = new Parametro(RecursosBDModulo15.parametroDojoIdImplemento, SqlDbType.Int, ((Dojo)(((Implemento)parametro).Dojo_Implemento)).Dojo_Id.ToString(), false);
                         parametros.Add(elParametro);
                     }
                     else
@@ -1450,7 +1450,7 @@ namespace DatosSKD.DAO.Modulo15
                 ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                 ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                 ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                 ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                 ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
@@ -1501,7 +1501,7 @@ namespace DatosSKD.DAO.Modulo15
                     ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                     ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                     ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                    ((Implemento)implemento).Dojo_Implemento.Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                    ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
                     ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
                     ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);

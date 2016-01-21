@@ -55,6 +55,7 @@
     <Compile Include="Entidades\Modulo16\ListaEvento.cs" />
     <Compile Include="Entidades\Modulo16\ListaImplemento.cs" />
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
+    <Compile Include="Entidades\Modulo4\Dojo.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
     <Compile Include="Entidades\Modulo14\Diseño.cs" />
@@ -109,7 +110,6 @@
     <Folder Include="Entidades\Modulo13\" />
     <Folder Include="Entidades\Modulo1\" />
     <Folder Include="Entidades\Modulo2\" />
-    <Folder Include="Entidades\Modulo4\" />
     <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

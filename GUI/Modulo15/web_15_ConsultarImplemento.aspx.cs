@@ -52,11 +52,22 @@ namespace templateApp.GUI.Modulo15
             ((Dojo)dojo).Dojo_Id = dojoUsuario;
             dojo= presentador.obtenerDojoXId(dojo);
             this.nombre_dojo.InnerText = ((Dojo)dojo).Nombre_dojo;
-
-
-
-             List<Entidad> listaImplementos = presentador.cargarListaImplementos(dojo);
-        
+            
+            string consultar = Request.QueryString["consultar"];
+            string eliminar="";
+            List<Entidad> listaImplementos=null;
+             if (consultar == "Inactivo")
+            {
+                listaImplementos = presentador.cargarListaImplementos2(dojo);
+            }
+             else {
+                 if (consultar == "eliminar") {
+                     eliminar = Request.QueryString["idImplemento"];
+                     presentador.eliminarImplemento(eliminar,((Dojo)dojo).Dojo_Id); 
+                 } 
+                listaImplementos = presentador.cargarListaImplementos(dojo);
+            
+            }
             foreach (Entidad valorActual in listaImplementos)
             {
                 this.tabla.Text+="<tr>";

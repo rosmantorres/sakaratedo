@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo15;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {    
@@ -18,7 +19,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 
             try
             {
-                return FabricaDAOSqlServer.ObtenerDAOImplemento().ConsultarXId(this.LaEntidad);
+                return FabricaDAOSqlServer.ObtenerDAOImplemento().implementoInventarioDatos(((Implemento)this.LaEntidad).Id_Implemento);
 
               
             }

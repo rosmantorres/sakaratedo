@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo15;
+using DominioSKD.Fabrica;
 using Interfaz_Contratos.Modulo15;
 using LogicaNegociosSKD;
-
-using LogicaNegociosSKD.Fabrica;namespace Interfaz_Presentadores.Modulo15
+using LogicaNegociosSKD.Fabrica;
+namespace Interfaz_Presentadores.Modulo15
 {
     public  class PresentadorConsultarImplemento
     {
@@ -38,6 +40,22 @@ using LogicaNegociosSKD.Fabrica;namespace Interfaz_Presentadores.Modulo15
              return comando.Ejecutar();
 
          }
+
+         public bool eliminarImplemento(string implemento ,int dojoid)
+         {                        
+             Comando<bool> comando;
+             FabricaEntidades fabricaEntidades = new FabricaEntidades();
+             Entidad implementoEliminar = fabricaEntidades.ObtenerImplemento();
+             FabricaComandos fabrica = new FabricaComandos();
+             comando = fabrica.ObtenerComandoEliminarImplemento();
+             ((Implemento)implementoEliminar).Id_Implemento = Convert.ToInt32(implemento);
+             ((Implemento)implementoEliminar).Stock_Minimo_Implemento=dojoid;
+             comando.LaEntidad = implementoEliminar;
+             return comando.Ejecutar();
+
+         }
+
+      
 
          public int usuarioDojo(Entidad usuario) {
              FabricaComandos fabrica = new FabricaComandos();

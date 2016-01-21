@@ -34,7 +34,7 @@
                       <input type="hidden" id="id_implemento" name="id_implemento" value="id_implemento" class="form-control" runat="server" />            
 
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea" runat="server"/>            
+                        <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control"  runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -48,12 +48,12 @@
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
-                           <input type="number" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control" value="20" runat="server"/>            
+                           <input type="number" id="cantidad_implemento" name="cantidad_implemento" placeholder="*Cantidad" class="form-control"  runat="server"/>            
                        </div>
                       <br/>
                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
                         <p><b>Precio (Bs):</b></p>
-                        <input type="number" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control" value="1000" runat="server"/>         
+                        <input type="number" id="precio_implemento" name="precio_implemento" placeholder="*Precio" class="form-control"  runat="server"/>         
                     </div>
                       <br/>
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -98,14 +98,14 @@
                 
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Stock m&iacutenimo:</b></p>
-                       <input type="number" id="stock_implemento" name="stock_implemento" placeholder="*Stock m&iacutenimo" class="form-control" value="5" runat="server"/>            
+                       <input type="number" id="stock_implemento" name="stock_implemento" placeholder="*Stock m&iacutenimo" class="form-control"  runat="server"/>            
                     </div>
                       <br/>
                         
                       
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Descripcion:</b></p>
-                       <input type="text" id="descripcion_implemento" name="descripcion_implemento" placeholder="*Descripcion" class="form-control" value="5" runat="server"/>            
+                       <input type="text" id="descripcion_implemento" name="descripcion_implemento" placeholder="*Descripcion" class="form-control"  runat="server"/>            
                     </div>
                       <br/>
 

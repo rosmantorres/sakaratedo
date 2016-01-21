@@ -28,6 +28,25 @@ namespace Interfaz_Presentadores.Modulo15
               return comandoAgregar.Ejecutar();
           
           }
+          public int usuarioDojo(Entidad usuario)
+          {
+              FabricaComandos fabrica = new FabricaComandos();
+
+              Comando<int> comando = fabrica.ObtenerComandoUsuarioDojo();
+              comando.LaEntidad = usuario;
+              return comando.Ejecutar();
+
+          }
+          public Entidad obtenerDojoXId(Entidad dojo)
+          {
+              FabricaComandos fabrica = new FabricaComandos();
+
+              Comando<Entidad> comando = fabrica.ObtenerComandoDojo();
+              comando.LaEntidad = dojo;
+              return comando.Ejecutar();
+
+          }
+
 
 
     }

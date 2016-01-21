@@ -16,7 +16,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             List<Entidad> lista = new List<Entidad>();
             try
             {
-                lista = FabricaDAOSqlServer.ObtenerDAOImplemento().ConsultarTodos();
+                lista = FabricaDAOSqlServer.ObtenerDAOImplemento().listarInventarioDatos2(this.LaEntidad);
 
             }
             catch (Exception ex)

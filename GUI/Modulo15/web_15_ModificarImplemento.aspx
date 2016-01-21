@@ -32,7 +32,7 @@
                 <form role="form" id="modificar_implemento"  runat="server">
                   <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                     <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                      <input type="hidden" id="id_implemento" name="id_implemento" value="id_implemento" class="form-control" runat="server" />            
+                      <input type="hidden" id="id_implemento" name="id_implemento"  class="form-control" runat="server" />            
 
                       <p><b>Nombre De Implemento:</b></p>
                         <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control" value="Guante de pelea" runat="server"/>            
