@@ -13,7 +13,52 @@ namespace Interfaz_Presentadores.Modulo8
     public class PresentadorAgregarRestriccionCompetencia
     {
         private IContratoAgregarRestriccionCompetencia vista;
-        
+       
+ 
+        public Boolean agregarRestriccionCompetencia()
+        {
+            Boolean resultado = false;
+            try
+            {
+
+                if (validarCampos())
+                {
+                    DominioSKD.Entidad elObjeto = meterParametrosVistaEnObjeto();
+                    LogicaNegociosSKD.Fabrica.FabricaComandos fabrica = new LogicaNegociosSKD.Fabrica.FabricaComandos();
+                    DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
+                    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
+                    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
+                    comando.Parametro = elObjeto;
+                    resultado= comando.Ejecutar(); 
+                }
+
+
+            }
+            catch
+            {
+
+            }
+            return resultado;
+        }
+
+
+        public Boolean validarCampos()
+        {
+            Boolean resultado = false;
+
+            if (int.Parse(vista.edadMinima.SelectedValue.ToString()) <= int.Parse(vista.edadMaxima.SelectedValue.ToString()) &&
+                int.Parse(vista.rangoMinimo.SelectedValue.ToString()) <= int.Parse(vista.rangoMaximo.SelectedValue.ToString()) &&
+                ("M".Equals(vista.sexo.SelectedValue.ToString()) || "F".Equals(vista.sexo.SelectedValue.ToString()) || "B".Equals(vista.sexo.SelectedValue.ToString())) &&
+                ("kata".Equals(vista.sexo.SelectedValue.ToString()) || "kumite".Equals(vista.sexo.SelectedValue.ToString()) || "todas".Equals(vista.sexo.SelectedValue.ToString())))
+                resultado = true;
+           
+            return resultado;
+        }
+
+
+
+
         public PresentadorAgregarRestriccionCompetencia(IContratoAgregarRestriccionCompetencia laVista)
         {
           
@@ -62,25 +107,53 @@ namespace Interfaz_Presentadores.Modulo8
             //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
             
             DominioSKD.Fabrica.FabricaEntidades fabrica = new  DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
-            restComp = meterParametrosVistaEnObjeto(restComp);
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
+            restComp = meterParametrosVistaEnObjeto();
             comando.LaRestriccionCompetencia = restComp;
-            //comando.ListaCompetencias
-
+            List<DominioSKD.Entidad> listaCompetencias;
+            listaCompetencias = vista.competenciasRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
+            comando.ListaCompetencias = listaCompetencias;
+            comando.Ejecutar();
         }
 
-        public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCompetencia laRestriccion)
+        public void agregarListaCompetenciasNoAsociadas()
         {
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia retriccionCompetencia = laRestriccion;
-            retriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
-            retriccionCompetencia.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
-            retriccionCompetencia.RangoMinimo = int.Parse(vista.rangoMinimo.SelectedValue);
-            retriccionCompetencia.RangoMaximo = int.Parse(vista.rangoMaximo.SelectedValue);
-            retriccionCompetencia.Sexo = vista.sexo.SelectedValue;
-            retriccionCompetencia.Modalidad = vista.modalidad.SelectedValue;
+
+            //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
+            //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
+
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
+            (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoEliminarListaCompetenciaRestriccionCompetencia();
+
+
+
+            //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
+            //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
+            restComp = meterParametrosVistaEnObjeto();
+            comando.LaRestriccionCompetencia = restComp;
+            List<DominioSKD.Entidad> listaCompetencias;
+            listaCompetencias = vista.competeciasNoRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
+            comando.ListaCompetencias = listaCompetencias;
+            comando.Ejecutar();
+        }
+
+
+         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
+        {
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
+            restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
+            restriccionCompetencia.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
+            restriccionCompetencia.RangoMinimo = int.Parse(vista.rangoMinimo.SelectedValue);
+            restriccionCompetencia.RangoMaximo = int.Parse(vista.rangoMaximo.SelectedValue);
+            restriccionCompetencia.Sexo = vista.sexo.SelectedValue;
+            restriccionCompetencia.Modalidad = vista.modalidad.SelectedValue;
             generarDescripcion();
-            retriccionCompetencia.Descripcion = vista.descripcion;
-            return retriccionCompetencia;
+            restriccionCompetencia.Descripcion = vista.descripcion;
+            return restriccionCompetencia;
             
         }
         //public void llenarComboRangos()
