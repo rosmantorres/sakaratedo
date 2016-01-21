@@ -23,11 +23,6 @@ namespace DominioSKD.Entidades.Modulo10
     {
         #region Atributos
         /// <summary>
-        /// Identificador en base de datos
-        /// </summary>
-        private int _id;
-
-        /// <summary>
         /// Nombre de la persona
         /// </summary>
         private String _nombre;
@@ -122,26 +117,13 @@ namespace DominioSKD.Entidades.Modulo10
         #endregion
 
         #region Constructores
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id">Identificador en BD</param>
-        public Persona(int id)
-        {
-            this._id = id;
-        }
 
         public Persona()
         {
-            this._id = -1;
+
 
         }
 
-        public int ID
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
         #endregion
 
         #region Métodos
