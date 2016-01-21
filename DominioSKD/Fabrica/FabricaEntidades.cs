@@ -187,32 +187,32 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 10
-        public Entidad ObtenerAsistencia()
+        public static Entidad ObtenerAsistencia()
         {
             return new DominioSKD.Entidades.Modulo10.Asistencia();
         }
 
-        public Entidad ObtenerInscripcion()
+        public static Entidad ObtenerInscripcion()
         {
             return new DominioSKD.Entidades.Modulo10.Inscripcion();
         }
 
-        public Entidad ObtenerPersonaM10()
+        public static Entidad ObtenerPersonaM10()
         {
             return new DominioSKD.Entidades.Modulo10.Persona();
         }
         #endregion
 
         #region Modulo 11
-        public Entidad ObtenerResultadoAscenso()
+        public static Entidad ObtenerResultadoAscenso()
         {
             return new DominioSKD.Entidades.Modulo11.ResultadoAscenso();
         }
-        public Entidad ObtenerResultadoKata()
+        public static Entidad ObtenerResultadoKata()
         {
             return new DominioSKD.Entidades.Modulo11.ResultadoKata();
         }
-        public Entidad ObtenerResultadoKumite()
+        public static Entidad ObtenerResultadoKumite()
         {
             return new DominioSKD.Entidades.Modulo11.ResultadoKumite();
         }
