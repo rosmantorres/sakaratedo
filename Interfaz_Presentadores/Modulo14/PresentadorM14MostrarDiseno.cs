@@ -30,13 +30,14 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
-        public void MostrarInformacion(int idIns, int idPersona,int idSolici, int planilla)
+        public Entidad MostrarInformacion(int idIns, int idPersona,int idSolici, int planilla)
         {
             FabricaComandos fabrica = new FabricaComandos();
             FabricaEntidades entidad = new FabricaEntidades();
             try
             {
-                Planilla plani = (Planilla)entidad.ObtenerPlanilla();
+                DominioSKD.Entidades.Modulo14.Planilla plani =
+                    (DominioSKD.Entidades.Modulo14.Planilla)entidad.ObtenerPlanilla();
                 plani.ID = planilla;
                 ComandoConsultarDiseño command = (ComandoConsultarDiseño)
                     fabrica.ObtenerComandoComandoConsultarDiseño();
@@ -45,8 +46,9 @@ namespace Interfaz_Presentadores.Modulo14
                 command.IdSolici = idSolici;
                 command.Planilla = plani;
                 Entidad diseño = command.Ejecutar();
-                string contenido = ((Diseño)diseño).Contenido;
+                string contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño).Contenido;
                 vista.informacion.Text = contenido;
+                return diseño;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -77,6 +79,7 @@ namespace Interfaz_Presentadores.Modulo14
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 //throw ex;
+                return null;
             }
         }
     }

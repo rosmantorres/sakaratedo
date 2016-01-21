@@ -29,14 +29,14 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alerta.InnerText = value;
+                this.alerta.Attributes["class"] = value;
             }
         }
         public string alertaRol
         {
             set
             {
-                this.alerta.InnerText = value;
+                this.alerta.Attributes["role"] = value;
             }
         }
         public string alert
@@ -85,9 +85,11 @@ namespace templateApp.GUI.Modulo14
                     this.NombrePanilla1.Text = Request.Cookies["Solicitud"]["nombre"].ToString();
                     idPlanilla = Convert.ToInt32(Request.Cookies["Solicitud"]["idPlanilla"]);
                     Request.Cookies["Planilla"].Expires = DateTime.Now;
-                    presentador.MostrarInformacion(idIns,
+                    Entidad diseño=presentador.MostrarInformacion(idIns,
                         Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]),
                         idSolicitud,idPlanilla);
+                    contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño).Contenido;
+                    this.informacion.Text = contenido;
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -118,9 +120,11 @@ namespace templateApp.GUI.Modulo14
             {
                 presentador.Alerta(ex.Message);
             }
-            presentador.MostrarInformacion(idIns,
+            Entidad diseño1=presentador.MostrarInformacion(idIns,
                         Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]),
                         idSolicitud, idPlanilla);
+            contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño1).Contenido;
+            this.informacion.Text = contenido;
         }
 
        /* public void MostrarInformacion()

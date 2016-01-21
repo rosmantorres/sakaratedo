@@ -30,7 +30,8 @@ namespace DatosSKD.DAO.Modulo14
             // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
 
             try
             {
@@ -115,7 +116,8 @@ namespace DatosSKD.DAO.Modulo14
             //BDConexion laConexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
             try
             {
                 //  laConexion = new BDConexion();
@@ -198,8 +200,8 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             //  BDConexion laConexion;
-            int idPlanilla = ((Planilla)laPlanilla).ID;
-            Planilla planilla = null;
+            int idPlanilla = ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID;
+            DominioSKD.Entidades.Modulo14.Planilla planilla = null;
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
@@ -220,7 +222,8 @@ namespace DatosSKD.DAO.Modulo14
                     String tipoPlanilla = row[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString();
                     String nombrePlanilla = row[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
                     bool statusPlanilla = (bool)row[RecursosDAOModulo14.AtributoStatusPlanilla];
-                    planilla = (Planilla)fabricaEntidad.ObtenerPlanilla(nombrePlanilla, statusPlanilla, tipoPlanilla);
+                    planilla =
+                        (DominioSKD.Entidades.Modulo14.Planilla)fabricaEntidad.ObtenerPlanilla(nombrePlanilla, statusPlanilla, tipoPlanilla);
                 }
 
             }
@@ -1026,7 +1029,7 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             List<Entidad> lista = new List<Entidad>();
             FabricaEntidades fabrica = new FabricaEntidades();
-
+            DominioSKD.Entidades.Modulo14.Planilla planilla;
             try
             {
 
@@ -1041,7 +1044,7 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        Planilla planilla =(Planilla)fabrica.ObtenerPersona();
+                        planilla = new DominioSKD.Entidades.Modulo14.Planilla();
                         planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
                         planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
                         planilla.Status = Convert.ToBoolean(leer[RecursosDAOModulo14.AtributoStatusPlanilla]);

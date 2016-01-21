@@ -11,6 +11,8 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using templateApp.GUI.Master;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_DetalleEventoAsistido : System.Web.UI.Page
