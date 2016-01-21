@@ -58,6 +58,10 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            finally
+            {
+                Desconectar();
+            }
 
             return listaEventos;
         }
