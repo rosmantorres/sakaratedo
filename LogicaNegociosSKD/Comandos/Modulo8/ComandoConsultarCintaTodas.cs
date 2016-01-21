@@ -8,7 +8,7 @@ using DominioSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ConsultarCintaTodas : Comando<List<DominioSKD.Entidad>>
+    public class ComandoConsultarCintaTodas : Comando<List<DominioSKD.Entidad>>
     {
 
         private Entidad RestriccionCinta;

@@ -71,6 +71,7 @@ namespace LogicaNegociosSKD.Fabrica
 
         #region Modulo 8
 
+        #region Comandos Restriccion Competencia
         public static Comando<Boolean> CrearComandoAgregarRestriccionCompetencia()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia();
@@ -95,6 +96,30 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarListaCompetenciaRestriccionCompetencia();
         }
+        #endregion
+
+        #region Comandos Restriccion Avance de Cinta
+        public static Comando<Boolean> CrearComandoAgregarRestriccionCinta()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta();
+        }
+
+        public static Comando<Boolean> CrearComandoConsultarRestriccionCinta()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta();
+        }
+
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas();
+        }
+
+        public static Comando<Boolean> CrearComandoModificarRestriccionCinta()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta();
+        }
+        #endregion
+
         #endregion
 
         #region Modulo 9

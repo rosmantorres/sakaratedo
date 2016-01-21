@@ -92,6 +92,11 @@
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
+    <Compile Include="Modulo8\RecursoPresentadorM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoPresentadorM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
@@ -143,6 +148,10 @@
       <LastGenOutput>RecursosInterfazPresentadorM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
+    <EmbeddedResource Include="Modulo8\RecursoPresentadorM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\menuLateral.xml" />
