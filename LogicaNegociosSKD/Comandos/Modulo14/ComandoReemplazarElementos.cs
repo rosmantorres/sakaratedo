@@ -171,8 +171,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                     info = info.Replace(RecursosComandoModulo14.OrgTelefono, "");
                     info = info.Replace(RecursosComandoModulo14.OrgEmail, "");
                 }
-                //Evento evento = (Evento)elEvento;
-                Evento evento= new Evento();
+                DominioSKD.Entidades.Modulo9.Evento evento =
+                    (DominioSKD.Entidades.Modulo9.Evento)elEvento;
                 if (evento != null)
                 {
                     info = info.Replace(RecursosComandoModulo14.EveNombre, evento.Nombre);
@@ -218,7 +218,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                         RecursosComandoModulo14.Linea;
                 }
 
-                Competencia competencia = (Competencia)laCompetencia;
+                DominioSKD.Entidades.Modulo12.Competencia competencia =
+                    (DominioSKD.Entidades.Modulo12.Competencia)laCompetencia;
                 if (competencia != null)
                 {
                     info = info.Replace(RecursosComandoModulo14.CompNombre, competencia.Nombre);
