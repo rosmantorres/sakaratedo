@@ -25,7 +25,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                ((Diseño)Diseño).Base64Encode();
+                ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
                 DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
                 return dao.Modificar(this.diseño);
             }

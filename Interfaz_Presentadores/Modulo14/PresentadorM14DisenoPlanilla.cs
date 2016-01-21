@@ -21,7 +21,7 @@ namespace Interfaz_Presentadores.Modulo14
         private IContratoM14DisenoPlanilla vista;
         private Entidad dis;
         private Boolean exito;
-        private Planilla planilla1;
+        private DominioSKD.Entidades.Modulo14.Planilla planilla1;
         private int idPlanilla;
 
         public PresentadorM14DisenoPlanilla(IContratoM14DisenoPlanilla vista)
@@ -33,20 +33,21 @@ namespace Interfaz_Presentadores.Modulo14
         {
             FabricaComandos fabrica = new FabricaComandos();
             FabricaEntidades entidad = new FabricaEntidades();
-            Planilla pla = (Planilla)entidad.ObtenerPlanilla();
+            DominioSKD.Entidades.Modulo14.Planilla pla =
+                (DominioSKD.Entidades.Modulo14.Planilla)entidad.ObtenerPlanilla();
             try
             {
                 if (request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieId].ToString() != "")
                 {
                     idPlanilla = Convert.ToInt32(request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieId]);
-                    pla.Id = idPlanilla;
+                    pla.ID = idPlanilla;
                     vista.tipoPlanilla.Text = request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieTipo].ToString();
                     vista.planilla.Text = request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieNombre].ToString();
                     ComandoConsultarDiseñoPuro commando =
                         (ComandoConsultarDiseñoPuro)fabrica.ObtenerComandoConsultarDiseñoPuro();
                     commando.Planilla = pla;
                     dis = commando.Ejecutar();
-                    planilla1 = new DominioSKD.Planilla(idPlanilla, vista.planilla.Text, true, vista.tipoPlanilla.Text);
+                    planilla1 = new DominioSKD.Entidades.Modulo14.Planilla(idPlanilla, vista.planilla.Text, true, vista.tipoPlanilla.Text);
 
                     if (!hit)
                     {
@@ -68,7 +69,8 @@ namespace Interfaz_Presentadores.Modulo14
                         vista.camposStatic.Text += RecursosPresentadorModulo14.Motivo;
                         vista.camposStatic.Text += RecursosPresentadorModulo14.ParteSuperior;
                         llenarCombo();
-                        vista.CKEditor1.Text = server.HtmlDecode(((Diseño)dis).Contenido);
+                        vista.CKEditor1.Text =
+                            server.HtmlDecode(((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido);
                     }
                     request.Cookies[RecursosPresentadorModulo14.CookiePlanilla].Expires = DateTime.Now;
                 }
@@ -114,16 +116,17 @@ namespace Interfaz_Presentadores.Modulo14
         public void btnguardar()
         {
             FabricaEntidades entidad = new FabricaEntidades();
-            Diseño diseño = (Diseño)entidad.obtenerDiseño(vista.CKEditor1.Text);
+            DominioSKD.Entidades.Modulo14.Diseño diseño =
+                (DominioSKD.Entidades.Modulo14.Diseño)entidad.obtenerDiseño(vista.CKEditor1.Text);
             FabricaComandos fabrica = new FabricaComandos();
             try
             {
-                if (((Diseño)dis).Contenido != "")
+                if (((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido != "")
                 {
 
                     if (vista.CKEditor1.Text != "")
                     {
-                        ((Diseño)dis).Contenido = vista.CKEditor1.Text;
+                        ((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido = vista.CKEditor1.Text;
                         ComandoModificarDiseno comando = 
                             (ComandoModificarDiseno)fabrica.ObtenerComandoModificarDiseno();
                         comando.Diseño = dis;
