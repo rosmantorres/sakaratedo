@@ -10,6 +10,8 @@ using DatosSKD.InterfazDAO.Modulo12;
 //using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo10;
+using DatosSKD.DAO.Modulo10;
 
 
 namespace DatosSKD.Fabrica
@@ -143,6 +145,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 10
+        public static IDaoAsistencia ObtenerDAOAsistencia()
+        {
+            return new DaoAsistencia();
+        }
         #endregion
 
         #region Modulo 11
