@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modulo10\M10_PruebasBDAsistencia.cs" />
+    <Compile Include="Modulo10\M10_PruebasDAO.cs" />
     <Compile Include="Modulo10\M10_PruebasLogica.cs" />
     <Compile Include="Modulo10\RecursosPU_Mod10.Designer.cs">
       <AutoGen>True</AutoGen>
