@@ -15,7 +15,7 @@ namespace DominioSKD.Entidades.Modulo10
         private DominioSKD.Entidades.Modulo12.Competencia competencia;
         private DominioSKD.Entidades.Modulo9.Evento evento;
         private List<Asistencia> asistencias;
-        private List<ResultadoAscenso> resAscenso;
+        private List<Entidad> resAscenso;
         private List<ResultadoKata> resKata;
         private List<ResultadoKumite> resKumite;
         #endregion
@@ -28,7 +28,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.evento = evento;
             this.competencia = new Modulo12.Competencia();
             this.asistencias = new List<Asistencia>();
-            this.resAscenso = new List<ResultadoAscenso>();
+            this.resAscenso = new List<Entidad>();
             this.resKata = new List<ResultadoKata>();
             this.resKumite = new List<ResultadoKumite>();
 
@@ -40,7 +40,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.competencia = competencia;
             this.evento = new Modulo9.Evento();
             this.asistencias = new List<Asistencia>();
-            this.resAscenso = new List<ResultadoAscenso>();
+            this.resAscenso = new List<Entidad>();
             this.resKata = new List<ResultadoKata>();
             this.resKumite = new List<ResultadoKumite>();
         }
@@ -53,7 +53,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.solicitud = solicitud;
             this.competencia = new Modulo12.Competencia();
             this.asistencias = new List<Asistencia>();
-            this.resAscenso = new List<ResultadoAscenso>();
+            this.resAscenso = new List<Entidad>();
             this.resKata = new List<ResultadoKata>();
             this.resKumite = new List<ResultadoKumite>();
 
@@ -66,7 +66,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.solicitud = solicitud;
             this.evento = new Modulo9.Evento();
             this.asistencias = new List<Asistencia>();
-            this.resAscenso = new List<ResultadoAscenso>();
+            this.resAscenso = new List<Entidad>();
             this.resKata = new List<ResultadoKata>();
             this.resKumite = new List<ResultadoKumite>();
         }
@@ -77,7 +77,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.competencia = new Modulo12.Competencia();
             this.evento = new Modulo9.Evento();
             this.asistencias = new List<Asistencia>();
-            this.resAscenso = new List<ResultadoAscenso>();
+            this.resAscenso = new List<Entidad>();
             this.resKata = new List<ResultadoKata>();
             this.resKumite = new List<ResultadoKumite>();
         }
@@ -114,7 +114,7 @@ namespace DominioSKD.Entidades.Modulo10
             get { return asistencias; }
             set { asistencias = value; }
         }
-        public List<ResultadoAscenso> ResAscenso
+        public List<Entidad> ResAscenso
         {
             get { return resAscenso; }
             set { resAscenso = value; }

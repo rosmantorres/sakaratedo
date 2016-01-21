@@ -201,6 +201,21 @@ namespace DominioSKD.Fabrica
         {
             return new DominioSKD.Entidades.Modulo10.Persona();
         }
+
+        public static Entidad ObtenerEventoM10()
+        {
+            return new DominioSKD.Entidades.Modulo10.Evento();
+        }
+
+        public static Entidad ObtenerHorarioM10()
+        {
+            return new DominioSKD.Entidades.Modulo10.Horario();
+        }
+
+        public static Entidad ObtenerTipoEventoM10()
+        {
+            return new DominioSKD.Entidades.Modulo10.TipoEvento();
+        }
         #endregion
 
         #region Modulo 11

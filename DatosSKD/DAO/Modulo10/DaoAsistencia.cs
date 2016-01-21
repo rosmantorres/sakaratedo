@@ -31,16 +31,15 @@ namespace DatosSKD.DAO.Modulo10
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimentoConsultarEventoAsistido, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                    Entidad evento = fabrica.ObtenerEvento();
-                    ((DominioSKD.Entidades.Modulo9.Evento) evento).Id = int.Parse(row[RecursosDAOModulo10.aliasIdEvento].ToString());
-                    ((DominioSKD.Entidades.Modulo9.Evento) evento).Nombre = row[RecursosDAOModulo10.aliasNombreEvento].ToString();
-                    Entidad horario = fabrica.ObtenerHorario();
-                    ((DominioSKD.Entidades.Modulo9.Horario) horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.aliasFechaEvento].ToString());
-                    Entidad tipo = fabrica.ObtenerTipoEvento();
-                    ((DominioSKD.Entidades.Modulo9.TipoEvento) tipo).Nombre = row[RecursosDAOModulo10.aliasTipoEvento].ToString();
-                    ((DominioSKD.Entidades.Modulo9.Evento) evento).Horario  = horario as DominioSKD.Entidades.Modulo9.Horario;
-                    ((DominioSKD.Entidades.Modulo9.Evento) evento).TipoEvento = tipo as DominioSKD.Entidades.Modulo9.TipoEvento;
+                    Entidad evento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.Evento) evento).Id = int.Parse(row[RecursosDAOModulo10.aliasIdEvento].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Evento) evento).Nombre = row[RecursosDAOModulo10.aliasNombreEvento].ToString();
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.aliasFechaEvento].ToString());
+                    Entidad tipo = DominioSKD.Fabrica.FabricaEntidades.ObtenerTipoEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.TipoEvento)tipo).Nombre = row[RecursosDAOModulo10.aliasTipoEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Horario = horario as DominioSKD.Entidades.Modulo10.Horario;
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).TipoEvento = tipo as DominioSKD.Entidades.Modulo10.TipoEvento;
                     listaEventos.Add(evento);
                 }
 
@@ -347,6 +346,7 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
+                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -357,7 +357,6 @@ namespace DatosSKD.DAO.Modulo10
                     parametro = new Parametro(RecursosDAOModulo10.ParametroIdInscripcion, SqlDbType.Int, ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Inscripcion.Id.ToString(), false);
                     parametros.Add(parametro);
 
-                    Conectar();
                     EjecutarStoredProcedure(RecursosDAOModulo10.ProcedimientoModificarAsistenciaE, parametros);
                     cont++;
                 }
@@ -466,6 +465,7 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
+                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -476,7 +476,6 @@ namespace DatosSKD.DAO.Modulo10
                     parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Competencia.Id.ToString(), false);
                     parametros.Add(parametro);
 
-                    Conectar();
                     EjecutarStoredProcedure(RecursosDAOModulo10.ProcedimientoModificarAsistenciaC, parametros);
                     cont++;
                 }
@@ -643,6 +642,7 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
+                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -652,7 +652,6 @@ namespace DatosSKD.DAO.Modulo10
                     parametros.Add(parametro);
                     parametro = new Parametro(RecursosDAOModulo10.ParametroAsistencia, SqlDbType.Char, ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio, false);
                     parametros.Add(parametro);
-                    Conectar();
                     EjecutarStoredProcedure(RecursosDAOModulo10.ProcedimientoAgregarAsistenciaEvento, parametros);
                     cont++;
                 }
@@ -701,6 +700,7 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
+                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -710,7 +710,6 @@ namespace DatosSKD.DAO.Modulo10
                     parametros.Add(parametro);
                     parametro = new Parametro(RecursosDAOModulo10.ParametroAsistencia, SqlDbType.Char, ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio, false);
                     parametros.Add(parametro);
-                    Conectar();
                     EjecutarStoredProcedure(RecursosDAOModulo10.ProcedimientoAgregarAsistenciaCompetencia, parametros);
                     cont++;
                 }
@@ -757,7 +756,6 @@ namespace DatosSKD.DAO.Modulo10
         {
             List<Entidad> listaHorarios = new List<Entidad>();
             List<Parametro> parametros;
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             try
             {
@@ -766,8 +764,8 @@ namespace DatosSKD.DAO.Modulo10
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoFechasCompetencias, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad horario = fabrica.ObtenerHorario();
-                    ((DominioSKD.Entidades.Modulo9.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.aliasFechaCompetencia].ToString());
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.aliasFechaCompetencia].ToString());
                     listaHorarios.Add(horario);
                 }
 

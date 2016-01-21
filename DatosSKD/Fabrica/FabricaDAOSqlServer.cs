@@ -12,6 +12,8 @@ using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
 using DatosSKD.InterfazDAO.Modulo10;
 using DatosSKD.DAO.Modulo10;
+using DatosSKD.InterfazDAO.Modulo11;
+using DatosSKD.DAO.Modulo11;
 
 
 namespace DatosSKD.Fabrica
@@ -152,6 +154,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 11
+        public static IDaoResultadoAscenso ObtenerDAOResultadoAscenso()
+        {
+            return new DaoResultadoAscenso();
+        }
         #endregion
 
         #region Modulo 12

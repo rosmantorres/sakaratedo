@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo10.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo11\DaoResultadoAscenso.cs" />
     <Compile Include="DAO\Modulo11\RecursosDAOModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +87,7 @@
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\Modulo10\IDaoAsistencia.cs" />
+    <Compile Include="InterfazDAO\Modulo11\IDaoResultadoAscenso.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCompra.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoEvento.cs" />
@@ -355,7 +357,6 @@
     <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />
     <Folder Include="DAO\Modulo9\" />
-    <Folder Include="InterfazDAO\Modulo11\" />
     <Folder Include="InterfazDAO\Modulo13\" />
     <Folder Include="InterfazDAO\Modulo15\" />
     <Folder Include="InterfazDAO\Modulo1\" />

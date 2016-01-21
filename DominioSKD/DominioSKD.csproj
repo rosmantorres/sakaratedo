@@ -46,10 +46,13 @@
     <Compile Include="Entidades\Modulo10\Asistencia.cs" />
     <Compile Include="Entidades\Modulo10\Correo.cs" />
     <Compile Include="Entidades\Modulo10\DocumentoIdentidad.cs" />
+    <Compile Include="Entidades\Modulo10\Evento.cs" />
+    <Compile Include="Entidades\Modulo10\Horario.cs" />
     <Compile Include="Entidades\Modulo10\InformacionPersonal.cs" />
     <Compile Include="Entidades\Modulo10\Inscripcion.cs" />
     <Compile Include="Entidades\Modulo10\Persona.cs" />
     <Compile Include="Entidades\Modulo10\Telefono.cs" />
+    <Compile Include="Entidades\Modulo10\TipoEvento.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoAscenso.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKata.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKumite.cs" />
