@@ -340,10 +340,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Button aux = (Button)sender;
                 String[] datos = aux.ID.Split('-');
 
-                //Expresion regular y variable a contener el numero
-                String expresionRegular = "^[1-9]+[0-9]*$";
+                //Expresion regular y lista que contendra los datos a ser validados por el mismo            
+                Regex expresionRegular = new Regex("^[1-9]+[0-9]*$");
+                List<String> datosValidar = new List<String>();
 
-                //Cantidad Deseada nueva por el usuario y en string
+                //Cantidad deseada nueva por el usuario y en string
                 int cantidad = 0;
                 String cantidadNueva = "";
 
@@ -376,8 +377,11 @@ namespace Interfaz_Presentadores.Modulo16
                         }
                     }
 
+                    //Agrego el input del usuario a la variable para validar los datos en la clase Validaciones
+                    datosValidar.Add(cantidadNueva);
+
                     //Verifico que sea un numero entero diferente de cero o negativo
-                    if (Regex.IsMatch(cantidadNueva, expresionRegular))
+                    if (Validaciones.ValidarExpresionRegular(datosValidar, expresionRegular))
                     {
                         //Decimos que se trata de un implemento y convertimos la cantidad deseada
                         TipoObjeto = 1;
@@ -424,8 +428,11 @@ namespace Interfaz_Presentadores.Modulo16
                         }
                     }
 
+                    //Agrego el input del usuario a la variable para validar los datos en la clase Validaciones
+                    datosValidar.Add(cantidadNueva);
+
                     //Verifico que sea un numero entero diferente de cero o negativo
-                    if (Regex.IsMatch(cantidadNueva, expresionRegular))
+                    if (Validaciones.ValidarExpresionRegular(datosValidar, expresionRegular))
                     {
                         //Decimos que se trata de un evento
                         TipoObjeto = 2;
