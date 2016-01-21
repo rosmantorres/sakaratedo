@@ -14,7 +14,7 @@ using LogicaNegociosSKD.Fabrica;
 using DominioSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo16
-{
+{/*
     /// <summary>
     /// Prueba unitaria del Caso de Uso Registrar Pago
     /// </summary>
@@ -254,5 +254,5 @@ namespace PruebasUnitariasSKD.Modulo16
             this.fabrica = null;          
             this.evento = null;
         }
-    }
+    }*/
 }

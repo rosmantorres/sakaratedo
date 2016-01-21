@@ -17,7 +17,7 @@ using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo16
-{
+{/*
     /// <summary>
     /// Prueba unitaria que trabaja sobre el DAO de Carrito
     /// </summary>
@@ -279,7 +279,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void PruebaModificarCarritosExceso()
         {
             /*Agrego Modifico un carrito en el que solo hay implementos poniendole una cantidad inexistente 
-            en en el stock*/
+            en en el stock
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
             Assert.IsFalse(this.daoPrueba.ModificarCarrito(this.persona, this.implemento, 1, 8000));
 
@@ -287,7 +287,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
 
             /*Modifico un carrito en hay implementos, eventos y matriculas, poniendole al implemento una cantidad
-            inexistente en el stock */
+            inexistente en el stock
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
             this.daoPrueba.agregarItem(this.persona3, this.evento, 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
@@ -309,7 +309,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void RegistrarPagosNormales()
         {
             /*Agregamos y Registramos el pago en un carrito 
-            donde solo hay Implementos y su cantidad se puede satisfacer*/
+            donde solo hay Implementos y su cantidad se puede satisfacer
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, "Tarjeta"));
 
@@ -483,7 +483,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.MatriculasCarrito = this.daoPrueba.getMatricula(this.persona4);
 
             /*Revisamos que hayan Implementos, Eventos y matriculas, ademas,
-              que efectivamente haya solo uno agregado de cada uno de ellos*/
+              que efectivamente haya solo uno agregado de cada uno de ellos
             Assert.IsTrue(this.ImplementosCarrito.Count == 1);
             Assert.IsTrue(this.EventosCarrito.Count == 1);
             Assert.IsTrue(this.MatriculasCarrito.Count == 1);
@@ -534,5 +534,5 @@ namespace PruebasUnitariasSKD.Modulo16
             this.evento = null;
             this.evento2 = null;     
         }
-    }
+    }*/
 }
