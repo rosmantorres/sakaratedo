@@ -401,56 +401,56 @@ namespace LogicaNegociosSKD.Fabrica
         #region Modulo 15
 
         #region ComandoAgregarImplemento -- ObtenerComandoAgregar
-        public Comando<bool> ObtenerComandoAgregar()
+        public static Comando<bool> ObtenerComandoAgregar()
         {
             return new ComandoAgregarImplemento();
         }
         #endregion
 
         #region ComandoConsultarTodosImplementos -- ObtenerComandoConsultar
-        public Comando<List<Entidad>> ObtenerComandoConsultar()
+        public static Comando<List<Entidad>> ObtenerComandoConsultar()
         {
             return new ComandoConsultarTodosImplementos();
         }
         #endregion
 
         #region ComandoConsultarTodosImplementos2 -- ObtenerComandoConsultar2
-        public Comando<List<Entidad>> ObtenerComandoConsultar2()
+        public static Comando<List<Entidad>> ObtenerComandoConsultar2()
         {
             return new ComandoConsultarTodosImplementos2();
         }
         #endregion
 
         #region ComandoEliminarImplemento -- ObtenerComandoEliminarImplemento
-        public Comando<bool> ObtenerComandoEliminarImplemento()
+        public static Comando<bool> ObtenerComandoEliminarImplemento()
         {
             return new ComandoEliminarImplemento();
         }
         #endregion
 
         #region ComandoModificarImplemento -- ObtenerComandoModificarImplemento
-        public Comando<bool> ObtenerComandoModificarImplemento()
+        public static Comando<bool> ObtenerComandoModificarImplemento()
         {
             return new ComandoModificarImplemento();
         }
         #endregion
 
         #region ComandoImplementoXId -- ObtenerComandoImplementoXId
-        public Comando<Entidad> ObtenerComandoImplementoXId()
+        public static Comando<Entidad> ObtenerComandoImplementoXId()
         {
             return new ComandoImplementoXId();
         }
         #endregion
 
         #region ComandoUsuarioDojo -- ObtenerComandoUsuarioDojo
-        public Comando<int> ObtenerComandoUsuarioDojo()
+        public static Comando<int> ObtenerComandoUsuarioDojo()
         {
             return new ComandoUsuarioDojo();
         }
         #endregion
 
         #region ComandoDojoId -- ObtenerComandoDojo
-        public Comando<Entidad> ObtenerComandoDojo()
+        public static Comando<Entidad> ObtenerComandoDojo()
         {
             return new ComandoDojoId();
         }

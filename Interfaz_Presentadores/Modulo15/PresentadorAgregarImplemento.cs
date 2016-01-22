@@ -21,27 +21,24 @@ namespace Interfaz_Presentadores.Modulo15
 
           public bool agregarImplemento(Entidad implemento) {
 
-              
-              FabricaComandos fabrica = new FabricaComandos();
-              Comando<bool> comandoAgregar=fabrica.ObtenerComandoAgregar();
+
+              Comando<bool> comandoAgregar = FabricaComandos.ObtenerComandoAgregar();
               comandoAgregar.LaEntidad = implemento;
               return comandoAgregar.Ejecutar();
           
           }
           public int usuarioDojo(Entidad usuario)
           {
-              FabricaComandos fabrica = new FabricaComandos();
 
-              Comando<int> comando = fabrica.ObtenerComandoUsuarioDojo();
+              Comando<int> comando = FabricaComandos.ObtenerComandoUsuarioDojo();
               comando.LaEntidad = usuario;
               return comando.Ejecutar();
 
           }
           public Entidad obtenerDojoXId(Entidad dojo)
           {
-              FabricaComandos fabrica = new FabricaComandos();
 
-              Comando<Entidad> comando = fabrica.ObtenerComandoDojo();
+              Comando<Entidad> comando = FabricaComandos.ObtenerComandoDojo();
               comando.LaEntidad = dojo;
               return comando.Ejecutar();
 

@@ -48,10 +48,9 @@ namespace templateApp.GUI.Modulo15
         }
 
         public void modificarImplemento(object sender,EventArgs e) {
-            FabricaEntidades fabrica = new FabricaEntidades();
-            Entidad implemento = fabrica.ObtenerImplemento();
+            Entidad implemento = FabricaEntidades.ObtenerImplemento();
             ((Implemento)implemento).Id_Implemento = Convert.ToInt16(this.id_implemento.Value);
-            ((Implemento)implemento).Dojo_Implemento = (Dojo)fabrica.ObtenerDojo();
+            ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
             ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
             ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
             ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;

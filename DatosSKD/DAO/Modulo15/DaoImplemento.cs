@@ -35,7 +35,6 @@ namespace DatosSKD.DAO.Modulo15
 
         public Entidad ConsultarXId(Entidad implemento)
         {
-            FabricaEntidades laFabrica = new FabricaEntidades();
             List<Implemento> laLista = new List<Implemento>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
@@ -66,8 +65,8 @@ namespace DatosSKD.DAO.Modulo15
                 //Obtengo todos los elementos del inventario del dojo donde pertenece el usuario logueado
                 foreach (DataRow row in resultado.Rows)
                 {
-                    elImplemento = (Implemento)laFabrica.ObtenerImplemento();
-                    elDojo = (Dojo)laFabrica.ObtenerDojos();
+                    elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
+                    elDojo = (Dojo)FabricaEntidades.tenerDojo();
                     elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
                     elImplemento.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                     elImplemento.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
@@ -150,7 +149,6 @@ namespace DatosSKD.DAO.Modulo15
 
         public Entidad DetallarImplemento(Entidad implemento)
         {
-            FabricaEntidades laFabrica = new FabricaEntidades();
             List<Implemento> laLista = new List<Implemento>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
@@ -181,7 +179,7 @@ namespace DatosSKD.DAO.Modulo15
                 //Obtengo todos los ids de implemento que posee ese dojo
                 foreach (DataRow row in resultado.Rows)
                 {
-                    elImplemento = (Implemento)laFabrica.ObtenerImplemento();
+                    elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
                     elImplemento.Imagen_implemento = row[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
                     elImplemento.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                     elImplemento.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
@@ -310,8 +308,7 @@ namespace DatosSKD.DAO.Modulo15
             BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
-            FabricaEntidades fabrica = new FabricaEntidades();
-            Entidad elDojo = fabrica.tenerDojo();
+            Entidad elDojo = FabricaEntidades.tenerDojo();
       
             try
             {
@@ -385,7 +382,6 @@ namespace DatosSKD.DAO.Modulo15
             List<Parametro> parametros;
             Parametro parametro;
             parametros = new List<Parametro>();
-            FabricaEntidades fabrica = new FabricaEntidades();
 
             try
             {
@@ -408,7 +404,7 @@ namespace DatosSKD.DAO.Modulo15
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad implemento = (Implemento)fabrica.ObtenerImplemento();
+                    Entidad implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
                     ((Implemento)implemento).Dojo_Implemento = new Dojo();
                     ((Implemento)implemento).Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                     ((Implemento)implemento).Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
@@ -472,11 +468,10 @@ namespace DatosSKD.DAO.Modulo15
                     throw ex;
                 }
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureConsultarInventario2, parametros);
-                FabricaEntidades fabrica = new FabricaEntidades();
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad implemento = fabrica.ObtenerImplemento();
+                    Entidad implemento = FabricaEntidades.ObtenerImplemento();
                     ((Implemento)implemento).Dojo_Implemento = new Dojo();
                     ((Implemento)implemento).Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                     ((Implemento)implemento).Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
@@ -515,10 +510,9 @@ namespace DatosSKD.DAO.Modulo15
           Entidad IDaoImplemento.implementoInventarioDatos(int idImplemento)
         {
             BDConexion laConexion;
-            FabricaEntidades fabrica = new FabricaEntidades();
 
-            Entidad implemento = fabrica.ObtenerImplemento();
-            ((Implemento)implemento).Dojo_Implemento = (Dojo)fabrica.ObtenerDojo();
+            Entidad implemento = FabricaEntidades.ObtenerImplemento();
+            ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
             List<Parametro> parametros;
             Parametro parametro;
             try
@@ -836,11 +830,10 @@ namespace DatosSKD.DAO.Modulo15
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureConsultarCarrito, parametros);
-                FabricaEntidades fabrica = new FabricaEntidades();
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad implemento = fabrica.ObtenerImplemento();
+                    Entidad implemento = FabricaEntidades.ObtenerImplemento();
                     ((Implemento)implemento).Dojo_Implemento = new Dojo();
                     ((Implemento)implemento).Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                     ((Implemento)implemento).Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
@@ -879,9 +872,8 @@ namespace DatosSKD.DAO.Modulo15
           Entidad IDaoImplemento.implementoInventarioDatosUltimo()
         {
             BDConexion laConexion;
-            FabricaEntidades fabrica = new FabricaEntidades();
 
-            Entidad implemento = fabrica.ObtenerImplemento();
+            Entidad implemento = FabricaEntidades.ObtenerImplemento();
             ((Implemento)implemento).Dojo_Implemento = new Dojo();
             List<Parametro> parametros;
             try
@@ -1418,10 +1410,9 @@ namespace DatosSKD.DAO.Modulo15
            Entidad InterfazDAO.IDao<Entidad, bool, Entidad>.ConsultarXId(Entidad parametro)
         {
             BDConexion laConexion;
-            FabricaEntidades fabrica = new FabricaEntidades();
 
-            Entidad implemento = fabrica.ObtenerImplemento();
-            ((Implemento)implemento).Dojo_Implemento = (Dojo)fabrica.ObtenerDojo();
+            Entidad implemento = FabricaEntidades.ObtenerImplemento();
+            ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
             List<Parametro> parametros;
             Parametro elParametro;
             try
@@ -1487,11 +1478,10 @@ namespace DatosSKD.DAO.Modulo15
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureConsultarCarrito, parametros);
-                FabricaEntidades fabrica = new FabricaEntidades();
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad implemento = fabrica.ObtenerImplemento();
+                    Entidad implemento = FabricaEntidades.ObtenerImplemento();
                     ((Implemento)implemento).Dojo_Implemento = new Dojo();
                     ((Implemento)implemento).Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
                     ((Implemento)implemento).Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();

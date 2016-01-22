@@ -49,11 +49,10 @@ namespace templateApp.GUI.Modulo15
             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
 
             //***************************
-            FabricaEntidades fabrica = new FabricaEntidades();
-            Entidad usuarioDojo = fabrica.ObtenerUsuario();
+            Entidad usuarioDojo = FabricaEntidades.tenerDojo();
             ((Usuario)usuarioDojo)._Nombre = usuario;
-            Entidad implemento = fabrica.ObtenerImplemento();
-            ((Implemento)implemento).Dojo_Implemento = (Dojo)fabrica.ObtenerDojo();
+            Entidad implemento = FabricaEntidades.ObtenerImplemento();
+            ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
             ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
             ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
             ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;

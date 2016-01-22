@@ -44,11 +44,10 @@ namespace templateApp.GUI.Modulo15
             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
           
             //***************************
-            FabricaEntidades fabrica = new FabricaEntidades();
-            Entidad usuarioLogear = fabrica.ObtenerUsuario();
+            Entidad usuarioLogear = FabricaEntidades.ObtenerUsuario();
             ((Usuario)usuarioLogear)._Nombre = usuario;
             int dojoUsuario = presentador.usuarioDojo(usuarioLogear);
-            Entidad dojo = fabrica.tenerDojo();
+            Entidad dojo = FabricaEntidades.tenerDojo();
             ((Dojo)dojo).Dojo_Id = dojoUsuario;
             dojo= presentador.obtenerDojoXId(dojo);
             this.nombre_dojo.InnerText = ((Dojo)dojo).Nombre_dojo;

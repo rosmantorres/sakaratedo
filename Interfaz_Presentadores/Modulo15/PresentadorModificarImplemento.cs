@@ -23,10 +23,8 @@ namespace Interfaz_Presentadores.Modulo15
 
 
           public Entidad precargarImplemento(int idImplemento) {
-              FabricaComandos fabrica = new FabricaComandos();
-              FabricaEntidades fabrica2 = new FabricaEntidades();
-            Comando<Entidad> comando = fabrica.ObtenerComandoImplementoXId();
-            Entidad implemento = fabrica2.ObtenerImplemento();
+              Comando<Entidad> comando = FabricaComandos.ObtenerComandoImplementoXId();
+            Entidad implemento = FabricaEntidades.ObtenerImplemento();
             ((Implemento)implemento).Id_Implemento = idImplemento;
             comando.LaEntidad = implemento;
             return comando.Ejecutar();
@@ -34,9 +32,8 @@ namespace Interfaz_Presentadores.Modulo15
           }
           public bool modificarImplemento(Entidad implemento)
           {
-              FabricaComandos fabrica = new FabricaComandos();
 
-              Comando<bool> comandoModificar = fabrica.ObtenerComandoModificarImplemento();
+              Comando<bool> comandoModificar = FabricaComandos.ObtenerComandoModificarImplemento();
               comandoModificar.LaEntidad = implemento;
               return comandoModificar.Ejecutar();
 

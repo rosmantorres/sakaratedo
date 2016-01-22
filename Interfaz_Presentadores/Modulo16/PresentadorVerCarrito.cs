@@ -370,7 +370,7 @@ namespace Interfaz_Presentadores.Modulo16
                         cantidad = int.Parse(cantidadNueva);
 
                         //Pasamos el ID que vino del boton                    
-                        Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                        Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
                         objeto.Id = int.Parse(datos[1]);
 
                         //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
@@ -643,7 +643,7 @@ namespace Interfaz_Presentadores.Modulo16
                 TipoObjeto = 1;
 
                 //Pasamos el ID que vino del boton
-                Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
                // objeto.Id = int.Parse(datos[1]);
 
                 FabricaComandos fabricac = new FabricaComandos();

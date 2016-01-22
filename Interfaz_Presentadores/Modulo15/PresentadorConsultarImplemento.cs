@@ -9,6 +9,7 @@ using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Fabrica;
 using Interfaz_Contratos.Modulo15;
 using LogicaNegociosSKD;
+using LogicaNegociosSKD.Comandos.Modulo15;
 using LogicaNegociosSKD.Fabrica;
 namespace Interfaz_Presentadores.Modulo15
 {
@@ -24,8 +25,7 @@ namespace Interfaz_Presentadores.Modulo15
          public List<Entidad> cargarListaImplementos(Entidad dojo)
          {  
              Comando<List<Entidad>> comando;
-             FabricaComandos fabrica= new FabricaComandos();
-             comando = fabrica.ObtenerComandoConsultar();
+             comando = FabricaComandos.ObtenerComandoConsultar();
              comando.LaEntidad = dojo;
              return comando.Ejecutar();
         
@@ -34,8 +34,7 @@ namespace Interfaz_Presentadores.Modulo15
          public List<Entidad> cargarListaImplementos2(Entidad dojo)
          {
              Comando<List<Entidad>> comando;
-             FabricaComandos fabrica = new FabricaComandos();
-             comando = fabrica.ObtenerComandoConsultar2();
+             comando = FabricaComandos.ObtenerComandoConsultar2();
              comando.LaEntidad = dojo;
              return comando.Ejecutar();
 
@@ -44,13 +43,13 @@ namespace Interfaz_Presentadores.Modulo15
          public bool eliminarImplemento(string implemento ,int dojoid)
          {                        
              Comando<bool> comando;
-             FabricaEntidades fabricaEntidades = new FabricaEntidades();
-             Entidad implementoEliminar = fabricaEntidades.ObtenerImplemento();
-             FabricaComandos fabrica = new FabricaComandos();
-             comando = fabrica.ObtenerComandoEliminarImplemento();
+             Entidad implementoEliminar = FabricaEntidades.ObtenerImplemento();
+             Entidad dojoEliminar = FabricaEntidades.tenerDojo();
+             comando = FabricaComandos.ObtenerComandoEliminarImplemento();
              ((Implemento)implementoEliminar).Id_Implemento = Convert.ToInt32(implemento);
-             ((Implemento)implementoEliminar).Stock_Minimo_Implemento=dojoid;
+             ((Dojo)dojoEliminar).Dojo_Id=dojoid;
              comando.LaEntidad = implementoEliminar;
+             ((ComandoEliminarImplemento)comando).Dojo = dojoEliminar;
              return comando.Ejecutar();
 
          }
@@ -58,18 +57,16 @@ namespace Interfaz_Presentadores.Modulo15
       
 
          public int usuarioDojo(Entidad usuario) {
-             FabricaComandos fabrica = new FabricaComandos();
 
-             Comando<int> comando = fabrica.ObtenerComandoUsuarioDojo();
+             Comando<int> comando = FabricaComandos.ObtenerComandoUsuarioDojo();
              comando.LaEntidad = usuario;
              return comando.Ejecutar();
          
          }
          public Entidad obtenerDojoXId(Entidad dojo)
          {
-             FabricaComandos fabrica = new FabricaComandos();
 
-             Comando<Entidad> comando = fabrica.ObtenerComandoDojo();
+             Comando<Entidad> comando = FabricaComandos.ObtenerComandoDojo();
              comando.LaEntidad=dojo;
              return comando.Ejecutar();
 

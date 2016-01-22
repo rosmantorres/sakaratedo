@@ -343,7 +343,7 @@ namespace Interfaz_Presentadores.Modulo16
                 String[] datos = aux.ID.Split('-');
 
                 //Creo el implemento asignandole su ID                
-                Implemento implemento = (Implemento)fabrica.ObtenerImplemento();
+                Implemento implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
                 implemento.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar y la cantidad que se desea de ese item
