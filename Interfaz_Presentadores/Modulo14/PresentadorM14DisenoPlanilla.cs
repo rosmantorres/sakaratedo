@@ -127,9 +127,10 @@ namespace Interfaz_Presentadores.Modulo14
                     if (vista.CKEditor1.Text != "")
                     {
                         ((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido = vista.CKEditor1.Text;
-                        ComandoModificarDiseno comando = 
-                            (ComandoModificarDiseno)fabrica.ObtenerComandoModificarDiseno();
-                        comando.Diseño = dis;
+                        ComandoAgregarDiseno comando =
+                         (ComandoAgregarDiseno)fabrica.ObtenerComandoAgregarDiseno();
+                        comando.Diseño = diseño;
+                        comando.Planilla = planilla1;
                         exito = comando.Ejecutar();
 
                         if (exito)
