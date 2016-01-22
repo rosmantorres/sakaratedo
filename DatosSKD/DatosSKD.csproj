@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo14.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Modulo16\DaoCarrito.cs" />
     <Compile Include="DAO\Modulo16\DaoCompra.cs" />
     <Compile Include="DAO\Modulo16\DaoEvento.cs" />
@@ -99,7 +104,6 @@
     <Compile Include="InterfazDAO\Modulo16\IdaoMensualidad.cs" />
     <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
     <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
-    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
     <Compile Include="DAO\Modulo14\DaoDatos.cs" />
     <Compile Include="DAO\Modulo14\DaoDiseno.cs" />
     <Compile Include="DAO\Modulo3\DaoOrganizacion.cs" />
@@ -247,7 +251,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx" />
+    <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo14.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo3\RecursosDaoModulo3.resx" />
     <EmbeddedResource Include="DAO\Modulo5\RecursosDaoModulo5.resx" />
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
