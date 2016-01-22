@@ -58,6 +58,25 @@
     <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoConsultarEventoDetalle.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasEnCategoriaYAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKataAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumiteAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaEspecialidadesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosExamenAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosCompetenciaPasado.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosEventosPasados.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
@@ -322,7 +341,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
-    <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo1\" />
