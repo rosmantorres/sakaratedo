@@ -3,6 +3,7 @@ using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
+using LogicaNegociosSKD.Fabrica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,9 +80,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 daoDatos.LimpiarSQLConnection();
                 diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarDisenoID(solicitud);
                 daoDiseno.LimpiarSQLConnection();
-                Fabrica.FabricaComandos fComandos = new Fabrica.FabricaComandos();
-                ComandoReemplazarElementos comand = 
-                    (ComandoReemplazarElementos)fComandos.ObtenerComandoReemplazarElementos();
+                ComandoReemplazarElementos comand =
+                    (ComandoReemplazarElementos)FabricaComandos.ObtenerComandoReemplazarElementos();
                 comand.Info = diseñoPlanilla.Contenido;
                 //comand.Info = solicitud.Diseno.Contenido;
                 comand.Persona = persona;

@@ -68,12 +68,11 @@ namespace Interfaz_Presentadores.Modulo14
 
         public List<Entidad> LlenarTabla(int idPersona)
         {
-            FabricaComandos fabrica = new FabricaComandos();
 
             try
             {
                 ComandoListarPlanillasSolicitadas command =(ComandoListarPlanillasSolicitadas)
-                    fabrica.ObtenerComandoListarPlanillasSolicitadas();
+                    FabricaComandos.ObtenerComandoListarPlanillasSolicitadas();
                 command.IDPersona = idPersona;
                 return command.Ejecutar();
             }
@@ -111,11 +110,10 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void EliminarFilaTable(HttpRequest request, int idSol)
         {
-            FabricaComandos fabrica = new FabricaComandos();
             try
             {
                 ComandoEliminarSolicitud command = (ComandoEliminarSolicitud)
-                    fabrica.ObtenerComandoEliminarSolicitud();
+                    FabricaComandos.ObtenerComandoEliminarSolicitud();
                 command.iDSolicitud = idSol;
                 Boolean succecs = command.Ejecutar();
                 if (succecs)

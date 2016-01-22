@@ -22,10 +22,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
         public override Entidad Ejecutar()
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
             DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
                 (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
-            ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)fabricaComandos.ObtenerComandoModificarPlanillaID();
+            ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)FabricaComandos.ObtenerComandoModificarPlanillaID();
 
             try
             {
