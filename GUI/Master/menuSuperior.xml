@@ -27,7 +27,7 @@
   </opcion>
 
   <opcion rol="Sistema-Dojo-Entrenador" nombre="Mercancía">
-    <subopcion rol="Sistema-Dojo-Entrenador" nombre="Inventario" link="~/GUI/Modulo15/M15_ConsultarImplemento.aspx"/>
+    <subopcion rol="Sistema-Dojo-Entrenador" nombre="Inventario" link="~/GUI/Modulo15/web_15_ConsultarImplemento.aspx"/>
   </opcion>
 
     <opcion rol="Sistema-Organización-Entrenador-Atleta-Representante-Dojo" nombre="Planillas">

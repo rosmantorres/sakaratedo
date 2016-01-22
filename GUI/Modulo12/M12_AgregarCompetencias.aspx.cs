@@ -7,16 +7,24 @@ using System.Web.UI.WebControls;
 using DominioSKD;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using Interfaz_Contratos.Modulo12;
+using Interfaz_Presentadores.Modulo12;
 
 namespace templateApp.GUI.Modulo12
 {
-    public partial class M12_AgregarCompetencias : System.Web.UI.Page
+    public partial class M12_AgregarCompetencias : System.Web.UI.Page, IContratoAgregarCompetencias
     {
         private DominioSKD.Competencia laCompetencia = new DominioSKD.Competencia();
         private LogicaNegociosSKD.Modulo12.LogicaCompetencias laLogica = new LogicaNegociosSKD.Modulo12.LogicaCompetencias();
         private List<Organizacion> listaOrg = new List<Organizacion>();
         private List<Cinta> listaCintaDesde = new List<Cinta>();
         private List<Cinta> listaCintaHasta = new List<Cinta>();
+        private PresentadorAgregarCompetencia presentador;
+
+        public M12_AgregarCompetencias()
+        {
+            presentador = new PresentadorAgregarCompetencia(this);
+        }
 
         protected DateTime convertirFecha(string fechaE)
         {
@@ -45,75 +53,13 @@ namespace templateApp.GUI.Modulo12
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = M12_RecursoInterfaz.idModulo;
-            String errorMalicioso = Request.QueryString[M12_RecursoInterfaz.errorGet];
 
-            if (errorMalicioso != null)
-            {
-                if (errorMalicioso.Equals(M12_RecursoInterfaz.strErrorMalicioso))
-                {
-                    alert.Attributes[M12_RecursoInterfaz.alertClase] = M12_RecursoInterfaz.alertaError;
-                    alert.Attributes[M12_RecursoInterfaz.alertRole] = M12_RecursoInterfaz.tipoAlerta;
-                    alert.InnerHtml = M12_RecursoInterfaz.alertaHtml + M12_RecursoInterfaz.inputMalicioso + M12_RecursoInterfaz.alertaHtmlFinal;
-                    alert.Visible = true;
-                }
-            }
+            presentador.ObtenerVariablesURL();
 
             #region LLENAR COMBO ORGANIZACIONES DE COMPETENCIA Y COMBOS CINTA
             if (!IsPostBack)
             {
-                try
-                {
-                    Dictionary<string, string> options = new Dictionary<string, string>();
-                    options.Add("-1", M12_RecursoInterfaz.selectOrganizacion);
-                    listaOrg = laLogica.M12obtenerListaDeOrganizaciones();
-
-                    foreach (Organizacion o in listaOrg)
-                    {
-                        options.Add(o.Id_organizacion.ToString(), o.Nombre);
-                    }
-                    comboOrgs.DataSource = options;
-                    comboOrgs.DataTextField = M12_RecursoInterfaz.valueCombo;
-                    comboOrgs.DataValueField = M12_RecursoInterfaz.keyCombo;
-                    comboOrgs.DataBind();
-
-                    Dictionary<int, string> optionsCin1 = new Dictionary<int, string>();
-                    optionsCin1.Add(-1, M12_RecursoInterfaz.selectCinta);
-                    listaCintaDesde = laLogica.M12obtenerListaDeCintas();
-                    listaCintaHasta = laLogica.M12obtenerListaDeCintas();
-
-                    foreach (Cinta c in listaCintaDesde)
-                    {
-                        optionsCin1.Add(c.Orden, c.Color_nombre);
-                    }
-                    comboCintaDesde.DataSource = optionsCin1;
-                    comboCintaDesde.DataTextField = M12_RecursoInterfaz.valueCombo;
-                    comboCintaDesde.DataValueField = M12_RecursoInterfaz.keyCombo;
-                    comboCintaDesde.DataBind();
-
-                    Dictionary<int, string> optionsCin2 = new Dictionary<int, string>();
-                    optionsCin2.Add(-1, M12_RecursoInterfaz.selectCinta);
-                    comboCintaHasta.DataSource = optionsCin2;
-                    comboCintaHasta.DataTextField = M12_RecursoInterfaz.valueCombo;
-                    comboCintaHasta.DataValueField = M12_RecursoInterfaz.keyCombo;
-                    comboCintaHasta.DataBind();
-
-                    foreach (Cinta c in listaCintaHasta)
-                    {
-                        optionsCin2.Add(c.Orden, c.Color_nombre);
-                    }
-                    comboCintaHasta.DataSource = optionsCin2;
-                    comboCintaHasta.DataTextField = M12_RecursoInterfaz.valueCombo;
-                    comboCintaHasta.DataValueField = M12_RecursoInterfaz.keyCombo;
-                    comboCintaHasta.DataBind();
-
-                }
-                catch (ExcepcionesSKD.ExceptionSKD ex)
-                {
-                    alert.Attributes[M12_RecursoInterfaz.alertClase] = M12_RecursoInterfaz.alertaError;
-                    alert.Attributes[M12_RecursoInterfaz.alertRole] = M12_RecursoInterfaz.tipoAlerta;
-                    alert.InnerHtml = M12_RecursoInterfaz.alertaHtml + ex.Mensaje + M12_RecursoInterfaz.alertaHtmlFinal;
-                    alert.Visible = true;
-                }
+                presentador.LlenarCombos();
             }
             #endregion
 
@@ -247,7 +193,7 @@ namespace templateApp.GUI.Modulo12
         }
 
 
-
+        #region void
         protected void comboSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -262,5 +208,173 @@ namespace templateApp.GUI.Modulo12
         {
 
         }
+        #endregion
+        #region Contrato
+        string IContratoAgregarCompetencias.nombreComp
+        {
+            get { return nombreComp.Text; }
+        }
+
+        public string tipoCompKumite
+        {
+            get { return tipoCompKumite; }
+        }
+
+        public bool tipoCompKumiteBool
+        {
+            get { return tipoCompKumiteBool; }
+        }
+
+        public string tipoCompKata
+        {
+            get { return tipoCompKata; }
+        }
+
+        public bool tipoCompKataBool
+        {
+            get { return tipoCompKataBool; }
+        }
+
+        public string tipoCompAmbos
+        {
+            get { return tipoCompAmbos; }
+        }
+
+        public bool tipoCompAmbosBool
+        {
+            get { return tipoCompAmbosBool; }
+        }
+
+        public bool orgCompBool
+        {
+            get { return orgCompBool; }
+        }
+
+        DropDownList IContratoAgregarCompetencias.organizacionComp
+        {
+            get
+            {
+                return comboOrgs;
+            }
+            set
+            {
+                comboOrgs = value;
+            }
+        }
+
+        public string statusIniciarComp
+        {
+            get { return statusIniciarComp; }
+        }
+
+        public bool statusIniciarCompBool
+        {
+            get { return statusIniciarCompBool; }
+        }
+
+        public string statusEnCursoComp
+        {
+            get { return statusEnCursoComp; }
+        }
+
+        public bool statusEnCursoCompBool
+        {
+            get { return statusEnCursoCompBool; }
+        }
+
+        string IContratoAgregarCompetencias.costoComp
+        {
+            get { return costoComp.Text; }
+        }
+
+        public string inicioComp
+        {
+            get { return inicioComp; }
+        }
+
+        public string finComp
+        {
+            get { return finComp; }
+        }
+
+        string IContratoAgregarCompetencias.latitudComp
+        {
+            get { return txtLAT.Value; }
+        }
+
+        string IContratoAgregarCompetencias.longitudComp
+        {
+            get { return txtLONG.Value; }
+        }
+
+        DropDownList IContratoAgregarCompetencias.categIniComp
+        {
+            get
+            {
+                return comboCintaDesde;
+            }
+            set
+            {
+                comboCintaDesde = value;
+            }
+        }
+
+        DropDownList IContratoAgregarCompetencias.categFinComp
+        {
+            get
+            {
+                return comboCintaHasta;
+            }
+            set
+            {
+                comboCintaHasta = value;
+            }
+        }
+
+        public string edadIniComp
+        {
+            get { return edadIniComp; }
+        }
+
+        public string edadFinComp
+        {
+            get { return edadFinComp; }
+        }
+
+        public string categSexoMComp
+        {
+            get { return categSexoMComp; }
+        }
+
+        public bool categSexoMCompBool
+        {
+            get { return categSexoMCompBool; }
+        }
+
+        public string cateSexoFComp
+        {
+            get { return cateSexoFComp; }
+        }
+
+        public bool cateSexoFCompBool
+        {
+            get { return cateSexoFCompBool; }
+        }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[M12_RecursoInterfaz.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[M12_RecursoInterfaz.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+        #endregion
     }
 }
