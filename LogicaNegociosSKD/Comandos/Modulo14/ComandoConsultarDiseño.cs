@@ -41,11 +41,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            DaoDiseno daoDiseno = (DaoDiseno)fabrica.ObtenerDAODiseno();
-            DaoDatos daoDatos = (DaoDatos)fabrica.ObtenerDAODatos();
-            DaoSolicitud daoSol = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+            DaoDiseno daoDiseno = (DaoDiseno)FabricaDAOSqlServer.ObtenerDAODiseno();
+            DaoDatos daoDatos = (DaoDatos)FabricaDAOSqlServer.ObtenerDAODatos();
+            DaoSolicitud daoSol = (DaoSolicitud)FabricaDAOSqlServer.ObtenerDAOSolicitud();
             try
             {
                 Persona persona = (Persona)FabricaEntidades.ObtenerPersona();
