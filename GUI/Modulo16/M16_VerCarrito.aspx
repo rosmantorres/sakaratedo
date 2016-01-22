@@ -239,13 +239,26 @@
                                 <option value="2">Deposito</option>
                                 <option value="3">Transferencia</option>
                                 </select>
-                     <br />
+                     
                 
                   </div>
                  <br />
             </div>
         </div>
         <br />
+        <h4 class="modal-title">Información del pago:</h4>
+        <div class="form-group">
+	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="DatoPago" type="text" placeholder="Ingrese el dato de su tipo de pago" class="form-control" name="Text1" runat="server"/>
+		    </div>
+            </div>
+            <br />
+        <h4 class="modal-title">Monto a debitar:</h4>
+        <div class="form-group">
+	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="Monto" type="text" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
+		    </div>
+	    </div>
      <%--  <h4 class="modal-title">Tarjeta Credito/Debito</h4>
         <div class="form-group">
 	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
