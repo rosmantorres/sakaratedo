@@ -76,6 +76,7 @@ namespace DominioSKD.Entidades.Modulo14
             this.motivo = motivo;
             this.idInscripcion = idInscripcion;
         }
+        
         #endregion
 
         #region gets y sets
@@ -123,6 +124,7 @@ namespace DominioSKD.Entidades.Modulo14
             get { return idDiseno; }
             set { idDiseno = value; }
         }
+     
         #endregion
 
 
