@@ -9,6 +9,7 @@ using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
+using DatosSKD.InterfazDAO.Modulo15;
 
 
 namespace LogicaNegociosSKD.Comandos.Modulo16

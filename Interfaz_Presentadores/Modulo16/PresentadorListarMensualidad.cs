@@ -315,7 +315,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -323,7 +323,7 @@ namespace Interfaz_Presentadores.Modulo16
                 String[] datos = aux.ID.Split('-');
 
                 //Creo la mensualidad asignandole su ID                
-                Matricula matricula = (Matricula)fabrica.ObtenerMatricula();
+                Matricula matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
                 matricula.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar

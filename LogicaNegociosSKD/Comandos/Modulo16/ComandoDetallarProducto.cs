@@ -11,6 +11,7 @@ using DatosSKD.InterfazDAO;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using DominioSKD.Fabrica;
+using DatosSKD.InterfazDAO.Modulo15;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {

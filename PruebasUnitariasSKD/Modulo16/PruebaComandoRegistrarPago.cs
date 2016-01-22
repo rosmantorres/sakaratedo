@@ -54,7 +54,11 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //Las fabricas
+<<<<<<< HEAD
             fabrica = new FabricaEntidades();           
+=======
+            fabricacomando = new FabricaComandos();
+>>>>>>> refs/remotes/origin/master
 
             //Dos implementos distintos
             this.implemento = new Implemento();
@@ -62,24 +66,32 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
             
             //Iniciamos los atributos para la prueba de vacio
+<<<<<<< HEAD
             this.persona = fabrica.ObtenerPersona();
             this.PruebaComandoVacio = FabricaComandos.CrearComandoRegistrarPago();
             this.PruebaComandoVacio2 = FabricaComandos.CrearComandoRegistrarPago(this.persona, "prueba");
             this.pruebaComandoVacio3 = (ComandoRegistrarPago)FabricaComandos.CrearComandoRegistrarPago();
             this.pruebaComandoVacio4 = (ComandoRegistrarPago)FabricaComandos.CrearComandoRegistrarPago
+=======
+            this.persona = FabricaEntidades.ObtenerPersona();
+            this.PruebaComandoVacio = fabricacomando.CrearComandoRegistrarPago();
+            this.PruebaComandoVacio2 = fabricacomando.CrearComandoRegistrarPago(this.persona, "prueba");
+            this.pruebaComandoVacio3 = (ComandoRegistrarPago)fabricacomando.CrearComandoRegistrarPago();
+            this.pruebaComandoVacio4 = (ComandoRegistrarPago)fabricacomando.CrearComandoRegistrarPago
+>>>>>>> refs/remotes/origin/master
                 (this.persona, "prueba");
             
             //La persona
             this.persona.Id = 11;
-            this.persona2 = fabrica.ObtenerPersona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = fabrica.ObtenerPersona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = fabrica.ObtenerPersona();
+            this.persona4 = FabricaEntidades.ObtenerPersona();
             this.persona4.Id = 14;
-            this.persona5 = fabrica.ObtenerPersona();
+            this.persona5 = FabricaEntidades.ObtenerPersona();
             this.persona5.Id = 15;
-            this.persona6 = fabrica.ObtenerPersona();
+            this.persona6 = FabricaEntidades.ObtenerPersona();
             this.persona6.Id = 16;
 
             //Implemento

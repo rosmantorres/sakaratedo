@@ -53,14 +53,15 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //Las fabricas
+
             fabrica = new FabricaEntidades();
         
             //Las personas
-            this.persona = fabrica.ObtenerPersona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = fabrica.ObtenerPersona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = fabrica.ObtenerPersona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
 
             //Implemento

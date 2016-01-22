@@ -29,14 +29,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
         public override Boolean Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandoModulo14.MsjLoggerInfo, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 FabricaEntidades fabricaEntidad = new FabricaEntidades();
                 ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
-                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                DaoDiseno dao = (DaoDiseno)FabricaDAOSqlServer.ObtenerDAODiseno();
                 dao.LimpiarSQLConnection();
                 return dao.GuardarDiseñoBD(this.diseño, this.planilla); 
             }

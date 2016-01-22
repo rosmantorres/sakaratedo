@@ -78,9 +78,8 @@ namespace Interfaz_Presentadores.Modulo14
 
         public bool AgregarSolicitud()
         {
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             FabricaComandos fabricaComandos = new FabricaComandos();
-            Entidad planilla = fabricaEntidades.ObtenerPlanilla();
+            Entidad planilla = FabricaEntidades.ObtenerPlanilla();
             ((DominioSKD.Entidades.Modulo14.Planilla)planilla).ID = Int32.Parse(vista.planillaId);
             //LogicaSolicitud lS = new LogicaSolicitud();
             Comando<bool> comandoRegistrarSolicitudPlanilla = fabricaComandos.ObtenerComandoRegistrarSolicitudPlanilla();
@@ -96,8 +95,8 @@ namespace Interfaz_Presentadores.Modulo14
                         {
                             //SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
                             //                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
-                            Entidad laSolicitud = 
-                                fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, 
+                            Entidad laSolicitud =
+                                FabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, 
                                 vista.FechaReincorporacion,
                                                      vista.Motivo,
                                                      (DominioSKD.Entidades.Modulo14.Planilla
@@ -112,7 +111,7 @@ namespace Interfaz_Presentadores.Modulo14
                         {
                             // SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
                             //                              this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
-                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(
+                            Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(
                                 vista.fechaRetiroI, vista.FechaReincorporacion,
                                                      vista.Motivo,
                                                      (DominioSKD.Entidades.Modulo14.Planilla
@@ -127,8 +126,8 @@ namespace Interfaz_Presentadores.Modulo14
                             /* SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
                                                           this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));*/
 
-                            Entidad laSolicitud = 
-                                fabricaEntidades.ObtenerSolicitudP(
+                            Entidad laSolicitud =
+                                FabricaEntidades.ObtenerSolicitudP(
                                 vista.fechaRetiroI, vista.FechaReincorporacion,
                                                      vista.Motivo,
                                                      (DominioSKD.Entidades.Modulo14.Planilla
@@ -176,11 +175,10 @@ namespace Interfaz_Presentadores.Modulo14
                 vista.IDPlanillaVisible = false;
 
                //LogicaSolicitud lP = new LogicaSolicitud();
-                FabricaEntidades fabricaEnt = new FabricaEntidades();
                 FabricaComandos fabricaCo = new FabricaComandos();
                 Comando<List<Boolean>> comandoDatosRequeridosSolicitud = fabricaCo.ObtenerComandoDatosRequeridosSolicitud();
                // List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(idPlanilla);
-                ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = fabricaEnt.ObtenerPlanilla();
+                ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = FabricaEntidades.ObtenerPlanilla();
                 ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id = idPlanilla;
                 List<Boolean> datosRequeridos = comandoDatosRequeridosSolicitud.Ejecutar();
                 if (datosRequeridos[0] == true)

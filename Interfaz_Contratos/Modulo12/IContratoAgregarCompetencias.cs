@@ -29,8 +29,8 @@ namespace Interfaz_Contratos.Modulo12
         string longitudComp { get; }
         DropDownList categIniComp { get; set; }
         DropDownList categFinComp { get; set; }
-        string categEdadIniComp { get; }
-        string cateEdadFinComp { get; }
+        string edadIniComp { get; }
+        string edadFinComp { get; }
         string categSexoMComp { get; }
         bool categSexoMCompBool { get; }
         string cateSexoFComp { get; }

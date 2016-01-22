@@ -10,10 +10,13 @@ using DatosSKD.InterfazDAO.Modulo12;
 //using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo15;
+using DatosSKD.DAO.Modulo15;
 using DatosSKD.InterfazDAO.Modulo10;
 using DatosSKD.DAO.Modulo10;
 using DatosSKD.InterfazDAO.Modulo11;
 using DatosSKD.DAO.Modulo11;
+using DatosSKD.InterfazDAO.Modulo14;
 
 
 namespace DatosSKD.Fabrica
@@ -183,28 +186,32 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 14
-        public DAOGeneral ObtenerDAOPlanilla()
+        public static IDaoPlanilla ObtenerDAOPlanilla()
         {
             return new DaoPlanilla();
         }
 
-        public DAOGeneral ObtenerDAOSolicitud()
+        public static IDaoSolicitud ObtenerDAOSolicitud()
         {
             return new DaoSolicitud();
         }
 
-        public DAOGeneral ObtenerDAODiseno()
+        public static IDaoDiseno ObtenerDAODiseno()
         {
             return new DaoDiseno();
         }
 
-        public DAOGeneral ObtenerDAODatos()
+        public static IDaoDatos ObtenerDAODatos()
         {
             return new DaoDatos();
         }
         #endregion
 
         #region Modulo 15
+        public static IDaoImplemento ObtenerDAOImplemento()
+        {
+            return new DaoImplemento();
+        }
         #endregion
 
         #region Modulo 16
@@ -231,9 +238,10 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del evento
         /// </summary>
         /// <returns>el DaoEvento</returns>
-        public static InterfazDAO.Modulo16.IdaoImplemento ObtenerDaoProductos()
+		
+        public static IDaoImplemento ObtenerDaoProductos()
         {
-            return new DatosSKD.DAO.Modulo16.DaoImplemento();
+            return new DaoImplemento();
         }
 
         /// <summary>
@@ -276,9 +284,10 @@ namespace DatosSKD.Fabrica
         /// Metodo de la fabrica que instancia el DAO del detalleProducto
         /// </summary>
         /// <returns>el DaoImplemento</returns>
-        public static InterfazDAO.Modulo16.IdaoImplemento ObtenerDaoDetalleProducto()
+
+        public static IDaoImplemento ObtenerDaoDetalleProducto()
         {
-            return new DatosSKD.DAO.Modulo16.DaoImplemento();
+            return new DaoImplemento();
         }
 
         /// <summary>
