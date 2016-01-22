@@ -280,6 +280,21 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarXIdCompetencia(paramEntidad);
         }
 
+        public Comando<bool> ObtenerComandoAgregarCompetencia(Entidad paramEntidad)
+        {
+            return new ComandoAgregarCompetencia(paramEntidad);
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultarOrgazaniciones()
+        {
+            return new ComandoConsultarOrganizaciones();
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultarCintas()
+        {
+            return new ComandoConsultarCintas();
+        }
+
         #endregion
 
         #region Modulo 13
