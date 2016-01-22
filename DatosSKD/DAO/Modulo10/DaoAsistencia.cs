@@ -26,7 +26,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 parametros = new List<Parametro>();
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimentoConsultarEventoAsistido, parametros);
                 foreach (DataRow row in dt.Rows)
@@ -63,10 +62,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
 
             return listaEventos;
         }
@@ -82,7 +77,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 parametros = new List<Parametro>();
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimentoConsultarCompetenciaAsistida, parametros);
                 foreach (DataRow row in dt.Rows)
@@ -116,10 +110,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
 
             return listaCompetencia;
         }
@@ -134,7 +124,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> personas = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
                 parametros.Add(parametro);
@@ -168,10 +157,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return personas;
         }
 
@@ -185,7 +170,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> personas = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
                 parametros.Add(parametro);
@@ -219,10 +203,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return personas;
 
         }
@@ -244,7 +224,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> personas = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
                 parametros.Add(parametro);
@@ -278,10 +257,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return personas;
         }
 
@@ -295,7 +270,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> personas = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
                 parametros.Add(parametro);
@@ -328,10 +302,6 @@ namespace DatosSKD.DAO.Modulo10
             catch (Exception ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            finally
-            {
-                Desconectar();
             }
             return personas;
         }
@@ -405,7 +375,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
                 parametros.Add(parametro);
@@ -442,10 +411,6 @@ namespace DatosSKD.DAO.Modulo10
             catch (Exception ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            finally
-            {
-                Desconectar();
             }
             return competencia;
         }
@@ -514,7 +479,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> personas = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
                 parametros.Add(parametro);
@@ -548,10 +512,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return personas;
         }
 
@@ -567,7 +527,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
                 parametros.Add(parametro);
@@ -614,10 +573,6 @@ namespace DatosSKD.DAO.Modulo10
             catch (Exception ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            finally
-            {
-                Desconectar();
             }
             return inscripciones;
         }
@@ -739,7 +694,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 parametros = new List<Parametro>();
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoFechasCompetencias, parametros);
                 foreach (DataRow row in dt.Rows)
@@ -778,10 +732,6 @@ namespace DatosSKD.DAO.Modulo10
 
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);*/
             }
-            finally
-            {
-                Desconectar();
-            }
             //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
@@ -803,7 +753,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoListaCompetenciaXFecha, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
@@ -842,10 +791,6 @@ namespace DatosSKD.DAO.Modulo10
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);*/
                 throw ex;
             }
-            finally
-            {
-                Desconectar();
-            }
             //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listaEventos;
@@ -861,7 +806,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> personas = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
                 parametros.Add(parametro);
@@ -909,7 +853,6 @@ namespace DatosSKD.DAO.Modulo10
             List<Entidad> inscripciones = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
                 parametros.Add(parametro);
@@ -956,10 +899,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return inscripciones;
         }
 
@@ -979,7 +918,6 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                Conectar();
                 competencia = fabrica.ObtenerCompetencia();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
