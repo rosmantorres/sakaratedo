@@ -52,7 +52,7 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 //Creo la fabrica y persona y le pongo su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
                 //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
@@ -319,7 +319,7 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -370,7 +370,7 @@ namespace Interfaz_Presentadores.Modulo16
                         cantidad = int.Parse(cantidadNueva);
 
                         //Pasamos el ID que vino del boton                    
-                        Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                        Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
                         objeto.Id = int.Parse(datos[1]);
 
                         //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
@@ -533,8 +533,8 @@ namespace Interfaz_Presentadores.Modulo16
             try
             {
                 //Instancio la fabrica, obtengo la entidad persona y asigno su ID
-                FabricaEntidades fabrica = new FabricaEntidades();                
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                FabricaEntidades fabrica = new FabricaEntidades();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
                 //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso
@@ -626,7 +626,7 @@ namespace Interfaz_Presentadores.Modulo16
 
             //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-            Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
             persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -643,7 +643,7 @@ namespace Interfaz_Presentadores.Modulo16
                 TipoObjeto = 1;
 
                 //Pasamos el ID que vino del boton
-                Entidad objeto = (Implemento)fabrica.ObtenerImplemento();
+                Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
                // objeto.Id = int.Parse(datos[1]);
 
                 FabricaComandos fabricac = new FabricaComandos();
@@ -674,7 +674,7 @@ namespace Interfaz_Presentadores.Modulo16
                 TipoObjeto = 2;
 
                 //Pasamos el ID que vino del boton                
-                Entidad objeto = (Matricula)fabrica.ObtenerMatricula();
+                Entidad objeto = (Matricula)FabricaEntidades.ObtenerMatricula();
                 objeto.Id = int.Parse(datos[1]);
 
                 FabricaComandos fabricac = new FabricaComandos();

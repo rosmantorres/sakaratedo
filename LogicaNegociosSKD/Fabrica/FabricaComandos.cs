@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD.Comandos.Modulo12;
+using LogicaNegociosSKD.Comandos.Modulo15;
 using LogicaNegociosSKD.Comandos.Modulo10;
 using LogicaNegociosSKD.Comandos.Modulo11;
 
@@ -280,124 +281,195 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarXIdCompetencia(paramEntidad);
         }
 
+        public Comando<bool> ObtenerComandoAgregarCompetencia(Entidad paramEntidad)
+        {
+            return new ComandoAgregarCompetencia(paramEntidad);
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultarOrgazaniciones()
+        {
+            return new ComandoConsultarOrganizaciones();
+        }
+
+        public Comando<List<Entidad>> ObtenerComandoConsultarCintas()
+        {
+            return new ComandoConsultarCintas();
+        }
+
         #endregion
 
         #region Modulo 13
         #endregion
 
         #region Modulo 14
-        public Comando<List<Entidad>> ObtenerComandoCompetenciasSolicitud()
+        public static Comando<List<Entidad>> ObtenerComandoCompetenciasSolicitud()
         {
             return new ComandoCompetenciasSolicitud();
         }
-        public Comando<List<Boolean>> ObtenerComandoDatosRequeridosSolicitud()
+        public static Comando<List<Boolean>> ObtenerComandoDatosRequeridosSolicitud()
         {
             return new ComandoDatosRequeridosSolicitud();
         }
-        public Comando<List<Entidad>> ObtenerComandoEventosSolicitud()
+        public static Comando<List<Entidad>> ObtenerComandoEventosSolicitud()
         {
             return new ComandoEventosSolicitud();
         }
-        public Comando<Entidad> ObtenerComandoModificarPlanillaID()
+        public static Comando<Entidad> ObtenerComandoModificarPlanillaID()
         {
             return new ComandoModificarPlanillaID();
         }
-        public Comando<Entidad> ObtenerComandoModificarPlanillaIDTipo()
+        public static Comando<Entidad> ObtenerComandoModificarPlanillaIDTipo()
         {
             return new ComandoModificarPlanillaIDTipo();
         }
-        public Comando<Entidad> ObtenerComandoModificarSolicitudID()
+        public static Comando<Entidad> ObtenerComandoModificarSolicitudID()
         {
             return new ComandoModificarSolicitudID();
         }
-        public Comando<Boolean> ObtenerComandoNuevoTipoPlanilla()
+        public static Comando<Boolean> ObtenerComandoNuevoTipoPlanilla()
         {
             return new ComandoNuevoTipoPlanilla();
         }
-        public Comando<List<String>> ObtenerComandoObtenerDatosBD()
+        public static Comando<List<String>> ObtenerComandoObtenerDatosBD()
         {
             return new ComandoObtenerDatosBD();
         }
-        public Comando<List<String>> ObtenerComandoObtenerDatosPlanilla()
+        public static Comando<List<String>> ObtenerComandoObtenerDatosPlanilla()
         {
             return new ComandoObtenerDatosPlanilla();
         }
-        public Comando<Entidad> ObtenerComandoObtenerPlanillaID()
+        public static Comando<Entidad> ObtenerComandoObtenerPlanillaID()
         {
             return new ComandoObtenerPlanillaID();
         }
-        public Comando<Entidad> ObtenerComandoObtenerSolicitudID()
+        public static Comando<Entidad> ObtenerComandoObtenerSolicitudID()
         {
             return new ComandoObtenerSolicitudID();
         }
-        public Comando<List<Entidad>> ObtenerComandoObtenerTipoPlanilla()
+        public static Comando<List<Entidad>> ObtenerComandoObtenerTipoPlanilla()
         {
             return new ComandoObtenerTipoPlanilla();
         }
-        public Comando<bool> ObtenerComandoRegistrarPlanilla()
+        public static Comando<bool> ObtenerComandoRegistrarPlanilla()
         {
             return new ComandoRegistrarPlanilla();
         }
-        public Comando<bool> ObtenerComandoRegistrarPlanillaTipo()
+        public static Comando<bool> ObtenerComandoRegistrarPlanillaTipo()
         {
             return new ComandoRegistrarPlanillaTipo();
         }
-        public Comando<Boolean> ObtenerComandoRegistrarSolicitudIDPersona()
+        public static Comando<Boolean> ObtenerComandoRegistrarSolicitudIDPersona()
         {
             return new ComandoRegistrarSolicitudIDPersona();
         }
-        public Comando<Boolean> ObtenerComandoRegistrarSolicitudPlanilla()
+        public static Comando<Boolean> ObtenerComandoRegistrarSolicitudPlanilla()
         {
             return new ComandoRegistrarSolicitudPlanilla();
         }
 
-        public Comando<List<Entidad>> ObtenerComandoListarPlanillasSolicitadas()
+        public static Comando<List<Entidad>> ObtenerComandoListarPlanillasSolicitadas()
         {
             return new ComandoListarPlanillasSolicitadas();
         }
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarPlanillasASolicitar()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarPlanillasASolicitar()
         {
             return new ComandoConsultarPlanillasASolicitar();
         }
 
-        public Comando<Boolean> ObtenerComandoEliminarSolicitud()
+        public static Comando<Boolean> ObtenerComandoEliminarSolicitud()
         {
             return new ComandoEliminarSolicitud();
         }
 
-        public Comando<Boolean> ObtenerComandoAgregarDiseno()
+        public static Comando<Boolean> ObtenerComandoAgregarDiseno()
         {
             return new ComandoAgregarDiseno();
         }
 
-        public Comando<Entidad> ObtenerComandoConsultarDiseñoPuro()
+        public static Comando<Entidad> ObtenerComandoConsultarDiseñoPuro()
         {
             return new ComandoConsultarDiseñoPuro();
         }
 
-        public Comando<Boolean> ObtenerComandoModificarDiseno()
+        public static Comando<Boolean> ObtenerComandoModificarDiseno()
         {
             return new ComandoModificarDiseno();
         }
 
-        public Comando<string> ObtenerComandoReemplazarElementos()
+        public static Comando<string> ObtenerComandoReemplazarElementos()
         {
             return new ComandoReemplazarElementos();
         }
 
-        public Comando<Entidad> ObtenerComandoComandoConsultarDiseño()
+        public static Comando<Entidad> ObtenerComandoComandoConsultarDiseño()
         {
             return new ComandoConsultarDiseño();
         }
 
-        public Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
+        public static Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
         {
             return new ComandoConsultarPlanillas();
         }
         #endregion
 
         #region Modulo 15
+
+        #region ComandoAgregarImplemento -- ObtenerComandoAgregar
+        public static Comando<bool> ObtenerComandoAgregar()
+        {
+            return new ComandoAgregarImplemento();
+        }
+        #endregion
+
+        #region ComandoConsultarTodosImplementos -- ObtenerComandoConsultar
+        public static Comando<List<Entidad>> ObtenerComandoConsultar()
+        {
+            return new ComandoConsultarTodosImplementos();
+        }
+        #endregion
+
+        #region ComandoConsultarTodosImplementos2 -- ObtenerComandoConsultar2
+        public static Comando<List<Entidad>> ObtenerComandoConsultar2()
+        {
+            return new ComandoConsultarTodosImplementos2();
+        }
+        #endregion
+
+        #region ComandoEliminarImplemento -- ObtenerComandoEliminarImplemento
+        public static Comando<bool> ObtenerComandoEliminarImplemento()
+        {
+            return new ComandoEliminarImplemento();
+        }
+        #endregion
+
+        #region ComandoModificarImplemento -- ObtenerComandoModificarImplemento
+        public static Comando<bool> ObtenerComandoModificarImplemento()
+        {
+            return new ComandoModificarImplemento();
+        }
+        #endregion
+
+        #region ComandoImplementoXId -- ObtenerComandoImplementoXId
+        public static Comando<Entidad> ObtenerComandoImplementoXId()
+        {
+            return new ComandoImplementoXId();
+        }
+        #endregion
+
+        #region ComandoUsuarioDojo -- ObtenerComandoUsuarioDojo
+        public static Comando<int> ObtenerComandoUsuarioDojo()
+        {
+            return new ComandoUsuarioDojo();
+        }
+        #endregion
+
+        #region ComandoDojoId -- ObtenerComandoDojo
+        public static Comando<Entidad> ObtenerComandoDojo()
+        {
+            return new ComandoDojoId();
+        }
+        #endregion 
         #endregion
 
         #region Modulo 16

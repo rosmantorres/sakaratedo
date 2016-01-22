@@ -335,7 +335,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -343,7 +343,7 @@ namespace Interfaz_Presentadores.Modulo16
                 String[] datos = aux.ID.Split('-');
 
                 //Creo el implemento asignandole su ID                
-                Implemento implemento = (Implemento)fabrica.ObtenerImplemento();
+                Implemento implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
                 implemento.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar y la cantidad que se desea de ese item

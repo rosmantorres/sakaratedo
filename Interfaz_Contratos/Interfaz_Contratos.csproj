@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\SANDRA\Programas\CKEditor.NET.dll</HintPath>
+      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo15\IContratoAgregarImplemento.cs" />
+    <Compile Include="Modulo15\IContratoConsultarImplemento.cs" />
+    <Compile Include="Modulo15\IContratoModificarImplemento.cs" />
     <Compile Include="Modulo16\IContratoEliminarItem.cs" />
     <Compile Include="Modulo16\IContratoListarEvento.cs" />
     <Compile Include="Modulo16\IContratoListarFactura.cs" />
@@ -87,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo15\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />

@@ -22,15 +22,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            FabricaComandos fabricaComandos = new FabricaComandos();
             DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
                 (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
-            ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)fabricaComandos.ObtenerComandoModificarPlanillaID();
+            ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)FabricaComandos.ObtenerComandoModificarPlanillaID();
 
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.tipoPlanilla);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
                 modificar.LaEntidad = (Entidad)laPlanilla;
