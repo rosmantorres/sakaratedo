@@ -27,7 +27,7 @@ namespace PruebasUnitariasSKD.Modulo10
         public string idEvento;
         public string idCompetencia;
         public Entidad entidad;
-        DominioSKD.Entidades.Modulo10.Asistencia asistencia;
+     
        
     
 
@@ -205,8 +205,10 @@ namespace PruebasUnitariasSKD.Modulo10
        [Test]
        public void PruebaModificarAsitenteE()
        {
+
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            bool a;
+           entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
             ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Evento.Id = 3;
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion.Id = 33;
@@ -230,6 +232,7 @@ namespace PruebasUnitariasSKD.Modulo10
        {
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            bool a;
+           entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Competencia.Id = 6;
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion.Id = 9;
@@ -285,11 +288,11 @@ namespace PruebasUnitariasSKD.Modulo10
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            bool a;
            listaEntidad = new List<Entidad>();
-
-           ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio = "N";
-           ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Evento.Id = 3;
-           ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Inscripcion.Id = 50;
-           listaEntidad.Add(asistencia);
+           entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+           ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
+           ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Evento.Id = 3;
+           ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion.Id = 50;
+           listaEntidad.Add(entidad);
            a = DAO.AgregarAsistenciaEvento(listaEntidad);
            Assert.IsTrue(a);
        }
@@ -297,10 +300,12 @@ namespace PruebasUnitariasSKD.Modulo10
          [Test]
         public void PruebaAgregarAsistenciaCompetencia()
         {
-            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+
+
+           IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            bool a;
            listaEntidad = new List<Entidad>();
-      
+           entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Competencia.Id = 6;
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion.Id = 9;
