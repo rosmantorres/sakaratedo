@@ -346,7 +346,6 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
-                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -387,10 +386,6 @@ namespace DatosSKD.DAO.Modulo10
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Desconectar();
             }
         }
 
@@ -465,7 +460,6 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
-                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -507,10 +501,6 @@ namespace DatosSKD.DAO.Modulo10
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Desconectar();
             }
         }
 
@@ -642,7 +632,6 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
-                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -684,10 +673,6 @@ namespace DatosSKD.DAO.Modulo10
             {
                 throw ex;
             }
-            finally
-            {
-                Desconectar();
-            }
         }
 
         /// <summary>
@@ -700,7 +685,6 @@ namespace DatosSKD.DAO.Modulo10
             int cont = 0;
             try
             {
-                Conectar();
                 foreach (Entidad asistencia in listaEntidad)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -741,10 +725,6 @@ namespace DatosSKD.DAO.Modulo10
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Desconectar();
             }
         }
 
