@@ -23,7 +23,6 @@ namespace DatosSKD.DAO.Modulo11
             List<Entidad> resultados = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEspecialidad, SqlDbType.Int, ((DominioSKD.Entidades.Modulo12.Competencia)entidad).TipoCompetencia, false);
                 parametros.Add(parametro);
@@ -76,10 +75,6 @@ namespace DatosSKD.DAO.Modulo11
             catch (Exception ex)
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            finally
-            {
-                Desconectar();
             }
             return resultados;
         }
@@ -94,7 +89,6 @@ namespace DatosSKD.DAO.Modulo11
             List<Entidad> resultados = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEspecialidad, SqlDbType.Int, ((DominioSKD.Entidades.Modulo12.Competencia)entidad).TipoCompetencia, false);
                 parametros.Add(parametro);
@@ -148,10 +142,6 @@ namespace DatosSKD.DAO.Modulo11
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return resultados;
         }
 
@@ -165,7 +155,6 @@ namespace DatosSKD.DAO.Modulo11
             List<Entidad> inscripciones = new List<Entidad>();
             try
             {
-                Conectar();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEspecialidad, SqlDbType.Int, ((DominioSKD.Entidades.Modulo12.Competencia)entidad).TipoCompetencia, false);
                 parametros.Add(parametro);
@@ -206,10 +195,6 @@ namespace DatosSKD.DAO.Modulo11
             {
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            finally
-            {
-                Desconectar();
-            }
             return inscripciones;
         }
         #endregion
@@ -225,7 +210,6 @@ namespace DatosSKD.DAO.Modulo11
             int cont = 0;
             try
             {
-                Conectar();
                 foreach (Entidad kumite in parametro)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -268,10 +252,6 @@ namespace DatosSKD.DAO.Modulo11
             {
                 throw ex;
             }
-            finally
-            {
-                Desconectar();
-            }
         }
 
         /// <summary>
@@ -284,7 +264,6 @@ namespace DatosSKD.DAO.Modulo11
             int cont = 0;
             try
             {
-                Conectar();
                 foreach (Entidad kumite in parametro)
                 {
                     List<Parametro> parametros = new List<Parametro>();
@@ -328,10 +307,6 @@ namespace DatosSKD.DAO.Modulo11
             catch (Exception ex)
             {
                 throw ex;
-            }
-            finally
-            {
-                Desconectar();
             }
         }
 
