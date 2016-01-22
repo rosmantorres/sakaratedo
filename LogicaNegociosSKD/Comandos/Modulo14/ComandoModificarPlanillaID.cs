@@ -14,13 +14,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
     {
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DominioSKD.Entidades.Modulo14.Planilla laPlanilla =( 
                 DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
 
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 BaseDeDatoPlanilla.Modificar(laPlanilla);
                 BaseDeDatoPlanilla.LimpiarSQLConnection();
                 BaseDeDatoPlanilla.EliminarDatosPlanillaBD(laPlanilla.ID);

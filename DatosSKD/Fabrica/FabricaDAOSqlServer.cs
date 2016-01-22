@@ -14,6 +14,7 @@ using DatosSKD.InterfazDAO.Modulo10;
 using DatosSKD.DAO.Modulo10;
 using DatosSKD.InterfazDAO.Modulo11;
 using DatosSKD.DAO.Modulo11;
+using DatosSKD.InterfazDAO.Modulo14;
 
 
 namespace DatosSKD.Fabrica
@@ -183,22 +184,22 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 14
-        public DAOGeneral ObtenerDAOPlanilla()
+        public static IDaoPlanilla ObtenerDAOPlanilla()
         {
             return new DaoPlanilla();
         }
 
-        public DAOGeneral ObtenerDAOSolicitud()
+        public static IDaoSolicitud ObtenerDAOSolicitud()
         {
             return new DaoSolicitud();
         }
 
-        public DAOGeneral ObtenerDAODiseno()
+        public static IDaoDiseno ObtenerDAODiseno()
         {
             return new DaoDiseno();
         }
 
-        public DAOGeneral ObtenerDAODatos()
+        public static IDaoDatos ObtenerDAODatos()
         {
             return new DaoDatos();
         }

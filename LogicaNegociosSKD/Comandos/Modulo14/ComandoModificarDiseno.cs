@@ -22,11 +22,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Boolean Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
                 ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
-                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                DaoDiseno dao = (DaoDiseno)FabricaDAOSqlServer.ObtenerDAODiseno();
                 return dao.Modificar(this.diseño);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
