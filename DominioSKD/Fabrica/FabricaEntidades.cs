@@ -42,6 +42,7 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
+ 
         #endregion
 
         #region Modulo 5
@@ -237,7 +238,7 @@ namespace DominioSKD.Fabrica
 
         public Entidad ObtenerCinta()
         {
-            return new DominioSKD.Entidades.Modulo5.Cinta();
+            return new Cinta();
         }
 
         public Entidad ObtenerOrganizacion(int elId, String elNombre)
@@ -305,124 +306,124 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 14
-        public Entidad ObtenerPlanilla()
+        public static Entidad ObtenerPlanilla()
         {
             return new DominioSKD.Entidades.Modulo14.Planilla();
         }
-        public Entidad ObtenerPlanilla(string nombre, Boolean status, string tipoPlanilla)
+        public static Entidad ObtenerPlanilla(string nombre, Boolean status, string tipoPlanilla)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(nombre, status, tipoPlanilla);
         }
-        public Entidad ObtenerPlanilla(int id, string nombre, Boolean status, string tipoPlanilla)
+        public static Entidad ObtenerPlanilla(int id, string nombre, Boolean status, string tipoPlanilla)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(id, nombre, status, tipoPlanilla);
         }
-        public Entidad ObtenerPlanilla(string nombre, bool status, string tipoPlanilla, List<String> datos)
+        public static Entidad ObtenerPlanilla(string nombre, bool status, string tipoPlanilla, List<String> datos)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(nombre, status, tipoPlanilla, datos);
         }
-        public Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        public static Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla, List<String> datos)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(nombre, status, idTipoPlanilla, datos);
         }
-        public Entidad ObtenerPlanilla(int id, string nombre, bool status, int idTipoPlanilla, List<String> datos)
+        public static Entidad ObtenerPlanilla(int id, string nombre, bool status, int idTipoPlanilla, List<String> datos)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(id, nombre, status, idTipoPlanilla, datos);
         }
-        public Entidad ObtenerPlanilla(int idTipoPlanilla, string tipoPlanilla)
+        public static Entidad ObtenerPlanilla(int idTipoPlanilla, string tipoPlanilla)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(idTipoPlanilla, tipoPlanilla);
         }
-        public Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla)
+        public static Entidad ObtenerPlanilla(string nombre, bool status, int idTipoPlanilla)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(nombre, status, idTipoPlanilla);
         }
-        public Entidad ObtenerPlanilla(List<String> datos)
+        public static Entidad ObtenerPlanilla(List<String> datos)
         {
             return new DominioSKD.Entidades.Modulo14.Planilla(datos);
         }
 
-        public Entidad ObtenerSolicitudP()
+        public static Entidad ObtenerSolicitudP()
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP();
         }
-        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id)
+        public static Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id);
         }
-        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, DominioSKD.Entidades.Modulo14.Planilla planilla, int id)
+        public static Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, DominioSKD.Entidades.Modulo14.Planilla planilla, int id)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP(fechaRetiro, fechaReincorporacion, motivo, planilla, id);
         }
-        public Entidad ObtenerSolicitudP(int id, String nombreEvento)
+        public static Entidad ObtenerSolicitudP(int id, String nombreEvento)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP(id, nombreEvento);
         }
-        public Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion)
+        public static Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP(id, fechaRetiro, fechaReincorporacion, motivo, planilla, idInscripcion);
         }
-        public Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id, int idInscripcion)
+        public static Entidad ObtenerSolicitudP(String fechaRetiro, String fechaReincorporacion, String motivo, int id, int idInscripcion)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP(fechaRetiro, fechaReincorporacion, motivo, id, idInscripcion);
         }
-        public Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, int idInscripcion)
+        public static Entidad ObtenerSolicitudP(int id, String fechaRetiro, String fechaReincorporacion, String motivo, int idInscripcion)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudP(id, fechaRetiro, fechaReincorporacion, motivo, idInscripcion);
         }
-        public Entidad ObtenerSolicitudPlanilla()
+        public static Entidad ObtenerSolicitudPlanilla()
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudPlanilla();
         }
-        public Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
+        public static Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
             string motivo, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion, int idPersona)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudPlanilla(fechaCreacion, fechaRetiro, fechaReincorporacion,
              motivo, planilla, idInscripcion, idPersona);
         }
-        public Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
+        public static Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, DateTime fechaRetiro, DateTime fechaReincorporacion,
             string motivo, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion, int idPersona)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudPlanilla(id, fechaCreacion, fechaRetiro, fechaReincorporacion,
              motivo, planilla, idInscripcion, idPersona);
         }
-        public Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion, int idPersona)
+        public static Entidad ObtenerSolicitudPlanilla(DateTime fechaCreacion, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion, int idPersona)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudPlanilla(fechaCreacion, planilla, idInscripcion, idPersona);
         }
-        public Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion, int idPersona)
+        public static Entidad ObtenerSolicitudPlanilla(int id, DateTime fechaCreacion, DominioSKD.Entidades.Modulo14.Planilla planilla, int idInscripcion, int idPersona)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudPlanilla(id, fechaCreacion, planilla, idInscripcion, idPersona);
         }
-        public Entidad ObtenerSolicitudPlanilla(DateTime fechaRetiro, DateTime fechaReincorporacion, string motivo, DominioSKD.Entidades.Modulo14.Planilla planilla)
+        public static Entidad ObtenerSolicitudPlanilla(DateTime fechaRetiro, DateTime fechaReincorporacion, string motivo, DominioSKD.Entidades.Modulo14.Planilla planilla)
         {
             return new DominioSKD.Entidades.Modulo14.SolicitudPlanilla(fechaRetiro, fechaReincorporacion, motivo, planilla);
         }
 
-        public Entidad obtenerDiseño()
+        public static Entidad obtenerDiseño()
         {
             return new DominioSKD.Entidades.Modulo14.Diseño();
         }
 
-        public Entidad obtenerDiseño(int id, string contenido)
+        public static Entidad obtenerDiseño(int id, string contenido)
         {
             return new DominioSKD.Entidades.Modulo14.Diseño(id, contenido);
         }
 
-        public Entidad obtenerDiseño(string contenido)
+        public static Entidad obtenerDiseño(string contenido)
         {
             return new DominioSKD.Entidades.Modulo14.Diseño(contenido);
         }
         // Entidades de otros modulos que necesitamos
-        public Entidad ObtenerPersona()
+        public static Entidad ObtenerPersona()
         {
             return new Persona();
         }
-        public Entidad ObtenerDojo()
+        public static Entidad ObtenerDojo()
         {
             return new Dojo();
         }
-        public Entidad ObtenerMatricula()
+        public static Entidad ObtenerMatricula()
         {
             return new Matricula();
         }
@@ -430,6 +431,24 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 15
+        public static Entidad ObtenerImplemento(int id_implemento, String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String imagen_implemento, int cantidad_implemento, int stock_minimo_implemento, String estatus_implemento, double precio_implemento, String descripcion_implemento, Dojo dojo)
+        {
+            return new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad_implemento, stock_minimo_implemento, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
+        }
+
+        public static Entidad ObtenerImplemento()
+        {
+            return new Implemento();
+        }
+
+        public static Entidad ObtenerUsuario()
+        {
+            return new Usuario();
+        }
+        public static Entidad tenerDojo()
+        {
+            return new Dojo();
+        }
         #endregion
 
         #region Modulo 16
@@ -464,17 +483,6 @@ namespace DominioSKD.Fabrica
        // {
          //   return new Evento();
         //}
-
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el implemento
-        /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad implemento con todos sus datos llenos</returns>
-        public Entidad ObtenerImplemento()
-        {
-            return new Implemento();
-        }
 
         /// <summary>
         /// Metodo de la fabrica que instancia el Dojo

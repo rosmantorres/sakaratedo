@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SANDRA\Programas\CKEditor.NET.dll</HintPath>
+      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
+    <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
+    <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
     <Compile Include="Modulo16\M16_Recursointerfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +149,7 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo15\" />
+    <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />

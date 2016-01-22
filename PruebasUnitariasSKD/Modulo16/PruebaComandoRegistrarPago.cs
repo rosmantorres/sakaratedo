@@ -55,7 +55,6 @@ namespace PruebasUnitariasSKD.Modulo16
         public void Iniciar()
         {
             //Las fabricas
-            fabrica = new FabricaEntidades();
             fabricacomando = new FabricaComandos();
 
             //Dos implementos distintos
@@ -64,7 +63,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
             
             //Iniciamos los atributos para la prueba de vacio
-            this.persona = fabrica.ObtenerPersona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.PruebaComandoVacio = fabricacomando.CrearComandoRegistrarPago();
             this.PruebaComandoVacio2 = fabricacomando.CrearComandoRegistrarPago(this.persona, "prueba");
             this.pruebaComandoVacio3 = (ComandoRegistrarPago)fabricacomando.CrearComandoRegistrarPago();
@@ -73,15 +72,15 @@ namespace PruebasUnitariasSKD.Modulo16
             
             //La persona
             this.persona.Id = 11;
-            this.persona2 = fabrica.ObtenerPersona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = fabrica.ObtenerPersona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = fabrica.ObtenerPersona();
+            this.persona4 = FabricaEntidades.ObtenerPersona();
             this.persona4.Id = 14;
-            this.persona5 = fabrica.ObtenerPersona();
+            this.persona5 = FabricaEntidades.ObtenerPersona();
             this.persona5.Id = 15;
-            this.persona6 = fabrica.ObtenerPersona();
+            this.persona6 = FabricaEntidades.ObtenerPersona();
             this.persona6.Id = 16;
 
             //Implemento

@@ -11,12 +11,12 @@ namespace DominioSKD.Entidades.Modulo10
         #region Atributos
         private string asistio;
         private Inscripcion inscripcion;
-        private DominioSKD.Entidades.Modulo9.Evento evento;
+        private Evento evento;
         private DominioSKD.Entidades.Modulo12.Competencia competencia;
         #endregion
 
         #region Constructores
-        public Asistencia(String asistio, Inscripcion inscripcion, DominioSKD.Entidades.Modulo9.Evento evento)
+        public Asistencia(String asistio, Inscripcion inscripcion, Evento evento)
         {
             this.asistio = asistio;
             this.inscripcion = inscripcion;
@@ -35,7 +35,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.asistio = " ";
             this.inscripcion = new Inscripcion();
             this.competencia = new Modulo12.Competencia();
-            this.evento = new Modulo9.Evento();
+            this.evento = new Evento();
         }
 
         #endregion
@@ -53,7 +53,7 @@ namespace DominioSKD.Entidades.Modulo10
             set { inscripcion = value; }
         }
 
-        public DominioSKD.Entidades.Modulo9.Evento Evento
+        public Evento Evento
         {
             get { return evento; }
             set { evento = value; }

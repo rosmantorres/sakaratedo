@@ -20,11 +20,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
        public override List<String> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             List<String> datos;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 datos = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(this.idPlanilla);
                 
             }
