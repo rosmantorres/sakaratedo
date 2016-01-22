@@ -32,9 +32,8 @@ namespace Interfaz_Presentadores.Modulo14
         public void PageLoad(HttpRequest request, bool hit, HttpServerUtility server)
         {
             FabricaComandos fabrica = new FabricaComandos();
-            FabricaEntidades entidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.Planilla pla =
-                (DominioSKD.Entidades.Modulo14.Planilla)entidad.ObtenerPlanilla();
+                (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
             try
             {
                 if (request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieId].ToString() != "")
@@ -115,9 +114,8 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void btnguardar()
         {
-            FabricaEntidades entidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.Diseño diseño =
-                (DominioSKD.Entidades.Modulo14.Diseño)entidad.obtenerDiseño(vista.CKEditor1.Text);
+                (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño(vista.CKEditor1.Text);
             FabricaComandos fabrica = new FabricaComandos();
             try
             {
