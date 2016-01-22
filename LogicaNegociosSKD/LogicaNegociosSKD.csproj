@@ -40,6 +40,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoCompetenciasPorFecha.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciasXId.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciaXIdDetalle.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanilla.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanillaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarCompetenciasAsistidas.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
@@ -304,7 +322,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
-    <Folder Include="Comandos\Modulo10\" />
     <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo15\" />
@@ -315,7 +332,6 @@
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
     <Folder Include="Comandos\Modulo9\" />
-    <Folder Include="Comandos\Modulo16\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
