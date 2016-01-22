@@ -45,9 +45,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DaoDiseno daoDiseno = (DaoDiseno)fabrica.ObtenerDAODiseno();
             DaoDatos daoDatos = (DaoDatos)fabrica.ObtenerDAODatos();
+            DaoSolicitud daoSol = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
             try
             {
                 Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
+                DominioSKD.Entidades.Modulo14.SolicitudP solP = (DominioSKD.Entidades.Modulo14.SolicitudP)fabricaEntidad.ObtenerSolicitudP();
                 Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
                 DominioSKD.Entidades.Modulo14.Diseño diseñoPlanilla =
                     (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
@@ -60,7 +62,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
                     (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
                 List<string> matricula = new List<string>();
-                diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarXId(planilla);
+                //diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarXId(planilla);
                 daoDiseno.LimpiarSQLConnection();
                 persona = daoDatos.ConsultarPersona(idPersona);
                 daoDatos.LimpiarSQLConnection();
@@ -76,10 +78,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 daoDatos.LimpiarSQLConnection();
                 solicitud = (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)daoDatos.ConsultarSolicitud(idSolici);
                 daoDatos.LimpiarSQLConnection();
+                diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarDisenoID(solicitud);
+                daoDiseno.LimpiarSQLConnection();
                 Fabrica.FabricaComandos fComandos = new Fabrica.FabricaComandos();
                 ComandoReemplazarElementos comand = 
                     (ComandoReemplazarElementos)fComandos.ObtenerComandoReemplazarElementos();
                 comand.Info = diseñoPlanilla.Contenido;
+                //comand.Info = solicitud.Diseno.Contenido;
                 comand.Persona = persona;
                 comand.Dojo = dojo;
                 comand.Evento = evento;

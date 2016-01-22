@@ -247,8 +247,10 @@ namespace DatosSKD.DAO.Modulo14
                     String motivo = row[RecursosDAOModulo14.AtributoMotivo].ToString();
                     int idPlanilla = Int32.Parse(row[RecursosDAOModulo14.AtributoIdPlanillaDatos].ToString());
                     int idInscripcion = Int32.Parse(row[RecursosDAOModulo14.AtributoInscripcion].ToString());
-
+               
                     solicitud = fabricaEntidad.ObtenerSolicitudP(fechaRetiro, fechaReincorporacion, motivo, idPlanilla, idInscripcion);
+                   
+                    
                 }
 
             }
@@ -800,7 +802,9 @@ namespace DatosSKD.DAO.Modulo14
                         solicitud = 
                             (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
                         DominioSKD.Entidades.Modulo14.Planilla planilla = new DominioSKD.Entidades.Modulo14.Planilla();
+                        DominioSKD.Entidades.Modulo14.Diseño diseno = new DominioSKD.Entidades.Modulo14.Diseño();
                         solicitud.Planilla = planilla;
+                        solicitud.Diseno = diseno;
                         solicitud.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdSolicitud]);
                         solicitud.IdInscripcion = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoInscripcion]);
                         solicitud.FechaCreacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaCreacion]);
@@ -810,6 +814,8 @@ namespace DatosSKD.DAO.Modulo14
                         solicitud.Planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanillaDatos]);
                         solicitud.Planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
                         solicitud.Planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoTipo].ToString();
+                        //solicitud.Diseno.ID = Convert.ToInt32(leer["DISEÑO_dis_id"]);
+                        //solicitud.Diseno.Contenido = leer["dis_contenido"].ToString();
                         if (leer[RecursosDAOModulo14.AtributoEventoNombre].ToString() != "")
                             solicitud.Evento = leer[RecursosDAOModulo14.AtributoEventoNombre].ToString();
                         else

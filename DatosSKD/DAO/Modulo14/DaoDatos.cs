@@ -672,10 +672,13 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
+                        DominioSKD.Entidades.Modulo14.Diseño dis = new DominioSKD.Entidades.Modulo14.Diseño();
+                        solicitud.Diseno = dis;
                         solicitud.FechaCreacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaCreacion]);
                         solicitud.FechaReincorporacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaReincorporacion]);
                         solicitud.FechaRetiro = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaRetiro]);
                         solicitud.Motivo = leer[RecursosDAOModulo14.AtributoMotivo].ToString();
+                        solicitud.Diseno.ID = Convert.ToInt32(leer["DISEÑO_dis_id"].ToString());
                         return solicitud;
                     }
 

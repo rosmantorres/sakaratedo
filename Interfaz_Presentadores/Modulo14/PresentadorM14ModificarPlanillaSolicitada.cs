@@ -78,7 +78,8 @@ namespace Interfaz_Presentadores.Modulo14
        
         public void PageLoadModificarPlanillaSolicitada()
         {
-
+            try
+            {
             //int idSolicitud = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idSol]);
             Entidad laSolicitud;
             int idSolicitud = vista.IDSolicitud;
@@ -166,6 +167,35 @@ namespace Interfaz_Presentadores.Modulo14
             else
             {
                 vista.divMotivoVisible = false;
+            }
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
             }
         }
         public bool EditarPlanillaSolicitada()
