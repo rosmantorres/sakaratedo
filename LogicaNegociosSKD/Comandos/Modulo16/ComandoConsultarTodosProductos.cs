@@ -9,6 +9,7 @@ using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
+using DatosSKD.InterfazDAO.Modulo15;
 
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
@@ -72,7 +73,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Instancio el DAO de Implemento
                 FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IdaoImplemento daoImplementos = fabrica.ObtenerDaoProductos();
+                IDaoImplemento daoImplementos = fabrica.ObtenerDaoProductos();
 
                 //Casteamos
                 PersonaM1 p = (PersonaM1)this.LaEntidad;
