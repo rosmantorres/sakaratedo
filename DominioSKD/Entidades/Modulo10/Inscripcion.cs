@@ -13,7 +13,7 @@ namespace DominioSKD.Entidades.Modulo10
         private Persona persona;
         private DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud;
         private DominioSKD.Entidades.Modulo12.Competencia competencia;
-        private DominioSKD.Entidades.Modulo9.Evento evento;
+        private Evento evento;
         private List<Asistencia> asistencias;
         private List<Entidad> resAscenso;
         private List<Entidad> resKata;
@@ -21,7 +21,7 @@ namespace DominioSKD.Entidades.Modulo10
         #endregion
 
         #region Constructores
-        public Inscripcion(DateTime fecha, Persona persona, DominioSKD.Entidades.Modulo9.Evento evento)
+        public Inscripcion(DateTime fecha, Persona persona, Evento evento)
         {
             this.fecha = fecha;
             this.persona = persona;
@@ -38,14 +38,14 @@ namespace DominioSKD.Entidades.Modulo10
             this.fecha = fecha;
             this.persona = persona;
             this.competencia = competencia;
-            this.evento = new Modulo9.Evento();
+            this.evento = new Evento();
             this.asistencias = new List<Asistencia>();
             this.resAscenso = new List<Entidad>();
             this.resKata = new List<Entidad>();
             this.resKumite = new List<ResultadoKumite>();
         }
 
-        public Inscripcion(DateTime fecha, Persona persona, DominioSKD.Entidades.Modulo9.Evento evento, DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud)
+        public Inscripcion(DateTime fecha, Persona persona, Evento evento, DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud)
         {
             this.fecha = fecha;
             this.persona = persona;
@@ -64,7 +64,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.persona = persona;
             this.competencia = competencia;
             this.solicitud = solicitud;
-            this.evento = new Modulo9.Evento();
+            this.evento = new Evento();
             this.asistencias = new List<Asistencia>();
             this.resAscenso = new List<Entidad>();
             this.resKata = new List<Entidad>();
@@ -75,7 +75,7 @@ namespace DominioSKD.Entidades.Modulo10
             this.fecha = new DateTime();
             this.persona = new Persona();
             this.competencia = new Modulo12.Competencia();
-            this.evento = new Modulo9.Evento();
+            this.evento = new Evento();
             this.asistencias = new List<Asistencia>();
             this.resAscenso = new List<Entidad>();
             this.resKata = new List<Entidad>();
@@ -104,7 +104,7 @@ namespace DominioSKD.Entidades.Modulo10
             get { return competencia; }
             set { competencia = value; }
         }
-        public DominioSKD.Entidades.Modulo9.Evento Evento
+        public Evento Evento
         {
             get { return evento; }
             set { evento = value; }
