@@ -58,6 +58,10 @@ namespace DatosSKD.DAO.Modulo14
                SqlDbType.VarChar, solicitud.ID.ToString(), false);
                 parametros.Add(parametro);
 
+                parametro = new Parametro(RecursosDAOModulo14.ParametroIdDiseno,
+               SqlDbType.VarChar, solicitud.IDDiseno.ToString(), false);
+                parametros.Add(parametro);
+
                 string query = RecursosDAOModulo14.ProcedimientoAgregarSolicitud;
                 List<Resultado> resultados = this.EjecutarStoredProcedure(query, parametros);
 
@@ -347,6 +351,10 @@ namespace DatosSKD.DAO.Modulo14
 
                 parametro = new Parametro(RecursosDAOModulo14.ParametroPersonaID,
                SqlDbType.VarChar, solicitud.ID.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosDAOModulo14.ParametroIdDiseno,
+               SqlDbType.VarChar, solicitud.IDDiseno.ToString(), false);
                 parametros.Add(parametro);
 
                 string query = RecursosDAOModulo14.ProcedimientoAgregarSolicitudIdP;
