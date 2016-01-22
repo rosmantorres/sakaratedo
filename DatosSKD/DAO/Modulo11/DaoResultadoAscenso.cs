@@ -125,9 +125,9 @@ namespace DatosSKD.DAO.Modulo11
             try
             {
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEvento, SqlDbType.Int, ((DominioSKD.Entidades.Modulo9.Evento)entidad).Id.ToString(), false);
+                Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEvento, SqlDbType.Int, ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDAOModulo11.ParametroIdCategoria, SqlDbType.Int, ((DominioSKD.Entidades.Modulo9.Evento)entidad).Categoria.Id.ToString(), false);
+                parametro = new Parametro(RecursosDAOModulo11.ParametroIdCategoria, SqlDbType.Int, ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria.Id.ToString(), false);
                 parametros.Add(parametro);
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo11.ProcedimientoPersonasEnCategoriaAscenso, parametros);
 
@@ -182,9 +182,9 @@ namespace DatosSKD.DAO.Modulo11
             try
             {
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEvento, SqlDbType.Int, ((DominioSKD.Entidades.Modulo9.Evento)entidad).Id.ToString(), false);
+                Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroIdEvento, SqlDbType.Int, ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDAOModulo11.ParametroIdCategoria, SqlDbType.Int, ((DominioSKD.Entidades.Modulo9.Evento)entidad).Categoria.Id.ToString(), false);
+                parametro = new Parametro(RecursosDAOModulo11.ParametroIdCategoria, SqlDbType.Int, ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria.Id.ToString(), false);
                 parametros.Add(parametro);
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo11.ProcedimientoInscritosAscensos, parametros);
 
