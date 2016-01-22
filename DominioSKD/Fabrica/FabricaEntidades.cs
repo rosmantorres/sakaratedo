@@ -238,7 +238,7 @@ namespace DominioSKD.Fabrica
 
         public Entidad ObtenerCinta()
         {
-            return new DominioSKD.Entidades.Modulo5.Cinta();
+            return new Cinta();
         }
 
         public Entidad ObtenerOrganizacion(int elId, String elNombre)
