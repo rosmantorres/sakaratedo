@@ -83,6 +83,7 @@
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodosEventos.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodosProductos.cs" />
     <Compile Include="Comandos\Modulo16\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarFactura.cs" />
     <Compile Include="Comandos\Modulo16\ComandoDetallarMatricula.cs" />
     <Compile Include="Comandos\Modulo16\ComandoDetallarProducto.cs" />
     <Compile Include="Comandos\Modulo16\ComandoeliminarItem.cs" />

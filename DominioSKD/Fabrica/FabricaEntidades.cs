@@ -477,17 +477,6 @@ namespace DominioSKD.Fabrica
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia el Evento
-        /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad evento con todos sus datos llenos</returns>
-       // public Entidad ObtenerEvento()
-       // {
-         //   return new Evento();
-        //}
-
-
-        /// <summary>
         /// Metodo de la fabrica que instancia el implemento
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>

@@ -10,30 +10,30 @@ using DatosSKD.InterfazDAO;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using DominioSKD.Fabrica;
-
+using DominioSKD.Entidades.Modulo16;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando que ejecuta la accion de detallar un evento en especifico
+    /// Comando que ejecuta la accion de detallar una factura en especifico
     /// </summary>
-   public class ComandoDetallarEvento : Comando<Entidad>
+    public class ComandoDetallarFactura : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
         /// Atributos del Comando
         /// </summary>
-        private  Entidad evento;
+        private  Entidad compra;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad del atributo evento
+        /// Propiedad del atributo compra
         /// </summary>
-        public Entidad Evento
+        public Entidad Compra
         {
-            get{ return this.evento;}
-            set{this.evento = value;}
+            get{ return this.compra;}
+            set{this.compra = value;}
         }
         #endregion
 
@@ -41,18 +41,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// <summary>
         /// Constructor vacio del Comando
         /// </summary>
-        public ComandoDetallarEvento()
+        public ComandoDetallarFactura()
         {
 
         }
 
         /// <summary>
-        /// Constructor del comando con todos los datos requeridos para el detalleEvento
+        /// Constructor del comando con todos los datos requeridos para el detalleFactura
         /// </summary>
-        /// <param name="evento">El evento al que se le mostrara el detalle</param>
-        public ComandoDetallarEvento(Entidad evento)
+        /// <param name="compra">La factura a la que se le mostrara el detalle</param>
+        public ComandoDetallarFactura(Entidad compra)
         {
-            this.evento = evento;
+            this.compra = compra;
         }
         #endregion
 
@@ -71,18 +71,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el DAO de Evento
-                IdaoEvento daoevento = FabricaDAOSqlServer.ObtenerDaoDetalleEvento();
+                //Instancio el DAO de compra
+                IdaoCompra daocompra = FabricaDAOSqlServer.ObtenerDaoDetalleFactura();
 
                 //Casteamos
-                Evento eve = (Evento)this.evento;
+                Compra comp = (Compra)this.compra;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamada
-                return daoevento.ConsultarXId(eve);
+                return daocompra.DetallarFactura(comp);
             }
 
             #region catches

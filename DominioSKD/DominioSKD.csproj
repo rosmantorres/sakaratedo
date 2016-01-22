@@ -87,7 +87,7 @@
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo12\Competencia.cs" />
     <Compile Include="Cuenta.cs" />
-    <Compile Include="Compra.cs" />
+    <Compile Include="Entidades\Modulo16\Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
     <Compile Include="HistorialCinta.cs" />

@@ -280,6 +280,15 @@ namespace DatosSKD.Fabrica
         {
             return new DatosSKD.DAO.Modulo16.DaoImplemento();
         }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del detalleFactura
+        /// </summary>
+        /// <returns>el DaoFactura</returns>
+        public static InterfazDAO.Modulo16.IdaoCompra ObtenerDaoDetalleFactura()
+        {
+            return new DatosSKD.DAO.Modulo16.DaoCompra();
+        }
         #endregion
 
 
