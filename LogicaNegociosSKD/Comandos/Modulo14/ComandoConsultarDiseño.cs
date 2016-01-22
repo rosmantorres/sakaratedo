@@ -48,11 +48,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             DaoSolicitud daoSol = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
             try
             {
-                Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
-                DominioSKD.Entidades.Modulo14.SolicitudP solP = (DominioSKD.Entidades.Modulo14.SolicitudP)fabricaEntidad.ObtenerSolicitudP();
-                Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
+                Persona persona = (Persona)FabricaEntidades.ObtenerPersona();
+                DominioSKD.Entidades.Modulo14.SolicitudP solP = (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP();
+                Dojo dojo = (Dojo)FabricaEntidades.ObtenerDojo();
                 DominioSKD.Entidades.Modulo14.Diseño diseñoPlanilla =
-                    (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
+                    (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño();
                 //
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
                 DominioSKD.Entidades.Modulo12.Competencia competencia = 
@@ -60,7 +60,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 Organizacion organizacion =
                     (Organizacion)fabricaEntidad.ObtenerOrganizacion();
                 DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
-                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)FabricaEntidades.ObtenerSolicitudPlanilla();
                 List<string> matricula = new List<string>();
                 //diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarXId(planilla);
                 daoDiseno.LimpiarSQLConnection();
