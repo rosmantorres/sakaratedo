@@ -120,7 +120,7 @@
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                         <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
                             <img src="Imagenes\Aikido.png" class="img-thumbnail" alt="Logo Dojo" width="200" height="100" style="margin: 5px 900px 5px 5px;float: left; " > 
-                            <asp:TextBox id="logoDojo" name="logoDojo" type="file" class="file"  runat="server"></asp:TextBox>
+                            <asp:TextBox id="logoDojos" name="logoDojos" type="file" class="file"  runat="server"></asp:TextBox>
                         </div>
                     
                         <br/>
@@ -157,7 +157,7 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Estado:</h3>
                                     <div class="dropdown" runat="server" id="divComboCintaHasta">
-                                       <asp:DropDownList ID="estadoDojo"  class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true">
+                                       <asp:DropDownList ID="estadoDojo"  class="btn btn-default dropdown-toggle" runat="server">
                                             <asp:ListItem Selected="True" Value="">Seleccionar Estado: </asp:ListItem>
                                             <asp:ListItem Value="Amazonas">Amazonas</asp:ListItem>
                                             <asp:ListItem Value="Anzoátegui">Anzoátegui</asp:ListItem>

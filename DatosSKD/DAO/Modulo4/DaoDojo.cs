@@ -19,6 +19,11 @@ namespace DatosSKD.DAO.Modulo4
     public class DaoDojo : DAOGeneral, IDaoDojo 
     {
         #region IDAO
+        /// <summary>
+        /// Método que agrega el dojo a la base de datos
+        /// </summary>
+        /// <param name="parametro">el dojo a insertar</param>
+        /// <returns>true si se insertó y false en el caso contrario</returns>
         public bool Agregar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -31,7 +36,7 @@ namespace DatosSKD.DAO.Modulo4
                   
              if (!BuscarRifDojo(elDojo))
                 { 
-                   
+                   ///Se listan todos los parametros para crear el nuevo dojo
                     List<Parametro> parametros = new List<Parametro>();
                     Parametro elParametro = new Parametro(RecursosDAOModulo4.ParametroRifDojo, SqlDbType.VarChar, elDojo.Rif_dojo, false);
                     parametros.Add(elParametro);

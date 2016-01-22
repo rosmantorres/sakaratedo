@@ -254,3 +254,23 @@
 2016-01-21 18:00:49,562 INFO  DaoDojo - Clase: DaoDojo
 2016-01-21 18:00:49,562 INFO  DaoDojo - Mensaje: Salida del Método
 2016-01-21 18:00:49,562 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 20:27:50,957 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 20:27:50,965 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 20:27:50,965 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 20:27:50,965 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 20:27:53,326 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 20:27:53,327 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 20:27:53,327 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 20:27:53,327 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 20:27:53,984 INFO  DaoDojo - *******************************************************
+2016-01-21 20:27:53,984 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 20:27:53,984 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 20:27:53,984 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 20:27:57,362 INFO  DaoDojo - *******************************************************
+2016-01-21 20:27:57,363 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 20:27:57,363 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-21 20:27:57,363 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-21 20:28:01,869 INFO  DaoDojo - *******************************************************
+2016-01-21 20:28:01,870 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 20:28:01,870 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-21 20:28:01,870 INFO  DaoDojo - Metodo: Agregar

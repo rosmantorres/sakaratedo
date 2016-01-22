@@ -9,6 +9,10 @@ namespace Interfaz_Contratos.Modulo4
 {
     public interface IContratoAgregarDojo
     {
+        /// <summary>
+        /// Firma de Métodos que deben ser implementados en el 
+        /// presentador del AgregarDojo 
+        /// </summary>
         string logo { get; }
         string rif { get; }
         string nombre { get; }

@@ -7,6 +7,7 @@ using Interfaz_Contratos.Modulo4;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD;
 
 namespace Interfaz_Presentadores.Modulo4
 {
@@ -15,12 +16,19 @@ namespace Interfaz_Presentadores.Modulo4
          private IContratoAgregarDojo vista;
 
          #region Constructor
+        /// <summary>
+        /// Constructor del Presentador
+        /// </summary>
+        /// <param name="laVista">la vista es la interfaz principal</param>
              public PresentadorAgregarDojo (IContratoAgregarDojo laVista)
             {
                 this.vista = laVista;
             }
          #endregion
 
+        /// <summary>
+        /// Método para agregar un nuevo Dojo
+        /// </summary>
              public void agregarDojo_Click ()
              {
                  DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
@@ -33,6 +41,7 @@ namespace Interfaz_Presentadores.Modulo4
 
                  try
                  {
+                     //Se cargan todos los valores tomados de la interfaz al objeto dojo
                      org.Id = vista.persona;
                      elDojo.Organizacion = org;
                      elDojo.Logo_dojo = vista.logo;
@@ -40,15 +49,13 @@ namespace Interfaz_Presentadores.Modulo4
                      elDojo.Nombre_dojo = vista.nombre;
                      elDojo.Telefono_dojo = int.Parse(vista.telefono);
                      elDojo.Email_dojo = vista.email;
-                     // laUbicacion.Latitud = txtLAT.Value.ToString();
-                     //  laUbicacion.Longitud = txtLONG.Value.ToString();
                      ubi.Latitud = lat;
                      ubi.Longitud = lon;
                      ubi.Ciudad = vista.ciudad;
                      ubi.Estado = vista.estado;
                      ubi.Direccion = vista.direccion;
                      elDojo.Ubicacion = ubi;
-
+                     //Se verifica si se seleccionó activo o inactivo
                      if (vista.statusAct)
                          elDojo.Status_dojo = true;
                      if (vista.statusIn)
@@ -58,9 +65,29 @@ namespace Interfaz_Presentadores.Modulo4
                      agregarDojo.LaEntidad = elDojo;
                      agregarDojo.Ejecutar();
                  }
-                 catch
+                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                  {
+                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                     throw ex;
+                 }
+                 catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+                 {
+                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                     throw ex;
+                 }
+                 catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+                 {
+                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                     throw ex;
+                 }
+                 catch (ExcepcionesSKD.ExceptionSKD ex)
+                 {
+                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                     throw ex;
                  }
              }
 

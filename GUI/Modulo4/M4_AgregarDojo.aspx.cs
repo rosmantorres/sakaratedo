@@ -14,16 +14,20 @@ namespace templateApp.GUI.Modulo4
     {
         PresentadorAgregarDojo _presentador;
 
-        #region Implementacion de Contrato
 
+        #region Implementacion de Contrato
+        /// <summary>
+        /// Se implementan todos los metodos que indica el contrato
+        /// </summary>
         public string logo
         {
             get
             {
-                string log = logoDojo.Text;
+                string log = logoDojos.Text;
                 return log; 
             }
         }
+      
         public string rif
         {
             get { return rifDojo.Text; } 
@@ -52,8 +56,6 @@ namespace templateApp.GUI.Modulo4
         {
             get { return direccionDojo.Text; }
         }
-        //string latitud { get; }
-        //string longitud { get; }
         public bool statusAct
         {
             get { return statusDojoA.Checked; } 
@@ -73,19 +75,31 @@ namespace templateApp.GUI.Modulo4
         #endregion
 
        #region Constructor
-
+        /// <summary>
+        /// Es el constructor de la clase M4_AgregarDojo
+        /// </summary>
         public M4_AgregarDojo()
 		{
 			_presentador = new PresentadorAgregarDojo(this);
 		}
 
 		#endregion
-
+        /// <summary>
+        /// Metodo para el inicio de la vista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "4";
         }
 
+        /// <summary>
+        /// El metodo que perite la llamada del presentador para 
+        /// agregar el nuevo Dojo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btn_agregarDojo_Click(object sender, EventArgs e)
         {
             _presentador.agregarDojo_Click();

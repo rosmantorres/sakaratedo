@@ -11,7 +11,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 {
     public class ComandoAgregarDojo : Comando<bool>
     {
-
+        /// <summary>
+        /// Método que sirve de enlace entre los datos
+        /// y la vista que ejecuta en agregar el nuevo dojo
+        /// </summary>
+        /// <returns>retorna true si se agrego y false si no se agregó</returns>
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
