@@ -19,6 +19,7 @@ namespace DominioSKD.Entidades.Modulo14
         private int idInscripcion;
         private int idPersona;
         private string evento;
+        private Diseño diseno;
 
         #endregion
 
@@ -131,6 +132,11 @@ namespace DominioSKD.Entidades.Modulo14
         {
             get { return evento; }
             set { evento = value; }
+        }
+        public Diseño Diseno
+        {
+            get { return diseno; }
+            set { diseno = value; }
         }
         #endregion
 

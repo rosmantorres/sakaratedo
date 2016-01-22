@@ -13,6 +13,8 @@ using DatosSKD;
 using DatosSKD.DAO;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
+using DatosSKD.InterfazDAO.Modulo15;
+using DatosSKD.DAO.Modulo15;
 
 namespace PruebasUnitariasSKD.Modulo16
 {
@@ -22,7 +24,7 @@ namespace PruebasUnitariasSKD.Modulo16
         #region Atributos
         //Atributos pertinentes a usar
         private DaoImplemento pruebaDao;
-        private IdaoImplemento daoImplemento;
+        private IDaoImplemento daoImplemento;
         private FabricaDAOSqlServer fabrica;
         #endregion
 

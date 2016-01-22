@@ -31,8 +31,7 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
+            Persona persona = (Persona)FabricaEntidades.ObtenerPersona();
             try
             {
 
@@ -135,8 +134,7 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
+            Dojo dojo = (Dojo)FabricaEntidades.ObtenerDojo();
             try
             {
 
@@ -656,7 +654,7 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
-                (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+                (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)FabricaEntidades.ObtenerSolicitudPlanilla();
             try
             {
 
@@ -672,10 +670,13 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
+                        DominioSKD.Entidades.Modulo14.Diseño dis = new DominioSKD.Entidades.Modulo14.Diseño();
+                        solicitud.Diseno = dis;
                         solicitud.FechaCreacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaCreacion]);
                         solicitud.FechaReincorporacion = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaReincorporacion]);
                         solicitud.FechaRetiro = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaRetiro]);
                         solicitud.Motivo = leer[RecursosDAOModulo14.AtributoMotivo].ToString();
+                        solicitud.Diseno.ID = Convert.ToInt32(leer["DISEÑO_dis_id"].ToString());
                         return solicitud;
                     }
 

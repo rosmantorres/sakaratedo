@@ -70,7 +70,7 @@ namespace DatosSKD.DAO.Modulo16
                 //Obtengo todos las mensualidades que debe el usuario logueado
                 foreach (DataRow row in resultado.Rows)
                 {
-                    laMatricula = (Matricula)laFabrica.ObtenerMatricula();
+                    laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();
                     laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_MATRICULA].ToString());
                     laMatricula.Identificador = row[RecursosBDModulo16.PARAMETRO_IDENTIFICADOR_MAT].ToString();
                     laMatricula.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO_MATRICULA].ToString());
@@ -186,7 +186,7 @@ namespace DatosSKD.DAO.Modulo16
                 //Obtengo cada atributo de la mensualidad solicitada
                 foreach (DataRow row in resultado.Rows)
                 {
-                    laMatricula = (Matricula)laFabrica.ObtenerMatricula();
+                    laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();
                     elDojo = (Dojo)laFabrica.ObtenerDojos();
                     laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_MATRICULA].ToString());
                     laMatricula.Identificador = row[RecursosBDModulo16.PARAMETRO_IDENTIFICADOR_MAT].ToString();
