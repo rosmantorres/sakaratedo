@@ -184,6 +184,24 @@ namespace templateApp.GUI.Modulo16 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect DropDownList1;
         
         /// <summary>
+        /// DatoPago control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText DatoPago;
+        
+        /// <summary>
+        /// Monto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Monto;
+        
+        /// <summary>
         /// BotonPagar control.
         /// </summary>
         /// <remarks>
