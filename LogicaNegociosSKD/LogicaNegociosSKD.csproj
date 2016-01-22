@@ -40,6 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoDojoId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoEliminarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoImplementoXId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoModificarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoUsuarioDojo.cs" />
     <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaEvento.cs" />
     <Compile Include="Comandos\Modulo10\ComandoCompetenciasPorFecha.cs" />
@@ -342,7 +350,6 @@
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
     <Folder Include="Comandos\Modulo4\" />

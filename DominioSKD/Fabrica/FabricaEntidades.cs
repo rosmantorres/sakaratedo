@@ -42,6 +42,7 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
+ 
         #endregion
 
         #region Modulo 5
@@ -430,6 +431,24 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 15
+        public static Entidad ObtenerImplemento(int id_implemento, String nombre_implemento, String tipo_implemento, String marca_implemento, String color_implemento, String talla_implemento, String imagen_implemento, int cantidad_implemento, int stock_minimo_implemento, String estatus_implemento, double precio_implemento, String descripcion_implemento, Dojo dojo)
+        {
+            return new Implemento(id_implemento, nombre_implemento, tipo_implemento, marca_implemento, color_implemento, talla_implemento, imagen_implemento, cantidad_implemento, stock_minimo_implemento, estatus_implemento, precio_implemento, descripcion_implemento, dojo);
+        }
+
+        public static Entidad ObtenerImplemento()
+        {
+            return new Implemento();
+        }
+
+        public static Entidad ObtenerUsuario()
+        {
+            return new Usuario();
+        }
+        public static Entidad tenerDojo()
+        {
+            return new Dojo();
+        }
         #endregion
 
         #region Modulo 16
@@ -464,17 +483,6 @@ namespace DominioSKD.Fabrica
        // {
          //   return new Evento();
         //}
-
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el implemento
-        /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad implemento con todos sus datos llenos</returns>
-        public Entidad ObtenerImplemento()
-        {
-            return new Implemento();
-        }
 
         /// <summary>
         /// Metodo de la fabrica que instancia el Dojo
