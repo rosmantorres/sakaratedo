@@ -23,13 +23,13 @@ namespace templateApp.GUI.Modulo5
             ((SKD)Page.Master).IdModulo = "5";
 
             // Controlador
-
+            this.presentador = new PresentadorCrearCintas(this);
             if (!IsPostBack)
             {
                 // la vista herda de la interfaz contrato 
                 //el presentador al final recive un tipo de dato IContratoCrearCinta
                 // la vista ES UN IContratoCrearCinta 
-                this.presentador = new PresentadorCrearCintas(this);
+              
                 this.presentador.llenarCombo();
                 this.ListOrg.DataSource = options;
                 this.ListOrg.DataTextField = "value";
@@ -76,9 +76,9 @@ namespace templateApp.GUI.Modulo5
             return this.signi.Value;
         }
 
-        public string obtenerOrden()
+        public int obtenerOrden()
         {
-            return this.ord.Value;
+            return Int32.Parse(this.ord.Value);
         }
         #endregion
 

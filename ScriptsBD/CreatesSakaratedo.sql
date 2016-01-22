@@ -4135,10 +4135,6 @@ as
 		
 	end;
 go
--- Le falta la descipcion del estilo y solo las org que tengan estilo van ha aparecer
-
---COMO PROBAR EL PROCEDIMIENTO
---execute M3_ConsultarOrganizacion;
 
 
 --PROCEDURE CONSULTA LISTA DE ORGANIZACIONES POR ID, SERIA PARA LA LISTA DESPLEGABLE ESA DEL ICONO "i"
@@ -4154,10 +4150,6 @@ as
 		where org.ESTILO_est_id = est.est_id and @id_organizacion = org.org_id
 	end;
 go
--- Le falta la descipcion del estilo
-
---COMO PROBAR EL PROCEDIMIENTO
---execute M3_ConsultarOrganizacionXId "1";
 
 
 --PROCEDURE ELIMINAR ORGANIZACION --- SOLO BORRO ORG
@@ -4169,7 +4161,7 @@ as
 		where @id_organizacion = org.org_id
 	end;
 go
---COMO PROBAR EL PROCEDIMIENTO execute M3_EliminarOrganizacion "1";
+
 
 
 --PROCEDURE AGREGAR ORGANIZACION
@@ -4192,8 +4184,6 @@ as
 		
  end;
 go
---COMO PROBAR EL PROCEDIMIENTO
---execute M3_AgregarOrganizacion "Seito Karate-do","Av 24, calle 8 edificio Morales, Altamira, Caracas","2123117754","seitokaratedo@gmail.com","Distrito Federal","Cobra-do";
 
 
 --PROCEDURE MODIFICAR ORGANIZACION--
@@ -4226,9 +4216,6 @@ as
  end;
 go
 
---COMO PROBAR EL PROCEDIMIENTO
---execute M3_ModificarOrganizacion "6","Prueba Karate-do","Av 24, calle 8 edificio Morales, Altamira, Caracas","2123117754","seitokaratedo@gmail.com","Distrito Federal","Cobra-do";
-
 
 CREATE procedure M3_ConsultarComboOrganizacion
 as
@@ -4238,6 +4225,8 @@ as
 		
 	end;
 go
+
+
 --PROCEDURE CONSULTAR NOMBRE ORGANIZACION--
 CREATE PROCEDURE M3_BuscarNombreOrganizacion
 	@nombreOrganizacion  [varchar](100),

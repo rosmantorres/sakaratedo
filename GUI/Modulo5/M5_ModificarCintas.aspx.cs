@@ -23,10 +23,10 @@ namespace templateApp.GUI.Modulo5
 
 
             ((SKD)Page.Master).IdModulo = "5";
-
+            this.presentador = new PresentadorModificarCinta(this);
             if (!IsPostBack)
             {
-                this.presentador = new PresentadorModificarCinta(this);
+               
                 this.presentador.llenarCombo();
                 this.ListOrg.DataSource = options;
                 this.ListOrg.DataTextField = "value";
@@ -72,13 +72,13 @@ namespace templateApp.GUI.Modulo5
             return this.signi.Value;
         }
 
-        public string obtenerOrden()
+        public int obtenerOrden()
         {
-            return this.ord.Value;
+            return Int32.Parse(this.ord.Value);
         }
-        public string obtenerIdCInta()
+        public int obtenerIdCInta()
         {
-            return this.Request.QueryString["idCinta"];
+            return Int32.Parse(Request.QueryString["idCinta"]);
         }
         #endregion
 

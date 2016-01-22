@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatosSKD.Modulo5 {
+namespace Interfaz_Presentadores.Modulo3 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace DatosSKD.Modulo5 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosBDModulo5 {
+    internal class RecursosPresentadorM3 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosBDModulo5() {
+        internal RecursosPresentadorM3() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DatosSKD.Modulo5 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatosSKD.Modulo5.RecursosBDModulo5", typeof(RecursosBDModulo5).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo3.RecursosPresentadorM3", typeof(RecursosPresentadorM3).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,24 @@ namespace DatosSKD.Modulo5 {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_001.
+        /// </summary>
+        internal static string Codigo_Error_Lista_Vacia {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Lista_Vacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La Lista Que Devuelve Esta Vacia.
+        /// </summary>
+        internal static string Mensaje_Error_Lista_Vacia {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Lista_Vacia", resourceCulture);
             }
         }
     }

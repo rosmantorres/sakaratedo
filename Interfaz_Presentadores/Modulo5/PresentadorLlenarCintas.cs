@@ -8,6 +8,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD;
 using DominioSKD;
+using ExcepcionesSKD.Modulo5;
 
 
 namespace Interfaz_Presentadores.Modulo5
@@ -35,6 +36,11 @@ namespace Interfaz_Presentadores.Modulo5
             
             if (_miLista != null)
                 this.llenarVista(_miLista);
+            else
+            {
+                throw new ExcepcionesSKD.Modulo5.ListaVaciaExcepcion(RecursoPresentadorM5.Codigo_Error_Lista_Vacia,
+                                   RecursoPresentadorM5.Mensaje_Error_Lista_Vacia, new Exception());
+            }
        }
 
         /// <summary>

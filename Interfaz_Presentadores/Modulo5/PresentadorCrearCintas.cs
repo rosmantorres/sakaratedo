@@ -31,7 +31,11 @@ namespace Interfaz_Presentadores.Modulo5
 
             if (_miLista != null)
                 this.asignarInformacionCombo(_miLista);
-            
+            else
+            {
+                throw new ExcepcionesSKD.Modulo5.ListaVaciaExcepcion(RecursoPresentadorM5.Codigo_Error_Lista_Vacia,
+                                   RecursoPresentadorM5.Mensaje_Error_Lista_Vacia, new Exception());
+            }
         }
 
         /// <summary>
@@ -64,7 +68,7 @@ namespace Interfaz_Presentadores.Modulo5
             laCinta.Rango = this.vista.obtenerRango();
             laCinta.Clasificacion = this.vista.obtenerCategoria();
             laCinta.Significado = this.vista.obtenerSignificado();
-            laCinta.Orden = Int32.Parse(this.vista.obtenerOrden());
+            laCinta.Orden = this.vista.obtenerOrden();
             laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion();
             laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
             laCinta.Organizacion = laOrganizacion;

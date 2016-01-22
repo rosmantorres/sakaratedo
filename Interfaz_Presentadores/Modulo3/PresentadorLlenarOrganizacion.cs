@@ -30,9 +30,14 @@ namespace Interfaz_Presentadores.Modulo3
             Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarConsultarTodosOrganizacion();
             List<Entidad> _miLista = _comando.Ejecutar();
 
-            // en caso de q sea null... pero cuando trengas la excepcion tienes q quitarlo
+          
             if (_miLista != null)
                 this.llenarVista(_miLista);
+            else
+            {
+                throw new ExcepcionesSKD.Modulo3.ListaVaciaExcepcion(RecursosPresentadorM3.Codigo_Error_Lista_Vacia,
+                                   RecursosPresentadorM3.Mensaje_Error_Lista_Vacia, new Exception());
+            }
         }
 
         /// <summary>
