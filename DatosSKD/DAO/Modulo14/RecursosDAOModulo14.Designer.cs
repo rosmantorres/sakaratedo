@@ -889,6 +889,15 @@ namespace DatosSKD.DAO.Modulo14 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @DISEÑO_dis_id.
+        /// </summary>
+        internal static string ParametroIdDiseno {
+            get {
+                return ResourceManager.GetString("ParametroIdDiseno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @INSCRIPCION_ins_id.
         /// </summary>
         internal static string ParametroIdInscripcion {
