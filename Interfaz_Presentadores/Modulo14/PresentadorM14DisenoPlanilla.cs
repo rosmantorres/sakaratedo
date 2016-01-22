@@ -129,7 +129,7 @@ namespace Interfaz_Presentadores.Modulo14
                         ((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido = vista.CKEditor1.Text;
                         ComandoAgregarDiseno comando =
                          (ComandoAgregarDiseno)fabrica.ObtenerComandoAgregarDiseno();
-                        comando.Diseño = diseño;
+                        comando.Diseño = dis;
                         comando.Planilla = planilla1;
                         exito = comando.Ejecutar();
 
