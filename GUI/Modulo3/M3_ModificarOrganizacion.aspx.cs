@@ -52,6 +52,17 @@ namespace templateApp.GUI.Modulo3
         {
             return this.ListTecnica.SelectedValue;
         }
+        public void alertaModificarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Mensaje + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(M3_RecursoInterfaz.agregarExito);
+        }
         #endregion
 
         protected void btnModificarOrganizaciones(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Modulo5;
 using LogicaNegociosSKD.Modulo3;
 using Interfaz_Presentadores.Modulo5;
 using Interfaz_Contratos.Modulo5;
+using System.Globalization;
 
 namespace templateApp.GUI.Modulo5
 {
@@ -53,7 +54,7 @@ namespace templateApp.GUI.Modulo5
 
         public string obtenerNombreOrganizacion()
         {
-            return this.ListOrg.Text;
+            return this.ListOrg.SelectedItem.Text;
         }
 
         public string obtenerColorCinta()
@@ -79,6 +80,24 @@ namespace templateApp.GUI.Modulo5
         public int obtenerOrden()
         {
             return Int32.Parse(this.ord.Value);
+        }
+        public void alertaCamposVacios()
+        {
+                this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+                this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+                this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.camposVacios + RecursoInterfazMod5.alertaHtmlFinal;
+                this.alert.Visible = true;
+        }
+        public void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Mensaje + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(RecursoInterfazMod5.agregarExito);
         }
         #endregion
 

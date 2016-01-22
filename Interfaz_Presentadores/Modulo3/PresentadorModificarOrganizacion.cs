@@ -28,6 +28,9 @@ namespace Interfaz_Presentadores.Modulo3
         {
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
 
+          try
+            {
+
             laOrganizacion.Id_organizacion = this.vista.obtenerIdOrg();
             laOrganizacion.Nombre = this.vista.obtenerNombreOrg();
             laOrganizacion.Email = this.vista.obtenerEmail();
@@ -39,6 +42,15 @@ namespace Interfaz_Presentadores.Modulo3
             FabricaComandos _fabrica = new FabricaComandos();
             Comando<bool> _comando = _fabrica.ObtenerEjecutarModificarOrganizacion(laOrganizacion);
             bool resultado = _comando.Ejecutar();
+
+            if (resultado)
+                this.vista.Respuesta();
+
+            }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                this.vista.alertaModificarFallido(ex);
+            }
         }
     }
 }

@@ -47,6 +47,24 @@ namespace templateApp.GUI.Modulo3
         {
             return this.ListTecnica.SelectedValue;
         }
+        public void alertaCamposVacios()
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + M3_RecursoInterfaz.camposVacios + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Mensaje + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(M3_RecursoInterfaz.agregarExito);
+        }
         #endregion
 
         protected void btnAgregarOrganizaciones(object sender, EventArgs e)

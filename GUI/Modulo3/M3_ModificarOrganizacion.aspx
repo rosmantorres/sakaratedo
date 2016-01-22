@@ -41,7 +41,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-
+     <div id="alert" runat="server"></div>
 
         <!-- general form elements -->
               <div class="box box-primary">

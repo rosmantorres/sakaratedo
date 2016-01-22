@@ -64,18 +64,44 @@ namespace Interfaz_Presentadores.Modulo5
             DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
 
-            laCinta.Color_nombre = this.vista.obtenerColorCinta();
-            laCinta.Rango = this.vista.obtenerRango();
-            laCinta.Clasificacion = this.vista.obtenerCategoria();
-            laCinta.Significado = this.vista.obtenerSignificado();
-            laCinta.Orden = this.vista.obtenerOrden();
-            laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion();
-            laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
-            laCinta.Organizacion = laOrganizacion;
+            //Se llena una lista de todos los valores que se piden por pantalla para validar si estan vacios
+            List<String> laListaDeInputs = new List<String>();
+            laListaDeInputs.Add(this.vista.obtenerColorCinta());
+            laListaDeInputs.Add(this.vista.obtenerRango());
+            laListaDeInputs.Add(this.vista.obtenerCategoria());
+            laListaDeInputs.Add(this.vista.obtenerSignificado());
+            laListaDeInputs.Add(this.vista.obtenerOrden().ToString());
+            laListaDeInputs.Add(this.vista.obtenerNombreOrganizacion());
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.ObtenerEjecutarAgregarCinta(laCinta);
-            bool resultado = _comando.Ejecutar();   
+            if (Validaciones.ValidarCamposVacios(laListaDeInputs))
+            {
+                try
+                {
+                    laCinta.Color_nombre = this.vista.obtenerColorCinta();
+                    laCinta.Rango = this.vista.obtenerRango();
+                    laCinta.Clasificacion = this.vista.obtenerCategoria();
+                    laCinta.Significado = this.vista.obtenerSignificado();
+                    laCinta.Orden = this.vista.obtenerOrden();
+                    laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion();
+                    laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
+                    laCinta.Organizacion = laOrganizacion;
+
+                    FabricaComandos _fabrica = new FabricaComandos();
+                    Comando<bool> _comando = _fabrica.ObtenerEjecutarAgregarCinta(laCinta);
+                    bool resultado = _comando.Ejecutar();
+                    if (resultado)
+                        this.vista.Respuesta();
+                }
+                catch (ExcepcionesSKD.ExceptionSKD ex)
+                {
+                    this.vista.alertaAgregarFallido(ex);
+                }
+            }
+            else
+            {
+                this.vista.alertaCamposVacios();
+
+            }
         }
 
     }

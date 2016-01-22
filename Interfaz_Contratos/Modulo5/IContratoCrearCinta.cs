@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using ExcepcionesSKD;
 
 namespace Interfaz_Contratos.Modulo5
 {
@@ -17,6 +19,9 @@ namespace Interfaz_Contratos.Modulo5
         string obtenerCategoria();
         string obtenerSignificado();
         int obtenerOrden();
+        void alertaCamposVacios();
+        void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex);
+        void Respuesta();
 
 
     }

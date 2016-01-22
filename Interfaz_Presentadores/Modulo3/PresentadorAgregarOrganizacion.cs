@@ -27,16 +27,43 @@ namespace Interfaz_Presentadores.Modulo3
         {
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
 
-            laOrganizacion.Nombre = this.vista.obtenerNombreOrg();
-            laOrganizacion.Email = this.vista.obtenerEmail();
-            laOrganizacion.Telefono = Int32.Parse(this.vista.obtenerTelefono());
-            laOrganizacion.Direccion = this.vista.obtenerDireccion();
-            laOrganizacion.Estado = this.vista.obtenerEstado();
-            laOrganizacion.Estilo = this.vista.obtenerTecnica();
+            //Se llena una lista de todos los valores que se piden por pantalla para validar si estan vacios
+            List<String> laListaDeInputs = new List<String>();
+            laListaDeInputs.Add(this.vista.obtenerNombreOrg());
+            laListaDeInputs.Add(this.vista.obtenerEmail());
+            laListaDeInputs.Add(this.vista.obtenerTelefono().ToString());
+            laListaDeInputs.Add(this.vista.obtenerDireccion());
+            laListaDeInputs.Add(this.vista.obtenerEstado());
+            laListaDeInputs.Add(this.vista.obtenerTecnica());
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.ObtenerEjecutarAgregarOrganizacion(laOrganizacion);
-            bool resultado = _comando.Ejecutar();
+            if (Validaciones.ValidarCamposVacios(laListaDeInputs))
+            {
+
+                try
+                {
+                     laOrganizacion.Nombre = this.vista.obtenerNombreOrg();
+                     laOrganizacion.Email = this.vista.obtenerEmail();
+                     laOrganizacion.Telefono = Int32.Parse(this.vista.obtenerTelefono());
+                     laOrganizacion.Direccion = this.vista.obtenerDireccion();
+                     laOrganizacion.Estado = this.vista.obtenerEstado();
+                     laOrganizacion.Estilo = this.vista.obtenerTecnica();
+
+                     FabricaComandos _fabrica = new FabricaComandos();
+                     Comando<bool> _comando = _fabrica.ObtenerEjecutarAgregarOrganizacion(laOrganizacion);
+                     bool resultado = _comando.Ejecutar();
+                        if (resultado)
+                             this.vista.Respuesta();
+                }
+                catch (ExcepcionesSKD.ExceptionSKD ex)
+                {
+                this.vista.alertaAgregarFallido(ex);
+                }
+            }
+            else
+            {
+                this.vista.alertaCamposVacios();
+
+            }
         }
     }
 }

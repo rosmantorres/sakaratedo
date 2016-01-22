@@ -141,11 +141,11 @@ kyoshinatera@gmail.com
           $(document).ready(function () {
               $('#ListaCintas').DataTable();
 
-              var table = $('#ListaCintas').DataTable({
-               /* "language": {
+        /*      var table = $('#ListaCintas').DataTable({
+                "language": {
                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }*/
-            });
+                }
+              });*/
             var req;
             var tr;
           

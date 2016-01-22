@@ -17,6 +17,8 @@ namespace Interfaz_Contratos.Modulo5
         string obtenerSignificado();
         int obtenerOrden();
         int obtenerIdCInta();
+        void alertaModificarFallido(ExcepcionesSKD.ExceptionSKD ex);
+        void Respuesta();
 
     }
 }

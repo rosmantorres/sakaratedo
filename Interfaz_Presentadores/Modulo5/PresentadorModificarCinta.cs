@@ -65,6 +65,9 @@ namespace Interfaz_Presentadores.Modulo5
             DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
 
+           try
+           {
+                 
             laCinta.Id_cinta = this.vista.obtenerIdCInta();
             laCinta.Color_nombre = this.vista.obtenerColorCinta();
             laCinta.Rango = this.vista.obtenerRango();
@@ -78,6 +81,14 @@ namespace Interfaz_Presentadores.Modulo5
             FabricaComandos _fabrica = new FabricaComandos();
             Comando<bool> _comando = _fabrica.ObtenerEjecutarModificarCinta(laCinta);
             bool resultado = _comando.Ejecutar();
+            if (resultado)
+                this.vista.Respuesta();
+
+           }
+           catch (ExcepcionesSKD.ExceptionSKD ex)
+           {
+               this.vista.alertaModificarFallido(ex);
+           }
         }
     }
 }

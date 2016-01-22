@@ -15,5 +15,7 @@ namespace Interfaz_Contratos.Modulo3
         string obtenerDireccion();
         string obtenerEstado();
         string obtenerTecnica();
+        void alertaModificarFallido(ExcepcionesSKD.ExceptionSKD ex);
+        void Respuesta();
     }
 }

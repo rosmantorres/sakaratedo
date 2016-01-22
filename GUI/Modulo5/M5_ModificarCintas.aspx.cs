@@ -49,7 +49,7 @@ namespace templateApp.GUI.Modulo5
 
         public string obtenerNombreOrganizacion()
         {
-            return this.ListOrg.Text;
+            return this.ListOrg.SelectedItem.Text;
         }
 
         public string obtenerColorCinta()
@@ -79,6 +79,17 @@ namespace templateApp.GUI.Modulo5
         public int obtenerIdCInta()
         {
             return Int32.Parse(Request.QueryString["idCinta"]);
+        }
+        public void alertaModificarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Mensaje + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(RecursoInterfazMod5.agregarExito);
         }
         #endregion
 
