@@ -91,9 +91,6 @@ namespace Interfaz_Presentadores.Modulo14
            vista.tipoPlanillaCombo.DataTextField = "value";
            vista.tipoPlanillaCombo.DataValueField = "key";
            vista.tipoPlanillaCombo.DataBind();
-
-
-
        }
 
        public void NombreTipoPVisible()
@@ -108,7 +105,7 @@ namespace Interfaz_Presentadores.Modulo14
            }
        }
 
-       public void EditarPlanilla()
+       public bool EditarPlanilla()
        {
            List<String> listDatos = new List<String>();
           // Planilla laPlanilla = null;
@@ -119,7 +116,7 @@ namespace Interfaz_Presentadores.Modulo14
            Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
            Comando<Entidad> comandoModificarPlanillaID = fabricaComandos.ObtenerComandoModificarPlanillaID();
            Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
-          
+           bool respuesta = false;
 
          //  LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
 
@@ -156,8 +153,10 @@ namespace Interfaz_Presentadores.Modulo14
                                    ((ComandoModificarPlanillaIDTipo)comandoModificarPlanillaIDTipo).LaEntidad = laPlanilla;
                                    ((ComandoModificarPlanillaIDTipo)comandoModificarPlanillaIDTipo).TipoPlanilla = TipoPlanilla;
                                     //comandoModificarPlanillaID.Ejecutar();
-                                    comandoModificarPlanillaIDTipo.Ejecutar();
+                                   comandoModificarPlanillaIDTipo.Ejecutar();
+                                   respuesta = true;
                                    //Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
+                                                                 
                                }
                                else
                                {
@@ -165,12 +164,14 @@ namespace Interfaz_Presentadores.Modulo14
                                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_NombreTipoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
                                    vista.alerta = true;
+                                   respuesta = false;
                                }
                            }
                            else
                            {
                                ((ComandoModificarPlanillaID)comandoModificarPlanillaID).LaEntidad = laPlanilla;
                                comandoModificarPlanillaID.Ejecutar();
+                               respuesta = true;
                                //lP.ModificarPlanillaID(laPlanilla);
                                //Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
                            }
@@ -181,6 +182,7 @@ namespace Interfaz_Presentadores.Modulo14
                            vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                            vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_DatoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                            vista.alerta = true;
+                           respuesta = false;
                        }
                    }
                    else
@@ -189,6 +191,7 @@ namespace Interfaz_Presentadores.Modulo14
                        vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                        vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_PlanillaVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                        vista.alerta = true;
+                       respuesta = false;
                    }
                }
                else
@@ -197,6 +200,7 @@ namespace Interfaz_Presentadores.Modulo14
                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_TipoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                    vista.alerta = true;
+                   respuesta = false;
                }
            }
            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -223,6 +227,7 @@ namespace Interfaz_Presentadores.Modulo14
            {
                Alerta(ex.Message);
            }
+           return respuesta;
        }
 
        public void AgregarDato()
