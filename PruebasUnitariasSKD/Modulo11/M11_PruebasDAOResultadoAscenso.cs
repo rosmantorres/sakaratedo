@@ -9,6 +9,7 @@ using DatosSKD.DAO.Modulo11;
 using DatosSKD.InterfazDAO.Modulo11;
 using DatosSKD.Fabrica;
 
+
 namespace PruebasUnitariasSKD.Modulo11
 {
         /// <summary>
@@ -36,6 +37,8 @@ namespace PruebasUnitariasSKD.Modulo11
             listaEntidad = new List<Entidad>();
             idEvento = "3";
             idCompetencia = "11";
+
+
 
 
         }
@@ -96,12 +99,32 @@ namespace PruebasUnitariasSKD.Modulo11
         public void PruebaListarAtletaEnCatyAsc()
         {
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoAscenso();
-            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Aprobado = "S";
-            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Id = 10;
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria.Id = 1;
             listaEntidad = DAO.ListaAtletasEnCategoriaYAscenso(entidad);
+            Assert.AreEqual(1,listaEntidad.ToArray().Length);
+
+
+        }
+
+        [Test]
+
+        public void PruebaListarInscritosExamenAsc()
+        {
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+            listaEntidad = DAO.ListaInscritosExamenAscenso(entidad);
             Assert.NotNull(listaEntidad);
 
+        }
+
+
+        [Test]
+
+        public void PruebaConsultarEventoDetalle()
+        {
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+            
 
         }
         #endregion
