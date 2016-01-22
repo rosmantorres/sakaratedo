@@ -36,9 +36,8 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void LlenarEventosCombo()
         {
-            //LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboEvento = fabricaCo.ObtenerComandoEventosSolicitud();
+
+            Comando<List<Entidad>> comboEvento = FabricaComandos.ObtenerComandoEventosSolicitud();
             ((ComandoEventosSolicitud)comboEvento).IDPersona = vista.IDUsuario;
             //List<SolicitudP> listEventos = (Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
             List<Entidad> listEventos = comboEvento.Ejecutar();
@@ -57,10 +56,8 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void LLenarCompetenciaCombo()
         {
-            //LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
-            //List<SolicitudP> listCompetencias = lP.CompetenciasSolicitud(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboCompetencia = fabricaCo.ObtenerComandoCompetenciasSolicitud();
+        
+            Comando<List<Entidad>> comboCompetencia = FabricaComandos.ObtenerComandoCompetenciasSolicitud();
             ((ComandoCompetenciasSolicitud)comboCompetencia).IDPersona = vista.IDUsuario;
             List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
@@ -88,8 +85,8 @@ namespace Interfaz_Presentadores.Modulo14
             // SolicitudP laSolicitud = new SolicitudP();
             //LogicaSolicitud lP = new LogicaSolicitud();
             // laSolicitud = lP.ObtenerSolicitudID(Int32.Parse(this.id_solicitud.Value));
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<Entidad> comandoObtenerSolicitudID = fabricaCo.ObtenerComandoObtenerSolicitudID();
+           
+            Comando<Entidad> comandoObtenerSolicitudID = FabricaComandos.ObtenerComandoObtenerSolicitudID();
             ((ComandoObtenerSolicitudID)comandoObtenerSolicitudID).IDSolicitud = idSolicitud;
             laSolicitud = comandoObtenerSolicitudID.Ejecutar();
             vista.FechaRetiro = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).FechaRetiro;
@@ -106,7 +103,7 @@ namespace Interfaz_Presentadores.Modulo14
             //   int idIns = laSolicitud.IDInscripcion;
 
             //  List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(laSolicitud.ID);
-            Comando<List<Boolean>> comandoDatosRequeridosSolicitud = fabricaCo.ObtenerComandoDatosRequeridosSolicitud();
+            Comando<List<Boolean>> comandoDatosRequeridosSolicitud = FabricaComandos.ObtenerComandoDatosRequeridosSolicitud();
            
             ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad =
                 FabricaEntidades.ObtenerPlanilla();
@@ -200,12 +197,11 @@ namespace Interfaz_Presentadores.Modulo14
         public bool EditarPlanillaSolicitada()
         {
            // LogicaSolicitud lS = new LogicaSolicitud();
-            FabricaComandos fabricaComandos = new FabricaComandos();
             Entidad solicitud = FabricaEntidades.ObtenerSolicitudP();
             ((DominioSKD.Entidades.Modulo14.SolicitudP)solicitud).ID =
                 Int32.Parse(vista.solicitudId);
            //Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
-           Comando<Entidad> comandoModificarSolicitudID = fabricaComandos.ObtenerComandoModificarSolicitudID();
+            Comando<Entidad> comandoModificarSolicitudID = FabricaComandos.ObtenerComandoModificarSolicitudID();
            //Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
           // int idIns = vista.IDIns; 
 
