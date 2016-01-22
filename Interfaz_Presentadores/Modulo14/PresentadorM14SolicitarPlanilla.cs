@@ -17,7 +17,6 @@ namespace Interfaz_Presentadores.Modulo14
                  //Variable que contiene la vista respectiva de este presentador a ser manipulada
         private IContratoM14SolicitarPlanilla vista;
         List<Entidad> lista;
-        FabricaComandos fabricaComando = new FabricaComandos();
         public PresentadorM14SolicitarPlanilla(IContratoM14SolicitarPlanilla vista)
         {
             this.vista = vista;
@@ -62,7 +61,7 @@ namespace Interfaz_Presentadores.Modulo14
         {
             try
             {
-                Comando<List<Entidad>> planillas = fabricaComando.ObtenerComandoConsultarPlanillasASolicitar();
+                Comando<List<Entidad>> planillas = FabricaComandos.ObtenerComandoConsultarPlanillasASolicitar();
                 return planillas.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

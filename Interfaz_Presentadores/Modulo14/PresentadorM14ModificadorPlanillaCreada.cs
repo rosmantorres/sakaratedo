@@ -33,8 +33,8 @@ namespace Interfaz_Presentadores.Modulo14
        public void LlenarTipoPlanillaCombo(String tipoPlanilla)
        {
            //LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
-           FabricaComandos fabricaCo = new FabricaComandos();
-           Comando<List<Entidad>> comboTipoPlanilla = fabricaCo.ObtenerComandoObtenerTipoPlanilla();
+          
+           Comando<List<Entidad>> comboTipoPlanilla = FabricaComandos.ObtenerComandoObtenerTipoPlanilla();
            List<Entidad> listPlanilla = new List<Entidad>();
            Dictionary<string, string> options = new Dictionary<string, string>();
            try
@@ -112,10 +112,9 @@ namespace Interfaz_Presentadores.Modulo14
            ListItemCollection listItem = vista.datosPlanilla2.Items;
            String TipoPlanilla = "";
            FabricaEntidades fabricaEntidades = new FabricaEntidades();
-           FabricaComandos fabricaComandos = new FabricaComandos();
-           Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
-           Comando<Entidad> comandoModificarPlanillaID = fabricaComandos.ObtenerComandoModificarPlanillaID();
-           Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
+           Comando<Boolean> comandoTipoPlanilla = FabricaComandos.ObtenerComandoNuevoTipoPlanilla();
+           Comando<Entidad> comandoModificarPlanillaID = FabricaComandos.ObtenerComandoModificarPlanillaID();
+           Comando<Entidad> comandoModificarPlanillaIDTipo = FabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
            bool respuesta = false;
 
          //  LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
@@ -329,8 +328,7 @@ namespace Interfaz_Presentadores.Modulo14
 
             //   LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
               // laPlanilla = lP.ObtenerPlanillaID(idPlanilla);
-               FabricaComandos fabricaCo = new FabricaComandos();
-               Comando<Entidad> comandoObtenerPlanillaID = fabricaCo.ObtenerComandoObtenerPlanillaID();
+               Comando<Entidad> comandoObtenerPlanillaID = FabricaComandos.ObtenerComandoObtenerPlanillaID();
                ((ComandoObtenerPlanillaID)comandoObtenerPlanillaID).IdPlanilla = idPlanilla;
                laPlanilla = comandoObtenerPlanillaID.Ejecutar();
                vista.nombrePlanilla = ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).Nombre;
