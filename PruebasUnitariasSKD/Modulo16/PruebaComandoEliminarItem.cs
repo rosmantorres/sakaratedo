@@ -110,7 +110,7 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             // valor  para Agregar un Implemento
             this.pruebaComandoImplemento1 = FabricaComandos.CrearComandoAgregarItem
-                (this.persona, this.implemento, 1, 10);
+                (this.persona, this.implemento, 1, 1);
 
             //Elimino un implemento al carrito de una persona con id 11
             Assert.IsTrue(this.pruebaComandoImplemento1.Ejecutar());
@@ -125,7 +125,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             // valor  para Agregar un Evento
             this.pruebaComandoEvento1 = FabricaComandos.CrearComandoAgregarItem
-                (this.persona2, this.evento, 2, 10);
+                (this.persona2, this.evento, 2, 1);
             //Elimino un Evento al carrito de una persona con id 12
             Assert.IsTrue(this.pruebaComandoEvento1.Ejecutar());
         }
@@ -138,7 +138,7 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             // valor  para Agregar una Matricula
             this.pruebaComandoMatricula1 = FabricaComandos.CrearComandoAgregarItem
-                (this.persona3, this.matricula, 3, 10);
+                (this.persona3, this.matricula, 3, 1);
 
             //Elimino una matricula al carrito de una persona con id 13
             Assert.IsTrue(this.pruebaComandoMatricula1.Ejecutar());
