@@ -544,9 +544,9 @@ namespace DatosSKD.DAO.Modulo10
                     ((DominioSKD.Entidades.Modulo10.Persona)persona).Apellido = row[RecursosDAOModulo10.aliasApellidoPersona].ToString();
                     ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Persona = persona as DominioSKD.Entidades.Modulo10.Persona;
 
-                    Entidad solicitud = fabrica.ObtenerSolicitudPlanilla();
+                    Entidad solicitud = DominioSKD.Fabrica.FabricaEntidades.ObtenerSolicitudPlanilla();
                     ((DominioSKD.Entidades.Modulo14.SolicitudPlanilla)solicitud).Id = int.Parse(row[RecursosDAOModulo10.aliasIdSolicitudPlanilla].ToString());
-                    Entidad planilla = fabrica.ObtenerPlanilla();
+                    Entidad planilla = DominioSKD.Fabrica.FabricaEntidades.ObtenerPlanilla();
                     ((DominioSKD.Entidades.Modulo14.Planilla)planilla).Id = int.Parse(row[RecursosDAOModulo10.aliasIdPlanilla].ToString());
                     ((DominioSKD.Entidades.Modulo14.Planilla)planilla).Nombre = row[RecursosDAOModulo10.aliasNombrePlanilla].ToString();
                     ((DominioSKD.Entidades.Modulo14.SolicitudPlanilla)solicitud).Planilla = planilla as DominioSKD.Entidades.Modulo14.Planilla;
@@ -870,9 +870,9 @@ namespace DatosSKD.DAO.Modulo10
                     ((DominioSKD.Entidades.Modulo10.Persona)persona).Apellido = row[RecursosDAOModulo10.aliasApellidoPersona].ToString();
                     ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Persona = persona as DominioSKD.Entidades.Modulo10.Persona;
 
-                    Entidad solicitud = fabrica.ObtenerSolicitudPlanilla();
+                    Entidad solicitud = DominioSKD.Fabrica.FabricaEntidades.ObtenerSolicitudPlanilla();
                     ((DominioSKD.Entidades.Modulo14.SolicitudPlanilla)solicitud).Id = int.Parse(row[RecursosDAOModulo10.aliasIdSolicitudPlanilla].ToString());
-                    Entidad planilla = fabrica.ObtenerPlanilla();
+                    Entidad planilla = DominioSKD.Fabrica.FabricaEntidades.ObtenerPlanilla();
                     ((DominioSKD.Entidades.Modulo14.Planilla)planilla).Id = int.Parse(row[RecursosDAOModulo10.aliasIdPlanilla].ToString());
                     ((DominioSKD.Entidades.Modulo14.Planilla)planilla).Nombre = row[RecursosDAOModulo10.aliasNombrePlanilla].ToString();
                     ((DominioSKD.Entidades.Modulo14.SolicitudPlanilla)solicitud).Planilla = planilla as DominioSKD.Entidades.Modulo14.Planilla;

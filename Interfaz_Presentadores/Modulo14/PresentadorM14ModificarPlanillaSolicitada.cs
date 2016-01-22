@@ -89,7 +89,6 @@ namespace Interfaz_Presentadores.Modulo14
             //LogicaSolicitud lP = new LogicaSolicitud();
             // laSolicitud = lP.ObtenerSolicitudID(Int32.Parse(this.id_solicitud.Value));
             FabricaComandos fabricaCo = new FabricaComandos();
-            FabricaEntidades fabricaEnt = new FabricaEntidades();
             Comando<Entidad> comandoObtenerSolicitudID = fabricaCo.ObtenerComandoObtenerSolicitudID();
             ((ComandoObtenerSolicitudID)comandoObtenerSolicitudID).IDSolicitud = idSolicitud;
             laSolicitud = comandoObtenerSolicitudID.Ejecutar();
@@ -109,8 +108,8 @@ namespace Interfaz_Presentadores.Modulo14
             //  List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(laSolicitud.ID);
             Comando<List<Boolean>> comandoDatosRequeridosSolicitud = fabricaCo.ObtenerComandoDatosRequeridosSolicitud();
            
-            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = 
-                fabricaEnt.ObtenerPlanilla();
+            ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad =
+                FabricaEntidades.ObtenerPlanilla();
             ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id =
                 ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).ID;
             //((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).IdPlanilla = idSolicitud;
@@ -201,9 +200,8 @@ namespace Interfaz_Presentadores.Modulo14
         public bool EditarPlanillaSolicitada()
         {
            // LogicaSolicitud lS = new LogicaSolicitud();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             FabricaComandos fabricaComandos = new FabricaComandos();
-            Entidad solicitud = fabricaEntidades.ObtenerSolicitudP();
+            Entidad solicitud = FabricaEntidades.ObtenerSolicitudP();
             ((DominioSKD.Entidades.Modulo14.SolicitudP)solicitud).ID =
                 Int32.Parse(vista.solicitudId);
            //Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
@@ -223,7 +221,7 @@ namespace Interfaz_Presentadores.Modulo14
                  //                          this.id_motivo.Value, Int32.Parse(this.comboEvento.SelectedValue));
                // lS.ModificarSolicitudID(laSolicitud);
 
-                             Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId),vista.FechaRetiro, vista.FechaReincorporacion,
+                             Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                        vista.Motivo, Int32.Parse(vista.EventoCombo.SelectedValue));
                              comandoModificarSolicitudID.LaEntidad = laSolicitud;
                              comandoModificarSolicitudID.Ejecutar();
@@ -234,8 +232,8 @@ namespace Interfaz_Presentadores.Modulo14
                /* SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
                                              this.id_motivo.Value, Int32.Parse(this.comboCompetencia.SelectedValue));*/
                // lS.ModificarSolicitudID(laSolicitud);
-           
-                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+
+                            Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                           vista.Motivo, Int32.Parse(vista.CompetenciaCombo.SelectedValue));
                             comandoModificarSolicitudID.LaEntidad =laSolicitud;
                             comandoModificarSolicitudID.Ejecutar();
@@ -247,8 +245,8 @@ namespace Interfaz_Presentadores.Modulo14
              //                                this.id_motivo.Value, idIns);
              //   lS.ModificarSolicitudID(laSolicitud);
             //    vista.IDInscripcion = Int32.Parse(Request.Cookies[RecursosPresentadorModulo14.CookieIdIns].ToString());
-                
-                            Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+
+                             Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                             vista.Motivo, IDIns);
                             comandoModificarSolicitudID.LaEntidad =laSolicitud;
                             comandoModificarSolicitudID.Ejecutar();

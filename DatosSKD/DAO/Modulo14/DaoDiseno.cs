@@ -33,7 +33,6 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.Diseño diseño;
             DominioSKD.Entidades.Modulo14.Planilla planilla =
                 (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
@@ -58,7 +57,7 @@ namespace DatosSKD.DAO.Modulo14
                             while (leer.Read())
                             {
                                 diseño =
-                       (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
+                       (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño();
                                 diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
                                 diseño.Contenido = leer[RecursosDAOModulo14.AtributocontenidoDiseño].ToString();
                                 diseño.Base64Decode();
@@ -254,7 +253,6 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.Diseño diseño;
             DominioSKD.Entidades.Modulo14.SolicitudPlanilla planilla =
                 (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)laPlanilla;
@@ -277,7 +275,7 @@ namespace DatosSKD.DAO.Modulo14
                         while (leer.Read())
                         {
                             diseño =
-                   (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
+                   (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño();
                             diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
                             diseño.Contenido = leer[RecursosDAOModulo14.AtributocontenidoDiseño].ToString();
                             diseño.Base64Decode();

@@ -27,9 +27,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
               try
               {
                   FabricaDAOSqlServer fabricaDao = new FabricaDAOSqlServer();
-                  FabricaEntidades entFab = new FabricaEntidades();
+                 
                   DaoDiseno diseno = (DaoDiseno)fabricaDao.ObtenerDAODiseno();
-                  DominioSKD.Entidades.Modulo14.Planilla planilla = (DominioSKD.Entidades.Modulo14.Planilla)entFab.ObtenerPlanilla();
+                  DominioSKD.Entidades.Modulo14.Planilla planilla = (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
                   planilla.ID = LaEntidad.Id;
                   Entidad resultDiseño = diseno.ConsultarXId(planilla);
 
