@@ -9,6 +9,8 @@ using LogicaNegociosSKD.Comandos.Modulo16;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD.Comandos.Modulo12;
+using LogicaNegociosSKD.Comandos.Modulo10;
+using LogicaNegociosSKD.Comandos.Modulo11;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -78,9 +80,192 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 10
+        public static Comando<List<Entidad>> ObtenerComandoListarEventosAsistidos()
+        {
+            return new ComandoListarEventosAsistidos();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListarCompetenciasAsistidas()
+        {
+            return new ComandoListarCompetenciasAsistidas();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAsistentesEvento(string idEvento)
+        {
+            return new ComandoListaAsistentesEvento(idEvento);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaNoAsistentesEvento(string idEvento)
+        {
+            return new ComandoListaNoAsistentesEvento(idEvento);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAsistentesCompetencia(string idCompetencia)
+        {
+            return new ComandoListaAsistentesCompetencia(idCompetencia);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaNoAsistentesCompetencia(string idCompetencia)
+        {
+            return new ComandoListaNoAsistentesCompetencia(idCompetencia);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarAsistenciaEvento(List<Entidad> lista)
+        {
+            return new ComandoModificarAsistenciaEvento(lista);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarCompetenciasXId(string idCompetencia)
+        {
+            return new ComandoConsultarCompetenciasXId(idCompetencia);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarAsistenciaCompetencia(List<Entidad> lista)
+        {
+            return new ComandoModificarAsistenciaCompetencia(lista);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasInscritosEvento(string idEvento)
+        {
+            return new ComandoListaAtletasInscritosEvento(idEvento);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaInasistentesPlanillaEvento(string idEvento)
+        {
+            return new ComandoListaInasistentesPlanilla(idEvento);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarAsistenciaEvento(List<Entidad> listaEntidad)
+        {
+            return new ComandoAgregarAsistenciaEvento(listaEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarAsistenciaCompetencia(List<Entidad> listaEntidad)
+        {
+            return new ComandoAgregarAsistenciaCompetencia(listaEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListarHorariosCompetencia()
+        {
+            return new ComandoListarHorariosCompetencia();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoCompetenciasPorFecha(string fechaInicio)
+        {
+            return new ComandoCompetenciasPorFecha(fechaInicio);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasInscritosCompetencia(string idCompetencia)
+        {
+            return new ComandoListaAtletasInscritosCompetencia(idCompetencia);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaInasistentesPlanillaCompetencia(string idCompetencia)
+        {
+            return new ComandoListaInasistentesPlanillaCompetencia(idCompetencia);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarCompetenciaXIdDetalle(string idCompetencia)
+        {
+            return new ComandoConsultarCompetenciaXIdDetalle(idCompetencia);
+        }
         #endregion
 
         #region Modulo 11
+        public static Comando<List<Entidad>> ObtenerComandoListarResultadosEventosPasados()
+        {
+            return new ComandoListarResultadosEventosPasados();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaCategoriaEvento(string idEvento)
+        {
+            return new ComandoListaCategoriaEvento(idEvento);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasEnCategoriaYAscenso(Entidad entidad)
+        {
+            return new ComandoListaAtletasEnCategoriaYAscenso(entidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaInscritosExamenAscenso(Entidad entidad)
+        {
+            return new ComandoListaInscritosExamenAscenso(entidad);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarEventoDetalle(string idEvento)
+        {
+            return new ComandoConsultarEventoDetalle(idEvento);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarResultadoAscenso(List<Entidad> listaEntidad)
+        {
+            return new ComandoAgregarResultadoAscenso(listaEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarResultadoAscenso(List<Entidad> listaEntidad)
+        {
+            return new ComandoModificarResultadoAscenso(listaEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListarResultadosCompetenciasPasado()
+        {
+            return new ComandoListarResultadosCompetenciaPasado();
+        }
+
+        public static Comando<List<string>> ObtenerComandoListaEspecialidadesCompetencia(string idCompetencia)
+        {
+            return new ComandoListaEspecialidadesCompetencia(idCompetencia);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaCategoriaCompetencia(Entidad entidad)
+        {
+            return new ComandoListaCategoriaCompetencia(entidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasParticipanCompetenciaKata(Entidad entidad)
+        {
+            return new ComandoListaAtletasParticipanCompetenciaKata(entidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasParticipanCompetenciaKataAmbos(Entidad entidad)
+        {
+            return new ComandoListaAtletasParticipanCompetenciaKataAmbos(entidad);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarResultadoKata(List<Entidad> listaEntidad)
+        {
+            return new ComandoAgregarResultadoKata(listaEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarResultadoKata(List<Entidad> listaEntidad)
+        {
+            return new ComandoModificarResultadoKata(listaEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasParticipanCompetenciaKumite(Entidad entidad)
+        {
+            return new ComandoListaAtletasParticipanCompetenciaKumite(entidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaAtletasParticipanCompetenciaKumiteAmbos(Entidad entidad)
+        {
+            return new ComandoListaAtletasParticipanCompetenciaKumiteAmbos(entidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoListaInscritosCompetencia(Entidad entidad)
+        {
+            return new ComandoListaInscritosCompetencia(entidad);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarResultadoKumite(List<Entidad> listaEntidad)
+        {
+            return new ComandoAgregarResultadoKumite(listaEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarResultadoKumite(List<Entidad> listaEntidad)
+        {
+            return new ComandoModificarResultadoKumite(listaEntidad);
+        }
         #endregion
 
         #region Modulo 12
