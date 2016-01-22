@@ -9,6 +9,7 @@ using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Fabrica;
 using Interfaz_Contratos.Modulo15;
 using Interfaz_Presentadores.Modulo15;
+using System.Web.UI.HtmlControls;
 
 namespace templateApp.GUI.Modulo15
 {
@@ -41,6 +42,8 @@ namespace templateApp.GUI.Modulo15
                 this.descripcion_implemento.Value = ((Implemento)implemento).Descripcion_Implemento;
                 this.precio_implemento.Value = (((Implemento)implemento).Precio_Implemento).ToString();
                 this.estatus_implemento.Value = ((Implemento)implemento).Estatus_Implemento;
+                
+                //this.imagen_implemento.Value = (HtmlInputFile)("~/GUI/Modulo15/imagen" + ((Implemento)implemento).Imagen_implemento);
             }
                 Modificar.Click += new EventHandler(this.modificarImplemento);
             

@@ -15,6 +15,7 @@ using DominioSKD.Fabrica;
 using Interfaz_Contratos.Modulo15;
 using Interfaz_Presentadores.Modulo15;
 using DominioSKD.Entidades.Modulo15;
+using System.Web.UI.HtmlControls;
 
 namespace templateApp.GUI.Modulo15
 {
@@ -43,13 +44,22 @@ namespace templateApp.GUI.Modulo15
     
         }
 
+        void guardarImagen() {
+            string TargetLocation;
+            string imagen_implemento = null;
+            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+            imagen_implemento = this.imagen_implemento.Value;
+            this.imagen_implemento.PostedFile.SaveAs(TargetLocation + imagen_implemento);
+
+        }
+
         public void agregarImplemento(object sender,EventArgs e) {
             // usuario y roles***********
             String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
 
             //***************************
-            Entidad usuarioDojo = FabricaEntidades.tenerDojo();
+            Entidad usuarioDojo = FabricaEntidades.ObtenerUsuario();
             ((Usuario)usuarioDojo)._Nombre = usuario;
             Entidad implemento = FabricaEntidades.ObtenerImplemento();
             ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
@@ -62,12 +72,14 @@ namespace templateApp.GUI.Modulo15
             ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = presentador.usuarioDojo(usuarioDojo);
             ((Implemento)implemento).Dojo_Implemento =(Dojo)presentador.obtenerDojoXId(((Implemento)implemento).Dojo_Implemento);
 
-            ((Implemento)implemento).Cantida_implemento= Convert.ToInt16(this.cantidad_implemento.Value);
-            ((Implemento)implemento).Stock_Minimo_Implemento= Convert.ToInt16(this.stock_implemento.Value);
+            ((Implemento)implemento).Cantida_implemento= Convert.ToInt32(this.cantidad_implemento.Value);
+            ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt32(this.stock_implemento.Value);
             ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
             ((Implemento)implemento).Precio_Implemento= Convert.ToDouble(this.precio_implemento.Value);
-            ((Implemento)implemento).Imagen_implemento = "Hola mundo";
+            ((Implemento)implemento).Imagen_implemento =this.imagen_implemento.Value;
             presentador.agregarImplemento(implemento);
+
+            guardarImagen();
             Response.Redirect("web_15_ConsultarImplemento.aspx");
 
         
@@ -182,6 +194,43 @@ namespace templateApp.GUI.Modulo15
         }
 
         public string imagen_implemeto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+
+        DropDownList IContratoAgregarImplemento.marca_implemeto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoAgregarImplemento.stock_implemeto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        string IContratoAgregarImplemento.imagen_implemeto
         {
             get
             {

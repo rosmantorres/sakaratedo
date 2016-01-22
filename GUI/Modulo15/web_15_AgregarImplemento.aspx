@@ -122,7 +122,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp
                     <asp:Button class="btn btn-default" ID="Agregar" runat="server" Text="Agregar" />
                     &nbsp;&nbsp
-                    <a class="btn btn-default" href="M15_ConsultarImplemento.aspx">Cancelar</a>
+                    <a class="btn btn-default" href="web_15_ConsultarImplemento.aspx">Cancelar</a>
                     </div>
                 </form>
                  
