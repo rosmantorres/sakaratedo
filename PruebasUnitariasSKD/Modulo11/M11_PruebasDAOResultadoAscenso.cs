@@ -24,7 +24,7 @@ namespace PruebasUnitariasSKD.Modulo11
    
         #region Atributos
         List<Entidad> listaEntidad;
-        public string idEvento;
+        string idEvento;
         public string idCompetencia;
         public Entidad entidad;
 
@@ -37,10 +37,7 @@ namespace PruebasUnitariasSKD.Modulo11
             listaEntidad = new List<Entidad>();
             idEvento = "3";
             idCompetencia = "11";
-
-
-
-
+     
         }
 
 
@@ -98,12 +95,16 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaListarAtletaEnCatyAsc()
         {
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            Entidad categoria = fabrica.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
-            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria.Id = 1;
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
             listaEntidad = DAO.ListaAtletasEnCategoriaYAscenso(entidad);
-            Assert.AreEqual(1,listaEntidad.ToArray().Length);
+            Assert.NotNull(listaEntidad);
 
 
         }
@@ -112,7 +113,16 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaListarInscritosExamenAsc()
         {
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
+           
+
             listaEntidad = DAO.ListaInscritosExamenAscenso(entidad);
             Assert.NotNull(listaEntidad);
 
@@ -123,9 +133,8 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaConsultarEventoDetalle()
         {
-            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
-            
-
+     
+           
         }
         #endregion
     }
