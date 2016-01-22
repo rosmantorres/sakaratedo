@@ -233,6 +233,80 @@ namespace DominioSKD.Fabrica
 
         #endregion
 
+        #region Fabricas Restriccion Evento
+        /// <summary>
+        /// Fabrica de Restriccion Evento sin parametros de entrada
+        /// </summary>
+        /// <returns> Objeto Tipo Entidad </returns>
+
+        public Entidad ObtenerRestriccionEvento()
+        {
+            return new Entidades.Modulo8.RestriccionEvento();
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametro de entrada identificador de la restriccion
+        /// </summary>
+        /// <param name="inputId"> Parametro referente al id unico de la restriccion del evento</param>
+        /// <returns>Objeto tipo Entidad</returns>
+
+        public Entidad ObtenerRestriccionEvento(int inputId)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(inputId);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametros de entrada multiples sin id unico.
+        /// </summary>
+        /// <param name="inputDescripcion"> String, descripcion breve de los parametros de la restriccion del evento</param>
+        /// <param name="inputEdadMinima">Integer,edad minima con la que se puede participar en el evento</param>
+        /// <param name="inputEdadMaxima">Integer, edad maxima con la que se puede participar en el evento</param>
+        /// <param name="inputSexo">String, sexo permitido en el evento {M,F,B} M para solo atletas masculinos, 
+        /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
+        /// <returns> Objeto tipo Entidad</returns>
+
+        public Entidad ObtenerRestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                                     int inputRangoMaximo, String inputSexo, String inputModalidad)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputEdadMinima">Integer,edad minima con la que se puede participar en el evento</param>
+        /// <param name="inputEdadMaxima">Integer, edad maxima con la que se puede participar en el evento</param>
+        /// <param name="inputSexo">String, sexo permitido en el evento {M,F,B} M para solo atletas masculinos, 
+        /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public Entidad ObtenerRestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                                     int inputRangoMaximo, String inputSexo, String inputModalidad)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="id">Integer, identificador unico del objeto</param>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputEdadMinima">Integer,edad minima con la que se puede participar en el evento</param>
+        /// <param name="inputEdadMaxima">Integer, edad maxima con la que se puede participar en el evento</param>
+        /// <param name="inputSexo">String, sexo permitido en el evento {M,F,B} M para solo atletas masculinos, 
+        /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+
+        public Entidad ObtenerRestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                                     int inputRangoMaximo, String inputSexo, String inputModalidad)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo);
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 9
