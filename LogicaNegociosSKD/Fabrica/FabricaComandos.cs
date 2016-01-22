@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD.Comandos.Modulo5;
+using LogicaNegociosSKD.Comandos.Modulo4;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -42,6 +43,10 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        public static Comando<bool> CrearComandoAgregarDojo()
+        {
+            return new ComandoAgregarDojo();
+        }
         #endregion
 
         #region Modulo 5

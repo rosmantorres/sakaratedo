@@ -44,7 +44,7 @@ namespace DatosSKD.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                         org.Id_organizacion = int.Parse(row[RecursosBDModulo7.AliasOrganizacionId].ToString());
+                         org.Id = int.Parse(row[RecursosBDModulo7.AliasOrganizacionId].ToString());
                          org.Nombre = row[RecursosBDModulo7.AliasOrganizacionNombre].ToString();
                          org.Direccion = row[RecursosBDModulo7.AliasOrganizacionDireccion].ToString();
                          org.Telefono = int.Parse(row[RecursosBDModulo7.AliasOrganizacionTelefono].ToString());

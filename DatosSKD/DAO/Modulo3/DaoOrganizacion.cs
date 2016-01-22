@@ -330,7 +330,7 @@ namespace DatosSKD.DAO.Modulo3
                    // laListaOrganizaciones.Add(new Organizacion(Int32.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString()), row[RecursosDaoModulo3.AliasNombreOrg].ToString()));
                     laOrganizacion = (Organizacion)laFabrica.ObtenerOrganizacion_M3();
 
-                    laOrganizacion.Id_organizacion = int.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString());
+                    laOrganizacion.Id = int.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString());
                     laOrganizacion.Nombre = row[RecursosDaoModulo3.AliasNombreOrg].ToString();
 
                     laListaOrganizaciones.Add(laOrganizacion);

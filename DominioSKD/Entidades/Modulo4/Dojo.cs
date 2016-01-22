@@ -18,13 +18,23 @@ namespace DominioSKD.Entidades.Modulo4
         private String logo_dojo;
         private DateTime registro_dojo;
         private bool status_dojo;
+        private int organizacion_dojo;
         private Organizacion organizacion;
         private Ubicacion ubicacion;
         private string estilo;
         #endregion
 
         #region propiedades
-
+        public int Organizacion_dojo
+        {
+            get { return organizacion_dojo; }
+            set { organizacion_dojo = value; }
+        }
+        public int Dojo_Id
+        {
+            get { return id_dojo; }
+            set { id_dojo = value; }
+        }
         public int Id_dojo
         {
             get { return id_dojo; }

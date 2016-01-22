@@ -85,6 +85,12 @@
     <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarXIdOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarModificarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoAgregarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\RecursosComandoModulo4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo4.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo5\EjecutarAgregarCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarTodosCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
@@ -214,6 +220,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo4\RecursosComandoModulo4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -289,7 +299,6 @@
     <Folder Include="Comandos\Modulo16\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
-    <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />

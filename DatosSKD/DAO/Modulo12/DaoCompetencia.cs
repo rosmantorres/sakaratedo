@@ -718,7 +718,7 @@ namespace DatosSKD.DAO.Modulo12
                     {
                         laOrganizacion = (Organizacion)laFabrica.ObtenerOrganizacion();
 
-                        laOrganizacion.Id_organizacion = int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString());
+                        laOrganizacion.Id = int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString());
                         laOrganizacion.Nombre = row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString();
 
                         laListaOrganizaciones.Add(laOrganizacion);

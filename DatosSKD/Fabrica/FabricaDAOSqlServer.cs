@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using DatosSKD.DAO.Modulo14;
 using DatosSKD.DAO.Modulo12;
 using DatosSKD.InterfazDAO.Modulo12;
-//using DatosSKD.DAO.Modulo16;
+using DatosSKD.DAO.Modulo4;
 using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo4;
 
 
 namespace DatosSKD.Fabrica
@@ -29,6 +30,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        public IDaoDojo ObtenerDAODojo()
+        {
+            return new DaoDojo();
+        }
         #endregion
 
         #region Modulo 5

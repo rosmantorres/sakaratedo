@@ -39,6 +39,27 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        public static Entidad ObtenerDojo_M4() 
+        {
+            return new Dojo();
+        }
+        public static Entidad ObtenerDojo_M4(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
+        {
+            return new Dojo(Id, Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);
+        }
+        public static Entidad ObtenerDojo_M4(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
+        {
+            return new Dojo( Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);
+        }
+       
+        public static Entidad ObtenerOrganizacion_M4()
+        {
+            return new Organizacion();
+        }
+        public static Entidad ObtenerUbicacion_M4()
+        {
+            return new Ubicacion();
+        }
         #endregion
 
         #region Modulo 5

@@ -62,3 +62,195 @@
 2016-01-18 14:51:02,487 INFO  BDCompetencia - Clase: BDCompetencia
 2016-01-18 14:51:02,487 INFO  BDCompetencia - Mensaje: Salida del Método
 2016-01-18 14:51:02,487 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-19 03:00:34,722 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:34,737 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:34,737 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-19 03:00:34,737 INFO  LogicaCompetencias - Metodo: obtenerListaDeCompetencias
+2016-01-19 03:00:34,750 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:34,750 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:34,750 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-19 03:00:34,750 INFO  LogicaCompetencias - Metodo: obtenerListaDeCompetencias
+2016-01-19 03:00:34,765 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:34,766 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:34,766 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-19 03:00:34,766 INFO  BDCompetencia - Metodo: ListarCompetencias
+2016-01-19 03:00:34,802 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:34,802 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:34,802 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-19 03:00:34,802 INFO  BDCompetencia - Metodo: ListarCompetencias
+2016-01-19 03:00:36,515 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:36,515 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:36,515 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-19 03:00:36,515 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeOrganizaciones
+2016-01-19 03:00:36,518 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:36,518 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:36,518 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-19 03:00:36,518 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeOrganizaciones
+2016-01-19 03:00:36,521 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:36,521 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:36,521 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-19 03:00:36,521 INFO  BDCompetencia - Metodo: M12ListarOrganizaciones
+2016-01-19 03:00:36,528 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:36,528 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:36,528 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-19 03:00:36,528 INFO  BDCompetencia - Metodo: M12ListarOrganizaciones
+2016-01-19 03:00:36,533 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:36,534 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:36,534 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-19 03:00:36,534 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-19 03:00:36,536 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:36,536 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:36,536 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-19 03:00:36,536 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-19 03:00:36,540 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:36,540 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:36,540 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-19 03:00:36,540 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-19 03:00:36,548 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:36,548 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:36,548 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-19 03:00:36,548 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-19 03:00:36,550 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:36,550 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:36,550 INFO  LogicaCompetencias - Mensaje: Entrada en el Método
+2016-01-19 03:00:36,550 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-19 03:00:36,552 INFO  LogicaCompetencias - *******************************************************
+2016-01-19 03:00:36,552 INFO  LogicaCompetencias - Clase: LogicaCompetencias
+2016-01-19 03:00:36,552 INFO  LogicaCompetencias - Mensaje: Salida del Método
+2016-01-19 03:00:36,552 INFO  LogicaCompetencias - Metodo: M12obtenerListaDeCintas
+2016-01-19 03:00:36,554 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:36,554 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:36,554 INFO  BDCompetencia - Mensaje: Entrada en el Método
+2016-01-19 03:00:36,554 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-19 03:00:36,561 INFO  BDCompetencia - *******************************************************
+2016-01-19 03:00:36,561 INFO  BDCompetencia - Clase: BDCompetencia
+2016-01-19 03:00:36,561 INFO  BDCompetencia - Mensaje: Salida del Método
+2016-01-19 03:00:36,561 INFO  BDCompetencia - Metodo: M12ListarCintas
+2016-01-21 15:59:06,644 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 15:59:06,651 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 15:59:06,651 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 15:59:06,651 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 15:59:09,421 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 15:59:09,421 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 15:59:09,421 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 15:59:09,421 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 15:59:09,857 INFO  DaoDojo - *******************************************************
+2016-01-21 15:59:09,858 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 15:59:09,858 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 15:59:09,858 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 16:12:50,914 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 16:12:50,921 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 16:12:50,921 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 16:12:50,921 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 16:13:13,240 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 16:13:13,240 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 16:13:13,240 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 16:13:13,240 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 16:13:27,488 INFO  DaoDojo - *******************************************************
+2016-01-21 16:13:27,489 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 16:13:27,489 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 16:13:27,489 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 17:02:11,184 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:02:11,195 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:02:11,196 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 17:02:11,196 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:03:07,763 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:03:07,763 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:03:07,763 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 17:03:07,763 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:04:06,123 INFO  DaoDojo - *******************************************************
+2016-01-21 17:04:06,123 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:04:06,123 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 17:04:06,123 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 17:06:18,931 ERROR DaoDojo - *******************************************************
+2016-01-21 17:06:18,931 ERROR DaoDojo - Mensaje: No se puede convertir un objeto de tipo 'DominioSKD.Dojo' al tipo 'DominioSKD.Entidades.Modulo4.Dojo'.
+2016-01-21 17:06:19,314 ERROR DaoDojo - Origen: DatosSKD
+2016-01-21 17:06:19,319 ERROR DaoDojo - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-21 17:06:19,321 ERROR DaoDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 28
+2016-01-21 17:06:19,321 ERROR DaoDojo - InnerException: 
+2016-01-21 17:06:19,354 ERROR ComandoAgregarDojo - *******************************************************
+2016-01-21 17:06:19,354 ERROR ComandoAgregarDojo - Mensaje: No se pudo completar la operacion
+2016-01-21 17:06:19,359 ERROR ComandoAgregarDojo - Origen: DatosSKD
+2016-01-21 17:06:19,359 ERROR ComandoAgregarDojo - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-21 17:06:19,359 ERROR ComandoAgregarDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 126
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarDojo.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarDojo.cs:línea 27
+2016-01-21 17:06:19,359 ERROR ComandoAgregarDojo - InnerException: System.InvalidCastException: No se puede convertir un objeto de tipo 'DominioSKD.Dojo' al tipo 'DominioSKD.Entidades.Modulo4.Dojo'.
+   en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 28
+2016-01-21 17:12:59,984 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:13:00,030 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:13:00,031 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 17:13:00,031 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:13:06,230 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:13:06,230 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:13:06,230 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 17:13:06,230 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:13:07,161 INFO  DaoDojo - *******************************************************
+2016-01-21 17:13:07,161 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:13:07,161 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 17:13:07,161 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 17:13:50,242 ERROR DaoDojo - *******************************************************
+2016-01-21 17:13:50,243 ERROR DaoDojo - Mensaje: No se puede convertir un objeto de tipo 'DominioSKD.Dojo' al tipo 'DominioSKD.Entidades.Modulo4.Dojo'.
+2016-01-21 17:13:50,251 ERROR DaoDojo - Origen: DatosSKD
+2016-01-21 17:13:50,252 ERROR DaoDojo - Metodo: Boolean BuscarRifDojo(DominioSKD.Entidad)
+2016-01-21 17:13:50,252 ERROR DaoDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.BuscarRifDojo(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 148
+2016-01-21 17:13:50,252 ERROR DaoDojo - InnerException: 
+2016-01-21 17:14:42,843 ERROR DaoDojo - *******************************************************
+2016-01-21 17:14:42,843 ERROR DaoDojo - Mensaje: No se pudo completar la operacion
+2016-01-21 17:14:42,844 ERROR DaoDojo - Origen: DatosSKD
+2016-01-21 17:14:42,844 ERROR DaoDojo - Metodo: Boolean BuscarRifDojo(DominioSKD.Entidad)
+2016-01-21 17:14:42,844 ERROR DaoDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.BuscarRifDojo(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 193
+   en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 32
+2016-01-21 17:14:42,844 ERROR DaoDojo - InnerException: System.InvalidCastException: No se puede convertir un objeto de tipo 'DominioSKD.Dojo' al tipo 'DominioSKD.Entidades.Modulo4.Dojo'.
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarRifDojo(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 148
+2016-01-21 17:14:42,853 INFO  DaoDojo - *******************************************************
+2016-01-21 17:14:42,853 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:14:42,853 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-21 17:14:42,853 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 17:21:11,638 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:21:11,638 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:21:11,638 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 17:21:11,638 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:21:13,179 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:21:13,179 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:21:13,179 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 17:21:13,179 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:21:13,868 INFO  DaoDojo - *******************************************************
+2016-01-21 17:21:13,868 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:21:13,868 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 17:21:13,868 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 17:26:56,240 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:26:56,248 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:26:56,248 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 17:26:56,248 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:26:56,855 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:26:56,855 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:26:56,855 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 17:26:56,855 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:26:57,066 INFO  DaoDojo - *******************************************************
+2016-01-21 17:26:57,066 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:26:57,066 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 17:26:57,066 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 17:27:24,527 INFO  DaoDojo - *******************************************************
+2016-01-21 17:27:24,527 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:27:24,527 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-21 17:27:24,527 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-21 17:59:31,326 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:59:31,334 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:59:31,334 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-21 17:59:31,334 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:59:36,259 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-21 17:59:36,259 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-21 17:59:36,259 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-21 17:59:36,259 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-21 17:59:39,227 INFO  DaoDojo - *******************************************************
+2016-01-21 17:59:39,227 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 17:59:39,227 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-21 17:59:39,227 INFO  DaoDojo - Metodo: Agregar
+2016-01-21 18:00:03,090 INFO  DaoDojo - *******************************************************
+2016-01-21 18:00:03,090 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 18:00:03,090 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-21 18:00:03,090 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-21 18:00:49,562 INFO  DaoDojo - *******************************************************
+2016-01-21 18:00:49,562 INFO  DaoDojo - Clase: DaoDojo
+2016-01-21 18:00:49,562 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-21 18:00:49,562 INFO  DaoDojo - Metodo: Agregar

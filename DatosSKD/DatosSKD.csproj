@@ -86,6 +86,7 @@
     <Compile Include="InterfazDAO\Modulo14\IDaoPlanilla.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoSolicitud.cs" />
     <Compile Include="InterfazDAO\Modulo3\IDaoOrganizacion.cs" />
+    <Compile Include="InterfazDAO\Modulo4\IDaoDojo.cs" />
     <Compile Include="InterfazDAO\Modulo5\IDaoCinta.cs" />
     <Compile Include="Modulo10\BDAsistencia.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
@@ -335,7 +336,6 @@
     <Folder Include="InterfazDAO\Modulo16\" />
     <Folder Include="InterfazDAO\Modulo1\" />
     <Folder Include="InterfazDAO\Modulo2\" />
-    <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo6\" />
     <Folder Include="InterfazDAO\Modulo7\" />
     <Folder Include="InterfazDAO\Modulo8\" />

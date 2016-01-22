@@ -25,16 +25,13 @@ namespace DatosSKD.DAO.Modulo4
 
             try
             {
-                DominioSKD.Entidades.Modulo4.Dojo elDojo = (DominioSKD.Entidades.Modulo4.Dojo)parametro;
+                DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
+                    elDojo = (DominioSKD.Dojo)parametro;
 
                   
-                    if (!BuscarRifDojo(elDojo))
+             if (!BuscarRifDojo(elDojo))
                 { 
-                    bool status;
-                    if (elDojo.Status_dojo.Equals("true"))
-                        status = true;
-                    else
-                        status= false;
+                   
                     List<Parametro> parametros = new List<Parametro>();
                     Parametro elParametro = new Parametro(RecursosDAOModulo4.ParametroRifDojo, SqlDbType.VarChar, elDojo.Rif_dojo, false);
                     parametros.Add(elParametro);
@@ -54,12 +51,8 @@ namespace DatosSKD.DAO.Modulo4
                         elDojo.Logo_dojo, false);
                     parametros.Add(elParametro);
 
-                    elParametro = new Parametro(RecursosDAOModulo4.ParametroFechaRegistro, SqlDbType.DateTime,
-                      elDojo.Registro_dojo.ToString(), false);
-                    parametros.Add(elParametro);
-
                     elParametro = new Parametro(RecursosDAOModulo4.ParametroStatusDojo, SqlDbType.Bit,
-                        status.ToString(), false);
+                        elDojo.Status_dojo.ToString(), false);
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAOModulo4.ParametroNombreEstado, SqlDbType.VarChar,
@@ -81,11 +74,13 @@ namespace DatosSKD.DAO.Modulo4
                     elParametro = new Parametro(RecursosDAOModulo4.ParametroDireccion, SqlDbType.VarChar,
                         elDojo.Ubicacion.Direccion, false);
                     parametros.Add(elParametro);
-
+                    elParametro = new Parametro(RecursosDAOModulo4.ParamIdOrganizacion, SqlDbType.Int, elDojo.Organizacion.Id.ToString(), false);
+                    parametros.Add(elParametro);
                     BDConexion laConexion = new BDConexion();
                     laConexion.EjecutarStoredProcedure(RecursosDAOModulo4.AgregarDojo, parametros);
-
-
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            
+                    return true;
                 }
                 else
                 {
@@ -125,16 +120,20 @@ namespace DatosSKD.DAO.Modulo4
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                //throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            return true;
+            
+            return false;
         }
+        public bool Modificar(Entidad parametro) { return true; }
+        public Entidad ConsultarXId(Entidad parametro) { return parametro; }
+        public List<Entidad> ConsultarTodos() { return null; }
         #endregion
 
         #region IDaoDojo
-        private static bool BuscarRifDojo(Entidad parametro)
+        public bool BuscarRifDojo(Entidad parametro)
         {
             bool retorno = false;
             BDConexion laConexion;
@@ -142,7 +141,8 @@ namespace DatosSKD.DAO.Modulo4
 
             try
             {
-                DominioSKD.Entidades.Modulo4.Dojo elDojo = (DominioSKD.Entidades.Modulo4.Dojo)parametro;
+                DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
+                elDojo = (DominioSKD.Dojo)parametro;
 
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();

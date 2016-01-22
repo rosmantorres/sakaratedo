@@ -44,7 +44,7 @@ namespace templateApp.GUI.Modulo3
             string tel = telefono.Value;
             string dir = direccion.Value;
 
-            laOrganizacion.Id_organizacion = Int32.Parse(idOrg);
+            laOrganizacion.Id = Int32.Parse(idOrg);
             laOrganizacion.Nombre = nombreOrg;
             laOrganizacion.Email = correo;
             laOrganizacion.Telefono = Int32.Parse(tel);

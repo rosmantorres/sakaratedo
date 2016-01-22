@@ -657,7 +657,7 @@ namespace DatosSKD.Modulo12
                 {
                     Organizacion laOrganizacion = new Organizacion();
 
-                    laOrganizacion.Id_organizacion = int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString());
+                    laOrganizacion.Id = int.Parse(row[RecursosBDModulo12.AliasIdOrganizacion].ToString());
                     laOrganizacion.Nombre = row[RecursosBDModulo12.AliasNombreOrganizacion].ToString();
                     
                     laListaOrganizaciones.Add(laOrganizacion);

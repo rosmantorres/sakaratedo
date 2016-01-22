@@ -9,7 +9,7 @@ namespace DatosSKD.InterfazDAO.Modulo4
 {
     public interface IDaoDojo : IDao<Entidad, bool, Entidad>
     {
-        bool BuscarRifDojoo(Entidad parametro);
+        bool BuscarRifDojo(Entidad parametro);
 
        // bool BuscarIDCompetencia(Entidad parametro);
 

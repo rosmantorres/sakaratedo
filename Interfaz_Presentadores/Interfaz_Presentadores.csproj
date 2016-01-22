@@ -86,6 +86,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo4\PresentadorAgregarDojo.cs" />
     <Compile Include="Modulo5\PresentadorCrearCintas.cs" />
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
@@ -118,7 +119,6 @@
     <Folder Include="Modulo15\" />
     <Folder Include="Modulo16\" />
     <Folder Include="Modulo3\" />
-    <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />

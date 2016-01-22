@@ -43,7 +43,7 @@ namespace templateApp.GUI.Modulo3
             {
 
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTR;
-                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Id_organizacion.ToString() + M3_RecursoInterfaz.CerrarTD;
+                this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Id.ToString() + M3_RecursoInterfaz.CerrarTD;
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Nombre.ToString() + M3_RecursoInterfaz.CerrarTD;
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Email.ToString() + M3_RecursoInterfaz.CerrarTD;
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Telefono.ToString() + M3_RecursoInterfaz.CerrarTD;
@@ -51,13 +51,13 @@ namespace templateApp.GUI.Modulo3
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Direccion.ToString() + M3_RecursoInterfaz.CerrarTD;
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTD + item.Estado.ToString() + M3_RecursoInterfaz.CerrarTD;
                 this.tabla.Text += M3_RecursoInterfaz.AbrirTD;
-                 this.tabla.Text += M3_RecursoInterfaz.BotonInfo + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
-                 this.tabla.Text += M3_RecursoInterfaz.BotonModificar + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
+                 this.tabla.Text += M3_RecursoInterfaz.BotonInfo + item.Id + M3_RecursoInterfaz.BotonCerrar;
+                 this.tabla.Text += M3_RecursoInterfaz.BotonModificar + item.Id + M3_RecursoInterfaz.BotonCerrar;
              //    this.tabla.Text += M3_RecursoInterfaz.BotonEliminar + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
                  if (item.Status)
-                     this.tabla.Text += M3_RecursoInterfaz.BotonActivarOrg + item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
+                     this.tabla.Text += M3_RecursoInterfaz.BotonActivarOrg + item.Id + M3_RecursoInterfaz.BotonCerrar;
                  else
-                     this.tabla.Text += M3_RecursoInterfaz.BotonDesactivarOrg+ item.Id_organizacion + M3_RecursoInterfaz.BotonCerrar;
+                     this.tabla.Text += M3_RecursoInterfaz.BotonDesactivarOrg+ item.Id + M3_RecursoInterfaz.BotonCerrar;
                  this.tabla.Text += M3_RecursoInterfaz.CerrarTD;
                  this.tabla.Text += M3_RecursoInterfaz.CerrarTR;
             }

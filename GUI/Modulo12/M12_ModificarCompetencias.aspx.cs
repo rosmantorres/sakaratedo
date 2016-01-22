@@ -74,7 +74,7 @@ namespace templateApp.GUI.Modulo12
 
                     foreach (Organizacion o in listaOrg)
                     {
-                        options.Add(o.Id_organizacion.ToString(), o.Nombre);
+                        options.Add(o.Id.ToString(), o.Nombre);
                     }
                     comboOrgs.DataSource = options;
                     comboOrgs.DataTextField = M12_RecursoInterfaz.valueCombo;
