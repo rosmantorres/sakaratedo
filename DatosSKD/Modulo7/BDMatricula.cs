@@ -10,6 +10,7 @@ using System.Configuration;
 using DominioSKD;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Entidades.Modulo6;
 namespace DatosSKD.Modulo7
 {
     public class BDMatricula

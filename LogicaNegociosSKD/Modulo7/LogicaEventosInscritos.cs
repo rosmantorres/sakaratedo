@@ -7,6 +7,8 @@ using DatosSKD;
 using DatosSKD.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD;
+
 
 namespace LogicaNegociosSKD.Modulo7
 {
@@ -17,7 +19,7 @@ namespace LogicaNegociosSKD.Modulo7
     {
         #region Atributos
 
-        private List<DominioSKD.Evento> laListaDeEventoInscrito;
+        private List<Evento> laListaDeEventoInscrito;
 
        #endregion
 
@@ -25,7 +27,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// Constructor
         /// </summary>
         #region Gets & Sets
-         public List<DominioSKD.Evento> LaListaDeEventoInscrito
+         public List<Evento> LaListaDeEventoInscrito
         {
             get { return laListaDeEventoInscrito; }
             set { laListaDeEventoInscrito = value; }
@@ -95,7 +97,7 @@ namespace LogicaNegociosSKD.Modulo7
          /// </summary>
          /// <param name="idPersona"></param>
          /// <returns>Lista de eventos</returns>
-         public List<DominioSKD.Evento> obtenerListaDeEventos(int idPersona)
+         public List<Evento> obtenerListaDeEventos(int idPersona)
          {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -146,7 +148,7 @@ namespace LogicaNegociosSKD.Modulo7
         /// <returns>
         /// Objeto de tipo evento
         /// </returns>
-         public DominioSKD.Evento detalleEventoID(int idEvento)
+         public Evento detalleEventoID(int idEvento)
          {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosLogicaModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

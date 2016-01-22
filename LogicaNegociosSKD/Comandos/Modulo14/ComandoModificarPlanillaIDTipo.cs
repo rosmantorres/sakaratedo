@@ -24,7 +24,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             FabricaComandos fabricaComandos = new FabricaComandos();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
+            DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
             ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)fabricaComandos.ObtenerComandoModificarPlanillaID();
 
             try

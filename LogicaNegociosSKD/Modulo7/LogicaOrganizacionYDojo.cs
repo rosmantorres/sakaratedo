@@ -2,6 +2,8 @@
 using DominioSKD;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD;
+
 using System;
 
 namespace LogicaNegociosSKD.Modulo7

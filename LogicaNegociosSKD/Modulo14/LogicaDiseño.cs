@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Modulo14;
 using ExcepcionesSKD;
+using DominioSKD;
+
 
 
 namespace LogicaNegociosSKD.Modulo14
@@ -71,9 +73,9 @@ namespace LogicaNegociosSKD.Modulo14
         {
             try
             {
-                DominioSKD.Persona persona = new DominioSKD.Persona();
+                Persona persona = new  Persona();
                 DominioSKD.Dojo dojo = new DominioSKD.Dojo();
-                DominioSKD.Evento evento = new DominioSKD.Evento();
+                Evento evento = new  Evento();
                 DominioSKD.Competencia competencia = new DominioSKD.Competencia();
                 DominioSKD.Organizacion organizacion = new DominioSKD.Organizacion();
                 DominioSKD.SolicitudPlanilla solicitud = new DominioSKD.SolicitudPlanilla();
@@ -161,8 +163,8 @@ namespace LogicaNegociosSKD.Modulo14
         /// <param name="organizacion">Clase Organizacion</param>
         /// Todas estas clases, son datos que se reemplazan en el diseño original
         /// <returns>Retorna el contenido del diseño, modificado por los datos</returns>
-        public string ReemplazarElementos(string info, DominioSKD.Persona persona, DominioSKD.Dojo dojo,
-            DominioSKD.Evento evento, DominioSKD.Competencia competencia, List<string> matricula,
+        public string ReemplazarElementos(string info,  Persona persona, DominioSKD.Dojo dojo,
+             Evento evento, DominioSKD.Competencia competencia, List<string> matricula,
             DominioSKD.Organizacion organizacion, DominioSKD.SolicitudPlanilla solicitud)
         {
             try

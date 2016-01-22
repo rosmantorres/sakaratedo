@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo15
 {
-    public class Implemento
+    public class Implemento : Entidad
     {
 
         #region atributos
@@ -187,3 +187,4 @@ namespace DominioSKD
 
     }
 }
+

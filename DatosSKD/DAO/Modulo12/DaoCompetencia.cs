@@ -103,8 +103,8 @@ namespace DatosSKD.DAO.Modulo12
                         laCompetencia.Costo.ToString(), false);
                     parametros.Add(elParametro);
 
-                    BDConexion laConexion = new BDConexion();
-                    laConexion.EjecutarStoredProcedure(RecursosDAOModulo12.AgregarCompetencia, parametros);
+                    //BDConexion laConexion = new BDConexion();
+                    EjecutarStoredProcedure(RecursosDAOModulo12.AgregarCompetencia, parametros);
 
                 }
                 else
@@ -281,7 +281,7 @@ namespace DatosSKD.DAO.Modulo12
             public Entidad ConsultarXId(Entidad parametro)
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                BDConexion laConexion;
+                //BDConexion laConexion;
                 List<Parametro> parametros;
                 Parametro elParametro = new Parametro();
 
@@ -303,7 +303,7 @@ namespace DatosSKD.DAO.Modulo12
                 {
                     if (BuscarIDCompetencia(laCompetencia))
                     {
-                        laConexion = new BDConexion();
+                        //laConexion = new BDConexion();
                         parametros = new List<Parametro>();
 
 
@@ -311,7 +311,7 @@ namespace DatosSKD.DAO.Modulo12
                                                     false);
                         parametros.Add(elParametro);
 
-                        DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                        DataTable dt = EjecutarStoredProcedureTuplas(
                                        RecursosDAOModulo12.ConsultarCompetenciasXId, parametros);
 
                         foreach (DataRow row in dt.Rows)
@@ -463,7 +463,7 @@ namespace DatosSKD.DAO.Modulo12
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                BDConexion laConexion;
+                //BDConexion laConexion;
                 //List<Competencia> laListaDeCompetencias = new List<Competencia>();
                 List<Entidad> laListaDeCompetencias = new List<Entidad>();
                 FabricaEntidades laFabrica = new FabricaEntidades();
@@ -474,10 +474,10 @@ namespace DatosSKD.DAO.Modulo12
 
                 try
                 {
-                    laConexion = new BDConexion();
+                    //laConexion = new BDConexion();
                     parametros = new List<Parametro>();
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo12.ConsultarCompetencias, parametros);
+                    DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo12.ConsultarCompetencias, parametros);
 
                     foreach (DataRow row in dt.Rows)
                     {
@@ -510,11 +510,9 @@ namespace DatosSKD.DAO.Modulo12
 
                         //PREGUNTAR!
                         laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)laFabrica.ObtenerUbicacion(int.Parse(row[RecursosDAOModulo12.AliasIdUbicacion].ToString()),
-                                                                row[RecursosDAOModulo12.AliasLatitudDireccion].ToString(),
-                                                                row[RecursosDAOModulo12.AliasLongitudDireccion].ToString(),
                                                                 row[RecursosDAOModulo12.AliasNombreCiudad].ToString(),
-                                                                row[RecursosDAOModulo12.AliasNombreEstado].ToString(),
-                                                                row[RecursosDAOModulo12.AliasNombreDireccion].ToString());
+                                                                row[RecursosDAOModulo12.AliasNombreEstado].ToString());
+                                                                
 
                         laListaDeCompetencias.Add(laCompetencia);
 
@@ -562,14 +560,14 @@ namespace DatosSKD.DAO.Modulo12
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 bool retorno = false;
-                BDConexion laConexion;
+                //BDConexion laConexion;
                 List<Parametro> parametros;
                 int contador = 0;
                 try
                 {
                     DominioSKD.Entidades.Modulo12.Competencia laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)parametro;
 
-                    laConexion = new BDConexion();
+                    //laConexion = new BDConexion();
                     parametros = new List<Parametro>();
 
                     Parametro elParametro = new Parametro(RecursosDAOModulo12.ParamNombreCompetencia, SqlDbType.VarChar
@@ -583,7 +581,7 @@ namespace DatosSKD.DAO.Modulo12
                         laCompetencia.Id.ToString(), false);
                     parametros.Add(elParametro);
 
-                    List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDAOModulo12.BuscarNombreCompetencia
+                    List<Resultado> resultados = EjecutarStoredProcedure(RecursosDAOModulo12.BuscarNombreCompetencia
                                                  , parametros);
 
                     foreach (Resultado elResultado in resultados)
@@ -629,13 +627,13 @@ namespace DatosSKD.DAO.Modulo12
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 bool retorno = false;
-                BDConexion laConexion;
+                //BDConexion laConexion;
                 List<Parametro> parametros;
 
                 try
                 {
                     DominioSKD.Entidades.Modulo12.Competencia laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)parametro;
-                    laConexion = new BDConexion();
+                    //laConexion = new BDConexion();
                     parametros = new List<Parametro>();
 
                     Parametro elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int
@@ -645,7 +643,7 @@ namespace DatosSKD.DAO.Modulo12
                     elParametro = new Parametro(RecursosDAOModulo12.ParamSalidaNumCompetencia, SqlDbType.Int, true);
                     parametros.Add(elParametro);
 
-                    List<Resultado> resultados = laConexion.EjecutarStoredProcedure(RecursosDAOModulo12.BuscarIDCompetencia
+                    List<Resultado> resultados = EjecutarStoredProcedure(RecursosDAOModulo12.BuscarIDCompetencia
                                                  , parametros);
 
                     foreach (Resultado elResultado in resultados)

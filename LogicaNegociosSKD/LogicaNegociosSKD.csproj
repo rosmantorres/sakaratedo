@@ -40,6 +40,60 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoCompetenciasPorFecha.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciasXId.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciaXIdDetalle.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanilla.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanillaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarCompetenciasAsistidas.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoConsultarEventoDetalle.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasEnCategoriaYAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKataAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumiteAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaEspecialidadesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosExamenAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosCompetenciaPasado.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosEventosPasados.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosEventos.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosProductos.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarMatricula.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarProducto.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoeliminarItem.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoModificarCarrito.cs" />
+    <Compile Include="Comandos\Modulo16\Comandoregistrarpago.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoVerCarrito.cs" />
+    <Compile Include="Comandos\Modulo16\RecursosLogicaModulo16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo12\ComandoAgregarCompetencia.cs" />
     <Compile Include="Comandos\Modulo12\ComandoConsultarCintas.cs" />
     <Compile Include="Comandos\Modulo12\ComandoConsultarOrganizaciones.cs" />
@@ -207,6 +261,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo12\RecursosComandoModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo12.Designer.cs</LastGenOutput>
@@ -283,11 +341,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
-    <Folder Include="Comandos\Modulo10\" />
-    <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo15\" />
-    <Folder Include="Comandos\Modulo16\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
     <Folder Include="Comandos\Modulo4\" />

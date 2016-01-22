@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo15;
 using templateApp.GUI;
-using templateApp.GUI.Modulo15;
+//using templateApp.GUI.Modulo15;
+using DominioSKD.Entidades.Modulo15;
+
 
 namespace PruebasUnitariasSKD.Modulo15
 {
@@ -18,13 +20,13 @@ namespace PruebasUnitariasSKD.Modulo15
     {
         private Implemento implemento;
         private Dojo dojo;
-        private InterfazImplemento interfaz;
+       // private InterfazImplemento interfaz;
 
         [SetUp]
         public void Init()
         {
             implemento = new Implemento();
-            interfaz = new InterfazImplemento();
+          //  interfaz = new InterfazImplemento();
             dojo = new Dojo(1);
             implemento.Nombre_Implemento = "Guantes Karate-DO";
             implemento.Tipo_Implemento = "Guantes";
@@ -52,7 +54,7 @@ namespace PruebasUnitariasSKD.Modulo15
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void M15_PruebaAgregarInventarioInterfaz()
         {
-            interfaz.agregarInventarioInterfaz(null);
+         //   interfaz.agregarInventarioInterfaz(null);
         }
         #endregion
 
@@ -61,7 +63,7 @@ namespace PruebasUnitariasSKD.Modulo15
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void M15_PruebaListarInventarioInterfaz()
         {
-            interfaz.listarInventarioInterfaz(null);
+        //    interfaz.listarInventarioInterfaz(null);
         }
         #endregion
 
@@ -70,7 +72,7 @@ namespace PruebasUnitariasSKD.Modulo15
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void M15_PruebaListarInventarioInterfaz2()
         {
-            interfaz.listarInventarioInterfaz2(null);
+          //  interfaz.listarInventarioInterfaz2(null);
         }
         #endregion
 
@@ -79,7 +81,7 @@ namespace PruebasUnitariasSKD.Modulo15
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void M15_PruebaUsuarioImplementoInterfaz()
         {
-            interfaz.usuarioImplementoInterfaz(null);
+           // interfaz.usuarioImplementoInterfaz(null);
         }
         #endregion
 
@@ -88,7 +90,7 @@ namespace PruebasUnitariasSKD.Modulo15
         [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
         public void M15_PruebaeliminarInventarioInterfaz()
         {
-            interfaz.modificarInventarioInterfaz(null);
+       //     interfaz.modificarInventarioInterfaz(null);
         }
         #endregion
 

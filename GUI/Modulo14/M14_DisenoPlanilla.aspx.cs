@@ -90,18 +90,18 @@ namespace templateApp.GUI.Modulo14
         {
             set
             {
-                this.alerta.InnerText = value;
+                this.alerta.Attributes["class"] = value;
             }
         }
-        public string alertaRol 
-        { 
+        public string alertaRol
+        {
             set
             {
-                this.alerta.InnerText = value;
+                this.alerta.Attributes["role"] = value;
             }
         }
-        public string alert 
-        { 
+        public string alert
+        {
             set
             {
                 this.alerta.InnerHtml = value;
