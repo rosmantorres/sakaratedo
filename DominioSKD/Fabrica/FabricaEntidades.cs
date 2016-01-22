@@ -495,16 +495,7 @@ namespace DominioSKD.Fabrica
             return new Entidades.Modulo16.Pago(monto, tipoPago, datoPago);
         }
 
-        /// <summary>
-        /// Metodo de la fabrica que instancia el implemento
-        /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad implemento con todos sus datos llenos</returns>
-        public static Entidad ObtenerImplemento()
-        {
-            return new Implemento();
-        }
-
+       
         /// <summary>
         /// Metodo de la fabrica que instancia el Dojo
         /// </summary>

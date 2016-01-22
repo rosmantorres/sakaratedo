@@ -73,7 +73,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Implemento
-                IdaoImplemento daoimplemento = FabricaDAOSqlServer.ObtenerDaoDetalleProducto();
+                IDaoImplemento daoimplemento = FabricaDAOSqlServer.ObtenerDaoDetalleProducto();
 
                 //Casteamos
                 Implemento pro = (Implemento)this.implemento;
