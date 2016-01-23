@@ -386,3 +386,49 @@
    at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
    at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
    at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 12:59:48,435 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 12:59:48,440 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 12:59:48,443 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 12:59:48,443 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 12:59:48,443 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 12:59:48,443 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 13:17:34,883 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 13:17:34,888 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 13:17:34,890 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 13:17:34,890 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 13:17:34,890 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 13:17:34,890 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170

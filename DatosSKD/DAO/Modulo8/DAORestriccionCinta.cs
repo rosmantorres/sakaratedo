@@ -126,7 +126,7 @@ namespace DatosSKD.DAO.Modulo8
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAORestriccionCinta.ParamCintaNueva, SqlDbType.Int,
-                            laRestriccionCinta.ToString(), false);
+                            laRestriccionCinta.Id.ToString(), false);
                     parametros.Add(elParametro);
 
                     elParametro = new Parametro(RecursosDAORestriccionCinta.ParamTiempoMinimo, SqlDbType.Int,
