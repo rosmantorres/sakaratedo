@@ -89,8 +89,6 @@
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo12\Competencia.cs" />
     <Compile Include="Entidades\Modulo1\Cuenta.cs" />
-    <Compile Include="Compra.cs" />
-    <Compile Include="Cuenta.cs" />
     <Compile Include="Entidades\Modulo16\Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
@@ -122,9 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo4\" />
-    <Folder Include="Entidades\Modulo1\" />
-    <Folder Include="Entidades\Modulo2\" />
     <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

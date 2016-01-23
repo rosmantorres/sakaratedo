@@ -108,7 +108,6 @@
     <Compile Include="InterfazDAO\Modulo16\IdaoMensualidad.cs" />
     <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
     <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
-    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
     <Compile Include="DAO\Modulo1\DaoLogin.cs" />
     <Compile Include="DAO\Modulo1\DaoRestablecer.cs" />
     <Compile Include="DAO\Modulo2\DaoRoles.cs" />
@@ -394,19 +393,11 @@
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo15\" />
-    <Folder Include="DAO\Modulo16\" />
-    <Folder Include="DAO\Modulo1\" />
-    <Folder Include="DAO\Modulo2\" />
     <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo6\" />
     <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo15\" />
-    <Folder Include="InterfazDAO\Modulo16\" />
-    <Folder Include="InterfazDAO\Modulo1\" />
-    <Folder Include="InterfazDAO\Modulo2\" />
     <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo6\" />
     <Folder Include="InterfazDAO\Modulo7\" />
