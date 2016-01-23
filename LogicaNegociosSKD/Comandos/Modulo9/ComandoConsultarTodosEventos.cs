@@ -9,21 +9,18 @@ using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
-using DatosSKD.InterfazDAO.Modulo15;
-
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando para consultar la lista de todos los productos
+    /// Comando para consultar la lista de todos los eventos
     /// </summary>
-    public class ComandoConsultarTodosProductos : Comando<Entidad>
+    public class ComandoConsultarTodosEventos : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
         /// Atributos del ComandoConsultarTodosProductos
         private PersonaM1 p;
-
         #endregion
 
         #region Propiedades
@@ -39,9 +36,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
         #region Constructores
         /// <summary>
-        /// Constructor vacio del ComandoConsultarTodosProductos
+        /// Constructor vacio del ComandoConsultarTodosEventos
         /// </summary>
-        public ComandoConsultarTodosProductos()
+        public ComandoConsultarTodosEventos()
         {
 
         }
@@ -50,30 +47,30 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// Constructor del ComandoConsultarTodosProductos
         /// </summary>
         /// <param name="p">La persona que se encuentra logueada</param>
-        public ComandoConsultarTodosProductos(PersonaM1 p)
+        public ComandoConsultarTodosEventos(PersonaM1 p)
         {
             this.p = p;
         }
+
         #endregion
 
         #region Metodo Ejecutar
-
         /// <summary>
-        /// Metodo que ejecuta la accion de consultarTodasLosProductos
+        /// Metodo que ejecuta la accion de consultarTodasLosEventos
         /// </summary>
-        /// <param name="NONE">Este procedimiento no posee paso de parametros</param>
-        /// <returns>lista de Productos</returns>
+        /// <param name="NONE">Este metodo no posee paso de parametros</param>
+        /// <returns>lista de Eventos</returns>
         public override Entidad Ejecutar()
         {
             try
-            {   //Escribo en el logger la entrada a este metodo
+            {
+                //Escribo en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el DAO de Implemento
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IDaoImplemento daoImplementos = fabrica.ObtenerDaoProductos();
+                //Instancio el DAO de Evento
+                DatosSKD.InterfazDAO.Modulo9.IDaoEvento daoEventos = FabricaDAOSqlServer.ObtenerDaoEvento();
 
                 //Casteamos
                 PersonaM1 p = (PersonaM1)this.LaEntidad;
@@ -83,41 +80,31 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamado
-                return daoImplementos.ConsultarXId(p);
+                return daoEventos.ListarEventoPorRestriciones(p);
             }
             #region catches
 
-            catch (LoggerException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ItemInvalidoException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (OpcionItemErroneoException e)
+            catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoVacioException e)
+            catch (ArgumentNullException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoFormatoInvalidoException e)
+            catch (FormatException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoEnSobrecargaException e)
+            catch (OverflowException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -140,13 +127,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
-                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                throw e;
             }
 
             #endregion
         }
-
         #endregion
     }
 }

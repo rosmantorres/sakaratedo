@@ -16,13 +16,22 @@ using System.Threading.Tasks;
 
 namespace DatosSKD.DAO.Modulo12
 {
+    /// <summary>
+    /// Data Access Object para Competencia
+    /// </summary>
     public class DaoCompetencia : DAOGeneral, IDaoCompetencia
     {
 
         #region IDAO
+            /// <summary>
+            /// Metodo para agregar competencias
+            /// </summary>
+            /// <param name="parametro">competencia a agregar</param>
+            /// <returns>booleano que refleja el exito de la operacion</returns>
             public bool Agregar(Entidad parametro)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             {
@@ -109,7 +118,8 @@ namespace DatosSKD.DAO.Modulo12
                 }
                 else
                 {
-                    Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.Mensaje_Competencia_Existente, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                        RecursosDAOModulo12.Mensaje_Competencia_Existente, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                     throw new ExcepcionesSKD.Modulo12.CompetenciaExistenteException(RecursosDAOModulo12.Codigo_Competencia_Existente,
                                 RecursosDAOModulo12.Mensaje_Competencia_Existente, new Exception());
@@ -152,9 +162,15 @@ namespace DatosSKD.DAO.Modulo12
             return true;
         }
 
+            /// <summary>
+            /// Metodo para modificar una competencia
+            /// </summary>
+            /// <param name="parametro">competencia a modificar</param>
+            /// <returns>booleano que refleja el exito de la operacion</returns>
             public bool Modificar(Entidad parametro)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 try
                 {
@@ -229,12 +245,13 @@ namespace DatosSKD.DAO.Modulo12
                             laCompetencia.Costo.ToString(), false);
                         parametros.Add(elParametro);
 
-                        BDConexion laConexion = new BDConexion();
-                        laConexion.EjecutarStoredProcedure(RecursosDAOModulo12.ModificarCompetencia, parametros);
+                        //BDConexion laConexion = new BDConexion();
+                        EjecutarStoredProcedure(RecursosDAOModulo12.ModificarCompetencia, parametros);
                     }
                     else
                     {
-                        Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.Mensaje_Competencia_Existente, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            RecursosDAOModulo12.Mensaje_Competencia_Existente, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                         throw new ExcepcionesSKD.Modulo12.CompetenciaExistenteException(RecursosDAOModulo12.Codigo_Competencia_Existente,
                                     RecursosDAOModulo12.Mensaje_Competencia_Existente, new Exception());
@@ -273,25 +290,32 @@ namespace DatosSKD.DAO.Modulo12
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             }
 
+            /// <summary>
+            /// Metodo para consultar todos los datos de una competencia
+            /// </summary>
+            /// <param name="parametro">parametro que contiene el id de la competencia a consultar</param>
+            /// <returns>Entidad con la competencia</returns>
             public Entidad ConsultarXId(Entidad parametro)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 //BDConexion laConexion;
                 List<Parametro> parametros;
                 Parametro elParametro = new Parametro();
 
-                FabricaEntidades laFabrica = new FabricaEntidades();
+                //FabricaEntidades laFabrica = new FabricaEntidades();
 
                 //Competencia laCompetencia = new Competencia();
                 DominioSKD.Entidades.Modulo12.Competencia laCompetencia;
 
-                laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)laFabrica.ObtenerCompetencia();
-                //PREGUNTAR POR EL ID
+                laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
+                
                 laCompetencia.Id = parametro.Id;
                 string diaFecha;
                 string mesFecha;
@@ -307,7 +331,8 @@ namespace DatosSKD.DAO.Modulo12
                         parametros = new List<Parametro>();
 
 
-                        elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia, SqlDbType.Int, laCompetencia.Id.ToString(),
+                        elParametro = new Parametro(RecursosDAOModulo12.ParamIdCompetencia,
+                            SqlDbType.Int, laCompetencia.Id.ToString(),
                                                     false);
                         parametros.Add(elParametro);
 
@@ -328,7 +353,9 @@ namespace DatosSKD.DAO.Modulo12
                                 laCompetencia.TipoCompetencia = RecursosDAOModulo12.TipoCompetenciaAmbos;
 
                             laCompetencia.Status = row[RecursosDAOModulo12.AliasStatusCompetencia].ToString();
-                            laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosDAOModulo12.AliasTodasOrganizaciones].ToString());
+                            
+                            laCompetencia.OrganizacionTodas = Convert.ToBoolean(
+                                row[RecursosDAOModulo12.AliasTodasOrganizaciones].ToString());
 
                             diaFecha = Convert.ToDateTime(row[RecursosDAOModulo12.AliasFechaInicio]).Day.ToString();
 
@@ -343,7 +370,8 @@ namespace DatosSKD.DAO.Modulo12
                             //  mesFecha = "0" + mesFecha.ToString();
 
                             anoFecha = Convert.ToDateTime(row[RecursosDAOModulo12.AliasFechaInicio]).Year.ToString();
-                            fechaInicio = mesFecha + RecursosDAOModulo12.SeparadorFecha + diaFecha + RecursosDAOModulo12.SeparadorFecha + anoFecha;
+                            fechaInicio = mesFecha + RecursosDAOModulo12.SeparadorFecha + diaFecha +
+                                RecursosDAOModulo12.SeparadorFecha + anoFecha;
                             //laCompetencia.FechaInicio = Convert.ToDateTime(fechaInicio);
 
                             laCompetencia.FechaInicio = DateTime.ParseExact(fechaInicio, RecursosDAOModulo12.FormatoFecha,
@@ -362,7 +390,8 @@ namespace DatosSKD.DAO.Modulo12
                             //  mesFecha = "0" + mesFecha.ToString();
 
                             anoFecha = Convert.ToDateTime(row[RecursosDAOModulo12.AliasFechaFin]).Year.ToString();
-                            fechaFin = mesFecha + RecursosDAOModulo12.SeparadorFecha + diaFecha + RecursosDAOModulo12.SeparadorFecha + anoFecha;
+                            fechaFin = mesFecha + RecursosDAOModulo12.SeparadorFecha + diaFecha +
+                                RecursosDAOModulo12.SeparadorFecha + anoFecha;
                             //laCompetencia.FechaFin = Convert.ToDateTime(fechaFin);
 
                             laCompetencia.FechaFin = DateTime.ParseExact(fechaFin, RecursosDAOModulo12.FormatoFecha,
@@ -370,31 +399,35 @@ namespace DatosSKD.DAO.Modulo12
 
                             laCompetencia.Costo = float.Parse(row[RecursosDAOModulo12.AliasCostoCompetencia].ToString());
 
-                            //PREGUNTAR!
+                            
                             if (laCompetencia.OrganizacionTodas == false)
 
-                                laCompetencia.Organizacion = (Organizacion)laFabrica.ObtenerOrganizacion(int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString())
-                                                                                , row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString());
+                                laCompetencia.Organizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion(
+                                    int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString())
+                                    , row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString());
                             else
                             {
 
-                                laCompetencia.Organizacion = (Organizacion)laFabrica.ObtenerOrganizacion(RecursosDAOModulo12.TodasLasOrganizaciones);
+                                laCompetencia.Organizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion(
+                                    RecursosDAOModulo12.TodasLasOrganizaciones);
                             }
 
+                            
+                            laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)FabricaEntidades.ObtenerUbicacion(
+                                int.Parse(row[RecursosDAOModulo12.AliasIdUbicacion].ToString()),
+                                row[RecursosDAOModulo12.AliasLatitudDireccion].ToString(),
+                                row[RecursosDAOModulo12.AliasLongitudDireccion].ToString(),
+                                row[RecursosDAOModulo12.AliasNombreCiudad].ToString(),
+                                row[RecursosDAOModulo12.AliasNombreEstado].ToString(),
+                                row[RecursosDAOModulo12.AliasNombreDireccion].ToString());
                             //PREGUNTAR!
-                            laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)laFabrica.ObtenerUbicacion(int.Parse(row[RecursosDAOModulo12.AliasIdUbicacion].ToString()),
-                                                                    row[RecursosDAOModulo12.AliasLatitudDireccion].ToString(),
-                                                                    row[RecursosDAOModulo12.AliasLongitudDireccion].ToString(),
-                                                                    row[RecursosDAOModulo12.AliasNombreCiudad].ToString(),
-                                                                    row[RecursosDAOModulo12.AliasNombreEstado].ToString(),
-                                                                    row[RecursosDAOModulo12.AliasNombreDireccion].ToString());
-                            //PREGUNTAR!
-                            laCompetencia.Categoria = (DominioSKD.Entidades.Modulo12.Categoria)laFabrica.ObtenerCategoria(int.Parse(row[RecursosDAOModulo12.AliasIdCategoria].ToString()),
-                                                                     int.Parse(row[RecursosDAOModulo12.AliasEdadInicio].ToString()),
-                                                                     int.Parse(row[RecursosDAOModulo12.AliasEdadFin].ToString()),
-                                                                     row[RecursosDAOModulo12.AliasCintaInicio].ToString(),
-                                                                     row[RecursosDAOModulo12.AliasCintaFin].ToString(),
-                                                                     row[RecursosDAOModulo12.AliasSexo].ToString());
+                            laCompetencia.Categoria = (DominioSKD.Entidades.Modulo12.Categoria)FabricaEntidades.ObtenerCategoria(
+                                int.Parse(row[RecursosDAOModulo12.AliasIdCategoria].ToString()),
+                                int.Parse(row[RecursosDAOModulo12.AliasEdadInicio].ToString()),
+                                int.Parse(row[RecursosDAOModulo12.AliasEdadFin].ToString()),
+                                row[RecursosDAOModulo12.AliasCintaInicio].ToString(),
+                                row[RecursosDAOModulo12.AliasCintaFin].ToString(),
+                                row[RecursosDAOModulo12.AliasSexo].ToString());
 
 
 
@@ -415,14 +448,16 @@ namespace DatosSKD.DAO.Modulo12
 
                         }
 
-                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                         return laCompetencia;
                     }
                     else
                     {
 
-                        Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.Mensaje_Competencia_Inexistente, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                        Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                            RecursosDAOModulo12.Mensaje_Competencia_Inexistente, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                         throw new ExcepcionesSKD.Modulo12.CompetenciaInexistenteException(RecursosDAOModulo12.Codigo_Competencia_Inexistente,
                                     RecursosDAOModulo12.Mensaje_Competencia_Inexistente, new Exception());
@@ -459,17 +494,21 @@ namespace DatosSKD.DAO.Modulo12
 
             }
 
+            /// <summary>
+            /// Metodo para consultar la lista de competencias
+            /// </summary>
+            /// <returns>Lista de Entidad con todos las competencias</returns>
             public List<Entidad> ConsultarTodos()
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //BDConexion laConexion;
                 //List<Competencia> laListaDeCompetencias = new List<Competencia>();
                 List<Entidad> laListaDeCompetencias = new List<Entidad>();
-                FabricaEntidades laFabrica = new FabricaEntidades();
+                //FabricaEntidades laFabrica = new FabricaEntidades();
 
                 DominioSKD.Entidades.Modulo12.Competencia laCompetencia;
-
                 List<Parametro> parametros;
 
                 try
@@ -481,7 +520,7 @@ namespace DatosSKD.DAO.Modulo12
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)laFabrica.ObtenerCompetencia();
+                        laCompetencia = (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
 
                         laCompetencia.Id = int.Parse(row[RecursosDAOModulo12.AliasIdCompetencia].ToString());
                         laCompetencia.Nombre = row[RecursosDAOModulo12.AliasNombreCompetencia].ToString();
@@ -497,21 +536,24 @@ namespace DatosSKD.DAO.Modulo12
                         laCompetencia.Status = row[RecursosDAOModulo12.AliasStatusCompetencia].ToString();
                         laCompetencia.OrganizacionTodas = Convert.ToBoolean(row[RecursosDAOModulo12.AliasTodasOrganizaciones].ToString());
 
-                        //PREGUNTAR!
+                        
                         if (laCompetencia.OrganizacionTodas == false)
 
-                            laCompetencia.Organizacion = (Organizacion)laFabrica.ObtenerOrganizacion(int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString())
-                                                                            , row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString());
+                            laCompetencia.Organizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion(
+                                int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString()), 
+                                row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString());
                         else
                         {
 
-                            laCompetencia.Organizacion = (Organizacion)laFabrica.ObtenerOrganizacion(RecursosDAOModulo12.TodasLasOrganizaciones);
+                            laCompetencia.Organizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion(
+                                RecursosDAOModulo12.TodasLasOrganizaciones);
                         }
 
-                        //PREGUNTAR!
-                        laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)laFabrica.ObtenerUbicacion(int.Parse(row[RecursosDAOModulo12.AliasIdUbicacion].ToString()),
-                                                                row[RecursosDAOModulo12.AliasNombreCiudad].ToString(),
-                                                                row[RecursosDAOModulo12.AliasNombreEstado].ToString());
+                        
+                        laCompetencia.Ubicacion = (DominioSKD.Entidades.Modulo12.Ubicacion)FabricaEntidades.ObtenerUbicacion(
+                            int.Parse(row[RecursosDAOModulo12.AliasIdUbicacion].ToString()),
+                            row[RecursosDAOModulo12.AliasNombreCiudad].ToString(),
+                            row[RecursosDAOModulo12.AliasNombreEstado].ToString());
                                                                 
 
                         laListaDeCompetencias.Add(laCompetencia);
@@ -546,7 +588,8 @@ namespace DatosSKD.DAO.Modulo12
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return laListaDeCompetencias;
 
@@ -555,9 +598,17 @@ namespace DatosSKD.DAO.Modulo12
         #endregion
 
         #region IDaoCompetencia
+
+            /// <summary>
+            /// Metodo para consultar si el nombre de la competencia existe al modificar
+            /// </summary>
+            /// <param name="parametro">Competencia para verificar si ya existe</param>
+            /// <returns>true si la competencia no existe, 
+            /// false si ya existe la competencia</returns>
             public bool BuscarNombreCompetencia(Entidad parametro)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 bool retorno = false;
                 //BDConexion laConexion;
@@ -615,16 +666,24 @@ namespace DatosSKD.DAO.Modulo12
                 }
 
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return retorno;
 
 
             }
 
+            /// <summary>
+            /// Metodo para consultar el id de una competencia
+            /// </summary>
+            /// <param name="parametro">Competencia a consultar el id</param>
+            /// <returns>true si la competencia no existe, 
+            /// false si ya existe la competencia</returns>
             public bool BuscarIDCompetencia(Entidad parametro)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 bool retorno = false;
                 //BDConexion laConexion;
@@ -653,7 +712,8 @@ namespace DatosSKD.DAO.Modulo12
                                 retorno = true;
                             else
                             {
-                                Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.Mensaje_Competencia_Inexistente, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                                Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                    RecursosDAOModulo12.Mensaje_Competencia_Inexistente, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                                 throw new ExcepcionesSKD.Modulo12.CompetenciaInexistenteException(RecursosDAOModulo12.Codigo_Competencia_Inexistente,
                                     RecursosDAOModulo12.Mensaje_Competencia_Inexistente, new Exception());
@@ -683,22 +743,28 @@ namespace DatosSKD.DAO.Modulo12
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return retorno;
 
 
             }
 
+            /// <summary>
+            /// Metodo para consultar las organizaciones
+            /// </summary>
+            /// <returns>Lista de Entidades con las organizaciones</returns>
             public List<Entidad> M12ListarOrganizaciones()
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
                 //BDConexion laConexion;
                 List<Parametro> parametros;
 
-                FabricaEntidades laFabrica = new FabricaEntidades();
+                //FabricaEntidades laFabrica = new FabricaEntidades();
                 List<Entidad> laListaOrganizaciones = new List<Entidad>();
                 Organizacion laOrganizacion;
 
@@ -714,7 +780,7 @@ namespace DatosSKD.DAO.Modulo12
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        laOrganizacion = (Organizacion)laFabrica.ObtenerOrganizacion();
+                        laOrganizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion();
 
                         laOrganizacion.Id = int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString());
                         laOrganizacion.Nombre = row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString();
@@ -751,18 +817,24 @@ namespace DatosSKD.DAO.Modulo12
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return laListaOrganizaciones;
             }
 
+            /// <summary>
+            /// Metodo para consultar las cintas
+            /// </summary>
+            /// <returns>Lista de Entidades con las cintas</returns>
             public List<Entidad> M12ListarCintas()
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //BDConexion laConexion;
                 List<Entidad> laListaCintas = new List<Entidad>();
-                FabricaEntidades laFabrica = new FabricaEntidades();
+                //FabricaEntidades laFabrica = new FabricaEntidades();
                 List<Parametro> parametros;
                 Cinta laCinta;
 
@@ -777,7 +849,7 @@ namespace DatosSKD.DAO.Modulo12
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        laCinta = (Cinta)laFabrica.ObtenerCinta();
+                        laCinta = (Cinta)FabricaEntidades.ObtenerCinta();
 
                         laCinta.Id = int.Parse(row[RecursosDAOModulo12.AliasIdCinta].ToString());
                         laCinta.Color_nombre = row[RecursosDAOModulo12.AliasNombreCinta].ToString();
@@ -815,11 +887,16 @@ namespace DatosSKD.DAO.Modulo12
                 }
 
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return laListaCintas;
             }
 
+            /// <summary>
+            /// Metodo para modificar fechas
+            /// </summary>
+            /// <returns>String con la fecha modificada</returns>
             public string ModificarFechas(string fecha)
             {
                 if (int.Parse(fecha) < 10)
@@ -828,9 +905,16 @@ namespace DatosSKD.DAO.Modulo12
                 return fecha;
             }
 
+            /// <summary>
+            /// Metodo para consultar si el nombre de la competencia existe al agregar
+            /// </summary>
+            /// <param name="parametro">Competencia para verificar si ya existe</param>
+            /// <returns>true si la competencia no existe, 
+            /// false si ya existe la competencia</returns>
             public bool BuscarNombreCompetenciaAgregar(Entidad parametro)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 bool retorno = false;
                 BDConexion laConexion;
@@ -888,7 +972,8 @@ namespace DatosSKD.DAO.Modulo12
                 }
 
 
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosDAOModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return retorno;
             }

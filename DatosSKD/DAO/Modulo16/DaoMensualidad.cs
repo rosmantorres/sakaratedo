@@ -39,7 +39,6 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Todas las mensualidades morosas asociadas al id de la persona logueada</returns>
         public Entidad ConsultarXId(Entidad entidad)
         {
-            FabricaEntidades laFabrica = new FabricaEntidades();
             List<Matricula> laLista = new List<Matricula>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
@@ -154,7 +153,6 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Retorna la mensualidad en especifico con todos sus detalles</returns>
         public Entidad DetallarMensualidad(Entidad matricula)
         {
-            FabricaEntidades laFabrica = new FabricaEntidades();
             List<Matricula> laLista = new List<Matricula>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
@@ -187,7 +185,7 @@ namespace DatosSKD.DAO.Modulo16
                 foreach (DataRow row in resultado.Rows)
                 {
                     laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();
-                    elDojo = (Dojo)laFabrica.ObtenerDojos();
+                    elDojo = (Dojo)FabricaEntidades.ObtenerDojos();
                     laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_MATRICULA].ToString());
                     laMatricula.Identificador = row[RecursosBDModulo16.PARAMETRO_IDENTIFICADOR_MAT].ToString();
                     laMatricula.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO_MATRICULA].ToString());

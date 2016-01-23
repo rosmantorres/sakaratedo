@@ -76,20 +76,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 Entidad carrito;
-                FabricaDAOSqlServer fabricad = new FabricaDAOSqlServer();
+                
                 //Instancio el DAO de Carrito
-                IdaoCarrito daocarrito = fabricad.ObtenerdaoCarrito();
+                IdaoCarrito daocarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
                 //Instancio el carrito y Obtengo todos los items del carrito de la persona
-                FabricaEntidades fabrica = new FabricaEntidades();
-                carrito = fabrica.ObtenerCarrito
+                carrito = FabricaEntidades.ObtenerCarrito
                     (daocarrito.getImplemento(this.persona),
                     daocarrito.getEvento(this.persona),
                     daocarrito.getMatricula(this.persona));
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                   RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamada
                 return carrito;

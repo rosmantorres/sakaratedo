@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modulo10\M10_PruebasBDAsistencia.cs" />
+    <Compile Include="Modulo10\M10_PruebasComandosAsistencia.cs" />
     <Compile Include="Modulo10\M10_PruebasDAO.cs" />
     <Compile Include="Modulo10\M10_PruebasLogica.cs" />
     <Compile Include="Modulo10\RecursosPU_Mod10.Designer.cs">
@@ -52,7 +53,10 @@
       <DependentUpon>RecursosPU_Mod10.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo11\M11_PruebasBDResultado.cs" />
+    <Compile Include="Modulo11\M11_PruebasComandoResultadoCompetencia.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoAscenso.cs" />
+    <Compile Include="Modulo11\M11_PruebasDAOResultadoKata.cs" />
+    <Compile Include="Modulo11\M11_PruebasDAOResultadoKumite.cs" />
     <Compile Include="Modulo11\M11_PruebasLogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosPU_Mod11.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,23 +88,11 @@
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo16\PruebaComandoAgregarItem.cs" />
-    <Compile Include="Modulo16\PruebaComandoConsultarEventos.cs" />
-    <Compile Include="Modulo16\PruebaComandoConsultarImplementos.cs" />
-    <Compile Include="Modulo16\PruebaComandoConsultarMatriculas.cs" />
-    <Compile Include="Modulo16\PruebaComandoDetallarEvento.cs" />
-    <Compile Include="Modulo16\PruebaComandoDetallarImplemento.cs" />
-    <Compile Include="Modulo16\PruebaComandoDetallarMatricula.cs" />
     <Compile Include="Modulo16\PruebaComandoEliminarItem.cs" />
     <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs" />
     <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs" />
     <Compile Include="Modulo16\PruebaDaoCarrito.cs" />
     <Compile Include="Modulo16\PruebaComandoVerCarrito.cs" />
-    <Compile Include="Modulo16\PruebaDaoConsultarEventos.cs" />
-    <Compile Include="Modulo16\PruebaDaoConsultarImplementos.cs" />
-    <Compile Include="Modulo16\PruebaDaoConsultarMatriculas.cs" />
-    <Compile Include="Modulo16\PruebaDaoDetallarEvento.cs" />
-    <Compile Include="Modulo16\PruebaDaoDetallarImplemento.cs" />
-    <Compile Include="Modulo16\PruebaDaoDetallarMatricula.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

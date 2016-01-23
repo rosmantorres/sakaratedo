@@ -10,9 +10,9 @@ namespace Interfaz_Contratos.Modulo10
    public interface IContratoListarAsistencia
     {
 
-       Literal tabla { set; }
+       string tabla { get;  set; }
        string alertaClase { set; }
        string alertaRol { set; }
-       string alert { set; }
+       string alerta { set; }
     }
 }

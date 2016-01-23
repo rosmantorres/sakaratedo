@@ -7,115 +7,107 @@ using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
-using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo16;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando para consultar la lista de todos los eventos
+    /// Comando que ejecuta la accion de detallar una factura en especifico
     /// </summary>
-    public class ComandoConsultarTodosEventos : Comando<Entidad>
+    public class ComandoDetallarFactura : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
-        /// Atributos del ComandoConsultarTodosProductos
-        private PersonaM1 p;
+        /// Atributos del Comando
+        /// </summary>
+        private  Entidad compra;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad del Atributo p
-
-        public PersonaM1 P
+        /// Propiedad del atributo compra
+        /// </summary>
+        public Entidad Compra
         {
-            get { return this.p; }
-            set { this.p = value; }
+            get{ return this.compra;}
+            set{this.compra = value;}
         }
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Constructor vacio del ComandoConsultarTodosEventos
+        /// Constructor vacio del Comando
         /// </summary>
-        public ComandoConsultarTodosEventos()
+        public ComandoDetallarFactura()
         {
 
         }
 
         /// <summary>
-        /// Constructor del ComandoConsultarTodosProductos
+        /// Constructor del comando con todos los datos requeridos para el detalleFactura
         /// </summary>
-        /// <param name="p">La persona que se encuentra logueada</param>
-        public ComandoConsultarTodosEventos(PersonaM1 p)
+        /// <param name="compra">La factura a la que se le mostrara el detalle</param>
+        public ComandoDetallarFactura(Entidad compra)
         {
-            this.p = p;
+            this.compra = compra;
         }
-
         #endregion
 
         #region Metodo Ejecutar
+
         /// <summary>
-        /// Metodo que ejecuta la accion de consultarTodasLosEventos
+        /// Metodo que ejecuta la accion del detalleEvento
         /// </summary>
-        /// <param name="NONE">Este metodo no posee paso de parametros</param>
-        /// <returns>lista de Eventos</returns>
+        /// <returns>El evento en especifico</returns>
         public override Entidad Ejecutar()
         {
             try
             {
                 //Escribo en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
-                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+                     RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el DAO de Evento
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IdaoEvento daoEventos = fabrica.ObtenerDaoEventos();
+                //Instancio el DAO de compra
+                IdaoCompra daocompra = FabricaDAOSqlServer.ObtenerDaoDetalleFactura();
 
                 //Casteamos
-                PersonaM1 p = (PersonaM1)this.LaEntidad;
+                Compra comp = (Compra)this.compra;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //retorno la entidad de donde sea llamado
-                return daoEventos.ListarEvento(p);
+                //retorno la entidad de donde sea llamada
+                return daocompra.DetallarFactura(comp);
             }
+
             #region catches
 
-            catch (LoggerException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ItemInvalidoException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (OpcionItemErroneoException e)
+            catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoVacioException e)
+            catch (ArgumentNullException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoFormatoInvalidoException e)
+            catch (FormatException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoEnSobrecargaException e)
+            catch (OverflowException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -138,12 +130,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
-                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                throw e;
             }
 
             #endregion
+
         }
+
         #endregion
     }
 }

@@ -88,6 +88,24 @@ namespace DatosSKD.DAO.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to costoEvento.
+        /// </summary>
+        internal static string AliasCostoEvento {
+            get {
+                return ResourceManager.GetString("AliasCostoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descripcionEvento.
+        /// </summary>
+        internal static string AliasDescripcionEvento {
+            get {
+                return ResourceManager.GetString("AliasDescripcionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to edadFinal.
         /// </summary>
         internal static string aliasEdadFinal {
@@ -115,6 +133,15 @@ namespace DatosSKD.DAO.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to estadoEvento.
+        /// </summary>
+        internal static string AliasEstadoEvento {
+            get {
+                return ResourceManager.GetString("AliasEstadoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fechaInicioCompetencia.
         /// </summary>
         internal static string aliasFechaCompetencia {
@@ -133,6 +160,24 @@ namespace DatosSKD.DAO.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fechaFin.
+        /// </summary>
+        internal static string AliasFechaFin {
+            get {
+                return ResourceManager.GetString("AliasFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaInicio.
+        /// </summary>
+        internal static string AliasFechaInicio {
+            get {
+                return ResourceManager.GetString("AliasFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fechaInicioCompetencia.
         /// </summary>
         internal static string aliasFechaInicioCompetencia {
@@ -147,6 +192,24 @@ namespace DatosSKD.DAO.Modulo10 {
         internal static string aliasFechaInscripcion {
             get {
                 return ResourceManager.GetString("aliasFechaInscripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horaFin.
+        /// </summary>
+        internal static string AliasHoraFin {
+            get {
+                return ResourceManager.GetString("AliasHoraFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horaInicio.
+        /// </summary>
+        internal static string AliasHoraInicio {
+            get {
+                return ResourceManager.GetString("AliasHoraInicio", resourceCulture);
             }
         }
         
@@ -210,6 +273,15 @@ namespace DatosSKD.DAO.Modulo10 {
         internal static string aliasIdSolicitudPlanilla {
             get {
                 return ResourceManager.GetString("aliasIdSolicitudPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idTipo.
+        /// </summary>
+        internal static string AliasIdTipo {
+            get {
+                return ResourceManager.GetString("AliasIdTipo", resourceCulture);
             }
         }
         
@@ -435,6 +507,15 @@ namespace DatosSKD.DAO.Modulo10 {
         internal static string ProcedimientoConsultarCompetenciaXID {
             get {
                 return ResourceManager.GetString("ProcedimientoConsultarCompetenciaXID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarEventoXID.
+        /// </summary>
+        internal static string ProcedimientoConsultarEventoXId {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarEventoXId", resourceCulture);
             }
         }
         

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
-using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
@@ -73,21 +72,21 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Evento
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IdaoEvento daoevento = fabrica.ObtenerDaoDetalleEvento();
+                DatosSKD.InterfazDAO.Modulo9.IDaoEvento daoevento = FabricaDAOSqlServer.ObtenerDaoEvento();
 
                 //Casteamos
-                Evento eve = (Evento)this.evento;
+                DominioSKD.Evento eve = (DominioSKD.Evento)this.evento;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamada
-                return daoevento.ConsultarXId(eve);
+                return daoevento.ConsultarPorIdPorRestricciones(eve);
             }
 
             #region catches
+
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
