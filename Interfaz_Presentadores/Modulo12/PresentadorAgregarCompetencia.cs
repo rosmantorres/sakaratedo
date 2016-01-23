@@ -14,15 +14,26 @@ using System.Web;
 
 namespace Interfaz_Presentadores.Modulo12
 {
+    /// <summary>
+    /// Presentador para la ventana Agregar Competencia
+    /// </summary>
     public class PresentadorAgregarCompetencia
     {
         private IContratoAgregarCompetencias vista;
 
+        /// <summary>
+        /// Constructor del presentador
+        /// </summary>
+        /// <param name="laVista">instancia de la ventana</param>
         public PresentadorAgregarCompetencia(IContratoAgregarCompetencias laVista)
         {
             this.vista = laVista;
         }
 
+
+        /// <summary>
+        /// Metodo para consultar las variables del url
+        /// </summary>
         public void ObtenerVariablesURL()
         { 
             String errorMalicioso = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.errorGet];
@@ -40,16 +51,19 @@ namespace Interfaz_Presentadores.Modulo12
             }
         }
 
+        /// <summary>
+        /// Metodo para llenar los comboboxes organizaciones y cintas
+        /// </summary>
         public void LlenarCombos()
         {
             try
             {
-                FabricaComandos laFabrica = new FabricaComandos();
+                //FabricaComandos laFabrica = new FabricaComandos();
                 Comando<List<Entidad>> comandoListarOrganizacion =
-                    laFabrica.ObtenerComandoConsultarOrgazaniciones();
+                    FabricaComandos.ObtenerComandoConsultarOrgazaniciones();
 
                 Comando<List<Entidad>> comandoListarCintas =
-                    laFabrica.ObtenerComandoConsultarCintas();
+                    FabricaComandos.ObtenerComandoConsultarCintas();
 
                 Dictionary<string, string> options = new Dictionary<string, string>();
                 options.Add("-1", M12_RecursoInterfazPresentador.selectOrganizacion);
@@ -107,6 +121,9 @@ namespace Interfaz_Presentadores.Modulo12
         
         }
 
+        /// <summary>
+        /// Metodo para modificar fechas
+        /// </summary>
         protected DateTime convertirFecha(string fechaE)
         {
             string diaFecha;
@@ -131,6 +148,10 @@ namespace Interfaz_Presentadores.Modulo12
             return DateTime.ParseExact(fechaCompleta, "MM/dd/yyyy", CultureInfo.InvariantCulture);
         }
 
+        /// <summary>
+        /// Metodo que se encarga del evento del boton para agregar una competencia
+        /// </summary>
+        /// <returns></returns>
         public void AgregarCompetencia()
         {
             List<String> laListaDeInputs = new List<String>();
@@ -181,13 +202,13 @@ namespace Interfaz_Presentadores.Modulo12
             {
                 try
                 {
-                    FabricaEntidades laFabricaEntidades = new FabricaEntidades();
-                    FabricaComandos laFabricaComando = new FabricaComandos();
+                    //FabricaEntidades laFabricaEntidades = new FabricaEntidades();
+                    //FabricaComandos laFabricaComando = new FabricaComandos();
 
                     Comando<bool> comandoAgregarCompetencia;
 
                     DominioSKD.Entidades.Modulo12.Competencia laCompetencia = 
-                        (DominioSKD.Entidades.Modulo12.Competencia)laFabricaEntidades.ObtenerCompetencia();
+                        (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
 
                     //ARMAR OBJETO COMPETENCIA---->
                     //NOMBRE
@@ -207,14 +228,14 @@ namespace Interfaz_Presentadores.Modulo12
                     if (vista.orgCompBool == false)
                     {
 
-                        laCompetencia.Organizacion = (Organizacion)laFabricaEntidades.ObtenerOrganizacion();
+                        laCompetencia.Organizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion();
                         //laCompetencia.Organizacion = new Organizacion();
                         laCompetencia.OrganizacionTodas = false;
                         laCompetencia.Organizacion.Nombre = vista.organizacionComp.SelectedItem.Text;
                     }
 
                     laCompetencia.Categoria = 
-                        (DominioSKD.Entidades.Modulo12.Categoria)laFabricaEntidades.ObtenerCategoria();
+                        (DominioSKD.Entidades.Modulo12.Categoria)FabricaEntidades.ObtenerCategoria();
                     //EDADES
                     laCompetencia.Categoria.Edad_inicial = int.Parse(vista.edadIniComp);
                     laCompetencia.Categoria.Edad_final = int.Parse(vista.edadFinComp);
@@ -240,7 +261,7 @@ namespace Interfaz_Presentadores.Modulo12
 
                     //UBICACION
                     laCompetencia.Ubicacion = 
-                        (DominioSKD.Entidades.Modulo12.Ubicacion)laFabricaEntidades.ObtenerUbicacion();
+                        (DominioSKD.Entidades.Modulo12.Ubicacion)FabricaEntidades.ObtenerUbicacion();
 
                     laCompetencia.Ubicacion.Latitud = this.vista.latitudComp;
                     laCompetencia.Ubicacion.Longitud = this.vista.longitudComp;
@@ -256,7 +277,7 @@ namespace Interfaz_Presentadores.Modulo12
                     laCompetencia.Costo = float.Parse(vista.costoComp);
 
                     //AGREGAR EN LOGICA OBJETO COMPETENCIA
-                    comandoAgregarCompetencia = laFabricaComando.ObtenerComandoAgregarCompetencia(laCompetencia);
+                    comandoAgregarCompetencia = FabricaComandos.ObtenerComandoAgregarCompetencia(laCompetencia);
 
                     if (comandoAgregarCompetencia.Ejecutar() == true)
                         HttpContext.Current.Response.Redirect(M12_RecursoInterfazPresentador.agregarExito);

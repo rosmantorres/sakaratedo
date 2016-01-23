@@ -335,7 +335,7 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Organizacion organizacion = (Organizacion)fabricaEntidad.ObtenerOrganizacion();
+            Organizacion organizacion = (Organizacion)FabricaEntidades.ObtenerOrganizacion();
             try
             {
 
@@ -545,7 +545,7 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo12.Competencia competencia =
-                (DominioSKD.Entidades.Modulo12.Competencia)fabricaEntidad.ObtenerCompetencia();
+                (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
             try
             {
 
@@ -563,7 +563,7 @@ namespace DatosSKD.DAO.Modulo14
                     {
                         FabricaEntidades fabricaEntidad1 = new FabricaEntidades();
                         DominioSKD.Entidades.Modulo12.Categoria cat =
-                            (DominioSKD.Entidades.Modulo12.Categoria)fabricaEntidad1.ObtenerCategoria();
+                            (DominioSKD.Entidades.Modulo12.Categoria)FabricaEntidades.ObtenerCategoria();
                         competencia.Categoria = cat;
                         competencia.Nombre = leer[RecursosDAOModulo14.AtributoCompetenciaNombre].ToString();
                         competencia.FechaFin = Convert.ToDateTime(leer[RecursosDAOModulo14.AtributoFechaFinCompetencia]);
