@@ -12,7 +12,7 @@ namespace Interfaz_Contratos.Modulo9
         string nombreEvento { get; }
         DropDownList comboTipoEvento { get; set; }
         string otroEvento { get; }
-        int costoEvento { get; }
+        string costoEvento { get; }
         string fechaInicio { get; }
         string fechaFin { get; }
         string horaInicio { get; }

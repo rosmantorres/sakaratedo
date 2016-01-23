@@ -79,7 +79,7 @@
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Costo del Evento</h3>
-                                <asp:TextBox runat="server" type="number" name="costoEvento" id="costoEvento" placeholder="Costo" class="form-control" OnTextChanged="costoEvento_TextChanged"></asp:TextBox>
+                                <asp:TextBox runat="server" type="number" name="costoEvento" id="costoEvento" placeholder="Costo" class="form-control"></asp:TextBox>
                             </div>
                     </div>
                 </div>
