@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
@@ -23,7 +24,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             List<String> datos;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 datos = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(this.idPlanilla);
                 
             }

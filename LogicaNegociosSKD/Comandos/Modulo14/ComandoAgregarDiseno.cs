@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -33,10 +34,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             {
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandoModulo14.MsjLoggerInfo, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                FabricaEntidades fabricaEntidad = new FabricaEntidades();
                 ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
-                DaoDiseno dao = (DaoDiseno)FabricaDAOSqlServer.ObtenerDAODiseno();
-                dao.LimpiarSQLConnection();
+                IDaoDiseno dao = FabricaDAOSqlServer.ObtenerDAODiseno();
                 return dao.GuardarDiseñoBD(this.diseño, this.planilla); 
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
