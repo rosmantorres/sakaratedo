@@ -222,6 +222,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarCompetenciaXIdDetalle(idCompetencia);
         }
+
+        public static Comando<Entidad> ObtenerComandoConsultarEventoM10XId(string idEvento)
+        {
+            return new ComandoConsultarEventoM10XId(idEvento);
+        }
         #endregion
 
         #region Modulo 11
