@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Fabrica;
+using DominioSKD.Fabrica;
 using DominioSKD;
 using NUnit.Framework;
-using log4net;
-using log4net.Config;
+
 
 namespace PruebasUnitariasSKD.Modulo9
 {
@@ -18,36 +18,34 @@ namespace PruebasUnitariasSKD.Modulo9
         [TestFixture]
         class PruebasDaoEvento
         {
-            #region Atributos
-            private int elId;
-            private Evento elEvento;
 
-            #endregion
+
 
             #region SetUp&TearDown
 
             [SetUp]
             public void Init()
             {
-                elId = 9;
+                FabricaEntidades fabricaEntidad = new FabricaEntidades();
                 DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
                 DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
-                Horario horario = new Horario(1, fechaInicio, fechaFin, 10, 11);
-                Categoria categoria = new Categoria(15, 16, "verde", "amarillo", "masculino");
-                TipoEvento tipoEvento = new TipoEvento(1, "Pase de Cinta");
-                Ubicacion ubicacion = new Ubicacion("10.499607", "66.788419", "Caracas", "Miranda", "NULL");
+                DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)fabricaEntidad.ObtenerHorario();
+                horario.FechaInicio = fechaInicio;
+                horario.FechaFin = fechaFin;
+                horario.HoraInicio = 10;
+                horario.HoraFin = 10;
+                horario.Id = 1;
+                DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)fabricaEntidad.ObtenerTipoEvento();
+                tipoEvento.Id = 1;
+                tipoEvento.Nombre = "Prueba Unitaria en Dao";               
                 Persona persona = new Persona();
-                categoria.Id_categoria = 1;
                 persona.ID = 33;
-                ubicacion.Id_ubicacion = 1;
-                elEvento = new Evento();
-                elEvento.Nombre = "Prueba Unitaria";
-                elEvento.Descripcion = "Pruebas Unitarias";
+                DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+                elEvento.Nombre = "Prueba Unitaria Dao";
+                elEvento.Descripcion = "Pruebas Unitarias de DAO";
                 elEvento.Costo = 55;
-                elEvento.Estado = true;
-                elEvento.Categoria = categoria;
+                elEvento.Estado = true;           
                 elEvento.Horario = horario;
-                elEvento.Ubicacion = ubicacion;
                 elEvento.TipoEvento = tipoEvento;
                 elEvento.Persona = persona;
             }
@@ -56,41 +54,101 @@ namespace PruebasUnitariasSKD.Modulo9
 
             public void clean()
             {
-                elId = 0;
-                elEvento = null;
+                
             }
             #endregion
 
             #region Pruebas Unitarias
 
-           /* [Test]
+            /// <summary>
+            /// Prueba que verifica si se inserta en BD
+            /// </summary>
+            [Test]
             public void PruebaCrearEvento()
             {
-                DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
-                Boolean auxiliar = baseDeDatosEvento.CrearEvento(elEvento);
+                FabricaEntidades fabricaEntidad = new FabricaEntidades();
+                DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
+                DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
+                DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)fabricaEntidad.ObtenerHorario();
+                horario.FechaInicio = fechaInicio;
+                horario.FechaFin = fechaFin;
+                horario.HoraInicio = 10;
+                horario.HoraFin = 10;
+                horario.Id = 1;
+                DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)fabricaEntidad.ObtenerTipoEvento();
+                tipoEvento.Id = 1;
+                tipoEvento.Nombre = "Prueba Unitaria en Dao";
+                Persona persona = new Persona();
+                persona.ID = 33;
+                DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+                elEvento.Nombre = "Prueba Unitaria Dao";
+                elEvento.Descripcion = "Pruebas Unitarias de DAO";
+                elEvento.Costo = 55;
+                elEvento.Estado = true;
+                elEvento.Horario = horario;
+                elEvento.TipoEvento = tipoEvento;
+                elEvento.Persona = persona;
+                DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
+                Boolean auxiliar = daoEvento.Agregar(elEvento);
                 Console.Out.WriteLine(auxiliar);
                 Assert.True(auxiliar);
-            }*/
+            }
 
+            /// <summary>
+            /// Prueba que permite saber si esta retornando los datos de BD
+            /// </summary>
             [Test]
             public void PruebaListarEventos()
             {
-            DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
-            List<Entidad> listaEvento = daoEvento.ListarEventos(10);
+                DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
+                List<Entidad> listaEvento = daoEvento.ListarEventos(70);
+                foreach (Entidad a in listaEvento)
+                {
+                    DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)a;
+                    Console.Out.WriteLine(evento.Id);
+                    Console.Out.WriteLine(evento.Nombre);
+                    Console.Out.WriteLine(evento.Descripcion);
+
+                }
                 Assert.Greater(listaEvento.Count, 0);
             }
 
-            /*[Test]
-            public void PruebaConsultarEvento()
+            /// <summary>
+            /// Prueba que permite saber si esta retornando los datos de BD
+            /// </summary>
+            [Test]
+            public void PruebaListarTiposEventos()
             {
-                DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
-                Evento evento = baseDeDatosEvento.ConsultarEvento("1");
+                DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
+                List<Entidad> listaEvento = daoEvento.ListarTiposEventos();
+                foreach (Entidad a in listaEvento)
+                {
+                    DominioSKD.Entidades.Modulo9.TipoEvento tipo = (DominioSKD.Entidades.Modulo9.TipoEvento)a;
+                    Console.Out.WriteLine(tipo.Id);
+                    Console.Out.WriteLine(tipo.Nombre);
+                    
 
-                Console.Out.WriteLine(evento.TipoEvento.Id);
-                Assert.AreEqual(evento.Nombre, "Clase Regular");
+                }
+                Assert.Greater(listaEvento.Count, 0);
             }
 
-            [Test]
+        /// <summary>
+        /// Prueba que verifica si se el evento consultado existe
+        /// </summary>
+
+        [Test]
+            public void PruebaConsultarEvento()
+            {
+                FabricaEntidades fabricaEntidad = new FabricaEntidades();
+                DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
+                DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+                evento.Id = 1;
+                Entidad axuiliar = daoEvento.ConsultarXId(evento);
+                Console.Out.WriteLine(axuiliar.Id);
+                Assert.AreEqual(axuiliar.Id,1);
+            }
+
+            /*[Test]
             public void PruebaListarHorarios()
             {
                 DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();

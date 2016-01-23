@@ -7,6 +7,9 @@ using DominioSKD;
 using NUnit.Framework;
 using log4net;
 using log4net.Config;
+using LogicaNegociosSKD.Comandos;
+using LogicaNegociosSKD.Fabrica;
+
 
 namespace PruebasUnitariasSKD.Modulo9
 {
@@ -45,6 +48,27 @@ namespace PruebasUnitariasSKD.Modulo9
         public void clean()
         {
             elEvento = null;
+        }
+
+        /// <summary>
+        /// Prueba que permite saber si esta retornando los datos de BD
+        /// </summary>
+        [Test]
+        public void PruebaListarTiposEventos()
+        {
+            LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos)FabricaComandos.ObtenerComandoConsultarTipoEventos();
+        
+                
+            List<Entidad> listaEvento = comando.Ejecutar();
+            foreach (Entidad a in listaEvento)
+            {
+                DominioSKD.Entidades.Modulo9.TipoEvento tipo = (DominioSKD.Entidades.Modulo9.TipoEvento)a;
+                Console.Out.WriteLine(tipo.Id);
+                Console.Out.WriteLine(tipo.Nombre);
+
+
+            }
+            Assert.Greater(listaEvento.Count, 0);
         }
         /*[Test]
         public void PruebaValidarCaracteres()
