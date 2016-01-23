@@ -23,7 +23,7 @@ namespace templateApp.GUI.Modulo9
                 try
                 {
 
-                    evento = logica.ConsultarEvento(idEvento);
+             //       evento = logica.ConsultarEvento(idEvento);
                     this.nombreEvento.Text = evento.Nombre;
                     this.tipoEvento.Text = evento.TipoEvento.Nombre;
                     this.costoEvento.Text = evento.Costo.ToString();

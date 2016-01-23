@@ -67,7 +67,7 @@ namespace templateApp.GUI.Modulo9
                             try
                             {
                                 Dictionary<string, string> options = new Dictionary<string, string>();
-                                listEvento = logicaEvento.ConsultarTiposEventos();
+                       //         listEvento = logicaEvento.ConsultarTiposEventos();
 
                                 foreach (TipoEvento o in listEvento)
                                 {
@@ -87,7 +87,7 @@ namespace templateApp.GUI.Modulo9
                         }
                         
 
-                        evento = logica.ConsultarEvento(idEvento);
+          //              evento = logica.ConsultarEvento(idEvento);
                         this.nombreEvento.Text = evento.Nombre;
                         this.costoEvento.Text = evento.Costo.ToString();
                         this.descripcionEvento.Text = evento.Descripcion;
@@ -204,7 +204,7 @@ namespace templateApp.GUI.Modulo9
                         TipoEvento tipoEvento = new TipoEvento();
                         tipoEvento.Nombre = otroEvento.Text;
                         evento.TipoEvento = tipoEvento;
-                        bool resultado = logicaEvento.CrearEventoConTipo(evento);
+                        bool resultado = true ; //= logicaEvento.CrearEventoConTipo(evento);
                         if (resultado)
                         {
                             alert.Attributes["class"] = "alert alert-success alert-dismissible";
@@ -228,7 +228,7 @@ namespace templateApp.GUI.Modulo9
                     TipoEvento tipoEvento = new TipoEvento();
                     tipoEvento.Id = comboTipoEvento.SelectedIndex;
                     evento.TipoEvento = tipoEvento;
-                    bool resultado = logicaEvento.ModificarEvento(evento);
+                    bool resultado = true;// = logicaEvento.ModificarEvento(evento);
                     if (resultado)
                     {
                         alert.Attributes["class"] = "alert alert-success alert-dismissible";
