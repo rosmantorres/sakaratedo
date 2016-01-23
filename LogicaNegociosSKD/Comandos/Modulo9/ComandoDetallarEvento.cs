@@ -7,81 +7,84 @@ using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
-using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
+using DominioSKD.Fabrica;
+
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando para consultar la lista de todos los eventos
+    /// Comando que ejecuta la accion de detallar un evento en especifico
     /// </summary>
-    public class ComandoConsultarTodosEventos : Comando<Entidad>
+   public class ComandoDetallarEvento : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
-        /// Atributos del ComandoConsultarTodosProductos
-        private PersonaM1 p;
+        /// Atributos del Comando
+        /// </summary>
+        private  Entidad evento;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad del Atributo p
-
-        public PersonaM1 P
+        /// Propiedad del atributo evento
+        /// </summary>
+        public Entidad Evento
         {
-            get { return this.p; }
-            set { this.p = value; }
+            get{ return this.evento;}
+            set{this.evento = value;}
         }
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Constructor vacio del ComandoConsultarTodosEventos
+        /// Constructor vacio del Comando
         /// </summary>
-        public ComandoConsultarTodosEventos()
+        public ComandoDetallarEvento()
         {
 
         }
 
         /// <summary>
-        /// Constructor del ComandoConsultarTodosProductos
+        /// Constructor del comando con todos los datos requeridos para el detalleEvento
         /// </summary>
-        /// <param name="p">La persona que se encuentra logueada</param>
-        public ComandoConsultarTodosEventos(PersonaM1 p)
+        /// <param name="evento">El evento al que se le mostrara el detalle</param>
+        public ComandoDetallarEvento(Entidad evento)
         {
-            this.p = p;
+            this.evento = evento;
         }
-
         #endregion
 
         #region Metodo Ejecutar
+
         /// <summary>
-        /// Metodo que ejecuta la accion de consultarTodasLosEventos
+        /// Metodo que ejecuta la accion del detalleEvento
         /// </summary>
-        /// <param name="NONE">Este metodo no posee paso de parametros</param>
-        /// <returns>lista de Eventos</returns>
+        /// <returns>El evento en especifico</returns>
         public override Entidad Ejecutar()
         {
             try
             {
                 //Escribo en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
-                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+                     RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Evento
-                IdaoEvento daoEventos = FabricaDAOSqlServer.ObtenerDaoEventos();
+                DatosSKD.InterfazDAO.Modulo9.IDaoEvento daoevento = FabricaDAOSqlServer.ObtenerDaoEvento();
 
                 //Casteamos
-                PersonaM1 p = (PersonaM1)this.LaEntidad;
+                DominioSKD.Evento eve = (DominioSKD.Evento)this.evento;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //retorno la entidad de donde sea llamado
-                return daoEventos.ListarEvento(p);
+                //retorno la entidad de donde sea llamada
+                return daoevento.ConsultarPorIdPorRestricciones(eve);
             }
+
             #region catches
 
             catch (PersonaNoValidaException e)
@@ -131,7 +134,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             }
 
             #endregion
+
         }
+
         #endregion
     }
 }

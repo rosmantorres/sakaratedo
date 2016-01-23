@@ -55,6 +55,12 @@ namespace Interfaz_Presentadores.Modulo10
                     vista.alertaRol = M10_RecursosPresentador.Alerta;
                     vista.alerta = M10_RecursosPresentador.InnerHtmlErrorAgregarCompetencia;
                 }
+                if (success.Equals(M10_RecursosPresentador.AlertErrorModificarAsistencia))
+                {
+                    vista.alertaClase = M10_RecursosPresentador.AlertaDanger;
+                    vista.alertaRol = M10_RecursosPresentador.Alerta;
+                    vista.alerta = M10_RecursosPresentador.InnerHtmlErrorModificarAsistencia;
+                }
             }
         }
 

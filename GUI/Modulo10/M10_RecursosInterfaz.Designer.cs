@@ -178,11 +178,38 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_IdEvento.
+        /// </summary>
+        internal static string IdEvento {
+            get {
+                return ResourceManager.GetString("IdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
             get {
                 return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx?success=2.
+        /// </summary>
+        internal static string ListaAsistenciaModificada {
+            get {
+                return ResourceManager.GetString("ListaAsistenciaModificada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx?success=6.
+        /// </summary>
+        internal static string ListaAsistenciaNoModificada {
+            get {
+                return ResourceManager.GetString("ListaAsistenciaNoModificada", resourceCulture);
             }
         }
         
@@ -201,6 +228,15 @@ namespace templateApp.GUI.Modulo10 {
         internal static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_tipo.
+        /// </summary>
+        internal static string tipoEvento {
+            get {
+                return ResourceManager.GetString("tipoEvento", resourceCulture);
             }
         }
         
