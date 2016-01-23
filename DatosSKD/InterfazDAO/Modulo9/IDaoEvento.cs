@@ -7,11 +7,12 @@ using DominioSKD;
 
 namespace DatosSKD.InterfazDAO.Modulo9
 {
+    /// <summary>
+    /// Firma de metodos para implementar en el DaoEvento
+    /// </summary>
     public interface IDaoEvento : IDao<Entidad, bool, Entidad>
     {
-        
         bool CrearEventoConTipo(Entidad eventoParametro);
-       
         bool ModificarEventoConTipo(Entidad eventoParametro);
         List<Entidad> ListarEventos(int idPersona);
         List<Entidad> ListarTiposEventos();

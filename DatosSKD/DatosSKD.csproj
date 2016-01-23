@@ -93,7 +93,11 @@
       <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
     </Compile>
     <Compile Include="DAO\Modulo9\DaoEvento.cs" />
-    <Compile Include="DAO\Modulo9\RecursosDaoEvento.Designer.cs" />
+    <Compile Include="DAO\Modulo9\RecursosDaoEvento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDaoEvento.resx</DependentUpon>
+    </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\Modulo15\IDaoImplemento.cs" />
     <Compile Include="InterfazDAO\Modulo10\IDaoAsistencia.cs" />
@@ -260,7 +264,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo3\RecursosDaoModulo3.resx" />
     <EmbeddedResource Include="DAO\Modulo5\RecursosDaoModulo5.resx" />
-    <EmbeddedResource Include="DAO\Modulo9\RecursosDaoEvento.resx" />
+    <EmbeddedResource Include="DAO\Modulo9\RecursosDaoEvento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDaoEvento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo10.Designer.cs</LastGenOutput>

@@ -15,6 +15,9 @@ using DatosSKD.InterfazDAO.Modulo9;
 
 namespace DatosSKD.DAO.Modulo9
 {
+    /// <summary>
+    /// Clase que maneja todas las transacciones de base de datos relacionadas con evento, implementa IdaoEvento
+    /// </summary>
     public class DaoEvento : DAOGeneral , IDaoEvento
     {
         #region Metodos
