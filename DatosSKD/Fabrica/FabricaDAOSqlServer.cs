@@ -147,6 +147,11 @@ namespace DatosSKD.Fabrica
             return new DatosSKD.DAO.Modulo8.DAORestriccionCinta();
         }
 
+        public DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionEvento ObtenerDAORestriccionEvento()
+        {
+            return new DatosSKD.DAO.Modulo8.DAORestriccionEvento();
+        }
+
         #endregion
 
         #region Modulo 9

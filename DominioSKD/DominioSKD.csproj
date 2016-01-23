@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +62,7 @@
     <Compile Include="Entidades\Modulo3\Organizacion.cs" />
     <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
+    <Compile Include="Entidades\Modulo8\RestriccionEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
@@ -111,7 +114,6 @@
     <Folder Include="Entidades\Modulo6\" />
     <Folder Include="Entidades\Modulo7\" />
     <Folder Include="Entidades\Modulo9\" />
-    <Folder Include="Entidades\Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
