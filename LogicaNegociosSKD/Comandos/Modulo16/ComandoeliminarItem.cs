@@ -123,13 +123,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 bool Respuesta = false;
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+                 
                 //Instancio el DAO de Carrito
-                IdaoCarrito daoCarrito = fabrica.ObtenerdaoCarrito();
+                IdaoCarrito daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
-                //Se procede a ejecutar eliminarItem y se retorna el Resultado
-
-
+                //Se procede a ejecutar eliminarItem y obtengo la respuesta
                 Respuesta = daoCarrito.eliminarItem(tipoObjeto, objetoaBorrar, usuario);
 
                 //Escribo en el logger la salida a este metodo
@@ -140,11 +138,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 return Respuesta;
 
             }
-
-
-
             #region Catches
             catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (CarritoConPagoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -179,15 +179,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-
-
             #endregion
-
-
-
         }
-
-
         #endregion
     }
 }

@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo10\M10_RecursosPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M10_RecursosPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo10\PresentadorListarAsistencia.cs" />
+    <Compile Include="Modulo10\PresentadorModificarAsistencia.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
@@ -101,12 +108,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosInterfazPresentadorM1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo1\ValidacionesM1.cs" />
+    <Compile Include="Modulo2\Encriptacion.cs" />
     <Compile Include="Modulo2\PresentadorM2.cs" />
     <Compile Include="Modulo2\RecursosInterfazPresentadorM2.Designer.cs">
       <DependentUpon>RecursosInterfazPresentadorM2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo2\ValidacionesM2.cs" />
     <Compile Include="Modulo5\PresentadorCrearCintas.cs" />
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
@@ -137,7 +147,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo3\" />
@@ -148,6 +157,10 @@
     <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M10_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\M16_Recursointerfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M16_Recursointerfaz.Designer.cs</LastGenOutput>

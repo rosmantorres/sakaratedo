@@ -9,13 +9,14 @@ using DominioSKD.Fabrica;
 using DominioSKD;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
-using LogicaNegociosSKD.Comandos.Modulo16;
+using LogicaNegociosSKD.Comandos.Modulo15;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
+using DominioSKD.Entidades.Modulo1;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -51,8 +52,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar el evento
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarProductos = fabrica.CrearComandoConsultarTodosProductos();
+                Comando<Entidad> comandoListarProductos = FabricaComandos.CrearComandoConsultarTodosProductos();
 
                 // Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -178,45 +178,55 @@ namespace Interfaz_Presentadores.Modulo16
 
             }
             #region Catches
-            catch (PersonaNoValidaException e)
+            catch (PersonaNoValidaException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK_PRODUCTO, false);
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK_PRODUCTO, false);
 
             }
-            catch (LoggerException e)
+            catch (ArgumentNullException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK_PRODUCTO, false);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK_PRODUCTO, false);
 
             }
-            catch (ArgumentNullException e)
+            catch (OverflowException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK_PRODUCTO, false);
 
             }
-            catch (FormatException e)
+            catch (ParametroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK_PRODUCTO, false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK_PRODUCTO, false);
 
             }
-            catch (OverflowException e)
+            catch (ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK_PRODUCTO, false);
 
             }
-            catch (ParametroInvalidoException e)
+            catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
-            }
-            catch (ExceptionSKD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
-            }
-            catch (Exception e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK_PRODUCTO, false);
             }
 
             #endregion
@@ -310,8 +320,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleProducto = fabrica.CrearComandoDetallarProducto(implemento);
+            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
             Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
             return elImplemento;
         }
@@ -350,31 +359,33 @@ namespace Interfaz_Presentadores.Modulo16
                 bool respuesta = false;
                 int cantidad = 0;
 
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a agregar
                 foreach (TableRow aux2 in this.vista.tablaProductos.Rows)
                 {
                     //Si la fila no es de tipo Header puedo comenzar a buscar
                     if ((aux2 is TableHeaderRow) != true)
                     {
-                        //En la celda 7 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[7].Controls[1] as Button;
+                        //En la celda 8 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[8].Controls[1] as Button;
 
                         //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
                         //Obtenemos el numero del textbox que el usuario desea
                         if (aux3.ID == aux.ID)
                         {
-                            /*En la celda 6 siempre estara el combobox,
+                            /*En la celda 7 siempre estara el combobox,
                             lo obtengo y agarro la cantidad que el usuario desea*/
-                            DropDownList lacantidad = aux2.Cells[6].Controls[0] as DropDownList;
+                            DropDownList lacantidad = aux2.Cells[7].Controls[0] as DropDownList;
                             cantidad = int.Parse(lacantidad.SelectedValue);
+
+                            //Agrego el precio del implemento
+                            implemento.Precio_Implemento = int.Parse(aux2.Cells[4].Text);
                             break;
                         }
                     }
                 }
 
                 //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente
-                FabricaComandos fabricaComando = new FabricaComandos();
-                Comando<bool> comando = fabricaComando.CrearComandoAgregarItem(persona, implemento, 1, cantidad);
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, implemento, 1, cantidad);
                 respuesta = comando.Ejecutar();
 
                 //Escribo en el logger la salida a este metodo
@@ -397,6 +408,11 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_ITEM_INVALIDO_LINK, false);
+            }
+            catch (CarritoConPagoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CARRITO_PAGO_LINK, false);
             }
             catch (PersonaNoValidaException e)
             {

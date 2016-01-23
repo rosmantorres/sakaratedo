@@ -46,5 +46,7 @@ namespace DatosSKD.InterfazDAO.Modulo10
         List<Entidad> ListaInasistentesPlanillaCompetencia(string idCompetencia);
 
         Entidad ConsultarCompetenciaXIdDetalle(string idCompetencia);
+
+        Entidad ConsultarEventoXID(string idEvento);
     }
 }

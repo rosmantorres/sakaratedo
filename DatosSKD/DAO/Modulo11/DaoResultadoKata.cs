@@ -1,5 +1,6 @@
 ﻿using DatosSKD.InterfazDAO.Modulo11;
 using DominioSKD;
+using DominioSKD.Fabrica;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,7 +30,7 @@ namespace DatosSKD.DAO.Modulo11
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo11.ProcedimientoConsultarResultadoPasadoC, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad competencia = fabrica.ObtenerCompetencia();
+                    Entidad competencia = FabricaEntidades.ObtenerCompetencia();
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = int.Parse(row[RecursosDAOModulo11.aliasIdCompetencia].ToString());
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Nombre = row[RecursosDAOModulo11.aliasNombreCompetencia].ToString();
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).FechaInicio = DateTime.Parse(row[RecursosDAOModulo11.aliasFechaCompetencia].ToString());
@@ -126,7 +127,7 @@ namespace DatosSKD.DAO.Modulo11
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad categoria = fabrica.ObtenerCategoria();
+                    Entidad categoria = FabricaEntidades.ObtenerCategoria();
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = int.Parse(row[RecursosDAOModulo11.aliasIdCategoria].ToString());
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Edad_inicial = int.Parse(row[RecursosDAOModulo11.aliasEdadInicial].ToString());
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Edad_final = int.Parse(row[RecursosDAOModulo11.aliasEdadFinal].ToString());

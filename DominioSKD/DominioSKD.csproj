@@ -68,6 +68,7 @@
     <Compile Include="Entidades\Modulo16\ListaEvento.cs" />
     <Compile Include="Entidades\Modulo16\ListaImplemento.cs" />
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
+    <Compile Include="Entidades\Modulo16\Pago.cs" />
     <Compile Include="Entidades\Modulo4\Dojo.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
@@ -84,11 +85,11 @@
     <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="InformacionPersonal.cs" />
-    <Compile Include="PersonaM1.cs" />
+    <Compile Include="Entidades\Modulo1\PersonaM1.cs" />
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo12\Competencia.cs" />
-    <Compile Include="Cuenta.cs" />
-    <Compile Include="Compra.cs" />
+    <Compile Include="Entidades\Modulo1\Cuenta.cs" />
+    <Compile Include="Entidades\Modulo16\Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
     <Compile Include="HistorialCinta.cs" />
@@ -98,7 +99,7 @@
     <Compile Include="Planilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestriccionEvento.cs" />
-    <Compile Include="Rol.cs" />
+    <Compile Include="Entidades\Modulo2\Rol.cs" />
     <Compile Include="RestriccionCompetencia.cs" />
     <Compile Include="ResultadoAscenso.cs" />
     <Compile Include="ResultadoKata.cs" />
@@ -119,8 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo1\" />
-    <Folder Include="Entidades\Modulo2\" />
     <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

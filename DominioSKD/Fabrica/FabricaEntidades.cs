@@ -13,9 +13,35 @@ namespace DominioSKD.Fabrica
     public class FabricaEntidades
     {
         #region Modulo 1
+        public Entidad ObtenerPersona_M1()
+        {
+            return new Entidades.Modulo1.PersonaM1();
+        }
+        public Entidad ObtenerPersona_M1(int id, String nombre, String apellido)
+        {
+            return new Entidades.Modulo1.PersonaM1(id, nombre, apellido);
+        }
+        public Entidad ObtenerCuenta_M1()
+        {
+            return new Entidades.Modulo1.Cuenta();
+        }
+        public Entidad ObtenerCuenta_M1(String elNombreUsuario, String laContrasena, 
+            List<Entidades.Modulo2.Rol> listaRoles, String laImagen, 
+            Entidades.Modulo1.PersonaM1 datosPersonales)
+        {
+            return new Entidades.Modulo1.Cuenta(elNombreUsuario, laContrasena, listaRoles, laImagen, datosPersonales);
+        }
         #endregion
 
         #region Modulo 2
+        public Entidad ObtenerRol_M2()
+        {
+            return new Entidades.Modulo2.Rol();
+        }
+        public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
+        {
+            return new Entidades.Modulo2.Rol(elId, elNombre, laDescripcion, laFecha);
+        }
         #endregion
 
         #region Modulo 3
@@ -185,6 +211,15 @@ namespace DominioSKD.Fabrica
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
+
+        #region ObtenerEventoCompletos Modulo16
+        public static Entidad ObtenerEventoCompletos()
+        {
+            return new DominioSKD.Evento();
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 10
@@ -236,67 +271,67 @@ namespace DominioSKD.Fabrica
 
         #region Modulo 12
 
-        public Entidad ObtenerCinta()
+        public static Entidad ObtenerCinta()
         {
-            return new DominioSKD.Entidades.Modulo5.Cinta();
+            return new Cinta();
         }
 
-        public Entidad ObtenerOrganizacion(int elId, String elNombre)
+        public static Entidad ObtenerOrganizacion(int elId, String elNombre)
         {
             return new Organizacion(elId, elNombre);
         }
 
-        public Entidad ObtenerOrganizacion(String elNombre)
+        public static Entidad ObtenerOrganizacion(String elNombre)
         {
             return new Organizacion(elNombre);
         }
 
-        public Entidad ObtenerOrganizacion()
+        public static Entidad ObtenerOrganizacion()
         {
             return new Organizacion();
         }
 
-        public Entidad ObtenerCategoria()
+        public static Entidad ObtenerCategoria()
         {
             return new DominioSKD.Entidades.Modulo12.Categoria();
         }
 
-        public   Entidad ObtenerUbicacion()
+        public static Entidad ObtenerUbicacion()
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion();
         }
 
-        public   Entidad ObtenerCompetencia()
+        public static Entidad ObtenerCompetencia()
         {
             return new DominioSKD.Entidades.Modulo12.Competencia();
         }
 
-        public   Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public static Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
             return new DominioSKD.Entidades.Modulo12.Categoria(laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
-        public   Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public static Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
             return new DominioSKD.Entidades.Modulo12.Categoria(elId, laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
-        public   Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
+        public static Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion(elId, laCiudad, elEstado);
         }
 
-        public   Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public static Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion(laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
-        public   Entidad ObtenerUbicacion(int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public static Entidad ObtenerUbicacion(int elId, String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion(elId, laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
-        public   Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
+        public static Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
         {
             return new DominioSKD.Entidades.Modulo12.Competencia(elId, elNombre, elTipo, orgTodas, elStatus);
         }
@@ -456,7 +491,7 @@ namespace DominioSKD.Fabrica
         /// Metodo de la fabrica que instancia un carrito vacio
         /// </summary>
         /// <returns>La entidad carrito vacia</returns>
-        public Entidad ObtenerCarrito()
+        public static Entidad ObtenerCarrito()
         {
             return new Entidades.Modulo16.Carrito();
         }
@@ -468,28 +503,40 @@ namespace DominioSKD.Fabrica
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
         /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
         /// <returns>La entidad carrito con todos sus datos llenos</returns>
-        public Entidad ObtenerCarrito(
+        public static Entidad ObtenerCarrito(
            Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
         {
             return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia el Evento
+        /// Metodo de la fabrica que instancia el pago vacio
         /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad evento con todos sus datos llenos</returns>
-       // public Entidad ObtenerEvento()
-       // {
-         //   return new Evento();
-        //}
+        /// <returns>La entidad pago vacio</returns>
+        public static Entidad ObtenerPago()
+        {
+            return new Entidades.Modulo16.Pago();
+        }
 
+        /// <summary>
+        /// Metodo de la fabrica que instnacia el carrito con todos sus datos llenos
+        /// </summary>
+        /// <param name="monto">El monto con el que se pagara la transaccion</param>
+        /// <param name="tipoPago">El tipo de pago con el que se realizara la transaccion</param>
+        /// <param name="datoPago">Los datos correspondientes al pago selecccionado</param>
+        /// <returns></returns>
+        public static Entidad ObtenerPago(float monto, String tipoPago, List<String> datoPago)
+        {
+            return new Entidades.Modulo16.Pago(monto, tipoPago, datoPago);
+        }
+
+       
         /// <summary>
         /// Metodo de la fabrica que instancia el Dojo
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad dojo con todos sus datos llenos</returns>
-        public Entidad ObtenerDojos()
+        public static Entidad ObtenerDojos()
         {
             return new Dojo();
         }
@@ -499,7 +546,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad compra con todos sus datos llenos</returns>
-        public Entidad ObtenerFactura()
+        public static Entidad ObtenerFactura()
         {
             return new Compra();
         }

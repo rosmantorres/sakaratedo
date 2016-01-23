@@ -29,9 +29,9 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <summary>
         /// Metodo que obtiene el detalle de la factura
         /// </summary>
-        /// <param name="Id_Factura">El id de la factura que desea detallar</param>
+        /// <param name="entidad">El id de la factura que desea detallar</param>
         /// <returns>El objeto con todos sus atributos en especifico</returns>
-        Entidad DetallarFactura(int Id_factura);
+        Entidad DetallarFactura(Entidad entidad);
 
         /// <summary>
         /// Metodo para el agregar
