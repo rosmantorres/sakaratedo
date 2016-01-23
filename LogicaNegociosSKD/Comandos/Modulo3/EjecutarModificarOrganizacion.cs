@@ -34,7 +34,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo3
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo3.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            return false;
+            return true;
 
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

@@ -26,17 +26,17 @@ namespace Interfaz_Presentadores.Modulo3
         public void LlenarInformacion()
         {
 
-            Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarConsultarTodosOrganizacion();
-            List<Entidad> _miLista = _comando.Ejecutar();
-
-          
-            if (_miLista != null)
-                this.llenarVista(_miLista);
-            else
+            try
             {
-                throw new ExcepcionesSKD.Modulo3.ListaVaciaExcepcion(RecursosPresentadorM3.Codigo_Error_Lista_Vacia,
-                                   RecursosPresentadorM3.Mensaje_Error_Lista_Vacia, new Exception());
+                Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarConsultarTodosOrganizacion();
+                List<Entidad> _miLista = _comando.Ejecutar();
+                this.llenarVista(_miLista);
             }
+            catch (ExcepcionesSKD.Modulo3.ListaVaciaExcepcion ex)
+            {
+                throw ex;
+            }
+            
         }
 
         /// <summary>

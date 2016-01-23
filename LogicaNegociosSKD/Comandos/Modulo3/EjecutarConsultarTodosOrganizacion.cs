@@ -35,7 +35,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo3
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo3.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return null;
+                throw new ExcepcionesSKD.Modulo5.ListaVaciaExcepcion(RecursosComandosModulo3.Codigo_Error_Lista_Vacia,
+                                   RecursosComandosModulo3.Mensaje_Error_Lista_Vacia, new Exception());
 
             }
             }

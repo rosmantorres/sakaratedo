@@ -257,7 +257,18 @@ namespace templateApp.GUI.Modulo5 {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/tr&gt;.
+        /// </summary>
+        internal static string falloOrden
+        {
+            get
+            {
+                return ResourceManager.GetString("falloOrden", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to idCinta.
         /// </summary>

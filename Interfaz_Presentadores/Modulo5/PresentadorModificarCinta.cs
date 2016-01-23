@@ -25,15 +25,15 @@ namespace Interfaz_Presentadores.Modulo5
         /// </summary>
         public void llenarCombo()
         {
-            Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
-            List<Entidad> _miLista = _comando.Ejecutar();
-
-            if (_miLista != null)
-                this.asignarInformacionCombo(_miLista);
-            else
+            try
             {
-                throw new ExcepcionesSKD.Modulo5.ListaVaciaExcepcion(RecursoPresentadorM5.Codigo_Error_Lista_Vacia,
-                                   RecursoPresentadorM5.Mensaje_Error_Lista_Vacia, new Exception());
+                Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
+                List<Entidad> _miLista = _comando.Ejecutar();
+                this.asignarInformacionCombo(_miLista);
+            }
+            catch (ExcepcionesSKD.Modulo5.ListaVaciaExcepcion ex)
+            {
+                throw ex;
             }
         }
 

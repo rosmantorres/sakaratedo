@@ -35,7 +35,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             miDaoCinta.Agregar(this.LaEntidad);
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
-            return false;
+            return true;
             
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -50,14 +50,25 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
+            catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo5.CintaRepetidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }           
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
-            
-           
+                   
         }
  
 

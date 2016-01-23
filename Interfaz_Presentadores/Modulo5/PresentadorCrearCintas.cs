@@ -25,15 +25,15 @@ namespace Interfaz_Presentadores.Modulo5
          /// </summary>
         public void llenarCombo()
         {
-            Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
-            List<Entidad> _miLista = _comando.Ejecutar();
-
-            if (_miLista != null)
-                this.asignarInformacionCombo(_miLista);
-            else
+            try
+            { 
+               Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
+               List<Entidad> _miLista = _comando.Ejecutar();
+               this.asignarInformacionCombo(_miLista);
+            }
+           catch (ExcepcionesSKD.Modulo5.ListaVaciaExcepcion ex)
             {
-                throw new ExcepcionesSKD.Modulo5.ListaVaciaExcepcion(RecursoPresentadorM5.Codigo_Error_Lista_Vacia,
-                                   RecursoPresentadorM5.Mensaje_Error_Lista_Vacia, new Exception());
+                throw ex;
             }
         }
 
@@ -90,9 +90,13 @@ namespace Interfaz_Presentadores.Modulo5
                     if (resultado)
                         this.vista.Respuesta();
                 }
-                catch (ExcepcionesSKD.ExceptionSKD ex)
+                catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
                 {
-                    this.vista.alertaAgregarFallido(ex);
+                    this.vista.alertaAgregarFallidoOrden(ex);
+                }
+                catch (ExcepcionesSKD.Modulo5.CintaRepetidaException ex)
+                {
+                    this.vista.alertaAgregarFallidoRepetida(ex);
                 }
             }
             else

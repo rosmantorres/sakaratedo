@@ -88,11 +88,18 @@ namespace templateApp.GUI.Modulo5
                 this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.camposVacios + RecursoInterfazMod5.alertaHtmlFinal;
                 this.alert.Visible = true;
         }
-        public void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        public void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
         {
             this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
             this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
-            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Mensaje + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo5.CintaRepetidaException ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
             this.alert.Visible = true;
         }
         public void Respuesta()
@@ -104,7 +111,7 @@ namespace templateApp.GUI.Modulo5
 
         protected void btnCrearCinta(object sender, EventArgs e){
 
-            this.presentador.agregarValoresCinta(); 
+            this.presentador.agregarValoresCinta();
         }
 
     }

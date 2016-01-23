@@ -20,7 +20,8 @@ namespace Interfaz_Contratos.Modulo5
         string obtenerSignificado();
         int obtenerOrden();
         void alertaCamposVacios();
-        void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex);
+        void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex);
+        void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo5.CintaRepetidaException ex);
         void Respuesta();
 
 

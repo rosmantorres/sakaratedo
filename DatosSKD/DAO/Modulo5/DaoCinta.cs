@@ -133,8 +133,6 @@ namespace DatosSKD.DAO.Modulo5
 
             if (ValidarOrganizacion(laOrganizacion))
                {  
-                  if (!ValidarNombreCinta(laCinta))
-                   {
                        if (!ValidarOrdenCinta(laCinta))
                        {
 
@@ -169,12 +167,7 @@ namespace DatosSKD.DAO.Modulo5
                          throw new ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException(RecursosDaoModulo5.Codigo_Orden_Cinta_Repetida,
                                  RecursosDaoModulo5.Mensaje_Orden_Cinta_Repetida, new Exception());
                      }
-                   }
-                   else
-                   {
-                       throw new ExcepcionesSKD.Modulo5.CintaRepetidaException(RecursosDaoModulo5.Codigo_Cinta_Repetida,
-                               RecursosDaoModulo5.Mensaje_Cinta_Repetida, new Exception());
-                   }
+
                } // Fin if
           else
              {

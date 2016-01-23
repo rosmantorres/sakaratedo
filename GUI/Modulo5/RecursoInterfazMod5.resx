@@ -197,4 +197,10 @@
   <data name="agregarExito" xml:space="preserve">
     <value>../Modulo5/M5_ListarCintas.aspx?success=1</value>
   </data>
+  <data name="falloNombre" xml:space="preserve">
+    <value>El nombre esta Repetido,intente de nuevo</value>
+  </data>
+  <data name="falloOrden" xml:space="preserve">
+    <value>El Orden de la Cinta esta Repetido para esa Organizacion</value>
+  </data>
 </root>

@@ -109,8 +109,6 @@ namespace DatosSKD.DAO.Modulo3
             {
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
-                if (!ValidarNombreOrganizacion(laOrganizacion))
-                {
                     if (ValidarEstilo(laOrganizacion))
                     {
                 List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
@@ -139,12 +137,7 @@ namespace DatosSKD.DAO.Modulo3
                          throw new ExcepcionesSKD.Modulo3.EstiloInexistenteException(RecursosDaoModulo3.Codigo_Estilo_Inexistente,
                                         RecursosDaoModulo3.Mensaje_Estilo_Inexistente, new Exception());
                      }
-                }// Fin if    
-                else
-                {
-                    throw new ExcepcionesSKD.Modulo3.OrganizacionExistenteException(RecursosDaoModulo3.Codigo_Organizacion_Existente,
-                                   RecursosDaoModulo3.Mensaje_Organizacion_Existente, new Exception());
-                }
+                
             }
             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
             {

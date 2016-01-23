@@ -61,6 +61,24 @@ namespace LogicaNegociosSKD.Comandos.Modulo3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SKD_001.
+        /// </summary>
+        internal static string Codigo_Error_Lista_Vacia {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Lista_Vacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La Lista Que Devuelve Esta Vacia.
+        /// </summary>
+        internal static string Mensaje_Error_Lista_Vacia {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Lista_Vacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Salida del Método.
         /// </summary>
         internal static string MensajeFinInfoLogger {
