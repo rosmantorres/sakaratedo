@@ -57,6 +57,11 @@ namespace Interfaz_Contratos.Modulo16
         /// </summary>
         void ejecutarScriptMensualidad();
 
+        /// <summary>
+        /// Literal que permite imprimir el precio total de la compra
+        /// </summary>
+        Literal PrecioFinal { get; set; }
+
         //void Modificar_Carrito(object sender, EventArgs e);
     }
 }

@@ -10,6 +10,7 @@ using DatosSKD.InterfazDAO;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
 using DatosSKD.InterfazDAO.Modulo15;
+using LogicaNegociosSKD.Comandos.Modulo16;
 
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
@@ -72,8 +73,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Implemento
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IDaoImplemento daoImplementos = fabrica.ObtenerDaoProductos();
+                IDaoImplemento daoImplementos = FabricaDAOSqlServer.ObtenerDAOImplemento();
 
                 //Casteamos
                 PersonaM1 p = (PersonaM1)this.LaEntidad;
@@ -87,37 +87,27 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             }
             #region catches
 
-            catch (LoggerException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
-            catch (ItemInvalidoException e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw e;
-            }
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (OpcionItemErroneoException e)
+            catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoVacioException e)
+            catch (ArgumentNullException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoFormatoInvalidoException e)
+            catch (FormatException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ParseoEnSobrecargaException e)
+            catch (OverflowException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -140,8 +130,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
-                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                throw e;
             }
 
             #endregion

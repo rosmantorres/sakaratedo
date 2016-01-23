@@ -200,8 +200,7 @@
 						<h4 class="modal-title">Registrar Pago</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
-
+						<div class="container-fluid" id="info">                            
   <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
           <div id="alert_nombre" runat="server">
@@ -231,18 +230,35 @@
                      </div>
             
                  <div class="btn-group">
-            
+                     
+                            <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
+                            <h3>Seleccione tipo de pago</h3>
                                 <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
                                 <option value="3">Transferencia</option>
                                 </select>
+                     
                 
                   </div>
+                 <br />
             </div>
         </div>
         <br />
+        <h4 class="modal-title">Información del pago:</h4>
+        <div class="form-group">
+	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="DatoPago" type="text" placeholder="Ingrese el dato de su tipo de pago" class="form-control" name="Text1" runat="server"/>
+		    </div>
+            </div>
+            <br />
+        <h4 class="modal-title">Monto a debitar:</h4>
+        <div class="form-group">
+	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="Monto" type="text" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
+		    </div>
+	    </div>
      <%--  <h4 class="modal-title">Tarjeta Credito/Debito</h4>
         <div class="form-group">
 	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
@@ -304,7 +320,8 @@
 			</div>
 		</div>--%>
          <div class="form-group">
-		    <div class="box-footer">			
+		    <div class="box-footer">
+                <br />			
                 <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>

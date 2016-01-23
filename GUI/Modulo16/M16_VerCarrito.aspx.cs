@@ -70,6 +70,18 @@ namespace templateApp.GUI.Modulo16
             get { return this.detalleProductoLiteral; }
         }
 
+        public Literal PrecioFinal
+        {
+            get
+            {
+                return this.precioFinal;
+            }
+
+            set
+            {
+                this.precioFinal = value;
+            }
+        }
         #endregion
 
         #region Constructores
@@ -326,8 +338,8 @@ namespace templateApp.GUI.Modulo16
 
                 //Ejecuto la operacion siempre y cuando el tipo de pago sea uno valido
                 if (pagofinal != null)
-                    respuesta = this.elPresentador.RegistrarPago(
-                    Session[RecursosInterfazMaster.sessionUsuarioID].ToString(), pago);                
+                /*    respuesta = this.elPresentador.RegistrarPago(
+                    Session[RecursosInterfazMaster.sessionUsuarioID].ToString(), , pago, ); */               
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)

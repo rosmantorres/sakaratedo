@@ -456,7 +456,7 @@ namespace DominioSKD.Fabrica
         /// Metodo de la fabrica que instancia un carrito vacio
         /// </summary>
         /// <returns>La entidad carrito vacia</returns>
-        public Entidad ObtenerCarrito()
+        public static Entidad ObtenerCarrito()
         {
             return new Entidades.Modulo16.Carrito();
         }
@@ -468,28 +468,40 @@ namespace DominioSKD.Fabrica
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
         /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
         /// <returns>La entidad carrito con todos sus datos llenos</returns>
-        public Entidad ObtenerCarrito(
+        public static Entidad ObtenerCarrito(
            Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
         {
             return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia el Evento
+        /// Metodo de la fabrica que instancia el pago vacio
         /// </summary>
-        /// <param name="NONE">Este metodo no posee parametros</param>
-        /// <returns>La entidad evento con todos sus datos llenos</returns>
-       // public Entidad ObtenerEvento()
-       // {
-         //   return new Evento();
-        //}
+        /// <returns>La entidad pago vacio</returns>
+        public static Entidad ObtenerPago()
+        {
+            return new Entidades.Modulo16.Pago();
+        }
 
+        /// <summary>
+        /// Metodo de la fabrica que instnacia el carrito con todos sus datos llenos
+        /// </summary>
+        /// <param name="monto">El monto con el que se pagara la transaccion</param>
+        /// <param name="tipoPago">El tipo de pago con el que se realizara la transaccion</param>
+        /// <param name="datoPago">Los datos correspondientes al pago selecccionado</param>
+        /// <returns></returns>
+        public static Entidad ObtenerPago(float monto, String tipoPago, List<String> datoPago)
+        {
+            return new Entidades.Modulo16.Pago(monto, tipoPago, datoPago);
+        }
+
+       
         /// <summary>
         /// Metodo de la fabrica que instancia el Dojo
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad dojo con todos sus datos llenos</returns>
-        public Entidad ObtenerDojos()
+        public static Entidad ObtenerDojos()
         {
             return new Dojo();
         }
@@ -499,7 +511,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="NONE">Este metodo no posee parametros</param>
         /// <returns>La entidad compra con todos sus datos llenos</returns>
-        public Entidad ObtenerFactura()
+        public static Entidad ObtenerFactura()
         {
             return new Compra();
         }

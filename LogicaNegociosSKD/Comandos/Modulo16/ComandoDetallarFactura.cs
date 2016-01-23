@@ -4,37 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
-using DominioSKD.Entidades.Modulo15;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using DominioSKD.Fabrica;
-using DatosSKD.InterfazDAO.Modulo15;
+using DominioSKD.Entidades.Modulo16;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando que ejecuta la accion de detallar un producto en especifico
+    /// Comando que ejecuta la accion de detallar una factura en especifico
     /// </summary>
-  public  class ComandoDetallarProducto : Comando<Entidad>
+    public class ComandoDetallarFactura : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
         /// Atributos del Comando
         /// </summary>
-        private  Entidad implemento;
+        private  Entidad compra;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad del atributo implemento
+        /// Propiedad del atributo compra
         /// </summary>
-        public Entidad Implemento
+        public Entidad Compra
         {
-            get{ return this.implemento;}
-            set{this.implemento = value;}
+            get{ return this.compra;}
+            set{this.compra = value;}
         }
         #endregion
 
@@ -42,27 +41,27 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// <summary>
         /// Constructor vacio del Comando
         /// </summary>
-        public ComandoDetallarProducto()
+        public ComandoDetallarFactura()
         {
 
         }
 
         /// <summary>
-        /// Constructor del comando con todos los datos requeridos para el detalleProducto
+        /// Constructor del comando con todos los datos requeridos para el detalleFactura
         /// </summary>
-        /// <param name="evento">El Producto al que se le mostrara el detalle</param>
-        public ComandoDetallarProducto(Entidad implemento)
+        /// <param name="compra">La factura a la que se le mostrara el detalle</param>
+        public ComandoDetallarFactura(Entidad compra)
         {
-            this.implemento = implemento;
+            this.compra = compra;
         }
         #endregion
 
         #region Metodo Ejecutar
 
         /// <summary>
-        /// Metodo que ejecuta la accion del detalleProducto
+        /// Metodo que ejecuta la accion del detalleEvento
         /// </summary>
-        /// <returns>El producto en especifico</returns>
+        /// <returns>El evento en especifico</returns>
         public override Entidad Ejecutar()
         {
             try
@@ -72,21 +71,22 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el DAO de Implemento
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IDaoImplemento daoimplemento = fabrica.ObtenerDaoDetalleProducto();
+                //Instancio el DAO de compra
+                IdaoCompra daocompra = FabricaDAOSqlServer.ObtenerDaoDetalleFactura();
 
                 //Casteamos
-                Implemento pro = (Implemento)this.implemento;
+                Compra comp = (Compra)this.compra;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamada
-                return daoimplemento.DetallarImplemento(pro);
+                return daocompra.DetallarFactura(comp);
             }
+
             #region catches
+
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -132,7 +132,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+
             #endregion
+
         }
 
         #endregion

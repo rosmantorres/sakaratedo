@@ -73,8 +73,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Matricula
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IdaoMensualidad daomatricula = fabrica.ObtenerDaoDetalleMatricula();
+                IdaoMensualidad daomatricula = FabricaDAOSqlServer.ObtenerDaoDetalleMatricula();
 
                 //Casteamos
                 Matricula mat = (Matricula)this.matricula;
@@ -87,6 +86,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 return daomatricula.DetallarMensualidad(mat);
             }
             #region catches
+
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -132,6 +132,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
+
             #endregion
         }
 
