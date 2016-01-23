@@ -24,7 +24,7 @@ namespace PruebasUnitariasSKD.Modulo10
        List<Entidad> listaEntidad;
        string idEvento;
        string idCompetencia;
-      private Entidad entidad;
+       private Entidad entidad;
      
   
 
