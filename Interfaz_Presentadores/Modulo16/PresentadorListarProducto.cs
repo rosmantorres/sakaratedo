@@ -9,7 +9,7 @@ using DominioSKD.Fabrica;
 using DominioSKD;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
-using LogicaNegociosSKD.Comandos.Modulo16;
+using LogicaNegociosSKD.Comandos.Modulo15;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI;

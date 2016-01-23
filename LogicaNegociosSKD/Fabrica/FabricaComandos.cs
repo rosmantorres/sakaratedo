@@ -470,6 +470,31 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoDojoId();
         }
         #endregion 
+
+        #region ComandoConsultarTodosProductos
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
+        /// </summary>
+        /// <returns>El ComandoConsultarTodosProductos</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodosProductos()
+        {
+            return new ComandoConsultarTodosProductos();
+        }
+        #endregion
+
+        #region CrearComandoDetallarProducto
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando CrearComandoDetallarProducto
+        /// </summary>
+        /// <returns>El ComandoDetallarProducto</returns>
+        public static Comando<Entidad> CrearComandoDetallarProducto(Entidad implemento)
+        {
+            return new ComandoDetallarProducto(implemento);
+        }
+        #endregion
+
         #endregion
 
         #region Modulo 16
@@ -609,14 +634,6 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoeliminarItem(tipoObjeto, objetoaBorrar, usuario);
         }
         
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
-        /// </summary>
-        /// <returns>El ComandoConsultarTodosProductos</returns>
-        public static Comando<Entidad> CrearComandoConsultarTodosProductos()
-        {
-            return new ComandoConsultarTodosProductos();
-        }
 
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasFacturas
@@ -652,15 +669,6 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<Entidad> CrearComandoDetallarMatricula(Entidad matricula)
         {
             return new ComandoDetallarMatricula(matricula);
-        }
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando CrearComandoDetallarProducto
-        /// </summary>
-        /// <returns>El CrearComandDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarProducto(Entidad implemento)
-        {
-            return new ComandoDetallarProducto(implemento);
         }
 
         /// <summary>

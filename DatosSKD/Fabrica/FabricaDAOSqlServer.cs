@@ -212,6 +212,21 @@ namespace DatosSKD.Fabrica
         {
             return new DaoImplemento();
         }
+
+     
+        #region ObtenerDaoDetalleProducto
+        /// <summary>
+        /// Metodo de la fabrica que instancia el DAO del detalleProducto
+        /// </summary>
+        /// <returns>el DaoImplemento</returns>
+
+        public static IDaoImplemento ObtenerDaoDetalleProducto()
+        {
+            return new DaoImplemento();
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 16
@@ -234,15 +249,6 @@ namespace DatosSKD.Fabrica
             return new DatosSKD.DAO.Modulo16.DaoCarrito();
         }
 
-        /// <summary>
-        /// Metodo de la fabrica que instancia el DAO del evento
-        /// </summary>
-        /// <returns>el DaoEvento</returns>
-		
-        public static IDaoImplemento ObtenerDaoProductos()
-        {
-            return new DaoImplemento();
-        }
 
         /// <summary>
         /// Metodo de la fabrica que instancia el DAO da la compra
@@ -281,16 +287,6 @@ namespace DatosSKD.Fabrica
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia el DAO del detalleProducto
-        /// </summary>
-        /// <returns>el DaoImplemento</returns>
-
-        public static IDaoImplemento ObtenerDaoDetalleProducto()
-        {
-            return new DaoImplemento();
-        }
-
-        /// <summary>
         /// Metodo de la fabrica que instancia el DAO del detalleFactura
         /// </summary>
         /// <returns>el DaoFactura</returns>
@@ -299,7 +295,6 @@ namespace DatosSKD.Fabrica
             return new DatosSKD.DAO.Modulo16.DaoCompra();
         }
         #endregion
-
 
     }
 }

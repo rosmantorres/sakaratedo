@@ -4,85 +4,87 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo15;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
-using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo16;
+using DominioSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo15;
-
+using LogicaNegociosSKD.Comandos.Modulo16;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando para consultar la lista de todos los productos
+    /// Comando que ejecuta la accion de detallar un producto en especifico
     /// </summary>
-    public class ComandoConsultarTodosProductos : Comando<Entidad>
+  public  class ComandoDetallarProducto : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
-        /// Atributos del ComandoConsultarTodosProductos
-        private PersonaM1 p;
-
+        /// Atributos del Comando
+        /// </summary>
+        private  Entidad implemento;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad del Atributo p
-
-        public PersonaM1 P
+        /// Propiedad del atributo implemento
+        /// </summary>
+        public Entidad Implemento
         {
-            get { return this.p; }
-            set { this.p = value; }
+            get{ return this.implemento;}
+            set{this.implemento = value;}
         }
         #endregion
 
         #region Constructores
         /// <summary>
-        /// Constructor vacio del ComandoConsultarTodosProductos
+        /// Constructor vacio del Comando
         /// </summary>
-        public ComandoConsultarTodosProductos()
+        public ComandoDetallarProducto()
         {
 
         }
 
         /// <summary>
-        /// Constructor del ComandoConsultarTodosProductos
+        /// Constructor del comando con todos los datos requeridos para el detalleProducto
         /// </summary>
-        /// <param name="p">La persona que se encuentra logueada</param>
-        public ComandoConsultarTodosProductos(PersonaM1 p)
+        /// <param name="evento">El Producto al que se le mostrara el detalle</param>
+        public ComandoDetallarProducto(Entidad implemento)
         {
-            this.p = p;
+            this.implemento = implemento;
         }
         #endregion
 
         #region Metodo Ejecutar
 
         /// <summary>
-        /// Metodo que ejecuta la accion de consultarTodasLosProductos
+        /// Metodo que ejecuta la accion del detalleProducto
         /// </summary>
-        /// <param name="NONE">Este procedimiento no posee paso de parametros</param>
-        /// <returns>lista de Productos</returns>
+        /// <returns>El producto en especifico</returns>
         public override Entidad Ejecutar()
         {
             try
-            {   //Escribo en el logger la entrada a este metodo
+            {
+                //Escribo en el logger la entrada a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
-                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+                     RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Implemento
-                IDaoImplemento daoImplementos = FabricaDAOSqlServer.ObtenerDaoProductos();
+                IDaoImplemento daoimplemento = FabricaDAOSqlServer.ObtenerDaoDetalleProducto();
 
                 //Casteamos
-                PersonaM1 p = (PersonaM1)this.LaEntidad;
+                Implemento pro = (Implemento)this.implemento;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //retorno la entidad de donde sea llamado
-                return daoImplementos.ConsultarXId(p);
+                //retorno la entidad de donde sea llamada
+                return daoimplemento.DetallarImplemento(pro);
             }
             #region catches
 
