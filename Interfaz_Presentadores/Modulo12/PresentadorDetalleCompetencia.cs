@@ -13,17 +13,27 @@ using DominioSKD.Fabrica;
 
 namespace Interfaz_Presentadores.Modulo12
 {
+    /// <summary>
+    /// Presentador para la ventana Detallar Competencia
+    /// </summary>
     public class PresentadorDetalleCompetencia
     {
         private IContratoDetalleCompetencia vista;
         public string laLatitud;
         public string laLongitud;
 
+        /// <summary>
+        /// Constructor del presentador
+        /// </summary>
+        /// <param name="laVista">instancia de la ventana</param>
         public PresentadorDetalleCompetencia(IContratoDetalleCompetencia laVista)
         {
             this.vista = laVista;
         }
 
+        /// <summary>
+        /// Metodo para consultar las variables del url
+        /// </summary>
         public void ObtenerVariableURL()
         {
             String detalleString = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompDetalle];
@@ -31,15 +41,19 @@ namespace Interfaz_Presentadores.Modulo12
                 DetallarCompetencia(int.Parse(detalleString));
         }
 
+        /// <summary>
+        /// Metodo que se encarga del evento del boton para detallar una competencia
+        /// </summary>
+        /// <returns></returns>
         public void DetallarCompetencia(int elIdComp)
         {
-            FabricaComandos laFabrica = new FabricaComandos();
-            FabricaEntidades laFabricaEntidades = new FabricaEntidades();
-            Entidad entidad = laFabricaEntidades.ObtenerCompetencia();
+            //FabricaComandos laFabrica = new FabricaComandos();
+            //FabricaEntidades laFabricaEntidades = new FabricaEntidades();
+            Entidad entidad = FabricaEntidades.ObtenerCompetencia();
 
             entidad.Id = elIdComp;
             Comando<Entidad> comandoDetallarCompetencia =
-                laFabrica.ObtenerComandoDetallarCompetencia(entidad);
+                FabricaComandos.ObtenerComandoDetallarCompetencia(entidad);
 
             try
             {

@@ -209,7 +209,7 @@ namespace PruebasUnitariasSKD.Modulo10
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            bool a;
            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
-            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
+           ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Evento.Id = 3;
            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion.Id = 33;
            listaEntidad.Add(entidad);
@@ -376,9 +376,24 @@ namespace PruebasUnitariasSKD.Modulo10
          [Test]
          public void ConsultarCompetenciaXIdDetalle()
          {
+             
              IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
-             listaEntidad = DAO.ListaInasistentesPlanillaCompetencia(idCompetencia);
-             Assert.IsNotNull(listaEntidad);
+
+             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
+             ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 6;
+             Assert.IsNotNull(entidad);
+         }
+
+
+         [Test]
+         public void ConsultarCompetenciaXIdDetalleC() // CONtar
+         {
+             
+             IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+
+             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
+             ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 6;
+             Assert.AreEqual(0, listaEntidad.ToArray().Length);
          }
 
         

@@ -340,7 +340,7 @@ namespace Interfaz_Presentadores.Modulo16
                 bool respuesta = false;
                 int cantidad = 0;
 
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a agregar
                 foreach (TableRow aux2 in this.vista.tablaEventos.Rows)
                 {
                     //Si la fila no es de tipo Header puedo comenzar a buscar
@@ -353,9 +353,13 @@ namespace Interfaz_Presentadores.Modulo16
                         //Obtenemos el numero del textbox que el usuario desea
                         if (aux3.ID == aux.ID)
                         {
-                            //En la celda 3 siempre estara el combobox, lo obtengo y agarro la cantidad que el usuario desea
+                            /*En la celda 3 siempre estara el combobox, lo obtengo y 
+                             agarro la cantidad que el usuario desea*/
                             DropDownList lacantidad = aux2.Cells[3].Controls[0] as DropDownList;
                             cantidad = int.Parse(lacantidad.SelectedValue);
+
+                            //Agrego el costo del evento
+                            evento.Costo = int.Parse(aux2.Cells[2].Text);
                             break;
                         }
                     }
@@ -380,6 +384,11 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
+            }
+            catch (CarritoConPagoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CARRITO_PAGO_LINK, false);
             }
             catch (ItemInvalidoException e)
             {

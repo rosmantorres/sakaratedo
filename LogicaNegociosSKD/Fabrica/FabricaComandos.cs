@@ -113,6 +113,28 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoModificarEventoConTipo(laEntidad);
         }
+
+        #region Comando para Eventos por restricciones
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
+        /// </summary>
+        /// <returns>El ComandoConsultarTodosEventos</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodosEventos()
+        {
+            return new ComandoConsultarTodosEventos();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
+        /// </summary>
+        /// <returns>El CrearComandDetallarEvento</returns>
+        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
+        {
+            return new ComandoDetallarEvento(evento);
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 10
@@ -204,6 +226,11 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<Entidad> ObtenerComandoConsultarCompetenciaXIdDetalle(string idCompetencia)
         {
             return new ComandoConsultarCompetenciaXIdDetalle(idCompetencia);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarEventoM10XId(string idEvento)
+        {
+            return new ComandoConsultarEventoM10XId(idEvento);
         }
         #endregion
 
@@ -306,27 +333,32 @@ namespace LogicaNegociosSKD.Fabrica
 
         #region Modulo 12
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarCompetencias()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarCompetencias()
         {
             return new ComandoConsultarTodosCompetencia();
         }
 
-        public Comando<Entidad> ObtenerComandoDetallarCompetencia(Entidad paramEntidad)
+        public static Comando<Entidad> ObtenerComandoDetallarCompetencia(Entidad paramEntidad)
         {
             return new ComandoConsultarXIdCompetencia(paramEntidad);
         }
 
-        public Comando<bool> ObtenerComandoAgregarCompetencia(Entidad paramEntidad)
+        public static Comando<bool> ObtenerComandoAgregarCompetencia(Entidad paramEntidad)
         {
             return new ComandoAgregarCompetencia(paramEntidad);
         }
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarOrgazaniciones()
+        public static Comando<bool> ObtenerComandoMoficiarCompetencia(Entidad paramEntidad)
+        {
+            return new ComandoModificarCompetencia(paramEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarOrgazaniciones()
         {
             return new ComandoConsultarOrganizaciones();
         }
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarCintas()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarCintas()
         {
             return new ComandoConsultarCintas();
         }
@@ -533,16 +565,7 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 16
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
-        /// </summary>
-        /// <returns>El ComandoConsultarTodosEventos</returns>
-        public static Comando <Entidad> CrearComandoConsultarTodosEventos()
-        {
-            return new ComandoConsultarTodosEventos();
-        }
-        
+  
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
         /// </summary>
@@ -688,15 +711,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarTodasMensualidades();
         }
 
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
-        /// </summary>
-        /// <returns>El CrearComandDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
-        {
-            return new ComandoDetallarEvento(evento);
-        }
-
+        
         /// <summary>
         /// Metodo de la fabrica que instancia el comando CrearComandoDetallarEvento
         /// </summary>

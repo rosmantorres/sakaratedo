@@ -358,23 +358,26 @@ namespace Interfaz_Presentadores.Modulo16
                 bool respuesta = false;
                 int cantidad = 0;
 
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a agregar
                 foreach (TableRow aux2 in this.vista.tablaProductos.Rows)
                 {
                     //Si la fila no es de tipo Header puedo comenzar a buscar
                     if ((aux2 is TableHeaderRow) != true)
                     {
-                        //En la celda 7 siempre estaran los botones, casteo el boton
-                        Button aux3 = aux2.Cells[7].Controls[1] as Button;
+                        //En la celda 8 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[8].Controls[1] as Button;
 
                         //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
                         //Obtenemos el numero del textbox que el usuario desea
                         if (aux3.ID == aux.ID)
                         {
-                            /*En la celda 6 siempre estara el combobox,
+                            /*En la celda 7 siempre estara el combobox,
                             lo obtengo y agarro la cantidad que el usuario desea*/
-                            DropDownList lacantidad = aux2.Cells[6].Controls[0] as DropDownList;
+                            DropDownList lacantidad = aux2.Cells[7].Controls[0] as DropDownList;
                             cantidad = int.Parse(lacantidad.SelectedValue);
+
+                            //Agrego el precio del implemento
+                            implemento.Precio_Implemento = int.Parse(aux2.Cells[4].Text);
                             break;
                         }
                     }
@@ -404,6 +407,11 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_ITEM_INVALIDO_LINK, false);
+            }
+            catch (CarritoConPagoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CARRITO_PAGO_LINK, false);
             }
             catch (PersonaNoValidaException e)
             {
