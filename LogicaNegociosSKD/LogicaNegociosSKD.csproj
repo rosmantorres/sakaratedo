@@ -163,7 +163,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandosModulo5.resx</DependentUpon>
-    <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+    </Compile>
     <Compile Include="Comandos\Modulo9\ComandoAgregarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoAgregarEventoConTipo.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarEvento.cs" />
@@ -311,7 +311,7 @@
     <EmbeddedResource Include="Comandos\Modulo5\RecursosComandosModulo5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandosModulo5.Designer.cs</LastGenOutput>
-    <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
+	</EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandosModulo9.Designer.cs</LastGenOutput>
@@ -386,7 +386,9 @@
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo1\" />
     <Folder Include="Comandos\Modulo2\" />
+	<Folder Include="Comandos\Modulo3\" />
     <Folder Include="Comandos\Modulo4\" />
+	<Folder Include="Comandos\Modulo5\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
