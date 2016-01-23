@@ -480,4 +480,7 @@
   <data name="TIPO_PAGO_TRANSFERENCIA" xml:space="preserve">
     <value>Transferencia</value>
   </data>
+  <data name="EXCEPCION_CARRITO_PAGO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=14</value>
+  </data>
 </root>

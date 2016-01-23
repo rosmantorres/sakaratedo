@@ -485,6 +485,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_CARRITO_PAGO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPCION_CARRITO_PAGO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=3.
         /// </summary>
         internal static string EXCEPTION_CONEXIONBD_LINK {
