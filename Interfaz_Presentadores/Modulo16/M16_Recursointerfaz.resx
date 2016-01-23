@@ -224,6 +224,9 @@
   <data name="CODIGO_EXCEPCION_GENERICO" xml:space="preserve">
     <value>S_16_01</value>
   </data>
+  <data name="CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO" xml:space="preserve">
+    <value>S_16_12</value>
+  </data>
   <data name="CODIGO_EXCEPCION_SOBRECARGA" xml:space="preserve">
     <value>S_16_08</value>
   </data>
@@ -438,6 +441,9 @@
   <data name="MENSAJE_EXCEPCION_GENERICO" xml:space="preserve">
     <value>Ha ocurrido un error inesperado en la capa de datos</value>
   </data>
+  <data name="MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO" xml:space="preserve">
+    <value>Se ha producido un error al elegir un tipo de pago no valido</value>
+  </data>
   <data name="MENSAJE_EXCEPCION_SOBRECARGA" xml:space="preserve">
     <value>Error al parsear un atributo sobrecargado</value>
   </data>
@@ -464,5 +470,14 @@
   </data>
   <data name="strIdEvento" xml:space="preserve">
     <value>idEvento</value>
+  </data>
+  <data name="TIPO_PAGO_DEPOSITO" xml:space="preserve">
+    <value>Deposito</value>
+  </data>
+  <data name="TIPO_PAGO_TARJETA" xml:space="preserve">
+    <value>Tarjeta</value>
+  </data>
+  <data name="TIPO_PAGO_TRANSFERENCIA" xml:space="preserve">
+    <value>Transferencia</value>
   </data>
 </root>

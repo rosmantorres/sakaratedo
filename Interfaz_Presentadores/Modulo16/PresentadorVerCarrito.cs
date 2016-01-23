@@ -545,9 +545,10 @@ namespace Interfaz_Presentadores.Modulo16
         /// Metodo del presentador que registra el pago de los productos que hay en el carrito de una persona
         /// </summary>
         /// <param name="idpersona">La persona que desea comprar los productos</param>
-        /// <param name="pago">El tipo de pago con el cual realizo la transaccion</param>
+        /// <param name="monto">El monto total con el que el cliente paga en ese momento</param>
+        /// <param name="tipoPago">El tipo de pago con el cual realizo la transaccion</param>        
         /// <returns>El exito o fallo del proceso siempre y cuando no exista un error</returns>
-        public bool RegistrarPago(string idpersona, float monto, String pago, List<String> datosPago)
+        public bool RegistrarPago(String idpersona, String monto, String tipoPago)
         {             
             try
             {
@@ -556,12 +557,49 @@ namespace Interfaz_Presentadores.Modulo16
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
-                //Instancio la entidad pago y asigno sus datos
-                Entidad pagoCompra = FabricaEntidades.ObtenerPago(monto, pago, datosPago);
+                //Pago que sera insertado en la Base De Datos y la respuesta
+                String pagofinal = null;
+                bool respuesta = false;
 
-                //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
-                Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
-                bool respuesta = registrarPago.Ejecutar();               
+                //Obtengo el monto con el que pago la transaccion
+                float montoPago = float.Parse(monto);
+
+                //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
+                switch (tipoPago)
+                {
+                    case "1":
+                        pagofinal = M16_Recursointerfaz.TIPO_PAGO_TARJETA;
+                        break;
+
+                    case "2":
+                        pagofinal = M16_Recursointerfaz.TIPO_PAGO_DEPOSITO;
+                        break;
+
+                    case "3":
+                        pagofinal = M16_Recursointerfaz.TIPO_PAGO_TRANSFERENCIA;
+                        break;
+
+                    default:
+                        throw new OpcionPagoNoValidoException
+                            (M16_Recursointerfaz.CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO,
+                            M16_Recursointerfaz.MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO,
+                            new OpcionPagoNoValidoException());
+                }
+
+                //Datos del pago seleccionado y anexo
+                List<String> datosPago = new List<String>();
+                datosPago.Add(laVista.Datospago.Value);
+
+                //Si es un tipo de pago valido
+                if (pagofinal != null)
+                {
+                    //Instancio la entidad pago y asigno sus datos
+                    Entidad pagoCompra = FabricaEntidades.ObtenerPago(montoPago, pagofinal, datosPago);
+
+                    //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
+                    Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
+                    respuesta = registrarPago.Ejecutar();  
+                }                             
 
                 //retorno la respuesta
                 return respuesta;
@@ -583,6 +621,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ParseoEnSobrecargaException(M16_Recursointerfaz.CODIGO_EXCEPCION_SOBRECARGA, 
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (OpcionPagoNoValidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
             catch (LoggerException e)
             {

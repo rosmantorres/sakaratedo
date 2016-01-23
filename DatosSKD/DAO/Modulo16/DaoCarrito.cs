@@ -171,6 +171,11 @@ namespace DatosSKD.DAO.Modulo16
                         //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
                         if (aux.valor == "1")
                             exito = true;
+                        else if (aux.valor == "2")
+                            throw new CarritoConPagoException
+                                (RecursosBDModulo16.CODIGO_EXCEPCION_CARRITO_PAGO,
+                                RecursosBDModulo16.MENSAJE_EXCEPCION_CARRITO_PAGO,
+                                new CarritoConPagoException());
                     }
 
                     //Escribo en el logger la salida a este metodo
@@ -181,6 +186,11 @@ namespace DatosSKD.DAO.Modulo16
                     return exito;
                 }
                 catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (CarritoConPagoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
@@ -655,6 +665,11 @@ namespace DatosSKD.DAO.Modulo16
                     //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
                     if (aux.valor == "1")
                         exito = true;
+                    else if (aux.valor == "2")
+                        throw new CarritoConPagoException
+                            (RecursosBDModulo16.CODIGO_EXCEPCION_CARRITO_PAGO,
+                            RecursosBDModulo16.MENSAJE_EXCEPCION_CARRITO_PAGO,
+                            new CarritoConPagoException());
                 }
 
                 //Limpio la conexion
@@ -669,6 +684,11 @@ namespace DatosSKD.DAO.Modulo16
                
             }
             catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (CarritoConPagoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
@@ -1045,6 +1065,11 @@ namespace DatosSKD.DAO.Modulo16
                         //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
                         if (aux.valor == "1")
                             exito = true;
+                        else if (aux.valor == "2")
+                            throw new CarritoConPagoException
+                                (RecursosBDModulo16.CODIGO_EXCEPCION_CARRITO_PAGO, 
+                                RecursosBDModulo16.MENSAJE_EXCEPCION_CARRITO_PAGO, 
+                                new CarritoConPagoException());
                     }
 
                     //Escribo en el logger la salida a este metodo
@@ -1055,6 +1080,11 @@ namespace DatosSKD.DAO.Modulo16
                     return exito;
                 }
                 catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (CarritoConPagoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;

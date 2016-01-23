@@ -430,4 +430,10 @@
   <data name="DETALLAR_MATRICULA" xml:space="preserve">
     <value>M16_DETALLAR_MATRICULA</value>
   </data>
+  <data name="CODIGO_EXCEPCION_CARRITO_PAGO" xml:space="preserve">
+    <value>S_16_14</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_CARRITO_PAGO" xml:space="preserve">
+    <value>Error, la compra no puede ser alterada ya que se ha hecho un pago de esta</value>
+  </data>
 </root>

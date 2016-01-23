@@ -151,6 +151,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_14.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_CARRITO_PAGO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_CARRITO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_07.
         /// </summary>
         internal static string CODIGO_EXCEPCION_FORMATO_INVALIDO {
@@ -345,6 +354,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string MENSAJE_EXCEPCION_ARGUMENTO_NULO {
             get {
                 return ResourceManager.GetString("MENSAJE_EXCEPCION_ARGUMENTO_NULO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, la compra no puede ser alterada ya que se ha hecho un pago de esta.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_CARRITO_PAGO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_CARRITO_PAGO", resourceCulture);
             }
         }
         

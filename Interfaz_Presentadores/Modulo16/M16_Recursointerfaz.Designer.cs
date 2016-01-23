@@ -368,6 +368,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_12.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_08.
         /// </summary>
         internal static string CODIGO_EXCEPCION_SOBRECARGA {
@@ -1007,6 +1016,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Se ha producido un error al elegir un tipo de pago no valido.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error al parsear un atributo sobrecargado.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_SOBRECARGA {
@@ -1084,6 +1102,33 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string strIdEvento {
             get {
                 return ResourceManager.GetString("strIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deposito.
+        /// </summary>
+        internal static string TIPO_PAGO_DEPOSITO {
+            get {
+                return ResourceManager.GetString("TIPO_PAGO_DEPOSITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarjeta.
+        /// </summary>
+        internal static string TIPO_PAGO_TARJETA {
+            get {
+                return ResourceManager.GetString("TIPO_PAGO_TARJETA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transferencia.
+        /// </summary>
+        internal static string TIPO_PAGO_TRANSFERENCIA {
+            get {
+                return ResourceManager.GetString("TIPO_PAGO_TRANSFERENCIA", resourceCulture);
             }
         }
     }
