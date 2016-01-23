@@ -1,5 +1,6 @@
 ﻿using DatosSKD.InterfazDAO.Modulo11;
 using DominioSKD;
+using DominioSKD.Fabrica;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -82,7 +83,7 @@ namespace DatosSKD.DAO.Modulo11
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad categoria = fabrica.ObtenerCategoria();
+                    Entidad categoria = FabricaEntidades.ObtenerCategoria();
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = int.Parse(row[RecursosDAOModulo11.aliasIdCategoria].ToString());
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Edad_inicial = int.Parse(row[RecursosDAOModulo11.aliasEdadInicial].ToString());
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Edad_final = int.Parse(row[RecursosDAOModulo11.aliasEdadFinal].ToString());
@@ -253,7 +254,7 @@ namespace DatosSKD.DAO.Modulo11
                     Entidad tipoEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerTipoEventoM10();
                     ((DominioSKD.Entidades.Modulo10.TipoEvento)tipoEvento).Id = int.Parse(row[RecursosDAOModulo11.aliasIdTipo].ToString());
                     ((DominioSKD.Entidades.Modulo10.TipoEvento)tipoEvento).Nombre = row[RecursosDAOModulo11.aliasTipoEvento].ToString();
-                    Entidad categoria = fabrica.ObtenerCategoria();
+                    Entidad categoria = FabricaEntidades.ObtenerCategoria();
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = int.Parse(row[RecursosDAOModulo11.aliasIdCategoria].ToString());
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Cinta_inicial = row[RecursosDAOModulo11.aliasCintaInicial].ToString();
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Cinta_final = row[RecursosDAOModulo11.aliasCintaFinal].ToString();
