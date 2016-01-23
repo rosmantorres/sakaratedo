@@ -11,6 +11,8 @@ using DominioSKD.Fabrica;
 using DominioSKD.Entidades;
 using DominioSKD;
 using DatosSKD.InterfazDAO.Modulo9;
+using DatosSKD.DAO.Modulo16;
+using ExcepcionesSKD.Modulo16;
 
 
 namespace DatosSKD.DAO.Modulo9
@@ -884,6 +886,226 @@ namespace DatosSKD.DAO.Modulo9
 
         public List<Entidad> ConsultarTodos()
         { throw new NotImplementedException(); }
+
+
+        #region Metodos para ListarEventoPorRestricciones
+        /// <summary>
+        /// Metodo que retorma una lista de los eventos existentes de acuerdo a las restricciones
+        /// </summary>
+        /// <param name=Entidad>Se pasa el id de la persona</param>
+        /// <returns>Lista solo los eventos en los que puede participar el usuario logueado</returns>
+        public Entidad ListarEventoPorRestriciones(Entidad evento)
+        {
+            List<DominioSKD.Evento> laLista = new List<DominioSKD.Evento>();
+            DataTable resultado = new DataTable();
+            List<Parametro> parametros = new List<Parametro>();
+            DominioSKD.Evento elEvento;
+            DominioSKD.Entidades.Modulo16.ListaEvento lista = new DominioSKD.Entidades.Modulo16.ListaEvento();
+
+            // Casteamos
+            DominioSKD.PersonaM1 p = (DominioSKD.PersonaM1)evento;
+
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, p._Id.ToString(), false);
+                parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_EVENTOS, parametros);
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                //Obtengo todos los ids que existen de evento
+                foreach (DataRow row in resultado.Rows)
+                {
+                    elEvento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
+                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                    elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                    elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+                    elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+                    laLista.Add(elEvento);
+
+                }
+
+                //Agrego a la lista
+                lista.ListaEventos = laLista;
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retorno la lista
+                return lista;
+
+            }
+            #region catches
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
+            #endregion
+        }
+
+        #endregion
+
+        #region Metodo para ConsultarPorIdPorRestricciones
+        /// <summary>
+        /// Metodo que retorma una entidad de tipo evento
+        /// </summary>
+        /// <param name=Entidad>Se pasa el id del evento a buscar</param>
+        /// <returns>Todas los atributos de la clase evento para el detallar</returns>
+        public Entidad ConsultarPorIdPorRestricciones(Entidad evento)
+        {
+            List<DominioSKD.Evento> laLista = new List<DominioSKD.Evento>();
+            DataTable resultado = new DataTable();
+            List<Parametro> parametros = new List<Parametro>();
+            DominioSKD.Evento elEvento = new DominioSKD.Evento();
+            DominioSKD.Evento lista = new DominioSKD.Evento();
+
+            // Casteamos
+            DominioSKD.Evento eve = (DominioSKD.Evento)evento;
+
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, eve.Id.ToString(), false);
+                parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_EVENTO, parametros);
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                //Obtengo todos los elementos del evento
+                foreach (DataRow row in resultado.Rows)
+                {
+                    elEvento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
+                    elEvento.Id_evento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                    elEvento.Nombre = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                    elEvento.Costo = int.Parse(row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
+                    elEvento.Descripcion = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+
+                }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retorno el evento
+                return elEvento;
+
+            }
+
+            #region catches
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
+            #endregion
+        }
+
+        #endregion 
+
+
         #endregion
 
     }
