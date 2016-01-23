@@ -289,11 +289,11 @@ namespace PruebasUnitariasSKD.Modulo10
         public void pruebaAgregarAsistenciaCompetencia()
         {
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+          
             listaEntidad = new List<Entidad>();
             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
             ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "S";
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
             Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
             ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = 50;

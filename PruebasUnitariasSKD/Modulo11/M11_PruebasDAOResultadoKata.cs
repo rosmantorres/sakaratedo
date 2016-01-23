@@ -96,10 +96,10 @@ namespace PruebasUnitariasSKD.Modulo11
         public void ListarCategoriaCompetencia() 
         {
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+         
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
-           
-            Entidad competencia = fabrica.ObtenerCompetencia();
+
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 11;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
 
@@ -112,13 +112,13 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void ListaAtletasParticipanComKata()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            
             
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 10;
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
           
@@ -131,13 +131,13 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void ListaAtletasParticipanComKataAmbos() 
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+           
 
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 10;
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
             listaEntidad = DAO.ListaAtletasParticipanCompetenciaKataAmbos(competencia);
@@ -148,8 +148,7 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void AgregarResultadoKata()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-
+      
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
             
             bool e;
@@ -168,7 +167,6 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void ModificarResultadoKata()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
 

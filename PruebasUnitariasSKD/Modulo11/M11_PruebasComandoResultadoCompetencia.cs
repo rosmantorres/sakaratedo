@@ -146,13 +146,11 @@ namespace PruebasUnitariasSKD.Modulo11
         public void pruebaCategoriaCompetencia()
         {
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-
-            entidad = fabrica.ObtenerCompetencia();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 5;
             ((DominioSKD.Entidades.Modulo12.Competencia)entidad).TipoCompetencia = "1";
 
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
 
             ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
@@ -166,12 +164,10 @@ namespace PruebasUnitariasSKD.Modulo11
         public void pruebaListaAtletasParticipanComKumite()
         {
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "2";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 2;
 
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
@@ -188,11 +184,11 @@ namespace PruebasUnitariasSKD.Modulo11
         {
 
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            Entidad competencia = fabrica.ObtenerCompetencia();
+
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "3";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 12;
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
 
@@ -207,11 +203,10 @@ namespace PruebasUnitariasSKD.Modulo11
         {
 
             
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 10;
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
 
@@ -227,11 +222,10 @@ namespace PruebasUnitariasSKD.Modulo11
         {
 
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "3";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 12;
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
 

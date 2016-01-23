@@ -95,11 +95,11 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaListarAtletaEnCatyAsc()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+        
 
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
@@ -114,10 +114,10 @@ namespace PruebasUnitariasSKD.Modulo11
         public void PruebaListarInscritosExamenAsc()
         {
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+          
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
-            Entidad categoria = fabrica.ObtenerCategoria();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
             ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
             ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
