@@ -124,10 +124,9 @@ namespace Interfaz_Presentadores.Modulo14
                     if (vista.CKEditor1.Text != "")
                     {
                         ((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido = vista.CKEditor1.Text;
-                        ComandoAgregarDiseno comando =
-                         (ComandoAgregarDiseno)FabricaComandos.ObtenerComandoAgregarDiseno();
-                        comando.Diseño = dis;
-                        comando.Planilla = planilla1;
+                        Comando<Boolean> comando = FabricaComandos.ObtenerComandoAgregarDiseno();
+                        ((ComandoAgregarDiseno)comando).Diseño = dis;
+                        ((ComandoAgregarDiseno)comando).Planilla = planilla1;
                         exito = comando.Ejecutar();
 
                         if (exito)
@@ -177,10 +176,9 @@ namespace Interfaz_Presentadores.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 if (vista.CKEditor1.Text != "")
                 {
-                    ComandoAgregarDiseno command =
-                        (ComandoAgregarDiseno)FabricaComandos.ObtenerComandoAgregarDiseno();
-                    command.Diseño = diseño;
-                    command.Planilla = planilla1;
+                    Comando<Boolean> command =FabricaComandos.ObtenerComandoAgregarDiseno();
+                    ((ComandoAgregarDiseno)command).Diseño = diseño;
+                    ((ComandoAgregarDiseno)command).Planilla = planilla1;
                     exito = command.Ejecutar();
                     if (exito)
                     {

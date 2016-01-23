@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo14;
 using DatosSKD.DAO.Modulo12;
+using DatosSKD.DAO.Modulo9;
 using DatosSKD.InterfazDAO.Modulo12;
-//using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo3;
 using DatosSKD.DAO.Modulo5;
 using DatosSKD.InterfazDAO.Modulo15;
@@ -43,7 +43,7 @@ namespace DatosSKD.Fabrica
 		public DaoCinta ObtenerDaoCinta()
         {
             return new DaoCinta();
-        } 
+        }
         #endregion
 
         #region Modulo 6
@@ -147,6 +147,11 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 9
+        public static InterfazDAO.Modulo9.IDaoEvento ObtenerDaoEvento()
+        {
+            return new DatosSKD.DAO.Modulo9.DaoEvento();
+        }
+
         #endregion
 
         #region Modulo 10
@@ -230,16 +235,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 16
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el DAO del evento
-        /// </summary>
-        /// <returns>el DaoEvento</returns>
-       public static InterfazDAO.Modulo16.IdaoEvento ObtenerDaoEventos()
-        {
-            return new DatosSKD.DAO.Modulo16.DaoEvento();
-        }
-        
+ 
         /// <summary>
         /// Metodo de la fabrica que instancia el DAO del carrito
         /// </summary>
@@ -266,15 +262,6 @@ namespace DatosSKD.Fabrica
         public static InterfazDAO.Modulo16.IdaoMensualidad ObtenerDaoMensualidades()
         {
             return new DatosSKD.DAO.Modulo16.DaoMensualidad();
-        }
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el DAO del detalleEvento
-        /// </summary>
-        /// <returns>el DaoEvento</returns>
-        public static InterfazDAO.Modulo16.IdaoEvento ObtenerDaoDetalleEvento()
-        {
-            return new DatosSKD.DAO.Modulo16.DaoEvento();
         }
 
         /// <summary>

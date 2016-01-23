@@ -185,6 +185,15 @@ namespace DominioSKD.Fabrica
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
+
+        #region ObtenerEventoCompletos Modulo16
+        public static Entidad ObtenerEventoCompletos()
+        {
+            return new DominioSKD.Evento();
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 10

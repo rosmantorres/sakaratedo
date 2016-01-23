@@ -465,6 +465,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
             }
+            catch (CarritoConPagoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CARRITO_PAGO_LINK, false);
+            }
             catch (CantidadInvalidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -545,9 +550,10 @@ namespace Interfaz_Presentadores.Modulo16
         /// Metodo del presentador que registra el pago de los productos que hay en el carrito de una persona
         /// </summary>
         /// <param name="idpersona">La persona que desea comprar los productos</param>
-        /// <param name="pago">El tipo de pago con el cual realizo la transaccion</param>
+        /// <param name="monto">El monto total con el que el cliente paga en ese momento</param>
+        /// <param name="tipoPago">El tipo de pago con el cual realizo la transaccion</param>        
         /// <returns>El exito o fallo del proceso siempre y cuando no exista un error</returns>
-        public bool RegistrarPago(string idpersona, float monto, String pago, List<String> datosPago)
+        public bool RegistrarPago(String idpersona, String monto, String tipoPago)
         {             
             try
             {
@@ -556,12 +562,49 @@ namespace Interfaz_Presentadores.Modulo16
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
-                //Instancio la entidad pago y asigno sus datos
-                Entidad pagoCompra = FabricaEntidades.ObtenerPago(monto, pago, datosPago);
+                //Pago que sera insertado en la Base De Datos y la respuesta
+                String pagofinal = null;
+                bool respuesta = false;
 
-                //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
-                Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
-                bool respuesta = registrarPago.Ejecutar();               
+                //Obtengo el monto con el que pago la transaccion
+                float montoPago = float.Parse(monto);
+
+                //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
+                switch (tipoPago)
+                {
+                    case "1":
+                        pagofinal = M16_Recursointerfaz.TIPO_PAGO_TARJETA;
+                        break;
+
+                    case "2":
+                        pagofinal = M16_Recursointerfaz.TIPO_PAGO_DEPOSITO;
+                        break;
+
+                    case "3":
+                        pagofinal = M16_Recursointerfaz.TIPO_PAGO_TRANSFERENCIA;
+                        break;
+
+                    default:
+                        throw new OpcionPagoNoValidoException
+                            (M16_Recursointerfaz.CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO,
+                            M16_Recursointerfaz.MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO,
+                            new OpcionPagoNoValidoException());
+                }
+
+                //Datos del pago seleccionado y anexo
+                List<String> datosPago = new List<String>();
+                datosPago.Add(laVista.Datospago.Value);
+
+                //Si es un tipo de pago valido
+                if (pagofinal != null)
+                {
+                    //Instancio la entidad pago y asigno sus datos
+                    Entidad pagoCompra = FabricaEntidades.ObtenerPago(montoPago, pagofinal, datosPago);
+
+                    //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
+                    Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
+                    respuesta = registrarPago.Ejecutar();  
+                }                             
 
                 //retorno la respuesta
                 return respuesta;
@@ -583,6 +626,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw new ParseoEnSobrecargaException(M16_Recursointerfaz.CODIGO_EXCEPCION_SOBRECARGA, 
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (OpcionPagoNoValidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
             catch (LoggerException e)
             {
@@ -640,79 +688,85 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="sender">El objeto que dispara la accion</param>
         /// <param name="e">El evento que es ejecutado</param>
         public void Eliminar_Item(object sender, EventArgs e)
-        {
-            
+        {            
             try
             {
-
-            //Persona que eventualmente la buscaremos por el session
-                FabricaEntidades fabrica = new FabricaEntidades();
+                //Persona que eventualmente la buscaremos por el session                
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
-            persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                persona.Id =int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
-            //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
-            Button aux = (Button)sender;
-            String[] datos = aux.ID.Split('-');
-            //Respuesta a obtener del comando, tipo de objeto
-            bool respuesta = false;
-            int TipoObjeto = 0;
+                //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
+                Button aux = (Button)sender;
+                String[] datos = aux.ID.Split('-');
 
-            //Si se trata de un implemento, me voy a la tabla correspondiente
-            if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
-            {
-                //Decimos que se trata de un implemento
-                TipoObjeto = 1;
+                //Respuesta a obtener del comando, tipo de objeto
+                bool respuesta = false;
+                int TipoObjeto = 0;
 
-                //Pasamos el ID que vino del boton
-                Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
+                //Si se trata de un implemento, me voy a la tabla correspondiente
+                if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
+                {
+                    //Decimos que se trata de un implemento
+                    TipoObjeto = 1;
+
+                    //Pasamos el ID que vino del boton
+                    Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
 				
-                objeto.Id = int.Parse(datos[1]);
+                    objeto.Id = int.Parse(datos[1]);
                 
-                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
-            //Si es un Evento, me voy a la tabla correspondiente
-            else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
-            {
-                //Decimos que se trata de un evento
-                TipoObjeto = 3;
+                    //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
 
-                //Pasamos el ID que vino del boton                
-                Evento objeto = (Evento)fabrica.ObtenerEvento();
-                objeto.Id = int.Parse(datos[1]);
+                //Si es un Evento, me voy a la tabla correspondiente
+                else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
+                {
+                    //Decimos que se trata de un evento
+                    TipoObjeto = 3;
+
+                    FabricaEntidades fabrica = new FabricaEntidades();
+
+                    //Pasamos el ID que vino del boton                
+                    Entidad objeto = (Evento)fabrica.ObtenerEvento();
+                    objeto.Id = int.Parse(datos[1]);
                 
-                //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
+                    //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
 
-            //Si se trata de una matricula, me voy a la tabla correspondiente
-            else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
-            {
-                //Decimos que se trata de un implemento
-                TipoObjeto = 2;
+                //Si se trata de una matricula, me voy a la tabla correspondiente
+                else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
+                {
+                    //Decimos que se trata de una matricula
+                    TipoObjeto = 2;
 
-                //Pasamos el ID que vino del boton                
-                Entidad objeto = (Matricula)FabricaEntidades.ObtenerMatricula();
-                objeto.Id = int.Parse(datos[1]);
+                    //Pasamos el ID que vino del boton                
+                    Entidad objeto = (Matricula)FabricaEntidades.ObtenerMatricula();
+                    objeto.Id = int.Parse(datos[1]);
                 
-                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
+                    //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
 
-            //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
-            if (respuesta)
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO);
-            else
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO);
+                //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
+                if (respuesta)
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO, false);
+                else
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO, false);
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ParseoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO,
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, ex);
+            }
+            catch (CarritoConPagoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CARRITO_PAGO_LINK, false);
             }
             catch (FormatException ex)
             {
