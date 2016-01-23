@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -29,11 +30,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             try
             {
 
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla =FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 
                 planilla.ID = this.idPlanilla;
                 Entidad entidad = BaseDeDatoPlanilla.ConsultarXId(planilla);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 planilla.Nombre = ((DominioSKD.Entidades.Modulo14.Planilla)entidad).Nombre;
                 planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
                

@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -31,7 +32,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             bool resultPlanilla = true;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla =FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.nombreTipo);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
                 registrar.LaEntidad = (Entidad)laPlanilla;

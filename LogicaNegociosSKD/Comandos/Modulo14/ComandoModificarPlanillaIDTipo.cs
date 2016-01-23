@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -28,7 +29,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.tipoPlanilla);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
                 modificar.LaEntidad = (Entidad)laPlanilla;

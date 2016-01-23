@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Comandos.Modulo12;
 using LogicaNegociosSKD.Comandos.Modulo15;
 using LogicaNegociosSKD.Comandos.Modulo10;
 using LogicaNegociosSKD.Comandos.Modulo11;
+using LogicaNegociosSKD.Comandos.Modulo9;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -78,6 +79,57 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 9
+        public static Comando<bool> ObtenerComandoAgregarEvento(Entidad laEntidad)
+        {
+            return new ComandoAgregarEvento(laEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarEventoConTipo(Entidad laEntidad)
+        {
+            return new ComandoAgregarEventoConTipo(laEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarListaEventos(Entidad laEntidad)
+        {
+            return new ComandoConsultarListaEventos(laEntidad);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarEvento(Entidad laEntidad)
+        {
+            return new ComandoConsultarEvento(laEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarEvento(Entidad laEntidad)
+        {
+            return new ComandoModificarEvento(laEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarEventoConTipo(Entidad laEntidad)
+        {
+            return new ComandoModificarEventoConTipo(laEntidad);
+        }
+
+        #region Comando para Eventos por restricciones
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
+        /// </summary>
+        /// <returns>El ComandoConsultarTodosEventos</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodosEventos()
+        {
+            return new ComandoConsultarTodosEventos();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
+        /// </summary>
+        /// <returns>El CrearComandDetallarEvento</returns>
+        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
+        {
+            return new ComandoDetallarEvento(evento);
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 10
@@ -498,16 +550,7 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 16
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
-        /// </summary>
-        /// <returns>El ComandoConsultarTodosEventos</returns>
-        public static Comando <Entidad> CrearComandoConsultarTodosEventos()
-        {
-            return new ComandoConsultarTodosEventos();
-        }
-        
+  
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
         /// </summary>
@@ -653,15 +696,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarTodasMensualidades();
         }
 
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
-        /// </summary>
-        /// <returns>El CrearComandDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
-        {
-            return new ComandoDetallarEvento(evento);
-        }
-
+        
         /// <summary>
         /// Metodo de la fabrica que instancia el comando CrearComandoDetallarEvento
         /// </summary>
