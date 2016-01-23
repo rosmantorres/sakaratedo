@@ -122,5 +122,14 @@ namespace templateApp.GUI.Modulo9 {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccionar Evento.
+        /// </summary>
+        internal static string selectEvento {
+            get {
+                return ResourceManager.GetString("selectEvento", resourceCulture);
+            }
+        }
     }
 }

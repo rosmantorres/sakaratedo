@@ -171,4 +171,10 @@
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
   </data>
+  <data name="keyCombo" xml:space="preserve">
+    <value>key</value>
+  </data>
+  <data name="valueCombo" xml:space="preserve">
+    <value>value</value>
+  </data>
 </root>

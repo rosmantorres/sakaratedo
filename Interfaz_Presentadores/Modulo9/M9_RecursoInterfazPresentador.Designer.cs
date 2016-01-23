@@ -196,6 +196,15 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to key.
+        /// </summary>
+        internal static string keyCombo {
+            get {
+                return ResourceManager.GetString("keyCombo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seleccionar Evento.
         /// </summary>
         internal static string selecccionarEvento {
@@ -219,6 +228,15 @@ namespace Interfaz_Presentadores.Modulo9 {
         internal static string tipoAlerta {
             get {
                 return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to value.
+        /// </summary>
+        internal static string valueCombo {
+            get {
+                return ResourceManager.GetString("valueCombo", resourceCulture);
             }
         }
     }

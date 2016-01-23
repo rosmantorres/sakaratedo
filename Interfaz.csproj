@@ -2150,8 +2150,7 @@
     <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
       <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_RecursoInterfaz.Designer.cs" />
-    <Compile Include="GUI\Modulo9\M9_RecursoInterfaz1.Designer.cs">
+    <Compile Include="GUI\Modulo9\M9_RecursoInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>M9_RecursoInterfaz.resx</DependentUpon>
@@ -2210,7 +2209,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>M9_RecursoInterfaz1.Designer.cs</LastGenOutput>
+      <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
