@@ -156,6 +156,7 @@
     <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
     <Compile Include="Comandos\Modulo9\ComandoAgregarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoAgregarEventoConTipo.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarEventos.cs" />
     <Compile Include="Comandos\Modulo9\Logica2daEntrega.cs" />
     <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
