@@ -39,8 +39,7 @@ namespace Interfaz_Presentadores.Modulo3
             laOrganizacion.Estado = this.vista.obtenerEstado();
             laOrganizacion.Estilo = this.vista.obtenerTecnica();
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.ObtenerEjecutarModificarOrganizacion(laOrganizacion);
+            Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(laOrganizacion);
             bool resultado = _comando.Ejecutar();
 
             if (resultado)

@@ -29,8 +29,7 @@ namespace Interfaz_Presentadores.Modulo5
         public void LlenarInformacion()
         {
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarConsultarTodosCinta();
+            Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarConsultarTodosCinta();
             List<Entidad> _miLista = _comando.Ejecutar();
       
             
@@ -65,6 +64,22 @@ namespace Interfaz_Presentadores.Modulo5
                     this.vista.llenarStatusInactivo(cinta.Id_cinta);
 
             }
+        }
+
+        public void cambiarStatus()
+        {
+            DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
+            laCinta.Id_cinta = this.vista.obtenerIdCinta();
+
+            if (this.vista.obtenerStatusCinta() == 1)
+                laCinta.Status = true;
+            else
+                laCinta.Status = false;
+
+            if (laCinta.Status)
+                this.vista.llenarStatusInactivo(laCinta.Id_cinta);
+            else
+                this.vista.llenarStatusActivo(laCinta.Id_cinta);            
         }
     }
 }

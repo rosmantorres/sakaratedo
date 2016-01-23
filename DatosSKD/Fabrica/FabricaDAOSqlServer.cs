@@ -30,7 +30,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 3
-		public DaoOrganizacion ObtenerDaoOrganizacion()
+        public static DaoOrganizacion ObtenerDaoOrganizacion()
         {
             return new DaoOrganizacion();
         }
@@ -40,7 +40,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		public DaoCinta ObtenerDaoCinta()
+        public static DaoCinta ObtenerDaoCinta()
         {
             return new DaoCinta();
         } 

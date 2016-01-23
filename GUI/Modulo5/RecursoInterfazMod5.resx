@@ -163,12 +163,12 @@
     <value>&amp;tipo=</value>
   </data>
   <data name="BotonActivarCin" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
+    <value>&lt;a class="make-switch switch-mini statusToggle" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked value="</value>
   </data>
   <data name="BotonDesactivarCin" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
+    <value>&lt;a class="make-switch switch-mini statusToggle" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF" value="</value>
   </data>
   <data name="alertaError" xml:space="preserve">
     <value>alert alert-danger alert-dismissible</value>

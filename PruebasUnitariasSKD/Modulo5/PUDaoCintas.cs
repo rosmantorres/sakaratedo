@@ -25,12 +25,10 @@ namespace PruebasUnitariasSKD.Modulo5
     {
 
         #region Atributos
-        private FabricaDAOSqlServer fabricaDAO;
         private Entidad miEntidad;
         private Entidad miEntidadCinta;
         private Entidad miEntidadCintaModificar;
         private Entidad miEntidadCintaAgregar;
-        private FabricaEntidades miFabrica;
         #endregion
 
         #region SetUp & TearDown
@@ -41,12 +39,12 @@ namespace PruebasUnitariasSKD.Modulo5
         public void init()
         {
            
-            miFabrica = new FabricaEntidades();
-            miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do");
+          
+            miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do");
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
-            miEntidadCinta = miFabrica.ObtenerCinta_M5(1, "Blanco","1er Kyu","Nivel inferior",	1, "Principiante"	, org, true);
-            miEntidadCintaModificar = miFabrica.ObtenerCinta_M5(1, "Naranja", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
-            miEntidadCintaAgregar = miFabrica.ObtenerCinta_M5("Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
+            miEntidadCinta = FabricaEntidades.ObtenerCinta_M5(1, "Blanco", "1er Kyu", "Nivel inferior", 1, "Principiante", org, true);
+            miEntidadCintaModificar = FabricaEntidades.ObtenerCinta_M5(1, "Naranja", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
+            miEntidadCintaAgregar = FabricaEntidades.ObtenerCinta_M5("Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
            
         }
 
@@ -55,13 +53,11 @@ namespace PruebasUnitariasSKD.Modulo5
         /// </summary>
         [TearDown]
         public void Clean()
-        {
-            fabricaDAO = null;
+        {          
             miEntidad = null;
             miEntidadCinta = null;
             miEntidadCintaModificar = null;
             miEntidadCintaAgregar = null;
-            miFabrica = null;
 
         }
         #endregion
@@ -71,12 +67,10 @@ namespace PruebasUnitariasSKD.Modulo5
         /// Método para probar la exception de Organizacion inexistente para Agregar y Modificar en DAO
         /// </summary>
         [Test]
-        //[ExpectedException(typeof(OrganizacionInexistenteException))]
         public void PruebaValidarOrganizacion()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer(); 
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrganizacion(miEntidad);
             Assert.IsTrue(resultado);
            
@@ -85,12 +79,10 @@ namespace PruebasUnitariasSKD.Modulo5
         /// Método para probar la exception de Orden de Cinta existente para Agregar y Modificar en DAO
         /// </summary>
         [Test]
-        //[ExpectedException(typeof(OrdenCintaRepetidoException))]
         public void PruebaValidarOrdenCinta()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrdenCinta(miEntidadCinta);
             Assert.IsFalse(resultado);
 
@@ -103,8 +95,7 @@ namespace PruebasUnitariasSKD.Modulo5
         public void PruebaValidarNombreCinta()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarNombreCinta(miEntidadCinta);
             Assert.IsFalse(resultado);
 
@@ -116,8 +107,7 @@ namespace PruebasUnitariasSKD.Modulo5
         public void PruebaListarCintasXOrganizacion()
         {
             List<Entidad> resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ListarCintasXOrganizacion(miEntidad);
             Assert.IsEmpty(resultado);
 
@@ -129,8 +119,7 @@ namespace PruebasUnitariasSKD.Modulo5
         public void PruebaAgregarCinta()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.Agregar(miEntidadCintaAgregar);
             Assert.IsTrue(resultado);
 
@@ -142,8 +131,7 @@ namespace PruebasUnitariasSKD.Modulo5
         public void PruebaModificarCinta()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.Modificar(miEntidadCintaModificar);
             Assert.IsTrue(resultado);
 
@@ -155,8 +143,7 @@ namespace PruebasUnitariasSKD.Modulo5
         public void PruebaConsultarTodos()
         {
             List<Entidad> resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ConsultarTodos();
             Assert.IsNotEmpty(resultado);
 
@@ -168,8 +155,7 @@ namespace PruebasUnitariasSKD.Modulo5
         public void PruebaConsultarXId()
         {
             Entidad resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = this.fabricaDAO.ObtenerDaoCinta();
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ConsultarXId(miEntidadCinta);
             Assert.IsNotNull(resultado);
 

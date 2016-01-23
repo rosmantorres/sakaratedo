@@ -34,9 +34,7 @@ namespace templateApp.GUI.Modulo5
                 this.presentador.LlenarInformacion();
             }
            
-        }
-
-      
+        } 
 
        #region IContratos
         public void llenarId(string id)
@@ -91,7 +89,22 @@ namespace templateApp.GUI.Modulo5
             this.tabla.Text += RecursoInterfazMod5.CerrarTD;
             this.tabla.Text += RecursoInterfazMod5.CerrarTR;
         }
+        public int obtenerIdCinta()
+        {
+            return Int32.Parse(this.cintaIdStatus.Value);
+        }
+        public int obtenerStatusCinta()
+        {
+            return Int32.Parse(this.estatusActual.Value);
+        }
         #endregion
+
+
+        protected void cambiarStatus(object sender, EventArgs e)
+        {
+            this.presentador.cambiarStatus();
+
+        }
 
 
     }

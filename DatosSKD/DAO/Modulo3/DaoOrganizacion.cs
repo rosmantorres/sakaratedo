@@ -186,11 +186,10 @@ namespace DatosSKD.DAO.Modulo3
            // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
-            FabricaEntidades laFabrica = new FabricaEntidades();
 
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3();
+            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
             //PREGUNTAR POR EL ID
             laOrganizacion.Id_organizacion= parametro.Id;
 
@@ -258,7 +257,6 @@ namespace DatosSKD.DAO.Modulo3
            // BDConexion laConexion;
             List<Entidad> laListaOrganizaciones = new List<Entidad>();
             List<Parametro> parametros;
-            FabricaEntidades laFabrica = new FabricaEntidades();
 
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
@@ -272,7 +270,7 @@ namespace DatosSKD.DAO.Modulo3
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3();
+                    laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
 
                     laOrganizacion.Id_organizacion = int.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString());
                     laOrganizacion.Nombre = row[RecursosDaoModulo3.AliasNombreOrg].ToString();
@@ -331,7 +329,6 @@ namespace DatosSKD.DAO.Modulo3
             //BDConexion laConexion;
             List<Parametro> parametros;
 
-            FabricaEntidades laFabrica = new FabricaEntidades();
             List<Entidad> laListaOrganizaciones = new List<Entidad>();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
             try
@@ -345,7 +342,7 @@ namespace DatosSKD.DAO.Modulo3
                 foreach (DataRow row in dt.Rows)
                 {
                    // laListaOrganizaciones.Add(new Organizacion(Int32.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString()), row[RecursosDaoModulo3.AliasNombreOrg].ToString()));
-                    laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3();
+                    laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
 
                     laOrganizacion.Id_organizacion = int.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString());
                     laOrganizacion.Nombre = row[RecursosDaoModulo3.AliasNombreOrg].ToString();

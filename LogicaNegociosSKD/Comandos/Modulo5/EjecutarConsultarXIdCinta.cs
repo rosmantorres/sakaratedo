@@ -28,8 +28,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try { 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = fabrica.ObtenerDaoCinta(); 
+
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta(); 
             Entidad _miEntidad= miDaoCinta.ConsultarXId(this.LaEntidad);
             
             if (_miEntidad != null)

@@ -22,8 +22,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo3
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try { 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = fabrica.ObtenerDaoOrganizacion();
+
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             List<Entidad> _miLista = miDaoOrganizacion.ConsultarTodos();
             if (_miLista != null)
             {

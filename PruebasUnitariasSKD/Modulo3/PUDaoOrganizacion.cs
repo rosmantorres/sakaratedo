@@ -24,11 +24,9 @@ namespace PruebasUnitariasSKD.Modulo3
     class PUDaoOrganizacion
     {
         #region Atributos
-        private FabricaDAOSqlServer fabricaDAO;
         private Entidad miEntidad;
         private Entidad miEntidadModificar;
         private Entidad miEntidadAgregar;
-        private FabricaEntidades miFabrica;
         #endregion
 
         #region SetUp & TearDown
@@ -38,10 +36,9 @@ namespace PruebasUnitariasSKD.Modulo3
         [SetUp]
         public void init()
         {
-            miFabrica = new FabricaEntidades();
-            miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadModificar = miFabrica.ObtenerOrganizacion_M3(1, "Seito", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadAgregar = miFabrica.ObtenerOrganizacion_M3(19, "Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");       
+            miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            miEntidadModificar = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            miEntidadAgregar = FabricaEntidades.ObtenerOrganizacion_M3(19, "Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");       
             
         }
 
@@ -51,11 +48,9 @@ namespace PruebasUnitariasSKD.Modulo3
         [TearDown]
         public void Clean()
         {
-            fabricaDAO = null;
             miEntidad = null;
             miEntidadModificar = null;
             miEntidadAgregar = null;
-            miFabrica = null;
 
         }
         #endregion
@@ -69,8 +64,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaValidarNombreOrganizacion()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ValidarNombreOrganizacion(miEntidad);
             Assert.IsTrue(resultado);
 
@@ -83,8 +77,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaValidarEstilo()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ValidarEstilo(miEntidad);
             Assert.IsTrue(resultado);
 
@@ -96,8 +89,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaComboOrganizaciones()
         {
             List<Entidad> resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ComboOrganizaciones();
             Assert.IsNotEmpty(resultado);
 
@@ -109,8 +101,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaAgregarOrganizacion()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.Agregar(miEntidadAgregar);
             Assert.IsTrue(resultado);
 
@@ -122,8 +113,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaModificarOrganizacion()
         {
             bool resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.Modificar(miEntidadModificar);
             Assert.IsTrue(resultado);
 
@@ -135,8 +125,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaConsultarTodos()
         {
             List<Entidad> resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ConsultarTodos();
             Assert.IsNotEmpty(resultado);
 
@@ -148,8 +137,7 @@ namespace PruebasUnitariasSKD.Modulo3
         public void PruebaConsultarXId()
         {
             Entidad resultado;
-            this.fabricaDAO = new FabricaDAOSqlServer();
-            IDaoOrganizacion miDaoOrganizacion = this.fabricaDAO.ObtenerDaoOrganizacion();
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
             resultado = miDaoOrganizacion.ConsultarXId(miEntidad);
             Assert.IsNotNull(resultado);
 

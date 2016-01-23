@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ListarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ListarCintas" %> 
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ListarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ListarCintas"  %> 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -36,7 +36,7 @@
 </asp:Content> 
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server"> 
-
+   <form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
 <div id="alert" runat="server"></div>
 
 <div class="row">
@@ -47,8 +47,10 @@
                  <h3 class="box-title">Lista de Cintas</h3>
             </div><!-- /.box-header -->
 
-<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server">
-    
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <input id="cintaIdStatus" type="hidden" runat="server" />
+    <input id="estatusActual" type="hidden" runat="server" />
 <!--<div class="form-group col-sm-10 col-md-10 col-lg-10">  -->
 <div class="box-body table-responsive"> 
 <table id="ListaCintas" class="table table-bordered table-striped dataTable">
@@ -72,8 +74,8 @@
 </tbody>
 </table>
 </div>
+    
 
-</form>
 </div>
 </div>
 </div>
@@ -112,7 +114,8 @@ kyoshinatera@gmail.com
 </div> 
 </div> 
 </div> 
- 
+
+
  <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -129,16 +132,28 @@ kyoshinatera@gmail.com
               </div>
             </div>
             <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>  <!-- onserverclick="CambioDeStatus_Click" --> 
+                <asp:Button runat="server" class="btn btn-primary" OnClick="cambiarStatus" Text="Aceptar" />
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div>
         </div>
       </div>
-    
+</form>
  
     <script type="text/javascript">
-          $(document).ready(function () {
+        $(document).ready(function () {
+            $(".statusToggle").click(function () {
+                //$(this).find("input").val()
+                if ($(this).find("input").is(":checked")) {
+                    $("[id$='estatusActual']").val("1");
+                }
+                else {
+                    $("[id$='estatusActual']").val("0");
+                }
+                $("[id$='cintaIdStatus']").val($(this).find("input").val());
+
+            })
+
               $('#ListaCintas').DataTable();
 
         /*      var table = $('#ListaCintas').DataTable({
@@ -148,7 +163,7 @@ kyoshinatera@gmail.com
               });*/
             var req;
             var tr;
-          
+          /*
             $('#ListaCintas tbody').on('click', 'a', function () {
                 if ($(this).parent().hasClass('selected')) {
                     req = $(this).parent().prev().prev().prev().prev().text();
@@ -164,7 +179,7 @@ kyoshinatera@gmail.com
                 }
             });
            
-
+           */ // la verdad no se q coño hace esa funcion de ahi arriba
 
         }); 
           $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');

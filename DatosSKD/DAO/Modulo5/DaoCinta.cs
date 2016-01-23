@@ -32,10 +32,10 @@ namespace DatosSKD.DAO.Modulo5
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-                FabricaEntidades laFabrica = new FabricaEntidades();
-                DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;                
+               
+                DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-                laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3(laCinta.Organizacion.Id_organizacion, laCinta.Organizacion.Nombre);
+                laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(laCinta.Organizacion.Id_organizacion, laCinta.Organizacion.Nombre);
 
 
                if (ValidarOrganizacion(laOrganizacion)) 
@@ -127,10 +127,9 @@ namespace DatosSKD.DAO.Modulo5
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-                FabricaEntidades laFabrica = new FabricaEntidades();
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-                laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3(laCinta.Organizacion.Id_organizacion, laCinta.Organizacion.Nombre);
+                laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(laCinta.Organizacion.Id_organizacion, laCinta.Organizacion.Nombre);
 
             if (ValidarOrganizacion(laOrganizacion))
                {  
@@ -224,10 +223,10 @@ namespace DatosSKD.DAO.Modulo5
            // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
-            FabricaEntidades laFabrica = new FabricaEntidades();
+          
             DominioSKD.Entidades.Modulo5.Cinta laCinta;
 
-            laCinta = (DominioSKD.Entidades.Modulo5.Cinta)laFabrica.ObtenerCinta_M5();
+            laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
 
             laCinta.Id_cinta = parametro.Id;
             try
@@ -300,8 +299,7 @@ namespace DatosSKD.DAO.Modulo5
            // BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
-            FabricaEntidades laFabrica = new FabricaEntidades();
-
+            
             DominioSKD.Entidades.Modulo5.Cinta laCinta;
 
             try
@@ -315,7 +313,7 @@ namespace DatosSKD.DAO.Modulo5
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    laCinta = (DominioSKD.Entidades.Modulo5.Cinta)laFabrica.ObtenerCinta_M5();
+                    laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
 
                     laCinta.Id_cinta = int.Parse(row[RecursosDaoModulo5.AliasIdCinta].ToString());
                     laCinta.Color_nombre = row[RecursosDaoModulo5.AliasColorCinta].ToString();
@@ -323,7 +321,7 @@ namespace DatosSKD.DAO.Modulo5
                     laCinta.Clasificacion = row[RecursosDaoModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosDaoModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
+                    laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
                                                                         , row[RecursosDaoModulo5.AliasNombreOrg].ToString());
                     laListaCintas.Add(laCinta);
 
@@ -609,10 +607,9 @@ namespace DatosSKD.DAO.Modulo5
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
-            FabricaEntidades laFabrica = new FabricaEntidades();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)laFabrica.ObtenerOrganizacion_M3();
+            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
 
             laOrganizacion.Id_organizacion = parametro.Id;
 

@@ -29,8 +29,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
             try 
             { 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = fabrica.ObtenerDaoCinta();
+
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
 
             miDaoCinta.Agregar(this.LaEntidad);
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

@@ -26,8 +26,7 @@ namespace Interfaz_Presentadores.Modulo3
         public void LlenarInformacion()
         {
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarConsultarTodosOrganizacion();
+            Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarConsultarTodosOrganizacion();
             List<Entidad> _miLista = _comando.Ejecutar();
 
           

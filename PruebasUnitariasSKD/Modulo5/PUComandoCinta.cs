@@ -28,11 +28,9 @@ namespace PruebasUnitariasSKD.Modulo5
         private Entidad miEntidad;
         private Entidad miEntidadCinta;
         private Entidad miEntidadCintaModificar;
-        FabricaComandos fabricaComandos;
         private Entidad miEntidadCintaAgregar;
         private Comando<List<Entidad>> miComandoLista;
         private Comando<Entidad> miComandoEntidad;
-        private FabricaEntidades miFabrica;
         #endregion
 
         #region SetUp & TearDown
@@ -42,13 +40,11 @@ namespace PruebasUnitariasSKD.Modulo5
         [SetUp]
         public void init()
         {
-            miFabrica = new FabricaEntidades();
-            fabricaComandos = new FabricaComandos();
-            miEntidad = miFabrica.ObtenerOrganizacion_M3(3, "Shotokan Org");
+            miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(3, "Shotokan Org");
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
-            miEntidadCinta = miFabrica.ObtenerCinta_M5(1, "Blanco", "1er Kyu", "Nivel inferior", 1, "Principiante", org, true);
-            miEntidadCintaModificar = miFabrica.ObtenerCinta_M5(1, "Verde", "1er Kyu", "Nivel inferior", 2, "Principiante", org, true);
-            miEntidadCintaAgregar = miFabrica.ObtenerCinta_M5(16, "Rojo", "1er Kyu", "Nivel inferior", 4, "Principiante", org, true);
+            miEntidadCinta = FabricaEntidades.ObtenerCinta_M5(1, "Blanco", "1er Kyu", "Nivel inferior", 1, "Principiante", org, true);
+            miEntidadCintaModificar = FabricaEntidades.ObtenerCinta_M5(1, "Verde", "1er Kyu", "Nivel inferior", 2, "Principiante", org, true);
+            miEntidadCintaAgregar = FabricaEntidades.ObtenerCinta_M5(16, "Rojo", "1er Kyu", "Nivel inferior", 4, "Principiante", org, true);
             
         }
 
@@ -59,12 +55,10 @@ namespace PruebasUnitariasSKD.Modulo5
         public void Clean()
         {
             miComando = null;
-            fabricaComandos = null;
             miEntidad = null;
             miEntidadCinta = null;
             miEntidadCintaModificar = null;
             miEntidadCintaAgregar = null;
-            miFabrica = null;
             miComandoLista = null;
             miComandoEntidad = null;
 
@@ -79,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo5
         [Test]
         public void ejecutarElComandoAgregar()
         {
-            this.miComando = this.fabricaComandos.ObtenerEjecutarAgregarCinta(miEntidadCintaAgregar);
+            this.miComando = FabricaComandos.ObtenerEjecutarAgregarCinta(miEntidadCintaAgregar);
             bool resultado = this.miComando.Ejecutar();
             Assert.IsFalse(resultado);
         
@@ -91,7 +85,7 @@ namespace PruebasUnitariasSKD.Modulo5
         [Test]
         public void ejecutarElComandoModificar()
         {
-            this.miComando = this.fabricaComandos.ObtenerEjecutarModificarCinta(miEntidadCintaModificar);
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarCinta(miEntidadCintaModificar);
             bool resultado = this.miComando.Ejecutar();
             Assert.IsFalse(resultado);
 
@@ -102,7 +96,7 @@ namespace PruebasUnitariasSKD.Modulo5
         [Test]
         public void ejecutarElComandoConsultarTodosCinta()
         {
-            this.miComandoLista = this.fabricaComandos.ObtenerEjecutarConsultarTodosCinta();
+            this.miComandoLista = FabricaComandos.ObtenerEjecutarConsultarTodosCinta();
             List<Entidad> resultado = this.miComandoLista.Ejecutar();
             Assert.IsNotEmpty(resultado);
 
@@ -114,7 +108,7 @@ namespace PruebasUnitariasSKD.Modulo5
         [Test]
         public void ejecutarElComandoConsultarXIdCinta()
         {
-            this.miComandoEntidad = this.fabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidadCinta);
+            this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidadCinta);
             Entidad resultado = this.miComandoEntidad.Ejecutar();
             Assert.IsNotNull(resultado);
 

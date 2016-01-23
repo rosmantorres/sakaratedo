@@ -26,11 +26,9 @@ namespace PruebasUnitariasSKD.Modulo3
         private Comando<bool> miComando;
         private Entidad miEntidad;
         private Entidad miEntidadOrganizacionModificar;
-        private FabricaComandos fabricaComandos;
         private Entidad miEntidadOrganizacionAgregar;
         private Comando<List<Entidad>> miComandoLista;
         private Comando<Entidad> miComandoEntidad;
-        private FabricaEntidades miFabrica;
         #endregion
 
         #region SetUp & TearDown
@@ -40,11 +38,9 @@ namespace PruebasUnitariasSKD.Modulo3
         [SetUp]
         public void init()
         {
-            miFabrica = new FabricaEntidades();
-            fabricaComandos = new FabricaComandos();
-            miEntidad = miFabrica.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadOrganizacionModificar = miFabrica.ObtenerOrganizacion_M3(1, "Seito-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadOrganizacionAgregar = miFabrica.ObtenerOrganizacion_M3(20, "Karate", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");
+            miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            miEntidadOrganizacionModificar = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            miEntidadOrganizacionAgregar = FabricaEntidades.ObtenerOrganizacion_M3(20, "Karate", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");
 
         }
 
@@ -55,11 +51,9 @@ namespace PruebasUnitariasSKD.Modulo3
         public void Clean()
         {
             miComando = null;
-            fabricaComandos = null;
             miEntidad = null;
             miEntidadOrganizacionModificar = null;
             miEntidadOrganizacionAgregar = null;
-            miFabrica = null;
             miComandoLista = null;
             miComandoEntidad = null;
 
@@ -73,7 +67,7 @@ namespace PruebasUnitariasSKD.Modulo3
         [Test]
         public void ejecutarElComandoAgregar()
         {
-            this.miComando = this.fabricaComandos.ObtenerEjecutarAgregarOrganizacion(miEntidadOrganizacionAgregar);
+            this.miComando = FabricaComandos.ObtenerEjecutarAgregarOrganizacion(miEntidadOrganizacionAgregar);
             bool resultado = this.miComando.Ejecutar();
             Assert.IsFalse(resultado);
 
@@ -85,7 +79,7 @@ namespace PruebasUnitariasSKD.Modulo3
         [Test]
         public void ejecutarElComandoModificar()
         {
-            this.miComando = this.fabricaComandos.ObtenerEjecutarModificarOrganizacion(miEntidadOrganizacionModificar);
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(miEntidadOrganizacionModificar);
             bool resultado = this.miComando.Ejecutar();
             Assert.IsFalse(resultado);
 
@@ -96,7 +90,7 @@ namespace PruebasUnitariasSKD.Modulo3
         [Test]
         public void ejecutarElComandoConsultarTodosOrganizacion()
         {
-            this.miComandoLista = this.fabricaComandos.ObtenerEjecutarConsultarTodosOrganizacion();
+            this.miComandoLista = FabricaComandos.ObtenerEjecutarConsultarTodosOrganizacion();
             List<Entidad> resultado = this.miComandoLista.Ejecutar();
             Assert.IsNotEmpty(resultado);
 
@@ -108,7 +102,7 @@ namespace PruebasUnitariasSKD.Modulo3
         [Test]
         public void ejecutarElComandoConsultarXIdOrganizacion()
         {
-            this.miComandoEntidad = this.fabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidad);
+            this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidad);
             Entidad resultado = this.miComandoEntidad.Ejecutar();
             Assert.IsNotNull(resultado);
 

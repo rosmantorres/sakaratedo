@@ -25,8 +25,7 @@ namespace Interfaz_Presentadores.Modulo5
          /// </summary>
         public void llenarCombo()
         {
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarComboOrganizaciones();
+            Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
             List<Entidad> _miLista = _comando.Ejecutar();
 
             if (_miLista != null)
@@ -86,8 +85,7 @@ namespace Interfaz_Presentadores.Modulo5
                     laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
                     laCinta.Organizacion = laOrganizacion;
 
-                    FabricaComandos _fabrica = new FabricaComandos();
-                    Comando<bool> _comando = _fabrica.ObtenerEjecutarAgregarCinta(laCinta);
+                    Comando<bool> _comando = FabricaComandos.ObtenerEjecutarAgregarCinta(laCinta);
                     bool resultado = _comando.Ejecutar();
                     if (resultado)
                         this.vista.Respuesta();
