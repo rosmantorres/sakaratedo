@@ -968,6 +968,56 @@ namespace DatosSKD.DAO.Modulo10
             }
             return competencia;
         }
+
+        public Entidad ConsultarEventoXID(string idEvento)
+        {
+            Entidad evento;
+            try
+            {
+                evento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                parametros.Add(parametro);
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoConsultarEventoXId, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Nombre = row[RecursosDAOModulo10.aliasNombreEvento].ToString(); ;
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Descripcion = row[RecursosDAOModulo10.AliasDescripcionEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Estado = Boolean.Parse(row[RecursosDAOModulo10.AliasEstadoEvento].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Costo = float.Parse(row[RecursosDAOModulo10.AliasCostoEvento].ToString());
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.AliasFechaInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaFin = DateTime.Parse(row[RecursosDAOModulo10.AliasFechaFin].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraInicio = int.Parse(row[RecursosDAOModulo10.AliasHoraInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraFin = int.Parse(row[RecursosDAOModulo10.AliasHoraFin].ToString());
+                    Entidad tipoEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerTipoEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.TipoEvento)tipoEvento).Nombre = row[RecursosDAOModulo10.aliasTipoEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Horario = horario as DominioSKD.Entidades.Modulo10.Horario;
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).TipoEvento = tipoEvento as DominioSKD.Entidades.Modulo10.TipoEvento;
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return evento;
+        }
         #endregion
 
         #region IDAO
