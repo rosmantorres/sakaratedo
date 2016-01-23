@@ -1,5 +1,6 @@
 ﻿using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo12;
+using DominioSKD;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo12
 {
     public class ComandoAgregarCompetencia : Comando<bool>
     {
+        public ComandoAgregarCompetencia(Entidad entidad)
+        {
+            LaEntidad = entidad;
+        }
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name

@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -22,10 +23,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                IDaoDiseno dao = FabricaDAOSqlServer.ObtenerDAODiseno();
                 return dao.ConsultarXId(this.planilla);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

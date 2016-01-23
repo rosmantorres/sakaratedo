@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -15,9 +16,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
        public override Entidad Ejecutar()
         {
         
-
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+            IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();
             DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud =
                 (DominioSKD.Entidades.Modulo14.SolicitudP)this.LaEntidad;
 

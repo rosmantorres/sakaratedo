@@ -1,8 +1,10 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
+using LogicaNegociosSKD.Fabrica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,16 +43,17 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            DaoDiseno daoDiseno = (DaoDiseno)fabrica.ObtenerDAODiseno();
-            DaoDatos daoDatos = (DaoDatos)fabrica.ObtenerDAODatos();
+            IDaoDiseno daoDiseno = FabricaDAOSqlServer.ObtenerDAODiseno();
+            IDaoDatos daoDatos = FabricaDAOSqlServer.ObtenerDAODatos();
+            IDaoSolicitud daoSol = FabricaDAOSqlServer.ObtenerDAOSolicitud();
             try
             {
-                Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
-                Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
+                Persona persona = (Persona)FabricaEntidades.ObtenerPersona();
+                DominioSKD.Entidades.Modulo14.SolicitudP solP = (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP();
+                Dojo dojo = (Dojo)FabricaEntidades.ObtenerDojo();
                 DominioSKD.Entidades.Modulo14.Diseño diseñoPlanilla =
-                    (DominioSKD.Entidades.Modulo14.Diseño)fabricaEntidad.obtenerDiseño();
+                    (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño();
                 //
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
                 DominioSKD.Entidades.Modulo12.Competencia competencia = 
@@ -58,28 +61,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 Organizacion organizacion =
                     (Organizacion)fabricaEntidad.ObtenerOrganizacion();
                 DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
-                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)FabricaEntidades.ObtenerSolicitudPlanilla();
                 List<string> matricula = new List<string>();
-                diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarXId(planilla);
-                daoDiseno.LimpiarSQLConnection();
                 persona = daoDatos.ConsultarPersona(idPersona);
-                daoDatos.LimpiarSQLConnection();
                 dojo = daoDatos.ConsultarDojo(persona.ID);
-                daoDatos.LimpiarSQLConnection();
                 matricula = daoDatos.ConsultarMatricula(dojo.Id_dojo, idPersona);
-                daoDatos.LimpiarSQLConnection();
                 evento = (DominioSKD.Entidades.Modulo9.Evento)daoDatos.ConsultarEvento(idIns);
-                daoDatos.LimpiarSQLConnection();
                 competencia = (DominioSKD.Entidades.Modulo12.Competencia)daoDatos.ConsultarCompetencia(idIns);
-                daoDatos.LimpiarSQLConnection();
                 organizacion = (Organizacion)daoDatos.ConsultarOrganizacion(dojo.Organizacion_dojo);
-                daoDatos.LimpiarSQLConnection();
                 solicitud = (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)daoDatos.ConsultarSolicitud(idSolici);
-                daoDatos.LimpiarSQLConnection();
-                Fabrica.FabricaComandos fComandos = new Fabrica.FabricaComandos();
-                ComandoReemplazarElementos comand = 
-                    (ComandoReemplazarElementos)fComandos.ObtenerComandoReemplazarElementos();
+                diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarDisenoID(solicitud);
+                ComandoReemplazarElementos comand =
+                    (ComandoReemplazarElementos)FabricaComandos.ObtenerComandoReemplazarElementos();
                 comand.Info = diseñoPlanilla.Contenido;
+                //comand.Info = solicitud.Diseno.Contenido;
                 comand.Persona = persona;
                 comand.Dojo = dojo;
                 comand.Evento = evento;

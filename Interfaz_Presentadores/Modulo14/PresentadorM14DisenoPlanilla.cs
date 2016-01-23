@@ -31,10 +31,8 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void PageLoad(HttpRequest request, bool hit, HttpServerUtility server)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            FabricaEntidades entidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.Planilla pla =
-                (DominioSKD.Entidades.Modulo14.Planilla)entidad.ObtenerPlanilla();
+                (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
             try
             {
                 if (request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieId].ToString() != "")
@@ -44,7 +42,7 @@ namespace Interfaz_Presentadores.Modulo14
                     vista.tipoPlanilla.Text = request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieTipo].ToString();
                     vista.planilla.Text = request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieNombre].ToString();
                     ComandoConsultarDiseñoPuro commando =
-                        (ComandoConsultarDiseñoPuro)fabrica.ObtenerComandoConsultarDiseñoPuro();
+                        (ComandoConsultarDiseñoPuro)FabricaComandos.ObtenerComandoConsultarDiseñoPuro();
                     commando.Planilla = pla;
                     dis = commando.Ejecutar();
                     planilla1 = new DominioSKD.Entidades.Modulo14.Planilla(idPlanilla, vista.planilla.Text, true, vista.tipoPlanilla.Text);
@@ -52,7 +50,7 @@ namespace Interfaz_Presentadores.Modulo14
                     if (!hit)
                     {
                         ComandoObtenerDatosPlanilla command =
-                         (ComandoObtenerDatosPlanilla)fabrica.ObtenerComandoObtenerDatosPlanilla();
+                         (ComandoObtenerDatosPlanilla)FabricaComandos.ObtenerComandoObtenerDatosPlanilla();
                         command.IdPlanilla = idPlanilla;
                         List<String> datos = command.Ejecutar();
 
@@ -115,10 +113,9 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void btnguardar()
         {
-            FabricaEntidades entidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.Diseño diseño =
-                (DominioSKD.Entidades.Modulo14.Diseño)entidad.obtenerDiseño(vista.CKEditor1.Text);
-            FabricaComandos fabrica = new FabricaComandos();
+                (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño(vista.CKEditor1.Text);
+            
             try
             {
                 if (((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido != "")
@@ -127,9 +124,9 @@ namespace Interfaz_Presentadores.Modulo14
                     if (vista.CKEditor1.Text != "")
                     {
                         ((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido = vista.CKEditor1.Text;
-                        ComandoModificarDiseno comando = 
-                            (ComandoModificarDiseno)fabrica.ObtenerComandoModificarDiseno();
-                        comando.Diseño = dis;
+                        Comando<Boolean> comando = FabricaComandos.ObtenerComandoAgregarDiseno();
+                        ((ComandoAgregarDiseno)comando).Diseño = dis;
+                        ((ComandoAgregarDiseno)comando).Planilla = planilla1;
                         exito = comando.Ejecutar();
 
                         if (exito)
@@ -179,10 +176,9 @@ namespace Interfaz_Presentadores.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 if (vista.CKEditor1.Text != "")
                 {
-                    ComandoAgregarDiseno command = 
-                        (ComandoAgregarDiseno)fabrica.ObtenerComandoAgregarDiseno();
-                    command.Diseño = diseño;
-                    command.Planilla = planilla1;
+                    Comando<Boolean> command =FabricaComandos.ObtenerComandoAgregarDiseno();
+                    ((ComandoAgregarDiseno)command).Diseño = diseño;
+                    ((ComandoAgregarDiseno)command).Planilla = planilla1;
                     exito = command.Ejecutar();
                     if (exito)
                     {

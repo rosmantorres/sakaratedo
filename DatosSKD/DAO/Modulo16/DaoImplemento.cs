@@ -71,8 +71,8 @@ namespace DatosSKD.DAO.Modulo16
                 //Obtengo todos los elementos del inventario del dojo donde pertenece el usuario logueado
                     foreach (DataRow row in resultado.Rows)
                     {
-                        elImplemento = (Implemento)laFabrica.ObtenerImplemento();
-                        elDojo = (Dojo)laFabrica.ObtenerDojos();
+                        elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
+                        elDojo = (Dojo)FabricaEntidades.ObtenerDojos();
                         elImplemento.Id_Implemento = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO].ToString());
                         elImplemento.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                         elImplemento.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();
@@ -186,7 +186,7 @@ namespace DatosSKD.DAO.Modulo16
                 //Obtengo todos los ids de implemento que posee ese dojo
                 foreach (DataRow row in resultado.Rows)
                 {
-                    elImplemento = (Implemento)laFabrica.ObtenerImplemento();
+                    elImplemento = (Implemento)FabricaEntidades.ObtenerImplemento();
                     elImplemento.Imagen_implemento = row[RecursosBDModulo16.PARAMETRO_IMAGEN].ToString();
                     elImplemento.Nombre_Implemento = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                     elImplemento.Tipo_Implemento = row[RecursosBDModulo16.PARAMETRO_TIPO].ToString();

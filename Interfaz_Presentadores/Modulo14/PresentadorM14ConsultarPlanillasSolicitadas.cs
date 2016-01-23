@@ -68,13 +68,12 @@ namespace Interfaz_Presentadores.Modulo14
 
         public List<Entidad> LlenarTabla(int idPersona)
         {
-            FabricaComandos fabrica = new FabricaComandos();
 
             try
             {
-                ComandoListarPlanillasSolicitadas command =(ComandoListarPlanillasSolicitadas)
-                    fabrica.ObtenerComandoListarPlanillasSolicitadas();
-                command.IDPersona = idPersona;
+                Comando<List<Entidad>> command =
+                    FabricaComandos.ObtenerComandoListarPlanillasSolicitadas();
+                ((ComandoListarPlanillasSolicitadas)command).IDPersona = idPersona;
                 return command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -111,12 +110,10 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void EliminarFilaTable(HttpRequest request, int idSol)
         {
-            FabricaComandos fabrica = new FabricaComandos();
             try
             {
-                ComandoEliminarSolicitud command = (ComandoEliminarSolicitud)
-                    fabrica.ObtenerComandoEliminarSolicitud();
-                command.iDSolicitud = idSol;
+                Comando<Boolean> command = FabricaComandos.ObtenerComandoEliminarSolicitud();
+                ((ComandoEliminarSolicitud)command).iDSolicitud = idSol;
                 Boolean succecs = command.Ejecutar();
                 if (succecs)
                 {
