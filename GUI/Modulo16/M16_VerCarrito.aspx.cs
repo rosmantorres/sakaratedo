@@ -306,6 +306,14 @@ namespace templateApp.GUI.Modulo16
                             alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                             alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CANTIDAD_INVALIDA_MENSAJE;
                             break;
+
+                        case "14":
+                            //Si hubo error al modificar de alguna forma un carrito con un pago ya hecho
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CARRITO_PAGO_MENSAJE;
+                            break;
+
                     }
                     break;
 
