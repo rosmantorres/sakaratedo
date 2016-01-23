@@ -327,8 +327,29 @@ namespace Interfaz_Presentadores.Modulo16
                 matricula.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar
-                bool respuesta = false;                
-                
+                bool respuesta = false;
+               
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a agregar
+                foreach (TableRow aux2 in this.vista.tablaMensualidades.Rows)
+                { 
+                    //Si la fila no es de tipo Header puedo comenzar a buscar
+                    if ((aux2 is TableHeaderRow) != true)
+                    {
+                        //En la celda 6 siempre estaran los botones, casteo el boton
+                        Button aux3 = aux2.Cells[6].Controls[1] as Button;
+
+                        //Si el ID del boton en la fila actual corresponde con el ID del boton que realizo la accion
+                        //Obtenemos el numero del textbox que el usuario desea
+                        if (aux3.ID == aux.ID)
+                        {
+                            //Agrego el costo de la matricula
+                            matricula.Costo = int.Parse(aux2.Cells[2].Text);
+
+                            break;
+                        }
+                    }
+                }
+
                 /*Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente,
                 la cantidad siempre sera 1*/
                 Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, matricula, 3, 1);
@@ -349,6 +370,11 @@ namespace Interfaz_Presentadores.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
+            }
+            catch (CarritoConPagoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_CARRITO_PAGO_LINK, false);
             }
             catch (ItemInvalidoException e)
             {

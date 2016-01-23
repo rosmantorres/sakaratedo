@@ -21,5 +21,12 @@ namespace DatosSKD.InterfazDAO.Modulo9
         List<Entidad> ListarHorariosAscensos();
         List<Entidad> AcsensosPorFecha(String fechaInicio, String fechaFin);
 
+        #region EventosPorRestricciones
+        Entidad ListarEventoPorRestriciones(Entidad entidad);
+
+        Entidad ConsultarPorIdPorRestricciones(Entidad entidad);
+
+        #endregion
+
     }
 }

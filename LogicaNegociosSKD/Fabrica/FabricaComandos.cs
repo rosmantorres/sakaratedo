@@ -108,6 +108,28 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoModificarEventoConTipo(laEntidad);
         }
+
+        #region Comando para Eventos por restricciones
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
+        /// </summary>
+        /// <returns>El ComandoConsultarTodosEventos</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodosEventos()
+        {
+            return new ComandoConsultarTodosEventos();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
+        /// </summary>
+        /// <returns>El CrearComandDetallarEvento</returns>
+        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
+        {
+            return new ComandoDetallarEvento(evento);
+        }
+
+        #endregion
+
         #endregion
 
         #region Modulo 10
@@ -528,16 +550,7 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 16
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
-        /// </summary>
-        /// <returns>El ComandoConsultarTodosEventos</returns>
-        public static Comando <Entidad> CrearComandoConsultarTodosEventos()
-        {
-            return new ComandoConsultarTodosEventos();
-        }
-        
+  
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
         /// </summary>
@@ -683,15 +696,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarTodasMensualidades();
         }
 
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
-        /// </summary>
-        /// <returns>El CrearComandDetallarEvento</returns>
-        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
-        {
-            return new ComandoDetallarEvento(evento);
-        }
-
+        
         /// <summary>
         /// Metodo de la fabrica que instancia el comando CrearComandoDetallarEvento
         /// </summary>
