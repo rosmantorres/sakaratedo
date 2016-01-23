@@ -23,7 +23,7 @@
 		    </li>
 	    </ol>
     </div>
-	<%--Fin_Breadcrumbs--%>
+	<%--Fin_Breadcrumbs.--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gesti&oacute;n de Eventos</asp:Content>
