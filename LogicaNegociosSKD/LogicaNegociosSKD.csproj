@@ -88,9 +88,9 @@
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
-    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosEventos.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarTodosEventos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosProductos.cs" />
-    <Compile Include="Comandos\Modulo16\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoDetallarEvento.cs" />
     <Compile Include="Comandos\Modulo16\ComandoDetallarFactura.cs" />
     <Compile Include="Comandos\Modulo16\ComandoDetallarMatricula.cs" />
     <Compile Include="Comandos\Modulo15\ComandoDetallarProducto.cs" />
