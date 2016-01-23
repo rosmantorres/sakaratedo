@@ -55,7 +55,7 @@ namespace templateApp.GUI.Modulo9
                 {
                     Dictionary<string, string> options = new Dictionary<string, string>();
                     options.Add("-2", "Seleccione Tipo De Evento");
-                    listEvento = logicaEvento.ConsultarTiposEventos();
+               //     listEvento = logicaEvento.ConsultarTiposEventos();
 
                     foreach (TipoEvento o in listEvento)
                     {
@@ -156,7 +156,7 @@ namespace templateApp.GUI.Modulo9
                         TipoEvento tipoEvento = new TipoEvento();
                         tipoEvento.Nombre = otroEvento.Text;
                         evento.TipoEvento = tipoEvento;
-                        bool resultado = logicaEvento.CrearEventoConTipo(evento);
+                        bool resultado = true;// = logicaEvento.CrearEventoConTipo(evento);
                         if (resultado)
                         {
                             alert.Attributes["class"] = "alert alert-success alert-dismissible";
@@ -179,7 +179,7 @@ namespace templateApp.GUI.Modulo9
                     TipoEvento tipoEvento = new TipoEvento();
                     tipoEvento.Id = comboTipoEvento.SelectedIndex;
                     evento.TipoEvento = tipoEvento;
-                    bool resultado = logicaEvento.CrearEvento(evento);
+                    bool resultado = true;// = logicaEvento.CrearEvento(evento);
                     if (resultado)
                     {
                         alert.Attributes["class"] = "alert alert-success alert-dismissible";

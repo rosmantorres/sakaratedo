@@ -52,7 +52,7 @@ namespace templateApp.GUI.Modulo9
                 try
                 {
                     String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();
-                    eventoLista = logicaEvento.ListarEventos(int.Parse(idPersona));
+              //      eventoLista = logicaEvento.ListarEventos(int.Parse(idPersona));
                     foreach (Evento evento in eventoLista)
                     {
                         this.tabla.Text += M9_RecursoInterfaz.AbrirTR;
