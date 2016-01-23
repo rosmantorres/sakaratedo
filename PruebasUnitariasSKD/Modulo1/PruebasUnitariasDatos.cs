@@ -7,7 +7,7 @@ using NUnit.Framework;
 using DatosSKD.Modulo1;
 using DatosSKD.Modulo2;
 using PruebasUnitariasSKD.Modulo1;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
 using ExcepcionesSKD;
 
 
