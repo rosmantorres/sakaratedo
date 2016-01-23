@@ -690,7 +690,11 @@ namespace Interfaz_Presentadores.Modulo16
         public void Eliminar_Item(object sender, EventArgs e)
         {            
             try
-            {
+            {   //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                System.Reflection.MethodBase.GetCurrentMethod().Name);
+                
                 //Persona que eventualmente la buscaremos por el session                
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id =int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
@@ -716,6 +720,11 @@ namespace Interfaz_Presentadores.Modulo16
                 
                     //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
                     Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    //Ejecuto el método eliminar carrito en el Comandoeliminartem
                     respuesta = EliminarCarrito.Ejecutar();
                 }
 
@@ -724,15 +733,17 @@ namespace Interfaz_Presentadores.Modulo16
                 {
                     //Decimos que se trata de un evento
                     TipoObjeto = 3;
-
                     FabricaEntidades fabrica = new FabricaEntidades();
-
                     //Pasamos el ID que vino del boton                
                     Entidad objeto = (Evento)fabrica.ObtenerEvento();
                     objeto.Id = int.Parse(datos[1]);
                 
                     //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
                     Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    //Ejecuto el método eliminar carrito en el Comandoeliminartem
                     respuesta = EliminarCarrito.Ejecutar();
                 }
 
@@ -748,6 +759,11 @@ namespace Interfaz_Presentadores.Modulo16
                 
                     //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
                     Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    //Ejecuto el método eliminar carrito en el Comandoeliminartem
                     respuesta = EliminarCarrito.Ejecutar();
                 }
 
@@ -760,8 +776,8 @@ namespace Interfaz_Presentadores.Modulo16
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ParseoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO,
-                    M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO, false);
+                                 
             }
             catch (CarritoConPagoException ex)
             {
@@ -771,29 +787,31 @@ namespace Interfaz_Presentadores.Modulo16
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ParseoFormatoInvalidoException(M16_Recursointerfaz.CODIGO_EXCEPCION_FORMATO_INVALIDO,
-                    M16_Recursointerfaz.MENSAJE_EXCEPCION_FORMATO_INVALIDO, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.CODIGO_EXCEPCION_FORMATO_INVALIDO, false);
+                                 
             }
             catch (OverflowException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ParseoEnSobrecargaException(M16_Recursointerfaz.CODIGO_EXCEPCION_SOBRECARGA,
-                    M16_Recursointerfaz.MENSAJE_EXCEPCION_SOBRECARGA, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.CODIGO_EXCEPCION_SOBRECARGA, false);
+                  
             }
             catch (LoggerException ex)
             {
+
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
+                
             }
             catch (ParseoVacioException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK, false);
+           }
             catch (PersonaNoValidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK, false);
             }
             catch (ParseoFormatoInvalidoException ex)
             {
@@ -808,24 +826,24 @@ namespace Interfaz_Presentadores.Modulo16
             catch (ParametroInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK, false);
             }
             catch (ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK, false);
             }
             catch (ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK, false);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionSKDConexionBD(M16_Recursointerfaz.CODIGO_EXCEPCION_GENERICO,
-                    M16_Recursointerfaz.MENSAJE_EXCEPCION_GENERICO, ex);
-            }   
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK, false);
+            }
+           
              
         }
         #endregion
