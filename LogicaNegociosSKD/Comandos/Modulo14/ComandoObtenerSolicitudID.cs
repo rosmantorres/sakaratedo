@@ -22,11 +22,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)FabricaDAOSqlServer.ObtenerDAOSolicitud();
             DominioSKD.Entidades.Modulo14.SolicitudP solicitud =
-                (DominioSKD.Entidades.Modulo14.SolicitudP)fabricaEntidad.ObtenerSolicitudP(); 
+                (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP(); 
             try
             {
                 solicitud.ID = idSolicitud;

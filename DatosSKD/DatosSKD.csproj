@@ -77,6 +77,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo15\DaoImplemento.cs" />
     <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,7 +86,6 @@
     <Compile Include="DAO\Modulo16\DaoCarrito.cs" />
     <Compile Include="DAO\Modulo16\DaoCompra.cs" />
     <Compile Include="DAO\Modulo16\DaoEvento.cs" />
-    <Compile Include="DAO\Modulo16\DaoImplemento.cs" />
     <Compile Include="DAO\Modulo16\DaoMensualidad.cs" />
     <Compile Include="DAO\Modulo16\RecursosBDModulo16.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +95,7 @@
     <Compile Include="DAO\Modulo9\DaoEvento.cs" />
     <Compile Include="DAO\Modulo9\RecursosDaoEvento.Designer.cs" />
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
+    <Compile Include="InterfazDAO\Modulo15\IDaoImplemento.cs" />
     <Compile Include="InterfazDAO\Modulo10\IDaoAsistencia.cs" />
     <Compile Include="InterfazDAO\Modulo11\IDaoResultadoAscenso.cs" />
     <Compile Include="InterfazDAO\Modulo11\IDaoResultadoKata.cs" />
@@ -102,7 +103,6 @@
     <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoCompra.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoEvento.cs" />
-    <Compile Include="InterfazDAO\Modulo16\IdaoImplemento.cs" />
     <Compile Include="InterfazDAO\Modulo16\IdaoMensualidad.cs" />
     <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
     <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
@@ -364,7 +364,6 @@
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo15\" />
     <Folder Include="DAO\Modulo1\" />
     <Folder Include="DAO\Modulo2\" />
     <Folder Include="DAO\Modulo4\" />
@@ -372,7 +371,6 @@
     <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo15\" />
     <Folder Include="InterfazDAO\Modulo1\" />
     <Folder Include="InterfazDAO\Modulo2\" />
     <Folder Include="InterfazDAO\Modulo4\" />

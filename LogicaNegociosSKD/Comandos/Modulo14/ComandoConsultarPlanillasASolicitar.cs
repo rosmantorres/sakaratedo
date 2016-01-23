@@ -15,10 +15,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
     {
         public override List<Entidad> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            
             try
             {
-                DaoSolicitud daoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+                DaoSolicitud daoSolicitud = (DaoSolicitud)FabricaDAOSqlServer.ObtenerDAOSolicitud();
                 return daoSolicitud.ConsultarPlanillasASolicitarBD();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

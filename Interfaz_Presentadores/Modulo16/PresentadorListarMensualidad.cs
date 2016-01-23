@@ -51,8 +51,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar la matricula
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarMensualidades = fabrica.CrearComandoConsultarTodasMensualidades();
+                Comando<Entidad> comandoListarMensualidades = FabricaComandos.CrearComandoConsultarTodasMensualidades();
 
                 // casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -143,45 +142,55 @@ namespace Interfaz_Presentadores.Modulo16
 
             }
             #region Catches
-            catch (PersonaNoValidaException e)
+            catch (PersonaNoValidaException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK_MATRICULA, false);
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK_MATRICULA, false);
 
             }
-            catch (LoggerException e)
+            catch (ArgumentNullException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK_MATRICULA, false);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK_MATRICULA, false);
 
             }
-            catch (ArgumentNullException e)
+            catch (OverflowException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK_MATRICULA, false);
 
             }
-            catch (FormatException e)
+            catch (ParametroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK_MATRICULA, false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK_MATRICULA, false);
 
             }
-            catch (OverflowException e)
+            catch (ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK_MATRICULA, false);
 
             }
-            catch (ParametroInvalidoException e)
+            catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
-            }
-            catch (ExceptionSKD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
-            }
-            catch (Exception e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK_MATRICULA, false);
             }
 
             #endregion
@@ -225,42 +234,52 @@ namespace Interfaz_Presentadores.Modulo16
             catch (PersonaNoValidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK_MATRICULA, false);
             }
             catch (LoggerException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK_MATRICULA, false);
 
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK_MATRICULA, false);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK_MATRICULA, false);
 
             }
             catch (OverflowException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK_MATRICULA, false);
 
             }
             catch (ParametroInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK_MATRICULA, false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK_MATRICULA, false);
 
             }
             catch (ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK_MATRICULA, false);
 
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK_MATRICULA, false);
             }
 
             #endregion
@@ -272,8 +291,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
         public Matricula DetalleMatricula(Entidad matricula)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            Comando<Entidad> DetalleMatricula = fabrica.CrearComandoDetallarMatricula(matricula);
+            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
             Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
             return laMatricula;
         }
@@ -297,7 +315,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -305,16 +323,15 @@ namespace Interfaz_Presentadores.Modulo16
                 String[] datos = aux.ID.Split('-');
 
                 //Creo la mensualidad asignandole su ID                
-                Matricula matricula = (Matricula)fabrica.ObtenerMatricula();
+                Matricula matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
                 matricula.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar
                 bool respuesta = false;                
-
+                
                 /*Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente,
                 la cantidad siempre sera 1*/
-                FabricaComandos fabricaComando = new FabricaComandos();
-                Comando<bool> comando = fabricaComando.CrearComandoAgregarItem(persona, matricula, 3, 1);
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, matricula, 3, 1);
                 respuesta = comando.Ejecutar();
 
                  //Escribo en el logger la salida a este metodo

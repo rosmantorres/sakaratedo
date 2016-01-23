@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
-using DominioSKD;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
@@ -73,8 +72,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el DAO de Evento
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IdaoEvento daoevento = fabrica.ObtenerDaoDetalleEvento();
+                IdaoEvento daoevento = FabricaDAOSqlServer.ObtenerDaoDetalleEvento();
 
                 //Casteamos
                 Evento eve = (Evento)this.evento;
@@ -88,6 +86,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             }
 
             #region catches
+
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);

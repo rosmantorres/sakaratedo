@@ -51,8 +51,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Instancio el comando para listar el evento
-                FabricaComandos fabrica = new FabricaComandos();
-                Comando<Entidad> comandoListarEventos = fabrica.CrearComandoConsultarTodosEventos();
+                Comando<Entidad> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
 
                 // Casteamos el parametro
                 PersonaM1 param = new PersonaM1();
@@ -150,45 +149,55 @@ namespace Interfaz_Presentadores.Modulo16
 
             }
             #region Catches
-            catch (PersonaNoValidaException e)
+            catch (PersonaNoValidaException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK_EVENTO, false);
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK_EVENTO, false);
 
             }
-            catch (LoggerException e)
+            catch (ArgumentNullException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK_EVENTO, false);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK_EVENTO, false);
 
             }
-            catch (ArgumentNullException e)
+            catch (OverflowException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK_EVENTO, false);
 
             }
-            catch (FormatException e)
+            catch (ParametroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK_EVENTO, false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK_EVENTO, false);
 
             }
-            catch (OverflowException e)
+            catch (ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK_EVENTO, false);
 
             }
-            catch (ParametroInvalidoException e)
+            catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
-            }
-            catch (ExceptionSKD e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
-            }
-            catch (Exception e)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK_EVENTO, false);
             }
 
             #endregion
@@ -233,42 +242,52 @@ namespace Interfaz_Presentadores.Modulo16
             catch (PersonaNoValidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK_EVENTO, false);
             }
             catch (LoggerException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK_EVENTO, false);
 
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK_EVENTO, false);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK_EVENTO, false);
 
             }
             catch (OverflowException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK_EVENTO, false);
 
             }
             catch (ParametroInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK_EVENTO, false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK_EVENTO, false);
 
             }
             catch (ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK_EVENTO, false);
 
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK_EVENTO, false);
             }
 
             #endregion
@@ -281,8 +300,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-                    FabricaComandos fabrica = new FabricaComandos();
-                    Comando<Entidad> DetalleEvento = fabrica.CrearComandoDetallarEvento(evento);
+                    Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
                     Evento elEvento = (Evento)DetalleEvento.Ejecutar();
                     return elEvento;       
             
@@ -307,7 +325,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
-                Entidad persona = (Persona)fabrica.ObtenerPersona();
+                Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
@@ -343,9 +361,8 @@ namespace Interfaz_Presentadores.Modulo16
                     }
                 }
 
-                //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente
-                FabricaComandos fabricaComando = new FabricaComandos();
-                Comando<bool> comando = fabricaComando.CrearComandoAgregarItem(persona, evento, 2, cantidad);
+                //Obtengo el comando que Agregara el Item y ejecuto la accion correspondiente         
+                Comando<bool> comando = FabricaComandos.CrearComandoAgregarItem(persona, evento, 2, cantidad);
                 respuesta = comando.Ejecutar();
 
                  //Escribo en el logger la salida a este metodo

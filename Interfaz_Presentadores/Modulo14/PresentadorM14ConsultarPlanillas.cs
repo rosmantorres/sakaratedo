@@ -74,12 +74,11 @@ namespace Interfaz_Presentadores.Modulo14
 
         public List<Entidad> LlenarTabla()
         {
-            FabricaComandos fabrica = new FabricaComandos();
 
             try
             {
                 ComandoConsultarPlanillas command = (ComandoConsultarPlanillas)
-                    fabrica.ObtenerComandConsultarPlanillas();
+                    FabricaComandos.ObtenerComandConsultarPlanillas();
                 return command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

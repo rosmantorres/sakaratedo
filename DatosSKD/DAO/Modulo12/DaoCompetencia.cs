@@ -695,7 +695,7 @@ namespace DatosSKD.DAO.Modulo12
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
-                BDConexion laConexion;
+                //BDConexion laConexion;
                 List<Parametro> parametros;
 
                 FabricaEntidades laFabrica = new FabricaEntidades();
@@ -705,18 +705,18 @@ namespace DatosSKD.DAO.Modulo12
 
                 try
                 {
-                    laConexion = new BDConexion();
+                    //laConexion = new BDConexion();
                     parametros = new List<Parametro>();
 
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo12.ConsultarOrganizaciones, parametros);
 
                     foreach (DataRow row in dt.Rows)
                     {
                         laOrganizacion = (Organizacion)laFabrica.ObtenerOrganizacion();
 
-                        laOrganizacion.Id_organizacion = int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString());
+                        laOrganizacion.Id = int.Parse(row[RecursosDAOModulo12.AliasIdOrganizacion].ToString());
                         laOrganizacion.Nombre = row[RecursosDAOModulo12.AliasNombreOrganizacion].ToString();
 
                         laListaOrganizaciones.Add(laOrganizacion);
@@ -760,7 +760,7 @@ namespace DatosSKD.DAO.Modulo12
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                BDConexion laConexion;
+                //BDConexion laConexion;
                 List<Entidad> laListaCintas = new List<Entidad>();
                 FabricaEntidades laFabrica = new FabricaEntidades();
                 List<Parametro> parametros;
@@ -768,18 +768,18 @@ namespace DatosSKD.DAO.Modulo12
 
                 try
                 {
-                    laConexion = new BDConexion();
+                    //laConexion = new BDConexion();
                     parametros = new List<Parametro>();
 
 
-                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo12.ConsultarCintas, parametros);
 
                     foreach (DataRow row in dt.Rows)
                     {
                         laCinta = (Cinta)laFabrica.ObtenerCinta();
 
-                        laCinta.Id_cinta = int.Parse(row[RecursosDAOModulo12.AliasIdCinta].ToString());
+                        laCinta.Id = int.Parse(row[RecursosDAOModulo12.AliasIdCinta].ToString());
                         laCinta.Color_nombre = row[RecursosDAOModulo12.AliasNombreCinta].ToString();
                         laCinta.Orden = int.Parse(row[RecursosDAOModulo12.AliasOrdenCinta].ToString());
 

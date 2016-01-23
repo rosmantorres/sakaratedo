@@ -15,10 +15,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
     {
         public override List<Entidad> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            
             try
             {
-                DaoPlanilla dao = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                DaoPlanilla dao = (DaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 List<Entidad> listaplanilla = new List<Entidad>();
                 listaplanilla = dao.ConsultarPlanillasCreadas();
                 dao.LimpiarSQLConnection();

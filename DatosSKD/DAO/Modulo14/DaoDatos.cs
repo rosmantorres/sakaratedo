@@ -31,8 +31,7 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Persona persona = (Persona)fabricaEntidad.ObtenerPersona();
+            Persona persona = (Persona)FabricaEntidades.ObtenerPersona();
             try
             {
 
@@ -135,8 +134,7 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Dojo dojo = (Dojo)fabricaEntidad.ObtenerDojo();
+            Dojo dojo = (Dojo)FabricaEntidades.ObtenerDojo();
             try
             {
 
@@ -656,7 +654,7 @@ namespace DatosSKD.DAO.Modulo14
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
-                (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)fabricaEntidad.ObtenerSolicitudPlanilla();
+                (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)FabricaEntidades.ObtenerSolicitudPlanilla();
             try
             {
 
