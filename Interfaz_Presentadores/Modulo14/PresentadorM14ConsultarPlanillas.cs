@@ -77,8 +77,7 @@ namespace Interfaz_Presentadores.Modulo14
 
             try
             {
-                ComandoConsultarPlanillas command = (ComandoConsultarPlanillas)
-                    FabricaComandos.ObtenerComandConsultarPlanillas();
+                Comando<List<Entidad>> command =FabricaComandos.ObtenerComandConsultarPlanillas();
                 return command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
