@@ -53,6 +53,7 @@
       <DependentUpon>RecursosPU_Mod10.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo11\M11_PruebasBDResultado.cs" />
+    <Compile Include="Modulo11\M11_PruebasComandoResultadoCompetencia.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoAscenso.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoKata.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoKumite.cs" />

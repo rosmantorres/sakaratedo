@@ -128,6 +128,44 @@ namespace PruebasUnitariasSKD.Modulo11
 
         }
 
+        [Test]
+
+        public void PruebaAgregarResultadoAscenso()
+        {
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+
+            bool e;
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoAscenso();
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Aprobado = "S";
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Id = 1;
+            listaEntidad.Add(entidad);
+            e = DAO.Agregar(listaEntidad);
+            Assert.IsTrue(e);
+
+        }
+
+        [Test]
+
+        public void PruebaModificarResultadoAscenso()
+        {
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+
+            bool e;
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoAscenso();
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Aprobado = "N";
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Id = 32;
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Evento.Id = 3;
+            listaEntidad.Add(entidad);
+            e = DAO.Modificar(listaEntidad);
+            Assert.IsTrue(e);
+
+        }
 
         [Test]
 

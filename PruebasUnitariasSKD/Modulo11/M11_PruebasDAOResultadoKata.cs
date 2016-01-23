@@ -93,16 +93,15 @@ namespace PruebasUnitariasSKD.Modulo11
 
         [Test]
 
-        public void ListarCategoriaCompetencia()  // FALTA
+        public void ListarCategoriaCompetencia() 
         {
 
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
-            Entidad categoria = fabrica.ObtenerCategoria();
+           
             Entidad competencia = fabrica.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 11;
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
-          //  ((DominioSKD.Entidades.Modulo10.Evento)categoria).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
 
             listaEntidad = DAO.ListaCategoriaCompetencia(competencia);
             Assert.NotNull(listaEntidad);
@@ -111,37 +110,80 @@ namespace PruebasUnitariasSKD.Modulo11
 
         [Test]
 
-        public void ListaAtletasParticipanComKata() //FALTA
+        public void ListaAtletasParticipanComKata()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
             Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 10;
             Entidad categoria = fabrica.ObtenerCategoria();
-           
-            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "2";
-            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
-            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 6;
-
-       
-   
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+          
+            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKata(competencia);
             Assert.NotNull(listaEntidad);
         }
 
 
         [Test]
 
-        public void ListaAtletasParticipanComKataAmbos() //FALTA
+        public void ListaAtletasParticipanComKataAmbos() 
+        {
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
+            Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 10;
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKataAmbos(competencia);
+            Assert.NotNull(listaEntidad);
+        }
+
+        [Test]
+
+        public void AgregarResultadoKata()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
             
-            Entidad entidad = fabrica.ObtenerCompetencia();
-            ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 1;
-            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKataAmbos(entidad);
-            Assert.NotNull(listaEntidad);
+            bool e;
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKata();
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Inscripcion.Id = 4;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado1 = 1;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado2 = 1;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado3 = 1; 
+            listaEntidad.Add(entidad);
+            e = DAO.Agregar(listaEntidad);
+            Assert.IsTrue(e);
+        }
+
+        [Test]
+
+        public void ModificarResultadoKata()
+        {
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            IDaoResultadoKata DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKata();
+
+            bool e;
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKata();
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Inscripcion.Id = 1;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Inscripcion.Competencia.Id = 5;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado1 = 2;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado2 = 3;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado3 = 1;
+
+            listaEntidad.Add(entidad);
+            e = DAO.Modificar(listaEntidad);
+            Assert.IsTrue(e);
         }
         #endregion
     }
