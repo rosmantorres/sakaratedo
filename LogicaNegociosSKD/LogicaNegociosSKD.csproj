@@ -154,6 +154,8 @@
     <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
     <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoAgregarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoAgregarEventoConTipo.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
@@ -357,7 +359,6 @@
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
-    <Folder Include="Comandos\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
