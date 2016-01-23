@@ -14,11 +14,12 @@ namespace templateApp.GUI.Modulo12
 {
     public partial class M12_AgregarCompetencias : System.Web.UI.Page, IContratoAgregarCompetencias
     {
-        private DominioSKD.Competencia laCompetencia = new DominioSKD.Competencia();
-        private LogicaNegociosSKD.Modulo12.LogicaCompetencias laLogica = new LogicaNegociosSKD.Modulo12.LogicaCompetencias();
-        private List<Organizacion> listaOrg = new List<Organizacion>();
-        private List<Cinta> listaCintaDesde = new List<Cinta>();
-        private List<Cinta> listaCintaHasta = new List<Cinta>();
+        //private DominioSKD.Competencia laCompetencia = new DominioSKD.Competencia();
+        //private LogicaNegociosSKD.Modulo12.LogicaCompetencias laLogica = new LogicaNegociosSKD.Modulo12.LogicaCompetencias();
+        //private List<Organizacion> listaOrg = new List<Organizacion>();
+        //private List<Cinta> listaCintaDesde = new List<Cinta>();
+        //private List<Cinta> listaCintaHasta = new List<Cinta>();
+
         private PresentadorAgregarCompetencia presentador;
 
         public M12_AgregarCompetencias()

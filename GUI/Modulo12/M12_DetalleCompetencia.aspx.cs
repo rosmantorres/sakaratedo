@@ -15,8 +15,8 @@ namespace templateApp.GUI.Modulo12
 {
     public partial class M12_DetalleCompetencia : System.Web.UI.Page, IContratoDetalleCompetencia
     {
-        Competencia laCompetencia = new Competencia();
-        LogicaCompetencias laLogica = new LogicaCompetencias();
+        //Competencia laCompetencia = new Competencia();
+        //LogicaCompetencias laLogica = new LogicaCompetencias();
         public string laLatitud;
         public string laLongitud;
 
