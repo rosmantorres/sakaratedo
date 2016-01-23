@@ -1,0 +1,14 @@
+﻿Revert "Revert "Revert""
+
+This reverts commit 3bb676d5a7da6474758f7b5682df1586eb60b4b7.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch M9auxiliar
+# Your branch is up-to-date with 'origin/M9auxiliar'.
+#
+# Changes to be committed:
+#	modified:   DatosSKD/DAO/Modulo9/DaoEvento.cs
+#	new file:   dgc2mkdb.32h.txt
+#
+

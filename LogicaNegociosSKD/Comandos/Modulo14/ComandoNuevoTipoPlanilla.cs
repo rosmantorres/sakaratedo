@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
@@ -21,11 +22,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Boolean Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             Boolean result = true;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 result = BaseDeDatoPlanilla.RegistrarTipoPlanilla(this.nombreTipo);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

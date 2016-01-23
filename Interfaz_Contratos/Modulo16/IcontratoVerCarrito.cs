@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace Interfaz_Contratos.Modulo16
 {
@@ -57,6 +58,20 @@ namespace Interfaz_Contratos.Modulo16
         /// </summary>
         void ejecutarScriptMensualidad();
 
-        //void Modificar_Carrito(object sender, EventArgs e);
+        /// <summary>
+        /// Literal que permite imprimir el precio total de la compra
+        /// </summary>
+        Literal PrecioFinal { get; set; }
+
+        /// <summary>
+        /// Input que recibe el dato del tipo de pago con el que se realiza la transaccion
+        /// </summary>
+        HtmlInputText Datospago {get; set; }
+
+        /// <summary>
+        /// Input que recibe el monto del pago con el que se realiza la transaccion
+        /// </summary>
+        HtmlInputText MontoPago { get; set; }
+        
     }
 }

@@ -40,14 +40,61 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoDojoId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoEliminarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoImplementoXId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoModificarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoUsuarioDojo.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoCompetenciasPorFecha.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciasXId.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciaXIdDetalle.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanilla.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanillaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarCompetenciasAsistidas.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoConsultarEventoDetalle.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasEnCategoriaYAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKataAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumiteAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaEspecialidadesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosExamenAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosCompetenciaPasado.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosEventosPasados.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
-    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosEventos.cs" />
-    <Compile Include="Comandos\Modulo16\ComandoConsultarTodosProductos.cs" />
-    <Compile Include="Comandos\Modulo16\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarTodosEventos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosProductos.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarFactura.cs" />
     <Compile Include="Comandos\Modulo16\ComandoDetallarMatricula.cs" />
-    <Compile Include="Comandos\Modulo16\ComandoDetallarProducto.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoDetallarProducto.cs" />
     <Compile Include="Comandos\Modulo16\ComandoeliminarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoModificarCarrito.cs" />
     <Compile Include="Comandos\Modulo16\Comandoregistrarpago.cs" />
@@ -127,6 +174,18 @@
     <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
     <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoAgregarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoAgregarEventoConTipo.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarListaEventos.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoModificarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoModificarEventoConTipo.cs" />
+    <Compile Include="Comandos\Modulo9\Logica2daEntrega.cs" />
+    <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo9.resx</DependentUpon>
+    </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
@@ -264,6 +323,10 @@
       <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
+    <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo9.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
@@ -331,8 +394,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
-    <Folder Include="Comandos\Modulo10\" />
-    <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo15\" />
     <Folder Include="Comandos\Modulo16\" />
@@ -342,8 +403,6 @@
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
-    <Folder Include="Comandos\Modulo9\" />
-    <Folder Include="Comandos\Modulo16\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

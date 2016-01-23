@@ -566,4 +566,8 @@
   <data name="ProcedurePersonaCompetencia" xml:space="preserve">
     <value>M14_ConsultarPersonaCompetencia</value>
   </data>
+  <data name="ParametroIdDiseno" xml:space="preserve">
+    <value>@DISEÑO_dis_id</value>
+    <comment>parametro que devuelve el id de diseno </comment>
+  </data>
 </root>

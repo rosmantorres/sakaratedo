@@ -17,6 +17,7 @@ namespace DominioSKD.Entidades.Modulo14
         private int id;
         private String nombreEvento;
         private int idInscripcion;
+        private int idDiseno;
         #endregion
 
         #region metodos
@@ -75,6 +76,7 @@ namespace DominioSKD.Entidades.Modulo14
             this.motivo = motivo;
             this.idInscripcion = idInscripcion;
         }
+        
         #endregion
 
         #region gets y sets
@@ -117,6 +119,12 @@ namespace DominioSKD.Entidades.Modulo14
             get { return idInscripcion; }
             set { idInscripcion = value; }
         }
+        public int IDDiseno
+        {
+            get { return idDiseno; }
+            set { idDiseno = value; }
+        }
+     
         #endregion
 
 

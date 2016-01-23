@@ -368,6 +368,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_12.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_08.
         /// </summary>
         internal static string CODIGO_EXCEPCION_SOBRECARGA {
@@ -476,6 +485,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_CARRITO_PAGO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPCION_CARRITO_PAGO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=3.
         /// </summary>
         internal static string EXCEPTION_CONEXIONBD_LINK {
@@ -485,11 +503,83 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=3.
+        /// </summary>
+        internal static string EXCEPTION_CONEXIONBD_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_CONEXIONBD_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=3.
+        /// </summary>
+        internal static string EXCEPTION_CONEXIONBD_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_CONEXIONBD_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=3.
+        /// </summary>
+        internal static string EXCEPTION_CONEXIONBD_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_CONEXIONBD_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=3.
+        /// </summary>
+        internal static string EXCEPTION_CONEXIONBD_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_CONEXIONBD_LINK_PRODUCTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=6.
         /// </summary>
         internal static string EXCEPTION_FORMATO_LINK {
             get {
                 return ResourceManager.GetString("EXCEPTION_FORMATO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=6.
+        /// </summary>
+        internal static string EXCEPTION_FORMATO_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_FORMATO_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=6.
+        /// </summary>
+        internal static string EXCEPTION_FORMATO_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_FORMATO_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=6.
+        /// </summary>
+        internal static string EXCEPTION_FORMATO_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_FORMATO_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=6.
+        /// </summary>
+        internal static string EXCEPTION_FORMATO_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_FORMATO_LINK_PRODUCTO", resourceCulture);
             }
         }
         
@@ -512,11 +602,83 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=1.
+        /// </summary>
+        internal static string EXCEPTION_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=1.
+        /// </summary>
+        internal static string EXCEPTION_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=1.
+        /// </summary>
+        internal static string EXCEPTION_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=1.
+        /// </summary>
+        internal static string EXCEPTION_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LINK_PRODUCTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=8.
         /// </summary>
         internal static string EXCEPTION_LOGGER_LINK {
             get {
                 return ResourceManager.GetString("EXCEPTION_LOGGER_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=8.
+        /// </summary>
+        internal static string EXCEPTION_LOGGER_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LOGGER_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=8.
+        /// </summary>
+        internal static string EXCEPTION_LOGGER_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LOGGER_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=8.
+        /// </summary>
+        internal static string EXCEPTION_LOGGER_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LOGGER_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=8.
+        /// </summary>
+        internal static string EXCEPTION_LOGGER_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_LOGGER_LINK_PRODUCTO", resourceCulture);
             }
         }
         
@@ -539,11 +701,83 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=4.
+        /// </summary>
+        internal static string EXCEPTION_PARAMETRO_INVALIDO_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARAMETRO_INVALIDO_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=4.
+        /// </summary>
+        internal static string EXCEPTION_PARAMETRO_INVALIDO_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARAMETRO_INVALIDO_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=4.
+        /// </summary>
+        internal static string EXCEPTION_PARAMETRO_INVALIDO_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARAMETRO_INVALIDO_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=4.
+        /// </summary>
+        internal static string EXCEPTION_PARAMETRO_INVALIDO_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARAMETRO_INVALIDO_LINK_PRODUCTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=7.
         /// </summary>
         internal static string EXCEPTION_PARSEO_VACIO_LINK {
             get {
                 return ResourceManager.GetString("EXCEPTION_PARSEO_VACIO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=7.
+        /// </summary>
+        internal static string EXCEPTION_PARSEO_VACIO_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARSEO_VACIO_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=7.
+        /// </summary>
+        internal static string EXCEPTION_PARSEO_VACIO_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARSEO_VACIO_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=7.
+        /// </summary>
+        internal static string EXCEPTION_PARSEO_VACIO_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARSEO_VACIO_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=7.
+        /// </summary>
+        internal static string EXCEPTION_PARSEO_VACIO_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PARSEO_VACIO_LINK_PRODUCTO", resourceCulture);
             }
         }
         
@@ -557,6 +791,42 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=9.
+        /// </summary>
+        internal static string EXCEPTION_PERSONA_INVALIDA_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PERSONA_INVALIDA_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=9.
+        /// </summary>
+        internal static string EXCEPTION_PERSONA_INVALIDA_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PERSONA_INVALIDA_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=9.
+        /// </summary>
+        internal static string EXCEPTION_PERSONA_INVALIDA_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PERSONA_INVALIDA_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=9.
+        /// </summary>
+        internal static string EXCEPTION_PERSONA_INVALIDA_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_PERSONA_INVALIDA_LINK_PRODUCTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=5.
         /// </summary>
         internal static string EXCEPTION_SOBRECARGA_LINK {
@@ -566,11 +836,83 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=5.
+        /// </summary>
+        internal static string EXCEPTION_SOBRECARGA_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_SOBRECARGA_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=5.
+        /// </summary>
+        internal static string EXCEPTION_SOBRECARGA_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_SOBRECARGA_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=5.
+        /// </summary>
+        internal static string EXCEPTION_SOBRECARGA_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTION_SOBRECARGA_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=5.
+        /// </summary>
+        internal static string EXCEPTION_SOBRECARGA_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTION_SOBRECARGA_LINK_PRODUCTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=2.
         /// </summary>
         internal static string EXCEPTIONSKD_LINK {
             get {
                 return ResourceManager.GetString("EXCEPTIONSKD_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=2.
+        /// </summary>
+        internal static string EXCEPTIONSKD_LINK_EVENTO {
+            get {
+                return ResourceManager.GetString("EXCEPTIONSKD_LINK_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=2.
+        /// </summary>
+        internal static string EXCEPTIONSKD_LINK_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPTIONSKD_LINK_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=2.
+        /// </summary>
+        internal static string EXCEPTIONSKD_LINK_MATRICULA {
+            get {
+                return ResourceManager.GetString("EXCEPTIONSKD_LINK_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=2.
+        /// </summary>
+        internal static string EXCEPTIONSKD_LINK_PRODUCTO {
+            get {
+                return ResourceManager.GetString("EXCEPTIONSKD_LINK_PRODUCTO", resourceCulture);
             }
         }
         
@@ -683,6 +1025,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Se ha producido un error al elegir un tipo de pago no valido.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error al parsear un atributo sobrecargado.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_SOBRECARGA {
@@ -760,6 +1111,33 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string strIdEvento {
             get {
                 return ResourceManager.GetString("strIdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deposito.
+        /// </summary>
+        internal static string TIPO_PAGO_DEPOSITO {
+            get {
+                return ResourceManager.GetString("TIPO_PAGO_DEPOSITO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarjeta.
+        /// </summary>
+        internal static string TIPO_PAGO_TARJETA {
+            get {
+                return ResourceManager.GetString("TIPO_PAGO_TARJETA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transferencia.
+        /// </summary>
+        internal static string TIPO_PAGO_TRANSFERENCIA {
+            get {
+                return ResourceManager.GetString("TIPO_PAGO_TRANSFERENCIA", resourceCulture);
             }
         }
     }

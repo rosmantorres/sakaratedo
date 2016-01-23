@@ -33,6 +33,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> pruebaComandoEvento1;
         private Comando<bool> pruebaComandoMatricula1;
         private Comando<Entidad> eventos;
+        private DominioSKD.Entidad evento;
         private Entidad persona;
         private Entidad persona2;
         private Entidad persona3;
@@ -63,28 +64,27 @@ namespace PruebasUnitariasSKD.Modulo16
 
 
             //Eventos
-            this.eventos = fabricacomandos.CrearComandoConsultarTodosEventos();
+            this.eventos = FabricaComandos.CrearComandoConsultarTodosEventos();
             this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
 
             //Dos matriculas distintas
             this.matricula = new Matricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
-
-            FabricaComandos fabrica = new FabricaComandos();
+            
             //Iniciamos los atributos para la prueba de vacio
-            this.PruebaComandoVacio = fabrica.CrearComandoeliminarItem();
-            this.PruebaComandoVacio2 = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona);
-            this.pruebaComandoVacio3 = (ComandoeliminarItem)fabrica.CrearComandoeliminarItem();
-            this.pruebaComandoVacio4 = (ComandoeliminarItem)fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            this.PruebaComandoVacio = FabricaComandos.CrearComandoeliminarItem();
+            this.PruebaComandoVacio2 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            this.pruebaComandoVacio3 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem();
+            this.pruebaComandoVacio4 = (ComandoeliminarItem)FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
 
 
             //valor  para Eliminar un Implemento
-            this.pruebaComandoImplemento1 = fabrica.CrearComandoeliminarItem(1, this.implemento, this.persona);
+            this.pruebaComandoImplemento1 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
             //valor para Eliminar un Evento
-            this.pruebaComandoEvento1 = fabrica.CrearComandoeliminarItem(2, this.listaEventos.ListaEventos[0], this.persona2);
+            this.pruebaComandoEvento1 = FabricaComandos.CrearComandoeliminarItem(2, this.listaEventos.ListaEventos[0], this.persona2);
             //valor  para Eliminar una Matricula
-            this.pruebaComandoMatricula1 = fabrica.CrearComandoeliminarItem(3, this.matricula, this.persona3);
+            this.pruebaComandoMatricula1 = FabricaComandos.CrearComandoeliminarItem(3, this.matricula, this.persona3);
 
 
         }
@@ -108,6 +108,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaEliminarImplemento()
         {
+            // valor  para Agregar un Implemento
+            this.pruebaComandoImplemento1 = FabricaComandos.CrearComandoAgregarItem
+                (this.persona, this.implemento, 1, 1);
+
             //Elimino un implemento al carrito de una persona con id 11
             Assert.IsTrue(this.pruebaComandoImplemento1.Ejecutar());
         }
@@ -118,6 +122,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaAgregarEvento()
         {
+
+            // valor  para Agregar un Evento
+            this.pruebaComandoEvento1 = FabricaComandos.CrearComandoAgregarItem
+                (this.persona2, this.evento, 2, 1);
             //Elimino un Evento al carrito de una persona con id 12
             Assert.IsTrue(this.pruebaComandoEvento1.Ejecutar());
         }
@@ -128,6 +136,10 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void PruebaEliminarMatricula()
         {
+            // valor  para Agregar una Matricula
+            this.pruebaComandoMatricula1 = FabricaComandos.CrearComandoAgregarItem
+                (this.persona3, this.matricula, 3, 1);
+
             //Elimino una matricula al carrito de una persona con id 13
             Assert.IsTrue(this.pruebaComandoMatricula1.Ejecutar());
         }
@@ -146,6 +158,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaComandoImplemento1 = null;
             this.pruebaComandoEvento1 = null;
             this.pruebaComandoMatricula1 = null;
+            this.evento = null;
             this.eventos = null;
             this.persona = null;
             this.persona2 = null;
