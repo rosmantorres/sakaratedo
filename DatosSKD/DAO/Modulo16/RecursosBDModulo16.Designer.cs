@@ -538,6 +538,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @datopago.
+        /// </summary>
+        internal static string PARAMETRO_DATO_PAGO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_DATO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to impDescripcion.
         /// </summary>
         internal static string PARAMETRO_DESCRIPCION {
@@ -732,6 +741,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string PARAMETRO_MES_DEUDOR_MATRICULA {
             get {
                 return ResourceManager.GetString("PARAMETRO_MES_DEUDOR_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @monto.
+        /// </summary>
+        internal static string PARAMETRO_MONTO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_MONTO", resourceCulture);
             }
         }
         

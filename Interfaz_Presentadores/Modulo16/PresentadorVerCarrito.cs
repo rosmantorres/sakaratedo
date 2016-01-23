@@ -688,73 +688,74 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="sender">El objeto que dispara la accion</param>
         /// <param name="e">El evento que es ejecutado</param>
         public void Eliminar_Item(object sender, EventArgs e)
-        {
-            
+        {            
             try
             {
-
-            //Persona que eventualmente la buscaremos por el session
-                FabricaEntidades fabrica = new FabricaEntidades();
+                //Persona que eventualmente la buscaremos por el session                
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
-            persona.Id = int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                persona.Id =int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
-            //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
-            Button aux = (Button)sender;
-            String[] datos = aux.ID.Split('-');
-            //Respuesta a obtener del comando, tipo de objeto
-            bool respuesta = false;
-            int TipoObjeto = 0;
+                //Transformo el boton y obtengo la informacion de que item quiero agregar y su ID
+                Button aux = (Button)sender;
+                String[] datos = aux.ID.Split('-');
 
-            //Si se trata de un implemento, me voy a la tabla correspondiente
-            if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
-            {
-                //Decimos que se trata de un implemento
-                TipoObjeto = 1;
+                //Respuesta a obtener del comando, tipo de objeto
+                bool respuesta = false;
+                int TipoObjeto = 0;
 
-                //Pasamos el ID que vino del boton
-                Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
+                //Si se trata de un implemento, me voy a la tabla correspondiente
+                if (datos[0] == M16_Recursointerfaz.IMPLEMENTO_ELIMINAR2)
+                {
+                    //Decimos que se trata de un implemento
+                    TipoObjeto = 1;
+
+                    //Pasamos el ID que vino del boton
+                    Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
 				
-                objeto.Id = int.Parse(datos[1]);
+                    objeto.Id = int.Parse(datos[1]);
                 
-                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
-            //Si es un Evento, me voy a la tabla correspondiente
-            else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
-            {
-                //Decimos que se trata de un evento
-                TipoObjeto = 3;
+                    //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
 
-                //Pasamos el ID que vino del boton                
-                Evento objeto = (Evento)fabrica.ObtenerEvento();
-                objeto.Id = int.Parse(datos[1]);
+                //Si es un Evento, me voy a la tabla correspondiente
+                else if (datos[0] == M16_Recursointerfaz.EVENTO_ELIMINAR2)
+                {
+                    //Decimos que se trata de un evento
+                    TipoObjeto = 3;
+
+                    FabricaEntidades fabrica = new FabricaEntidades();
+
+                    //Pasamos el ID que vino del boton                
+                    Entidad objeto = (Evento)fabrica.ObtenerEvento();
+                    objeto.Id = int.Parse(datos[1]);
                 
-                //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
+                    //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
 
-            //Si se trata de una matricula, me voy a la tabla correspondiente
-            else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
-            {
-                //Decimos que se trata de un implemento
-                TipoObjeto = 2;
+                //Si se trata de una matricula, me voy a la tabla correspondiente
+                else if (datos[0] == M16_Recursointerfaz.MATRICULA_ELIMINAR2)
+                {
+                    //Decimos que se trata de una matricula
+                    TipoObjeto = 2;
 
-                //Pasamos el ID que vino del boton                
-                Entidad objeto = (Matricula)FabricaEntidades.ObtenerMatricula();
-                objeto.Id = int.Parse(datos[1]);
+                    //Pasamos el ID que vino del boton                
+                    Entidad objeto = (Matricula)FabricaEntidades.ObtenerMatricula();
+                    objeto.Id = int.Parse(datos[1]);
                 
-                //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
-                Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
-                respuesta = EliminarCarrito.Ejecutar();
-            }
+                    //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
+                    Comando<bool> EliminarCarrito = FabricaComandos.CrearComandoeliminarItem(TipoObjeto, objeto, persona);
+                    respuesta = EliminarCarrito.Ejecutar();
+                }
 
-            //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
-            if (respuesta)
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO);
-            else
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO);
+                //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
+                if (respuesta)
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_EXITO, false);
+                else
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.ELIMINAR_LINK_FALLO, false);
             }
             catch (ArgumentNullException ex)
             {

@@ -358,7 +358,7 @@ namespace Interfaz_Presentadores.Modulo16
                 bool respuesta = false;
                 int cantidad = 0;
 
-                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a modificar
+                //Recorro cada fila para saber a cual me refiero y obtener la cantidad a agregar
                 foreach (TableRow aux2 in this.vista.tablaProductos.Rows)
                 {
                     //Si la fila no es de tipo Header puedo comenzar a buscar
@@ -375,6 +375,9 @@ namespace Interfaz_Presentadores.Modulo16
                             lo obtengo y agarro la cantidad que el usuario desea*/
                             DropDownList lacantidad = aux2.Cells[7].Controls[0] as DropDownList;
                             cantidad = int.Parse(lacantidad.SelectedValue);
+
+                            //Agrego el precio del implemento
+                            implemento.Precio_Implemento = int.Parse(aux2.Cells[4].Text);
                             break;
                         }
                     }

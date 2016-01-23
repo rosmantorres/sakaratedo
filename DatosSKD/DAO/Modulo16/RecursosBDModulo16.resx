@@ -436,4 +436,10 @@
   <data name="MENSAJE_EXCEPCION_CARRITO_PAGO" xml:space="preserve">
     <value>Error, la compra no puede ser alterada ya que se ha hecho un pago de esta</value>
   </data>
+  <data name="PARAMETRO_DATO_PAGO" xml:space="preserve">
+    <value>@datopago</value>
+  </data>
+  <data name="PARAMETRO_MONTO" xml:space="preserve">
+    <value>@monto</value>
+  </data>
 </root>

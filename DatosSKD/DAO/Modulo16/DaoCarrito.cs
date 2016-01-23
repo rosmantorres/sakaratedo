@@ -675,12 +675,12 @@ namespace DatosSKD.DAO.Modulo16
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
-                 //Escribo en el logger la salida a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                        RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                    //Retorno la respuesta
-                    return exito;
+                //Retorno la respuesta
+                return exito;
                
             }
             catch (LoggerException e)
@@ -769,7 +769,7 @@ namespace DatosSKD.DAO.Modulo16
                         SqlDbType.Int, persona.Id.ToString(), false);
                     parametros.Add(parametro);
 
-                    parametro = new Parametro(null,
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_MONTO,
                         SqlDbType.VarChar, pagoCompra.Monto.ToString(), false);
                     parametros.Add(parametro);
 
@@ -777,7 +777,7 @@ namespace DatosSKD.DAO.Modulo16
                         SqlDbType.VarChar, pagoCompra.TipoPago, false);
                     parametros.Add(parametro);
 
-                    parametro = new Parametro(null,
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_DATO_PAGO,
                         SqlDbType.VarChar, pagoCompra.DatoPago[0], false);
                     parametros.Add(parametro);
 

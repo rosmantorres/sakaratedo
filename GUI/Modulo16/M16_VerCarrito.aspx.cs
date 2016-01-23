@@ -359,9 +359,9 @@ namespace templateApp.GUI.Modulo16
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
-                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_EXITOSO);
+                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_EXITOSO, false);
                 else
-                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_FALLIDO);
+                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_FALLIDO, false);
             }            
             catch (LoggerException e)
             {
