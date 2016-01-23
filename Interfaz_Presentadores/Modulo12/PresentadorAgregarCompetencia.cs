@@ -1,11 +1,14 @@
 ﻿using DominioSKD;
+using DominioSKD.Fabrica;
 using Interfaz_Contratos.Modulo12;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Fabrica;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -100,6 +103,184 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
                 vista.alerta = M12_RecursoInterfazPresentador.alertaHtml 
                     + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+            }
+        
+        }
+
+        protected DateTime convertirFecha(string fechaE)
+        {
+            string diaFecha;
+            string mesFecha;
+            string anoFecha;
+            string fechaCompleta;
+            string fechaCortada = fechaE.Substring(0, 24);
+            string formato = "ddd MMM dd yyyy hh:mm:ss";
+            DateTime fechaEntrada = DateTime.ParseExact(fechaCortada, formato, CultureInfo.InvariantCulture);
+
+            diaFecha = fechaEntrada.Day.ToString();
+            if (int.Parse(diaFecha) < 10)
+                diaFecha = "0" + diaFecha.ToString();
+
+            mesFecha = fechaEntrada.Month.ToString();
+            if (int.Parse(mesFecha) < 10)
+                mesFecha = "0" + mesFecha.ToString();
+
+            anoFecha = fechaEntrada.Year.ToString();
+            fechaCompleta = mesFecha + "/" + diaFecha + "/" + anoFecha;
+
+            return DateTime.ParseExact(fechaCompleta, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+        }
+
+        public void AgregarCompetencia()
+        {
+            List<String> laListaDeInputs = new List<String>();
+            List<String> expresionesRegInput = new List<String>();
+
+            laListaDeInputs.Add(vista.nombreComp);
+            if (vista.tipoCompKataBool == true)
+                laListaDeInputs.Add(vista.tipoCompKata);
+            if (vista.tipoCompKumiteBool == true)
+                laListaDeInputs.Add(vista.tipoCompKumite);
+            if (vista.tipoCompAmbosBool == true)
+                laListaDeInputs.Add(vista.tipoCompAmbos);
+            if (vista.orgCompBool == true)
+                laListaDeInputs.Add(M12_RecursoInterfazPresentador.orgTodas);
+            if (vista.orgCompBool == false)
+                laListaDeInputs.Add(vista.organizacionComp.SelectedItem.Text);
+
+            laListaDeInputs.Add(vista.latitudComp);
+            laListaDeInputs.Add(vista.longitudComp);
+            //laListaDeInputs.Add(txtLAT.Value);
+            //laListaDeInputs.Add(txtLONG.Value);
+
+            if (vista.inicioComp != "" || vista.finComp != "")
+            { 
+                laListaDeInputs.Add(convertirFecha(vista.inicioComp).ToString());
+                laListaDeInputs.Add(convertirFecha(vista.finComp).ToString());
+            }
+
+            laListaDeInputs.Add(vista.edadIniComp);
+            laListaDeInputs.Add(vista.edadFinComp);
+            laListaDeInputs.Add(vista.categIniComp.Text);
+            laListaDeInputs.Add(vista.categIniComp.Text);
+            if (vista.categSexoMCompBool == true)
+                laListaDeInputs.Add(vista.categSexoMComp);
+            if (vista.cateSexoFCompBool == true)
+                laListaDeInputs.Add(vista.cateSexoFComp);
+            if (vista.statusIniciarCompBool == true)
+                laListaDeInputs.Add(vista.statusIniciarComp);
+            if (vista.statusEnCursoCompBool == true)
+                laListaDeInputs.Add(vista.statusEnCursoComp);
+            laListaDeInputs.Add(vista.costoComp);
+
+            expresionesRegInput.Add(vista.nombreComp);
+            Regex expresionSQL = new Regex(M12_RecursoInterfazPresentador.expresionSQL);
+
+
+            if (Validaciones.ValidarCamposVacios(laListaDeInputs))
+            {
+                try
+                {
+                    FabricaEntidades laFabricaEntidades = new FabricaEntidades();
+                    FabricaComandos laFabricaComando = new FabricaComandos();
+
+                    Comando<bool> comandoAgregarCompetencia;
+
+                    DominioSKD.Entidades.Modulo12.Competencia laCompetencia = 
+                        (DominioSKD.Entidades.Modulo12.Competencia)laFabricaEntidades.ObtenerCompetencia();
+
+                    //ARMAR OBJETO COMPETENCIA---->
+                    //NOMBRE
+                    laCompetencia.Nombre = vista.nombreComp;
+
+                    //TIPO COMPETENCIA
+                    if (vista.tipoCompKataBool == true)
+                        laCompetencia.TipoCompetencia = vista.tipoCompKata;
+                    if (vista.tipoCompKumiteBool == true)
+                        laCompetencia.TipoCompetencia = vista.tipoCompKumite;
+                    if (vista.tipoCompAmbosBool == true)
+                        laCompetencia.TipoCompetencia = vista.tipoCompAmbos;
+
+                    //ORGANIZACIONES
+                    if (vista.orgCompBool == true)
+                        laCompetencia.OrganizacionTodas = true;
+                    if (vista.orgCompBool == false)
+                    {
+
+                        laCompetencia.Organizacion = (Organizacion)laFabricaEntidades.ObtenerOrganizacion();
+                        //laCompetencia.Organizacion = new Organizacion();
+                        laCompetencia.OrganizacionTodas = false;
+                        laCompetencia.Organizacion.Nombre = vista.organizacionComp.SelectedItem.Text;
+                    }
+
+                    laCompetencia.Categoria = 
+                        (DominioSKD.Entidades.Modulo12.Categoria)laFabricaEntidades.ObtenerCategoria();
+                    //EDADES
+                    laCompetencia.Categoria.Edad_inicial = int.Parse(vista.edadIniComp);
+                    laCompetencia.Categoria.Edad_final = int.Parse(vista.edadFinComp);
+
+                    //CINTAS 
+                    laCompetencia.Categoria.Cinta_inicial = vista.categIniComp.SelectedItem.Text;
+                    laCompetencia.Categoria.Cinta_final = vista.categFinComp.SelectedItem.Text;
+                    //SEXO
+                    if (vista.categSexoMCompBool == true)
+                        laCompetencia.Categoria.Sexo = vista.categSexoMComp;
+                    if (vista.cateSexoFCompBool == true)
+                        laCompetencia.Categoria.Sexo = vista.cateSexoFComp;
+
+                    //FECHAS INI-FIN
+                    laCompetencia.FechaInicio = convertirFecha(vista.inicioComp);
+                    laCompetencia.FechaFin = convertirFecha(vista.finComp);
+
+                    //STATUS
+                    if (vista.statusIniciarCompBool == true)
+                        laCompetencia.Status = vista.statusIniciarComp;
+                    if (vista.statusEnCursoCompBool == true)
+                        laCompetencia.Status = vista.statusEnCursoComp;
+
+                    //UBICACION
+                    laCompetencia.Ubicacion = 
+                        (DominioSKD.Entidades.Modulo12.Ubicacion)laFabricaEntidades.ObtenerUbicacion();
+
+                    laCompetencia.Ubicacion.Latitud = this.vista.latitudComp;
+                    laCompetencia.Ubicacion.Longitud = this.vista.longitudComp;
+
+                    //laCompetencia.Ubicacion.Latitud = this.txtLAT.Value;
+                    //laCompetencia.Ubicacion.Longitud = this.txtLONG.Value;
+
+                    laCompetencia.Ubicacion.Ciudad = "Caracas";
+                    laCompetencia.Ubicacion.Estado = "Distrito Capital";
+                    laCompetencia.Ubicacion.Direccion = "";
+
+                    //COSTO
+                    laCompetencia.Costo = float.Parse(vista.costoComp);
+
+                    //AGREGAR EN LOGICA OBJETO COMPETENCIA
+                    comandoAgregarCompetencia = laFabricaComando.ObtenerComandoAgregarCompetencia(laCompetencia);
+
+                    if (comandoAgregarCompetencia.Ejecutar() == true)
+                        HttpContext.Current.Response.Redirect(M12_RecursoInterfazPresentador.agregarExito);
+
+
+                }
+                catch (ExcepcionesSKD.ExceptionSKD ex)
+                {
+                    vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
+                    vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
+                    vista.alerta = M12_RecursoInterfazPresentador.alertaHtml 
+                        + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+                }
+
+
+
+            }
+            else
+            {
+                vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
+                vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
+                vista.alerta = M12_RecursoInterfazPresentador.alertaHtml 
+                    + M12_RecursoInterfazPresentador.camposVacios 
+                    + M12_RecursoInterfazPresentador.alertaHtmlFinal;
             }
         
         }
