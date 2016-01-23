@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Comandos.Modulo12;
 using LogicaNegociosSKD.Comandos.Modulo15;
 using LogicaNegociosSKD.Comandos.Modulo10;
 using LogicaNegociosSKD.Comandos.Modulo11;
+using LogicaNegociosSKD.Comandos.Modulo9;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -78,6 +79,35 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 9
+        public static Comando<bool> ObtenerComandoAgregarEvento(Entidad laEntidad)
+        {
+            return new ComandoAgregarEvento(laEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoAgregarEventoConTipo(Entidad laEntidad)
+        {
+            return new ComandoAgregarEventoConTipo(laEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarListaEventos(Entidad laEntidad)
+        {
+            return new ComandoConsultarListaEventos(laEntidad);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarEvento(Entidad laEntidad)
+        {
+            return new ComandoConsultarEvento(laEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarEvento(Entidad laEntidad)
+        {
+            return new ComandoModificarEvento(laEntidad);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarEventoConTipo(Entidad laEntidad)
+        {
+            return new ComandoModificarEventoConTipo(laEntidad);
+        }
         #endregion
 
         #region Modulo 10

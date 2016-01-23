@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo14;
 using DatosSKD.DAO.Modulo12;
+using DatosSKD.DAO.Modulo9;
 using DatosSKD.InterfazDAO.Modulo12;
 //using DatosSKD.DAO.Modulo16;
 using DatosSKD.DAO.Modulo3;
@@ -43,7 +44,7 @@ namespace DatosSKD.Fabrica
 		public DaoCinta ObtenerDaoCinta()
         {
             return new DaoCinta();
-        } 
+        }
         #endregion
 
         #region Modulo 6
@@ -147,6 +148,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 9
+        public static InterfazDAO.Modulo9.IDaoEvento ObtenerDaoEvento()
+        {
+            return new DatosSKD.DAO.Modulo9.DaoEvento();
+        }
         #endregion
 
         #region Modulo 10

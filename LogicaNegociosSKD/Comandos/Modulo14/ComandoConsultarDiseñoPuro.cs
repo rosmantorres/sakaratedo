@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -24,7 +25,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         {
             try
             {
-                DaoDiseno dao = (DaoDiseno)FabricaDAOSqlServer.ObtenerDAODiseno();
+                IDaoDiseno dao = FabricaDAOSqlServer.ObtenerDAODiseno();
                 return dao.ConsultarXId(this.planilla);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

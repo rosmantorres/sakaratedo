@@ -37,12 +37,12 @@ namespace Interfaz_Presentadores.Modulo14
                 DominioSKD.Entidades.Modulo14.Planilla plani =
                     (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
                 plani.ID = planilla;
-                ComandoConsultarDiseño command = (ComandoConsultarDiseño)
+                Comando<Entidad> command = (ComandoConsultarDiseño)
                     FabricaComandos.ObtenerComandoComandoConsultarDiseño();
-                command.IdIns = idIns;
-                command.IdPersona = idPersona;
-                command.IdSolici = idSolici;
-                command.Planilla = plani;
+                ((ComandoConsultarDiseño)command).IdIns = idIns;
+                ((ComandoConsultarDiseño)command).IdPersona = idPersona;
+                ((ComandoConsultarDiseño)command).IdSolici = idSolici;
+                ((ComandoConsultarDiseño)command).Planilla = plani;
                 Entidad diseño = command.Ejecutar();
                 string contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño).Contenido;
                 vista.informacion.Text = contenido;

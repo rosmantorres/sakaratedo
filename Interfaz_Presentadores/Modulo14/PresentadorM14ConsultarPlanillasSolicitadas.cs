@@ -71,9 +71,9 @@ namespace Interfaz_Presentadores.Modulo14
 
             try
             {
-                ComandoListarPlanillasSolicitadas command =(ComandoListarPlanillasSolicitadas)
+                Comando<List<Entidad>> command =
                     FabricaComandos.ObtenerComandoListarPlanillasSolicitadas();
-                command.IDPersona = idPersona;
+                ((ComandoListarPlanillasSolicitadas)command).IDPersona = idPersona;
                 return command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -112,9 +112,8 @@ namespace Interfaz_Presentadores.Modulo14
         {
             try
             {
-                ComandoEliminarSolicitud command = (ComandoEliminarSolicitud)
-                    FabricaComandos.ObtenerComandoEliminarSolicitud();
-                command.iDSolicitud = idSol;
+                Comando<Boolean> command = FabricaComandos.ObtenerComandoEliminarSolicitud();
+                ((ComandoEliminarSolicitud)command).iDSolicitud = idSol;
                 Boolean succecs = command.Ejecutar();
                 if (succecs)
                 {
