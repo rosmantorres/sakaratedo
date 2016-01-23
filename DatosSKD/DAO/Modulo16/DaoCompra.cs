@@ -50,7 +50,7 @@ namespace DatosSKD.DAO.Modulo16
             PersonaM1 p = (PersonaM1)entidad;
 
             //Nos aseguramos que realmente sea una persona valida
-            if (entidad is Persona)
+            if (entidad is PersonaM1)
             {
                 try
                 {
@@ -72,10 +72,8 @@ namespace DatosSKD.DAO.Modulo16
                     //Obtengo todos los ids que estan en la compra
                     foreach (DataRow row in resultado.Rows)
                     {
-                        laCompra = (Compra)laFabrica.ObtenerFactura();
+                        laCompra = (Compra)FabricaEntidades.ObtenerFactura();
                         laCompra.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_ID_COMPRA].ToString());
-                        laCompra.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_TIPO_PAGO].ToString();
-                        laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAMETRO_FECHA].ToString());
                         laCompra.Com_estado = row[RecursosBDModulo16.PARAMETRO_ESTADO_COMPRA].ToString();
                         laLista.Add(laCompra);
 
@@ -146,6 +144,114 @@ namespace DatosSKD.DAO.Modulo16
         }
         #endregion
 
+        #region Metodo DetallarFactura
+        /// <summary>
+        /// Metodo que devueve un tipoimplemento dado su id
+        /// </summary>
+        /// <param name="entidad">Indica el objeto a detallar</param>
+        /// <returns>Retorna una factura en especifico con todos sus detalles</returns>
+        public Entidad DetallarFactura(Entidad compra)
+        {
+            List<Compra> laLista = new List<Compra>();
+            DataTable resultado = new DataTable();
+            List<Parametro> parametros = new List<Parametro>();
+            Compra laFactura = new Compra();
+            Compra lista = new Compra();
+
+            // Casteamos
+            Compra comp = (Compra)compra;
+
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Creo la lista de los parametros para el stored procedure y los anexo
+                parametros = new List<Parametro>();
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, comp.Com_id.ToString(), false);
+                parametros.Add(parametro);
+
+                //Ejecuto el Stored Procedure 
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_EVENTO, parametros);
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                //Obtengo todos los elementos del evento
+                foreach (DataRow row in resultado.Rows)
+                {
+                    laFactura = (Compra)FabricaEntidades.ObtenerFactura();
+                    /// se debe arreglar
+                    laFactura.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
+                    laFactura.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
+                    laFactura.Com_estado = row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString();
+                    laFactura.Com_estado = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+
+                }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Retorno el evento
+                return laFactura;
+
+            }
+
+            #region catches
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ArgumentNullException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (FormatException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+            }
+            catch (OverflowException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }
+            #endregion          
+        }
+
+        #endregion
+
         #region Metodo que Lista las facturas
         /// <summary>
         /// Metodo que devueve una lista de facturas
@@ -166,19 +272,6 @@ namespace DatosSKD.DAO.Modulo16
         /// <param name="NONE">Este metodo no posee paso de parametros</param>
         /// <returns>Retorna una lista de facturas</returns>
         public List<Entidad> ConsultarTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #region Metodo DetallarFactura
-        /// <summary>
-        /// Metodo que devueve un tipoimplemento dado su id
-        /// </summary>
-        /// <param name="Id_evento">Indica el objeto a detallar</param>
-        /// <returns>Retorna un implemento en especifico con todos sus detalles</returns>
-        public Entidad DetallarFactura(int Id_factura)
         {
             throw new NotImplementedException();
         }
