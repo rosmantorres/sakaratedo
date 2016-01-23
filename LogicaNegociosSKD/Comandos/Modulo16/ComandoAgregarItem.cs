@@ -132,16 +132,16 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 bool Respuesta = false;
-                FabricaDAOSqlServer fabricad = new FabricaDAOSqlServer();
+               
                 //Instancio el DAO de Carrito
-                IdaoCarrito daoCarrito = fabricad.ObtenerdaoCarrito();
+                IdaoCarrito daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
                 //Ejecuto Agregar item y retorno el resultado
                 Respuesta = daoCarrito.agregarItem(persona, objeto, this.tipoObjeto, this.cantidad);
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                   RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la respuesta de donde sea llamado
                 return Respuesta;

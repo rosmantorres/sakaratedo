@@ -27,9 +27,17 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// Metodo para registrar el pago de los productos que hay en el carrito de una persona en la Base de Datos
         /// </summary>
         /// <param name="persona">La persona a la que se adjudicara el pago</param>
+        /// <param name="pago">El pago con el que se realizo la transaccion</param>
+        /// <returns>El exito o fallo del proceso</returns>
+        bool RegistrarPago(Entidad persona, Entidad pago);
+
+       /* /// <summary>
+        /// Metodo para registrar el pago de los productos que hay en el carrito de una persona en la Base de Datos
+        /// </summary>
+        /// <param name="persona">La persona a la que se adjudicara el pago</param>
         /// <param name="tipoPoago">El metodo de pago con el que se realizo la transaccion</param>
         /// <returns>El exito o fallo del proceso</returns>
-        bool RegistrarPago(Entidad persona, string tipoPoago);
+        bool RegistrarPago(Entidad persona, string tipoPoago);*/
 
         // <summary>
         /// Metodo para modificar un Item determinado en el carrito de una persona en Base de Datos

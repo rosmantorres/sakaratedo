@@ -20,12 +20,47 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// <summary>
         /// Atributos del Comando
         /// </summary>
-        private String tipoPago;
         private Entidad persona;
+        private Entidad pago;
+
+        /*private String tipoPago;
+        private Entidad persona;*/
         #endregion
 
         #region Propiedades
+         /// <summary>
+        /// Propiedad del atributo persona
+        /// </summary>
+        public Entidad Persona
+        {
+            get
+            {
+                return this.persona;
+            }
+
+            set
+            {
+                this.persona = value;
+            }
+        }
+
         /// <summary>
+        /// Propiedad del atributo pago
+        /// </summary>
+        public Entidad Pago
+        {
+            get
+            {
+                return this.pago;
+            }
+
+            set
+            {
+                this.pago = value;
+            }
+        }
+
+       /* /// <summary>
         /// Propiedad del atributo TipoPago
         /// </summary>
         public String TipoPago
@@ -55,10 +90,28 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             {
                 this.persona = value;
             }
-        }
+        }*/
         #endregion
 
         #region Constructores
+        /// <summary>
+        /// Constructor vacio del comando
+        /// </summary>
+        public ComandoRegistrarPago()
+        {
+
+        }
+
+        /// <summary>
+        /// Constructor con los datos a insertar del comando
+        /// </summary>
+        public ComandoRegistrarPago(Entidad persona, Entidad pago)
+        {
+            this.persona = persona;
+            this.pago = pago;
+        }
+
+        /*
         /// <summary>
         /// Constructor vacio del comando
         /// </summary>
@@ -74,7 +127,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         {
             this.persona = persona;
             this.tipoPago = TipoPago;
-        }
+        }*/
         #endregion
 
         /// <summary>
@@ -92,12 +145,16 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
 
                 //Respuesta a obtener en el DAO
                 bool Respuesta = false;
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+
                 //Instancio el DAO del Carrito
-                IdaoCarrito daoCarrito = fabrica.ObtenerdaoCarrito();
+                IdaoCarrito daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
                 //Ejecuto el registrar pago y obtengo el exito o fallo del proceso
-                Respuesta = daoCarrito.RegistrarPago(this.persona, this.tipoPago);
+                Respuesta = daoCarrito.RegistrarPago(this.persona, this.pago);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la respuesta de donde sea llamado
                 return Respuesta;
@@ -148,6 +205,77 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
                     RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
             }
+
+            /*
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Respuesta a obtener en el DAO
+                bool Respuesta = false;
+                
+                //Instancio el DAO del Carrito
+                IdaoCarrito daoCarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
+
+                //Ejecuto el registrar pago y obtengo el exito o fallo del proceso
+                Respuesta = daoCarrito.RegistrarPago(this.persona, this.tipoPago);
+              
+             * //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //retorno la respuesta de donde sea llamado
+                return Respuesta;
+            }
+            catch (LoggerException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (PersonaNoValidaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoFormatoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParseoEnSobrecargaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ParametroInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKDConexionBD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (ExceptionSKD e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (Exception e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
+                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+            }*/
         }
     }
 }
