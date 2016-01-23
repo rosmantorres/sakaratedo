@@ -52,20 +52,19 @@ namespace Interfaz_Presentadores.Modulo8
 
         }
 
-       /* public void LlenarComboTipoPlanilla()
+        public void LlenarComboCinta()
         {
             FabricaComandos fabricaCo = new FabricaComandos();
-            //Comando<List<Entidad>> comboCinta = fabricaCo();
-            //LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
+            Comando<List<Entidad>> comboCinta = fabricaCo.CrearComandoConsultarCintaTodas();
             List<Entidad> listCinta = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("-1", "Selecciona una opcion");
             try
             {
                 listCinta = comboCinta.Ejecutar();
-                foreach (Planilla item in listCinta)
+                foreach (Cinta item in listCinta)
                 {
-                    options.Add(item.IDtipoPlanilla.ToString(), item.TipoPlanilla);
+                    options.Add(item.Id_cinta.ToString(), item.Color_nombre);
                 }
                 options.Add("-2", "OTRO");
             }
@@ -99,13 +98,29 @@ namespace Interfaz_Presentadores.Modulo8
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-            vista.tipoPlanillaCombo.DataSource = options;
-            vista.tipoPlanillaCombo.DataTextField = "value";
-            vista.tipoPlanillaCombo.DataValueField = "key";
-            vista.tipoPlanillaCombo.DataBind();
+            vista.comboRestCinta.DataSource = options;
+            vista.comboRestCinta.DataTextField = "value";
+            vista.comboRestCinta.DataValueField = "key";
+            vista.comboRestCinta.DataBind();
 
-        }*/
-    
+        }
+
+        public void agregarRest()
+        {
+            DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
+
+            laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
+            laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
+            laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
+            laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
+            laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
+            laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);
+
+
+            FabricaComandos _fabrica = new FabricaComandos();
+            Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
+            bool resultado = _comando.Ejecutar();   
+        }
 
     }
 }

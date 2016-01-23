@@ -7,6 +7,9 @@ using System.Data;
 using System.Data.SqlClient;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo8;
+using DatosSKD.InterfazDAO.Modulo8;
+using DominioSKD;
+using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo8
 {
@@ -110,10 +113,12 @@ namespace DatosSKD.DAO.Modulo8
             /// <returns></returns>
             public Boolean AgregarRestriccionCinta(DominioSKD.Entidad parametro)
             {
-                DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
-                    (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
+                
                 try
                 {
+                    
+                    DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
+                    (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
                     List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
 
                     Parametro elParametro = new Parametro(RecursosDAORestriccionCinta.ParamDescripcionRestricionCinta, SqlDbType.VarChar,
@@ -136,8 +141,9 @@ namespace DatosSKD.DAO.Modulo8
                             laRestriccionCinta.PuntosMinimos.ToString(), false);
                     parametros.Add(elParametro);
 
-                    BDConexion laConexion = new BDConexion();
-                    laConexion.EjecutarStoredProcedure(RecursosDAORestriccionCinta.AgregarRestriccionCinta, parametros);
+                    //BDConexion laConexion = new BDConexion();
+                    List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionCinta.AgregarRestriccionCinta
+                                        , parametros);
                 }
 
                 catch (SqlException ex)
@@ -273,20 +279,22 @@ namespace DatosSKD.DAO.Modulo8
             /// <returns></returns>
             public List<DominioSKD.Entidad> ConsultarCintaTodas()
             {
-                BDConexion laConexion;
+               // BDConexion laConexion;
+                FabricaEntidades fabricaEntidad = new FabricaEntidades();
                 List<DominioSKD.Entidad> ListaCinta = new List<DominioSKD.Entidad>();
                 List<Parametro> parametros;
 
-                /*
+                
                  try
                  {
-                     laConexion = new BDConexion();
+                     //laConexion = new BDConexion();
+                     this.Conectar();
                      parametros = new List<Parametro>();
-                     DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDAORestriccionCinta.ConsultarCinta, parametros);
+                     DataTable dt = this.EjecutarStoredProcedureTuplas(RecursosDAORestriccionCinta.ConsultarCinta, parametros);
 
                      foreach (DataRow row in dt.Rows)
                      {
-                         ListaCinta.Add(new Cinta(Int32.Parse(row[RecursosDAORestriccionCinta.AliasId_cinta].ToString()), row[RecursoBDRestriccionCinta.AliasColorCinta].ToString()));
+                         ListaCinta.Add(new Cinta(Int32.Parse(row[RecursosDAORestriccionCinta.AliasId_cinta].ToString()), row[RecursosDAORestriccionCinta.AliasColorCinta].ToString()));
                      }
 
                  }
@@ -307,7 +315,7 @@ namespace DatosSKD.DAO.Modulo8
                  catch (Exception ex)
                  {
                      throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                 }*/
+                 }
 
 
                 return ListaCinta;

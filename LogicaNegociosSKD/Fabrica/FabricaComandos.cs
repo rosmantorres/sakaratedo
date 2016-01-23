@@ -99,22 +99,22 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
-        public static Comando<Boolean> CrearComandoAgregarRestriccionCinta()
+        public Comando<Boolean> CrearComandoAgregarRestriccionCinta(Entidad laRestCinta)
         {
-            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta();
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta(laRestCinta);
         }
 
-        public static Comando<Boolean> CrearComandoConsultarRestriccionCinta()
+        public Comando<Boolean> CrearComandoConsultarRestriccionCinta()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta();
         }
 
-        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
+        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas();
         }
 
-        public static Comando<Boolean> CrearComandoModificarRestriccionCinta()
+        public Comando<Boolean> CrearComandoModificarRestriccionCinta()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta();
         }

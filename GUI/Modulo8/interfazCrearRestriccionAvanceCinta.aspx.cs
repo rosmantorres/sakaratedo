@@ -16,7 +16,7 @@ namespace templateApp.GUI.Modulo8
 
        #region Implementacion de Contrato
 
-       public String id_rest_cinta
+       public string id_rest_cinta
        {
            get
            {
@@ -28,7 +28,7 @@ namespace templateApp.GUI.Modulo8
            }
        }
 
-       public String descripcion_rest_cinta
+       public string descripcion_rest_cinta
         {
             get
             {
@@ -40,7 +40,7 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String tiempo_Min
+       public string tiempo_Min
         {
             get
             {
@@ -52,7 +52,7 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String tiempo_Max
+       public string tiempo_Max
         {
             get
             {
@@ -64,7 +64,7 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String puntaje_min
+       public string puntaje_min
         {
             get
             {
@@ -76,7 +76,7 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-        public String horas_docen
+       public string horas_docen
         {
             get
             {
@@ -112,30 +112,15 @@ namespace templateApp.GUI.Modulo8
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "14";
-                
-                   // _presentador.LlenarComboTipoPlanilla();
+                ((SKD)Page.Master).IdModulo = "8";
+
+                _presentador.LlenarComboCinta();
             }
         }
                
        protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            string opcionDato = descripcion.Value.ToString();
-            string opciondato2 = tiempo_minimo.Value;
-            string opciondato3 = tiempo_maximo.Value;
-            string opciondato4 = puntaje_minimo.Value;
-            string opciondato5 = horas_docentes.Value;
-
-
-            /*RestriccionCinta Restriccion = new RestriccionCinta(opcionDato, Int32.Parse(opciondato2), Int32.Parse(opciondato3), Int32.Parse(opciondato4), Int32.Parse(opciondato5));
-
-            LogicaRestriccionCinta LRC = new LogicaRestriccionCinta();
-
-            if (this.comboCinta.SelectedValue != "-1" && this.comboCinta.SelectedValue != "-2")
-            {
-                LRC.AgregarRestriccionCinta(Restriccion, Int32.Parse(this.comboCinta.SelectedValue));
-            }*/
-
+            _presentador.agregarRest();
         }
         
     }

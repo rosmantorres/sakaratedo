@@ -66,3 +66,323 @@
 2016-01-20 23:12:45,469 INFO  DaoPlanilla - Clase: DaoPlanilla
 2016-01-20 23:12:45,469 INFO  DaoPlanilla - Mensaje: Entrada en el Método
 2016-01-20 23:12:45,469 INFO  DaoPlanilla - Metodo: ObtenerTipoPlanilla
+2016-01-22 13:51:32,004 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,011 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,011 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,011 INFO  BDPlanilla - Metodo: ConsultarPlanillasCreadas
+2016-01-22 13:51:32,073 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,073 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,073 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,073 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,123 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,124 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,124 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,124 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,128 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,128 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,128 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,128 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,133 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,133 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,133 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,133 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,138 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,138 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,138 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,138 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,143 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,143 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,143 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,143 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,148 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,148 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,148 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,148 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,153 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,153 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,153 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,153 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,158 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,158 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,158 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,158 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,164 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,164 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,164 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,164 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,171 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,171 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,171 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,171 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,179 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,179 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,179 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,179 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,187 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,187 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,187 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,187 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,195 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,195 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,195 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,195 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:32,204 INFO  BDPlanilla - *******************************************************
+2016-01-22 13:51:32,204 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 13:51:32,204 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:32,204 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 13:51:34,826 INFO  DaoPlanilla - *******************************************************
+2016-01-22 13:51:34,826 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-22 13:51:34,826 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-22 13:51:34,826 INFO  DaoPlanilla - Metodo: ObtenerTipoPlanilla
+2016-01-22 19:36:10,560 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,565 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,565 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,565 INFO  BDPlanilla - Metodo: ConsultarPlanillasCreadas
+2016-01-22 19:36:10,644 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,644 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,644 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,644 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,684 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,684 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,684 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,684 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,688 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,688 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,688 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,688 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,692 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,692 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,692 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,692 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,696 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,696 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,696 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,696 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,700 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,700 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,700 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,700 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,704 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,704 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,704 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,704 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,709 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,710 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,710 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,710 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,714 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,714 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,714 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,714 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,718 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,718 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,718 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,718 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,722 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,722 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,722 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,722 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,726 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,726 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,726 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,726 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,731 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,731 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,731 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,731 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,737 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,737 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,737 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,737 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:10,743 INFO  BDPlanilla - *******************************************************
+2016-01-22 19:36:10,743 INFO  BDPlanilla - Clase: BDPlanilla
+2016-01-22 19:36:10,743 INFO  BDPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:10,743 INFO  BDPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-22 19:36:19,905 INFO  DaoPlanilla - *******************************************************
+2016-01-22 19:36:19,905 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-22 19:36:19,905 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-22 19:36:19,905 INFO  DaoPlanilla - Metodo: ObtenerTipoPlanilla
+2016-01-23 10:02:32,878 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 10:02:32,883 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 10:02:32,950 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 10:02:32,950 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 10:02:32,950 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 158
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 10:02:32,951 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:line 167
+2016-01-23 10:14:20,454 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 10:14:20,459 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 10:14:20,461 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 10:14:20,461 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 10:14:20,461 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 160
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 10:14:20,461 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 10:31:08,756 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 10:31:08,770 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 10:31:08,776 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 10:31:08,776 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 10:31:08,776 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 10:31:08,777 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 11:03:14,839 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 11:03:14,844 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 11:03:14,846 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 11:03:14,846 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 11:03:14,846 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 11:03:14,847 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 11:20:42,641 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 11:20:42,646 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 11:20:42,648 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 11:20:42,648 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 11:20:42,648 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 11:20:42,649 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 11:24:48,956 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 11:24:48,968 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 11:24:48,973 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 11:24:48,973 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 11:24:48,973 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 11:24:48,974 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 11:29:44,918 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 11:29:44,922 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 11:29:44,924 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 11:29:44,924 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 11:29:44,925 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 11:29:44,925 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-23 12:46:47,344 ERROR ComandoAgregarRestriccionCinta - *******************************************************
+2016-01-23 12:46:47,348 ERROR ComandoAgregarRestriccionCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-23 12:46:47,350 ERROR ComandoAgregarRestriccionCinta - Origen: DatosSKD
+2016-01-23 12:46:47,350 ERROR ComandoAgregarRestriccionCinta - Metodo: Boolean AgregarRestriccionCinta(DominioSKD.Entidad)
+2016-01-23 12:46:47,351 ERROR ComandoAgregarRestriccionCinta - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.AgregarRestriccionCinta(Entidad parametro) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 161
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs:line 41
+2016-01-23 12:46:47,351 ERROR ComandoAgregarRestriccionCinta - InnerException: System.FormatException: Failed to convert parameter value from a String to a Int32. ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.SetUpRPCParameters(_SqlRPC rpc, Int32 startCount, Boolean inSchema, SqlParameterCollection parameters)
+   at System.Data.SqlClient.SqlCommand.BuildRPC(Boolean inSchema, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170

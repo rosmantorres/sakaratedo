@@ -11,12 +11,12 @@ namespace Interfaz_Contratos.Modulo8
 {
     public interface IContratoAgregarRestriccionCinta
     {
-        String id_rest_cinta { get; set; }
-        String descripcion_rest_cinta { get; set; }
-        String tiempo_Min { get; set; }
-        String tiempo_Max { get; set; }
-        String horas_docen { get; set; }
-        String puntaje_min { get; set; }
+        
+        string descripcion_rest_cinta { get; set; }
+        string tiempo_Min { get; set; }
+        string tiempo_Max { get; set; }
+        string horas_docen { get; set; }
+        string puntaje_min { get; set; }
         DropDownList comboRestCinta { get; }
         //List<Cinta> cintasRelacionadas { get; set; }
     }
