@@ -8,10 +8,12 @@ using DominioSKD;
 using LogicaNegociosSKD.Modulo12;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using Interfaz_Contratos.Modulo12;
+using Interfaz_Presentadores.Modulo12;
 
 namespace templateApp.GUI.Modulo12
 {
-    public partial class M12_ModificarCompetencias : System.Web.UI.Page
+    public partial class M12_ModificarCompetencias : System.Web.UI.Page, IContratoModificarCompetencias
     {
         Competencia laCompetencia = new Competencia();
         LogicaCompetencias laLogica = new LogicaCompetencias();
@@ -21,6 +23,12 @@ namespace templateApp.GUI.Modulo12
         public string laLatitud;
         public string laLongitud;
 
+        private PresentadorModificarCompetencias presentador;
+
+        public M12_ModificarCompetencias()
+        {
+            presentador = new PresentadorModificarCompetencias(this);
+        }
         protected DateTime convertirFecha(string fechaE)
         {
             string diaFecha;

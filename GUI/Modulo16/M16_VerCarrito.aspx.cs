@@ -8,6 +8,7 @@ using Interfaz_Presentadores.Modulo16;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
 using templateApp.GUI.Master;
+using System.Web.UI.HtmlControls;
 
 namespace templateApp.GUI.Modulo16
 {
@@ -70,6 +71,54 @@ namespace templateApp.GUI.Modulo16
             get { return this.detalleProductoLiteral; }
         }
 
+        /// <summary>
+        /// Propiedad del Literal del PrecioFinal
+        /// </summary>
+        public Literal PrecioFinal
+        {
+            get
+            {
+                return this.precioFinal;
+            }
+
+            set
+            {
+                this.precioFinal = value;
+            }
+        }
+
+        /// <summary>
+        /// Propiedad del input HTML DatoPago
+        /// </summary>
+        public HtmlInputText Datospago
+        {
+            get
+            {
+                return this.DatoPago;
+            }
+
+            set
+            {
+                this.DatoPago = value;
+            }
+
+        }
+
+        /// <summary>
+        /// Propiedad del input HTML Monto
+        /// </summary>
+        public HtmlInputText MontoPago
+        {
+            get
+            {
+                return this.Monto;
+            }
+
+            set
+            {
+                this.Monto = value;
+            }
+        }
         #endregion
 
         #region Constructores
@@ -257,6 +306,14 @@ namespace templateApp.GUI.Modulo16
                             alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                             alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CANTIDAD_INVALIDA_MENSAJE;
                             break;
+
+                        case "14":
+                            //Si hubo error al modificar de alguna forma un carrito con un pago ya hecho
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CARRITO_PAGO_MENSAJE;
+                            break;
+
                     }
                     break;
 
@@ -295,45 +352,16 @@ namespace templateApp.GUI.Modulo16
         {
             try
             {
-                //Valor que esta seleccionado en el combobox del tipo de pago
-                String pago = DropDownList1.Value;
-
-                //Pago que finalmente se enviara a Base de Datos y respuesta de ella
-                String pagofinal = null;
-                bool respuesta = false;
-
-                //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
-                switch (pago)
-                {
-                    case "1":
-                        pagofinal = M16_RecursoInterfaz.TIPO_PAGO_TARJETA;
-                        break;
-
-                    case "2":
-                        pagofinal = M16_RecursoInterfaz.TIPO_PAGO_DEPOSITO;
-                        break;
-
-                    case "3":
-                        pagofinal = M16_RecursoInterfaz.TIPO_PAGO_TRANSFERENCIA;
-                        break;
-                    
-                    default:
-                        throw new OpcionPagoNoValidoException
-                            (M16_RecursoInterfaz.CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO, 
-                            M16_RecursoInterfaz.MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO, 
-                            new OpcionPagoNoValidoException());
-                }
-
-                //Ejecuto la operacion siempre y cuando el tipo de pago sea uno valido
-                if (pagofinal != null)
-                    respuesta = this.elPresentador.RegistrarPago(
-                    Session[RecursosInterfazMaster.sessionUsuarioID].ToString(), pago);                
+                //Ejecuto la operacion para registrar un pago y obtengo la respuesta
+                bool respuesta = this.elPresentador.RegistrarPago
+                    (Session[RecursosInterfazMaster.sessionUsuarioID].ToString(),
+                    Monto.Value, DropDownList1.Value);
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
-                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_EXITOSO);
+                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_EXITOSO, false);
                 else
-                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_FALLIDO);
+                    HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.REGISTRAR_PAGO_FALLIDO, false);
             }            
             catch (LoggerException e)
             {
@@ -386,14 +414,7 @@ namespace templateApp.GUI.Modulo16
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LINK, false);
             }
         }
-        #endregion
-
-        #region ModificarCarrito
-   /*     protected void Modificar_Carrito(object sender, EventArgs e)
-        {
-
-        }*/
-        #endregion
+        #endregion           
         #endregion
 
         /// <summary>

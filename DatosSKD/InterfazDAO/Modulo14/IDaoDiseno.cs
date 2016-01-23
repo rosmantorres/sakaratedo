@@ -10,5 +10,6 @@ namespace DatosSKD.InterfazDAO.Modulo14
     public interface IDaoDiseno : IDao<Entidad, bool, Entidad>
     {
         Boolean GuardarDiseñoBD(Entidad elDiseño, Entidad laPlanilla);
+        Entidad ConsultarDisenoID(Entidad solicitud);
     }
 }

@@ -202,7 +202,6 @@ namespace DatosSKD.DAO.Modulo14
             //  BDConexion laConexion;
             int idPlanilla = ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID;
             DominioSKD.Entidades.Modulo14.Planilla planilla = null;
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
@@ -223,7 +222,7 @@ namespace DatosSKD.DAO.Modulo14
                     String nombrePlanilla = row[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
                     bool statusPlanilla = (bool)row[RecursosDAOModulo14.AtributoStatusPlanilla];
                     planilla =
-                        (DominioSKD.Entidades.Modulo14.Planilla)fabricaEntidad.ObtenerPlanilla(nombrePlanilla, statusPlanilla, tipoPlanilla);
+                        (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla(nombrePlanilla, statusPlanilla, tipoPlanilla);
                 }
 
             }
@@ -294,7 +293,7 @@ namespace DatosSKD.DAO.Modulo14
         /// <returns>Lista de los tipos de planillas</returns>
         public List<Entidad> ObtenerTipoPlanilla()
         {
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -311,7 +310,7 @@ namespace DatosSKD.DAO.Modulo14
 
                 foreach (DataRow row in resultadoConsulta.Rows)
                 {
-                    Entidad laPlanilla = fabricaEntidad.ObtenerPlanilla(Int32.Parse(row[RecursosDAOModulo14.AtributoIdTipoPlanilla].ToString()), row[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString());
+                    Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla(Int32.Parse(row[RecursosDAOModulo14.AtributoIdTipoPlanilla].ToString()), row[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString());
                     listaTipoPlanilla.Add(laPlanilla);
                 }
 

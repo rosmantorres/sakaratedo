@@ -30,24 +30,23 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
-        public void MostrarInformacion(int idIns, int idPersona,int idSolici, int planilla)
+        public Entidad MostrarInformacion(int idIns, int idPersona,int idSolici, int planilla)
         {
-            FabricaComandos fabrica = new FabricaComandos();
-            FabricaEntidades entidad = new FabricaEntidades();
             try
             {
                 DominioSKD.Entidades.Modulo14.Planilla plani =
-                    (DominioSKD.Entidades.Modulo14.Planilla)entidad.ObtenerPlanilla();
+                    (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
                 plani.ID = planilla;
-                ComandoConsultarDiseño command = (ComandoConsultarDiseño)
-                    fabrica.ObtenerComandoComandoConsultarDiseño();
-                command.IdIns = idIns;
-                command.IdPersona = idPersona;
-                command.IdSolici = idSolici;
-                command.Planilla = plani;
+                Comando<Entidad> command = (ComandoConsultarDiseño)
+                    FabricaComandos.ObtenerComandoComandoConsultarDiseño();
+                ((ComandoConsultarDiseño)command).IdIns = idIns;
+                ((ComandoConsultarDiseño)command).IdPersona = idPersona;
+                ((ComandoConsultarDiseño)command).IdSolici = idSolici;
+                ((ComandoConsultarDiseño)command).Planilla = plani;
                 Entidad diseño = command.Ejecutar();
                 string contenido = ((DominioSKD.Entidades.Modulo14.Diseño)diseño).Contenido;
                 vista.informacion.Text = contenido;
+                return diseño;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -78,6 +77,7 @@ namespace Interfaz_Presentadores.Modulo14
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 //throw ex;
+                return null;
             }
         }
     }

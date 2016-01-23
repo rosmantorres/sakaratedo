@@ -17,7 +17,7 @@ using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo16
-{
+{/*
     /// <summary>
     /// Prueba unitaria que trabaja sobre el DAO de Carrito
     /// </summary>
@@ -40,10 +40,8 @@ namespace PruebasUnitariasSKD.Modulo16
         private Dictionary<Entidad, int> ImplementosCarrito;
         private Dictionary<Entidad, int> EventosCarrito;
         private Dictionary<Entidad, int> MatriculasCarrito;
-        private Evento evento;
-        private Evento evento2;
-        FabricaDAOSqlServer fabrica;
-        FabricaComandos fabricacomandos;
+        private DominioSKD.Entidades.Modulo9.Evento evento;
+        private DominioSKD.Entidades.Modulo9.Evento evento2; 
         FabricaEntidades fabricaentidades;
         #endregion
 
@@ -53,11 +51,8 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            //Instancio las fabricas y obtengo el DAO
-            fabrica = new FabricaDAOSqlServer();
-            fabricacomandos = new FabricaComandos();
-            fabricaentidades = new FabricaEntidades();
-            this.daoPrueba = fabrica.ObtenerdaoCarrito();
+            //Obtengo el DAO           
+            this.daoPrueba = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
             //La persona
             this.persona = new Persona();
@@ -82,11 +77,11 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            this.evento = (Evento)fabricaentidades.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaentidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
-            this.evento2 = (Evento)fabricaentidades.ObtenerEvento();
+            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabricaentidades.ObtenerEvento();
             this.evento2.Id = 2;
             this.evento2.Costo = 2000;
 
@@ -284,7 +279,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void PruebaModificarCarritosExceso()
         {
             /*Agrego Modifico un carrito en el que solo hay implementos poniendole una cantidad inexistente 
-            en en el stock*/
+            en en el stock
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
             Assert.IsFalse(this.daoPrueba.ModificarCarrito(this.persona, this.implemento, 1, 8000));
 
@@ -292,7 +287,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
 
             /*Modifico un carrito en hay implementos, eventos y matriculas, poniendole al implemento una cantidad
-            inexistente en el stock */
+            inexistente en el stock
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
             this.daoPrueba.agregarItem(this.persona3, this.evento, 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
@@ -314,7 +309,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void RegistrarPagosNormales()
         {
             /*Agregamos y Registramos el pago en un carrito 
-            donde solo hay Implementos y su cantidad se puede satisfacer*/
+            donde solo hay Implementos y su cantidad se puede satisfacer
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, "Tarjeta"));
 
@@ -431,7 +426,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.IsTrue(this.MatriculasCarrito.Count == 0);
 
             //Obtenemos el Evento y verificamos sus valores
-            this.evento = this.EventosCarrito.ElementAt(0).Key as Evento;
+            this.evento = this.EventosCarrito.ElementAt(0).Key as DominioSKD.Entidades.Modulo9.Evento;
             Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);
@@ -488,7 +483,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.MatriculasCarrito = this.daoPrueba.getMatricula(this.persona4);
 
             /*Revisamos que hayan Implementos, Eventos y matriculas, ademas,
-              que efectivamente haya solo uno agregado de cada uno de ellos*/
+              que efectivamente haya solo uno agregado de cada uno de ellos
             Assert.IsTrue(this.ImplementosCarrito.Count == 1);
             Assert.IsTrue(this.EventosCarrito.Count == 1);
             Assert.IsTrue(this.MatriculasCarrito.Count == 1);
@@ -499,7 +494,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.implemento.Precio_Implemento, 4500);
             Assert.AreEqual(this.ImplementosCarrito.ElementAt(0).Value, 5);
 
-            this.evento = this.EventosCarrito.ElementAt(0).Key as Evento;
+            this.evento = this.EventosCarrito.ElementAt(0).Key as DominioSKD.Entidades.Modulo9.Evento;
             Assert.AreEqual(this.evento.Id, 1);
             Assert.AreEqual(this.evento.Costo, 0);
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);
@@ -537,9 +532,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.EventosCarrito = null;
             this.MatriculasCarrito = null;
             this.evento = null;
-            this.evento2 = null;
-            this.fabrica = null;
-            this.fabricacomandos = null;
+            this.evento2 = null;     
         }
-    }
+    }*/
 }

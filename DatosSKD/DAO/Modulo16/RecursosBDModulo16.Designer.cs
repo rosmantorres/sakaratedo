@@ -151,6 +151,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_14.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_CARRITO_PAGO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_CARRITO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_07.
         /// </summary>
         internal static string CODIGO_EXCEPCION_FORMATO_INVALIDO {
@@ -349,6 +358,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error, la compra no puede ser alterada ya que se ha hecho un pago de esta.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_CARRITO_PAGO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_CARRITO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error en parsear un atributo invalido.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_FORMATO_INVALIDO {
@@ -516,6 +534,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string PARAMETRO_COLOR {
             get {
                 return ResourceManager.GetString("PARAMETRO_COLOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @datopago.
+        /// </summary>
+        internal static string PARAMETRO_DATO_PAGO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_DATO_PAGO", resourceCulture);
             }
         }
         
@@ -714,6 +741,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string PARAMETRO_MES_DEUDOR_MATRICULA {
             get {
                 return ResourceManager.GetString("PARAMETRO_MES_DEUDOR_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @monto.
+        /// </summary>
+        internal static string PARAMETRO_MONTO {
+            get {
+                return ResourceManager.GetString("PARAMETRO_MONTO", resourceCulture);
             }
         }
         

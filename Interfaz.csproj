@@ -39,8 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKEditor.NET">
-      <HintPath>..\CKEditor.NET.dll</HintPath>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -50,7 +50,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
+      <HintPath>packages\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
@@ -58,9 +58,8 @@
       <HintPath>packages\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -217,6 +216,20 @@
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitudPlanilla.aspx" />
+    <Content Include="GUI\Modulo15\Imagen\aula virtual error.png" />
+    <Content Include="GUI\Modulo15\Imagen\calendario.png" />
+    <Content Include="GUI\Modulo15\Imagen\captahuella.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\computacion.png" />
+    <Content Include="GUI\Modulo15\Imagen\franco_de_vita.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\imagen1.jpg" />
+    <Content Include="GUI\Modulo15\Imagen\logo.png" />
+    <Content Include="GUI\Modulo15\Imagen\logo2.png" />
+    <Content Include="GUI\Modulo15\Imagen\logooo.png" />
+    <Content Include="GUI\Modulo15\Imagen\primera1.png" />
+    <Content Include="GUI\Modulo15\Imagen\r1.png" />
+    <Content Include="GUI\Modulo15\web_15_AgregarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx" />
+    <Content Include="GUI\Modulo15\web_15_ModificarImplemento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -340,6 +353,7 @@
     <Content Include="plugins\jquery_validate\demo\captcha\rand.php" />
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1685,6 +1699,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoInterfazModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo15\web_15_AgregarImplemento.aspx.cs">
+      <DependentUpon>web_15_AgregarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_AgregarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_AgregarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx.cs">
+      <DependentUpon>web_15_ConsultarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_ConsultarImplemento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ModificarImplemento.aspx.cs">
+      <DependentUpon>web_15_ModificarImplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo15\web_15_ModificarImplemento.aspx.designer.cs">
+      <DependentUpon>web_15_ModificarImplemento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo16\M16_ConsultarEvento.aspx.cs">
       <DependentUpon>M16_ConsultarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2165,7 +2200,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>43086</DevelopmentServerPort>
+          <DevelopmentServerPort>62916</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:23072/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
