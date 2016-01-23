@@ -4,36 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo15;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo16;
 using DatosSKD.InterfazDAO;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using DominioSKD.Fabrica;
-
+using DatosSKD.InterfazDAO.Modulo15;
+using LogicaNegociosSKD.Comandos.Modulo16;
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
     /// <summary>
-    /// Comando que ejecuta la accion de detallar un evento en especifico
+    /// Comando que ejecuta la accion de detallar un producto en especifico
     /// </summary>
-   public class ComandoDetallarEvento : Comando<Entidad>
+  public  class ComandoDetallarProducto : Comando<Entidad>
     {
         #region Atributos
         /// <summary>
         /// Atributos del Comando
         /// </summary>
-        private  Entidad evento;
+        private  Entidad implemento;
         #endregion
 
         #region Propiedades
         /// <summary>
-        /// Propiedad del atributo evento
+        /// Propiedad del atributo implemento
         /// </summary>
-        public Entidad Evento
+        public Entidad Implemento
         {
-            get{ return this.evento;}
-            set{this.evento = value;}
+            get{ return this.implemento;}
+            set{this.implemento = value;}
         }
         #endregion
 
@@ -41,27 +43,27 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
         /// <summary>
         /// Constructor vacio del Comando
         /// </summary>
-        public ComandoDetallarEvento()
+        public ComandoDetallarProducto()
         {
 
         }
 
         /// <summary>
-        /// Constructor del comando con todos los datos requeridos para el detalleEvento
+        /// Constructor del comando con todos los datos requeridos para el detalleProducto
         /// </summary>
-        /// <param name="evento">El evento al que se le mostrara el detalle</param>
-        public ComandoDetallarEvento(Entidad evento)
+        /// <param name="evento">El Producto al que se le mostrara el detalle</param>
+        public ComandoDetallarProducto(Entidad implemento)
         {
-            this.evento = evento;
+            this.implemento = implemento;
         }
         #endregion
 
         #region Metodo Ejecutar
 
         /// <summary>
-        /// Metodo que ejecuta la accion del detalleEvento
+        /// Metodo que ejecuta la accion del detalleProducto
         /// </summary>
-        /// <returns>El evento en especifico</returns>
+        /// <returns>El producto en especifico</returns>
         public override Entidad Ejecutar()
         {
             try
@@ -71,20 +73,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                      RecursosLogicaModulo16.MENSAJE_ENTRADA_LOGGER,
                      System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Instancio el DAO de Evento
-                IdaoEvento daoevento = FabricaDAOSqlServer.ObtenerDaoDetalleEvento();
+                //Instancio el DAO de Implemento
+                IDaoImplemento daoimplemento = FabricaDAOSqlServer.ObtenerDaoDetalleProducto();
 
                 //Casteamos
-                Evento eve = (Evento)this.evento;
+                Implemento pro = (Implemento)this.implemento;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                RecursosLogicaModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la entidad de donde sea llamada
-                return daoevento.ConsultarXId(eve);
+                return daoimplemento.DetallarImplemento(pro);
             }
-
             #region catches
 
             catch (PersonaNoValidaException e)
@@ -134,7 +135,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             }
 
             #endregion
-
         }
 
         #endregion
