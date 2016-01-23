@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Modulo6;
 using LogicaNegociosSKD.Modulo2;
 using Interfaz_Contratos.Master;

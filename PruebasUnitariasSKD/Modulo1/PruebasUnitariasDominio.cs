@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using DatosSKD;
 using PruebasUnitariasSKD.Modulo1;
-using DominioSKD;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo1;
+using DominioSKD.Entidades.Modulo2;
 using ExcepcionesSKD;
 
 
@@ -15,17 +17,18 @@ namespace PruebasUnitariasSKD.Modulo1
     [TestFixture]
     class PruebasUnitariasDominio
     {
+        private FabricaEntidades laFabrica;
         [SetUp]
         protected void parametros()
         {
-
+            laFabrica = new FabricaEntidades();
         }
         // Prueba unitaria del metodo Cuenta() 
         [Test]
         public void PruebaConstructorCuenta1()
         {
 
-            Cuenta cuenta = new Cuenta();
+            Cuenta cuenta = (Cuenta)laFabrica.ObtenerCuenta_M1() ;
 
             Assert.AreEqual(cuenta.PersonaUsuario._Id, 0);
             Assert.AreEqual(cuenta.PersonaUsuario._Nombre, RecursosPU_Mod1.Vacio);
@@ -39,7 +42,9 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaConstructorCuenta2()
         {
 
-            Cuenta cuenta = new Cuenta(new PersonaM1(int.Parse(RecursosPU_Mod1.Id)), RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, RecursosPU_Mod1.Vacio, RecursosPU_Mod1.Vacio);
+            Cuenta cuenta =(Cuenta)laFabrica.ObtenerCuenta_M1
+                ( RecursosPU_Mod1.usuario, 
+                RecursosPU_Mod1.PruebaErrorClave,null, RecursosPU_Mod1.Vacio,(PersonaM1)laFabrica.ObtenerPersona_M1());
 
             Assert.AreEqual(cuenta.PersonaUsuario._Id, Int32.Parse(RecursosPU_Mod1.Id));
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
@@ -56,7 +61,9 @@ namespace PruebasUnitariasSKD.Modulo1
             elRol.Id_rol = Int32.Parse(RecursosPU_Mod1.Id);
             elRol.Nombre = RecursosPU_Mod1.usuario.ToString();
             listaRol.Add(elRol);
-            Cuenta cuenta = new Cuenta(RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, listaRol, RecursosPU_Mod1.Vacio);
+            FabricaEntidades laFabrica = new FabricaEntidades();
+            Cuenta cuenta = (Cuenta)laFabrica.ObtenerCuenta_M1
+                (RecursosPU_Mod1.usuario, RecursosPU_Mod1.PruebaErrorClave, listaRol, RecursosPU_Mod1.Vacio,(PersonaM1)laFabrica.ObtenerPersona_M1());
 
             Assert.AreEqual(cuenta.Roles, listaRol);
             Assert.AreEqual(cuenta.Nombre_usuario, RecursosPU_Mod1.usuario);
@@ -90,7 +97,7 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaConstructorRol3()
         {
-            Rol rl = new Rol(Int32.Parse(RecursosPU_Mod1.Id), RecursosPU_Mod1.Rol, RecursosPU_Mod1.Descripcion);
+            Rol rl = (Rol) laFabrica.ObtenerRol_M2(Int32.Parse(RecursosPU_Mod1.Id), RecursosPU_Mod1.Rol, RecursosPU_Mod1.Descripcion,DateTime.Today);
             Assert.AreEqual(rl.Id_rol, Int32.Parse(RecursosPU_Mod1.Id));
             Assert.AreEqual(rl.Nombre, RecursosPU_Mod1.Rol);
             Assert.AreEqual(rl.Descripcion, RecursosPU_Mod1.Descripcion);
@@ -115,14 +122,6 @@ namespace PruebasUnitariasSKD.Modulo1
             Assert.AreEqual(Pn._Id, 1);
             Assert.AreEqual(Pn._Nombre, RecursosPU_Mod1.nombre);
             Assert.AreEqual(Pn._Apellido, RecursosPU_Mod1.Apellido);
-
-        }
-        // Prueba unitaria del metodo      public PersonaM1(int id)
-        [Test]
-        public void PruebaConstructorPersonaM1_3()
-        {
-            PersonaM1 Pn = new PersonaM1(1);
-            Assert.AreEqual(Pn._Id, 1);
 
         }
 

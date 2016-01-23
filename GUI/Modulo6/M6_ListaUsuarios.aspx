@@ -72,13 +72,13 @@
             <tbody>
                
                       
-                <%foreach(DominioSKD.Cuenta cuenta in lasCuentas) %>
+                <%foreach(DominioSKD.Entidades.Modulo1.Cuenta cuenta in lasCuentas) %>
                 <%{ %>
                  <tr style="background: rgb(224, 235, 235);">
                     <td><%=cuenta.PersonaUsuario._Nombre+' '+cuenta.PersonaUsuario._Apellido %></td>
                     <td><%=cuenta.PersonaUsuario._DocumentoID %> </td>
                      <td><%=cuenta.Nombre_usuario %></td>
-                    <td><%foreach(DominioSKD.Rol rol in cuenta.Roles)%>
+                    <td><%foreach (DominioSKD.Entidades.Modulo2.Rol rol in cuenta.Roles)%>
                         <%{ %>
                                <%=rol.Nombre +" ;"%>
 

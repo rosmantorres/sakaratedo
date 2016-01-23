@@ -68,6 +68,7 @@ namespace DatosSKD
             try
             {
                 this.conexion.Close();
+                conexion = null;
             }
 
             catch (Exception ex)
