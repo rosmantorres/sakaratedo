@@ -328,27 +328,32 @@ namespace LogicaNegociosSKD.Fabrica
 
         #region Modulo 12
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarCompetencias()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarCompetencias()
         {
             return new ComandoConsultarTodosCompetencia();
         }
 
-        public Comando<Entidad> ObtenerComandoDetallarCompetencia(Entidad paramEntidad)
+        public static Comando<Entidad> ObtenerComandoDetallarCompetencia(Entidad paramEntidad)
         {
             return new ComandoConsultarXIdCompetencia(paramEntidad);
         }
 
-        public Comando<bool> ObtenerComandoAgregarCompetencia(Entidad paramEntidad)
+        public static Comando<bool> ObtenerComandoAgregarCompetencia(Entidad paramEntidad)
         {
             return new ComandoAgregarCompetencia(paramEntidad);
         }
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarOrgazaniciones()
+        public static Comando<bool> ObtenerComandoMoficiarCompetencia(Entidad paramEntidad)
+        {
+            return new ComandoModificarCompetencia(paramEntidad);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarOrgazaniciones()
         {
             return new ComandoConsultarOrganizaciones();
         }
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarCintas()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarCintas()
         {
             return new ComandoConsultarCintas();
         }

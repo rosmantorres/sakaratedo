@@ -57,9 +57,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 //
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
                 DominioSKD.Entidades.Modulo12.Competencia competencia = 
-                    (DominioSKD.Entidades.Modulo12.Competencia)fabricaEntidad.ObtenerCompetencia();
+                    (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
                 Organizacion organizacion =
-                    (Organizacion)fabricaEntidad.ObtenerOrganizacion();
+                    (Organizacion)FabricaEntidades.ObtenerOrganizacion();
                 DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
                     (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)FabricaEntidades.ObtenerSolicitudPlanilla();
                 List<string> matricula = new List<string>();

@@ -180,7 +180,7 @@ namespace DatosSKD.Fabrica
 
         #region Modulo 12
 
-        public IDaoCompetencia ObtenerDAOCompetencia()
+        public static IDaoCompetencia ObtenerDAOCompetencia()
         {
             return new DaoCompetencia();
         }

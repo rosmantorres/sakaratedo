@@ -1,6 +1,7 @@
 ﻿using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo10;
 using DominioSKD;
+using DominioSKD.Fabrica;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -82,7 +83,7 @@ namespace DatosSKD.DAO.Modulo10
                 foreach (DataRow row in dt.Rows)
                 {
                     DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                    Entidad competencia = fabrica.ObtenerCompetencia();
+                    Entidad competencia = FabricaEntidades.ObtenerCompetencia();
                     
                     ((DominioSKD.Entidades.Modulo12.Competencia) competencia).Id = int.Parse(row[RecursosDAOModulo10.aliasIdCompetencia].ToString());
                     ((DominioSKD.Entidades.Modulo12.Competencia) competencia).Nombre = row[RecursosDAOModulo10.aliasNombreCompetencia].ToString();
@@ -367,7 +368,7 @@ namespace DatosSKD.DAO.Modulo10
         public Entidad ConsultarCompetenciasXId(string idCompetencia)
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            Entidad competencia = fabrica.ObtenerCompetencia();
+            Entidad competencia = FabricaEntidades.ObtenerCompetencia();
             string diaFecha;
             string mesFecha;
             string anoFecha;
@@ -756,7 +757,7 @@ namespace DatosSKD.DAO.Modulo10
                 DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoListaCompetenciaXFecha, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad competencia = fabrica.ObtenerCompetencia();
+                    Entidad competencia = FabricaEntidades.ObtenerCompetencia();
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = int.Parse(row[RecursosDAOModulo10.aliasIdCompetencia].ToString());
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Nombre = row[RecursosDAOModulo10.aliasNombreCompetencia].ToString();
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.aliasFechaCompetencia].ToString());
@@ -918,7 +919,7 @@ namespace DatosSKD.DAO.Modulo10
 
             try
             {
-                competencia = fabrica.ObtenerCompetencia();
+                competencia = FabricaEntidades.ObtenerCompetencia();
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDAOModulo10.ParametroIdCompetencia, SqlDbType.Int, idCompetencia, false);
                 parametros.Add(parametro);
@@ -936,7 +937,7 @@ namespace DatosSKD.DAO.Modulo10
                     fechaInicio = mesFecha + RecursosDAOModulo10.SeparadorFecha + diaFecha + RecursosDAOModulo10.SeparadorFecha + anoFecha;
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).FechaInicio = DateTime.ParseExact(fechaInicio, RecursosDAOModulo10.FormatoFecha, CultureInfo.InvariantCulture);
                     ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = row[RecursosDAOModulo10.aliasEspecialidadCompetencia].ToString();
-                    Entidad categoria = fabrica.ObtenerCategoria();
+                    Entidad categoria = FabricaEntidades.ObtenerCategoria();
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = int.Parse(row[RecursosDAOModulo10.aliasIdCategoria].ToString());
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Cinta_inicial = row[RecursosDAOModulo10.aliasCintaInicial].ToString();
                     ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Cinta_final = row[RecursosDAOModulo10.aliasCintaFinal].ToString();
