@@ -163,6 +163,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\PruebasComandosM9.cs" />
     <Compile Include="Modulo9\PruebasDaoEvento.cs" />
     <Compile Include="Modulo9\RecursosPU_Mod9.Designer.cs">
       <AutoGen>True</AutoGen>
