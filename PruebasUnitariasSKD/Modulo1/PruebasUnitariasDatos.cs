@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using DatosSKD.Modulo1;
+//using DatosSKD.Modulo1;
 using DatosSKD.Modulo2;
 using PruebasUnitariasSKD.Modulo1;
 using DominioSKD.Entidades.Modulo1;
 using ExcepcionesSKD;
+using DatosSKD.DAO.Modulo1;
+using DatosSKD.Fabrica;
+
 
 
 namespace PruebasUnitariasSKD.Modulo1
@@ -16,6 +19,7 @@ namespace PruebasUnitariasSKD.Modulo1
     [TestFixture]
     class PruebasUnitariasDatos
     {
+        FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
         [SetUp]
         protected void parametros()
         {
@@ -25,8 +29,8 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaReestablecerContrasena()
         {
-
-            BDRestablecer conexionBD = new BDRestablecer();
+            
+            DaoRestablecer conexionBD = (DaoRestablecer) laFabrica.ObtenerDaoRestablecer();
             bool True = conexionBD.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
             Assert.AreEqual(True, true);
 
