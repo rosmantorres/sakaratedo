@@ -142,6 +142,15 @@ namespace Interfaz_Presentadores.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 6.
+        /// </summary>
+        internal static string AlertErrorModificarAsistencia {
+            get {
+                return ResourceManager.GetString("AlertErrorModificarAsistencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2.
         /// </summary>
         internal static string AlertModificarAsistenciaExito {
@@ -277,6 +286,15 @@ namespace Interfaz_Presentadores.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modficar la asistencia.&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlErrorModificarAsistencia {
+            get {
+                return ResourceManager.GetString("InnerHtmlErrorModificarAsistencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia modificada exitosamente&lt;/div&gt;.
         /// </summary>
         internal static string InnerHtmlModificarAsistencia {
@@ -304,6 +322,24 @@ namespace Interfaz_Presentadores.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to N.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S.
+        /// </summary>
+        internal static string Si {
+            get {
+                return ResourceManager.GetString("Si", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to success.
         /// </summary>
         internal static string Success {
@@ -327,6 +363,15 @@ namespace Interfaz_Presentadores.Modulo10 {
         internal static string Value {
             get {
                 return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx.
+        /// </summary>
+        internal static string VentanaListarAsistenciaEvento {
+            get {
+                return ResourceManager.GetString("VentanaListarAsistenciaEvento", resourceCulture);
             }
         }
     }

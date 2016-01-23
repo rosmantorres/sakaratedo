@@ -168,4 +168,16 @@
   <data name="Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="IdEvento" xml:space="preserve">
+    <value>M10_IdEvento</value>
+  </data>
+  <data name="tipoEvento" xml:space="preserve">
+    <value>M10_tipo</value>
+  </data>
+  <data name="ListaAsistenciaModificada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=2</value>
+  </data>
+  <data name="ListaAsistenciaNoModificada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=6</value>
+  </data>
 </root>

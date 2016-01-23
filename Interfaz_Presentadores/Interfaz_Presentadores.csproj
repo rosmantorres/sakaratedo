@@ -56,6 +56,7 @@
       <DependentUpon>M10_RecursosPresentador.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo10\PresentadorListarAsistencia.cs" />
+    <Compile Include="Modulo10\PresentadorModificarAsistencia.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
