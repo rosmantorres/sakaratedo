@@ -45,8 +45,7 @@ namespace Interfaz_Presentadores.Modulo10
             }
             else if (tipoEvento.Equals(M10_RecursosPresentador.Competencia))
             {
-                DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                Entidad competencia = fabrica.ObtenerCompetencia();
+                Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
                 Comando<Entidad> comando = LogicaNegociosSKD.Fabrica.FabricaComandos.ObtenerComandoConsultarCompetenciasXId(idEvento);
                 competencia = comando.Ejecutar();
                 vista.Fecha.Text = ((DominioSKD.Entidades.Modulo12.Competencia)competencia).FechaInicio.ToShortDateString();
@@ -175,8 +174,7 @@ namespace Interfaz_Presentadores.Modulo10
                         {
                             Entidad asistencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
                             ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio = M10_RecursosPresentador.Si;
-                            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                            Entidad competencia = fabrica.ObtenerCompetencia();
+                            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
                             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = Convert.ToInt32(idEvento);
                             Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
                             ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = ((DominioSKD.Entidades.Modulo10.Persona)persona).IdInscripcion;
@@ -192,8 +190,7 @@ namespace Interfaz_Presentadores.Modulo10
                         {
                             Entidad asistencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
                             ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio = M10_RecursosPresentador.No;
-                            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                            Entidad competencia = fabrica.ObtenerCompetencia();
+                            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
                             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = Convert.ToInt32(idEvento);
                             Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
                             ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = ((DominioSKD.Entidades.Modulo10.Persona)persona).IdInscripcion;
@@ -212,8 +209,7 @@ namespace Interfaz_Presentadores.Modulo10
                         {
                             Entidad asistencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
                             ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio = M10_RecursosPresentador.Si;
-                            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                            Entidad competencia = fabrica.ObtenerCompetencia();
+                            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
                             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = Convert.ToInt32(idEvento);
                             Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
                             ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = ((DominioSKD.Entidades.Modulo10.Persona)persona).IdInscripcion;
@@ -229,8 +225,7 @@ namespace Interfaz_Presentadores.Modulo10
                         {
                             Entidad asistencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
                             ((DominioSKD.Entidades.Modulo10.Asistencia)asistencia).Asistio = M10_RecursosPresentador.No;
-                            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-                            Entidad competencia = fabrica.ObtenerCompetencia();
+                            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
                             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = Convert.ToInt32(idEvento);
                             Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
                             ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = ((DominioSKD.Entidades.Modulo10.Persona)persona).IdInscripcion;
