@@ -10,12 +10,12 @@ using System.Data.SqlClient;
 using DominioSKD.Fabrica;
 using DominioSKD.Entidades;
 using DominioSKD;
-
+using DatosSKD.InterfazDAO.Modulo9;
 
 
 namespace DatosSKD.DAO.Modulo9
 {
-    public class DaoEvento:DAOGeneral        
+    public class DaoEvento : DAOGeneral , IDaoEvento
     {
         #region Metodos
         /// <summary>
@@ -23,7 +23,7 @@ namespace DatosSKD.DAO.Modulo9
         /// </summary>
         /// <param name="evento">El Evento a Agregar</param>
         /// <returns>Retorna true o false</returns>
-        public bool CrearEvento(Entidad eventoParametro)
+        public bool Agregar(Entidad eventoParametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoEvento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -43,7 +43,7 @@ namespace DatosSKD.DAO.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosDaoEvento.ParametroIdPersona, SqlDbType.Int, evento.Persona.ID.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDaoEvento.ParametroIdUbicacion, SqlDbType.Int,"1", false);
+                parametro = new Parametro(RecursosDaoEvento.ParametroIdUbicacion, SqlDbType.Int, "1", false);
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosDaoEvento.ParametroIdTipoEvento, SqlDbType.Int, evento.TipoEvento.Id.ToString(), false);
                 parametros.Add(parametro);
@@ -191,7 +191,7 @@ namespace DatosSKD.DAO.Modulo9
         /// </summary>
         /// <param name="evento">Evento a modificar</param>
         /// <returns>Verdadero o Falso</returns>
-        public bool ModificarEvento(Entidad eventoParametro)
+        public bool Modificar(Entidad eventoParametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoEvento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -371,7 +371,6 @@ namespace DatosSKD.DAO.Modulo9
             FabricaEntidades laFabrica = new FabricaEntidades();
             try
             {
-                //DominioSKD.Entidades.Modulo9.Horario horario;
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDaoEvento.ParametroIdPersona, SqlDbType.Int, idPersona.ToString(), false);
@@ -392,7 +391,7 @@ namespace DatosSKD.DAO.Modulo9
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
                     horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
-                    horario.HoraFin = int.Parse(row[RecursosDaoEvento.AliasHoraFin].ToString());   
+                    horario.HoraFin = int.Parse(row[RecursosDaoEvento.AliasHoraFin].ToString());
                     tipoEvento.Nombre = row[RecursosDaoEvento.AliasTipoEvento].ToString();
                     evento.Horario = horario;
                     evento.TipoEvento = tipoEvento;
@@ -456,7 +455,7 @@ namespace DatosSKD.DAO.Modulo9
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDaoEvento.ProcedimientoConsultarTiposEventos, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    evento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento;
+                    evento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
                     tipo = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
                     tipo.Id = int.Parse(row[RecursosDaoEvento.AliasIDTipoEvento].ToString());
                     //Console.Out.WriteLine(evento.Id_evento);
@@ -506,20 +505,24 @@ namespace DatosSKD.DAO.Modulo9
         /// <returns>Retorna un evento</returns>
 
 
-        /// ConsultarEventoTerminado
-        public Evento ConsultarEvento(String idEvento)
+
+        public Entidad ConsultarXId(Entidad idEvento)
         {
             BDConexion laConexion;
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoEvento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             FabricaEntidades laFabrica = new FabricaEntidades();
+            DominioSKD.Entidades.Modulo9.Evento evento;
+            DominioSKD.Entidades.Modulo9.Horario horario;
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento;
             try
             {
+                evento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
+                evento.Id = idEvento.Id;
                 Console.Out.WriteLine(idEvento);
                 laConexion = new BDConexion();
-                DominioSKD.Entidades.Modulo9.Evento evento;
                 //evento = new Evento();
                 List<Parametro> parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosDaoEvento.ParametroIdEvento, SqlDbType.Int, idEvento, false);
+                Parametro parametro = new Parametro(RecursosDaoEvento.ParametroIdEvento, SqlDbType.Int, idEvento.Id.ToString(), false);
                 /*Console.Out.WriteLine(parametro.valor);
                 Console.Out.WriteLine(parametro.tipoDato);
                 Console.Out.WriteLine(RecursosDaoEvento.ParametroIdEvento);*/
@@ -528,9 +531,9 @@ namespace DatosSKD.DAO.Modulo9
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    DominioSKD.Entidades.Modulo9.Horario horario;
-                    DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento;
-                    evento.Nombre = row[RecursosDaoEvento.AliasNombreEvento].ToString(); ;
+                    tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
+                    horario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                    evento.Nombre = row[RecursosDaoEvento.AliasNombreEvento].ToString();
                     Console.Out.WriteLine(evento.Nombre);
                     evento.Descripcion = row[RecursosDaoEvento.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosDaoEvento.AliasEstadoEvento].ToString());
@@ -587,13 +590,14 @@ namespace DatosSKD.DAO.Modulo9
         /// </summary>
         /// <returns>lista de horario</returns>
 
-        public List<Horario> ListarHorarios()
+        public List<Entidad> ListarHorarios()
         {
             BDConexion laConexion;
-            List<Horario> listaHorarios = new List<Horario>();
+            FabricaEntidades laFabrica = new FabricaEntidades();
+            List<Entidad> listaHorarios = new List<Entidad>();
             List<Parametro> parametros;
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoEvento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+            DominioSKD.Entidades.Modulo9.Horario horario;
             try
             {
                 laConexion = new BDConexion();
@@ -602,7 +606,7 @@ namespace DatosSKD.DAO.Modulo9
                 foreach (DataRow row in dt.Rows)
                 {
 
-                    Horario horario = new Horario();
+                    horario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
                     horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
@@ -652,10 +656,14 @@ namespace DatosSKD.DAO.Modulo9
         /// <returns>lista de eventos</returns>
 
 
-        public List<Evento> EventosPorFecha(String fechaInicio, String fechaFin)
+        public List<Entidad> EventosPorFecha(String fechaInicio, String fechaFin)
         {
             BDConexion laConexion;
-            List<Evento> listaEventos = new List<Evento>();
+            List<Entidad> listaEventos = new List<Entidad>();
+            FabricaEntidades laFabrica = new FabricaEntidades();
+            DominioSKD.Entidades.Modulo9.Evento evento;
+            DominioSKD.Entidades.Modulo9.Horario horario;
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento;
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro(RecursosDaoEvento.ParametroFechaInicio, SqlDbType.Date, fechaInicio, false);
             parametros.Add(parametro);
@@ -669,19 +677,21 @@ namespace DatosSKD.DAO.Modulo9
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDaoEvento.ProcedimientoConsultarEventosRangoFecha, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Evento evento = new Evento();
-
-                    evento.Id_evento = int.Parse(row[RecursosDaoEvento.AliasIdEvento].ToString());
-                    Console.Out.WriteLine(evento.Id_evento);
+                    //Evento evento = new Evento();
+                    evento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
+                    horario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                    tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
+                    evento.Id = int.Parse(row[RecursosDaoEvento.AliasIdEvento].ToString());
+                    Console.Out.WriteLine(evento.Id);
                     evento.Nombre = row[RecursosDaoEvento.AliasNombreEvento].ToString();
                     evento.Descripcion = row[RecursosDaoEvento.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosDaoEvento.AliasEstadoEvento].ToString());
-                    Horario horario = new Horario();
+                    //Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
                     horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
                     horario.HoraFin = int.Parse(row[RecursosDaoEvento.AliasHoraFin].ToString());
-                    TipoEvento tipoEvento = new TipoEvento();
+                    // TipoEvento tipoEvento = new TipoEvento();
                     tipoEvento.Nombre = row[RecursosDaoEvento.AliasTipoEvento].ToString();
                     evento.Horario = horario;
                     evento.TipoEvento = tipoEvento;
@@ -727,13 +737,14 @@ namespace DatosSKD.DAO.Modulo9
         /// </summary>
         /// <returns>lista de horario</returns>
 
-        public List<Horario> ListarHorariosAscensos()
+        public List<Entidad> ListarHorariosAscensos()
         {
             BDConexion laConexion;
-            List<Horario> listaHorarios = new List<Horario>();
+            List<Entidad> listaHorarios = new List<Entidad>();
             List<Parametro> parametros;
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoEvento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+            DominioSKD.Entidades.Modulo9.Horario horario;
+            FabricaEntidades laFabrica = new FabricaEntidades();
             try
             {
                 laConexion = new BDConexion();
@@ -741,8 +752,8 @@ namespace DatosSKD.DAO.Modulo9
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDaoEvento.ProcedimientoConsultarFechasAscensos, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-
-                    Horario horario = new Horario();
+                    horario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                    //Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
                     horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
@@ -791,10 +802,14 @@ namespace DatosSKD.DAO.Modulo9
         /// <param name="fechaFin">fecha fin</param>
         /// <returns>lista de eventos</returns>
 
-        public List<Evento> AcsensosPorFecha(String fechaInicio, String fechaFin)
+        public List<Entidad> AcsensosPorFecha(String fechaInicio, String fechaFin)
         {
+            DominioSKD.Entidades.Modulo9.Evento evento;
+            DominioSKD.Entidades.Modulo9.Horario horario;
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento;
+            FabricaEntidades laFabrica = new FabricaEntidades();
             BDConexion laConexion;
-            List<Evento> listaEventos = new List<Evento>();
+            List<Entidad> listaEventos = new List<Entidad>();
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro(RecursosDaoEvento.ParametroFechaInicio, SqlDbType.Date, fechaInicio, false);
             parametros.Add(parametro);
@@ -809,19 +824,21 @@ namespace DatosSKD.DAO.Modulo9
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDaoEvento.ProcedimientoConsultarAscensosRangoFecha, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
-                    Evento evento = new Evento();
-
-                    evento.Id_evento = int.Parse(row[RecursosDaoEvento.AliasIdEvento].ToString());
-                    Console.Out.WriteLine(evento.Id_evento);
+                    //  Evento evento = new Evento();
+                    evento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
+                    horario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                    tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
+                    evento.Id = int.Parse(row[RecursosDaoEvento.AliasIdEvento].ToString());
+                    Console.Out.WriteLine(evento.Id);
                     evento.Nombre = row[RecursosDaoEvento.AliasNombreEvento].ToString();
                     evento.Descripcion = row[RecursosDaoEvento.AliasDescripcionEvento].ToString();
                     evento.Estado = Boolean.Parse(row[RecursosDaoEvento.AliasEstadoEvento].ToString());
-                    Horario horario = new Horario();
+                    // Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
                     horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
                     horario.HoraFin = int.Parse(row[RecursosDaoEvento.AliasHoraFin].ToString());
-                    TipoEvento tipoEvento = new TipoEvento();
+                    //   TipoEvento tipoEvento = new TipoEvento();
                     tipoEvento.Nombre = row[RecursosDaoEvento.AliasTipoEvento].ToString();
                     evento.Horario = horario;
                     evento.TipoEvento = tipoEvento;
@@ -861,6 +878,9 @@ namespace DatosSKD.DAO.Modulo9
             return listaEventos;
 
         }
+
+        public List<Entidad> ConsultarTodos()
+        { throw new NotImplementedException(); }
         #endregion
 
     }
