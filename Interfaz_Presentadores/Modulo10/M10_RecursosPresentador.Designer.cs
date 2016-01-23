@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo10 {
+namespace Interfaz_Presentadores.Modulo10 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace templateApp.GUI.Modulo10 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class M10_RecursosInterfaz {
+    internal class M10_RecursosPresentador {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal M10_RecursosInterfaz() {
+        internal M10_RecursosPresentador() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace templateApp.GUI.Modulo10 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo10.M10_RecursosInterfaz", typeof(M10_RecursosInterfaz).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo10.M10_RecursosPresentador", typeof(M10_RecursosPresentador).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,20 +79,74 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to class.
+        ///   Looks up a localized string similar to alert.
         /// </summary>
-        internal static string alertClase {
+        internal static string Alerta {
             get {
-                return ResourceManager.GetString("alertClase", resourceCulture);
+                return ResourceManager.GetString("Alerta", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to role.
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
-        internal static string alertRole {
+        internal static string AlertaDanger {
             get {
-                return ResourceManager.GetString("alertRole", resourceCulture);
+                return ResourceManager.GetString("AlertaDanger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4.
+        /// </summary>
+        internal static string AlertAgregarAsistenciaCompetencia {
+            get {
+                return ResourceManager.GetString("AlertAgregarAsistenciaCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string AlertAgregarAsistenciaEvento {
+            get {
+                return ResourceManager.GetString("AlertAgregarAsistenciaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string AlertaSuccess {
+            get {
+                return ResourceManager.GetString("AlertaSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5.
+        /// </summary>
+        internal static string AlertErrorAgregarCompetencia {
+            get {
+                return ResourceManager.GetString("AlertErrorAgregarCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string AlertErrorAgregarEvento {
+            get {
+                return ResourceManager.GetString("AlertErrorAgregarEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string AlertModificarAsistenciaExito {
+            get {
+                return ResourceManager.GetString("AlertModificarAsistenciaExito", resourceCulture);
             }
         }
         
@@ -178,6 +232,60 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0:dd/MM/yyyy}.
+        /// </summary>
+        internal static string FormatoFechas {
+            get {
+                return ResourceManager.GetString("FormatoFechas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia a competencia agregada exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlAgregarAsistenciaCompetencia {
+            get {
+                return ResourceManager.GetString("InnerHtmlAgregarAsistenciaCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia a eventos agregada exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlAgregarAsistenciaEvento {
+            get {
+                return ResourceManager.GetString("InnerHtmlAgregarAsistenciaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar la asistencia de la competencia &lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlErrorAgregarCompetencia {
+            get {
+                return ResourceManager.GetString("InnerHtmlErrorAgregarCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar la asistencia al evento &lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlErrorAgregarEvento {
+            get {
+                return ResourceManager.GetString("InnerHtmlErrorAgregarEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia modificada exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlModificarAsistencia {
+            get {
+                return ResourceManager.GetString("InnerHtmlModificarAsistencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
@@ -192,6 +300,15 @@ namespace templateApp.GUI.Modulo10 {
         internal static string Modificar {
             get {
                 return ResourceManager.GetString("Modificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to success.
+        /// </summary>
+        internal static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
             }
         }
         

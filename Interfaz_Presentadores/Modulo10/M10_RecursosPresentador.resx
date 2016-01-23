@@ -123,11 +123,23 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
-  <data name="alertClase" xml:space="preserve">
-    <value>class</value>
+  <data name="Alerta" xml:space="preserve">
+    <value>alert</value>
   </data>
-  <data name="alertRole" xml:space="preserve">
-    <value>role</value>
+  <data name="AlertAgregarAsistenciaCompetencia" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AlertAgregarAsistenciaEvento" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AlertErrorAgregarCompetencia" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AlertErrorAgregarEvento" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AlertModificarAsistenciaExito" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
@@ -162,10 +174,37 @@
   <data name="Modificar" xml:space="preserve">
     <value>modificar</value>
   </data>
+  <data name="Success" xml:space="preserve">
+    <value>success</value>
+  </data>
   <data name="Tipo" xml:space="preserve">
     <value>tipo</value>
   </data>
   <data name="Value" xml:space="preserve">
     <value>Value</value>
+  </data>
+  <data name="AlertaDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="InnerHtmlAgregarAsistenciaCompetencia" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia a competencia agregada exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlAgregarAsistenciaEvento" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia a eventos agregada exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlErrorAgregarCompetencia" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar la asistencia de la competencia &lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlErrorAgregarEvento" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar la asistencia al evento &lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlModificarAsistencia" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Asistencia modificada exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="FormatoFechas" xml:space="preserve">
+    <value>{0:dd/MM/yyyy}</value>
   </data>
 </root>

@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo10\M10_RecursosPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M10_RecursosPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo10\PresentadorListarAsistencia.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
@@ -137,7 +143,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo3\" />
@@ -148,6 +153,10 @@
     <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M10_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\M16_Recursointerfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M16_Recursointerfaz.Designer.cs</LastGenOutput>
