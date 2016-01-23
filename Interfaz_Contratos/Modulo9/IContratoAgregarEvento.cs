@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Interfaz_Contratos.Modulo9
 {
-    interface IContratoAgregarEvento
+    public interface IContratoAgregarEvento
     {
         string nombreEvento { get; }
         DropDownList comboTipoEvento { get; set; }
