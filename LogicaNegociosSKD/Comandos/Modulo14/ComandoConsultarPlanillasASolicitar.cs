@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo14
 {
-    class ComandoConsultarPlanillasASolicitar : Comando<List<Entidad>>
+    public class ComandoConsultarPlanillasASolicitar : Comando<List<Entidad>>
     {
         public override List<Entidad> Ejecutar()
         {
