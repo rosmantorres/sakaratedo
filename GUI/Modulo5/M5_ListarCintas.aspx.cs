@@ -26,11 +26,9 @@ namespace templateApp.GUI.Modulo5
         {
             ((SKD)Page.Master).IdModulo = "5";
 
-            
+            this.presentador = new PresentadorLlenarCintas(this);
             if (!IsPostBack)
-            {
-
-                this.presentador = new PresentadorLlenarCintas(this);
+            {                
                 this.presentador.LlenarInformacion();
             }
            

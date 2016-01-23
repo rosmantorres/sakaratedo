@@ -76,10 +76,12 @@ namespace Interfaz_Presentadores.Modulo5
             else
                 laCinta.Status = false;
 
+            /* 
             if (laCinta.Status)
                 this.vista.llenarStatusInactivo(laCinta.Id_cinta);
             else
-                this.vista.llenarStatusActivo(laCinta.Id_cinta);            
+                this.vista.llenarStatusActivo(laCinta.Id_cinta);    
+             * */
         }
     }
 }
