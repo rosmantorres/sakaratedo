@@ -53,7 +53,7 @@ namespace PruebasUnitariasSKD.Modulo11
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             IDaoResultadoKumite DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKumite();
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKumite();
+    
             Entidad competencia = fabrica.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "2";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
@@ -62,7 +62,7 @@ namespace PruebasUnitariasSKD.Modulo11
 
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
 
-            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKumite(entidad);
+            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKumite(competencia);
             Assert.NotNull(listaEntidad);
 
         }
@@ -71,21 +71,22 @@ namespace PruebasUnitariasSKD.Modulo11
         [Test]
 
 
-        public void ListaAtletasParticipanCompetenciaKumiteAmbos()
+        public void ListaAtletasParticipanCompetenciaKumiteAmbos() 
         {
 
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             IDaoResultadoKumite DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKumite();
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKumite();
+     
             Entidad competencia = fabrica.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "3";
-            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 7;
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 12;
             Entidad categoria = fabrica.ObtenerCategoria();
             ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
-            
 
-            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKumiteAmbos(entidad);
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+
+            listaEntidad = DAO.ListaAtletasParticipanCompetenciaKumiteAmbos(competencia);
             Assert.NotNull(listaEntidad);
 
         }
@@ -100,7 +101,7 @@ namespace PruebasUnitariasSKD.Modulo11
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             IDaoResultadoKumite DAO = FabricaDAOSqlServer.ObtenerDAOResultadoKumite();
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
+       
             Entidad competencia = fabrica.ObtenerCompetencia();
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
@@ -109,7 +110,7 @@ namespace PruebasUnitariasSKD.Modulo11
 
             ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
 
-            listaEntidad = DAO.ListaInscritosCompetencia(entidad);
+            listaEntidad = DAO.ListaInscritosCompetencia(competencia);
             Assert.NotNull(listaEntidad);
 
         }

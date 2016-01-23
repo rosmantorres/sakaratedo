@@ -230,14 +230,17 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void pruebaConsultarCompXIDdetalle() // Vacio!
         {
+            Comando<Entidad> entidad = FabricaComandos.ObtenerComandoConsultarCompetenciaXIdDetalle(idCompetencia);
+            Assert.NotNull(entidad.Ejecutar());
 
-          
         }
+
 
         [Test]
         public void pruebaConsultarCompXID() // Vacio!
         {
-
+            Comando<Entidad> entidad = FabricaComandos.ObtenerComandoConsultarCompetenciasXId(idCompetencia);
+            Assert.NotNull(entidad.Ejecutar());
 
         }
 
@@ -245,22 +248,62 @@ namespace PruebasUnitariasSKD.Modulo10
         [Test]
         public void pruebaConsultarCompXfecha() // Vacio!
         {
-
-
+            Comando<List<Entidad>> comandoConsultarXfecha = FabricaComandos.ObtenerComandoCompetenciasPorFecha("20/02/2016");
+            listaEntidad = comandoConsultarXfecha.Ejecutar();
+            Assert.NotNull(listaEntidad);
         }
-
 
 
         [Test]
-        public void pruebaAgregarAsistenciaEvento() 
+        public void pruebaConsultarCompXfechaC() // Contar Competencias por Iniciar
+        {
+            Comando<List<Entidad>> comandoConsultarXfecha = FabricaComandos.ObtenerComandoCompetenciasPorFecha("20/02/2016");
+            listaEntidad = comandoConsultarXfecha.Ejecutar();
+            Assert.AreEqual(2, listaEntidad.ToArray().Length);
+        }
+
+
+        [Test]
+        public void pruebaAgregarAsistenciaEvento()
         {
 
-          
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "S";
+            Entidad evento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            ((DominioSKD.Entidades.Modulo10.Evento)evento).Id = 3;
+            Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
+            ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = 50;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Evento = evento as DominioSKD.Entidades.Modulo10.Evento;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion = inscripcion as DominioSKD.Entidades.Modulo10.Inscripcion;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoAgregarAsistenciaEvento(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
         }
+          
+   
 
         [Test]
         public void pruebaAgregarAsistenciaCompetencia()
         {
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "S";
+            Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
+            Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
+            ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = 50;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Competencia = competencia as DominioSKD.Entidades.Modulo12.Competencia;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion = inscripcion as DominioSKD.Entidades.Modulo10.Inscripcion;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoAgregarAsistenciaCompetencia(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
 
         }
 

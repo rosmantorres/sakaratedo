@@ -75,8 +75,10 @@ namespace PruebasUnitariasSKD.Modulo11
         [Test]
         public void pruebaInscritosExamenAscenso() // Vacio!
         {
-            Comando<List<Entidad>> comandoInscritosExamenA = FabricaComandos.ObtenerComandoListaInscritosExamenAscenso(entidad);
 
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+            Comando<List<Entidad>> comandoInscritosExamenA = FabricaComandos.ObtenerComandoListaInscritosExamenAscenso(entidad);
+     
         }
 
         [Test]
@@ -140,9 +142,123 @@ namespace PruebasUnitariasSKD.Modulo11
 
         }
 
+        [Test]
+        public void pruebaCategoriaCompetencia()
+        {
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            entidad = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 5;
+            ((DominioSKD.Entidades.Modulo12.Competencia)entidad).TipoCompetencia = "1";
+
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+
+            ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+
+            Comando<List<Entidad>> lista = FabricaComandos.ObtenerComandoListaCategoriaCompetencia(entidad);
+           
+            Assert.NotNull(lista.Ejecutar());
+        }
+
+        [Test]
+        public void pruebaListaAtletasParticipanComKumite()
+        {
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+
+            Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "2";
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 6;
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 2;
+
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+
+            Comando<List<Entidad>> lista = FabricaComandos.ObtenerComandoListaAtletasParticipanCompetenciaKumite(competencia);
+            listaEntidad = lista.Ejecutar();
+            Assert.NotNull(listaEntidad);
+       
+        }
+
+        [Test]
+
+        public void pruebaListarAtletasParticipanComKumiteAmbos()
+        {
+
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "3";
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 12;
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+
+            Comando<List<Entidad>> lista = FabricaComandos.ObtenerComandoListaAtletasParticipanCompetenciaKumiteAmbos(competencia);
+            Assert.NotNull(lista.Ejecutar());
+
+        }
+
+        [Test]
+
+        public void pruebaListarAtletasParticipanComKata()
+        {
+
+            
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "1";
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 10;
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+
+            Comando<List<Entidad>> lista = FabricaComandos.ObtenerComandoListaAtletasParticipanCompetenciaKata(competencia);
+            listaEntidad = lista.Ejecutar();
+            Assert.NotNull(listaEntidad);
+
+        }
+
+
+        [Test]
+        public void pruebaListarAtletasParticipanComKataAmbos()
+        {
+
+
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            Entidad competencia = fabrica.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).TipoCompetencia = "3";
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 12;
+            Entidad categoria = fabrica.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+
+            Comando<List<Entidad>> lista = FabricaComandos.ObtenerComandoListaAtletasParticipanCompetenciaKataAmbos(competencia);
+            listaEntidad = lista.Ejecutar();
+            Assert.NotNull(listaEntidad);
 
 
 
+        }
+
+        [Test]
+
+        public void pruebaListaAtletasCatYascenso()
+        {
+
+
+
+        }
+
+        [Test]
+
+        public void pruebaAgregarResultadoKata()
+        {
+
+         
+        }
 
         #endregion
     }

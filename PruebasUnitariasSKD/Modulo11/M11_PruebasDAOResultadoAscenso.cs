@@ -171,9 +171,15 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaConsultarEventoDetalle()
         {
-     
-           
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
+            Assert.NotNull(entidad);
         }
+
+        
         #endregion
     }
 }
