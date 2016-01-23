@@ -216,6 +216,21 @@
   <data name="Codigo_Objeto_Nulo" xml:space="preserve">
     <value>SKD_00_011</value>
   </data>
+  <data name="DetalleStringCompetenciaInscDetalle" xml:space="preserve">
+    <value>CompInscDetalle</value>
+  </data>
+  <data name="DetalleStringDetalleEventoInscrito" xml:space="preserve">
+    <value>EventInscDetalle</value>
+  </data>
+  <data name="DetalleStringDetalleHorarioPractica" xml:space="preserve">
+    <value>horarioDetalle</value>
+  </data>
+  <data name="DetalleStringEventoInscrito" xml:space="preserve">
+    <value>EventInscDetalle</value>
+  </data>
+  <data name="DetalleStringHorarioPractica" xml:space="preserve">
+    <value>horarioDetalle</value>
+  </data>
   <data name="MensajeListaNulaLogger" xml:space="preserve">
     <value>La lista que retorno el metodo es nula</value>
   </data>
@@ -224,6 +239,9 @@
   </data>
   <data name="Mensaje_Numero_Parametro_invalido" xml:space="preserve">
     <value>El número del parametro es invalido, debe ser un entero positivo</value>
+  </data>
+  <data name="Modulo" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="RolAtleta" xml:space="preserve">
     <value>Atleta</value>

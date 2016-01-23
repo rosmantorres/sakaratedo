@@ -19,6 +19,7 @@ namespace Interfaz_Presentadores.Modulo7
     public class PresentadorListarEventosInscritos
     {
         private IContratoListarEventosInscritos vista;
+
         /// <summary>
         /// Constructor del presentador
         /// </summary>

@@ -151,6 +151,7 @@
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoConsultarPerfil.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCinta.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarHorarioPractica.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarMatricula.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarEvento.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosInscritos.cs" />

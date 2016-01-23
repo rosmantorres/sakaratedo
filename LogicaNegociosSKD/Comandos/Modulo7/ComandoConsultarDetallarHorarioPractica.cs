@@ -9,33 +9,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
     /// <summary>
-    /// Comando para detallar el horario de practica del atleta
+    /// Comando para detallar horario de practica
     /// </summary>
-    public class ComandoConsultarListaHorarioPractica : Comando<Tuple<List<Entidad>>>
+    public class ComandoConsultarDetallarHorarioPractica : Comando<Entidad>
     {
         /// <summary>
-        /// Implementacion de método ejecutar para comando listar horario de practica del atleta
+        /// Implementacion de método ejecutar para comando detallar horario practica
         /// </summary>
-        /// <returns>Retorta tupla con listas del evento horario de clase</returns>
-        public override Tuple<List<Entidad>> Ejecutar()
+        /// <returns>Retorna entidad de evento</returns>
+        public override Entidad Ejecutar()
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
-            List<Entidad> eventos = new List<Entidad>();
-            List<Entidad> competencias = new List<Entidad>();
-            Persona idPersona = (Persona)LaEntidad;
-            Tuple<List<Entidad>> tupla;
-            List<DateTime> listaFechaEventos = new List<DateTime>();
+            Evento idEvento = (Evento)LaEntidad;
+            Evento evento;
             try
             {
-                if (idPersona.Id > 0)
+                if (idEvento.Id > 0)
                 {
-                    eventos = baseDeDatosEvento.ListarHorarioPractica(idPersona);
-                     tupla = Tuple.Create(eventos);
+                    evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
                 }
                 else
                 {
@@ -67,7 +62,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
 
                 throw ex;
             }
-            return tupla;
+            return evento;
         }
     }
 }

@@ -38,7 +38,10 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarListaHorarioPractica();
         }
-
+        public Comando<Entidad> ObtenerComandoConsultarDetallarHorarioPractica()
+        {
+            return new ComandoConsultarDetallarHorarioPractica();
+        }
         public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosAsistidos()
         {
             return new ComandoConsultarListaEventosAsistidos();
