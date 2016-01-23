@@ -79,7 +79,7 @@
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <div class="col-sm-4 col-md-4 col-lg-4">
                                 <h3>Costo del Evento</h3>
-                                <asp:TextBox runat="server" type="number" name="costoEvento" id="costoEvento" placeholder="Costo" class="form-control"></asp:TextBox>
+                                <asp:TextBox runat="server" type="number" name="costoEvento" id="costoEvento" placeholder="Costo" class="form-control" OnTextChanged="costoEvento_TextChanged"></asp:TextBox>
                             </div>
                     </div>
                 </div>
@@ -96,6 +96,7 @@
                                 <div class="input-group input-append date" id="datePickerIni">
                                     <input runat="server" type="text" class="form-control" name="date" id="fechaInicio"/>
                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <asp:HiddenField runat="server" id="fechaIniValue" ClientIDMode="Static"></asp:HiddenField>
                                 </div>
                             </div>
                             <div class="col-sm-1 col-md-1 col-lg-1"></div>
@@ -105,6 +106,7 @@
                                 <div class="input-group input-append date" id="datePickerFin">
                                     <input runat="server" type="text" class="form-control" name="date" id="fechaFin"/>
                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <asp:HiddenField runat="server" id="fechaFinValue" ClientIDMode="Static"/>
                                 </div>
                             </div>
                        </div>

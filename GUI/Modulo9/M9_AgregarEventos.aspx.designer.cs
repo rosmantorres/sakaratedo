@@ -85,6 +85,15 @@ namespace templateApp.GUI.Modulo9 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText fechaInicio;
         
         /// <summary>
+        /// fechaIniValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField fechaIniValue;
+        
+        /// <summary>
         /// fechaFin control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace templateApp.GUI.Modulo9 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText fechaFin;
+        
+        /// <summary>
+        /// fechaFinValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField fechaFinValue;
         
         /// <summary>
         /// horaInicio control.
