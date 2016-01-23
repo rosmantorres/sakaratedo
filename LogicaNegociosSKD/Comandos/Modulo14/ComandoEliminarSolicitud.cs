@@ -24,10 +24,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Boolean Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                DaoSolicitud daoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+                DaoSolicitud daoSolicitud = (DaoSolicitud)FabricaDAOSqlServer.ObtenerDAOSolicitud();
                 return daoSolicitud.EliminarSolicitudBD(this.idSolicitud);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

@@ -3,6 +3,7 @@ using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
+using LogicaNegociosSKD.Fabrica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,11 +42,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            DaoDiseno daoDiseno = (DaoDiseno)fabrica.ObtenerDAODiseno();
-            DaoDatos daoDatos = (DaoDatos)fabrica.ObtenerDAODatos();
-            DaoSolicitud daoSol = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+            DaoDiseno daoDiseno = (DaoDiseno)FabricaDAOSqlServer.ObtenerDAODiseno();
+            DaoDatos daoDatos = (DaoDatos)FabricaDAOSqlServer.ObtenerDAODatos();
+            DaoSolicitud daoSol = (DaoSolicitud)FabricaDAOSqlServer.ObtenerDAOSolicitud();
             try
             {
                 Persona persona = (Persona)FabricaEntidades.ObtenerPersona();
@@ -80,9 +80,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                 daoDatos.LimpiarSQLConnection();
                 diseñoPlanilla = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarDisenoID(solicitud);
                 daoDiseno.LimpiarSQLConnection();
-                Fabrica.FabricaComandos fComandos = new Fabrica.FabricaComandos();
-                ComandoReemplazarElementos comand = 
-                    (ComandoReemplazarElementos)fComandos.ObtenerComandoReemplazarElementos();
+                ComandoReemplazarElementos comand =
+                    (ComandoReemplazarElementos)FabricaComandos.ObtenerComandoReemplazarElementos();
                 comand.Info = diseñoPlanilla.Contenido;
                 //comand.Info = solicitud.Diseno.Contenido;
                 comand.Persona = persona;

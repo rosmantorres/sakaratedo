@@ -32,14 +32,13 @@ namespace Interfaz_Presentadores.Modulo14
 
         public Entidad MostrarInformacion(int idIns, int idPersona,int idSolici, int planilla)
         {
-            FabricaComandos fabrica = new FabricaComandos();
             try
             {
                 DominioSKD.Entidades.Modulo14.Planilla plani =
                     (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
                 plani.ID = planilla;
                 ComandoConsultarDiseño command = (ComandoConsultarDiseño)
-                    fabrica.ObtenerComandoComandoConsultarDiseño();
+                    FabricaComandos.ObtenerComandoComandoConsultarDiseño();
                 command.IdIns = idIns;
                 command.IdPersona = idPersona;
                 command.IdSolici = idSolici;

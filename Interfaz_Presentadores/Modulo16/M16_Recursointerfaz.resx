@@ -264,11 +264,47 @@
   <data name="EXCEPTIONSKD_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=2</value>
   </data>
+  <data name="EXCEPTIONSKD_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=2</value>
+  </data>
+  <data name="EXCEPTIONSKD_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=2</value>
+  </data>
+  <data name="EXCEPTIONSKD_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=2</value>
+  </data>
+  <data name="EXCEPTIONSKD_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=2</value>
+  </data>
   <data name="EXCEPTION_CONEXIONBD_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=3</value>
   </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=3</value>
+  </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=3</value>
+  </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=3</value>
+  </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=3</value>
+  </data>
   <data name="EXCEPTION_FORMATO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=6</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=6</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=6</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=6</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=6</value>
   </data>
   <data name="EXCEPTION_ITEM_INVALIDO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=10</value>
@@ -276,8 +312,32 @@
   <data name="EXCEPTION_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=1</value>
   </data>
+  <data name="EXCEPTION_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=1</value>
+  </data>
+  <data name="EXCEPTION_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=1</value>
+  </data>
+  <data name="EXCEPTION_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=1</value>
+  </data>
+  <data name="EXCEPTION_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=1</value>
+  </data>
   <data name="EXCEPTION_LOGGER_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=8</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=8</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=8</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=8</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=8</value>
   </data>
   <data name="EXCEPTION_OPCION_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=11</value>
@@ -285,14 +345,62 @@
   <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=4</value>
   </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=4</value>
+  </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=4</value>
+  </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=4</value>
+  </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=4</value>
+  </data>
   <data name="EXCEPTION_PARSEO_VACIO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=7</value>
   </data>
   <data name="EXCEPTION_PERSONA_INVALIDA_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=9</value>
   </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=9</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=9</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=9</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=9</value>
+  </data>
   <data name="EXCEPTION_SOBRECARGA_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=5</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK_EVENTO" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=5</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=5</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK_MATRICULA" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=5</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK_PRODUCTO" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=5</value>
   </data>
   <data name="IMPLEMENTO" xml:space="preserve">
     <value>Implemento</value>

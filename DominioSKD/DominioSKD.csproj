@@ -68,6 +68,7 @@
     <Compile Include="Entidades\Modulo16\ListaEvento.cs" />
     <Compile Include="Entidades\Modulo16\ListaImplemento.cs" />
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
+    <Compile Include="Entidades\Modulo16\Pago.cs" />
     <Compile Include="Entidades\Modulo4\Dojo.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
@@ -88,7 +89,7 @@
     <Compile Include="RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo12\Competencia.cs" />
     <Compile Include="Cuenta.cs" />
-    <Compile Include="Compra.cs" />
+    <Compile Include="Entidades\Modulo16\Compra.cs" />
     <Compile Include="Diseño.cs" />
     <Compile Include="Dojo.cs" />
     <Compile Include="HistorialCinta.cs" />

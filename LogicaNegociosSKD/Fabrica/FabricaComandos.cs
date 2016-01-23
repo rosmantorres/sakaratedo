@@ -302,112 +302,112 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 14
-        public Comando<List<Entidad>> ObtenerComandoCompetenciasSolicitud()
+        public static Comando<List<Entidad>> ObtenerComandoCompetenciasSolicitud()
         {
             return new ComandoCompetenciasSolicitud();
         }
-        public Comando<List<Boolean>> ObtenerComandoDatosRequeridosSolicitud()
+        public static Comando<List<Boolean>> ObtenerComandoDatosRequeridosSolicitud()
         {
             return new ComandoDatosRequeridosSolicitud();
         }
-        public Comando<List<Entidad>> ObtenerComandoEventosSolicitud()
+        public static Comando<List<Entidad>> ObtenerComandoEventosSolicitud()
         {
             return new ComandoEventosSolicitud();
         }
-        public Comando<Entidad> ObtenerComandoModificarPlanillaID()
+        public static Comando<Entidad> ObtenerComandoModificarPlanillaID()
         {
             return new ComandoModificarPlanillaID();
         }
-        public Comando<Entidad> ObtenerComandoModificarPlanillaIDTipo()
+        public static Comando<Entidad> ObtenerComandoModificarPlanillaIDTipo()
         {
             return new ComandoModificarPlanillaIDTipo();
         }
-        public Comando<Entidad> ObtenerComandoModificarSolicitudID()
+        public static Comando<Entidad> ObtenerComandoModificarSolicitudID()
         {
             return new ComandoModificarSolicitudID();
         }
-        public Comando<Boolean> ObtenerComandoNuevoTipoPlanilla()
+        public static Comando<Boolean> ObtenerComandoNuevoTipoPlanilla()
         {
             return new ComandoNuevoTipoPlanilla();
         }
-        public Comando<List<String>> ObtenerComandoObtenerDatosBD()
+        public static Comando<List<String>> ObtenerComandoObtenerDatosBD()
         {
             return new ComandoObtenerDatosBD();
         }
-        public Comando<List<String>> ObtenerComandoObtenerDatosPlanilla()
+        public static Comando<List<String>> ObtenerComandoObtenerDatosPlanilla()
         {
             return new ComandoObtenerDatosPlanilla();
         }
-        public Comando<Entidad> ObtenerComandoObtenerPlanillaID()
+        public static Comando<Entidad> ObtenerComandoObtenerPlanillaID()
         {
             return new ComandoObtenerPlanillaID();
         }
-        public Comando<Entidad> ObtenerComandoObtenerSolicitudID()
+        public static Comando<Entidad> ObtenerComandoObtenerSolicitudID()
         {
             return new ComandoObtenerSolicitudID();
         }
-        public Comando<List<Entidad>> ObtenerComandoObtenerTipoPlanilla()
+        public static Comando<List<Entidad>> ObtenerComandoObtenerTipoPlanilla()
         {
             return new ComandoObtenerTipoPlanilla();
         }
-        public Comando<bool> ObtenerComandoRegistrarPlanilla()
+        public static Comando<bool> ObtenerComandoRegistrarPlanilla()
         {
             return new ComandoRegistrarPlanilla();
         }
-        public Comando<bool> ObtenerComandoRegistrarPlanillaTipo()
+        public static Comando<bool> ObtenerComandoRegistrarPlanillaTipo()
         {
             return new ComandoRegistrarPlanillaTipo();
         }
-        public Comando<Boolean> ObtenerComandoRegistrarSolicitudIDPersona()
+        public static Comando<Boolean> ObtenerComandoRegistrarSolicitudIDPersona()
         {
             return new ComandoRegistrarSolicitudIDPersona();
         }
-        public Comando<Boolean> ObtenerComandoRegistrarSolicitudPlanilla()
+        public static Comando<Boolean> ObtenerComandoRegistrarSolicitudPlanilla()
         {
             return new ComandoRegistrarSolicitudPlanilla();
         }
 
-        public Comando<List<Entidad>> ObtenerComandoListarPlanillasSolicitadas()
+        public static Comando<List<Entidad>> ObtenerComandoListarPlanillasSolicitadas()
         {
             return new ComandoListarPlanillasSolicitadas();
         }
 
-        public Comando<List<Entidad>> ObtenerComandoConsultarPlanillasASolicitar()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarPlanillasASolicitar()
         {
             return new ComandoConsultarPlanillasASolicitar();
         }
 
-        public Comando<Boolean> ObtenerComandoEliminarSolicitud()
+        public static Comando<Boolean> ObtenerComandoEliminarSolicitud()
         {
             return new ComandoEliminarSolicitud();
         }
 
-        public Comando<Boolean> ObtenerComandoAgregarDiseno()
+        public static Comando<Boolean> ObtenerComandoAgregarDiseno()
         {
             return new ComandoAgregarDiseno();
         }
 
-        public Comando<Entidad> ObtenerComandoConsultarDiseñoPuro()
+        public static Comando<Entidad> ObtenerComandoConsultarDiseñoPuro()
         {
             return new ComandoConsultarDiseñoPuro();
         }
 
-        public Comando<Boolean> ObtenerComandoModificarDiseno()
+        public static Comando<Boolean> ObtenerComandoModificarDiseno()
         {
             return new ComandoModificarDiseno();
         }
 
-        public Comando<string> ObtenerComandoReemplazarElementos()
+        public static Comando<string> ObtenerComandoReemplazarElementos()
         {
             return new ComandoReemplazarElementos();
         }
 
-        public Comando<Entidad> ObtenerComandoComandoConsultarDiseño()
+        public static Comando<Entidad> ObtenerComandoComandoConsultarDiseño()
         {
             return new ComandoConsultarDiseño();
         }
 
-        public Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
+        public static Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
         {
             return new ComandoConsultarPlanillas();
         }
@@ -470,6 +470,31 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoDojoId();
         }
         #endregion 
+
+        #region ComandoConsultarTodosProductos
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
+        /// </summary>
+        /// <returns>El ComandoConsultarTodosProductos</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodosProductos()
+        {
+            return new ComandoConsultarTodosProductos();
+        }
+        #endregion
+
+        #region CrearComandoDetallarProducto
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando CrearComandoDetallarProducto
+        /// </summary>
+        /// <returns>El ComandoDetallarProducto</returns>
+        public static Comando<Entidad> CrearComandoDetallarProducto(Entidad implemento)
+        {
+            return new ComandoDetallarProducto(implemento);
+        }
+        #endregion
+
         #endregion
 
         #region Modulo 16
@@ -478,123 +503,16 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosEventos
         /// </summary>
         /// <returns>El ComandoConsultarTodosEventos</returns>
-        public Comando <Entidad> CrearComandoConsultarTodosEventos()
+        public static Comando <Entidad> CrearComandoConsultarTodosEventos()
         {
             return new ComandoConsultarTodosEventos();
         }
         
-              /*  /// <summary>
-                /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
-                /// </summary>
-                /// <returns>El ComandoAgregarItem vacio</returns>
-                public static Comando<bool> CrearComandoAgregarItem()
-                {
-                    return new ComandoAgregarItem();
-                }
-
-                /// <summary>
-                /// Metodo de la fabrica que instancia el ComandoAgregarItem con sus datos llenos
-                /// </summary>
-                /// <param name="persona">La persona a la que se le agregara al carrito</param>
-                /// <param name="objeto">el item que se agregara al carrito de la persona</param>
-                /// <param name="tipoObjeto">Indica a que tipo de item nos estamos refiriendo para Agregar</param>
-                /// <param name="cantidad">la cantidad que se esta agregando del objeto</param>
-                /// <returns>El ComandoAgregarItem con sus datos llenos</returns>
-                public static Comando<bool> CrearComandoAgregarItem(Entidad persona, Entidad objeto, int tipoObjeto
-                    , int cantidad)
-                {
-                    return new ComandoAgregarItem(persona, objeto, tipoObjeto, cantidad);
-                }
-
-                /// <summary>
-                /// Metodo de la fabrica que instancia el comando ComandoRegistrarPago Vacio
-                /// </summary>
-                /// <returns>El ComandoRegistrarPago vacio</returns>
-                public static Comando<bool> CrearComandoRegistrarPago()
-                {
-                    return new ComandoRegistrarPago();
-                }
-
-                /// <summary>
-                /// Metodo de la fabrica que instancia el ComandoRegistraPago con sus datos llenos
-                /// </summary>
-                /// <param name="persona">La persona a la cual se le adjudicara la transaccion</param>
-                /// <param name="tipoPago">el tipo de pago que la persona realizo</param>
-                /// <returns>El ComandoRegistrarPago con sus datos llenos</returns>
-                public static Comando<bool> CrearComandoRegistrarPago(Entidad persona, String tipoPago)
-                {
-                    return new ComandoRegistrarPago(persona, tipoPago);
-                }
-
-                /// <summary>
-                /// Metodo de la fabrica que instancia el comando ComandoModificarCarrito Vacio
-                /// </summary>
-                /// <returns>El ComandoModificarCarrito vacio</returns>
-                public static Comando<bool> CrearComandoModificarCarrito()
-                {
-                    return new ComandoModificarCarrito();
-                }
-
-                /// <summary>
-                /// Metodo de la fabrica que instancia el ComandoModficiarCarrito con sus datos llenos
-                /// </summary>
-                /// <param name="persona">La persona a la que se le modificara el carrito</param>
-                /// <param name="objeto">el item que se modificara al carrito de la persona</param>
-                /// <param name="tipoObjeto">Indica a que tipo de item nos estamos refiriendo para Modificar</param>
-                /// <param name="cantidad">la cantidad nueva que se quiere del objeto</param>
-                /// <returns>El ComandoModificarCarrito con sus datos llenos</returns>
-                public static Comando<bool> CrearComandoModificarCarrito(Entidad persona, Entidad objeto, int tipoObjeto
-                    , int cantidad)
-                {
-                    return new ComandoModificarCarrito(persona, objeto, tipoObjeto, cantidad);
-                } */
-
-
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoCeliminarItem que no recibe parámetros
-        /// </summary>
-        /// <returns>El ComandoeliminarItem</returns>
-        public Comando<bool> CrearComandoeliminarItem()
-                {
-                    return new ComandoeliminarItem();
-                }
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoCeliminarItem que recibe parámetros
-        /// </summary>
-        /// <param name="tipoObjeto">tipo de objeto que se refiere al eliminar en el carrito</param>
-        /// <param name="objetoaBorrar">el objeto que se va a borrar en el carrito</param>
-        /// <param name="usuario">usuario que esta asociado al carrito</param>
-        /// <returns>El ComandoeliminarItem</returns>
-        public Comando<bool> CrearComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
-        {
-            return new ComandoeliminarItem(tipoObjeto, objetoaBorrar, usuario);
-        }
-        
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodosProductos
-        /// </summary>
-        /// <returns>El ComandoConsultarTodosProductos</returns>
-        public  Comando<Entidad> CrearComandoConsultarTodosProductos()
-        {
-            return new ComandoConsultarTodosProductos();
-        }
-
-        /// <summary>
-        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasFacturas
-        /// </summary>
-        /// <returns>El ComandoConsultarTodasFacturas</returns>
-        public Comando<Entidad> CrearComandoConsultarTodasFacturas()
-        {
-            return new ComandoConsultarTodasFacturas();
-        }
-
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoAgregarItem Vacio
         /// </summary>
         /// <returns>El ComandoAgregarItem vacio</returns>
-        public  Comando<bool> CrearComandoAgregarItem()
+        public static Comando<bool> CrearComandoAgregarItem()
         {
             return new ComandoAgregarItem();
         }
@@ -607,7 +525,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// <param name="tipoObjeto">Indica a que tipo de item nos estamos refiriendo para Agregar</param>
         /// <param name="cantidad">la cantidad que se esta agregando del objeto</param>
         /// <returns>El ComandoAgregarItem con sus datos llenos</returns>
-        public  Comando<bool> CrearComandoAgregarItem(Entidad persona, Entidad objeto, int tipoObjeto
+        public static Comando<bool> CrearComandoAgregarItem(Entidad persona, Entidad objeto, int tipoObjeto
             , int cantidad)
         {
             return new ComandoAgregarItem(persona, objeto, tipoObjeto, cantidad);
@@ -617,7 +535,27 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando ComandoRegistrarPago Vacio
         /// </summary>
         /// <returns>El ComandoRegistrarPago vacio</returns>
-        public Comando<bool> CrearComandoRegistrarPago()
+        public static Comando<bool> CrearComandoRegistrarPago()
+        {
+            return new ComandoRegistrarPago();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el ComandoRegistraPago con sus datos llenos
+        /// </summary>
+        /// <param name="persona">La persona a la cual se le adjudicara la transaccion</param>
+        /// <param name="pago">el pago que la persona realiza</param>
+        /// <returns>El ComandoRegistrarPago con sus datos llenos</returns>
+        public static Comando<bool> CrearComandoRegistrarPago(Entidad persona, Entidad pago)
+        {
+            return new ComandoRegistrarPago(persona, pago);
+        }
+
+        /*/// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoRegistrarPago Vacio
+        /// </summary>
+        /// <returns>El ComandoRegistrarPago vacio</returns>
+        public static Comando<bool> CrearComandoRegistrarPago()
         {
             return new ComandoRegistrarPago();
         }
@@ -628,16 +566,16 @@ namespace LogicaNegociosSKD.Fabrica
         /// <param name="persona">La persona a la cual se le adjudicara la transaccion</param>
         /// <param name="tipoPago">el tipo de pago que la persona realizo</param>
         /// <returns>El ComandoRegistrarPago con sus datos llenos</returns>
-        public  Comando<bool> CrearComandoRegistrarPago(Entidad persona, String tipoPago)
+        public static Comando<bool> CrearComandoRegistrarPago(Entidad persona, String tipoPago)
         {
             return new ComandoRegistrarPago(persona, tipoPago);
-        }
+        }*/
 
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoModificarCarrito Vacio
         /// </summary>
         /// <returns>El ComandoModificarCarrito vacio</returns>
-        public  Comando<bool> CrearComandoModificarCarrito()
+        public static Comando<bool> CrearComandoModificarCarrito()
         {
             return new ComandoModificarCarrito();
         }
@@ -650,7 +588,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// <param name="tipoObjeto">Indica a que tipo de item nos estamos refiriendo para Modificar</param>
         /// <param name="cantidad">la cantidad nueva que se quiere del objeto</param>
         /// <returns>El ComandoModificarCarrito con sus datos llenos</returns>
-        public  Comando<bool> CrearComandoModificarCarrito(Entidad persona, Entidad objeto, int tipoObjeto
+        public static Comando<bool> CrearComandoModificarCarrito(Entidad persona, Entidad objeto, int tipoObjeto
             , int cantidad)
         {
             return new ComandoModificarCarrito(persona, objeto, tipoObjeto, cantidad);
@@ -659,8 +597,8 @@ namespace LogicaNegociosSKD.Fabrica
         /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoVerCarrito Vacio
         /// </summary>
-        /// <returns>El ComandoVerCarrito vacio</returns>
-        public  Comando<Entidad> CrearComandoVerCarrito()
+        /// <returns>El ComandoModificarCarrito vacio</returns>
+        public static Comando<Entidad> CrearComandoVerCarrito()
         {
             return new ComandoVerCarrito();
         }
@@ -668,18 +606,49 @@ namespace LogicaNegociosSKD.Fabrica
         /// <summary>
         /// Metodo de la fabrica que instancia el ComandoVerCarrito con sus datos llenos
         /// </summary>
-        /// <param name="persona">La persona a la que se le vera su carrito</param>
-        /// <returns>El carrito de la persona con todos los items que contiene</returns>
-        public  Comando<Entidad> CrearComandoVerCarrito(Entidad persona)
+        /// <param name="persona">La persona a la que se le desea ver sus datos</param>
+        /// <returns>El carrito con todos los items de la persona</returns>
+        public static Comando<Entidad> CrearComandoVerCarrito(Entidad persona)
         {
             return new ComandoVerCarrito(persona);
         }
 
         /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoCeliminarItem que no recibe parámetros
+        /// </summary>
+        /// <returns>El ComandoeliminarItem</returns>
+        public static  Comando<bool> CrearComandoeliminarItem()
+                {
+                    return new ComandoeliminarItem();
+                }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoCeliminarItem que recibe parámetros
+        /// </summary>
+        /// <param name="tipoObjeto">tipo de objeto que se refiere al eliminar en el carrito</param>
+        /// <param name="objetoaBorrar">el objeto que se va a borrar en el carrito</param>
+        /// <param name="usuario">usuario que esta asociado al carrito</param>
+        /// <returns>El ComandoeliminarItem</returns>
+        public static Comando<bool> CrearComandoeliminarItem(int tipoObjeto, Entidad objetoaBorrar, Entidad usuario)
+        {
+            return new ComandoeliminarItem(tipoObjeto, objetoaBorrar, usuario);
+        }
+        
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasFacturas
+        /// </summary>
+        /// <returns>El ComandoConsultarTodasFacturas</returns>
+        public static Comando<Entidad> CrearComandoConsultarTodasFacturas()
+        {
+            return new ComandoConsultarTodasFacturas();
+        }            
+
+        /// <summary>
         /// Metodo de la fabrica que instancia el comando ComandoConsultarTodasMensualidades
         /// </summary>
         /// <returns>El ComandoConsultarTodasMensualidades</returns>
-        public Comando<Entidad> CrearComandoConsultarTodasMensualidades()
+        public static Comando<Entidad> CrearComandoConsultarTodasMensualidades()
         {
             return new ComandoConsultarTodasMensualidades();
         }
@@ -688,7 +657,7 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando CrearComandDetallarEvento
         /// </summary>
         /// <returns>El CrearComandDetallarEvento</returns>
-        public Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
+        public static Comando<Entidad> CrearComandoDetallarEvento(Entidad evento)
         {
             return new ComandoDetallarEvento(evento);
         }
@@ -697,18 +666,18 @@ namespace LogicaNegociosSKD.Fabrica
         /// Metodo de la fabrica que instancia el comando CrearComandoDetallarEvento
         /// </summary>
         /// <returns>El CrearComandoDetallarEvento</returns>
-        public Comando<Entidad> CrearComandoDetallarMatricula(Entidad matricula)
+        public static Comando<Entidad> CrearComandoDetallarMatricula(Entidad matricula)
         {
             return new ComandoDetallarMatricula(matricula);
         }
 
         /// <summary>
-        /// Metodo de la fabrica que instancia el comando CrearComandoDetallarProducto
+        /// Metodo de la fabrica que instancia el comando CrearComandoDetallarFactura
         /// </summary>
-        /// <returns>El CrearComandDetallarEvento</returns>
-        public Comando<Entidad> CrearComandoDetallarProducto(Entidad implemento)
+        /// <returns>El CrearComandoDetallarFactura</returns>
+        public static Comando<Entidad> CrearComandoDetallarFactura(Entidad compra)
         {
-            return new ComandoDetallarProducto(implemento);
+            return new ComandoDetallarFactura(compra);
         }
         #endregion
 

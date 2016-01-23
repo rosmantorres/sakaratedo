@@ -31,7 +31,6 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void PageLoad(HttpRequest request, bool hit, HttpServerUtility server)
         {
-            FabricaComandos fabrica = new FabricaComandos();
             DominioSKD.Entidades.Modulo14.Planilla pla =
                 (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
             try
@@ -43,7 +42,7 @@ namespace Interfaz_Presentadores.Modulo14
                     vista.tipoPlanilla.Text = request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieTipo].ToString();
                     vista.planilla.Text = request.Cookies[RecursosPresentadorModulo14.CookiePlanilla][RecursosPresentadorModulo14.CookieNombre].ToString();
                     ComandoConsultarDiseñoPuro commando =
-                        (ComandoConsultarDiseñoPuro)fabrica.ObtenerComandoConsultarDiseñoPuro();
+                        (ComandoConsultarDiseñoPuro)FabricaComandos.ObtenerComandoConsultarDiseñoPuro();
                     commando.Planilla = pla;
                     dis = commando.Ejecutar();
                     planilla1 = new DominioSKD.Entidades.Modulo14.Planilla(idPlanilla, vista.planilla.Text, true, vista.tipoPlanilla.Text);
@@ -51,7 +50,7 @@ namespace Interfaz_Presentadores.Modulo14
                     if (!hit)
                     {
                         ComandoObtenerDatosPlanilla command =
-                         (ComandoObtenerDatosPlanilla)fabrica.ObtenerComandoObtenerDatosPlanilla();
+                         (ComandoObtenerDatosPlanilla)FabricaComandos.ObtenerComandoObtenerDatosPlanilla();
                         command.IdPlanilla = idPlanilla;
                         List<String> datos = command.Ejecutar();
 
@@ -116,7 +115,7 @@ namespace Interfaz_Presentadores.Modulo14
         {
             DominioSKD.Entidades.Modulo14.Diseño diseño =
                 (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño(vista.CKEditor1.Text);
-            FabricaComandos fabrica = new FabricaComandos();
+            
             try
             {
                 if (((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido != "")
@@ -126,7 +125,7 @@ namespace Interfaz_Presentadores.Modulo14
                     {
                         ((DominioSKD.Entidades.Modulo14.Diseño)dis).Contenido = vista.CKEditor1.Text;
                         ComandoAgregarDiseno comando =
-                         (ComandoAgregarDiseno)fabrica.ObtenerComandoAgregarDiseno();
+                         (ComandoAgregarDiseno)FabricaComandos.ObtenerComandoAgregarDiseno();
                         comando.Diseño = dis;
                         comando.Planilla = planilla1;
                         exito = comando.Ejecutar();
@@ -178,8 +177,8 @@ namespace Interfaz_Presentadores.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 if (vista.CKEditor1.Text != "")
                 {
-                    ComandoAgregarDiseno command = 
-                        (ComandoAgregarDiseno)fabrica.ObtenerComandoAgregarDiseno();
+                    ComandoAgregarDiseno command =
+                        (ComandoAgregarDiseno)FabricaComandos.ObtenerComandoAgregarDiseno();
                     command.Diseño = diseño;
                     command.Planilla = planilla1;
                     exito = command.Ejecutar();

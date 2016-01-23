@@ -56,12 +56,6 @@
                    Id Factura
                </asp:TableHeaderCell>
                <asp:TableHeaderCell>
-                   Tipo de Pago
-               </asp:TableHeaderCell>
-               <asp:TableHeaderCell>
-                   Fecha de la Compra
-               </asp:TableHeaderCell>
-               <asp:TableHeaderCell>
                    Estado de la Compra
                </asp:TableHeaderCell>             
                <asp:TableHeaderCell>
