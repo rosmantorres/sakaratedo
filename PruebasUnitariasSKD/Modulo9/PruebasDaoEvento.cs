@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatosSKD.Fabrica;
 using DominioSKD;
 using NUnit.Framework;
 using log4net;
@@ -69,17 +70,17 @@ namespace PruebasUnitariasSKD.Modulo9
                 Boolean auxiliar = baseDeDatosEvento.CrearEvento(elEvento);
                 Console.Out.WriteLine(auxiliar);
                 Assert.True(auxiliar);
-            }
+            }*/
 
             [Test]
             public void PruebaListarEventos()
             {
-                DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
-                List<Evento> listaEvento = baseDeDatosEvento.ListarEventos(elEvento.Persona.ID);
+            DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
+            List<Entidad> listaEvento = daoEvento.ListarEventos(10);
                 Assert.Greater(listaEvento.Count, 0);
             }
 
-            [Test]
+            /*[Test]
             public void PruebaConsultarEvento()
             {
                 DatosSKD.Modulo9.BDEvento baseDeDatosEvento = new DatosSKD.Modulo9.BDEvento();
