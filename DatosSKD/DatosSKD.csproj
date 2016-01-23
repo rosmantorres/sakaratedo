@@ -276,6 +276,7 @@
     <EmbeddedResource Include="DAO\Modulo2\RecursosBDModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAOModulo14.Designer.cs</LastGenOutput>
