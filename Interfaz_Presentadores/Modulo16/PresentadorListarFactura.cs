@@ -28,6 +28,7 @@ namespace Interfaz_Presentadores.Modulo16
        #region Atributos
         private IContratoListarFactura vista;
         private HttpServerUtility server;
+        private HttpResponse Response;
         #endregion
 
        #region Constructores
@@ -46,7 +47,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// metodo para consultar la lista de las Facturas
         /// </summary>
-        public void consultarFacturas(int persona, HttpServerUtility server)
+        public void consultarFacturas(int persona, HttpServerUtility server, HttpResponse response)
         {
             try
             {
@@ -55,6 +56,7 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
                 this.server = server;
+                this.Response = response;
                 //Instancio el comando para listar el evento
                 Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
@@ -450,13 +452,13 @@ namespace Interfaz_Presentadores.Modulo16
                      pdfDoc.Add(htmlElement as IElement);
                  pdfDoc.Close();
 
-                 HttpContext.Current. Response.ContentType = "application/pdf";
+                 Response.ContentType = "application/pdf";
 
-                 HttpContext.Current.Response.AddHeader("content-disposition", "attachment; filename=" + "factura" + ".pdf");
+                 Response.AddHeader("content-disposition", "attachment; filename=" + "factura" + ".pdf");
                  System.Web.HttpContext.Current.Response.Write(pdfDoc);
 
-                 HttpContext.Current.Response.Flush();
-                 HttpContext.Current.Response.End();
+                 Response.Flush();
+                 Response.End();
 
              }
              catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
