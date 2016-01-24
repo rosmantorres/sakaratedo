@@ -79,8 +79,8 @@ namespace templateApp.GUI.Modulo10
             {
                 String idEvento = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Modificar];
                 String tipo = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Tipo];
-                Session[M10_RecursosInterfaz.IdEvento] = "5";
-                Session[M10_RecursosInterfaz.tipoEvento] = "Competencia";
+                Session[M10_RecursosInterfaz.IdEvento] = idEvento;
+                Session[M10_RecursosInterfaz.tipoEvento] = tipo;
                 presentador.CargaVentana(Session[M10_RecursosInterfaz.IdEvento].ToString(), Session[M10_RecursosInterfaz.tipoEvento].ToString());
             }
         }
