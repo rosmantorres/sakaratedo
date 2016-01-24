@@ -88,6 +88,60 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux4&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX4 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux5&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX5 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux6&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX6 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux7&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX7 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux8&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX8 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux9&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX9 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
         internal static string ABRIR_TD {
@@ -151,20 +205,20 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to btn btn-success glyphicon glyphicon-shopping-cart.
+        /// </summary>
+        internal static string BOTON_AGREGAR {
+            get {
+                return ResourceManager.GetString("BOTON_AGREGAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;M16_ConsultarMensualidad.aspx?compAgregar=.
         /// </summary>
         internal static string BOTON_AGREGAR_CARRITO {
             get {
                 return ResourceManager.GetString("BOTON_AGREGAR_CARRITO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to btn btn-success glyphicon glyphicon-shopping-cart.
-        /// </summary>
-        internal static string BOTON_AGREGAR_EVENTO {
-            get {
-                return ResourceManager.GetString("BOTON_AGREGAR_EVENTO", resourceCulture);
             }
         }
         
@@ -333,9 +387,9 @@ namespace Interfaz_Presentadores.Modulo16 {
         /// <summary>
         ///   Looks up a localized string similar to btn btn-primary glyphicon glyphicon-info-sign.
         /// </summary>
-        internal static string BOTON_INFORMACION_EVENTO {
+        internal static string BOTON_INFORMACION {
             get {
-                return ResourceManager.GetString("BOTON_INFORMACION_EVENTO", resourceCulture);
+                return ResourceManager.GetString("BOTON_INFORMACION", resourceCulture);
             }
         }
         
@@ -379,9 +433,9 @@ namespace Interfaz_Presentadores.Modulo16 {
         /// <summary>
         ///   Looks up a localized string similar to &lt;/label&gt;.
         /// </summary>
-        internal static string CIERRA_LABEL {
+        internal static string CIERRE_LABEL {
             get {
-                return ResourceManager.GetString("CIERRA_LABEL", resourceCulture);
+                return ResourceManager.GetString("CIERRE_LABEL", resourceCulture);
             }
         }
         
@@ -607,6 +661,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string EXCEPCION_LISTA_VACIA {
             get {
                 return ResourceManager.GetString("EXCEPCION_LISTA_VACIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_LISTA_VACIA_PROD {
+            get {
+                return ResourceManager.GetString("EXCEPCION_LISTA_VACIA_PROD", resourceCulture);
             }
         }
         
@@ -1034,6 +1097,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos; /&gt;.
+        /// </summary>
+        internal static string FIN_TAG_IMAGEN {
+            get {
+                return ResourceManager.GetString("FIN_TAG_IMAGEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Implemento.
         /// </summary>
         internal static string IMPLEMENTO {
@@ -1066,6 +1138,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string IMPLEMENTO_ID {
             get {
                 return ResourceManager.GetString("IMPLEMENTO_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;img width=&apos;150&apos; height=&apos;150&apos; src=&apos;.
+        /// </summary>
+        internal static string INICIO_TAG_IMAGEN {
+            get {
+                return ResourceManager.GetString("INICIO_TAG_IMAGEN", resourceCulture);
             }
         }
         
@@ -1349,6 +1430,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Color&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_COLOR {
+            get {
+                return ResourceManager.GetString("TITULO_COLOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;Costo&lt;/h3&gt;.
         /// </summary>
         internal static string TITULO_COSTO {
@@ -1367,11 +1457,74 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Descripcion&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_DESCRIPCIONES {
+            get {
+                return ResourceManager.GetString("TITULO_DESCRIPCIONES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Imagen del Producto&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_IMAGEN {
+            get {
+                return ResourceManager.GetString("TITULO_IMAGEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Marca&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_MARCA {
+            get {
+                return ResourceManager.GetString("TITULO_MARCA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;Nombre&lt;/h3&gt;.
         /// </summary>
         internal static string TITULO_NOMBRE {
             get {
                 return ResourceManager.GetString("TITULO_NOMBRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Precio&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_PRECIO {
+            get {
+                return ResourceManager.GetString("TITULO_PRECIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Estatus&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_STATUS {
+            get {
+                return ResourceManager.GetString("TITULO_STATUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Talla&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_TALLA {
+            get {
+                return ResourceManager.GetString("TITULO_TALLA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Tipo&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_TIPO {
+            get {
+                return ResourceManager.GetString("TITULO_TIPO", resourceCulture);
             }
         }
         
