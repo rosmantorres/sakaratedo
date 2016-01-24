@@ -7,8 +7,10 @@ using NUnit.Framework;
 using DatosSKD.Fabrica;
 using DatosSKD.DAO.Modulo7;
 using DominioSKD.Fabrica;
-using DominioSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Entidades.Modulo5;
+using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,10 +21,11 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOCinta
     {
         #region Atributos
-        private Persona idPersona;
-        private FabricaEntidades fabricaEntidades;
+        private PersonaM7 idPersona;
         private FabricaDAOSqlServer fabricaSql;
         private DaoCinta baseDeDatosCinta;
+        private CintaM7 cinta;
+        CintaM7 idCinta;
         #endregion
 
         #region SetUp & TearDown
@@ -32,11 +35,13 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
+            idCinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosCinta = fabricaSql.ObtenerDaoCintaM7();
-            fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();//esto se sustituye con fabrica de entidad
+            cinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
+            idCinta.Id = 1;
         }
 
         /// <summary>
@@ -46,7 +51,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idPersona = null;
-            fabricaEntidades = null;
+            cinta = null;
             fabricaSql = null;
             baseDeDatosCinta = null;
         }
@@ -92,9 +97,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarCintaXIdDAO()
         {
-            Cinta idCinta = new Cinta();
-            idCinta.Id = 1;
-            Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
+            cinta = (CintaM7)baseDeDatosCinta.ConsultarXId(idCinta);
             Assert.AreEqual("Blanco", cinta.Color_nombre);
         }
 
@@ -105,9 +108,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetallarCintaNumeroEnteroException()
         {
-            Cinta idCinta = new Cinta();
             idCinta.Id = -1;
-            Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
+            cinta = (CintaM7)baseDeDatosCinta.ConsultarXId(idCinta);
         }
 
         /// <summary>
@@ -116,9 +118,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarCintaxIDNoNula()
         {
-            Cinta idCinta = new Cinta();
-            idCinta.Id = 1;
-            Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
+            cinta = (CintaM7)baseDeDatosCinta.ConsultarXId(idCinta);
             Assert.NotNull(cinta);
         }
 
@@ -128,7 +128,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaUltimaCinta()
         {
-            Cinta cinta = (Cinta)baseDeDatosCinta.UltimaCinta(idPersona);
+            cinta = (CintaM7)baseDeDatosCinta.UltimaCinta(idPersona);
             Assert.AreEqual("Amarillo", cinta.Color_nombre);
         }
 
@@ -140,7 +140,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void UltimaCintaNumeroEnteroException()
         {
             idPersona.Id = -1;
-            Cinta cinta = (Cinta)baseDeDatosCinta.UltimaCinta(idPersona);
+            cinta = (CintaM7)baseDeDatosCinta.UltimaCinta(idPersona);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaUltimaCintaNoNula()
         {
-            Cinta cinta = (Cinta)baseDeDatosCinta.UltimaCinta(idPersona);
+            cinta = (CintaM7)baseDeDatosCinta.UltimaCinta(idPersona);
             Assert.NotNull(cinta);
         }
 
@@ -159,7 +159,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaObtencionCinta()
         {
-            Cinta idCinta = new Cinta();
             idCinta.Id = 2;
             Assert.AreEqual("08/21/2015", baseDeDatosCinta.FechaCinta(idPersona, idCinta).ToString("MM/dd/yyyy"));
         }
@@ -172,7 +171,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void FechaObtecionCintaNumeroEnteroException()
         {
-            Cinta idCinta = new Cinta();
             idCinta.Id = -2;
             baseDeDatosCinta.FechaCinta(idPersona, idCinta);
         }
@@ -183,7 +181,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaObtencionCintaNoNula()
         {
-            Cinta idCinta = new Cinta();
             idCinta.Id = 3;
             Assert.NotNull(baseDeDatosCinta.FechaCinta(idPersona, idCinta).ToString("MM/dd/yyyy"));
         }

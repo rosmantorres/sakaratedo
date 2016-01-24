@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -31,7 +32,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// <summary>
         /// Método para consultar las cintas obtenidas
         /// </summary>
-        public void ConsultarCintasObtenidas(Persona idPersona)
+        public void ConsultarCintasObtenidas(Entidad idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -49,7 +50,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext() && e2.MoveNext())
                     {
-                        Cinta cinta = (Cinta)e1.Current;
+                        CintaM7 cinta = (CintaM7)e1.Current;
                         DateTime fechaInscripcion = e2.Current;
 
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;

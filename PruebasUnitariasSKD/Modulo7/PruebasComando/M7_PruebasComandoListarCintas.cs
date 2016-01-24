@@ -6,6 +6,7 @@ using LogicaNegociosSKD.Fabrica;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using DominioSKD.Entidades.Modulo7;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoListarCintas
     {
         #region Atributos
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarListaCinta cintas;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             cintas = (ComandoConsultarListaCinta)fabricaComandos.ObtenerComandoConsultarListaCinta();
-            fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();//cambiar por fabrica
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             cintas.LaEntidad = idPersona;
         }
@@ -48,7 +47,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             cintas = null;
-            fabricaEntidades = null;
             idPersona = null;
         }
         #endregion

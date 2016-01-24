@@ -10,6 +10,7 @@ using ExcepcionesSKD.Modulo7;
 using System.Data;
 using System.Data.SqlClient;
 using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -52,8 +53,8 @@ namespace DatosSKD.DAO.Modulo7
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            Cinta idCinta = (Cinta)parametro;
-            Cinta cinta = (Cinta)FabricaEntidades.ObtenerCinta_M5();
+            CintaM7 idCinta = (CintaM7)parametro;
+            CintaM7 cinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
 
             try
             {
@@ -133,8 +134,8 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroPersona = new Parametro();
             Parametro parametroCinta = new Parametro();
             DateTime fechaCinta = new DateTime();
-            Persona idPersona = (Persona)persona;
-            Cinta idCinta = (Cinta)cinta;
+            PersonaM7 idPersona = (PersonaM7)persona;
+            CintaM7 idCinta = (CintaM7)cinta;
 
             try
             {
@@ -212,7 +213,7 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroQuery = new Parametro();
            
             List<Entidad> listaDeCintas = new List<Entidad>();
-            Persona idPersona = (Persona)persona;
+            PersonaM7 idPersona = (PersonaM7)persona;
 
             try
             {
@@ -228,7 +229,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Cinta cinta = (Cinta)FabricaEntidades.ObtenerCinta_M5();
+                        CintaM7 cinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
                         cinta.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCinta].ToString());
                         cinta.Color_nombre = row[RecursosDAOModulo7.AliasCintaNombre].ToString();
                         cinta.Rango = row[RecursosDAOModulo7.AliasCintaRango].ToString();
@@ -305,8 +306,8 @@ namespace DatosSKD.DAO.Modulo7
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            Persona idPersona = (Persona)persona;
-            Cinta cinta = (Cinta)FabricaEntidades.ObtenerCinta_M5();
+            PersonaM7 idPersona = (PersonaM7)persona;
+            CintaM7 cinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
 
             try
             {

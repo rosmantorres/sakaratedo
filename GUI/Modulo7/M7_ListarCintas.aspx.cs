@@ -13,6 +13,7 @@ using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -23,8 +24,7 @@ namespace templateApp.GUI.Modulo7
     {
         #region Atributos
         private PresentadorListarCintasObtenidas presentador;
-        private FabricaEntidades fabricaEntidades;
-        private Persona idPersona;
+        private PersonaM7 idPersona;
 
         #region Contrato
         /// <summary>
@@ -87,8 +87,7 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            fabricaEntidades = new FabricaEntidades();
-                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();//cambiar por fabrica
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.ConsultarCintasObtenidas(idPersona);
                         }

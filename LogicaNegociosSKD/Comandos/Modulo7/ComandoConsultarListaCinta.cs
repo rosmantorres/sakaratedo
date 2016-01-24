@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
@@ -25,7 +26,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
             List<Entidad> cintas = new List<Entidad>();
-            Persona idPersona = (Persona)LaEntidad;
+            PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad>, List<DateTime>> tupla;
             List<DateTime> listaFechaCintas = new List<DateTime>();
 
@@ -35,7 +36,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
                 {
                     cintas = baseDeDatosCinta.ListarCintasObtenidas(idPersona);
 
-                    foreach (Cinta cinta in cintas)
+                    foreach (CintaM7 cinta in cintas)
                     {
                         listaFechaCintas.Add(baseDeDatosCinta.FechaCinta(idPersona, cinta));
                     }
