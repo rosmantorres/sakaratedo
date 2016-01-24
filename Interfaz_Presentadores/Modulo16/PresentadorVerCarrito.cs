@@ -566,11 +566,10 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// Metodo del presentador que registra el pago de los productos que hay en el carrito de una persona
         /// </summary>
-        /// <param name="idpersona">La persona que desea comprar los productos</param>
-        /// <param name="monto">El monto total con el que el cliente paga en ese momento</param>
+        /// <param name="idpersona">La persona que desea comprar los productos</param>        
         /// <param name="tipoPago">El tipo de pago con el cual realizo la transaccion</param>        
         /// <returns>El exito o fallo del proceso siempre y cuando no exista un error</returns>
-        public bool RegistrarPago(String idpersona, String monto, String tipoPago)
+        public bool RegistrarPago(String idpersona, String tipoPago)
         {             
             try
             {
@@ -578,6 +577,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Expresion regular que validara los datos del tipo de pago 
+                Regex expresionRegular = new Regex("^[0-9]+[0-9]*$");                
 
                 //Instancio la fabrica, obtengo la entidad persona y asigno su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
@@ -589,7 +591,7 @@ namespace Interfaz_Presentadores.Modulo16
                 bool respuesta = false;
 
                 //Obtengo el monto con el que pago la transaccion
-                float montoPago = float.Parse(monto);
+                float montoPago = float.Parse(laVista.MontoPago.Value);
 
                 //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
                 switch (tipoPago)
@@ -618,8 +620,8 @@ namespace Interfaz_Presentadores.Modulo16
                 datosPago.Add(laVista.Datospago.Value);
 
                 //Si es un tipo de pago valido
-                if (pagofinal != null)
-                {
+                if (Validaciones.ValidarExpresionRegular(datosPago, expresionRegular))
+                {                    
                     //Instancio la entidad pago y asigno sus datos
                     Entidad pagoCompra = FabricaEntidades.ObtenerPago(montoPago, pagofinal, datosPago);
 
@@ -627,6 +629,11 @@ namespace Interfaz_Presentadores.Modulo16
                     Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
                     respuesta = registrarPago.Ejecutar();  
                 }
+                else
+                    throw new CantidadInvalidaException(
+                        M16_Recursointerfaz.CODIGO_EXCEPCION_DATO_PAGO, 
+                        M16_Recursointerfaz.MENSAJE_EXCEPCION_DATO_PAGO, 
+                        new CantidadInvalidaException());
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -640,6 +647,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
                 throw new ParseoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO,
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (CantidadInvalidaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
             catch (FormatException e)
             {

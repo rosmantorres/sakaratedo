@@ -413,6 +413,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_15.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_DATO_PAGO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_DATO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_07.
         /// </summary>
         internal static string CODIGO_EXCEPCION_FORMATO_INVALIDO {
@@ -1102,6 +1111,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string MENSAJE_EXCEPCION_CANTIDAD_INVALIDA {
             get {
                 return ResourceManager.GetString("MENSAJE_EXCEPCION_CANTIDAD_INVALIDA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, los datos que ha introducido de su pago no son validos, no pueden contener letras ni caracteres especiales.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_DATO_PAGO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_DATO_PAGO", resourceCulture);
             }
         }
         

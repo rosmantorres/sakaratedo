@@ -160,6 +160,24 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=15.
+        /// </summary>
+        internal static string EXCEPTION_DATO_PAGO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_DATO_PAGO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error en la introduccion de los datos de su pago, no pueden contener letras ni caracteres especiales&lt;/div&gt;.
+        /// </summary>
+        internal static string EXCEPTION_DATO_PAGO_MENSAJE {
+            get {
+                return ResourceManager.GetString("EXCEPTION_DATO_PAGO_MENSAJE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=6.
         /// </summary>
         internal static string EXCEPTION_FORMATO_LINK {

@@ -325,6 +325,12 @@ namespace templateApp.GUI.Modulo16
                                 alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CARRITO_PAGO_MENSAJE;
                                 break;
 
+                            case "15":
+                                //Si hubo error al insertar datos de pago con formato invalido
+                                alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                                alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                                alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_DATO_PAGO_MENSAJE;
+                                break;
                         }
                         break;
 
@@ -425,8 +431,7 @@ namespace templateApp.GUI.Modulo16
 
                 //Ejecuto la operacion para registrar un pago y obtengo la respuesta
                 bool respuesta = this.elPresentador.RegistrarPago
-                    (Session[RecursosInterfazMaster.sessionUsuarioID].ToString(),
-                    Monto.Value, DropDownList1.Value);
+                    (Session[RecursosInterfazMaster.sessionUsuarioID].ToString(), DropDownList1.Value);
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -447,6 +452,11 @@ namespace templateApp.GUI.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LOGGER_LINK, false);
+            }
+            catch (CantidadInvalidaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_DATO_PAGO_LINK, false);
             }
             catch (ParseoVacioException e)
             {

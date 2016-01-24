@@ -555,4 +555,10 @@
   <data name="REFERENCIA_PRODUCTO" xml:space="preserve">
     <value>Producto-</value>
   </data>
+  <data name="CODIGO_EXCEPCION_DATO_PAGO" xml:space="preserve">
+    <value>S_16_15</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_DATO_PAGO" xml:space="preserve">
+    <value>Error, los datos que ha introducido de su pago no son validos, no pueden contener letras ni caracteres especiales</value>
+  </data>
 </root>
