@@ -53,9 +53,13 @@ namespace Interfaz_Presentadores.Modulo3
                         if (resultado)
                              this.vista.Respuesta();
                 }
-                catch (ExcepcionesSKD.ExceptionSKD ex)
+                catch (ExcepcionesSKD.Modulo3.OrganizacionExistenteException ex)
                 {
-                this.vista.alertaAgregarFallido(ex);
+                    this.vista.alertaAgregarFallidoNombreOrg(ex);
+                }
+                catch (ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
+                {
+                    this.vista.alertaAgregarFallidoEstiloOrg(ex);
                 }
             }
             else

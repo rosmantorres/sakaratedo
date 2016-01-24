@@ -83,9 +83,9 @@ namespace Interfaz_Presentadores.Modulo5
                 this.vista.Respuesta();
 
            }
-           catch (ExcepcionesSKD.ExceptionSKD ex)
+           catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
            {
-               this.vista.alertaModificarFallido(ex);
+               this.vista.alertaModificarFallidoOrden(ex);
            }
         }
     }

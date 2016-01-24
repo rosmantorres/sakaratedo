@@ -52,11 +52,11 @@ namespace templateApp.GUI.Modulo3
         {
             return this.ListTecnica.SelectedValue;
         }
-        public void alertaModificarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        public void alertaModificarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
         {
             this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
             this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
-            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Mensaje + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Message + M3_RecursoInterfaz.alertaHtmlFinal;
             this.alert.Visible = true;
         }
         public void Respuesta()

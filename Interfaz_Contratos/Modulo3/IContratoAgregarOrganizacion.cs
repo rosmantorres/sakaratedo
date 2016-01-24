@@ -15,7 +15,8 @@ namespace Interfaz_Contratos.Modulo3
         string obtenerEstado();
         string obtenerTecnica();
         void alertaCamposVacios();
-        void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex);
+        void alertaAgregarFallidoNombreOrg(ExcepcionesSKD.Modulo3.OrganizacionExistenteException ex);
+        void alertaAgregarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex);
         void Respuesta();
 
     }
