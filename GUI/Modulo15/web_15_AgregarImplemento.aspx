@@ -10,7 +10,8 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
         <%--Alerta de falta de contenido--%>
- <div id="alert"  >
+ <div id="alert" runat="server" >
+
  </div>
      <div id="alert2" runat="server">
     </div>
@@ -34,7 +35,7 @@
                       <input type="hidden" id="id_implemento" name="id_implemento" value="id_implemento" class="form-control" runat="server" />            
 
                       <p><b>Nombre De Implemento:</b></p>
-                        <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control"  runat="server"/>            
+                        <input  type="text" id="nombre_implemento" name ="nombre_implemento" placeholder="*Nombre del Implemento" class="form-control"   runat="server"/>            
                     </div>
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -42,9 +43,13 @@
                         <select id="tipo_implemento"  name="tipo_implemento" class="form-control" runat="server">
                                <option value="Vestimenta" >Vestimenta</option>
                                <option selected value="Accesorios" >Accesorios</option>
-                               <option value="Otros" >Otros</option>
+                               <option value="otros" >Otros</option>
                         </select>            
                       </div>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                         <input id="tipo_implemento_div"  placeholder="*tipo" class="form-control"  runat="server"/>             
+                      </div>
+
                       <br/>
                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <p><b>Cantidad:</b></p>
@@ -65,9 +70,14 @@
                                <option value="ROJO" >ROJO</option>
                                <option value="NEGRO" >NEGRO</option>
                                <option value="ROSADO" >ROSADO</option>
-                        </select>
+                               <option value="otros" >Otros</option>
 
+                        </select>
                     </div>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                         <input id="color_implemento_div"  placeholder="*color" class="form-control"  runat="server"/>             
+                      </div>
+
                       <br/>
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Marca:</b></p>
@@ -78,9 +88,14 @@
                                <option value="NIKE" >NIKE</option>
                                <option value="KOMBA" >KOMBA</option>
                                <option value="RS21" >RS21</option>
+                               <option value="otros" >Otros</option>
+
                         </select>
 
                         </div>
+                      <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                         <input id="marca_implemento_div"  placeholder="*marca" class="form-control"  runat="server"/>             
+                      </div>
                       <br/>
                 <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Talla:</b></p>
@@ -92,9 +107,15 @@
                                <option value="XL" >XL</option>
                                <option value="XXL" >XXL</option>
                                <option value="XXXL" >XXXL</option>
+                               <option value="otros" >Otros</option>
+                
                         </select>            
                       </div>
                       <br/>
+                
+                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                         <input id="talla_implemento_div"  placeholder="*talla" class="form-control"  runat="server"/>             
+                      </div>
                 
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Stock m&iacutenimo:</b></p>
@@ -111,7 +132,7 @@
 
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
-                       <input type="file" id="imagen_implemento" name="imagen_implemento" class="form-control" runat="server"/>            
+                       <input type="file" id="imagen_implemento" name="imagen_implemento" class="form-control" runat="server" accept="image/*"/>            
                     </div>
                       <br/>
 
@@ -125,6 +146,211 @@
                     <a class="btn btn-default" href="web_15_ConsultarImplemento.aspx">Cancelar</a>
                     </div>
                 </form>
-                 
               </div><!-- Fin del formulario-->
+
+<script src="../../plugins/jquery_validate/dist/jquery.validate.js"></script>
+<script src="../../plugins/jquery_validate/dist/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery_validate/dist/additional-methods.js"></script>
+
+      <!-- Declaración de las alertas-->
+     <script type="text/javascript">  
+         $(document).ready(function () {
+            // alert("prueba");
+
+             // talla implemento
+             $("#contenidoCentral_talla_implemento").change(function () {
+                // alert("hola");
+                 if ($("#contenidoCentral_talla_implemento").val() == "otros") {
+                     $("#contenidoCentral_talla_implemento_div").show();
+                 }else {
+                     $("#contenidoCentral_talla_implemento_div").hide();
+                 }
+
+             });
+             $("#contenidoCentral_talla_implemento_div").hide();
+
+
+             // tipo implemento
+             $("#contenidoCentral_tipo_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_tipo_implemento").val() == "otros") {
+                     $("#contenidoCentral_tipo_implemento_div").show();
+                 } else {
+                     $("#contenidoCentral_tipo_implemento_div").hide();
+                 }
+
+             });
+             $("#contenidoCentral_tipo_implemento_div").hide();
+
+
+             // color implemento
+             $("#contenidoCentral_color_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_color_implemento").val() == "otros") {
+                     $("#contenidoCentral_color_implemento_div").show();
+                 } else {
+                     $("#contenidoCentral_color_implemento_div").hide();
+                 }
+
+             });
+             $("#contenidoCentral_color_implemento_div").hide();
+
+
+             // talla marca
+             $("#contenidoCentral_marca_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_marca_implemento").val() == "otros") {
+                     $("#contenidoCentral_marca_implemento_div").show();
+                 } else {
+                     $("#contenidoCentral_marca_implemento_div").hide();
+                 }
+
+             });
+             $("#contenidoCentral_marca_implemento_div").hide();
+
+                 
+
+             // just for the demos, avoids form submit
+             jQuery.validator.setDefaults({
+                 debug: true,
+                 success: "valid"
+             });
+             $("#agregar_implemento").validate({
+                 rules: {
+                     ctl00$contenidoCentral$nombre_implemento: {
+                         required: true,
+                         minlength: 2,
+                         maxlength: 90
+
+                     },
+                     ctl00$contenidoCentral$tipo_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 90
+
+                     },
+                     ctl00$contenidoCentral$cantidad_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 8,
+                         number: true
+                     },
+                     ctl00$contenidoCentral$precio_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 8,
+                         number: true
+                     },
+                     ctl00$contenidoCentral$color_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 90
+                     },
+                     ctl00$contenidoCentral$marca_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 90
+                     },
+                     ctl00$contenidoCentral$talla_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 5
+                     },
+                     ctl00$contenidoCentral$stock_implemento: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 8,
+                         number: true
+                     },
+                     ctl00$contenidoCentral$descripcion_implemento: {
+                         required: true,
+                         minlength: 5,
+                         maxlength: 120,
+                     },
+                     ctl00$contenidoCentral$imagen_implemento: {
+                         required: true
+                     }
+
+                 },
+                 messages: {
+                     ctl00$contenidoCentral$nombre_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 2 caracteres",
+                         maxlength: "Maximo tiene que ser 90 caracteres"
+                     },
+                     ctl00$contenidoCentral$tipo_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 2 caracteres",
+                         maxlength: "Maximo tiene que ser 90 caracteres"
+                     },
+                     ctl00$contenidoCentral$cantidad_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 1 digito",
+                         maxlength: "Maximo tiene que ser 8 digitos",
+                         number: "solo se aceptan numeros",
+                         range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
+                     },
+                     ctl00$contenidoCentral$precio_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 1 digito",
+                         maxlength: "Maximo tiene que ser 8 digitos",
+                         number: "solo se aceptan numeros",
+                         range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
+
+                     },
+                     ctl00$contenidoCentral$color_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 2 caracteres",
+                         maxlength: "Maximo tiene que ser 90 caracteres"
+                     },
+                     ctl00$contenidoCentral$marca_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 2 caracteres",
+                         maxlength: "Maximo tiene que ser 90 caracteres"
+                     },
+                     ctl00$contenidoCentral$talla_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 1 caracteres",
+                         maxlength: "Maximo tiene que ser 5 caracteres"
+                     },
+                     ctl00$contenidoCentral$stock_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 1 digito",
+                         maxlength: "Maximo tiene que ser 8 digitos",
+                         number: "solo se aceptan numeros",
+                         range: "solo se aceptan numeros mayores a 0 y menores que 99999999"
+
+
+                     },
+                     ctl00$contenidoCentral$descripcion_implemento: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 5 caracteres",
+                         maxlength: "Maximo tiene que ser 120 caracteres"
+
+                     },
+                     ctl00$contenidoCentral$imagen_implemento: {
+                         required: "La imagen es obligatoria"
+
+
+                     }
+
+
+                 },
+                 submitHandler: function (form) {
+                     // some other code
+                     // maybe disabling submit button
+                     // then:
+                     form.submit();
+                 }
+
+             });
+
+
+         });
+    </script>
+
+
+
 </asp:Content>
