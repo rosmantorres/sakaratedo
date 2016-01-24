@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.UI;
 
 namespace Interfaz_Presentadores.Modulo12
 {
@@ -34,7 +35,8 @@ namespace Interfaz_Presentadores.Modulo12
         {
             String modificarString = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompMod];
             String errorMalicioso = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.errorGet];
-            if (modificarString != null)
+           
+            if (modificarString != null && !(HttpContext.Current.Handler as Page).IsPostBack)
                 obtenerCompetencia(int.Parse(modificarString));
 
             if (errorMalicioso != null)
@@ -68,7 +70,7 @@ namespace Interfaz_Presentadores.Modulo12
 
                 foreach (Organizacion o in listaOrg)
                 {
-                    options.Add(o.Id_organizacion.ToString(), o.Nombre);
+                    options.Add(o.Id.ToString(), o.Nombre);
                 }
                 vista.organizacionComp.DataSource = options;
                 vista.organizacionComp.DataTextField = M12_RecursoInterfazPresentador.valueCombo;
@@ -88,6 +90,7 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.categIniComp.DataSource = optionsCin1;
                 vista.categIniComp.DataTextField = M12_RecursoInterfazPresentador.valueCombo;
                 vista.categIniComp.DataValueField = M12_RecursoInterfazPresentador.keyCombo;
+                vista.categIniComp.SelectedValue = null;
                 vista.categIniComp.DataBind();
 
                 Dictionary<int, string> optionsCin2 = new Dictionary<int, string>();
@@ -100,6 +103,7 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.categFinComp.DataSource = optionsCin2;
                 vista.categFinComp.DataTextField = M12_RecursoInterfazPresentador.valueCombo;
                 vista.categFinComp.DataValueField = M12_RecursoInterfazPresentador.keyCombo;
+                vista.categFinComp.SelectedValue = null;
                 vista.categFinComp.DataBind();
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
@@ -135,6 +139,7 @@ namespace Interfaz_Presentadores.Modulo12
 
         public void obtenerCompetencia(int elIdCompetencia) 
         {
+            LlenarCombos();
             try
             {
                 Entidad entidad = FabricaEntidades.ObtenerCompetencia();
@@ -165,7 +170,8 @@ namespace Interfaz_Presentadores.Modulo12
                 else
                 {
                     this.vista.orgCompBool = false;
-                    this.vista.organizacionComp.SelectedItem.Text = laCompetencia.Organizacion.Nombre;
+                    this.vista.organizacionComp.SelectedValue = Convert.ToString(laCompetencia.Organizacion.Id_organizacion);
+                    //vista.organizacionComp.Items.FindByValue(Convert.ToString(laCompetencia.Organizacion.Id)).Selected = true;
                 }
 
                 //Carga de Fechas
@@ -200,8 +206,36 @@ namespace Interfaz_Presentadores.Modulo12
                     this.vista.cateSexoFCompBool = true;
 
                 // Carga Cintas
-                this.vista.categIniComp.SelectedItem.Text = laCompetencia.Categoria.Cinta_inicial;
-                this.vista.categFinComp.SelectedItem.Text = laCompetencia.Categoria.Cinta_final;
+                if (laCompetencia.Categoria.Cinta_inicial == "Blanco")
+                    this.vista.categIniComp.SelectedValue = "1";
+                else
+                    if (laCompetencia.Categoria.Cinta_inicial == "Amarillo")
+                        this.vista.categIniComp.SelectedValue = "2";
+                    else
+                        if (laCompetencia.Categoria.Cinta_inicial == "Naranja")
+                            this.vista.categIniComp.SelectedValue = "3";
+                        else
+                            if (laCompetencia.Categoria.Cinta_inicial == "Marron")
+                                this.vista.categIniComp.SelectedValue = "4";
+                            else
+                                if (laCompetencia.Categoria.Cinta_inicial == "Negro")
+                                    this.vista.categIniComp.SelectedValue = "5";
+
+
+                if (laCompetencia.Categoria.Cinta_final == "Blanco")
+                    this.vista.categFinComp.SelectedValue = "1";
+                else
+                    if (laCompetencia.Categoria.Cinta_final == "Amarillo")
+                        this.vista.categFinComp.SelectedValue = "2";
+                    else
+                        if (laCompetencia.Categoria.Cinta_final == "Naranja")
+                            this.vista.categFinComp.SelectedValue = "3";
+                        else
+                            if (laCompetencia.Categoria.Cinta_final == "Marron")
+                                this.vista.categFinComp.SelectedValue = "4";
+                            else
+                                if (laCompetencia.Categoria.Cinta_final == "Negro")
+                                    this.vista.categFinComp.SelectedValue = "5";
 
                 // Carga Costo
                 this.vista.costoComp = laCompetencia.Costo.ToString();

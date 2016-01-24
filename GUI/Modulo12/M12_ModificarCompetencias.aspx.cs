@@ -32,7 +32,7 @@ namespace templateApp.GUI.Modulo12
 
             if (!IsPostBack)
             {
-                presentador.LlenarCombos();
+                //presentador.LlenarCombos();
             }
 
 
