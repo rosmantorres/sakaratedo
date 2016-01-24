@@ -389,7 +389,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoAgregarCompetencia(paramEntidad);
         }
 
-        public static Comando<bool> ObtenerComandoMoficiarCompetencia(Entidad paramEntidad)
+        public static Comando<bool> ObtenerComandoModificarCompetencia(Entidad paramEntidad)
         {
             return new ComandoModificarCompetencia(paramEntidad);
         }
