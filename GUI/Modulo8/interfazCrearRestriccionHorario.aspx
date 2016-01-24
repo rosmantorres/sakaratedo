@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazCrearRestriccionHorario.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazCrearRestriccionHorario" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazCrearRestriccionHorario.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazCrearRestriccionHorario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
@@ -40,15 +40,14 @@
     
   <div id="alert" runat="server">
     </div>
-  
-  <select class="combobox" style="width:300px; height:35px">
-  <option value="">Seleccione Horario</option>
-  <option value="1">Horario 1: Lunes-Miercoles-Viernes 14:00 a 16:00</option>
-  <option value="2">Horario 2: Martes-Jueves-Sabado 10:00 a 12:00</option>
-  <option value="3">Horario 3: Lunes-Miercoles-Viernes 16:00 a 18:00</option>
-  <option value="4">Horario 4: Lunes-Miercoles-Viernes 08:00 a 10:00</option>
-  <option value="5">Horario 5: Martes-Jueves-Sabado 14:00 a 16:00</option>
-  </select>
+
+<form  role="form" name="agregar_restriccion" id="agregar_restriccion" method="post"   runat="server">  
+  <div class="col-sm-8 col-md-8 col-lg-84">
+      <div class="dropdown" runat="server" id="divcomboEventos" >
+           <asp:DropDownList ID="comboEvento" name="dropdowlist" OnClick="btnaceptar_Click" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList>
+      </div>  
+   </div>
  
   
  <div class="container">
@@ -57,63 +56,49 @@
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input type="text" placeholder="Edad Mínima" class="form-control" id="edad_menor">
+					<div class="dropdown" runat="server" id="divEdadMin" contenteditable="false" draggable="false" >
+                        <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" ID="comboEdadMinima" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
+                        </asp:DropDownList>
+                    </div>	
 					
-					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
-						<option value="">Seleccione Cinta</option>
-						<option value="1">blanca</option>
-						<option value="2">amarilla</option>
-						<option value="3">verde</option>
-						<option value="4">azul</option>
-						<option value="5">roja</option>
-						<option value="6">marrón</option>
-						<option value="7">Negra 1do Dan</option>
-						<option value="8">Negra 2do Dan</option>
-						<option value="9">Negra 3er Dan</option>
-						<option value="10">Negra 4to Dan</option>
-						<option value="11">Negra 5to Dan</option>
-					</select>
+					<div class="col-sm-8 col-md-8 col-lg-84">
+                    <div class="dropdown" runat="server" id="div1"  style="margin-top:10px; margin-left:-15px;">
+                    <asp:DropDownList ID="comboSexo" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList>
+              </div>  
+          </div>
 				</div>
 			
             </div>
 		</div>
-        
-        <label class="radio-inline"><input type="radio" name="optradio">Masculino</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Femenino</label>
-        <label class="radio-inline"><input type="radio" name="optradio">Ambos Sexos</label>
 		
         <div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
-					<input type="text" placeholder="Edad Máxima" class="form-control" id="rango_mayor">
+					<div class="dropdown" runat="server" id="divEdadMax" contenteditable="false" >
+                        <asp:DropDownList ID="comboEdadMaxima" style="width:265px; height:35px; margin-top: 5%" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
+                        </asp:DropDownList>
+                    </div>	
 					
-					<select class="combobox" style="width:265px; height:35px; margin-top: 5%" id="cinta_menor">
-						<option value="">Seleccione Cinta</option>
-						<option value="1">blanca</option>
-						<option value="2">amarilla</option>
-						<option value="3">verde</option>
-						<option value="4">azul</option>
-						<option value="5">roja</option>
-						<option value="6">marrón</option>
-						<option value="7">Negra 1do Dan</option>
-						<option value="8">Negra 2do Dan</option>
-						<option value="9">Negra 3er Dan</option>
-						<option value="10">Negra 4to Dan</option>
-						<option value="11">Negra 5to Dan</option>
-					</select>
-				    <a id="btn-aceptar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
-                    <a id="btn-aceptar" type="submit" class="btn btn-primary pull-right" style="margin-top:5%; margin-right:5%; height:35px" href="interfazRestriccionesHorario.aspx?actionSuccess=1"> Agregar</a>
-				
+					<div class="col-sm-8 col-md-8 col-lg-84">
+             <div class="dropdown" runat="server" id="combocintama" style="margin-top:10px; margin-left:-15px;">
+                 <asp:DropDownList ID="comboCintaMayor" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList>
+              </div>  
+          </div>
+				    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
+                    
+				 <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
                 </div>
 			</div>
 		</div>
 	</div>
 </div>
-
+</form>
        
 <script type="text/javascript">
-  $(document).ready(function(){
-	$('.combobox').combobox();
-  });
+    $(document).ready(function () {
+        $('.combobox').combobox();
+    });
 </script>
 </asp:Content>

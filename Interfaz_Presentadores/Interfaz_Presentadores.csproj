@@ -133,6 +133,7 @@
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionEvento.cs" />
     <Compile Include="Modulo8\PresentadorConsultarRestriccionesCinta.cs" />
     <Compile Include="Modulo8\RecursoPresentadorM8.Designer.cs">
       <AutoGen>True</AutoGen>
