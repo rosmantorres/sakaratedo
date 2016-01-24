@@ -68,7 +68,7 @@ namespace templateApp.GUI.Modulo16
         protected void Page_Load(object sender, EventArgs e)
         {
             //Carga la Barra lateral del modulo indicado
-            ((SKD)Page.Master).IdModulo = "16";
+            ((SKD)Page.Master).IdModulo = M16_RecursoInterfaz.Modulo16;
 
             //inicio el presentador
             this.IniciarPresentador();
@@ -191,7 +191,8 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void ejecutarScript()
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
+            // Llamada para llenar el modal
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script, false);
         }
         #endregion
 

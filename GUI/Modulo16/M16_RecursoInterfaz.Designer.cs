@@ -376,6 +376,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 16.
+        /// </summary>
+        internal static string Modulo16 {
+            get {
+                return ResourceManager.GetString("Modulo16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha procesado el pago exitosamente, ¡Que disfrute sus productos!&lt;/div&gt;.
         /// </summary>
         internal static string REGISTRAR_PAGO_EXITO {
@@ -408,6 +417,24 @@ namespace templateApp.GUI.Modulo16 {
         internal static string REGISTRAR_PAGO_FALLO {
             get {
                 return ResourceManager.GetString("REGISTRAR_PAGO_FALLO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;script type=&apos;text/javascript&apos;&gt;$(&apos;#modal-info1&apos;).modal(&apos;toggle&apos;);&lt;/script&gt; .
+        /// </summary>
+        internal static string Script {
+            get {
+                return ResourceManager.GetString("Script", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test().
+        /// </summary>
+        internal static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
             }
         }
         

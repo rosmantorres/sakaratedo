@@ -483,4 +483,70 @@
   <data name="EXCEPCION_CARRITO_PAGO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=14</value>
   </data>
+  <data name="BOTON_AGREGAR_EVENTO" xml:space="preserve">
+    <value>btn btn-success glyphicon glyphicon-shopping-cart</value>
+  </data>
+  <data name="BOTON_INFORMACION_EVENTO" xml:space="preserve">
+    <value>btn btn-primary glyphicon glyphicon-info-sign</value>
+  </data>
+  <data name="REFERENCIA_AGREGAR_EVENTO" xml:space="preserve">
+    <value>Agregar-</value>
+  </data>
+  <data name="REFERENCIA_EVENTO" xml:space="preserve">
+    <value>Evento-</value>
+  </data>
+  <data name="ABRE_LABEL_AUX1" xml:space="preserve">
+    <value>&lt;label id='aux1' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX2" xml:space="preserve">
+    <value>&lt;label id='aux2' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX3" xml:space="preserve">
+    <value>&lt;label id='aux3' &gt;</value>
+  </data>
+  <data name="CIERRA_LABEL" xml:space="preserve">
+    <value>&lt;/label&gt;</value>
+  </data>
+  <data name="Cinco" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Cuatro" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Diez" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Dos" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Nueve" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Ocho" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SALTO_LINEA" xml:space="preserve">
+    <value>&lt;/br&gt;</value>
+  </data>
+  <data name="Seis" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Siete" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TITULO_COSTO" xml:space="preserve">
+    <value>&lt;h3&gt;Costo&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_DESCRIPCION" xml:space="preserve">
+    <value>&lt;h3&gt;Descripcion&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_NOMBRE" xml:space="preserve">
+    <value>&lt;h3&gt;Nombre&lt;/h3&gt;</value>
+  </data>
+  <data name="Tres" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Uno" xml:space="preserve">
+    <value>1</value>
+  </data>
 </root>

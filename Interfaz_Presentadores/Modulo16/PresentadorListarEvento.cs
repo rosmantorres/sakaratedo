@@ -92,28 +92,27 @@ namespace Interfaz_Presentadores.Modulo16
                     fila.Cells.Add(celda);
 
                     //Nueva celda que tendra el ComboBox para poner la cantidad del evento a escoger
-
                     celda = new TableCell();
                     DropDownList ddl = new DropDownList();
-                    ddl.Items.Add(new ListItem("1","1"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Uno, M16_Recursointerfaz.Uno));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("2", "2"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Dos, M16_Recursointerfaz.Dos));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("3", "3"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Tres, M16_Recursointerfaz.Tres));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("4", "4"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Cuatro, M16_Recursointerfaz.Cuatro));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("5", "5"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Cinco, M16_Recursointerfaz.Cinco));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("6", "6"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Seis, M16_Recursointerfaz.Seis));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("7", "7"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Siete, M16_Recursointerfaz.Siete));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("8", "8"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Ocho, M16_Recursointerfaz.Ocho));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("9", "9"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Nueve, M16_Recursointerfaz.Nueve));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("10", "10"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Diez, M16_Recursointerfaz.Diez));
                     celda.Controls.Add(ddl);
 
                     //Agrego la celda a la fila
@@ -122,17 +121,18 @@ namespace Interfaz_Presentadores.Modulo16
                     //Celda que tendra los botones de Detallar y Agregar a Carrito
                     celda = new TableCell();
                     Button boton = new Button();
-                    boton.ID = "Evento-" + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_EVENTO + item.Id_evento.ToString();
                     boton.Command +=  DetalleEvento_Event;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    
+                    boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION_EVENTO ;
                     boton.CommandName = item.Id_evento.ToString();                 
                     celda.Controls.Add(boton);
 
                     //Boton de Agregar a Carrito
                     boton = new Button();
-                    boton.ID = "Agregar-" + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR_EVENTO + item.Id_evento.ToString();
                     boton.Click += AgregarCarrito;
-                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
+                    boton.CssClass = M16_Recursointerfaz.BOTON_AGREGAR_EVENTO;                    
                     celda.Controls.Add(boton);                   
 
                     //Agrego la celda a la fila
@@ -226,9 +226,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Evento resultados = DetalleEvento(evento);
 
                 // Variables para imprimir en el modal
-                vista.LiteralDetallesEventos.Text = "</br>" + "<h3>Nombre</h3>" + "<label id='aux1' >" + resultados.Nombre + "</label>" +
-                                                            "<h3>Descripcion</h3>" + "<label id='aux2' >" + resultados.Descripcion + "</label>" +
-                                                            "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>";
+                vista.LiteralDetallesEventos.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_NOMBRE + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Nombre + M16_Recursointerfaz.CIERRA_LABEL +
+                                                    M16_Recursointerfaz.TITULO_DESCRIPCION + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Descripcion + M16_Recursointerfaz.CIERRA_LABEL +
+                                                    M16_Recursointerfaz.TITULO_COSTO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Costo + M16_Recursointerfaz.CIERRA_LABEL;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -300,10 +300,78 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-                    Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
-                    Evento elEvento = (Evento)DetalleEvento.Ejecutar();
-                    return elEvento;       
-            
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Casteamos
+                Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
+                Evento elEvento = (Evento)DetalleEvento.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos el Evento
+                return elEvento; 
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+            #endregion
         }
 
         #endregion
