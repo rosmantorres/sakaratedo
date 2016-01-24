@@ -123,7 +123,7 @@
 				</tr>
 			</thead>
 			<tbody>
-                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
+                <asp:Literal runat="server" ID="tabla"></asp:Literal>
 		    </tbody>
             </table>
             </div>

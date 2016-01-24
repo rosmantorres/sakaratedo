@@ -55,6 +55,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>M10_RecursosPresentador.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo10\PresentadorAgregarAsistencia.cs" />
+    <Compile Include="Modulo10\PresentadorDetalleAsistencia.cs" />
     <Compile Include="Modulo10\PresentadorListarAsistencia.cs" />
     <Compile Include="Modulo10\PresentadorModificarAsistencia.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />

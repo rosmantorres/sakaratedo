@@ -48,5 +48,9 @@ namespace DatosSKD.InterfazDAO.Modulo10
         Entidad ConsultarCompetenciaXIdDetalle(string idCompetencia);
 
         Entidad ConsultarEventoXID(string idEvento);
+
+        List<Entidad> TodasLasFechasEventoM10();
+
+        List<Entidad> EventosPorRangosdeFechaM10(string fechaInicio);
     }
 }
