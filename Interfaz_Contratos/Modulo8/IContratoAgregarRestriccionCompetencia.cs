@@ -15,17 +15,17 @@ namespace Interfaz_Contratos.Modulo8
     {
         String id { get; set; }
         String descripcion { get; set; }
-        ListBox competenciasRelacionadas { get; set; }
-        ListBox competeciasNoRelacionadas { get; set; }
-        DropDownList rangoMinimo { get; }
-        DropDownList rangoMaximo { get; }
-        DropDownList edadMinima { get; }
-        DropDownList edadMaxima { get; }
-        DropDownList sexo { get; }
-        DropDownList modalidad { get; }
-        String alert { set; }
-        String alertClase { set; }
-        String alertRol { set; }
+        //ListBox competenciasRelacionadas { get; set; }
+        //ListBox competeciasNoRelacionadas { get; set; }
+        DropDownList rangoMinimo { get; set; }
+        DropDownList rangoMaximo { get; set; }
+        DropDownList edadMinima { get; set; }
+        DropDownList edadMaxima { get; set; }
+        DropDownList sexo { get; set; }
+        DropDownList modalidad { get; set; }
+        //String alert { set; }
+        //String alertClase { set; }
+        //String alertRol { set; }
 
         //List<Competencia> competenciasRelacionadas { get; set; }
         //List<Competencia> competenciasNoRelacionadas { get; set; }

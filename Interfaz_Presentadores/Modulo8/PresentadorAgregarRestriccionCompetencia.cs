@@ -14,6 +14,10 @@ namespace Interfaz_Presentadores.Modulo8
     {
         private IContratoAgregarRestriccionCompetencia vista;
        
+        //public PresentadorAgregarRestriccionCompetencia (IContratoAgregarRestriccionCompetencia laVista)
+        //{
+        //    this.vista = laVista;
+        //}
  
         public Boolean agregarRestriccionCompetencia()
         {
@@ -66,79 +70,79 @@ namespace Interfaz_Presentadores.Modulo8
             
         }
 
-        public void LlenarListaCompetenciasNoAsociadas()
-        {
-            LogicaNegociosSKD.Comando<List<DominioSKD.Entidad>> consultarCompetencias =
-            LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCompetencias();
-            List<DominioSKD.Entidad> listaEntidades = consultarCompetencias.Ejecutar();
-            List<DominioSKD.Entidades.Modulo12.Competencia> listaCompetencias = listaEntidades.Cast<DominioSKD.Entidades.Modulo12.Competencia>().ToList();
+        //public void LlenarListaCompetenciasNoAsociadas()
+        //{
+        //    LogicaNegociosSKD.Comando<List<DominioSKD.Entidad>> consultarCompetencias =
+        //    LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCompetencias();
+        //    List<DominioSKD.Entidad> listaEntidades = consultarCompetencias.Ejecutar();
+        //    List<DominioSKD.Entidades.Modulo12.Competencia> listaCompetencias = listaEntidades.Cast<DominioSKD.Entidades.Modulo12.Competencia>().ToList();
             
-            //foreach (DominioSKD.Entidad entidad in listaEntidades)
-            //{
-            //    listaCompetencias.Add = ((DominioSKD.Entidades.Modulo12.Competencia)entidad);
-            //}
+        //    //foreach (DominioSKD.Entidad entidad in listaEntidades)
+        //    //{
+        //    //    listaCompetencias.Add = ((DominioSKD.Entidades.Modulo12.Competencia)entidad);
+        //    //}
             
-            vista.competeciasNoRelacionadas.Enabled = true;
-            vista.competeciasNoRelacionadas.DataTextField = "nombre";
+        //    vista.competeciasNoRelacionadas.Enabled = true;
+        //    vista.competeciasNoRelacionadas.DataTextField = "nombre";
             
-            vista.competeciasNoRelacionadas.DataSource = listaCompetencias;
-            vista.competeciasNoRelacionadas.DataBind();
-            //foreach (DominioSKD.Entidad competencia in listaCompetencias)
-            //{
+        //    vista.competeciasNoRelacionadas.DataSource = listaCompetencias;
+        //    vista.competeciasNoRelacionadas.DataBind();
+        //    //foreach (DominioSKD.Entidad competencia in listaCompetencias)
+        //    //{
                
-            //    vista.competeciasNoRelacionadas.Items.Add = (DominioSKD.Entidades.Modulo12.Competencia)competencia;
+        //    //    vista.competeciasNoRelacionadas.Items.Add = (DominioSKD.Entidades.Modulo12.Competencia)competencia;
             
-            //}
-        }
+        //    //}
+        //}
 
 
-        public void agregarListaCompetenciasAsociadas ()
-        {
+        //public void agregarListaCompetenciasAsociadas ()
+        //{
 
-            //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
-            //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
+        //    //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
+        //    //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
 
-            LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando = 
-            (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
+        //    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando = 
+        //    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
 
 
             
-            //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-            //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
+        //    //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
+        //    //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
             
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new  DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
-            restComp = meterParametrosVistaEnObjeto();
-            comando.LaRestriccionCompetencia = restComp;
-            List<DominioSKD.Entidad> listaCompetencias;
-            listaCompetencias = vista.competenciasRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
-            comando.ListaCompetencias = listaCompetencias;
-            comando.Ejecutar();
-        }
+        //    DominioSKD.Fabrica.FabricaEntidades fabrica = new  DominioSKD.Fabrica.FabricaEntidades();
+        //    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
+        //    restComp = meterParametrosVistaEnObjeto();
+        //    comando.LaRestriccionCompetencia = restComp;
+        //    List<DominioSKD.Entidad> listaCompetencias;
+        //    listaCompetencias = vista.competenciasRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
+        //    comando.ListaCompetencias = listaCompetencias;
+        //    comando.Ejecutar();
+        //}
 
-        public void agregarListaCompetenciasNoAsociadas()
-        {
+        //public void agregarListaCompetenciasNoAsociadas()
+        //{
 
-            //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
-            //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
+        //    //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
+        //    //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
 
-            LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-            (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoEliminarListaCompetenciaRestriccionCompetencia();
+        //    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
+        //    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoEliminarListaCompetenciaRestriccionCompetencia();
 
 
 
-            //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-            //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
+        //    //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
+        //    //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
 
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
-            restComp = meterParametrosVistaEnObjeto();
-            comando.LaRestriccionCompetencia = restComp;
-            List<DominioSKD.Entidad> listaCompetencias;
-            listaCompetencias = vista.competeciasNoRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
-            comando.ListaCompetencias = listaCompetencias;
-            comando.Ejecutar();
-        }
+        //    DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+        //    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
+        //    restComp = meterParametrosVistaEnObjeto();
+        //    comando.LaRestriccionCompetencia = restComp;
+        //    List<DominioSKD.Entidad> listaCompetencias;
+        //    listaCompetencias = vista.competeciasNoRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
+        //    comando.ListaCompetencias = listaCompetencias;
+        //    comando.Ejecutar();
+        //}
 
 
          public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
