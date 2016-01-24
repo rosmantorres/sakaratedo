@@ -66,7 +66,6 @@
     <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
-	<Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
     <Compile Include="Comandos\Modulo10\ComandoConsultarTodasLasFechasDeUnEventoM10.cs" />
     <Compile Include="Comandos\Modulo10\ComandoEventosPorRangosdeFechaM10.cs" />
     <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoAscenso.cs" />
