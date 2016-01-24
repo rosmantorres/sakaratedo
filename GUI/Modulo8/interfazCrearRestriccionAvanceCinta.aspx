@@ -65,11 +65,11 @@
 			<div id="id_otro" runat="server" class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input runat="server" type="text" placeholder="Descripcion" class="form-control" id="descripcion" name ="descripcion">
-					<input style="margin-top:5%" runat="server" type="text" placeholder="Tiempo mínimo" class="form-control" id="tiempo_minimo" name ="tiempo_minimo">                    
-					<input style="margin-top:5%" runat="server" type="text" placeholder="Tiempo maximo" class="form-control" id="tiempo_maximo" name ="tiempo_maximo">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Puntaje mínimo" class="form-control" id="puntaje_minimo" name="punto_minimo">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Horas docentes mínimas" class="form-control" id="horas_docentes" name="hora_docente">
+					<input runat="server" type="text" placeholder="Descripcion" class="form-control" id="descripcion" name ="descripcion" maxlength="25">
+					<input style="margin-top:5%" runat="server" type="number" placeholder="Tiempo mínimo" class="form-control" id="tiempo_minimo" name ="tiempo_minimo" min="0" max="10">                    
+					<input style="margin-top:5%" runat="server" type="number" placeholder="Tiempo maximo" class="form-control" id="tiempo_maximo" name ="tiempo_maximo" min="0" max="10">
+                    <input style="margin-top:5%" runat="server" type="number" placeholder="Puntaje mínimo" class="form-control" id="puntaje_minimo" name="punto_minimo" min="0" max="10">
+                    <input style="margin-top:5%" runat="server" type="number" placeholder="Horas docentes mínimas" class="form-control" id="horas_docentes" name="hora_docente" min="0" max="10">
 					
                     <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
                     <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>

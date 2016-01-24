@@ -63,7 +63,7 @@ namespace Interfaz_Presentadores.Modulo8
             try
             {
                 listCinta = comboCinta.Ejecutar();
-                foreach (Cinta item in listCinta)
+                foreach (DominioSKD.Entidades.Modulo5.Cinta item in listCinta)
                 {
                     options.Add(item.Id_cinta.ToString(), item.Color_nombre);
                 }
@@ -125,8 +125,8 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void Alerta(string msj)
         {
-            vista.alertLocalClase = RecursoPresentadorM8.Alerta_Clase_Error;
-            vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
+            //vista.alertLocalClase = RecursoPresentadorM8.Alerta_Clase_Error;
+            //vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
             vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 

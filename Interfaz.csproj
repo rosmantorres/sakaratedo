@@ -2091,6 +2091,11 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo8\RecursoInterfazModulo8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoInterfazModulo8.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
       <DependentUpon>M9_Prueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2166,6 +2171,10 @@
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo8\RecursoInterfazModulo8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoInterfazModulo8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

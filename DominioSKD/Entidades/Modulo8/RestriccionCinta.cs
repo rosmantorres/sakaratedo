@@ -154,6 +154,15 @@ namespace DominioSKD.Entidades.Modulo8
             puntosMinimos = inputPuntosMinimos;
             listaCintas = null;
         }
+
+        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputPuntosMinimos, int inputTiempoDocente)
+        {
+            this.idRestriccionCinta = inputId;
+            this.descripcion = inputDescripcion;
+            this.tiempoMinimo = inputTiempoMinimo;
+            this.puntosMinimos = inputPuntosMinimos;
+            this.tiempoDocente = inputTiempoDocente;
+        }
         #endregion
 
     }
