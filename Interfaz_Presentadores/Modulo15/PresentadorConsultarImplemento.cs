@@ -50,6 +50,12 @@ namespace Interfaz_Presentadores.Modulo15
                  throw ex;
              }
 
+             catch (Exception ex)
+             {
+
+                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 throw ex;
+             }
          }
 
          public List<Entidad> cargarListaImplementos2(Entidad dojo)
@@ -76,6 +82,12 @@ namespace Interfaz_Presentadores.Modulo15
                  throw ex;
              }
 
+             catch (Exception ex)
+             {
+
+                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 throw ex;
+             }
          }
 
          public bool eliminarImplemento(string implemento ,int dojoid)
@@ -108,6 +120,12 @@ namespace Interfaz_Presentadores.Modulo15
                  throw ex;
              }
 
+             catch (Exception ex)
+             {
+
+                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 throw ex;
+             }
          }
 
       
@@ -131,6 +149,13 @@ namespace Interfaz_Presentadores.Modulo15
              catch (ExceptionSKD ex)
              {
                  ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 throw ex;
+             }
+
+             catch (Exception ex)
+             {
+
                  Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
                  throw ex;
              }
@@ -159,6 +184,12 @@ namespace Interfaz_Presentadores.Modulo15
                  throw ex;
              }
 
+             catch (Exception ex)
+             {
+
+                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 throw ex;
+             }
          }
 
 

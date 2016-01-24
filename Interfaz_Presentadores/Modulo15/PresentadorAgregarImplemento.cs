@@ -44,6 +44,13 @@ namespace Interfaz_Presentadores.Modulo15
                   throw ex;
               }
 
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  throw ex;
+              }
+
           
           }
           public int usuarioDojo(Entidad usuario)
@@ -69,6 +76,13 @@ namespace Interfaz_Presentadores.Modulo15
                   throw ex;
               }
 
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  throw ex;
+              }
+
           }
           public Entidad obtenerDojoXId(Entidad dojo)
           {
@@ -90,6 +104,13 @@ namespace Interfaz_Presentadores.Modulo15
               catch (ExceptionSKD ex)
               {
                   ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  throw ex;
+              }
+
+              catch (Exception ex)
+              {
+
                   Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
                   throw ex;
               }

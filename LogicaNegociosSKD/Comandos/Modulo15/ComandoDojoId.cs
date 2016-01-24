@@ -35,6 +35,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
                 Logger.EscribirError("Error en Comando dojo Id", ex);
                 throw ex;
             }
+            catch (Exception ex)
+            {
+                
+                Logger.EscribirError("Error comando dojo id", ex);
+                throw ex;
+            }
 
 
     }

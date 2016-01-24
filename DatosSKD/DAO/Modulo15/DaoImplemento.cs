@@ -433,6 +433,13 @@ namespace DatosSKD.DAO.Modulo15
                 throw ex;
             }
 
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO listar inventario datos", ex);
+                throw ex;
+            }
+
             return listaDeImplementos;
         }
         #endregion
@@ -498,6 +505,14 @@ namespace DatosSKD.DAO.Modulo15
                 Logger.EscribirError("ConexionBaseDatos", ex);
                 throw ex;
             }
+
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO listar inventario datos2", ex);
+                throw ex;
+            }
             return listaDeImplementos;
         }
         #endregion 
@@ -559,6 +574,14 @@ namespace DatosSKD.DAO.Modulo15
                 Logger.EscribirError("ConexionBaseDatos", ex);
                 throw ex;
             }
+
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO implemento inventario datos", ex);
+                throw ex;
+            }
             return implemento;
         }
 
@@ -611,6 +634,13 @@ namespace DatosSKD.DAO.Modulo15
                 throw ex;
             }
 
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO eliminar inventario datos", ex);
+                throw ex;
+            }
             return false;
         }
         #endregion
@@ -816,6 +846,14 @@ namespace DatosSKD.DAO.Modulo15
                 throw ex;
             }
 
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO modificar inventario datos", ex);
+                throw ex;
+            }
+
             return false;
         }
         #endregion
@@ -872,6 +910,13 @@ namespace DatosSKD.DAO.Modulo15
                 throw ex;
             }
 
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO listar inventario datos", ex);
+                throw ex;
+            }
             return listaDeImplementos;
         }
 
@@ -921,6 +966,14 @@ namespace DatosSKD.DAO.Modulo15
             {
                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                 Logger.EscribirError("ConexionBaseDatos", ex);
+                throw ex;
+            }
+
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO implemento inventario datos ultimos", ex);
                 throw ex;
             }
             return implemento;
@@ -983,6 +1036,14 @@ namespace DatosSKD.DAO.Modulo15
                 Logger.EscribirError("ConexionBaseDatos", ex);
                 throw ex;
             }
+
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO  implemento inventario datos ultimo", ex);
+                throw ex;
+            }
             if (((Implemento)implemento).Id_Implemento == idImplemento)
                 return true;
             else
@@ -1029,6 +1090,14 @@ namespace DatosSKD.DAO.Modulo15
             {
                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                 Logger.EscribirError("ConexionBaseDatos", ex);
+                throw ex;
+            }
+
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en DAO usuario implemento datos ", ex);
                 throw ex;
             }
             return idDojo;

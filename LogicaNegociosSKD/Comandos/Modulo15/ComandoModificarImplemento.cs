@@ -36,6 +36,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
                Logger.EscribirError("Error en Comando modificar implemento", ex);
                throw ex;
            }
+
+           catch (Exception ex)
+           {
+
+               Logger.EscribirError("Error de en Comando modificar implemento", ex);
+               throw ex;
+           }
        }
 
     }

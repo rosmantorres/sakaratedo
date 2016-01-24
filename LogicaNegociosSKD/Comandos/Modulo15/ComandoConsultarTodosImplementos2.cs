@@ -35,6 +35,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
                 Logger.EscribirError("Error en Comando consultar todos implementos2", ex);
                 throw ex;
             }
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en Comando consultar todos implemento2", ex);
+                throw ex;
+            }
             return lista;
         }
     }

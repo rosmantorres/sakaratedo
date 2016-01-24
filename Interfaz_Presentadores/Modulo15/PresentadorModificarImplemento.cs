@@ -50,6 +50,12 @@ namespace Interfaz_Presentadores.Modulo15
                   throw ex;
               }
 
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
           }
           public bool modificarImplemento(Entidad implemento)
           {
@@ -74,6 +80,12 @@ namespace Interfaz_Presentadores.Modulo15
                   throw ex;
               }
 
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
           }
     }
 }
