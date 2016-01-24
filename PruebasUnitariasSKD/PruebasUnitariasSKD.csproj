@@ -113,6 +113,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo3\PUComandoOrganizacion.cs" />
     <Compile Include="Modulo3\PUDaoOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +125,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\PUComandoCinta.cs" />
     <Compile Include="Modulo5\PUDaoCintas.cs" />
     <Compile Include="Modulo5\RecursosPU_Mod5.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -186,6 +188,10 @@
     <ProjectReference Include="..\Interfaz.csproj">
       <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
       <Name>Interfaz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaz_Presentadores\Interfaz_Presentadores.csproj">
+      <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>
+      <Name>Interfaz_Presentadores</Name>
     </ProjectReference>
     <ProjectReference Include="..\LogicaNegociosSKD\LogicaNegociosSKD.csproj">
       <Project>{9f907dce-b707-4187-aba9-d825c1eee891}</Project>
