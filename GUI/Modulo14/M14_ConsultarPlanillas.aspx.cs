@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaNegociosSKD.Modulo14;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo14;
 using Interfaz_Presentadores.Modulo14;
@@ -17,7 +16,6 @@ namespace templateApp.GUI.Modulo14
     {
         #region atributos
         private PresentadorM14ConsultarPlanillas presentador;
-        private LogicaNegociosSKD.Modulo14.LogicaPlanilla logica = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
         #endregion
 
         #region Contratos

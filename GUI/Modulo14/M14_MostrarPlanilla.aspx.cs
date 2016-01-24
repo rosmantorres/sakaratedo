@@ -17,7 +17,6 @@ namespace templateApp.GUI.Modulo14
 {
     public partial class M14_MostrarPlanilla : System.Web.UI.Page, IContratoM14MostrarPlanilla
     {
-        private LogicaNegociosSKD.Modulo14.LogicaDiseño logica = new LogicaNegociosSKD.Modulo14.LogicaDiseño();
         private int idSolicitud;
         private int idPlanilla;
         private int idIns;
