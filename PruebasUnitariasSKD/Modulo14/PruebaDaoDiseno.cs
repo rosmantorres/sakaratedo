@@ -26,7 +26,7 @@ namespace PruebasUnitariasSKD.Modulo14
         {
 
             Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla();
-            ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID = 19;
+            ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID = 90;
             DominioSKD.Entidades.Modulo14.Diseño result = (DominioSKD.Entidades.Modulo14.Diseño)daoDiseno.ConsultarXId(laPlanilla);
             Assert.IsTrue(result != null);
         }
@@ -35,7 +35,7 @@ namespace PruebasUnitariasSKD.Modulo14
         {
 
             Entidad elDiseno = FabricaEntidades.obtenerDiseño();
-            ((DominioSKD.Entidades.Modulo14.Diseño)elDiseno).ID = 56;
+            ((DominioSKD.Entidades.Modulo14.Diseño)elDiseno).ID = 67;
             ((DominioSKD.Entidades.Modulo14.Diseño)elDiseno).Contenido = "Modificado en prueba";
             Assert.IsTrue(daoDiseno.Modificar(elDiseno));
         }
@@ -45,7 +45,7 @@ namespace PruebasUnitariasSKD.Modulo14
         {
 
             Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla();
-            ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID = 19;
+            ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID = 90;
             Entidad elDiseno = FabricaEntidades.obtenerDiseño();
             ((DominioSKD.Entidades.Modulo14.Diseño)elDiseno).Contenido = "Modificado en prueba";
             Assert.IsTrue(daoDiseno.GuardarDiseñoBD(elDiseno,laPlanilla));
