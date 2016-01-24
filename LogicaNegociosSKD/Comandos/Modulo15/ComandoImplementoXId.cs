@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
+using ExcepcionesSKD.Modulo15.ExcepcionComando;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {    
@@ -21,11 +23,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             {
                 return FabricaDAOSqlServer.ObtenerDAOImplemento().implementoInventarioDatos(((Implemento)this.LaEntidad).Id_Implemento);
 
-              
-            }
-            catch (Exception ex)
-            {
 
+            }
+            catch (ExcepcionComandoImplementoXId ex)
+            {
+                ex = new ExcepcionComandoImplementoXId("Error en Comando implemento por Id", new Exception());
+                Logger.EscribirError("Error en Comando implemento por Id", ex);
+                throw ex;
+
+            }
+
+            catch (ExceptionSKD ex)
+            {
+                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+                Logger.EscribirError("Error en Comando implemento por Id", ex);
                 throw ex;
             }
         }

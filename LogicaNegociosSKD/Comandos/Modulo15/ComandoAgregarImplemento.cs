@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo15;
 using DominioSKD;
+using ExcepcionesSKD.Modulo15.ExcepcionComando;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
@@ -22,9 +24,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
                return daoImplemeto.Agregar(this.LaEntidad);
            
            }
-           catch (Exception ex)
+           catch (ExcepcionComandoAgregarImplemento ex)
            {
+               ex = new ExcepcionComandoAgregarImplemento("Error en Comando Agregar Implemento", new Exception());
+               Logger.EscribirError("Error en Comando Agregar Implemento", ex);
+               throw ex;
 
+           }
+
+           catch (ExceptionSKD ex)
+           {
+               ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+               Logger.EscribirError("Error en Comando Agregar Implemento", ex);
                throw ex;
            }
        }
