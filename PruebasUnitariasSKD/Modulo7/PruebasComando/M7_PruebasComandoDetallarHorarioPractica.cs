@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
     class M7_PruebasComandoDetallarHorarioPractica
-    {
+    {/*
         #region Atributos
         private Evento idEvento;
         private FabricaComandos fabricaComandos;
@@ -78,6 +78,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             idEvento.Id = -1;
             Evento evento = (Evento)detalleHorario.Ejecutar();
         }
-        #endregion
+        #endregion*/
     }
 }

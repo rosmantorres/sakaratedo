@@ -1,4 +1,5 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Comandos.Modulo7;

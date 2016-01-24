@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo7;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo6;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using System;

@@ -9,6 +9,8 @@ using DatosSKD.DAO.Modulo7;
 using DominioSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Entidades.Modulo6;
+
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
     /// <summary>
@@ -16,7 +18,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     /// </summary>
     [TestFixture]
     public class M7_PruebasDAOMatricula
-    {
+    {/*
         #region Atributos
         private Persona idPersona;
         private FabricaEntidades fabricaEntidades;
@@ -139,6 +141,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             idPersona.Id = -1;
             List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
         }
-        #endregion
+        #endregion*/
     }
 }

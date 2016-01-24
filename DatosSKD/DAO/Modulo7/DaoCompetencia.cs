@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using ExcepcionesSKD.Modulo7;
 using System.Data;
 using DatosSKD.Fabrica;
+using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -60,7 +61,7 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    competencia = new Competencia();
+                    competencia = (Competencia)FabricaEntidades.ObtenerCompetencia();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdCompetencia, SqlDbType.Int, idCompetencia.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 

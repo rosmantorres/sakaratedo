@@ -892,7 +892,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Competencia competencia = (Competencia)fabricaEntidades.ObtenerCompetencia();
+                        Competencia competencia = (Competencia)FabricaEntidades.ObtenerCompetencia();
 
                         competencia.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();

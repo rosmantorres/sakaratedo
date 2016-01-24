@@ -54,7 +54,8 @@ namespace DatosSKD.DAO.Modulo7
 
         public Entidad ConsultarXId(Entidad parametro)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            throw new NotImplementedException();
+            /*Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             BDConexion conexion;
@@ -123,7 +124,7 @@ namespace DatosSKD.DAO.Modulo7
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                  RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            return matricula;
+            return matricula;*/
         }
      
         /// <summary>
@@ -212,7 +213,8 @@ namespace DatosSKD.DAO.Modulo7
 
         public List<Entidad> ListarMatriculasPagas(Entidad persona)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            throw new NotImplementedException();
+            /*Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             BDConexion conexion;
@@ -288,7 +290,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            return listaDeMatriculas;
+            return listaDeMatriculas;*/
         }
 
         /// <summary>
@@ -377,7 +379,8 @@ namespace DatosSKD.DAO.Modulo7
    
         public float MontoPagoMatricula(Entidad persona, Entidad matricula)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            throw new NotImplementedException();
+            /*Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                  RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion conexion;
             List<Parametro> parametros;
@@ -445,7 +448,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            return monto;
+            return monto;*/
         }
     }
 }

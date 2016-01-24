@@ -92,7 +92,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarCintaXIdDAO()
         {
-            Cinta idCinta = (Cinta)fabricaEntidades.ObtenerCinta();
+            Cinta idCinta = new Cinta();
             idCinta.Id = 1;
             Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
             Assert.AreEqual("Blanco", cinta.Color_nombre);
@@ -105,7 +105,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetallarCintaNumeroEnteroException()
         {
-            Cinta idCinta = (Cinta)fabricaEntidades.ObtenerCinta();
+            Cinta idCinta = new Cinta();
             idCinta.Id = -1;
             Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
         }
@@ -116,7 +116,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarCintaxIDNoNula()
         {
-            Cinta idCinta = (Cinta)fabricaEntidades.ObtenerCinta();
+            Cinta idCinta = new Cinta();
             idCinta.Id = 1;
             Cinta cinta = (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
             Assert.NotNull(cinta);
@@ -159,7 +159,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaObtencionCinta()
         {
-            Cinta idCinta = (Cinta)fabricaEntidades.ObtenerCinta();
+            Cinta idCinta = new Cinta();
             idCinta.Id = 2;
             Assert.AreEqual("08/21/2015", baseDeDatosCinta.FechaCinta(idPersona, idCinta).ToString("MM/dd/yyyy"));
         }
@@ -172,7 +172,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void FechaObtecionCintaNumeroEnteroException()
         {
-            Cinta idCinta = (Cinta)fabricaEntidades.ObtenerCinta();
+            Cinta idCinta = new Cinta();
             idCinta.Id = -2;
             baseDeDatosCinta.FechaCinta(idPersona, idCinta);
         }
@@ -183,7 +183,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaObtencionCintaNoNula()
         {
-            Cinta idCinta = (Cinta)fabricaEntidades.ObtenerCinta();
+            Cinta idCinta = new Cinta();
             idCinta.Id = 3;
             Assert.NotNull(baseDeDatosCinta.FechaCinta(idPersona, idCinta).ToString("MM/dd/yyyy"));
         }
