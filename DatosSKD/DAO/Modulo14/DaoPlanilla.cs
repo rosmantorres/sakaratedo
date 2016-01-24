@@ -27,7 +27,7 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            // BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
             DominioSKD.Entidades.Modulo14.Planilla planilla =
@@ -35,7 +35,7 @@ namespace DatosSKD.DAO.Modulo14
 
             try
             {
-                //   laConexion = new BDConexion();
+                
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroNombrePlanilla,
@@ -113,14 +113,14 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+   
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
             DominioSKD.Entidades.Modulo14.Planilla planilla =
                 (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
             try
             {
-                //  laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -199,7 +199,7 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //  BDConexion laConexion;
+          
             int idPlanilla = ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID;
             DominioSKD.Entidades.Modulo14.Planilla planilla = null;
             List<Parametro> parametros;
@@ -207,7 +207,7 @@ namespace DatosSKD.DAO.Modulo14
 
             try
             {
-                //  laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -375,13 +375,13 @@ namespace DatosSKD.DAO.Modulo14
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+            
             List<Entidad> listaTipoPlanilla = new List<Entidad>();
             List<Parametro> parametros;
 
             try
             {
-             //   laConexion = new BDConexion();
+            
                 this.Conectar();
                 parametros = new List<Parametro>();
                 DataTable resultadoConsulta = this.EjecutarStoredProcedureTuplas(RecursosDAOModulo14.ProcedureListaTipoPlanilla, parametros);
@@ -453,14 +453,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-         //   BDConexion laConexion;
+        
             List<String> listaDatos = new List<String>();
             List<Parametro> parametros;
-            //List<Resultado> resultadoConsulta;
 
             try
             {
-             //   laConexion = new BDConexion();
+            
                 this.Conectar();
                 parametros = new List<Parametro>();
                 DataTable resultadoConsulta = this.EjecutarStoredProcedureTuplas(RecursosDAOModulo14.ProcedureConsultarListaDatos, parametros);
@@ -532,14 +531,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-           // BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-             //   laConexion = new BDConexion();
-                //this.Conectar();
+             
                 parametros = new List<Parametro>();
 
                 parametro = new Parametro(RecursosDAOModulo14.ParametroNombrePlanilla,
@@ -612,13 +610,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-          //  BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-               // laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
 
@@ -691,14 +689,14 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-           // BDConexion laConexion;
+           
             int idTipolanilla;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-               // laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroTipoPlanilla,
@@ -778,13 +776,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-          //  BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
             List<String> listDatos = new List<String>();
             try
             {
-            //    laConexion = new BDConexion();
+            
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -861,13 +859,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-          //  BDConexion laConexion;
+         
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
             List<String> listDatos = new List<String>();
             try
             {
-              //  laConexion = new BDConexion();
+              
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -944,13 +942,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+            
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-                //laConexion = new BDConexion();
+                
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -1022,13 +1020,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+            
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-              //  laConexion = new BDConexion();
+              
                 parametros = new List<Parametro>();
                 this.Conectar();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
