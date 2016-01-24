@@ -12,7 +12,7 @@ namespace DatosSKD.DAO.Modulo8
 {
     public class DAORestriccionEvento : DAOGeneral, InterfazDAO.Modulo8.IDaoRestriccionEvento
     {
-
+        //asd
         #region IDAO
         public Boolean Agregar(Entidad parametro)
         {
