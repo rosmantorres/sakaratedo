@@ -59,7 +59,7 @@ namespace templateApp.GUI.Modulo15
         void guardarImagen() {
             string TargetLocation;
             string imagen_implemento = null;
-            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagenes/");
             imagen_implemento = this.imagen_implemento.Value;
             this.imagen_implemento.PostedFile.SaveAs(TargetLocation + imagen_implemento);
 
