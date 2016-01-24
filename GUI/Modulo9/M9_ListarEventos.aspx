@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_ListarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_ListarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_ListarEventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript">
@@ -50,23 +50,23 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 
-	<%--Breadcrumbs--%>
+    <%--Breadcrumbs--%>
     <div>
-	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
-		    <li>
-			    <a href="../Master/Inicio.aspx">Home</a>
-		    </li>
-		
-		    <li>
-			    <a href="#">Eventos y Competencias</a> 
-		    </li>
-		
-		    <li class="active">
-			    Gesti&oacute;n de Eventos
-		    </li>
-	    </ol>
+        <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+            <li>
+                <a href="../Master/Inicio.aspx">Home</a>
+            </li>
+        
+            <li>
+                <a href="#">Eventos y Competencias</a> 
+            </li>
+        
+            <li class="active">
+                Gesti&oacute;n de Eventos
+            </li>
+        </ol>
     </div>
-	<%--Fin_Breadcrumbs--%>
+    <%--Fin_Breadcrumbs--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gesti&oacute;n de Eventos
 </asp:Content>
@@ -85,21 +85,22 @@
 
     <div class="box-body table-responsive">
         <table id="tablaeventos" class="table table-bordered table-striped dataTable">
-        <thead>
-				<tr>
-					<th style="text-align:center">Nombre</th>
-					<th style="text-align:center">Tipo</th>
-					<th style="text-align:center">Fecha Inicio</th>
+        <thead
+                <tr>
+                    <th style="text-align:center">Nombre</th>
+                    <th style="text-align:center">Tipo</th>
+                    <th style="text-align:center">Fecha Inicio</th>
                     <th style="text-align:center">Fecha Fin</th>
                     <th style="text-align:center">Hora Inicio</th>
                     <th style="text-align:center">Hora Fin</th>
-					<th style="text-align:center">Status</th>
+                    <th style="text-align:center">Status</th>
                     <th style="text-align:center">Acciones</th>
-				</tr>
-			</thead>
-			    <tbody>
-                    <asp:Literal runat="server" ID="tabla"></asp:Literal>    
-			    </tbody>
+                </tr>
+            </thead>
+                <tbody>
+                     <asp:Literal runat="server" ID="laTabla"></asp:Literal> 
+                     <asp:Literal runat="server" ID="dataTableEvento"></asp:Literal>
+                </tbody>
             </table>
            </div>
        </div>
@@ -129,27 +130,27 @@
         </div><!-- /.modal-delete-dialog -->
       </div><!-- /.modal-delete -->
 
-    		<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Descripci&oacute;n del Evento</h4>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<h3>Descripci&oacute;n:</h3>
+            <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Descripci&oacute;n del Evento</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid" id="info">
+                            <div class="row">
+                                <h3>Descripci&oacute;n:</h3>
                                 <h4>Mapa</h4>
                                 <div id="googleMap" style="width:250px;height:250px;"></div>
 
 
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#tablaeventos').DataTable();

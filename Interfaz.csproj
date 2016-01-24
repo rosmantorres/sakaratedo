@@ -305,8 +305,8 @@
     <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
-    <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
+    <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_ModificarEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_AgregarEvento.aspx" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
@@ -2117,19 +2117,19 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.cs">
-      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.designer.cs">
-      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo9\M9_ListarEventos.aspx.cs">
       <DependentUpon>M9_ListarEventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ListarEventos.aspx.designer.cs">
       <DependentUpon>M9_ListarEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.designer.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
       <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
