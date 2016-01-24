@@ -46,10 +46,10 @@ namespace Interfaz_Presentadores.Modulo3
                 this.vista.Respuesta();
 
             }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                this.vista.alertaModificarFallido(ex);
-            }
+          catch (ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
+          {
+              this.vista.alertaModificarFallidoEstiloOrg(ex);
+          }
         }
     }
 }
