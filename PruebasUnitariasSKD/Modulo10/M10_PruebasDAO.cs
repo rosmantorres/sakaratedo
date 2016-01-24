@@ -396,6 +396,17 @@ namespace PruebasUnitariasSKD.Modulo10
              Assert.AreEqual(0, listaEntidad.ToArray().Length);
          }
 
+         [Test]
+         public void ConsultarEventoXID() // Contar
+         {
+
+             IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+
+             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+             ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
+             Assert.NotNull(entidad);
+         }
+
         
        }
         #endregion
