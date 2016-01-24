@@ -13,6 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
    public class ComandoRegistrarPlanilla : Comando<bool>
     {
+        /// <summary>Para registrar una planilla</summary>
+        /// <param name="">planilla</param>
+        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
        public override bool Ejecutar()
         {
             DominioSKD.Entidades.Modulo14.Planilla laPlanilla =

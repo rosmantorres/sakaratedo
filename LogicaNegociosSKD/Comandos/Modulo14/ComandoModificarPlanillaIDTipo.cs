@@ -21,6 +21,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return tipoPlanilla; }
             set { tipoPlanilla = value; }
         }
+        /// <summary>Modificar una planilla</summary>
+        /// <param name="">tipo de planilla</param>
+        /// <returns>Regresa la planilla modificando su tipo de planilla</returns>
+        /// 
         public override Entidad Ejecutar()
         {
             DominioSKD.Entidades.Modulo14.Planilla laPlanilla =

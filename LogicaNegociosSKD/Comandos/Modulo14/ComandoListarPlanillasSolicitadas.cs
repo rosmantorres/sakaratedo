@@ -22,6 +22,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPersona; }
             set { idPersona = value; }
         }
+        /// <summary>
+        /// Metodo que lista todas las planillas que ha solicitado una persona
+        /// </summary>
+        /// <param name="idPersona">Id de la Persona </param>
+        /// <returns>Retorna una lista de solicitudes</returns>
         public override List<Entidad> Ejecutar()
         {
             try
