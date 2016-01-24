@@ -108,6 +108,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosInterfazPresentadorM1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo1\ValidacionesM1.cs" />
+    <Compile Include="Modulo2\Encriptacion.cs" />
     <Compile Include="Modulo2\PresentadorM2.cs" />
     <Compile Include="Modulo2\RecursosInterfazPresentadorM2.Designer.cs">
       <DependentUpon>RecursosInterfazPresentadorM2.resx</DependentUpon>
@@ -122,6 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPresentadorM3.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo2\ValidacionesM2.cs" />
     <Compile Include="Modulo5\PresentadorCrearCintas.cs" />
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />

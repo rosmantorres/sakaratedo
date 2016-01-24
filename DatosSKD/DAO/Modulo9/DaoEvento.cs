@@ -903,7 +903,7 @@ namespace DatosSKD.DAO.Modulo9
             DominioSKD.Entidades.Modulo16.ListaEvento lista = new DominioSKD.Entidades.Modulo16.ListaEvento();
 
             // Casteamos
-            DominioSKD.PersonaM1 p = (DominioSKD.PersonaM1)evento;
+            DominioSKD.Entidades.Modulo1.PersonaM1 p = (DominioSKD.Entidades.Modulo1.PersonaM1)evento;
 
             try
             {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
 
 namespace Interfaz_Contratos.Master
 {

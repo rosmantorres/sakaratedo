@@ -191,10 +191,6 @@
     <Content Include="GUI\Modulo10\M10_DetalleAsistenciaEvento.aspx" />
     <Content Include="GUI\Modulo10\M10_ListarAsistenciaEventos.aspx" />
     <Content Include="GUI\Modulo10\M10_ModificarAsistenciaEventos.aspx" />
-    <Content Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx" />
-    <Content Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx" />
-    <Content Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx" />
-    <Content Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_AgregarCompetencias.aspx" />
     <Content Include="GUI\Modulo12\M12_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo12\M12_ListarCompetencias.aspx" />
@@ -1560,39 +1556,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>M10_RecursosInterfaz.resx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.cs">
-      <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.designer.cs">
-      <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.cs">
-      <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.designer.cs">
-      <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
-      <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.designer.cs">
-      <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.cs">
-      <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
-      <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Modulo11\M11_RecursosInterfaz.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>M11_RecursosInterfaz.resx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2171,10 +2134,6 @@
     <EmbeddedResource Include="GUI\Modulo10\M10_RecursosInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M10_RecursosInterfaz.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Modulo11\M11_RecursosInterfaz.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>M11_RecursosInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>

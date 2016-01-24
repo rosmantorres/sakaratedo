@@ -43,34 +43,51 @@
                 <thead>
     			<tr>
 				    <td>ID</td>
-					<td>Nombre</td>
-					<td>Tipo</td>
-                    <td>Marca</td>
-					<td>Color</td>
-                    <td>Talla</td>
-                    <td>Cantidad</td>
+					<td >Nombre</td>
+					<td class="tomar2">Tipo</td>
+                    <td class="tomar2">Marca</td>
+					<td class="tomar2">Color</td>
+                    <td class="tomar2">Talla</td>
+                    <td class="tomar2">Cantidad</td>
                     <td>Stock M&iacutenimo</td>
                     <td>Estatus</td>                 
-					<td>Precio (Bs)</td>
+					<td class="tomar2">Precio (Bs)</td>
                     <td>Monto Total Bs</td>
                    <th style="text-align:right;">Acciones</th>
 				</tr>
                     <tr>
 				
-                    <th>ID</th>
-					<th>Nombre</th>
-					<th>Tipo</th>
-                    <th>Marca</th>
-					<th>Color</th>
-                    <th>Talla</th>
-                    <th>Cantidad</th>
+                    <th >ID</th>
+					<th class="tomar" >Nombre</th>
+					<th class="tomar" >Tipo</th>
+                    <th class="tomar">Marca</th>
+					<th class="tomar">Color</th>
+                    <th class="tomar">Talla</th>
+                    <th class="tomar">Cantidad</th>
                     <th>Stock M&iacutenimo</th>
                     <th>Estatus</th>                 
-					<th>Precio (Bs)</th>
+					<th class="tomar">Precio (Bs)</th>
                     <th >Monto Total Bs</th>
                    <th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
+                <tfoot>
+                        <tr>
+                    <td>ID</td>
+					<td >Nombre</td>
+					<td >Tipo</td>
+                    <td >Marca</td>
+					<td >Color</td>
+                    <td >Talla</td>
+                    <td >Cantidad</td>
+                    <td>Stock M&iacutenimo</td>
+                    <td>Estatus</td>                 
+					<td >Precio (Bs)</td>
+                    <td>Monto Total Bs</td>
+                   <th style="text-align:right;">Acciones</th>
+                            
+                        </tr>
+                    </tfoot>
 
             <asp:Literal runat="server" ID="tabla"></asp:Literal>
            </table>
@@ -139,8 +156,11 @@
     </div>
 
       <!-- Declaración de las alertas-->
-    <script type="text/javascript" src="../../plugins/dataTables.tableTools.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../plugins/dataTables.tableTools.css" media="screen" />
+<script type="text/javascript" src="../../plugins/datatables/extensions/TableTools/js/dataTables.tableTools.js" ></script>
+ <link rel="stylesheet" type="text/css" href="../../plugins/datatables/extensions/TableTools/css/dataTables.tableTools.css" />
+
+
+        <link rel="stylesheet" type="text/css" href="../../plugins/dataTables.tableTools.css" media="screen" />
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -149,6 +169,7 @@
                 $("#nombre-dojo").css("text-align", "center");
 
                 var table = $('#example').DataTable({  //lenguaje del DataTable
+                    "bLengthChange": false,
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     },
@@ -159,14 +180,16 @@
                     }],
                     dom: 'T<"clear">lfrtip',
                     tableTools: {
-                        "sSwfPath": "copy_csv_xls_pdf.swf",
+                        "sSwfPath": "../../plugins/copy_csv_xls_pdf.swf",
                         "aButtons": [
                             "copy",
                             "csv",
                             "xls",
                             {
                                 "sExtends": "pdf",
-                                "sPdfOrientation": "landscape"
+                                "sPdfOrientation": "landscape",
+                                "sPdfMessage": "Lista de Implementos"
+
                             },
                             "print"
                         ]
@@ -176,7 +199,25 @@
 
            
 
-                
+                $('#example th').each(function () {
+                    var title = $('.tomar').eq($(this).index()).text();
+                    $(this).html('<input type="text" onkeyup=buscar_valor(); id="' + title + '" placeholder="Buscar ' + title + '" />');
+                });
+
+
+
+
+
+                table.columns().every(function (indice) {
+                    var that = this;
+                  //  alert(this.column(indice).data());
+                    $('input',this.header).on('keyup change', function () {
+                        that.search(this.value).draw();
+
+                    });
+                });
+
+
 
                 var req;
                 var tr;
