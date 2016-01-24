@@ -212,17 +212,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo12\LogicaCompetencias.cs" />
-    <Compile Include="Modulo12\RecursosLogicaModulo12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo12.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo13\RecursosLogicaModulo13.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo13.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo14\LogicaDiseño.cs" />
     <Compile Include="Modulo14\LogicaPlanilla.cs" />
     <Compile Include="Modulo14\LogicaSolicitud.cs" />
@@ -269,12 +258,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo5.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo6\LogicaListar.cs" />
-    <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo6.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo7\LogicaCintas.cs" />
     <Compile Include="Modulo7\LogicaEventosPagos.cs" />
@@ -355,14 +338,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo12\RecursosLogicaModulo12.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo12.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo13\RecursosLogicaModulo13.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo13.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo14\RecursosLogicaModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo14.Designer.cs</LastGenOutput>
@@ -394,10 +369,6 @@
     <EmbeddedResource Include="Modulo5\RecursosLogicaModulo5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo5.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo6\RecursosLogicaModulo6.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo6.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo7\RecursosLogicaModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
