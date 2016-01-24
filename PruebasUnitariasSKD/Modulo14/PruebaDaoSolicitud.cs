@@ -26,8 +26,8 @@ namespace PruebasUnitariasSKD.Modulo14
          public void PruebaAgregar()
          {
              Planilla laPlanilla = (Planilla)FabricaEntidades.ObtenerPlanilla();
-             laPlanilla.ID = 16;
-             DominioSKD.Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 16);
+             laPlanilla.ID = 90;
+             DominioSKD.Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 1);
              Assert.IsTrue(daosolicitud.Agregar(laSolicitud));
 
          }
@@ -35,8 +35,8 @@ namespace PruebasUnitariasSKD.Modulo14
          public void PruebaModificar()
          {
              Planilla laPlanilla = (Planilla)FabricaEntidades.ObtenerPlanilla();
-             laPlanilla.ID = 16;
-             DominioSKD.Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 16);
+             laPlanilla.ID = 90;
+             DominioSKD.Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla,1);
              Assert.IsTrue(daosolicitud.Agregar(laSolicitud));
 
          }
@@ -46,7 +46,7 @@ namespace PruebasUnitariasSKD.Modulo14
           {
               DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud = (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP();
 
-              laSolicitud.ID = 56;
+              laSolicitud.ID = 77;
               DominioSKD.Entidades.Modulo14.SolicitudP result = (DominioSKD.Entidades.Modulo14.SolicitudP)daosolicitud.ConsultarXId(laSolicitud);
               Assert.IsTrue(result != null);
           }
@@ -54,7 +54,7 @@ namespace PruebasUnitariasSKD.Modulo14
           public void PruebaRegistrarSolicitudIDPersonaBD()
           {
               DominioSKD.Entidades.Modulo14.Planilla laPlanilla = (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
-              laPlanilla.ID = 82;
+              laPlanilla.ID = 90;
                DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud = (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 1);
                Assert.IsTrue(daosolicitud.RegistrarSolicitudIDPersonaBD(laSolicitud));
           }
@@ -66,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo14
            [Test]
            public void PruebaEliminarSolicitudBD()
            {
-               Assert.IsTrue(daosolicitud.EliminarSolicitudBD(34));
+               Assert.IsTrue(daosolicitud.EliminarSolicitudBD(79));
            }
            [Test]
            public void PruebaObtenerCompetenciaSolicitud()
