@@ -432,3 +432,95 @@
    at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
    at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
    at DatosSKD.DAOGeneral.EjecutarStoredProcedure(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 170
+2016-01-24 01:11:10,354 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,360 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,360 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,360 INFO  DaoPlanilla - Metodo: ConsultarPlanillasCreadas
+2016-01-24 01:11:10,448 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,448 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,448 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,448 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,656 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,656 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,657 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,657 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,665 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,665 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,665 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,665 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,674 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,674 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,674 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,674 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,683 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,683 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,683 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,683 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,692 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,692 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,692 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,692 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,700 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,700 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,700 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,700 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,708 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,708 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,708 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,708 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,716 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,716 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,716 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,716 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,723 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,723 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,723 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,723 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,729 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,729 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,729 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,729 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,733 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,734 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,734 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,734 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,738 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,738 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,738 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,738 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,742 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,742 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,742 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,742 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 01:11:10,746 INFO  DaoPlanilla - *******************************************************
+2016-01-24 01:11:10,746 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 01:11:10,746 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 01:11:10,746 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 02:55:30,020 ERROR PresentadorAgregarRestriccionCinta - *******************************************************
+2016-01-24 02:55:30,025 ERROR PresentadorAgregarRestriccionCinta - Mensaje: Unable to cast object of type 'DominioSKD.Entidades.Modulo5.Cinta' to type 'DominioSKD.Cinta'.
+2016-01-24 02:55:30,026 ERROR PresentadorAgregarRestriccionCinta - Origen: Interfaz_Presentadores
+2016-01-24 02:55:30,027 ERROR PresentadorAgregarRestriccionCinta - Metodo: Void LlenarComboCinta()
+2016-01-24 02:55:30,027 ERROR PresentadorAgregarRestriccionCinta - StackTrace:    at Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionCinta.LlenarComboCinta() in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorAgregarRestriccionCinta.cs:line 66
+2016-01-24 02:55:30,027 ERROR PresentadorAgregarRestriccionCinta - InnerException: 
+2016-01-24 11:21:22,095 INFO  ComandoConsultarCintas - *******************************************************
+2016-01-24 11:21:22,100 INFO  ComandoConsultarCintas - Clase: ComandoConsultarCintas
+2016-01-24 11:21:22,100 INFO  ComandoConsultarCintas - Mensaje: Entrada en el Método
+2016-01-24 11:21:22,100 INFO  ComandoConsultarCintas - Metodo: Ejecutar
+2016-01-24 11:21:22,108 INFO  ComandoConsultarCintas - *******************************************************
+2016-01-24 11:21:22,108 INFO  ComandoConsultarCintas - Clase: ComandoConsultarCintas
+2016-01-24 11:21:22,108 INFO  ComandoConsultarCintas - Mensaje: Salida del Método
+2016-01-24 11:21:22,108 INFO  ComandoConsultarCintas - Metodo: Ejecutar
+2016-01-24 11:21:22,115 INFO  DaoCompetencia - *******************************************************
+2016-01-24 11:21:22,115 INFO  DaoCompetencia - Clase: DaoCompetencia
+2016-01-24 11:21:22,115 INFO  DaoCompetencia - Mensaje: Entrada en el Método
+2016-01-24 11:21:22,115 INFO  DaoCompetencia - Metodo: M12ListarCintas
+2016-01-24 11:21:22,149 INFO  DaoCompetencia - *******************************************************
+2016-01-24 11:21:22,149 INFO  DaoCompetencia - Clase: DaoCompetencia
+2016-01-24 11:21:22,149 INFO  DaoCompetencia - Mensaje: Salida del Método
+2016-01-24 11:21:22,149 INFO  DaoCompetencia - Metodo: M12ListarCintas
+2016-01-24 11:21:22,191 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-24 11:21:22,192 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Unable to cast object of type 'DominioSKD.Cinta' to type 'DominioSKD.Entidades.Modulo8.RestriccionCinta'.
+2016-01-24 11:21:22,195 ERROR PresentadorConsultarRestriccionesCinta - Origen: Interfaz_Presentadores
+2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - Metodo: Void LlenarInformacion(System.Collections.Generic.List`1[DominioSKD.Entidad])
+2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarInformacion(List`1 lista) in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 39
+2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - InnerException: 

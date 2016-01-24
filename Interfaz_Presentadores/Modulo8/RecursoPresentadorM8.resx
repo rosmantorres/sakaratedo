@@ -183,7 +183,7 @@
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
   </data>
   <data name="BotonModificarRegistro" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx?idPlan=</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionAvanceCinta.aspx?idPlan=</value>
   </data>
   <data name="BotonModificarSolicitud" xml:space="preserve">
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx?idSol=</value>

@@ -34,7 +34,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <div id="alert" runat="server">
+    <div id="alerta" runat="server">
 	</div>
 
 	<div class="row">
@@ -44,7 +44,7 @@
 				  <h3 class="box-title">Lista de Restricciones de Avance de Cinta</h3>
 				</div><!-- /.box-header -->
 
-	 
+<form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
 	<div class="box-body table-responsive">
 
 	   <table id="RestriccionesCintas" class="table table-bordered table-striped dataTable">
@@ -52,41 +52,20 @@
 				<tr>
 					<th>ID</th>
 					<th>Cinta</th>
-					<th >Tiempo Mínimo</th>
+					<th >Tiempo Mínimo (meses)</th>
 					<th>Puntaje Mínimo</th>
 					<th >Mínimo Horas Docentes</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
+           <asp:Literal runat="server" ID="tabla"></asp:Literal>
 			<tbody>
-				<tr>
-					<td class="id">RPC_1</td>
-					<td>Blanca</td>
-					<td>3 meses</td>
-					<td>30pts</td>
-					<td>0 horas</td>
-					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionAvanceCinta.aspx"></a>
-						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-					 </td>
-				</tr>
-
-				<tr>
-					<td class="id">RPC_2</td>
-					<td>Amarilla</td>
-					<td>5 meses</td>
-					<td>60pts</td>
-					<td>2 horas</td>
-					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionAvanceCinta.aspx"></a>
-						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-					 </td>
-				</tr>
-				
+							
 				
 			</tbody>
 	</table>
-
+    </div>
+</form>
 					  
 
 		<div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">

@@ -41,10 +41,9 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTR;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Id.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Descripcion.ToString() + RecursoPresentadorM8.CerrarTD;
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoMinimo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.PuntosMinimos.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoDocente.ToString() + RecursoPresentadorM8.CerrarTD;
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoMinimo.ToString() + RecursoPresentadorM8.CerrarTD;
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoMaximo.ToString() + RecursoPresentadorM8.CerrarTD;
                     /*vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
                     foreach (string dat in plani.Dato)
                     {
@@ -79,8 +78,8 @@ namespace Interfaz_Presentadores.Modulo8
         {
             try
             {
-            Comando<List<Entidad>> command = FabricaComandos.ObtenerComandoConsultarCintas();
-            return command.Ejecutar();
+                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
+                return command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
