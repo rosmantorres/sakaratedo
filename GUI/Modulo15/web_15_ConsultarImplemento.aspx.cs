@@ -15,6 +15,7 @@ namespace templateApp.GUI.Modulo15
 {
     public partial class web_15_ConsultarImplemento : System.Web.UI.Page,IContratoConsultarImplemento
     {
+        
         private List<Entidad> laLista = new List<Entidad>();
         private PresentadorConsultarImplemento presentador;
        
@@ -56,9 +57,13 @@ namespace templateApp.GUI.Modulo15
 
 
             }
-              
 
-
+            try
+            {
+                /// <summary>
+                /// Consulta los datos de un implemento
+                /// </summary>
+                /// 
                 Entidad usuarioLogear = FabricaEntidades.ObtenerUsuario();
                 ((Usuario)usuarioLogear)._Nombre = usuario;
                 int dojoUsuario = presentador.usuarioDojo(usuarioLogear);
@@ -95,6 +100,8 @@ namespace templateApp.GUI.Modulo15
                     this.tabla.Text += "<td>" + ((Implemento)valorActual).Talla_Implemento + "</td>";
                     this.tabla.Text += "<td>" + ((Implemento)valorActual).Cantida_implemento + "</td>";
                     this.tabla.Text += "<td>" + ((Implemento)valorActual).Stock_Minimo_Implemento + "</td>";
+
+
                     if (((Implemento)valorActual).Stock_Minimo_Implemento > ((Implemento)valorActual).Cantida_implemento)
                     {
                         this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-error'></div></td>";
@@ -126,12 +133,28 @@ namespace templateApp.GUI.Modulo15
 
 
                 }
+            }
+            catch (ExcepcionesSKD.Modulo15.ExcepcionPresentador.ExcepcionPresentadorConsultarImplemento ex)
+            {
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>"+ex.Data+"</div>";
+                       
+            
 
+
+            }
+            catch (Exception ex) {
+
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Problema Cargando los Datos</div>";
+                       
+            
+            
+            }
         }
 
-        public void eliminarImplemento(object sender, EventArgs e){ 
-        
-        
-        }
+ 
     }
 }
