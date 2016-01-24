@@ -217,11 +217,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo16\RecursosLogicaModulo16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo1\logicaLogin.cs" />
     <Compile Include="Modulo1\logicaRestablecer.cs" />
     <Compile Include="Modulo1\RecursosLogicaModulo1.Designer.cs">
@@ -323,10 +318,6 @@
     <EmbeddedResource Include="Modulo15\RecursosLogicaModulo15.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo15.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo16\RecursosLogicaModulo16.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
