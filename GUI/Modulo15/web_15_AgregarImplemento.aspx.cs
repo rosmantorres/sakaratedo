@@ -136,7 +136,7 @@ namespace templateApp.GUI.Modulo15
                     presentador.agregarImplemento(implemento);
 
                     guardarImagen();
-                    Response.Redirect("web_15_ConsultarImplemento.aspx");
+                    Response.Redirect("web_15_ConsultarImplemento.aspx?agregar=exito");
                 }
                 else
                 {
