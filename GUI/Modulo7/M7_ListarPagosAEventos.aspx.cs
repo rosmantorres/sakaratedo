@@ -13,6 +13,8 @@ using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     /// <summary>
@@ -21,6 +23,7 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarPagosAEventos : System.Web.UI.Page, IContratoListarEventosPagos
     {
         #region Atributos
+
         private List<DominioSKD.Evento> laListaEventos;
         private List<DominioSKD.Competencia> laListaCompetencias;
         private List<Evento> laLista = new List<Evento>();///xq

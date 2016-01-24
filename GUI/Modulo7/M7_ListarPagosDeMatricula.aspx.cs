@@ -12,6 +12,7 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
+using DominioSKD.Entidades.Modulo6;
 
 
 namespace templateApp.GUI.Modulo7

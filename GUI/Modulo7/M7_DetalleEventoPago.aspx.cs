@@ -15,6 +15,8 @@ using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
 
 
+
+
 namespace templateApp.GUI.Modulo7
 {
 

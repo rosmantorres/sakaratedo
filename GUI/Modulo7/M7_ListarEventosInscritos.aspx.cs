@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Web.UI;
 using templateApp.GUI.Master;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     /// <summary>
@@ -36,6 +38,10 @@ namespace templateApp.GUI.Modulo7
                 laTabla.Text = value;
             }
         }
+
+        private List<Evento> laLista;
+        private List<DominioSKD.Competencia> laListaCompetencias;
+
         #endregion
         #region Page Load
         /// <summary>

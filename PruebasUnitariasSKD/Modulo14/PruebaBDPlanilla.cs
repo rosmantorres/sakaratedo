@@ -31,9 +31,9 @@ namespace PruebasUnitariasSKD.Modulo14
         public void PruebaConsultarPlanillasCreadas()
         {
              List<DominioSKD.Planilla> lista = new List<DominioSKD.Planilla>();
-             Planilla planilla = new Planilla("RETIRO COMPETENCIA", true, 1);
+             Planilla planilla = new Planilla("Retiro Temporal Evento", true, 1);
              lista=BaseDeDatosPlanilla.ConsultarPlanillasCreadas();
-             Assert.AreEqual(lista[0].Nombre,planilla.Nombre);
+             Assert.AreEqual(lista[2].Nombre,planilla.Nombre);
              
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace PruebasUnitariasSKD.Modulo14
         public void PruebaObtenerTipoPlanilla()
         {
             List<Planilla> lista2 = new List<Planilla>();
-            Planilla planilla = new Planilla(1, "RETIRO COMPETENCIA", true, "RETIRO");
+            Planilla planilla = new Planilla(1, "Retiro Temporal Evento", true, "RETIRO");
             lista2 = BaseDeDatosPlanilla.ObtenerTipoPlanilla();
             Assert.AreEqual(lista2[0].TipoPlanilla, planilla.TipoPlanilla);
             
@@ -56,8 +56,8 @@ namespace PruebasUnitariasSKD.Modulo14
 
         public void PruebaObtenerDatosBD()
         {
-            var datos = new List<string> { "PERSONA", "COMPETENCIA","DOJO"};
-            Planilla planilla = new Planilla("RETIRO COMPETENCIA",true,"RETIRO",datos);
+            var datos = new List<string> { "PERSONA", "EVENTO"};
+            Planilla planilla = new Planilla("Retiro Temporal Evento", true, "RETIRO", datos);
             datos = BaseDeDatosPlanilla.ObtenerDatosBD();
             Assert.AreEqual(6, datos.Count());
            
@@ -91,8 +91,8 @@ namespace PruebasUnitariasSKD.Modulo14
          public void PruebaRegistrarDatosPlanillaIdBD()
          {
              var datos = new List<string> { "PERSONA"};
-             Planilla planilla = new Planilla("RETIRO COMPETENCIA", true, 1, datos);
-             Assert.IsTrue(BaseDeDatosPlanilla.RegistrarDatosPlanillaIdBD(1,"PERSONA"));
+             Planilla planilla = new Planilla("Retiro Temporal Evento", true, 1, datos);
+             Assert.IsTrue(BaseDeDatosPlanilla.RegistrarDatosPlanillaIdBD(19,"PERSONA"));
                  
                
          }

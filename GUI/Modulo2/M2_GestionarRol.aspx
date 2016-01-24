@@ -34,10 +34,10 @@
         <img id="imageTag" runat="server" src="" class="img-circle" alt="User Image" height="150" width="150">   
         <br />
         <br />
-        Nombre completo:<strong><%=cuentaConsultada.PersonaUsuario._Nombre+" "+cuentaConsultada.PersonaUsuario._Apellido %></strong>
+        Nombre completo:<strong id="NombreApellido" runat="server"></strong>
         <br /> 
          <br />
-        Usuario:<strong> <%=cuentaConsultada.Nombre_usuario%></strong>
+        Usuario:<strong id="NombreUsuario" runat="server"></strong>
 
                   <span class="hidden-xs" id="userName" runat="server"></span>
 
@@ -65,65 +65,22 @@
 
                 </tr>
             </thead>
-            <tbody>
-                
-                <%foreach(DominioSKD.Rol rol in rolSinPermiso) %>
-                <%{ %>
-                 <tr style="background: rgb(224, 235, 235);">
-                    <td><%=rol.Nombre %></td>
-                    <td><%=rol.Descripcion %>
-                    </td>
-                    <td><%=rol.Fecha_creacion.ToString()%></td>
-                    <td >
-                        <a title="Info" class="btn btn-info glyphicon glyphicon-info-sign "  
-                          data-toggle="modal" data-target="#modal-info" 
-                          href="#"></a>
-                    </td>
-                </tr>
-                <%} %>
+            <tbody id="TBodyRoles" runat="server">
+               
+            </tbody>
+             <script>
 
+                 $('a').click(function () {
 
-               <%foreach(DominioSKD.Rol rol in rolesDePersona) %>
-                <%{ %>
-                 <tr>
-                    <td><%=rol.Nombre %></td>
-                    <td><%=rol.Descripcion %>
-                    </td>
-                    <td><%=rol.Fecha_creacion.ToString()%></td>
-                    <td >
-                        <a title="Eliminar" class="btn btn-danger glyphicon glyphicon-remove-sign  botonRol"  
-                          data-toggle="modal" data-target="#modal-delete" 
-                          data-id="<%=rol.Id_rol.ToString() %>" href="#"></a>
-                    </td>
-                </tr>
-                <%} %>
-                 <%foreach(DominioSKD.Rol rol in rolesFiltrados) %>
-                <%{ %>
-                 <tr>
-                    <td><%=rol.Nombre %></td>
-                    <td><%=rol.Descripcion %></td>
-                    <td>-</td>
-                    <td >
-                        <a title="Añadir" class="btn btn-success glyphicon glyphicon-plus-sign botonRol"  
-                         data-toggle="modal" data-target="#modal-create" 
-                         data-id="<%=rol.Id_rol.ToString() %>" href="#" />
-                    </td>
-                </tr>
-                <%} %>
-                <script>
-
-                    $('a').click(function () {
-  
-                        valor = $(this).data('id');
-                        console.log(valor);
-                        valor = this.getAttribute("data-id");
-                        console.log(valor);
-                        document.getElementById("<%=RolSelect.ClientID%>").value = valor;
+                     valor = $(this).data('id');
+                     console.log(valor);
+                     valor = this.getAttribute("data-id");
+                     console.log(valor);
+                     document.getElementById("<%=RolSelect.ClientID%>").value = valor;
 
                     });
 
                 </script>
-            </tbody>
         </table>
     </div>
 

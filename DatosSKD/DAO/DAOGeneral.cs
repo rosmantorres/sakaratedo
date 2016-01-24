@@ -33,10 +33,10 @@ namespace DatosSKD
             try
             {
                 strConexion = ConfigurationManager.ConnectionStrings[RecursoGeneralDAO.NombreBD].ConnectionString;
-                if (conexion == null)
-                {
+                //if (conexion == null)
+                //{
                     conexion = new SqlConnection(strConexion);
-                }
+                //}
 
             }
 
@@ -68,6 +68,7 @@ namespace DatosSKD
             try
             {
                 this.conexion.Close();
+                conexion = null;
             }
 
             catch (Exception ex)
@@ -318,10 +319,15 @@ namespace DatosSKD
         }
         #endregion
 
-
-
-
-
-
+        #region LimpiarSQLConnection
+        /// <summary>
+        /// Metodo que deja en vacio la conexion
+        /// </summary>
+        public void LimpiarSQLConnection()
+        {
+            //Igualamos a vacio
+            this.conexion = null;
+        }
+        #endregion
     }
 }

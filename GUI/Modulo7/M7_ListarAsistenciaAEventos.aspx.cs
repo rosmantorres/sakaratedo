@@ -14,6 +14,8 @@ using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 using DominioSKD.Fabrica;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     /// <summary>
@@ -41,6 +43,9 @@ namespace templateApp.GUI.Modulo7
                 laTabla.Text = value;
             }
         }
+
+        private List<Evento> laListaEventos;
+        private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
 
         /// <summary>

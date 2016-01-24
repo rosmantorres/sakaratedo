@@ -12,6 +12,8 @@ using ExcepcionesSKD;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_DetalleEventoInscrito : System.Web.UI.Page, IContratoDetallarEvento

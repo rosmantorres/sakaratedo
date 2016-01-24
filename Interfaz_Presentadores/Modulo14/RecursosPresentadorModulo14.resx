@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
+  </data>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="Alerta_Clase_Error" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="Alerta_DatoVacio" xml:space="preserve">
+    <value>No seleccionaste ningun dato</value>
+  </data>
+  <data name="Alerta_Html" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="Alerta_HtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="Alerta_NombreTipoVacio" xml:space="preserve">
+    <value>No ingresaste nombre del tipo de planilla</value>
+  </data>
+  <data name="Alerta_PlanillaVacio" xml:space="preserve">
+    <value>No ingresaste el nombre de la planilla</value>
+  </data>
+  <data name="Alerta_Rol" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="Alerta_TipoVacio" xml:space="preserve">
+    <value>No seleccionaste tipo de planilla</value>
+  </data>
+  <data name="BotonActivarPlanilla" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
+  </data>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonCerrar1" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonDesactivarPlanilla" xml:space="preserve">
+    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
+  </data>
+  <data name="BotonEliminarSolicitud" xml:space="preserve">
+    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
+  </data>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
+  </data>
+  <data name="BotonInfoSolicitud" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
+  </data>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
+  </data>
+  <data name="BotonModificarRegistro" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx?idPlan=</value>
+  </data>
+  <data name="BotonModificarSolicitud" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx?idSol=</value>
+  </data>
+  <data name="BotonSolicitarPlanilla" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
+  </data>
+  <data name="CerrarSolicitud" xml:space="preserve">
+    <value>"&gt;Solicitar&lt;/a&gt;</value>
+  </data>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="Competencia" xml:space="preserve">
+    <value>COMPETENCIA</value>
+  </data>
+  <data name="CookieDis" xml:space="preserve">
+    <value>diseno</value>
+  </data>
+  <data name="CookieId" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="CookieIdIns" xml:space="preserve">
+    <value>idIns</value>
+  </data>
+  <data name="CookieIdPlanilla" xml:space="preserve">
+    <value>idPlanilla</value>
+  </data>
+  <data name="CookieNombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="CookiePlanilla" xml:space="preserve">
+    <value>Planilla</value>
+  </data>
+  <data name="CookieSolicitud" xml:space="preserve">
+    <value>Solicitud</value>
+  </data>
+  <data name="CookieTipo" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="DatosPlanilla" xml:space="preserve">
+    <value>Datos de la Solicitud&lt;br/&gt;</value>
+  </data>
+  <data name="DojEmail" xml:space="preserve">
+    <value>$doj_email&lt;br/&gt;</value>
+  </data>
+  <data name="DojNombre" xml:space="preserve">
+    <value>$doj_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="Dojo" xml:space="preserve">
+    <value>DOJO</value>
+  </data>
+  <data name="DojRif" xml:space="preserve">
+    <value>$doj_rif&lt;br/&gt;</value>
+  </data>
+  <data name="DojTlf" xml:space="preserve">
+    <value>$doj_telefono&lt;br/&gt;</value>
+  </data>
+  <data name="Espacio" xml:space="preserve">
+    <value>--</value>
+  </data>
+  <data name="Evento" xml:space="preserve">
+    <value>EVENTO</value>
+  </data>
+  <data name="FechaCreacionPlanilla" xml:space="preserve">
+    <value>$fecha_creacionDelaPlanilla&lt;br/&gt;</value>
+  </data>
+  <data name="FechaRein" xml:space="preserve">
+    <value>$fecha_reincorporacion&lt;br/&gt;</value>
+  </data>
+  <data name="FechaRetiro" xml:space="preserve">
+    <value>$fecha_retiro&lt;br/&gt;</value>
+  </data>
+  <data name="IdDis" xml:space="preserve">
+    <value>&amp;idDis=</value>
+  </data>
+  <data name="idIns" xml:space="preserve">
+    <value>&amp;idIns=</value>
+  </data>
+  <data name="idPlan" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="IdPlanilla" xml:space="preserve">
+    <value>&amp;idPlanilla=</value>
+  </data>
+  <data name="idSol" xml:space="preserve">
+    <value>idSol</value>
+  </data>
+  <data name="linea" xml:space="preserve">
+    <value>&lt;br/&gt;</value>
+  </data>
+  <data name="Matricula" xml:space="preserve">
+    <value>MATRICULA</value>
+  </data>
+  <data name="Motivo" xml:space="preserve">
+    <value>$motivo&lt;br/&gt;</value>
+  </data>
+  <data name="MsjDiseñoPlanillaModificado" xml:space="preserve">
+    <value>Diseño de Plantilla Modificado satisfactoriamente</value>
+  </data>
+  <data name="MSJEliminacionSolicitud" xml:space="preserve">
+    <value>Eliminación de Solicitud satisfactoria</value>
+  </data>
+  <data name="MsjErrorEliminacionSolicitud" xml:space="preserve">
+    <value>Error no se pudo Eliminar la Solicitud. Intente más tarde</value>
+  </data>
+  <data name="MsjErrorNoGuardada" xml:space="preserve">
+    <value>Error no se pudo guardar el diseño. Intente más tarde</value>
+  </data>
+  <data name="MsjErrorPLanillaModificado" xml:space="preserve">
+    <value>Error no se pudo Modificar el diseño. Intente más tarde</value>
+  </data>
+  <data name="MsjPlanillaGuardada" xml:space="preserve">
+    <value>Diseño de Plantilla guardado satisfactoriamente</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>&amp;nombre=</value>
+  </data>
+  <data name="Numero1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NumeroModulo" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Organizacion" xml:space="preserve">
+    <value>ORGANIZACION</value>
+  </data>
+  <data name="PaginaDisenoPlanilla" xml:space="preserve">
+    <value>M14_DisenoPlanilla.aspx</value>
+  </data>
+  <data name="PaginaMostrarPlanilla" xml:space="preserve">
+    <value>M14_MostrarPlanilla.aspx</value>
+  </data>
+  <data name="ParteSuperior" xml:space="preserve">
+    <value>________________________________&lt;br/&gt;</value>
+  </data>
+  <data name="PerApellido" xml:space="preserve">
+    <value>$per_apellido&lt;br/&gt;</value>
+  </data>
+  <data name="PerDir" xml:space="preserve">
+    <value>$per_direccion&lt;br/&gt;</value>
+  </data>
+  <data name="PerEstatura" xml:space="preserve">
+    <value>$per_estatura&lt;br/&gt;</value>
+  </data>
+  <data name="PerFechaNac" xml:space="preserve">
+    <value>$per_fecha_nacimiento&lt;br/&gt;</value>
+  </data>
+  <data name="PerImagen" xml:space="preserve">
+    <value>$per_imagen&lt;br/&gt;</value>
+  </data>
+  <data name="PerNacionalidad" xml:space="preserve">
+    <value>$per_nacionalidad&lt;br/&gt;</value>
+  </data>
+  <data name="PerNombre" xml:space="preserve">
+    <value>$per_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="PerNumDoc" xml:space="preserve">
+    <value>$per_num_doc_id&lt;br/&gt;</value>
+  </data>
+  <data name="PerPeso" xml:space="preserve">
+    <value>$per_peso&lt;br/&gt;</value>
+  </data>
+  <data name="Persona" xml:space="preserve">
+    <value>PERSONA</value>
+  </data>
+  <data name="QueryIdEliminar" xml:space="preserve">
+    <value>idEliminar</value>
+  </data>
+  <data name="QueryIdPlan" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="QueryIdSolici" xml:space="preserve">
+    <value>idSolici</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="Tipo" xml:space="preserve">
+    <value>&amp;tipo=</value>
+  </data>
+  <data name="CategoriaCat" xml:space="preserve">
+    <value>$CATEGORIA_cat&lt;br/&gt;</value>
+  </data>
+  <data name="CategoriaComp" xml:space="preserve">
+    <value>$CATEGORIA_comp&lt;br/&gt;</value>
+  </data>
+  <data name="CompCosto" xml:space="preserve">
+    <value>$comp_costo&lt;br/&gt;</value>
+  </data>
+  <data name="CompFechaFin" xml:space="preserve">
+    <value>$comp_fecha_fin&lt;br/&gt;</value>
+  </data>
+  <data name="CompFechaIni" xml:space="preserve">
+    <value>$comp_fecha_ini&lt;br/&gt;</value>
+  </data>
+  <data name="CompNombre" xml:space="preserve">
+    <value>$comp_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="CompTipo" xml:space="preserve">
+    <value>$comp_tipo&lt;br/&gt;</value>
+  </data>
+  <data name="EveCosto" xml:space="preserve">
+    <value>$eve_costo&lt;br/&gt;</value>
+  </data>
+  <data name="EveDescrip" xml:space="preserve">
+    <value>$eve_descripcion&lt;br/&gt;</value>
+  </data>
+  <data name="EveNombre" xml:space="preserve">
+    <value>$eve_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="HorarioHor" xml:space="preserve">
+    <value>$HORARIO_hor&lt;br/&gt;</value>
+  </data>
+  <data name="MatActiva" xml:space="preserve">
+    <value>$mat_activa&lt;br/&gt;</value>
+  </data>
+  <data name="MatFechaCrea" xml:space="preserve">
+    <value>$mat_fecha_creacion&lt;br/&gt;</value>
+  </data>
+  <data name="MatFechaUltPago" xml:space="preserve">
+    <value>$mat_fecha_ultimo_pago&lt;br/&gt;</value>
+  </data>
+  <data name="MatIdenti" xml:space="preserve">
+    <value>$mat_identificador&lt;br/&gt;</value>
+  </data>
+  <data name="MatPrecio" xml:space="preserve">
+    <value>$mat_precio&lt;br/&gt;</value>
+  </data>
+  <data name="OrgDireccion" xml:space="preserve">
+    <value>$org_direccion&lt;br/&gt;</value>
+  </data>
+  <data name="OrgEmail" xml:space="preserve">
+    <value>$org_email&lt;br/&gt;</value>
+  </data>
+  <data name="OrgNombre" xml:space="preserve">
+    <value>$org_nombre&lt;br/&gt;</value>
+  </data>
+  <data name="OrgTelefono" xml:space="preserve">
+    <value>$org_telefono&lt;br/&gt;</value>
+  </data>
+  <data name="TipoEvento" xml:space="preserve">
+    <value>$TIPO_EVENTO&lt;br/&gt;</value>
+  </data>
+  <data name="AlertaFechaReincorporacionVacio" xml:space="preserve">
+    <value>No ingresaste ninguna fecha de reincorporacion</value>
+  </data>
+  <data name="AlertaFechaRetiroVacio" xml:space="preserve">
+    <value>No ingresaste ninguna fecha de retiro</value>
+  </data>
+  <data name="AlertaMotivoVacio" xml:space="preserve">
+    <value>No ingresaste el motivo</value>
+  </data>
+  <data name="Alerta_Pregunta" xml:space="preserve">
+    <value>Seguro que deseas solicitar esta planilla?</value>
+  </data>
+  <data name="Alert_Clase_Success" xml:space="preserve">
+    <value>alert alert-info alert-dismissible</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
+  </data>
+</root>

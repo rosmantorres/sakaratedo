@@ -7,7 +7,8 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
+using DominioSKD.Entidades.Modulo2;
 
 namespace DatosSKD.Modulo1
 {

@@ -11,6 +11,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_DetallarHorarioPractica : System.Web.UI.Page, IContratoDetallarHorarioPractica
