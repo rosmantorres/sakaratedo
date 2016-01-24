@@ -872,9 +872,10 @@ namespace DatosSKD.DAO.Modulo7
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
 
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
+          
             List<Entidad> listaDeCompetenciasPagas= new List<Entidad>();
-            Persona idPersona = (Persona)persona;
+            PersonaM7 idPersona = (PersonaM7)persona;
+            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
 
             try
             {
@@ -891,7 +892,7 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Competencia competencia = (Competencia)FabricaEntidades.ObtenerCompetencia();
+                        CompetenciaM7 competencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
 
                         competencia.Id = int.Parse(row[RecursosDAOModulo7.AliasIdCompetencia].ToString());
                         competencia.Nombre = row[RecursosDAOModulo7.AliasCompetenciaNombre].ToString();
@@ -964,12 +965,15 @@ namespace DatosSKD.DAO.Modulo7
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             List<Entidad> listaDeEventos = new List<Entidad>();
-            Persona idPersona = (Persona)persona;
+            PersonaM7 idPersona = (PersonaM7)persona;
             FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
             DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+          RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
 
             try
             {
@@ -986,16 +990,17 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Evento evento  = (Evento)fabricaEntidades.ObtenerEvento();
+                        EventoM7 evento  = (EventoM7)FabricaEntidades.ObtenerEventoM7();
                         evento.Id = int.Parse(row[RecursosDAOModulo7.AliasIdEvento].ToString());
                         evento.Nombre = row[RecursosDAOModulo7.AliasEventoNombre].ToString();
 
-                        TipoEvento idTipoEvento = new TipoEvento();//se debe usar fabrica aqui cuando est
+                        TipoEventoM7 idTipoEvento = (TipoEventoM7)FabricaEntidades.ObtenerTipoEventoM7();
                         idTipoEvento.Id = int.Parse(row[RecursosDAOModulo7.AliasEventoTipoEveId].ToString());
-                        evento.TipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+                        evento.TipoEvento = (TipoEventoM7)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
 
                      
                         listaDeEventos.Add(evento);
+
                     }
                 }
                 else
@@ -1058,8 +1063,9 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroPersona = new Parametro();
             Parametro parametroEvento = new Parametro();
             float monto = new float();
-            Persona idPersona = (Persona)persona;
-            Evento idEvento = (Evento)evento;
+            PersonaM7 idPersona = (PersonaM7)persona;
+            EventoM7 idEvento = (EventoM7)evento;
+
         
             try
             {

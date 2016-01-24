@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
@@ -23,7 +25,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();          
             List<Entidad> eventos = new List<Entidad>();
             List<Entidad> competencias = new List<Entidad>();
-            Persona idPersona = (Persona)LaEntidad;
+            PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad> ,List<Entidad>, List<DateTime>, List<float>, List<DateTime>> tupla;
             List<DateTime> listaFechaPagoEventos = new List<DateTime>();
             List<DateTime> listaFechaPagoCompetencias = new List<DateTime>();
@@ -35,12 +37,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
                     eventos = baseDeDatosEvento.ListarEventosPagos(idPersona);
                     competencias= baseDeDatosEvento.ListarCompetenciasPaga(idPersona);
 
-                    foreach (Evento evento in eventos)
+                    foreach (EventoM7 evento in eventos)
                     {                       
                         listaFechaPagoEventos.Add(baseDeDatosEvento.FechaPagoEvento(idPersona, evento));
                         listaMontoPagoEvento.Add(baseDeDatosEvento.MontoPagoEvento(idPersona, evento));
                     }
-                    foreach (Competencia competencia in competencias)
+                    foreach (CompetenciaM7 competencia in competencias)
                     {
                         listaFechaPagoCompetencias.Add(baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia));
                     }

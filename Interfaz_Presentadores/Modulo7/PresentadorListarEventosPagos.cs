@@ -1,5 +1,7 @@
 ﻿using DominioSKD;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Fabrica;
@@ -8,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -28,7 +31,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// <summary>
         /// Método para consultar los eventos pagos del atleta
         /// </summary>
-        public void ConsultarListaEventosPagos()
+        public void ConsultarListaEventosPagos(Entidad idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -37,8 +40,7 @@ namespace Interfaz_Presentadores.Modulo7
                 Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>>> comandoListaEventosPagos = 
                     fabricaComandos.ObtenerComandoConsultarListaEventosPagos();
 
-                Persona idPersona = new Persona();//cambiar por fabrica
-                idPersona.Id = 6; //falta modificar esto
+               
                 comandoListaEventosPagos.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>> tupla = comandoListaEventosPagos.Ejecutar();
 
@@ -54,7 +56,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext() && e2.MoveNext() && e3.MoveNext())
                     {
-                        Evento evento = (Evento)e1.Current;
+                        EventoM7 evento = (EventoM7)e1.Current;
                         DateTime fechaPagoEvento = e2.Current;
                         float montoPago = e3.Current;
 
@@ -76,7 +78,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext() && e2.MoveNext())
                     {
-                        Competencia competencia = (Competencia)e1.Current;
+                        CompetenciaM7 competencia = (CompetenciaM7)e1.Current;
                         DateTime fechaPago = e2.Current;
 
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
@@ -91,7 +93,7 @@ namespace Interfaz_Presentadores.Modulo7
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

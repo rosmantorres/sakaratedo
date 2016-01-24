@@ -8,10 +8,13 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
-using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
+using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
+
 
 
 
@@ -24,10 +27,9 @@ namespace templateApp.GUI.Modulo7
     {
         #region Atributos
 
-        private List<DominioSKD.Evento> laListaEventos;
-        private List<DominioSKD.Competencia> laListaCompetencias;
-        private List<Evento> laLista = new List<Evento>();///xq
         private PresentadorListarEventosPagos presentador;
+        private FabricaEntidades fabricaEntidades;
+        private PersonaM7 idPersona;
 
         string IContratoListarEventosPagos.laTabla
         {
@@ -79,45 +81,11 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
 
-                              presentador.ConsultarListaEventosPagos();
-                           /* laLista = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            if (laLista != null && laListaCompetencias != null)
-                            {
-                                foreach (Evento evento in laLista)
-                                {
-                                    monto = logEvento.obtenerMontoEvento(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
-                                    fechaPago = logEvento.obtenerFechaPagoEvento(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), evento.Id_evento);
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoPagosAEventos + evento.Id_evento + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-
-                                foreach (Competencia competencia in laListaCompetencias)
-                                {
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Costo.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoPagosACompetencias + competencia.Id_competencia + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-                            }
-                            else
-                            {
-                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
-                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }
-                            */
+                              fabricaEntidades = new FabricaEntidades();
+                              idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
+                              idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                              presentador.ConsultarListaEventosPagos(idPersona);
+                          
                         }
                         catch (ListaNulaException)
                         {
