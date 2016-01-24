@@ -68,7 +68,6 @@
     <Compile Include="Modulo7\PresentadorListarMatriculasPagas.cs" />
     <Compile Include="Modulo7\PresentadorListarEventosPagos.cs" />
     <Compile Include="Modulo7\PresentadorListarEventosAsistidos.cs" />
-    <Compile Include="PresentadorMasterPage.cs" />
     <Compile Include="Modulo10\M10_RecursosPresentador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
