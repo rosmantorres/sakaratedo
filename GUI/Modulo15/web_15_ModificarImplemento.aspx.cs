@@ -43,7 +43,7 @@ namespace templateApp.GUI.Modulo15
                     this.descripcion_implemento.Value = ((Implemento)implemento).Descripcion_Implemento;
                     this.precio_implemento.Value = (((Implemento)implemento).Precio_Implemento).ToString();
                     this.estatus_implemento.Value = ((Implemento)implemento).Estatus_Implemento;
-                    this.imagen_img.Src = "~/GUI/Modulo15/Imagen/" + ((Implemento)implemento).Imagen_implemento;
+                    this.imagen_img.Src =((Implemento)implemento).Imagen_implemento;
 
                     //this.imagen_implemento.Value = (HtmlInputFile)("~/GUI/Modulo15/imagen" + ((Implemento)implemento).Imagen_implemento);
                 }

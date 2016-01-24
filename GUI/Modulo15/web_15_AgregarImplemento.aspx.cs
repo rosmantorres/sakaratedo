@@ -34,12 +34,24 @@ namespace templateApp.GUI.Modulo15
         protected void Page_Load(object sender, EventArgs e)
         {
              ((SKD)Page.Master).IdModulo = "15";
-            //variables agregar
-             // usuario y roles***********
-             String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
-             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+             String usuario = null;
+             String rol;
+             try
+             {
+                 // usuario y roles***********
+                 rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                 usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
 
-             //***************************
+                 //***************************
+
+                 //      btnEliminar.Click += new EventHandler(this.eliminarImplemento);     
+             }
+             catch (Exception ex)
+             {
+                 Response.Redirect("~/GUI/Modulo1/Index.aspx");
+
+
+             }
              Agregar.Click += new EventHandler(this.agregarImplemento);     
     
         }
@@ -118,7 +130,7 @@ namespace templateApp.GUI.Modulo15
                     ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt32(this.stock_implemento.Value);
                     ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(this.precio_implemento.Value);
-                    ((Implemento)implemento).Imagen_implemento = this.imagen_implemento.Value;
+                    ((Implemento)implemento).Imagen_implemento ="~/GUI/Modulo15/Imagenes/"+this.imagen_implemento.Value;
                     presentador.agregarImplemento(implemento);
 
                     guardarImagen();

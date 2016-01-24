@@ -47,7 +47,7 @@
                         </select>            
                       </div>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <input id="tipo_implemento_div"  placeholder="*tipo" class="form-control"  runat="server"/>             
+                         <input id="tipo_implemento_div" name="tipo_implemento_div" placeholder="*tipo" class="form-control"  runat="server"/>             
                       </div>
 
                       <br/>
@@ -157,58 +157,6 @@
          $(document).ready(function () {
             // alert("prueba");
 
-             // talla implemento
-             $("#contenidoCentral_talla_implemento").change(function () {
-                // alert("hola");
-                 if ($("#contenidoCentral_talla_implemento").val() == "otros") {
-                     $("#contenidoCentral_talla_implemento_div").show();
-                 }else {
-                     $("#contenidoCentral_talla_implemento_div").hide();
-                 }
-
-             });
-             $("#contenidoCentral_talla_implemento_div").hide();
-
-
-             // tipo implemento
-             $("#contenidoCentral_tipo_implemento").change(function () {
-                 // alert("hola");
-                 if ($("#contenidoCentral_tipo_implemento").val() == "otros") {
-                     $("#contenidoCentral_tipo_implemento_div").show();
-                 } else {
-                     $("#contenidoCentral_tipo_implemento_div").hide();
-                 }
-
-             });
-             $("#contenidoCentral_tipo_implemento_div").hide();
-
-
-             // color implemento
-             $("#contenidoCentral_color_implemento").change(function () {
-                 // alert("hola");
-                 if ($("#contenidoCentral_color_implemento").val() == "otros") {
-                     $("#contenidoCentral_color_implemento_div").show();
-                 } else {
-                     $("#contenidoCentral_color_implemento_div").hide();
-                 }
-
-             });
-             $("#contenidoCentral_color_implemento_div").hide();
-
-
-             // talla marca
-             $("#contenidoCentral_marca_implemento").change(function () {
-                 // alert("hola");
-                 if ($("#contenidoCentral_marca_implemento").val() == "otros") {
-                     $("#contenidoCentral_marca_implemento_div").show();
-                 } else {
-                     $("#contenidoCentral_marca_implemento_div").hide();
-                 }
-
-             });
-             $("#contenidoCentral_marca_implemento_div").hide();
-
-                 
 
              // just for the demos, avoids form submit
              jQuery.validator.setDefaults({
@@ -268,6 +216,9 @@
                          maxlength: 120,
                      },
                      ctl00$contenidoCentral$imagen_implemento: {
+                         required: true
+                     },
+                     ctl00$contenidoCentral$tipo_implemento_div: {
                          required: true
                      }
 
@@ -334,6 +285,9 @@
                          required: "La imagen es obligatoria"
 
 
+                     },
+                     ctl00$contenidoCentral$tipo_implemento_div: {
+                         required: "Este campo es obligatorio"
                      }
 
 
@@ -346,6 +300,73 @@
                  }
 
              });
+
+
+             // talla implemento
+             $("#contenidoCentral_talla_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_talla_implemento").val() == "otros") {
+                     $("#contenidoCentral_talla_implemento_div").show();
+                 } else {
+                     $("#contenidoCentral_talla_implemento_div").hide();
+                     $("#contenidoCentral_talla_implemento_div").val("prueba");
+                     $("#contenidoCentral_talla_implemento_div-error").text("");
+
+                 }
+
+             });
+             $("#contenidoCentral_talla_implemento_div").hide();
+
+
+             // tipo implemento
+             $("#contenidoCentral_tipo_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_tipo_implemento").val() == "otros") {
+                     $("#contenidoCentral_tipo_implemento_div").val("");
+
+                     $("#contenidoCentral_tipo_implemento_div").show();
+
+                 } else {
+                     $("#contenidoCentral_tipo_implemento_div").hide();
+                     $("#contenidoCentral_tipo_implemento_div").val("prueba");
+                     $("#contenidoCentral_tipo_implemento_div-error").text("");
+                 }
+
+             });
+             $("#contenidoCentral_tipo_implemento_div").hide();
+
+
+             // color implemento
+             $("#contenidoCentral_color_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_color_implemento").val() == "otros") {
+                     $("#contenidoCentral_color_implemento_div").show();
+                 } else {
+                     $("#contenidoCentral_color_implemento_div").hide();
+                     $("#contenidoCentral_color_implemento_div").val("prueba");
+                     $("#contenidoCentral_color_implemento_div-error").text("");
+
+                 }
+
+             });
+             $("#contenidoCentral_color_implemento_div").hide();
+
+
+             // talla marca
+             $("#contenidoCentral_marca_implemento").change(function () {
+                 // alert("hola");
+                 if ($("#contenidoCentral_marca_implemento").val() == "otros") {
+                     $("#contenidoCentral_marca_implemento_div").show();
+                 } else {
+                     $("#contenidoCentral_marca_implemento_div").hide();
+                     $("#contenidoCentral_marca_implemento_div").val("prueba");
+                     $("#contenidoCentral_marca_implemento_div-error").text("");
+
+                 }
+
+             });
+             $("#contenidoCentral_marca_implemento_div").hide();
+
 
 
          });

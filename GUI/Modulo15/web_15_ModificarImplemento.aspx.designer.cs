@@ -67,6 +67,15 @@ namespace templateApp.GUI.Modulo15 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect tipo_implemento;
         
         /// <summary>
+        /// tipo_implemento_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText tipo_implemento_div;
+        
+        /// <summary>
         /// cantidad_implemento control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace templateApp.GUI.Modulo15 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect color_implemento;
         
         /// <summary>
+        /// color_impolemento_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText color_impolemento_div;
+        
+        /// <summary>
         /// marca_implemento control.
         /// </summary>
         /// <remarks>
@@ -103,6 +121,15 @@ namespace templateApp.GUI.Modulo15 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect marca_implemento;
         
         /// <summary>
+        /// marca_implemento_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText marca_implemento_div;
+        
+        /// <summary>
         /// talla_implemento control.
         /// </summary>
         /// <remarks>
@@ -110,6 +137,15 @@ namespace templateApp.GUI.Modulo15 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect talla_implemento;
+        
+        /// <summary>
+        /// talla_implemento_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText talla_implemento_div;
         
         /// <summary>
         /// stock_implemento control.
