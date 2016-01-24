@@ -62,6 +62,12 @@ namespace Interfaz_Presentadores.Modulo16
                 // Invocamos el comando
                 ListaImplemento com = (ListaImplemento)comandoListarProductos.Ejecutar();
 
+                // Si la lista retorna vacia, retorna un mensaje al usuario
+                if (com.ListaImplementos.Count == 0)
+                {
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_LISTA_VACIA_PROD, false);
+                }
+
                 //Obtenemos cada producto para ponerlos en la tabla
                 foreach (Entidad aux in com.ListaImplementos)
                 {
@@ -153,7 +159,7 @@ namespace Interfaz_Presentadores.Modulo16
                     Button boton = new Button();
                     boton.ID = M16_Recursointerfaz.REFERENCIA_PRODUCTO + item.Id_Implemento.ToString();
                     boton.Command +=  DetalleProducto_Prod;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION;
                     boton.CommandName = item.Id_Implemento.ToString();                
                     celda.Controls.Add(boton);
 
@@ -161,7 +167,7 @@ namespace Interfaz_Presentadores.Modulo16
                     boton = new Button();
                     boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR + item.Id_Implemento.ToString();
                     boton.Click += AgregarCarrito;
-                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
+                    boton.CssClass = M16_Recursointerfaz.BOTON_AGREGAR;                   
                     celda.Controls.Add(boton);                   
 
                     //Agrego la celda a la fila
@@ -254,15 +260,15 @@ namespace Interfaz_Presentadores.Modulo16
                     Implemento resultados = DetalleImplemento(implemento);
 
                     // Variables para imprimir en el modal
-                    vista.LiteralDetallesProductos.Text = "</br>" + "<h3>Imagen del Producto</h3>" + "<img width='150' height='150' src='" + resultados.Imagen_implemento + "' />" +
-                                                                      "<h3>Nombre</h3>" + "<label id='aux2' >" + resultados.Nombre_Implemento + "</label>" +
-                                                                      "<h3>Tipo</h3>" + "<label id='aux3' >" + resultados.Tipo_Implemento + "</label>" +
-                                                                      "<h3>Marca</h3>" + "<label id='aux4' >" + resultados.Marca_Implemento + "</label>" +
-                                                                      "<h3>Color</h3>" + "<label id='aux5' >" + resultados.Color_Implemento + "</label>" +
-                                                                      "<h3>Talla</h3>" + "<label id='aux6' >" + resultados.Talla_Implemento + "</label>" +
-                                                                      "<h3>Estatus</h3>" + "<label id='aux7' >" + resultados.Estatus_Implemento + "</label>" +
-                                                                      "<h3>Precio</h3>" + "<label id='aux8' >" + resultados.Precio_Implemento + "</label>" +
-                                                                      "<h3>Descripcion</h3>" + "<label id='aux9' >" + resultados.Descripcion_Implemento + "</label>";
+                    vista.LiteralDetallesProductos.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_IMAGEN + M16_Recursointerfaz.INICIO_TAG_IMAGEN + resultados.Imagen_implemento + M16_Recursointerfaz.FIN_TAG_IMAGEN +
+                                                                      M16_Recursointerfaz.TITULO_NOMBRE + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Nombre_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_TIPO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Tipo_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_MARCA + M16_Recursointerfaz.ABRE_LABEL_AUX4 + resultados.Marca_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_COLOR + M16_Recursointerfaz.ABRE_LABEL_AUX5 + resultados.Color_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_TALLA + M16_Recursointerfaz.ABRE_LABEL_AUX6 + resultados.Talla_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_STATUS + M16_Recursointerfaz.ABRE_LABEL_AUX7 + resultados.Estatus_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_PRECIO + M16_Recursointerfaz.ABRE_LABEL_AUX8 + resultados.Precio_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_DESCRIPCIONES + M16_Recursointerfaz.ABRE_LABEL_AUX9 + resultados.Descripcion_Implemento + M16_Recursointerfaz.CIERRE_LABEL;
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                         M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -270,46 +276,58 @@ namespace Interfaz_Presentadores.Modulo16
                     // Ejecutamos el script                                 
                     vista.ejecutarScript();  
                 }
+
             #region Catches
+
             catch (PersonaNoValidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK_PRODUCTO, false);
             }
             catch (LoggerException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK_PRODUCTO, false);
 
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK_PRODUCTO, false);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK_PRODUCTO, false);
 
             }
             catch (OverflowException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK_PRODUCTO, false);
 
             }
             catch (ParametroInvalidoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK_PRODUCTO, false);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK_PRODUCTO, false);
 
             }
             catch (ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK_PRODUCTO, false);
 
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK_PRODUCTO, false);
             }
 
             #endregion
@@ -321,9 +339,78 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
-            Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
-            return elImplemento;
+            try
+            {   //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Casteamos
+                Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
+                Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos el Implemento
+                return elImplemento;
+            }
+
+            #region Catches
+
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+            #endregion
         }
 
         #endregion

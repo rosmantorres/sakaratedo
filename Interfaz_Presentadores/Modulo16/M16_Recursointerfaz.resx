@@ -483,10 +483,10 @@
   <data name="EXCEPCION_CARRITO_PAGO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=14</value>
   </data>
-  <data name="BOTON_AGREGAR_EVENTO" xml:space="preserve">
+  <data name="BOTON_AGREGAR" xml:space="preserve">
     <value>btn btn-success glyphicon glyphicon-shopping-cart</value>
   </data>
-  <data name="BOTON_INFORMACION_EVENTO" xml:space="preserve">
+  <data name="BOTON_INFORMACION" xml:space="preserve">
     <value>btn btn-primary glyphicon glyphicon-info-sign</value>
   </data>
   <data name="REFERENCIA_AGREGAR" xml:space="preserve">
@@ -504,7 +504,7 @@
   <data name="ABRE_LABEL_AUX3" xml:space="preserve">
     <value>&lt;label id='aux3' &gt;</value>
   </data>
-  <data name="CIERRA_LABEL" xml:space="preserve">
+  <data name="CIERRE_LABEL" xml:space="preserve">
     <value>&lt;/label&gt;</value>
   </data>
   <data name="Cinco" xml:space="preserve">
@@ -554,5 +554,56 @@
   </data>
   <data name="REFERENCIA_PRODUCTO" xml:space="preserve">
     <value>Producto-</value>
+  </data>
+  <data name="ABRE_LABEL_AUX4" xml:space="preserve">
+    <value>&lt;label id='aux4' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX5" xml:space="preserve">
+    <value>&lt;label id='aux5' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX6" xml:space="preserve">
+    <value>&lt;label id='aux6' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX7" xml:space="preserve">
+    <value>&lt;label id='aux7' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX8" xml:space="preserve">
+    <value>&lt;label id='aux8' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX9" xml:space="preserve">
+    <value>&lt;label id='aux9' &gt;</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_PROD" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=14</value>
+  </data>
+  <data name="FIN_TAG_IMAGEN" xml:space="preserve">
+    <value>' /&gt;</value>
+  </data>
+  <data name="INICIO_TAG_IMAGEN" xml:space="preserve">
+    <value>&lt;img width='150' height='150' src='</value>
+  </data>
+  <data name="TITULO_COLOR" xml:space="preserve">
+    <value>&lt;h3&gt;Color&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_DESCRIPCIONES" xml:space="preserve">
+    <value>&lt;h3&gt;Descripcion&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_IMAGEN" xml:space="preserve">
+    <value>&lt;h3&gt;Imagen del Producto&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_MARCA" xml:space="preserve">
+    <value>&lt;h3&gt;Marca&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_PRECIO" xml:space="preserve">
+    <value>&lt;h3&gt;Precio&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_STATUS" xml:space="preserve">
+    <value>&lt;h3&gt;Estatus&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_TALLA" xml:space="preserve">
+    <value>&lt;h3&gt;Talla&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_TIPO" xml:space="preserve">
+    <value>&lt;h3&gt;Tipo&lt;/h3&gt;</value>
   </data>
 </root>

@@ -129,7 +129,7 @@ namespace Interfaz_Presentadores.Modulo16
                     Button boton = new Button();
                     boton.ID = M16_Recursointerfaz.REFERENCIA_EVENTO + item.Id_evento.ToString();
                     boton.Command +=  DetalleEvento_Event;
-                    boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION_EVENTO ;
+                    boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION;
                     boton.CommandName = item.Id_evento.ToString();                 
                     celda.Controls.Add(boton);
 
@@ -137,7 +137,7 @@ namespace Interfaz_Presentadores.Modulo16
                     boton = new Button();
                     boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR + item.Id_evento.ToString();
                     boton.Click += AgregarCarrito;
-                    boton.CssClass = M16_Recursointerfaz.BOTON_AGREGAR_EVENTO;                    
+                    boton.CssClass = M16_Recursointerfaz.BOTON_AGREGAR;                    
                     celda.Controls.Add(boton);                   
 
                     //Agrego la celda a la fila
@@ -231,9 +231,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Evento resultados = DetalleEvento(evento);
 
                 // Variables para imprimir en el modal
-                vista.LiteralDetallesEventos.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_NOMBRE + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Nombre + M16_Recursointerfaz.CIERRA_LABEL +
-                                                    M16_Recursointerfaz.TITULO_DESCRIPCION + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Descripcion + M16_Recursointerfaz.CIERRA_LABEL +
-                                                    M16_Recursointerfaz.TITULO_COSTO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Costo + M16_Recursointerfaz.CIERRA_LABEL;
+                vista.LiteralDetallesEventos.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_NOMBRE + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Nombre + M16_Recursointerfaz.CIERRE_LABEL +
+                                                    M16_Recursointerfaz.TITULO_DESCRIPCION + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Descripcion + M16_Recursointerfaz.CIERRE_LABEL +
+                                                    M16_Recursointerfaz.TITULO_COSTO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Costo + M16_Recursointerfaz.CIERRE_LABEL;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
