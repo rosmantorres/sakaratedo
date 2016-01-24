@@ -75,7 +75,7 @@ namespace PruebasUnitariasSKD.Modulo5
         {
             this.miComando = FabricaComandos.ObtenerEjecutarAgregarCinta(miEntidadCintaAgregar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
         
         }
 
@@ -87,7 +87,7 @@ namespace PruebasUnitariasSKD.Modulo5
         {
             this.miComando = FabricaComandos.ObtenerEjecutarModificarCinta(miEntidadCintaModificar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
 
         }
         /// <summary>

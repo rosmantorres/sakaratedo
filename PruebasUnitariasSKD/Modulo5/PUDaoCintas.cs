@@ -72,7 +72,7 @@ namespace PruebasUnitariasSKD.Modulo5
             bool resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrganizacion(miEntidad);
-            Assert.IsTrue(resultado);
+            Assert.IsFalse(resultado);
            
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace PruebasUnitariasSKD.Modulo5
             bool resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrdenCinta(miEntidadCinta);
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
 
         }
         /// <summary>

@@ -69,7 +69,7 @@ namespace PruebasUnitariasSKD.Modulo3
         {
             this.miComando = FabricaComandos.ObtenerEjecutarAgregarOrganizacion(miEntidadOrganizacionAgregar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
 
         }
 
@@ -81,7 +81,7 @@ namespace PruebasUnitariasSKD.Modulo3
         {
             this.miComando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(miEntidadOrganizacionModificar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
 
         }
         /// <summary>
