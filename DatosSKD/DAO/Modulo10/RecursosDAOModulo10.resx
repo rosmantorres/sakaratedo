@@ -342,4 +342,12 @@
   <data name="AliasIdTipo" xml:space="preserve">
     <value>idTipo</value>
   </data>
+  <data name="ProcedimientoTodasLasFechasEvento" xml:space="preserve">
+    <value>M10_TodasLasFechasEvento</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ProcedimientoConsultarEventosPorFechas" xml:space="preserve">
+    <value>M10_ConsultarEventosRangoFecha</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
 </root>

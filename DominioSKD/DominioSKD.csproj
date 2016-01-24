@@ -53,6 +53,7 @@
     <Compile Include="Entidades\Modulo10\Persona.cs" />
     <Compile Include="Entidades\Modulo10\Telefono.cs" />
     <Compile Include="Entidades\Modulo10\TipoEvento.cs" />
+    <Compile Include="Entidades\Modulo10\Valores.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoAscenso.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKata.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKumite.cs" />
