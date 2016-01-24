@@ -79,42 +79,24 @@ namespace templateApp.GUI.Modulo10
             {
                 String idEvento = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Modificar];
                 String tipo = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Tipo];
-                Session[M10_RecursosInterfaz.IdEvento] = "5";
-                Session[M10_RecursosInterfaz.tipoEvento] = "Competencia";
+                Session[M10_RecursosInterfaz.IdEvento] = idEvento;
+                Session[M10_RecursosInterfaz.tipoEvento] = tipo;
                 presentador.CargaVentana(Session[M10_RecursosInterfaz.IdEvento].ToString(), Session[M10_RecursosInterfaz.tipoEvento].ToString());
             }
         }
 
         protected void bIzquierdo_Click(object sender, EventArgs e)
         {
-            for (int i = listaAsistentes.Items.Count - 1; i >= 0; i--)
-            {
-                if (listaAsistentes.Items[i].Selected == true)
-                {
-                    listaNoAsistieron.Items.Add(listaAsistentes.Items[i]);
-                    ListItem li = listaAsistentes.Items[i];
-                    listaAsistentes.Items.Remove(li);
-                }
-            }
+            presentador.MoverIzquierda();
         }
 
         protected void bDerecho_Click(object sender, EventArgs e)
         {
-            for (int i = listaNoAsistieron.Items.Count - 1; i >= 0; i--)
-            {
-                if (listaNoAsistieron.Items[i].Selected == true)
-                {
-                    listaAsistentes.Items.Add(listaNoAsistieron.Items[i]);
-                    ListItem li = listaNoAsistieron.Items[i];
-                    listaNoAsistieron.Items.Remove(li);
-                }
-            }
+            presentador.MoverDerecha();
         }
 
         protected void bModificar_Click(object sender, EventArgs e)
         {
-            string idEvento = Session[M10_RecursosInterfaz.IdEvento].ToString();
-            string tipoEvento = Session[M10_RecursosInterfaz.tipoEvento].ToString();
             bool resultado = presentador.EventoClick_Modificar(Session[M10_RecursosInterfaz.IdEvento].ToString(), Session[M10_RecursosInterfaz.tipoEvento].ToString());
             if (resultado.Equals(true))
             {

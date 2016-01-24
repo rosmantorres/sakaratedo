@@ -21,6 +21,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return planilla; }
             set { planilla = value; }
         }
+
+        /// <summary>
+        /// Método que devuelve el diseño, tal cual se creo
+        /// </summary>
+        /// <param name="planilla">la planilla que contiene el diseño a consultar</param>
+        /// <returns>Retorna la entidad a consultar</returns>
         public override Entidad Ejecutar()
         {
             try

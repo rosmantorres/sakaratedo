@@ -130,6 +130,11 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarListaEventos(laEntidad);
         }
 
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTipoEventos()
+        {
+            return new ComandoConsultarListaTipoEventos();
+        }
+
         public static Comando<Entidad> ObtenerComandoConsultarEvento(Entidad laEntidad)
         {
             return new ComandoConsultarEvento(laEntidad);
@@ -263,6 +268,16 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarEventoM10XId(idEvento);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoTodasLasFechasEventoM10()
+        {
+            return new ComandoConsultarTodasLasFechasDeUnEventoM10();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoEventosPorRangosdeFechaM10(string fechaInicio)
+        {
+            return new ComandoEventosPorRangosdeFechaM10(fechaInicio);
+        }
         #endregion
 
         #region Modulo 11
@@ -379,7 +394,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoAgregarCompetencia(paramEntidad);
         }
 
-        public static Comando<bool> ObtenerComandoMoficiarCompetencia(Entidad paramEntidad)
+        public static Comando<bool> ObtenerComandoModificarCompetencia(Entidad paramEntidad)
         {
             return new ComandoModificarCompetencia(paramEntidad);
         }
@@ -508,6 +523,11 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
         {
             return new ComandoConsultarPlanillas();
+        }
+
+        public static Comando<Boolean> ObtenerComandoCambiarStatusPlanilla()
+        {
+            return new ComandoCambiarStatusPlanilla();
         }
         #endregion
 

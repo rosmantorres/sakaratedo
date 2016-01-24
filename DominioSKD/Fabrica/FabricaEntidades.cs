@@ -197,17 +197,17 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 9
-        public Entidad ObtenerEvento()
+        public  Entidad ObtenerEvento()
         {
             return new DominioSKD.Entidades.Modulo9.Evento();
         }
 
-        public Entidad ObtenerHorario()
+        public  Entidad ObtenerHorario()
         {
             return new DominioSKD.Entidades.Modulo9.Horario();
         }
 
-        public Entidad ObtenerTipoEvento()
+        public  Entidad ObtenerTipoEvento()
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
@@ -251,6 +251,11 @@ namespace DominioSKD.Fabrica
         public static Entidad ObtenerTipoEventoM10()
         {
             return new DominioSKD.Entidades.Modulo10.TipoEvento();
+        }
+
+        public static Entidad ObtenerValores()
+        {
+            return new DominioSKD.Entidades.Modulo10.Valores();
         }
         #endregion
 
@@ -549,6 +554,46 @@ namespace DominioSKD.Fabrica
         public static Entidad ObtenerFactura()
         {
             return new Compra();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de productos</returns>
+        public static Entidad ObtenerFacturaImplemento()
+        {
+            return new DetalleFacturaProducto();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de eventos</returns>
+        public static Entidad ObtenerFacturaEvento()
+        {
+            return new DetalleFacturaEvento();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de matricula</returns>
+        public static Entidad ObtenerFacturaMatricula()
+        {
+            return new DetalleFacturaMatricula();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad pago con todos datos de la factura</returns>
+        public static Entidad ObtenerFacturaPago()
+        {
+            return new Pago();
         }
 
         #endregion

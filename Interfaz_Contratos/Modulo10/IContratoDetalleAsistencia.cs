@@ -9,12 +9,12 @@ namespace Interfaz_Contratos.Modulo10
 {
     public interface IContratoDetalleAsistencia
     {
-        TextBox fechaEvento { set; }
+        TextBox Fecha { get; set; }
 
-        TextBox nombreEvento { set; }
+        TextBox Nombre { get; set; }
 
-        ListBox noAsistieron { set; }
+        ListBox NoAsistieron { get; set; }
 
-        ListBox asistieron { set; }
+        ListBox Asistieron { get; set; }
     }
 }

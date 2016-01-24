@@ -13,6 +13,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
    public class ComandoModificarSolicitudID : Comando<Entidad>
     {
+        /// <summary>Modificar una solicitud por id</summary>
+        /// <param name="laSolicitud">la solicitud</param>
+        /// <returns>Regresa true si se modifico y false si no</returns>
+        /// 
        public override Entidad Ejecutar()
         {
         

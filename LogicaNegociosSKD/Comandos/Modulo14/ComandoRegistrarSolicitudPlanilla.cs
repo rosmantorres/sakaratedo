@@ -13,6 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
     public class ComandoRegistrarSolicitudPlanilla : Comando<bool>
     {
+        /// <summary>Para registrar una solicitud</summary>
+        /// <param name="laSolicitud"> la solicitud</param>
+        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
         public override bool Ejecutar()
         {
             IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();

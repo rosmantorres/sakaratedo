@@ -21,6 +21,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPlanilla; }
             set { idPlanilla = value; }
         }
+        /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
+        /// <param name="idPlanilla"> id de la planilla solicitada</param>
+        /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
           public override List<Boolean> Ejecutar()
           {
               List<Boolean> datosRequeridos = new List<Boolean>();

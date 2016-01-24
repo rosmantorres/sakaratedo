@@ -27,49 +27,111 @@ namespace templateApp.GUI.Modulo15
         {
             ((SKD)Page.Master).IdModulo = "15";
             //variables agregar
-
-            if (this.id_implemento.Value == "")
+            try
             {
-                Entidad implemento = presentador.precargarImplemento(Convert.ToInt32(Request.QueryString["idImplemento"]));
-                this.id_implemento.Value = (((Implemento)implemento).Id_Implemento).ToString();
-                this.nombre_implemento.Value = ((Implemento)implemento).Nombre_Implemento;
-                this.tipo_implemento.Value = ((Implemento)implemento).Tipo_Implemento;
-                this.marca_implemento.Value = ((Implemento)implemento).Marca_Implemento;
-                this.color_implemento.Value = ((Implemento)implemento).Color_Implemento;
-                this.talla_implemento.Value = ((Implemento)implemento).Talla_Implemento;
-                this.cantidad_implemento.Value = (((Implemento)implemento).Cantida_implemento).ToString();
-                this.stock_implemento.Value = (((Implemento)implemento).Stock_Minimo_Implemento).ToString();
-                this.descripcion_implemento.Value = ((Implemento)implemento).Descripcion_Implemento;
-                this.precio_implemento.Value = (((Implemento)implemento).Precio_Implemento).ToString();
-                this.estatus_implemento.Value = ((Implemento)implemento).Estatus_Implemento;
-                
-                //this.imagen_implemento.Value = (HtmlInputFile)("~/GUI/Modulo15/imagen" + ((Implemento)implemento).Imagen_implemento);
-            }
+                if (this.id_implemento.Value == "")
+                {
+                    Entidad implemento = presentador.precargarImplemento(Convert.ToInt32(Request.QueryString["idImplemento"]));
+                    this.id_implemento.Value = (((Implemento)implemento).Id_Implemento).ToString();
+                    this.nombre_implemento.Value = ((Implemento)implemento).Nombre_Implemento;
+                    this.tipo_implemento.Value = ((Implemento)implemento).Tipo_Implemento;
+                    this.marca_implemento.Value = ((Implemento)implemento).Marca_Implemento;
+                    this.color_implemento.Value = ((Implemento)implemento).Color_Implemento;
+                    this.talla_implemento.Value = ((Implemento)implemento).Talla_Implemento;
+                    this.cantidad_implemento.Value = (((Implemento)implemento).Cantida_implemento).ToString();
+                    this.stock_implemento.Value = (((Implemento)implemento).Stock_Minimo_Implemento).ToString();
+                    this.descripcion_implemento.Value = ((Implemento)implemento).Descripcion_Implemento;
+                    this.precio_implemento.Value = (((Implemento)implemento).Precio_Implemento).ToString();
+                    this.estatus_implemento.Value = ((Implemento)implemento).Estatus_Implemento;
+                    this.imagen_img.Src =((Implemento)implemento).Imagen_implemento;
+
+                    //this.imagen_implemento.Value = (HtmlInputFile)("~/GUI/Modulo15/imagen" + ((Implemento)implemento).Imagen_implemento);
+                }
                 Modificar.Click += new EventHandler(this.modificarImplemento);
+            }
+            catch (ExcepcionesSKD.Modulo15.ExcepcionPresentador.ExcepcionPresentadorModificarImplemento ex)
+            {
+
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + ex.Data + "</div>";
+
+            }
+            catch (Exception ex) {
+
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Problema Cargando los Datos en los Campos</div>";
+                       
             
+            }
            
         }
+        void guardarImagen()
+        {
+            string TargetLocation;
+            string imagen_implemento = null;
+            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagenes/");
+            imagen_implemento = this.imagen_implemento.Value;
+            this.imagen_implemento.PostedFile.SaveAs(TargetLocation + imagen_implemento);
 
+        }
         public void modificarImplemento(object sender,EventArgs e) {
-            Entidad implemento = FabricaEntidades.ObtenerImplemento();
-            ((Implemento)implemento).Id_Implemento = Convert.ToInt16(this.id_implemento.Value);
-            ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
-            ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
-            ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
-            ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
-            ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
-            ((Implemento)implemento).Talla_Implemento= this.talla_implemento.Value;
-            ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = 1;
-            ((Implemento)implemento).Cantida_implemento= Convert.ToInt16(this.cantidad_implemento.Value);
-            ((Implemento)implemento).Stock_Minimo_Implemento= Convert.ToInt16(this.stock_implemento.Value);
-            ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
-            ((Implemento)implemento).Precio_Implemento= Convert.ToDouble(this.precio_implemento.Value);
-            ((Implemento)implemento).Imagen_implemento = "Hola mundo";
-            ((Implemento)implemento).Estatus_Implemento = this.estatus_implemento.Value;
-            presentador.modificarImplemento(implemento);
-            Response.Redirect("web_15_ConsultarImplemento.aspx");
+            try
+            {
+                /// <summary>
+                /// Método que modifica los datos de un implemento
+                /// </summary>
+                Entidad implementoCargado = presentador.precargarImplemento(Convert.ToInt32(this.id_implemento.Value));
 
-        
+                if ((this.nombre_implemento.Value != "") && (this.tipo_implemento.Value != "") && (this.marca_implemento.Value != "") && (this.color_implemento.Value != "") && (this.talla_implemento.Value != "") && (this.cantidad_implemento.Value != "") && (this.stock_implemento.Value != "") && (this.descripcion_implemento.Value != "") && (this.precio_implemento.Value != ""))
+                {
+
+                    Entidad implemento = FabricaEntidades.ObtenerImplemento();
+                    ((Implemento)implemento).Id_Implemento = Convert.ToInt16(this.id_implemento.Value);
+                    ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
+                    ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
+                    ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
+                    ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
+                    ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
+                    ((Implemento)implemento).Talla_Implemento = this.talla_implemento.Value;
+                    ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = 1;
+                    ((Implemento)implemento).Cantida_implemento = Convert.ToInt16(this.cantidad_implemento.Value);
+                    ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(this.stock_implemento.Value);
+                    ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
+                    ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(this.precio_implemento.Value);
+                    if (this.imagen_implemento.Value == "")
+                    {
+                        ((Implemento)implemento).Imagen_implemento =((Implemento)implementoCargado).Imagen_implemento;
+                    }
+                    else
+                    {
+                        ((Implemento)implemento).Imagen_implemento = "~/GUI/Modulo15/Imagenes/" +this.imagen_implemento.Value;
+                        guardarImagen();
+                    }
+                    ((Implemento)implemento).Estatus_Implemento = this.estatus_implemento.Value;
+                    presentador.modificarImplemento(implemento);
+                    Response.Redirect("web_15_ConsultarImplemento.aspx");
+
+                }
+            }
+            catch (ExcepcionesSKD.Modulo15.ExcepcionPresentador.ExcepcionPresentadorModificarImplemento ex)
+            {
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>"+ex.Data+"</div>";
+                       
+
+            }
+            catch (Exception ex) {
+
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Problema con los campos ingresados</div>";
+                       
+            
+            
+            }
         }
 
         TextBox IContratoModificarImplemento.nombre_implemento

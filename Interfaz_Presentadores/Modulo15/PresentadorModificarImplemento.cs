@@ -9,11 +9,16 @@ using DominioSKD.Fabrica;
 using Interfaz_Contratos.Modulo15;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Fabrica;
+using ExcepcionesSKD.Modulo15.ExcepcionPresentador;
+using ExcepcionesSKD;
 
 namespace Interfaz_Presentadores.Modulo15
 {
    public class PresentadorModificarImplemento
     {
+        /// <summary>
+        /// Método de presentador para modificar un implemento
+        /// </summary>
           private IContratoModificarImplemento _vista;
 
           public PresentadorModificarImplemento(IContratoModificarImplemento _vista)
@@ -23,20 +28,73 @@ namespace Interfaz_Presentadores.Modulo15
 
 
           public Entidad precargarImplemento(int idImplemento) {
-              Comando<Entidad> comando = FabricaComandos.ObtenerComandoImplementoXId();
-            Entidad implemento = FabricaEntidades.ObtenerImplemento();
-            ((Implemento)implemento).Id_Implemento = idImplemento;
-            comando.LaEntidad = implemento;
-            return comando.Ejecutar();
 
+              /// <summary>
+              /// Método de presentador para precargar la informacion de un implemento
+              /// </summary>
+              try
+              {
+
+                  Comando<Entidad> comando = FabricaComandos.ObtenerComandoImplementoXId();
+                  Entidad implemento = FabricaEntidades.ObtenerImplemento();
+                  ((Implemento)implemento).Id_Implemento = idImplemento;
+                  comando.LaEntidad = implemento;
+                  return comando.Ejecutar();
+              }
+              catch (ExcepcionPresentadorModificarImplemento ex)
+              {
+                  ex = new ExcepcionPresentadorModificarImplemento("Error en Presentador Modificar Implemento", new Exception());
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+
+              }
+
+              catch (ExceptionSKD ex)
+              {
+                  ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
+
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
           }
           public bool modificarImplemento(Entidad implemento)
           {
+              /// <summary>
+              /// Método de presentador para modificar la informacion de un implemento
+              /// </summary>
+              try
+              {
+                  Comando<bool> comandoModificar = FabricaComandos.ObtenerComandoModificarImplemento();
+                  comandoModificar.LaEntidad = implemento;
+                  return comandoModificar.Ejecutar();
+              }
+              catch (ExcepcionPresentadorModificarImplemento ex)
+              {
+                  ex = new ExcepcionPresentadorModificarImplemento("Error en Presentador Modificar Implemento", new Exception());
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
 
-              Comando<bool> comandoModificar = FabricaComandos.ObtenerComandoModificarImplemento();
-              comandoModificar.LaEntidad = implemento;
-              return comandoModificar.Ejecutar();
+              }
 
+              catch (ExceptionSKD ex)
+              {
+                  ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
+              
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
           }
     }
 }

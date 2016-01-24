@@ -394,7 +394,7 @@ namespace DatosSKD.DAO.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M9_TodosLosTiposEvento.
+        ///   Looks up a localized string similar to M9_ConsultarTipoEventos.
         /// </summary>
         internal static string ProcedimientoConsultarTiposEventos {
             get {

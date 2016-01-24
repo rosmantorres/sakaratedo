@@ -34,6 +34,25 @@ namespace templateApp.GUI.Modulo16
             get { return this.tablitaFacturas; }
         }
 
+        public Table tablaDetalleProductos
+        {
+            get { return this.tablaDetallesProductos; }
+        }
+
+        public Table tablaDetalleEventos
+        {
+            get { return this.tablaDetallesEventos; }
+        }
+
+        public Table tablaDetalleMatriculas
+        {
+            get { return this.tablaDetallesMatriculas; }
+        }
+
+        public Table tablaDetalleDatos
+        {
+            get { return this.tablaDetallesDatos; }
+        }
         /// <summary>
         /// Propiedad de la TablaListaMensualidades
         /// </summary>
@@ -67,7 +86,7 @@ namespace templateApp.GUI.Modulo16
 
             //Obtengo la matricula de la Persona pasandole el ID del session sino hubo ningun error previo
             if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null)
-                presentador.consultarFacturas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                presentador.consultarFacturas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), Server, Response);
 
             //Nos indica si se pudo listar
             String accion = Request.QueryString[M16_RecursoInterfaz.VARIABLE_ACCION];

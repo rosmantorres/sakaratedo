@@ -378,8 +378,8 @@ namespace PruebasUnitariasSKD.Modulo10
          {
              
              IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
-
-             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
+             entidad = DAO.ConsultarCompetenciaXIdDetalle(idCompetencia);
+     
              ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 6;
              Assert.IsNotNull(entidad);
          }
@@ -391,12 +391,52 @@ namespace PruebasUnitariasSKD.Modulo10
              
              IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
 
-             entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
+             entidad = DAO.ConsultarCompetenciaXIdDetalle(idCompetencia);
              ((DominioSKD.Entidades.Modulo12.Competencia)entidad).Id = 6;
-             Assert.AreEqual(0, listaEntidad.ToArray().Length);
+
+             listaEntidad.Add(entidad);
+             Assert.AreEqual(1, listaEntidad.ToArray().Length);
          }
 
-        
+         [Test]
+         public void ConsultarEventoXID() // VAcio
+         {
+
+             IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+
+             entidad = DAO.ConsultarEventoXID(idEvento);
+      
+             Assert.NotNull(entidad);
+         }
+
+         [Test]
+         public void pruebaTodaLasFechasEventoM10() 
+         {
+
+             IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+             listaEntidad = DAO.TodasLasFechasEventoM10();
+             Assert.AreEqual(2,listaEntidad.ToArray().Length);
+         }
+
+
+         [Test]
+         public void pruebaTodaLasFechasEventoM10V()// Vacio
+         {
+
+             IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+             listaEntidad = DAO.TodasLasFechasEventoM10();
+             Assert.NotNull(listaEntidad);
+         }
+     
+
+              [Test]
+         public void EventosPorRangosdeFechaM10() 
+         {
+
+             IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
+             listaEntidad = DAO.EventosPorRangosdeFechaM10("20/02/2016");
+             Assert.NotNull(listaEntidad);
+         }
        }
         #endregion
 
