@@ -26,9 +26,12 @@ namespace PruebasUnitariasSKD.Modulo5
 
         #region Atributos
         private Entidad miEntidad;
+        private Entidad miEntidadOrg;
         private Entidad miEntidadCinta;
         private Entidad miEntidadCintaModificar;
         private Entidad miEntidadCintaAgregar;
+        private Entidad miEntidadValidarCinta;
+        private Entidad miEntidadCintaXId;
         #endregion
 
         #region SetUp & TearDown
@@ -38,14 +41,15 @@ namespace PruebasUnitariasSKD.Modulo5
         [SetUp]
         public void init()
         {
-           
-          
+
+            miEntidadOrg = FabricaEntidades.ObtenerOrganizacion_M3(20, "Seito-Ka");
             miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do");
             DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)miEntidad; ;
             miEntidadCinta = FabricaEntidades.ObtenerCinta_M5(1, "Blanco", "1er Kyu", "Nivel inferior", 1, "Principiante", org, true);
+            miEntidadValidarCinta = FabricaEntidades.ObtenerCinta_M5("Blanco", "1er Kyu", "Nivel inferior", 6, "Principiante", org, true);
             miEntidadCintaModificar = FabricaEntidades.ObtenerCinta_M5(1, "Naranja", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
             miEntidadCintaAgregar = FabricaEntidades.ObtenerCinta_M5("Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
-           
+            miEntidadCintaXId = FabricaEntidades.ObtenerCinta_M5(1, "Blanco");
         }
 
         /// <summary>
@@ -53,18 +57,20 @@ namespace PruebasUnitariasSKD.Modulo5
         /// </summary>
         [TearDown]
         public void Clean()
-        {          
+        {
+            miEntidadOrg = null;
             miEntidad = null;
             miEntidadCinta = null;
             miEntidadCintaModificar = null;
             miEntidadCintaAgregar = null;
+            miEntidadValidarCinta = null;
 
         }
         #endregion
 
         #region Test
-        /// <summary>
-        /// Método para probar la exception de Organizacion inexistente para Agregar y Modificar en DAO
+        /// <summary>   
+        /// Método para probar si existe o no una Organizacion para Agregar y Modificar en DAO
         /// </summary>
         [Test]
         public void PruebaValidarOrganizacion()
@@ -76,7 +82,19 @@ namespace PruebasUnitariasSKD.Modulo5
            
         }
         /// <summary>
-        /// Método para probar la exception de Orden de Cinta existente para Agregar y Modificar en DAO
+        /// Método para probar la exception de Organizacion inexistente para Agregar y Modificar en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(OrganizacionInexistenteException))]
+        public void PruebaValidarOrganizacionExcepcion()
+        {
+            bool resultado;
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
+            resultado = miDaoCinta.ValidarOrganizacion(miEntidadOrg);
+
+        }
+        /// <summary>
+        /// Método para probar el Orden de Cinta existente para Agregar y Modificar en DAO
         /// </summary>
         [Test]
         public void PruebaValidarOrdenCinta()
@@ -84,24 +102,45 @@ namespace PruebasUnitariasSKD.Modulo5
             bool resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrdenCinta(miEntidadCinta);
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
+
+        }
+        /// <summary>
+        /// Método para probar la exception de Orden de Cinta existente para Agregar y Modificar en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(OrdenCintaRepetidoException))]
+        public void PruebaValidarOrdenCintaExcepcion()
+        {
+            bool resultado;
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
+            resultado = miDaoCinta.Modificar(miEntidadCinta);
+        }
+        /// <summary>
+        /// Método para probar si el Nombre de Cinta existente para Agregar y Modificar en DAO
+        /// </summary>
+        [Test]
+        public void PruebaValidarNombreCinta()
+        {
+            bool resultado;
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
+            resultado = miDaoCinta.ValidarNombreCinta(miEntidadCinta);
+            Assert.IsTrue(resultado);
 
         }
         /// <summary>
         /// Método para probar la exception de Nombre de Cinta existente para Agregar y Modificar en DAO
         /// </summary>
         [Test]
-        //[ExpectedException(typeof(CintaRepetidaException))]
-        public void PruebaValidarNombreCinta()
+        [ExpectedException(typeof(CintaRepetidaException))]
+        public void PruebaValidarNombreCintaExcepcion()
         {
             bool resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
-            resultado = miDaoCinta.ValidarNombreCinta(miEntidadCinta);
-            Assert.IsFalse(resultado);
-
+            resultado = miDaoCinta.Agregar(miEntidadValidarCinta);
         }
         /// <summary>
-        /// Método de prueba para ListarCintasXOrganizacion en DAO
+        /// Método de prueba para ListarCintasXOrganizacion en DAO, para verificar que no este vacia
         /// </summary>
         [Test]
         public void PruebaListarCintasXOrganizacion()
@@ -137,7 +176,7 @@ namespace PruebasUnitariasSKD.Modulo5
 
         }
         /// <summary>
-        /// Método de prueba para Listar todas las Cintas en DAO
+        /// Método de prueba para Listar todas las Cintas en DAO, que no este vacia
         /// </summary>
         [Test]
         public void PruebaConsultarTodos()
@@ -149,10 +188,10 @@ namespace PruebasUnitariasSKD.Modulo5
 
         }
         /// <summary>
-        /// Método de prueba para consultar detalles de una cinta en DAO
+        /// Método de prueba para consultar detalles de una cinta en DAO, que no sea nula
         /// </summary>
         [Test]
-        public void PruebaConsultarXId()
+        public void PruebaConsultarXIdNoNula()
         {
             Entidad resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();

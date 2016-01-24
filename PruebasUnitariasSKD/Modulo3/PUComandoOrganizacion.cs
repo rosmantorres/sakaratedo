@@ -13,6 +13,7 @@ using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo3;
 using DatosSKD.DAO.Modulo3;
 using LogicaNegociosSKD.Fabrica;
+using ExcepcionesSKD.Modulo3;
 
 namespace PruebasUnitariasSKD.Modulo3
 {
@@ -29,6 +30,8 @@ namespace PruebasUnitariasSKD.Modulo3
         private Entidad miEntidadOrganizacionAgregar;
         private Comando<List<Entidad>> miComandoLista;
         private Comando<Entidad> miComandoEntidad;
+        private Entidad miEntidadValidarOrg;
+        private Entidad miEntidadValidarEstilo;
         #endregion
 
         #region SetUp & TearDown
@@ -40,8 +43,10 @@ namespace PruebasUnitariasSKD.Modulo3
         {
             miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
             miEntidadOrganizacionModificar = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadOrganizacionAgregar = FabricaEntidades.ObtenerOrganizacion_M3(20, "Karate", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");
-
+            miEntidadOrganizacionAgregar = FabricaEntidades.ObtenerOrganizacion_M3("Ryu Karate", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");
+            miEntidadValidarEstilo = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Goju Ryu");
+            miEntidadValidarOrg = FabricaEntidades.ObtenerOrganizacion_M3("Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
+            
         }
 
         /// <summary>
@@ -56,7 +61,8 @@ namespace PruebasUnitariasSKD.Modulo3
             miEntidadOrganizacionAgregar = null;
             miComandoLista = null;
             miComandoEntidad = null;
-
+            miEntidadValidarEstilo = null;
+            miEntidadValidarOrg = null;
         }
         #endregion
 
@@ -69,7 +75,19 @@ namespace PruebasUnitariasSKD.Modulo3
         {
             this.miComando = FabricaComandos.ObtenerEjecutarAgregarOrganizacion(miEntidadOrganizacionAgregar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
+
+        }
+
+        /// <summary>
+        /// Método para probar la exception de Organizacion existente para Agregar y Modificar en comando
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(OrganizacionExistenteException))]
+        public void PruebaValidarNombreOrganizacionExcepcion()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarAgregarOrganizacion(miEntidadValidarOrg);
+            bool resultado = this.miComando.Ejecutar();
 
         }
 
@@ -81,7 +99,19 @@ namespace PruebasUnitariasSKD.Modulo3
         {
             this.miComando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(miEntidadOrganizacionModificar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
+
+        }
+
+        /// <summary>
+        /// Método para probar la exception de Organizacion solo puede tener un estilo para Agregar y Modificar en comando
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(EstiloInexistenteException))]
+        public void PruebaValidarEstiloExcepcion()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(miEntidadValidarEstilo);
+            bool resultado = this.miComando.Ejecutar();
 
         }
         /// <summary>
