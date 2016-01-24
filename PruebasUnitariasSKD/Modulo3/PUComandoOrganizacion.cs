@@ -100,7 +100,6 @@ namespace PruebasUnitariasSKD.Modulo3
             this.miComando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(miEntidadOrganizacionModificar);
             bool resultado = this.miComando.Ejecutar();
             Assert.IsTrue(resultado);
-
         }
 
         /// <summary>
