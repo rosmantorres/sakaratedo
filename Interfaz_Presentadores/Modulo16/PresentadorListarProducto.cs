@@ -253,7 +253,7 @@ namespace Interfaz_Presentadores.Modulo16
                     Implemento resultados = DetalleImplemento(implemento);
 
                     // Variables para imprimir en el modal
-                    vista.LiteralDetallesProductos.Text = "</br>" + "<h3>Imagen del Producto</h3>" + "<label id='aux1' >" + resultados.Imagen_implemento + "</label>" +
+                    vista.LiteralDetallesProductos.Text = "</br>" + "<h3>Imagen del Producto</h3>" + "<img width='150' height='150' src='" + resultados.Imagen_implemento + "' />" +
                                                                       "<h3>Nombre</h3>" + "<label id='aux2' >" + resultados.Nombre_Implemento + "</label>" +
                                                                       "<h3>Tipo</h3>" + "<label id='aux3' >" + resultados.Tipo_Implemento + "</label>" +
                                                                       "<h3>Marca</h3>" + "<label id='aux4' >" + resultados.Marca_Implemento + "</label>" +
