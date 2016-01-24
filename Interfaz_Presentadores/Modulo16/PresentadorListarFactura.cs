@@ -87,10 +87,18 @@ namespace Interfaz_Presentadores.Modulo16
                     celda = new TableCell();
                     Button boton = new Button();
                     boton.ID = "Matricula-" + item.Com_id.ToString();
+                    // El DetalleFactura_Fact llama al metodo encargado de llamar al comando.
                     boton.Command += DetalleFactura_Fact;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
-                    boton.CommandName = item.Id.ToString();                 
+                    boton.CommandName = item.Com_id.ToString();                 
                     celda.Controls.Add(boton);
+
+                    //Boton que imprime la factura de Modulo15
+                    boton = new Button();
+                    boton.ID = "Imprimir-" + item.Com_id.ToString();
+                   // boton.Click += ImprimirFactura; // Aqui debes llamar a tu metodo para imprimir
+                    boton.CssClass = "btn btn-success glyphicon glyphicon-print";
+                    celda.Controls.Add(boton);   
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
@@ -178,15 +186,120 @@ namespace Interfaz_Presentadores.Modulo16
 
                 string id = e.CommandName;
                 Compra compra = new Compra();
-                compra.Id = int.Parse(id);
+                compra.Com_id = int.Parse(id);
 
                 //Casteamos
                 Compra resultados = DetalleFactura(compra);
+                
+                // Imprime el Detalle del Implemento de la Factura
+                foreach(DetalleFacturaProducto aux in resultados.Listainventario)
+                {
+                    TableRow fila = new TableRow();
+
+                    //Nueva celda que tendra el id de la factura 
+                    TableCell celda = new TableCell();
+                    celda.Text = aux.Producto.Nombre_Implemento;
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    celda = new TableCell();
+                    celda.Text = aux.Producto.Precio_Implemento.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+
+                    celda = new TableCell();
+                    celda.Text = aux.Cantidad_producto.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    celda = new TableCell();
+                    celda.Text = aux.Subtotal.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    vista.tablaDetalleProductos.Rows.Add(fila);
+                }
+
+                // Imprime el Detalle del Evento de la Factura
+                foreach (DetalleFacturaEvento aux in resultados.Listaevento)
+                {
+                    TableRow fila = new TableRow();
+
+                    //Nueva celda que tendra el id de la factura 
+                    TableCell celda = new TableCell();
+                    celda.Text = aux.Evento.Nombre.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    celda = new TableCell();
+                    celda.Text = aux.Evento.Costo.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+
+                    celda = new TableCell();
+                    celda.Text = aux.Cantidad_evento.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    celda = new TableCell();
+                    celda.Text = aux.Subtotal.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    vista.tablaDetalleEventos.Rows.Add(fila);
+                }
+
+
+                // Imprime el Detalle de la Matricula de la Factura
+                foreach (DetalleFacturaMatricula aux in resultados.Listamatricula)
+                {
+                    TableRow fila = new TableRow();
+
+                    //Nueva celda que tendra el id de la factura 
+                    TableCell celda = new TableCell();
+                    celda.Text = aux.Matricula.Identificador.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    celda = new TableCell();
+                    celda.Text = aux.Matricula.Costo.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+
+                    celda = new TableCell();
+                    celda.Text = aux.Cantidad_matricula.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    celda = new TableCell();
+                    celda.Text = aux.Subtotal.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    vista.tablaDetalleMatriculas.Rows.Add(fila);
+                }
 
                 // Variables para imprimir en el modal
-                vista.LiteralDetallesFacturas.Text = "</br>" + "<h3>Nombre</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
-                                                            "<h3>Descripcion</h3>" + "<label id='aux2' >" + resultados.Com_tipo_pago + "</label>" +
-                                                            "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Com_tipo_pago + "</label>";
+                vista.LiteralDetallesFacturas.Text = "</br>" + "<h3>Nro. Factura</h3>" + "<label id='aux1' >" + resultados.Com_id + "</label>" +
+                                                            "<h3>Fecha de Pago</h3>" + "<label id='aux2' >" + resultados.Com_fecha_compra + "</label>" +
+                                                            "<h3>Total</h3>" + "<label id='aux3' >" + "</label>";
+
+
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -266,6 +379,7 @@ namespace Interfaz_Presentadores.Modulo16
         }
 
         #endregion
+
 
     }
 }

@@ -80,6 +80,61 @@
 							<div class="row" id="prueba" >
                                 <asp:Literal runat="server" ID="detalleFacturaLiteral" ></asp:Literal>
 
+                                <h2 class="modal-title">Detalles de los Productos</h2>
+                                  <asp:Table ID="tablaDetallesProductos" runat="server" CssClass="table table-bordered table-striped dataTable">
+                                     <asp:TableHeaderRow>
+                                       <asp:TableHeaderCell>
+                                           Nombre
+                                       </asp:TableHeaderCell>
+                                       <asp:TableHeaderCell>
+                                           Precio Unitario
+                                       </asp:TableHeaderCell>             
+                                       <asp:TableHeaderCell>
+                                           Cantidad
+                                       </asp:TableHeaderCell>
+                                           <asp:TableHeaderCell>
+                                           Subtotal
+                                       </asp:TableHeaderCell>
+                                   </asp:TableHeaderRow>           
+                                  </asp:Table>
+
+                                <h2 class="modal-title">Detalles de los Eventos</h2>
+                                  <asp:Table ID="tablaDetallesEventos" runat="server" CssClass="table table-bordered table-striped dataTable">
+                                     <asp:TableHeaderRow>
+                                       <asp:TableHeaderCell>
+                                           Nombre
+                                       </asp:TableHeaderCell>
+                                       <asp:TableHeaderCell>
+                                           Precio Unitario
+                                       </asp:TableHeaderCell>             
+                                       <asp:TableHeaderCell>
+                                           Cantidad
+                                       </asp:TableHeaderCell>
+                                           <asp:TableHeaderCell>
+                                           Subtotal
+                                       </asp:TableHeaderCell>
+                                   </asp:TableHeaderRow>           
+                                  </asp:Table>
+
+                                <h2 class="modal-title">Detalles de las Matriculas</h2>
+                                  <asp:Table ID="tablaDetallesMatriculas" runat="server" CssClass="table table-bordered table-striped dataTable">
+                                     <asp:TableHeaderRow>
+                                       <asp:TableHeaderCell>
+                                           Nombre
+                                       </asp:TableHeaderCell>
+                                       <asp:TableHeaderCell>
+                                           Precio Unitario
+                                       </asp:TableHeaderCell>             
+                                       <asp:TableHeaderCell>
+                                           Cantidad
+                                       </asp:TableHeaderCell>
+                                           <asp:TableHeaderCell>
+                                           Subtotal
+                                       </asp:TableHeaderCell>
+                                   </asp:TableHeaderRow>           
+                                  </asp:Table>
+
+
 							</div>
 						</div>
 					</div>

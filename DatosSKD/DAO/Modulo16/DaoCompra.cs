@@ -155,9 +155,23 @@ namespace DatosSKD.DAO.Modulo16
             List<Compra> laLista = new List<Compra>();
             DataTable resultado = new DataTable();
             List<Parametro> parametros = new List<Parametro>();
-            Compra laFactura = new Compra();
-            Compra lista = new Compra();
 
+            // Instanciando los productos
+            DetalleFacturaProducto elProducto = new DetalleFacturaProducto();
+
+            //Instancio los eventos
+            DetalleFacturaEvento elEvento = new DetalleFacturaEvento();
+
+            // Instancio las matriculas
+            DetalleFacturaMatricula laMatricula = new DetalleFacturaMatricula();
+
+            // Instanciando el pago
+            Pago elPago = new Pago();
+
+            // Instancio la compra
+            Compra laCompra = new Compra();
+            Compra lista = new Compra();
+            
             // Casteamos
             Compra comp = (Compra)compra;
 
@@ -169,25 +183,108 @@ namespace DatosSKD.DAO.Modulo16
 
                 //Creo la lista de los parametros para el stored procedure y los anexo
                 parametros = new List<Parametro>();
-                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ITEM, SqlDbType.Int, comp.Com_id.ToString(), false);
+                Parametro parametro = new Parametro(RecursosBDModulo16.PARAMETRO_ID_USUARIO, SqlDbType.Int, comp.Com_id.ToString(), false);
                 parametros.Add(parametro);
 
+                 /////////////////////////////////////// Buscando el detalle de PRODUCTOS //////////////////////////////////////////
+
                 //Ejecuto el Stored Procedure 
-                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.DETALLAR_EVENTO, parametros);
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_PRODUCTO_FACTURA, parametros);
 
                 //Limpio la conexion
                 LimpiarSQLConnection();
 
+                comp.Listainventario = new List<DetalleFacturaProducto>();
+
                 //Obtengo todos los elementos del evento
                 foreach (DataRow row in resultado.Rows)
                 {
-                    laFactura = (Compra)FabricaEntidades.ObtenerFactura();
-                    /// se debe arreglar
-                    laFactura.Com_id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
-                    laFactura.Com_tipo_pago = row[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
-                    laFactura.Com_estado = row[RecursosBDModulo16.PARAMETRO_PRECIO].ToString();
-                    laFactura.Com_estado = row[RecursosBDModulo16.PARAMETRO_DESCRIPCION].ToString();
+                    elProducto = (DetalleFacturaProducto)FabricaEntidades.ObtenerFacturaImplemento();
 
+                    elProducto.Producto.Nombre_Implemento = row[RecursosBDModulo16.PARAM_NOMBRE].ToString();
+                    elProducto.Producto.Precio_Implemento = int.Parse(row[RecursosBDModulo16.PARAM_PRECIO].ToString());
+                    elProducto.Cantidad_producto = int.Parse(row[RecursosBDModulo16.PARAM_CANTIDAD].ToString());
+                    elProducto.Subtotal = int.Parse(row[RecursosBDModulo16.PARAM_MONTO_PP].ToString());
+
+                    comp.Listainventario.Add(elProducto);
+                }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                /////////////////////////////////////// Buscando el detalle de EVENTOS //////////////////////////////////////////
+                //Ejecuto el Stored Procedure 
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_EVENTO_FACTURA, parametros);
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                comp.Listaevento = new List<DetalleFacturaEvento>();
+
+                //Obtengo todos los elementos del evento
+                foreach (DataRow row in resultado.Rows)
+                {
+                    elEvento = (DetalleFacturaEvento)FabricaEntidades.ObtenerFacturaEvento();
+
+                    elEvento.Evento.Nombre = row[RecursosBDModulo16.PARAM_NOMBRE_EVENTO].ToString();
+                    elEvento.Evento.Costo = int.Parse(row[RecursosBDModulo16.PARAM_PRECIO].ToString());
+                    elEvento.Cantidad_evento = int.Parse(row[RecursosBDModulo16.PARAM_CANT_EVENTO].ToString());
+                    elEvento.Subtotal = int.Parse(row[RecursosBDModulo16.PARAM_MONTO_PE].ToString());
+
+                    comp.Listaevento.Add(elEvento);
+                }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+
+                /////////////////////////////////////// Buscando el detalle de MATRICULA //////////////////////////////////////////
+                //Ejecuto el Stored Procedure 
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_MATRICULA_FACTURA, parametros);
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                comp.Listamatricula = new List<DetalleFacturaMatricula>();
+
+                //Obtengo todos los elementos del evento
+                foreach (DataRow row in resultado.Rows)
+                {
+                    laMatricula = (DetalleFacturaMatricula)FabricaEntidades.ObtenerFacturaMatricula();
+
+                    laMatricula.Matricula.Identificador = row[RecursosBDModulo16.PARAM_NOMBRE_MAT].ToString();
+                    laMatricula.Matricula.Costo = int.Parse(row[RecursosBDModulo16.PARAM_PRECIO].ToString());
+                    laMatricula.Cantidad_matricula = int.Parse(row[RecursosBDModulo16.PARAM_CANT_MAT].ToString());
+                    laMatricula.Subtotal = int.Parse(row[RecursosBDModulo16.PARAM_MONTO_PM].ToString());
+
+                    comp.Listamatricula.Add(laMatricula);
+                }
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+
+                /////////////////////////////////////// Buscando los DATOS DE LA FACTURA //////////////////////////////////////////
+                //Ejecuto el Stored Procedure 
+                resultado = EjecutarStoredProcedureTuplas(RecursosBDModulo16.CONSULTAR_FACTURA_DATO, parametros);
+
+                //Limpio la conexion
+                LimpiarSQLConnection();
+
+                comp.Listapago = new List<Pago>();
+
+                //Obtengo todos los elementos de la factura
+                foreach (DataRow row in resultado.Rows)
+                {
+                    elPago = (Pago)FabricaEntidades.ObtenerFacturaPago();
+                    laCompra = (Compra)FabricaEntidades.ObtenerFactura();
+
+                    laCompra.Id = int.Parse(row[RecursosBDModulo16.PARAM_ID_FACT].ToString());
+                    laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAM_FECHA_COMPRA].ToString());
+                    elPago.TipoPago = row[RecursosBDModulo16.PARAM_TIPO_PAGO_FACT].ToString();
+                    elPago.Monto = int.Parse(row[RecursosBDModulo16.PARAM_MONTO_PAGO_FACT].ToString());
+
+                    comp.Listapago.Add(elPago);
                 }
 
                 //Limpio la conexion
@@ -198,7 +295,7 @@ namespace DatosSKD.DAO.Modulo16
                 RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Retorno el evento
-                return laFactura;
+                return comp;
 
             }
 

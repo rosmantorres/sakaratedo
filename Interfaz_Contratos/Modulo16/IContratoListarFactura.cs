@@ -18,6 +18,12 @@ namespace Interfaz_Contratos.Modulo16
         /// </summary>
         Table tablaFacturas { get; }
 
+        Table tablaDetalleProductos { get; }
+
+        Table tablaDetalleEventos { get; }
+
+        Table tablaDetalleMatriculas { get; }
+
         /// <summary>
         /// Literal que permite imprimir los valores en el modal
         /// </summary>
