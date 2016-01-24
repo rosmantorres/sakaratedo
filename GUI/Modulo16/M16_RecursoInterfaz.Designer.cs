@@ -331,11 +331,29 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingresando al metodo.
+        /// </summary>
+        internal static string MENSAJE_ENTRADA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_ENTRADA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Se ha producido un error al elegir un tipo de pago no valido.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO {
             get {
                 return ResourceManager.GetString("MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saliendo del metodo.
+        /// </summary>
+        internal static string MENSAJE_SALIDA_LOGGER {
+            get {
+                return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
             }
         }
         
