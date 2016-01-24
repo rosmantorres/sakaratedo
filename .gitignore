@@ -203,3 +203,7 @@ PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
 =======
 Log.xml
 >>>>>>> ae1054d7521700263b9b9aacd87c3bad7edc9bd0
+*.json
+Log.xml
+PruebasUnitariasSKD/App.config
+PruebasUnitariasSKD/PruebasUnitariasSKD.csproj
