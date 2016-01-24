@@ -74,6 +74,7 @@
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
     <Compile Include="Entidades\Modulo16\Pago.cs" />
     <Compile Include="Entidades\Modulo4\Dojo.cs" />
+    <Compile Include="Entidades\Modulo7\MatriculaM7.cs" />
     <Compile Include="Entidades\Modulo7\CintaM7.cs" />
     <Compile Include="Entidades\Modulo7\CompetenciaM7.cs" />
     <Compile Include="Entidades\Modulo7\DojoM7.cs" />

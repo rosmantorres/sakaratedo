@@ -12,7 +12,8 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
-using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 
 namespace templateApp.GUI.Modulo7
@@ -22,9 +23,13 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarPagosDeMatricula : System.Web.UI.Page, IContratoListarMatriculasPagas
     {
         #region Atributos
-        private List<Matricula> laLista = new List<Matricula>();
         private PresentadorListarMatriculasPagas presentador;
-
+        private PersonaM7 idPersona;
+        #endregion
+        #region Contrato
+        /// <summary>
+        /// Implementacion de contrato laTabla
+        /// </summary>
         string IContratoListarMatriculasPagas.laTabla
         {
             get
@@ -76,42 +81,11 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            presentador.ConsultarListaMatriculasPagas();
-                            /*laLista = logMatricula.obtenerListaDeMatriculas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            if (laLista != null)
-                            {
-                                foreach (Matricula matricula in laLista)
-                                {
-                                    String estadoFinal;
-                                    id = logMatricula.obtenerIdMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                                    monto = logMatricula.obtenerMontoMatricula(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), id);
-                                    estado = logMatricula.obtenerEstado(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                                    if (estado == true)
-                                    {
-                                        estadoFinal = "Activa";
-                                    }
-                                    else
-                                    {
-                                        estadoFinal = "No Activa";
-                                    }
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + matricula.Identificador.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + estadoFinal + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + monto.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoPagosDeMatricula + matricula.Id + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-                            }
-                          
-                            else
-                            {
-                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
-                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }*/
+
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();//cambiar por fabrica
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                            presentador.ConsultarListaMatriculasPagas(idPersona);
+
                         }
                         catch (ListaNulaException)
                         {

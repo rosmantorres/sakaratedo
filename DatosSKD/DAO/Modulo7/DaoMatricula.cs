@@ -10,6 +10,7 @@ using ExcepcionesSKD.Modulo7;
 using System.Data;
 using System.Data.SqlClient;
 using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -54,16 +55,16 @@ namespace DatosSKD.DAO.Modulo7
 
         public Entidad ConsultarXId(Entidad parametro)
         {
-            throw new NotImplementedException();
-            /*Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+    
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
-            Matricula idMatricula = (Matricula)parametro;
-            Matricula matricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+            MatriculaM7 idMatricula = (MatriculaM7)parametro;
+            MatriculaM7 matricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
+
 
             try
             {
@@ -124,7 +125,7 @@ namespace DatosSKD.DAO.Modulo7
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                  RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            return matricula;*/
+            return matricula;
         }
      
         /// <summary>
@@ -143,7 +144,8 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroPersona = new Parametro();
             Parametro parametroMatricula = new Parametro();
             Boolean estadoMatricula = new bool();
-            Persona idPersona = (Persona)persona;
+            PersonaM7 idPersona = (PersonaM7)persona;
+           // MatriculaM7 idMatricula
           
             try
             {
@@ -213,8 +215,8 @@ namespace DatosSKD.DAO.Modulo7
 
         public List<Entidad> ListarMatriculasPagas(Entidad persona)
         {
-            throw new NotImplementedException();
-            /*Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             BDConexion conexion;
@@ -223,7 +225,7 @@ namespace DatosSKD.DAO.Modulo7
 
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             List<Entidad> listaDeMatriculas = new List<Entidad>();
-            Persona idPersona = (Persona)persona;
+            PersonaM7 idPersona = (PersonaM7)persona;
 
             try
             {
@@ -240,8 +242,8 @@ namespace DatosSKD.DAO.Modulo7
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        Matricula matricula  = (Matricula)fabricaEntidades.ObtenerMatricula();
-                    
+                        
+                        MatriculaM7 matricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
                         matricula.Id = int.Parse(row[RecursosDAOModulo7.AliasIdMatricula].ToString());
                         matricula.Identificador = row[RecursosDAOModulo7.AliasIdentificadorMatricula].ToString();
                         matricula.FechaCreacion = DateTime.Parse(row[RecursosDAOModulo7.AliasFechaPagoMatricula].ToString());
@@ -290,7 +292,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            return listaDeMatriculas;*/
+            return listaDeMatriculas;
         }
 
         /// <summary>
@@ -308,7 +310,8 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroPersona = new Parametro();
             Parametro parametroMatricula = new Parametro();
             int idMatricula = new int();
-            Persona idPersona = (Persona)persona;
+            PersonaM7 idPersona = (PersonaM7)persona;
+
 
             try
             {
@@ -379,16 +382,16 @@ namespace DatosSKD.DAO.Modulo7
    
         public float MontoPagoMatricula(Entidad persona, Entidad matricula)
         {
-            throw new NotImplementedException();
-            /*Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                  RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroPersona = new Parametro();
             Parametro parametroMatricula = new Parametro();
             float monto = new float();
-            Persona idPersona = (Persona)persona;
-            Matricula idMatricula = (Matricula)matricula;
+            PersonaM7 idPersona = (PersonaM7)persona;
+            MatriculaM7 idMatricula = (MatriculaM7)matricula;
         
             try
             {
@@ -448,7 +451,7 @@ namespace DatosSKD.DAO.Modulo7
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            return monto;*/
+            return monto;
         }
     }
 }

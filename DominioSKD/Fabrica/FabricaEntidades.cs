@@ -112,6 +112,10 @@ namespace DominioSKD.Fabrica
         {
             return new CompetenciaM7();
         }
+        public static Entidad ObtenerMatriculaM7()
+        {
+            return new MatriculaM7();
+        }
         public static Entidad ObtenerDojoM7()
         {
             return new DojoM7();

@@ -1,7 +1,6 @@
 ﻿using DatosSKD.DAO.Modulo7;
 using DatosSKD.Fabrica;
 using DominioSKD;
-using DominioSKD.Entidades.Modulo6;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using System;
@@ -9,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
@@ -23,7 +23,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoMatricula baseDeDatosMatricula = fabrica.ObtenerDaoMatriculaM7();        
             List<Entidad> matriculas = new List<Entidad>();
-            Persona idPersona = (Persona)LaEntidad;
+            PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad> ,List<Boolean>, List<float>> tupla;
             List<Boolean> listaEstado = new List<Boolean>();
             List<float> listaMonto = new List<float>();           
@@ -33,12 +33,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
                 {
                     matriculas = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
                    
-                    foreach (Matricula matricula in matriculas)
+                    foreach (MatriculaM7 matricula in matriculas)
                     {
                         listaEstado.Add(baseDeDatosMatricula.EstadoMatricula(idPersona));
                     }
 
-                    foreach (Matricula matricula in matriculas)
+                    foreach (MatriculaM7 matricula in matriculas)
                     {
                         listaMonto.Add(baseDeDatosMatricula.MontoPagoMatricula(idPersona,matricula));
                     }

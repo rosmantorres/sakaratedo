@@ -1,6 +1,7 @@
 ﻿using DominioSKD;
-using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Fabrica;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -24,18 +26,14 @@ namespace Interfaz_Presentadores.Modulo7
             vista = laVista;
         }
 
-        public void ConsultarListaMatriculasPagas()
+        public void ConsultarListaMatriculasPagas(Entidad idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>> comandoListaMatriculasPagas = 
-                    fabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
-
-                Persona idPersona = new Persona();//cambiar por fabrica
-                //idPersona.ID = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                idPersona.Id = 6; //falta modificar esto
+                fabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
                 comandoListaMatriculasPagas.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Boolean>, List<float>> tupla = comandoListaMatriculasPagas.Ejecutar();
 
@@ -49,7 +47,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext() && e2.MoveNext() && e3.MoveNext())
                     {
-                        Matricula matricula = (Matricula)e1.Current;
+                        MatriculaM7 matricula = (MatriculaM7)e1.Current;
                         Boolean estadoMatricula = e2.Current;
                         float montoPago = e3.Current;
                         String estadoFinal;

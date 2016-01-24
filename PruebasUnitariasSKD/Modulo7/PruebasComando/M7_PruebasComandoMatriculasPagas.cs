@@ -1,14 +1,15 @@
-﻿using System;
+﻿using DominioSKD;
+using DominioSKD.Fabrica;
+using ExcepcionesSKD.Modulo7;
+using LogicaNegociosSKD.Comandos.Modulo7;
+using LogicaNegociosSKD.Fabrica;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using DominioSKD.Entidades.Modulo7;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
-using LogicaNegociosSKD.Fabrica;
-using DominioSKD;
-using LogicaNegociosSKD.Comandos.Modulo7;
-using DominioSKD.Fabrica;
-using ExcepcionesSKD.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -19,10 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoMatriculas
     {
         #region Atributos
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarListaMatriculasPagas matriculasPagas;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             matriculasPagas = (ComandoConsultarListaMatriculasPagas)fabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
-            fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();//cambiar por fabrica
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             matriculasPagas.LaEntidad = idPersona;
         }
@@ -48,7 +47,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             matriculasPagas = null;
-            fabricaEntidades = null;
             idPersona = null;
         }
         #endregion
