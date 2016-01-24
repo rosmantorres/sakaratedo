@@ -169,6 +169,15 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to compDetalle.
+        /// </summary>
+        internal static string Detalle {
+            get {
+                return ResourceManager.GetString("Detalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Evento.
         /// </summary>
         internal static string Evento {

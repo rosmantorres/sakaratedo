@@ -195,4 +195,7 @@
   <data name="ListaAsistenciaEventoNoAgregada" xml:space="preserve">
     <value>M10_ListarAsistenciaEventos.aspx?success=3</value>
   </data>
+  <data name="Detalle" xml:space="preserve">
+    <value>compDetalle</value>
+  </data>
 </root>
