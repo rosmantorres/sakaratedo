@@ -142,6 +142,15 @@ namespace templateApp.GUI.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9.
+        /// </summary>
+        internal static string idModulo {
+            get {
+                return ResourceManager.GetString("idModulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Seleccionar Evento.
         /// </summary>
         internal static string selectEvento {

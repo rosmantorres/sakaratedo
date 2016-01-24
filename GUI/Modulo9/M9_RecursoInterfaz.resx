@@ -147,4 +147,7 @@
   <data name="selectEvento" xml:space="preserve">
     <value>Seleccionar Evento</value>
   </data>
+  <data name="idModulo" xml:space="preserve">
+    <value>9</value>
+  </data>
 </root>

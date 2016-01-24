@@ -24,7 +24,7 @@ namespace templateApp.GUI.Modulo9
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "9";
+            ((SKD)Page.Master).IdModulo = M9_RecursoInterfaz.idModulo;
 
             presentador.ObtenerVariablesURL();
 
