@@ -9,6 +9,8 @@ using ExcepcionesSKD;
 using System.Data;
 using ExcepcionesSKD.Modulo7;
 using System.Data.SqlClient;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -49,8 +51,8 @@ namespace DatosSKD.DAO.Modulo7
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            Persona idPersona = (Persona)parametro;
-            Persona persona;
+            PersonaM7 idPersona = (PersonaM7)parametro;
+            PersonaM7 persona;
 
             try
             {
@@ -58,7 +60,7 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    persona = new Persona();//se debe sustituir por fabrica
+                    persona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUsuarioLogueado, SqlDbType.Int, idPersona.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 

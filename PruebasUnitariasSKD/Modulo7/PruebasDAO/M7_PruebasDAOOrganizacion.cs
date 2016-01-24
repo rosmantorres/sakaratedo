@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +20,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOOrganizacion
     {
         #region Atributos
-        private Organizacion idOrganizacion;
-        private FabricaEntidades fabricaEntidades;
+        private OrganizacionM7 idOrganizacion;
         private FabricaDAOSqlServer fabricaSql;
         private DaoOrganizacion baseDeDatosOrganizacion;
         #endregion
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosOrganizacion = fabricaSql.ObtenerDaoOrganizacionM7();
-            fabricaEntidades = new FabricaEntidades();
-            idOrganizacion = new Organizacion();//se debe sustituir por fabrica
+            idOrganizacion = (OrganizacionM7)FabricaEntidades.ObtenerOrganizacionM7();
             idOrganizacion.Id = 1;
         }
 
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idOrganizacion = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosOrganizacion = null;
         }
@@ -58,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarOrganizacionXId()
         {
-            Organizacion organizacion = (Organizacion)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
+            OrganizacionM7 organizacion = (OrganizacionM7)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
             Assert.AreEqual("Seito Karate-do", organizacion.Nombre);
         }
 
@@ -68,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarOrganizacionXIdNoNulo()
         {
-            Organizacion organizacion = (Organizacion)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
+            OrganizacionM7 organizacion = (OrganizacionM7)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
             Assert.IsNotNull(organizacion);
         }
 
@@ -80,7 +78,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void DetallarOrganizacionNumeroEnteroException()
         {
             idOrganizacion.Id = -1;
-            Organizacion organizacion = (Organizacion)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
+            OrganizacionM7 organizacion = (OrganizacionM7)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
         }
     }
 }

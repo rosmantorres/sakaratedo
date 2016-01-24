@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -32,7 +33,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos de la persona
         /// </summary>
         /// <param name="idPersona">id de la persona</param>
-        public void cargarDatos(Persona idPersona)
+        public void cargarDatos(Entidad idPersona)
         {
             try
             {
@@ -41,12 +42,12 @@ namespace Interfaz_Presentadores.Modulo7
                 comandoDetallarPersona.LaEntidad = idPersona;
                 Tuple <Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = comandoDetallarPersona.Ejecutar();
 
-                Persona persona = (Persona)tupla.Item1;
-                Dojo dojo = (Dojo)tupla.Item2;
-                Ubicacion ubicacionDojo = (Ubicacion)tupla.Item3;
-                Organizacion organizacion = (Organizacion)tupla.Item4;
+                PersonaM7 persona = (PersonaM7)tupla.Item1;
+                DojoM7 dojo = (DojoM7)tupla.Item2;
+                UbicacionM7 ubicacionDojo = (UbicacionM7)tupla.Item3;
+                OrganizacionM7 organizacion = (OrganizacionM7)tupla.Item4;
                 string ubicacionOrganizacion = tupla.Item5;
-                Cinta ultimaCinta = (Cinta)tupla.Item6;
+                CintaM7 ultimaCinta = (CintaM7)tupla.Item6;
 
                 vista.apellidoPersona = persona.Apellido;
                 vista.cintaActual = ultimaCinta.Color_nombre;

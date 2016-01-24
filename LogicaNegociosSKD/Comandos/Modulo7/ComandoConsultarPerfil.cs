@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
@@ -31,33 +32,33 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
             DaoUbicacion baseDeDatosUbicacion = fabrica.ObtenerDaoUbicacionM7();
 
-            Persona persona;
-            Dojo dojo;
-            Organizacion organizacion;
-            Ubicacion ubicacionDojo;
+            PersonaM7 persona;
+            DojoM7 dojo;
+            OrganizacionM7 organizacion;
+            UbicacionM7 ubicacionDojo;
             String ubicacionOrganizacion;
-            Cinta ultimaCinta;
+            CintaM7 ultimaCinta;
 
-            Persona idPersona = (Persona)LaEntidad;
+            PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla;
 
             try
             {              
                 if (idPersona.Id > 0)
                 {
-                    persona = (Persona)baseDeDatosPersona.ConsultarXId(idPersona);
-       
-                    Dojo idDojo = new Dojo(); //cambiar por fabrica
-                    idDojo.Id = persona.DojoPersona;
-                    dojo = (Dojo)baseDeDatosDojo.ConsultarXId(idDojo);
+                    persona = (PersonaM7)baseDeDatosPersona.ConsultarXId(idPersona);
 
-                    Organizacion idOrganizacion = new Organizacion(); //cambiar por fabrica
+                    DojoM7 idDojo = (DojoM7)FabricaEntidades.ObtenerDojoM7();
+                    idDojo.Id = persona.DojoPersona;
+                    dojo = (DojoM7)baseDeDatosDojo.ConsultarXId(idDojo);
+
+                    OrganizacionM7 idOrganizacion = (OrganizacionM7)FabricaEntidades.ObtenerOrganizacionM7();
                     idOrganizacion.Id = dojo.Organizacion_dojo;
-                    organizacion = (Organizacion)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
+                    organizacion = (OrganizacionM7)baseDeDatosOrganizacion.ConsultarXId(idOrganizacion);
 
                     ubicacionDojo = dojo.Ubicacion;
                     ubicacionOrganizacion = organizacion.Direccion;
-                    ultimaCinta = (Cinta)baseDeDatosCinta.UltimaCinta(idPersona);
+                    ultimaCinta = (CintaM7)baseDeDatosCinta.UltimaCinta(idPersona);
 
                     tupla = Tuple.Create((Entidad)persona, (Entidad)dojo, (Entidad)ubicacionDojo,
                         (Entidad)organizacion, ubicacionOrganizacion, (Entidad)ultimaCinta);

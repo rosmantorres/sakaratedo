@@ -10,6 +10,8 @@ using System.Data;
 using ExcepcionesSKD.Modulo7;
 using System.Data.SqlClient;
 using DatosSKD.Fabrica;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -52,8 +54,8 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroQuery = new Parametro();
             FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
             DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            Dojo idDojo = (Dojo)parametro;
-            Dojo dojo;
+            DojoM7 idDojo = (DojoM7)parametro;
+            DojoM7 dojo;
 
             try
             {
@@ -61,7 +63,7 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    dojo = new Dojo();// se debe sustituir por fabrica
+                    dojo = (DojoM7)FabricaEntidades.ObtenerDojoM7();
 
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdDojo, SqlDbType.Int, idDojo.Id.ToString(), false);
                     parametros.Add(parametroQuery);
@@ -75,9 +77,9 @@ namespace DatosSKD.DAO.Modulo7
                         dojo.Telefono_dojo = int.Parse(row[RecursosDAOModulo7.AliasDojoTelefono].ToString());
                         dojo.Email_dojo = row[RecursosDAOModulo7.AliasDojoEmail].ToString();
 
-                        Ubicacion idUbicacion = new Ubicacion();//se debe sustituir por fabrica
+                        UbicacionM7 idUbicacion = (UbicacionM7)FabricaEntidades.ObtenerUbicacionM7();
                         idUbicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasDojoUbicacion].ToString());
-                        dojo.Ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+                        dojo.Ubicacion = (UbicacionM7)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
 
                         dojo.Organizacion_dojo = int.Parse(row[RecursosDAOModulo7.AliasDojoOrganizacionId].ToString());
                     }

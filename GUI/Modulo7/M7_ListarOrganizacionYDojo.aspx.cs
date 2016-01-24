@@ -12,6 +12,8 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 
 
@@ -23,7 +25,7 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_ListarOrganizacionYDojo : System.Web.UI.Page, IContratoConsultarPerfil
     {
         private PresentadorConsultarPerfil presentador;
-        private Persona idPersona;
+        private PersonaM7 idPersona;
 
         /// <summary>
         /// Constructor de la clase
@@ -250,7 +252,7 @@ namespace templateApp.GUI.Modulo7
                 if (permitido)
                 {
                     try {
-                        idPersona = new Persona();//cambiar por fabrica
+                        idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                         idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                         presentador.cargarDatos(idPersona);
                     }

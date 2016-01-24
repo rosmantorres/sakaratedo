@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +20,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAODojo
     {
         #region Atributos
-        private Dojo idDojo;
-        private FabricaEntidades fabricaEntidades;
+        private DojoM7 idDojo;
         private FabricaDAOSqlServer fabricaSql;
         private DaoDojo baseDeDatosDojo;
         #endregion
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosDojo = fabricaSql.ObtenerDaoDojoM7();
-            fabricaEntidades = new FabricaEntidades();
-            idDojo = new Dojo();//se debe sustituir por fabrica
+            idDojo = (DojoM7)FabricaEntidades.ObtenerDojoM7();
             idDojo.Id = 1;
         }
 
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idDojo = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosDojo = null;
         }
@@ -58,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarDojoXId()
         {
-            Dojo dojo = (Dojo)baseDeDatosDojo.ConsultarXId(idDojo);
+            DojoM7 dojo = (DojoM7)baseDeDatosDojo.ConsultarXId(idDojo);
             Assert.AreEqual("bushido", dojo.Nombre_dojo);
         }
 
@@ -68,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarDojoXIdNoNulo()
         {
-            Dojo dojo = (Dojo)baseDeDatosDojo.ConsultarXId(idDojo);
+            DojoM7 dojo = (DojoM7)baseDeDatosDojo.ConsultarXId(idDojo);
             Assert.IsNotNull(dojo);
         }
 

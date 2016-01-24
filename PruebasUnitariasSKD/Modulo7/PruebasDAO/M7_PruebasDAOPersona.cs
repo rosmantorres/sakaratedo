@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
+
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +21,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOPersona
     {
         #region Atributos
-        private Persona idPersona;
-        private FabricaEntidades fabricaEntidades;
+        private PersonaM7 idPersona;
         private FabricaDAOSqlServer fabricaSql;
         private DaoPersona baseDeDatosPersona;
         #endregion
@@ -34,8 +35,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosPersona = fabricaSql.ObtenerDaoPersonaM7();
-            fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();//se debe sustituir por fabrica
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
         }
 
@@ -46,7 +46,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idPersona = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosPersona = null;
         }
@@ -58,7 +57,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarPersonaXId()
         {
-            Persona persona = (Persona)baseDeDatosPersona.ConsultarXId(idPersona);
+            PersonaM7 persona = (PersonaM7)baseDeDatosPersona.ConsultarXId(idPersona);
             Assert.AreEqual("Maria Isabel", persona.Nombre);
         }
 
@@ -68,7 +67,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarPersonaXIdNoNulo()
         {
-            Persona persona = (Persona)baseDeDatosPersona.ConsultarXId(idPersona);
+            PersonaM7 persona = (PersonaM7)baseDeDatosPersona.ConsultarXId(idPersona);
             Assert.IsNotNull(persona);
         }
 
@@ -80,7 +79,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void DetallarPersonaNumeroEnteroException()
         {
             idPersona.Id = -1;
-            Persona persona = (Persona)baseDeDatosPersona.ConsultarXId(idPersona);
+            PersonaM7 persona = (PersonaM7)baseDeDatosPersona.ConsultarXId(idPersona);
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -19,10 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     class M7_PruebasComandoConsultarPerfil
     {
         #region Atributos
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarPerfil perfil;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             perfil = (ComandoConsultarPerfil)fabricaComandos.ObtenerComandoConsultarPerfil();
-            fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();//cambiar por fabrica
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             perfil.LaEntidad = idPersona;
         }
@@ -48,7 +47,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             perfil = null;
-            fabricaEntidades = null;
             idPersona = null;
         }
         #endregion
@@ -81,7 +79,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaObtenerPerfil()
         {
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = perfil.Ejecutar();
-            Persona persona = (Persona)tupla.Item1;
+            PersonaM7 persona = (PersonaM7)tupla.Item1;
             Assert.GreaterOrEqual("Maria Isabel", persona.Nombre);
         }
 
@@ -92,7 +90,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaObtenerDojo()
         {
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = perfil.Ejecutar();
-            Dojo dojo = (Dojo)tupla.Item2;
+            DojoM7 dojo = (DojoM7)tupla.Item2;
             Assert.GreaterOrEqual("Dai-Fu", dojo.Nombre_dojo);
         }
 
@@ -103,7 +101,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaObtenerUbicacionDojo()
         {
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = perfil.Ejecutar();
-            Ubicacion ubicacionDojo = (Ubicacion)tupla.Item3;
+            UbicacionM7 ubicacionDojo = (UbicacionM7)tupla.Item3;
             Assert.GreaterOrEqual("Maracay",ubicacionDojo.Ciudad);
         }
 
@@ -114,7 +112,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaObtenerOrganizacion()
         {
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = perfil.Ejecutar();
-            Organizacion organizacion = (Organizacion)tupla.Item4;
+            OrganizacionM7 organizacion = (OrganizacionM7)tupla.Item4;
             Assert.GreaterOrEqual("Shotokan Org", organizacion.Nombre);
         }
 
@@ -136,7 +134,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaObtenerUltimaCinta()
         {
             Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = perfil.Ejecutar();
-            Cinta ultimaCinta = (Cinta)tupla.Item6;
+            CintaM7 ultimaCinta = (CintaM7)tupla.Item6;
             Assert.GreaterOrEqual("Amarillo", ultimaCinta.Color_nombre);
         }
         #endregion
