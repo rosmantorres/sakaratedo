@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoCambiarStatusPlanilla.cs" />
     <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
@@ -330,7 +331,7 @@
     <EmbeddedResource Include="Comandos\Modulo5\RecursosComandosModulo5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandosModulo5.Designer.cs</LastGenOutput>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo1\RecursosComandoModulo1.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo1.Designer.cs</LastGenOutput>
@@ -411,13 +412,7 @@
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo15\" />
-    <Folder Include="Comandos\Modulo16\" />
-    <Folder Include="Comandos\Modulo1\" />
-    <Folder Include="Comandos\Modulo2\" />
-	<Folder Include="Comandos\Modulo3\" />
     <Folder Include="Comandos\Modulo4\" />
-	<Folder Include="Comandos\Modulo5\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />

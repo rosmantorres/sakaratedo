@@ -437,4 +437,7 @@
   <data name="Alert_Clase_Success" xml:space="preserve">
     <value>alert alert-info alert-dismissible</value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
+  </data>
 </root>
