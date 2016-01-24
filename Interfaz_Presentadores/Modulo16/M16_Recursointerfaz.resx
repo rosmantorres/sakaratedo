@@ -549,4 +549,7 @@
   <data name="Uno" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="EXCEPCION_LISTA_VACIA" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=14</value>
+  </data>
 </root>

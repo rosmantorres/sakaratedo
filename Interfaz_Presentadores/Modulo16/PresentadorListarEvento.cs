@@ -61,6 +61,12 @@ namespace Interfaz_Presentadores.Modulo16
                 // Invocamos el comando
                 ListaEvento com = (ListaEvento)comandoListarEventos.Ejecutar();
 
+                // Si la lista retorna vacia, retorna un mensaje al usuario
+                if (com.ListaEventos.Count == 0)
+                {
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_LISTA_VACIA, false);
+                }
+
                 //Obtenemos cada evento para ponerlos en la tabla
                 foreach (Entidad aux in com.ListaEventos)
                 {

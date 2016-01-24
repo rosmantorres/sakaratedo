@@ -178,6 +178,7 @@ namespace Interfaz_Presentadores.Modulo16
 
             }
             #region Catches
+
             catch (PersonaNoValidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);

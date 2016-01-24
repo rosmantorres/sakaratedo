@@ -180,6 +180,13 @@ namespace templateApp.GUI.Modulo16
                             alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                             alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CANTIDAD_INVALIDA_MENSAJE;
                             break;
+
+                        case "14":
+                            //Si la lista retorma vacia porque no retorma elementos
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPCION_LISTA_VACIA_MENSAJE;
+                            break;
                     }
                     break;
             }
