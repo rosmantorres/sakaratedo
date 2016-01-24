@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using Interfaz_Contratos.Modulo9;
 using Interfaz_Presentadores.Modulo9;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo9
 {
@@ -37,7 +38,7 @@ namespace templateApp.GUI.Modulo9
         }
         protected void btn_agregarEventoClick(object sender, EventArgs e)
         {
-            presentador.AgregarEvento();
+            presentador.AgregarEvento(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
         }
         #region void
         protected void comboTipoEvento_SelectedIndexChanged(object sender, EventArgs e)

@@ -46,7 +46,7 @@ namespace Interfaz_Presentadores.Modulo9
                 LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos comandoListarTipoEvento = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos)FabricaComandos.ObtenerComandoConsultarTipoEventos();
 
                 Dictionary<string, string> options = new Dictionary<string, string>();
-            //    options.Add("-1", M9_RecursoInterfazPresentador.selecccionarEvento);
+                options.Add("0", M9_RecursoInterfazPresentador.selecccionarEvento);
                 
 
                 List<Entidad> listaTipoEvento = comandoListarTipoEvento.Ejecutar();
@@ -64,14 +64,14 @@ namespace Interfaz_Presentadores.Modulo9
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-     //           vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
-       //         vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
-         //       vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
-           //         + ex.Mensaje + M9_RecursoInterfazPresentador.alertaHtmlFinal; 
+                vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
+                vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
+                    + ex.Mensaje + M9_RecursoInterfazPresentador.alertaHtmlFinal; 
             }
 
         }
-        public void AgregarEvento()
+        public void AgregarEvento(string idPersona)
         {
             List<String> laListaDeInputs = new List<String>();
             laListaDeInputs.Add(vista.iNombreEvento);
@@ -87,50 +87,57 @@ namespace Interfaz_Presentadores.Modulo9
 
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
             {
-                try
+                if (vista.iComboTipoEvento.SelectedIndex != 0)
                 {
-                    int size = vista.iComboTipoEvento.Items.Count;
-                    int index = vista.iComboTipoEvento.SelectedIndex + 1;
-                    Comando<bool> comandoAgregarEvento;
-                    FabricaEntidades laFabrica = new FabricaEntidades();
-                    DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
-                    DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
-                    DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
-
-
-                    elEvento.Nombre = vista.iNombreEvento;
-                    elEvento.Costo = float.Parse(vista.iCostoEvento);
-                    elTipoEvento.Nombre = vista.iComboTipoEvento.SelectedItem.Text;
-                    elTipoEvento.Id = vista.iComboTipoEvento.SelectedIndex;
-                    elEvento.TipoEvento = elTipoEvento;
-                    elHorario.FechaInicio = Convert.ToDateTime(vista.iHoraInicio);
-                    elHorario.FechaFin = Convert.ToDateTime(vista.iHoraFin);
-                    String inicio = vista.iHoraInicio;
-                    String fin = vista.iHoraFin;
-                    string[] cadena = inicio.Split(':');
-                    elHorario.HoraInicio = int.Parse(cadena[0]);
-                    cadena = fin.Split(':');
-                    elHorario.HoraFin = int.Parse(cadena[0]);
-                    elEvento.Horario = elHorario;
-                    Persona persona = new Persona();
-                    //    String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();
-                    persona.ID = int.Parse("36");
-                    elEvento.Persona = persona;
-                    elEvento.Descripcion = vista.iDescripcionEvento;
-                    if (vista.iStatusActivoBool == true)
-                        elEvento.Estado = true;
-                    else
-                        elEvento.Estado = false;
-                    comandoAgregarEvento = FabricaComandos.ObtenerComandoAgregarEvento(elEvento);
-                    if (comandoAgregarEvento.Ejecutar() == true)
-                        HttpContext.Current.Response.Redirect(M9_RecursoInterfazPresentador.agregarExito);
+                    try
+                    {
+                        int size = vista.iComboTipoEvento.Items.Count;
+                        int index = vista.iComboTipoEvento.SelectedIndex + 1;
+                        Comando<bool> comandoAgregarEvento;
+                        FabricaEntidades laFabrica = new FabricaEntidades();
+                        DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
+                        DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
+                        DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                        elEvento.Nombre = vista.iNombreEvento;
+                        elEvento.Costo = float.Parse(vista.iCostoEvento);
+                        elTipoEvento.Nombre = vista.iComboTipoEvento.SelectedItem.Text;
+                        elTipoEvento.Id = vista.iComboTipoEvento.SelectedIndex;
+                        elEvento.TipoEvento = elTipoEvento;
+                        elHorario.FechaInicio = Convert.ToDateTime(vista.iHoraInicio);
+                        elHorario.FechaFin = Convert.ToDateTime(vista.iHoraFin);
+                        String inicio = vista.iHoraInicio;
+                        String fin = vista.iHoraFin;
+                        string[] cadena = inicio.Split(':');
+                        elHorario.HoraInicio = int.Parse(cadena[0]);
+                        cadena = fin.Split(':');
+                        elHorario.HoraFin = int.Parse(cadena[0]);
+                        elEvento.Horario = elHorario;
+                        Persona persona = new Persona();
+                        //    String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();
+                        persona.ID = int.Parse(idPersona);
+                        elEvento.Persona = persona;
+                        elEvento.Descripcion = vista.iDescripcionEvento;
+                        if (vista.iStatusActivoBool == true)
+                            elEvento.Estado = true;
+                        else
+                            elEvento.Estado = false;
+                        comandoAgregarEvento = FabricaComandos.ObtenerComandoAgregarEvento(elEvento);
+                        if (comandoAgregarEvento.Ejecutar() == true)
+                            HttpContext.Current.Response.Redirect(M9_RecursoInterfazPresentador.agregarExito);
+                    }
+                    catch (ExcepcionesSKD.ExceptionSKD ex)
+                    {
+                        vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                        vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
+                        vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
+                            + ex.Mensaje + M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                    }
                 }
-                catch (ExcepcionesSKD.ExceptionSKD ex)
-                {
+                else {
                     vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
-                    vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
                     vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
-                        + ex.Mensaje + M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                        + M9_RecursoInterfazPresentador.comboVacio
+                        + M9_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
             }
             else

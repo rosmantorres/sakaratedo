@@ -196,6 +196,15 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Seleccione un Tipo de Evento.
+        /// </summary>
+        internal static string comboVacio {
+            get {
+                return ResourceManager.GetString("comboVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to error.
         /// </summary>
         internal static string errorGet {
