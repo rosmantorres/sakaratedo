@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaNegociosSKD.Modulo14;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo14;
 using Interfaz_Presentadores.Modulo14;
@@ -15,7 +14,7 @@ namespace templateApp.GUI.Modulo14
 {
     public partial class M14_ConsultarPlanillasSolicitadas : System.Web.UI.Page, IContratoM14ConsultarPlanillasSolicitadas
     {
-        private LogicaSolicitud logica = new LogicaSolicitud();
+        
         private PresentadorM14ConsultarPlanillasSolicitadas presentador;
 
         #region Contratos
