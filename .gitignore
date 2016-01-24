@@ -189,6 +189,7 @@ Interfaz.v2.ncrunchsolution
 *.sql
 PruebasUnitariasSKD/App.config
 Interfaz.csproj
+<<<<<<< HEAD
 PruebasUnitariasSKD/Modulo15/PruebaDatos.cs
 PruebasUnitariasSKD/Modulo15/PruebaInterfaz.cs
 PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
@@ -199,3 +200,6 @@ PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
 PruebasUnitariasSKD/Modulo15/PruebaDatos.cs
 PruebasUnitariasSKD/Modulo15/PruebaInterfaz.cs
 PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
+=======
+Log.xml
+>>>>>>> ae1054d7521700263b9b9aacd87c3bad7edc9bd0
