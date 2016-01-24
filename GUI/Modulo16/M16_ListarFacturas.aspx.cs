@@ -86,7 +86,7 @@ namespace templateApp.GUI.Modulo16
 
             //Obtengo la matricula de la Persona pasandole el ID del session sino hubo ningun error previo
             if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null)
-                presentador.consultarFacturas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                presentador.consultarFacturas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), Server);
 
             //Nos indica si se pudo listar
             String accion = Request.QueryString[M16_RecursoInterfaz.VARIABLE_ACCION];
