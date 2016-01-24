@@ -2,6 +2,9 @@
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
+using DominioSKD;
+using DominioSKD.Fabrica;
+using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
 using LogicaNegociosSKD;
@@ -12,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DominioSKD.Entidades.Modulo7;
 namespace Interfaz_Presentadores.Modulo7
 {
     /// <summary>
@@ -35,14 +38,15 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos de la matricula
         /// </summary>
         /// <param name="idCinta">id de la matricula</param>
-        public void cargarDatos(Matricula idMatricula)
+        public void cargarDatos(Entidad idMatricula, Entidad idPersona)
         {           
             try
             {
                fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
                 comandoDetallarMatricula.LaEntidad = idMatricula;
-                Matricula matricula = (Matricula)comandoDetallarMatricula.Ejecutar();
+                //comandoDetallarMatricula.IdPersona = (PersonaM7)idPersona;
+                MatriculaM7 matricula = (MatriculaM7)comandoDetallarMatricula.Ejecutar();
                 String estadoFinal;
                 vista.identificadorMatricula = matricula.Identificador;
                 vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString("MM/dd/yyyy");

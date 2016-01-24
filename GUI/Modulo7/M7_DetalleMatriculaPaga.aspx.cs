@@ -12,7 +12,8 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
-using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -22,7 +23,8 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_DetalleMatriculaPaga : System.Web.UI.Page, IContratoDetallarMatricula
         
     {
-        private Matricula idMatricula;
+        private MatriculaM7 idMatricula;
+        private PersonaM7 idPersona;
         private PresentadorDetallarMatricula presentador;
         
         /// <summary>
@@ -130,9 +132,14 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            idMatricula = new Matricula();//cambiar por fabrica
+                            idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idMatricula.Id = int.Parse(detalleStringMatricula);
-                            presentador.cargarDatos(idMatricula);
+                            presentador.cargarDatos(idMatricula,idPersona);
+                           
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                         
+                          
                         }
                         catch (ObjetoNuloException)
                         {
