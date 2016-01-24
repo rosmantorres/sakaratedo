@@ -59,5 +59,59 @@ namespace Interfaz_Presentadores.Modulo8 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string Alerta_Clase_Error {
+            get {
+                return ResourceManager.GetString("Alerta_Clase_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No seleccionaste ningun dato.
+        /// </summary>
+        internal static string Alerta_DatoVacio {
+            get {
+                return ResourceManager.GetString("Alerta_DatoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string Alerta_Html {
+            get {
+                return ResourceManager.GetString("Alerta_Html", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string Alerta_HtmlFinal {
+            get {
+                return ResourceManager.GetString("Alerta_HtmlFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string Alerta_Rol {
+            get {
+                return ResourceManager.GetString("Alerta_Rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No seleccionaste tipo de planilla.
+        /// </summary>
+        internal static string Alerta_TipoVacio {
+            get {
+                return ResourceManager.GetString("Alerta_TipoVacio", resourceCulture);
+            }
+        }
     }
 }

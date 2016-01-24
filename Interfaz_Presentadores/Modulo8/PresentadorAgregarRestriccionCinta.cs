@@ -11,6 +11,7 @@ using LogicaNegociosSKD.Comandos.Modulo8;
 using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
 using DominioSKD;
+using System.Text.RegularExpressions;
 //using System.Windows;
 
 
@@ -120,6 +121,13 @@ namespace Interfaz_Presentadores.Modulo8
             FabricaComandos _fabrica = new FabricaComandos();
             Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
             bool resultado = _comando.Ejecutar();   
+        }
+
+        public void Alerta(string msj)
+        {
+            vista.alertLocalClase = RecursoPresentadorM8.Alerta_Clase_Error;
+            vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
+            vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
     }

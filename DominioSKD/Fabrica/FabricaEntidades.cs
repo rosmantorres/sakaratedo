@@ -171,7 +171,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
 
-        public Entidad ObtenerRestriccionCinta()
+        public static Entidad ObtenerRestriccionCinta()
         {
             return new Entidades.Modulo8.RestriccionCinta();
         }
@@ -210,7 +210,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerRestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public static Entidad ObtenerRestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
         {
             return new Entidades.Modulo8.RestriccionCinta(inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
         }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Interfaz_Presentadores.Modulo8;
 using Interfaz_Contratos.Modulo8;
 using ExcepcionesSKD;
+using System.Text.RegularExpressions;
 
 namespace templateApp.GUI.Modulo8
 {
@@ -88,7 +89,7 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-        public DropDownList comboRestCinta
+       public DropDownList comboRestCinta
         {
             get
             {
@@ -99,7 +100,40 @@ namespace templateApp.GUI.Modulo8
                 this.comboCinta = value;
             }
         }
+
+       public String alertLocalRol
+        {
+            set
+            {
+                this.alertlocal.InnerText = value;
+            }
+        }
+
+       public String alertLocalClase
+        {
+            set
+            {
+                this.alert.InnerText = value;
+            }
+        }
+
+       public String alertLocal
+        {
+            set
+            {
+                this.alertlocal.InnerHtml = value;
+            }
+        }
+
+       public bool alerta
+        {
+            set
+            {
+                this.alert.Visible = value;
+            }
+        }
         #endregion
+
 
        #region Constructor
         public interfazCrearRestriccionAvanceCinta()
@@ -113,14 +147,43 @@ namespace templateApp.GUI.Modulo8
             if (!IsPostBack)
             {
                 ((SKD)Page.Master).IdModulo = "8";
-
+                try
+                { 
                 _presentador.LlenarComboCinta();
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    Alerta(ex.Message);
+                }
             }
         }
                
        protected void btnaceptar_Click(object sender, EventArgs e)
         {
             _presentador.agregarRest();
+
+        }
+
+       public void Alerta(string msj)
+       {
+           _presentador.Alerta(msj);
+           /* alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+            alert.Attributes["role"] = "alert";
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";*/
+       }
+
+       public bool validarInput(String pword)
+       {
+	      var positiveIntRegex = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]*$");
+
+	      if (!positiveIntRegex.IsMatch(pword))	
+	      {
+                return false;
+	      }
+	      else
+	      {
+		        return true;
+	      }
         }
         
     }
