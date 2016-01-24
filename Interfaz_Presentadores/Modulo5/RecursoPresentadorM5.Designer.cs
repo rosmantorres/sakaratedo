@@ -95,5 +95,28 @@ namespace Interfaz_Presentadores.Modulo5 {
                 return ResourceManager.GetString("valorOtro", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Codigo_Error_Lista_Vacia.
+        /// </summary>
+        internal static string Codigo_Error_Lista_Vacia
+        {
+            get
+            {
+                return ResourceManager.GetString("Codigo_Error_Lista_Vacia", resourceCulture);
+            }
+        }
+
+         /// <summary>
+        ///   Looks up a localized string similar to Mensaje_Error_Lista_Vacia.
+        /// </summary>
+        internal static string Mensaje_Error_Lista_Vacia
+        {
+            get
+            {
+                return ResourceManager.GetString("Mensaje_Error_Lista_Vacia", resourceCulture);
+            }
+        }
+        
     }
 }

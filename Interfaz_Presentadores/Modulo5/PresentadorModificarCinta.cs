@@ -20,15 +20,27 @@ namespace Interfaz_Presentadores.Modulo5
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método para ejecutar el comando ComboOrganizaciones y ontener la lista de organizaciones
+        /// </summary>
         public void llenarCombo()
         {
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarComboOrganizaciones();
-            List<Entidad> _miLista = _comando.Ejecutar();
-
+            try
+            {
+                Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
+                List<Entidad> _miLista = _comando.Ejecutar();
+                this.asignarInformacionCombo(_miLista);
+            }
+            catch (ExcepcionesSKD.Modulo5.ListaVaciaExcepcion ex)
+            {
+                throw ex;
+            }
         }
 
 
+        /// <summary>
+        /// Método para asiganar la informacion en el Combo con las organizaciones 
+        /// </summary>
         private void asignarInformacionCombo(List<Entidad> listaOrganizaciones)
         {
 
@@ -44,25 +56,37 @@ namespace Interfaz_Presentadores.Modulo5
 
         }
 
-
+        /// <summary>
+        /// Método para obtener los valores de la vista y ejecutar el comando para modificar la cinta
+        /// </summary>
         public void ModificarValoresCinta()
         {
             DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
 
-            laCinta.Id_cinta = Int32.Parse(this.vista.obtenerIdCInta());
+           try
+           {
+                 
+            laCinta.Id_cinta = this.vista.obtenerIdCInta();
             laCinta.Color_nombre = this.vista.obtenerColorCinta();
             laCinta.Rango = this.vista.obtenerRango();
             laCinta.Clasificacion = this.vista.obtenerCategoria();
             laCinta.Significado = this.vista.obtenerSignificado();
-            laCinta.Orden = Int32.Parse(this.vista.obtenerOrden());
+            laCinta.Orden = this.vista.obtenerOrden();
             laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion();
             laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
             laCinta.Organizacion = laOrganizacion;
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.ObtenerEjecutarModificarCinta(laCinta);
+            Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarCinta(laCinta);
             bool resultado = _comando.Ejecutar();
+            if (resultado)
+                this.vista.Respuesta();
+
+           }
+           catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
+           {
+               this.vista.alertaModificarFallidoOrden(ex);
+           }
         }
     }
 }

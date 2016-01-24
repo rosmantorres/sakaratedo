@@ -24,13 +24,25 @@ namespace DatosSKD.Fabrica
     public class FabricaDAOSqlServer
     {
         #region Modulo 1
+        public InterfazDAO.Modulo1.IDaoLogin ObtenerDaoLogin()
+        {
+            return new DAO.Modulo1.DaoLogin();
+        }
+        public InterfazDAO.Modulo1.IDaoRestablecer ObtenerDaoRestablecer()
+        {
+            return new DAO.Modulo1.DaoRestablecer();
+        }
         #endregion
 
         #region Modulo 2
+        public InterfazDAO.Modulo2.IDaoRoles ObtenerDaoRoles()
+        {
+            return new DAO.Modulo2.DaoRoles();
+        }
         #endregion
 
         #region Modulo 3
-		public DaoOrganizacion ObtenerDaoOrganizacion()
+        public static DaoOrganizacion ObtenerDaoOrganizacion()
         {
             return new DaoOrganizacion();
         }
@@ -40,7 +52,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		public DaoCinta ObtenerDaoCinta()
+        public static DaoCinta ObtenerDaoCinta()
         {
             return new DaoCinta();
         }
