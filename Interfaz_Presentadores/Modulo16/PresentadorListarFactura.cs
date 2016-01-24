@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using Interfaz_Contratos.Modulo16;
 using DominioSKD.Entidades.Modulo16;
@@ -16,6 +17,9 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
 using DominioSKD.Entidades.Modulo1;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -23,6 +27,8 @@ namespace Interfaz_Presentadores.Modulo16
     {
        #region Atributos
         private IContratoListarFactura vista;
+        private HttpServerUtility server;
+        private HttpResponse Response;
         #endregion
 
        #region Constructores
@@ -41,7 +47,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// metodo para consultar la lista de las Facturas
         /// </summary>
-        public void consultarFacturas(int persona)
+        public void consultarFacturas(int persona, HttpServerUtility server, HttpResponse response)
         {
             try
             {
@@ -49,7 +55,8 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+                this.server = server;
+                this.Response = response;
                 //Instancio el comando para listar el evento
                 Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
@@ -98,8 +105,10 @@ namespace Interfaz_Presentadores.Modulo16
                     boton = new Button();
                     boton.ID = "Imprimir-" + item.Com_id.ToString();
                    // boton.Click += ImprimirFactura; // Aqui debes llamar a tu metodo para imprimir
+                    boton.Command += DetalleFactura_Fact1;
                     boton.CssClass = "btn btn-success glyphicon glyphicon-print";
-                    celda.Controls.Add(boton);   
+                    boton.CommandName = item.Com_id.ToString();  
+                    celda.Controls.Add(boton); 
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
@@ -395,7 +404,152 @@ namespace Interfaz_Presentadores.Modulo16
 
         }
 
-        #endregion
+        public Compra DetalleFactura1(Entidad compra)
+        {
+            Comando<Entidad> DetalleFactura = FabricaComandos.CrearComandoDetallarFactura(compra);
+            Compra laFactura = (Compra)DetalleFactura.Ejecutar();
+            return laFactura;
+
+        }
+
+        public void DetalleFactura_Fact1(object sender, CommandEventArgs e)
+        {
+            
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                string id = e.CommandName;
+                Compra compra = new Compra();
+                compra.Com_id = int.Parse(id);
+
+                //Casteamos
+                Compra resultados = DetalleFactura1(compra);
+                imprimir_Click(resultados);
+          }
+
+         public void imprimir_Click(Compra compra)
+         {
+             Document pdfDoc = new Document(PageSize.A4, 10, 10, 10, 10);
+
+             try
+             {
+                 PdfWriter.GetInstance(pdfDoc, System.Web.HttpContext.Current.Response.OutputStream);
+                 pdfDoc.Open();
+
+
+                 string cadenaFinal = ConstruirDiseno(compra);
+                 string path = server.MapPath("Carnet_titulo.jpg");
+
+                 string encabezado = "<img src='" + path + "' Height='48' Width='570'/><br/><br/>";
+
+                 string strContent = encabezado + cadenaFinal;
+
+                 var parsedHtmlElements = HTMLWorker.ParseToList(new StringReader(strContent), null);
+
+                 foreach (var htmlElement in parsedHtmlElements)
+                     pdfDoc.Add(htmlElement as IElement);
+                 pdfDoc.Close();
+
+                 Response.ContentType = "application/pdf";
+
+                 Response.AddHeader("content-disposition", "attachment; filename=" + "factura" + ".pdf");
+                 System.Web.HttpContext.Current.Response.Write(pdfDoc);
+
+                 Response.Flush();
+                 Response.End();
+
+             }
+             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
+             }
+             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
+             }
+             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
+             }
+             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
+             }
+             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
+             }
+             catch (NullReferenceException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Message, false);
+             }
+             catch (Exception ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 HttpContext.Current.Response.Redirect(ex.Message, false);
+             }
+        
+         }
+
+         public string ConstruirDiseno(Compra compra)
+         {
+             string encabezado = "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nro de Factura</strong></td><td>";
+             string numeroFact = encabezado + compra.Com_id + "</td><td><strong>Fecha de Pago</strong></td><td>";
+             string finEncabezado = numeroFact + compra.Com_fecha_compra + "</td></tr></tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
+             string formasPago = finEncabezado + "<p><strong>Formas de Pago</strong></p>";
+             string pago="";
+             foreach (Pago pag in compra.Listapago)
+             {
+                 pago+= "<p>" + pag.TipoPago + "</p>";
+             }
+             string finPago = formasPago + pago;
+             string encabezadoDetallePro = finPago +"<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>&nbsp;Detalles de los productos</strong></td></tr></tbody></table><p>&nbsp;</p>";
+             string productos = encabezadoDetallePro + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nombre</strong></td><td><strong>Precio unitario</strong></td><td><strong>Cantidad</strong></td><td><strong>Subtotal</strong></td></tr>";
+             string detalle = "";
+             foreach(DetalleFacturaProducto detaPro in compra.Listainventario)
+             {
+                 detalle += "<tr><td>"+ detaPro.Producto.Nombre_Implemento;
+                 detalle += "</td><td>" + detaPro.Producto.Precio_Implemento;
+                 detalle += "</td><td>" + detaPro.Cantidad_producto;
+                 detalle += "</td><td>" + detaPro.Subtotal + "</td></tr>";
+             }
+             string finEncabezadoDetallePro = productos + detalle + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
+             string encabezadoDetalleEven = "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>&nbsp;Detalles de los eventos</strong></td></tr></tbody></table><p>&nbsp;</p>";
+             string evento = encabezadoDetalleEven + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nombre</strong></td><td><strong>Precio Unitario</strong></td><td><strong>Cantidad</strong></td><td><strong>Subtotal</strong></td></tr>";
+             string detalleEve = "";
+             foreach (DetalleFacturaEvento eve in compra.Listaevento)
+             {
+                 detalleEve += "<tr><td>" + eve.Evento.Nombre;
+                 detalleEve += "<tr><td>" + eve.Evento.Costo;
+                 detalleEve += "<tr><td>" + eve.Cantidad_evento;
+                 detalleEve += "<tr><td>" + eve.Subtotal + "</td></tr>";
+             }
+
+             string finEncabezadoDetalleEve = evento + detalleEve + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
+             string encabezadoDetalleMatri = "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<strong>Detalles de las matriculas</strong></td></tr></tbody></table><p>&nbsp;</p>";
+             string matricula = encabezadoDetalleMatri + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nombre</strong></td><td><strong>Precio Unitario</strong></td><td><strong>Cantidad</strong></td><td><strong>Subtotal</strong></td></tr>";
+             string detalleMatri = "";
+             foreach (DetalleFacturaMatricula matri in compra.Listamatricula)
+             {
+                 detalleMatri += "<tr><td>" + matri.Matricula.Identificador;
+                 detalleMatri += "<tr><td>" + matri.Matricula.Costo;
+                 detalleMatri += "<tr><td>" + matri.Cantidad_matricula;
+                 detalleMatri += "<tr><td>" + matri.Subtotal+ "</td></tr>";
+             }
+             string finEncabezadoDetalleMatri = matricula + detalleMatri + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
+             string total = finEncabezadoDetalleMatri +"<p><strong>Total:</strong>" + compra.Monto + "</p>";
+             return total;
+         }
+
+       #endregion
 
 
     }
