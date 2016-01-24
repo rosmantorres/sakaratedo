@@ -566,6 +566,7 @@
   </data>
   <data name="MENSAJE_EXCEPCION_MONTO_INVALIDO" xml:space="preserve">
     <value>Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0</value>
+    </data>
   <data name="ABRE_LABEL_AUX4" xml:space="preserve">
     <value>&lt;label id='aux4' &gt;</value>
   </data>
