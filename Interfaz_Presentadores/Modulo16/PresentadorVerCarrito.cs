@@ -269,6 +269,9 @@ namespace Interfaz_Presentadores.Modulo16
                     precioFinal += item.Costo * aux.Value;
                 }
 
+                //Descontamos del total los pagos que ya haya hecho
+                precioFinal -= elCarrito.montoPagado;
+
                 //Colocamos el precio en el modal
                 laVista.PrecioFinal.Text =  "</br>" + "<h3>Precio final: </h3>" + "<label id='labelprecio' >" + precioFinal.ToString() + "</label>";
 

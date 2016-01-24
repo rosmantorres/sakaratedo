@@ -496,4 +496,7 @@
   <data name="PARAM_TIPO_PAGO_FACT" xml:space="preserve">
     <value>tipoPago</value>
   </data>
+  <data name="PROCEDIMIENTO_MONTOS_PAGADOS" xml:space="preserve">
+    <value>M16_MONTOS_PAGADOS</value>
+  </data>
 </root>

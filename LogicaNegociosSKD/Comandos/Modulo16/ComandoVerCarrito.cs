@@ -80,11 +80,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //Instancio el DAO de Carrito
                 IdaoCarrito daocarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
-                //Instancio el carrito y Obtengo todos los items del carrito de la persona
+                //Instancio el carrito y Obtengo todos los items del carrito de la persona y pagos hechos
                 carrito = FabricaEntidades.ObtenerCarrito
                     (daocarrito.getImplemento(this.persona),
                     daocarrito.getEvento(this.persona),
-                    daocarrito.getMatricula(this.persona));
+                    daocarrito.getMatricula(this.persona), daocarrito.getMontoPagado(this.persona));
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
