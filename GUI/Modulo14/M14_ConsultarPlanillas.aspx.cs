@@ -210,15 +210,23 @@ namespace templateApp.GUI.Modulo14
         /// </summary>
         public void LlamarVentana_Click()
         {
-
-            HttpCookie aCookie = new HttpCookie(RecursoInterfazModulo14.CookiePlanilla);
-            aCookie.Values[RecursoInterfazModulo14.CookieId] = Request.QueryString[RecursoInterfazModulo14.QueryIdPlan];
-            aCookie.Values[RecursoInterfazModulo14.CookieNombre] = Request.QueryString[RecursoInterfazModulo14.CookieNombre];
-            aCookie.Values[RecursoInterfazModulo14.Tipo] = Request.QueryString[RecursoInterfazModulo14.Tipo];
-            aCookie.Values[RecursoInterfazModulo14.CookieDis] = RecursoInterfazModulo14.Numero1;
-            aCookie.Expires = DateTime.Now.AddMinutes(15);
-            Response.Cookies.Add(aCookie);
-            HttpContext.Current.Response.Redirect(RecursoInterfazModulo14.PaginaDisenoPlanilla);
+            if (Request.QueryString["status"] == "true")
+            {
+                int id = Convert.ToInt32(Request.QueryString[RecursoInterfazModulo14.QueryIdPlan]);
+                presentador.CambiarStatus(id);
+                HttpContext.Current.Response.Redirect("M14_ConsultarPlanillas.aspx");
+            }
+            else
+            {
+                HttpCookie aCookie = new HttpCookie(RecursoInterfazModulo14.CookiePlanilla);
+                aCookie.Values[RecursoInterfazModulo14.CookieId] = Request.QueryString[RecursoInterfazModulo14.QueryIdPlan];
+                aCookie.Values[RecursoInterfazModulo14.CookieNombre] = Request.QueryString[RecursoInterfazModulo14.CookieNombre];
+                aCookie.Values[RecursoInterfazModulo14.Tipo] = Request.QueryString[RecursoInterfazModulo14.Tipo];
+                aCookie.Values[RecursoInterfazModulo14.CookieDis] = RecursoInterfazModulo14.Numero1;
+                aCookie.Expires = DateTime.Now.AddMinutes(15);
+                Response.Cookies.Add(aCookie);
+                HttpContext.Current.Response.Redirect(RecursoInterfazModulo14.PaginaDisenoPlanilla);
+            }
         }
 
         /// <summary>

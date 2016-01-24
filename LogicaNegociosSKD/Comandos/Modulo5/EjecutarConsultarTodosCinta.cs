@@ -7,32 +7,41 @@ using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo5;
 using DominioSKD;
 using ExcepcionesSKD;
+using System.Resources;
 
 namespace LogicaNegociosSKD.Comandos.Modulo5
 {
     public class EjecutarConsultarTodosCinta : Comando<List<Entidad>>
     {
 
+        /// <summary>
+        /// Método Ejecutar el consultar la lista de cintas 
+        /// </summary>
+        /// <returns>Lista de cintas</returns>
         public override List<Entidad> Ejecutar()
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try { 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            IDaoCinta miDaoCinta = fabrica.ObtenerDaoCinta();
+
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             List<Entidad> _miLista = miDaoCinta.ConsultarTodos(); 
 
             if(_miLista != null)
             {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+           
                 return _miLista;
             }
             else
             {
-                return null; 
+                throw new ExcepcionesSKD.Modulo5.ListaVaciaExcepcion(RecursosComandosModulo5.Codigo_Error_Lista_Vacia,
+                                   RecursosComandosModulo5.Mensaje_Error_Lista_Vacia, new Exception());
                 
             }
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
            
+            
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -40,7 +49,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

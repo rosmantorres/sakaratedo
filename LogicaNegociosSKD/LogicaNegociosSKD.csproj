@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoCambiarStatusPlanilla.cs" />
     <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
@@ -144,16 +146,44 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandoModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Comandos\Modulo1\ComandoConsultarCorreo.cs" />
+    <Compile Include="Comandos\Modulo1\ComandoEnviarCorreo.cs" />
+    <Compile Include="Comandos\Modulo1\ComandoIniciarSesion.cs" />
+    <Compile Include="Comandos\Modulo1\ComandoRestablecerContraseña.cs" />
+    <Compile Include="Comandos\Modulo1\RecursosComandoModulo1.Designer.cs">
+      <DependentUpon>RecursosComandoModulo1.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Comandos\Modulo2\ComandoAgregarRol.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoCuentaUsuario.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoEliminarRol.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoRolesDeSistema.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoRolesUsuario.cs" />
+    <Compile Include="Comandos\Modulo2\RecursosLogicaModulo2.Designer.cs">
+      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Comandos\Modulo3\EjecutarAgregarOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarComboOrganizaciones.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarXIdOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarModificarOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo3\RecursosComandosModulo3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo3.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo5\EjecutarAgregarCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarTodosCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
-    <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+    <Compile Include="Comandos\Modulo5\RecursosComandosModulo5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo5.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo9\ComandoAgregarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoAgregarEventoConTipo.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarEvento.cs" />
@@ -294,7 +324,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
+    <EmbeddedResource Include="Comandos\Modulo3\RecursosComandosModulo3.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo3.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo5\RecursosComandosModulo5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo1\RecursosComandoModulo1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo2\RecursosLogicaModulo2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandosModulo9.Designer.cs</LastGenOutput>
@@ -367,8 +412,6 @@
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo1\" />
-    <Folder Include="Comandos\Modulo2\" />
     <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />
