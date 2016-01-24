@@ -5,10 +5,7 @@ using LogicaNegociosSKD.Comandos.Modulo7;
 using LogicaNegociosSKD.Fabrica;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -19,10 +16,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoDetallarCinta
     {
         #region Atributos
-        private Cinta idCinta;
+        private CintaM7 idCinta;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarCinta detalleCinta;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -35,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
             fabricaComandos = new FabricaComandos();
             detalleCinta  = (ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
             detalleCinta.IdPersona.Id = 6;
-            fabricaEntidades = new FabricaEntidades();
-            idCinta = new Cinta();//cambiar por fabrica
+            idCinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();//cambiar por fabrica
             idCinta.Id = 2;
             detalleCinta.LaEntidad = idCinta;
         }
@@ -49,7 +44,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             detalleCinta = null;
-            fabricaEntidades = null;
             idCinta = null;
         }
         #endregion
@@ -62,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaCinta()
         {
             Tuple<Entidad, DateTime> tupla = detalleCinta.Ejecutar();
-            Cinta cinta = (Cinta)tupla.Item1;
+            CintaM7 cinta = (CintaM7)tupla.Item1;
             Assert.GreaterOrEqual("Amarillo", cinta.Color_nombre);
         }
 
@@ -73,7 +67,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void PruebaCintaNoNula()
         {
             Tuple<Entidad, DateTime> tupla = detalleCinta.Ejecutar();
-            Cinta cinta = (Cinta)tupla.Item1;
+            CintaM7 cinta = (CintaM7)tupla.Item1;
             Assert.IsNotNull(cinta);
         }
 
