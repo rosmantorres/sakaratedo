@@ -561,4 +561,10 @@
   <data name="MENSAJE_EXCEPCION_DATO_PAGO" xml:space="preserve">
     <value>Error, los datos que ha introducido de su pago no son validos, no pueden contener letras ni caracteres especiales</value>
   </data>
+  <data name="CODIGO_EXCEPCION_MONTO_INVALIDO" xml:space="preserve">
+    <value>S_16_16</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_MONTO_INVALIDO" xml:space="preserve">
+    <value>Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0</value>
+  </data>
 </root>

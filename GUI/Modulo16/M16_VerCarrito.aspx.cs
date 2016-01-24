@@ -331,6 +331,13 @@ namespace templateApp.GUI.Modulo16
                                 alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                                 alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_DATO_PAGO_MENSAJE;
                                 break;
+
+                            case "16":
+                                //Si hubo error al insertar un monto de pago menor o igual a 0
+                                alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                                alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                                alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_MONTO_INVALIDO_MENSAJE;
+                                break;
                         }
                         break;
 
@@ -452,6 +459,11 @@ namespace templateApp.GUI.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LOGGER_LINK, false);
+            }
+            catch (MontoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_MONTO_INVALIDO_LINK, false);
             }
             catch (CantidadInvalidaException e)
             {

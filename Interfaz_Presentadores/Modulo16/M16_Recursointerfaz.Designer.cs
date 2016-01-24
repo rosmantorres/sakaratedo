@@ -440,6 +440,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_16.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_MONTO_INVALIDO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_MONTO_INVALIDO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_12.
         /// </summary>
         internal static string CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO {
@@ -1138,6 +1147,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string MENSAJE_EXCEPCION_GENERICO {
             get {
                 return ResourceManager.GetString("MENSAJE_EXCEPCION_GENERICO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_MONTO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_MONTO_INVALIDO", resourceCulture);
             }
         }
         

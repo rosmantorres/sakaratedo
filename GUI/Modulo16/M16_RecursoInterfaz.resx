@@ -282,4 +282,10 @@
   <data name="EXCEPTION_DATO_PAGO_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error en la introduccion de los datos de su pago, no pueden contener letras ni caracteres especiales&lt;/div&gt;</value>
   </data>
+  <data name="EXCEPTION_MONTO_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=16</value>
+  </data>
+  <data name="EXCEPTION_MONTO_INVALIDO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los montos permitidos para pagar su compra solo pueden ser mayores a cero&lt;/div&gt;</value>
+  </data>
 </root>

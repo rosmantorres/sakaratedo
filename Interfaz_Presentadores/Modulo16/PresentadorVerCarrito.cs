@@ -593,6 +593,13 @@ namespace Interfaz_Presentadores.Modulo16
                 //Obtengo el monto con el que pago la transaccion
                 float montoPago = float.Parse(laVista.MontoPago.Value);
 
+                //Disparo una excepcion si el pago insertado es a/o es 0
+                if (montoPago <= 0)
+                    throw new MontoInvalidoException(
+                        M16_Recursointerfaz.CODIGO_EXCEPCION_MONTO_INVALIDO,
+                        M16_Recursointerfaz.MENSAJE_EXCEPCION_MONTO_INVALIDO,
+                        new MontoInvalidoException());
+
                 //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
                 switch (tipoPago)
                 {
@@ -649,6 +656,11 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
             }
             catch (CantidadInvalidaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (MontoInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;

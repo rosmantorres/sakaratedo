@@ -322,7 +322,7 @@
          <div class="form-group">
 		    <div class="box-footer">
                 <br />			
-                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="false" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
