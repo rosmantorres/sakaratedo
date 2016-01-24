@@ -188,6 +188,11 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoConsultarListaEventos(laEntidad);
         }
 
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTipoEventos()
+        {
+            return new ComandoConsultarListaTipoEventos();
+        }
+
         public static Comando<Entidad> ObtenerComandoConsultarEvento(Entidad laEntidad)
         {
             return new ComandoConsultarEvento(laEntidad);

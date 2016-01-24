@@ -100,6 +100,10 @@
     <Compile Include="Modulo5\IContratoCrearCinta.cs" />
     <Compile Include="Modulo5\IContratoListarCintas.cs" />
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
+    <Compile Include="Modulo9\IContratoAgregarEvento.cs" />
+    <Compile Include="Modulo9\IContratoDetalleEvento.cs" />
+    <Compile Include="Modulo9\IContratoListarEvento.cs" />
+    <Compile Include="Modulo9\IContratoModificarEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,7 +123,6 @@
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo8\" />
-    <Folder Include="Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
