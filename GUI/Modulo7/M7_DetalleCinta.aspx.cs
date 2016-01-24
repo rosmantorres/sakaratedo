@@ -12,6 +12,8 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -20,9 +22,9 @@ namespace templateApp.GUI.Modulo7
     /// </summary>
     public partial class M7_DetalleCinta : System.Web.UI.Page, IContratoDetallarCinta
     {
-        private Cinta idCinta;
+        private CintaM7 idCinta;
         private PresentadorDetallarCinta presentador;
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         /// <summary>
         /// Constructor de la clase
         /// </summary>
@@ -157,8 +159,8 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            idCinta = new Cinta();//cambiar por fabrica
-                            idPersona = new Persona();//cambiar por fabrica
+                            idCinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             idCinta.Id = int.Parse(detalleStringCinta);
                             presentador.cargarDatos(idCinta, idPersona);

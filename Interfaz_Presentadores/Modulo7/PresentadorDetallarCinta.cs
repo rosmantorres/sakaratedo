@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -36,16 +37,16 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         /// <param name="idCinta">id de la cinta</param>
         /// <param name="idPersona">id de la persona</param>
-        public void cargarDatos(Cinta idCinta, Persona idPersona)
+        public void cargarDatos(Entidad idCinta, Entidad idPersona)
         {           
             try
             {
                 fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarCinta comandoDetallarCinta =(ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
                 comandoDetallarCinta.LaEntidad = idCinta;
-                comandoDetallarCinta.IdPersona = idPersona;
+                comandoDetallarCinta.IdPersona = (PersonaM7)idPersona;
                 Tuple<Entidad, DateTime> tupla = comandoDetallarCinta.Ejecutar();
-                Cinta cinta = (Cinta)tupla.Item1;
+                CintaM7 cinta = (CintaM7)tupla.Item1;
                 DateTime fechaObtencionCinta = tupla.Item2;
                 
                 vista.clasificacionCinta = cinta.Clasificacion;

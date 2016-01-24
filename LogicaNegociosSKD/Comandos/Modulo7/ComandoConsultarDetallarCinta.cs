@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
@@ -16,9 +18,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
     /// </summary>
     public class ComandoConsultarDetallarCinta : Comando<Tuple<Entidad, DateTime>>
     {
-        private Persona idPersona = new Persona(); //cambiar por fabrica
+        private PersonaM7 idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7(); //cambiar por fabrica
 
-        public Persona IdPersona
+        public PersonaM7 IdPersona
         {
             get
             {
@@ -40,14 +42,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
             Tuple <Entidad, DateTime> tupla;
             DateTime fechaObtencionCinta;           
-            Cinta idCinta = (Cinta)LaEntidad;
-            Cinta cinta;
+            CintaM7 idCinta = (CintaM7)LaEntidad;
+            CintaM7 cinta;
 
             try
             {
                 if (idCinta.Id > 0)
                 {
-                    cinta =  (Cinta)baseDeDatosCinta.ConsultarXId(idCinta);
+                    cinta =  (CintaM7)baseDeDatosCinta.ConsultarXId(idCinta);
                     fechaObtencionCinta = baseDeDatosCinta.FechaCinta(idPersona, idCinta);
 
 
