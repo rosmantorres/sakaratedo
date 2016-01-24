@@ -26,7 +26,7 @@ namespace Interfaz_Presentadores.Modulo16
         #region Atributos
         //Interfaz a usar de su vista
         IcontratoVerCarrito laVista;
-        private float precioFinal = 0;
+        private float precioFinal;
         #endregion
 
         #region Constructores
@@ -37,6 +37,7 @@ namespace Interfaz_Presentadores.Modulo16
         public PresentadorVerCarrito(IcontratoVerCarrito laVista)
         {
             this.laVista = laVista;
+            this.precioFinal = 0;
         }
         #endregion
 
@@ -269,6 +270,9 @@ namespace Interfaz_Presentadores.Modulo16
                     precioFinal += item.Costo * aux.Value;
                 }
 
+                //Descontamos del total los pagos que ya haya hecho
+                precioFinal -= elCarrito.montoPagado;
+
                 //Colocamos el precio en el modal
                 laVista.PrecioFinal.Text =  "</br>" + "<h3>Precio final: </h3>" + "<label id='labelprecio' >" + precioFinal.ToString() + "</label>";
 
@@ -280,52 +284,47 @@ namespace Interfaz_Presentadores.Modulo16
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK, false);
+                throw e;
             }
             catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
-                
+                throw e;                
             }
-            catch (ArgumentNullException e)
+            catch (ParseoVacioException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
+                throw e;
             }
-            catch (FormatException e)
+            catch (ParseoFormatoInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK, false);
-                
+                throw e;
             }
-            catch (OverflowException e)
+            catch (ParseoEnSobrecargaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK, false);
-                
+                throw e;                
             }
             catch (ParametroInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK, false);
+                throw e;
             }
             catch (ExceptionSKDConexionBD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK, false);
-                
+                throw e;                
             }
             catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK, false);
-                
+                throw e;                
             }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK, false);
+                throw e;
             }
         }
         #endregion        
@@ -567,11 +566,10 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// Metodo del presentador que registra el pago de los productos que hay en el carrito de una persona
         /// </summary>
-        /// <param name="idpersona">La persona que desea comprar los productos</param>
-        /// <param name="monto">El monto total con el que el cliente paga en ese momento</param>
+        /// <param name="idpersona">La persona que desea comprar los productos</param>        
         /// <param name="tipoPago">El tipo de pago con el cual realizo la transaccion</param>        
         /// <returns>El exito o fallo del proceso siempre y cuando no exista un error</returns>
-        public bool RegistrarPago(String idpersona, String monto, String tipoPago)
+        public bool RegistrarPago(String idpersona, String tipoPago)
         {             
             try
             {
@@ -579,6 +577,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Expresion regular que validara los datos del tipo de pago 
+                Regex expresionRegular = new Regex("^[0-9]+[0-9]*$");                
 
                 //Instancio la fabrica, obtengo la entidad persona y asigno su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
@@ -590,7 +591,14 @@ namespace Interfaz_Presentadores.Modulo16
                 bool respuesta = false;
 
                 //Obtengo el monto con el que pago la transaccion
-                float montoPago = float.Parse(monto);
+                float montoPago = float.Parse(laVista.MontoPago.Value);
+
+                //Disparo una excepcion si el pago insertado es a/o es 0
+                if (montoPago <= 0)
+                    throw new MontoInvalidoException(
+                        M16_Recursointerfaz.CODIGO_EXCEPCION_MONTO_INVALIDO,
+                        M16_Recursointerfaz.MENSAJE_EXCEPCION_MONTO_INVALIDO,
+                        new MontoInvalidoException());
 
                 //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
                 switch (tipoPago)
@@ -619,8 +627,8 @@ namespace Interfaz_Presentadores.Modulo16
                 datosPago.Add(laVista.Datospago.Value);
 
                 //Si es un tipo de pago valido
-                if (pagofinal != null)
-                {
+                if (Validaciones.ValidarExpresionRegular(datosPago, expresionRegular))
+                {                    
                     //Instancio la entidad pago y asigno sus datos
                     Entidad pagoCompra = FabricaEntidades.ObtenerPago(montoPago, pagofinal, datosPago);
 
@@ -628,6 +636,11 @@ namespace Interfaz_Presentadores.Modulo16
                     Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
                     respuesta = registrarPago.Ejecutar();  
                 }
+                else
+                    throw new CantidadInvalidaException(
+                        M16_Recursointerfaz.CODIGO_EXCEPCION_DATO_PAGO, 
+                        M16_Recursointerfaz.MENSAJE_EXCEPCION_DATO_PAGO, 
+                        new CantidadInvalidaException());
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -641,6 +654,16 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
                 throw new ParseoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO,
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (CantidadInvalidaException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (MontoInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
             catch (FormatException e)
             {

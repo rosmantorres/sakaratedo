@@ -151,11 +151,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo16\RecursosBDModulo16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo1\BDLogin.cs" />
     <Compile Include="Modulo1\BDRestablecer.cs" />
     <Compile Include="DAO\Modulo1\RecursosBDModulo1.Designer.cs">
@@ -174,20 +169,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo3\RecursosBDModulo3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo3.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo4.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo5\RecursosBDModulo5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo5.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo7\BDCinta.cs" />
     <Compile Include="Modulo7\BDCompetencia.cs" />
@@ -272,10 +257,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo16\RecursosBDModulo16.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo1\RecursosBDModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
@@ -288,17 +269,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo3\RecursosBDModulo3.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo3.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosBDModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo4.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo5\RecursosBDModulo5.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo5.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo7\RecursosBDModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
