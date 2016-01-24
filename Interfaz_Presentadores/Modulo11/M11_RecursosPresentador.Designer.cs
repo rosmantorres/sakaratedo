@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace templateApp.GUI.Modulo11 {
+namespace Interfaz_Presentadores.Modulo11 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace templateApp.GUI.Modulo11 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class M11_RecursosInterfaz {
+    internal class M11_RecursosPresentador {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal M11_RecursosInterfaz() {
+        internal M11_RecursosPresentador() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace templateApp.GUI.Modulo11 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo11.M11_RecursosInterfaz", typeof(M11_RecursosInterfaz).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo11.M11_RecursosPresentador", typeof(M11_RecursosPresentador).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -93,6 +93,195 @@ namespace templateApp.GUI.Modulo11 {
         internal static string AbrirTR {
             get {
                 return ResourceManager.GetString("AbrirTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string Alerta {
+            get {
+                return ResourceManager.GetString("Alerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string AlertaDanger {
+            get {
+                return ResourceManager.GetString("AlertaDanger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string AlertAscensoErrorAgregar {
+            get {
+                return ResourceManager.GetString("AlertAscensoErrorAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4.
+        /// </summary>
+        internal static string AlertAscensoErrorModificar {
+            get {
+                return ResourceManager.GetString("AlertAscensoErrorModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string AlertAscensoExitoAgregar {
+            get {
+                return ResourceManager.GetString("AlertAscensoExitoAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string AlertAscensoModificado {
+            get {
+                return ResourceManager.GetString("AlertAscensoModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string AlertaSuccess {
+            get {
+                return ResourceManager.GetString("AlertaSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase {
+            get {
+                return ResourceManager.GetString("alertClase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 12.
+        /// </summary>
+        internal static string AlertKataErrorAgregar {
+            get {
+                return ResourceManager.GetString("AlertKataErrorAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6.
+        /// </summary>
+        internal static string AlertKataErrorModificar {
+            get {
+                return ResourceManager.GetString("AlertKataErrorModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 11.
+        /// </summary>
+        internal static string AlertKataExitoAgregar {
+            get {
+                return ResourceManager.GetString("AlertKataExitoAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 16.
+        /// </summary>
+        internal static string AlertKataKumiteErrorAgregar {
+            get {
+                return ResourceManager.GetString("AlertKataKumiteErrorAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10.
+        /// </summary>
+        internal static string AlertKataKumiteErrorModificar {
+            get {
+                return ResourceManager.GetString("AlertKataKumiteErrorModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 15.
+        /// </summary>
+        internal static string AlertKataKumiteExitoAgregar {
+            get {
+                return ResourceManager.GetString("AlertKataKumiteExitoAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9.
+        /// </summary>
+        internal static string AlertKataKumiteModificar {
+            get {
+                return ResourceManager.GetString("AlertKataKumiteModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5.
+        /// </summary>
+        internal static string AlertKataModificado {
+            get {
+                return ResourceManager.GetString("AlertKataModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 14.
+        /// </summary>
+        internal static string AlertKumiteErrorAgregar {
+            get {
+                return ResourceManager.GetString("AlertKumiteErrorAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.
+        /// </summary>
+        internal static string AlertKumiteErrorModificar {
+            get {
+                return ResourceManager.GetString("AlertKumiteErrorModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 13.
+        /// </summary>
+        internal static string AlertKumiteExitoAgregar {
+            get {
+                return ResourceManager.GetString("AlertKumiteExitoAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 7.
+        /// </summary>
+        internal static string AlertKumiteModificar {
+            get {
+                return ResourceManager.GetString("AlertKumiteModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole {
+            get {
+                return ResourceManager.GetString("alertRole", resourceCulture);
             }
         }
         
@@ -183,6 +372,159 @@ namespace templateApp.GUI.Modulo11 {
         internal static string Evento {
             get {
                 return ResourceManager.GetString("Evento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0:dd/MM/yyyy}.
+        /// </summary>
+        internal static string FormatoFechas {
+            get {
+                return ResourceManager.GetString("FormatoFechas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado del Examen de Ascenso&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlAscensoErrorAgregar {
+            get {
+                return ResourceManager.GetString("InnerHtmlAscensoErrorAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados del Examen de Ascenso&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlAscensoErrorModificar {
+            get {
+                return ResourceManager.GetString("InnerHtmlAscensoErrorModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado del Examen de Ascenso agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlAscensoExitoAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlAscensoExitoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados del Examen de Ascenso modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlAscensoExitoModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlAscensoExitoModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado de la Competencia Kata&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataErrorAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataErrorAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados de la Competencia Especialidad Kata&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataErrorModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataErrorModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado de la Competencia Kata agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataExitoAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataExitoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados de la Competencia Especialidad Kata modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataExitoModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataExitoModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados de la Competencia Especialidad Kata y Kumite&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataKumietErrorModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataKumietErrorModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado de las Competencias Kata y Kumite&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataKumiteErrorAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataKumiteErrorAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado de las Competencias Kata y Kumite agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataKumiteExitoAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataKumiteExitoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados de la Competencia Especialidad Kata y Kumite modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKataKumiteExitoModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKataKumiteExitoModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado de la Competencia Kumite agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKumiteAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKumiteAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado de la Competencia Kumite&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKumiteErrorAgregado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKumiteErrorAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados de la Competencia Especialidad Kumite&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKumiteErrorModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKumiteErrorModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados de la Competencia Especialidad Kumite modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string InnerHtmlKumiteExitoModificado {
+            get {
+                return ResourceManager.GetString("InnerHtmlKumiteExitoModificado", resourceCulture);
             }
         }
         
@@ -961,6 +1303,15 @@ namespace templateApp.GUI.Modulo11 {
         internal static string selectNoAprobado {
             get {
                 return ResourceManager.GetString("selectNoAprobado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to success.
+        /// </summary>
+        internal static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
             }
         }
         

@@ -129,6 +129,12 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
   <data name="Aprobado" xml:space="preserve">
     <value>Aprobado</value>
   </data>
