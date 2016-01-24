@@ -31,11 +31,11 @@ namespace Interfaz_Presentadores.Modulo9
             {
                 if (errorMalicioso.Equals(M9_RecursoInterfazPresentador.strErrorMalicioso))
                 {
-                //    vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
-                  //  vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
-                   // vista.alerta = M9_RecursoInterfazPresentador.alertaHtml +
-                     //   M9_RecursoInterfazPresentador.inputMalicioso +
-                   //     M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                    vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                    vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
+                    vista.alerta = M9_RecursoInterfazPresentador.alertaHtml +
+                    M9_RecursoInterfazPresentador.inputMalicioso +
+                    M9_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
             }
         }

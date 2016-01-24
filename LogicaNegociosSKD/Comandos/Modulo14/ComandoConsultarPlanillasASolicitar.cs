@@ -14,6 +14,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
     public class ComandoConsultarPlanillasASolicitar : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Método que devuelve todas las planillas que un atleta puede solicitar
+        /// </summary>
+        /// <returns>retorna una lista de planillas</returns>
         public override List<Entidad> Ejecutar()
         {
             

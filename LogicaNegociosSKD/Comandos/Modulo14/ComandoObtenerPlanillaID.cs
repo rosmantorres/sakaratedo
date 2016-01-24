@@ -22,7 +22,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPlanilla; }
             set { idPlanilla = value; }
         }
-
+        /// <summary>Obtener una planilla por ID</summary>
+        /// <param name="idPlanilla"></param>
+        /// <returns>Regresa la planilla con su nombre, status y tipo planilla</returns>
+        /// 
         public override Entidad Ejecutar()
         {
             DominioSKD.Entidades.Modulo14.Planilla planilla =

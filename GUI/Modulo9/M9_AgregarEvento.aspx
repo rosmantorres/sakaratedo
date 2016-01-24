@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_AgregarEvento.aspx.cs" Inherits="templateApp.GUI.Modulo9.prueba" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_AgregarEvento.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_AgregarEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
 <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
