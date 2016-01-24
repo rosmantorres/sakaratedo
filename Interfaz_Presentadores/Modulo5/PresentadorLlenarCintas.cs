@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD;
 using DominioSKD;
 using ExcepcionesSKD.Modulo5;
+using DominioSKD.Fabrica;
 
 
 namespace Interfaz_Presentadores.Modulo5
@@ -66,7 +67,7 @@ namespace Interfaz_Presentadores.Modulo5
 
         public void cambiarStatus()
         {
-            DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
+            DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
             laCinta.Id_cinta = this.vista.obtenerIdCinta();
 
             if (this.vista.obtenerStatusCinta() == 1)
