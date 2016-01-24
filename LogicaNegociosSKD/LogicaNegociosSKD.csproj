@@ -192,6 +192,7 @@
     <Compile Include="Comandos\Modulo9\ComandoConsultarListaEventos.cs" />
     <Compile Include="Comandos\Modulo9\ComandoModificarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoModificarEventoConTipo.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarListaTipoEventos.cs" />
     <Compile Include="Comandos\Modulo9\Logica2daEntrega.cs" />
     <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
