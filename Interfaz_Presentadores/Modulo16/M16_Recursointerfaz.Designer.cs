@@ -61,6 +61,87 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux1&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX1 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux2&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX2 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux3&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX3 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux4&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX4 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux5&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX5 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux6&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX6 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux7&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX7 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux8&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX8 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;aux9&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_AUX9 {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_AUX9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
         internal static string ABRIR_TD {
@@ -120,6 +201,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string AGREGAR_LINK_FALLO {
             get {
                 return ResourceManager.GetString("AGREGAR_LINK_FALLO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btn btn-success glyphicon glyphicon-shopping-cart.
+        /// </summary>
+        internal static string BOTON_AGREGAR {
+            get {
+                return ResourceManager.GetString("BOTON_AGREGAR", resourceCulture);
             }
         }
         
@@ -295,6 +385,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to btn btn-primary glyphicon glyphicon-info-sign.
+        /// </summary>
+        internal static string BOTON_INFORMACION {
+            get {
+                return ResourceManager.GetString("BOTON_INFORMACION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M12_ModificarCompetencias.aspx?compMod=.
         /// </summary>
         internal static string BOTON_MODIFICAR {
@@ -332,6 +431,24 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;/label&gt;.
+        /// </summary>
+        internal static string CIERRE_LABEL {
+            get {
+                return ResourceManager.GetString("CIERRE_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5.
+        /// </summary>
+        internal static string Cinco {
+            get {
+                return ResourceManager.GetString("Cinco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_06.
         /// </summary>
         internal static string CODIGO_EXCEPCION_ARGUMENTO_NULO {
@@ -350,6 +467,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_15.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_DATO_PAGO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_DATO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_07.
         /// </summary>
         internal static string CODIGO_EXCEPCION_FORMATO_INVALIDO {
@@ -364,6 +490,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string CODIGO_EXCEPCION_GENERICO {
             get {
                 return ResourceManager.GetString("CODIGO_EXCEPCION_GENERICO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S_16_16.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_MONTO_INVALIDO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_MONTO_INVALIDO", resourceCulture);
             }
         }
         
@@ -409,6 +544,33 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string COMBOCANTIDAD {
             get {
                 return ResourceManager.GetString("COMBOCANTIDAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4.
+        /// </summary>
+        internal static string Cuatro {
+            get {
+                return ResourceManager.GetString("Cuatro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10.
+        /// </summary>
+        internal static string Diez {
+            get {
+                return ResourceManager.GetString("Diez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string Dos {
+            get {
+                return ResourceManager.GetString("Dos", resourceCulture);
             }
         }
         
@@ -490,6 +652,24 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string EXCEPCION_CARRITO_PAGO_LINK {
             get {
                 return ResourceManager.GetString("EXCEPCION_CARRITO_PAGO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarEvento.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_LISTA_VACIA {
+            get {
+                return ResourceManager.GetString("EXCEPCION_LISTA_VACIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_LISTA_VACIA_PROD {
+            get {
+                return ResourceManager.GetString("EXCEPCION_LISTA_VACIA_PROD", resourceCulture);
             }
         }
         
@@ -917,6 +1097,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos; /&gt;.
+        /// </summary>
+        internal static string FIN_TAG_IMAGEN {
+            get {
+                return ResourceManager.GetString("FIN_TAG_IMAGEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Implemento.
         /// </summary>
         internal static string IMPLEMENTO {
@@ -949,6 +1138,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string IMPLEMENTO_ID {
             get {
                 return ResourceManager.GetString("IMPLEMENTO_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;img width=&apos;150&apos; height=&apos;150&apos; src=&apos;.
+        /// </summary>
+        internal static string INICIO_TAG_IMAGEN {
+            get {
+                return ResourceManager.GetString("INICIO_TAG_IMAGEN", resourceCulture);
             }
         }
         
@@ -1007,6 +1205,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error, los datos que ha introducido de su pago no son validos, no pueden contener letras ni caracteres especiales.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_DATO_PAGO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_DATO_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error en parsear un atributo invalido.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_FORMATO_INVALIDO {
@@ -1021,6 +1228,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string MENSAJE_EXCEPCION_GENERICO {
             get {
                 return ResourceManager.GetString("MENSAJE_EXCEPCION_GENERICO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0.
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_MONTO_INVALIDO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_MONTO_INVALIDO", resourceCulture);
             }
         }
         
@@ -1097,11 +1313,83 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9.
+        /// </summary>
+        internal static string Nueve {
+            get {
+                return ResourceManager.GetString("Nueve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.
+        /// </summary>
+        internal static string Ocho {
+            get {
+                return ResourceManager.GetString("Ocho", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to elProducto-.
         /// </summary>
         internal static string PRODUCTO_INFORMACION {
             get {
                 return ResourceManager.GetString("PRODUCTO_INFORMACION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agregar-.
+        /// </summary>
+        internal static string REFERENCIA_AGREGAR {
+            get {
+                return ResourceManager.GetString("REFERENCIA_AGREGAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evento-.
+        /// </summary>
+        internal static string REFERENCIA_EVENTO {
+            get {
+                return ResourceManager.GetString("REFERENCIA_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Producto-.
+        /// </summary>
+        internal static string REFERENCIA_PRODUCTO {
+            get {
+                return ResourceManager.GetString("REFERENCIA_PRODUCTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/br&gt;.
+        /// </summary>
+        internal static string SALTO_LINEA {
+            get {
+                return ResourceManager.GetString("SALTO_LINEA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6.
+        /// </summary>
+        internal static string Seis {
+            get {
+                return ResourceManager.GetString("Seis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 7.
+        /// </summary>
+        internal static string Siete {
+            get {
+                return ResourceManager.GetString("Siete", resourceCulture);
             }
         }
         
@@ -1138,6 +1426,123 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string TIPO_PAGO_TRANSFERENCIA {
             get {
                 return ResourceManager.GetString("TIPO_PAGO_TRANSFERENCIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Color&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_COLOR {
+            get {
+                return ResourceManager.GetString("TITULO_COLOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Costo&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_COSTO {
+            get {
+                return ResourceManager.GetString("TITULO_COSTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Descripcion&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_DESCRIPCION {
+            get {
+                return ResourceManager.GetString("TITULO_DESCRIPCION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Descripcion&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_DESCRIPCIONES {
+            get {
+                return ResourceManager.GetString("TITULO_DESCRIPCIONES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Imagen del Producto&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_IMAGEN {
+            get {
+                return ResourceManager.GetString("TITULO_IMAGEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Marca&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_MARCA {
+            get {
+                return ResourceManager.GetString("TITULO_MARCA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Nombre&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_NOMBRE {
+            get {
+                return ResourceManager.GetString("TITULO_NOMBRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Precio&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_PRECIO {
+            get {
+                return ResourceManager.GetString("TITULO_PRECIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Estatus&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_STATUS {
+            get {
+                return ResourceManager.GetString("TITULO_STATUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Talla&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_TALLA {
+            get {
+                return ResourceManager.GetString("TITULO_TALLA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Tipo&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_TIPO {
+            get {
+                return ResourceManager.GetString("TITULO_TIPO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string Tres {
+            get {
+                return ResourceManager.GetString("Tres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string Uno {
+            get {
+                return ResourceManager.GetString("Uno", resourceCulture);
             }
         }
     }

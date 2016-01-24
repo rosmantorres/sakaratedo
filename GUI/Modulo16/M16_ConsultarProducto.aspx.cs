@@ -179,6 +179,14 @@ namespace templateApp.GUI.Modulo16
                             alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                             alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CANTIDAD_INVALIDA_MENSAJE;
                             break;
+
+                        case "14":
+                            //Si la lista retorna vacia no muestra elementos en el listar
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.EXCEPCION_LISTA_VACIA_PROD_MENSAJE;
+                            break;
+
                     }
                     break;
             }
@@ -189,8 +197,9 @@ namespace templateApp.GUI.Modulo16
         /// Metodo que ejecuta el script en el cliente, desde el servidor
         /// </summary>
         public void ejecutarScript()
-        {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
+        {   
+            // Llamada para llenar el modal
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script, false);
         }
         #endregion
 
