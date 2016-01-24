@@ -489,7 +489,7 @@
   <data name="BOTON_INFORMACION_EVENTO" xml:space="preserve">
     <value>btn btn-primary glyphicon glyphicon-info-sign</value>
   </data>
-  <data name="REFERENCIA_AGREGAR_EVENTO" xml:space="preserve">
+  <data name="REFERENCIA_AGREGAR" xml:space="preserve">
     <value>Agregar-</value>
   </data>
   <data name="REFERENCIA_EVENTO" xml:space="preserve">
@@ -551,5 +551,8 @@
   </data>
   <data name="EXCEPCION_LISTA_VACIA" xml:space="preserve">
     <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=14</value>
+  </data>
+  <data name="REFERENCIA_PRODUCTO" xml:space="preserve">
+    <value>Producto-</value>
   </data>
 </root>

@@ -129,14 +129,13 @@ namespace Interfaz_Presentadores.Modulo16
                     Button boton = new Button();
                     boton.ID = M16_Recursointerfaz.REFERENCIA_EVENTO + item.Id_evento.ToString();
                     boton.Command +=  DetalleEvento_Event;
-                    
                     boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION_EVENTO ;
                     boton.CommandName = item.Id_evento.ToString();                 
                     celda.Controls.Add(boton);
 
                     //Boton de Agregar a Carrito
                     boton = new Button();
-                    boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR_EVENTO + item.Id_evento.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR + item.Id_evento.ToString();
                     boton.Click += AgregarCarrito;
                     boton.CssClass = M16_Recursointerfaz.BOTON_AGREGAR_EVENTO;                    
                     celda.Controls.Add(boton);                   

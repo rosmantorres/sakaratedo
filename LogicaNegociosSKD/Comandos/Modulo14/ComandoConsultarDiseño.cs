@@ -40,7 +40,15 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idSolici; }
             set { idSolici = value; }
         }
-
+        /// <summary>
+        /// Método que separa consultar el diseño de un 
+        /// planilla y reemplaza los valores con los datos necesarios del Atleta
+        /// </summary>
+        /// <param name="planilla">la Planilla que contiene el diseño</param>
+        /// <param name="idPersona">Id de la persona de los datos</param>
+        /// <param name="idSolicitud">Id de la solicitud de la planilla que 
+        /// contiene el diseño a consultar</param>
+        /// <returns>Retorna la entidad, con los datos reemplazados</returns>
         public override Entidad Ejecutar()
         {
             FabricaEntidades fabricaEntidad = new FabricaEntidades();

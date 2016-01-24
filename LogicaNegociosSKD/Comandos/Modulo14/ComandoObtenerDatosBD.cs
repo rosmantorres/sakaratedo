@@ -12,6 +12,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
     public class ComandoObtenerDatosBD : Comando<List<String>>
     {
+        /// <summary>Para obtener los datos de la bd</summary>
+        /// <returns>Regresa una lista con los datos</returns>
         public override List<String> Ejecutar()
         {
             List<String> listaDatos = new List<String>();

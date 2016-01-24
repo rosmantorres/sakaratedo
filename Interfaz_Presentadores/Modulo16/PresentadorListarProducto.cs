@@ -124,25 +124,25 @@ namespace Interfaz_Presentadores.Modulo16
 
                     celda = new TableCell();
                     DropDownList ddl = new DropDownList();
-                    ddl.Items.Add(new ListItem("1","1"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Uno, M16_Recursointerfaz.Uno));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("2", "2"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Dos, M16_Recursointerfaz.Dos));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("3", "3"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Tres, M16_Recursointerfaz.Tres));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("4", "4"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Cuatro, M16_Recursointerfaz.Cuatro));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("5", "5"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Cinco, M16_Recursointerfaz.Cinco));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("6", "6"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Seis, M16_Recursointerfaz.Seis));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("7", "7"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Siete, M16_Recursointerfaz.Siete));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("8", "8"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Ocho, M16_Recursointerfaz.Ocho));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("9", "9"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Nueve, M16_Recursointerfaz.Nueve));
                     celda.Controls.Add(ddl);
-                    ddl.Items.Add(new ListItem("10", "10"));
+                    ddl.Items.Add(new ListItem(M16_Recursointerfaz.Diez, M16_Recursointerfaz.Diez));
                     celda.Controls.Add(ddl);
 
                     //Agrego la celda a la fila
@@ -151,7 +151,7 @@ namespace Interfaz_Presentadores.Modulo16
                     //Celda que tendra los botones de Detallar y Agregar a Carrito
                     celda = new TableCell();
                     Button boton = new Button();
-                    boton.ID = "Producto-" + item.Id_Implemento.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_PRODUCTO + item.Id_Implemento.ToString();
                     boton.Command +=  DetalleProducto_Prod;
                     boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
                     boton.CommandName = item.Id_Implemento.ToString();                
@@ -159,7 +159,7 @@ namespace Interfaz_Presentadores.Modulo16
 
                     //Boton de Agregar a Carrito
                     boton = new Button();
-                    boton.ID = "Agregar-" + item.Id_Implemento.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR + item.Id_Implemento.ToString();
                     boton.Click += AgregarCarrito;
                     boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";                    
                     celda.Controls.Add(boton);                   

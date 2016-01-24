@@ -1225,9 +1225,9 @@ namespace Interfaz_Presentadores.Modulo16 {
         /// <summary>
         ///   Looks up a localized string similar to Agregar-.
         /// </summary>
-        internal static string REFERENCIA_AGREGAR_EVENTO {
+        internal static string REFERENCIA_AGREGAR {
             get {
-                return ResourceManager.GetString("REFERENCIA_AGREGAR_EVENTO", resourceCulture);
+                return ResourceManager.GetString("REFERENCIA_AGREGAR", resourceCulture);
             }
         }
         
@@ -1237,6 +1237,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string REFERENCIA_EVENTO {
             get {
                 return ResourceManager.GetString("REFERENCIA_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Producto-.
+        /// </summary>
+        internal static string REFERENCIA_PRODUCTO {
+            get {
+                return ResourceManager.GetString("REFERENCIA_PRODUCTO", resourceCulture);
             }
         }
         
