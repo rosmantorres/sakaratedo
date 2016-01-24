@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo2
 {
-    public class Rol
+    public class Rol:Entidad
     {
         #region atributos
         private int id_rol;
@@ -65,18 +65,6 @@ namespace DominioSKD
             nombre = elNombre;
             descripcion = laDescripcion;
             fecha_creacion = laFecha;
-        }
-        /// <summary>
-        /// constructor numero 3 de rol el cual recibe algunos parametros
-        /// </summary>
-        /// <param name="elId">el id del rol</param>
-        /// <param name="elNombre">el nombre del rol</param>
-        /// <param name="laDescripcion">la descripcion del rol </param>
-        public Rol(int elId, String elNombre, String laDescripcion)
-        {
-            id_rol = elId;
-            nombre = elNombre;
-            descripcion = laDescripcion;
         }
         #endregion
     }

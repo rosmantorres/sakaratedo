@@ -969,6 +969,11 @@ namespace DatosSKD.DAO.Modulo10
             return competencia;
         }
 
+        /// <summary>
+        /// Metodo que permite obtener de base de datos un evento por id
+        /// </summary>
+        /// <param name="idEvento">id de la competencia</param>
+        /// <returns>Un Evento</returns>
         public Entidad ConsultarEventoXID(string idEvento)
         {
             Entidad evento;
@@ -1018,6 +1023,106 @@ namespace DatosSKD.DAO.Modulo10
             }
             return evento;
         }
+
+        /// <summary>
+        /// Metodo que permite obtener de base de datos un evento por id
+        /// </summary>
+        /// <returns>Lista de Entidad tipo Horario</returns>
+        public List<Entidad> TodasLasFechasEventoM10() 
+        {
+            List<Entidad> listaHorarios = new List<Entidad>();
+            try
+            {
+                List<Parametro> parametros;
+                parametros = new List<Parametro>();
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoTodasLasFechasEvento, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.AliasFechaInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaFin = DateTime.Parse(row[RecursosDAOModulo10.AliasFechaFin].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraInicio = int.Parse(row[RecursosDAOModulo10.AliasHoraInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraFin = int.Parse(row[RecursosDAOModulo10.AliasHoraFin].ToString());
+                    listaHorarios.Add(horario);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
+                //     RecursosBDModulo9.MensajeErrorFormato, ex);
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaHorarios;
+        }
+
+        public List<Entidad> EventosPorRangosdeFechaM10(string fechaInicio)
+        {
+            List<Entidad> listaEventos = new List<Entidad>();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosDAOModulo10.AliasFechaInicio, SqlDbType.Date, fechaInicio, false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosDAOModulo10.AliasFechaFin, SqlDbType.Date, fechaInicio, false);
+            parametros.Add(parametro);
+
+            try
+            {
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo10.ProcedimientoConsultarEventosPorFechas, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad evento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Id = int.Parse(row[RecursosDAOModulo10.aliasIdEvento].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Nombre = row[RecursosDAOModulo10.aliasNombreEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Descripcion = row[RecursosDAOModulo10.AliasDescripcionEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Estado = Boolean.Parse(row[RecursosDAOModulo10.AliasEstadoEvento].ToString());
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo10.AliasFechaInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaFin = DateTime.Parse(row[RecursosDAOModulo10.AliasFechaFin].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraInicio = int.Parse(row[RecursosDAOModulo10.AliasHoraInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraFin = int.Parse(row[RecursosDAOModulo10.AliasHoraFin].ToString());
+                    Entidad tipoEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerTipoEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.TipoEvento)tipoEvento).Nombre = row[RecursosDAOModulo10.aliasTipoEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Horario = horario as DominioSKD.Entidades.Modulo10.Horario;
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).TipoEvento = tipoEvento as DominioSKD.Entidades.Modulo10.TipoEvento;
+                    listaEventos.Add(evento);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaEventos;
+
+        }
         #endregion
 
         #region IDAO
@@ -1042,5 +1147,6 @@ namespace DatosSKD.DAO.Modulo10
         }
         #endregion
 
+        
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
 using DatosSKD.Modulo6;
 
 namespace LogicaNegociosSKD.Modulo6
