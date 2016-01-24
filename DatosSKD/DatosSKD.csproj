@@ -171,11 +171,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo16\RecursosBDModulo16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo1\BDLogin.cs" />
     <Compile Include="Modulo1\BDRestablecer.cs" />
     <Compile Include="DAO\Modulo1\RecursosBDModulo1.Designer.cs">
@@ -309,10 +304,6 @@
     <EmbeddedResource Include="Modulo15\RecursosBDModulo15.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo15.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo16\RecursosBDModulo16.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo1\RecursosBDModulo1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
