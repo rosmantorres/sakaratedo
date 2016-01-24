@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -22,14 +23,15 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         }
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            SolicitudP solicitud = (SolicitudP)fabricaEntidad.ObtenerSolicitudP(); 
+            IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();
+            DominioSKD.Entidades.Modulo14.SolicitudP solicitud =
+                (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP(); 
             try
             {
                 solicitud.ID = idSolicitud;
-                solicitud = (SolicitudP)BaseDeDatoSolicitud.ConsultarXId(solicitud);
+                solicitud =
+                    (DominioSKD.Entidades.Modulo14.SolicitudP
+                    )BaseDeDatoSolicitud.ConsultarXId(solicitud);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

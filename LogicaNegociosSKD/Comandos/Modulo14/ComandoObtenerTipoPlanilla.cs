@@ -1,4 +1,5 @@
 ﻿using DatosSKD.Fabrica;
+using DatosSKD.InterfazDAO.Modulo14;
 using DominioSKD;
 using ExcepcionesSKD;
 using System;
@@ -14,12 +15,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
     {
       public override List<Entidad> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             List<Entidad> listaTipoPlanilla = new List<Entidad>();
             try
             {
-                
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 listaTipoPlanilla = BaseDeDatoPlanilla.ObtenerTipoPlanilla();
 
             }

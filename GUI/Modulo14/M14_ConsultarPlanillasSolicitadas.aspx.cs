@@ -5,24 +5,67 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD.Modulo14;
+using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo14;
+using Interfaz_Presentadores.Modulo14;
 using DominioSKD;
 using templateApp.GUI.Master;
-using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo14
 {
-    public partial class M14_ConsultarPlanillasSolicitadas : System.Web.UI.Page
+    public partial class M14_ConsultarPlanillasSolicitadas : System.Web.UI.Page, IContratoM14ConsultarPlanillasSolicitadas
     {
         private LogicaSolicitud logica = new LogicaSolicitud();
-        List<DominioSKD.SolicitudPlanilla> lista;
+        private PresentadorM14ConsultarPlanillasSolicitadas presentador;
 
+        #region Contratos
+        public string alertaClase
+        {
+            set
+            {
+                this.alerta.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alerta.Attributes["role"] = value;
+            }
+        }
+        public string alert
+        {
+            set
+            {
+                this.alerta.InnerHtml = value;
+            }
+        }
+        public string tablaplanillas
+        {
+            get
+            {
+                return this.tabla.Text;
+            }
+            set
+            {
+                this.tabla.Text = value;
+            }
+        }
+
+        #endregion
+
+        public M14_ConsultarPlanillasSolicitadas()
+        {
+            presentador = new PresentadorM14ConsultarPlanillasSolicitadas(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "14.1";
             try
             {
-                List<DominioSKD.SolicitudPlanilla> listaSolicitud = LlenarTabla();
-                LlenarInformacion(listaSolicitud);
+                List<Entidad> listaSolicitud = 
+                    presentador.LlenarTabla(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+                presentador.LlenarInformacion(listaSolicitud);
                 string exito = Request.QueryString[RecursoInterfazModulo14.QueryIdSolici];
                 string exito1 = Request.QueryString[RecursoInterfazModulo14.QueryIdEliminar];
                 if (exito != null)
@@ -32,43 +75,37 @@ namespace templateApp.GUI.Modulo14
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (NullReferenceException ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
             catch (Exception ex)
             {
-                Alerta(ex.Message);
+                presentador.Alerta(ex.Message);
             }
 
         }
 
-        public void Alerta(string msj)
-        {
-            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-            alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
 
-        public void LlenarInformacion(List<DominioSKD.SolicitudPlanilla> lista)
+        /*public void LlenarInformacion(List<DominioSKD.SolicitudPlanilla> lista)
         {
             try
             {
@@ -103,6 +140,7 @@ namespace templateApp.GUI.Modulo14
         }
         public List<DominioSKD.SolicitudPlanilla> LlenarTabla()
         {
+            
             try
             {
                 return logica.ListarPlanillasSolicitadas(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
@@ -137,7 +175,7 @@ namespace templateApp.GUI.Modulo14
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
-        }
+        }*/
 
         public void LlamarVentana_Click()
         {
@@ -154,55 +192,11 @@ namespace templateApp.GUI.Modulo14
 
         public void EliminarFilaTable()
         {
-            try
-            {
-                Boolean succecs = logica.EliminarSolicitud(Convert.ToInt32(Request.QueryString[RecursoInterfazModulo14.QueryIdEliminar]));
-                if (succecs)
-                {
-                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                    alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MSJEliminacionSolicitud + "</div>";
-                }
-                else
-                {
-                    alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-                    alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + RecursoInterfazModulo14.MsjErrorEliminacionSolicitud + "</div>";
-                }
+            presentador.EliminarFilaTable(Request, Convert.ToInt32(Request.QueryString[RecursoInterfazModulo14.QueryIdEliminar]));
                 this.tabla.Text = null;
-                List<DominioSKD.SolicitudPlanilla> listaSolicitud = LlenarTabla();
-                LlenarInformacion(listaSolicitud);
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
+                List<Entidad> listaSolicitud = presentador.LlenarTabla(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+                presentador.LlenarInformacion(listaSolicitud);
+             
         }
     }
 }

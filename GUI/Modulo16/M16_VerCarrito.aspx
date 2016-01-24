@@ -32,255 +32,100 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"  >&times;</button>
             El Pago se ha registrado Exitosamente.
         </div>
-<!--MODAL PARA EL DETALLE-->
+<!--TABLAS-->
      <!-- general form elements -->
-    <form role="form" class="form-horizontal" method="POST">
+     <form id="form1" runat="server">
               
-              <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Subtotal 23.300 Bs.</h3>
-                </div><!-- /.box-header -->
-        <table id="example" class="table table-bordered table-striped dataTable">
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio (Bs.)</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
- 
-        <tfoot>
-            <tr>
-                <th>Foto</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio (Bs.)</th>
-                <th>Acciones</th>
-            </tr>
-        </tfoot>
-<!--INFORMACION DEL MODAL PARA EL DETALLE-->
-        <tbody>
-           
-            <tr>
-                <td><img src="Imagenes/GuanteRojo.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Guantes rojos</td>
-                <td>
-                     
-                                 <div class="dropdown" runat="server" id="div3">
-                                     </div>
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList3" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
+              <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Inventario</h3>
+        </div><!-- /.box-header -->
 
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                    </td>
-                                 <%-- <asp:DropDownList ID="DropDownList3"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
+    <div class="box-body table-responsive">
+       <asp:Table ID="TablaImplemento" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
+       </div>
+    </div>
+</div>       
 
-                 
-                
-                <td>5000</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/Karategi.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Karategi</td>
-                <td>
-                     
-                                 <div class="dropdown" runat="server" id="div4">
-                                 <%-- <asp:DropDownList ID="DropDownList4"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                 </div> 
-                                  <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList4" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-
-                </td>
-                <td>14000</td>
-                 <td>
-                     <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                     <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/Suspensorio.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Suspensorio</td>
-                <td>
-                    
-                                 <div class="dropdown" runat="server" id="div5">
-                                     </div>
-                    <%-- 
-                                 <asp:DropDownList ID="DropDownList5"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                    
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                     <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList5" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                  
-                        
-
-                </td>
-                <td>350</td>
-                <td> 
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-             <tr>
-                <td><img src="Imagenes/ProtectorBucal.jpg" alt="" style="width:50px; height:auto;"></td>
-                <td>Proteccion bucal</td>
-                <td>
-                     <div class="dropdown" runat="server" id="div6">
-                         </div>
-                                <%--  
-                                    <asp:DropDownList ID="DropDownList6"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                     
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                       <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList6" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-                                 
-                </td>
-                <td>3200</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"></a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Imagenes/CintaBlanca.jpg" alt="" style="width:50px; height:auto;"></td>
-                
-                <td>Cinta Blanca</td>
-                <td>
-                     <div class="dropdown" runat="server" id="div7">
-                         </div>
-                              <%--    <asp:DropDownList ID="DropDownList7"   class="btn btn-default dropdown-toggle"  runat="server" >
-                                    
-                                     <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                     <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                     <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                     <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                     <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                 </asp:DropDownList>--%>
-                                  <div class="col-sm-8 col-md-8 col-lg-8" >
-                                <div class="btn-group">
-            
-                                <select id="DropDownList7" runat="server" class="combobox" style="width:80px; height:35px" onchange="funcionCantidadObjetos(this.id);" >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                  <option value="5">5</option>
-
-                                  </select>
-                
-                                         </div>
-                                      </div>
-
-                </td>
-                <td>400</td>
-                <td>
-                    <a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info1" href="#"> </a>
-                    <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
-
-         <div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminar Producto</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
                 <div class="row">
-                    <p>Seguro que desea eliminar el Producto:</p>
-                    <p id="req"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-                    <a id="btn-eliminar" type="button" class="btn btn-primary" href="#">Eliminar</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-           </div>
-          </div><!-- /.modal-delete-content -->
-        </div><!-- /.modal-delete-dialog -->
-      </div><!-- /.modal-delete -->
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Evento</h3>
+        </div><!-- /.box-header -->
 
-    		<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+    <div class="box-body table-responsive">
+       <asp:Table ID="TablaEvento" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
+       </div>
+    </div>
+</div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+        <div class="box-header">
+                      <h3 class="box-title">Matricula</h3>
+        </div><!-- /.box-header -->
+
+        <div class="box-body table-responsive">
+       <asp:Table ID="TablaMatricula" runat="server" CssClass="table table-bordered table-striped dataTable">
+           <asp:TableHeaderRow>
+               <asp:TableHeaderCell>
+                   Producto
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Precio
+               </asp:TableHeaderCell>
+               <asp:TableHeaderCell>
+                   Cantidad
+               </asp:TableHeaderCell>               
+               <asp:TableHeaderCell>
+                   Acciones
+               </asp:TableHeaderCell>
+           </asp:TableHeaderRow>           
+         </asp:Table>
+        </div>
+       </div>
+    </div>
+</div>
+
+   <!-- M  O  D  A  L  E  S-->
+       <!--MODAL PARA EL DETALLE IMPLEMENTO-->
+    	<div id="modal-info1" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -289,41 +134,64 @@
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid" id="info1">
-							<div class="row">
-                                <img src="Imagenes/GuanteRojo.jpg" alt="">
-								<h3>Nombre</h3>
-								<p>
-									Guantes Rojos
-								</p>
-								<h3>Cantidad disponible</h3>
-								<p>
-									7
-								</p>
-								<h3>Detalles</h3>
-								<p>
-									Guantes de color rojos diseñados para proteger las manos al momento de impactar
-                                    golpes contra el contrincante o cuando se está practicando, con un diseño
-                                    particular de color rojo a gusto del atleta.
-								</p>
-								
+							<div class="row" id="" >
+                                <asp:Literal runat="server" ID="detalleProductoLiteral" ></asp:Literal>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-    </div>
+		</div>   
 
+        <!--MODAL PARA EL DETALLE EVENTO-->
+    	<div id="modal-info2" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada del Evento</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info2">
+							<div class="row" id="" >
+                                <asp:Literal runat="server" ID="detalleEventoLiteral" ></asp:Literal>
 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
 
-<!--MODAL DE PAGO-->
+         <!--MODAL PARA EL DETALLE DE MATRICULA-->
+         <div id="modal-info3" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" >
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h2 class="modal-title">Información detallada de la Mensualidad</h2>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="info3">
+							<div class="row" id="" >
+                                <asp:Literal runat="server" ID="detalleMensualidadLiteral" ></asp:Literal>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+    <!--BOTON DE PAGAR-->
     <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
          <button id="btn-agregarComp" style="align-content:flex-end" class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-info"">Pagar</button>
-          &nbsp;&nbsp
-         
+          &nbsp;&nbsp        
     </div>
 
+   <!--MODAL DE PAGO-->
    <div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -332,10 +200,8 @@
 						<h4 class="modal-title">Registrar Pago</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid" id="info">
-
-
-                            <!--INFORMACION DEL MODAL PARA EL PAGO-->
+						<div class="container-fluid" id="info">                            
+  <!--INFORMACION DEL MODAL PARA EL PAGO-->
     <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
           <div id="alert_nombre" runat="server">
          </div>
@@ -355,40 +221,45 @@
         <div id="alertlocal" runat="server">
         </div>
 
-
-        <h4 class="modal-title">Total: 26.096 Bs</h4>
-
-    
-         <div class="form-group">
-        <!-- El form iba aqui -->
-        
-              
+        <%-- <h4 class="modal-title" id ="preciofinal"></h4> --%>
         <br />
-        
-            <div class="col-sm-10 col-md-10 col-lg-10">
+        <div class="form-group">
+            <!-- El form iba aqui -->             
+             <div class="col-sm-10 col-md-10 col-lg-10">
                  <div class="dropdown" runat="server" id="div1">
                      </div>
-             <%--     <asp:DropDownList ID="DropDownList1"   class="btn btn-default dropdown-toggle"   onchange="example()"  runat="server" >
-                     <asp:ListItem Enabled="true" Text="Seleccione" Value="-1"></asp:ListItem>
-                     <asp:ListItem Text="Tarjeta" Value="1"></asp:ListItem>
-                     <asp:ListItem Text="Deposito" Value="2"></asp:ListItem>
-                     <asp:ListItem Text="Transferencia" Value="3"></asp:ListItem>
-               </asp:DropDownList>
-              --%>
-                 <div class="btn-group">
             
+                 <div class="btn-group">
+                     
+                            <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
+                            <h3>Seleccione tipo de pago</h3>
                                 <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
                                 <option value="3">Transferencia</option>
-                                
-                                  </select>
+                                </select>
+                     
                 
-                                         </div>
+                  </div>
+                 <br />
             </div>
         </div>
-        <h4 class="modal-title">Tarjeta Credito/Debito</h4>
+        <br />
+        <h4 class="modal-title">Información del pago:</h4>
+        <div class="form-group">
+	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="DatoPago" type="text" placeholder="Ingrese el dato de su tipo de pago" class="form-control" name="Text1" runat="server"/>
+		    </div>
+            </div>
+            <br />
+        <h4 class="modal-title">Monto a debitar:</h4>
+        <div class="form-group">
+	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
+		        <input id="Monto" type="text" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
+		    </div>
+	    </div>
+     <%--  <h4 class="modal-title">Tarjeta Credito/Debito</h4>
         <div class="form-group">
 	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
 		        <input id="Text1" Disabled="disabled" type="text" placeholder="Numero de la Tarjeta" class="form-control" name="Text1" runat="server"/>
@@ -447,172 +318,36 @@
 			<div id="div_respuess" class="col-sm-5 col-md-5 col-lg-5">
 				<input id="Text10" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text10"  runat="server"/>
 			</div>
-		</div>
-
+		</div>--%>
          <div class="form-group">
 		    <div class="box-footer">
-				<button id="Boton1" style="align-content:flex-end" runat="server" Disabled="disabled" class="btn btn-primary" type="button" onclick="$('#modal-info').modal('hide'); $('#prueba1').show(); $('#example').DataTable().clear().draw(); " >Registrar Pago</button>
+                <br />			
+                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
-
-
-    </form>
         </div>
-
-
-<!--VALIDACION PARA EL MODAL DE PAGO-->
-    <script src="js/Validacion.js"></script>
-    <script>
-
-        function example() {
-            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
-
-                $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
-                $('#<%=Text1.ClientID %>').val('');
-                $('#<%=Text2.ClientID %>').val('');
-                $('#<%=Text3.ClientID %>').val('');
-                $('#<%=Text4.ClientID %>').val('');
-                $('#<%=Text5.ClientID %>').val('');
-                $('#<%=Text6.ClientID %>').val('');
-                $('#<%=Text7.ClientID %>').val('');
-                $('#<%=Text8.ClientID %>').val('');
-                $('#<%=Text9.ClientID %>').val('');
-                $('#<%=Text10.ClientID %>').val('');
-            }
-            else
-                if ($('#<%=DropDownList1.ClientID %>').val() == 1) {
-                    $('#<%=Text1.ClientID %>').attr("disabled", false);
-                    $('#<%=Text2.ClientID %>').attr("disabled", false);
-                    $('#<%=Text3.ClientID %>').attr("disabled", false);
-                    $('#<%=Text4.ClientID %>').attr("disabled", false);
-
-                    //Deshabilitamos los campos y limpiamos
-                    $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
-                    $('#<%=Text5.ClientID %>').val('');
-                    $('#<%=Text6.ClientID %>').val('');
-                    $('#<%=Text7.ClientID %>').val('');
-                    $('#<%=Text8.ClientID %>').val('');
-                    $('#<%=Text9.ClientID %>').val('');
-                    $('#<%=Text10.ClientID %>').val('');
-
-                    $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                }
-
-                else
-                    if ($('#<%=DropDownList1.ClientID %>').val() == 2) {
-
-                        //Deshabilitamos los campos y limpiamos
-                        $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text1.ClientID %>').val('');
-                        $('#<%=Text2.ClientID %>').val('');
-                        $('#<%=Text3.ClientID %>').val('');
-                        $('#<%=Text4.ClientID %>').val('');
-
-                        $('#<%=Text5.ClientID %>').attr("disabled", false);
-                        $('#<%=Text6.ClientID %>').attr("disabled", false);
-                        $('#<%=Text7.ClientID %>').attr("disabled", false);
-
-                        //Deshabilitamos los campos y limpiamos
-                        $('#<%=Text8.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text9.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text10.ClientID %>').attr("disabled", "disabled");
-                        $('#<%=Text8.ClientID %>').val('');
-                        $('#<%=Text9.ClientID %>').val('');
-                        $('#<%=Text10.ClientID %>').val('');
-
-                        $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                    }
-                    else
-                        if ($('#<%=DropDownList1.ClientID %>').val() == 3) {
-
-                            //Deshabilitamos los campos y limpiamos
-                            $('#<%=Text1.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text2.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text3.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text4.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text5.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text6.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text7.ClientID %>').attr("disabled", "disabled");
-                            $('#<%=Text1.ClientID %>').val('');
-                            $('#<%=Text2.ClientID %>').val('');
-                            $('#<%=Text3.ClientID %>').val('');
-                            $('#<%=Text4.ClientID %>').val('');
-                            $('#<%=Text5.ClientID %>').val('');
-                            $('#<%=Text6.ClientID %>').val('');
-                            $('#<%=Text7.ClientID %>').val('');
-
-                            $('#<%=Text8.ClientID %>').attr("disabled", false);
-                            $('#<%=Text9.ClientID %>').attr("disabled", false);
-                            $('#<%=Text10.ClientID %>').attr("disabled", false);
-                            $('#<%=Boton1.ClientID %>').attr("disabled", false);
-                        }
-        }
-
-    </script>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+       </div>
 
+     </form>      
 
+<!--VALIDACION PARA EL MODAL DE PAGO-->
     <script type="text/javascript">
-        $(document).ready(function () {
+        debugger;
 
-            var table = $('#example').DataTable({
-                "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }
-            });
-            var req;
-            var tr;
+        //Funcion que activa el boton si el valor seleccionado es diferente de -1, sino, lo desactiva
+        function example() {
+            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
 
-                $('#example tbody').on('click', 'a', function () {
-                    if ($(this).parent().hasClass('selected')) {
-                        req = $(this).parent().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        $(this).parent().removeClass('selected');
-                    }
-                    else {
-                        req = $(this).parent().prev().prev().prev().text();
-                        tr = $(this).parents('tr');//se guarda la fila seleccionada
-                        table.$('tr.selected').removeClass('selected');
-                        $(this).parent().addClass('selected');
-                    }
-                });
+                $('#<%=BotonPagar.ClientID %>').attr("disabled", true);
+            }
+            else
+                $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
+        }
 
-                $('#modal-delete').on('show.bs.modal', function (event) {
-                    var modal = $(this)
-                    modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
-                    modal.find('#req').text(req)
-                })
-                $('#btn-eliminar').on('click', function () {
-                    table.row(tr).remove().draw();//se elimina la fila de la tabla
-                    $('#modal-delete').modal('hide');//se esconde el modal
-                    $('#prueba').show();//Muestra el mensaje de borrado exitosamente
-                });
-
-
-           });
-
-        </script>
-
+    </script>
 </asp:Content>

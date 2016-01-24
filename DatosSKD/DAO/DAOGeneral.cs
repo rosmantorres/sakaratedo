@@ -33,10 +33,10 @@ namespace DatosSKD
             try
             {
                 strConexion = ConfigurationManager.ConnectionStrings[RecursoGeneralDAO.NombreBD].ConnectionString;
-                if (conexion == null)
-                {
+                //if (conexion == null)
+                //{
                     conexion = new SqlConnection(strConexion);
-                }
+                //}
 
             }
 
@@ -68,6 +68,7 @@ namespace DatosSKD
             try
             {
                 this.conexion.Close();
+                conexion = null;
             }
 
             catch (Exception ex)
@@ -328,9 +329,5 @@ namespace DatosSKD
             this.conexion = null;
         }
         #endregion
-
-
-
-
     }
 }

@@ -33,9 +33,9 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Diseño diseño = (Diseño)fabricaEntidad.obtenerDiseño();
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Diseño diseño;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
 
             if (planilla != null)
             {
@@ -44,29 +44,41 @@ namespace DatosSKD.DAO.Modulo14
 
                     SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureConsultarDiseño, conect);
                     sqlcom.CommandType = CommandType.StoredProcedure;
-                    sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroDiseñoPlanilla, planilla.Id));
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroDiseñoPlanilla, planilla.ID));
 
                     SqlDataReader leer;
                     conect.Open();
-
+                    List<DominioSKD.Entidades.Modulo14.Diseño> lista = new List<DominioSKD.Entidades.Modulo14.Diseño>();
                     leer = sqlcom.ExecuteReader();
                     if (leer != null)
                     {
-                        while (leer.Read())
-                        {
-                            diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
-                            diseño.Contenido = leer[RecursosDAOModulo14.AtributocontenidoDiseño].ToString();
-                            diseño.Base64Decode();
-                            return diseño;
-                        }
-
-                        return null;
+                      //  if (leer.Read())
+                      //  {
+                            while (leer.Read())
+                            {
+                                diseño =
+                       (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño();
+                                diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
+                                diseño.Contenido = leer[RecursosDAOModulo14.AtributocontenidoDiseño].ToString();
+                                diseño.Base64Decode();
+                                lista.Add(diseño);
+                                diseño = null;
+                            }
+                            int items = lista.Count;
+                            return lista[items - 1];
+                      //  }
+                      //  else
+                      //      return null;
                     }
                     else
                     {
 
                         return null;
                     }
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    return null;
                 }
                 catch (SqlException ex)
                 {
@@ -139,7 +151,8 @@ namespace DatosSKD.DAO.Modulo14
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
-            Diseño diseño = (Diseño)elDiseño;
+            DominioSKD.Entidades.Modulo14.Diseño diseño = 
+                (DominioSKD.Entidades.Modulo14.Diseño)elDiseño;
 
             if (diseño != null)
             {
@@ -235,6 +248,109 @@ namespace DatosSKD.DAO.Modulo14
         #endregion
 
         #region IdaoDiseño
+        public Entidad ConsultarDisenoID(Entidad laPlanilla)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            DominioSKD.Entidades.Modulo14.Diseño diseño;
+            DominioSKD.Entidades.Modulo14.SolicitudPlanilla planilla =
+                (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)laPlanilla;
+
+            if (planilla != null)
+            {
+                try
+                {
+
+                    SqlCommand sqlcom = new SqlCommand("M14_ConsultarDiseñoID", conect);
+                    sqlcom.CommandType = CommandType.StoredProcedure;
+                    sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroDiseñoPlanilla, planilla.Diseno.ID));
+
+                    SqlDataReader leer;
+                    conect.Open();
+                    List<DominioSKD.Entidades.Modulo14.Diseño> lista = new List<DominioSKD.Entidades.Modulo14.Diseño>();
+                    leer = sqlcom.ExecuteReader();
+                    if (leer != null)
+                    {
+                        while (leer.Read())
+                        {
+                            diseño =
+                   (DominioSKD.Entidades.Modulo14.Diseño)FabricaEntidades.obtenerDiseño();
+                            diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
+                            diseño.Contenido = leer[RecursosDAOModulo14.AtributocontenidoDiseño].ToString();
+                            diseño.Base64Decode();
+                            lista.Add(diseño);
+                            diseño = null;
+                        }
+                        int items = lista.Count;
+                        return lista[items - 1];
+                    }
+                    else
+                    {
+
+                        return null;
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (IOException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosDAOModulo14.CodigoIoException,
+                        RecursosDAOModulo14.MsjExceptionIO, ex);
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (NullReferenceException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                        RecursosDAOModulo14.MsjNullException, ex);
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (ObjectDisposedException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosDAOModulo14.CodigoDisposedObject,
+                        RecursosDAOModulo14.MensajeDisposedException, ex);
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, ex);
+
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosDAOModulo14.CodigoFormatExceptio,
+                        RecursosDAOModulo14.MsjFormatException, ex);
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                catch (Exception ex)
+                {
+                    BDDiseñoException excep = new BDDiseñoException(RecursosDAOModulo14.CodigoException,
+                        RecursosDAOModulo14.MsjException, ex);
+                    Logger.EscribirError(RecursosDAOModulo14.ClaseBDDis, excep);
+                    throw excep;
+                }
+                finally
+                {
+                    Desconectar(conect);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         /// <summary>
         /// Método que guarda un diseño en la bd
         /// </summary>
@@ -247,8 +363,10 @@ namespace DatosSKD.DAO.Modulo14
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
             SqlConnection conect = Conectar();
-            Diseño diseño = (Diseño)elDiseño;
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Diseño diseño =
+                (DominioSKD.Entidades.Modulo14.Diseño)elDiseño;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
             try
             {
                 if (diseño != null && planilla != null)

@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -22,11 +23,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 
         public override Boolean Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                ((Diseño)Diseño).Base64Encode();
-                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
+                IDaoDiseno dao = FabricaDAOSqlServer.ObtenerDAODiseno();
                 return dao.Modificar(this.diseño);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

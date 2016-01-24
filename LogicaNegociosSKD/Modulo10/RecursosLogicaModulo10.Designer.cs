@@ -59,5 +59,14 @@ namespace LogicaNegociosSKD.Modulo10 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccionar Evento:.
+        /// </summary>
+        internal static string NombreEvento0 {
+            get {
+                return ResourceManager.GetString("NombreEvento0", resourceCulture);
+            }
+        }
     }
 }

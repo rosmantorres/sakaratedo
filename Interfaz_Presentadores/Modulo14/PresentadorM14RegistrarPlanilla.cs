@@ -27,8 +27,7 @@ namespace Interfaz_Presentadores.Modulo14
 
         public void LlenarComboTipoPlanilla()
         {
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboTipoPlanilla = fabricaCo.ObtenerComandoObtenerTipoPlanilla();
+            Comando<List<Entidad>> comboTipoPlanilla = FabricaComandos.ObtenerComandoObtenerTipoPlanilla();
             //LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
             List<Entidad> listPlanilla = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
@@ -36,7 +35,7 @@ namespace Interfaz_Presentadores.Modulo14
             try
             {
                 listPlanilla = comboTipoPlanilla.Ejecutar();
-                foreach (Planilla item in listPlanilla)
+                foreach (DominioSKD.Entidades.Modulo14.Planilla item in listPlanilla)
                 {
                     options.Add(item.IDtipoPlanilla.ToString(), item.TipoPlanilla);
                 }
@@ -85,11 +84,9 @@ namespace Interfaz_Presentadores.Modulo14
             List<String> listDatos = new List<String>();
             ListItemCollection listItem = vista.datosPlanilla2.Items;
             String TipoPlanilla = "";
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
-            Comando<bool> comandoRegistrarPlanillaTipo = fabricaComandos.ObtenerComandoRegistrarPlanillaTipo();
-            Comando<bool> comandoRegistrarPlanilla = fabricaComandos.ObtenerComandoRegistrarPlanilla();
+            Comando<Boolean> comandoTipoPlanilla = FabricaComandos.ObtenerComandoNuevoTipoPlanilla();
+            Comando<bool> comandoRegistrarPlanillaTipo = FabricaComandos.ObtenerComandoRegistrarPlanillaTipo();
+            Comando<bool> comandoRegistrarPlanilla = FabricaComandos.ObtenerComandoRegistrarPlanilla();
             bool respuesta = false;
             //LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
             try
@@ -103,7 +100,7 @@ namespace Interfaz_Presentadores.Modulo14
                /* laPlanilla = new Planilla(this.id_nombrePlanilla.Value, true,
                                                    this.comboTipoPlanilla.SelectedIndex,
                                                    listDatos);*/
-                Entidad laPlanilla = fabricaEntidades.ObtenerPlanilla(vista.planillaNombre,true,
+                Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla(vista.planillaNombre, true,
                                                                       vista.tipoPlanillaCombo.SelectedIndex,
                                                                       listDatos);
                 if (vista.tipoPlanillaCombo.SelectedValue != "-1")
@@ -126,6 +123,7 @@ namespace Interfaz_Presentadores.Modulo14
                                     ((ComandoRegistrarPlanillaTipo)comandoRegistrarPlanillaTipo).NombreTipo = TipoPlanilla;
                                     respuesta = comandoRegistrarPlanillaTipo.Ejecutar();
                                   //  Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
+                     //               respuesta = true;
                                 }
                                 else
                                 {
@@ -133,6 +131,7 @@ namespace Interfaz_Presentadores.Modulo14
                                     vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                                     vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_NombreTipoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
                                     vista.alerta= true;
+                                    respuesta = false;
                                 }
                             }
                             else
@@ -149,6 +148,7 @@ namespace Interfaz_Presentadores.Modulo14
                             vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                             vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_DatoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                             vista.alerta = true;
+                            respuesta = false;
                         }
                     }
                     else
@@ -157,6 +157,7 @@ namespace Interfaz_Presentadores.Modulo14
                         vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                         vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_PlanillaVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                         vista.alerta = true;
+                        respuesta = false;
                     }
                 }
                 else
@@ -165,6 +166,7 @@ namespace Interfaz_Presentadores.Modulo14
                     vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
                     vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_TipoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
                     vista.alerta = true;
+                    respuesta = false;
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -279,6 +281,43 @@ namespace Interfaz_Presentadores.Modulo14
                 {
                     vista.datosPlanilla1.Items.Add("EVENTO");
                 }
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
+            }
+        }
+
+        public void PageLoadRegistrarPlanilla()
+        {
+            try
+            {
+                vista.id_otroTipo = false;
+                LlenarComboTipoPlanilla();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

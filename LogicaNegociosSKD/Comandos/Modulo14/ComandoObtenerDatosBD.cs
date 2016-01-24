@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
@@ -14,11 +15,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
         public override List<String> Ejecutar()
         {
             List<String> listaDatos = new List<String>();
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
 
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 listaDatos = BaseDeDatoPlanilla.ObtenerDatosBD();
                
             }

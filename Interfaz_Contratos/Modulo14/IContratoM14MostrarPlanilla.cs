@@ -9,7 +9,10 @@ namespace Interfaz_Contratos.Modulo14
 {
     public interface IContratoM14MostrarPlanilla
     {
-        String NombrePanilla { set; }
-        String informacion { get; set; }
+        Label NombrePanilla { set; }
+        Label informacion { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alert { set; }
     }
 }
