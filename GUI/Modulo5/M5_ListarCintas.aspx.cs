@@ -26,17 +26,13 @@ namespace templateApp.GUI.Modulo5
         {
             ((SKD)Page.Master).IdModulo = "5";
 
-            
+            this.presentador = new PresentadorLlenarCintas(this);
             if (!IsPostBack)
-            {
-
-                this.presentador = new PresentadorLlenarCintas(this);
+            {                
                 this.presentador.LlenarInformacion();
             }
            
-        }
-
-      
+        } 
 
        #region IContratos
         public void llenarId(string id)
@@ -91,7 +87,22 @@ namespace templateApp.GUI.Modulo5
             this.tabla.Text += RecursoInterfazMod5.CerrarTD;
             this.tabla.Text += RecursoInterfazMod5.CerrarTR;
         }
+        public int obtenerIdCinta()
+        {
+            return Int32.Parse(this.cintaIdStatus.Value);
+        }
+        public int obtenerStatusCinta()
+        {
+            return Int32.Parse(this.estatusActual.Value);
+        }
         #endregion
+
+
+        protected void cambiarStatus(object sender, EventArgs e)
+        {
+            this.presentador.cambiarStatus();
+
+        }
 
 
     }

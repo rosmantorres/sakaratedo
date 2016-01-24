@@ -61,23 +61,23 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 3
-		public EjecutarAgregarOrganizacion ObtenerEjecutarAgregarOrganizacion(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarAgregarOrganizacion(Entidad nuevaEntidad)
         {
             return new EjecutarAgregarOrganizacion(nuevaEntidad);
         }
-        public EjecutarModificarOrganizacion ObtenerEjecutarModificarOrganizacion(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarModificarOrganizacion(Entidad nuevaEntidad)
         {
             return new EjecutarModificarOrganizacion(nuevaEntidad);
         }
-        public EjecutarConsultarXIdOrganizacion ObtenerEjecutarConsultarXIdOrganizacion(Entidad nuevaEntidad)
+        public static Comando<Entidad> ObtenerEjecutarConsultarXIdOrganizacion(Entidad nuevaEntidad)
         {
             return new EjecutarConsultarXIdOrganizacion(nuevaEntidad);
         }
-        public EjecutarConsultarTodosOrganizacion ObtenerEjecutarConsultarTodosOrganizacion()
+        public static Comando<List<Entidad>> ObtenerEjecutarConsultarTodosOrganizacion()
         {
             return new EjecutarConsultarTodosOrganizacion();
         }
-        public EjecutarComboOrganizaciones ObtenerEjecutarComboOrganizaciones()
+        public static Comando<List<Entidad>> ObtenerEjecutarComboOrganizaciones()
         {
             return new EjecutarComboOrganizaciones();
         }
@@ -87,19 +87,19 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		 public EjecutarAgregarCinta ObtenerEjecutarAgregarCinta(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarAgregarCinta(Entidad nuevaEntidad)
         {
             return new EjecutarAgregarCinta(nuevaEntidad);
         }
-        public EjecutarModificarCinta ObtenerEjecutarModificarCinta(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarModificarCinta(Entidad nuevaEntidad)
         {
             return new EjecutarModificarCinta(nuevaEntidad);
         }
-        public EjecutarConsultarXIdCinta ObtenerEjecutarConsultarXIdCinta(Entidad nuevaEntidad)
+        public static Comando<Entidad> ObtenerEjecutarConsultarXIdCinta(Entidad nuevaEntidad)
         {
             return new EjecutarConsultarXIdCinta(nuevaEntidad);
         }
-        public EjecutarConsultarTodosCinta ObtenerEjecutarConsultarTodosCinta()
+        public static Comando<List<Entidad>> ObtenerEjecutarConsultarTodosCinta()
         {
             return new EjecutarConsultarTodosCinta();
         }

@@ -95,9 +95,11 @@
     <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="Modulo3\EstiloInexistenteException.cs" />
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo3\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo5\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />
     <Compile Include="Modulo5\OrganizacionInexistenteException.cs" />
     <Compile Include="Modulo7\ListaNulaException.cs" />

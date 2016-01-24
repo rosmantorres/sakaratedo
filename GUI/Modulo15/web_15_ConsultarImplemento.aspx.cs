@@ -38,79 +38,94 @@ namespace templateApp.GUI.Modulo15
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "15";
-           
-            // usuario y roles***********
-            String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
-            String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
-          
-            //***************************
-            Entidad usuarioLogear = FabricaEntidades.ObtenerUsuario();
-            ((Usuario)usuarioLogear)._Nombre = usuario;
-            int dojoUsuario = presentador.usuarioDojo(usuarioLogear);
-            Entidad dojo = FabricaEntidades.tenerDojo();
-            ((Dojo)dojo).Dojo_Id = dojoUsuario;
-            dojo= presentador.obtenerDojoXId(dojo);
-            this.nombre_dojo.InnerText = ((Dojo)dojo).Nombre_dojo;
-            
-            string consultar = Request.QueryString["consultar"];
-            string eliminar="";
-            List<Entidad> listaImplementos=null;
-             if (consultar == "Inactivo")
+            String usuario=null;
+            String rol ;
+            try
             {
-                listaImplementos = presentador.cargarListaImplementos2(dojo);
+                // usuario y roles***********
+                 rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+
+                //***************************
+
+                //      btnEliminar.Click += new EventHandler(this.eliminarImplemento);     
             }
-             else {
-                 if (consultar == "eliminar") {
-                     eliminar = Request.QueryString["idImplemento"];
-                     presentador.eliminarImplemento(eliminar,((Dojo)dojo).Dojo_Id); 
-                 } 
-                listaImplementos = presentador.cargarListaImplementos(dojo);
-            
-            }
-            foreach (Entidad valorActual in listaImplementos)
+            catch (Exception ex)
             {
-                this.tabla.Text+="<tr>";
-                this.tabla.Text+="<td>" + ((Implemento)valorActual).Id_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Nombre_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Tipo_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Marca_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Color_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Talla_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Cantida_implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Stock_Minimo_Implemento + "</td>";
-                if (((Implemento)valorActual).Stock_Minimo_Implemento > ((Implemento)valorActual).Cantida_implemento)
+                Response.Redirect("~/GUI/Modulo1/Index.aspx");
+
+
+            }
+              
+
+
+                Entidad usuarioLogear = FabricaEntidades.ObtenerUsuario();
+                ((Usuario)usuarioLogear)._Nombre = usuario;
+                int dojoUsuario = presentador.usuarioDojo(usuarioLogear);
+                Entidad dojo = FabricaEntidades.tenerDojo();
+                ((Dojo)dojo).Dojo_Id = dojoUsuario;
+                dojo = presentador.obtenerDojoXId(dojo);
+                this.nombre_dojo.InnerText = ((Dojo)dojo).Nombre_dojo;
+
+                string consultar = Request.QueryString["consultar"];
+                string eliminar = "";
+                List<Entidad> listaImplementos = null;
+                if (consultar == "Inactivo")
                 {
-                    this.tabla.Text+="<td><div class='panel panel-default caja'><div class='panel-body alert-error'></div></td>";
+                    listaImplementos = presentador.cargarListaImplementos2(dojo);
                 }
                 else
                 {
-                    if (((Implemento)valorActual).Stock_Minimo_Implemento == ((Implemento)valorActual).Cantida_implemento)
+                    if (consultar == "eliminar")
                     {
-                        this.tabla.Text+="<td><div class='panel panel-default caja'><div class='panel-body alert-warning'></div></td>";
+                        eliminar = Request.QueryString["idImplemento"];
+                        presentador.eliminarImplemento(eliminar, ((Dojo)dojo).Dojo_Id);
+                    }
+                    listaImplementos = presentador.cargarListaImplementos(dojo);
 
+                }
+                foreach (Entidad valorActual in listaImplementos)
+                {
+                    this.tabla.Text += "<tr>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Id_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Nombre_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Tipo_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Marca_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Color_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Talla_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Cantida_implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Stock_Minimo_Implemento + "</td>";
+                    if (((Implemento)valorActual).Stock_Minimo_Implemento > ((Implemento)valorActual).Cantida_implemento)
+                    {
+                        this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-error'></div></td>";
                     }
                     else
                     {
-                        if (((Implemento)valorActual).Stock_Minimo_Implemento < ((Implemento)valorActual).Cantida_implemento)
+                        if (((Implemento)valorActual).Stock_Minimo_Implemento == ((Implemento)valorActual).Cantida_implemento)
                         {
-                            this.tabla.Text+="<td><div class='panel panel-default caja'><div class='panel-body alert-success'></div></td>";
+                            this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-warning'></div></td>";
+
                         }
+                        else
+                        {
+                            if (((Implemento)valorActual).Stock_Minimo_Implemento < ((Implemento)valorActual).Cantida_implemento)
+                            {
+                                this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-success'></div></td>";
+                            }
+                        }
+
                     }
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Precio_Implemento + "</td>";
+                    this.tabla.Text += "<td>" + ((Implemento)valorActual).Precio_Implemento * ((Implemento)valorActual).Cantida_implemento + "</td>";
+                    this.tabla.Text += "<td>";
+                    this.tabla.Text += "<a class='btn btn-primary glyphicon glyphicon-info-sign' data-toggle='modal' data-target='#modal-info' href='#'></a>";
+                    this.tabla.Text += "<a class='btn btn-default glyphicon glyphicon-pencil'  href='web_15_ModificarImplemento.aspx?idImplemento=" + ((Implemento)valorActual).Id_Implemento + "'></a>";
+                    this.tabla.Text += "<a id='nombre_2' class='eliminar_clase btn btn-danger glyphicon glyphicon-remove-sign' data-id=" + ((Implemento)valorActual).Id_Implemento + " data-toggle='modal' data-target='#modal-delete'></a>";
+                    this.tabla.Text += "</td>";
+                    this.tabla.Text += "</tr>";
+
 
                 }
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Precio_Implemento + "</td>";
-                this.tabla.Text += "<td>" + ((Implemento)valorActual).Precio_Implemento * ((Implemento)valorActual).Cantida_implemento + "</td>";
-                this.tabla.Text+="<td>";
-                this.tabla.Text+="<a class='btn btn-primary glyphicon glyphicon-info-sign' data-toggle='modal' data-target='#modal-info' href='#'></a>";
-                this.tabla.Text += "<a class='btn btn-default glyphicon glyphicon-pencil'  href='web_15_ModificarImplemento.aspx?idImplemento=" + ((Implemento)valorActual).Id_Implemento + "'></a>";
-                this.tabla.Text += "<a id='nombre_2' class='eliminar_clase btn btn-danger glyphicon glyphicon-remove-sign' data-id=" + ((Implemento)valorActual).Id_Implemento + " data-toggle='modal' data-target='#modal-delete'></a>";
-                this.tabla.Text+="</td>";
-                this.tabla.Text+="</tr>";
-
-
-            }
-
-      //      btnEliminar.Click += new EventHandler(this.eliminarImplemento);     
 
         }
 
