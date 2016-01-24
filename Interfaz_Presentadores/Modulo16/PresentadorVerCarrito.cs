@@ -51,6 +51,11 @@ namespace Interfaz_Presentadores.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 //Creo la fabrica y persona y le pongo su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
@@ -267,6 +272,10 @@ namespace Interfaz_Presentadores.Modulo16
                 //Colocamos el precio en el modal
                 laVista.PrecioFinal.Text =  "</br>" + "<h3>Precio final: </h3>" + "<label id='labelprecio' >" + precioFinal.ToString() + "</label>";
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             }
             catch (PersonaNoValidaException e)
             {
@@ -331,6 +340,11 @@ namespace Interfaz_Presentadores.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 //Persona que eventualmente la buscaremos por el session
                 FabricaEntidades fabrica = new FabricaEntidades();
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
@@ -454,6 +468,10 @@ namespace Interfaz_Presentadores.Modulo16
                             new CantidadInvalidaException()); 
                 }
 
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)
                     HttpContext.Current.Response.Redirect(M16_Recursointerfaz.MODIFICAR_LINK_EXITO, false);
@@ -557,6 +575,11 @@ namespace Interfaz_Presentadores.Modulo16
         {             
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 //Instancio la fabrica, obtengo la entidad persona y asigno su ID
                 FabricaEntidades fabrica = new FabricaEntidades();
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
@@ -604,7 +627,11 @@ namespace Interfaz_Presentadores.Modulo16
                     //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
                     Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
                     respuesta = registrarPago.Ejecutar();  
-                }                             
+                }
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //retorno la respuesta
                 return respuesta;
