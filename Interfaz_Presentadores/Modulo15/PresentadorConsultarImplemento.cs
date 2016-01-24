@@ -19,6 +19,10 @@ namespace Interfaz_Presentadores.Modulo15
 {
     public  class PresentadorConsultarImplemento
     {
+
+        /// <summary>
+        /// Método de presentador que consulta implemento
+        /// </summary>
          private IContratoConsultarImplemento _vista;
 
          public PresentadorConsultarImplemento(IContratoConsultarImplemento _vista)
@@ -59,6 +63,10 @@ namespace Interfaz_Presentadores.Modulo15
          }
 
          public List<Entidad> cargarListaImplementos2(Entidad dojo)
+
+         /// <summary>
+         /// Método de presentador que carga una lista de implementos segun el dojo
+         /// </summary>
          {
              try{
              Comando<List<Entidad>> comando;
@@ -92,6 +100,10 @@ namespace Interfaz_Presentadores.Modulo15
 
          public bool eliminarImplemento(string implemento ,int dojoid)
          {
+
+             /// <summary>
+             /// Método de presentador que elimina un implemento
+             /// </summary>
              try
              {
                  Comando<bool> comando;
@@ -131,6 +143,11 @@ namespace Interfaz_Presentadores.Modulo15
       
 
          public int usuarioDojo(Entidad usuario) {
+
+             /// <summary>
+             /// Método de presentador que con el usuario te devuelve el dojo
+             /// </summary>
+             
              try
              {
                  Comando<int> comando = FabricaComandos.ObtenerComandoUsuarioDojo();
@@ -162,6 +179,9 @@ namespace Interfaz_Presentadores.Modulo15
          }
          public Entidad obtenerDojoXId(Entidad dojo)
          {
+             /// <summary>
+             /// Método de presentador para obtener el dojo por Id
+             /// </summary>
              try
              {
                  Comando<Entidad> comando = FabricaComandos.ObtenerComandoDojo();

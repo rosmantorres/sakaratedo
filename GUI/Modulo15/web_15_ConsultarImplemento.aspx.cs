@@ -15,6 +15,7 @@ namespace templateApp.GUI.Modulo15
 {
     public partial class web_15_ConsultarImplemento : System.Web.UI.Page,IContratoConsultarImplemento
     {
+        
         private List<Entidad> laLista = new List<Entidad>();
         private PresentadorConsultarImplemento presentador;
        
@@ -59,7 +60,10 @@ namespace templateApp.GUI.Modulo15
 
             try
             {
-
+                /// <summary>
+                /// Consulta los datos de un implemento
+                /// </summary>
+                /// 
                 Entidad usuarioLogear = FabricaEntidades.ObtenerUsuario();
                 ((Usuario)usuarioLogear)._Nombre = usuario;
                 int dojoUsuario = presentador.usuarioDojo(usuarioLogear);

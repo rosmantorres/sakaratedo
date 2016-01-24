@@ -14,13 +14,16 @@ namespace Interfaz_Presentadores.Modulo15
 {
     public class PresentadorAgregarImplemento
     {
+       
           private IContratoAgregarImplemento _vista;
 
           public PresentadorAgregarImplemento(IContratoAgregarImplemento _vista)
         {
             this._vista = _vista;
         }
-
+          /// <summary>
+          /// Método de presentador que agrega implemento
+          /// </summary>
           public bool agregarImplemento(Entidad implemento) {
               try
               {
@@ -55,6 +58,9 @@ namespace Interfaz_Presentadores.Modulo15
           }
           public int usuarioDojo(Entidad usuario)
           {
+              /// <summary>
+              /// Método de presentador que con el usuario te devuelve el dojo
+              /// </summary>
               try
               {
                   Comando<int> comando = FabricaComandos.ObtenerComandoUsuarioDojo();
@@ -86,6 +92,10 @@ namespace Interfaz_Presentadores.Modulo15
           }
           public Entidad obtenerDojoXId(Entidad dojo)
           {
+
+              /// <summary>
+              /// Método de presentador para obtener el dojo por Id
+              /// </summary>
               try
               {
 

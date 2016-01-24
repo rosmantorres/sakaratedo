@@ -79,6 +79,9 @@ namespace templateApp.GUI.Modulo15
         public void modificarImplemento(object sender,EventArgs e) {
             try
             {
+                /// <summary>
+                /// Método que modifica los datos de un implemento
+                /// </summary>
                 Entidad implementoCargado = presentador.precargarImplemento(Convert.ToInt32(this.id_implemento.Value));
 
                 if ((this.nombre_implemento.Value != "") && (this.tipo_implemento.Value != "") && (this.marca_implemento.Value != "") && (this.color_implemento.Value != "") && (this.talla_implemento.Value != "") && (this.cantidad_implemento.Value != "") && (this.stock_implemento.Value != "") && (this.descripcion_implemento.Value != "") && (this.precio_implemento.Value != ""))
