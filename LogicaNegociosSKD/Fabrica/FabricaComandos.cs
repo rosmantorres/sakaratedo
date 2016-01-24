@@ -19,29 +19,65 @@ namespace LogicaNegociosSKD.Fabrica
     public class FabricaComandos
     {
         #region Modulo 1
+        public Comando<String> ObtenerConsultarCorreo()
+        {
+            return new Comandos.Modulo1.ComandoConsultarCorreo();
+        }
+        public Comando<Boolean> ObtenerEnviarCorreo()
+        {
+            return new Comandos.Modulo1.ComandoEnviarCorreo();
+        }
+        public Comando<String[]> ObtenerIniciarSesion()
+        {
+            return new Comandos.Modulo1.ComandoIniciarSesion();
+        }
+        public Comando<Boolean> ObtenerRestablecerContraseña()
+        {
+            return new Comandos.Modulo1.ComandoRestablecerContraseña();
+        }
         #endregion
 
         #region Modulo 2
+        public Comando<Boolean> ObtenerAgregarRol()
+        {
+            return new Comandos.Modulo2.ComandoAgregarRol();
+        }
+        public Comando<Entidad> ObtenerCuentaUsuario()
+        {
+            return new Comandos.Modulo2.ComandoCuentaUsuario();
+        }
+        public Comando<Boolean> ObtenerEliminarRol()
+        {
+            return new Comandos.Modulo2.ComandoEliminarRol();
+        }
+        public Comando<List<Entidad>> ObtenerRolesDeSistema()
+        {
+            return new Comandos.Modulo2.ComandoRolesDeSistema();
+        }
+        public Comando<List<Entidad>> ObtenerRolesUsuario()
+        {
+            return new Comandos.Modulo2.ComandoRolesUsuario();
+        }
         #endregion
 
         #region Modulo 3
-		public EjecutarAgregarOrganizacion ObtenerEjecutarAgregarOrganizacion(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarAgregarOrganizacion(Entidad nuevaEntidad)
         {
             return new EjecutarAgregarOrganizacion(nuevaEntidad);
         }
-        public EjecutarModificarOrganizacion ObtenerEjecutarModificarOrganizacion(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarModificarOrganizacion(Entidad nuevaEntidad)
         {
             return new EjecutarModificarOrganizacion(nuevaEntidad);
         }
-        public EjecutarConsultarXIdOrganizacion ObtenerEjecutarConsultarXIdOrganizacion(Entidad nuevaEntidad)
+        public static Comando<Entidad> ObtenerEjecutarConsultarXIdOrganizacion(Entidad nuevaEntidad)
         {
             return new EjecutarConsultarXIdOrganizacion(nuevaEntidad);
         }
-        public EjecutarConsultarTodosOrganizacion ObtenerEjecutarConsultarTodosOrganizacion()
+        public static Comando<List<Entidad>> ObtenerEjecutarConsultarTodosOrganizacion()
         {
             return new EjecutarConsultarTodosOrganizacion();
         }
-        public EjecutarComboOrganizaciones ObtenerEjecutarComboOrganizaciones()
+        public static Comando<List<Entidad>> ObtenerEjecutarComboOrganizaciones()
         {
             return new EjecutarComboOrganizaciones();
         }
@@ -51,19 +87,19 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		 public EjecutarAgregarCinta ObtenerEjecutarAgregarCinta(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarAgregarCinta(Entidad nuevaEntidad)
         {
             return new EjecutarAgregarCinta(nuevaEntidad);
         }
-        public EjecutarModificarCinta ObtenerEjecutarModificarCinta(Entidad nuevaEntidad)
+        public static Comando<bool> ObtenerEjecutarModificarCinta(Entidad nuevaEntidad)
         {
             return new EjecutarModificarCinta(nuevaEntidad);
         }
-        public EjecutarConsultarXIdCinta ObtenerEjecutarConsultarXIdCinta(Entidad nuevaEntidad)
+        public static Comando<Entidad> ObtenerEjecutarConsultarXIdCinta(Entidad nuevaEntidad)
         {
             return new EjecutarConsultarXIdCinta(nuevaEntidad);
         }
-        public EjecutarConsultarTodosCinta ObtenerEjecutarConsultarTodosCinta()
+        public static Comando<List<Entidad>> ObtenerEjecutarConsultarTodosCinta()
         {
             return new EjecutarConsultarTodosCinta();
         }
@@ -232,6 +268,16 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarEventoM10XId(idEvento);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoTodasLasFechasEventoM10()
+        {
+            return new ComandoConsultarTodasLasFechasDeUnEventoM10();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoEventosPorRangosdeFechaM10(string fechaInicio)
+        {
+            return new ComandoEventosPorRangosdeFechaM10(fechaInicio);
+        }
         #endregion
 
         #region Modulo 11
@@ -348,7 +394,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new ComandoAgregarCompetencia(paramEntidad);
         }
 
-        public static Comando<bool> ObtenerComandoMoficiarCompetencia(Entidad paramEntidad)
+        public static Comando<bool> ObtenerComandoModificarCompetencia(Entidad paramEntidad)
         {
             return new ComandoModificarCompetencia(paramEntidad);
         }
@@ -477,6 +523,11 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<List<Entidad>> ObtenerComandConsultarPlanillas()
         {
             return new ComandoConsultarPlanillas();
+        }
+
+        public static Comando<Boolean> ObtenerComandoCambiarStatusPlanilla()
+        {
+            return new ComandoCambiarStatusPlanilla();
         }
         #endregion
 

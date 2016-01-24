@@ -242,7 +242,14 @@ namespace PruebasUnitariasSKD.Modulo11
         public void pruebaListaAtletasCatYascenso()
         {
 
-
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+            Comando<List<Entidad>> lista = FabricaComandos.ObtenerComandoListaAtletasEnCategoriaYAscenso(entidad);
+            listaEntidad = lista.Ejecutar();
+            Assert.NotNull(listaEntidad);
 
         }
 
@@ -250,9 +257,112 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void pruebaAgregarResultadoKata()
         {
-
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKata();
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Inscripcion.Id = 4;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado1 = 2;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado2 = 3;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado3 = 3;
+            listaEntidad.Add(entidad);
+            Comando<bool> comando = FabricaComandos.ObtenerComandoAgregarResultadoKata(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
          
         }
+
+
+        [Test]
+
+        public void pruebaAgregarResultadoKumite()
+        {
+
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKumite();
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Inscripcion1.Id = 4;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Inscripcion2.Id = 1;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Puntaje1 = 2;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Puntaje2 = 2;
+            listaEntidad.Add(entidad);
+            Comando<bool> comando = FabricaComandos.ObtenerComandoAgregarResultadoKumite(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
+         
+
+        }
+
+
+        [Test]
+
+        public void pruebaAgregarResultadoAscenso()
+        {
+
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoAscenso();
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Aprobado = "S";
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Id = 2;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoAgregarResultadoAscenso(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
+
+        }
+
+        [Test]
+
+        public void pruebaModificarResultadoKata()
+        {
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKata();
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Inscripcion.Id = 1;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Inscripcion.Competencia.Id = 5;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado1 = 9;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado2 = 9;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKata)entidad).Jurado3 = 1;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoModificarResultadoKata(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
+        }
+
+
+        [Test]
+
+        public void pruebaModificarResultadoKumite()
+        {
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoKumite();
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Inscripcion1.Id = 9;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Inscripcion2.Id = 11;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Puntaje1 = 3;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Puntaje2 = 3;
+            ((DominioSKD.Entidades.Modulo11.ResultadoKumite)entidad).Inscripcion1.Competencia.Id = 6;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoModificarResultadoKumite(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
+        }
+
+
+        [Test]
+
+        public void pruebaModificarResultadoAscenso()
+        {
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerResultadoAscenso();
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Aprobado = "N";
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Id = 32;
+            ((DominioSKD.Entidades.Modulo11.ResultadoAscenso)entidad).Inscripcion.Evento.Id = 3;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoModificarResultadoAscenso(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
+
+        }
+
 
         #endregion
     }

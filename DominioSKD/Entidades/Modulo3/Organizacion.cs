@@ -90,7 +90,7 @@ namespace DominioSKD.Entidades.Modulo3
             email = "";
             estado = "";
             estilo = "";
-            status = false;
+            status = true;
         }
 
         public Organizacion(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo) : base()

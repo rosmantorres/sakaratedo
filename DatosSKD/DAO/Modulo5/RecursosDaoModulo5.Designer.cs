@@ -322,11 +322,11 @@ namespace DatosSKD.DAO.Modulo5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @id_cinta.
+        ///   Looks up a localized string similar to @idcinta.
         /// </summary>
-        internal static string ParamEliminarCinta {
+        internal static string ParamModificarCinta {
             get {
-                return ResourceManager.GetString("ParamEliminarCinta", resourceCulture);
+                return ResourceManager.GetString("ParamModificarCinta", resourceCulture);
             }
         }
         

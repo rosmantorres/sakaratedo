@@ -610,17 +610,20 @@ namespace DatosSKD.DAO.Modulo14
                 {
                     while (leer.Read())
                     {
-                        planilla = new DominioSKD.Entidades.Modulo14.Planilla();
-                        DominioSKD.Entidades.Modulo14.Diseño diseño =
-                            new DominioSKD.Entidades.Modulo14.Diseño();
-                        planilla.Diseño = diseño;
-                        planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
-                        planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
-                        planilla.Diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
-                        planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoTipo].ToString();
-                        lista.Add(planilla);
-                        diseño = null;
-                        planilla = null;
+                        if (leer[RecursosDAOModulo14.AtributoIdDiseño].ToString() != "")
+                        {
+                            planilla = new DominioSKD.Entidades.Modulo14.Planilla();
+                            DominioSKD.Entidades.Modulo14.Diseño diseño =
+                                new DominioSKD.Entidades.Modulo14.Diseño();
+                            planilla.Diseño = diseño;
+                            planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
+                            planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
+                            planilla.Diseño.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdDiseño]);
+                            planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoTipo].ToString();
+                            lista.Add(planilla);
+                            diseño = null;
+                            planilla = null;
+                        }
 
                     }
 

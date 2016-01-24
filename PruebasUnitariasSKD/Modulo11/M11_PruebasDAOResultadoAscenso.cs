@@ -132,7 +132,7 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaAgregarResultadoAscenso()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+       
 
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
 
@@ -151,7 +151,6 @@ namespace PruebasUnitariasSKD.Modulo11
 
         public void PruebaModificarResultadoAscenso()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
             IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
 

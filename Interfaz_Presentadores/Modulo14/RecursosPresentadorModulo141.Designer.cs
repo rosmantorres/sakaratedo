@@ -79,6 +79,15 @@ namespace Interfaz_Presentadores.Modulo14 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a alert alert-info alert-dismissible.
+        /// </summary>
+        public static string Alert_Clase_Success {
+            get {
+                return ResourceManager.GetString("Alert_Clase_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a alert alert-danger alert-dismissible.
         /// </summary>
         public static string Alerta_Clase_Error {
@@ -129,6 +138,15 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string Alerta_PlanillaVacio {
             get {
                 return ResourceManager.GetString("Alerta_PlanillaVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seguro que deseas solicitar esta planilla?.
+        /// </summary>
+        public static string Alerta_Pregunta {
+            get {
+                return ResourceManager.GetString("Alerta_Pregunta", resourceCulture);
             }
         }
         
@@ -968,6 +986,15 @@ namespace Interfaz_Presentadores.Modulo14 {
         public static string QueryIdSolici {
             get {
                 return ResourceManager.GetString("QueryIdSolici", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         

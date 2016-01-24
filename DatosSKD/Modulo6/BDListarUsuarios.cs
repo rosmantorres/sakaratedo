@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DominioSKD;
+using DominioSKD.Entidades.Modulo1;
+using DominioSKD.Entidades.Modulo2;
 using DatosSKD.Modulo1;
 
 namespace DatosSKD.Modulo6
