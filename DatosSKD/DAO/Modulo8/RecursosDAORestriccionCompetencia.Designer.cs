@@ -601,6 +601,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @idRelacion.
+        /// </summary>
+        internal static string IdRelacion {
+            get {
+                return ResourceManager.GetString("IdRelacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error de parseo.
         /// </summary>
         internal static string Mensaje_Error_Formato {
@@ -696,6 +705,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ModificarRestriccionCompetencia1 {
             get {
                 return ResourceManager.GetString("ModificarRestriccionCompetencia1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @numRelaciones.
+        /// </summary>
+        internal static string NumeroRelaciones {
+            get {
+                return ResourceManager.GetString("NumeroRelaciones", resourceCulture);
             }
         }
         

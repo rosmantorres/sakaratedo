@@ -297,6 +297,9 @@
   <data name="ExisteRestriccionCompetencia1" xml:space="preserve">
     <value>M8_ExisteRestriccionCompetencia</value>
   </data>
+  <data name="IdRelacion" xml:space="preserve">
+    <value>@idRelacion</value>
+  </data>
   <data name="MensajeFinInfoLogger" xml:space="preserve">
     <value>Salida del Método</value>
   </data>
@@ -329,6 +332,9 @@
   </data>
   <data name="ModificarRestriccionCompetencia1" xml:space="preserve">
     <value>M8_ModificarRestriccionCompetencia</value>
+  </data>
+  <data name="NumeroRelaciones" xml:space="preserve">
+    <value>@numRelaciones</value>
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
     <value>@rest_comp_desc</value>
