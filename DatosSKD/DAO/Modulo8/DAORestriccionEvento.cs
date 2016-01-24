@@ -12,7 +12,7 @@ namespace DatosSKD.DAO.Modulo8
 {
     public class DAORestriccionEvento : DAOGeneral, InterfazDAO.Modulo8.IDaoRestriccionEvento
     {
-        
+
         #region IDAO
         public Boolean Agregar(Entidad parametro)
         {
@@ -72,8 +72,8 @@ namespace DatosSKD.DAO.Modulo8
                         laRestriccionEvento.IdEvento.ToString(), false);
                 parametros.Add(elParametro);
 
-                BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRestriccionEvento
+                //BDConexion laConexion = new BDConexion();// abres la conexion
+                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRestriccionEvento
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
             }
 
@@ -139,8 +139,8 @@ namespace DatosSKD.DAO.Modulo8
                 parametros.Add(elParametro);
 
 
-                BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.ModificarRestriccionEvento
+                //BDConexion laConexion = new BDConexion();// abres la conexion
+                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.ModificarRestriccionEvento
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
             }
 
@@ -188,12 +188,11 @@ namespace DatosSKD.DAO.Modulo8
                 //agregas eso que acabas de hacer a la lista de parametros.
                 //repites hasta que tengas todos los parametros de tu stored procedure asociado
 
-                BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRHCinta
-                                             , parametros);
+                //BDConexion laConexion = new BDConexion();// abres la conexion
+                //laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRHCinta , parametros);
 
-                laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRestriccionEvento
+                //laConexion = new BDConexion();// abres la conexion
+                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRestriccionEvento
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
             }
 
@@ -248,8 +247,8 @@ namespace DatosSKD.DAO.Modulo8
                     laRestriccionEvento.IdRestEvento.ToString(), false);
                 parametros.Add(elParametro);
 
-                BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRH_Cinta
+                //BDConexion laConexion = new BDConexion();// abres la conexion
+                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRH_Cinta
                                              , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
             }
 
@@ -297,8 +296,8 @@ namespace DatosSKD.DAO.Modulo8
                 //agregas eso que acabas de hacer a la lista de parametros.
                 //repites hasta que tengas todos los parametros de tu stored procedure asociado
 
-                BDConexion laConexion = new BDConexion();// abres la conexion
-                laConexion.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRHCinta
+                //BDConexion laConexion = new BDConexion();// abres la conexion
+                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRHCinta
                                              , parametros);
             }
 
@@ -335,20 +334,19 @@ namespace DatosSKD.DAO.Modulo8
 
             DominioSKD.Entidad laRestriccionEvento = null;
             DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
-            
+
             try
             {
-                BDConexion laConexion;
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdEvento, SqlDbType.Int,
                     elEventoSimple.IdEvento.ToString(), false);
 
                 parametros.Add(elParametro);
-                
-            
-                laConexion = new BDConexion();
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+
+                this.Conectar();
+
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDAORestriccionEvento.ConsultarRestriccionEvento, parametros);
 
                 int IdRestEvento = int.Parse(RecursosDAORestriccionEvento.AliasIdRestriccionEvento.ToString());
@@ -392,7 +390,6 @@ namespace DatosSKD.DAO.Modulo8
         /// <returns>Lista de todas las RestriccionesEventos que existen</returns>
         public List<DominioSKD.Entidad> ConsultarEventosConRestriccion()
         {
-            BDConexion laConexion;
             List<Parametro> parametros = new List<Parametro>();
 
             List<DominioSKD.Entidad> laListaRestriccionesEvento = new List<DominioSKD.Entidad>();
@@ -400,9 +397,9 @@ namespace DatosSKD.DAO.Modulo8
 
             try
             {
-                laConexion = new BDConexion();
+                this.Conectar();
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDAORestriccionEvento.ConsultarEventosConRestriccion, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -451,16 +448,14 @@ namespace DatosSKD.DAO.Modulo8
         /// <returns>Lista de EventoSimple que no tienen Restriccion</returns>
         public List<Entidad> ConsultarEventosSinRestriccion()
         {
-            BDConexion laConexion;
             List<Parametro> parametros = new List<Parametro>();
 
             List<Entidad> losEventosSimple = new List<Entidad>();
             DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
             try
             {
-                laConexion = new BDConexion();
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                this.Conectar();
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDAORestriccionEvento.ConsultarEventosSinRestriccion, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -475,21 +470,15 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -509,7 +498,7 @@ namespace DatosSKD.DAO.Modulo8
                 (DominioSKD.Entidades.Modulo8.RestriccionEvento)parametro;
 
 
-            BDConexion laConexion;
+            this.Conectar();
             List<Parametro> parametros = new List<Parametro>();
 
             List<Entidad> laListaCintasSimple = new List<Entidad>();
@@ -524,9 +513,7 @@ namespace DatosSKD.DAO.Modulo8
 
             try
             {
-                laConexion = new BDConexion();
-
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDAORestriccionEvento.ConsultarCintasDeRestriccionEvento, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -572,7 +559,6 @@ namespace DatosSKD.DAO.Modulo8
         /// <returns>Lista de EventoSimple a los que puede asistir</returns>
         public List<Entidad> EventosQuePuedeAsistirAtleta(int parametro)
         {
-            BDConexion laConexion;
             List<Parametro> parametros = new List<Parametro>();
 
             List<Entidad> laListaEventosSimple = new List<Entidad>();
@@ -585,9 +571,9 @@ namespace DatosSKD.DAO.Modulo8
 
             try
             {
-                laConexion = new BDConexion();
+                this.Conectar();
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDAORestriccionEvento.ConsultarEventosCumplaREAtleta, parametros);
 
                 foreach (DataRow row in dt.Rows)
