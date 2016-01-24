@@ -33,13 +33,14 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
             vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-
+        /// <summary>
+        /// Llenar el combobox con los eventos
+        /// </summary>
         public void LlenarEventosCombo()
         {
 
             Comando<List<Entidad>> comboEvento = FabricaComandos.ObtenerComandoEventosSolicitud();
             ((ComandoEventosSolicitud)comboEvento).IDPersona = vista.IDUsuario;
-            //List<SolicitudP> listEventos = (Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
             List<Entidad> listEventos = comboEvento.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
@@ -53,7 +54,9 @@ namespace Interfaz_Presentadores.Modulo14
             vista.EventoCombo.DataValueField = "key";
             vista.EventoCombo.DataBind();
         }
-
+        /// <summary>
+        /// Llenar el combox con las competencias .
+        /// </summary>
         public void LLenarCompetenciaCombo()
         {
         
@@ -72,19 +75,19 @@ namespace Interfaz_Presentadores.Modulo14
             vista.CompetenciaCombo.DataValueField = "key";
             vista.CompetenciaCombo.DataBind();
         }
-       
+        /// <summary>
+        /// Cargar la pagina de modificar la planilla solicitada.
+        /// </summary>
         public void PageLoadModificarPlanillaSolicitada()
         {
             try
             {
-            //int idSolicitud = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idSol]);
+         
             Entidad laSolicitud;
             int idSolicitud = vista.IDSolicitud;
             vista.solicitudId = idSolicitud.ToString();
             vista.IDSolicitudVisible = false;
-            // SolicitudP laSolicitud = new SolicitudP();
-            //LogicaSolicitud lP = new LogicaSolicitud();
-            // laSolicitud = lP.ObtenerSolicitudID(Int32.Parse(this.id_solicitud.Value));
+           
            
             Comando<Entidad> comandoObtenerSolicitudID = FabricaComandos.ObtenerComandoObtenerSolicitudID();
             ((ComandoObtenerSolicitudID)comandoObtenerSolicitudID).IDSolicitud = idSolicitud;
@@ -95,21 +98,12 @@ namespace Interfaz_Presentadores.Modulo14
             vista.IDInscripcion = ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).IDInscripcion;
             IDIns = vista.IDInscripcion;
 
-        /*    HttpCookie aCookie = new HttpCookie(RecursosPresentadorModulo14.CookieIdIns);
-            aCookie.Values[RecursosPresentadorModulo14.CookieIdIns] = ((SolicitudP)laSolicitud).IDInscripcion.ToString();
-            aCookie.Expires = DateTime.Now.AddMinutes(1);
-            Response.Cookies.Add(aCookie);
-            HttpContext.Current.Response.Redirect(RecursosPresentadorModulo14.PaginaModificarSolicitud);*/
-            //   int idIns = laSolicitud.IDInscripcion;
-
-            //  List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(laSolicitud.ID);
             Comando<List<Boolean>> comandoDatosRequeridosSolicitud = FabricaComandos.ObtenerComandoDatosRequeridosSolicitud();
            
             ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad =
                 FabricaEntidades.ObtenerPlanilla();
             ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id =
                 ((DominioSKD.Entidades.Modulo14.SolicitudP)laSolicitud).ID;
-            //((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).IdPlanilla = idSolicitud;
 
             List<Boolean> datosRequeridos = comandoDatosRequeridosSolicitud.Ejecutar();
 
@@ -194,28 +188,23 @@ namespace Interfaz_Presentadores.Modulo14
                 Alerta(ex.Message);
             }
         }
+        /// <summary>
+        /// Modifica la planilla solicitada con los datos modificados.
+        /// </summary>
+        /// <returns>verdadero si se logro editar exitosamente la planilla solicitada</returns>>
         public bool EditarPlanillaSolicitada()
         {
-           // LogicaSolicitud lS = new LogicaSolicitud();
+           
             Entidad solicitud = FabricaEntidades.ObtenerSolicitudP();
             ((DominioSKD.Entidades.Modulo14.SolicitudP)solicitud).ID =
                 Int32.Parse(vista.solicitudId);
-           //Comando<Boolean> comandoTipoPlanilla = fabricaComandos.ObtenerComandoNuevoTipoPlanilla();
+          
             Comando<Entidad> comandoModificarSolicitudID = FabricaComandos.ObtenerComandoModificarSolicitudID();
-           //Comando<Entidad> comandoModificarPlanillaIDTipo = fabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
-          // int idIns = vista.IDIns; 
-
+         
               bool resultado = false;
          
-            /*if (vista.FechaRetiro != "")
-            {
-                if(vista.FechaReincorporacion != ""){
-                    if (vista.Motivo !=""){*/
                       if (vista.ComboEventoVisible == true)
                          {
-               // SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
-                 //                          this.id_motivo.Value, Int32.Parse(this.comboEvento.SelectedValue));
-               // lS.ModificarSolicitudID(laSolicitud);
 
                              Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                        vista.Motivo, Int32.Parse(vista.EventoCombo.SelectedValue));
@@ -225,9 +214,6 @@ namespace Interfaz_Presentadores.Modulo14
                            }
                        if (vista.ComboCompetenciaVisible == true)
                         {
-               /* SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
-                                             this.id_motivo.Value, Int32.Parse(this.comboCompetencia.SelectedValue));*/
-               // lS.ModificarSolicitudID(laSolicitud);
 
                             Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                           vista.Motivo, Int32.Parse(vista.CompetenciaCombo.SelectedValue));
@@ -237,49 +223,15 @@ namespace Interfaz_Presentadores.Modulo14
                         }
                        if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
                          {
-             //   SolicitudP laSolicitud = new SolicitudP(Int32.Parse(this.id_solicitud.Value), this.idFechaI.Value, this.idFechaF.Value,
-             //                                this.id_motivo.Value, idIns);
-             //   lS.ModificarSolicitudID(laSolicitud);
-            //    vista.IDInscripcion = Int32.Parse(Request.Cookies[RecursosPresentadorModulo14.CookieIdIns].ToString());
-
                              Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
                                             vista.Motivo, IDIns);
                             comandoModificarSolicitudID.LaEntidad =laSolicitud;
                             comandoModificarSolicitudID.Ejecutar();
                             resultado = true;
                            }
-                   /* }
-                    else
-                    {
-                        vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
-                        vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
-                        vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaMotivoVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
-                        vista.alerta = true;
-                        resultado = false;
-                    }
-                }
-                else
-                {
-                    vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
-                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
-                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaReincorporacionVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
-                    vista.alerta = true;
-                    resultado = false;
-                }
-            }
-            else
-            {
-                vista.alertLocalClase = RecursosPresentadorModulo14.Alerta_Clase_Error;
-                vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
-                vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.AlertaFechaRetiroVacio + RecursosPresentadorModulo14.Alerta_HtmlFinal;
-                vista.alerta = true;
-                resultado = false;
-            }*/
 
             return resultado;
 
         }
-
-      
     }
 }

@@ -22,7 +22,10 @@ namespace Interfaz_Presentadores.Modulo14
         {
             this.vista = vista;
         }
-
+        /// <summary>
+        /// Agrega los datos requeridos de la tabla
+        /// </summary>
+        /// <returns></returns>
         public void LlenarInformacion(List<Entidad> lista)
         {
             try
@@ -71,7 +74,10 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertaRol = "alert";
             vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-
+        /// <summary>
+        /// Obtiene los datos de las planillas para llenar la tabla
+        /// </summary>
+        /// <returns>Lista de Entidad </returns>
         public List<Entidad> LlenarTabla()
         {
 
@@ -111,7 +117,9 @@ namespace Interfaz_Presentadores.Modulo14
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Activa e Inactiva una planilla
+        /// </summary>
         public void CambiarStatus(int id)
         {
             try

@@ -355,6 +355,22 @@ namespace PruebasUnitariasSKD.Modulo10
             entidad = ComandoEventoXID.Ejecutar();
             Assert.NotNull(entidad);
         }
+
+        [Test]
+        public void pruebaTodaLasFechasEventoXID() // Vacio!
+        {
+            Comando<List<Entidad>> ComandoFechaEventoXID = FabricaComandos.ObtenerComandoTodasLasFechasEventoM10();
+            listaEntidad = ComandoFechaEventoXID.Ejecutar();
+            Assert.NotNull(listaEntidad);
+        }
+
+        [Test]
+        public void pruebaEventoFechaRangoXid() // Vacio!
+        {
+            Comando<List<Entidad>> ComandoRangoEventoXID = FabricaComandos.ObtenerComandoEventosPorRangosdeFechaM10("20/02/2016");
+            listaEntidad = ComandoRangoEventoXID.Ejecutar();
+            Assert.NotNull(listaEntidad);
+        }
         #endregion
     }
 }
