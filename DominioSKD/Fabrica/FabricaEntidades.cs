@@ -551,6 +551,46 @@ namespace DominioSKD.Fabrica
             return new Compra();
         }
 
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de productos</returns>
+        public static Entidad ObtenerFacturaImplemento()
+        {
+            return new DetalleFacturaProducto();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de eventos</returns>
+        public static Entidad ObtenerFacturaEvento()
+        {
+            return new DetalleFacturaEvento();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de matricula</returns>
+        public static Entidad ObtenerFacturaMatricula()
+        {
+            return new DetalleFacturaMatricula();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad pago con todos datos de la factura</returns>
+        public static Entidad ObtenerFacturaPago()
+        {
+            return new Pago();
+        }
+
         #endregion
     }
 }
