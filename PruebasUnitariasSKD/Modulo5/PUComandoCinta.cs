@@ -14,6 +14,7 @@ using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo5;
 using DatosSKD.DAO.Modulo5;
 using LogicaNegociosSKD.Fabrica;
+using ExcepcionesSKD.Modulo5;
 
 namespace PruebasUnitariasSKD.Modulo5
 {
@@ -31,6 +32,7 @@ namespace PruebasUnitariasSKD.Modulo5
         private Entidad miEntidadCintaAgregar;
         private Comando<List<Entidad>> miComandoLista;
         private Comando<Entidad> miComandoEntidad;
+        private Entidad miEntidadValidarCinta;
         #endregion
 
         #region SetUp & TearDown
@@ -45,6 +47,7 @@ namespace PruebasUnitariasSKD.Modulo5
             miEntidadCinta = FabricaEntidades.ObtenerCinta_M5(1, "Blanco", "1er Kyu", "Nivel inferior", 1, "Principiante", org, true);
             miEntidadCintaModificar = FabricaEntidades.ObtenerCinta_M5(1, "Verde", "1er Kyu", "Nivel inferior", 2, "Principiante", org, true);
             miEntidadCintaAgregar = FabricaEntidades.ObtenerCinta_M5(16, "Rojo", "1er Kyu", "Nivel inferior", 4, "Principiante", org, true);
+            miEntidadValidarCinta = FabricaEntidades.ObtenerCinta_M5("Blanco", "1er Kyu", "Nivel inferior", 6, "Principiante", org, true);
             
         }
 
@@ -61,7 +64,7 @@ namespace PruebasUnitariasSKD.Modulo5
             miEntidadCintaAgregar = null;
             miComandoLista = null;
             miComandoEntidad = null;
-
+            miEntidadValidarCinta = null;
         }
         #endregion
 
@@ -75,8 +78,20 @@ namespace PruebasUnitariasSKD.Modulo5
         {
             this.miComando = FabricaComandos.ObtenerEjecutarAgregarCinta(miEntidadCintaAgregar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
         
+        }
+
+
+        /// <summary>
+        /// Método para probar la exception de Nombre de Cinta existente para Agregar y Modificar en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(CintaRepetidaException))]
+        public void PruebaValidarNombreCintaExcepcion()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarAgregarCinta(miEntidadValidarCinta);
+            bool resultado = this.miComando.Ejecutar();
         }
 
         /// <summary>
@@ -87,14 +102,26 @@ namespace PruebasUnitariasSKD.Modulo5
         {
             this.miComando = FabricaComandos.ObtenerEjecutarModificarCinta(miEntidadCintaModificar);
             bool resultado = this.miComando.Ejecutar();
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
 
         }
+
         /// <summary>
-        /// Método de prueba para Ejecutar el comando Consultar todas las Cintas
+        /// Método para probar la exception de Orden de Cinta existente para Agregar y Modificar en Comando
         /// </summary>
         [Test]
-        public void ejecutarElComandoConsultarTodosCinta()
+        [ExpectedException(typeof(OrdenCintaRepetidoException))]
+        public void PruebaValidarOrdenCintaExcepcion()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarCinta(miEntidadCinta);
+            bool resultado = this.miComando.Ejecutar();
+        }
+
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Consultar todas las Cintas, la lista no este vacia
+        /// </summary>
+        [Test]
+        public void ejecutarElComandoConsultarTodosCintaNoVacia()
         {
             this.miComandoLista = FabricaComandos.ObtenerEjecutarConsultarTodosCinta();
             List<Entidad> resultado = this.miComandoLista.Ejecutar();
@@ -103,10 +130,22 @@ namespace PruebasUnitariasSKD.Modulo5
         }
 
         /// <summary>
-        /// Método de prueba para Ejecutar el comando Consultar cinta por ID
+        /// Método de prueba para Ejecutar el comando Consultar todas las Cintas, la lista tenga mas de un registro
         /// </summary>
         [Test]
-        public void ejecutarElComandoConsultarXIdCinta()
+        public void ejecutarElComandoConsultarTodosCinta()
+        {
+            this.miComandoLista = FabricaComandos.ObtenerEjecutarConsultarTodosCinta();
+            List<Entidad> resultado = this.miComandoLista.Ejecutar();
+            Assert.GreaterOrEqual(resultado.Count, 1);
+
+        }
+
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Consultar cinta por ID, no sea null
+        /// </summary>
+        [Test]
+        public void ejecutarElComandoConsultarXIdCintaNoNula()
         {
             this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidadCinta);
             Entidad resultado = this.miComandoEntidad.Ejecutar();
