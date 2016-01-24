@@ -73,8 +73,26 @@ namespace templateApp.GUI.Modulo15
                 this.nombre_dojo.InnerText = ((Dojo)dojo).Nombre_dojo;
 
                 string consultar = Request.QueryString["consultar"];
+                string mensajeModificar = Request.QueryString["modificar"];
+                string mensajeAgregar = Request.QueryString["agregar"];
+
                 string eliminar = "";
                 List<Entidad> listaImplementos = null;
+                if (mensajeAgregar == "exito") {
+
+                    this.alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    this.alert.Attributes["role"] = "alert";
+                    this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Se agrego con exito</div>";
+                    
+                }
+                if (mensajeModificar == "exito")
+                {
+                    this.alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    this.alert.Attributes["role"] = "alert";
+                    this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Se modifico con exito</div>";
+                    
+
+                }
                 if (consultar == "Inactivo")
                 {
                     listaImplementos = presentador.cargarListaImplementos2(dojo);
