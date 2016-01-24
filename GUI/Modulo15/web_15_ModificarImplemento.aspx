@@ -10,7 +10,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
          <%--Alerta de falta de contenido--%>
- <div id="alert"  >
+ <div id="alert" runat="server" >
  </div>
      <%--Fin de alerta de falta de contenido--%>
 

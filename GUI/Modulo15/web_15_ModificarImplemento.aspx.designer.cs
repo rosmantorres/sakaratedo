@@ -13,6 +13,15 @@ namespace templateApp.GUI.Modulo15 {
     public partial class web_15_ModificarImplemento {
         
         /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// alert2 control.
         /// </summary>
         /// <remarks>
