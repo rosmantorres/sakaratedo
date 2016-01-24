@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Contratos.Modulo9
 {
-    interface IContratoListarEvento
+    public interface IContratoListarEventos
     {
-        string laTabla { set; }
+        string ilaTabla { get; set; }
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }

@@ -12,9 +12,7 @@ namespace templateApp.GUI.Modulo14
 {
     public partial class M14_SolicitarPlanilla : System.Web.UI.Page, IContratoM14SolicitarPlanilla
     {
-        private LogicaNegociosSKD.Modulo14.LogicaSolicitud logica = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
-        List<DominioSKD.Planilla> lista;
-        private PresentadorM14SolicitarPlanilla presentador;
+       private PresentadorM14SolicitarPlanilla presentador;
 
         public M14_SolicitarPlanilla()
         {
