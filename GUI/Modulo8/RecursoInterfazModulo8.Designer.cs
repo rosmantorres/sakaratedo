@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Interfaz_Presentadores.Modulo8 {
+namespace templateApp.GUI.Modulo8 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Interfaz_Presentadores.Modulo8 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursoPresentadorM8 {
+    internal class RecursoInterfazModulo8 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursoPresentadorM8() {
+        internal RecursoInterfazModulo8() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo8.RecursoPresentadorM8", typeof(RecursoPresentadorM8).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("templateApp.GUI.Modulo8.RecursoInterfazModulo8", typeof(RecursoInterfazModulo8).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -75,105 +75,6 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string AbrirTR {
             get {
                 return ResourceManager.GetString("AbrirTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
-        /// </summary>
-        internal static string Alerta_Clase_Error1 {
-            get {
-                return ResourceManager.GetString("Alerta_Clase_Error1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No seleccionaste ningun dato.
-        /// </summary>
-        internal static string Alerta_DatoVacio1 {
-            get {
-                return ResourceManager.GetString("Alerta_DatoVacio1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
-        /// </summary>
-        internal static string Alerta_Html1 {
-            get {
-                return ResourceManager.GetString("Alerta_Html1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;/div&gt;.
-        /// </summary>
-        internal static string Alerta_HtmlFinal1 {
-            get {
-                return ResourceManager.GetString("Alerta_HtmlFinal1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No ingresaste nombre del tipo de planilla.
-        /// </summary>
-        internal static string Alerta_NombreTipoVacio {
-            get {
-                return ResourceManager.GetString("Alerta_NombreTipoVacio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No ingresaste el nombre de la planilla.
-        /// </summary>
-        internal static string Alerta_PlanillaVacio {
-            get {
-                return ResourceManager.GetString("Alerta_PlanillaVacio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to alert.
-        /// </summary>
-        internal static string Alerta_Rol1 {
-            get {
-                return ResourceManager.GetString("Alerta_Rol1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No seleccionaste tipo de planilla.
-        /// </summary>
-        internal static string Alerta_TipoVacio1 {
-            get {
-                return ResourceManager.GetString("Alerta_TipoVacio1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No ingresaste ninguna fecha de reincorporacion.
-        /// </summary>
-        internal static string AlertaFechaReincorporacionVacio {
-            get {
-                return ResourceManager.GetString("AlertaFechaReincorporacionVacio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No ingresaste ninguna fecha de retiro.
-        /// </summary>
-        internal static string AlertaFechaRetiroVacio {
-            get {
-                return ResourceManager.GetString("AlertaFechaRetiroVacio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No ingresaste el motivo.
-        /// </summary>
-        internal static string AlertaMotivoVacio {
-            get {
-                return ResourceManager.GetString("AlertaMotivoVacio", resourceCulture);
             }
         }
         
@@ -252,7 +153,7 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;interfazModificarRestriccionAvanceCinta.aspx?idPlan=.
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;M14_ModificarPlanillaCreada.aspx?idPlan=.
         /// </summary>
         internal static string BotonModificarRegistro {
             get {
@@ -275,24 +176,6 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string BotonSolicitarPlanilla {
             get {
                 return ResourceManager.GetString("BotonSolicitarPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to $CATEGORIA_cat&lt;br/&gt;.
-        /// </summary>
-        internal static string CategoriaCat {
-            get {
-                return ResourceManager.GetString("CategoriaCat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to $CATEGORIA_comp&lt;br/&gt;.
-        /// </summary>
-        internal static string CategoriaComp {
-            get {
-                return ResourceManager.GetString("CategoriaComp", resourceCulture);
             }
         }
         
@@ -320,33 +203,6 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;br/&gt;.
-        /// </summary>
-        internal static string linea {
-            get {
-                return ResourceManager.GetString("linea", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &amp;nombre=.
-        /// </summary>
-        internal static string Nombre {
-            get {
-                return ResourceManager.GetString("Nombre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &amp;tipo=.
-        /// </summary>
-        internal static string Tipo {
-            get {
-                return ResourceManager.GetString("Tipo", resourceCulture);
             }
         }
     }

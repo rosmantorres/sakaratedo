@@ -7,7 +7,7 @@ using DominioSKD;
 
 namespace DatosSKD.InterfazDAO.Modulo8
 {
-    public interface IDaoRestriccionEvento : IDao< DominioSKD.Entidad, Boolean, DominioSKD.Entidad>
+    public interface IDaoRestriccionEvento : IDao<DominioSKD.Entidad, Boolean, DominioSKD.Entidad>
     {
         /// <summary>
         /// Firma Metodo para agregar una restriccion de evento a la base de datos.

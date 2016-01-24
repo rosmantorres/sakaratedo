@@ -146,7 +146,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta(laRestCinta);
         }
 
-        public Comando<Boolean> CrearComandoConsultarRestriccionCinta()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarRestriccionCinta()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta();
         }

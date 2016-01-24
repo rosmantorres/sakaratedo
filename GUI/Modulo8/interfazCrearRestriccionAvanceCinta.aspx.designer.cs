@@ -82,7 +82,7 @@ namespace templateApp.GUI.Modulo8 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tiempo_minimo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tiempo_minimo;
         
         /// <summary>
         /// tiempo_maximo control.
@@ -91,7 +91,7 @@ namespace templateApp.GUI.Modulo8 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tiempo_maximo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tiempo_maximo;
         
         /// <summary>
         /// puntaje_minimo control.
@@ -100,7 +100,7 @@ namespace templateApp.GUI.Modulo8 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText puntaje_minimo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl puntaje_minimo;
         
         /// <summary>
         /// horas_docentes control.
@@ -109,7 +109,7 @@ namespace templateApp.GUI.Modulo8 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText horas_docentes;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horas_docentes;
         
         /// <summary>
         /// btnaceptar control.

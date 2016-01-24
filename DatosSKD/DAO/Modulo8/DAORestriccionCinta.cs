@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using DominioSKD;
+using DominioSKD.Entidades;
 using DominioSKD.Entidades.Modulo8;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
@@ -227,12 +227,8 @@ namespace DatosSKD.DAO.Modulo8
             #endregion
 
             #region Consultar Restriccion por cinta
-            /// <summary>
-            /// Metodo para Consultar una restriccion de cinta existente en la base de datos.
-            /// </summary>
-            /// <param name="parametro"></param>
-            /// <returns></returns>
-            public Boolean ConsultarRestriccionCinta(DominioSKD.Entidad parametro)
+            
+            /*public List<Entidad> ConsultarRestriccionCinta(DominioSKD.Entidad parametro)
             {
                 DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
                    (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
@@ -244,8 +240,8 @@ namespace DatosSKD.DAO.Modulo8
                             laRestriccionCinta.Id.ToString(), false);
                     parametros.Add(elParametro);
 
-                    BDConexion laConexion = new BDConexion();
-                    laConexion.EjecutarStoredProcedure(RecursosDAORestriccionCinta.ConsultarRestriccionCinta, parametros);
+                    //BDConexion laConexion = new BDConexion();
+                    this.EjecutarStoredProcedure(RecursosDAORestriccionCinta.ConsultarRestriccionCinta, parametros);
 
                 }
                 catch (SqlException ex)
@@ -268,7 +264,7 @@ namespace DatosSKD.DAO.Modulo8
                 }
 
                 return true;
-            }
+            }*/
 
             #endregion
 
@@ -294,7 +290,7 @@ namespace DatosSKD.DAO.Modulo8
 
                      foreach (DataRow row in dt.Rows)
                      {
-                         ListaCinta.Add(new Cinta(Int32.Parse(row[RecursosDAORestriccionCinta.AliasId_cinta].ToString()), row[RecursosDAORestriccionCinta.AliasColorCinta].ToString()));
+                         ListaCinta.Add(new DominioSKD.Entidades.Modulo5.Cinta(Int32.Parse(row[RecursosDAORestriccionCinta.AliasId_cinta].ToString()), row[RecursosDAORestriccionCinta.AliasColorCinta].ToString()));
                      }
 
                  }
@@ -323,5 +319,67 @@ namespace DatosSKD.DAO.Modulo8
             }
 
             #endregion
+
+        #region Consultar Restricciones de CInta para Data Table
+
+            public List<DominioSKD.Entidad> ConsultarRestriccionCintaDT()
+            {
+
+                //BDConexion laConexion;
+                this.Conectar();
+                List<Parametro> parametros;
+                FabricaEntidades fabricaEntidad = new FabricaEntidades();
+                List<DominioSKD.Entidad> ListaRestriccionCinta = new List<DominioSKD.Entidad>();
+                
+
+                try
+                {
+                    //laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+                    DataTable dt = this.EjecutarStoredProcedureTuplas(RecursosDAORestriccionCinta.ConsultarRestriccionCinta, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        ListaRestriccionCinta.Add(new DominioSKD.Entidades.Modulo8.RestriccionCinta(Int32.Parse(row[RecursosDAORestriccionCinta.AliasIdRestriccionCinta].ToString()),
+                                                                                   row[RecursosDAORestriccionCinta.AliasColorCinta].ToString(),
+                                                                       Int32.Parse(row[RecursosDAORestriccionCinta.AliasTiempoMinCintas].ToString()),
+                                                                       Int32.Parse(row[RecursosDAORestriccionCinta.AliasPuntosMinCintas].ToString()),
+                                                                       Int32.Parse(row[RecursosDAORestriccionCinta.AliasTiempoDocente].ToString())));
+                    }
+
+                }
+                catch (SqlException ex)
+                {
+                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (FormatException ex)
+                {
+                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAORestriccionCinta.Codigo_Error_Formato,
+                          RecursosDAORestriccionCinta.Mensaje_Error_Formato, ex);
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    //EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+
+
+                return ListaRestriccionCinta;
+
+            }    
+
+        #endregion
     }
 }
