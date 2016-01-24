@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -101,8 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo15\" />
-    <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />

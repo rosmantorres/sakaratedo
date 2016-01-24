@@ -233,7 +233,7 @@
                      
                             <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
                             <h3>Seleccione tipo de pago</h3>
-                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
+                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()">
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
@@ -327,27 +327,12 @@
 			</div>
 	    </div>
         </div>
-					</div>
-				</div>
+					</div>                      
+                    </div>
 			</div>
 		</div>
        </div>
-
-     </form>      
-
-<!--VALIDACION PARA EL MODAL DE PAGO-->
-    <script type="text/javascript">
-        debugger;
-
-        //Funcion que activa el boton si el valor seleccionado es diferente de -1, sino, lo desactiva
-        function example() {
-            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
-
-                $('#<%=BotonPagar.ClientID %>').attr("disabled", true);
-            }
-            else
-                $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
-        }
-
-    </script>
+         <script src="JS/ValidacionesJS.js"></script>
+     </form>
+    
 </asp:Content>
