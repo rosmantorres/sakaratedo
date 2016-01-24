@@ -17,8 +17,7 @@ namespace templateApp.GUI.Modulo5
 {
     public partial class M5_ListarCintas : System.Web.UI.Page, IContratoListarCintas
     {
-      //  private LogicaNegociosSKD.Modulo5.LogicaCinta logica = new LogicaNegociosSKD.Modulo5.LogicaCinta();
-//        List<DominioSKD.Cinta> lista;
+
 
         private PresentadorLlenarCintas presentador;
 
@@ -70,7 +69,6 @@ namespace templateApp.GUI.Modulo5
         public void llenarBotones(int id)
         {
             this.tabla.Text += RecursoInterfazMod5.AbrirTD;
-            this.tabla.Text += RecursoInterfazMod5.BotonInfo + id + RecursoInterfazMod5.BotonCerrar;
             this.tabla.Text += RecursoInterfazMod5.BotonModificar + id + RecursoInterfazMod5.BotonCerrar;
         }
 
