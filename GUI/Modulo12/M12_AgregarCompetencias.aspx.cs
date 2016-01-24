@@ -66,6 +66,7 @@ namespace templateApp.GUI.Modulo12
 
         }
         #endregion
+
         #region Contrato
         string IContratoAgregarCompetencias.nombreComp
         {
