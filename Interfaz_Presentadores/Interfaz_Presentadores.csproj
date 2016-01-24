@@ -36,6 +36,10 @@
     <Reference Include="CKEditor.NET">
       <HintPath>..\packages\CKEditor.NET.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
@@ -213,6 +217,7 @@
     <Content Include="Master\menuSuperior.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Modulo16\Carnet_titulo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
