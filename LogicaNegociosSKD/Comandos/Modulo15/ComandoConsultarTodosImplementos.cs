@@ -13,7 +13,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoConsultarTodosImplementos : Comando<List<Entidad>>
     {
-
+        /// <summary>
+        /// Comando Consultar todos los Implemento
+        /// </summary>
+        /// <param name=""> </param>
+        /// <returns>una lista de implementos</returns>
         public override List<Entidad> Ejecutar()
         {
             List<Entidad> lista=new List<Entidad>();

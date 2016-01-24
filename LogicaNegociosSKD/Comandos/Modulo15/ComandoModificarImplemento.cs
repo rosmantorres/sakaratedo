@@ -10,8 +10,13 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
+
    public class ComandoModificarImplemento:Comando<bool>
     {
+        /// <summary>
+        /// Comando Modificar un Implemento
+        /// </summary>
+        /// <param name=""> id del Implemento</param>
        private Entidad implemento;
        private Entidad dojo;
        public override bool Ejecutar()

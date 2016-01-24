@@ -13,7 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoUsuarioDojo : Comando<int>
     {
-
+        /// <summary>
+        /// Comando Usuario de Dojo
+        /// </summary>
         
 
         public override int Ejecutar()

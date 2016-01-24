@@ -13,6 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {    
     public class ComandoImplementoXId:Comando<Entidad>
     {
+        /// <summary>
+        /// Comando Consultar implemento por ID
+        /// </summary>
         private Entidad dojo;
         private Entidad implemento;
 

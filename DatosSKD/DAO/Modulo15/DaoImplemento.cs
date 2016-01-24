@@ -305,6 +305,12 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region idDojo
+
+        /// <summary>
+        /// Método que consulta los datos de un dojo
+        /// </summary>
+        /// <param name="">Id del Dojo a consultar</param>
+        /// <returns>La clase Dojo</returns>
         public  Entidad DetallarDojo(Entidad parametroDojo)
         {
             BDConexion laConexion;
@@ -368,6 +374,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion 
 
         #region listarInventarioDatos
+        /// <summary>
+        /// Método que lista los datos de un inventario
+        /// </summary>
+        /// <param name="">Id del Dojo a consultar donde este el inventario</param>
+        /// <returns>La clase Implemento</returns>
         List<Entidad> IDaoImplemento.listarInventarioDatos(Entidad parametroDojo)
         {
             BDConexion laConexion;
@@ -445,6 +456,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region listaInventarioDatos2
+        /// <summary>
+        /// Método que lista los datos de un inventario
+        /// </summary>
+        /// <param name="">Id del Dojo a consultar donde este el inventario</param>
+        /// <returns>La clase Implemento</returns>
            List<Entidad> IDaoImplemento.listarInventarioDatos2(Entidad parametroDojo)
         {
             BDConexion laConexion;
@@ -518,6 +534,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion 
 
         #region implementoInventarioDatos
+           /// <summary>
+           /// Método que lista los datos de un implemento
+           /// </summary>
+           /// <param name="">Id del implemento a consultar </param>
+           /// <returns>La clase Implemento</returns>
           Entidad IDaoImplemento.implementoInventarioDatos(int idImplemento)
         {
             BDConexion laConexion;
@@ -588,6 +609,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region eliminarInventarioDatos
+          /// <summary>
+          /// Método que elimina los datos de un implemento
+          /// </summary>
+          /// <param name="">Id del dojo donde se encuentra el implemento, id del inventario </param>
+          /// <returns>La clase Implemento</returns>
           bool IDaoImplemento.eliminarInventarioDatos(int idInventario, Entidad parametroDojo)
           {
             BDConexion laConexion;
@@ -646,6 +672,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region modificarInventarioDatos
+          /// <summary>
+          /// Método que modifica los datos de un implemento
+          /// </summary>
+          /// <param name="">Id del implemento a modificar </param>
+          /// <returns>La clase Implemento</returns>
           bool IDaoImplemento.modificarInventarioDatos(Entidad parametroImplemento)
         {
             BDConexion laConexion;
@@ -859,6 +890,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region listarInventarioDatos
+          /// <summary>
+          /// Método que lista los datos de un implemento
+          /// </summary>
+          /// <param name=""> </param>
+          /// <returns>La clase Implemento</returns>
             List<Entidad> IDaoImplemento.listarCarrito()
         {
             BDConexion laConexion;
@@ -923,6 +959,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region implementoInventarioDatosUltimo
+            /// <summary>
+            /// Método que lista los ultimos datos de un implemento
+            /// </summary>
+            /// <param name=""> </param>
+            /// <returns>La clase Implemento</returns>
           Entidad IDaoImplemento.implementoInventarioDatosUltimo()
         {
             BDConexion laConexion;
@@ -981,6 +1022,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region implementoInventarioDatosBool
+          /// <summary>
+          /// Método que lista los datos de un implemento en un inventario
+          /// </summary>
+          /// <param name="">Id del implemento a consultar </param>
+          /// <returns>La clase Implemento</returns>
           bool IDaoImplemento.implementoInventarioDatosBool(int idImplemento)
           {
             BDConexion laConexion;
@@ -1052,6 +1098,11 @@ namespace DatosSKD.DAO.Modulo15
         #endregion
 
         #region usuarioImplementoDatos
+          /// <summary>
+          /// Método que lista los datos de un implemento por usuario
+          /// </summary>
+          /// <param name="">Id del usuario a consultar </param>
+          /// <returns>La clase Implemento</returns>
           int IDaoImplemento.usuarioImplementoDatos(string usuario)
         {
             BDConexion laConexion;

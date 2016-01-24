@@ -11,6 +11,11 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
+    /// <summary>
+    /// Comando Agregar Implemento
+    /// </summary>
+    /// <param name="">La Entidad Implemento que se va a agregar </param>
+    /// <returns>un true si agrego el implemento, false si no lo agrego</returns>
    public  class ComandoAgregarImplemento:Comando<Boolean>
     {
 

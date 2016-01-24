@@ -12,6 +12,9 @@ using ExcepcionesSKD;
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoDojoId :Comando<Entidad>
+    /// <summary>
+    /// Comando ID Dojo
+    /// </summary>
     {
         public override Entidad Ejecutar()
         {

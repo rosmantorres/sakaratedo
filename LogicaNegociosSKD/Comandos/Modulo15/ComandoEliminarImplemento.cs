@@ -13,6 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoEliminarImplemento:Comando<bool>
     {
+        /// <summary>
+        /// Comando Eliminar  Implemento
+        /// </summary>
         public Entidad dojo;
 
         public Entidad Dojo {
