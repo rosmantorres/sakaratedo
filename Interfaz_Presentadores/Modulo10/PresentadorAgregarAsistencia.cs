@@ -73,6 +73,7 @@ namespace Interfaz_Presentadores.Modulo10
             List<Entidad> listaC = comandoListaC.Ejecutar();
 
             Dictionary<int, string> listaEventos = new Dictionary<int, string>();
+            listaEventos.Add(0, "Seleccionar Evento:");
             foreach (Entidad evento in listaE)
             {
                 listaEventos.Add(((DominioSKD.Entidades.Modulo10.Evento)evento).Id, ((DominioSKD.Entidades.Modulo10.Evento)evento).Nombre);
