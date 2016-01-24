@@ -10,7 +10,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
          <%--Alerta de falta de contenido--%>
- <div id="alert"  >
+ <div id="alert" runat="server" >
  </div>
      <%--Fin de alerta de falta de contenido--%>
 
@@ -113,7 +113,9 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Imagen Implemento:</b></p>
                        <input type="file" id="imagen_implemento" name="imagen_implemento" class="form-control" runat="server"/>            
-                    </div>
+                    <img id="imagen_img" src="" alt="Smiley face" height="80" width="80" runat="server">
+
+                        </div>
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Estatus:</b></p>
