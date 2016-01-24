@@ -36,7 +36,6 @@ namespace DatosSKD.DAO.Modulo9
             {
                 //parametros para insertar un evento
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)eventoParametro;
-
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro parametro = new Parametro(RecursosDaoEvento.ParametroNombreEvento, SqlDbType.VarChar, evento.Nombre, false);
                 parametros.Add(parametro);
@@ -58,9 +57,9 @@ namespace DatosSKD.DAO.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosDaoEvento.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDaoEvento.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametro = new Parametro(RecursosDaoEvento.ParametroHoraInicio, SqlDbType.VarChar, evento.Horario.HoraInicioS, false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDaoEvento.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametro = new Parametro(RecursosDaoEvento.ParametroHoraFin, SqlDbType.VarChar, evento.Horario.HoraFinS, false);
                 parametros.Add(parametro);
 
                 BDConexion con = new BDConexion();
@@ -84,26 +83,28 @@ namespace DatosSKD.DAO.Modulo9
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1"+" "+ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
+                
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Console.Out.WriteLine("2" + " " + ex.Message);
                 throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDaoEvento.CodigoErrorFormato,
                      RecursosDaoEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Console.Out.WriteLine("3" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Console.Out.WriteLine("4" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
         }
@@ -224,9 +225,9 @@ namespace DatosSKD.DAO.Modulo9
                 parametros.Add(parametro);
                 parametro = new Parametro(RecursosDaoEvento.ParametroFechaFin, SqlDbType.Date, evento.Horario.FechaFin.ToString(), false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDaoEvento.ParametroHoraInicio, SqlDbType.Int, evento.Horario.HoraInicio.ToString(), false);
+                parametro = new Parametro(RecursosDaoEvento.ParametroHoraInicio, SqlDbType.VarChar, evento.Horario.HoraInicioS, false);
                 parametros.Add(parametro);
-                parametro = new Parametro(RecursosDaoEvento.ParametroHoraFin, SqlDbType.Int, evento.Horario.HoraFin.ToString(), false);
+                parametro = new Parametro(RecursosDaoEvento.ParametroHoraFin, SqlDbType.VarChar, evento.Horario.HoraFinS, false);
                 parametros.Add(parametro);
 
                 BDConexion con = new BDConexion();
@@ -395,8 +396,8 @@ namespace DatosSKD.DAO.Modulo9
                     //Horario horario = new Horario();
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
-                    horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
-                    horario.HoraFin = int.Parse(row[RecursosDaoEvento.AliasHoraFin].ToString());
+                    horario.HoraInicioS = (row[RecursosDaoEvento.AliasHoraInicio].ToString());
+                    horario.HoraFinS = (row[RecursosDaoEvento.AliasHoraFin].ToString());
                     tipoEvento.Nombre = row[RecursosDaoEvento.AliasTipoEvento].ToString();
                     evento.Horario = horario;
                     evento.TipoEvento = tipoEvento;
@@ -542,8 +543,8 @@ namespace DatosSKD.DAO.Modulo9
                     evento.Costo = float.Parse(row[RecursosDaoEvento.AliasCostoEvento].ToString());
                     horario.FechaInicio = DateTime.Parse(row[RecursosDaoEvento.AliasFechaInicio].ToString());
                     horario.FechaFin = DateTime.Parse(row[RecursosDaoEvento.AliasFechaFin].ToString());
-                    horario.HoraInicio = int.Parse(row[RecursosDaoEvento.AliasHoraInicio].ToString());
-                    horario.HoraFin = int.Parse(row[RecursosDaoEvento.AliasHoraFin].ToString());
+                    horario.HoraInicioS = (row[RecursosDaoEvento.AliasHoraInicio].ToString());
+                    horario.HoraFinS = (row[RecursosDaoEvento.AliasHoraFin].ToString());
                     tipoEvento.Id = int.Parse(row[RecursosDaoEvento.AliasIDTipoEvento].ToString());
                     tipoEvento.Nombre = row[RecursosDaoEvento.AliasTipoEvento].ToString();
                     evento.Horario = horario;

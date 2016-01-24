@@ -85,7 +85,7 @@
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
     <Compile Include="Modulo9\IContratoAgregarEvento.cs" />
     <Compile Include="Modulo9\IContratoDetalleEvento.cs" />
-    <Compile Include="Modulo9\IContratoListarEvento.cs" />
+    <Compile Include="Modulo9\IContratoListarEventos.cs" />
     <Compile Include="Modulo9\IContratoModificarEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

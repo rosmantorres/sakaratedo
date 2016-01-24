@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo9 {
     
     
-    public partial class prueba {
+    public partial class M9_AgregarEvento {
         
         /// <summary>
         /// alert control.

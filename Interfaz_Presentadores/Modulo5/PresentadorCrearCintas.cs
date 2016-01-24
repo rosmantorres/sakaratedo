@@ -8,6 +8,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD;
 using DominioSKD;
+using DominioSKD.Fabrica;
 
 namespace Interfaz_Presentadores.Modulo5
 {
@@ -60,8 +61,8 @@ namespace Interfaz_Presentadores.Modulo5
         /// </summary>
         public void agregarValoresCinta()
         {
-            DominioSKD.Entidades.Modulo5.Cinta laCinta = new DominioSKD.Entidades.Modulo5.Cinta();
-            DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
+            DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
+            DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
 
             //Se llena una lista de todos los valores que se piden por pantalla para validar si estan vacios
             List<String> laListaDeInputs = new List<String>();

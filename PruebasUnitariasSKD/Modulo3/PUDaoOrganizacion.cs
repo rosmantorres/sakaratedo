@@ -27,6 +27,8 @@ namespace PruebasUnitariasSKD.Modulo3
         private Entidad miEntidad;
         private Entidad miEntidadModificar;
         private Entidad miEntidadAgregar;
+        private Entidad miEntidadValidarOrg;
+        private Entidad miEntidadValidarEstilo;
         #endregion
 
         #region SetUp & TearDown
@@ -38,7 +40,9 @@ namespace PruebasUnitariasSKD.Modulo3
         {
             miEntidad = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
             miEntidadModificar = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
-            miEntidadAgregar = FabricaEntidades.ObtenerOrganizacion_M3(19, "Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");       
+            miEntidadAgregar = FabricaEntidades.ObtenerOrganizacion_M3("Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Falcon", 2123117754, "seitokaratedo@gmail.com", "Falcon", "Cobra-do");
+            miEntidadValidarEstilo = FabricaEntidades.ObtenerOrganizacion_M3(1, "Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Goju Ryu");
+            miEntidadValidarOrg = FabricaEntidades.ObtenerOrganizacion_M3("Seito Karate-do", "Av 24, calle 8 edificio Morales, Altamira, Caracas", 2123117754, "seitokaratedo@gmail.com", "Distrito Federal", "Cobra-do");
             
         }
 
@@ -51,16 +55,17 @@ namespace PruebasUnitariasSKD.Modulo3
             miEntidad = null;
             miEntidadModificar = null;
             miEntidadAgregar = null;
+            miEntidadValidarEstilo = null;
+            miEntidadValidarOrg = null;
 
         }
         #endregion
 
         #region Test
         /// <summary>
-        /// Método para probar la exception de Organizacion existente para Agregar y Modificar en DAO
+        /// Método para probar la  existencia de una Organizacion para Agregar y Modificar en DAO
         /// </summary>
         [Test]
-       // [ExpectedException(typeof(OrganizacionExistenteException))]
         public void PruebaValidarNombreOrganizacion()
         {
             bool resultado;
@@ -69,11 +74,23 @@ namespace PruebasUnitariasSKD.Modulo3
             Assert.IsTrue(resultado);
 
         }
+
         /// <summary>
-        /// Método para probar la exception de Organizacion solo puede tener un estilo para Agregar y Modificar en DAO
+        /// Método para probar la exception de Organizacion existente para Agregar y Modificar en DAO
         /// </summary>
         [Test]
-        //[ExpectedException(typeof(EstiloInexistenteException))]
+        [ExpectedException(typeof(OrganizacionExistenteException))]
+        public void PruebaValidarNombreOrganizacionExcepcion()
+        {
+            bool resultado;
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.Agregar(miEntidadValidarOrg);
+
+        }
+        /// <summary>
+        /// Método para probar si la Organizacion tiene un estilo existente o no para Agregar y Modificar en DAO
+        /// </summary>
+        [Test]
         public void PruebaValidarEstilo()
         {
             bool resultado;
@@ -82,8 +99,22 @@ namespace PruebasUnitariasSKD.Modulo3
             Assert.IsTrue(resultado);
 
         }
+
         /// <summary>
-        /// Método de prueba para ListarOrganizaciones sol el id y el nombre en DAO
+        /// Método para probar la exception de Organizacion solo puede tener un estilo para Agregar y Modificar en DAO
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(EstiloInexistenteException))]
+        public void PruebaValidarEstiloExcepcion()
+        {
+            bool resultado;
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.Modificar(miEntidadValidarEstilo);
+
+        }
+
+        /// <summary>
+        /// Método de prueba para ListarOrganizaciones sol el id y el nombre en DAO, no este vacio
         /// </summary>
         [Test]
         public void PruebaComboOrganizaciones()
@@ -119,7 +150,7 @@ namespace PruebasUnitariasSKD.Modulo3
 
         }
         /// <summary>
-        /// Método de prueba para Listar Todas las Organizaciones 
+        /// Método de prueba para Listar Todas las Organizaciones, no este vacia
         /// </summary>
         [Test]
         public void PruebaConsultarTodos()
@@ -131,7 +162,7 @@ namespace PruebasUnitariasSKD.Modulo3
 
         }
         /// <summary>
-        /// Método de prueba para Consultar una organizacion en especifico
+        /// Método de prueba para Consultar una organizacion en especifico, no sea nulo
         /// </summary>
         [Test]
         public void PruebaConsultarXId()
