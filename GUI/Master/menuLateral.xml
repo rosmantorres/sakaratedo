@@ -151,7 +151,7 @@
   <opcion nombre="Gestionar Eventos" link="~/GUI/Modulo9/M9_ListarEventos.aspx">
     <modulo id="9"></modulo>
   </opcion>
-  <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEventos.aspx">
+  <opcion nombre="Agregar Eventos" link="~/GUI/Modulo9/M9_AgregarEvento.aspx">
     <modulo id="9"></modulo>
   </opcion>
   <opcion nombre="Gestión de Competencias" link="~/GUI/Modulo12/M12_ListarCompetencias.aspx">
