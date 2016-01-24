@@ -24,6 +24,8 @@ namespace Interfaz_Contratos.Modulo16
 
         Table tablaDetalleMatriculas { get; }
 
+        Table tablaDetalleDatos { get; }
+
         /// <summary>
         /// Literal que permite imprimir los valores en el modal
         /// </summary>

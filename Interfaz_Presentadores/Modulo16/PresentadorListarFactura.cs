@@ -191,6 +191,22 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Casteamos
                 Compra resultados = DetalleFactura(compra);
+         
+
+                // Imprime los tipos de pago
+                foreach (Pago aux in resultados.Listapago)
+                {
+                    TableRow fila = new TableRow();
+
+                    //Nueva celda que tendra el id de la factura 
+                    TableCell celda = new TableCell();
+                    celda.Text = aux.TipoPago.ToString();
+
+                    //Agrego la Celda a la fila
+                    fila.Cells.Add(celda);
+
+                    vista.tablaDetalleDatos.Rows.Add(fila);
+                }
                 
                 // Imprime el Detalle del Implemento de la Factura
                 foreach(DetalleFacturaProducto aux in resultados.Listainventario)
@@ -298,7 +314,7 @@ namespace Interfaz_Presentadores.Modulo16
                 // Variables para imprimir en el modal
                 vista.LiteralDetallesFacturas.Text = "</br>" + "<h3>Nro. Factura</h3>" + "<label id='aux1' >" + resultados.Com_id + "</label>" +
                                                             "<h3>Fecha de Pago</h3>" + "<label id='aux2' >" + resultados.Com_fecha_compra + "</label>" +
-                                                            "<h3>Total</h3>" + "<label id='aux3' >" + "</label>";
+                                                            "<h3>Total</h3>" + "<label id='aux3' >" + resultados.Monto + "</label>";
 
 
 

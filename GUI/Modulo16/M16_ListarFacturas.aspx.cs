@@ -48,6 +48,11 @@ namespace templateApp.GUI.Modulo16
         {
             get { return this.tablaDetallesMatriculas; }
         }
+
+        public Table tablaDetalleDatos
+        {
+            get { return this.tablaDetallesDatos; }
+        }
         /// <summary>
         /// Propiedad de la TablaListaMensualidades
         /// </summary>

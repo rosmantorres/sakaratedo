@@ -80,6 +80,16 @@
 							<div class="row" id="prueba" >
                                 <asp:Literal runat="server" ID="detalleFacturaLiteral" ></asp:Literal>
 
+                                <h2 class="modal-title">Formas de Pago</h2>
+                                  <asp:Table ID="tablaDetallesDatos" runat="server" CssClass="table table-bordered table-striped dataTable">
+                                     <asp:TableHeaderRow>
+                                       <asp:TableHeaderCell>
+                                           Pagado con
+                                       </asp:TableHeaderCell>            
+                   
+                                   </asp:TableHeaderRow>           
+                                  </asp:Table>
+
                                 <h2 class="modal-title">Detalles de los Productos</h2>
                                   <asp:Table ID="tablaDetallesProductos" runat="server" CssClass="table table-bordered table-striped dataTable">
                                      <asp:TableHeaderRow>

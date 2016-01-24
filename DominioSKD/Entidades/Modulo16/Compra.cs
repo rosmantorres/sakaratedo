@@ -24,6 +24,7 @@ namespace DominioSKD.Entidades.Modulo16
         int com_id;
         string com_estado;
         DateTime com_fecha_compra;
+        float monto;
 
         #endregion
 
@@ -139,6 +140,22 @@ namespace DominioSKD.Entidades.Modulo16
             }
         }
 
+        /// <summary>
+        /// Propiedad del atributo monto
+        /// </summary>
+        public float Monto
+        {
+            get
+            {
+                return this.monto;
+            }
+
+            set
+            {
+                this.monto = value;
+            }
+
+        }
 
         #endregion
 
@@ -151,16 +168,18 @@ namespace DominioSKD.Entidades.Modulo16
             this.com_id = 0;
             this.com_estado = "";
             this.com_fecha_compra = DateTime.Now;
+            this.monto = 0;
         }
 
         /// <summary>
         /// Constructor con todos los atributos de la clase compra
         /// </summary>
-        public Compra(int com_id, string com_estado, DateTime com_fecha_compra)
+        public Compra(int com_id, string com_estado, DateTime com_fecha_compra, float monto)
         {
             this.com_id = com_id;
             this.com_estado = com_estado;
             this.com_fecha_compra = com_fecha_compra;
+            this.monto = monto;
         }
         #endregion
 

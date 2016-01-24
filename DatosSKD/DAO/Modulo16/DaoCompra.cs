@@ -283,7 +283,7 @@ namespace DatosSKD.DAO.Modulo16
                     laCompra.Id = int.Parse(row[RecursosBDModulo16.PARAM_ID_FACT].ToString());
                     laCompra.Com_fecha_compra = DateTime.Parse(row[RecursosBDModulo16.PARAM_FECHA_COMPRA].ToString());
                     elPago.TipoPago = row[RecursosBDModulo16.PARAM_TIPO_PAGO_FACT].ToString();
-                    elPago.Monto = int.Parse(row[RecursosBDModulo16.PARAM_MONTO_PAGO_FACT].ToString());
+                    comp.Monto = int.Parse(row[RecursosBDModulo16.PARAM_MONTO_PAGO_FACT].ToString());
 
                     comp.Listapago.Add(elPago);
                 }
