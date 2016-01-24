@@ -40,9 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
-    <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
-    <Compile Include="Comandos\Modulo10\ComandoConsultarTodasLasFechasDeUnEventoM10.cs" />
-    <Compile Include="Comandos\Modulo10\ComandoEventosPorRangosdeFechaM10.cs" />
     <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
@@ -69,6 +66,9 @@
     <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
     <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
+	<Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarTodasLasFechasDeUnEventoM10.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoEventosPorRangosdeFechaM10.cs" />
     <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoAscenso.cs" />
     <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKata.cs" />
     <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKumite.cs" />
