@@ -80,7 +80,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 //Instancio el DAO de Carrito
                 IdaoCarrito daocarrito = FabricaDAOSqlServer.ObtenerdaoCarrito();
 
-                //Instancio el carrito y Obtengo todos los items del carrito de la persona y pagos hechos
+                //Instancio el carrito y Obtengo todos los items del carrito de la persona y los pagos hechos
                 carrito = FabricaEntidades.ObtenerCarrito
                     (daocarrito.getImplemento(this.persona),
                     daocarrito.getEvento(this.persona),
@@ -103,17 +103,17 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (ArgumentNullException e)
+            catch (ParseoVacioException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (FormatException e)
+            catch (ParseoFormatoInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;
             }
-            catch (OverflowException e)
+            catch (ParseoEnSobrecargaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;

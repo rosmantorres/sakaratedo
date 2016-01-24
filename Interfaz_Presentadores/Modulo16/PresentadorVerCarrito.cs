@@ -26,7 +26,7 @@ namespace Interfaz_Presentadores.Modulo16
         #region Atributos
         //Interfaz a usar de su vista
         IcontratoVerCarrito laVista;
-        private float precioFinal = 0;
+        private float precioFinal;
         #endregion
 
         #region Constructores
@@ -37,6 +37,7 @@ namespace Interfaz_Presentadores.Modulo16
         public PresentadorVerCarrito(IcontratoVerCarrito laVista)
         {
             this.laVista = laVista;
+            this.precioFinal = 0;
         }
         #endregion
 
@@ -283,52 +284,47 @@ namespace Interfaz_Presentadores.Modulo16
             catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PERSONA_INVALIDA_LINK, false);
+                throw e;
             }
             catch (LoggerException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LOGGER_LINK, false);
-                
+                throw e;                
             }
-            catch (ArgumentNullException e)
+            catch (ParseoVacioException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARSEO_VACIO_LINK, false);
+                throw e;
             }
-            catch (FormatException e)
+            catch (ParseoFormatoInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_FORMATO_LINK, false);
-                
+                throw e;
             }
-            catch (OverflowException e)
+            catch (ParseoEnSobrecargaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_SOBRECARGA_LINK, false);
-                
+                throw e;                
             }
             catch (ParametroInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_PARAMETRO_INVALIDO_LINK, false);
+                throw e;
             }
             catch (ExceptionSKDConexionBD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_CONEXIONBD_LINK, false);
-                
+                throw e;                
             }
             catch (ExceptionSKD e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTIONSKD_LINK, false);
-                
+                throw e;                
             }
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPTION_LINK, false);
+                throw e;
             }
         }
         #endregion        
