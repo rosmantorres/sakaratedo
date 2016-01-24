@@ -9,19 +9,19 @@ namespace Interfaz_Contratos.Modulo9
 {
     public interface IContratoAgregarEvento
     {
-        string nombreEvento { get; }
-        DropDownList comboTipoEvento { get; set; }
-        string otroEvento { get; }
-        string costoEvento { get; }
-        string fechaInicio { get; }
-        string fechaFin { get; }
-        string horaInicio { get; }
-        string horaFin { get; }
-        string descripcionEvento { get; }
-        string statusActivo { get; }
-        bool statusActivoBool { get; }
-        string statusInactivo { get; }
-        bool statusInactivoBool { get; }
+        DropDownList iComboTipoEvento { get; set; }
+        string iNombreEvento { get; }
+        string iCostoEvento { get; }
+        string iOtroEvento { get;}
+        string iFechaInicio { get; }
+        string iFechaFin { get; }
+        string iHoraInicio { get; }
+        string iHoraFin { get; }
+        string iDescripcionEvento { get; }
+        string iStatusActivo { get; }
+        bool iStatusActivoBool { get; }
+        string iStatusInactivo { get; }
+        bool iStatusInactivoBool { get; }
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }

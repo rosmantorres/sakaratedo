@@ -79,6 +79,24 @@ namespace templateApp.GUI.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase {
+            get {
+                return ResourceManager.GetString("alertClase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole {
+            get {
+                return ResourceManager.GetString("alertRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {

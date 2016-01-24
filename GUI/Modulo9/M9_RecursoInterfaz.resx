@@ -123,6 +123,12 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>

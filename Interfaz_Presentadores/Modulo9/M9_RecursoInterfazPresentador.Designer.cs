@@ -79,6 +79,15 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ../Modulo9/M9_ListarEventos.aspx?success=1.
+        /// </summary>
+        internal static string agregarExito {
+            get {
+                return ResourceManager.GetString("agregarExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
         internal static string alertaError {
@@ -156,6 +165,15 @@ namespace Interfaz_Presentadores.Modulo9 {
         internal static string BotonModificar {
             get {
                 return ResourceManager.GetString("BotonModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Existen campos vacios, todos los campos son obligatorios.
+        /// </summary>
+        internal static string camposVacios {
+            get {
+                return ResourceManager.GetString("camposVacios", resourceCulture);
             }
         }
         

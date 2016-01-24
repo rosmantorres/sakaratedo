@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_AgregarEventos.aspx.cs" Inherits="templateApp.GUI.Modulo9.M9_AgregarEventos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M9_AgregarEvento.aspx.cs" Inherits="templateApp.GUI.Modulo9.prueba" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <link href="../../../plugins/datepicker/datepicker3.css" rel="stylesheet"/>
 <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
@@ -65,10 +65,10 @@
                                 <h3>Tipo de Evento</h3>
                                 <div class="btn-group"> 
                                     <div class="dropdown" runat="server" id="divComboTipoEvento">
-                                       <asp:DropDownList ID="comboTipoEvento"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged" AutoPostBack="true">
+                                       <asp:DropDownList ID="comboTipoEvento"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged">
                                        </asp:DropDownList>
                                     </div>
-                                        <asp:TextBox runat="server" type="text" name="otroEvento" id="otroEvento" placeholder="Tipo de Evento" class="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" type="text" name="otroEvento" id="otroEvento" placeholder="Tipo de Evento" class="form-control" Visible="False"></asp:TextBox>
                                     
                                 </div>
                             </div>
@@ -176,25 +176,25 @@
 </div>
 
 <script type="text/javascript">
-$(document).ready(function () {
-    $('#datePickerIni')
-    .datepicker({
-        format: 'mm/dd/yyyy'
-    })
-    .on('changeDate', function (e) {
-                // Revalidate the date field
-            });
+    $(document).ready(function () {
+        $('#datePickerIni')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function (e) {
+            // Revalidate the date field
+        });
     });
 
-$(document).ready(function () {
-    $('#datePickerFin')
-    .datepicker({
-        format: 'mm/dd/yyyy'
-    })
-    .on('changeDate', function (e) {
-        // Revalidate the date field
+    $(document).ready(function () {
+        $('#datePickerFin')
+        .datepicker({
+            format: 'mm/dd/yyyy'
+        })
+        .on('changeDate', function (e) {
+            // Revalidate the date field
+        });
     });
-});
 
     </script>
 

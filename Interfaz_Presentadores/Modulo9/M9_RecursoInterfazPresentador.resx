@@ -177,4 +177,10 @@
   <data name="valueCombo" xml:space="preserve">
     <value>value</value>
   </data>
+  <data name="agregarExito" xml:space="preserve">
+    <value>../Modulo9/M9_ListarEventos.aspx?success=1</value>
+  </data>
+  <data name="camposVacios" xml:space="preserve">
+    <value>Existen campos vacios, todos los campos son obligatorios</value>
+  </data>
 </root>
