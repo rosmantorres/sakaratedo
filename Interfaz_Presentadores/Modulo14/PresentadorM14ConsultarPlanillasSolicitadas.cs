@@ -31,7 +31,9 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertaRol = "alert";
             vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-
+        /// <summary>
+        /// Agrega los datos requeridos de la tabla de planillas solicitadas
+        /// </summary>
         public void LlenarInformacion(List<Entidad> lista)
         {
             try
@@ -65,7 +67,10 @@ namespace Interfaz_Presentadores.Modulo14
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Llena la tabla con los datos de las planillas solicitadas por usuario
+        /// </summary>
+        /// <returns>lista de entidad</returns>
         public List<Entidad> LlenarTabla(int idPersona)
         {
 
@@ -107,7 +112,9 @@ namespace Interfaz_Presentadores.Modulo14
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Elimina toda una fila de la tabla
+        /// </summary>
         public void EliminarFilaTable(HttpRequest request, int idSol)
         {
             try

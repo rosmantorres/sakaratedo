@@ -39,9 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CKEditor.NET.dll</HintPath>
+    <Reference Include="CKEditor.NET">
+      <HintPath>packages\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -306,10 +305,10 @@
     <Content Include="GUI\Modulo8\interfazRestriccionesAvanceCinta.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesEventos.aspx" />
     <Content Include="GUI\Modulo8\interfazRestriccionesHorario.aspx" />
-    <Content Include="GUI\Modulo9\M9_Prueba.aspx" />
+    <Content Include="GUI\Modulo9\M9_DetalleEvento.aspx" />
     <Content Include="GUI\Modulo9\M9_ListarEventos.aspx" />
-    <Content Include="GUI\Modulo9\M9_AgregarEventos.aspx" />
-    <Content Include="GUI\Modulo9\M9_ModificarEventos.aspx" />
+    <Content Include="GUI\Modulo9\M9_ModificarEvento.aspx" />
+    <Content Include="GUI\Modulo9\M9_AgregarEvento.aspx" />
     <Content Include="plugins\ckeditor\CHANGES.md" />
     <Content Include="plugins\ckeditor\LICENSE.md" />
     <Content Include="plugins\ckeditor\plugins\scayt\LICENSE.md" />
@@ -2122,12 +2121,12 @@
     <Compile Include="GUI\Modulo8\interfazRestriccionesHorario.aspx.designer.cs">
       <DependentUpon>interfazRestriccionesHorario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_Prueba.aspx.designer.cs">
-      <DependentUpon>M9_Prueba.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_DetalleEvento.aspx.designer.cs">
+      <DependentUpon>M9_DetalleEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo9\M9_ListarEventos.aspx.cs">
       <DependentUpon>M9_ListarEventos.aspx</DependentUpon>
@@ -2136,19 +2135,24 @@
     <Compile Include="GUI\Modulo9\M9_ListarEventos.aspx.designer.cs">
       <DependentUpon>M9_ListarEventos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_AgregarEventos.aspx.cs">
-      <DependentUpon>M9_AgregarEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_AgregarEventos.aspx.designer.cs">
-      <DependentUpon>M9_AgregarEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_ModificarEvento.aspx.designer.cs">
+      <DependentUpon>M9_ModificarEvento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.cs">
-      <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M9_RecursoInterfaz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo9\M9_AgregarEvento.aspx.cs">
+      <DependentUpon>M9_AgregarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo9\M9_ModificarEventos.aspx.designer.cs">
-      <DependentUpon>M9_ModificarEventos.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo9\M9_AgregarEvento.aspx.designer.cs">
+      <DependentUpon>M9_AgregarEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Validaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2201,6 +2205,10 @@
     <EmbeddedResource Include="GUI\Modulo2\RecursosInterfazModulo2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modulo9\M9_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M9_RecursoInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
