@@ -21,6 +21,7 @@ namespace DominioSKD.Entidades.Modulo16
         private Dictionary<Entidad, int> listaImplemento;
         private Dictionary<Entidad, int> listaEvento;
         private Dictionary<Entidad, int> listaMatricula;
+        private float MontoPagado;
         #endregion
 
         #region Propiedades
@@ -70,7 +71,21 @@ namespace DominioSKD.Entidades.Modulo16
             }
         }
 
+        /// <summary>
+        /// Propiedad del atributo MontoPagado
+        /// </summary>
+        public float montoPagado
+        {
+            get
+            {
+                return this.MontoPagado;
+            }
 
+            set
+            {
+                this.MontoPagado = value;
+            }
+        }
         #endregion
 
         #region Constructores
@@ -83,6 +98,7 @@ namespace DominioSKD.Entidades.Modulo16
             listaImplemento = null;
             listaEvento = null;
             listaMatricula = null;
+            MontoPagado = 0;
 
         }
 
@@ -92,12 +108,14 @@ namespace DominioSKD.Entidades.Modulo16
         /// <param name="implementos">Lista con todos los implementos del carrito</param>
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
         /// <param name="matriculas">Lista con todas las matriculas del carrito</param>
+        /// <param name="monto"> Monto de ese carrito pagado</param>
         public Carrito(Dictionary<Entidad, int> implementos,
-            Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
+            Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas, float monto)
         {
             this.listaImplemento = implementos;
             this.listaEvento = eventos;
             this.listaMatricula = matriculas;
+            this.MontoPagado = monto;
         }
         #endregion
 
