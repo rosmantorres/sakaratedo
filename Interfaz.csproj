@@ -1562,24 +1562,28 @@
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_AgregarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_AgregarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_DetalleResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_DetalleResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ListarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ListarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
