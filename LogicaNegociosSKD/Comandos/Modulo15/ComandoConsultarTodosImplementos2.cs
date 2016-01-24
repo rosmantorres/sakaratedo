@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using ExcepcionesSKD.Modulo15.ExcepcionComando;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
@@ -19,9 +21,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
                 lista = FabricaDAOSqlServer.ObtenerDAOImplemento().listarInventarioDatos2(this.LaEntidad);
 
             }
-            catch (Exception ex)
+            catch (ExcepcionComandoConsultarTodosImplementos2 ex)
             {
+                ex = new ExcepcionComandoConsultarTodosImplementos2("Error en Comando consultar todos implementos2", new Exception());
+                Logger.EscribirError("Error en Comando consultar todos implementos2", ex);
+                throw ex;
 
+            }
+
+            catch (ExceptionSKD ex)
+            {
+                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
+                Logger.EscribirError("Error en Comando consultar todos implementos2", ex);
                 throw ex;
             }
             return lista;
