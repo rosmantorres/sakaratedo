@@ -13,29 +13,55 @@ namespace DominioSKD.Fabrica
     public class FabricaEntidades
     {
         #region Modulo 1
+        public Entidad ObtenerPersona_M1()
+        {
+            return new Entidades.Modulo1.PersonaM1();
+        }
+        public Entidad ObtenerPersona_M1(int id, String nombre, String apellido)
+        {
+            return new Entidades.Modulo1.PersonaM1(id, nombre, apellido);
+        }
+        public Entidad ObtenerCuenta_M1()
+        {
+            return new Entidades.Modulo1.Cuenta();
+        }
+        public Entidad ObtenerCuenta_M1(String elNombreUsuario, String laContrasena, 
+            List<Entidades.Modulo2.Rol> listaRoles, String laImagen, 
+            Entidades.Modulo1.PersonaM1 datosPersonales)
+        {
+            return new Entidades.Modulo1.Cuenta(elNombreUsuario, laContrasena, listaRoles, laImagen, datosPersonales);
+        }
         #endregion
 
         #region Modulo 2
+        public Entidad ObtenerRol_M2()
+        {
+            return new Entidades.Modulo2.Rol();
+        }
+        public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
+        {
+            return new Entidades.Modulo2.Rol(elId, elNombre, laDescripcion, laFecha);
+        }
         #endregion
 
         #region Modulo 3
-		public Entidad ObtenerOrganizacion_M3()
+        public static Entidad ObtenerOrganizacion_M3()
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion();
         }
-        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre)
+        public static Entidad ObtenerOrganizacion_M3(int elId, String elNombre)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre);
         }
-        public Entidad ObtenerOrganizacion_M3(String elNombre)
+        public static Entidad ObtenerOrganizacion_M3(String elNombre)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre);
         }
-        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        public static Entidad ObtenerOrganizacion_M3(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
         }
-        public Entidad ObtenerOrganizacion_M3(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        public static Entidad ObtenerOrganizacion_M3(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
         }
@@ -46,27 +72,27 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		public Entidad ObtenerCinta_M5()
+        public static Entidad ObtenerCinta_M5()
         {
             return new DominioSKD.Entidades.Modulo5.Cinta();
         }
-        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        public static Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
         }
-        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        public static Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
         }
-        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        public static Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
         }
-        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        public static Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
         }
-        public Entidad ObtenerCinta_M5(int elId, String elColor)
+        public static Entidad ObtenerCinta_M5(int elId, String elColor)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor);
         }
@@ -245,67 +271,67 @@ namespace DominioSKD.Fabrica
 
         #region Modulo 12
 
-        public Entidad ObtenerCinta()
+        public static Entidad ObtenerCinta()
         {
             return new Cinta();
         }
 
-        public Entidad ObtenerOrganizacion(int elId, String elNombre)
+        public static Entidad ObtenerOrganizacion(int elId, String elNombre)
         {
             return new Organizacion(elId, elNombre);
         }
 
-        public Entidad ObtenerOrganizacion(String elNombre)
+        public static Entidad ObtenerOrganizacion(String elNombre)
         {
             return new Organizacion(elNombre);
         }
 
-        public Entidad ObtenerOrganizacion()
+        public static Entidad ObtenerOrganizacion()
         {
             return new Organizacion();
         }
 
-        public Entidad ObtenerCategoria()
+        public static Entidad ObtenerCategoria()
         {
             return new DominioSKD.Entidades.Modulo12.Categoria();
         }
 
-        public   Entidad ObtenerUbicacion()
+        public static Entidad ObtenerUbicacion()
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion();
         }
 
-        public   Entidad ObtenerCompetencia()
+        public static Entidad ObtenerCompetencia()
         {
             return new DominioSKD.Entidades.Modulo12.Competencia();
         }
 
-        public   Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public static Entidad ObtenerCategoria(int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
             return new DominioSKD.Entidades.Modulo12.Categoria(laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
-        public   Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
+        public static Entidad ObtenerCategoria(int elId, int laEdadIni, int laEdadFin, String laCintaIni, String laCintaFinal, String elSexo)
         {
             return new DominioSKD.Entidades.Modulo12.Categoria(elId, laEdadIni, laEdadFin, laCintaIni, laCintaFinal, elSexo);
         }
 
-        public   Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
+        public static Entidad ObtenerUbicacion(int elId, String laCiudad, String elEstado)
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion(elId, laCiudad, elEstado);
         }
 
-        public   Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public static Entidad ObtenerUbicacion(String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion(laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
-        public   Entidad ObtenerUbicacion(int elId,String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
+        public static Entidad ObtenerUbicacion(int elId, String laLat, String laLon, String laCiudad, String elEstado, String LaDir)
         {
             return new DominioSKD.Entidades.Modulo12.Ubicacion(elId, laLat, laLon, laCiudad, elEstado, LaDir);
         }
 
-        public   Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
+        public static Entidad ObtenerCompetencia(int elId, String elNombre, String elTipo, bool orgTodas, String elStatus)
         {
             return new DominioSKD.Entidades.Modulo12.Competencia(elId, elNombre, elTipo, orgTodas, elStatus);
         }

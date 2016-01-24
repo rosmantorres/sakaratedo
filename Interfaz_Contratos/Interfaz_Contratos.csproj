@@ -77,6 +77,9 @@
     <Compile Include="Modulo1\IContratoM1Inicio.cs" />
     <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
     <Compile Include="Modulo2\IContratoM2.cs" />
+    <Compile Include="Modulo3\IContratoAgregarOrganizacion.cs" />
+    <Compile Include="Modulo3\IContratoConsultarOrganizacion.cs" />
+    <Compile Include="Modulo3\IContratoModificarOrganizacion.cs" />
     <Compile Include="Modulo5\IContratoCrearCinta.cs" />
     <Compile Include="Modulo5\IContratoListarCintas.cs" />
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
@@ -87,9 +90,14 @@
       <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
       <Name>DominioSKD</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
+      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
+      <Name>ExcepcionesSKD</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo13\" />
+    <Folder Include="Modulo15\" />
     <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />

@@ -314,4 +314,32 @@
   <data name="SeparadorFecha" xml:space="preserve">
     <value>/</value>
   </data>
+  <data name="ProcedimientoConsultarEventoXId" xml:space="preserve">
+    <value>M10_ConsultarEventoXID</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="AliasDescripcionEvento" xml:space="preserve">
+    <value>descripcionEvento</value>
+  </data>
+  <data name="AliasCostoEvento" xml:space="preserve">
+    <value>costoEvento</value>
+  </data>
+  <data name="AliasEstadoEvento" xml:space="preserve">
+    <value>estadoEvento</value>
+  </data>
+  <data name="AliasFechaFin" xml:space="preserve">
+    <value>fechaFin</value>
+  </data>
+  <data name="AliasFechaInicio" xml:space="preserve">
+    <value>fechaInicio</value>
+  </data>
+  <data name="AliasHoraFin" xml:space="preserve">
+    <value>horaFin</value>
+  </data>
+  <data name="AliasHoraInicio" xml:space="preserve">
+    <value>horaInicio</value>
+  </data>
+  <data name="AliasIdTipo" xml:space="preserve">
+    <value>idTipo</value>
+  </data>
 </root>

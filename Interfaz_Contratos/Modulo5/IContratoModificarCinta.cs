@@ -15,8 +15,10 @@ namespace Interfaz_Contratos.Modulo5
         string obtenerRango();
         string obtenerCategoria();
         string obtenerSignificado();
-        string obtenerOrden();
-        string obtenerIdCInta();
+        int obtenerOrden();
+        int obtenerIdCInta();
+        void alertaModificarFallido(ExcepcionesSKD.ExceptionSKD ex);
+        void Respuesta();
 
     }
 }
