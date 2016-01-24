@@ -226,6 +226,11 @@ namespace DominioSKD.Fabrica
         {
             return new DominioSKD.Entidades.Modulo10.TipoEvento();
         }
+
+        public static Entidad ObtenerValores()
+        {
+            return new DominioSKD.Entidades.Modulo10.Valores();
+        }
         #endregion
 
         #region Modulo 11

@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarTodasLasFechasDeUnEventoM10.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoEventosPorRangosdeFechaM10.cs" />
     <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />

@@ -178,6 +178,15 @@ namespace templateApp.GUI.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_fecha.
+        /// </summary>
+        internal static string FechaEvento {
+            get {
+                return ResourceManager.GetString("FechaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_IdEvento.
         /// </summary>
         internal static string IdEvento {
@@ -192,6 +201,42 @@ namespace templateApp.GUI.Modulo10 {
         internal static string Key {
             get {
                 return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx?success=4.
+        /// </summary>
+        internal static string ListaAsistenciaCompetenciaAgregada {
+            get {
+                return ResourceManager.GetString("ListaAsistenciaCompetenciaAgregada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx?success=5.
+        /// </summary>
+        internal static string ListaAsistenciaCompetenciaNoAgregada {
+            get {
+                return ResourceManager.GetString("ListaAsistenciaCompetenciaNoAgregada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx?success=1.
+        /// </summary>
+        internal static string ListaAsistenciaEventoAgregada {
+            get {
+                return ResourceManager.GetString("ListaAsistenciaEventoAgregada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ListarAsistenciaEventos.aspx?success=3.
+        /// </summary>
+        internal static string ListaAsistenciaEventoNoAgregada {
+            get {
+                return ResourceManager.GetString("ListaAsistenciaEventoNoAgregada", resourceCulture);
             }
         }
         

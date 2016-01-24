@@ -511,6 +511,15 @@ namespace DatosSKD.DAO.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarEventosRangoFecha.
+        /// </summary>
+        internal static string ProcedimientoConsultarEventosPorFechas {
+            get {
+                return ResourceManager.GetString("ProcedimientoConsultarEventosPorFechas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_ConsultarEventoXID.
         /// </summary>
         internal static string ProcedimientoConsultarEventoXId {
@@ -579,6 +588,15 @@ namespace DatosSKD.DAO.Modulo10 {
         internal static string ProcedimientoModificarAsistenciaE {
             get {
                 return ResourceManager.GetString("ProcedimientoModificarAsistenciaE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_TodasLasFechasEvento.
+        /// </summary>
+        internal static string ProcedimientoTodasLasFechasEvento {
+            get {
+                return ResourceManager.GetString("ProcedimientoTodasLasFechasEvento", resourceCulture);
             }
         }
         

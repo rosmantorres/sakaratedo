@@ -227,6 +227,16 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarEventoM10XId(idEvento);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoTodasLasFechasEventoM10()
+        {
+            return new ComandoConsultarTodasLasFechasDeUnEventoM10();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoEventosPorRangosdeFechaM10(string fechaInicio)
+        {
+            return new ComandoEventosPorRangosdeFechaM10(fechaInicio);
+        }
         #endregion
 
         #region Modulo 11

@@ -17,6 +17,6 @@ namespace Interfaz_Contratos.Modulo10
 
         ListBox asistentes { get; set; }
 
-        Literal ausentesPlanilla { set; }
+        Literal ausentesPlanilla { get;  set; }
     }
 }
