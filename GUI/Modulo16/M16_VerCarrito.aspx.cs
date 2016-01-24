@@ -133,11 +133,19 @@ namespace templateApp.GUI.Modulo16
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M16_RecursoInterfaz.MENSAJE_ENTRADA_LOGGER,
+                System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             //Carga la Barra lateral del modulo indicado
             ((SKD)Page.Master).IdModulo = "16";
            
-            //Obtengo el Carrito de la Persona pasandole el ID del session sino hubo ningun error previo
-            if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null)
+            /*Obtengo el Carrito de la Persona pasandole el ID del session sino hubo ningun error previo o solamente
+              error de la base de datos*/
+            if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null ||
+                (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] != "3" && 
+                Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] != "4"))
                 this.elPresentador.LlenarTabla(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             //Nos indica si hubo alguna accion de agregar, modificar o eliminar
@@ -338,6 +346,10 @@ namespace templateApp.GUI.Modulo16
                     }
                     break;
             }
+
+            //Escribo en el logger la salida a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+               M16_RecursoInterfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 
         }
 
@@ -352,10 +364,19 @@ namespace templateApp.GUI.Modulo16
         {
             try
             {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_RecursoInterfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 //Ejecuto la operacion para registrar un pago y obtengo la respuesta
                 bool respuesta = this.elPresentador.RegistrarPago
                     (Session[RecursosInterfazMaster.sessionUsuarioID].ToString(),
                     Monto.Value, DropDownList1.Value);
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                   M16_RecursoInterfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Obtenemos la respuesta y redireccionamos para mostrar el exito o fallo
                 if (respuesta)

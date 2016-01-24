@@ -207,8 +207,14 @@
   <data name="EXCEPTION_VACIO_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos que son inexistentes o no contienen informacion, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
   </data>
+  <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
+    <value>Ingresando al metodo</value>
+  </data>
   <data name="MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO" xml:space="preserve">
     <value>Se ha producido un error al elegir un tipo de pago no valido</value>
+  </data>
+  <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
+    <value>Saliendo del metodo</value>
   </data>
   <data name="MODIFICAR_EXITO" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Cantidad modificada exitosamente&lt;/div&gt;</value>

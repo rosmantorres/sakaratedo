@@ -442,4 +442,58 @@
   <data name="PARAMETRO_MONTO" xml:space="preserve">
     <value>@monto</value>
   </data>
+  <data name="CONSULTAR_EVENTO_FACTURA" xml:space="preserve">
+    <value>M16_CONSULTARFACTURAEVENTOS</value>
+  </data>
+  <data name="CONSULTAR_FACTURA_DATO" xml:space="preserve">
+    <value>M16_CONSULTARFACTURADATOS</value>
+  </data>
+  <data name="CONSULTAR_MATRICULA_FACTURA" xml:space="preserve">
+    <value>M16_CONSULTARFACTURAMATRICULAS</value>
+  </data>
+  <data name="CONSULTAR_PRODUCTO_FACTURA" xml:space="preserve">
+    <value>M16_CONSULTARFACTURAPRODUCTOS</value>
+  </data>
+  <data name="PARAM_CANTIDAD" xml:space="preserve">
+    <value>cantProducto</value>
+  </data>
+  <data name="PARAM_CANT_EVENTO" xml:space="preserve">
+    <value>cantEvento</value>
+  </data>
+  <data name="PARAM_CANT_MAT" xml:space="preserve">
+    <value>cantMatricula</value>
+  </data>
+  <data name="PARAM_FECHA_COMPRA" xml:space="preserve">
+    <value>fechaPago</value>
+  </data>
+  <data name="PARAM_ID_FACT" xml:space="preserve">
+    <value>idfactura</value>
+  </data>
+  <data name="PARAM_MONTO_PAGO_FACT" xml:space="preserve">
+    <value>montoPago</value>
+  </data>
+  <data name="PARAM_MONTO_PE" xml:space="preserve">
+    <value>totalEvento</value>
+  </data>
+  <data name="PARAM_MONTO_PM" xml:space="preserve">
+    <value>totalMatricula</value>
+  </data>
+  <data name="PARAM_MONTO_PP" xml:space="preserve">
+    <value>totalProducto</value>
+  </data>
+  <data name="PARAM_NOMBRE" xml:space="preserve">
+    <value>prodNombre</value>
+  </data>
+  <data name="PARAM_NOMBRE_EVENTO" xml:space="preserve">
+    <value>evenNombre</value>
+  </data>
+  <data name="PARAM_NOMBRE_MAT" xml:space="preserve">
+    <value>matNombre</value>
+  </data>
+  <data name="PARAM_PRECIO" xml:space="preserve">
+    <value>precUnitario</value>
+  </data>
+  <data name="PARAM_TIPO_PAGO_FACT" xml:space="preserve">
+    <value>tipoPago</value>
+  </data>
 </root>

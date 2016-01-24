@@ -288,6 +288,84 @@ namespace DatosSKD.DAO.Modulo14
         #region IDAOPlanilla
 
         /// <summary>
+        /// Método cambia el status de una planilla
+        /// </summary>
+        /// <param name="idPlanilla">id de la planilla a cambiar</param>
+        public Boolean CambiarStatus(int idPlanilla)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureCambiarStatusPlanilla, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+                sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroIdPlanilla,
+                            SqlDbType.Int));
+                sqlcom.Parameters[RecursosDAOModulo14.ParametroIdPlanilla].Value = idPlanilla;
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+
+        }
+
+        /// <summary>
         /// Obtiene la lista de los tipo de planillas
         /// </summary>
         /// <returns>Lista de los tipos de planillas</returns>
@@ -689,9 +767,7 @@ namespace DatosSKD.DAO.Modulo14
             }
 
             return idTipolanilla;
-        }
-
-       
+        } 
 
         /// <summary>
         /// Obtiene los datos de una planilla id
@@ -858,7 +934,6 @@ namespace DatosSKD.DAO.Modulo14
 
             return listDatos;
         }
-
 
         /// <summary>
         /// Modifica una planilla en la base de datos

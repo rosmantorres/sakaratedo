@@ -519,6 +519,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoConsultarPlanillas();
         }
+
+        public static Comando<Boolean> ObtenerComandoCambiarStatusPlanilla()
+        {
+            return new ComandoCambiarStatusPlanilla();
+        }
         #endregion
 
         #region Modulo 15
