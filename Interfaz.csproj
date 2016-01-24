@@ -215,6 +215,7 @@
     <Content Include="GUI\Modulo14\M14_DisenoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
+    <Content Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_MostrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
@@ -1697,6 +1698,12 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
       <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx.cs">
+      <DependentUpon>M14_MostrarFacturaDisenoPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_MostrarFacturaDisenoPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.cs">
       <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
