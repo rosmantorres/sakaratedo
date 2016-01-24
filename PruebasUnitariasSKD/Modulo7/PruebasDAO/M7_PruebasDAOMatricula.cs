@@ -9,7 +9,7 @@ using DatosSKD.DAO.Modulo7;
 using DominioSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD.Modulo7;
-using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -18,11 +18,13 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     /// </summary>
     [TestFixture]
     public class M7_PruebasDAOMatricula
-    {/*
+    {
         #region Atributos
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         private FabricaEntidades fabricaEntidades;
         private FabricaDAOSqlServer fabricaSql;
+        private DaoMatricula baseDeDatosMatricula;
+
         #endregion
 
         #region SetUp & TearDown
@@ -34,7 +36,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();
+            baseDeDatosMatricula = fabricaSql.ObtenerDaoMatriculaM7();
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
         }
 
@@ -47,6 +50,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             idPersona = null;
             fabricaEntidades = null;
             fabricaSql = null;
+            baseDeDatosMatricula = null;
         }
         #endregion
 
@@ -59,8 +63,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaMontoPagoMatricula()
         {
 
-            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
-            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+          
+            MatriculaM7 idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
             idMatricula.Id = 25;
             float matricula = (float)baseDeDatosMatricula.MontoPagoMatricula(idPersona, idMatricula);
             Assert.AreEqual(1200, matricula );
@@ -72,10 +76,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaDetallarMatriculaXId()
         {
             
-            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
-            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+            MatriculaM7 idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
             idMatricula.Id =25;
-            Matricula matricula = (Matricula)baseDeDatosMatricula.ConsultarXId(idMatricula);
+            MatriculaM7 matricula = (MatriculaM7)baseDeDatosMatricula.ConsultarXId(idMatricula);
             Assert.AreEqual("CCA1-CAF-CAFE", matricula.Identificador);
         }
 
@@ -86,10 +89,10 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarMatriculaXIdNoNulo()
         {
-            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
-            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+           
+            MatriculaM7 idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
             idMatricula.Id = 1;
-             Matricula matricula = (Matricula)baseDeDatosMatricula.ConsultarXId(idMatricula);
+             MatriculaM7 matricula = (MatriculaM7)baseDeDatosMatricula.ConsultarXId(idMatricula);
             Assert.NotNull(matricula);
         }
 
@@ -101,9 +104,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void DetallarMatriculaPagaNumeroEnteroException()
         {
             DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
-            Matricula idMatricula = (Matricula)fabricaEntidades.ObtenerMatricula();
+            MatriculaM7 idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
             idMatricula.Id = -1;
-            Matricula matricula = (Matricula)baseDeDatosMatricula.ConsultarXId(idMatricula);
+            MatriculaM7 matricula = (MatriculaM7)baseDeDatosMatricula.ConsultarXId(idMatricula);
         }
        
         
@@ -113,7 +116,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaListarMatriculasObtenidasDAO()
         {
            
-            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+           
             List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
             Assert.GreaterOrEqual(listaMatricula.Count, 0);
         }
@@ -124,7 +127,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaListarMatriculasPagasNulas()
         {
-            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+            
             List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
             Assert.NotNull(listaMatricula);
         }
@@ -137,7 +140,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void ListarMatriculasPagasEnteroException()
         {
-            DaoMatricula baseDeDatosMatricula = new DaoMatricula();//esto se sustituye con la fabrica
+          
             idPersona.Id = -1;
             List<Entidad> listaMatricula = baseDeDatosMatricula.ListarMatriculasPagas(idPersona);
         }

@@ -9,7 +9,7 @@ using DominioSKD;
 using LogicaNegociosSKD.Comandos.Modulo7;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD.Modulo7;
-
+using DominioSKD.Entidades.Modulo7;
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
     /// <summary>

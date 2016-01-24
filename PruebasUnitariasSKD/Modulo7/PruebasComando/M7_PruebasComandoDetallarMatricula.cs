@@ -1,5 +1,4 @@
 ﻿using DominioSKD;
-using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Comandos.Modulo7;
@@ -10,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -20,10 +20,10 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoDetallarMatricula
     {
         #region Atributos
-        private Matricula idMatricula;
+        private MatriculaM7 idMatricula;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarMatricula detalleMatricula;
-        private FabricaEntidades fabricaEntidades;
+       
         #endregion
 
         #region SetUp & TearDown
@@ -35,10 +35,12 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             detalleMatricula = (ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
-            fabricaEntidades = new FabricaEntidades();
-            idMatricula = new Matricula();//cambiar por fabrica
+            //  fabricaEntidades = new FabricaEntidades();
+            idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
             idMatricula.Id = 2;
             detalleMatricula.LaEntidad = idMatricula;
+            detalleMatricula.LaEntidad = idMatricula;
+
         }
 
         /// <summary>
@@ -49,8 +51,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             detalleMatricula = null;
-            fabricaEntidades = null;
-            idMatricula = null;
+           idMatricula = null;
         }
         #endregion
 
@@ -61,7 +62,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaMatricula()
         {
-            Matricula matricula = (Matricula)detalleMatricula.Ejecutar();
+            MatriculaM7 matricula = (MatriculaM7)detalleMatricula.Ejecutar();
             Assert.GreaterOrEqual("CCA1-CAF-CAFE", matricula.Identificador);
         }
 
@@ -71,7 +72,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaMatriculaNoNula()
         {
-            Matricula matricula = (Matricula)detalleMatricula.Ejecutar();
+            MatriculaM7 matricula = (MatriculaM7)detalleMatricula.Ejecutar();
             Assert.IsNotNull(matricula);
         }
 
@@ -83,7 +84,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void DetallarMatriculaNumeroEnteroException()
         {
             idMatricula.Id = -1;
-            Matricula matricula = (Matricula)detalleMatricula.Ejecutar();
+            MatriculaM7 matricula = (MatriculaM7)detalleMatricula.Ejecutar();
         }
         #endregion
     }

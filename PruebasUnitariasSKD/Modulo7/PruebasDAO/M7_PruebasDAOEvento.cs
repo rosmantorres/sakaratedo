@@ -306,7 +306,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void FechaPagoEventoNumeroEnteroException()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = -1;
             DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
         }
@@ -409,7 +409,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaMontoPagoEvento()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = 14;
             float montoPago = baseDeDatosEvento.MontoPagoEvento(idPersona, evento);
             Assert.AreEqual(1200, montoPago);
