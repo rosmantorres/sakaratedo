@@ -13,6 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {    
     public class ComandoImplementoXId:Comando<Entidad>
     {
+        /// <summary>
+        /// Comando Consultar implemento por ID
+        /// </summary>
         private Entidad dojo;
         private Entidad implemento;
 
@@ -37,6 +40,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             {
                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                 Logger.EscribirError("Error en Comando implemento por Id", ex);
+                throw ex;
+            }
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en Comando implemento por Id", ex);
                 throw ex;
             }
         }

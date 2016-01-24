@@ -66,7 +66,9 @@ namespace templateApp.GUI.Modulo15
         }
 
         public void agregarImplemento(object sender,EventArgs e) {
-
+            /// <summary>
+            /// Método que agrega implemento
+            /// </summary>
             try
             {
                 if ((this.nombre_implemento.Value != "") && (this.tipo_implemento.Value != "") && (this.marca_implemento.Value != "") && (this.color_implemento.Value != "") && (this.talla_implemento.Value != "") && (this.cantidad_implemento.Value != "") && (this.stock_implemento.Value != "") && (this.descripcion_implemento.Value != "") && (this.precio_implemento.Value != ""))

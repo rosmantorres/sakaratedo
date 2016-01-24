@@ -12,6 +12,9 @@ using ExcepcionesSKD;
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoDojoId :Comando<Entidad>
+    /// <summary>
+    /// Comando ID Dojo
+    /// </summary>
     {
         public override Entidad Ejecutar()
         {
@@ -33,6 +36,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             {
                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                 Logger.EscribirError("Error en Comando dojo Id", ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                
+                Logger.EscribirError("Error comando dojo id", ex);
                 throw ex;
             }
 

@@ -13,7 +13,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoConsultarTodosImplementos : Comando<List<Entidad>>
     {
-
+        /// <summary>
+        /// Comando Consultar todos los Implemento
+        /// </summary>
+        /// <param name=""> </param>
+        /// <returns>una lista de implementos</returns>
         public override List<Entidad> Ejecutar()
         {
             List<Entidad> lista=new List<Entidad>();
@@ -34,6 +38,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             {
                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                 Logger.EscribirError("Error en Comando consultar todos implementos", ex);
+                throw ex;
+            }
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en Comando consultar todos implemento ", ex);
                 throw ex;
             }
             return lista;

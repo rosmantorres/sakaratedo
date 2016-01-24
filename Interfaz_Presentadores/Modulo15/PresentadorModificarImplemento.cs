@@ -16,6 +16,9 @@ namespace Interfaz_Presentadores.Modulo15
 {
    public class PresentadorModificarImplemento
     {
+        /// <summary>
+        /// Método de presentador para modificar un implemento
+        /// </summary>
           private IContratoModificarImplemento _vista;
 
           public PresentadorModificarImplemento(IContratoModificarImplemento _vista)
@@ -26,6 +29,9 @@ namespace Interfaz_Presentadores.Modulo15
 
           public Entidad precargarImplemento(int idImplemento) {
 
+              /// <summary>
+              /// Método de presentador para precargar la informacion de un implemento
+              /// </summary>
               try
               {
 
@@ -50,9 +56,18 @@ namespace Interfaz_Presentadores.Modulo15
                   throw ex;
               }
 
+              catch (Exception ex)
+              {
+
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
           }
           public bool modificarImplemento(Entidad implemento)
           {
+              /// <summary>
+              /// Método de presentador para modificar la informacion de un implemento
+              /// </summary>
               try
               {
                   Comando<bool> comandoModificar = FabricaComandos.ObtenerComandoModificarImplemento();
@@ -73,7 +88,13 @@ namespace Interfaz_Presentadores.Modulo15
                   Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
                   throw ex;
               }
+              
+              catch (Exception ex)
+              {
 
+                  Logger.EscribirError("Error en Presentador Modificar Implemento", ex);
+                  throw ex;
+              }
           }
     }
 }

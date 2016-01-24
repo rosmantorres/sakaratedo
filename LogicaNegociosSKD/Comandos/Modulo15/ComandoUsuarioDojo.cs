@@ -13,7 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
 {
     public class ComandoUsuarioDojo : Comando<int>
     {
-
+        /// <summary>
+        /// Comando Usuario de Dojo
+        /// </summary>
         
 
         public override int Ejecutar()
@@ -36,6 +38,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             {
                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                 Logger.EscribirError("Error en Comando usuario Dojo", ex);
+                throw ex;
+            }
+
+            catch (Exception ex)
+            {
+
+                Logger.EscribirError("Error de en Comando usuario Dojo", ex);
                 throw ex;
             }
         }

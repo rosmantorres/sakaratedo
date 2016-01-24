@@ -11,6 +11,11 @@ using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo15
 {
+    /// <summary>
+    /// Comando Agregar Implemento
+    /// </summary>
+    /// <param name="">La Entidad Implemento que se va a agregar </param>
+    /// <returns>un true si agrego el implemento, false si no lo agrego</returns>
    public  class ComandoAgregarImplemento:Comando<Boolean>
     {
 
@@ -36,6 +41,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
            {
                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
                Logger.EscribirError("Error en Comando Agregar Implemento", ex);
+               throw ex;
+           }
+
+           catch (Exception ex)
+           {
+
+               Logger.EscribirError("Error de en Comando Agregar implemento datos ", ex);
                throw ex;
            }
        }
