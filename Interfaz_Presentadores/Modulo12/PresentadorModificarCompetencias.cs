@@ -267,8 +267,8 @@ namespace Interfaz_Presentadores.Modulo12
                 laListaDeInputs.Add(M12_RecursoInterfazPresentador.orgTodas);
             if (vista.orgCompBool == false)
                 laListaDeInputs.Add(vista.organizacionComp.SelectedItem.Text);
-            laListaDeInputs.Add(vista.latitudComp);
-            laListaDeInputs.Add(vista.longitudComp);
+            //laListaDeInputs.Add(vista.longitudComp);
+            //laListaDeInputs.Add(vista.latitudComp);
 
             if (vista.inicioComp != "" || vista.finComp != "")
             {

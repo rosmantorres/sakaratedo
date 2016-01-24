@@ -183,14 +183,14 @@ namespace templateApp.GUI.Modulo12
 
         string IContratoModificarCompetencias.latitudComp
         {
-            get { return txtLAT.Value; }
-            set { txtLAT.Value = laLatitud; }
+            get { return laLatitud; }
+            set { laLatitud = value; }
         }
 
         string IContratoModificarCompetencias.longitudComp
         {
-            get { return txtLONG.Value; }
-            set { txtLONG.Value = laLatitud; }
+            get { return laLongitud; }
+            set { laLongitud = value; }
         }
 
         DropDownList IContratoModificarCompetencias.categIniComp
