@@ -139,12 +139,12 @@ namespace templateApp.GUI.Modulo8 {
         protected global::System.Web.UI.WebControls.DropDownList comboModalidad;
         
         /// <summary>
-        /// btnaceptar control.
+        /// bAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaceptar;
+        protected global::System.Web.UI.WebControls.Button bAgregar;
     }
 }

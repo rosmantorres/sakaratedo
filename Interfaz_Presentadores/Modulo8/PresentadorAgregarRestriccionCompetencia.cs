@@ -33,15 +33,17 @@ namespace Interfaz_Presentadores.Modulo8
                     LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
                     (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
                     DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
-                    comando.Parametro = elObjeto;
+                    //comando.Parametro = elObjeto;
+                    restriccionCompetencia = meterParametrosVistaEnObjeto();
+                    comando.Parametro = restriccionCompetencia;
                     resultado= comando.Ejecutar(); 
                 }
 
 
             }
-            catch
+            catch (Exception e)
             {
-
+                throw e;
             }
             return resultado;
         }

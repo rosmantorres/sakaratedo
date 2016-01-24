@@ -123,6 +123,9 @@ namespace DatosSKD.InterfazDAO.Modulo8
 
         #endregion
 
+        #region Eliminar
+        Boolean Eliminar(DominioSKD.Entidad parmetro);
+        #endregion
         #endregion
     }
 }

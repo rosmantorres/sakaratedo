@@ -36,6 +36,7 @@ namespace PruebasUnitariasSKD.Modulo8
            laRestriccion.RangoMaximo=21;
            laRestriccion.RangoMinimo=-1;
            laRestriccion.Sexo="P";
+           
            //laListaCompetencias = new List<Competencia>();
            //laCompetencia = new Competencia(47);
            //laListaRestriccionCompetencia = new List<RestriccionCompetencia>();
@@ -60,6 +61,25 @@ namespace PruebasUnitariasSKD.Modulo8
                throw e;
            }
        }
+
+       [Test]
+       public void pruebaEliminarRestriccionCompetencia()
+       {
+
+
+           try
+           {
+
+               Assert.IsTrue(DAORestriccionCompetencia.Eliminar(laRestriccion));
+           }
+           catch (Exception e)
+           {
+
+               throw e;
+           }
+       }
+
+
 
     //   [Test]
     //   public void PruebaExisteRestriccionCompetenciaSimilar()
@@ -108,22 +128,7 @@ namespace PruebasUnitariasSKD.Modulo8
 
 
 
-    //   [Test]
-    //   public void pruebaEliminarRestriccionCompetencia()
-    //   {
 
-
-    //       try
-    //       {
-
-    //           Assert.IsTrue(DatosSKD.Modulo8.BDRestriccionCompetencia.EliminarRestriccionCompetencia(laRestriccionCompetencia));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
 
 
     //   [Test]
@@ -251,16 +256,18 @@ namespace PruebasUnitariasSKD.Modulo8
     //   }
        
 
-    //   [TearDown]
-    //   public void limpiar()
-    //   {
-    //       laListaCompetencias = null;
-    //       laCompetencia = null;
-    //       laListaRestriccionCompetencia = null;
-    //       laRestriccionCompetencia = null;
-    //   }
-    //}
+       [TearDown]
+       public void limpiar()
+       {
+           fabricaDAO = null;
+           fabricaEntidad = null;
+           DAORestriccionCompetencia = null;
+           laRestriccion = null;
 
+       }
     }
+
 }
+
+
 //}

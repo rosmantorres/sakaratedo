@@ -147,12 +147,89 @@ namespace DatosSKD.DAO.Modulo8
 
             #endregion
 
+            #region Eliminar
+               public Boolean Eliminar(DominioSKD.Entidad parametro)
+                {
+                    DominioSKD.Entidades.Modulo8.RestriccionCompetencia laRestriccionCompetencia =
+                    (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)parametro;
+
+                    try
+                    {
+                        if (ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia))
+                        {
+                            List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+
+
+                            laRestriccionCompetencia.IdRestriccionComp = traerIdRestriccionCompetencia(laRestriccionCompetencia);
+
+                            Parametro elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                                  laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+                            parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamDescripcion, SqlDbType.VarChar,
+                            //    laRestriccionCompetencia.Descripcion, false);
+                            //parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamEdadMin, SqlDbType.Int,
+                            //     laRestriccionCompetencia.EdadMinima.ToString(), false);
+                            //parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamEdadMax, SqlDbType.Int,
+                            //    laRestriccionCompetencia.EdadMaxima.ToString(), false);
+                            //parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamRangoMin, SqlDbType.Int,
+                            //     laRestriccionCompetencia.RangoMinimo.ToString(), false);
+                            //parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamRangoMax, SqlDbType.Int,
+                            //    laRestriccionCompetencia.RangoMaximo.ToString(), false);
+                            //parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamSexo, SqlDbType.VarChar,
+                            //    laRestriccionCompetencia.Sexo, false);
+                            //parametros.Add(elParametro);
+
+                            //elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamModalidad, SqlDbType.VarChar,
+                            //    laRestriccionCompetencia.Modalidad, false);
+                            //parametros.Add(elParametro);
+
+
+
+                            EjecutarStoredProcedure(RecursosDAORestriccionCompetencia.EliminarRestriccionCompetencia, parametros);
+
+                        }
+                        else
+                            throw new ExcepcionesSKD.Modulo8.RestriccionExistenteException(RecursosDAORestriccionCompetencia.Codigo_Restriccion_Competencia_No_Existente,
+                                        RecursosDAORestriccionCompetencia.Mensaje_Restriccion_Competencia_No_Existente, new Exception());
+                    }
+                    catch (SqlException ex)
+                    {
+            
+                        throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                            RecursoGeneralBD.Mensaje, ex);
+                    }
+                    catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                    {
+        
+                        throw ex;
+                    }
+                    catch (Exception ex)
+                    {
+                        //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                        throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                    }
+
+
+                    return true;
+                }
+            #endregion
 
        #endregion
 
-       #region Existe Restriccion
+            #region Existe Restriccion
 
-        /// <summary>
+            /// <summary>
         /// Metodo que permite corroborar dado un objeto tipo RestriccionCompetencia
         /// si existe una restriccion de competencia con los mismos parametros en la
         /// base de datos

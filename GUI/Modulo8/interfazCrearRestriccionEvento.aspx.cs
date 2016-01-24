@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Interfaz_Contratos;
-using Interfaz_Presentadores;
+using Interfaz_Presentadores.Modulo8;
+using Interfaz_Contratos.Modulo8;
+using ExcepcionesSKD;
+using System.Text.RegularExpressions;
 
 namespace templateApp.GUI.Modulo8
 {
@@ -14,6 +16,10 @@ namespace templateApp.GUI.Modulo8
         //Declaramos el presentador de esta vista
         private Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionCompetencia presentador;
 
+        public interfazCrearRestriccionEvento()
+		{
+            presentador = new PresentadorAgregarRestriccionCompetencia(this);
+		}
 
         public String id { get; set; }
         public String descripcion { get; set; }
@@ -105,13 +111,24 @@ namespace templateApp.GUI.Modulo8
         
         
         
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            presentador = new Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionCompetencia(this);
-            presentador.LlenarComboEdades();
-            presentador.LlenarComboModalidad();
-            presentador.LlenarComboRangos();
-            presentador.LlenarComboSexo();
+ 
+                    presentador = new Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionCompetencia(this);
+                    presentador.LlenarComboEdades();
+                    presentador.LlenarComboModalidad();
+                    presentador.LlenarComboRangos();
+                    presentador.LlenarComboSexo();
+                
+            
+        }
+
+        protected void btnaceptar_Click(object sender, EventArgs e)
+        {
+            PresentadorAgregarRestriccionCompetencia presentador2 = new PresentadorAgregarRestriccionCompetencia(this);
+            presentador2.agregarRestriccionCompetencia();
+            
         }
     }
 }
