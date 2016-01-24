@@ -180,4 +180,22 @@
   <data name="ListaAsistenciaNoModificada" xml:space="preserve">
     <value>M10_ListarAsistenciaEventos.aspx?success=6</value>
   </data>
+  <data name="FechaEvento" xml:space="preserve">
+    <value>M10_fecha</value>
+  </data>
+  <data name="ListaAsistenciaCompetenciaAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=4</value>
+  </data>
+  <data name="ListaAsistenciaCompetenciaNoAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=5</value>
+  </data>
+  <data name="ListaAsistenciaEventoAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=1</value>
+  </data>
+  <data name="ListaAsistenciaEventoNoAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=3</value>
+  </data>
+  <data name="Detalle" xml:space="preserve">
+    <value>compDetalle</value>
+  </data>
 </root>

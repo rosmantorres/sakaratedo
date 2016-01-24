@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Interfaz_Presentadores.Modulo10
 {
@@ -249,6 +250,32 @@ namespace Interfaz_Presentadores.Modulo10
         public string RedireccionarListarAsistenciaEvento()
         {
             return M10_RecursosPresentador.VentanaListarAsistenciaEvento;
+        }
+
+        public void MoverIzquierda()
+        {
+            for (int i = vista.ListaAsis.Items.Count - 1; i >= 0; i--)
+            {
+                if (vista.ListaAsis.Items[i].Selected == true)
+                {
+                    vista.ListaNo.Items.Add(vista.ListaAsis.Items[i]);
+                    ListItem li = vista.ListaAsis.Items[i];
+                    vista.ListaAsis.Items.Remove(li);
+                }
+            }
+        }
+
+        public void MoverDerecha()
+        {
+            for (int i = vista.ListaNo.Items.Count - 1; i >= 0; i--)
+            {
+                if (vista.ListaNo.Items[i].Selected == true)
+                {
+                    vista.ListaAsis.Items.Add(vista.ListaNo.Items[i]);
+                    ListItem li = vista.ListaNo.Items[i];
+                    vista.ListaNo.Items.Remove(li);
+                }
+            }
         }
     }
 }
