@@ -5,6 +5,7 @@ using Interfaz_Contratos.Modulo7;
 using LogicaNegociosSKD.Comandos.Modulo7;
 using LogicaNegociosSKD.Fabrica;
 using System;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -29,14 +30,14 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos del evento
         /// </summary>
         /// <param name="idEvento">id del evento</param>
-        public void cargarDatos(Evento idEvento)
+        public void cargarDatos(Entidad idEvento)
         {
             try
             {
                 fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarEvento comandoDetallarEvento = (ComandoConsultarDetallarEvento)fabricaComandos.ObtenerComandoConsultarDetallarEvento();
                 comandoDetallarEvento.LaEntidad = idEvento;
-                Evento evento = (Evento)comandoDetallarEvento.Ejecutar();
+                EventoM7 evento = (EventoM7)comandoDetallarEvento.Ejecutar();
 
                 vista.ciudad_evento = evento.Ubicacion.Ciudad;
                 vista.costo_evento = evento.Costo.ToString();

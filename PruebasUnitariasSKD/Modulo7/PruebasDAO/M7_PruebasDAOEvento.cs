@@ -9,6 +9,8 @@ using DatosSKD.DAO.Modulo7;
 using DominioSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -20,7 +22,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOEvento
     {
         #region Atributos
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         private FabricaEntidades fabricaEntidades;
         private FabricaDAOSqlServer fabricaSql;
         private DaoEvento baseDeDatosEvento;
@@ -36,7 +38,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
             fabricaSql = new FabricaDAOSqlServer();
             fabricaEntidades = new FabricaEntidades();
             baseDeDatosEvento = fabricaSql.ObtenerDaoEventoM7();
-            idPersona = new Persona();//cambiar por fabrica
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
         }
 
@@ -58,9 +60,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarEventoXId()
         {
-            Evento idEvento = (Evento)fabricaEntidades.ObtenerEvento();
+            EventoM7 idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             idEvento.Id = 5;
-            Evento evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
+            EventoM7 evento = (EventoM7)baseDeDatosEvento.ConsultarXId(idEvento);
             Assert.AreEqual("La vida en el Dojo", evento.Nombre);
         }
         /// <summary>
@@ -69,23 +71,22 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarEventoXIdNoNulo()
         {
-            Evento idEvento = (Evento)fabricaEntidades.ObtenerEvento();
+            EventoM7 idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             idEvento.Id = 5;
-            Evento evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
+            EventoM7 evento = (EventoM7)baseDeDatosEvento.ConsultarXId(idEvento);
             Assert.NotNull(evento);
         }
 
         /// <summary>
         /// Método para probar la exception de número entero invalido de prueba detalle evento en DAO
         /// </summary>
-
         [Test]
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void DetalleEventoNumeroEnteroException()
         {
-            Evento idEvento = (Evento)fabricaEntidades.ObtenerEvento();;
+            EventoM7 idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             idEvento.Id = -1;
-            Evento evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
+            EventoM7 evento = (EventoM7)baseDeDatosEvento.ConsultarXId(idEvento);
         }
 
         /// <summary>
@@ -280,7 +281,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaPagoEvento()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = 14;
             DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
             Assert.AreEqual("03/10/2015", fechaPago.ToString("MM/dd/yyyy"));
@@ -292,7 +293,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaPagoEventoNoNula()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = 5;
             DateTime fechaPago = baseDeDatosEvento.FechaPagoEvento(idPersona, evento);
             Assert.NotNull(fechaPago);
@@ -316,7 +317,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaInscripcion()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = 5;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
             Assert.AreEqual("02/10/2015", fechaInscripcion.ToString("MM/dd/yyyy"));

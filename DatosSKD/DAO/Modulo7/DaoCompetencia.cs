@@ -11,6 +11,7 @@ using ExcepcionesSKD.Modulo7;
 using System.Data;
 using DatosSKD.Fabrica;
 using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -53,15 +54,15 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroQuery = new Parametro();
             FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
             DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            Competencia idCompetencia = (Competencia)parametro;
-            Competencia competencia;
+            CompetenciaM7 idCompetencia = (CompetenciaM7)parametro;
+            CompetenciaM7 competencia;
             try
             {
                 if (idCompetencia.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    competencia = (Competencia)FabricaEntidades.ObtenerCompetencia();
+                    competencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdCompetencia, SqlDbType.Int, idCompetencia.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 
@@ -76,9 +77,9 @@ namespace DatosSKD.DAO.Modulo7
                         competencia.FechaFin = DateTime.Parse(row[RecursosDAOModulo7.AliasCompetenciaFechaFin].ToString());
                         competencia.Costo = float.Parse(row[RecursosDAOModulo7.AliasCompetenciaCosto].ToString());
 
-                        Ubicacion idUbicacion = new Ubicacion();//sustituir por fabrica
+                        UbicacionM7 idUbicacion = (UbicacionM7)FabricaEntidades.ObtenerUbicacionM7();
                         idUbicacion.Id = int.Parse(row[RecursosDAOModulo7.AliasCompetenciaUbicacionId].ToString());
-                        competencia.Ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+                        competencia.Ubicacion = (UbicacionM7)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
                     }
                 }
                 else

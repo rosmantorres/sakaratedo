@@ -19,7 +19,7 @@ namespace DominioSKD.Entidades.Modulo7
         private String status_dojo;
         private String orgNombre_dojo;
         private int organizacion_dojo;
-        private Ubicacion ubicacion;
+        private UbicacionM7 ubicacion;
         #endregion
 
         #region propiedades
@@ -76,7 +76,7 @@ namespace DominioSKD.Entidades.Modulo7
             set { logo_dojo = value; }
         }
 
-        public Ubicacion Ubicacion
+        public UbicacionM7 Ubicacion
         {
             get { return ubicacion; }
             set { ubicacion = value; }

@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
@@ -24,13 +26,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
-            Evento idEvento = (Evento)LaEntidad;
-            Evento evento;
+            EventoM7 idEvento = (EventoM7)LaEntidad;
+            EventoM7 evento;
             try
             {
                 if (idEvento.Id > 0)
                 {
-                    evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
+                    evento = (EventoM7)baseDeDatosEvento.ConsultarXId(idEvento);
                 }
                 else
                 {

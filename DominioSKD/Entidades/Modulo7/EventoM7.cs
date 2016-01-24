@@ -15,11 +15,11 @@ namespace DominioSKD.Entidades.Modulo7
         private String nombre;
         private String descripcion;
         private float costo;
-        private Persona persona;
-        private Ubicacion ubicacion;
+        private PersonaM7 persona;
+        private UbicacionM7 ubicacion;
         private Categoria categoria;
-        private TipoEvento tipoEvento;
-        private Horario horario;
+        private TipoEventoM7 tipoEvento;
+        private HorarioM7 horario;
         private Boolean estado;
 
         #endregion
@@ -54,13 +54,13 @@ namespace DominioSKD.Entidades.Modulo7
             set { nombre = value; }
         }
 
-        public Horario Horario
+        public HorarioM7 Horario
         {
             get { return horario; }
             set { horario = value; }
         }
 
-        public Ubicacion Ubicacion
+        public UbicacionM7 Ubicacion
         {
             get { return ubicacion; }
             set { ubicacion = value; }
@@ -79,7 +79,7 @@ namespace DominioSKD.Entidades.Modulo7
             set { costo = value; }
         }
 
-        public TipoEvento TipoEvento
+        public TipoEventoM7 TipoEvento
         {
             get { return tipoEvento; }
             set { tipoEvento = value; }
@@ -91,7 +91,7 @@ namespace DominioSKD.Entidades.Modulo7
             set { estado = value; }
         }
 
-        public Persona Persona
+        public PersonaM7 Persona
         {
             get { return persona; }
             set { persona = value; }

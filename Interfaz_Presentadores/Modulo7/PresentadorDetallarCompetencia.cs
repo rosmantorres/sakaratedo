@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -33,14 +34,14 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos de la competencia
         /// </summary>
         /// <param name="idCompetencia">id de la competencia</param>
-        public void cargarDatos(Competencia idCompetencia)
+        public void cargarDatos(Entidad idCompetencia)
         {
             try
             {
                 fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarCompetencia comandoDetallarCompetencia = (ComandoConsultarDetallarCompetencia)fabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
                 comandoDetallarCompetencia.LaEntidad = idCompetencia;
-                Competencia cinta = (Competencia)comandoDetallarCompetencia.Ejecutar();
+                CompetenciaM7 cinta = (CompetenciaM7)comandoDetallarCompetencia.Ejecutar();
 
                 vista.ciudad_evento = cinta.Ubicacion.Ciudad;
                 vista.costo_evento = cinta.Costo.ToString();

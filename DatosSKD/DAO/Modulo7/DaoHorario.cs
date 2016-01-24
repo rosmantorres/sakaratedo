@@ -9,6 +9,8 @@ using ExcepcionesSKD;
 using System.Data;
 using System.Data.SqlClient;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -49,15 +51,15 @@ namespace DatosSKD.DAO.Modulo7
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            Horario idHorario = (Horario)parametro;
-            Horario horario;
+            HorarioM7 idHorario = (HorarioM7)parametro;
+            HorarioM7 horario;
             try
             {
                 if (idHorario.Id > 0)
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    horario = new Horario();//esto se debe cambiar por fabrica
+                    horario = (HorarioM7)FabricaEntidades.ObtenerHorarioM7();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdHorario, SqlDbType.Int, idHorario.Id.ToString(), false);
                     parametros.Add(parametroQuery);
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo7.ConsultarHorarioXId, parametros);

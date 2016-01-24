@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +20,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOCompetencia
     {
         #region Atributos
-        private Competencia idCompetencia;
-        private FabricaEntidades fabricaEntidades;
+        private CompetenciaM7 idCompetencia;
         private FabricaDAOSqlServer fabricaSql;
         private DaoCompetencia baseDeDatosCompetencia;
         #endregion
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosCompetencia = fabricaSql.ObtenerDaoCompetenciaM7();
-            fabricaEntidades = new FabricaEntidades();
-            idCompetencia = new Competencia();//se debe sustituir por fabrica
+            idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             idCompetencia.Id = 8;
         }
 
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idCompetencia = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosCompetencia = null;
         }
@@ -58,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarCompetenciaXId()
         {
-            Competencia competencia = (Competencia)baseDeDatosCompetencia.ConsultarXId(idCompetencia);
+            CompetenciaM7 competencia = (CompetenciaM7)baseDeDatosCompetencia.ConsultarXId(idCompetencia);
             Assert.AreEqual("Shoosei Kai", competencia.Nombre);
         }
 
@@ -68,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarCompetenciaXIdNoNulo()
         {
-            Competencia competencia = (Competencia)baseDeDatosCompetencia.ConsultarXId(idCompetencia);
+            CompetenciaM7 competencia = (CompetenciaM7)baseDeDatosCompetencia.ConsultarXId(idCompetencia);
             Assert.IsNotNull(competencia);
         }
 

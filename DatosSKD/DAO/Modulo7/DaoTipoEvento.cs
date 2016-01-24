@@ -9,6 +9,8 @@ using ExcepcionesSKD;
 using System.Data;
 using ExcepcionesSKD.Modulo7;
 using System.Data.SqlClient;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace DatosSKD.DAO.Modulo7
 {
@@ -49,8 +51,8 @@ namespace DatosSKD.DAO.Modulo7
             BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            TipoEvento idTipoEvento = (TipoEvento)parametro;
-            TipoEvento tipoEvento;
+            TipoEventoM7 idTipoEvento = (TipoEventoM7)parametro;
+            TipoEventoM7 tipoEvento;
 
             try
             {
@@ -58,7 +60,7 @@ namespace DatosSKD.DAO.Modulo7
                 {
                     conexion = new BDConexion();
                     parametros = new List<Parametro>();
-                    tipoEvento = new TipoEvento();// se sustituye con fabrica
+                    tipoEvento = (TipoEventoM7)FabricaEntidades.ObtenerTipoEventoM7();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdTipoEvento, SqlDbType.Int, idTipoEvento.Id.ToString(), false);
                     parametros.Add(parametroQuery);
                     DataTable dt = conexion.EjecutarStoredProcedureTuplas(

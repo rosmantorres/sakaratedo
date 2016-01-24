@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -19,10 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoDetallarCompetencia
     {
         #region Atributos
-        private Competencia idCompetencia;
+        private CompetenciaM7 idCompetencia;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarCompetencia detalleCompetencia;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             detalleCompetencia = (ComandoConsultarDetallarCompetencia)fabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
-            fabricaEntidades = new FabricaEntidades();
-            idCompetencia = new Competencia();//cambiar por fabrica
+            idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             idCompetencia.Id = 2;
             detalleCompetencia.LaEntidad = idCompetencia;
         }
@@ -48,7 +47,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             detalleCompetencia = null;
-            fabricaEntidades = null;
             idCompetencia = null;
         }
         #endregion
@@ -60,7 +58,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaCompetencia()
         {
-            Competencia competencia = (Competencia)detalleCompetencia.Ejecutar();
+            CompetenciaM7 competencia = (CompetenciaM7)detalleCompetencia.Ejecutar();
             Assert.GreaterOrEqual("Kobudo", competencia.Nombre);
         }
 
@@ -70,7 +68,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaCintaNoNula()
         {
-            Competencia competencia = (Competencia)detalleCompetencia.Ejecutar();
+            CompetenciaM7 competencia = (CompetenciaM7)detalleCompetencia.Ejecutar();
             Assert.IsNotNull(competencia);
         }
 
@@ -82,7 +80,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void DetallarCintaNumeroEnteroException()
         {
             idCompetencia.Id = -1;
-            Competencia competencia = (Competencia)detalleCompetencia.Ejecutar();
+            CompetenciaM7 competencia = (CompetenciaM7)detalleCompetencia.Ejecutar();
         }
         #endregion
     }

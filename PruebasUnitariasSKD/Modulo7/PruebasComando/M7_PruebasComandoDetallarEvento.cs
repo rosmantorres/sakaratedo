@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -19,10 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoDetallarEvento
     {
         #region Atributos
-        private Evento idEvento;
+        private EventoM7 idEvento;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarEvento detalleEvento;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             detalleEvento = (ComandoConsultarDetallarEvento)fabricaComandos.ObtenerComandoConsultarDetallarEvento();
-            fabricaEntidades = new FabricaEntidades();
-            idEvento = new Evento();//cambiar por fabrica
+            idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             idEvento.Id = 2;
             detalleEvento.LaEntidad = idEvento;
         }
@@ -48,7 +47,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             detalleEvento = null;
-            fabricaEntidades = null;
             idEvento = null;
         }
         #endregion
@@ -60,7 +58,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaEvento()
         {
-            Evento evento = (Evento)detalleEvento.Ejecutar();
+            EventoM7 evento = (EventoM7)detalleEvento.Ejecutar();
             Assert.GreaterOrEqual("Entrenamiento 2", evento.Nombre);
         }
 
@@ -70,7 +68,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaEventoNoNulo()
         {
-            Evento evento = (Evento)detalleEvento.Ejecutar();
+            EventoM7 evento = (EventoM7)detalleEvento.Ejecutar();
             Assert.IsNotNull(evento);
         }
 
@@ -82,7 +80,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void DetallarEventoNumeroEnteroException()
         {
             idEvento.Id = -1;
-            Evento evento = (Evento)detalleEvento.Ejecutar();
+            EventoM7 evento = (EventoM7)detalleEvento.Ejecutar();
         }
         #endregion
     }

@@ -15,10 +15,10 @@ namespace DominioSKD.Entidades.Modulo7
         private String status;
         private float costo;
         private Categoria categoria;
-        private Ubicacion ubicacion;
+        private UbicacionM7 ubicacion;
         private DateTime fechaInicio;
         private DateTime fechaFin;
-        private Organizacion organizacion;
+        private OrganizacionM7 organizacion;
         private List<Organizacion> listaOrganizaciones;
 
 
@@ -55,7 +55,7 @@ namespace DominioSKD.Entidades.Modulo7
             set { categoria = value; }
         }
 
-        public Ubicacion Ubicacion
+        public UbicacionM7 Ubicacion
         {
             get { return ubicacion; }
             set { ubicacion = value; }
@@ -73,7 +73,7 @@ namespace DominioSKD.Entidades.Modulo7
             set { fechaFin = value; }
         }
 
-        public Organizacion Organizacion
+        public OrganizacionM7 Organizacion
         {
             get { return organizacion; }
             set { organizacion = value; }

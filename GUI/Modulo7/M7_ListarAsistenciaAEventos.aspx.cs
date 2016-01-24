@@ -13,6 +13,7 @@ using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo7;
 
 
 
@@ -26,7 +27,7 @@ namespace templateApp.GUI.Modulo7
         #region Atributos
         private PresentadorListarEventosAsistidos presentador;
         private FabricaEntidades fabricaEntidades;
-        private Persona idPersona;
+        private PersonaM7 idPersona;
 
         /// <summary>
         /// Implementacion de contrato laTabla
@@ -44,10 +45,7 @@ namespace templateApp.GUI.Modulo7
             }
         }
 
-        private List<Evento> laListaEventos;
-        private List<DominioSKD.Competencia> laListaCompetencias;
         #endregion
-
         /// <summary>
         /// Constructor de la clase
         /// </summary>
@@ -86,7 +84,7 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
                             fabricaEntidades = new FabricaEntidades();
-                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.ConsultarEventosAsistidos(idPersona);
                         }

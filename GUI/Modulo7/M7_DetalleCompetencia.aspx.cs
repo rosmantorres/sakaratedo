@@ -11,6 +11,8 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
@@ -19,7 +21,7 @@ namespace templateApp.GUI.Modulo7
     /// </summary>
     public partial class M7_DetalleCompetencia : System.Web.UI.Page, IContratoDetallarCompetencia
     {
-        private Competencia idCompetencia;
+        private CompetenciaM7 idCompetencia;
         private PresentadorDetallarCompetencia presentador;
 
         /// <summary>
@@ -187,7 +189,7 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            idCompetencia = new Competencia();//cambiar por fabrica
+                            idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
                             idCompetencia.Id = int.Parse(detalleStringCompetencia);
                             presentador.cargarDatos(idCompetencia);
                         }

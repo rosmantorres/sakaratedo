@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
@@ -31,7 +32,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// <summary>
         /// Método para consultar los eventos asistidos del atleta
         /// </summary>
-        public void ConsultarEventosAsistidos(Persona idPersona)
+        public void ConsultarEventosAsistidos(Entidad idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -53,7 +54,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext() && e2.MoveNext())
                     {
-                        Evento evento = (Evento)e1.Current;
+                        EventoM7 evento = (EventoM7)e1.Current;
                         DateTime fechaInscripcion = e2.Current;
 
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
@@ -73,7 +74,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext() && e2.MoveNext())
                     {
-                        Competencia competencia = (Competencia)e1.Current;
+                        CompetenciaM7 competencia = (CompetenciaM7)e1.Current;
                         DateTime fechaInscripcion = e2.Current;
 
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;

@@ -9,6 +9,7 @@ using DominioSKD;
 using LogicaNegociosSKD.Comandos.Modulo7;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD.Modulo7;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
@@ -19,10 +20,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     public class M7_PruebasComandoEventosAsistidos
     {
         #region Atributos
-        private Persona idPersona;
+        private PersonaM7 idPersona;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarListaEventosAsistidos eventosAsistidos;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             eventosAsistidos = (ComandoConsultarListaEventosAsistidos)fabricaComandos.ObtenerComandoConsultarListaEventosAsistidos();
-            fabricaEntidades = new FabricaEntidades();
-            idPersona = new Persona();//cambiar por fabrica
+            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             eventosAsistidos.LaEntidad = idPersona;
         }
@@ -48,7 +47,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             eventosAsistidos = null;
-            fabricaEntidades = null;
             idPersona = null;
         }
         #endregion
