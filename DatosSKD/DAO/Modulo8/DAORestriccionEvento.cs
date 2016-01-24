@@ -322,7 +322,6 @@ namespace DatosSKD.DAO.Modulo8
         }
         #endregion
 
-
         #region ConsultarRestriccionEvento
         /// <summary>
         /// Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos.
