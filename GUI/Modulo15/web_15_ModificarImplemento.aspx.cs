@@ -42,6 +42,7 @@ namespace templateApp.GUI.Modulo15
                 this.descripcion_implemento.Value = ((Implemento)implemento).Descripcion_Implemento;
                 this.precio_implemento.Value = (((Implemento)implemento).Precio_Implemento).ToString();
                 this.estatus_implemento.Value = ((Implemento)implemento).Estatus_Implemento;
+                this.imagen_img.Src = "~/GUI/Modulo15/Imagen/"+((Implemento)implemento).Imagen_implemento;
                 
                 //this.imagen_implemento.Value = (HtmlInputFile)("~/GUI/Modulo15/imagen" + ((Implemento)implemento).Imagen_implemento);
             }
@@ -49,9 +50,18 @@ namespace templateApp.GUI.Modulo15
             
            
         }
+        void guardarImagen()
+        {
+            string TargetLocation;
+            string imagen_implemento = null;
+            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+            imagen_implemento = this.imagen_implemento.Value;
+            this.imagen_implemento.PostedFile.SaveAs(TargetLocation + imagen_implemento);
 
+        }
         public void modificarImplemento(object sender,EventArgs e) {
 
+            Entidad implementoCargado = presentador.precargarImplemento(Convert.ToInt32(this.id_implemento.Value));
 
             if ((this.nombre_implemento.Value != "") && (this.tipo_implemento.Value != "") && (this.marca_implemento.Value != "") && (this.color_implemento.Value != "") && (this.talla_implemento.Value != "") && (this.cantidad_implemento.Value != "") && (this.stock_implemento.Value != "") && (this.descripcion_implemento.Value != "") && (this.precio_implemento.Value != ""))
             {
@@ -69,7 +79,14 @@ namespace templateApp.GUI.Modulo15
                 ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(this.stock_implemento.Value);
                 ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(this.precio_implemento.Value);
-                ((Implemento)implemento).Imagen_implemento = "Hola mundo";
+                if (this.imagen_implemento.Value == "")
+                {
+                    ((Implemento)implemento).Imagen_implemento = ((Implemento)implementoCargado).Imagen_implemento;
+                }
+                else {
+                    ((Implemento)implemento).Imagen_implemento = this.imagen_implemento.Value;
+                    guardarImagen();
+                }
                 ((Implemento)implemento).Estatus_Implemento = this.estatus_implemento.Value;
                 presentador.modificarImplemento(implemento);
                 Response.Redirect("web_15_ConsultarImplemento.aspx");

@@ -95,6 +95,8 @@ namespace templateApp.GUI.Modulo15
                     this.tabla.Text += "<td>" + ((Implemento)valorActual).Talla_Implemento + "</td>";
                     this.tabla.Text += "<td>" + ((Implemento)valorActual).Cantida_implemento + "</td>";
                     this.tabla.Text += "<td>" + ((Implemento)valorActual).Stock_Minimo_Implemento + "</td>";
+              
+             
                     if (((Implemento)valorActual).Stock_Minimo_Implemento > ((Implemento)valorActual).Cantida_implemento)
                     {
                         this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-error'></div></td>";
@@ -103,14 +105,14 @@ namespace templateApp.GUI.Modulo15
                     {
                         if (((Implemento)valorActual).Stock_Minimo_Implemento == ((Implemento)valorActual).Cantida_implemento)
                         {
-                            this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-warning'></div></td>";
+                           this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-warning'></div></td>";
 
                         }
                         else
                         {
                             if (((Implemento)valorActual).Stock_Minimo_Implemento < ((Implemento)valorActual).Cantida_implemento)
                             {
-                                this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-success'></div></td>";
+                               this.tabla.Text += "<td><div class='panel panel-default caja'><div class='panel-body alert-success'></div></td>";
                             }
                         }
 

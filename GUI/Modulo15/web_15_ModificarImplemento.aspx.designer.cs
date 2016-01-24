@@ -130,6 +130,15 @@ namespace templateApp.GUI.Modulo15 {
         protected global::System.Web.UI.HtmlControls.HtmlInputFile imagen_implemento;
         
         /// <summary>
+        /// imagen_img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imagen_img;
+        
+        /// <summary>
         /// estatus_implemento control.
         /// </summary>
         /// <remarks>
