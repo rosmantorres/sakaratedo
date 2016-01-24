@@ -431,72 +431,8 @@ namespace Interfaz_Presentadores.Modulo16
 
          public void imprimir_Click(Compra compra)
          {
-             Document pdfDoc = new Document(PageSize.A4, 10, 10, 10, 10);
-
-             try
-             {
-                 PdfWriter.GetInstance(pdfDoc, System.Web.HttpContext.Current.Response.OutputStream);
-                 pdfDoc.Open();
-
-
-                 string cadenaFinal = ConstruirDiseno(compra);
-                 string path = server.MapPath("Carnet_titulo.jpg");
-
-                 string encabezado = "<img src='" + path + "' Height='48' Width='570'/><br/><br/>";
-
-                 string strContent = encabezado + cadenaFinal;
-
-                 var parsedHtmlElements = HTMLWorker.ParseToList(new StringReader(strContent), null);
-
-                 foreach (var htmlElement in parsedHtmlElements)
-                     pdfDoc.Add(htmlElement as IElement);
-                 pdfDoc.Close();
-
-                 Response.ContentType = "application/pdf";
-
-                 Response.AddHeader("content-disposition", "attachment; filename=" + "factura" + ".pdf");
-                 System.Web.HttpContext.Current.Response.Write(pdfDoc);
-
-                 Response.Flush();
-                 Response.End();
-
-             }
-             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
-             }
-             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
-             }
-             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
-             }
-             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
-             }
-             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Mensaje, false);
-             }
-             catch (NullReferenceException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Message, false);
-             }
-             catch (Exception ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 HttpContext.Current.Response.Redirect(ex.Message, false);
-             }
-        
+             string cadenaFinal = ConstruirDiseno(compra);
+             HttpContext.Current.Response.Redirect("~/GUI/Modulo14/M14_MostrarFacturaDisenoPlanilla.aspx?idPlan=" + cadenaFinal, false);      
          }
 
          public string ConstruirDiseno(Compra compra)
