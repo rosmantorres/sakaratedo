@@ -86,7 +86,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo4\M4_RecursosPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M4_RecursosPresentador.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo4\PresentadorAgregarDojo.cs" />
+    <Compile Include="Modulo4\PresentadorDetallarDojo.cs" />
+    <Compile Include="Modulo4\PresentadorListarDojos.cs" />
     <Compile Include="Modulo5\PresentadorCrearCintas.cs" />
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
@@ -140,6 +147,10 @@
     <EmbeddedResource Include="Modulo2\RecursosInterfazPresentadorM2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo4\M4_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M4_RecursosPresentador.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
   </ItemGroup>

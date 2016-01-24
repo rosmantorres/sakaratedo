@@ -286,6 +286,15 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_BuscarIdOrganizacion.
+        /// </summary>
+        internal static string BuscarIdOrganizacion {
+            get {
+                return ResourceManager.GetString("BuscarIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M4_BuscarRifDojo.
         /// </summary>
         internal static string BuscarRifDojo {
@@ -327,6 +336,15 @@ namespace DatosSKD.DAO.Modulo4 {
         internal static string ConsultarDojos {
             get {
                 return ResourceManager.GetString("ConsultarDojos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarDojosXOrg.
+        /// </summary>
+        internal static string ConsultarDojosXOrg {
+            get {
+                return ResourceManager.GetString("ConsultarDojosXOrg", resourceCulture);
             }
         }
         

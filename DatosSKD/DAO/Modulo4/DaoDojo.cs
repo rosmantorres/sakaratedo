@@ -133,8 +133,262 @@ namespace DatosSKD.DAO.Modulo4
             return false;
         }
         public bool Modificar(Entidad parametro) { return true; }
-        public Entidad ConsultarXId(Entidad parametro) { return parametro; }
-        public List<Entidad> ConsultarTodos() { return null; }
+        public Entidad ConsultarXId(Entidad parametro)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+          
+            DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
+            elDojo = (DominioSKD.Dojo)parametro;
+
+            try
+            {
+               
+                        laConexion = new BDConexion();
+                        parametros = new List<Parametro>();
+
+
+                        elParametro = new Parametro(RecursosDAOModulo4.ParamIdDojo, SqlDbType.Int, elDojo.Id.ToString(),
+                                                    false);
+                        parametros.Add(elParametro);
+
+                        DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                       RecursosDAOModulo4.ConsultarDojoXId, parametros);
+
+                        foreach (DataRow row in dt.Rows)
+                        {
+
+                            Organizacion org = (Organizacion)FabricaEntidades.ObtenerOrganizacion_M4();
+                            Ubicacion ubi = (Ubicacion)FabricaEntidades.ObtenerUbicacion_M4();
+
+                            elDojo.Id_dojo = int.Parse(row[RecursosDAOModulo4.AliasIdDojo].ToString());
+                            elDojo.Rif_dojo = row[RecursosDAOModulo4.AliasRifDojo].ToString();
+                            elDojo.Nombre_dojo = row[RecursosDAOModulo4.AliasNombreDojo].ToString();
+                            elDojo.Telefono_dojo = int.Parse(row[RecursosDAOModulo4.AliasTelefonoDojo].ToString());
+                            elDojo.Email_dojo = row[RecursosDAOModulo4.AliasEmailDojo].ToString();
+                            elDojo.Logo_dojo = row[RecursosDAOModulo4.AliasLogoDojo].ToString();
+                            elDojo.Status_dojo = bool.Parse(row[RecursosDAOModulo4.AliasStatusDojo].ToString());
+                            elDojo.Estilo_dojo = row[RecursosDAOModulo4.AliasEstiloDojo].ToString();
+                            elDojo.Registro_dojo = DateTime.Parse(row[RecursosDAOModulo4.AliasFechaDojo].ToString());
+                            org.Id = int.Parse(row[RecursosDAOModulo4.AliasIdOrganizacion].ToString());
+                            org.Nombre = row[RecursosDAOModulo4.AliasNombreOrganizacion].ToString();
+                            elDojo.Organizacion = org;
+                            ubi.Id = int.Parse(row[RecursosDAOModulo4.AliasIdUbicacion].ToString());
+                            ubi.Ciudad = row[RecursosDAOModulo4.AliasNombreCiudad].ToString();
+                            ubi.Estado = row[RecursosDAOModulo4.AliasNombreEstado].ToString();
+                            elDojo.Ubicacion = ubi;
+
+
+                        }
+                        
+                    
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosDAOModulo4.Codigo_Error_Formato,
+                     RecursosDAOModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.Modulo4.DojoInexistenteException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return elDojo;
+        }
+        public List<Entidad> ConsultarTodos()
+        {
+            BDConexion laConexion;
+            List<Entidad> laListaDeDojos = new List<Entidad>();
+            List<Parametro> parametros;
+
+            try
+            {
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                               RecursosDAOModulo4.ConsultarDojos, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    Dojo elDojo = (Dojo)FabricaEntidades.ObtenerDojo_M4();
+                    Organizacion org = (Organizacion)FabricaEntidades.ObtenerOrganizacion_M4();
+                    Ubicacion ubi = (Ubicacion)FabricaEntidades.ObtenerUbicacion_M4();
+
+                    elDojo.Id_dojo = int.Parse(row[RecursosDAOModulo4.AliasIdDojo].ToString());
+                    elDojo.Rif_dojo = row[RecursosDAOModulo4.AliasRifDojo].ToString();
+                    elDojo.Nombre_dojo = row[RecursosDAOModulo4.AliasNombreDojo].ToString();
+                    elDojo.Telefono_dojo = int.Parse(row[RecursosDAOModulo4.AliasTelefonoDojo].ToString());
+                    elDojo.Email_dojo = row[RecursosDAOModulo4.AliasEmailDojo].ToString();
+                    elDojo.Logo_dojo = row[RecursosDAOModulo4.AliasLogoDojo].ToString();
+                    elDojo.Status_dojo = bool.Parse(row[RecursosDAOModulo4.AliasStatusDojo].ToString());
+                    org.Nombre= row[RecursosDAOModulo4.AliasNombreOrganizacion].ToString();
+                    elDojo.Registro_dojo = DateTime.Parse(row[RecursosDAOModulo4.AliasFechaDojo].ToString());
+                    org.Id = int.Parse(row[RecursosDAOModulo4.AliasIdOrganizacion].ToString());
+                    elDojo.Organizacion = org;
+                    ubi.Id = int.Parse(row[RecursosDAOModulo4.AliasIdUbicacion].ToString());
+                    ubi.Ciudad = row[RecursosDAOModulo4.AliasNombreCiudad].ToString();
+                    ubi.Estado =row[RecursosDAOModulo4.AliasNombreEstado].ToString();
+                    elDojo.Ubicacion = ubi;
+
+                    laListaDeDojos.Add(elDojo);
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosDAOModulo4.Codigo_Error_Formato,
+                     RecursosDAOModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return laListaDeDojos;
+        }
+        public bool EliminarDojo(Entidad parametro)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            BDConexion laConexion;
+            List<Parametro> parametros;
+            Parametro elParametro = new Parametro();
+
+           
+            try
+            {
+                DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
+                elDojo = (DominioSKD.Dojo)parametro;
+
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+                elParametro = new Parametro(RecursosDAOModulo4.ParamIdDojo, SqlDbType.Int, elDojo.Id.ToString(),
+                                               false);
+                parametros.Add(elParametro);
+
+                laConexion.EjecutarStoredProcedure(RecursosDAOModulo4.EliminarDojo, parametros);
+               
+                return true;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosDAOModulo4.Codigo_Error_Formato,
+                     RecursosDAOModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            return false;
+        }
+        public List<Entidad> ConsultarTodosOrganizacion(Entidad parametro)
+        {
+            BDConexion laConexion;
+            List<Entidad> laListaDeDojos = new List<Entidad>();
+            List<Parametro> parametros;
+
+            try
+            {
+                int idOrg = BuscarIdOrganizacion(parametro);
+                if (idOrg != 0)
+                {
+                    laConexion = new BDConexion();
+                    parametros = new List<Parametro>();
+
+                    Parametro elParametro = new Parametro(RecursosDAOModulo4.ParamIdOrganizacion, SqlDbType.Int, idOrg.ToString(),
+                                                  false);
+                    parametros.Add(elParametro);
+
+                    DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
+                                   RecursosDAOModulo4.ConsultarDojosXOrg, parametros);
+                    foreach (DataRow row in dt.Rows)
+                    {
+
+                        Dojo elDojo = (Dojo)FabricaEntidades.ObtenerDojo_M4();
+                        Organizacion org = (Organizacion)FabricaEntidades.ObtenerOrganizacion_M4();
+                        Ubicacion ubi = (Ubicacion)FabricaEntidades.ObtenerUbicacion_M4();
+
+                        elDojo.Id_dojo = int.Parse(row[RecursosDAOModulo4.AliasIdDojo].ToString());
+                        elDojo.Rif_dojo = row[RecursosDAOModulo4.AliasRifDojo].ToString();
+                        elDojo.Nombre_dojo = row[RecursosDAOModulo4.AliasNombreDojo].ToString();
+                        elDojo.Telefono_dojo = int.Parse(row[RecursosDAOModulo4.AliasTelefonoDojo].ToString());
+                        elDojo.Email_dojo = row[RecursosDAOModulo4.AliasEmailDojo].ToString();
+                        elDojo.Logo_dojo = row[RecursosDAOModulo4.AliasLogoDojo].ToString();
+                        elDojo.Status_dojo = bool.Parse(row[RecursosDAOModulo4.AliasStatusDojo].ToString());
+                        org.Nombre = row[RecursosDAOModulo4.AliasNombreOrganizacion].ToString();
+                        elDojo.Registro_dojo = DateTime.Parse(row[RecursosDAOModulo4.AliasFechaDojo].ToString());
+                        org.Id = int.Parse(row[RecursosDAOModulo4.AliasIdOrganizacion].ToString());
+                        elDojo.Organizacion = org;
+                        ubi.Id = int.Parse(row[RecursosDAOModulo4.AliasIdUbicacion].ToString());
+                        ubi.Ciudad = row[RecursosDAOModulo4.AliasNombreCiudad].ToString();
+                        ubi.Estado = row[RecursosDAOModulo4.AliasNombreEstado].ToString();
+                        elDojo.Ubicacion = ubi;
+
+                        laListaDeDojos.Add(elDojo);
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosDAOModulo4.Codigo_Error_Formato,
+                     RecursosDAOModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return laListaDeDojos;
+        }
         #endregion
 
         #region IDaoDojo
@@ -200,6 +454,61 @@ namespace DatosSKD.DAO.Modulo4
 
             return retorno;
 
+        }
+
+        public int BuscarIdOrganizacion(Entidad parametro)
+        {
+            BDConexion laConexion;
+            List<Parametro> parametros;
+
+            try
+            {
+
+                laConexion = new BDConexion();
+                parametros = new List<Parametro>();
+
+                Parametro elParametro = new Parametro(RecursosDAOModulo4.ParamIdOrganizacion, SqlDbType.Int, parametro.Id.ToString(),
+                                               false);
+                parametros.Add(elParametro);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosDAOModulo4.BuscarIdOrganizacion, parametros);
+
+                if (dt != null)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        int id = int.Parse(row[RecursosDAOModulo4.AliasIdOrganizacion].ToString());
+                            return id;
+                    }
+                }
+                else return 0;
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo4.Codigo_Error_Formato,
+                     RecursosDAOModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return 0;
         }
         #endregion
     }

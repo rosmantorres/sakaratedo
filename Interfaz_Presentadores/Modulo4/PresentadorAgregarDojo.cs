@@ -29,7 +29,7 @@ namespace Interfaz_Presentadores.Modulo4
         /// <summary>
         /// Método para agregar un nuevo Dojo
         /// </summary>
-             public void agregarDojo_Click ()
+             public void AgregarDojo_Click ()
              {
                  DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
                  DominioSKD.Organizacion org = (DominioSKD.Organizacion)FabricaEntidades.ObtenerOrganizacion_M4();
@@ -66,18 +66,6 @@ namespace Interfaz_Presentadores.Modulo4
                      agregarDojo.Ejecutar();
                  }
                  catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-                 {
-                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                     throw ex;
-                 }
-                 catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
-                 {
-                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                     throw ex;
-                 }
-                 catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
                  {
                      Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

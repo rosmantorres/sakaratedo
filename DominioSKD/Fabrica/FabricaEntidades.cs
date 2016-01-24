@@ -43,6 +43,14 @@ namespace DominioSKD.Fabrica
         {
             return new Dojo();
         }
+        public static List<Entidad> ObtenerListaEntidad_M4()
+        {
+            return new List<Entidad>();
+        }
+        public static List<Dojo> ObtenerListaDojos_M4()
+        {
+            return new List<Dojo>();
+        }
         public static Entidad ObtenerDojo_M4(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
         {
             return new Dojo(Id, Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);

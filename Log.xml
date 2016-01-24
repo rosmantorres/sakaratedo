@@ -274,3 +274,618 @@
 2016-01-21 20:28:01,870 INFO  DaoDojo - Clase: DaoDojo
 2016-01-21 20:28:01,870 INFO  DaoDojo - Mensaje: Salida del Método
 2016-01-21 20:28:01,870 INFO  DaoDojo - Metodo: Agregar
+2016-01-23 21:55:33,808 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 21:55:33,817 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 21:55:33,817 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-23 21:55:33,817 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 21:55:35,364 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 21:55:35,364 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 21:55:35,364 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-23 21:55:35,364 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 21:58:45,965 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 21:58:45,965 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 21:58:45,965 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-23 21:58:45,965 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 21:58:45,970 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 21:58:45,971 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 21:58:45,971 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-23 21:58:45,971 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 23:42:06,782 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 23:42:06,789 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 23:42:06,789 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-23 23:42:06,789 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 23:42:06,800 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 23:42:06,800 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 23:42:06,800 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-23 23:42:06,800 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 23:43:19,558 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 23:43:19,558 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 23:43:19,558 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-23 23:43:19,559 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 23:43:19,564 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 23:43:19,566 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 23:43:19,566 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-23 23:43:19,566 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 23:47:02,638 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 23:47:02,645 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 23:47:02,645 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-23 23:47:02,645 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-23 23:47:02,654 INFO  ComandoListarDojos - *******************************************************
+2016-01-23 23:47:02,654 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-23 23:47:02,654 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-23 23:47:02,654 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:16:01,461 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:16:01,468 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:16:01,468 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:16:01,468 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:16:01,477 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:16:01,477 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:16:01,477 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:16:01,477 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:16:03,335 ERROR DaoDojo - *******************************************************
+2016-01-24 00:16:03,335 ERROR DaoDojo - Mensaje: La columna 'Rif_dojo' no pertenece a la tabla .
+2016-01-24 00:16:03,341 ERROR DaoDojo - Origen: System.Data
+2016-01-24 00:16:03,341 ERROR DaoDojo - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-01-24 00:16:03,341 ERROR DaoDojo - StackTrace:    en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 356
+2016-01-24 00:16:03,341 ERROR DaoDojo - InnerException: 
+2016-01-24 00:16:03,393 ERROR ComandoListarDojos - *******************************************************
+2016-01-24 00:16:03,394 ERROR ComandoListarDojos - Mensaje: No se pudo completar la operacion
+2016-01-24 00:16:03,397 ERROR ComandoListarDojos - Origen: DatosSKD
+2016-01-24 00:16:03,397 ERROR ComandoListarDojos - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodosOrganizacion(DominioSKD.Entidad)
+2016-01-24 00:16:03,397 ERROR ComandoListarDojos - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodosOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 264
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoListarDojos.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoListarDojos.cs:línea 29
+2016-01-24 00:16:03,398 ERROR ComandoListarDojos - InnerException: ExcepcionesSKD.ExceptionSKD: No se pudo completar la operacion ---> System.ArgumentException: La columna 'Rif_dojo' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 356
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 381
+   en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodosOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 208
+2016-01-24 00:16:31,928 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:16:31,928 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:16:31,928 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:16:31,928 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:16:31,933 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:16:31,934 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:16:31,934 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:16:31,934 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:16:35,300 ERROR DaoDojo - *******************************************************
+2016-01-24 00:16:35,300 ERROR DaoDojo - Mensaje: La columna 'Rif_dojo' no pertenece a la tabla .
+2016-01-24 00:16:35,300 ERROR DaoDojo - Origen: System.Data
+2016-01-24 00:16:35,301 ERROR DaoDojo - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-01-24 00:16:35,301 ERROR DaoDojo - StackTrace:    en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 356
+2016-01-24 00:16:35,301 ERROR DaoDojo - InnerException: 
+2016-01-24 00:16:35,360 ERROR ComandoListarDojos - *******************************************************
+2016-01-24 00:16:35,360 ERROR ComandoListarDojos - Mensaje: No se pudo completar la operacion
+2016-01-24 00:16:35,360 ERROR ComandoListarDojos - Origen: DatosSKD
+2016-01-24 00:16:35,360 ERROR ComandoListarDojos - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodosOrganizacion(DominioSKD.Entidad)
+2016-01-24 00:16:35,362 ERROR ComandoListarDojos - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodosOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 264
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoListarDojos.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoListarDojos.cs:línea 29
+2016-01-24 00:16:35,362 ERROR ComandoListarDojos - InnerException: ExcepcionesSKD.ExceptionSKD: No se pudo completar la operacion ---> System.ArgumentException: La columna 'Rif_dojo' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 356
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 381
+   en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodosOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 208
+2016-01-24 00:17:49,160 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:17:49,160 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:17:49,160 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:17:49,160 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:17:49,167 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:17:49,168 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:17:49,168 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:17:49,168 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:20:10,236 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:20:10,243 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:20:10,243 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:20:10,243 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:20:10,253 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:20:10,253 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:20:10,253 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:20:10,253 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:20:56,898 ERROR DaoDojo - *******************************************************
+2016-01-24 00:20:56,898 ERROR DaoDojo - Mensaje: La columna 'Rif_dojo' no pertenece a la tabla .
+2016-01-24 00:20:56,906 ERROR DaoDojo - Origen: System.Data
+2016-01-24 00:20:56,906 ERROR DaoDojo - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-01-24 00:20:56,906 ERROR DaoDojo - StackTrace:    en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 356
+2016-01-24 00:20:56,906 ERROR DaoDojo - InnerException: 
+2016-01-24 00:20:57,005 ERROR ComandoListarDojos - *******************************************************
+2016-01-24 00:20:57,006 ERROR ComandoListarDojos - Mensaje: No se pudo completar la operacion
+2016-01-24 00:20:57,009 ERROR ComandoListarDojos - Origen: DatosSKD
+2016-01-24 00:20:57,009 ERROR ComandoListarDojos - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodosOrganizacion(DominioSKD.Entidad)
+2016-01-24 00:20:57,010 ERROR ComandoListarDojos - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodosOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 264
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoListarDojos.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoListarDojos.cs:línea 29
+2016-01-24 00:20:57,010 ERROR ComandoListarDojos - InnerException: ExcepcionesSKD.ExceptionSKD: No se pudo completar la operacion ---> System.ArgumentException: La columna 'Rif_dojo' no pertenece a la tabla .
+   en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 356
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DatosSKD.DAO.Modulo4.DaoDojo.BuscarIdOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 382
+   en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodosOrganizacion(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 208
+2016-01-24 00:21:04,122 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:21:04,122 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:21:04,122 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:21:04,122 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:21:04,126 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:21:04,126 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:21:04,126 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:21:04,126 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:25:40,970 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:25:40,979 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:25:40,979 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:25:40,979 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:25:41,012 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:25:41,012 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:25:41,012 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:25:41,012 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:27:08,718 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:27:08,719 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:27:08,719 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:27:08,719 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:27:08,724 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:27:08,724 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:27:08,724 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:27:08,724 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:37:45,194 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:37:45,195 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:37:45,195 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 00:37:45,195 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 00:37:45,197 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 00:37:45,200 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 00:37:45,200 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 00:37:45,200 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:16:00,282 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:16:00,291 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:16:00,291 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:16:00,291 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:16:00,300 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:16:00,300 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:16:00,300 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:16:00,301 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:16:22,334 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:16:22,334 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:16:22,334 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:16:22,334 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:16:22,339 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:16:22,339 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:16:22,339 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:16:22,339 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:16:22,346 INFO  DaoDojo - *******************************************************
+2016-01-24 01:16:22,346 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:16:22,346 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:16:22,346 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:16:22,524 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:16:22,524 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:16:22,524 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:16:22,524 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:16:22,528 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:16:22,528 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:16:22,528 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:16:22,528 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:16:32,904 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:16:32,904 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:16:32,904 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:16:32,904 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:16:32,908 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:16:32,909 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:16:32,909 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:16:32,909 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:16:32,912 INFO  DaoDojo - *******************************************************
+2016-01-24 01:16:32,913 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:16:32,913 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:16:32,913 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:16:32,970 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:16:32,970 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:16:32,970 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:16:32,970 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:16:32,973 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:16:32,973 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:16:32,973 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:16:32,973 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:22:46,418 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:22:46,425 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:22:46,425 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:22:46,425 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:22:46,434 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:22:46,434 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:22:46,434 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:22:46,434 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:23:00,531 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:23:00,532 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:23:00,532 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:23:00,532 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:23:00,535 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:23:00,535 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:23:00,535 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:23:00,535 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:23:00,542 INFO  DaoDojo - *******************************************************
+2016-01-24 01:23:00,543 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:23:00,543 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:23:00,543 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:23:01,111 ERROR ComandoEliminarDojo - *******************************************************
+2016-01-24 01:23:01,111 ERROR ComandoEliminarDojo - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 01:23:01,114 ERROR ComandoEliminarDojo - Origen: DatosSKD
+2016-01-24 01:23:01,114 ERROR ComandoEliminarDojo - Metodo: Boolean EliminarDojo(DominioSKD.Entidad)
+2016-01-24 01:23:01,115 ERROR ComandoEliminarDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.EliminarDojo(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 237
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoEliminarDojo.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoEliminarDojo.cs:línea 31
+2016-01-24 01:23:01,126 ERROR ComandoEliminarDojo - InnerException: System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "HISTORIAL_MATRICULA_DOJO_FK". The conflict occurred in database "BaseDeDatosSKD", table "dbo.HISTORIAL_MATRICULA", column 'DOJO_doj_id'.
+The statement has been terminated.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:09789de3-9796-4f4b-9cee-ae123f058752
+Error Number:547,State:0,Class:16
+2016-01-24 01:23:01,143 ERROR PresentadorListarDojos - *******************************************************
+2016-01-24 01:23:01,144 ERROR PresentadorListarDojos - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 01:23:01,144 ERROR PresentadorListarDojos - Origen: DatosSKD
+2016-01-24 01:23:01,144 ERROR PresentadorListarDojos - Metodo: Boolean EliminarDojo(DominioSKD.Entidad)
+2016-01-24 01:23:01,145 ERROR PresentadorListarDojos - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoEliminarDojo.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoEliminarDojo.cs:línea 37
+   en Interfaz_Presentadores.Modulo4.PresentadorListarDojos.EliminarDojo(Int32 id) en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorListarDojos.cs:línea 167
+2016-01-24 01:23:01,146 ERROR PresentadorListarDojos - InnerException: System.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "HISTORIAL_MATRICULA_DOJO_FK". The conflict occurred in database "BaseDeDatosSKD", table "dbo.HISTORIAL_MATRICULA", column 'DOJO_doj_id'.
+The statement has been terminated.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:09789de3-9796-4f4b-9cee-ae123f058752
+Error Number:547,State:0,Class:16
+2016-01-24 01:25:31,175 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:25:31,175 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:25:31,175 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:25:31,175 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:25:31,180 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:25:31,180 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:25:31,180 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:25:31,180 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:25:31,182 INFO  DaoDojo - *******************************************************
+2016-01-24 01:25:31,182 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:25:31,182 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:25:31,182 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:25:31,247 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:25:31,247 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:25:31,247 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:25:31,247 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:25:31,249 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:25:31,249 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:25:31,249 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:25:31,249 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:25:37,058 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:25:37,058 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:25:37,059 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:25:37,059 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:25:37,062 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:25:37,062 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:25:37,063 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:25:37,063 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:25:37,066 INFO  DaoDojo - *******************************************************
+2016-01-24 01:25:37,066 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:25:37,066 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:25:37,066 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:25:37,134 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:25:37,134 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:25:37,134 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:25:37,134 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:25:37,139 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:25:37,139 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:25:37,139 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:25:37,139 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:25:42,133 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:25:42,134 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:25:42,134 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:25:42,134 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:25:42,138 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:25:42,138 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:25:42,139 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:25:42,139 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:25:42,142 INFO  DaoDojo - *******************************************************
+2016-01-24 01:25:42,142 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:25:42,142 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:25:42,142 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:25:42,207 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:25:42,207 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:25:42,207 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:25:42,207 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:25:42,210 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:25:42,210 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:25:42,210 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:25:42,210 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:26:08,364 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:26:08,364 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:26:08,364 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:26:08,364 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:26:08,369 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:26:08,369 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:26:08,369 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:26:08,369 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:26:31,378 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:26:31,378 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:26:31,378 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-01-24 01:26:31,378 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:26:31,381 INFO  ComandoEliminarDojo - *******************************************************
+2016-01-24 01:26:31,381 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-01-24 01:26:31,382 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-01-24 01:26:31,382 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-01-24 01:26:31,385 INFO  DaoDojo - *******************************************************
+2016-01-24 01:26:31,385 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 01:26:31,385 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 01:26:31,385 INFO  DaoDojo - Metodo: EliminarDojo
+2016-01-24 01:26:31,461 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:26:31,461 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:26:31,461 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 01:26:31,461 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 01:26:31,464 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 01:26:31,464 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 01:26:31,464 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 01:26:31,464 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 13:51:35,210 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 13:51:35,218 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 13:51:35,218 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 13:51:35,218 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 13:51:35,226 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 13:51:35,226 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 13:51:35,226 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 13:51:35,226 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 13:51:40,195 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 13:51:40,195 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 13:51:40,197 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 13:51:40,197 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 13:51:40,201 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 13:51:40,201 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 13:51:40,201 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 13:51:40,201 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 13:51:40,209 INFO  DaoDojo - *******************************************************
+2016-01-24 13:51:40,209 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 13:51:40,209 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 13:51:40,209 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 13:51:40,249 INFO  DaoDojo - *******************************************************
+2016-01-24 13:51:40,249 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 13:51:40,249 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-24 13:51:40,249 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-24 14:03:15,374 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:03:15,390 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:03:15,390 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:03:15,390 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:03:15,437 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:03:15,437 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:03:15,437 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:03:15,437 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:03:19,242 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:03:19,242 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:03:19,242 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:03:19,242 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:03:19,246 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:03:19,246 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:03:19,246 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:03:19,246 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:03:19,254 INFO  DaoDojo - *******************************************************
+2016-01-24 14:03:19,254 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:03:19,254 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:03:19,254 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:03:19,275 INFO  DaoDojo - *******************************************************
+2016-01-24 14:03:19,275 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:03:19,275 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-24 14:03:19,275 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-24 14:05:46,873 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:05:46,874 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:05:46,874 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:05:46,874 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:05:46,882 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:05:46,883 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:05:46,883 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:05:46,883 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:05:46,897 INFO  DaoDojo - *******************************************************
+2016-01-24 14:05:46,897 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:05:46,898 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:05:46,898 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:05:47,910 INFO  DaoDojo - *******************************************************
+2016-01-24 14:05:47,910 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:05:47,910 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-24 14:05:47,910 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-24 14:06:06,540 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:06:06,540 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:06:06,540 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:06:06,540 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:06:06,561 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:06:06,562 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:06:06,562 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:06:06,562 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:06:06,597 INFO  DaoDojo - *******************************************************
+2016-01-24 14:06:06,597 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:06:06,597 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:06:06,597 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:07:47,921 INFO  DaoDojo - *******************************************************
+2016-01-24 14:07:47,922 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:07:47,922 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-24 14:07:47,922 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-24 14:11:36,484 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:11:36,515 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:11:36,515 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:11:36,515 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:11:36,572 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:11:36,573 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:11:36,573 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:11:36,573 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:11:45,471 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:11:45,471 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:11:45,471 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:11:45,471 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:11:45,489 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:11:45,489 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:11:45,490 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:11:45,490 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:11:45,528 INFO  DaoDojo - *******************************************************
+2016-01-24 14:11:45,529 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:11:45,529 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:11:45,529 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:11:48,168 INFO  DaoDojo - *******************************************************
+2016-01-24 14:11:48,169 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:11:48,169 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-24 14:11:48,169 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-24 14:14:09,722 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:14:09,733 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:14:09,733 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:14:09,733 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:14:09,752 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:14:09,756 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:14:09,756 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:14:09,756 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:14:09,764 INFO  DaoDojo - *******************************************************
+2016-01-24 14:14:09,765 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:14:09,765 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:14:09,765 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:15:00,088 INFO  DaoDojo - *******************************************************
+2016-01-24 14:15:00,089 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:15:00,089 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-24 14:15:00,089 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-24 14:15:23,255 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:15:23,256 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:15:23,256 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:15:23,256 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:15:23,269 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:15:23,270 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:15:23,270 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:15:23,270 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:15:23,327 INFO  DaoDojo - *******************************************************
+2016-01-24 14:15:23,328 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:15:23,328 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:15:23,328 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:18:16,153 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:18:16,167 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:18:16,167 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:18:16,167 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:18:16,188 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:18:16,188 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:18:16,189 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:18:16,189 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:18:34,495 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:18:34,495 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:18:34,495 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:18:34,495 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:18:34,535 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:18:34,535 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:18:34,535 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:18:34,535 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:18:34,547 INFO  DaoDojo - *******************************************************
+2016-01-24 14:18:34,548 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:18:34,548 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:18:34,548 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:18:58,716 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:18:58,716 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:18:58,716 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:18:58,717 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:18:58,749 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:18:58,749 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:18:58,749 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:18:58,749 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:19:04,780 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:19:04,780 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:19:04,780 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:19:04,780 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:19:04,788 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:19:04,789 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:19:04,789 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:19:04,789 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:19:04,792 INFO  DaoDojo - *******************************************************
+2016-01-24 14:19:04,792 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:19:04,792 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:19:04,792 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:19:42,500 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:19:42,501 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:19:42,501 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:19:42,501 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:19:42,507 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:19:42,507 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:19:42,507 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:19:42,507 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:19:47,246 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:19:47,246 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:19:47,246 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:19:47,246 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:19:47,277 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:19:47,278 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:19:47,278 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:19:47,278 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:19:47,281 INFO  DaoDojo - *******************************************************
+2016-01-24 14:19:47,281 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:19:47,281 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:19:47,281 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-24 14:31:39,404 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:31:39,412 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:31:39,412 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:31:39,412 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:31:39,423 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:31:39,423 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:31:39,423 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:31:39,423 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:34:53,839 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:34:53,848 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:34:53,848 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:34:53,848 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:34:53,861 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:34:53,861 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:34:53,861 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:34:53,861 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:44:36,525 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:44:36,534 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:44:36,534 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:44:36,534 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:44:36,567 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:44:36,567 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:44:36,567 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:44:36,567 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:47:20,085 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:47:20,098 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:47:20,098 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:47:20,098 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:47:20,142 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:47:20,142 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:47:20,142 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:47:20,142 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:49:34,443 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:49:34,555 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:49:34,555 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:49:34,556 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:49:34,594 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:49:34,594 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:49:34,594 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:49:34,594 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:52:05,107 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:52:05,119 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:52:05,119 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-24 14:52:05,119 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:52:05,138 INFO  ComandoListarDojos - *******************************************************
+2016-01-24 14:52:05,138 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-24 14:52:05,138 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-24 14:52:05,139 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-24 14:52:07,721 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:52:07,721 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:52:07,721 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-24 14:52:07,721 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:52:07,727 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-24 14:52:07,727 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-24 14:52:07,727 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-24 14:52:07,727 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-24 14:52:07,732 INFO  DaoDojo - *******************************************************
+2016-01-24 14:52:07,732 INFO  DaoDojo - Clase: DaoDojo
+2016-01-24 14:52:07,732 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-24 14:52:07,732 INFO  DaoDojo - Metodo: ConsultarXId

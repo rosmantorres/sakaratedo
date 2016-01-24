@@ -47,6 +47,18 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoAgregarDojo();
         }
+        public static Comando<List<Entidad>> CrearComandoListarDojos()
+        {
+            return new ComandoListarDojos();
+        }
+        public static Comando<bool> CrearComandoEliminarDojo()
+        {
+            return new ComandoEliminarDojo();
+        }
+        public static Comando<Entidad> CrearComandoDetallarDojo()
+        {
+            return new ComandoDetallarDojo();
+        }
         #endregion
 
         #region Modulo 5

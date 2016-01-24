@@ -11,6 +11,11 @@ namespace DatosSKD.InterfazDAO.Modulo4
     {
         bool BuscarRifDojo(Entidad parametro);
 
+        List<Entidad> ConsultarTodosOrganizacion(Entidad parametro);
+
+        int BuscarIdOrganizacion(Entidad parametro);
+
+        bool EliminarDojo(Entidad parametro);
        // bool BuscarIDCompetencia(Entidad parametro);
 
         //List<Entidad> M12ListarOrganizaciones();
