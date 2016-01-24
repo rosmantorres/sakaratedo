@@ -33,9 +33,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -131,6 +130,12 @@
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
+    <Compile Include="Modulo9\M9_RecursoInterfazPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M9_RecursoInterfazPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo9\PresentadorAgregarEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
@@ -163,7 +168,6 @@
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
-    <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
@@ -199,6 +203,10 @@
       <LastGenOutput>RecursosPresentadorM3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
+    <EmbeddedResource Include="Modulo9\M9_RecursoInterfazPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M9_RecursoInterfazPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\menuLateral.xml" />
