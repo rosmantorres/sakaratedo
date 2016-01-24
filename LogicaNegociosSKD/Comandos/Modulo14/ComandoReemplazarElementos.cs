@@ -61,7 +61,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return laSolicitud; }
             set { laSolicitud = value; }
         }
-
+        /// <summary>
+        /// Método que reemplaza cada uno de los elementos del diseño de la panilla
+        /// con datos reales del atleta
+        /// </summary>
+        /// <param name="info">Contenido del diseño</param>
+        /// <param name="persona">persona</param>
+        /// <param name="dojo">Dojo</param>
+        /// <param name="evento">Evento</param>
+        /// <param name="competencia">Competencia</param>
+        /// <param name="matricula">Matricula</param>
+        /// <param name="organizacion">Organizacion</param>
+        /// datos que se reemplazan en el diseño original
+        /// <returns>Retorna el contenido del diseño, modificado por los datos</returns>
+    
         public override string Ejecutar()
         {
             

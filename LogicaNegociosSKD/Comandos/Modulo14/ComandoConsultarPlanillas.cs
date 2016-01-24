@@ -13,6 +13,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
     public class ComandoConsultarPlanillas : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Método que devuelve todas las planillas creadas
+        /// </summary>
+        /// <returns>Retorna una lista con todas las planillas registradas</returns>
         public override List<Entidad> Ejecutar()
         {
             
