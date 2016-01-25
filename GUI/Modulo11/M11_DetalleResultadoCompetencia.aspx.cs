@@ -1,7 +1,6 @@
 ﻿using DominioSKD;
 using LogicaNegociosSKD.Modulo10;
 using LogicaNegociosSKD.Modulo11;
-using LogicaNegociosSKD.Modulo9;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,7 @@ namespace templateApp.GUI.Modulo11
                 Session["M11_IdEvento"] = idEvento;
                 Session["M11_tipo"] = tipo;
 
-                if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
+                /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
                 {
                     #region Detalle de Eventos Examen de Ascenso
                     evento = LogicaResultado.ConsultarEventoDetalle(Session["M11_IdEvento"].ToString());
@@ -166,7 +165,7 @@ namespace templateApp.GUI.Modulo11
                         }
                         #endregion
                     }
-                }
+                }*/
             }
         }
 
