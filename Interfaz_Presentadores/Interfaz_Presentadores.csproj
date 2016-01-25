@@ -38,7 +38,7 @@
     </Reference>
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\itextsharp.dll</HintPath>
+      <HintPath>..\packages\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +70,7 @@
     <Compile Include="Modulo11\PresentadorAgregarResultado.cs" />
     <Compile Include="Modulo11\PresentadorListaResultado.cs" />
     <Compile Include="Modulo11\PresentadorModificarResultado.cs" />
+    <Compile Include="Modulo14\PresentadorM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
@@ -148,7 +149,9 @@
       <DependentUpon>M9_RecursoInterfazPresentador.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo9\PresentadorAgregarEvento.cs" />
-    <Compile Include="Modulo9\PresentadorListarEventos.cs" />
+    <Compile Include="Modulo9\PresentadorDetalleEvento.cs" />
+    <Compile Include="Modulo9\PresentadorListarEvento.cs" />
+    <Compile Include="Modulo9\PresentadorModificarEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>

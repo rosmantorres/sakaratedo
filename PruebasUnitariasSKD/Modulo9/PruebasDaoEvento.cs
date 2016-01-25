@@ -18,30 +18,28 @@ namespace PruebasUnitariasSKD.Modulo9
     [TestFixture]
     class PruebasDaoEvento
     {
-        
         #region Pruebas Unitarias
-
         /// <summary>
         /// Prueba que verifica si se inserta en BD
         /// </summary>
         [Test]
         public void PruebaCrearEvento()
         {
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            //FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
             DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
-            DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)fabricaEntidad.ObtenerHorario();
+            DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)FabricaEntidades.ObtenerHorario();
             horario.FechaInicio = fechaInicio;
             horario.FechaFin = fechaFin;
             horario.HoraInicioS = "10:30";
             horario.HoraFinS = "11:00";
             horario.Id = 1;
-            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)fabricaEntidad.ObtenerTipoEvento();
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)FabricaEntidades.ObtenerTipoEvento();
             tipoEvento.Id = 1;
             tipoEvento.Nombre = "Prueba Unitaria en Dao";
             Persona persona = new Persona();
             persona.ID = 36;
-            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             elEvento.Nombre = "Prueba Unitaria Dao Crear";
             elEvento.Descripcion = "Pruebas Unitarias de DAO Crear";
             elEvento.Costo = 55;
@@ -106,21 +104,21 @@ namespace PruebasUnitariasSKD.Modulo9
         [Test]
         public void PruebaModificarEvento()
         {
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            //FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
             DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
-            DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)fabricaEntidad.ObtenerHorario();
+            DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)FabricaEntidades.ObtenerHorario();
             horario.FechaInicio = fechaInicio;
             horario.FechaFin = fechaFin;
             horario.HoraInicioS = "10:30";
             horario.HoraFinS = "11:00";
             horario.Id = 1;
-            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)fabricaEntidad.ObtenerTipoEvento();
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)FabricaEntidades.ObtenerTipoEvento();
             tipoEvento.Id = 1;
             tipoEvento.Nombre = "Prueba Unitaria en Dao";
             Persona persona = new Persona();
             persona.ID = 36;
-            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             elEvento.Id = 4;
             elEvento.Nombre = "Prueba Unitaria Dao Modificar";
             elEvento.Descripcion = "Pruebas Unitarias de DAO Modificar";
@@ -140,13 +138,12 @@ namespace PruebasUnitariasSKD.Modulo9
         /// <summary>
         /// Prueba que verifica si se el evento consultado existe
         /// </summary>
-
         [Test]
         public void PruebaConsultarEvento()
         {
             FabricaEntidades fabricaEntidad = new FabricaEntidades();
             DatosSKD.DAO.Modulo9.DaoEvento daoEvento = (DatosSKD.DAO.Modulo9.DaoEvento)FabricaDAOSqlServer.ObtenerDaoEvento();
-            DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             evento.Id = 1;
             Entidad axuiliar = daoEvento.ConsultarXId(evento);
             Console.Out.WriteLine(axuiliar.Id);

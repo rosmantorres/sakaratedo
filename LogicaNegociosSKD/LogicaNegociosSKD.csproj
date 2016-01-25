@@ -195,7 +195,6 @@
     <Compile Include="Comandos\Modulo9\ComandoModificarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoModificarEventoConTipo.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarListaTipoEventos.cs" />
-    <Compile Include="Comandos\Modulo9\Logica2daEntrega.cs" />
     <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -254,11 +253,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -340,10 +334,6 @@
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosLogicaModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

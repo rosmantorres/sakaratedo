@@ -105,8 +105,6 @@
                                <option value="M" >M</option>
                                <option value="L" >L</option>
                                <option value="XL" >XL</option>
-                               <option value="XXL" >XXL</option>
-                               <option value="XXXL" >XXXL</option>
                                <option value="otros" >Otros</option>
                 
                         </select>            
@@ -219,7 +217,24 @@
                          required: true
                      },
                      ctl00$contenidoCentral$tipo_implemento_div: {
-                         required: true
+                         required: true,
+                         minlength: 3,
+                         maxlength: 120
+                     },
+                     ctl00$contenidoCentral$marca_implemento_div: {
+                         required: true,
+                         minlength: 3,
+                         maxlength: 120,
+                     },
+                     ctl00$contenidoCentral$color_implemento_div: {
+                         required: true,
+                         minlength: 3,
+                         maxlength: 120,
+                     },
+                     ctl00$contenidoCentral$talla_implemento_div: {
+                         required: true,
+                         minlength: 1,
+                         maxlength: 3,
                      }
 
                  },
@@ -287,7 +302,27 @@
 
                      },
                      ctl00$contenidoCentral$tipo_implemento_div: {
-                         required: "Este campo es obligatorio"
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 3 caracteres",
+                         maxlength: "Maximo tiene que ser 120 caracteres"
+                     },
+                     ctl00$contenidoCentral$marca_implemento_div: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 3 caracteres",
+                         maxlength: "Maximo tiene que ser 120 caracteres"
+
+                     },
+                     ctl00$contenidoCentral$color_implemento_div: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 3 caracteres",
+                         maxlength: "Maximo tiene que ser 10 caracteres"
+
+                     },
+                     ctl00$contenidoCentral$talla_implemento_div: {
+                         required: "Este campo es obligatorio",
+                         minlength: "Minimo tiene que ser 1 caracteres",
+                         maxlength: "Maximo tiene que ser 3 caracteres"
+
                      }
 
 
@@ -306,6 +341,8 @@
              $("#contenidoCentral_talla_implemento").change(function () {
                  // alert("hola");
                  if ($("#contenidoCentral_talla_implemento").val() == "otros") {
+                     $("#contenidoCentral_talla_implemento_div").val("");
+
                      $("#contenidoCentral_talla_implemento_div").show();
                  } else {
                      $("#contenidoCentral_talla_implemento_div").hide();
