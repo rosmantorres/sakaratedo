@@ -197,17 +197,17 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 9
-        public Entidad ObtenerEvento()
+        public  Entidad ObtenerEvento()
         {
             return new DominioSKD.Entidades.Modulo9.Evento();
         }
 
-        public Entidad ObtenerHorario()
+        public  Entidad ObtenerHorario()
         {
             return new DominioSKD.Entidades.Modulo9.Horario();
         }
 
-        public Entidad ObtenerTipoEvento()
+        public  Entidad ObtenerTipoEvento()
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
@@ -506,12 +506,15 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="implementos">Lista con todos los implementos del carrito</param>
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
-        /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
+        /// <param name="matriculas">Lista con todas las matriculas del carrito</param>
+        /// <param name="monto">Monto que se ha pagado de ese carrito</param>
         /// <returns>La entidad carrito con todos sus datos llenos</returns>
         public static Entidad ObtenerCarrito(
-           Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
+           Dictionary<Entidad, int> implementos,
+            Dictionary<Entidad, int> eventos,
+            Dictionary<Entidad, int> matriculas, float monto)
         {
-            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
+            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas, monto);
         }
 
         /// <summary>

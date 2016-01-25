@@ -483,4 +483,181 @@
   <data name="EXCEPCION_CARRITO_PAGO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=14</value>
   </data>
+  <data name="BOTON_AGREGAR" xml:space="preserve">
+    <value>btn btn-success glyphicon glyphicon-shopping-cart</value>
+  </data>
+  <data name="BOTON_INFORMACION" xml:space="preserve">
+    <value>btn btn-primary glyphicon glyphicon-info-sign</value>
+  </data>
+  <data name="REFERENCIA_AGREGAR" xml:space="preserve">
+    <value>Agregar-</value>
+  </data>
+  <data name="REFERENCIA_EVENTO" xml:space="preserve">
+    <value>Evento-</value>
+  </data>
+  <data name="ABRE_LABEL_AUX1" xml:space="preserve">
+    <value>&lt;label id='aux1' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX2" xml:space="preserve">
+    <value>&lt;label id='aux2' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX3" xml:space="preserve">
+    <value>&lt;label id='aux3' &gt;</value>
+  </data>
+  <data name="CIERRE_LABEL" xml:space="preserve">
+    <value>&lt;/label&gt;</value>
+  </data>
+  <data name="Cinco" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Cuatro" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Diez" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Dos" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Nueve" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Ocho" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SALTO_LINEA" xml:space="preserve">
+    <value>&lt;/br&gt;</value>
+  </data>
+  <data name="Seis" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Siete" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TITULO_COSTO" xml:space="preserve">
+    <value>&lt;h3&gt;Costo&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_DESCRIPCION" xml:space="preserve">
+    <value>&lt;h3&gt;Descripcion&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_NOMBRE" xml:space="preserve">
+    <value>&lt;h3&gt;Nombre&lt;/h3&gt;</value>
+  </data>
+  <data name="Tres" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Uno" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA" xml:space="preserve">
+    <value>M16_ConsultarEvento.aspx?accion=4&amp;mensaje=14</value>
+  </data>
+  <data name="REFERENCIA_PRODUCTO" xml:space="preserve">
+    <value>Producto-</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_DATO_PAGO" xml:space="preserve">
+    <value>S_16_15</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_DATO_PAGO" xml:space="preserve">
+    <value>Error, los datos que ha introducido de su pago no son validos, no pueden contener letras ni caracteres especiales</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_MONTO_INVALIDO" xml:space="preserve">
+    <value>S_16_16</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_MONTO_INVALIDO" xml:space="preserve">
+    <value>Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0</value>
+  </data>
+  <data name="ABRE_LABEL_AUX4" xml:space="preserve">
+    <value>&lt;label id='aux4' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX5" xml:space="preserve">
+    <value>&lt;label id='aux5' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX6" xml:space="preserve">
+    <value>&lt;label id='aux6' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX7" xml:space="preserve">
+    <value>&lt;label id='aux7' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX8" xml:space="preserve">
+    <value>&lt;label id='aux8' &gt;</value>
+  </data>
+  <data name="ABRE_LABEL_AUX9" xml:space="preserve">
+    <value>&lt;label id='aux9' &gt;</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_PROD" xml:space="preserve">
+    <value>M16_ConsultarProducto.aspx?accion=4&amp;mensaje=14</value>
+  </data>
+  <data name="FIN_TAG_IMAGEN" xml:space="preserve">
+    <value>' /&gt;</value>
+  </data>
+  <data name="INICIO_TAG_IMAGEN" xml:space="preserve">
+    <value>&lt;img width='150' height='150' src='</value>
+  </data>
+  <data name="TITULO_COLOR" xml:space="preserve">
+    <value>&lt;h3&gt;Color&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_DESCRIPCIONES" xml:space="preserve">
+    <value>&lt;h3&gt;Descripcion&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_IMAGEN" xml:space="preserve">
+    <value>&lt;h3&gt;Imagen del Producto&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_MARCA" xml:space="preserve">
+    <value>&lt;h3&gt;Marca&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_PRECIO" xml:space="preserve">
+    <value>&lt;h3&gt;Precio&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_STATUS" xml:space="preserve">
+    <value>&lt;h3&gt;Estatus&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_TALLA" xml:space="preserve">
+    <value>&lt;h3&gt;Talla&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_TIPO" xml:space="preserve">
+    <value>&lt;h3&gt;Tipo&lt;/h3&gt;</value>
+  </data>
+  <data name="REFERENCIA_MATRICULA" xml:space="preserve">
+    <value>Matricula-</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_MATRIC" xml:space="preserve">
+    <value>M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=14</value>
+  </data>
+  <data name="TITULO_DOJO_PERTENECE" xml:space="preserve">
+    <value>&lt;h3&gt;Nombre del Dojo al que pertenece&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_FECHA_PAGO" xml:space="preserve">
+    <value>&lt;h3&gt;Ultima Fecha de Pago&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_IDENTIFICADOR" xml:space="preserve">
+    <value>&lt;h3&gt;Identificador&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_ID_MATRICULA" xml:space="preserve">
+    <value>&lt;h3&gt;Id Matricula&lt;/h3&gt;</value>
+  </data>
+  <data name="ABRE_LABEL_PRECIO_FINAL" xml:space="preserve">
+    <value>&lt;label id='labelprecio' &gt;</value>
+  </data>
+  <data name="TITULO_PRECIO_FINAL" xml:space="preserve">
+    <value>&lt;h3&gt;Precio final: &lt;/h3&gt;</value>
+  </data>
+  <data name="BOTON_IMPRIMIR" xml:space="preserve">
+    <value>btn btn-success glyphicon glyphicon-print</value>
+  </data>
+  <data name="REFERENCIA_IMPRIMIR" xml:space="preserve">
+    <value>Imprimir-</value>
+  </data>
+  <data name="TITULO_FECHA_PAGO_FACTURA" xml:space="preserve">
+    <value>&lt;h3&gt;Fecha de Pago&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_NUM_FACTURA" xml:space="preserve">
+    <value>&lt;h3&gt;Nro. Factura&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_TOTAL" xml:space="preserve">
+    <value>&lt;h3&gt;Total&lt;/h3&gt;</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=14</value>
+  </data>
 </root>

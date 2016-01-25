@@ -4,44 +4,67 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DominioSKD;
+using System.Text.RegularExpressions;
+using System.Globalization;
+using Interfaz_Contratos.Modulo9;
+using Interfaz_Presentadores.Modulo9;
+using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo9
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class M9_ListarEventos : System.Web.UI.Page, IContratoListarEventos
     {
+        private PresentadorListarEventos presentador;
+        public M9_ListarEventos()
+        {
+            presentador = new PresentadorListarEventos(this);
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((SKD)Page.Master).IdModulo = M9_RecursoInterfaz.idModulo;
+            presentador.ObtenerVariablesURL();
+
+            if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "9";
-
-                String success = Request.QueryString["eliminacionSuccess"];
-
-                if (success != null)
-                {
-                    if (success.Equals("1"))
-                    {
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Evento agregado exitosamente</div>";
-                    }
-
-                    if (success.Equals("2"))
-                    {
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Evento eliminado exitosamente</div>";
-                    }
-
-                    if (success.Equals("3"))
-                    {
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Evento modificado exitosamente</div>";
-                    }
-
-                }
+                presentador.ListarEventos(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
             }
-
         }
+
+
+        #region Contrato
+
+        string IContratoListarEventos.ilaTabla{
+            get
+            {
+                return laTabla.Text;
+            }
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[M9_RecursoInterfaz.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[M9_RecursoInterfaz.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
+
+        #endregion
+
+
     }
 }

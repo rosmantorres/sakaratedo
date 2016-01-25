@@ -28,6 +28,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return planilla; }
             set { planilla= value; }
         }
+        /// <summary>
+        /// Metodo que comunica con la Bd para agregar un diseño nuevo
+        /// </summary>
+        /// <param name="diseño">diseño</param>
+        /// <param name="planilla">para unir con el diseño en la BD</param>
+        /// <returns>Retorna True, si se realizo la operación satisfactoriamente.
+        /// De lo contrario devuelve false</returns>
         public override Boolean Ejecutar()
         {
             try

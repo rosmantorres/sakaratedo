@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo12;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using Interfaz_Contratos.Modulo12;

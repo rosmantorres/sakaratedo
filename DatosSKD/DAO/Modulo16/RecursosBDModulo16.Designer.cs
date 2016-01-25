@@ -1114,6 +1114,15 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_MONTOS_PAGADOS.
+        /// </summary>
+        internal static string PROCEDIMIENTO_MONTOS_PAGADOS {
+            get {
+                return ResourceManager.GetString("PROCEDIMIENTO_MONTOS_PAGADOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_REGISTRAR_PAGO.
         /// </summary>
         internal static string PROCEDIMIENTO_REGISTRAR_PAGO {
