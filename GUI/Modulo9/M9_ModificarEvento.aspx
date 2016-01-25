@@ -65,10 +65,9 @@
                                 <h3>Tipo de Evento</h3>
                                 <div class="btn-group"> 
                                     <div class="dropdown" runat="server" id="divComboTipoEvento">
-                                       <asp:DropDownList ID="comboTipoEvento"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged" AutoPostBack="true">
-                                       </asp:DropDownList>
+                                        <asp:DropDownList ID="comboTipoEvento" runat="server" class="btn btn-default dropdown-toggle" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged">
+                                        </asp:DropDownList>
                                     </div>
-                                        <asp:TextBox runat="server" type="text" name="otroEvento" id="otroEvento" placeholder="Tipo de Evento" class="form-control"></asp:TextBox>
                                     
                                 </div>
                             </div>
@@ -96,6 +95,7 @@
                                 <div class="input-group input-append date" id="datePickerIni">
                                     <input runat="server" type="text" class="form-control" name="date" id="fechaInicio"/>
                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <asp:HiddenField runat="server" id="fechaIniValue" ClientIDMode="Static"></asp:HiddenField>
                                 </div>
                             </div>
                             <div class="col-sm-1 col-md-1 col-lg-1"></div>
@@ -105,6 +105,7 @@
                                 <div class="input-group input-append date" id="datePickerFin">
                                     <input runat="server" type="text" class="form-control" name="date" id="fechaFin"/>
                                     <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <asp:HiddenField runat="server" id="fechaFinValue" ClientIDMode="Static"/>
                                 </div>
                             </div>
                        </div>
@@ -166,7 +167,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <div class="box-footer">
          &nbsp;&nbsp;&nbsp;&nbsp
-         <asp:Button id="btn_agregarEvento" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarEventoClick" Text="Agregar"></asp:Button>
+         <asp:Button id="btn_agregarEvento" class="btn btn-primary" type="submit" runat="server" OnClick="btn_agregarEventoClick" Text="Modificar"></asp:Button>
          &nbsp;&nbsp
          <a class="btn btn-default" href="M9_ListarEventos.aspx">Cancelar</a>
       </div>

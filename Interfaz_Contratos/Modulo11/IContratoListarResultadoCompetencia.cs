@@ -9,12 +9,12 @@ namespace Interfaz_Contratos.Modulo11
 {
     public interface IContratoListarResultadoCompetencia
     {
-        Literal dataTable { set; }
+        Literal Tabla { get; set; }
 
         string alertaClase { set; }
 
         string alertaRol { set; }
 
-        string alert { set; }
+        string alerta { set; }
     }
 }

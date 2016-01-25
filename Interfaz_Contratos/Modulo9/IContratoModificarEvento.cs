@@ -7,21 +7,18 @@ using System.Web.UI.WebControls;
 
 namespace Interfaz_Contratos.Modulo9
 {
-    interface IContratoModificarEvento
+    public interface IContratoModificarEvento
     {
-        string nombreEvento { get; set; }
-        DropDownList comboTipoEvento { get; set; }
-        string otroEvento { get; set; }
-        int costoEvento { get; set; }
-        string fechaInicio { get; set; }
-        string fechaFin { get; set; }
-        string horaInicio { get; set; }
-        string horaFin { get; set; }
-        string descripcionEvento { get; set; }
-        string statusActivo { get; set; }
-        bool statusActivoBool { get; set; }
-        string statusInactivo { get; set; }
-        bool statusInactivoBool { get; set; }
+        DropDownList iComboTipoEvento { get; set; }
+        string iNombreEvento { get; set; }
+        string iCostoEvento { get; set; }
+        string iFechaInicio { get; set; }
+        string iFechaFin { get; set; }
+        string iHoraInicio { get; set; }
+        string iHoraFin { get; set; }
+        string iDescripcionEvento { get; set; }
+        bool iStatusActivoBool { get; set; }
+        bool iStatusInactivoBool { get; set; }
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }

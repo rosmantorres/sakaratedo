@@ -682,4 +682,136 @@
   <data name="Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="Alerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="AlertaDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertAscensoErrorAgregar" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AlertAscensoErrorModificar" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AlertAscensoExitoAgregar" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AlertAscensoModificado" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AlertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="AlertKataErrorAgregar" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="AlertKataErrorModificar" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="AlertKataExitoAgregar" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="AlertKataKumiteErrorAgregar" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="AlertKataKumiteErrorModificar" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="AlertKataKumiteExitoAgregar" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="AlertKataKumiteModificar" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="AlertKataModificado" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AlertKumiteErrorAgregar" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="AlertKumiteErrorModificar" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="AlertKumiteExitoAgregar" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="AlertKumiteModificar" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="InnerHtmlAscensoErrorAgregar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado del Examen de Ascenso&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlAscensoErrorModificar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados del Examen de Ascenso&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlAscensoExitoAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado del Examen de Ascenso agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlAscensoExitoModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados del Examen de Ascenso modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataErrorAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado de la Competencia Kata&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataErrorModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados de la Competencia Especialidad Kata&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataExitoAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado de la Competencia Kata agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataExitoModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados de la Competencia Especialidad Kata modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataKumietErrorModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados de la Competencia Especialidad Kata y Kumite&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataKumiteErrorAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado de las Competencias Kata y Kumite&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataKumiteExitoAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado de las Competencias Kata y Kumite agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKataKumiteExitoModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados de la Competencia Especialidad Kata y Kumite modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKumiteAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultado de la Competencia Kumite agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKumiteErrorAgregado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al agregar el Resultado de la Competencia Kumite&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKumiteErrorModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error al modificar los resultados de la Competencia Especialidad Kumite&lt;/div&gt;</value>
+  </data>
+  <data name="InnerHtmlKumiteExitoModificado" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Resultados de la Competencia Especialidad Kumite modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="FormatoFechas" xml:space="preserve">
+    <value>{0:dd/MM/yyyy}</value>
+  </data>
+  <data name="VentanaListarResultadoCompetencia" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx</value>
+  </data>
+  <data name="especialidadAmbos" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="especialidadKata" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="especialidadKataKumite" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="especialidadKumite" xml:space="preserve">
+    <value>2</value>
+  </data>
 </root>
