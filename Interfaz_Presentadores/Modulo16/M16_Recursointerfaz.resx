@@ -636,4 +636,28 @@
   <data name="TITULO_ID_MATRICULA" xml:space="preserve">
     <value>&lt;h3&gt;Id Matricula&lt;/h3&gt;</value>
   </data>
+  <data name="ABRE_LABEL_PRECIO_FINAL" xml:space="preserve">
+    <value>&lt;label id='labelprecio' &gt;</value>
+  </data>
+  <data name="TITULO_PRECIO_FINAL" xml:space="preserve">
+    <value>&lt;h3&gt;Precio final: &lt;/h3&gt;</value>
+  </data>
+  <data name="BOTON_IMPRIMIR" xml:space="preserve">
+    <value>btn btn-success glyphicon glyphicon-print</value>
+  </data>
+  <data name="REFERENCIA_IMPRIMIR" xml:space="preserve">
+    <value>Imprimir-</value>
+  </data>
+  <data name="TITULO_FECHA_PAGO_FACTURA" xml:space="preserve">
+    <value>&lt;h3&gt;Fecha de Pago&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_NUM_FACTURA" xml:space="preserve">
+    <value>&lt;h3&gt;Nro. Factura&lt;/h3&gt;</value>
+  </data>
+  <data name="TITULO_TOTAL" xml:space="preserve">
+    <value>&lt;h3&gt;Total&lt;/h3&gt;</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_FACTURA" xml:space="preserve">
+    <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=14</value>
+  </data>
 </root>

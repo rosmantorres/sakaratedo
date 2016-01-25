@@ -63,20 +63,20 @@ namespace PruebasUnitariasSKD.Modulo16
             fabrica = new FabricaEntidades();
 
             //La persona
-            this.persona = new Persona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = new Persona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = new Persona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = new Persona();
+            this.persona4 = FabricaEntidades.ObtenerPersona();
             this.persona4.Id = 14;
 
             //Dos implementos distintos
-            this.implemento = new Implemento();
+            this.implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
-            this.implemento2 = new Implemento();
+            this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento2.Id = 2;
             this.implemento2.Precio_Implemento = 3000;
 
@@ -94,10 +94,10 @@ namespace PruebasUnitariasSKD.Modulo16
             this.evento2.Costo = 2000;
 
             //Dos matriculas distintas
-            this.matricula = new Matricula();
+            this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
-            this.matricula2 = new Matricula();
+            this.matricula2 = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula2.Id = 2;
             this.matricula2.Costo = 4500;
             
@@ -111,7 +111,7 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //valor  para Eliminar un Implemento
             this.pruebaComandoImplemento1 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona);
-            this.pruebaComandoImplemento2 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento2, this.persona);
+            this.pruebaComandoImplemento2 =FabricaComandos.CrearComandoeliminarItem(1, this.implemento2, this.persona);
 
             //valor para Eliminar un Evento
             this.pruebaComandoEvento1 = FabricaComandos.CrearComandoeliminarItem(
@@ -124,7 +124,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaComandoMatricula2 = FabricaComandos.CrearComandoeliminarItem(2, this.matricula2, this.persona3);
 
             //Comandos que eliminaran en la prueba de la persona4
-            this.pruebaComandoImplemento3 = FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona4);
+            this.pruebaComandoImplemento3 =FabricaComandos.CrearComandoeliminarItem(1, this.implemento, this.persona4);
             this.pruebaComandoEvento3 = FabricaComandos.CrearComandoeliminarItem(3, this.evento, this.persona4);
             this.pruebaComandoMatricula3 = FabricaComandos.CrearComandoeliminarItem(2, this.matricula, this.persona4);
         }
