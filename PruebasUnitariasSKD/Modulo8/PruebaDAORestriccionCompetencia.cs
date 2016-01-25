@@ -79,6 +79,33 @@ namespace PruebasUnitariasSKD.Modulo8
            }
        }
 
+       [Test]
+       public void pruebaModificarCompetencia()
+       {
+
+           try
+           {
+               DAORestriccionCompetencia.Agregar(laRestriccion);
+               laRestriccion.IdRestriccionComp  = DAORestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccion);
+               laRestriccion.Id = DAORestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccion);
+               laRestriccion.Descripcion = "prueba modificar";
+               laRestriccion.EdadMinima =-1;
+               laRestriccion.EdadMaxima=90;
+               laRestriccion.RangoMinimo=25;
+               laRestriccion.RangoMaximo=-1;
+               laRestriccion.Sexo="T";
+               laRestriccion.Modalidad="Modificar";
+
+               Assert.IsTrue(DAORestriccionCompetencia.Modificar(laRestriccion));
+           }
+           catch (Exception e)
+           {
+
+               throw e;
+           }
+       }
+
+
 
 
     //   [Test]
@@ -152,22 +179,7 @@ namespace PruebasUnitariasSKD.Modulo8
 
 
 
-    //   [Test]
-    //   public void pruebaModificarCompetencia()
-    //   {
 
-    //       try
-    //       {
-    //           int Id = DatosSKD.Modulo8.BDRestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccionCompetencia);
-    //           RestriccionCompetencia modificada = new RestriccionCompetencia(Id, "prueba modificar", 20, 40, 10, 20, "M", "Kumite");
-    //           Assert.IsTrue(DatosSKD.Modulo8.BDRestriccionCompetencia.ModificarRestriccionCompetencia(modificada));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
 
        
     //   [Test]

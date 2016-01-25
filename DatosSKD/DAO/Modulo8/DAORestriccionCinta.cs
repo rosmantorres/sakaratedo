@@ -199,8 +199,8 @@ namespace DatosSKD.DAO.Modulo8
                             laRestriccionCinta.TiempoDocente.ToString(), false);
                     parametros.Add(elParametro);
 
-                    BDConexion laConexion = new BDConexion();
-                    laConexion.EjecutarStoredProcedure(RecursosDAORestriccionCinta.ModificarRestriccionCinta, parametros);
+                    //BDConexion laConexion = new BDConexion();
+                    this.EjecutarStoredProcedure(RecursosDAORestriccionCinta.ModificarRestriccionCinta, parametros);
 
                 }
                 catch (SqlException ex)

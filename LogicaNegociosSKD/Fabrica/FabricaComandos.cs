@@ -138,6 +138,17 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarListaCompetenciaRestriccionCompetencia();
         }
+
+        public static Comando<Boolean> CrearComandoModificarRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCompetencia();
+        }
+
+        public static Comando<List<Entidad>> CrearComandoConsultarTodosRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodosRestriccionCompetencia();
+        }
+
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
@@ -156,9 +167,9 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas();
         }
 
-        public Comando<Boolean> CrearComandoModificarRestriccionCinta()
+        public Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
         {
-            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta();
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta(laRestCinta);
         }
         #endregion
 
@@ -183,6 +194,8 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento(laRestEvento);
         }
         #endregion
+
+
 
         #endregion
 
