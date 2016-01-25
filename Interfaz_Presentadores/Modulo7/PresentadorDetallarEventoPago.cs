@@ -30,7 +30,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos del evento pago
         /// </summary>
         /// <param name="idEvento">id del evento</param>
-        public void cargarDatos(Entidad idEvento)
+        public void cargarDatos(Entidad idEvento, Entidad idPersona)
         {
             try
             {

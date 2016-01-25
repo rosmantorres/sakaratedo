@@ -8,11 +8,12 @@ using DominioSKD;
 using LogicaNegociosSKD;
 using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
-using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
-using templateApp.GUI.Master;
+using ExcepcionesSKD.Modulo7;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 
 
@@ -26,9 +27,9 @@ namespace templateApp.GUI.Modulo7
     public partial class M7_DetalleEventoPago : System.Web.UI.Page, IContratoDetallarEvento
     {
 
-        private Evento idEvento;
+        private EventoM7 idEvento;
         private PresentadorDetallarEvento presentador;
-
+        private PersonaM7 idPersona;
           /// <summary>
         /// Constructor de la clase
         /// </summary>
@@ -246,9 +247,11 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            
-                            idEvento = new Evento();//cambiar por fabrica
+
+                            idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
                             idEvento.Id = int.Parse(detalleStringEvento);
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.cargarDatos(idEvento);
 
                         }
