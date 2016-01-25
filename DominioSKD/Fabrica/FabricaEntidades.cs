@@ -7,6 +7,7 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DominioSKD.Fabrica
 {
@@ -99,9 +100,50 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 6
+
         #endregion
 
         #region Modulo 7
+        public static Entidad ObtenerCintaM7()
+        {
+            return new CintaM7();
+        }
+        public static Entidad ObtenerCompetenciaM7()
+        {
+            return new CompetenciaM7();
+        }
+        public static Entidad ObtenerMatriculaM7()
+        {
+            return new MatriculaM7();
+        }
+        public static Entidad ObtenerDojoM7()
+        {
+            return new DojoM7();
+        }
+        public static Entidad ObtenerEventoM7()
+        {
+            return new EventoM7();
+        }
+        public static Entidad ObtenerHorarioM7()
+        {
+            return new HorarioM7();
+        }
+        public static Entidad ObtenerOrganizacionM7()
+        {
+            return new OrganizacionM7();
+        }
+        public static Entidad ObtenerPersonaM7()
+        {
+            return new PersonaM7();
+        }
+        public static Entidad ObtenerTipoEventoM7()
+        {
+            return new TipoEventoM7();
+        }
+        public static Entidad ObtenerUbicacionM7()
+        {
+            return new UbicacionM7();
+        }
         #endregion
 
         #region Modulo 8
@@ -111,7 +153,7 @@ namespace DominioSKD.Fabrica
         /// Fabrica de Restriccion Competencia sin parametros de entrada
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
-       
+
         public Entidad ObtenerRestriccionCompetencia()
         {
             return new Entidades.Modulo8.RestriccionCompetencia();
@@ -411,17 +453,17 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 9
-        public Entidad ObtenerEvento()
+        public static Entidad ObtenerEvento()
         {
             return new DominioSKD.Entidades.Modulo9.Evento();
         }
 
-        public Entidad ObtenerHorario()
+        public static Entidad ObtenerHorario()
         {
             return new DominioSKD.Entidades.Modulo9.Horario();
         }
 
-        public Entidad ObtenerTipoEvento()
+        public static Entidad ObtenerTipoEvento()
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
@@ -465,6 +507,11 @@ namespace DominioSKD.Fabrica
         public static Entidad ObtenerTipoEventoM10()
         {
             return new DominioSKD.Entidades.Modulo10.TipoEvento();
+        }
+
+        public static Entidad ObtenerValores()
+        {
+            return new DominioSKD.Entidades.Modulo10.Valores();
         }
         #endregion
 
@@ -715,12 +762,15 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="implementos">Lista con todos los implementos del carrito</param>
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
-        /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
+        /// <param name="matriculas">Lista con todas las matriculas del carrito</param>
+        /// <param name="monto">Monto que se ha pagado de ese carrito</param>
         /// <returns>La entidad carrito con todos sus datos llenos</returns>
         public static Entidad ObtenerCarrito(
-           Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
+           Dictionary<Entidad, int> implementos,
+            Dictionary<Entidad, int> eventos,
+            Dictionary<Entidad, int> matriculas, float monto)
         {
-            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
+            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas, monto);
         }
 
         /// <summary>
@@ -763,6 +813,46 @@ namespace DominioSKD.Fabrica
         public static Entidad ObtenerFactura()
         {
             return new Compra();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de productos</returns>
+        public static Entidad ObtenerFacturaImplemento()
+        {
+            return new DetalleFacturaProducto();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de eventos</returns>
+        public static Entidad ObtenerFacturaEvento()
+        {
+            return new DetalleFacturaEvento();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de matricula</returns>
+        public static Entidad ObtenerFacturaMatricula()
+        {
+            return new DetalleFacturaMatricula();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad pago con todos datos de la factura</returns>
+        public static Entidad ObtenerFacturaPago()
+        {
+            return new Pago();
         }
 
         #endregion

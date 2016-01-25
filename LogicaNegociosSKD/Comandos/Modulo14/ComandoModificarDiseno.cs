@@ -20,7 +20,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return diseño; }
             set { diseño = value; }
         }
-
+        /// <summary>
+        /// Método que modifica un diseño
+        /// </summary>
+        /// <param name="diseño">diseño que se desea modificar</param>
+        /// <returns>Retorna True si se realizo satisfactoriamente la modificación.
+        /// De lo contrario devuelve False</returns>
         public override Boolean Ejecutar()
         {
             try

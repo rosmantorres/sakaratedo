@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo16;
 
-namespace DominioSKD
+namespace DominioSKD.Entidades.Modulo16
 {
     /// <summary>
     /// Clase Compra con sus constructores y atributos
@@ -13,25 +14,26 @@ namespace DominioSKD
     {
         #region Atributos
         /// <summary>
-        /// Atributos de la clase Carrito
+        /// Atributos de la clase Compra
         /// </summary>
-        /*
-        List<Inventario> listaInventario;
-        List<Evento> listaEvento;
-        List<Matricula> listaMatricula;*/
+        
+        List<DetalleFacturaProducto> listaInventario;
+        List<DetalleFacturaEvento> listaEvento;
+        List<DetalleFacturaMatricula> listaMatricula;
+        List<Pago> listaPago;
         int com_id;
-        string com_tipo_pago;
-        DateTime com_fecha_compra;
         string com_estado;
-        int persona_per_id;
+        DateTime com_fecha_compra;
+        float monto;
+
         #endregion
 
         #region Propiedades
-        /*
+        
         /// <summary>
         /// Propiedad del atributo listaInventario
         /// </summary>
-        public List<Inventario> Listainventario
+        public List<DetalleFacturaProducto> Listainventario
         {
             get
             {
@@ -46,7 +48,7 @@ namespace DominioSKD
         /// <summary>
         /// Propiedad del atributo listaEvento
         /// </summary>
-        public List<Evento> Listaevento
+        public List<DetalleFacturaEvento> Listaevento
         {
             get
             {
@@ -61,7 +63,7 @@ namespace DominioSKD
         /// <summary>
         /// Propiedad del atributo listaMatricula
         /// </summary>
-        public List<Matricula> Listamatricula
+        public List<DetalleFacturaMatricula> Listamatricula
         {
             get
             {
@@ -72,11 +74,25 @@ namespace DominioSKD
                 this.listaMatricula = value;
             }
         }
-        
-        */
 
         /// <summary>
-        /// Propiedad del atributo Com_id
+        /// Propiedad del atributo listaPago
+        /// </summary>
+        public List<Pago> Listapago
+        {
+            get
+            {
+                return this.listaPago;
+            }
+            set
+            {
+                this.listaPago = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Propiedad del atributo id de la factura
         /// </summary>
         public int Com_id
         {
@@ -84,25 +100,29 @@ namespace DominioSKD
             {
                 return this.com_id;
             }
+
             set
             {
                 this.com_id = value;
             }
+
         }
 
         /// <summary>
-        /// Propiedad del atributo Com_tipo_pago
+        /// Propiedad del atributo estado de la factura
         /// </summary>
-        public string Com_tipo_pago
+        public string Com_estado
         {
             get
             {
-                return this.com_tipo_pago;
+                return this.com_estado;
             }
+
             set
             {
-                this.com_tipo_pago = value;
+                this.com_estado = value;
             }
+
         }
 
         /// <summary>
@@ -120,36 +140,23 @@ namespace DominioSKD
             }
         }
 
-
         /// <summary>
-        /// Propiedad del atributo Com_estado
+        /// Propiedad del atributo monto
         /// </summary>
-        public string Com_estado
+        public float Monto
         {
             get
             {
-                return this.com_estado;
+                return this.monto;
             }
+
             set
             {
-                this.com_estado = value;
+                this.monto = value;
             }
+
         }
 
-        /// <summary>
-        /// Propiedad del atributo Persona_per_id
-        /// </summary>
-        public int Persona_per_id
-        {
-            get
-            {
-                return this.persona_per_id;
-            }
-            set
-            {
-                this.persona_per_id = value;
-            }
-        }
         #endregion
 
         #region Constructores
@@ -159,22 +166,20 @@ namespace DominioSKD
         public Compra()
         {
             this.com_id = 0;
-            this.com_tipo_pago = "";
+            this.com_estado = "";
             this.com_fecha_compra = DateTime.Now;
-            this.com_estado ="";
-            this.persona_per_id = 0;
+            this.monto = 0;
         }
 
         /// <summary>
         /// Constructor con todos los atributos de la clase compra
         /// </summary>
-        public Compra(int com_id, string com_tipo_pago, DateTime com_fecha_compra, string com_estado, int persona_per_id)
+        public Compra(int com_id, string com_estado, DateTime com_fecha_compra, float monto)
         {
             this.com_id = com_id;
-            this.com_tipo_pago = com_tipo_pago;
-            this.com_fecha_compra = com_fecha_compra;
             this.com_estado = com_estado;
-            this.persona_per_id = persona_per_id;
+            this.com_fecha_compra = com_fecha_compra;
+            this.monto = monto;
         }
         #endregion
 

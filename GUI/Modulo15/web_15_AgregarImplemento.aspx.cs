@@ -34,12 +34,24 @@ namespace templateApp.GUI.Modulo15
         protected void Page_Load(object sender, EventArgs e)
         {
              ((SKD)Page.Master).IdModulo = "15";
-            //variables agregar
-             // usuario y roles***********
-             String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
-             String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+             String usuario = null;
+             String rol;
+             try
+             {
+                 // usuario y roles***********
+                 rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                 usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
 
-             //***************************
+                 //***************************
+
+                 //      btnEliminar.Click += new EventHandler(this.eliminarImplemento);     
+             }
+             catch (Exception ex)
+             {
+                 Response.Redirect("~/GUI/Modulo1/Index.aspx");
+
+
+             }
              Agregar.Click += new EventHandler(this.agregarImplemento);     
     
         }
@@ -47,41 +59,107 @@ namespace templateApp.GUI.Modulo15
         void guardarImagen() {
             string TargetLocation;
             string imagen_implemento = null;
-            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagen/");
+            TargetLocation = Server.MapPath("~/GUI/Modulo15/Imagenes/");
             imagen_implemento = this.imagen_implemento.Value;
             this.imagen_implemento.PostedFile.SaveAs(TargetLocation + imagen_implemento);
 
         }
 
         public void agregarImplemento(object sender,EventArgs e) {
-            // usuario y roles***********
-            String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
-            String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+            /// <summary>
+            /// Método que agrega implemento
+            /// </summary>
+            try
+            {
+                if ((this.nombre_implemento.Value != "") && (this.tipo_implemento.Value != "") && (this.marca_implemento.Value != "") && (this.color_implemento.Value != "") && (this.talla_implemento.Value != "") && (this.cantidad_implemento.Value != "") && (this.stock_implemento.Value != "") && (this.descripcion_implemento.Value != "") && (this.precio_implemento.Value != ""))
+                {
 
-            //***************************
-            Entidad usuarioDojo = FabricaEntidades.ObtenerUsuario();
-            ((Usuario)usuarioDojo)._Nombre = usuario;
-            Entidad implemento = FabricaEntidades.ObtenerImplemento();
-            ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
-            ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
-            ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
-            ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
-            ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
-            ((Implemento)implemento).Talla_Implemento= this.talla_implemento.Value;
 
-            ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = presentador.usuarioDojo(usuarioDojo);
-            ((Implemento)implemento).Dojo_Implemento =(Dojo)presentador.obtenerDojoXId(((Implemento)implemento).Dojo_Implemento);
+                    // usuario y roles***********
+                    String rol = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+                    String usuario = Session[templateApp.GUI.Master.RecursosInterfazMaster.sessionUsuarioNombre].ToString();
+                    //***************************
 
-            ((Implemento)implemento).Cantida_implemento= Convert.ToInt32(this.cantidad_implemento.Value);
-            ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt32(this.stock_implemento.Value);
-            ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
-            ((Implemento)implemento).Precio_Implemento= Convert.ToDouble(this.precio_implemento.Value);
-            ((Implemento)implemento).Imagen_implemento =this.imagen_implemento.Value;
-            presentador.agregarImplemento(implemento);
 
-            guardarImagen();
-            Response.Redirect("web_15_ConsultarImplemento.aspx");
+                    Entidad usuarioDojo = FabricaEntidades.ObtenerUsuario();
+                    ((Usuario)usuarioDojo)._Nombre = usuario;
+                    Entidad implemento = FabricaEntidades.ObtenerImplemento();
+                    ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
+                    ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
+                    if (this.tipo_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento_div.Value;
+                    }
+                    else
+                    {
+                        ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
+                    }
+                    if (this.marca_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Marca_Implemento = this.marca_implemento_div.Value;
 
+                    }
+                    else
+                    {
+
+                        ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
+
+                    }
+                    if (this.color_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Color_Implemento = this.color_implemento_div.Value;
+
+                    }
+                    else
+                    {
+                        ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
+
+
+                    }
+                    if (this.talla_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Talla_Implemento = this.talla_implemento_div.Value;
+
+                    }
+                    else
+                    {
+
+                        ((Implemento)implemento).Talla_Implemento = this.talla_implemento.Value;
+                    }
+                    ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = presentador.usuarioDojo(usuarioDojo);
+                    ((Implemento)implemento).Dojo_Implemento = (Dojo)presentador.obtenerDojoXId(((Implemento)implemento).Dojo_Implemento);
+                    ((Implemento)implemento).Cantida_implemento = Convert.ToInt32(this.cantidad_implemento.Value);
+                    ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt32(this.stock_implemento.Value);
+                    ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
+                    ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(this.precio_implemento.Value);
+                    ((Implemento)implemento).Imagen_implemento ="~/GUI/Modulo15/Imagenes/"+this.imagen_implemento.Value;
+                    presentador.agregarImplemento(implemento);
+
+                    guardarImagen();
+                    Response.Redirect("web_15_ConsultarImplemento.aspx?agregar=exito");
+                }
+                else
+                {
+                    this.alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                    this.alert.Attributes["role"] = "alert";
+                    this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Implemento deportivo eliminado exitosamente</div>";
+                }
+            }catch(ExcepcionesSKD.Modulo15.ExcepcionPresentador.ExcepcionPresentadorAgregarImplemento ex){
+ 
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>"+ex.Data+"</div>";
+                       
+                       
+                     
+            }catch (Exception ex2){
+
+                this.alert.Attributes["class"] = "alert alert-error alert-dismissible";
+                this.alert.Attributes["role"] = "alert";
+                this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Problema con los campos ingresados</div>";
+                       
+            
+            }
         
         }
 

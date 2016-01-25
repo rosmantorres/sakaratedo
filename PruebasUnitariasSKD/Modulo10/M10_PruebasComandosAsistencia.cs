@@ -307,22 +307,70 @@ namespace PruebasUnitariasSKD.Modulo10
 
         }
 
-        [Test]
-        public void pruebaModificarAsistenciaEvento()
-        {
-
-
-
-        }
 
         [Test]
         public void pruebaModificarAsistenciaCompetencia()
         {
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
+            Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
+            ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id = 5;
+            Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
+            ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = 1;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Competencia = competencia as DominioSKD.Entidades.Modulo12.Competencia;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion = inscripcion as DominioSKD.Entidades.Modulo10.Inscripcion;
+            listaEntidad.Add(entidad);
 
+            Comando<bool> comando = FabricaComandos.ObtenerComandoModificarAsistenciaCompetencia(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
 
 
         }
 
+        [Test]
+        public void pruebaModificarAsistenciaEvento()
+        {
+            listaEntidad = new List<Entidad>();
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Asistio = "N";
+            Entidad evento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            ((DominioSKD.Entidades.Modulo10.Evento)evento).Id = 3;
+            Entidad inscripcion = DominioSKD.Fabrica.FabricaEntidades.ObtenerInscripcion();
+            ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Id = 43;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Evento = evento as DominioSKD.Entidades.Modulo10.Evento;
+            ((DominioSKD.Entidades.Modulo10.Asistencia)entidad).Inscripcion = inscripcion as DominioSKD.Entidades.Modulo10.Inscripcion;
+            listaEntidad.Add(entidad);
+
+            Comando<bool> comando = FabricaComandos.ObtenerComandoModificarAsistenciaEvento(listaEntidad);
+            bool a = comando.Ejecutar();
+            Assert.IsTrue(a);
+        }
+
+        [Test]
+        public void pruebaConsultarEventoXID() // Vacio!
+        {
+            Comando<Entidad> ComandoEventoXID = FabricaComandos.ObtenerComandoConsultarEventoM10XId(idEvento);
+            entidad = ComandoEventoXID.Ejecutar();
+            Assert.NotNull(entidad);
+        }
+
+        [Test]
+        public void pruebaTodaLasFechasEventoXID() // Vacio!
+        {
+            Comando<List<Entidad>> ComandoFechaEventoXID = FabricaComandos.ObtenerComandoTodasLasFechasEventoM10();
+            listaEntidad = ComandoFechaEventoXID.Ejecutar();
+            Assert.NotNull(listaEntidad);
+        }
+
+        [Test]
+        public void pruebaEventoFechaRangoXid() // Vacio!
+        {
+            Comando<List<Entidad>> ComandoRangoEventoXID = FabricaComandos.ObtenerComandoEventosPorRangosdeFechaM10("20/02/2016");
+            listaEntidad = ComandoRangoEventoXID.Ejecutar();
+            Assert.NotNull(listaEntidad);
+        }
         #endregion
     }
 }

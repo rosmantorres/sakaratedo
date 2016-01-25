@@ -9,37 +9,34 @@ using DatosSKD.Fabrica;
 using DatosSKD.DAO.Modulo14;
 using DominioSKD.Fabrica;
 using DominioSKD.Entidades.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 
 namespace PruebasUnitariasSKD.Modulo14
 {
      [TestFixture]
     class PruebaDaoSolicitud
     {
-        FabricaDAOSqlServer fabrica;
-        DaoSolicitud daosolicitud;
-        FabricaEntidades fentidades;
+        IDaoSolicitud daosolicitud;
          [SetUp]
          public void Init()
          {
-             fabrica = new FabricaDAOSqlServer();
-             fentidades = new FabricaEntidades();
-             daosolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+             daosolicitud = (IDaoSolicitud)FabricaDAOSqlServer.ObtenerDAOSolicitud();
          }
          [Test]
          public void PruebaAgregar()
          {
-             Planilla laPlanilla = (Planilla)fentidades.ObtenerPlanilla();
-             laPlanilla.ID = 16;
-             DominioSKD.Entidad laSolicitud = fentidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 16);
+             Planilla laPlanilla = (Planilla)FabricaEntidades.ObtenerPlanilla();
+             laPlanilla.ID = 90;
+             DominioSKD.Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 1);
              Assert.IsTrue(daosolicitud.Agregar(laSolicitud));
 
          }
           [Test]
          public void PruebaModificar()
          {
-             Planilla laPlanilla = (Planilla)fentidades.ObtenerPlanilla();
-             laPlanilla.ID = 16;
-             DominioSKD.Entidad laSolicitud = fentidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo",laPlanilla,16);
+             Planilla laPlanilla = (Planilla)FabricaEntidades.ObtenerPlanilla();
+             laPlanilla.ID = 90;
+             DominioSKD.Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla,1);
              Assert.IsTrue(daosolicitud.Agregar(laSolicitud));
 
          }
@@ -47,18 +44,18 @@ namespace PruebasUnitariasSKD.Modulo14
           [Test]
           public void PruebaConsultar()
           {
-              SolicitudP laSolicitud = (SolicitudP)fentidades.ObtenerSolicitudP();
+              DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud = (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP();
 
-              laSolicitud.ID = 14;
-              SolicitudP result = (SolicitudP)daosolicitud.ConsultarXId(laSolicitud);
+              laSolicitud.ID = 77;
+              DominioSKD.Entidades.Modulo14.SolicitudP result = (DominioSKD.Entidades.Modulo14.SolicitudP)daosolicitud.ConsultarXId(laSolicitud);
               Assert.IsTrue(result != null);
           }
            [Test]
           public void PruebaRegistrarSolicitudIDPersonaBD()
           {
-              Planilla laPlanilla = (Planilla)fentidades.ObtenerPlanilla();
-              SolicitudP laSolicitud = (SolicitudP)fentidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 10);
-              laSolicitud.ID = 14;
+              DominioSKD.Entidades.Modulo14.Planilla laPlanilla = (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
+              laPlanilla.ID = 90;
+               DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud = (DominioSKD.Entidades.Modulo14.SolicitudP)FabricaEntidades.ObtenerSolicitudP("01/01/2016", "10/01/2016", "motivo", laPlanilla, 1);
                Assert.IsTrue(daosolicitud.RegistrarSolicitudIDPersonaBD(laSolicitud));
           }
            [Test]
@@ -69,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo14
            [Test]
            public void PruebaEliminarSolicitudBD()
            {
-               Assert.IsTrue(daosolicitud.EliminarSolicitudBD(34));
+               Assert.IsTrue(daosolicitud.EliminarSolicitudBD(79));
            }
            [Test]
            public void PruebaObtenerCompetenciaSolicitud()

@@ -81,41 +81,6 @@
 </div>
 
   
-<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true"> 
-<div class="modal-dialog"> 
-<div class="modal-content"> 
-<div class="modal-header"> 
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
-<h4 class="modal-title">Información detallada de la Organización</h4> 
-</div> 
-<div class="modal-body"> 
-<div class="container-fluid" id="info"> 
-<div class="row"> 
-<h3>Nombre</h3> 
-<p> 
-Shito Ryu 
-    </p> 
-<h3>Direccion</h3> 
-<p>  
-El Paraiso 
-</p> 
-<h3>Persona Contacto</h3> 
-<p> 
-Kyoshi Jose Gregorio Natera 
-</p> 
-<h3>Email Contacto</h3> 
-<p> 
-kyoshinatera@gmail.com 
-</p> 
- 
-</div> 
-</div> 
-</div> 
-</div> 
-</div> 
-</div> 
-
-
  <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">

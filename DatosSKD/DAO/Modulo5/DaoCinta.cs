@@ -104,12 +104,6 @@ namespace DatosSKD.DAO.Modulo5
 
                 throw ex;
             }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
             return true;
@@ -193,12 +187,6 @@ namespace DatosSKD.DAO.Modulo5
 
                 throw ex;
             }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
@@ -232,7 +220,7 @@ namespace DatosSKD.DAO.Modulo5
                                             false);
                 parametros.Add(elParametro);
 
-                DataTable dt = EjecutarStoredProcedureTuplas(
+                DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDaoModulo5.ConsultarCintasXId, parametros);
 
                 foreach (DataRow row in dt.Rows)
@@ -244,13 +232,13 @@ namespace DatosSKD.DAO.Modulo5
                     laCinta.Clasificacion = row[RecursosDaoModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosDaoModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion = new DominioSKD.Entidades.Modulo3.Organizacion(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
+                    laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
                                                                          , row[RecursosDaoModulo5.AliasNombreOrg].ToString());
 
 
                 }
-                
-               
+
+                return laCinta;
 
             }
             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
@@ -279,7 +267,7 @@ namespace DatosSKD.DAO.Modulo5
             }
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            return laCinta;
+
         }
         /// <summary>
         /// Método Consulta la Lista de Todas las Cintas en la Base de Datos
@@ -415,12 +403,6 @@ namespace DatosSKD.DAO.Modulo5
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             finally
             {

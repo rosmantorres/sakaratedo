@@ -64,9 +64,12 @@
     <Compile Include="Entidades\Modulo10\Persona.cs" />
     <Compile Include="Entidades\Modulo10\Telefono.cs" />
     <Compile Include="Entidades\Modulo10\TipoEvento.cs" />
+    <Compile Include="Entidades\Modulo10\Valores.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoAscenso.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKata.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKumite.cs" />
+    <Compile Include="Entidades\Modulo11\ValorEvento.cs" />
+    <Compile Include="Entidades\Modulo11\ValorKataKumite.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />
@@ -76,12 +79,25 @@
     <Compile Include="Entidades\Modulo15\Implemento.cs" />
     <Compile Include="Entidades\Modulo15\Usuario.cs" />
     <Compile Include="Entidades\Modulo16\Carrito.cs" />
+    <Compile Include="Entidades\Modulo16\DetalleFacturaEvento.cs" />
+    <Compile Include="Entidades\Modulo16\DetalleFacturaMatricula.cs" />
+    <Compile Include="Entidades\Modulo16\DetalleFacturaProducto.cs" />
     <Compile Include="Entidades\Modulo16\ListaCompra.cs" />
     <Compile Include="Entidades\Modulo16\ListaEvento.cs" />
     <Compile Include="Entidades\Modulo16\ListaImplemento.cs" />
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
     <Compile Include="Entidades\Modulo16\Pago.cs" />
     <Compile Include="Entidades\Modulo4\Dojo.cs" />
+    <Compile Include="Entidades\Modulo7\MatriculaM7.cs" />
+    <Compile Include="Entidades\Modulo7\CintaM7.cs" />
+    <Compile Include="Entidades\Modulo7\CompetenciaM7.cs" />
+    <Compile Include="Entidades\Modulo7\DojoM7.cs" />
+    <Compile Include="Entidades\Modulo7\EventoM7.cs" />
+    <Compile Include="Entidades\Modulo7\HorarioM7.cs" />
+    <Compile Include="Entidades\Modulo7\OrganizacionM7.cs" />
+    <Compile Include="Entidades\Modulo7\PersonaM7.cs" />
+    <Compile Include="Entidades\Modulo7\TipoEventoM7.cs" />
+    <Compile Include="Entidades\Modulo7\UbicacionM7.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
     <Compile Include="Entidades\Modulo14\Diseño.cs" />
@@ -133,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

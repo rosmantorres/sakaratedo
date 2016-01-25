@@ -41,20 +41,7 @@
                           
            <table id="example" class="table table-bordered table-striped dataTable" >
                 <thead>
-    			<tr>
-				    <td>ID</td>
-					<td >Nombre</td>
-					<td class="tomar2">Tipo</td>
-                    <td class="tomar2">Marca</td>
-					<td class="tomar2">Color</td>
-                    <td class="tomar2">Talla</td>
-                    <td class="tomar2">Cantidad</td>
-                    <td>Stock M&iacutenimo</td>
-                    <td>Estatus</td>                 
-					<td class="tomar2">Precio (Bs)</td>
-                    <td>Monto Total Bs</td>
-                   <th style="text-align:right;">Acciones</th>
-				</tr>
+    			
                     <tr>
 				
                     <th >ID</th>
@@ -73,24 +60,25 @@
 			</thead>
                 <tfoot>
                         <tr>
-                    <td>ID</td>
-					<td >Nombre</td>
-					<td >Tipo</td>
-                    <td >Marca</td>
-					<td >Color</td>
-                    <td >Talla</td>
-                    <td >Cantidad</td>
-                    <td>Stock M&iacutenimo</td>
+                    <th>ID</th>
+					<th >Nombre</th>
+					<th >Tipo</th>
+                    <th >Marca</th>
+					<th >Color</th>
+                    <th >Talla</th>
+                    <th >Cantidad</th>
+                    <th>Stock M&iacutenimo</th>
                     <td>Estatus</td>                 
-					<td >Precio (Bs)</td>
-                    <td>Monto Total Bs</td>
-                   <th style="text-align:right;">Acciones</th>
+					<th >Precio (Bs)</th>
+                    <th>Monto Total Bs</th>
+                   <td style="text-align:right;">Acciones</td>
                             
                         </tr>
                     </tfoot>
-
+                    <tbody id="cuerpo"> 
             <asp:Literal runat="server" ID="tabla"></asp:Literal>
-           </table>
+           </tbody>
+                   </table>
   
         	<%--fin del llenado de la tabla--%>
 
@@ -113,7 +101,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btneliminar" type="button" class="btn btn-primary"  href="M15_ConsultarImplemento.aspx?eliminacionSuccess=1" >Eliminar</a>
+                <a id="btneliminar" type="button" class="btn btn-primary"  href="web_15_eliminarImplemento.aspx?eliminacionSuccess=1" >Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
            </div>
           </div>
@@ -169,7 +157,12 @@
                 $("#nombre-dojo").css("text-align", "center");
 
                 var table = $('#example').DataTable({  //lenguaje del DataTable
+                    "iDisplayLength": 6,
                     "bLengthChange": false,
+
+                    dom: 'T<"clear">lfrtip',
+
+                    "smart":true,
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     },
@@ -178,7 +171,6 @@
                         "targets": [0],
                         "visible": false
                     }],
-                    dom: 'T<"clear">lfrtip',
                     tableTools: {
                         "sSwfPath": "../../plugins/copy_csv_xls_pdf.swf",
                         "aButtons": [
@@ -199,23 +191,23 @@
 
            
 
-                $('#example th').each(function () {
-                    var title = $('.tomar').eq($(this).index()).text();
-                    $(this).html('<input type="text" onkeyup=buscar_valor(); id="' + title + '" placeholder="Buscar ' + title + '" />');
+                $('#example tfoot th').each(function () {
+                    var title = $(this).text();
+                    $(this).html('<input type="text" size="7"  placeholder="Buscar ' + title + '" />');
                 });
 
-
-
-
-
-                table.columns().every(function (indice) {
+                table.columns().every( function () {
                     var that = this;
-                  //  alert(this.column(indice).data());
-                    $('input',this.header).on('keyup change', function () {
-                        that.search(this.value).draw();
 
-                    });
+                    $( 'input', this.footer()).on( 'keyup change', function () {
+                     //   alert(that.search());
+                        if (that.search() !== this.value) {
+
+                            that.search(this.value).draw();
+                        } 
+                } );
                 });
+
 
 
 

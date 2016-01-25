@@ -28,7 +28,9 @@ namespace Interfaz_Presentadores.Modulo14
         {
             this.vista = vista;
         }
-
+        /// <summary>
+        /// procedimiento que inicia la pagina correspondiente al diseno de la planilla
+        /// </summary>
         public void PageLoad(HttpRequest request, bool hit, HttpServerUtility server)
         {
             DominioSKD.Entidades.Modulo14.Planilla pla =
@@ -110,7 +112,9 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertaRol = "alert";
             vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-
+        /// <summary>
+        /// Guardar el diseno de la planilla
+        /// </summary>
         public void btnguardar()
         {
             DominioSKD.Entidades.Modulo14.Diseño diseño =
@@ -149,27 +153,27 @@ namespace Interfaz_Presentadores.Modulo14
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
@@ -196,7 +200,9 @@ namespace Interfaz_Presentadores.Modulo14
                 //throw ex;
             }
         }
-
+        /// <summary>
+        /// Llena el combobox de los datos que son requeridos en la planilla
+        /// </summary>
         public void llenarCombo()
         {
 

@@ -29,17 +29,17 @@ namespace Interfaz_Presentadores.Modulo14
            vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
            vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
        }
-
+       /// <summary>
+       /// Llenar el combobox con los tipos de planillas existentes.
+       /// </summary>
        public void LlenarTipoPlanillaCombo(String tipoPlanilla)
        {
-           //LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
           
            Comando<List<Entidad>> comboTipoPlanilla = FabricaComandos.ObtenerComandoObtenerTipoPlanilla();
            List<Entidad> listPlanilla = new List<Entidad>();
            Dictionary<string, string> options = new Dictionary<string, string>();
            try
            {
-              // listPlanilla = lP.ObtenerTipoPlanilla();
                listPlanilla = comboTipoPlanilla.Ejecutar();
 
                //mostrar el primer lugar el tipo de planilla actual
@@ -59,32 +59,32 @@ namespace Interfaz_Presentadores.Modulo14
            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw ex;
+               Alerta(ex.Message);
            }
            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw ex;
+               Alerta(ex.Message);
            }
            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw ex;
+               Alerta(ex.Message);
            }
            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw ex;
+               Alerta(ex.Message);
            }
            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw ex;
+               Alerta(ex.Message);
            }
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw ex;
+               Alerta(ex.Message);
            }
 
            vista.tipoPlanillaCombo.DataSource = options;
@@ -92,7 +92,9 @@ namespace Interfaz_Presentadores.Modulo14
            vista.tipoPlanillaCombo.DataValueField = "key";
            vista.tipoPlanillaCombo.DataBind();
        }
-
+       /// <summary>
+       /// Permite que el sea visible el nombre de tipo planilla.
+       /// </summary>
        public void NombreTipoPVisible()
        {
            if (vista.tipoPlanillaCombo.SelectedValue == "-2")
@@ -104,11 +106,14 @@ namespace Interfaz_Presentadores.Modulo14
                vista.id_otroTipo = false;
            }
        }
-
+       /// <summary>
+       /// Modifica el registro de una planilla con los datos que se cambiaron.
+       /// </summary>
+       /// <returns>verdadero si se logro modificar con exito la planilla</returns>>
        public bool EditarPlanilla()
        {
            List<String> listDatos = new List<String>();
-          // Planilla laPlanilla = null;
+          
            ListItemCollection listItem = vista.datosPlanilla2.Items;
            String TipoPlanilla = "";
            FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -117,8 +122,7 @@ namespace Interfaz_Presentadores.Modulo14
            Comando<Entidad> comandoModificarPlanillaIDTipo = FabricaComandos.ObtenerComandoModificarPlanillaIDTipo();
            bool respuesta = false;
 
-         //  LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
-
+       
            try
            {
                foreach (var item in listItem)
@@ -127,9 +131,6 @@ namespace Interfaz_Presentadores.Modulo14
 
                }
 
-           /*    laPlanilla = new Planilla(Int32.Parse(this.id_planilla.Value), this.id_nombrePlanilla.Value, true,
-                                                  Int32.Parse(this.comboTipoPlanilla.SelectedValue),
-                                                  listDatos);*/
                Entidad laPlanilla = new DominioSKD.Entidades.Modulo14.Planilla(Int32.Parse(vista.planillaId), vista.nombrePlanilla, true,
                                                   Int32.Parse(vista.tipoPlanillaCombo.SelectedValue),
                                                   listDatos);
@@ -145,17 +146,16 @@ namespace Interfaz_Presentadores.Modulo14
                                if (vista.nombreTipo != "")
                                {
                                    TipoPlanilla = vista.nombreTipo;
-                                 //  lP.NuevoTipoPlanilla(TipoPlanilla);
+                            
                                    ((ComandoNuevoTipoPlanilla)comandoTipoPlanilla).NombreTipo = TipoPlanilla;
                                    comandoTipoPlanilla.Ejecutar();
-                                   //lP.ModificarPlanillaID(laPlanilla, TipoPlanilla);
+                               
                                    ((ComandoModificarPlanillaIDTipo)comandoModificarPlanillaIDTipo).LaEntidad = laPlanilla;
                                    ((ComandoModificarPlanillaIDTipo)comandoModificarPlanillaIDTipo).TipoPlanilla = TipoPlanilla;
-                                    //comandoModificarPlanillaID.Ejecutar();
+                                 
                                    comandoModificarPlanillaIDTipo.Ejecutar();
                                    respuesta = true;
-                                   //Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
-                                                                 
+                                                           
                                }
                                else
                                {
@@ -171,8 +171,6 @@ namespace Interfaz_Presentadores.Modulo14
                                ((ComandoModificarPlanillaID)comandoModificarPlanillaID).LaEntidad = laPlanilla;
                                comandoModificarPlanillaID.Ejecutar();
                                respuesta = true;
-                               //lP.ModificarPlanillaID(laPlanilla);
-                               //Response.Redirect("../Modulo14/M14_ConsultarPlanillas.aspx?success=true");
                            }
                        }
                        else
@@ -228,7 +226,9 @@ namespace Interfaz_Presentadores.Modulo14
            }
            return respuesta;
        }
-
+       /// <summary>
+       /// Agrega los datos requeridos de la lista.
+       /// </summary>
        public void AgregarDato()
        {
            try
@@ -271,7 +271,9 @@ namespace Interfaz_Presentadores.Modulo14
                Alerta(ex.Message);
            }
        }
-
+       /// <summary>
+       /// Quitar los datos requeridos de la lista.
+       /// </summary>
        public void QuitarDatos()
        {
            try
@@ -314,20 +316,21 @@ namespace Interfaz_Presentadores.Modulo14
                Alerta(ex.Message);
            }
        }
-
+       /// <summary>
+       /// Cargar la pantalla de modificar la planilla
+       /// </summary>
        public void PageLoadModificarPlanilla()
        {
            try
            {
               Entidad laPlanilla;
-              // int idPlanilla = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idPlan]);
+         
                int idPlanilla = vista.IDPlanillaModificar;
                vista.IDPlanillaModificarVisible = false;
                vista.id_otroTipo = false;
                vista.planillaId = idPlanilla.ToString();
 
-            //   LogicaNegociosSKD.Modulo14.LogicaPlanilla lP = new LogicaNegociosSKD.Modulo14.LogicaPlanilla();
-              // laPlanilla = lP.ObtenerPlanillaID(idPlanilla);
+       
                Comando<Entidad> comandoObtenerPlanillaID = FabricaComandos.ObtenerComandoObtenerPlanillaID();
                ((ComandoObtenerPlanillaID)comandoObtenerPlanillaID).IdPlanilla = idPlanilla;
                laPlanilla = comandoObtenerPlanillaID.Ejecutar();

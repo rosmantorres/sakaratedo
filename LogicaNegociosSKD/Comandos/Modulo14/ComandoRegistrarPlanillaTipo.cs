@@ -21,7 +21,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return nombreTipo; }
             set { nombreTipo = value; }
         }
-
+        /// <summary>
+        /// Método que registra una planilla
+        /// </summary>
+        /// <param name="laPlanilla">planilla</param>
+        /// <param name="nombreTipo">El tipo de planilla al cual pertenece</param>
         public override bool Ejecutar()
         {
 

@@ -299,6 +299,109 @@ namespace DatosSKD.DAO.Modulo11
 
             return evento;
         }
+
+        /// <summary>
+        /// Metodo que retorna todas las fechas donde hay ascensos
+        /// </summary>
+        /// <returns>lista de horario</returns>
+        public List<Entidad> TodasLasFechasEventoAscenso()
+        {
+            List<Entidad> listaHorarios = new List<Entidad>();
+            List<Parametro> parametros;
+
+            try
+            {
+                parametros = new List<Parametro>();
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo11.ProcedimientoTodasLasFechasAscensosM10, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo11.aliasFechaInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaFin = DateTime.Parse(row[RecursosDAOModulo11.aliasFechaFin].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraInicio = int.Parse(row[RecursosDAOModulo11.aliasHoraInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraFin = int.Parse(row[RecursosDAOModulo11.aliasHoraFin].ToString());
+                    listaHorarios.Add(horario);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaHorarios;
+        }
+
+        /// <summary>
+        /// Metodo que dado un rango de fecha retorna los eventos tipo ascenso que esten en el rango
+        /// </summary>
+        /// <param name="fecha">fecha inicio</param>
+        /// <returns>lista de eventos</returns>
+        public List<Entidad> AscensosPorFechaM10(string fecha)
+        {
+            List<Entidad> listaEventos = new List<Entidad>();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro(RecursosDAOModulo11.ParametroFechaInicio, SqlDbType.Date, fecha, false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursosDAOModulo11.ParametroFechaFin, SqlDbType.Date, fecha, false);
+            parametros.Add(parametro);
+
+            try
+            {
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOModulo11.ProcedimientoAscensosPorFechaM10, parametros);
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad evento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Id = int.Parse(row[RecursosDAOModulo11.aliasIdEvento].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Nombre = row[RecursosDAOModulo11.aliasNombreEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Descripcion = row[RecursosDAOModulo11.aliasDescripcionEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Estado = Boolean.Parse(row[RecursosDAOModulo11.aliasEstadoEvento].ToString());
+                    Entidad horario = DominioSKD.Fabrica.FabricaEntidades.ObtenerHorarioM10();
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio = DateTime.Parse(row[RecursosDAOModulo11.aliasFechaInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaFin = DateTime.Parse(row[RecursosDAOModulo11.aliasFechaFin].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraInicio = int.Parse(row[RecursosDAOModulo11.aliasHoraInicio].ToString());
+                    ((DominioSKD.Entidades.Modulo10.Horario)horario).HoraFin = int.Parse(row[RecursosDAOModulo11.aliasHoraFin].ToString());
+                    Entidad tipoEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerTipoEventoM10();
+                    ((DominioSKD.Entidades.Modulo10.TipoEvento)tipoEvento).Nombre = row[RecursosDAOModulo11.aliasTipoEvento].ToString();
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).Horario = horario as DominioSKD.Entidades.Modulo10.Horario;
+                    ((DominioSKD.Entidades.Modulo10.Evento)evento).TipoEvento = tipoEvento as DominioSKD.Entidades.Modulo10.TipoEvento;
+                    listaEventos.Add(evento);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaEventos;
+        }
         #endregion
 
         #region Idao
@@ -416,5 +519,6 @@ namespace DatosSKD.DAO.Modulo11
             throw new NotImplementedException();
         }
         #endregion
+
     }
 }

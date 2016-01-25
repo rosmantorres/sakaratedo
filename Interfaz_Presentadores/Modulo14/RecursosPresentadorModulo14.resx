@@ -431,4 +431,13 @@
   <data name="AlertaMotivoVacio" xml:space="preserve">
     <value>No ingresaste el motivo</value>
   </data>
+  <data name="Alerta_Pregunta" xml:space="preserve">
+    <value>Seguro que deseas solicitar esta planilla?</value>
+  </data>
+  <data name="Alert_Clase_Success" xml:space="preserve">
+    <value>alert alert-info alert-dismissible</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
+  </data>
 </root>

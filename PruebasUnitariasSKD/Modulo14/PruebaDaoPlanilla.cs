@@ -9,26 +9,25 @@ using DatosSKD.Fabrica;
 using DatosSKD.DAO.Modulo14;
 using DominioSKD.Fabrica;
 using DominioSKD.Entidades.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 
 namespace PruebasUnitariasSKD.Modulo14
 {
     [TestFixture]
     public class PruebaDaoPlanilla
     {
-        FabricaDAOSqlServer fabrica;
-        DaoPlanilla daoplanilla;
-        FabricaEntidades fentidades;
+       // FabricaDAOSqlServer fabrica;
+        IDaoPlanilla daoplanilla;
+       // FabricaEntidades fentidades;
         [SetUp]
         public void Init()
         {
-            fabrica = new FabricaDAOSqlServer();
-            fentidades = new FabricaEntidades();
-            daoplanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+            daoplanilla = (IDaoPlanilla)FabricaDAOSqlServer.ObtenerDAOPlanilla();
         }
         [Test]
         public void PruebaAgregar()
         {
-            DominioSKD.Entidad laPlanilla = fentidades.ObtenerPlanilla("Retiro Prueba",true,1);
+            DominioSKD.Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla("Retiro Prueba", true, 1);
 
             Assert.IsTrue(daoplanilla.Agregar(laPlanilla));
 
@@ -36,7 +35,7 @@ namespace PruebasUnitariasSKD.Modulo14
         [Test]
         public void PruebaModificar()
         {
-            DominioSKD.Entidad laPlanilla = fentidades.ObtenerPlanilla("Retiro Pruebaa", true, 1);
+            DominioSKD.Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla("Retiro Pruebaa", true, 1);
 
             Assert.IsTrue(daoplanilla.Modificar(laPlanilla));
 
@@ -44,7 +43,7 @@ namespace PruebasUnitariasSKD.Modulo14
         [Test]
         public void PruebaConsultar()
         {
-            Planilla laPlanilla = (Planilla)fentidades.ObtenerPlanilla();
+            Planilla laPlanilla = (Planilla)FabricaEntidades.ObtenerPlanilla();
             ((Planilla)laPlanilla).ID = 16;
             Assert.IsTrue(((Planilla)daoplanilla.ConsultarXId(laPlanilla)).Nombre == "Carnet");
          }
@@ -63,7 +62,7 @@ namespace PruebasUnitariasSKD.Modulo14
         [Test]
         public void PruebaRegistrarDatosPlanillaBD()
         {
-            Assert.IsTrue(daoplanilla.RegistrarDatosPlanillaBD("sinosi","DOJO"));
+            Assert.IsTrue(daoplanilla.RegistrarDatosPlanillaBD("Retiro Prueba","DOJO"));
         }
         [Test]
         public void PruebaRegistrarTipoPlanilla()
@@ -73,7 +72,7 @@ namespace PruebasUnitariasSKD.Modulo14
         [Test]
         public void PruebaObtenerIdTipoPlanilla()
         {
-            Assert.AreEqual(daoplanilla.ObtenerIdTipoPlanilla("RETIRO"), 12);
+            Assert.AreEqual(daoplanilla.ObtenerIdTipoPlanilla("RETIRO"), 1);
         }
         [Test]
         public void PruebaObtenerDatosPlanillaID()
@@ -83,19 +82,14 @@ namespace PruebasUnitariasSKD.Modulo14
          [Test]
           public void PruebaEliminarDatosPlanillaBD()
          {
-            // DominioSKD.Entidad laPlanilla = fentidades.ObtenerPlanilla("Prueba", true, 1);
-             Assert.IsTrue(daoplanilla.EliminarDatosPlanillaBD(55));
+             Assert.IsTrue(daoplanilla.EliminarDatosPlanillaBD(91));
 
          }
         public void PruebaRegistrarDatosPlanillaIdBD()
         {
-            Assert.IsTrue(daoplanilla.RegistrarDatosPlanillaIdBD(16,"DOJO"));
+            Assert.IsTrue(daoplanilla.RegistrarDatosPlanillaIdBD(90,"Matricula"));
         }
-        [Test]
-        public void PruebaConsultarPlanillasCreadas()
-        {
-            Assert.IsNotEmpty(daoplanilla.ConsultarPlanillasCreadas());
-        }
+        
    }
 }
 

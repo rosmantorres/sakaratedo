@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo12;
 using Interfaz_Contratos.Modulo12;
 using Interfaz_Presentadores.Modulo12;
 

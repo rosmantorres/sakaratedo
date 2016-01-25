@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo3;
 using Interfaz_Presentadores.Modulo3;
 using Interfaz_Contratos.Modulo3;
 
@@ -54,11 +53,18 @@ namespace templateApp.GUI.Modulo3
             this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + M3_RecursoInterfaz.camposVacios + M3_RecursoInterfaz.alertaHtmlFinal;
             this.alert.Visible = true;
         }
-        public void alertaAgregarFallido(ExcepcionesSKD.ExceptionSKD ex)
+        public void alertaAgregarFallidoNombreOrg(ExcepcionesSKD.Modulo3.OrganizacionExistenteException ex)
         {
             this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
             this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
-            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Mensaje + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Message + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Message + M3_RecursoInterfaz.alertaHtmlFinal;
             this.alert.Visible = true;
         }
         public void Respuesta()

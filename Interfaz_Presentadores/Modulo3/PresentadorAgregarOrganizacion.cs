@@ -8,6 +8,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using LogicaNegociosSKD;
 using DominioSKD;
+using DominioSKD.Fabrica;
 
 namespace Interfaz_Presentadores.Modulo3
 {
@@ -25,7 +26,7 @@ namespace Interfaz_Presentadores.Modulo3
         /// </summary>
         public void agregarValoresOrganizacion()
         {
-            DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = new DominioSKD.Entidades.Modulo3.Organizacion();
+            DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
 
             //Se llena una lista de todos los valores que se piden por pantalla para validar si estan vacios
             List<String> laListaDeInputs = new List<String>();
@@ -53,9 +54,13 @@ namespace Interfaz_Presentadores.Modulo3
                         if (resultado)
                              this.vista.Respuesta();
                 }
-                catch (ExcepcionesSKD.ExceptionSKD ex)
+                catch (ExcepcionesSKD.Modulo3.OrganizacionExistenteException ex)
                 {
-                this.vista.alertaAgregarFallido(ex);
+                    this.vista.alertaAgregarFallidoNombreOrg(ex);
+                }
+                catch (ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
+                {
+                    this.vista.alertaAgregarFallidoEstiloOrg(ex);
                 }
             }
             else

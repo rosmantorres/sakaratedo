@@ -21,6 +21,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPersona; }
             set { idPersona = value; }
         }
+        /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
+        /// <param name="idPlanilla"> id de la planilla solicitada</param>
+        /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
         public override List<Entidad> Ejecutar()
         {
             IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();

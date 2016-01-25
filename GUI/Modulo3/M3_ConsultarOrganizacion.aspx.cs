@@ -1,5 +1,4 @@
 ﻿using DominioSKD;
-using LogicaNegociosSKD.Modulo3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,7 +61,6 @@ namespace templateApp.GUI.Modulo3
         public void llenarBotones(int id)
         {
             this.tabla.Text += M3_RecursoInterfaz.AbrirTD;
-            this.tabla.Text += M3_RecursoInterfaz.BotonInfo + id + M3_RecursoInterfaz.BotonCerrar;
             this.tabla.Text += M3_RecursoInterfaz.BotonModificar + id + M3_RecursoInterfaz.BotonCerrar;
         }
 

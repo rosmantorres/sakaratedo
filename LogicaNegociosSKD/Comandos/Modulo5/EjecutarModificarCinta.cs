@@ -57,12 +57,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo5.CintaRepetidaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }  
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);

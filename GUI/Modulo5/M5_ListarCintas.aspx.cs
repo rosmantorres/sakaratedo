@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +7,6 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo5;
-using LogicaNegociosSKD.Modulo3;
 using Interfaz_Contratos.Modulo5;
 using Interfaz_Presentadores.Modulo5;
 
@@ -17,8 +14,7 @@ namespace templateApp.GUI.Modulo5
 {
     public partial class M5_ListarCintas : System.Web.UI.Page, IContratoListarCintas
     {
-      //  private LogicaNegociosSKD.Modulo5.LogicaCinta logica = new LogicaNegociosSKD.Modulo5.LogicaCinta();
-//        List<DominioSKD.Cinta> lista;
+
 
         private PresentadorLlenarCintas presentador;
 
@@ -70,7 +66,6 @@ namespace templateApp.GUI.Modulo5
         public void llenarBotones(int id)
         {
             this.tabla.Text += RecursoInterfazMod5.AbrirTD;
-            this.tabla.Text += RecursoInterfazMod5.BotonInfo + id + RecursoInterfazMod5.BotonCerrar;
             this.tabla.Text += RecursoInterfazMod5.BotonModificar + id + RecursoInterfazMod5.BotonCerrar;
         }
 
