@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
@@ -101,6 +109,7 @@
     <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
     <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo1\PruebasUnitariasLogicaN.cs" />
+    <Compile Include="Modulo1\PruebaUnitariaPresentadores.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,6 +117,7 @@
     </Compile>
     <Compile Include="Modulo2\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo2\PruebasUnitariasLogicaN.cs" />
+    <Compile Include="Modulo2\PruebaUnitariasPresentadoresM2.cs" />
     <Compile Include="Modulo2\RecursosPU_Mod2.Designer.cs">
       <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
