@@ -177,6 +177,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionEvento();
         }
+        
+        public Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento(laRestEvento);
+        }
         #endregion
 
         #endregion

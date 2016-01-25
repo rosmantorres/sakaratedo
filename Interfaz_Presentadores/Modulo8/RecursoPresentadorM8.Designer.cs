@@ -261,7 +261,7 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;interfazModificarRestriccionEvento.aspx?idPlan=.
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;interfazModificarRestriccionHorario.aspx?idPlan=.
         /// </summary>
         internal static string BotonModificarRegistroEvento {
             get {

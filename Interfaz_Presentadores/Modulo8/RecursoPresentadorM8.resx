@@ -213,6 +213,6 @@
     <value>&amp;nombre=</value>
   </data>
   <data name="BotonModificarRegistroEvento" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionEvento.aspx?idPlan=</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionHorario.aspx?idPlan=</value>
   </data>
 </root>

@@ -121,6 +121,7 @@ namespace DatosSKD.DAO.Modulo8
                 //repites hasta que tengas todos los parametros de tu stored procedure asociado
                 elParametro = new Parametro(RecursosDAORestriccionEvento.ParamDescripcionRestricionEvento, SqlDbType.VarChar,
                     laRestriccionEvento.Descripcion, false);
+                parametros.Add(elParametro);
 
                 elParametro = new Parametro(RecursosDAORestriccionEvento.ParamEdadMinimaRestricionEvento, SqlDbType.Int,
                         laRestriccionEvento.EdadMinima.ToString(), false);
