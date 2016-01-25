@@ -1,6 +1,5 @@
 ﻿using DominioSKD;
 using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo15;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
