@@ -51,15 +51,15 @@ namespace DominioSKD.Fabrica
         {
             return new List<Dojo>();
         }
-        public static Entidad ObtenerDojo_M4(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
+        public static Entidad ObtenerHistorialMatricula()
         {
-            return new Dojo(Id, Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);
+            return new Historial_Matricula();
         }
-        public static Entidad ObtenerDojo_M4(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
+        public static List<Historial_Matricula> ObtenerListaHistorialMatricula()
         {
-            return new Dojo( Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);
+            return new List<Historial_Matricula>();
         }
-       
+
         public static Entidad ObtenerOrganizacion_M4()
         {
             return new Organizacion();

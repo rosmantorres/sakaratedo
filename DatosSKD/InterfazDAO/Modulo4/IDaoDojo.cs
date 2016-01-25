@@ -16,14 +16,5 @@ namespace DatosSKD.InterfazDAO.Modulo4
         int BuscarIdOrganizacion(Entidad parametro);
 
         bool EliminarDojo(Entidad parametro);
-       // bool BuscarIDCompetencia(Entidad parametro);
-
-        //List<Entidad> M12ListarOrganizaciones();
-
-        //List<Entidad> M12ListarCintas();
-
-        //String ModificarFechas(String fecha);
-
-        //bool BuscarNombreCompetenciaAgregar(Entidad parametro);
     }
 }

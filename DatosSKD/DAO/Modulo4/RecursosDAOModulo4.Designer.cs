@@ -466,6 +466,15 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_ModificarHistorial.
+        /// </summary>
+        internal static string ModificarHistorialMatricula {
+            get {
+                return ResourceManager.GetString("ModificarHistorialMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Direccion.
         /// </summary>
         internal static string ParametroDireccion {
