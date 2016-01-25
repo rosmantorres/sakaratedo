@@ -240,21 +240,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo6.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo7\BDCinta.cs" />
-    <Compile Include="Modulo7\BDCompetencia.cs" />
-    <Compile Include="Modulo7\BDDojo.cs" />
-    <Compile Include="Modulo7\BDEvento.cs" />
-    <Compile Include="Modulo7\BDHorario.cs" />
-    <Compile Include="Modulo7\BDMatricula.cs" />
-    <Compile Include="Modulo7\BDOrganizacion.cs" />
-    <Compile Include="Modulo7\BDPersona.cs" />
-    <Compile Include="Modulo7\BDTipoEvento.cs" />
-    <Compile Include="Modulo7\BDUbicacion.cs" />
-    <Compile Include="Modulo7\RecursosBDModulo7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -370,10 +355,6 @@
     <EmbeddedResource Include="Modulo6\RecursosBDModulo6.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo6.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo7\RecursosBDModulo7.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>

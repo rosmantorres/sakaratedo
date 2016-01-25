@@ -76,7 +76,13 @@ namespace Interfaz_Presentadores.Modulo7
 
                 }
             }
-            catch (Exception ex)
+            catch (NumeroEnteroInvalidoException)
+            {
+            }
+            catch (FormatException)
+            {
+            }
+            catch (Exception)
             {
 
             }
