@@ -77,10 +77,8 @@ namespace templateApp.GUI.Modulo10
             ((SKD)Page.Master).IdModulo = "10";
             if (!IsPostBack)
             {
-                String idEvento = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Modificar];
-                String tipo = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Tipo];
-                Session[M10_RecursosInterfaz.IdEvento] = idEvento;
-                Session[M10_RecursosInterfaz.tipoEvento] = tipo;
+                Session[M10_RecursosInterfaz.IdEvento] = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Modificar];
+                Session[M10_RecursosInterfaz.tipoEvento] = HttpContext.Current.Request.QueryString[M10_RecursosInterfaz.Tipo];
                 presentador.CargaVentana(Session[M10_RecursosInterfaz.IdEvento].ToString(), Session[M10_RecursosInterfaz.tipoEvento].ToString());
             }
         }
