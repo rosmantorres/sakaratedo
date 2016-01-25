@@ -94,6 +94,7 @@
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionEvento.cs" />
     <Compile Include="Modulo8\IContratoConsultarResticcionCinta.cs" />
+    <Compile Include="Modulo8\IContratoConsultarRestriccionEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

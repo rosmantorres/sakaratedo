@@ -44,7 +44,7 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 	
-	<div id="alert" runat="server">
+	<div id="alerta" runat="server">
 	</div>
 
 	<div class="row">
@@ -54,57 +54,30 @@
 				  <h3 class="box-title">Lista de Restricciones de Horarios</h3>
 				</div><!-- /.box-header -->
 
-	
-  
-  
-				  
-	<div class="box-body table-responsive">
+                <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
+	                <div class="box-body table-responsive">
 
-	   <table id="Restricciones" class="table table-bordered table-striped dataTable">
-		<thead>
-				<tr>
-					<th>ID</th>
-					<th>Horario</th>
-					<th >Edad Mínima</th>
-					<th>Edad Máxima</th>
-					<th >Rango Mínimo</th>
-					<th >Rango Máximo</th>
-					<th >Sexo</th>
-					<th style="text-align:right;">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="id">RH_1</td>
-					<td>Lunes-Miercoles-Viernes 12:00 a 14:00</td>
-					<td>10</td>
-					<td>18</td>
-					<td>Blanco</td>
-					<td>Marrón</td>
-					<td>Ambos</td>
-					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionHorario.aspx"></a>
-						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-					 </td>
-				</tr>
-
-				<tr>
-					<td class="id">RH_1</td>
-					<td>Lunes-Miercoles-Viernes 12:00 a 14:00</td>
-					<td>10</td>
-					<td>18</td>
-					<td>Blanco</td>
-					<td>Marrón</td>
-					<td>Ambos</td>
-					<td>
-						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionHorario.aspx"></a>
-						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-					 </td>
-				</tr>
+	                   <table id="RestriccionesCintas" class="table table-bordered table-striped dataTable">
+		                <thead>
+				                <tr>
+					                <th>Id Restriccion</th>
+					                <th>Id Evento</th>
+					                <th>Nombre Evento</th>
+					                <th>Edad Minima</th>
+					                <th>Edad Maxima</th>
+                                    <th>Cinta</th>
+                                    <th>Sexo</th>
+					                <th style="text-align:right;">Acciones</th>
+				                </tr>
+			                </thead>
+                           <asp:Literal runat="server" ID="tabla"></asp:Literal>
+			                <tbody>
+							
 				
-				
-			</tbody>
-	</table>
+			                </tbody>
+	                </table>
+                    </div>
+                </form>
 
 					  
 
