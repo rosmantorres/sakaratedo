@@ -5,6 +5,7 @@ using System.Linq;
 using LogicaNegociosSKD.Comandos.Modulo15;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
+using ExcepcionesSKD.Modulo15.ExcepcionComando;
 namespace PruebasUnitariasSKD.Modulo15
 {
     [TestFixture]
@@ -24,8 +25,6 @@ namespace PruebasUnitariasSKD.Modulo15
         private List<Entidad> lista;
         private List<Entidad> lista2;
         private Usuario usuario;
-        int numero;
-        int numero2;
         [SetUp]
         public void Init()
         {
@@ -54,6 +53,7 @@ namespace PruebasUnitariasSKD.Modulo15
             implemento.Imagen_implemento = "A.jpg";
             cai.LaEntidad = implemento;
             cei.LaEntidad = implemento;
+            cei.Dojo = dojo;
             ccti.LaEntidad = dojo;
             ccti2.LaEntidad = dojo;
             cmi.LaEntidad = implemento;
@@ -77,7 +77,6 @@ namespace PruebasUnitariasSKD.Modulo15
 
         }
         #endregion
-
         #region M15_ComandoConsultarTodosImplementos
         [Test]
         public void M15_ComandoConsultarTodosImplementos()
@@ -86,6 +85,17 @@ namespace PruebasUnitariasSKD.Modulo15
             lista = ccti.Ejecutar();
             lista2 = ccti.Ejecutar();
             Assert.AreEqual(lista.Count(), lista2.Count());
+        }
+        #endregion
+
+        #region M15_ComandoConsultarTodosImplementosEntidadNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void M15_ComandoConsultarTodosImplementosEntidadNulo()
+        {
+            ccti.LaEntidad = null;
+            ccti.Ejecutar();
+            
         }
         #endregion
 
@@ -101,12 +111,43 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
+        #region M15_ComandoConsultarTodosImplementos2EntidadNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void M15_ComandoConsultarTodosImplementos2EntidadNulo()
+        {
+            ccti2.LaEntidad = null;
+            ccti2.Ejecutar();
+
+        }
+        #endregion
+
         #region M15_ComandoEliminarImplemento
         [Test]
         public void M15_ComandoEliminarImplemento()
         {
-            cai.Ejecutar();
+            cai.Ejecutar();     
             Assert.True(cei.Ejecutar());
+        }
+        #endregion
+
+        #region M15_ComandoEliminarImplementoDojoNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void M15_ComandoEliminarImplementoDojoNulo()
+        {
+            cei.Dojo = null;
+            cei.Ejecutar();
+        }
+        #endregion
+
+        #region M15_ComandoEliminarImplementoEntidadNulo
+        [Test]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void M15_ComandoEliminarImplementoEntidadNulo()
+        {
+            cei.LaEntidad = null;
+            cei.Ejecutar();
         }
         #endregion
 
@@ -116,6 +157,17 @@ namespace PruebasUnitariasSKD.Modulo15
         {
             cai.Ejecutar();
             Assert.True(cmi.Ejecutar());
+
+        }
+        #endregion
+
+        #region M15_ComandoModificarImplementoNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void M15_ComandoModificarImplementoNulo()
+        {
+            cmi.LaEntidad = null;
+            cmi.Ejecutar();
 
         }
         #endregion

@@ -60,25 +60,6 @@ namespace PruebasUnitariasSKD.Modulo15
             lista2 = null;
             dojo = null;
         }
-        /*       #region M15_PruebaAgregarInventarioNulo
-               [Test]
-               [ExpectedException(typeof(ErrorEnParametroDeProcedure))]
-               public void M15_PruebaAgregarInventarioNulo()
-               {
-                  FabricaDAOSqlServer.ObtenerDAOImplemento().listarInventarioDatos(null);
-           
-               }
-               #endregion 
-
-               #region M15_PruebaAgregarInventarioAtributoNulo
-               #endregion
-               #region M15_PruebaAgregarInventarioAtributoStockNegativo
-               #endregion
-               #region egion M15_PruebaAgregarInventarioAtributoCantidadNegativo
-               #endregion
-               #region M15_PruebaAgregarInventarioAtributoPrecioNegativo
-               #endregion
-         */
 
         #region M15_PruebaAgregarInventario
         [Test]
@@ -118,15 +99,17 @@ namespace PruebasUnitariasSKD.Modulo15
             Assert.AreEqual(implemento.Imagen_implemento, implemento.Imagen_implemento);
         }
         #endregion
+
         #region M15_PruebaModificarInventarioNulo
         [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        [ExpectedException(typeof(ExcepcionmodificarInventarioDatos))]
         public void M15_PruebaModificarInventarioNulo()
         {
             FabricaDAOSqlServer.ObtenerDAOImplemento().modificarInventarioDatos(null);
         }
         #endregion
-        #region M15_PruebaModificarInventarioNulo
+
+        #region M15_PruebaModificarInventarioParametroNulo
         [Test]
         [ExpectedException(typeof(ExcepcionmodificarInventarioDatos))]
         public void M15_PruebaModificarInventarioParametroNulo()
@@ -135,14 +118,17 @@ namespace PruebasUnitariasSKD.Modulo15
             FabricaDAOSqlServer.ObtenerDAOImplemento().modificarInventarioDatos(implemento);
         }
         #endregion
+
         #region M15_PruebaModificarInventarioNulo
         [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        [ExpectedException(typeof(ExcepcionmodificarInventarioDatos))]
         public void M15_PruebaModificarInventarioParametroNegativo()
         {
-            FabricaDAOSqlServer.ObtenerDAOImplemento().modificarInventarioDatos(null);
+            implemento.Precio_Implemento = -40;
+            FabricaDAOSqlServer.ObtenerDAOImplemento().modificarInventarioDatos(implemento);
         }
         #endregion
+
         #region M15_PruebaEliminarInventario
         [Test]
         public void M15_PruebaEliminarInventarioDatos()
@@ -161,6 +147,15 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
+        #region M15_PruebaEliminarInventarioDojoNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcioneliminarInventarioDatos))]
+        public void M15_PruebaEliminarInventarioDojoNulo()
+        {
+            FabricaDAOSqlServer.ObtenerDAOImplemento().eliminarInventarioDatos(implemento.Id_Implemento, null);
+        }
+        #endregion
+
         #region M15_ListarInventarioDatos()
         [Test]
         public void M15_ListarInventarioDatos()
@@ -174,7 +169,7 @@ namespace PruebasUnitariasSKD.Modulo15
 
         #region M15_ListaInventarioDatosNulo()
         [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        [ExpectedException(typeof(ExcepcionListarInventarioDatos))]
         public void M15_ListaInventarioDatosNulo()
         {
             FabricaDAOSqlServer.ObtenerDAOImplemento().listarInventarioDatos(null);
@@ -195,7 +190,7 @@ namespace PruebasUnitariasSKD.Modulo15
 
         #region M15_ListaInventarioDatos2Nulo()
         [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        [ExpectedException(typeof(ExcepcionlistaInventarioDatos2))]
         public void M15_ListarInventarioDatos2Nulo()
         {
             FabricaDAOSqlServer.ObtenerDAOImplemento().listarInventarioDatos2(null);
