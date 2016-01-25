@@ -1,23 +1,129 @@
-﻿using DominioSKD;
+﻿using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
-using LogicaNegociosSKD.Modulo7;
+using Interfaz_Contratos.Modulo7;
+using Interfaz_Presentadores.Modulo7;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_DetallarHorarioPractica : System.Web.UI.Page
+    public partial class M7_DetallarHorarioPractica : System.Web.UI.Page, IContratoDetallarHorarioPractica
     {
-        Evento evento = new Evento();
-        Competencia competencia = new Competencia();
-        LogicaHorarioPractica laLogica = new LogicaHorarioPractica();
+        private EventoM7 idEvento;
+        private PresentadorDetallarHorarioPractica presentador;
+
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        public M7_DetallarHorarioPractica()
+        {
+            presentador = new PresentadorDetallarHorarioPractica(this);
+        }
+
+        
+        #region Contrato
+         /// <summary>
+        /// Implementacion contrato descripcion_evento
+        /// </summary>
+        public string descripcion_evento
+        {
+            get
+            {
+                return descripcion_evento1.InnerText;
+            }
+
+            set
+            {
+                descripcion_evento1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato direccionEvento_evento
+        /// </summary>
+        public string direccionEvento_evento
+        {
+            get
+            {
+                return direccion_evento1.InnerText;
+            }
+
+            set
+            {
+                direccion_evento1.InnerText += value;
+            }
+        }
+        
+        /// <summary>
+        /// Implementacion contrato estado_evento
+        /// </summary>
+        public string estado_evento
+        {
+            get
+            {
+                return estado_evento1.InnerText;
+            }
+
+            set
+            {
+                estado_evento1.InnerText += value;
+            }
+        }
+        
+        /// <summary>
+        /// Implementacion contrato horaFin_evento
+        /// </summary>
+        public string horaFin_evento
+        {
+            get
+            {
+                return horaFin_evento1.InnerText;
+            }
+
+            set
+            {
+                horaFin_evento1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato horaInicio_evento
+        /// </summary>
+        public string horaInicio_evento
+        {
+            get
+            {
+                return horaInicio_evento1.InnerText;
+            }
+
+            set
+            {
+                horaInicio_evento1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato nombre_evento
+        /// </summary>
+        public string nombre_evento
+        {
+            get
+            {
+                return nombre_evento1.InnerText;
+            }
+
+            set
+            {
+                nombre_evento1.InnerText += value;
+            }
+        }
+        #endregion
+       
 
         /// <summary>
         /// Metodo que se ejecuta cuando carga la pagina
@@ -31,7 +137,7 @@ namespace templateApp.GUI.Modulo7
                 String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -39,36 +145,16 @@ namespace templateApp.GUI.Modulo7
                 }
                 if (permitido)
                 {
-                    ((SKD)Page.Master).IdModulo = "7";
-                    String detalleStringEvento = Request.QueryString["horarioDetalle"];
+                    ((SKD)Page.Master).IdModulo = M7_Recursos.Modulo;
+                    String detalleStringEvento = Request.QueryString[M7_Recursos.DetalleStringDetalleHorarioPractica];
 
             if (!IsPostBack) // verificar si la pagina se muestra por primera vez
             {
                 try
                 {
-                    evento = laLogica.detalleEventoID(int.Parse(detalleStringEvento));
-                    if (evento != null)
-                    {                      
-                        this.nombre_evento.Text = evento.Nombre;
-                        this.descripcion_evento.Text = evento.Descripcion.ToString();
-                        
-                        if (evento.Estado.Equals(true))
-                        {
-                            this.estado_evento.Text = M7_Recursos.AliasEventoActivo;
-                        }
-                        else if (evento.Estado.Equals(false))
-                        {
-                            this.estado_evento.Text = M7_Recursos.AliasEventoInactivo;
-                        }
-                        this.horaInicio_evento.Text = evento.Horario.HoraInicio.ToString();
-                        this.horaFin_evento.Text = evento.Horario.HoraFin.ToString();
-                        this.direccion_evento.Text = evento.Ubicacion.Direccion;
-                    }
-                    else
-                    {
-                         throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
-                         M7_Recursos.MensajeObjetoNuloLogger, new Exception());
-                    }
+                    idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();    
+                    idEvento.Id = int.Parse(detalleStringEvento);
+                    presentador.CargarDatosHorario(idEvento);
                 }
                         catch (ObjetoNuloException)
                         {
