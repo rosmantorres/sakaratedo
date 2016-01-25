@@ -34,10 +34,60 @@ namespace templateApp.GUI.Modulo15
                     Entidad implemento = presentador.precargarImplemento(Convert.ToInt32(Request.QueryString["idImplemento"]));
                     this.id_implemento.Value = (((Implemento)implemento).Id_Implemento).ToString();
                     this.nombre_implemento.Value = ((Implemento)implemento).Nombre_Implemento;
-                    this.tipo_implemento.Value = ((Implemento)implemento).Tipo_Implemento;
-                    this.marca_implemento.Value = ((Implemento)implemento).Marca_Implemento;
-                    this.color_implemento.Value = ((Implemento)implemento).Color_Implemento;
-                    this.talla_implemento.Value = ((Implemento)implemento).Talla_Implemento;
+                    
+                    if ((((Implemento)implemento).Tipo_Implemento != "Vestimenta") && (((Implemento)implemento).Tipo_Implemento != "Accesorios"))
+                    {
+                        this.tipo_implemento.Value = "otros";
+                        this.tipo_implemento_div.Visible = true;
+                        this.tipo_implemento_div.Value = ((Implemento)implemento).Tipo_Implemento;
+
+                    }
+                    else {
+                        this.tipo_implemento_div.Attributes.Add("style", "DISPLAY: none");
+                        this.tipo_implemento.Value = ((Implemento)implemento).Tipo_Implemento;
+                    
+                    }
+
+                    if ((((Implemento)implemento).Marca_Implemento != "ADIDAS") && (((Implemento)implemento).Marca_Implemento != "ARENA") && (((Implemento)implemento).Marca_Implemento != "PUMA") && (((Implemento)implemento).Marca_Implemento != "NIKE") && (((Implemento)implemento).Marca_Implemento != "KOMBA") && (((Implemento)implemento).Marca_Implemento != "RS21"))
+                    {
+                        this.marca_implemento.Value = "otros";
+                        this.marca_implemento_div.Visible = true;
+                        this.marca_implemento_div.Value = ((Implemento)implemento).Marca_Implemento;
+
+                    }
+                    else
+                    {
+                        this.marca_implemento_div.Attributes.Add("style", "DISPLAY: none");
+                        this.marca_implemento.Value = ((Implemento)implemento).Marca_Implemento;
+
+                    }
+                    if ((((Implemento)implemento).Talla_Implemento != "XS") && (((Implemento)implemento).Talla_Implemento != "S") && (((Implemento)implemento).Talla_Implemento != "M") && (((Implemento)implemento).Talla_Implemento != "L") && (((Implemento)implemento).Talla_Implemento != "XL"))
+                    {
+                        this.talla_implemento.Value = "otros";
+                        this.talla_implemento_div.Visible = true;
+                        this.talla_implemento_div.Value = ((Implemento)implemento).Talla_Implemento;
+
+                    }
+                    else
+                    {
+                        this.talla_implemento_div.Attributes.Add("style", "DISPLAY: none");
+                        this.talla_implemento.Value = ((Implemento)implemento).Talla_Implemento;
+
+                    }
+                    if ((((Implemento)implemento).Color_Implemento != "AZUL") && (((Implemento)implemento).Color_Implemento != "VERDE") && (((Implemento)implemento).Color_Implemento != "AMARILLO") && (((Implemento)implemento).Color_Implemento != "ROJO") && (((Implemento)implemento).Color_Implemento != "NEGRO") && (((Implemento)implemento).Color_Implemento != "ROSADO"))
+                    {
+                        this.color_implemento.Value = "otros";
+                        this.color_impolemento_div.Visible = true;
+                        this.color_impolemento_div.Value = ((Implemento)implemento).Color_Implemento;
+
+                    }
+                    else
+                    {
+                        this.color_impolemento_div.Attributes.Add("style", "DISPLAY: none");
+                        this.color_implemento.Value = ((Implemento)implemento).Color_Implemento;
+
+                    }
+
                     this.cantidad_implemento.Value = (((Implemento)implemento).Cantida_implemento).ToString();
                     this.stock_implemento.Value = (((Implemento)implemento).Stock_Minimo_Implemento).ToString();
                     this.descripcion_implemento.Value = ((Implemento)implemento).Descripcion_Implemento;
@@ -88,16 +138,51 @@ namespace templateApp.GUI.Modulo15
                 {
 
                     Entidad implemento = FabricaEntidades.ObtenerImplemento();
-                    ((Implemento)implemento).Id_Implemento = Convert.ToInt16(this.id_implemento.Value);
+                    ((Implemento)implemento).Id_Implemento = Convert.ToInt32(this.id_implemento.Value);
                     ((Implemento)implemento).Dojo_Implemento = (Dojo)FabricaEntidades.tenerDojo();
                     ((Implemento)implemento).Nombre_Implemento = this.nombre_implemento.Value;
-                    ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
-                    ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
-                    ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
-                    ((Implemento)implemento).Talla_Implemento = this.talla_implemento.Value;
+                    if (this.tipo_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento_div.Value;
+
+                    }
+                    else {
+                        ((Implemento)implemento).Tipo_Implemento = this.tipo_implemento.Value;
+
+                    }
+                    if (this.marca_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Marca_Implemento = this.marca_implemento_div.Value;
+
+                    }
+                    else
+                    {
+                        ((Implemento)implemento).Marca_Implemento = this.marca_implemento.Value;
+
+                    }
+                    if (this.color_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Color_Implemento = this.color_impolemento_div.Value;
+
+                    }
+                    else
+                    {
+                        ((Implemento)implemento).Color_Implemento = this.color_implemento.Value;
+
+                    }
+                    if (this.talla_implemento.Value == "otros")
+                    {
+                        ((Implemento)implemento).Talla_Implemento = this.talla_implemento_div.Value;
+
+                    }
+                    else
+                    {
+                        ((Implemento)implemento).Talla_Implemento = this.talla_implemento.Value;
+
+                    }
                     ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Id_dojo = 1;
-                    ((Implemento)implemento).Cantida_implemento = Convert.ToInt16(this.cantidad_implemento.Value);
-                    ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(this.stock_implemento.Value);
+                    ((Implemento)implemento).Cantida_implemento = Convert.ToInt32(this.cantidad_implemento.Value);
+                    ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt32(this.stock_implemento.Value);
                     ((Implemento)implemento).Descripcion_Implemento = this.descripcion_implemento.Value;
                     ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(this.precio_implemento.Value);
                     if (this.imagen_implemento.Value == "")
@@ -111,7 +196,7 @@ namespace templateApp.GUI.Modulo15
                     }
                     ((Implemento)implemento).Estatus_Implemento = this.estatus_implemento.Value;
                     presentador.modificarImplemento(implemento);
-                    Response.Redirect("web_15_ConsultarImplemento.aspx");
+                    Response.Redirect("web_15_ConsultarImplemento.aspx?modificar=exito");
 
                 }
             }
