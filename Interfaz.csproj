@@ -1719,6 +1719,7 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx.cs">
       <DependentUpon>M14_MostrarFacturaDisenoPlanilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx.designer.cs">
       <DependentUpon>M14_MostrarFacturaDisenoPlanilla.aspx</DependentUpon>
